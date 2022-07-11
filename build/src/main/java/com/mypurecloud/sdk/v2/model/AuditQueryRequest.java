@@ -74,6 +74,7 @@ public class AuditQueryRequest  implements Serializable {
     TOPICSDEFINITIONS("TopicsDefinitions"),
     TRIGGERS("Triggers"),
     PROCESSAUTOMATION("ProcessAutomation"),
+    VOICEMAIL("Voicemail"),
     WEBDEPLOYMENTS("WebDeployments"),
     WEBHOOKS("Webhooks"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),

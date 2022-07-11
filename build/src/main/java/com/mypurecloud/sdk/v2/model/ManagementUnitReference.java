@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Management unit reference object for Workforce Management (ID/selfUri only)
+ * ManagementUnitReference
  */
-@ApiModel(description = "Management unit reference object for Workforce Management (ID/selfUri only)")
 
 public class ManagementUnitReference  implements Serializable {
   

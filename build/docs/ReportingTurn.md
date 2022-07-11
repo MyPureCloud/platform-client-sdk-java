@@ -16,6 +16,7 @@ title: ReportingTurn
 | **knowledge** | <!----><!---->[**ReportingTurnKnowledge**](ReportingTurnKnowledge.html)<!----> | The knowledge data captured during this reporting turn. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the original turn was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **askActionResult** | [**AskActionResultEnum**](#AskActionResultEnum)<!----> | Result of the bot flow 'ask' action. |  [optional] |
+| **sessionEndDetails** | <!----><!---->[**SessionEndDetails**](SessionEndDetails.html)<!----> | The details related to end of bot flow session. |  [optional] |
 | **conversation** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The conversation details, across potentially multiple Bot Flow sessions. |  [optional] |
 {: class="table table-striped"}
 

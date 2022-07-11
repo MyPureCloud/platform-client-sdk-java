@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * An object to provide context to nullable fields in PATCH requests
+ * ValueWrapperString
  */
-@ApiModel(description = "An object to provide context to nullable fields in PATCH requests")
 
 public class ValueWrapperString  implements Serializable {
   

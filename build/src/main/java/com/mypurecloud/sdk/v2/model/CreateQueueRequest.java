@@ -113,6 +113,7 @@ public class CreateQueueRequest  implements Serializable {
   private Map<String, Script> defaultScripts = null;
   private QueueMessagingAddresses outboundMessagingAddresses = null;
   private QueueEmailAddress outboundEmailAddress = null;
+  private String peerId = null;
   private String sourceQueueId = null;
   private String selfUri = null;
 
@@ -595,6 +596,24 @@ public class CreateQueueRequest  implements Serializable {
 
 
   /**
+   * The ID of the external Queue
+   **/
+  public CreateQueueRequest peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the external Queue")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
+  /**
    * The id of an existing queue to copy the settings (does not include GPR settings) from when creating a new queue.
    **/
   public CreateQueueRequest sourceQueueId(String sourceQueueId) {
@@ -658,13 +677,14 @@ public class CreateQueueRequest  implements Serializable {
             Objects.equals(this.defaultScripts, createQueueRequest.defaultScripts) &&
             Objects.equals(this.outboundMessagingAddresses, createQueueRequest.outboundMessagingAddresses) &&
             Objects.equals(this.outboundEmailAddress, createQueueRequest.outboundEmailAddress) &&
+            Objects.equals(this.peerId, createQueueRequest.peerId) &&
             Objects.equals(this.sourceQueueId, createQueueRequest.sourceQueueId) &&
             Objects.equals(this.selfUri, createQueueRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, sourceQueueId, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, sourceQueueId, selfUri);
   }
 
   @Override
@@ -701,6 +721,7 @@ public class CreateQueueRequest  implements Serializable {
     sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");
     sb.append("    outboundMessagingAddresses: ").append(toIndentedString(outboundMessagingAddresses)).append("\n");
     sb.append("    outboundEmailAddress: ").append(toIndentedString(outboundEmailAddress)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    sourceQueueId: ").append(toIndentedString(sourceQueueId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

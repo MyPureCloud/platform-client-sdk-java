@@ -124,7 +124,7 @@ public class InboundDomain  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Mx Record Status")
+  @ApiModelProperty(example = "null", value = "Mx Record Status")
   @JsonProperty("mxRecordStatus")
   public MxRecordStatusEnum getMxRecordStatus() {
     return mxRecordStatus;

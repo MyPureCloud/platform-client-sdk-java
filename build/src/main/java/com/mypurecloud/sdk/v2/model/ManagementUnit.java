@@ -23,9 +23,8 @@ import java.util.Date;
 
 import java.io.Serializable;
 /**
- * Management Unit object for Workforce Management
+ * ManagementUnit
  */
-@ApiModel(description = "Management Unit object for Workforce Management")
 
 public class ManagementUnit  implements Serializable {
   

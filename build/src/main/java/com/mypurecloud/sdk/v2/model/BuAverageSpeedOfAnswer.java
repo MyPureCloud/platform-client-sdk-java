@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Service goal average speed of answer configuration
+ * BuAverageSpeedOfAnswer
  */
-@ApiModel(description = "Service goal average speed of answer configuration")
 
 public class BuAverageSpeedOfAnswer  implements Serializable {
   

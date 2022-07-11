@@ -17,9 +17,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Pointer to look up source data for a short term forecast
+ * ForecastSourceDayPointer
  */
-@ApiModel(description = "Pointer to look up source data for a short term forecast")
 
 public class ForecastSourceDayPointer  implements Serializable {
   

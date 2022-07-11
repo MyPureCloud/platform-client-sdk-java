@@ -19,9 +19,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * List of service goal templates
+ * ServiceGoalTemplateList
  */
-@ApiModel(description = "List of service goal templates")
 
 public class ServiceGoalTemplateList  implements Serializable {
   

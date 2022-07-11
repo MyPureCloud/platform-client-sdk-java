@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Marker to indicate an approved full day time off request
+ * UserScheduleFullDayTimeOffMarker
  */
-@ApiModel(description = "Marker to indicate an approved full day time off request")
 
 public class UserScheduleFullDayTimeOffMarker  implements Serializable {
   

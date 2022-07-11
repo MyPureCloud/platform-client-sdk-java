@@ -19,9 +19,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * A list of the waitlist positions for each time off request day separately. If time off request is not waitlisted, then then there are no items in the list for such time off request.
+ * WaitlistPositionListing
  */
-@ApiModel(description = "A list of the waitlist positions for each time off request day separately. If time off request is not waitlisted, then then there are no items in the list for such time off request.")
 
 public class WaitlistPositionListing  implements Serializable {
   

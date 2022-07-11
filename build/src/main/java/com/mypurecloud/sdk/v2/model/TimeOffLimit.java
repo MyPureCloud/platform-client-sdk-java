@@ -18,9 +18,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Time Off Limit
+ * TimeOffLimit
  */
-@ApiModel(description = "Time Off Limit")
 
 public class TimeOffLimit  implements Serializable {
   

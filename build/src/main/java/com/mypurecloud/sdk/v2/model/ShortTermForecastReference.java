@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * A pointer to a short term forecast
+ * ShortTermForecastReference
  */
-@ApiModel(description = "A pointer to a short term forecast")
 
 public class ShortTermForecastReference  implements Serializable {
   

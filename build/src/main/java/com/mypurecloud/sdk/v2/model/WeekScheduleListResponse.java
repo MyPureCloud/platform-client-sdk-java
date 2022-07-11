@@ -19,9 +19,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Week schedule list
+ * WeekScheduleListResponse
  */
-@ApiModel(description = "Week schedule list")
 
 public class WeekScheduleListResponse  implements Serializable {
   

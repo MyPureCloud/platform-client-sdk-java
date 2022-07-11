@@ -112,6 +112,7 @@ public class UserQueue  implements Serializable {
   private Map<String, Script> defaultScripts = null;
   private QueueMessagingAddresses outboundMessagingAddresses = null;
   private QueueEmailAddress outboundEmailAddress = null;
+  private String peerId = null;
   private Boolean joined = null;
   private String selfUri = null;
 
@@ -575,6 +576,24 @@ public class UserQueue  implements Serializable {
 
 
   /**
+   * The ID of the external Queue
+   **/
+  public UserQueue peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the external Queue")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
+  /**
    **/
   public UserQueue joined(Boolean joined) {
     this.joined = joined;
@@ -636,13 +655,14 @@ public class UserQueue  implements Serializable {
             Objects.equals(this.defaultScripts, userQueue.defaultScripts) &&
             Objects.equals(this.outboundMessagingAddresses, userQueue.outboundMessagingAddresses) &&
             Objects.equals(this.outboundEmailAddress, userQueue.outboundEmailAddress) &&
+            Objects.equals(this.peerId, userQueue.peerId) &&
             Objects.equals(this.joined, userQueue.joined) &&
             Objects.equals(this.selfUri, userQueue.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, joined, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, joined, selfUri);
   }
 
   @Override
@@ -678,6 +698,7 @@ public class UserQueue  implements Serializable {
     sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");
     sb.append("    outboundMessagingAddresses: ").append(toIndentedString(outboundMessagingAddresses)).append("\n");
     sb.append("    outboundEmailAddress: ").append(toIndentedString(outboundEmailAddress)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    joined: ").append(toIndentedString(joined)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

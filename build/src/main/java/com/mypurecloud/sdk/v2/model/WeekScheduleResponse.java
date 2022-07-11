@@ -17,9 +17,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Response for query for week schedule for a given week in management unit
+ * WeekScheduleResponse
  */
-@ApiModel(description = "Response for query for week schedule for a given week in management unit")
 
 public class WeekScheduleResponse  implements Serializable {
   

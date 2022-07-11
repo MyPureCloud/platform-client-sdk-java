@@ -12,15 +12,15 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ListWrapperSecondaryPresence;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Activity Code
+ * UpdateActivityCodeRequest
  */
-@ApiModel(description = "Activity Code")
 
 public class UpdateActivityCodeRequest  implements Serializable {
   
@@ -84,6 +84,10 @@ public class UpdateActivityCodeRequest  implements Serializable {
   private Boolean countsAsPaidTime = null;
   private Boolean countsAsWorkTime = null;
   private Boolean agentTimeOffSelectable = null;
+  private Boolean countsTowardShrinkage = null;
+  private Boolean plannedShrinkage = null;
+  private Boolean interruptible = null;
+  private ListWrapperSecondaryPresence secondaryPresences = null;
   private WfmVersionedEntityMetadata metadata = null;
 
   
@@ -196,6 +200,78 @@ public class UpdateActivityCodeRequest  implements Serializable {
 
 
   /**
+   * Whether or not this activity code counts toward shrinkage calculations
+   **/
+  public UpdateActivityCodeRequest countsTowardShrinkage(Boolean countsTowardShrinkage) {
+    this.countsTowardShrinkage = countsTowardShrinkage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether or not this activity code counts toward shrinkage calculations")
+  @JsonProperty("countsTowardShrinkage")
+  public Boolean getCountsTowardShrinkage() {
+    return countsTowardShrinkage;
+  }
+  public void setCountsTowardShrinkage(Boolean countsTowardShrinkage) {
+    this.countsTowardShrinkage = countsTowardShrinkage;
+  }
+
+
+  /**
+   * Whether this activity code is considered planned or unplanned shrinkage
+   **/
+  public UpdateActivityCodeRequest plannedShrinkage(Boolean plannedShrinkage) {
+    this.plannedShrinkage = plannedShrinkage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this activity code is considered planned or unplanned shrinkage")
+  @JsonProperty("plannedShrinkage")
+  public Boolean getPlannedShrinkage() {
+    return plannedShrinkage;
+  }
+  public void setPlannedShrinkage(Boolean plannedShrinkage) {
+    this.plannedShrinkage = plannedShrinkage;
+  }
+
+
+  /**
+   * Whether this activity code is considered interruptible
+   **/
+  public UpdateActivityCodeRequest interruptible(Boolean interruptible) {
+    this.interruptible = interruptible;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this activity code is considered interruptible")
+  @JsonProperty("interruptible")
+  public Boolean getInterruptible() {
+    return interruptible;
+  }
+  public void setInterruptible(Boolean interruptible) {
+    this.interruptible = interruptible;
+  }
+
+
+  /**
+   * The secondary presences of this activity code
+   **/
+  public UpdateActivityCodeRequest secondaryPresences(ListWrapperSecondaryPresence secondaryPresences) {
+    this.secondaryPresences = secondaryPresences;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The secondary presences of this activity code")
+  @JsonProperty("secondaryPresences")
+  public ListWrapperSecondaryPresence getSecondaryPresences() {
+    return secondaryPresences;
+  }
+  public void setSecondaryPresences(ListWrapperSecondaryPresence secondaryPresences) {
+    this.secondaryPresences = secondaryPresences;
+  }
+
+
+  /**
    * Version metadata for the associated business unit's list of activity codes
    **/
   public UpdateActivityCodeRequest metadata(WfmVersionedEntityMetadata metadata) {
@@ -229,12 +305,16 @@ public class UpdateActivityCodeRequest  implements Serializable {
             Objects.equals(this.countsAsPaidTime, updateActivityCodeRequest.countsAsPaidTime) &&
             Objects.equals(this.countsAsWorkTime, updateActivityCodeRequest.countsAsWorkTime) &&
             Objects.equals(this.agentTimeOffSelectable, updateActivityCodeRequest.agentTimeOffSelectable) &&
+            Objects.equals(this.countsTowardShrinkage, updateActivityCodeRequest.countsTowardShrinkage) &&
+            Objects.equals(this.plannedShrinkage, updateActivityCodeRequest.plannedShrinkage) &&
+            Objects.equals(this.interruptible, updateActivityCodeRequest.interruptible) &&
+            Objects.equals(this.secondaryPresences, updateActivityCodeRequest.secondaryPresences) &&
             Objects.equals(this.metadata, updateActivityCodeRequest.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, metadata);
+    return Objects.hash(name, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, countsTowardShrinkage, plannedShrinkage, interruptible, secondaryPresences, metadata);
   }
 
   @Override
@@ -248,6 +328,10 @@ public class UpdateActivityCodeRequest  implements Serializable {
     sb.append("    countsAsPaidTime: ").append(toIndentedString(countsAsPaidTime)).append("\n");
     sb.append("    countsAsWorkTime: ").append(toIndentedString(countsAsWorkTime)).append("\n");
     sb.append("    agentTimeOffSelectable: ").append(toIndentedString(agentTimeOffSelectable)).append("\n");
+    sb.append("    countsTowardShrinkage: ").append(toIndentedString(countsTowardShrinkage)).append("\n");
+    sb.append("    plannedShrinkage: ").append(toIndentedString(plannedShrinkage)).append("\n");
+    sb.append("    interruptible: ").append(toIndentedString(interruptible)).append("\n");
+    sb.append("    secondaryPresences: ").append(toIndentedString(secondaryPresences)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

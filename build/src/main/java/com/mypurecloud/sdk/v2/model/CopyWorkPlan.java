@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Information associated with a work plan thats created as a copy
+ * CopyWorkPlan
  */
-@ApiModel(description = "Information associated with a work plan thats created as a copy")
 
 public class CopyWorkPlan  implements Serializable {
   

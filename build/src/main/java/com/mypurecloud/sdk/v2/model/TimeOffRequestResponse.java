@@ -32,6 +32,7 @@ public class TimeOffRequestResponse  implements Serializable {
   private Boolean isFullDayRequest = null;
   private Boolean markedAsRead = null;
   private String activityCodeId = null;
+  private Boolean paid = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -82,6 +83,59 @@ public class TimeOffRequestResponse  implements Serializable {
     }
   }
   private StatusEnum status = null;
+
+  private static class SubstatusEnumDeserializer extends StdDeserializer<SubstatusEnum> {
+    public SubstatusEnumDeserializer() {
+      super(SubstatusEnumDeserializer.class);
+    }
+
+    @Override
+    public SubstatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SubstatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The substatus of this time off request
+   */
+ @JsonDeserialize(using = SubstatusEnumDeserializer.class)
+  public enum SubstatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ADVANCETIMEELAPSED("AdvanceTimeElapsed"),
+    AUTOAPPROVED("AutoApproved"),
+    INSUFFICIENTBALANCE("InsufficientBalance"),
+    INVALIDDAILYDURATION("InvalidDailyDuration"),
+    OUTSIDESHIFT("OutsideShift"),
+    REMOVEDFROMWAITLIST("RemovedFromWaitlist"),
+    WAITLISTED("Waitlisted");
+
+    private String value;
+
+    SubstatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SubstatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SubstatusEnum value : SubstatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SubstatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SubstatusEnum substatus = null;
   private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
   private List<String> fullDayManagementUnitDates = new ArrayList<String>();
   private Integer dailyDurationMinutes = null;
@@ -176,6 +230,24 @@ public class TimeOffRequestResponse  implements Serializable {
 
 
   /**
+   * Whether this is a paid time off request
+   **/
+  public TimeOffRequestResponse paid(Boolean paid) {
+    this.paid = paid;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this is a paid time off request")
+  @JsonProperty("paid")
+  public Boolean getPaid() {
+    return paid;
+  }
+  public void setPaid(Boolean paid) {
+    this.paid = paid;
+  }
+
+
+  /**
    * The status of this time off request
    **/
   public TimeOffRequestResponse status(StatusEnum status) {
@@ -194,14 +266,32 @@ public class TimeOffRequestResponse  implements Serializable {
 
 
   /**
-   * A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest == false
+   * The substatus of this time off request
+   **/
+  public TimeOffRequestResponse substatus(SubstatusEnum substatus) {
+    this.substatus = substatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The substatus of this time off request")
+  @JsonProperty("substatus")
+  public SubstatusEnum getSubstatus() {
+    return substatus;
+  }
+  public void setSubstatus(SubstatusEnum substatus) {
+    this.substatus = substatus;
+  }
+
+
+  /**
+   * A set of start date-times in ISO-8601 format for partial day requests. Will be not empty if isFullDayRequest == false
    **/
   public TimeOffRequestResponse partialDayStartDateTimes(List<Date> partialDayStartDateTimes) {
     this.partialDayStartDateTimes = partialDayStartDateTimes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest == false")
+  @ApiModelProperty(example = "null", value = "A set of start date-times in ISO-8601 format for partial day requests. Will be not empty if isFullDayRequest == false")
   @JsonProperty("partialDayStartDateTimes")
   public List<Date> getPartialDayStartDateTimes() {
     return partialDayStartDateTimes;
@@ -212,14 +302,14 @@ public class TimeOffRequestResponse  implements Serializable {
 
 
   /**
-   * A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.  Will be not empty if isFullDayRequest == true
+   * A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone. Will be not empty if isFullDayRequest == true
    **/
   public TimeOffRequestResponse fullDayManagementUnitDates(List<String> fullDayManagementUnitDates) {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.  Will be not empty if isFullDayRequest == true")
+  @ApiModelProperty(example = "null", value = "A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone. Will be not empty if isFullDayRequest == true")
   @JsonProperty("fullDayManagementUnitDates")
   public List<String> getFullDayManagementUnitDates() {
     return fullDayManagementUnitDates;
@@ -413,7 +503,9 @@ public class TimeOffRequestResponse  implements Serializable {
             Objects.equals(this.isFullDayRequest, timeOffRequestResponse.isFullDayRequest) &&
             Objects.equals(this.markedAsRead, timeOffRequestResponse.markedAsRead) &&
             Objects.equals(this.activityCodeId, timeOffRequestResponse.activityCodeId) &&
+            Objects.equals(this.paid, timeOffRequestResponse.paid) &&
             Objects.equals(this.status, timeOffRequestResponse.status) &&
+            Objects.equals(this.substatus, timeOffRequestResponse.substatus) &&
             Objects.equals(this.partialDayStartDateTimes, timeOffRequestResponse.partialDayStartDateTimes) &&
             Objects.equals(this.fullDayManagementUnitDates, timeOffRequestResponse.fullDayManagementUnitDates) &&
             Objects.equals(this.dailyDurationMinutes, timeOffRequestResponse.dailyDurationMinutes) &&
@@ -430,7 +522,7 @@ public class TimeOffRequestResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, status, partialDayStartDateTimes, fullDayManagementUnitDates, dailyDurationMinutes, notes, submittedBy, submittedDate, reviewedBy, reviewedDate, modifiedBy, modifiedDate, metadata, selfUri);
+    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, dailyDurationMinutes, notes, submittedBy, submittedDate, reviewedBy, reviewedDate, modifiedBy, modifiedDate, metadata, selfUri);
   }
 
   @Override
@@ -443,7 +535,9 @@ public class TimeOffRequestResponse  implements Serializable {
     sb.append("    isFullDayRequest: ").append(toIndentedString(isFullDayRequest)).append("\n");
     sb.append("    markedAsRead: ").append(toIndentedString(markedAsRead)).append("\n");
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
+    sb.append("    paid: ").append(toIndentedString(paid)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    substatus: ").append(toIndentedString(substatus)).append("\n");
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");

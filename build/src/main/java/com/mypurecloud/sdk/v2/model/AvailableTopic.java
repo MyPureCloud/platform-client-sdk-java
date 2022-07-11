@@ -105,7 +105,8 @@ public class AvailableTopic  implements Serializable {
   public enum TransportsEnum {
     ALL("All"),
     WEBSOCKET("Websocket"),
-    EVENTBRIDGE("EventBridge");
+    EVENTBRIDGE("EventBridge"),
+    PROCESSAUTOMATION("ProcessAutomation");
 
     private String value;
 

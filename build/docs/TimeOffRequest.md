@@ -13,7 +13,9 @@ title: TimeOffRequest
 | **isFullDayRequest** | <!----><!---->**Boolean**<!----> | Whether this is a full day request (false means partial day) |  [optional] |
 | **markedAsRead** | <!----><!---->**Boolean**<!----> | Whether this request has been marked as read by the agent |  [optional] |
 | **activityCodeId** | <!----><!---->**String**<!----> | The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category |  [optional] |
+| **paid** | <!----><!---->**Boolean**<!----> | Whether this is a paid time off request |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of this time off request |  [optional] |
+| **substatus** | [**SubstatusEnum**](#SubstatusEnum)<!----> | The substatus of this time off request |  [optional] |
 | **partialDayStartDateTimes** | <!----><!---->[**List&lt;Date&gt;**](Date.html)<!----> | A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest == false |  [optional] |
 | **fullDayManagementUnitDates** | <!----><!---->**List&lt;String&gt;**<!----> | A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.  Will be not empty if isFullDayRequest == true |  [optional] |
 | **dailyDurationMinutes** | <!----><!---->**Integer**<!----> | The daily duration of this time off request in minutes |  [optional] |
@@ -38,6 +40,23 @@ title: TimeOffRequest
 | APPROVED | &quot;APPROVED&quot; | 
 | DENIED | &quot;DENIED&quot; | 
 | CANCELED | &quot;CANCELED&quot; | 
+{: class="table table-striped"}
+
+
+<a name="SubstatusEnum"></a>
+
+## Enum: SubstatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ADVANCETIMEELAPSED | &quot;AdvanceTimeElapsed&quot; | 
+| AUTOAPPROVED | &quot;AutoApproved&quot; | 
+| INSUFFICIENTBALANCE | &quot;InsufficientBalance&quot; | 
+| INVALIDDAILYDURATION | &quot;InvalidDailyDuration&quot; | 
+| OUTSIDESHIFT | &quot;OutsideShift&quot; | 
+| REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; | 
+| WAITLISTED | &quot;Waitlisted&quot; | 
 {: class="table table-striped"}
 
 

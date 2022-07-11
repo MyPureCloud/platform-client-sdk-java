@@ -113,6 +113,7 @@ public class Queue  implements Serializable {
   private Map<String, Script> defaultScripts = null;
   private QueueMessagingAddresses outboundMessagingAddresses = null;
   private QueueEmailAddress outboundEmailAddress = null;
+  private String peerId = null;
   private String selfUri = null;
 
   
@@ -592,6 +593,24 @@ public class Queue  implements Serializable {
   }
 
 
+  /**
+   * The ID of the external Queue
+   **/
+  public Queue peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the external Queue")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -638,12 +657,13 @@ public class Queue  implements Serializable {
             Objects.equals(this.defaultScripts, queue.defaultScripts) &&
             Objects.equals(this.outboundMessagingAddresses, queue.outboundMessagingAddresses) &&
             Objects.equals(this.outboundEmailAddress, queue.outboundEmailAddress) &&
+            Objects.equals(this.peerId, queue.peerId) &&
             Objects.equals(this.selfUri, queue.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, selfUri);
   }
 
   @Override
@@ -680,6 +700,7 @@ public class Queue  implements Serializable {
     sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");
     sb.append("    outboundMessagingAddresses: ").append(toIndentedString(outboundMessagingAddresses)).append("\n");
     sb.append("    outboundEmailAddress: ").append(toIndentedString(outboundEmailAddress)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

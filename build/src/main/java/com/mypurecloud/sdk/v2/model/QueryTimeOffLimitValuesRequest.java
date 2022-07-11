@@ -19,9 +19,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * This sets up a filter to request date ranges of time off limit, allocated and waitlisted minutes
+ * QueryTimeOffLimitValuesRequest
  */
-@ApiModel(description = "This sets up a filter to request date ranges of time off limit, allocated and waitlisted minutes")
 
 public class QueryTimeOffLimitValuesRequest  implements Serializable {
   
@@ -67,14 +66,14 @@ public class QueryTimeOffLimitValuesRequest  implements Serializable {
 
 
   /**
-   * The list of the date ranges to return time off limit, allocated and waitlisted minutes.
+   * The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.
    **/
   public QueryTimeOffLimitValuesRequest dateRanges(List<LocalDateRange> dateRanges) {
     this.dateRanges = dateRanges;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The list of the date ranges to return time off limit, allocated and waitlisted minutes.")
+  @ApiModelProperty(example = "null", required = true, value = "The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.")
   @JsonProperty("dateRanges")
   public List<LocalDateRange> getDateRanges() {
     return dateRanges;

@@ -19,9 +19,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * The list of date ranges with available time off values and the current waitlist per granularity.
+ * AvailableTimeOffResponse
  */
-@ApiModel(description = "The list of date ranges with available time off values and the current waitlist per granularity.")
 
 public class AvailableTimeOffResponse  implements Serializable {
   

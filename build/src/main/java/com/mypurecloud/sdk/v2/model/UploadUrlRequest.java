@@ -25,6 +25,7 @@ public class UploadUrlRequest  implements Serializable {
   private String fileName = null;
   private String contentMd5 = null;
   private Integer signedUrlTimeoutSeconds = null;
+  private String contentType = null;
 
   private static class ServerSideEncryptionEnumDeserializer extends StdDeserializer<ServerSideEncryptionEnum> {
     public ServerSideEncryptionEnumDeserializer() {
@@ -129,6 +130,24 @@ public class UploadUrlRequest  implements Serializable {
 
 
   /**
+   * The content type of the file to upload. Allows all MIME types
+   **/
+  public UploadUrlRequest contentType(String contentType) {
+    this.contentType = contentType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The content type of the file to upload. Allows all MIME types")
+  @JsonProperty("contentType")
+  public String getContentType() {
+    return contentType;
+  }
+  public void setContentType(String contentType) {
+    this.contentType = contentType;
+  }
+
+
+  /**
    **/
   public UploadUrlRequest serverSideEncryption(ServerSideEncryptionEnum serverSideEncryption) {
     this.serverSideEncryption = serverSideEncryption;
@@ -158,12 +177,13 @@ public class UploadUrlRequest  implements Serializable {
     return Objects.equals(this.fileName, uploadUrlRequest.fileName) &&
             Objects.equals(this.contentMd5, uploadUrlRequest.contentMd5) &&
             Objects.equals(this.signedUrlTimeoutSeconds, uploadUrlRequest.signedUrlTimeoutSeconds) &&
+            Objects.equals(this.contentType, uploadUrlRequest.contentType) &&
             Objects.equals(this.serverSideEncryption, uploadUrlRequest.serverSideEncryption);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileName, contentMd5, signedUrlTimeoutSeconds, serverSideEncryption);
+    return Objects.hash(fileName, contentMd5, signedUrlTimeoutSeconds, contentType, serverSideEncryption);
   }
 
   @Override
@@ -174,6 +194,7 @@ public class UploadUrlRequest  implements Serializable {
     sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
     sb.append("    contentMd5: ").append(toIndentedString(contentMd5)).append("\n");
     sb.append("    signedUrlTimeoutSeconds: ").append(toIndentedString(signedUrlTimeoutSeconds)).append("\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    serverSideEncryption: ").append(toIndentedString(serverSideEncryption)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -80,6 +81,8 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     }
   }
   private ScheduledActivityCategoryEnum scheduledActivityCategory = null;
+  private List<String> scheduledSecondaryPresenceLookupIds = new ArrayList<String>();
+  private String actualActivityCodeId = null;
 
   private static class ActualActivityCategoryEnumDeserializer extends StdDeserializer<ActualActivityCategoryEnum> {
     public ActualActivityCategoryEnumDeserializer() {
@@ -368,6 +371,42 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
 
 
   /**
+   * The lookup IDs used to retrieve the scheduled secondary statuses from map of lookup ID to corresponding secondary presence ID
+   **/
+  public HistoricalAdherenceExceptionInfo scheduledSecondaryPresenceLookupIds(List<String> scheduledSecondaryPresenceLookupIds) {
+    this.scheduledSecondaryPresenceLookupIds = scheduledSecondaryPresenceLookupIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The lookup IDs used to retrieve the scheduled secondary statuses from map of lookup ID to corresponding secondary presence ID")
+  @JsonProperty("scheduledSecondaryPresenceLookupIds")
+  public List<String> getScheduledSecondaryPresenceLookupIds() {
+    return scheduledSecondaryPresenceLookupIds;
+  }
+  public void setScheduledSecondaryPresenceLookupIds(List<String> scheduledSecondaryPresenceLookupIds) {
+    this.scheduledSecondaryPresenceLookupIds = scheduledSecondaryPresenceLookupIds;
+  }
+
+
+  /**
+   * The ID of the actual activity code for this user
+   **/
+  public HistoricalAdherenceExceptionInfo actualActivityCodeId(String actualActivityCodeId) {
+    this.actualActivityCodeId = actualActivityCodeId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the actual activity code for this user")
+  @JsonProperty("actualActivityCodeId")
+  public String getActualActivityCodeId() {
+    return actualActivityCodeId;
+  }
+  public void setActualActivityCodeId(String actualActivityCodeId) {
+    this.actualActivityCodeId = actualActivityCodeId;
+  }
+
+
+  /**
    * Activity for which the user is actually engaged
    **/
   public HistoricalAdherenceExceptionInfo actualActivityCategory(ActualActivityCategoryEnum actualActivityCategory) {
@@ -471,6 +510,8 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
             Objects.equals(this.endOffsetSeconds, historicalAdherenceExceptionInfo.endOffsetSeconds) &&
             Objects.equals(this.scheduledActivityCodeId, historicalAdherenceExceptionInfo.scheduledActivityCodeId) &&
             Objects.equals(this.scheduledActivityCategory, historicalAdherenceExceptionInfo.scheduledActivityCategory) &&
+            Objects.equals(this.scheduledSecondaryPresenceLookupIds, historicalAdherenceExceptionInfo.scheduledSecondaryPresenceLookupIds) &&
+            Objects.equals(this.actualActivityCodeId, historicalAdherenceExceptionInfo.actualActivityCodeId) &&
             Objects.equals(this.actualActivityCategory, historicalAdherenceExceptionInfo.actualActivityCategory) &&
             Objects.equals(this.systemPresence, historicalAdherenceExceptionInfo.systemPresence) &&
             Objects.equals(this.routingStatus, historicalAdherenceExceptionInfo.routingStatus) &&
@@ -480,7 +521,7 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(startOffsetSeconds, endOffsetSeconds, scheduledActivityCodeId, scheduledActivityCategory, actualActivityCategory, systemPresence, routingStatus, impact, secondaryPresenceLookupId);
+    return Objects.hash(startOffsetSeconds, endOffsetSeconds, scheduledActivityCodeId, scheduledActivityCategory, scheduledSecondaryPresenceLookupIds, actualActivityCodeId, actualActivityCategory, systemPresence, routingStatus, impact, secondaryPresenceLookupId);
   }
 
   @Override
@@ -492,6 +533,8 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     sb.append("    endOffsetSeconds: ").append(toIndentedString(endOffsetSeconds)).append("\n");
     sb.append("    scheduledActivityCodeId: ").append(toIndentedString(scheduledActivityCodeId)).append("\n");
     sb.append("    scheduledActivityCategory: ").append(toIndentedString(scheduledActivityCategory)).append("\n");
+    sb.append("    scheduledSecondaryPresenceLookupIds: ").append(toIndentedString(scheduledSecondaryPresenceLookupIds)).append("\n");
+    sb.append("    actualActivityCodeId: ").append(toIndentedString(actualActivityCodeId)).append("\n");
     sb.append("    actualActivityCategory: ").append(toIndentedString(actualActivityCategory)).append("\n");
     sb.append("    systemPresence: ").append(toIndentedString(systemPresence)).append("\n");
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");

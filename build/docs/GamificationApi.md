@@ -29,6 +29,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGamificationScorecardsPointsAlltime**](GamificationApi.html#getGamificationScorecardsPointsAlltime) | All-time points of the requesting user |
 | [**getGamificationScorecardsPointsAverage**](GamificationApi.html#getGamificationScorecardsPointsAverage) | Average points of the requesting user's division or performance profile |
 | [**getGamificationScorecardsPointsTrends**](GamificationApi.html#getGamificationScorecardsPointsTrends) | Points trends of the requesting user |
+| [**getGamificationScorecardsProfileMetricUserValuesTrends**](GamificationApi.html#getGamificationScorecardsProfileMetricUserValuesTrends) | Average performance values trends by metric of a user |
+| [**getGamificationScorecardsProfileMetricUsersValuesTrends**](GamificationApi.html#getGamificationScorecardsProfileMetricUsersValuesTrends) | Average performance values trends by metric of a division or a performance profile |
+| [**getGamificationScorecardsProfileMetricValuesTrends**](GamificationApi.html#getGamificationScorecardsProfileMetricValuesTrends) | Average performance values trends by metric of the requesting user |
 | [**getGamificationScorecardsUser**](GamificationApi.html#getGamificationScorecardsUser) | Workday performance metrics for a user |
 | [**getGamificationScorecardsUserAttendance**](GamificationApi.html#getGamificationScorecardsUserAttendance) | Attendance status metrics for a user |
 | [**getGamificationScorecardsUserBestpoints**](GamificationApi.html#getGamificationScorecardsUserBestpoints) | Best points of a user |
@@ -1445,6 +1448,227 @@ try {
 ### Return type
 
 [**WorkdayPointsTrend**](WorkdayPointsTrend.html)
+
+<a name="getGamificationScorecardsProfileMetricUserValuesTrends"></a>
+
+# **getGamificationScorecardsProfileMetricUserValuesTrends**
+
+
+
+> [MetricValueTrendAverage](MetricValueTrendAverage.html) getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, referenceWorkday, timeZone)
+
+Average performance values trends by metric of a user
+
+Wraps GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends  
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String profileId = "profileId_example"; // String | performanceProfileId
+String metricId = "metricId_example"; // String | metricId
+String userId = "userId_example"; // String | 
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate referenceWorkday = new LocalDate(); // LocalDate | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String timeZone = "UTC"; // String | Timezone for the workday. Defaults to UTC
+try {
+    MetricValueTrendAverage result = apiInstance.getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, referenceWorkday, timeZone);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationScorecardsProfileMetricUserValuesTrends");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **profileId** | **String**| performanceProfileId | 
+| **metricId** | **String**| metricId | 
+| **userId** | **String**|  | 
+| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **referenceWorkday** | **LocalDate**| Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **timeZone** | **String**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MetricValueTrendAverage**](MetricValueTrendAverage.html)
+
+<a name="getGamificationScorecardsProfileMetricUsersValuesTrends"></a>
+
+# **getGamificationScorecardsProfileMetricUsersValuesTrends**
+
+
+
+> [MetricValueTrendAverage](MetricValueTrendAverage.html) getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone)
+
+Average performance values trends by metric of a division or a performance profile
+
+Wraps GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends  
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String profileId = "profileId_example"; // String | performanceProfileId
+String metricId = "metricId_example"; // String | metricId
+String filterType = "filterType_example"; // String | Filter type for the query request.
+String filterId = "filterId_example"; // String | ID for the filter type. For example, division Id
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate referenceWorkday = new LocalDate(); // LocalDate | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String timeZone = "UTC"; // String | Timezone for the workday. Defaults to UTC
+try {
+    MetricValueTrendAverage result = apiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationScorecardsProfileMetricUsersValuesTrends");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **profileId** | **String**| performanceProfileId | 
+| **metricId** | **String**| metricId | 
+| **filterType** | **String**| Filter type for the query request. |<br />**Values**: PerformanceProfile, Division 
+| **filterId** | **String**| ID for the filter type. For example, division Id | 
+| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **referenceWorkday** | **LocalDate**| Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **timeZone** | **String**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MetricValueTrendAverage**](MetricValueTrendAverage.html)
+
+<a name="getGamificationScorecardsProfileMetricValuesTrends"></a>
+
+# **getGamificationScorecardsProfileMetricValuesTrends**
+
+
+
+> [MetricValueTrendAverage](MetricValueTrendAverage.html) getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, filterType, referenceWorkday, timeZone)
+
+Average performance values trends by metric of the requesting user
+
+Wraps GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends  
+
+Requires ANY permissions: 
+
+* gamification:scorecard:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String profileId = "profileId_example"; // String | performanceProfileId
+String metricId = "metricId_example"; // String | metricId
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String filterType = "filterType_example"; // String | Filter type for the query request. If not set, returns the values trends of the requesting user
+LocalDate referenceWorkday = new LocalDate(); // LocalDate | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String timeZone = "UTC"; // String | Timezone for the workday. Defaults to UTC
+try {
+    MetricValueTrendAverage result = apiInstance.getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, filterType, referenceWorkday, timeZone);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationScorecardsProfileMetricValuesTrends");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **profileId** | **String**| performanceProfileId | 
+| **metricId** | **String**| metricId | 
+| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **filterType** | **String**| Filter type for the query request. If not set, returns the values trends of the requesting user | [optional]<br />**Values**: PerformanceProfile, Division 
+| **referenceWorkday** | **LocalDate**| Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **timeZone** | **String**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MetricValueTrendAverage**](MetricValueTrendAverage.html)
 
 <a name="getGamificationScorecardsUser"></a>
 

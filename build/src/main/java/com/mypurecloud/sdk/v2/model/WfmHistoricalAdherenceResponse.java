@@ -20,9 +20,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Response for Historical Adherence Query, intended to tell the client what to listen for on a notification topic
+ * WfmHistoricalAdherenceResponse
  */
-@ApiModel(description = "Response for Historical Adherence Query, intended to tell the client what to listen for on a notification topic")
 
 public class WfmHistoricalAdherenceResponse  implements Serializable {
   

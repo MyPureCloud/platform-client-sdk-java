@@ -19,9 +19,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * The list of date ranges with the time off limit, allocated and waitlisted values.
+ * QueryTimeOffLimitValuesResponse
  */
-@ApiModel(description = "The list of date ranges with the time off limit, allocated and waitlisted values.")
 
 public class QueryTimeOffLimitValuesResponse  implements Serializable {
   

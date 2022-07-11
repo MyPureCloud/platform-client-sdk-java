@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Short Term Forecasting Settings
+ * ShortTermForecastingSettings
  */
-@ApiModel(description = "Short Term Forecasting Settings")
 
 public class ShortTermForecastingSettings  implements Serializable {
   

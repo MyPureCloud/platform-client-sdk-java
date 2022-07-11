@@ -3475,12 +3475,14 @@ public class RoutingApi {
    * @param name Filter by queue name (optional)
    * @param id Filter by queue ID(s) (optional)
    * @param divisionId Filter by queue division ID(s) (optional)
+   * @param peerId Filter by queue peer ID(s) (optional)
+   * @param hasPeer Filter by queues associated with peer (optional)
    * @return QueueEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueEntityListing getRoutingQueues(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId) throws IOException, ApiException {
-    return  getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId));
+  public QueueEntityListing getRoutingQueues(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, Boolean hasPeer) throws IOException, ApiException {
+    return  getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, hasPeer));
   }
 
   /**
@@ -3492,14 +3494,16 @@ public class RoutingApi {
    * @param name Filter by queue name (optional)
    * @param id Filter by queue ID(s) (optional)
    * @param divisionId Filter by queue division ID(s) (optional)
+   * @param peerId Filter by queue peer ID(s) (optional)
+   * @param hasPeer Filter by queues associated with peer (optional)
    * @return QueueEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId) throws IOException {
-    return getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId).withHttpInfo());
+  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, Boolean hasPeer) throws IOException {
+    return getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, hasPeer).withHttpInfo());
   }
 
-  private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId) {
+  private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, Boolean hasPeer) {
     return GetRoutingQueuesRequest.builder()
             .withPageNumber(pageNumber)
 
@@ -3512,6 +3516,10 @@ public class RoutingApi {
             .withId(id)
 
             .withDivisionId(divisionId)
+
+            .withPeerId(peerId)
+
+            .withHasPeer(hasPeer)
 
             .build();
   }

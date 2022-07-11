@@ -19,9 +19,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * The list of time off limit objects
+ * TimeOffLimitListing
  */
-@ApiModel(description = "The list of time off limit objects")
 
 public class TimeOffLimitListing  implements Serializable {
   

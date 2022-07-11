@@ -10321,6 +10321,143 @@
     "return": "WorkdayPointsTrend",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.WorkdayPointsTrend;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetGamificationScorecardsPointsTrends {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nString dayOfWeek = \"dayOfWeek_example\"; // String | Optional filter to specify which day of weeks to be included in the response\n        try { \n            // Points trends of the requesting user\n            WorkdayPointsTrend result = apiInstance.getGamificationScorecardsPointsTrends(startWorkday, endWorkday, dayOfWeek);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationScorecardsPointsTrends\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getgamificationscorecardsprofilemetricuservaluestrends": {
+    "operationId": "getgamificationscorecardsprofilemetricuservaluestrends",
+    "functionName": "getGamificationScorecardsProfileMetricUserValuesTrends",
+    "signature": "getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, referenceWorkday, timeZone)",
+    "parameters": [
+      {
+        "name": "profileId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "startWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "endWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "referenceWorkday",
+        "type": "LocalDate",
+        "required": "false"
+      },
+      {
+        "name": "timeZone",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "MetricValueTrendAverage",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;import com.mypurecloud.sdk.v2.model.MetricValueTrendAverage;\n\npublic class ExamplegetGamificationScorecardsProfileMetricUserValuesTrends {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String profileId = \"profileId_example\"; // String | performanceProfileId\nString metricId = \"metricId_example\"; // String | metricId\nString userId = \"userId_example\"; // String | \nLocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate referenceWorkday = new LocalDate(); // LocalDate | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nString timeZone = \"UTC\"; // String | Timezone for the workday. Defaults to UTC\n        try { \n            // Average performance values trends by metric of a user\n            MetricValueTrendAverage result = apiInstance.getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, referenceWorkday, timeZone);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationScorecardsProfileMetricUserValuesTrends\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getgamificationscorecardsprofilemetricusersvaluestrends": {
+    "operationId": "getgamificationscorecardsprofilemetricusersvaluestrends",
+    "functionName": "getGamificationScorecardsProfileMetricUsersValuesTrends",
+    "signature": "getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone)",
+    "parameters": [
+      {
+        "name": "profileId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "startWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "endWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "referenceWorkday",
+        "type": "LocalDate",
+        "required": "false"
+      },
+      {
+        "name": "timeZone",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "MetricValueTrendAverage",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;import com.mypurecloud.sdk.v2.model.MetricValueTrendAverage;\n\npublic class ExamplegetGamificationScorecardsProfileMetricUsersValuesTrends {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String profileId = \"profileId_example\"; // String | performanceProfileId\nString metricId = \"metricId_example\"; // String | metricId\nString filterType = \"filterType_example\"; // String | Filter type for the query request.\nString filterId = \"filterId_example\"; // String | ID for the filter type. For example, division Id\nLocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate referenceWorkday = new LocalDate(); // LocalDate | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nString timeZone = \"UTC\"; // String | Timezone for the workday. Defaults to UTC\n        try { \n            // Average performance values trends by metric of a division or a performance profile\n            MetricValueTrendAverage result = apiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationScorecardsProfileMetricUsersValuesTrends\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getgamificationscorecardsprofilemetricvaluestrends": {
+    "operationId": "getgamificationscorecardsprofilemetricvaluestrends",
+    "functionName": "getGamificationScorecardsProfileMetricValuesTrends",
+    "signature": "getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, filterType, referenceWorkday, timeZone)",
+    "parameters": [
+      {
+        "name": "profileId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "startWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "endWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "referenceWorkday",
+        "type": "LocalDate",
+        "required": "false"
+      },
+      {
+        "name": "timeZone",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "MetricValueTrendAverage",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;import com.mypurecloud.sdk.v2.model.MetricValueTrendAverage;\n\npublic class ExamplegetGamificationScorecardsProfileMetricValuesTrends {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String profileId = \"profileId_example\"; // String | performanceProfileId\nString metricId = \"metricId_example\"; // String | metricId\nLocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nString filterType = \"filterType_example\"; // String | Filter type for the query request. If not set, returns the values trends of the requesting user\nLocalDate referenceWorkday = new LocalDate(); // LocalDate | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nString timeZone = \"UTC\"; // String | Timezone for the workday. Defaults to UTC\n        try { \n            // Average performance values trends by metric of the requesting user\n            MetricValueTrendAverage result = apiInstance.getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, filterType, referenceWorkday, timeZone);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationScorecardsProfileMetricValuesTrends\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "getgamificationscorecardsuser": {
     "operationId": "getgamificationscorecardsuser",
     "functionName": "getGamificationScorecardsUser",
@@ -15490,6 +15627,50 @@
     ],
     "return": "LearningModulesDomainEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LearningApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;\n\npublic class ExamplegetLearningModules {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LearningApi apiInstance = new LearningApi();\n        Boolean isArchived = false; // Boolean | Archive status\nList<String> types = Arrays.asList(null); // List<String> | Specifies the module types.\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nString sortOrder = \"ascending\"; // String | Sort order\nString sortBy = \"name\"; // String | Sort by\nString searchTerm = \"searchTerm_example\"; // String | Search Term (searchable by name)\nList<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)\nString isPublished = \"Any\"; // String | Specifies if only the Unpublished (isPublished is \\\"False\\\") or Published (isPublished is \\\"True\\\") modules are returned. If isPublished is \\\"Any\\\" or omitted, both types are returned\n        try { \n            // Get all learning modules of an organization\n            LearningModulesDomainEntityListing result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LearningApi#getLearningModules\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getlearningmodulesassignments": {
+    "operationId": "getlearningmodulesassignments",
+    "functionName": "getLearningModulesAssignments",
+    "signature": "getLearningModulesAssignments(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand)",
+    "parameters": [
+      {
+        "name": "userIds",
+        "type": "List<String>",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "searchTerm",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "overdue",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "assignmentStates",
+        "type": "List<String>",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedLearningModuleDomainEntityListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LearningApi;\nimport com.mypurecloud.sdk.v2.model.AssignedLearningModuleDomainEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetLearningModulesAssignments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LearningApi apiInstance = new LearningApi();\n        List<String> userIds = Arrays.asList(null); // List<String> | The IDs of the users to include\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nString searchTerm = \"searchTerm_example\"; // String | Search Term (searches by name and description)\nString overdue = \"Any\"; // String | Specifies if only modules with overdue/not overdue (overdue is \\\"True\\\" or \\\"False\\\") assignments are returned. If overdue is \\\"Any\\\" or omitted, both are returned and can including modules that are unassigned.\nList<String> assignmentStates = Arrays.asList(null); // List<String> | Specifies the assignment states to return.\nList<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)\n        try { \n            // Get all learning modules of an organization including assignments for a specific user\n            AssignedLearningModuleDomainEntityListing result = apiInstance.getLearningModulesAssignments(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LearningApi#getLearningModulesAssignments\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "patchlearningassignment": {
     "operationId": "patchlearningassignment",
@@ -23501,7 +23682,7 @@
   "getroutingqueues": {
     "operationId": "getroutingqueues",
     "functionName": "getRoutingQueues",
-    "signature": "getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId)",
+    "signature": "getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, hasPeer)",
     "parameters": [
       {
         "name": "pageNumber",
@@ -23532,10 +23713,20 @@
         "name": "divisionId",
         "type": "List<String>",
         "required": "false"
+      },
+      {
+        "name": "peerId",
+        "type": "List<String>",
+        "required": "false"
+      },
+      {
+        "name": "hasPeer",
+        "type": "Boolean",
+        "required": "false"
       }
     ],
     "return": "QueueEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.QueueEntityListing;\n\npublic class ExamplegetRoutingQueues {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        Integer pageNumber = 1; // Integer | Page number\nInteger pageSize = 25; // Integer | Page size\nString sortOrder = \"asc\"; // String | Note: results are sorted by name.\nString name = \"name_example\"; // String | Filter by queue name\nList<String> id = Arrays.asList(null); // List<String> | Filter by queue ID(s)\nList<String> divisionId = Arrays.asList(null); // List<String> | Filter by queue division ID(s)\n        try { \n            // Get list of queues.\n            QueueEntityListing result = apiInstance.getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingQueues\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.QueueEntityListing;\n\npublic class ExamplegetRoutingQueues {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        Integer pageNumber = 1; // Integer | Page number\nInteger pageSize = 25; // Integer | Page size\nString sortOrder = \"asc\"; // String | Note: results are sorted by name.\nString name = \"name_example\"; // String | Filter by queue name\nList<String> id = Arrays.asList(null); // List<String> | Filter by queue ID(s)\nList<String> divisionId = Arrays.asList(null); // List<String> | Filter by queue division ID(s)\nList<String> peerId = Arrays.asList(null); // List<String> | Filter by queue peer ID(s)\nBoolean hasPeer = true; // Boolean | Filter by queues associated with peer\n        try { \n            // Get list of queues.\n            QueueEntityListing result = apiInstance.getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, hasPeer);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingQueues\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getroutingqueuesdivisionviews": {
     "operationId": "getroutingqueuesdivisionviews",

@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.AssignedLearningModuleDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
 import com.mypurecloud.sdk.v2.model.LearningAssignment;
@@ -43,6 +44,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningModulesAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssessmentsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentReassignRequest;
@@ -1005,6 +1007,108 @@ public class LearningApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LearningModulesDomainEntityListing> response = (ApiResponse<LearningModulesDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all learning modules of an organization including assignments for a specific user
+   * 
+   * @param userIds The IDs of the users to include (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param searchTerm Search Term (searches by name and description) (optional)
+   * @param overdue Specifies if only modules with overdue/not overdue (overdue is \"True\" or \"False\") assignments are returned. If overdue is \"Any\" or omitted, both are returned and can including modules that are unassigned. (optional, default to Any)
+   * @param assignmentStates Specifies the assignment states to return. (optional)
+   * @param expand Fields to expand in response(case insensitive) (optional)
+   * @return AssignedLearningModuleDomainEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssignedLearningModuleDomainEntityListing getLearningModulesAssignments(List<String> userIds, Integer pageSize, Integer pageNumber, String searchTerm, String overdue, List<String> assignmentStates, List<String> expand) throws IOException, ApiException {
+    return  getLearningModulesAssignments(createGetLearningModulesAssignmentsRequest(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand));
+  }
+
+  /**
+   * Get all learning modules of an organization including assignments for a specific user
+   * 
+   * @param userIds The IDs of the users to include (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param searchTerm Search Term (searches by name and description) (optional)
+   * @param overdue Specifies if only modules with overdue/not overdue (overdue is \"True\" or \"False\") assignments are returned. If overdue is \"Any\" or omitted, both are returned and can including modules that are unassigned. (optional, default to Any)
+   * @param assignmentStates Specifies the assignment states to return. (optional)
+   * @param expand Fields to expand in response(case insensitive) (optional)
+   * @return AssignedLearningModuleDomainEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssignedLearningModuleDomainEntityListing> getLearningModulesAssignmentsWithHttpInfo(List<String> userIds, Integer pageSize, Integer pageNumber, String searchTerm, String overdue, List<String> assignmentStates, List<String> expand) throws IOException {
+    return getLearningModulesAssignments(createGetLearningModulesAssignmentsRequest(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand).withHttpInfo());
+  }
+
+  private GetLearningModulesAssignmentsRequest createGetLearningModulesAssignmentsRequest(List<String> userIds, Integer pageSize, Integer pageNumber, String searchTerm, String overdue, List<String> assignmentStates, List<String> expand) {
+    return GetLearningModulesAssignmentsRequest.builder()
+            .withUserIds(userIds)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withSearchTerm(searchTerm)
+
+            .withOverdue(overdue)
+
+            .withAssignmentStates(assignmentStates)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get all learning modules of an organization including assignments for a specific user
+   * 
+   * @param request The request object
+   * @return AssignedLearningModuleDomainEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssignedLearningModuleDomainEntityListing getLearningModulesAssignments(GetLearningModulesAssignmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AssignedLearningModuleDomainEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssignedLearningModuleDomainEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all learning modules of an organization including assignments for a specific user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssignedLearningModuleDomainEntityListing> getLearningModulesAssignments(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AssignedLearningModuleDomainEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssignedLearningModuleDomainEntityListing> response = (ApiResponse<AssignedLearningModuleDomainEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssignedLearningModuleDomainEntityListing> response = (ApiResponse<AssignedLearningModuleDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

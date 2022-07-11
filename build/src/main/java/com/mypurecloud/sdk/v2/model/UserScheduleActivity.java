@@ -17,9 +17,8 @@ import java.util.Date;
 
 import java.io.Serializable;
 /**
- * Represents a single activity in a user&#39;s shift
+ * UserScheduleActivity
  */
-@ApiModel(description = "Represents a single activity in a user's shift")
 
 public class UserScheduleActivity  implements Serializable {
   

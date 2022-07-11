@@ -21,9 +21,8 @@ import java.util.Map;
 
 import java.io.Serializable;
 /**
- * Container for a map of ActivityCodeId to ActivityCode
+ * ActivityCodeContainer
  */
-@ApiModel(description = "Container for a map of ActivityCodeId to ActivityCode")
 
 public class ActivityCodeContainer  implements Serializable {
   

@@ -12,6 +12,8 @@ title: HistoricalAdherenceExceptionInfo
 | **endOffsetSeconds** | <!----><!---->**Integer**<!----> | Exception end offset in seconds relative to query start time |  [optional] |
 | **scheduledActivityCodeId** | <!----><!---->**String**<!----> | The ID of the scheduled activity code for this user |  [optional] |
 | **scheduledActivityCategory** | [**ScheduledActivityCategoryEnum**](#ScheduledActivityCategoryEnum)<!----> | Activity for which the user is scheduled |  [optional] |
+| **scheduledSecondaryPresenceLookupIds** | <!----><!---->**List&lt;String&gt;**<!----> | The lookup IDs used to retrieve the scheduled secondary statuses from map of lookup ID to corresponding secondary presence ID |  [optional] |
+| **actualActivityCodeId** | <!----><!---->**String**<!----> | The ID of the actual activity code for this user |  [optional] |
 | **actualActivityCategory** | [**ActualActivityCategoryEnum**](#ActualActivityCategoryEnum)<!----> | Activity for which the user is actually engaged |  [optional] |
 | **systemPresence** | [**SystemPresenceEnum**](#SystemPresenceEnum)<!----> | Actual underlying system presence value |  [optional] |
 | **routingStatus** | [**RoutingStatusEnum**](#RoutingStatusEnum)<!----> | Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue |  [optional] |

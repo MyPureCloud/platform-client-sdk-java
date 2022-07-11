@@ -17,9 +17,8 @@ import java.util.Date;
 
 import java.io.Serializable;
 /**
- * POST request body for fetching the current user&#39;s schedule over a given range
+ * CurrentUserScheduleRequestBody
  */
-@ApiModel(description = "POST request body for fetching the current user's schedule over a given range")
 
 public class CurrentUserScheduleRequestBody  implements Serializable {
   

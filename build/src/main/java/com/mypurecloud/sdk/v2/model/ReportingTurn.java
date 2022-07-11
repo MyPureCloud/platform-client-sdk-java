@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ReportingTurnAction;
 import com.mypurecloud.sdk.v2.model.ReportingTurnIntent;
 import com.mypurecloud.sdk.v2.model.ReportingTurnKnowledge;
+import com.mypurecloud.sdk.v2.model.SessionEndDetails;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -98,6 +99,7 @@ public class ReportingTurn  implements Serializable {
     }
   }
   private AskActionResultEnum askActionResult = null;
+  private SessionEndDetails sessionEndDetails = null;
   private AddressableEntityRef conversation = null;
 
   
@@ -245,6 +247,24 @@ public class ReportingTurn  implements Serializable {
   }
 
 
+  /**
+   * The details related to end of bot flow session.
+   **/
+  public ReportingTurn sessionEndDetails(SessionEndDetails sessionEndDetails) {
+    this.sessionEndDetails = sessionEndDetails;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The details related to end of bot flow session.")
+  @JsonProperty("sessionEndDetails")
+  public SessionEndDetails getSessionEndDetails() {
+    return sessionEndDetails;
+  }
+  public void setSessionEndDetails(SessionEndDetails sessionEndDetails) {
+    this.sessionEndDetails = sessionEndDetails;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The conversation details, across potentially multiple Bot Flow sessions.")
   @JsonProperty("conversation")
   public AddressableEntityRef getConversation() {
@@ -270,12 +290,13 @@ public class ReportingTurn  implements Serializable {
             Objects.equals(this.knowledge, reportingTurn.knowledge) &&
             Objects.equals(this.dateCreated, reportingTurn.dateCreated) &&
             Objects.equals(this.askActionResult, reportingTurn.askActionResult) &&
+            Objects.equals(this.sessionEndDetails, reportingTurn.sessionEndDetails) &&
             Objects.equals(this.conversation, reportingTurn.conversation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userInput, botPrompts, sessionId, askAction, intent, knowledge, dateCreated, askActionResult, conversation);
+    return Objects.hash(userInput, botPrompts, sessionId, askAction, intent, knowledge, dateCreated, askActionResult, sessionEndDetails, conversation);
   }
 
   @Override
@@ -291,6 +312,7 @@ public class ReportingTurn  implements Serializable {
     sb.append("    knowledge: ").append(toIndentedString(knowledge)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    askActionResult: ").append(toIndentedString(askActionResult)).append("\n");
+    sb.append("    sessionEndDetails: ").append(toIndentedString(sessionEndDetails)).append("\n");
     sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("}");
     return sb.toString();

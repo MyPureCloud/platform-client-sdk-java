@@ -200,6 +200,34 @@ public class GetRoutingQueuesRequest {
 	    return this;
 	} 
 
+	private List<String> peerId;
+	public List<String> getPeerId() {
+		return this.peerId;
+	}
+
+	public void setPeerId(List<String> peerId) {
+		this.peerId = peerId;
+	}
+
+	public GetRoutingQueuesRequest withPeerId(List<String> peerId) {
+	    this.setPeerId(peerId);
+	    return this;
+	} 
+
+	private Boolean hasPeer;
+	public Boolean getHasPeer() {
+		return this.hasPeer;
+	}
+
+	public void setHasPeer(Boolean hasPeer) {
+		this.hasPeer = hasPeer;
+	}
+
+	public GetRoutingQueuesRequest withHasPeer(Boolean hasPeer) {
+	    this.setHasPeer(hasPeer);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -240,6 +268,12 @@ public class GetRoutingQueuesRequest {
         
 
                 .withQueryParameters("divisionId", "multi", divisionId)
+        
+
+                .withQueryParameters("peerId", "multi", peerId)
+        
+
+                .withQueryParameters("hasPeer", "", hasPeer)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -298,6 +332,16 @@ public class GetRoutingQueuesRequest {
 
 		public Builder withDivisionId(List<String> divisionId) {
 			request.setDivisionId(divisionId);
+			return this;
+		}
+
+		public Builder withPeerId(List<String> peerId) {
+			request.setPeerId(peerId);
+			return this;
+		}
+
+		public Builder withHasPeer(Boolean hasPeer) {
+			request.setHasPeer(hasPeer);
 			return this;
 		}
 

@@ -20,9 +20,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * The non-empty list of the time off limit value intervals
+ * SetTimeOffLimitValuesRequest
  */
-@ApiModel(description = "The non-empty list of the time off limit value intervals")
 
 public class SetTimeOffLimitValuesRequest  implements Serializable {
   

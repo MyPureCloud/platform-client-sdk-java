@@ -29,6 +29,7 @@ import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.MemberListing;
 import com.mypurecloud.sdk.v2.model.Metric;
 import com.mypurecloud.sdk.v2.model.MetricDefinition;
+import com.mypurecloud.sdk.v2.model.MetricValueTrendAverage;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.OverallBestPoints;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
@@ -64,6 +65,9 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsBestpointsReq
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsPointsAlltimeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsPointsAverageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsPointsTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsProfileMetricUserValuesTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsProfileMetricValuesTrendsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsUserAttendanceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsUserBestpointsRequest;
@@ -1888,6 +1892,316 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WorkdayPointsTrend> response = (ApiResponse<WorkdayPointsTrend>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of a user
+   * 
+   * @param profileId performanceProfileId (required)
+   * @param metricId metricId (required)
+   * @param userId  (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
+   * @return MetricValueTrendAverage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MetricValueTrendAverage getGamificationScorecardsProfileMetricUserValuesTrends(String profileId, String metricId, String userId, LocalDate startWorkday, LocalDate endWorkday, LocalDate referenceWorkday, String timeZone) throws IOException, ApiException {
+    return  getGamificationScorecardsProfileMetricUserValuesTrends(createGetGamificationScorecardsProfileMetricUserValuesTrendsRequest(profileId, metricId, userId, startWorkday, endWorkday, referenceWorkday, timeZone));
+  }
+
+  /**
+   * Average performance values trends by metric of a user
+   * 
+   * @param profileId performanceProfileId (required)
+   * @param metricId metricId (required)
+   * @param userId  (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
+   * @return MetricValueTrendAverage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MetricValueTrendAverage> getGamificationScorecardsProfileMetricUserValuesTrendsWithHttpInfo(String profileId, String metricId, String userId, LocalDate startWorkday, LocalDate endWorkday, LocalDate referenceWorkday, String timeZone) throws IOException {
+    return getGamificationScorecardsProfileMetricUserValuesTrends(createGetGamificationScorecardsProfileMetricUserValuesTrendsRequest(profileId, metricId, userId, startWorkday, endWorkday, referenceWorkday, timeZone).withHttpInfo());
+  }
+
+  private GetGamificationScorecardsProfileMetricUserValuesTrendsRequest createGetGamificationScorecardsProfileMetricUserValuesTrendsRequest(String profileId, String metricId, String userId, LocalDate startWorkday, LocalDate endWorkday, LocalDate referenceWorkday, String timeZone) {
+    return GetGamificationScorecardsProfileMetricUserValuesTrendsRequest.builder()
+            .withProfileId(profileId)
+
+            .withMetricId(metricId)
+
+            .withUserId(userId)
+
+            .withStartWorkday(startWorkday)
+
+            .withEndWorkday(endWorkday)
+
+            .withReferenceWorkday(referenceWorkday)
+
+            .withTimeZone(timeZone)
+
+            .build();
+  }
+
+  /**
+   * Average performance values trends by metric of a user
+   * 
+   * @param request The request object
+   * @return MetricValueTrendAverage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MetricValueTrendAverage getGamificationScorecardsProfileMetricUserValuesTrends(GetGamificationScorecardsProfileMetricUserValuesTrendsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MetricValueTrendAverage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MetricValueTrendAverage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MetricValueTrendAverage> getGamificationScorecardsProfileMetricUserValuesTrends(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MetricValueTrendAverage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of a division or a performance profile
+   * 
+   * @param profileId performanceProfileId (required)
+   * @param metricId metricId (required)
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. For example, division Id (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
+   * @return MetricValueTrendAverage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MetricValueTrendAverage getGamificationScorecardsProfileMetricUsersValuesTrends(String profileId, String metricId, String filterType, String filterId, LocalDate startWorkday, LocalDate endWorkday, LocalDate referenceWorkday, String timeZone) throws IOException, ApiException {
+    return  getGamificationScorecardsProfileMetricUsersValuesTrends(createGetGamificationScorecardsProfileMetricUsersValuesTrendsRequest(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone));
+  }
+
+  /**
+   * Average performance values trends by metric of a division or a performance profile
+   * 
+   * @param profileId performanceProfileId (required)
+   * @param metricId metricId (required)
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. For example, division Id (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
+   * @return MetricValueTrendAverage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MetricValueTrendAverage> getGamificationScorecardsProfileMetricUsersValuesTrendsWithHttpInfo(String profileId, String metricId, String filterType, String filterId, LocalDate startWorkday, LocalDate endWorkday, LocalDate referenceWorkday, String timeZone) throws IOException {
+    return getGamificationScorecardsProfileMetricUsersValuesTrends(createGetGamificationScorecardsProfileMetricUsersValuesTrendsRequest(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone).withHttpInfo());
+  }
+
+  private GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest createGetGamificationScorecardsProfileMetricUsersValuesTrendsRequest(String profileId, String metricId, String filterType, String filterId, LocalDate startWorkday, LocalDate endWorkday, LocalDate referenceWorkday, String timeZone) {
+    return GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest.builder()
+            .withProfileId(profileId)
+
+            .withMetricId(metricId)
+
+            .withFilterType(filterType)
+
+            .withFilterId(filterId)
+
+            .withStartWorkday(startWorkday)
+
+            .withEndWorkday(endWorkday)
+
+            .withReferenceWorkday(referenceWorkday)
+
+            .withTimeZone(timeZone)
+
+            .build();
+  }
+
+  /**
+   * Average performance values trends by metric of a division or a performance profile
+   * 
+   * @param request The request object
+   * @return MetricValueTrendAverage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MetricValueTrendAverage getGamificationScorecardsProfileMetricUsersValuesTrends(GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MetricValueTrendAverage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MetricValueTrendAverage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of a division or a performance profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MetricValueTrendAverage> getGamificationScorecardsProfileMetricUsersValuesTrends(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MetricValueTrendAverage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of the requesting user
+   * 
+   * @param profileId performanceProfileId (required)
+   * @param metricId metricId (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param filterType Filter type for the query request. If not set, returns the values trends of the requesting user (optional)
+   * @param referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
+   * @return MetricValueTrendAverage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MetricValueTrendAverage getGamificationScorecardsProfileMetricValuesTrends(String profileId, String metricId, LocalDate startWorkday, LocalDate endWorkday, String filterType, LocalDate referenceWorkday, String timeZone) throws IOException, ApiException {
+    return  getGamificationScorecardsProfileMetricValuesTrends(createGetGamificationScorecardsProfileMetricValuesTrendsRequest(profileId, metricId, startWorkday, endWorkday, filterType, referenceWorkday, timeZone));
+  }
+
+  /**
+   * Average performance values trends by metric of the requesting user
+   * 
+   * @param profileId performanceProfileId (required)
+   * @param metricId metricId (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param filterType Filter type for the query request. If not set, returns the values trends of the requesting user (optional)
+   * @param referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
+   * @return MetricValueTrendAverage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MetricValueTrendAverage> getGamificationScorecardsProfileMetricValuesTrendsWithHttpInfo(String profileId, String metricId, LocalDate startWorkday, LocalDate endWorkday, String filterType, LocalDate referenceWorkday, String timeZone) throws IOException {
+    return getGamificationScorecardsProfileMetricValuesTrends(createGetGamificationScorecardsProfileMetricValuesTrendsRequest(profileId, metricId, startWorkday, endWorkday, filterType, referenceWorkday, timeZone).withHttpInfo());
+  }
+
+  private GetGamificationScorecardsProfileMetricValuesTrendsRequest createGetGamificationScorecardsProfileMetricValuesTrendsRequest(String profileId, String metricId, LocalDate startWorkday, LocalDate endWorkday, String filterType, LocalDate referenceWorkday, String timeZone) {
+    return GetGamificationScorecardsProfileMetricValuesTrendsRequest.builder()
+            .withProfileId(profileId)
+
+            .withMetricId(metricId)
+
+            .withStartWorkday(startWorkday)
+
+            .withEndWorkday(endWorkday)
+
+            .withFilterType(filterType)
+
+            .withReferenceWorkday(referenceWorkday)
+
+            .withTimeZone(timeZone)
+
+            .build();
+  }
+
+  /**
+   * Average performance values trends by metric of the requesting user
+   * 
+   * @param request The request object
+   * @return MetricValueTrendAverage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MetricValueTrendAverage getGamificationScorecardsProfileMetricValuesTrends(GetGamificationScorecardsProfileMetricValuesTrendsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MetricValueTrendAverage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MetricValueTrendAverage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of the requesting user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MetricValueTrendAverage> getGamificationScorecardsProfileMetricValuesTrends(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MetricValueTrendAverage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

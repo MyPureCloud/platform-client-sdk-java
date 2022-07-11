@@ -21,9 +21,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Single shift in a user&#39;s schedule
+ * UserScheduleShift
  */
-@ApiModel(description = "Single shift in a user's schedule")
 
 public class UserScheduleShift  implements Serializable {
   

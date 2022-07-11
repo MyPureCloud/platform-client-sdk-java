@@ -17,9 +17,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Schedule Adherence Configuration
+ * AdherenceSettings
  */
-@ApiModel(description = "Schedule Adherence Configuration")
 
 public class AdherenceSettings  implements Serializable {
   

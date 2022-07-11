@@ -2647,7 +2647,7 @@ try {
 
 
 
-> [QueueEntityListing](QueueEntityListing.html) getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId)
+> [QueueEntityListing](QueueEntityListing.html) getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, hasPeer)
 
 Get list of queues.
 
@@ -2685,8 +2685,10 @@ String sortOrder = "asc"; // String | Note: results are sorted by name.
 String name = "name_example"; // String | Filter by queue name
 List<String> id = Arrays.asList(null); // List<String> | Filter by queue ID(s)
 List<String> divisionId = Arrays.asList(null); // List<String> | Filter by queue division ID(s)
+List<String> peerId = Arrays.asList(null); // List<String> | Filter by queue peer ID(s)
+Boolean hasPeer = true; // Boolean | Filter by queues associated with peer
 try {
-    QueueEntityListing result = apiInstance.getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId);
+    QueueEntityListing result = apiInstance.getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, hasPeer);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueues");
@@ -2705,6 +2707,8 @@ try {
 | **name** | **String**| Filter by queue name | [optional] 
 | **id** | [**List&lt;String&gt;**](String.html)| Filter by queue ID(s) | [optional] 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| Filter by queue division ID(s) | [optional] 
+| **peerId** | [**List&lt;String&gt;**](String.html)| Filter by queue peer ID(s) | [optional] 
+| **hasPeer** | **Boolean**| Filter by queues associated with peer | [optional] 
 {: class="table-striped"}
 
 

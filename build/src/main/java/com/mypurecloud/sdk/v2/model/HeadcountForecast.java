@@ -19,9 +19,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Headcount interval information for schedule
+ * HeadcountForecast
  */
-@ApiModel(description = "Headcount interval information for schedule")
 
 public class HeadcountForecast  implements Serializable {
   

@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Activity configured for shift in work plan
+ * WorkPlanActivity
  */
-@ApiModel(description = "Activity configured for shift in work plan")
 
 public class WorkPlanActivity  implements Serializable {
   

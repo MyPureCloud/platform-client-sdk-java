@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlanActivity;
 import com.mypurecloud.sdk.v2.model.SetWrapperDayOfWeek;
 import io.swagger.annotations.ApiModel;
@@ -20,9 +21,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Shift in a work plan
+ * CreateWorkPlanShift
  */
-@ApiModel(description = "Shift in a work plan")
 
 public class CreateWorkPlanShift  implements Serializable {
   
@@ -45,6 +45,55 @@ public class CreateWorkPlanShift  implements Serializable {
   private Boolean constrainContiguousWorkTime = null;
   private Integer minimumContiguousWorkTimeMinutes = null;
   private Integer maximumContiguousWorkTimeMinutes = null;
+  private Boolean constrainDayOff = null;
+
+  private static class DayOffRuleEnumDeserializer extends StdDeserializer<DayOffRuleEnum> {
+    public DayOffRuleEnumDeserializer() {
+      super(DayOffRuleEnumDeserializer.class);
+    }
+
+    @Override
+    public DayOffRuleEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DayOffRuleEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true
+   */
+ @JsonDeserialize(using = DayOffRuleEnumDeserializer.class)
+  public enum DayOffRuleEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NEXTDAYOFF("NextDayOff"),
+    PREVIOUSDAYOFF("PreviousDayOff");
+
+    private String value;
+
+    DayOffRuleEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DayOffRuleEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DayOffRuleEnum value : DayOffRuleEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DayOffRuleEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DayOffRuleEnum dayOffRule = null;
   private List<CreateWorkPlanActivity> activities = new ArrayList<CreateWorkPlanActivity>();
 
   
@@ -391,6 +440,42 @@ public class CreateWorkPlanShift  implements Serializable {
 
 
   /**
+   * Whether day off rule is enabled
+   **/
+  public CreateWorkPlanShift constrainDayOff(Boolean constrainDayOff) {
+    this.constrainDayOff = constrainDayOff;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether day off rule is enabled")
+  @JsonProperty("constrainDayOff")
+  public Boolean getConstrainDayOff() {
+    return constrainDayOff;
+  }
+  public void setConstrainDayOff(Boolean constrainDayOff) {
+    this.constrainDayOff = constrainDayOff;
+  }
+
+
+  /**
+   * The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true
+   **/
+  public CreateWorkPlanShift dayOffRule(DayOffRuleEnum dayOffRule) {
+    this.dayOffRule = dayOffRule;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true")
+  @JsonProperty("dayOffRule")
+  public DayOffRuleEnum getDayOffRule() {
+    return dayOffRule;
+  }
+  public void setDayOffRule(DayOffRuleEnum dayOffRule) {
+    this.dayOffRule = dayOffRule;
+  }
+
+
+  /**
    * Activities configured for this shift
    **/
   public CreateWorkPlanShift activities(List<CreateWorkPlanActivity> activities) {
@@ -437,12 +522,14 @@ public class CreateWorkPlanShift  implements Serializable {
             Objects.equals(this.constrainContiguousWorkTime, createWorkPlanShift.constrainContiguousWorkTime) &&
             Objects.equals(this.minimumContiguousWorkTimeMinutes, createWorkPlanShift.minimumContiguousWorkTimeMinutes) &&
             Objects.equals(this.maximumContiguousWorkTimeMinutes, createWorkPlanShift.maximumContiguousWorkTimeMinutes) &&
+            Objects.equals(this.constrainDayOff, createWorkPlanShift.constrainDayOff) &&
+            Objects.equals(this.dayOffRule, createWorkPlanShift.dayOffRule) &&
             Objects.equals(this.activities, createWorkPlanShift.activities);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, days, flexibleStartTime, exactStartTimeMinutesFromMidnight, earliestStartTimeMinutesFromMidnight, latestStartTimeMinutesFromMidnight, constrainStopTime, constrainLatestStopTime, latestStopTimeMinutesFromMidnight, constrainEarliestStopTime, earliestStopTimeMinutesFromMidnight, startIncrementMinutes, flexiblePaidTime, exactPaidTimeMinutes, minimumPaidTimeMinutes, maximumPaidTimeMinutes, constrainContiguousWorkTime, minimumContiguousWorkTimeMinutes, maximumContiguousWorkTimeMinutes, activities);
+    return Objects.hash(name, days, flexibleStartTime, exactStartTimeMinutesFromMidnight, earliestStartTimeMinutesFromMidnight, latestStartTimeMinutesFromMidnight, constrainStopTime, constrainLatestStopTime, latestStopTimeMinutesFromMidnight, constrainEarliestStopTime, earliestStopTimeMinutesFromMidnight, startIncrementMinutes, flexiblePaidTime, exactPaidTimeMinutes, minimumPaidTimeMinutes, maximumPaidTimeMinutes, constrainContiguousWorkTime, minimumContiguousWorkTimeMinutes, maximumContiguousWorkTimeMinutes, constrainDayOff, dayOffRule, activities);
   }
 
   @Override
@@ -469,6 +556,8 @@ public class CreateWorkPlanShift  implements Serializable {
     sb.append("    constrainContiguousWorkTime: ").append(toIndentedString(constrainContiguousWorkTime)).append("\n");
     sb.append("    minimumContiguousWorkTimeMinutes: ").append(toIndentedString(minimumContiguousWorkTimeMinutes)).append("\n");
     sb.append("    maximumContiguousWorkTimeMinutes: ").append(toIndentedString(maximumContiguousWorkTimeMinutes)).append("\n");
+    sb.append("    constrainDayOff: ").append(toIndentedString(constrainDayOff)).append("\n");
+    sb.append("    dayOffRule: ").append(toIndentedString(dayOffRule)).append("\n");
     sb.append("    activities: ").append(toIndentedString(activities)).append("\n");
     sb.append("}");
     return sb.toString();

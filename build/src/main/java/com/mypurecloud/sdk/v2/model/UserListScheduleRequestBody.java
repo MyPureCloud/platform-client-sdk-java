@@ -19,9 +19,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Request body for fetching the schedule for a group of users over a given time range
+ * UserListScheduleRequestBody
  */
-@ApiModel(description = "Request body for fetching the schedule for a group of users over a given time range")
 
 public class UserListScheduleRequestBody  implements Serializable {
   

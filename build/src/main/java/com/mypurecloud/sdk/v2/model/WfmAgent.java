@@ -25,9 +25,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Workforce management agent data
+ * WfmAgent
  */
-@ApiModel(description = "Workforce management agent data")
 
 public class WfmAgent  implements Serializable {
   

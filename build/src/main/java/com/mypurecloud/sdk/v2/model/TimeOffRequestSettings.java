@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Time Off Request Settings
+ * TimeOffRequestSettings
  */
-@ApiModel(description = "Time Off Request Settings")
 
 public class TimeOffRequestSettings  implements Serializable {
   

@@ -17,9 +17,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Work plan information
+ * WorkPlanReference
  */
-@ApiModel(description = "Work plan information")
 
 public class WorkPlanReference  implements Serializable {
   

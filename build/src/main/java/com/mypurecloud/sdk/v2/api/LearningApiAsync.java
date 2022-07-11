@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.AssignedLearningModuleDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
 import com.mypurecloud.sdk.v2.model.LearningAssignment;
@@ -46,6 +47,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningModulesAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssessmentsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentReassignRequest;
@@ -818,6 +820,81 @@ public class LearningApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LearningModulesDomainEntityListing> response = (ApiResponse<LearningModulesDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all learning modules of an organization including assignments for a specific user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AssignedLearningModuleDomainEntityListing> getLearningModulesAssignmentsAsync(GetLearningModulesAssignmentsRequest request, final AsyncApiCallback<AssignedLearningModuleDomainEntityListing> callback) {
+    try {
+      final SettableFuture<AssignedLearningModuleDomainEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssignedLearningModuleDomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<AssignedLearningModuleDomainEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssignedLearningModuleDomainEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all learning modules of an organization including assignments for a specific user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AssignedLearningModuleDomainEntityListing>> getLearningModulesAssignmentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedLearningModuleDomainEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AssignedLearningModuleDomainEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AssignedLearningModuleDomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<AssignedLearningModuleDomainEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssignedLearningModuleDomainEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssignedLearningModuleDomainEntityListing> response = (ApiResponse<AssignedLearningModuleDomainEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssignedLearningModuleDomainEntityListing> response = (ApiResponse<AssignedLearningModuleDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

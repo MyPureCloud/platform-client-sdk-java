@@ -17,9 +17,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Contains time off limit object property values to be updated.
+ * UpdateTimeOffLimitRequest
  */
-@ApiModel(description = "Contains time off limit object property values to be updated.")
 
 public class UpdateTimeOffLimitRequest  implements Serializable {
   

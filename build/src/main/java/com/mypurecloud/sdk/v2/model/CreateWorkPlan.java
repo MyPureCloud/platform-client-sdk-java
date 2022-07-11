@@ -23,9 +23,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Work plan information
+ * CreateWorkPlan
  */
-@ApiModel(description = "Work plan information")
 
 public class CreateWorkPlan  implements Serializable {
   

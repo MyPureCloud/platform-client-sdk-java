@@ -22,9 +22,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Management Unit Settings
+ * ManagementUnitSettingsRequest
  */
-@ApiModel(description = "Management Unit Settings")
 
 public class ManagementUnitSettingsRequest  implements Serializable {
   

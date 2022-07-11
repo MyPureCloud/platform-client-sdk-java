@@ -22,9 +22,8 @@ import java.util.Map;
 
 import java.io.Serializable;
 /**
- * Container object to hold a map of user schedules
+ * UserScheduleContainer
  */
-@ApiModel(description = "Container object to hold a map of user schedules")
 
 public class UserScheduleContainer  implements Serializable {
   

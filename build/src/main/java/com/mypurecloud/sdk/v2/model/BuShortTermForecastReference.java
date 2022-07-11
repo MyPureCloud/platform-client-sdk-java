@@ -17,9 +17,8 @@ import java.time.LocalDate;
 
 import java.io.Serializable;
 /**
- * A pointer to a short term forecast
+ * BuShortTermForecastReference
  */
-@ApiModel(description = "A pointer to a short term forecast")
 
 public class BuShortTermForecastReference  implements Serializable {
   

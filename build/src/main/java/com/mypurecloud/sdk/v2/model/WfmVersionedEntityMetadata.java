@@ -18,9 +18,8 @@ import java.util.Date;
 
 import java.io.Serializable;
 /**
- * Metadata to associate with a given entity
+ * WfmVersionedEntityMetadata
  */
-@ApiModel(description = "Metadata to associate with a given entity")
 
 public class WfmVersionedEntityMetadata  implements Serializable {
   

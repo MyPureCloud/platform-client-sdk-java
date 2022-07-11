@@ -37,6 +37,9 @@ title: Check
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | HANDLETIMEVALUE | &quot;HandleTimeValue&quot; | 
 | TRANSFERRATEVALUE | &quot;TransferRateValue&quot; | 
+| SALESCONVERSIONRATEVALUE | &quot;SalesConversionRateValue&quot; | 
+| RETENTIONRATEVALUE | &quot;RetentionRateValue&quot; | 
+| CHURNRATEVALUE | &quot;ChurnRateValue&quot; | 
 | INTERACTIONVOLUME | &quot;InteractionVolume&quot; | 
 | USERVARIANCE | &quot;UserVariance&quot; | 
 | DATACOVERAGE | &quot;DataCoverage&quot; | 

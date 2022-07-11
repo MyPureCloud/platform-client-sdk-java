@@ -36,6 +36,7 @@ title: UserQueue
 | **defaultScripts** | <!----><!---->[**Map&lt;String, Script&gt;**](Script.html)<!----> | The default script Ids for the communication types. |  [optional] |
 | **outboundMessagingAddresses** | <!----><!---->[**QueueMessagingAddresses**](QueueMessagingAddresses.html)<!----> | The messaging addresses for the queue. |  [optional] |
 | **outboundEmailAddress** | <!----><!---->[**QueueEmailAddress**](QueueEmailAddress.html)<!----> |  |  [optional] |
+| **peerId** | <!----><!---->**String**<!----> | The ID of the external Queue |  [optional] |
 | **joined** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}

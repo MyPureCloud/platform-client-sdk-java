@@ -24,6 +24,7 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
   
   private String managementUnitId = null;
   private List<String> userIds = new ArrayList<String>();
+  private List<String> teamIds = new ArrayList<String>();
 
   
   /**
@@ -62,6 +63,24 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
   }
 
 
+  /**
+   * The teamIds to request. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit
+   **/
+  public BuQueryAgentSchedulesRequest teamIds(List<String> teamIds) {
+    this.teamIds = teamIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The teamIds to request. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit")
+  @JsonProperty("teamIds")
+  public List<String> getTeamIds() {
+    return teamIds;
+  }
+  public void setTeamIds(List<String> teamIds) {
+    this.teamIds = teamIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -73,12 +92,13 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
     BuQueryAgentSchedulesRequest buQueryAgentSchedulesRequest = (BuQueryAgentSchedulesRequest) o;
 
     return Objects.equals(this.managementUnitId, buQueryAgentSchedulesRequest.managementUnitId) &&
-            Objects.equals(this.userIds, buQueryAgentSchedulesRequest.userIds);
+            Objects.equals(this.userIds, buQueryAgentSchedulesRequest.userIds) &&
+            Objects.equals(this.teamIds, buQueryAgentSchedulesRequest.teamIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(managementUnitId, userIds);
+    return Objects.hash(managementUnitId, userIds, teamIds);
   }
 
   @Override
@@ -88,6 +108,7 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
     
     sb.append("    managementUnitId: ").append(toIndentedString(managementUnitId)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
+    sb.append("    teamIds: ").append(toIndentedString(teamIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

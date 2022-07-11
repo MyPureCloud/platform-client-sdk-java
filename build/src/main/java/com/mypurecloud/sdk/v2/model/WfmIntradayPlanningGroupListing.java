@@ -20,9 +20,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * A list of IntradayPlanningGroup objects
+ * WfmIntradayPlanningGroupListing
  */
-@ApiModel(description = "A list of IntradayPlanningGroup objects")
 
 public class WfmIntradayPlanningGroupListing  implements Serializable {
   

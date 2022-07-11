@@ -21,9 +21,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * A schedule for a single user over a given time range
+ * UserSchedule
  */
-@ApiModel(description = "A schedule for a single user over a given time range")
 
 public class UserSchedule  implements Serializable {
   

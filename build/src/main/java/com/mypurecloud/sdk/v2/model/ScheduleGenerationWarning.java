@@ -17,9 +17,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Schedule generation warning
+ * ScheduleGenerationWarning
  */
-@ApiModel(description = "Schedule generation warning")
 
 public class ScheduleGenerationWarning  implements Serializable {
   

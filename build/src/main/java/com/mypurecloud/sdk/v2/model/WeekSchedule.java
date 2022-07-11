@@ -24,9 +24,8 @@ import java.util.Map;
 
 import java.io.Serializable;
 /**
- * Week schedule information
+ * WeekSchedule
  */
-@ApiModel(description = "Week schedule information")
 
 public class WeekSchedule  implements Serializable {
   

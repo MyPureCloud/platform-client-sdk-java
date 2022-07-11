@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLearningModuleRule**](LearningApi.html#getLearningModuleRule) | Get a learning module rule |
 | [**getLearningModuleVersion**](LearningApi.html#getLearningModuleVersion) | Get specific version of a published module |
 | [**getLearningModules**](LearningApi.html#getLearningModules) | Get all learning modules of an organization |
+| [**getLearningModulesAssignments**](LearningApi.html#getLearningModulesAssignments) | Get all learning modules of an organization including assignments for a specific user |
 | [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | Update Learning Assignment |
 | [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | Score learning assessment for preview |
 | [**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | Reassign Learning Assignment |
@@ -725,6 +726,80 @@ try {
 ### Return type
 
 [**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing.html)
+
+<a name="getLearningModulesAssignments"></a>
+
+# **getLearningModulesAssignments**
+
+
+
+> [AssignedLearningModuleDomainEntityListing](AssignedLearningModuleDomainEntityListing.html) getLearningModulesAssignments(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand)
+
+Get all learning modules of an organization including assignments for a specific user
+
+Wraps GET /api/v2/learning/modules/assignments  
+
+Requires ALL permissions: 
+
+* learning:module:view
+* learning:assignment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+List<String> userIds = Arrays.asList(null); // List<String> | The IDs of the users to include
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String searchTerm = "searchTerm_example"; // String | Search Term (searches by name and description)
+String overdue = "Any"; // String | Specifies if only modules with overdue/not overdue (overdue is \"True\" or \"False\") assignments are returned. If overdue is \"Any\" or omitted, both are returned and can including modules that are unassigned.
+List<String> assignmentStates = Arrays.asList(null); // List<String> | Specifies the assignment states to return.
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)
+try {
+    AssignedLearningModuleDomainEntityListing result = apiInstance.getLearningModulesAssignments(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#getLearningModulesAssignments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userIds** | [**List&lt;String&gt;**](String.html)| The IDs of the users to include | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **searchTerm** | **String**| Search Term (searches by name and description) | [optional] 
+| **overdue** | **String**| Specifies if only modules with overdue/not overdue (overdue is \&quot;True\&quot; or \&quot;False\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or omitted, both are returned and can including modules that are unassigned. | [optional] [default to Any]<br />**Values**: True, False, Any 
+| **assignmentStates** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to return. | [optional]<br />**Values**: NotAssigned, Assigned, InProgress, Completed 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: coverArt 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssignedLearningModuleDomainEntityListing**](AssignedLearningModuleDomainEntityListing.html)
 
 <a name="patchLearningAssignment"></a>
 

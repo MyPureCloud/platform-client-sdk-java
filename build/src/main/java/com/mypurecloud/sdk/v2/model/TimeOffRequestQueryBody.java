@@ -23,6 +23,7 @@ import java.io.Serializable;
 
 public class TimeOffRequestQueryBody  implements Serializable {
   
+  private List<String> ids = new ArrayList<String>();
   private List<String> userIds = new ArrayList<String>();
 
   private static class StatusesEnumDeserializer extends StdDeserializer<StatusesEnum> {
@@ -70,9 +71,79 @@ public class TimeOffRequestQueryBody  implements Serializable {
     }
   }
   private List<StatusesEnum> statuses = new ArrayList<StatusesEnum>();
+
+  private static class SubstatusesEnumDeserializer extends StdDeserializer<SubstatusesEnum> {
+    public SubstatusesEnumDeserializer() {
+      super(SubstatusesEnumDeserializer.class);
+    }
+
+    @Override
+    public SubstatusesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SubstatusesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets substatuses
+   */
+ @JsonDeserialize(using = SubstatusesEnumDeserializer.class)
+  public enum SubstatusesEnum {
+    ADVANCETIMEELAPSED("AdvanceTimeElapsed"),
+    AUTOAPPROVED("AutoApproved"),
+    INSUFFICIENTBALANCE("InsufficientBalance"),
+    INVALIDDAILYDURATION("InvalidDailyDuration"),
+    OUTSIDESHIFT("OutsideShift"),
+    REMOVEDFROMWAITLIST("RemovedFromWaitlist"),
+    WAITLISTED("Waitlisted");
+
+    private String value;
+
+    SubstatusesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SubstatusesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SubstatusesEnum value : SubstatusesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SubstatusesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SubstatusesEnum> substatuses = new ArrayList<SubstatusesEnum>();
   private DateRange dateRange = null;
 
   
+  /**
+   * The set of ids to filter time off requests
+   **/
+  public TimeOffRequestQueryBody ids(List<String> ids) {
+    this.ids = ids;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The set of ids to filter time off requests")
+  @JsonProperty("ids")
+  public List<String> getIds() {
+    return ids;
+  }
+  public void setIds(List<String> ids) {
+    this.ids = ids;
+  }
+
+
   /**
    * The set of user ids to filter time off requests
    **/
@@ -110,6 +181,24 @@ public class TimeOffRequestQueryBody  implements Serializable {
 
 
   /**
+   * The set of substatuses to filter time off requests
+   **/
+  public TimeOffRequestQueryBody substatuses(List<SubstatusesEnum> substatuses) {
+    this.substatuses = substatuses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The set of substatuses to filter time off requests")
+  @JsonProperty("substatuses")
+  public List<SubstatusesEnum> getSubstatuses() {
+    return substatuses;
+  }
+  public void setSubstatuses(List<SubstatusesEnum> substatuses) {
+    this.substatuses = substatuses;
+  }
+
+
+  /**
    * The inclusive range of dates to filter time off requests
    **/
   public TimeOffRequestQueryBody dateRange(DateRange dateRange) {
@@ -137,14 +226,16 @@ public class TimeOffRequestQueryBody  implements Serializable {
     }
     TimeOffRequestQueryBody timeOffRequestQueryBody = (TimeOffRequestQueryBody) o;
 
-    return Objects.equals(this.userIds, timeOffRequestQueryBody.userIds) &&
+    return Objects.equals(this.ids, timeOffRequestQueryBody.ids) &&
+            Objects.equals(this.userIds, timeOffRequestQueryBody.userIds) &&
             Objects.equals(this.statuses, timeOffRequestQueryBody.statuses) &&
+            Objects.equals(this.substatuses, timeOffRequestQueryBody.substatuses) &&
             Objects.equals(this.dateRange, timeOffRequestQueryBody.dateRange);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userIds, statuses, dateRange);
+    return Objects.hash(ids, userIds, statuses, substatuses, dateRange);
   }
 
   @Override
@@ -152,8 +243,10 @@ public class TimeOffRequestQueryBody  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class TimeOffRequestQueryBody {\n");
     
+    sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
     sb.append("    statuses: ").append(toIndentedString(statuses)).append("\n");
+    sb.append("    substatuses: ").append(toIndentedString(substatuses)).append("\n");
     sb.append("    dateRange: ").append(toIndentedString(dateRange)).append("\n");
     sb.append("}");
     return sb.toString();

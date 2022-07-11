@@ -17,9 +17,8 @@ import java.util.Date;
 
 import java.io.Serializable;
 /**
- * An object to provide context to nullable fields in PATCH requests
+ * ValueWrapperDate
  */
-@ApiModel(description = "An object to provide context to nullable fields in PATCH requests")
 
 public class ValueWrapperDate  implements Serializable {
   

@@ -77,6 +77,7 @@ public class HistoricalAdherenceActuals  implements Serializable {
     }
   }
   private ActualActivityCategoryEnum actualActivityCategory = null;
+  private String actualSecondaryPresenceLookupId = null;
   private Integer startOffsetSeconds = null;
   private Integer endOffsetSeconds = null;
 
@@ -96,6 +97,24 @@ public class HistoricalAdherenceActuals  implements Serializable {
   }
   public void setActualActivityCategory(ActualActivityCategoryEnum actualActivityCategory) {
     this.actualActivityCategory = actualActivityCategory;
+  }
+
+
+  /**
+   * The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID
+   **/
+  public HistoricalAdherenceActuals actualSecondaryPresenceLookupId(String actualSecondaryPresenceLookupId) {
+    this.actualSecondaryPresenceLookupId = actualSecondaryPresenceLookupId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID")
+  @JsonProperty("actualSecondaryPresenceLookupId")
+  public String getActualSecondaryPresenceLookupId() {
+    return actualSecondaryPresenceLookupId;
+  }
+  public void setActualSecondaryPresenceLookupId(String actualSecondaryPresenceLookupId) {
+    this.actualSecondaryPresenceLookupId = actualSecondaryPresenceLookupId;
   }
 
 
@@ -146,13 +165,14 @@ public class HistoricalAdherenceActuals  implements Serializable {
     HistoricalAdherenceActuals historicalAdherenceActuals = (HistoricalAdherenceActuals) o;
 
     return Objects.equals(this.actualActivityCategory, historicalAdherenceActuals.actualActivityCategory) &&
+            Objects.equals(this.actualSecondaryPresenceLookupId, historicalAdherenceActuals.actualSecondaryPresenceLookupId) &&
             Objects.equals(this.startOffsetSeconds, historicalAdherenceActuals.startOffsetSeconds) &&
             Objects.equals(this.endOffsetSeconds, historicalAdherenceActuals.endOffsetSeconds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actualActivityCategory, startOffsetSeconds, endOffsetSeconds);
+    return Objects.hash(actualActivityCategory, actualSecondaryPresenceLookupId, startOffsetSeconds, endOffsetSeconds);
   }
 
   @Override
@@ -161,6 +181,7 @@ public class HistoricalAdherenceActuals  implements Serializable {
     sb.append("class HistoricalAdherenceActuals {\n");
     
     sb.append("    actualActivityCategory: ").append(toIndentedString(actualActivityCategory)).append("\n");
+    sb.append("    actualSecondaryPresenceLookupId: ").append(toIndentedString(actualSecondaryPresenceLookupId)).append("\n");
     sb.append("    startOffsetSeconds: ").append(toIndentedString(startOffsetSeconds)).append("\n");
     sb.append("    endOffsetSeconds: ").append(toIndentedString(endOffsetSeconds)).append("\n");
     sb.append("}");

@@ -19,9 +19,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * List of BusinessUnitActivityCode
+ * BusinessUnitActivityCodeListing
  */
-@ApiModel(description = "List of BusinessUnitActivityCode")
 
 public class BusinessUnitActivityCodeListing  implements Serializable {
   

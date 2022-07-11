@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Service goal abandon rate configuration
+ * BuAbandonRate
  */
-@ApiModel(description = "Service goal abandon rate configuration")
 
 public class BuAbandonRate  implements Serializable {
   

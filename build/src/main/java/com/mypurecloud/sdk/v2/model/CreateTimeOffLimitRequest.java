@@ -17,9 +17,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Contains property values of time off limit to be created
+ * CreateTimeOffLimitRequest
  */
-@ApiModel(description = "Contains property values of time off limit to be created")
 
 public class CreateTimeOffLimitRequest  implements Serializable {
   
@@ -92,14 +91,14 @@ public class CreateTimeOffLimitRequest  implements Serializable {
 
 
   /**
-   * The default limit value in minutes per granularity.If not specified, then 0 is assumed, which means there are no time off minutes available
+   * The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available
    **/
   public CreateTimeOffLimitRequest defaultLimitMinutes(Integer defaultLimitMinutes) {
     this.defaultLimitMinutes = defaultLimitMinutes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The default limit value in minutes per granularity.If not specified, then 0 is assumed, which means there are no time off minutes available")
+  @ApiModelProperty(example = "null", value = "The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available")
   @JsonProperty("defaultLimitMinutes")
   public Integer getDefaultLimitMinutes() {
     return defaultLimitMinutes;

@@ -80,6 +80,7 @@ public class CreateAdminTimeOffRequest  implements Serializable {
   private List<String> fullDayManagementUnitDates = new ArrayList<String>();
   private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
   private Integer dailyDurationMinutes = null;
+  private Boolean paid = null;
 
   
   /**
@@ -208,6 +209,24 @@ public class CreateAdminTimeOffRequest  implements Serializable {
   }
 
 
+  /**
+   * Whether this is a paid time off request
+   **/
+  public CreateAdminTimeOffRequest paid(Boolean paid) {
+    this.paid = paid;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this is a paid time off request")
+  @JsonProperty("paid")
+  public Boolean getPaid() {
+    return paid;
+  }
+  public void setPaid(Boolean paid) {
+    this.paid = paid;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -224,12 +243,13 @@ public class CreateAdminTimeOffRequest  implements Serializable {
             Objects.equals(this.notes, createAdminTimeOffRequest.notes) &&
             Objects.equals(this.fullDayManagementUnitDates, createAdminTimeOffRequest.fullDayManagementUnitDates) &&
             Objects.equals(this.partialDayStartDateTimes, createAdminTimeOffRequest.partialDayStartDateTimes) &&
-            Objects.equals(this.dailyDurationMinutes, createAdminTimeOffRequest.dailyDurationMinutes);
+            Objects.equals(this.dailyDurationMinutes, createAdminTimeOffRequest.dailyDurationMinutes) &&
+            Objects.equals(this.paid, createAdminTimeOffRequest.paid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, users, activityCodeId, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes);
+    return Objects.hash(status, users, activityCodeId, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes, paid);
   }
 
   @Override
@@ -244,6 +264,7 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");
+    sb.append("    paid: ").append(toIndentedString(paid)).append("\n");
     sb.append("}");
     return sb.toString();
   }

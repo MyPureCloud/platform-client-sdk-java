@@ -18,9 +18,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Activity code data
+ * ActivityCode
  */
-@ApiModel(description = "Activity code data")
 
 public class ActivityCode  implements Serializable {
   

@@ -22,9 +22,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * The date range with lists of time off limit, allocated and waitlisted minutes.
+ * TimeOffLimitValueRange
  */
-@ApiModel(description = "The date range with lists of time off limit, allocated and waitlisted minutes.")
 
 public class TimeOffLimitValueRange  implements Serializable {
   

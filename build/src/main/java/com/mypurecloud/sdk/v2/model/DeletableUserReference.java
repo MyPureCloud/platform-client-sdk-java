@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * User reference with delete flag to remove the user from an associated entity
+ * DeletableUserReference
  */
-@ApiModel(description = "User reference with delete flag to remove the user from an associated entity")
 
 public class DeletableUserReference  implements Serializable {
   

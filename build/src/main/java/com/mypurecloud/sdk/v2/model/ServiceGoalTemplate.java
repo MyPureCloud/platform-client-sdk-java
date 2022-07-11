@@ -20,9 +20,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Service Goal Template
+ * ServiceGoalTemplate
  */
-@ApiModel(description = "Service Goal Template")
 
 public class ServiceGoalTemplate  implements Serializable {
   

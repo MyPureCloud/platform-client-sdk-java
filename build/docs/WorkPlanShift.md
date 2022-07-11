@@ -27,10 +27,24 @@ title: WorkPlanShift
 | **constrainContiguousWorkTime** | <!----><!---->**Boolean**<!----> | Whether the contiguous time constraint for the shift is enabled |  [optional] |
 | **minimumContiguousWorkTimeMinutes** | <!----><!---->**Integer**<!----> | Minimum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime == true |  [optional] |
 | **maximumContiguousWorkTimeMinutes** | <!----><!---->**Integer**<!----> | Maximum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime == true |  [optional] |
+| **constrainDayOff** | <!----><!---->**Boolean**<!----> | Whether day off rule is enabled |  [optional] |
+| **dayOffRule** | [**DayOffRuleEnum**](#DayOffRuleEnum)<!----> | The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true |  [optional] |
 | **activities** | <!----><!---->[**List&lt;WorkPlanActivity&gt;**](WorkPlanActivity.html)<!----> | Activities configured for this shift |  [optional] |
 | **id** | <!----><!---->**String**<!----> | ID of the shift. This is required only for the case of updating an existing shift |  [optional] |
 | **delete** | <!----><!---->**Boolean**<!----> | If marked true for updating an existing shift, the shift will be permanently deleted |  [optional] |
 | **validationId** | <!----><!---->**String**<!----> | ID of shift in the context of work plan validation |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="DayOffRuleEnum"></a>
+
+## Enum: DayOffRuleEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NEXTDAYOFF | &quot;NextDayOff&quot; | 
+| PREVIOUSDAYOFF | &quot;PreviousDayOff&quot; | 
 {: class="table table-striped"}
 
 

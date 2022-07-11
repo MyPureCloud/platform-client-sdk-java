@@ -46,6 +46,7 @@ title: AvailableTopic
 | ALL | &quot;All&quot; |
 | WEBSOCKET | &quot;Websocket&quot; |
 | EVENTBRIDGE | &quot;EventBridge&quot; |
+| PROCESSAUTOMATION | &quot;ProcessAutomation&quot; |
 {: class="table table-striped"}
 
 

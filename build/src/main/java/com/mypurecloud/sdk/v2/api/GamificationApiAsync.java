@@ -32,6 +32,7 @@ import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.MemberListing;
 import com.mypurecloud.sdk.v2.model.Metric;
 import com.mypurecloud.sdk.v2.model.MetricDefinition;
+import com.mypurecloud.sdk.v2.model.MetricValueTrendAverage;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.OverallBestPoints;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
@@ -67,6 +68,9 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsBestpointsReq
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsPointsAlltimeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsPointsAverageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsPointsTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsProfileMetricUserValuesTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsProfileMetricValuesTrendsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsUserAttendanceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsUserBestpointsRequest;
@@ -1751,6 +1755,231 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WorkdayPointsTrend> response = (ApiResponse<WorkdayPointsTrend>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MetricValueTrendAverage> getGamificationScorecardsProfileMetricUserValuesTrendsAsync(GetGamificationScorecardsProfileMetricUserValuesTrendsRequest request, final AsyncApiCallback<MetricValueTrendAverage> callback) {
+    try {
+      final SettableFuture<MetricValueTrendAverage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MetricValueTrendAverage>() {}, new AsyncApiCallback<ApiResponse<MetricValueTrendAverage>>() {
+        @Override
+        public void onCompleted(ApiResponse<MetricValueTrendAverage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MetricValueTrendAverage>> getGamificationScorecardsProfileMetricUserValuesTrendsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MetricValueTrendAverage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MetricValueTrendAverage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MetricValueTrendAverage>() {}, new AsyncApiCallback<ApiResponse<MetricValueTrendAverage>>() {
+        @Override
+        public void onCompleted(ApiResponse<MetricValueTrendAverage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of a division or a performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MetricValueTrendAverage> getGamificationScorecardsProfileMetricUsersValuesTrendsAsync(GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest request, final AsyncApiCallback<MetricValueTrendAverage> callback) {
+    try {
+      final SettableFuture<MetricValueTrendAverage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MetricValueTrendAverage>() {}, new AsyncApiCallback<ApiResponse<MetricValueTrendAverage>>() {
+        @Override
+        public void onCompleted(ApiResponse<MetricValueTrendAverage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of a division or a performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MetricValueTrendAverage>> getGamificationScorecardsProfileMetricUsersValuesTrendsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MetricValueTrendAverage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MetricValueTrendAverage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MetricValueTrendAverage>() {}, new AsyncApiCallback<ApiResponse<MetricValueTrendAverage>>() {
+        @Override
+        public void onCompleted(ApiResponse<MetricValueTrendAverage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of the requesting user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MetricValueTrendAverage> getGamificationScorecardsProfileMetricValuesTrendsAsync(GetGamificationScorecardsProfileMetricValuesTrendsRequest request, final AsyncApiCallback<MetricValueTrendAverage> callback) {
+    try {
+      final SettableFuture<MetricValueTrendAverage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MetricValueTrendAverage>() {}, new AsyncApiCallback<ApiResponse<MetricValueTrendAverage>>() {
+        @Override
+        public void onCompleted(ApiResponse<MetricValueTrendAverage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Average performance values trends by metric of the requesting user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MetricValueTrendAverage>> getGamificationScorecardsProfileMetricValuesTrendsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MetricValueTrendAverage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MetricValueTrendAverage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MetricValueTrendAverage>() {}, new AsyncApiCallback<ApiResponse<MetricValueTrendAverage>>() {
+        @Override
+        public void onCompleted(ApiResponse<MetricValueTrendAverage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MetricValueTrendAverage> response = (ApiResponse<MetricValueTrendAverage>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

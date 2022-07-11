@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Service goal service level configuration
+ * BuServiceLevel
  */
-@ApiModel(description = "Service goal service level configuration")
 
 public class BuServiceLevel  implements Serializable {
   

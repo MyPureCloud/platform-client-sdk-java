@@ -27,7 +27,21 @@ title: CreateWorkPlanShift
 | **constrainContiguousWorkTime** | <!----><!---->**Boolean**<!----> | Whether the contiguous time constraint for the shift is enabled |  [optional] |
 | **minimumContiguousWorkTimeMinutes** | <!----><!---->**Integer**<!----> | Minimum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime == true |  [optional] |
 | **maximumContiguousWorkTimeMinutes** | <!----><!---->**Integer**<!----> | Maximum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime == true |  [optional] |
+| **constrainDayOff** | <!----><!---->**Boolean**<!----> | Whether day off rule is enabled |  [optional] |
+| **dayOffRule** | [**DayOffRuleEnum**](#DayOffRuleEnum)<!----> | The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true |  [optional] |
 | **activities** | <!----><!---->[**List&lt;CreateWorkPlanActivity&gt;**](CreateWorkPlanActivity.html)<!----> | Activities configured for this shift |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="DayOffRuleEnum"></a>
+
+## Enum: DayOffRuleEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NEXTDAYOFF | &quot;NextDayOff&quot; | 
+| PREVIOUSDAYOFF | &quot;PreviousDayOff&quot; | 
 {: class="table table-striped"}
 
 

@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Override the value of a single interval in a forecast
+ * WfmForecastModificationIntervalOffsetValue
  */
-@ApiModel(description = "Override the value of a single interval in a forecast")
 
 public class WfmForecastModificationIntervalOffsetValue  implements Serializable {
   

@@ -19,9 +19,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * A reference from agent to management unit
+ * AgentManagementUnitReference
  */
-@ApiModel(description = "A reference from agent to management unit")
 
 public class AgentManagementUnitReference  implements Serializable {
   

@@ -20,9 +20,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * A single range filled with time off limit interval values
+ * TimeOffLimitRange
  */
-@ApiModel(description = "A single range filled with time off limit interval values")
 
 public class TimeOffLimitRange  implements Serializable {
   

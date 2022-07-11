@@ -17,9 +17,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Variance in minutes among start times of shifts in work plan
+ * ShiftStartVariance
  */
-@ApiModel(description = "Variance in minutes among start times of shifts in work plan")
 
 public class ShiftStartVariance  implements Serializable {
   

@@ -18,9 +18,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Create Management Unit
+ * CreateManagementUnitApiRequest
  */
-@ApiModel(description = "Create Management Unit")
 
 public class CreateManagementUnitApiRequest  implements Serializable {
   

@@ -19,9 +19,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Scheduling Settings
+ * SchedulingSettingsRequest
  */
-@ApiModel(description = "Scheduling Settings")
 
 public class SchedulingSettingsRequest  implements Serializable {
   
