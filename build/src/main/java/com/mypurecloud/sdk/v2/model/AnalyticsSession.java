@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AnalyticsAgentGroup;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationSegment;
 import com.mypurecloud.sdk.v2.model.AnalyticsFlow;
 import com.mypurecloud.sdk.v2.model.AnalyticsMediaEndpointStat;
@@ -356,6 +357,7 @@ public class AnalyticsSession  implements Serializable {
   private String videoRoomId = null;
   private List<Integer> waitingInteractionCounts = new ArrayList<Integer>();
   private List<AnalyticsProposedAgent> proposedAgents = new ArrayList<AnalyticsProposedAgent>();
+  private List<AnalyticsAgentGroup> agentGroups = new ArrayList<AnalyticsAgentGroup>();
   private List<AnalyticsMediaEndpointStat> mediaEndpointStats = new ArrayList<AnalyticsMediaEndpointStat>();
   private AnalyticsFlow flow = null;
   private List<AnalyticsSessionMetric> metrics = new ArrayList<AnalyticsSessionMetric>();
@@ -849,14 +851,14 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
-   * Extended email delivery status
+   * Extended delivery status
    **/
   public AnalyticsSession extendedDeliveryStatus(String extendedDeliveryStatus) {
     this.extendedDeliveryStatus = extendedDeliveryStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Extended email delivery status")
+  @ApiModelProperty(example = "null", value = "Extended delivery status")
   @JsonProperty("extendedDeliveryStatus")
   public String getExtendedDeliveryStatus() {
     return extendedDeliveryStatus;
@@ -1623,6 +1625,24 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
+   * Conditional group routing agent groups
+   **/
+  public AnalyticsSession agentGroups(List<AnalyticsAgentGroup> agentGroups) {
+    this.agentGroups = agentGroups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Conditional group routing agent groups")
+  @JsonProperty("agentGroups")
+  public List<AnalyticsAgentGroup> getAgentGroups() {
+    return agentGroups;
+  }
+  public void setAgentGroups(List<AnalyticsAgentGroup> agentGroups) {
+    this.agentGroups = agentGroups;
+  }
+
+
+  /**
    * MediaEndpointStats associated with this session
    **/
   public AnalyticsSession mediaEndpointStats(List<AnalyticsMediaEndpointStat> mediaEndpointStats) {
@@ -1774,6 +1794,7 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.videoRoomId, analyticsSession.videoRoomId) &&
             Objects.equals(this.waitingInteractionCounts, analyticsSession.waitingInteractionCounts) &&
             Objects.equals(this.proposedAgents, analyticsSession.proposedAgents) &&
+            Objects.equals(this.agentGroups, analyticsSession.agentGroups) &&
             Objects.equals(this.mediaEndpointStats, analyticsSession.mediaEndpointStats) &&
             Objects.equals(this.flow, analyticsSession.flow) &&
             Objects.equals(this.metrics, analyticsSession.metrics) &&
@@ -1782,7 +1803,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, callbackNumbers, callbackScheduledTime, callbackUserName, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, proposedAgents, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, callbackNumbers, callbackScheduledTime, callbackUserName, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, proposedAgents, agentGroups, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -1860,6 +1881,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    videoRoomId: ").append(toIndentedString(videoRoomId)).append("\n");
     sb.append("    waitingInteractionCounts: ").append(toIndentedString(waitingInteractionCounts)).append("\n");
     sb.append("    proposedAgents: ").append(toIndentedString(proposedAgents)).append("\n");
+    sb.append("    agentGroups: ").append(toIndentedString(agentGroups)).append("\n");
     sb.append("    mediaEndpointStats: ").append(toIndentedString(mediaEndpointStats)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");

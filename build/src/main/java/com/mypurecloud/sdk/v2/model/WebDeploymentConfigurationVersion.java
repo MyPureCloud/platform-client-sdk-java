@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.AuthenticationSettings;
 import com.mypurecloud.sdk.v2.model.CobrowseSettings;
+import com.mypurecloud.sdk.v2.model.CustomI18nLabels;
 import com.mypurecloud.sdk.v2.model.JourneyEventsSettings;
 import com.mypurecloud.sdk.v2.model.MessengerSettings;
 import com.mypurecloud.sdk.v2.model.PositionSettings;
@@ -39,6 +40,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   private String description = null;
   private List<String> languages = new ArrayList<String>();
   private String defaultLanguage = null;
+  private List<CustomI18nLabels> customI18nLabels = new ArrayList<CustomI18nLabels>();
   private MessengerSettings messenger = null;
   private PositionSettings position = null;
   private SupportCenterSettings supportCenter = null;
@@ -188,6 +190,24 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   }
   public void setDefaultLanguage(String defaultLanguage) {
     this.defaultLanguage = defaultLanguage;
+  }
+
+
+  /**
+   * The localization settings for homescreen app
+   **/
+  public WebDeploymentConfigurationVersion customI18nLabels(List<CustomI18nLabels> customI18nLabels) {
+    this.customI18nLabels = customI18nLabels;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The localization settings for homescreen app")
+  @JsonProperty("customI18nLabels")
+  public List<CustomI18nLabels> getCustomI18nLabels() {
+    return customI18nLabels;
+  }
+  public void setCustomI18nLabels(List<CustomI18nLabels> customI18nLabels) {
+    this.customI18nLabels = customI18nLabels;
   }
 
 
@@ -382,6 +402,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
             Objects.equals(this.description, webDeploymentConfigurationVersion.description) &&
             Objects.equals(this.languages, webDeploymentConfigurationVersion.languages) &&
             Objects.equals(this.defaultLanguage, webDeploymentConfigurationVersion.defaultLanguage) &&
+            Objects.equals(this.customI18nLabels, webDeploymentConfigurationVersion.customI18nLabels) &&
             Objects.equals(this.messenger, webDeploymentConfigurationVersion.messenger) &&
             Objects.equals(this.position, webDeploymentConfigurationVersion.position) &&
             Objects.equals(this.supportCenter, webDeploymentConfigurationVersion.supportCenter) &&
@@ -400,7 +421,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, description, languages, defaultLanguage, messenger, position, supportCenter, cobrowse, journeyEvents, authenticationSettings, dateCreated, dateModified, datePublished, lastModifiedUser, createdUser, publishedUser, status, selfUri);
+    return Objects.hash(id, name, version, description, languages, defaultLanguage, customI18nLabels, messenger, position, supportCenter, cobrowse, journeyEvents, authenticationSettings, dateCreated, dateModified, datePublished, lastModifiedUser, createdUser, publishedUser, status, selfUri);
   }
 
   @Override
@@ -414,6 +435,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
+    sb.append("    customI18nLabels: ").append(toIndentedString(customI18nLabels)).append("\n");
     sb.append("    messenger: ").append(toIndentedString(messenger)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    supportCenter: ").append(toIndentedString(supportCenter)).append("\n");

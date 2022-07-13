@@ -160,6 +160,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementuni
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdhocmodelingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeManagementunitRequest;
@@ -1398,6 +1399,84 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<UserScheduleAdherence>> response = (ApiResponse<List<UserScheduleAdherence>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId jobId (required)
+   * @return WfmHistoricalAdherenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalAdherenceResponse getWorkforcemanagementAdherenceHistoricalJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementAdherenceHistoricalJob(createGetWorkforcemanagementAdherenceHistoricalJobRequest(jobId));
+  }
+
+  /**
+   * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId jobId (required)
+   * @return WfmHistoricalAdherenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalAdherenceResponse> getWorkforcemanagementAdherenceHistoricalJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementAdherenceHistoricalJob(createGetWorkforcemanagementAdherenceHistoricalJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAdherenceHistoricalJobRequest createGetWorkforcemanagementAdherenceHistoricalJobRequest(String jobId) {
+    return GetWorkforcemanagementAdherenceHistoricalJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return WfmHistoricalAdherenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalAdherenceResponse getWorkforcemanagementAdherenceHistoricalJob(GetWorkforcemanagementAdherenceHistoricalJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmHistoricalAdherenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmHistoricalAdherenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalAdherenceResponse> getWorkforcemanagementAdherenceHistoricalJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmHistoricalAdherenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

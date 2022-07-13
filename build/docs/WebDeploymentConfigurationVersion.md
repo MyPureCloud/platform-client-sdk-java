@@ -14,6 +14,7 @@ title: WebDeploymentConfigurationVersion
 | **description** | <!----><!---->**String**<!----> | The description of the configuration |  [optional] |
 | **languages** | <!----><!---->**List&lt;String&gt;**<!----> | A list of languages supported on the configuration required if the messenger is enabled |  [optional] |
 | **defaultLanguage** | <!----><!---->**String**<!----> | The default language to use for the configuration required if the messenger is enabled |  [optional] |
+| **customI18nLabels** | <!----><!---->[**List&lt;CustomI18nLabels&gt;**](CustomI18nLabels.html)<!----> | The localization settings for homescreen app |  [optional] |
 | **messenger** | <!----><!---->[**MessengerSettings**](MessengerSettings.html)<!----> | The settings for messenger |  [optional] |
 | **position** | <!----><!---->[**PositionSettings**](PositionSettings.html)<!----> | The settings for position |  [optional] |
 | **supportCenter** | <!----><!---->[**SupportCenterSettings**](SupportCenterSettings.html)<!----> | The settings for support center |  [optional] |

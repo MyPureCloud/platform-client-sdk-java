@@ -41,6 +41,7 @@ title: Miner
 | EN_ZA | &quot;en-za&quot; | 
 | ES_US | &quot;es-us&quot; | 
 | ES_ES | &quot;es-es&quot; | 
+| FR_FR | &quot;fr-fr&quot; | 
 {: class="table table-striped"}
 
 

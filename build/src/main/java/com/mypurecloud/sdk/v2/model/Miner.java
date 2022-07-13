@@ -54,7 +54,8 @@ public class Miner  implements Serializable {
     EN_IN("en-in"),
     EN_ZA("en-za"),
     ES_US("es-us"),
-    ES_ES("es-es");
+    ES_ES("es-es"),
+    FR_FR("fr-fr");
 
     private String value;
 

@@ -45,6 +45,7 @@ public class BotAggregationView  implements Serializable {
     NBOTSESSIONS("nBotSessions"),
     OBOTINTENT("oBotIntent"),
     OBOTSESSIONQUERY("oBotSessionQuery"),
+    OBOTSESSIONQUERYSELFSERVED("oBotSessionQuerySelfServed"),
     OBOTSESSIONTURN("oBotSessionTurn"),
     OBOTSLOT("oBotSlot"),
     TBOTDISCONNECT("tBotDisconnect"),

@@ -26,6 +26,8 @@ import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.SearchRequest;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
+import com.mypurecloud.sdk.v2.model.TeamSearchRequest;
+import com.mypurecloud.sdk.v2.model.TeamsSearchResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
@@ -51,6 +53,7 @@ import com.mypurecloud.sdk.v2.api.request.PostLocationsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSearchSuggestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTeamsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
 
@@ -1441,6 +1444,84 @@ public class SearchApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param body Search request options (required)
+   * @return TeamsSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TeamsSearchResponse postTeamsSearch(TeamSearchRequest body) throws IOException, ApiException {
+    return  postTeamsSearch(createPostTeamsSearchRequest(body));
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param body Search request options (required)
+   * @return TeamsSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TeamsSearchResponse> postTeamsSearchWithHttpInfo(TeamSearchRequest body) throws IOException {
+    return postTeamsSearch(createPostTeamsSearchRequest(body).withHttpInfo());
+  }
+
+  private PostTeamsSearchRequest createPostTeamsSearchRequest(TeamSearchRequest body) {
+    return PostTeamsSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request The request object
+   * @return TeamsSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TeamsSearchResponse postTeamsSearch(PostTeamsSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TeamsSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TeamsSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TeamsSearchResponse> postTeamsSearch(ApiRequest<TeamSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TeamsSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TeamsSearchResponse> response = (ApiResponse<TeamsSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TeamsSearchResponse> response = (ApiResponse<TeamsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

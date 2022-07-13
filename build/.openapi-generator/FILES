@@ -77,6 +77,7 @@ docs/AlertingApi.json
 docs/AlertingApi.md
 docs/AllTimePoints.md
 docs/AmazonLexRequest.md
+docs/AnalyticsAgentGroup.md
 docs/AnalyticsApi.json
 docs/AnalyticsApi.md
 docs/AnalyticsConversation.md
@@ -880,6 +881,7 @@ docs/CursorRelationshipListing.md
 docs/Cursors.md
 docs/CustomEventAttribute.md
 docs/CustomEventAttributeList.md
+docs/CustomI18nLabels.md
 docs/CustomerEndDetailEventTopicCustomerEndEvent.md
 docs/CustomerInteractionCenter.md
 docs/CustomerStartDetailEventTopicCustomerStartEvent.md
@@ -1651,6 +1653,7 @@ docs/LocalDateRange.md
 docs/LocalEncryptionConfiguration.md
 docs/LocalEncryptionConfigurationListing.md
 docs/LocalEncryptionKeyRequest.md
+docs/LocalizedLabels.md
 docs/Location.md
 docs/LocationAddress.md
 docs/LocationAddressVerificationDetails.md
@@ -2622,7 +2625,13 @@ docs/TagValue.md
 docs/TagValueEntityListing.md
 docs/TargetPerformanceProfile.md
 docs/Team.md
+docs/TeamEntityListing.md
 docs/TeamReference.md
+docs/TeamSearchCriteria.md
+docs/TeamSearchRequest.md
+docs/TeamsApi.json
+docs/TeamsApi.md
+docs/TeamsSearchResponse.md
 docs/TelephonyApi.json
 docs/TelephonyApi.md
 docs/TelephonyProvidersEdgeApi.json
@@ -3383,6 +3392,7 @@ docs/deleteSpeechandtextanalyticsSentimentfeedback-example.txt
 docs/deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId-example.txt
 docs/deleteSpeechandtextanalyticsTopic-example.txt
 docs/deleteStationAssociateduser-example.txt
+docs/deleteTeam-example.txt
 docs/deleteTelephonyProvidersEdge-example.txt
 docs/deleteTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/deleteTelephonyProvidersEdgeSoftwareupdate-example.txt
@@ -4099,6 +4109,8 @@ docs/getStation-example.txt
 docs/getStations-example.txt
 docs/getStationsSettings-example.txt
 docs/getSystempresences-example.txt
+docs/getTeam-example.txt
+docs/getTeams-example.txt
 docs/getTelephonyProvidersEdge-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticPing-example.txt
@@ -4246,6 +4258,7 @@ docs/getWebmessagingMessages-example.txt
 docs/getWidgetsDeployment-example.txt
 docs/getWidgetsDeployments-example.txt
 docs/getWorkforcemanagementAdherence-example.txt
+docs/getWorkforcemanagementAdherenceHistoricalJob-example.txt
 docs/getWorkforcemanagementAdhocmodelingjob-example.txt
 docs/getWorkforcemanagementAgentManagementunit-example.txt
 docs/getWorkforcemanagementAgentsMeManagementunit-example.txt
@@ -4390,6 +4403,7 @@ docs/patchScimV2Group-example.txt
 docs/patchScimV2User-example.txt
 docs/patchSpeechandtextanalyticsSettings-example.txt
 docs/patchStationsSettings-example.txt
+docs/patchTeam-example.txt
 docs/patchUser-example.txt
 docs/patchUserCallforwarding-example.txt
 docs/patchUserGeolocation-example.txt
@@ -4755,6 +4769,9 @@ docs/postSpeechandtextanalyticsTopics-example.txt
 docs/postSpeechandtextanalyticsTopicsPublishjobs-example.txt
 docs/postSpeechandtextanalyticsTranscriptsSearch-example.txt
 docs/postSpeechandtextanalyticsTranscriptsSearch-example.txt
+docs/postTeams-example.txt
+docs/postTeamsSearch-example.txt
+docs/postTeamsSearch-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticPing-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticRoute-example.txt
@@ -5156,6 +5173,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/StationsApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/StationsApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/SuggestApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/SuggestApiAsync.java
+src/main/java/com/mypurecloud/sdk/v2/api/TeamsApi.java
+src/main/java/com/mypurecloud/sdk/v2/api/TeamsApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/TelephonyApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/TelephonyApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/TelephonyProvidersEdgeApi.java
@@ -5344,6 +5363,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSpeechandtextanalyticsSen
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSpeechandtextanalyticsTopicRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteStationAssociateduserRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTeamRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgeLogicalinterfaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgeSoftwareupdateRequest.java
@@ -6060,6 +6080,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetStationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetStationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetStationsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSystempresencesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTeamRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTeamsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeDiagnosticNslookupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeDiagnosticPingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeDiagnosticRouteRequest.java
@@ -6206,6 +6228,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetWebdeploymentsDeploymentsReq
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWebmessagingMessagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWidgetsDeploymentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWidgetsDeploymentsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementAdherenceHistoricalJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementAdherenceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementAdhocmodelingjobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementAgentManagementunitRequest.java
@@ -6351,6 +6374,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchScimV2GroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchScimV2UserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchSpeechandtextanalyticsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchStationsSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTeamRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchUserCallforwardingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchUserGeolocationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchUserGeolocationRequest.java
@@ -6716,6 +6740,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostSpeechandtextanalyticsTopic
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSpeechandtextanalyticsTopicsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSpeechandtextanalyticsTranscriptsSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSpeechandtextanalyticsTranscriptsSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostTeamsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostTeamsSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostTeamsSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgeDiagnosticNslookupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgeDiagnosticPingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgeDiagnosticRouteRequest.java
@@ -7087,6 +7114,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AggregationResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/AggregationResultEntry.java
 src/main/java/com/mypurecloud/sdk/v2/model/AllTimePoints.java
 src/main/java/com/mypurecloud/sdk/v2/model/AmazonLexRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsAgentGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsConversation.java
 src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsConversationAsyncQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsConversationQueryResponse.java
@@ -7872,6 +7900,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/CursorRelationshipListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Cursors.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomEventAttribute.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomEventAttributeList.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomI18nLabels.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomerEndDetailEventTopicCustomerEndEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomerInteractionCenter.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomerStartDetailEventTopicCustomerStartEvent.java
@@ -8609,6 +8638,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/LocalDateRange.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocalEncryptionConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocalEncryptionConfigurationListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocalEncryptionKeyRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/LocalizedLabels.java
 src/main/java/com/mypurecloud/sdk/v2/model/Location.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocationAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocationAddressVerificationDetails.java
@@ -9540,7 +9570,11 @@ src/main/java/com/mypurecloud/sdk/v2/model/TagValue.java
 src/main/java/com/mypurecloud/sdk/v2/model/TagValueEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/TargetPerformanceProfile.java
 src/main/java/com/mypurecloud/sdk/v2/model/Team.java
+src/main/java/com/mypurecloud/sdk/v2/model/TeamEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/TeamReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/TeamSearchCriteria.java
+src/main/java/com/mypurecloud/sdk/v2/model/TeamSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/TeamsSearchResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/TemplateParameter.java
 src/main/java/com/mypurecloud/sdk/v2/model/TermAttribute.java
 src/main/java/com/mypurecloud/sdk/v2/model/TestExecutionOperationResult.java

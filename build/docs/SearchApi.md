@@ -24,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSearch**](SearchApi.html#postSearch) | Search resources. |
 | [**postSearchSuggest**](SearchApi.html#postSearchSuggest) | Suggest resources. |
 | [**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi.html#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
+| [**postTeamsSearch**](SearchApi.html#postTeamsSearch) | Search resources. |
 | [**postUsersSearch**](SearchApi.html#postUsersSearch) | Search users |
 | [**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | Search voicemails |
 {: class="table-striped"}
@@ -1028,6 +1029,67 @@ try {
 ### Return type
 
 [**JsonSearchResponse**](JsonSearchResponse.html)
+
+<a name="postTeamsSearch"></a>
+
+# **postTeamsSearch**
+
+
+
+> [TeamsSearchResponse](TeamsSearchResponse.html) postTeamsSearch(body)
+
+Search resources.
+
+Wraps POST /api/v2/teams/search  
+
+Requires ANY permissions: 
+
+* groups:team:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SearchApi apiInstance = new SearchApi();
+TeamSearchRequest body = new TeamSearchRequest(); // TeamSearchRequest | Search request options
+try {
+    TeamsSearchResponse result = apiInstance.postTeamsSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#postTeamsSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TeamSearchRequest**](TeamSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TeamsSearchResponse**](TeamsSearchResponse.html)
 
 <a name="postUsersSearch"></a>
 

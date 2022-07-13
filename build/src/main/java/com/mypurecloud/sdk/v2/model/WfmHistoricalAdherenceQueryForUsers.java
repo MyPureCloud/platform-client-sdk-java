@@ -67,14 +67,14 @@ public class WfmHistoricalAdherenceQueryForUsers  implements Serializable {
 
 
   /**
-   * The time zone to use for returned results in olson format. If it is not set, the business unit time zone will be used to compute adherence
+   * The time zone, in olson format, to use in defining days when computing adherence. If it is not set, the business unit time zone will be used. The results will be returned as UTC timestamps regardless of the time zone input.
    **/
   public WfmHistoricalAdherenceQueryForUsers timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time zone to use for returned results in olson format. If it is not set, the business unit time zone will be used to compute adherence")
+  @ApiModelProperty(example = "null", value = "The time zone, in olson format, to use in defining days when computing adherence. If it is not set, the business unit time zone will be used. The results will be returned as UTC timestamps regardless of the time zone input.")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;
