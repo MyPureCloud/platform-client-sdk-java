@@ -42,8 +42,8 @@ public class LocalizedLabels  implements Serializable {
  @JsonDeserialize(using = KeyEnumDeserializer.class)
   public enum KeyEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    MESSENGERHOMETITLE("MessengerHomeTitle"),
-    MESSENGERHOMESUBTITLE("MessengerHomeSubTitle");
+    MESSENGERHOMEHEADERTITLE("MessengerHomeHeaderTitle"),
+    MESSENGERHOMEHEADERSUBTITLE("MessengerHomeHeaderSubTitle");
 
     private String value;
 

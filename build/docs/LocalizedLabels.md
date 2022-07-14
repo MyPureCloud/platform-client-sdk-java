@@ -20,8 +20,8 @@ title: LocalizedLabels
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| MESSENGERHOMETITLE | &quot;MessengerHomeTitle&quot; | 
-| MESSENGERHOMESUBTITLE | &quot;MessengerHomeSubTitle&quot; | 
+| MESSENGERHOMEHEADERTITLE | &quot;MessengerHomeHeaderTitle&quot; | 
+| MESSENGERHOMEHEADERSUBTITLE | &quot;MessengerHomeHeaderSubTitle&quot; | 
 {: class="table table-striped"}
 
 

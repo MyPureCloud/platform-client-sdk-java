@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.ConversationEventTopicMessage;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicScreenshare;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicSocialExpression;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicVideo;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicWorkflow;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -126,6 +127,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
   private List<ConversationEventTopicScreenshare> screenshares = new ArrayList<ConversationEventTopicScreenshare>();
   private List<ConversationEventTopicSocialExpression> socialExpressions = new ArrayList<ConversationEventTopicSocialExpression>();
   private List<ConversationEventTopicVideo> videos = new ArrayList<ConversationEventTopicVideo>();
+  private ConversationEventTopicWorkflow workflow = null;
 
   
   /**
@@ -783,6 +785,23 @@ public class ConversationEventTopicParticipant  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ConversationEventTopicParticipant workflow(ConversationEventTopicWorkflow workflow) {
+    this.workflow = workflow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("workflow")
+  public ConversationEventTopicWorkflow getWorkflow() {
+    return workflow;
+  }
+  public void setWorkflow(ConversationEventTopicWorkflow workflow) {
+    this.workflow = workflow;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -829,12 +848,13 @@ public class ConversationEventTopicParticipant  implements Serializable {
             Objects.equals(this.messages, conversationEventTopicParticipant.messages) &&
             Objects.equals(this.screenshares, conversationEventTopicParticipant.screenshares) &&
             Objects.equals(this.socialExpressions, conversationEventTopicParticipant.socialExpressions) &&
-            Objects.equals(this.videos, conversationEventTopicParticipant.videos);
+            Objects.equals(this.videos, conversationEventTopicParticipant.videos) &&
+            Objects.equals(this.workflow, conversationEventTopicParticipant.workflow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, workflow);
   }
 
   @Override
@@ -879,6 +899,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     sb.append("    screenshares: ").append(toIndentedString(screenshares)).append("\n");
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");
+    sb.append("    workflow: ").append(toIndentedString(workflow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

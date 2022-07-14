@@ -711,12 +711,13 @@ public class SpeechTextAnalyticsApi {
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
+   * @param state Program state. Defaults to Latest (optional)
    * @return ProgramsEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ProgramsEntityListing getSpeechandtextanalyticsPrograms(String nextPage, Integer pageSize) throws IOException, ApiException {
-    return  getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize));
+  public ProgramsEntityListing getSpeechandtextanalyticsPrograms(String nextPage, Integer pageSize, String state) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize, state));
   }
 
   /**
@@ -724,18 +725,21 @@ public class SpeechTextAnalyticsApi {
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
+   * @param state Program state. Defaults to Latest (optional)
    * @return ProgramsEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ProgramsEntityListing> getSpeechandtextanalyticsProgramsWithHttpInfo(String nextPage, Integer pageSize) throws IOException {
-    return getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize).withHttpInfo());
+  public ApiResponse<ProgramsEntityListing> getSpeechandtextanalyticsProgramsWithHttpInfo(String nextPage, Integer pageSize, String state) throws IOException {
+    return getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize, state).withHttpInfo());
   }
 
-  private GetSpeechandtextanalyticsProgramsRequest createGetSpeechandtextanalyticsProgramsRequest(String nextPage, Integer pageSize) {
+  private GetSpeechandtextanalyticsProgramsRequest createGetSpeechandtextanalyticsProgramsRequest(String nextPage, Integer pageSize, String state) {
     return GetSpeechandtextanalyticsProgramsRequest.builder()
             .withNextPage(nextPage)
 
             .withPageSize(pageSize)
+
+            .withState(state)
 
             .build();
   }

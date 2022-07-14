@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DurationCondition;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.TimeAllowed;
@@ -128,6 +129,54 @@ public class PolicyConditions  implements Serializable {
   private DurationCondition duration = null;
   private List<WrapupCode> wrapupCodes = new ArrayList<WrapupCode>();
   private TimeAllowed timeAllowed = null;
+
+  private static class CustomerParticipationEnumDeserializer extends StdDeserializer<CustomerParticipationEnum> {
+    public CustomerParticipationEnumDeserializer() {
+      super(CustomerParticipationEnumDeserializer.class);
+    }
+
+    @Override
+    public CustomerParticipationEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CustomerParticipationEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * This condition is to filter out conversation with and without customer participation.
+   */
+ @JsonDeserialize(using = CustomerParticipationEnumDeserializer.class)
+  public enum CustomerParticipationEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    YES("YES"),
+    NO("NO");
+
+    private String value;
+
+    CustomerParticipationEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CustomerParticipationEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CustomerParticipationEnum value : CustomerParticipationEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CustomerParticipationEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CustomerParticipationEnum customerParticipation = null;
 
   
   /**
@@ -266,6 +315,24 @@ public class PolicyConditions  implements Serializable {
   }
 
 
+  /**
+   * This condition is to filter out conversation with and without customer participation.
+   **/
+  public PolicyConditions customerParticipation(CustomerParticipationEnum customerParticipation) {
+    this.customerParticipation = customerParticipation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "This condition is to filter out conversation with and without customer participation.")
+  @JsonProperty("customerParticipation")
+  public CustomerParticipationEnum getCustomerParticipation() {
+    return customerParticipation;
+  }
+  public void setCustomerParticipation(CustomerParticipationEnum customerParticipation) {
+    this.customerParticipation = customerParticipation;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -283,12 +350,13 @@ public class PolicyConditions  implements Serializable {
             Objects.equals(this.forQueues, policyConditions.forQueues) &&
             Objects.equals(this.duration, policyConditions.duration) &&
             Objects.equals(this.wrapupCodes, policyConditions.wrapupCodes) &&
-            Objects.equals(this.timeAllowed, policyConditions.timeAllowed);
+            Objects.equals(this.timeAllowed, policyConditions.timeAllowed) &&
+            Objects.equals(this.customerParticipation, policyConditions.customerParticipation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(forUsers, directions, dateRanges, mediaTypes, forQueues, duration, wrapupCodes, timeAllowed);
+    return Objects.hash(forUsers, directions, dateRanges, mediaTypes, forQueues, duration, wrapupCodes, timeAllowed, customerParticipation);
   }
 
   @Override
@@ -304,6 +372,7 @@ public class PolicyConditions  implements Serializable {
     sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
     sb.append("    wrapupCodes: ").append(toIndentedString(wrapupCodes)).append("\n");
     sb.append("    timeAllowed: ").append(toIndentedString(timeAllowed)).append("\n");
+    sb.append("    customerParticipation: ").append(toIndentedString(customerParticipation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

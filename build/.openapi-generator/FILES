@@ -714,6 +714,7 @@ docs/ConversationEventTopicSocialExpression.md
 docs/ConversationEventTopicUriReference.md
 docs/ConversationEventTopicVideo.md
 docs/ConversationEventTopicVoicemail.md
+docs/ConversationEventTopicWorkflow.md
 docs/ConversationEventTopicWrapup.md
 docs/ConversationEventTyping.md
 docs/ConversationMessageContent.md
@@ -2134,6 +2135,7 @@ docs/QueueConversationEventTopicSocialExpression.md
 docs/QueueConversationEventTopicUriReference.md
 docs/QueueConversationEventTopicVideo.md
 docs/QueueConversationEventTopicVoicemail.md
+docs/QueueConversationEventTopicWorkflow.md
 docs/QueueConversationEventTopicWrapup.md
 docs/QueueConversationMessageEventTopicConversationRoutingData.md
 docs/QueueConversationMessageEventTopicDetail.md
@@ -2203,6 +2205,7 @@ docs/QueueConversationSocialExpressionEventTopicSocialExpression.md
 docs/QueueConversationSocialExpressionEventTopicUriReference.md
 docs/QueueConversationSocialExpressionEventTopicVideo.md
 docs/QueueConversationSocialExpressionEventTopicVoicemail.md
+docs/QueueConversationSocialExpressionEventTopicWorkflow.md
 docs/QueueConversationSocialExpressionEventTopicWrapup.md
 docs/QueueConversationVideoEventTopicAddress.md
 docs/QueueConversationVideoEventTopicAfterCallWork.md
@@ -2239,6 +2242,7 @@ docs/QueueConversationVideoEventTopicSocialExpression.md
 docs/QueueConversationVideoEventTopicUriReference.md
 docs/QueueConversationVideoEventTopicVideo.md
 docs/QueueConversationVideoEventTopicVoicemail.md
+docs/QueueConversationVideoEventTopicWorkflow.md
 docs/QueueConversationVideoEventTopicWrapup.md
 docs/QueueEmailAddress.md
 docs/QueueEntityListing.md
@@ -3218,6 +3222,8 @@ docs/WorkdayValuesTrend.md
 docs/WorkdayValuesTrendItem.md
 docs/WorkforceManagementApi.json
 docs/WorkforceManagementApi.md
+docs/WorkitemsUserEventsNotificationDelta.md
+docs/WorkitemsUserEventsNotificationWorkitem.md
 docs/Workspace.md
 docs/WorkspaceCreate.md
 docs/WorkspaceEntityListing.md
@@ -7735,6 +7741,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicSocialExpressio
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicUriReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicVideo.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicVoicemail.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicWorkflow.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicWrapup.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTyping.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationMessageContent.java
@@ -9097,6 +9104,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicSocialExpr
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicUriReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicVideo.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicVoicemail.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicWorkflow.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicWrapup.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationMessageEventTopicConversationRoutingData.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationMessageEventTopicDetail.java
@@ -9166,6 +9174,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEven
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicUriReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicVideo.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicVoicemail.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicWorkflow.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicWrapup.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicAfterCallWork.java
@@ -9202,6 +9211,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicSocia
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicUriReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicVideo.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicVoicemail.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicWorkflow.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicWrapup.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueEmailAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueEntityListing.java
@@ -10131,6 +10141,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/WorkdayPointsTrendItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkdayValuesMetricItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkdayValuesTrend.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkdayValuesTrendItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsUserEventsNotificationDelta.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsUserEventsNotificationWorkitem.java
 src/main/java/com/mypurecloud/sdk/v2/model/Workspace.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkspaceCreate.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkspaceEntityListing.java

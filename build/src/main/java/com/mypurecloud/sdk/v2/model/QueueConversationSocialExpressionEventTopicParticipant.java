@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicM
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicScreenshare;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicSocialExpression;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicVideo;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWorkflow;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -126,6 +127,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   private List<QueueConversationSocialExpressionEventTopicScreenshare> screenshares = new ArrayList<QueueConversationSocialExpressionEventTopicScreenshare>();
   private List<QueueConversationSocialExpressionEventTopicSocialExpression> socialExpressions = new ArrayList<QueueConversationSocialExpressionEventTopicSocialExpression>();
   private List<QueueConversationSocialExpressionEventTopicVideo> videos = new ArrayList<QueueConversationSocialExpressionEventTopicVideo>();
+  private QueueConversationSocialExpressionEventTopicWorkflow workflow = null;
 
   
   /**
@@ -783,6 +785,23 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   }
 
 
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicParticipant workflow(QueueConversationSocialExpressionEventTopicWorkflow workflow) {
+    this.workflow = workflow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("workflow")
+  public QueueConversationSocialExpressionEventTopicWorkflow getWorkflow() {
+    return workflow;
+  }
+  public void setWorkflow(QueueConversationSocialExpressionEventTopicWorkflow workflow) {
+    this.workflow = workflow;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -829,12 +848,13 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
             Objects.equals(this.messages, queueConversationSocialExpressionEventTopicParticipant.messages) &&
             Objects.equals(this.screenshares, queueConversationSocialExpressionEventTopicParticipant.screenshares) &&
             Objects.equals(this.socialExpressions, queueConversationSocialExpressionEventTopicParticipant.socialExpressions) &&
-            Objects.equals(this.videos, queueConversationSocialExpressionEventTopicParticipant.videos);
+            Objects.equals(this.videos, queueConversationSocialExpressionEventTopicParticipant.videos) &&
+            Objects.equals(this.workflow, queueConversationSocialExpressionEventTopicParticipant.workflow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, workflow);
   }
 
   @Override
@@ -879,6 +899,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     sb.append("    screenshares: ").append(toIndentedString(screenshares)).append("\n");
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");
+    sb.append("    workflow: ").append(toIndentedString(workflow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

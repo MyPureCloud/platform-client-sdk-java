@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicMessage;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicScreenshare;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicSocialExpression;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicVideo;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWorkflow;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -126,6 +127,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   private List<QueueConversationEventTopicScreenshare> screenshares = new ArrayList<QueueConversationEventTopicScreenshare>();
   private List<QueueConversationEventTopicSocialExpression> socialExpressions = new ArrayList<QueueConversationEventTopicSocialExpression>();
   private List<QueueConversationEventTopicVideo> videos = new ArrayList<QueueConversationEventTopicVideo>();
+  private QueueConversationEventTopicWorkflow workflow = null;
 
   
   /**
@@ -783,6 +785,23 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   }
 
 
+  /**
+   **/
+  public QueueConversationEventTopicParticipant workflow(QueueConversationEventTopicWorkflow workflow) {
+    this.workflow = workflow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("workflow")
+  public QueueConversationEventTopicWorkflow getWorkflow() {
+    return workflow;
+  }
+  public void setWorkflow(QueueConversationEventTopicWorkflow workflow) {
+    this.workflow = workflow;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -829,12 +848,13 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
             Objects.equals(this.messages, queueConversationEventTopicParticipant.messages) &&
             Objects.equals(this.screenshares, queueConversationEventTopicParticipant.screenshares) &&
             Objects.equals(this.socialExpressions, queueConversationEventTopicParticipant.socialExpressions) &&
-            Objects.equals(this.videos, queueConversationEventTopicParticipant.videos);
+            Objects.equals(this.videos, queueConversationEventTopicParticipant.videos) &&
+            Objects.equals(this.workflow, queueConversationEventTopicParticipant.workflow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, workflow);
   }
 
   @Override
@@ -879,6 +899,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
     sb.append("    screenshares: ").append(toIndentedString(screenshares)).append("\n");
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");
+    sb.append("    workflow: ").append(toIndentedString(workflow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

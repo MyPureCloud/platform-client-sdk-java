@@ -78,6 +78,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     TELEPHONY("Telephony"),
     TOPICSDEFINITIONS("TopicsDefinitions"),
     TRIGGERS("Triggers"),
+    VOICEMAIL("Voicemail"),
     WEBDEPLOYMENTS("WebDeployments"),
     WORKFORCEMANAGEMENT("WorkforceManagement");
 

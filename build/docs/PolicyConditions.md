@@ -16,6 +16,7 @@ title: PolicyConditions
 | **duration** | <!----><!---->[**DurationCondition**](DurationCondition.html)<!----> |  |  [optional] |
 | **wrapupCodes** | <!----><!---->[**List&lt;WrapupCode&gt;**](WrapupCode.html)<!----> |  |  [optional] |
 | **timeAllowed** | <!----><!---->[**TimeAllowed**](TimeAllowed.html)<!----> |  |  [optional] |
+| **customerParticipation** | [**CustomerParticipationEnum**](#CustomerParticipationEnum)<!----> | This condition is to filter out conversation with and without customer participation. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -38,6 +39,18 @@ title: PolicyConditions
 | ---- | ----- |
 | CALL | &quot;CALL&quot; |
 | CHAT | &quot;CHAT&quot; |
+{: class="table table-striped"}
+
+
+<a name="CustomerParticipationEnum"></a>
+
+## Enum: CustomerParticipationEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| YES | &quot;YES&quot; | 
+| NO | &quot;NO&quot; | 
 {: class="table table-striped"}
 
 

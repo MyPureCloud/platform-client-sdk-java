@@ -26361,7 +26361,7 @@
   "getspeechandtextanalyticsprograms": {
     "operationId": "getspeechandtextanalyticsprograms",
     "functionName": "getSpeechandtextanalyticsPrograms",
-    "signature": "getSpeechandtextanalyticsPrograms(nextPage, pageSize)",
+    "signature": "getSpeechandtextanalyticsPrograms(nextPage, pageSize, state)",
     "parameters": [
       {
         "name": "nextPage",
@@ -26372,10 +26372,15 @@
         "name": "pageSize",
         "type": "Integer",
         "required": "false"
+      },
+      {
+        "name": "state",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "ProgramsEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;\nimport com.mypurecloud.sdk.v2.model.ProgramsEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetSpeechandtextanalyticsPrograms {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();\n        String nextPage = \"nextPage_example\"; // String | The key for listing the next page\nInteger pageSize = 20; // Integer | The page size for the listing\n        try { \n            // Get the list of Speech & Text Analytics programs\n            ProgramsEntityListing result = apiInstance.getSpeechandtextanalyticsPrograms(nextPage, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsPrograms\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;\nimport com.mypurecloud.sdk.v2.model.ProgramsEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetSpeechandtextanalyticsPrograms {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();\n        String nextPage = \"nextPage_example\"; // String | The key for listing the next page\nInteger pageSize = 20; // Integer | The page size for the listing\nString state = \"state_example\"; // String | Program state. Defaults to Latest\n        try { \n            // Get the list of Speech & Text Analytics programs\n            ProgramsEntityListing result = apiInstance.getSpeechandtextanalyticsPrograms(nextPage, pageSize, state);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsPrograms\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getspeechandtextanalyticsprogramsgeneraljob": {
     "operationId": "getspeechandtextanalyticsprogramsgeneraljob",

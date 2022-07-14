@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicMessage;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicScreenshare;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicSocialExpression;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicVideo;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWorkflow;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -126,6 +127,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   private List<QueueConversationVideoEventTopicScreenshare> screenshares = new ArrayList<QueueConversationVideoEventTopicScreenshare>();
   private List<QueueConversationVideoEventTopicSocialExpression> socialExpressions = new ArrayList<QueueConversationVideoEventTopicSocialExpression>();
   private List<QueueConversationVideoEventTopicVideo> videos = new ArrayList<QueueConversationVideoEventTopicVideo>();
+  private QueueConversationVideoEventTopicWorkflow workflow = null;
 
   
   /**
@@ -783,6 +785,23 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   }
 
 
+  /**
+   **/
+  public QueueConversationVideoEventTopicParticipant workflow(QueueConversationVideoEventTopicWorkflow workflow) {
+    this.workflow = workflow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("workflow")
+  public QueueConversationVideoEventTopicWorkflow getWorkflow() {
+    return workflow;
+  }
+  public void setWorkflow(QueueConversationVideoEventTopicWorkflow workflow) {
+    this.workflow = workflow;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -829,12 +848,13 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
             Objects.equals(this.messages, queueConversationVideoEventTopicParticipant.messages) &&
             Objects.equals(this.screenshares, queueConversationVideoEventTopicParticipant.screenshares) &&
             Objects.equals(this.socialExpressions, queueConversationVideoEventTopicParticipant.socialExpressions) &&
-            Objects.equals(this.videos, queueConversationVideoEventTopicParticipant.videos);
+            Objects.equals(this.videos, queueConversationVideoEventTopicParticipant.videos) &&
+            Objects.equals(this.workflow, queueConversationVideoEventTopicParticipant.workflow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, workflow);
   }
 
   @Override
@@ -879,6 +899,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     sb.append("    screenshares: ").append(toIndentedString(screenshares)).append("\n");
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");
+    sb.append("    workflow: ").append(toIndentedString(workflow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

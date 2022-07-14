@@ -54,6 +54,7 @@ title: AuditTopicAuditLogMessage
 | TELEPHONY | &quot;Telephony&quot; | 
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; | 
 | TRIGGERS | &quot;Triggers&quot; | 
+| VOICEMAIL | &quot;Voicemail&quot; | 
 | WEBDEPLOYMENTS | &quot;WebDeployments&quot; | 
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; | 
 {: class="table table-striped"}

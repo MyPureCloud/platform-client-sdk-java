@@ -532,7 +532,7 @@ try {
 
 
 
-> [ProgramsEntityListing](ProgramsEntityListing.html) getSpeechandtextanalyticsPrograms(nextPage, pageSize)
+> [ProgramsEntityListing](ProgramsEntityListing.html) getSpeechandtextanalyticsPrograms(nextPage, pageSize, state)
 
 Get the list of Speech & Text Analytics programs
 
@@ -566,8 +566,9 @@ Configuration.setDefaultApiClient(apiClient);
 SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String nextPage = "nextPage_example"; // String | The key for listing the next page
 Integer pageSize = 20; // Integer | The page size for the listing
+String state = "state_example"; // String | Program state. Defaults to Latest
 try {
-    ProgramsEntityListing result = apiInstance.getSpeechandtextanalyticsPrograms(nextPage, pageSize);
+    ProgramsEntityListing result = apiInstance.getSpeechandtextanalyticsPrograms(nextPage, pageSize, state);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsPrograms");
@@ -582,6 +583,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **nextPage** | **String**| The key for listing the next page | [optional] 
 | **pageSize** | **Integer**| The page size for the listing | [optional] [default to 20] 
+| **state** | **String**| Program state. Defaults to Latest | [optional]<br />**Values**: Latest, Published 
 {: class="table-striped"}
 
 
