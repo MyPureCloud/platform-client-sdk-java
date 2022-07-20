@@ -1213,6 +1213,14 @@ docs/ExternalContactsUnresolvedContactChangedTopicPhoneNumber.md
 docs/ExternalContactsUnresolvedContactChangedTopicTwitterId.md
 docs/ExternalContactsUnresolvedContactChangedTopicWhatsAppId.md
 docs/ExternalDataSource.md
+docs/ExternalMetricDataItem.md
+docs/ExternalMetricDataUnprocessedItem.md
+docs/ExternalMetricDataWriteRequest.md
+docs/ExternalMetricDataWriteResponse.md
+docs/ExternalMetricDefinition.md
+docs/ExternalMetricDefinitionCreateRequest.md
+docs/ExternalMetricDefinitionListing.md
+docs/ExternalMetricDefinitionUpdateRequest.md
 docs/ExternalOrganization.md
 docs/ExternalOrganizationListing.md
 docs/ExternalOrganizationTrustorLink.md
@@ -3280,6 +3288,7 @@ docs/deleteConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/deleteConversationsMessagingSupportedcontentSupportedContentId-example.txt
+docs/deleteEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/deleteExternalcontactsContact-example.txt
 docs/deleteExternalcontactsContactNote-example.txt
 docs/deleteExternalcontactsContactsSchema-example.txt
@@ -3642,6 +3651,8 @@ docs/getDataextensionsLimits-example.txt
 docs/getDate-example.txt
 docs/getDocumentationGknSearch-example.txt
 docs/getDocumentationSearch-example.txt
+docs/getEmployeeperformanceExternalmetricsDefinition-example.txt
+docs/getEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/getExternalcontactsContact-example.txt
 docs/getExternalcontactsContactNote-example.txt
 docs/getExternalcontactsContactNotes-example.txt
@@ -4369,6 +4380,7 @@ docs/patchConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/patchConversationsMessagingSupportedcontentSupportedContentId-example.txt
+docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/patchGeolocationsSettings-example.txt
 docs/patchIntegration-example.txt
 docs/patchIntegrationsAction-example.txt
@@ -4570,6 +4582,8 @@ docs/postConversationsMessagingIntegrationsWhatsapp-example.txt
 docs/postConversationsMessagingSupportedcontent-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
+docs/postEmployeeperformanceExternalmetricsData-example.txt
+docs/postEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/postExternalcontactsBulkContacts-example.txt
 docs/postExternalcontactsBulkContactsAdd-example.txt
 docs/postExternalcontactsBulkContactsRemove-example.txt
@@ -5251,6 +5265,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingInt
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingSupportedcontentSupportedContentIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteEmployeeperformanceExternalmetricsDefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsContactNoteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsContactRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsContactsSchemaRequest.java
@@ -5613,6 +5628,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsLimitsRequest.
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDocumentationGknSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDocumentationSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetEmployeeperformanceExternalmetricsDefinitionRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetEmployeeperformanceExternalmetricsDefinitionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactNoteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactNotesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactRequest.java
@@ -6340,6 +6357,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingInte
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingSupportedcontentSupportedContentIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchEmployeeperformanceExternalmetricsDefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchGeolocationsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchIntegrationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchIntegrationsActionDraftRequest.java
@@ -6541,6 +6559,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingInteg
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingSupportedcontentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationGknSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostEmployeeperformanceExternalmetricsDataRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostEmployeeperformanceExternalmetricsDefinitionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkContactsAddRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkContactsRemoveRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkContactsRequest.java
@@ -8234,6 +8254,14 @@ src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChan
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicTwitterId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicWhatsAppId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalDataSource.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDataItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDataUnprocessedItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDataWriteRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDataWriteResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDefinition.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDefinitionCreateRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDefinitionListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDefinitionUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganization.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganizationListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganizationTrustorLink.java

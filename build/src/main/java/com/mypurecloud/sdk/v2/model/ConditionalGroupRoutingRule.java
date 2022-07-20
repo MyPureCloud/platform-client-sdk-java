@@ -129,14 +129,14 @@ public class ConditionalGroupRoutingRule  implements Serializable {
 
   
   /**
-   * The queue being evaluated for this rule.  For rule 1, this is always the current queue.
+   * The queue being evaluated for this rule.  For rule 1, this is always the current queue, so should not be specified.
    **/
   public ConditionalGroupRoutingRule queue(DomainEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The queue being evaluated for this rule.  For rule 1, this is always the current queue.")
+  @ApiModelProperty(example = "null", value = "The queue being evaluated for this rule.  For rule 1, this is always the current queue, so should not be specified.")
   @JsonProperty("queue")
   public DomainEntityRef getQueue() {
     return queue;
@@ -219,14 +219,14 @@ public class ConditionalGroupRoutingRule  implements Serializable {
 
 
   /**
-   * The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule
+   * The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule.  For the final rule, this is ignored, so need not be specified.
    **/
   public ConditionalGroupRoutingRule waitSeconds(Integer waitSeconds) {
     this.waitSeconds = waitSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule")
+  @ApiModelProperty(example = "null", value = "The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule.  For the final rule, this is ignored, so need not be specified.")
   @JsonProperty("waitSeconds")
   public Integer getWaitSeconds() {
     return waitSeconds;

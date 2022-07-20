@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Actions;
 import com.mypurecloud.sdk.v2.model.ExpansionCriterium;
+import com.mypurecloud.sdk.v2.model.MemberGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class Ring  implements Serializable {
   
   private List<ExpansionCriterium> expansionCriteria = new ArrayList<ExpansionCriterium>();
   private Actions actions = null;
+  private List<MemberGroup> memberGroups = new ArrayList<MemberGroup>();
 
   
   /**
@@ -65,6 +67,24 @@ public class Ring  implements Serializable {
   }
 
 
+  /**
+   * The groups of agents associated with the ring, if any.  Ring membership will update to match group membership changes.
+   **/
+  public Ring memberGroups(List<MemberGroup> memberGroups) {
+    this.memberGroups = memberGroups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The groups of agents associated with the ring, if any.  Ring membership will update to match group membership changes.")
+  @JsonProperty("memberGroups")
+  public List<MemberGroup> getMemberGroups() {
+    return memberGroups;
+  }
+  public void setMemberGroups(List<MemberGroup> memberGroups) {
+    this.memberGroups = memberGroups;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -76,12 +96,13 @@ public class Ring  implements Serializable {
     Ring ring = (Ring) o;
 
     return Objects.equals(this.expansionCriteria, ring.expansionCriteria) &&
-            Objects.equals(this.actions, ring.actions);
+            Objects.equals(this.actions, ring.actions) &&
+            Objects.equals(this.memberGroups, ring.memberGroups);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(expansionCriteria, actions);
+    return Objects.hash(expansionCriteria, actions, memberGroups);
   }
 
   @Override
@@ -91,6 +112,7 @@ public class Ring  implements Serializable {
     
     sb.append("    expansionCriteria: ").append(toIndentedString(expansionCriteria)).append("\n");
     sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+    sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");
     sb.append("}");
     return sb.toString();
   }

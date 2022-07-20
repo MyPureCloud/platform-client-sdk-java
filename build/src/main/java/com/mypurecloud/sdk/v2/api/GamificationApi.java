@@ -18,6 +18,12 @@ import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
 import com.mypurecloud.sdk.v2.model.CreateMetric;
 import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDataWriteRequest;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDataWriteResponse;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDefinition;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionCreateRequest;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionListing;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionUpdateRequest;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricResponse;
@@ -43,6 +49,9 @@ import com.mypurecloud.sdk.v2.model.WorkdayPointsTrend;
 import com.mypurecloud.sdk.v2.model.WorkdayValuesTrend;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteEmployeeperformanceExternalmetricsDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardAllBestpointsRequest;
@@ -82,6 +91,9 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsValuesTrendsR
 import com.mypurecloud.sdk.v2.api.request.GetGamificationStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchEmployeeperformanceExternalmetricsDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDataRequest;
+import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
@@ -110,6 +122,241 @@ public class GamificationApi {
 
   public GamificationApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete an External Metric Definition
+   * 
+   * @param metricId Specifies the External Metric Definition ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteEmployeeperformanceExternalmetricsDefinition(String metricId) throws IOException, ApiException {
+     deleteEmployeeperformanceExternalmetricsDefinition(createDeleteEmployeeperformanceExternalmetricsDefinitionRequest(metricId));
+  }
+
+  /**
+   * Delete an External Metric Definition
+   * 
+   * @param metricId Specifies the External Metric Definition ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteEmployeeperformanceExternalmetricsDefinitionWithHttpInfo(String metricId) throws IOException {
+    return deleteEmployeeperformanceExternalmetricsDefinition(createDeleteEmployeeperformanceExternalmetricsDefinitionRequest(metricId).withHttpInfo());
+  }
+
+  private DeleteEmployeeperformanceExternalmetricsDefinitionRequest createDeleteEmployeeperformanceExternalmetricsDefinitionRequest(String metricId) {
+    return DeleteEmployeeperformanceExternalmetricsDefinitionRequest.builder()
+            .withMetricId(metricId)
+
+            .build();
+  }
+
+  /**
+   * Delete an External Metric Definition
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteEmployeeperformanceExternalmetricsDefinition(DeleteEmployeeperformanceExternalmetricsDefinitionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an External Metric Definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteEmployeeperformanceExternalmetricsDefinition(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an External Metric Definition
+   * 
+   * @param metricId Specifies the External Metric Definition ID (required)
+   * @return ExternalMetricDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalMetricDefinition getEmployeeperformanceExternalmetricsDefinition(String metricId) throws IOException, ApiException {
+    return  getEmployeeperformanceExternalmetricsDefinition(createGetEmployeeperformanceExternalmetricsDefinitionRequest(metricId));
+  }
+
+  /**
+   * Get an External Metric Definition
+   * 
+   * @param metricId Specifies the External Metric Definition ID (required)
+   * @return ExternalMetricDefinition
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalMetricDefinition> getEmployeeperformanceExternalmetricsDefinitionWithHttpInfo(String metricId) throws IOException {
+    return getEmployeeperformanceExternalmetricsDefinition(createGetEmployeeperformanceExternalmetricsDefinitionRequest(metricId).withHttpInfo());
+  }
+
+  private GetEmployeeperformanceExternalmetricsDefinitionRequest createGetEmployeeperformanceExternalmetricsDefinitionRequest(String metricId) {
+    return GetEmployeeperformanceExternalmetricsDefinitionRequest.builder()
+            .withMetricId(metricId)
+
+            .build();
+  }
+
+  /**
+   * Get an External Metric Definition
+   * 
+   * @param request The request object
+   * @return ExternalMetricDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalMetricDefinition getEmployeeperformanceExternalmetricsDefinition(GetEmployeeperformanceExternalmetricsDefinitionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalMetricDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalMetricDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an External Metric Definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalMetricDefinition> getEmployeeperformanceExternalmetricsDefinition(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalMetricDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return ExternalMetricDefinitionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalMetricDefinitionListing getEmployeeperformanceExternalmetricsDefinitions(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getEmployeeperformanceExternalmetricsDefinitions(createGetEmployeeperformanceExternalmetricsDefinitionsRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return ExternalMetricDefinitionListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalMetricDefinitionListing> getEmployeeperformanceExternalmetricsDefinitionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getEmployeeperformanceExternalmetricsDefinitions(createGetEmployeeperformanceExternalmetricsDefinitionsRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetEmployeeperformanceExternalmetricsDefinitionsRequest createGetEmployeeperformanceExternalmetricsDefinitionsRequest(Integer pageSize, Integer pageNumber) {
+    return GetEmployeeperformanceExternalmetricsDefinitionsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+   * 
+   * @param request The request object
+   * @return ExternalMetricDefinitionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalMetricDefinitionListing getEmployeeperformanceExternalmetricsDefinitions(GetEmployeeperformanceExternalmetricsDefinitionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalMetricDefinitionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalMetricDefinitionListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalMetricDefinitionListing> getEmployeeperformanceExternalmetricsDefinitions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalMetricDefinitionListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalMetricDefinitionListing> response = (ApiResponse<ExternalMetricDefinitionListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalMetricDefinitionListing> response = (ApiResponse<ExternalMetricDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3386,6 +3633,244 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GetTemplatesResponse> response = (ApiResponse<GetTemplatesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update External Metric Definition
+   * 
+   * @param metricId Specifies the metric definition ID (required)
+   * @param body The External Metric Definition parameters to be updated (required)
+   * @return ExternalMetricDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalMetricDefinition patchEmployeeperformanceExternalmetricsDefinition(String metricId, ExternalMetricDefinitionUpdateRequest body) throws IOException, ApiException {
+    return  patchEmployeeperformanceExternalmetricsDefinition(createPatchEmployeeperformanceExternalmetricsDefinitionRequest(metricId, body));
+  }
+
+  /**
+   * Update External Metric Definition
+   * 
+   * @param metricId Specifies the metric definition ID (required)
+   * @param body The External Metric Definition parameters to be updated (required)
+   * @return ExternalMetricDefinition
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalMetricDefinition> patchEmployeeperformanceExternalmetricsDefinitionWithHttpInfo(String metricId, ExternalMetricDefinitionUpdateRequest body) throws IOException {
+    return patchEmployeeperformanceExternalmetricsDefinition(createPatchEmployeeperformanceExternalmetricsDefinitionRequest(metricId, body).withHttpInfo());
+  }
+
+  private PatchEmployeeperformanceExternalmetricsDefinitionRequest createPatchEmployeeperformanceExternalmetricsDefinitionRequest(String metricId, ExternalMetricDefinitionUpdateRequest body) {
+    return PatchEmployeeperformanceExternalmetricsDefinitionRequest.builder()
+            .withMetricId(metricId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update External Metric Definition
+   * 
+   * @param request The request object
+   * @return ExternalMetricDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalMetricDefinition patchEmployeeperformanceExternalmetricsDefinition(PatchEmployeeperformanceExternalmetricsDefinitionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalMetricDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalMetricDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update External Metric Definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalMetricDefinition> patchEmployeeperformanceExternalmetricsDefinition(ApiRequest<ExternalMetricDefinitionUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalMetricDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Write External Metric Data
+   * 
+   * @param body The External Metric Data to be added (optional)
+   * @return ExternalMetricDataWriteResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalMetricDataWriteResponse postEmployeeperformanceExternalmetricsData(ExternalMetricDataWriteRequest body) throws IOException, ApiException {
+    return  postEmployeeperformanceExternalmetricsData(createPostEmployeeperformanceExternalmetricsDataRequest(body));
+  }
+
+  /**
+   * Write External Metric Data
+   * 
+   * @param body The External Metric Data to be added (optional)
+   * @return ExternalMetricDataWriteResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalMetricDataWriteResponse> postEmployeeperformanceExternalmetricsDataWithHttpInfo(ExternalMetricDataWriteRequest body) throws IOException {
+    return postEmployeeperformanceExternalmetricsData(createPostEmployeeperformanceExternalmetricsDataRequest(body).withHttpInfo());
+  }
+
+  private PostEmployeeperformanceExternalmetricsDataRequest createPostEmployeeperformanceExternalmetricsDataRequest(ExternalMetricDataWriteRequest body) {
+    return PostEmployeeperformanceExternalmetricsDataRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Write External Metric Data
+   * 
+   * @param request The request object
+   * @return ExternalMetricDataWriteResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalMetricDataWriteResponse postEmployeeperformanceExternalmetricsData(PostEmployeeperformanceExternalmetricsDataRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalMetricDataWriteResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalMetricDataWriteResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Write External Metric Data
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalMetricDataWriteResponse> postEmployeeperformanceExternalmetricsData(ApiRequest<ExternalMetricDataWriteRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalMetricDataWriteResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalMetricDataWriteResponse> response = (ApiResponse<ExternalMetricDataWriteResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalMetricDataWriteResponse> response = (ApiResponse<ExternalMetricDataWriteResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create External Metric Definition
+   * 
+   * @param body The External Metric Definition to be created (optional)
+   * @return ExternalMetricDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalMetricDefinition postEmployeeperformanceExternalmetricsDefinitions(ExternalMetricDefinitionCreateRequest body) throws IOException, ApiException {
+    return  postEmployeeperformanceExternalmetricsDefinitions(createPostEmployeeperformanceExternalmetricsDefinitionsRequest(body));
+  }
+
+  /**
+   * Create External Metric Definition
+   * 
+   * @param body The External Metric Definition to be created (optional)
+   * @return ExternalMetricDefinition
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalMetricDefinition> postEmployeeperformanceExternalmetricsDefinitionsWithHttpInfo(ExternalMetricDefinitionCreateRequest body) throws IOException {
+    return postEmployeeperformanceExternalmetricsDefinitions(createPostEmployeeperformanceExternalmetricsDefinitionsRequest(body).withHttpInfo());
+  }
+
+  private PostEmployeeperformanceExternalmetricsDefinitionsRequest createPostEmployeeperformanceExternalmetricsDefinitionsRequest(ExternalMetricDefinitionCreateRequest body) {
+    return PostEmployeeperformanceExternalmetricsDefinitionsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create External Metric Definition
+   * 
+   * @param request The request object
+   * @return ExternalMetricDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalMetricDefinition postEmployeeperformanceExternalmetricsDefinitions(PostEmployeeperformanceExternalmetricsDefinitionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalMetricDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalMetricDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create External Metric Definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalMetricDefinition> postEmployeeperformanceExternalmetricsDefinitions(ApiRequest<ExternalMetricDefinitionCreateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalMetricDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

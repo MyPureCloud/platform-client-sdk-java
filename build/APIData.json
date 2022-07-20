@@ -9936,6 +9936,52 @@
     "return": "FaxDocument",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.FaxApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.FaxDocument;\n\npublic class ExampleputFaxDocument {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        FaxApi apiInstance = new FaxApi();\n        String documentId = \"documentId_example\"; // String | Document ID\nFaxDocument body = new FaxDocument(); // FaxDocument | Document\n        try { \n            // Update a fax document.\n            FaxDocument result = apiInstance.putFaxDocument(documentId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling FaxApi#putFaxDocument\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deleteemployeeperformanceexternalmetricsdefinition": {
+    "operationId": "deleteemployeeperformanceexternalmetricsdefinition",
+    "functionName": "deleteEmployeeperformanceExternalmetricsDefinition",
+    "signature": "deleteEmployeeperformanceExternalmetricsDefinition(metricId)",
+    "parameters": [
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteEmployeeperformanceExternalmetricsDefinition {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String metricId = \"metricId_example\"; // String | Specifies the External Metric Definition ID\n        try { \n            // Delete an External Metric Definition\n            apiInstance.deleteEmployeeperformanceExternalmetricsDefinition(metricId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#deleteEmployeeperformanceExternalmetricsDefinition\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getemployeeperformanceexternalmetricsdefinition": {
+    "operationId": "getemployeeperformanceexternalmetricsdefinition",
+    "functionName": "getEmployeeperformanceExternalmetricsDefinition",
+    "signature": "getEmployeeperformanceExternalmetricsDefinition(metricId)",
+    "parameters": [
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ExternalMetricDefinition",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExternalMetricDefinition;\n\npublic class ExamplegetEmployeeperformanceExternalmetricsDefinition {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String metricId = \"metricId_example\"; // String | Specifies the External Metric Definition ID\n        try { \n            // Get an External Metric Definition\n            ExternalMetricDefinition result = apiInstance.getEmployeeperformanceExternalmetricsDefinition(metricId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getEmployeeperformanceExternalmetricsDefinition\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getemployeeperformanceexternalmetricsdefinitions": {
+    "operationId": "getemployeeperformanceexternalmetricsdefinitions",
+    "functionName": "getEmployeeperformanceExternalmetricsDefinitions",
+    "signature": "getEmployeeperformanceExternalmetricsDefinitions(pageSize, pageNumber)",
+    "parameters": [
+      {
+        "name": "pageSize",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Integer",
+        "required": "false"
+      }
+    ],
+    "return": "ExternalMetricDefinitionListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionListing;\n\npublic class ExamplegetEmployeeperformanceExternalmetricsDefinitions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        Integer pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\n        try { \n            // Get a list of External Metric Definitions of an organization, sorted by name in ascending order\n            ExternalMetricDefinitionListing result = apiInstance.getEmployeeperformanceExternalmetricsDefinitions(pageSize, pageNumber);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getEmployeeperformanceExternalmetricsDefinitions\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "getgamificationleaderboard": {
     "operationId": "getgamificationleaderboard",
     "functionName": "getGamificationLeaderboard",
@@ -10764,6 +10810,53 @@
     "signature": "getGamificationTemplates()",
     "return": "GetTemplatesResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;\n\npublic class ExamplegetGamificationTemplates {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n                try { \n            // All objective templates\n            GetTemplatesResponse result = apiInstance.getGamificationTemplates();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationTemplates\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchemployeeperformanceexternalmetricsdefinition": {
+    "operationId": "patchemployeeperformanceexternalmetricsdefinition",
+    "functionName": "patchEmployeeperformanceExternalmetricsDefinition",
+    "signature": "patchEmployeeperformanceExternalmetricsDefinition(metricId, body)",
+    "parameters": [
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ExternalMetricDefinitionUpdateRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ExternalMetricDefinition",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExternalMetricDefinition;import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionUpdateRequest;\n\npublic class ExamplepatchEmployeeperformanceExternalmetricsDefinition {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String metricId = \"metricId_example\"; // String | Specifies the metric definition ID\nExternalMetricDefinitionUpdateRequest body = new ExternalMetricDefinitionUpdateRequest(); // ExternalMetricDefinitionUpdateRequest | The External Metric Definition parameters to be updated\n        try { \n            // Update External Metric Definition\n            ExternalMetricDefinition result = apiInstance.patchEmployeeperformanceExternalmetricsDefinition(metricId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#patchEmployeeperformanceExternalmetricsDefinition\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postemployeeperformanceexternalmetricsdata": {
+    "operationId": "postemployeeperformanceexternalmetricsdata",
+    "functionName": "postEmployeeperformanceExternalmetricsData",
+    "signature": "postEmployeeperformanceExternalmetricsData(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ExternalMetricDataWriteRequest",
+        "required": "false"
+      }
+    ],
+    "return": "ExternalMetricDataWriteResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ExternalMetricDataWriteRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExternalMetricDataWriteResponse;\n\npublic class ExamplepostEmployeeperformanceExternalmetricsData {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        ExternalMetricDataWriteRequest body = new ExternalMetricDataWriteRequest(); // ExternalMetricDataWriteRequest | The External Metric Data to be added\n        try { \n            // Write External Metric Data\n            ExternalMetricDataWriteResponse result = apiInstance.postEmployeeperformanceExternalmetricsData(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#postEmployeeperformanceExternalmetricsData\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postemployeeperformanceexternalmetricsdefinitions": {
+    "operationId": "postemployeeperformanceexternalmetricsdefinitions",
+    "functionName": "postEmployeeperformanceExternalmetricsDefinitions",
+    "signature": "postEmployeeperformanceExternalmetricsDefinitions(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ExternalMetricDefinitionCreateRequest",
+        "required": "false"
+      }
+    ],
+    "return": "ExternalMetricDefinition",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionCreateRequest;import com.mypurecloud.sdk.v2.model.ExternalMetricDefinition;\n\npublic class ExamplepostEmployeeperformanceExternalmetricsDefinitions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        ExternalMetricDefinitionCreateRequest body = new ExternalMetricDefinitionCreateRequest(); // ExternalMetricDefinitionCreateRequest | The External Metric Definition to be created\n        try { \n            // Create External Metric Definition\n            ExternalMetricDefinition result = apiInstance.postEmployeeperformanceExternalmetricsDefinitions(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#postEmployeeperformanceExternalmetricsDefinitions\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postgamificationmetrics": {
     "operationId": "postgamificationmetrics",

@@ -7,6 +7,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteEmployeeperformanceExternalmetricsDefinition**](GamificationApi.html#deleteEmployeeperformanceExternalmetricsDefinition) | Delete an External Metric Definition |
+| [**getEmployeeperformanceExternalmetricsDefinition**](GamificationApi.html#getEmployeeperformanceExternalmetricsDefinition) | Get an External Metric Definition |
+| [**getEmployeeperformanceExternalmetricsDefinitions**](GamificationApi.html#getEmployeeperformanceExternalmetricsDefinitions) | Get a list of External Metric Definitions of an organization, sorted by name in ascending order |
 | [**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | Leaderboard of the requesting user's division or performance profile |
 | [**getGamificationLeaderboardAll**](GamificationApi.html#getGamificationLeaderboardAll) | Leaderboard by filter type |
 | [**getGamificationLeaderboardAllBestpoints**](GamificationApi.html#getGamificationLeaderboardAllBestpoints) | Best Points by division or performance profile |
@@ -46,6 +49,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGamificationStatus**](GamificationApi.html#getGamificationStatus) | Gamification activation status |
 | [**getGamificationTemplate**](GamificationApi.html#getGamificationTemplate) | Objective template by id |
 | [**getGamificationTemplates**](GamificationApi.html#getGamificationTemplates) | All objective templates |
+| [**patchEmployeeperformanceExternalmetricsDefinition**](GamificationApi.html#patchEmployeeperformanceExternalmetricsDefinition) | Update External Metric Definition |
+| [**postEmployeeperformanceExternalmetricsData**](GamificationApi.html#postEmployeeperformanceExternalmetricsData) | Write External Metric Data |
+| [**postEmployeeperformanceExternalmetricsDefinitions**](GamificationApi.html#postEmployeeperformanceExternalmetricsDefinitions) | Create External Metric Definition |
 | [**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | Creates a gamified metric with a given metric definition and metric objective |
 | [**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | Activate a performance profile |
 | [**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | Deactivate a performance profile |
@@ -59,6 +65,190 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putGamificationProfileMetric**](GamificationApi.html#putGamificationProfileMetric) | Updates a metric in performance profile |
 | [**putGamificationStatus**](GamificationApi.html#putGamificationStatus) | Update gamification activation status |
 {: class="table-striped"}
+
+<a name="deleteEmployeeperformanceExternalmetricsDefinition"></a>
+
+# **deleteEmployeeperformanceExternalmetricsDefinition**
+
+
+
+> Void deleteEmployeeperformanceExternalmetricsDefinition(metricId)
+
+Delete an External Metric Definition
+
+Wraps DELETE /api/v2/employeeperformance/externalmetrics/definitions/{metricId}  
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricDefinition:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String metricId = "metricId_example"; // String | Specifies the External Metric Definition ID
+try {
+    apiInstance.deleteEmployeeperformanceExternalmetricsDefinition(metricId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#deleteEmployeeperformanceExternalmetricsDefinition");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **metricId** | **String**| Specifies the External Metric Definition ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="getEmployeeperformanceExternalmetricsDefinition"></a>
+
+# **getEmployeeperformanceExternalmetricsDefinition**
+
+
+
+> [ExternalMetricDefinition](ExternalMetricDefinition.html) getEmployeeperformanceExternalmetricsDefinition(metricId)
+
+Get an External Metric Definition
+
+Wraps GET /api/v2/employeeperformance/externalmetrics/definitions/{metricId}  
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricDefinition:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String metricId = "metricId_example"; // String | Specifies the External Metric Definition ID
+try {
+    ExternalMetricDefinition result = apiInstance.getEmployeeperformanceExternalmetricsDefinition(metricId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getEmployeeperformanceExternalmetricsDefinition");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **metricId** | **String**| Specifies the External Metric Definition ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalMetricDefinition**](ExternalMetricDefinition.html)
+
+<a name="getEmployeeperformanceExternalmetricsDefinitions"></a>
+
+# **getEmployeeperformanceExternalmetricsDefinitions**
+
+
+
+> [ExternalMetricDefinitionListing](ExternalMetricDefinitionListing.html) getEmployeeperformanceExternalmetricsDefinitions(pageSize, pageNumber)
+
+Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+
+Wraps GET /api/v2/employeeperformance/externalmetrics/definitions  
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricDefinition:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    ExternalMetricDefinitionListing result = apiInstance.getEmployeeperformanceExternalmetricsDefinitions(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getEmployeeperformanceExternalmetricsDefinitions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalMetricDefinitionListing**](ExternalMetricDefinitionListing.html)
 
 <a name="getGamificationLeaderboard"></a>
 
@@ -2567,6 +2757,191 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**GetTemplatesResponse**](GetTemplatesResponse.html)
+
+<a name="patchEmployeeperformanceExternalmetricsDefinition"></a>
+
+# **patchEmployeeperformanceExternalmetricsDefinition**
+
+
+
+> [ExternalMetricDefinition](ExternalMetricDefinition.html) patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
+
+Update External Metric Definition
+
+Wraps PATCH /api/v2/employeeperformance/externalmetrics/definitions/{metricId}  
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricDefinition:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String metricId = "metricId_example"; // String | Specifies the metric definition ID
+ExternalMetricDefinitionUpdateRequest body = new ExternalMetricDefinitionUpdateRequest(); // ExternalMetricDefinitionUpdateRequest | The External Metric Definition parameters to be updated
+try {
+    ExternalMetricDefinition result = apiInstance.patchEmployeeperformanceExternalmetricsDefinition(metricId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#patchEmployeeperformanceExternalmetricsDefinition");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **metricId** | **String**| Specifies the metric definition ID | 
+| **body** | [**ExternalMetricDefinitionUpdateRequest**](ExternalMetricDefinitionUpdateRequest.html)| The External Metric Definition parameters to be updated | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalMetricDefinition**](ExternalMetricDefinition.html)
+
+<a name="postEmployeeperformanceExternalmetricsData"></a>
+
+# **postEmployeeperformanceExternalmetricsData**
+
+
+
+> [ExternalMetricDataWriteResponse](ExternalMetricDataWriteResponse.html) postEmployeeperformanceExternalmetricsData(body)
+
+Write External Metric Data
+
+Wraps POST /api/v2/employeeperformance/externalmetrics/data  
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricData:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+ExternalMetricDataWriteRequest body = new ExternalMetricDataWriteRequest(); // ExternalMetricDataWriteRequest | The External Metric Data to be added
+try {
+    ExternalMetricDataWriteResponse result = apiInstance.postEmployeeperformanceExternalmetricsData(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#postEmployeeperformanceExternalmetricsData");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ExternalMetricDataWriteRequest**](ExternalMetricDataWriteRequest.html)| The External Metric Data to be added | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalMetricDataWriteResponse**](ExternalMetricDataWriteResponse.html)
+
+<a name="postEmployeeperformanceExternalmetricsDefinitions"></a>
+
+# **postEmployeeperformanceExternalmetricsDefinitions**
+
+
+
+> [ExternalMetricDefinition](ExternalMetricDefinition.html) postEmployeeperformanceExternalmetricsDefinitions(body)
+
+Create External Metric Definition
+
+Wraps POST /api/v2/employeeperformance/externalmetrics/definitions  
+
+Requires ANY permissions: 
+
+* employeePerformance:externalMetricDefinition:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+ExternalMetricDefinitionCreateRequest body = new ExternalMetricDefinitionCreateRequest(); // ExternalMetricDefinitionCreateRequest | The External Metric Definition to be created
+try {
+    ExternalMetricDefinition result = apiInstance.postEmployeeperformanceExternalmetricsDefinitions(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#postEmployeeperformanceExternalmetricsDefinitions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ExternalMetricDefinitionCreateRequest**](ExternalMetricDefinitionCreateRequest.html)| The External Metric Definition to be created | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalMetricDefinition**](ExternalMetricDefinition.html)
 
 <a name="postGamificationMetrics"></a>
 

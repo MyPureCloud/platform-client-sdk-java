@@ -21,6 +21,12 @@ import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
 import com.mypurecloud.sdk.v2.model.CreateMetric;
 import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDataWriteRequest;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDataWriteResponse;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDefinition;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionCreateRequest;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionListing;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionUpdateRequest;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricResponse;
@@ -46,6 +52,9 @@ import com.mypurecloud.sdk.v2.model.WorkdayPointsTrend;
 import com.mypurecloud.sdk.v2.model.WorkdayValuesTrend;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteEmployeeperformanceExternalmetricsDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardAllBestpointsRequest;
@@ -85,6 +94,9 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsValuesTrendsR
 import com.mypurecloud.sdk.v2.api.request.GetGamificationStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchEmployeeperformanceExternalmetricsDefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDataRequest;
+import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
@@ -114,6 +126,231 @@ public class GamificationApiAsync {
 
   public GamificationApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete an External Metric Definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteEmployeeperformanceExternalmetricsDefinitionAsync(DeleteEmployeeperformanceExternalmetricsDefinitionRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an External Metric Definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteEmployeeperformanceExternalmetricsDefinitionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an External Metric Definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalMetricDefinition> getEmployeeperformanceExternalmetricsDefinitionAsync(GetEmployeeperformanceExternalmetricsDefinitionRequest request, final AsyncApiCallback<ExternalMetricDefinition> callback) {
+    try {
+      final SettableFuture<ExternalMetricDefinition> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalMetricDefinition>() {}, new AsyncApiCallback<ApiResponse<ExternalMetricDefinition>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalMetricDefinition> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an External Metric Definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalMetricDefinition>> getEmployeeperformanceExternalmetricsDefinitionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalMetricDefinition>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalMetricDefinition>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalMetricDefinition>() {}, new AsyncApiCallback<ApiResponse<ExternalMetricDefinition>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalMetricDefinition> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalMetricDefinitionListing> getEmployeeperformanceExternalmetricsDefinitionsAsync(GetEmployeeperformanceExternalmetricsDefinitionsRequest request, final AsyncApiCallback<ExternalMetricDefinitionListing> callback) {
+    try {
+      final SettableFuture<ExternalMetricDefinitionListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalMetricDefinitionListing>() {}, new AsyncApiCallback<ApiResponse<ExternalMetricDefinitionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalMetricDefinitionListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalMetricDefinitionListing>> getEmployeeperformanceExternalmetricsDefinitionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalMetricDefinitionListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalMetricDefinitionListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalMetricDefinitionListing>() {}, new AsyncApiCallback<ApiResponse<ExternalMetricDefinitionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalMetricDefinitionListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalMetricDefinitionListing> response = (ApiResponse<ExternalMetricDefinitionListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalMetricDefinitionListing> response = (ApiResponse<ExternalMetricDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
@@ -3030,6 +3267,231 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<GetTemplatesResponse> response = (ApiResponse<GetTemplatesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update External Metric Definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalMetricDefinition> patchEmployeeperformanceExternalmetricsDefinitionAsync(PatchEmployeeperformanceExternalmetricsDefinitionRequest request, final AsyncApiCallback<ExternalMetricDefinition> callback) {
+    try {
+      final SettableFuture<ExternalMetricDefinition> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalMetricDefinition>() {}, new AsyncApiCallback<ApiResponse<ExternalMetricDefinition>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalMetricDefinition> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update External Metric Definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalMetricDefinition>> patchEmployeeperformanceExternalmetricsDefinitionAsync(ApiRequest<ExternalMetricDefinitionUpdateRequest> request, final AsyncApiCallback<ApiResponse<ExternalMetricDefinition>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalMetricDefinition>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalMetricDefinition>() {}, new AsyncApiCallback<ApiResponse<ExternalMetricDefinition>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalMetricDefinition> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Write External Metric Data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalMetricDataWriteResponse> postEmployeeperformanceExternalmetricsDataAsync(PostEmployeeperformanceExternalmetricsDataRequest request, final AsyncApiCallback<ExternalMetricDataWriteResponse> callback) {
+    try {
+      final SettableFuture<ExternalMetricDataWriteResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalMetricDataWriteResponse>() {}, new AsyncApiCallback<ApiResponse<ExternalMetricDataWriteResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalMetricDataWriteResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Write External Metric Data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalMetricDataWriteResponse>> postEmployeeperformanceExternalmetricsDataAsync(ApiRequest<ExternalMetricDataWriteRequest> request, final AsyncApiCallback<ApiResponse<ExternalMetricDataWriteResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalMetricDataWriteResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalMetricDataWriteResponse>() {}, new AsyncApiCallback<ApiResponse<ExternalMetricDataWriteResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalMetricDataWriteResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalMetricDataWriteResponse> response = (ApiResponse<ExternalMetricDataWriteResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalMetricDataWriteResponse> response = (ApiResponse<ExternalMetricDataWriteResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create External Metric Definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExternalMetricDefinition> postEmployeeperformanceExternalmetricsDefinitionsAsync(PostEmployeeperformanceExternalmetricsDefinitionsRequest request, final AsyncApiCallback<ExternalMetricDefinition> callback) {
+    try {
+      final SettableFuture<ExternalMetricDefinition> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalMetricDefinition>() {}, new AsyncApiCallback<ApiResponse<ExternalMetricDefinition>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalMetricDefinition> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create External Metric Definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExternalMetricDefinition>> postEmployeeperformanceExternalmetricsDefinitionsAsync(ApiRequest<ExternalMetricDefinitionCreateRequest> request, final AsyncApiCallback<ApiResponse<ExternalMetricDefinition>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExternalMetricDefinition>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalMetricDefinition>() {}, new AsyncApiCallback<ApiResponse<ExternalMetricDefinition>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalMetricDefinition> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

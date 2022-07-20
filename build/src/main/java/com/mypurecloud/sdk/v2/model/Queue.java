@@ -13,10 +13,12 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AcwSettings;
+import com.mypurecloud.sdk.v2.model.AgentOwnedRouting;
 import com.mypurecloud.sdk.v2.model.Bullseye;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.MediaSetting;
+import com.mypurecloud.sdk.v2.model.MemberGroup;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
 import com.mypurecloud.sdk.v2.model.QueueMessagingAddresses;
 import com.mypurecloud.sdk.v2.model.RoutingRule;
@@ -100,6 +102,7 @@ public class Queue  implements Serializable {
     }
   }
   private SkillEvaluationMethodEnum skillEvaluationMethod = null;
+  private List<MemberGroup> memberGroups = new ArrayList<MemberGroup>();
   private DomainEntityRef queueFlow = null;
   private DomainEntityRef emailInQueueFlow = null;
   private DomainEntityRef messageInQueueFlow = null;
@@ -108,6 +111,7 @@ public class Queue  implements Serializable {
   private Boolean autoAnswerOnly = null;
   private Boolean enableTranscription = null;
   private Boolean enableManualAssignment = null;
+  private AgentOwnedRouting agentOwnedRouting = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
   private Map<String, Script> defaultScripts = null;
@@ -361,6 +365,24 @@ public class Queue  implements Serializable {
 
 
   /**
+   * The groups of agents associated with the queue, if any.  Queue membership will update to match group membership changes.
+   **/
+  public Queue memberGroups(List<MemberGroup> memberGroups) {
+    this.memberGroups = memberGroups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The groups of agents associated with the queue, if any.  Queue membership will update to match group membership changes.")
+  @JsonProperty("memberGroups")
+  public List<MemberGroup> getMemberGroups() {
+    return memberGroups;
+  }
+  public void setMemberGroups(List<MemberGroup> memberGroups) {
+    this.memberGroups = memberGroups;
+  }
+
+
+  /**
    * The in-queue flow to use for call conversations waiting in queue.
    **/
   public Queue queueFlow(DomainEntityRef queueFlow) {
@@ -505,6 +527,24 @@ public class Queue  implements Serializable {
 
 
   /**
+   * The Agent Owned Routing settings for the queue
+   **/
+  public Queue agentOwnedRouting(AgentOwnedRouting agentOwnedRouting) {
+    this.agentOwnedRouting = agentOwnedRouting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Agent Owned Routing settings for the queue")
+  @JsonProperty("agentOwnedRouting")
+  public AgentOwnedRouting getAgentOwnedRouting() {
+    return agentOwnedRouting;
+  }
+  public void setAgentOwnedRouting(AgentOwnedRouting agentOwnedRouting) {
+    this.agentOwnedRouting = agentOwnedRouting;
+  }
+
+
+  /**
    * The name to use for caller identification for outbound calls from this queue.
    **/
   public Queue callingPartyName(String callingPartyName) {
@@ -594,14 +634,14 @@ public class Queue  implements Serializable {
 
 
   /**
-   * The ID of the external Queue
+   * The ID of an associated external queue.
    **/
   public Queue peerId(String peerId) {
     this.peerId = peerId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the external Queue")
+  @ApiModelProperty(example = "null", value = "The ID of an associated external queue.")
   @JsonProperty("peerId")
   public String getPeerId() {
     return peerId;
@@ -644,6 +684,7 @@ public class Queue  implements Serializable {
             Objects.equals(this.bullseye, queue.bullseye) &&
             Objects.equals(this.acwSettings, queue.acwSettings) &&
             Objects.equals(this.skillEvaluationMethod, queue.skillEvaluationMethod) &&
+            Objects.equals(this.memberGroups, queue.memberGroups) &&
             Objects.equals(this.queueFlow, queue.queueFlow) &&
             Objects.equals(this.emailInQueueFlow, queue.emailInQueueFlow) &&
             Objects.equals(this.messageInQueueFlow, queue.messageInQueueFlow) &&
@@ -652,6 +693,7 @@ public class Queue  implements Serializable {
             Objects.equals(this.autoAnswerOnly, queue.autoAnswerOnly) &&
             Objects.equals(this.enableTranscription, queue.enableTranscription) &&
             Objects.equals(this.enableManualAssignment, queue.enableManualAssignment) &&
+            Objects.equals(this.agentOwnedRouting, queue.agentOwnedRouting) &&
             Objects.equals(this.callingPartyName, queue.callingPartyName) &&
             Objects.equals(this.callingPartyNumber, queue.callingPartyNumber) &&
             Objects.equals(this.defaultScripts, queue.defaultScripts) &&
@@ -663,7 +705,7 @@ public class Queue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, agentOwnedRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, selfUri);
   }
 
   @Override
@@ -687,6 +729,7 @@ public class Queue  implements Serializable {
     sb.append("    bullseye: ").append(toIndentedString(bullseye)).append("\n");
     sb.append("    acwSettings: ").append(toIndentedString(acwSettings)).append("\n");
     sb.append("    skillEvaluationMethod: ").append(toIndentedString(skillEvaluationMethod)).append("\n");
+    sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");
     sb.append("    queueFlow: ").append(toIndentedString(queueFlow)).append("\n");
     sb.append("    emailInQueueFlow: ").append(toIndentedString(emailInQueueFlow)).append("\n");
     sb.append("    messageInQueueFlow: ").append(toIndentedString(messageInQueueFlow)).append("\n");
@@ -695,6 +738,7 @@ public class Queue  implements Serializable {
     sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
     sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");
+    sb.append("    agentOwnedRouting: ").append(toIndentedString(agentOwnedRouting)).append("\n");
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");
     sb.append("    callingPartyNumber: ").append(toIndentedString(callingPartyNumber)).append("\n");
     sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");

@@ -85,8 +85,8 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
   private ImpactEnum impact = null;
   private List<HistoricalAdherenceExceptionInfo> exceptionInfo = new ArrayList<HistoricalAdherenceExceptionInfo>();
   private List<HistoricalAdherenceDayMetrics> dayMetrics = new ArrayList<HistoricalAdherenceDayMetrics>();
+  private Date actualsEndDate = null;
   private List<HistoricalAdherenceActuals> actuals = new ArrayList<HistoricalAdherenceActuals>();
-  private Date actualsEndsDate = null;
 
   
   /**
@@ -234,6 +234,24 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
 
 
   /**
+   * The end date of the actual activities in ISO-8601 format.
+   **/
+  public HistoricalAdherenceQueryResult actualsEndDate(Date actualsEndDate) {
+    this.actualsEndDate = actualsEndDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The end date of the actual activities in ISO-8601 format.")
+  @JsonProperty("actualsEndDate")
+  public Date getActualsEndDate() {
+    return actualsEndDate;
+  }
+  public void setActualsEndDate(Date actualsEndDate) {
+    this.actualsEndDate = actualsEndDate;
+  }
+
+
+  /**
    * List of actual activity with offset for this user
    **/
   public HistoricalAdherenceQueryResult actuals(List<HistoricalAdherenceActuals> actuals) {
@@ -248,24 +266,6 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
   }
   public void setActuals(List<HistoricalAdherenceActuals> actuals) {
     this.actuals = actuals;
-  }
-
-
-  /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public HistoricalAdherenceQueryResult actualsEndsDate(Date actualsEndsDate) {
-    this.actualsEndsDate = actualsEndsDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("actualsEndsDate")
-  public Date getActualsEndsDate() {
-    return actualsEndsDate;
-  }
-  public void setActualsEndsDate(Date actualsEndsDate) {
-    this.actualsEndsDate = actualsEndsDate;
   }
 
 
@@ -287,13 +287,13 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
             Objects.equals(this.impact, historicalAdherenceQueryResult.impact) &&
             Objects.equals(this.exceptionInfo, historicalAdherenceQueryResult.exceptionInfo) &&
             Objects.equals(this.dayMetrics, historicalAdherenceQueryResult.dayMetrics) &&
-            Objects.equals(this.actuals, historicalAdherenceQueryResult.actuals) &&
-            Objects.equals(this.actualsEndsDate, historicalAdherenceQueryResult.actualsEndsDate);
+            Objects.equals(this.actualsEndDate, historicalAdherenceQueryResult.actualsEndDate) &&
+            Objects.equals(this.actuals, historicalAdherenceQueryResult.actuals);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, startDate, endDate, adherencePercentage, conformancePercentage, impact, exceptionInfo, dayMetrics, actuals, actualsEndsDate);
+    return Objects.hash(userId, startDate, endDate, adherencePercentage, conformancePercentage, impact, exceptionInfo, dayMetrics, actualsEndDate, actuals);
   }
 
   @Override
@@ -309,8 +309,8 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     sb.append("    impact: ").append(toIndentedString(impact)).append("\n");
     sb.append("    exceptionInfo: ").append(toIndentedString(exceptionInfo)).append("\n");
     sb.append("    dayMetrics: ").append(toIndentedString(dayMetrics)).append("\n");
+    sb.append("    actualsEndDate: ").append(toIndentedString(actualsEndDate)).append("\n");
     sb.append("    actuals: ").append(toIndentedString(actuals)).append("\n");
-    sb.append("    actualsEndsDate: ").append(toIndentedString(actualsEndsDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
