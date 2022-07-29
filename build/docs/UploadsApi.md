@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**postKnowledgeDocumentuploads**](UploadsApi.html#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
 | [**postLanguageunderstandingMinerUploads**](UploadsApi.html#postLanguageunderstandingMinerUploads) | Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner |
+| [**postUploadsLearningCoverart**](UploadsApi.html#postUploadsLearningCoverart) | Generates pre-signed URL to upload cover art for learning modules |
 | [**postUploadsPublicassetsImages**](UploadsApi.html#postUploadsPublicassetsImages) | Creates presigned url for uploading a public asset image |
 | [**postUploadsRecordings**](UploadsApi.html#postUploadsRecordings) | Creates presigned url for uploading a recording file |
 | [**postUploadsWorkforcemanagementHistoricaldataCsv**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataCsv) | Creates presigned url for uploading WFM historical data file. Requires data in csv format. |
@@ -131,6 +132,67 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **minerId** | **String**| Miner ID | 
 | **body** | **Object**| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
+
+<a name="postUploadsLearningCoverart"></a>
+
+# **postUploadsLearningCoverart**
+
+
+
+> [UploadUrlResponse](UploadUrlResponse.html) postUploadsLearningCoverart(body)
+
+Generates pre-signed URL to upload cover art for learning modules
+
+Wraps POST /api/v2/uploads/learning/coverart  
+
+Requires ALL permissions: 
+
+* learning:coverart:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UploadsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UploadsApi apiInstance = new UploadsApi();
+LearningCoverArtUploadUrlRequest body = new LearningCoverArtUploadUrlRequest(); // LearningCoverArtUploadUrlRequest | query
+try {
+    UploadUrlResponse result = apiInstance.postUploadsLearningCoverart(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UploadsApi#postUploadsLearningCoverart");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**LearningCoverArtUploadUrlRequest**](LearningCoverArtUploadUrlRequest.html)| query | 
 {: class="table-striped"}
 
 

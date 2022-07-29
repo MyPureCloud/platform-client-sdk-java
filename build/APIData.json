@@ -10414,7 +10414,7 @@
   "getgamificationscorecardsprofilemetricusersvaluestrends": {
     "operationId": "getgamificationscorecardsprofilemetricusersvaluestrends",
     "functionName": "getGamificationScorecardsProfileMetricUsersValuesTrends",
-    "signature": "getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone)",
+    "signature": "getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, startWorkday, endWorkday, filterId, referenceWorkday, timeZone)",
     "parameters": [
       {
         "name": "profileId",
@@ -10432,11 +10432,6 @@
         "required": "true"
       },
       {
-        "name": "filterId",
-        "type": "String",
-        "required": "true"
-      },
-      {
         "name": "startWorkday",
         "type": "LocalDate",
         "required": "true"
@@ -10445,6 +10440,11 @@
         "name": "endWorkday",
         "type": "LocalDate",
         "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "false"
       },
       {
         "name": "referenceWorkday",
@@ -10458,7 +10458,7 @@
       }
     ],
     "return": "MetricValueTrendAverage",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;import com.mypurecloud.sdk.v2.model.MetricValueTrendAverage;\n\npublic class ExamplegetGamificationScorecardsProfileMetricUsersValuesTrends {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String profileId = \"profileId_example\"; // String | performanceProfileId\nString metricId = \"metricId_example\"; // String | metricId\nString filterType = \"filterType_example\"; // String | Filter type for the query request.\nString filterId = \"filterId_example\"; // String | ID for the filter type. For example, division Id\nLocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate referenceWorkday = new LocalDate(); // LocalDate | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nString timeZone = \"UTC\"; // String | Timezone for the workday. Defaults to UTC\n        try { \n            // Average performance values trends by metric of a division or a performance profile\n            MetricValueTrendAverage result = apiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationScorecardsProfileMetricUsersValuesTrends\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;import com.mypurecloud.sdk.v2.model.MetricValueTrendAverage;\n\npublic class ExamplegetGamificationScorecardsProfileMetricUsersValuesTrends {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String profileId = \"profileId_example\"; // String | performanceProfileId\nString metricId = \"metricId_example\"; // String | metricId\nString filterType = \"filterType_example\"; // String | Filter type for the query request.\nLocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nString filterId = \"filterId_example\"; // String | ID for the filter type. Only required when filterType is Division.\nLocalDate referenceWorkday = new LocalDate(); // LocalDate | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nString timeZone = \"UTC\"; // String | Timezone for the workday. Defaults to UTC\n        try { \n            // Average performance values trends by metric of a division or a performance profile\n            MetricValueTrendAverage result = apiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, startWorkday, endWorkday, filterId, referenceWorkday, timeZone);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationScorecardsProfileMetricUsersValuesTrends\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getgamificationscorecardsprofilemetricvaluestrends": {
     "operationId": "getgamificationscorecardsprofilemetricvaluestrends",
@@ -15764,6 +15764,20 @@
     ],
     "return": "AssignedLearningModuleDomainEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LearningApi;\nimport com.mypurecloud.sdk.v2.model.AssignedLearningModuleDomainEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetLearningModulesAssignments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LearningApi apiInstance = new LearningApi();\n        List<String> userIds = Arrays.asList(null); // List<String> | The IDs of the users to include\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nString searchTerm = \"searchTerm_example\"; // String | Search Term (searches by name and description)\nString overdue = \"Any\"; // String | Specifies if only modules with overdue/not overdue (overdue is \\\"True\\\" or \\\"False\\\") assignments are returned. If overdue is \\\"Any\\\" or omitted, both are returned and can including modules that are unassigned.\nList<String> assignmentStates = Arrays.asList(null); // List<String> | Specifies the assignment states to return.\nList<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)\n        try { \n            // Get all learning modules of an organization including assignments for a specific user\n            AssignedLearningModuleDomainEntityListing result = apiInstance.getLearningModulesAssignments(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LearningApi#getLearningModulesAssignments\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getlearningmodulescoverartcoverartid": {
+    "operationId": "getlearningmodulescoverartcoverartid",
+    "functionName": "getLearningModulesCoverartCoverArtId",
+    "signature": "getLearningModulesCoverartCoverArtId(coverArtId)",
+    "parameters": [
+      {
+        "name": "coverArtId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "LearningModuleCoverArtResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LearningApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;\n\npublic class ExamplegetLearningModulesCoverartCoverArtId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LearningApi apiInstance = new LearningApi();\n        String coverArtId = \"coverArtId_example\"; // String | Key identifier for the cover art\n        try { \n            // Get a specific Learning Module cover art using ID\n            LearningModuleCoverArtResponse result = apiInstance.getLearningModulesCoverartCoverArtId(coverArtId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LearningApi#getLearningModulesCoverartCoverArtId\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "patchlearningassignment": {
     "operationId": "patchlearningassignment",
@@ -29815,6 +29829,20 @@
     ],
     "return": "UploadUrlResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.UploadsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UploadUrlResponse;\n\npublic class ExamplepostLanguageunderstandingMinerUploads {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        UploadsApi apiInstance = new UploadsApi();\n        String minerId = \"minerId_example\"; // String | Miner ID\nObject body = null; // Object | query\n        try { \n            // Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner\n            UploadUrlResponse result = apiInstance.postLanguageunderstandingMinerUploads(minerId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling UploadsApi#postLanguageunderstandingMinerUploads\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postuploadslearningcoverart": {
+    "operationId": "postuploadslearningcoverart",
+    "functionName": "postUploadsLearningCoverart",
+    "signature": "postUploadsLearningCoverart(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "LearningCoverArtUploadUrlRequest",
+        "required": "true"
+      }
+    ],
+    "return": "UploadUrlResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.UploadsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LearningCoverArtUploadUrlRequest;import com.mypurecloud.sdk.v2.model.UploadUrlResponse;\n\npublic class ExamplepostUploadsLearningCoverart {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        UploadsApi apiInstance = new UploadsApi();\n        LearningCoverArtUploadUrlRequest body = new LearningCoverArtUploadUrlRequest(); // LearningCoverArtUploadUrlRequest | query\n        try { \n            // Generates pre-signed URL to upload cover art for learning modules\n            UploadUrlResponse result = apiInstance.postUploadsLearningCoverart(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling UploadsApi#postUploadsLearningCoverart\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postuploadspublicassetsimages": {
     "operationId": "postuploadspublicassetsimages",

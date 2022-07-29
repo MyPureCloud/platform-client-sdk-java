@@ -75,6 +75,7 @@ title: AuditQueryEntity
 | EDGEPREFERENCES | &quot;EdgePreferences&quot; | 
 | EDGETRACELEVEL | &quot;EdgeTraceLevel&quot; | 
 | EMERGENCYGROUP | &quot;EmergencyGroup&quot; | 
+| ENTERPRISEAGREEMENT | &quot;EnterpriseAgreement&quot; | 
 | EVALUATION | &quot;Evaluation&quot; | 
 | EVALUATIONFORM | &quot;EvaluationForm&quot; | 
 | EVENTTYPE | &quot;EventType&quot; | 

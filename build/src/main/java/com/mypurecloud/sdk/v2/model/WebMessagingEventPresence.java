@@ -42,7 +42,8 @@ public class WebMessagingEventPresence  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    JOIN("Join");
+    JOIN("Join"),
+    DISCONNECT("Disconnect");
 
     private String value;
 

@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLearningModuleVersion**](LearningApi.html#getLearningModuleVersion) | Get specific version of a published module |
 | [**getLearningModules**](LearningApi.html#getLearningModules) | Get all learning modules of an organization |
 | [**getLearningModulesAssignments**](LearningApi.html#getLearningModulesAssignments) | Get all learning modules of an organization including assignments for a specific user |
+| [**getLearningModulesCoverartCoverArtId**](LearningApi.html#getLearningModulesCoverartCoverArtId) | Get a specific Learning Module cover art using ID |
 | [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | Update Learning Assignment |
 | [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | Score learning assessment for preview |
 | [**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | Reassign Learning Assignment |
@@ -800,6 +801,67 @@ try {
 ### Return type
 
 [**AssignedLearningModuleDomainEntityListing**](AssignedLearningModuleDomainEntityListing.html)
+
+<a name="getLearningModulesCoverartCoverArtId"></a>
+
+# **getLearningModulesCoverartCoverArtId**
+
+
+
+> [LearningModuleCoverArtResponse](LearningModuleCoverArtResponse.html) getLearningModulesCoverartCoverArtId(coverArtId)
+
+Get a specific Learning Module cover art using ID
+
+Wraps GET /api/v2/learning/modules/coverart/{coverArtId}  
+
+Requires ANY permissions: 
+
+* learning:coverart:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+String coverArtId = "coverArtId_example"; // String | Key identifier for the cover art
+try {
+    LearningModuleCoverArtResponse result = apiInstance.getLearningModulesCoverartCoverArtId(coverArtId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#getLearningModulesCoverartCoverArtId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **coverArtId** | **String**| Key identifier for the cover art | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse.html)
 
 <a name="patchLearningAssignment"></a>
 

@@ -78,6 +78,7 @@ title: AuditQueryExecutionStatusResponse
 | WORKITEMS | &quot;Workitems&quot; | 
 | SCIM | &quot;SCIM&quot; | 
 | NUMBERPURCHASING | &quot;NumberPurchasing&quot; | 
+| MARKETPLACE | &quot;Marketplace&quot; | 
 {: class="table table-striped"}
 
 

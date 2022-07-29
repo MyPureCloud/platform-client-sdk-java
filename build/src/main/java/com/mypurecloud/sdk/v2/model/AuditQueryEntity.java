@@ -98,6 +98,7 @@ public class AuditQueryEntity  implements Serializable {
     EDGEPREFERENCES("EdgePreferences"),
     EDGETRACELEVEL("EdgeTraceLevel"),
     EMERGENCYGROUP("EmergencyGroup"),
+    ENTERPRISEAGREEMENT("EnterpriseAgreement"),
     EVALUATION("Evaluation"),
     EVALUATIONFORM("EvaluationForm"),
     EVENTTYPE("EventType"),

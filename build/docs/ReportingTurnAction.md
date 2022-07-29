@@ -57,6 +57,8 @@ title: ReportingTurnAction
 | DIGITALMENUACTION | &quot;DigitalMenuAction&quot; | 
 | WAITFORINPUTACTION | &quot;WaitForInputAction&quot; | 
 | SHOWKNOWLEDGEARTICLEACTION | &quot;ShowKnowledgeArticleAction&quot; | 
+| FINDSYSTEMPROMPTACTION | &quot;FindSystemPromptAction&quot; | 
+| FINDUSERPROMPTACTION | &quot;FindUserPromptAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

@@ -1607,6 +1607,7 @@ docs/LearningAssignmentUserListing.md
 docs/LearningAssignmentUserQuery.md
 docs/LearningAssignmentsDomainEntity.md
 docs/LearningCoverArtThumbnail.md
+docs/LearningCoverArtUploadUrlRequest.md
 docs/LearningModule.md
 docs/LearningModuleCoverArtRequest.md
 docs/LearningModuleCoverArtResponse.md
@@ -3865,6 +3866,7 @@ docs/getLearningModuleRule-example.txt
 docs/getLearningModuleVersion-example.txt
 docs/getLearningModules-example.txt
 docs/getLearningModulesAssignments-example.txt
+docs/getLearningModulesCoverartCoverArtId-example.txt
 docs/getLicenseDefinition-example.txt
 docs/getLicenseDefinitions-example.txt
 docs/getLicenseToggle-example.txt
@@ -4822,6 +4824,7 @@ docs/postTelephonySiptracesDownload-example.txt
 docs/postTextbotsBotflowsSessionTurns-example.txt
 docs/postTextbotsBotflowsSessions-example.txt
 docs/postTextbotsBotsExecute-example.txt
+docs/postUploadsLearningCoverart-example.txt
 docs/postUploadsPublicassetsImages-example.txt
 docs/postUploadsRecordings-example.txt
 docs/postUploadsWorkforcemanagementHistoricaldataCsv-example.txt
@@ -5841,6 +5844,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningModuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningModuleRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningModuleVersionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningModulesAssignmentsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningModulesCoverartCoverArtIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningModulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLicenseDefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLicenseDefinitionsRequest.java
@@ -6799,6 +6803,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonySiptracesDownloadR
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTextbotsBotflowsSessionTurnsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTextbotsBotflowsSessionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTextbotsBotsExecuteRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostUploadsLearningCoverartRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostUploadsPublicassetsImagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostUploadsRecordingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostUploadsWorkforcemanagementHistoricaldataCsvRequest.java
@@ -8620,6 +8625,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentUserListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentUserQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentsDomainEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningCoverArtThumbnail.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningCoverArtUploadUrlRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModule.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleCoverArtRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleCoverArtResponse.java

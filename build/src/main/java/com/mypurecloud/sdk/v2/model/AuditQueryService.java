@@ -81,7 +81,8 @@ public class AuditQueryService  implements Serializable {
     CALLBACK("Callback"),
     WORKITEMS("Workitems"),
     SCIM("SCIM"),
-    NUMBERPURCHASING("NumberPurchasing");
+    NUMBERPURCHASING("NumberPurchasing"),
+    MARKETPLACE("Marketplace");
 
     private String value;
 

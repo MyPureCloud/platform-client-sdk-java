@@ -34,14 +34,14 @@ public class BuRescheduleResult  implements Serializable {
 
   
   /**
-   * The generation results.  Note the result will always be delivered via the downloadUrl; however the schema is included for documentation
+   * The generation results.  Note the result will always be delivered via the generationResultsDownloadUrl; however the schema is included for documentation
    **/
   public BuRescheduleResult generationResults(ScheduleGenerationResult generationResults) {
     this.generationResults = generationResults;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The generation results.  Note the result will always be delivered via the downloadUrl; however the schema is included for documentation")
+  @ApiModelProperty(example = "null", value = "The generation results.  Note the result will always be delivered via the generationResultsDownloadUrl; however the schema is included for documentation")
   @JsonProperty("generationResults")
   public ScheduleGenerationResult getGenerationResults() {
     return generationResults;
@@ -70,14 +70,14 @@ public class BuRescheduleResult  implements Serializable {
 
 
   /**
-   * The headcount forecast.  Note the result will always be delivered via the downloadUrl; however the schema is included for documentation
+   * The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation
    **/
   public BuRescheduleResult headcountForecast(BuHeadcountForecast headcountForecast) {
     this.headcountForecast = headcountForecast;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The headcount forecast.  Note the result will always be delivered via the downloadUrl; however the schema is included for documentation")
+  @ApiModelProperty(example = "null", value = "The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation")
   @JsonProperty("headcountForecast")
   public BuHeadcountForecast getHeadcountForecast() {
     return headcountForecast;

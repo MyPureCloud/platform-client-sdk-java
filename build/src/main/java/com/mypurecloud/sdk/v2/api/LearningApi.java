@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
 import com.mypurecloud.sdk.v2.model.LearningModule;
+import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
@@ -45,6 +46,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModuleRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesAssignmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningModulesCoverartCoverArtIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssessmentsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentReassignRequest;
@@ -1109,6 +1111,84 @@ public class LearningApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AssignedLearningModuleDomainEntityListing> response = (ApiResponse<AssignedLearningModuleDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a specific Learning Module cover art using ID
+   * 
+   * @param coverArtId Key identifier for the cover art (required)
+   * @return LearningModuleCoverArtResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModuleCoverArtResponse getLearningModulesCoverartCoverArtId(String coverArtId) throws IOException, ApiException {
+    return  getLearningModulesCoverartCoverArtId(createGetLearningModulesCoverartCoverArtIdRequest(coverArtId));
+  }
+
+  /**
+   * Get a specific Learning Module cover art using ID
+   * 
+   * @param coverArtId Key identifier for the cover art (required)
+   * @return LearningModuleCoverArtResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModuleCoverArtResponse> getLearningModulesCoverartCoverArtIdWithHttpInfo(String coverArtId) throws IOException {
+    return getLearningModulesCoverartCoverArtId(createGetLearningModulesCoverartCoverArtIdRequest(coverArtId).withHttpInfo());
+  }
+
+  private GetLearningModulesCoverartCoverArtIdRequest createGetLearningModulesCoverartCoverArtIdRequest(String coverArtId) {
+    return GetLearningModulesCoverartCoverArtIdRequest.builder()
+            .withCoverArtId(coverArtId)
+
+            .build();
+  }
+
+  /**
+   * Get a specific Learning Module cover art using ID
+   * 
+   * @param request The request object
+   * @return LearningModuleCoverArtResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModuleCoverArtResponse getLearningModulesCoverartCoverArtId(GetLearningModulesCoverartCoverArtIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningModuleCoverArtResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningModuleCoverArtResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a specific Learning Module cover art using ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModuleCoverArtResponse> getLearningModulesCoverartCoverArtId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningModuleCoverArtResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModuleCoverArtResponse> response = (ApiResponse<LearningModuleCoverArtResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModuleCoverArtResponse> response = (ApiResponse<LearningModuleCoverArtResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.UCI10n;
 import com.mypurecloud.sdk.v2.model.UCIcon;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -84,6 +85,8 @@ public class UCIntegration  implements Serializable {
   private UCIcon icon = null;
   private Map<String, UCIcon> badgeIcons = null;
   private Map<String, UCI10n> i10n = null;
+  private Boolean polledPresence = null;
+  private List<String> userPermissions = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -153,6 +156,20 @@ public class UCIntegration  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", required = true, value = "polledPresence")
+  @JsonProperty("polledPresence")
+  public Boolean getPolledPresence() {
+    return polledPresence;
+  }
+
+
+  @ApiModelProperty(example = "null", required = true, value = "userPermissions")
+  @JsonProperty("userPermissions")
+  public List<String> getUserPermissions() {
+    return userPermissions;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -178,12 +195,14 @@ public class UCIntegration  implements Serializable {
             Objects.equals(this.icon, uCIntegration.icon) &&
             Objects.equals(this.badgeIcons, uCIntegration.badgeIcons) &&
             Objects.equals(this.i10n, uCIntegration.i10n) &&
+            Objects.equals(this.polledPresence, uCIntegration.polledPresence) &&
+            Objects.equals(this.userPermissions, uCIntegration.userPermissions) &&
             Objects.equals(this.selfUri, uCIntegration.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, ucIntegrationKey, integrationPresenceSource, pbxPermission, icon, badgeIcons, i10n, selfUri);
+    return Objects.hash(id, name, ucIntegrationKey, integrationPresenceSource, pbxPermission, icon, badgeIcons, i10n, polledPresence, userPermissions, selfUri);
   }
 
   @Override
@@ -199,6 +218,8 @@ public class UCIntegration  implements Serializable {
     sb.append("    icon: ").append(toIndentedString(icon)).append("\n");
     sb.append("    badgeIcons: ").append(toIndentedString(badgeIcons)).append("\n");
     sb.append("    i10n: ").append(toIndentedString(i10n)).append("\n");
+    sb.append("    polledPresence: ").append(toIndentedString(polledPresence)).append("\n");
+    sb.append("    userPermissions: ").append(toIndentedString(userPermissions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

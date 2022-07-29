@@ -32,7 +32,6 @@ title: KnowledgeImport
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CSV | &quot;Csv&quot; | 
 | JSONLINES | &quot;JsonLines&quot; | 
-| JSON | &quot;Json&quot; | 
 {: class="table table-striped"}
 
 

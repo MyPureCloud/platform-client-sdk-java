@@ -79,6 +79,8 @@ public class ReportingTurnAction  implements Serializable {
     DIGITALMENUACTION("DigitalMenuAction"),
     WAITFORINPUTACTION("WaitForInputAction"),
     SHOWKNOWLEDGEARTICLEACTION("ShowKnowledgeArticleAction"),
+    FINDSYSTEMPROMPTACTION("FindSystemPromptAction"),
+    FINDUSERPROMPTACTION("FindUserPromptAction"),
     UNKNOWN("Unknown");
 
     private String value;

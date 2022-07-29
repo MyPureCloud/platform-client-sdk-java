@@ -11,12 +11,14 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LearningCoverArtUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerUploadsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUploadsLearningCoverartRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsPublicassetsImagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsRecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsWorkforcemanagementHistoricaldataCsvRequest;
@@ -177,6 +179,84 @@ public class UploadsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<UploadUrlResponse> postLanguageunderstandingMinerUploads(ApiRequest<Object> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Generates pre-signed URL to upload cover art for learning modules
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postUploadsLearningCoverart(LearningCoverArtUploadUrlRequest body) throws IOException, ApiException {
+    return  postUploadsLearningCoverart(createPostUploadsLearningCoverartRequest(body));
+  }
+
+  /**
+   * Generates pre-signed URL to upload cover art for learning modules
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postUploadsLearningCoverartWithHttpInfo(LearningCoverArtUploadUrlRequest body) throws IOException {
+    return postUploadsLearningCoverart(createPostUploadsLearningCoverartRequest(body).withHttpInfo());
+  }
+
+  private PostUploadsLearningCoverartRequest createPostUploadsLearningCoverartRequest(LearningCoverArtUploadUrlRequest body) {
+    return PostUploadsLearningCoverartRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Generates pre-signed URL to upload cover art for learning modules
+   * 
+   * @param request The request object
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postUploadsLearningCoverart(PostUploadsLearningCoverartRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generates pre-signed URL to upload cover art for learning modules
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postUploadsLearningCoverart(ApiRequest<LearningCoverArtUploadUrlRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
     }

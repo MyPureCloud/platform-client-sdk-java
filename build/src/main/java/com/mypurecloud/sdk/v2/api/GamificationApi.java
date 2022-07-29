@@ -2251,17 +2251,17 @@ public class GamificationApi {
    * @param profileId performanceProfileId (required)
    * @param metricId metricId (required)
    * @param filterType Filter type for the query request. (required)
-   * @param filterId ID for the filter type. For example, division Id (required)
    * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param filterId ID for the filter type. Only required when filterType is Division. (optional)
    * @param referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return MetricValueTrendAverage
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MetricValueTrendAverage getGamificationScorecardsProfileMetricUsersValuesTrends(String profileId, String metricId, String filterType, String filterId, LocalDate startWorkday, LocalDate endWorkday, LocalDate referenceWorkday, String timeZone) throws IOException, ApiException {
-    return  getGamificationScorecardsProfileMetricUsersValuesTrends(createGetGamificationScorecardsProfileMetricUsersValuesTrendsRequest(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone));
+  public MetricValueTrendAverage getGamificationScorecardsProfileMetricUsersValuesTrends(String profileId, String metricId, String filterType, LocalDate startWorkday, LocalDate endWorkday, String filterId, LocalDate referenceWorkday, String timeZone) throws IOException, ApiException {
+    return  getGamificationScorecardsProfileMetricUsersValuesTrends(createGetGamificationScorecardsProfileMetricUsersValuesTrendsRequest(profileId, metricId, filterType, startWorkday, endWorkday, filterId, referenceWorkday, timeZone));
   }
 
   /**
@@ -2270,19 +2270,19 @@ public class GamificationApi {
    * @param profileId performanceProfileId (required)
    * @param metricId metricId (required)
    * @param filterType Filter type for the query request. (required)
-   * @param filterId ID for the filter type. For example, division Id (required)
    * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param filterId ID for the filter type. Only required when filterType is Division. (optional)
    * @param referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return MetricValueTrendAverage
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MetricValueTrendAverage> getGamificationScorecardsProfileMetricUsersValuesTrendsWithHttpInfo(String profileId, String metricId, String filterType, String filterId, LocalDate startWorkday, LocalDate endWorkday, LocalDate referenceWorkday, String timeZone) throws IOException {
-    return getGamificationScorecardsProfileMetricUsersValuesTrends(createGetGamificationScorecardsProfileMetricUsersValuesTrendsRequest(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone).withHttpInfo());
+  public ApiResponse<MetricValueTrendAverage> getGamificationScorecardsProfileMetricUsersValuesTrendsWithHttpInfo(String profileId, String metricId, String filterType, LocalDate startWorkday, LocalDate endWorkday, String filterId, LocalDate referenceWorkday, String timeZone) throws IOException {
+    return getGamificationScorecardsProfileMetricUsersValuesTrends(createGetGamificationScorecardsProfileMetricUsersValuesTrendsRequest(profileId, metricId, filterType, startWorkday, endWorkday, filterId, referenceWorkday, timeZone).withHttpInfo());
   }
 
-  private GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest createGetGamificationScorecardsProfileMetricUsersValuesTrendsRequest(String profileId, String metricId, String filterType, String filterId, LocalDate startWorkday, LocalDate endWorkday, LocalDate referenceWorkday, String timeZone) {
+  private GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest createGetGamificationScorecardsProfileMetricUsersValuesTrendsRequest(String profileId, String metricId, String filterType, LocalDate startWorkday, LocalDate endWorkday, String filterId, LocalDate referenceWorkday, String timeZone) {
     return GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest.builder()
             .withProfileId(profileId)
 
@@ -2290,11 +2290,11 @@ public class GamificationApi {
 
             .withFilterType(filterType)
 
-            .withFilterId(filterId)
-
             .withStartWorkday(startWorkday)
 
             .withEndWorkday(endWorkday)
+
+            .withFilterId(filterId)
 
             .withReferenceWorkday(referenceWorkday)
 

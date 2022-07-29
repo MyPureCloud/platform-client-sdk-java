@@ -1718,7 +1718,7 @@ try {
 
 
 
-> [MetricValueTrendAverage](MetricValueTrendAverage.html) getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone)
+> [MetricValueTrendAverage](MetricValueTrendAverage.html) getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, startWorkday, endWorkday, filterId, referenceWorkday, timeZone)
 
 Average performance values trends by metric of a division or a performance profile
 
@@ -1753,13 +1753,13 @@ GamificationApi apiInstance = new GamificationApi();
 String profileId = "profileId_example"; // String | performanceProfileId
 String metricId = "metricId_example"; // String | metricId
 String filterType = "filterType_example"; // String | Filter type for the query request.
-String filterId = "filterId_example"; // String | ID for the filter type. For example, division Id
 LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String filterId = "filterId_example"; // String | ID for the filter type. Only required when filterType is Division.
 LocalDate referenceWorkday = new LocalDate(); // LocalDate | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String timeZone = "UTC"; // String | Timezone for the workday. Defaults to UTC
 try {
-    MetricValueTrendAverage result = apiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone);
+    MetricValueTrendAverage result = apiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, startWorkday, endWorkday, filterId, referenceWorkday, timeZone);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#getGamificationScorecardsProfileMetricUsersValuesTrends");
@@ -1775,9 +1775,9 @@ try {
 | **profileId** | **String**| performanceProfileId | 
 | **metricId** | **String**| metricId | 
 | **filterType** | **String**| Filter type for the query request. |<br />**Values**: PerformanceProfile, Division 
-| **filterId** | **String**| ID for the filter type. For example, division Id | 
 | **startWorkday** | **LocalDate**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **filterId** | **String**| ID for the filter type. Only required when filterType is Division. | [optional] 
 | **referenceWorkday** | **LocalDate**| Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
 | **timeZone** | **String**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] 
 {: class="table-striped"}

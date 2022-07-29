@@ -92,7 +92,8 @@ public class AuditLogMessage  implements Serializable {
     CALLBACK("Callback"),
     WORKITEMS("Workitems"),
     SCIM("SCIM"),
-    NUMBERPURCHASING("NumberPurchasing");
+    NUMBERPURCHASING("NumberPurchasing"),
+    MARKETPLACE("Marketplace");
 
     private String value;
 
@@ -322,6 +323,7 @@ public class AuditLogMessage  implements Serializable {
     EDGEPREFERENCES("EdgePreferences"),
     EDGETRACELEVEL("EdgeTraceLevel"),
     EMERGENCYGROUP("EmergencyGroup"),
+    ENTERPRISEAGREEMENT("EnterpriseAgreement"),
     EVALUATION("Evaluation"),
     EVALUATIONFORM("EvaluationForm"),
     EVENTTYPE("EventType"),

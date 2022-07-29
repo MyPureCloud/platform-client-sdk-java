@@ -132,20 +132,6 @@ public class GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest {
 		}
 	}
 
-	private String filterId;
-	public String getFilterId() {
-		return this.filterId;
-	}
-
-	public void setFilterId(String filterId) {
-		this.filterId = filterId;
-	}
-
-	public GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest withFilterId(String filterId) {
-	    this.setFilterId(filterId);
-	    return this;
-	} 
-
 	private LocalDate startWorkday;
 	public LocalDate getStartWorkday() {
 		return this.startWorkday;
@@ -171,6 +157,20 @@ public class GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest {
 
 	public GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest withEndWorkday(LocalDate endWorkday) {
 	    this.setEndWorkday(endWorkday);
+	    return this;
+	} 
+
+	private String filterId;
+	public String getFilterId() {
+		return this.filterId;
+	}
+
+	public void setFilterId(String filterId) {
+		this.filterId = filterId;
+	}
+
+	public GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest withFilterId(String filterId) {
+	    this.setFilterId(filterId);
 	    return this;
 	} 
 
@@ -238,11 +238,6 @@ public class GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest {
             throw new IllegalStateException("Missing the required parameter 'filterType' when building request for GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest.");
         }
         
-        // verify the required parameter 'filterId' is set
-        if (this.filterId == null) {
-            throw new IllegalStateException("Missing the required parameter 'filterId' when building request for GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest.");
-        }
-        
         // verify the required parameter 'startWorkday' is set
         if (this.startWorkday == null) {
             throw new IllegalStateException("Missing the required parameter 'startWorkday' when building request for GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest.");
@@ -289,9 +284,9 @@ public class GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest {
 	}
 
 
-	public static Builder builder(String profileId, String metricId, String filterType, String filterId, LocalDate startWorkday, LocalDate endWorkday) {
+	public static Builder builder(String profileId, String metricId, String filterType, LocalDate startWorkday, LocalDate endWorkday) {
 	    return new Builder()
-	            .withRequiredParams(profileId, metricId, filterType, filterId, startWorkday, endWorkday);
+	            .withRequiredParams(profileId, metricId, filterType, startWorkday, endWorkday);
 	}
 
 
@@ -327,11 +322,6 @@ public class GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest {
 		    return this;
 		}
 
-		public Builder withFilterId(String filterId) {
-			request.setFilterId(filterId);
-			return this;
-		}
-
 		public Builder withStartWorkday(LocalDate startWorkday) {
 			request.setStartWorkday(startWorkday);
 			return this;
@@ -339,6 +329,11 @@ public class GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest {
 
 		public Builder withEndWorkday(LocalDate endWorkday) {
 			request.setEndWorkday(endWorkday);
+			return this;
+		}
+
+		public Builder withFilterId(String filterId) {
+			request.setFilterId(filterId);
 			return this;
 		}
 
@@ -354,11 +349,10 @@ public class GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest {
 
 
 
-		public Builder withRequiredParams(String profileId, String metricId, String filterType, String filterId, LocalDate startWorkday, LocalDate endWorkday) {
+		public Builder withRequiredParams(String profileId, String metricId, String filterType, LocalDate startWorkday, LocalDate endWorkday) {
 			request.setProfileId(profileId);
 			request.setMetricId(metricId);
 			request.setFilterType(filterType);
-			request.setFilterId(filterId);
 			request.setStartWorkday(startWorkday);
 			request.setEndWorkday(endWorkday);
 
@@ -381,11 +375,6 @@ public class GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest {
             // verify the required parameter 'filterType' is set
             if (request.filterType == null) {
                 throw new IllegalStateException("Missing the required parameter 'filterType' when building request for GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest.");
-            }
-            
-            // verify the required parameter 'filterId' is set
-            if (request.filterId == null) {
-                throw new IllegalStateException("Missing the required parameter 'filterId' when building request for GetGamificationScorecardsProfileMetricUsersValuesTrendsRequest.");
             }
             
             // verify the required parameter 'startWorkday' is set
