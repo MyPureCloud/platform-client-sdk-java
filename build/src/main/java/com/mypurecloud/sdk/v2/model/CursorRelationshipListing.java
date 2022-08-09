@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Cursors;
 import com.mypurecloud.sdk.v2.model.Relationship;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,6 +29,7 @@ public class CursorRelationshipListing  implements Serializable {
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;
+  private Cursors cursors = null;
 
   
   /**
@@ -98,6 +100,24 @@ public class CursorRelationshipListing  implements Serializable {
   }
 
 
+  /**
+   * The cursor that points to the next set of entities being returned.
+   **/
+  public CursorRelationshipListing cursors(Cursors cursors) {
+    this.cursors = cursors;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The cursor that points to the next set of entities being returned.")
+  @JsonProperty("cursors")
+  public Cursors getCursors() {
+    return cursors;
+  }
+  public void setCursors(Cursors cursors) {
+    this.cursors = cursors;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -111,12 +131,13 @@ public class CursorRelationshipListing  implements Serializable {
     return Objects.equals(this.entities, cursorRelationshipListing.entities) &&
             Objects.equals(this.nextUri, cursorRelationshipListing.nextUri) &&
             Objects.equals(this.selfUri, cursorRelationshipListing.selfUri) &&
-            Objects.equals(this.previousUri, cursorRelationshipListing.previousUri);
+            Objects.equals(this.previousUri, cursorRelationshipListing.previousUri) &&
+            Objects.equals(this.cursors, cursorRelationshipListing.cursors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, nextUri, selfUri, previousUri);
+    return Objects.hash(entities, nextUri, selfUri, previousUri, cursors);
   }
 
   @Override
@@ -128,6 +149,7 @@ public class CursorRelationshipListing  implements Serializable {
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    cursors: ").append(toIndentedString(cursors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

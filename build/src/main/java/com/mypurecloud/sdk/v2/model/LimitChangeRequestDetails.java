@@ -28,11 +28,112 @@ public class LimitChangeRequestDetails  implements Serializable {
   
   private String id = null;
   private String key = null;
-  private String namespace = null;
+
+  private static class NamespaceEnumDeserializer extends StdDeserializer<NamespaceEnum> {
+    public NamespaceEnumDeserializer() {
+      super(NamespaceEnumDeserializer.class);
+    }
+
+    @Override
+    public NamespaceEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return NamespaceEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Namespace the key belongs to (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits)
+   */
+ @JsonDeserialize(using = NamespaceEnumDeserializer.class)
+  public enum NamespaceEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CONTACTS("contacts"),
+    AGENT_ASSISTANT("agent.assistant"),
+    ANALYTICS_ALERTING("analytics.alerting"),
+    ANALYTICS("analytics"),
+    ANALYTICS_REALTIME("analytics.realtime"),
+    ANALYTICS_REPORTING_SETTINGS("analytics.reporting.settings"),
+    ARCHITECT("architect"),
+    AUDIOHOOK("audiohook"),
+    AUDIT("audit"),
+    AUTH_API("auth.api"),
+    AUTHORIZATION("authorization"),
+    AUTOMATION_TESTING("automation.testing"),
+    BOTS("bots"),
+    BOTS_VOICE("bots.voice"),
+    COBROWSE("cobrowse"),
+    CONTENT_MANAGEMENT("content.management"),
+    CONVERSATION("conversation"),
+    DATAACTIONS("dataactions"),
+    DATATABLES("datatables"),
+    DIRECTORY("directory"),
+    EMAIL("email"),
+    EVENT_ORCHESTRATION("event.orchestration"),
+    EXTERNAL_CONTACTS("external.contacts"),
+    GCV("gcv"),
+    GDPR("gdpr"),
+    GROUPS("groups"),
+    HISTORICAL_ADHERENCE("historical.adherence"),
+    INFRASTRUCTUREASCODE("infrastructureascode"),
+    INTEGRATIONS("integrations"),
+    INTENT_MINER("intent.miner"),
+    JOURNEY("journey"),
+    KNOWLEDGE("knowledge"),
+    LANGUAGE_UNDERSTANDING("language.understanding"),
+    LIMIT_REGISTRY("limit.registry"),
+    MARKETPLACE("marketplace"),
+    MESSAGING("messaging"),
+    NOTIFICATIONS("notifications"),
+    ONBOARDING("onboarding"),
+    OUTBOUND("outbound"),
+    PLATFORM_API("platform.api"),
+    PREDICTIVE_ROUTING("predictive.routing"),
+    QUALITY("quality"),
+    RECORDING("recording"),
+    RESPONSE_MANAGEMENT("response.management"),
+    ROUTING("routing"),
+    SCIM("scim"),
+    SEARCH("search"),
+    SPEECH_AND_TEXT_ANALYTICS("speech.and.text.analytics"),
+    SPEECH_INTEGRATION("speech.integration"),
+    SUPPORTABILITY("supportability"),
+    TASK_MANAGEMENT("task.management"),
+    TELEPHONY_CONFIGURATION("telephony.configuration"),
+    WEB_DEPLOYMENTS("web.deployments"),
+    WEB_MESSAGING("web.messaging"),
+    WEBCHAT("webchat"),
+    WEBHOOKS("webhooks"),
+    WORKFORCE_MANAGEMENT("workforce.management");
+
+    private String value;
+
+    NamespaceEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static NamespaceEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (NamespaceEnum value : NamespaceEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return NamespaceEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private NamespaceEnum namespace = null;
   private Double requestedValue = null;
   private String description = null;
   private String supportCaseUrl = null;
-  private String createdBy = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -52,12 +153,17 @@ public class LimitChangeRequestDetails  implements Serializable {
  @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    OPEN("Open"),
     APPROVED("Approved"),
-    IMPLEMENTINGCHANGE("ImplementingChange"),
-    CHANGEIMPLEMENTED("ChangeImplemented"),
     REJECTED("Rejected"),
     ROLLBACK("Rollback"),
+    PENDING("Pending"),
+    OPEN("Open"),
+    SECONDARYAPPROVALNAMESPACESADDED("SecondaryApprovalNamespacesAdded"),
+    REVIEWERAPPROVED("ReviewerApproved"),
+    REVIEWERREJECTED("ReviewerRejected"),
+    REVIEWERROLLBACK("ReviewerRollback"),
+    IMPLEMENTINGCHANGE("ImplementingChange"),
+    CHANGEIMPLEMENTED("ChangeImplemented"),
     IMPLEMENTINGROLLBACK("ImplementingRollback"),
     ROLLBACKIMPLEMENTED("RollbackImplemented");
 
@@ -91,7 +197,6 @@ public class LimitChangeRequestDetails  implements Serializable {
   private Date dateCreated = null;
   private List<StatusChange> statusHistory = new ArrayList<StatusChange>();
   private Date dateCompleted = null;
-  private String lastChangedBy = null;
 
   private static class RejectReasonEnumDeserializer extends StdDeserializer<RejectReasonEnum> {
     public RejectReasonEnumDeserializer() {
@@ -174,17 +279,17 @@ public class LimitChangeRequestDetails  implements Serializable {
   /**
    * Namespace the key belongs to (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits)
    **/
-  public LimitChangeRequestDetails namespace(String namespace) {
+  public LimitChangeRequestDetails namespace(NamespaceEnum namespace) {
     this.namespace = namespace;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Namespace the key belongs to (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits)")
   @JsonProperty("namespace")
-  public String getNamespace() {
+  public NamespaceEnum getNamespace() {
     return namespace;
   }
-  public void setNamespace(String namespace) {
+  public void setNamespace(NamespaceEnum namespace) {
     this.namespace = namespace;
   }
 
@@ -243,13 +348,6 @@ public class LimitChangeRequestDetails  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The user who created the change request")
-  @JsonProperty("createdBy")
-  public String getCreatedBy() {
-    return createdBy;
-  }
-
-
   @ApiModelProperty(example = "null", value = "Current status of the limit change request")
   @JsonProperty("status")
   public StatusEnum getStatus() {
@@ -285,13 +383,6 @@ public class LimitChangeRequestDetails  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The user who last updated the status of the limit change request")
-  @JsonProperty("lastChangedBy")
-  public String getLastChangedBy() {
-    return lastChangedBy;
-  }
-
-
   @ApiModelProperty(example = "null", value = "The reason for rejecting the limit override request")
   @JsonProperty("rejectReason")
   public RejectReasonEnum getRejectReason() {
@@ -322,20 +413,18 @@ public class LimitChangeRequestDetails  implements Serializable {
             Objects.equals(this.requestedValue, limitChangeRequestDetails.requestedValue) &&
             Objects.equals(this.description, limitChangeRequestDetails.description) &&
             Objects.equals(this.supportCaseUrl, limitChangeRequestDetails.supportCaseUrl) &&
-            Objects.equals(this.createdBy, limitChangeRequestDetails.createdBy) &&
             Objects.equals(this.status, limitChangeRequestDetails.status) &&
             Objects.equals(this.currentValue, limitChangeRequestDetails.currentValue) &&
             Objects.equals(this.dateCreated, limitChangeRequestDetails.dateCreated) &&
             Objects.equals(this.statusHistory, limitChangeRequestDetails.statusHistory) &&
             Objects.equals(this.dateCompleted, limitChangeRequestDetails.dateCompleted) &&
-            Objects.equals(this.lastChangedBy, limitChangeRequestDetails.lastChangedBy) &&
             Objects.equals(this.rejectReason, limitChangeRequestDetails.rejectReason) &&
             Objects.equals(this.selfUri, limitChangeRequestDetails.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, key, namespace, requestedValue, description, supportCaseUrl, createdBy, status, currentValue, dateCreated, statusHistory, dateCompleted, lastChangedBy, rejectReason, selfUri);
+    return Objects.hash(id, key, namespace, requestedValue, description, supportCaseUrl, status, currentValue, dateCreated, statusHistory, dateCompleted, rejectReason, selfUri);
   }
 
   @Override
@@ -349,13 +438,11 @@ public class LimitChangeRequestDetails  implements Serializable {
     sb.append("    requestedValue: ").append(toIndentedString(requestedValue)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    supportCaseUrl: ").append(toIndentedString(supportCaseUrl)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    currentValue: ").append(toIndentedString(currentValue)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    statusHistory: ").append(toIndentedString(statusHistory)).append("\n");
     sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
-    sb.append("    lastChangedBy: ").append(toIndentedString(lastChangedBy)).append("\n");
     sb.append("    rejectReason: ").append(toIndentedString(rejectReason)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

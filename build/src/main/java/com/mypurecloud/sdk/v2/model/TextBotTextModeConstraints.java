@@ -25,6 +25,7 @@ import java.io.Serializable;
 public class TextBotTextModeConstraints  implements Serializable {
   
   private List<String> languagePreferences = new ArrayList<String>();
+  private Integer noInputTimeoutMilliseconds = null;
 
   
   /**
@@ -45,6 +46,24 @@ public class TextBotTextModeConstraints  implements Serializable {
   }
 
 
+  /**
+   * The amount of time, in milliseconds, before the client should send the 'NoInput' event  to trigger the \"no input\" bot response and handling on digital channels.  Note: This optional field will only be returned for 'Digital Bot Flow' turns.
+   **/
+  public TextBotTextModeConstraints noInputTimeoutMilliseconds(Integer noInputTimeoutMilliseconds) {
+    this.noInputTimeoutMilliseconds = noInputTimeoutMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The amount of time, in milliseconds, before the client should send the 'NoInput' event  to trigger the \"no input\" bot response and handling on digital channels.  Note: This optional field will only be returned for 'Digital Bot Flow' turns.")
+  @JsonProperty("noInputTimeoutMilliseconds")
+  public Integer getNoInputTimeoutMilliseconds() {
+    return noInputTimeoutMilliseconds;
+  }
+  public void setNoInputTimeoutMilliseconds(Integer noInputTimeoutMilliseconds) {
+    this.noInputTimeoutMilliseconds = noInputTimeoutMilliseconds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -55,12 +74,13 @@ public class TextBotTextModeConstraints  implements Serializable {
     }
     TextBotTextModeConstraints textBotTextModeConstraints = (TextBotTextModeConstraints) o;
 
-    return Objects.equals(this.languagePreferences, textBotTextModeConstraints.languagePreferences);
+    return Objects.equals(this.languagePreferences, textBotTextModeConstraints.languagePreferences) &&
+            Objects.equals(this.noInputTimeoutMilliseconds, textBotTextModeConstraints.noInputTimeoutMilliseconds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(languagePreferences);
+    return Objects.hash(languagePreferences, noInputTimeoutMilliseconds);
   }
 
   @Override
@@ -69,6 +89,7 @@ public class TextBotTextModeConstraints  implements Serializable {
     sb.append("class TextBotTextModeConstraints {\n");
     
     sb.append("    languagePreferences: ").append(toIndentedString(languagePreferences)).append("\n");
+    sb.append("    noInputTimeoutMilliseconds: ").append(toIndentedString(noInputTimeoutMilliseconds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

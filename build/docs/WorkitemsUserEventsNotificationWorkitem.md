@@ -34,6 +34,7 @@ title: WorkitemsUserEventsNotificationWorkitem
 | **assignmentState** | [**AssignmentStateEnum**](#AssignmentStateEnum)<!----> |  |  [optional] |
 | **assignmentId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **alertTimeoutSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **customFields** | <!----><!---->[**Map&lt;String, WorkitemsUserEventsNotificationCustomAttribute&gt;**](WorkitemsUserEventsNotificationCustomAttribute.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.AssessmentListing;
+import com.mypurecloud.sdk.v2.model.AvailableMediaTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.BenefitAssessment;
 import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriod;
@@ -99,6 +100,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingAvailablemediatypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
@@ -1765,6 +1767,81 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AssessmentJobListing> response = (ApiResponse<AssessmentJobListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get available media types
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AvailableMediaTypeEntityListing> getRoutingAvailablemediatypesAsync(GetRoutingAvailablemediatypesRequest request, final AsyncApiCallback<AvailableMediaTypeEntityListing> callback) {
+    try {
+      final SettableFuture<AvailableMediaTypeEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AvailableMediaTypeEntityListing>() {}, new AsyncApiCallback<ApiResponse<AvailableMediaTypeEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AvailableMediaTypeEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get available media types
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AvailableMediaTypeEntityListing>> getRoutingAvailablemediatypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AvailableMediaTypeEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AvailableMediaTypeEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AvailableMediaTypeEntityListing>() {}, new AsyncApiCallback<ApiResponse<AvailableMediaTypeEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AvailableMediaTypeEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AvailableMediaTypeEntityListing> response = (ApiResponse<AvailableMediaTypeEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AvailableMediaTypeEntityListing> response = (ApiResponse<AvailableMediaTypeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

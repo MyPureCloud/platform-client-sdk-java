@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialogflowProject;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -26,6 +27,7 @@ public class DialogflowAgentSummary  implements Serializable {
   private String name = null;
   private DialogflowProject project = null;
   private String description = null;
+  private DomainEntityRef integration = null;
   private String selfUri = null;
 
   
@@ -54,14 +56,14 @@ public class DialogflowAgentSummary  implements Serializable {
 
 
   /**
-   * The project this Dialogflow agent belongs to
+   * The project this Dialogflow agent belongs to.
    **/
   public DialogflowAgentSummary project(DialogflowProject project) {
     this.project = project;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The project this Dialogflow agent belongs to")
+  @ApiModelProperty(example = "null", value = "The project this Dialogflow agent belongs to.")
   @JsonProperty("project")
   public DialogflowProject getProject() {
     return project;
@@ -72,20 +74,38 @@ public class DialogflowAgentSummary  implements Serializable {
 
 
   /**
-   * A description of the Dialogflow agent
+   * A description of the Dialogflow agent.
    **/
   public DialogflowAgentSummary description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A description of the Dialogflow agent")
+  @ApiModelProperty(example = "null", value = "A description of the Dialogflow agent.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
   public void setDescription(String description) {
     this.description = description;
+  }
+
+
+  /**
+   * The Integration this Dialogflow agent was referenced from.
+   **/
+  public DialogflowAgentSummary integration(DomainEntityRef integration) {
+    this.integration = integration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Integration this Dialogflow agent was referenced from.")
+  @JsonProperty("integration")
+  public DomainEntityRef getIntegration() {
+    return integration;
+  }
+  public void setIntegration(DomainEntityRef integration) {
+    this.integration = integration;
   }
 
 
@@ -110,12 +130,13 @@ public class DialogflowAgentSummary  implements Serializable {
             Objects.equals(this.name, dialogflowAgentSummary.name) &&
             Objects.equals(this.project, dialogflowAgentSummary.project) &&
             Objects.equals(this.description, dialogflowAgentSummary.description) &&
+            Objects.equals(this.integration, dialogflowAgentSummary.integration) &&
             Objects.equals(this.selfUri, dialogflowAgentSummary.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, project, description, selfUri);
+    return Objects.hash(id, name, project, description, integration, selfUri);
   }
 
   @Override
@@ -127,6 +148,7 @@ public class DialogflowAgentSummary  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    integration: ").append(toIndentedString(integration)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

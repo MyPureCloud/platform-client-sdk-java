@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
 import com.mypurecloud.sdk.v2.model.PublishForm;
@@ -199,13 +200,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Evaluation> deleteQualityConversationEvaluationAsync(DeleteQualityConversationEvaluationRequest request, final AsyncApiCallback<Evaluation> callback) {
+  public Future<EvaluationResponse> deleteQualityConversationEvaluationAsync(DeleteQualityConversationEvaluationRequest request, final AsyncApiCallback<EvaluationResponse> callback) {
     try {
-      final SettableFuture<Evaluation> future = SettableFuture.create();
+      final SettableFuture<EvaluationResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationResponse>() {}, new AsyncApiCallback<ApiResponse<EvaluationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Evaluation> response) {
+        public void onCompleted(ApiResponse<EvaluationResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -233,13 +234,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Evaluation>> deleteQualityConversationEvaluationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Evaluation>> callback) {
+  public Future<ApiResponse<EvaluationResponse>> deleteQualityConversationEvaluationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<EvaluationResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationResponse>() {}, new AsyncApiCallback<ApiResponse<EvaluationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Evaluation> response) {
+        public void onCompleted(ApiResponse<EvaluationResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -247,7 +248,7 @@ public class QualityApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)exception;
+            ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -255,7 +256,7 @@ public class QualityApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -724,13 +725,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Evaluation> getQualityConversationEvaluationAsync(GetQualityConversationEvaluationRequest request, final AsyncApiCallback<Evaluation> callback) {
+  public Future<EvaluationResponse> getQualityConversationEvaluationAsync(GetQualityConversationEvaluationRequest request, final AsyncApiCallback<EvaluationResponse> callback) {
     try {
-      final SettableFuture<Evaluation> future = SettableFuture.create();
+      final SettableFuture<EvaluationResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationResponse>() {}, new AsyncApiCallback<ApiResponse<EvaluationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Evaluation> response) {
+        public void onCompleted(ApiResponse<EvaluationResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -758,13 +759,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Evaluation>> getQualityConversationEvaluationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Evaluation>> callback) {
+  public Future<ApiResponse<EvaluationResponse>> getQualityConversationEvaluationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<EvaluationResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationResponse>() {}, new AsyncApiCallback<ApiResponse<EvaluationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Evaluation> response) {
+        public void onCompleted(ApiResponse<EvaluationResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -772,7 +773,7 @@ public class QualityApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)exception;
+            ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -780,7 +781,7 @@ public class QualityApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3874,13 +3875,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Evaluation> putQualityConversationEvaluationAsync(PutQualityConversationEvaluationRequest request, final AsyncApiCallback<Evaluation> callback) {
+  public Future<EvaluationResponse> putQualityConversationEvaluationAsync(PutQualityConversationEvaluationRequest request, final AsyncApiCallback<EvaluationResponse> callback) {
     try {
-      final SettableFuture<Evaluation> future = SettableFuture.create();
+      final SettableFuture<EvaluationResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationResponse>() {}, new AsyncApiCallback<ApiResponse<EvaluationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Evaluation> response) {
+        public void onCompleted(ApiResponse<EvaluationResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3908,13 +3909,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Evaluation>> putQualityConversationEvaluationAsync(ApiRequest<Evaluation> request, final AsyncApiCallback<ApiResponse<Evaluation>> callback) {
+  public Future<ApiResponse<EvaluationResponse>> putQualityConversationEvaluationAsync(ApiRequest<Evaluation> request, final AsyncApiCallback<ApiResponse<EvaluationResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<EvaluationResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationResponse>() {}, new AsyncApiCallback<ApiResponse<EvaluationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Evaluation> response) {
+        public void onCompleted(ApiResponse<EvaluationResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3922,7 +3923,7 @@ public class QualityApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)exception;
+            ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3930,7 +3931,7 @@ public class QualityApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

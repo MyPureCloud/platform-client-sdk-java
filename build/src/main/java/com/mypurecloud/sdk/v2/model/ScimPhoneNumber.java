@@ -52,7 +52,7 @@ public class ScimPhoneNumber  implements Serializable {
     OTHER("other"),
     MICROSOFTTEAMS("microsoftteams"),
     ZOOMPHONE("zoomphone"),
-    EIGHBYEIGHT("eighbyeight");
+    EIGHTBYEIGHT("eightbyeight");
 
     private String value;
 

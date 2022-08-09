@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
 import com.mypurecloud.sdk.v2.model.PublishForm;
@@ -201,11 +202,11 @@ public class QualityApi {
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param expand evaluatorId, evaluationForm (optional)
-   * @return Evaluation
+   * @return EvaluationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Evaluation deleteQualityConversationEvaluation(String conversationId, String evaluationId, String expand) throws IOException, ApiException {
+  public EvaluationResponse deleteQualityConversationEvaluation(String conversationId, String evaluationId, String expand) throws IOException, ApiException {
     return  deleteQualityConversationEvaluation(createDeleteQualityConversationEvaluationRequest(conversationId, evaluationId, expand));
   }
 
@@ -215,10 +216,10 @@ public class QualityApi {
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param expand evaluatorId, evaluationForm (optional)
-   * @return Evaluation
+   * @return EvaluationResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> deleteQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, String expand) throws IOException {
+  public ApiResponse<EvaluationResponse> deleteQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, String expand) throws IOException {
     return deleteQualityConversationEvaluation(createDeleteQualityConversationEvaluationRequest(conversationId, evaluationId, expand).withHttpInfo());
   }
 
@@ -237,13 +238,13 @@ public class QualityApi {
    * Delete an evaluation
    * 
    * @param request The request object
-   * @return Evaluation
+   * @return EvaluationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Evaluation deleteQualityConversationEvaluation(DeleteQualityConversationEvaluationRequest request) throws IOException, ApiException {
+  public EvaluationResponse deleteQualityConversationEvaluation(DeleteQualityConversationEvaluationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Evaluation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Evaluation>() {});
+      ApiResponse<EvaluationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -259,13 +260,13 @@ public class QualityApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> deleteQualityConversationEvaluation(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<EvaluationResponse> deleteQualityConversationEvaluation(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Evaluation>() {});
+      return pcapiClient.invoke(request, new TypeReference<EvaluationResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)exception;
+      ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -276,7 +277,7 @@ public class QualityApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -834,11 +835,11 @@ public class QualityApi {
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param expand agent, evaluator, evaluationForm (optional)
-   * @return Evaluation
+   * @return EvaluationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Evaluation getQualityConversationEvaluation(String conversationId, String evaluationId, String expand) throws IOException, ApiException {
+  public EvaluationResponse getQualityConversationEvaluation(String conversationId, String evaluationId, String expand) throws IOException, ApiException {
     return  getQualityConversationEvaluation(createGetQualityConversationEvaluationRequest(conversationId, evaluationId, expand));
   }
 
@@ -848,10 +849,10 @@ public class QualityApi {
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param expand agent, evaluator, evaluationForm (optional)
-   * @return Evaluation
+   * @return EvaluationResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> getQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, String expand) throws IOException {
+  public ApiResponse<EvaluationResponse> getQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, String expand) throws IOException {
     return getQualityConversationEvaluation(createGetQualityConversationEvaluationRequest(conversationId, evaluationId, expand).withHttpInfo());
   }
 
@@ -870,13 +871,13 @@ public class QualityApi {
    * Get an evaluation
    * 
    * @param request The request object
-   * @return Evaluation
+   * @return EvaluationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Evaluation getQualityConversationEvaluation(GetQualityConversationEvaluationRequest request) throws IOException, ApiException {
+  public EvaluationResponse getQualityConversationEvaluation(GetQualityConversationEvaluationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Evaluation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Evaluation>() {});
+      ApiResponse<EvaluationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -892,13 +893,13 @@ public class QualityApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> getQualityConversationEvaluation(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<EvaluationResponse> getQualityConversationEvaluation(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Evaluation>() {});
+      return pcapiClient.invoke(request, new TypeReference<EvaluationResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)exception;
+      ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -909,7 +910,7 @@ public class QualityApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4411,11 +4412,11 @@ public class QualityApi {
    * @param evaluationId evaluationId (required)
    * @param body evaluation (required)
    * @param expand evaluatorId, evaluationForm (optional)
-   * @return Evaluation
+   * @return EvaluationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Evaluation putQualityConversationEvaluation(String conversationId, String evaluationId, Evaluation body, String expand) throws IOException, ApiException {
+  public EvaluationResponse putQualityConversationEvaluation(String conversationId, String evaluationId, Evaluation body, String expand) throws IOException, ApiException {
     return  putQualityConversationEvaluation(createPutQualityConversationEvaluationRequest(conversationId, evaluationId, body, expand));
   }
 
@@ -4426,10 +4427,10 @@ public class QualityApi {
    * @param evaluationId evaluationId (required)
    * @param body evaluation (required)
    * @param expand evaluatorId, evaluationForm (optional)
-   * @return Evaluation
+   * @return EvaluationResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> putQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, Evaluation body, String expand) throws IOException {
+  public ApiResponse<EvaluationResponse> putQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, Evaluation body, String expand) throws IOException {
     return putQualityConversationEvaluation(createPutQualityConversationEvaluationRequest(conversationId, evaluationId, body, expand).withHttpInfo());
   }
 
@@ -4450,13 +4451,13 @@ public class QualityApi {
    * Update an evaluation
    * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
    * @param request The request object
-   * @return Evaluation
+   * @return EvaluationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Evaluation putQualityConversationEvaluation(PutQualityConversationEvaluationRequest request) throws IOException, ApiException {
+  public EvaluationResponse putQualityConversationEvaluation(PutQualityConversationEvaluationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Evaluation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Evaluation>() {});
+      ApiResponse<EvaluationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -4472,13 +4473,13 @@ public class QualityApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> putQualityConversationEvaluation(ApiRequest<Evaluation> request) throws IOException {
+  public ApiResponse<EvaluationResponse> putQualityConversationEvaluation(ApiRequest<Evaluation> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Evaluation>() {});
+      return pcapiClient.invoke(request, new TypeReference<EvaluationResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)exception;
+      ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4489,7 +4490,7 @@ public class QualityApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<EvaluationResponse> response = (ApiResponse<EvaluationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

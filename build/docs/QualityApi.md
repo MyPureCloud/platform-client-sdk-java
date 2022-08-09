@@ -133,7 +133,7 @@ try {
 
 
 
-> [Evaluation](Evaluation.html) deleteQualityConversationEvaluation(conversationId, evaluationId, expand)
+> [EvaluationResponse](EvaluationResponse.html) deleteQualityConversationEvaluation(conversationId, evaluationId, expand)
 
 Delete an evaluation
 
@@ -169,7 +169,7 @@ String conversationId = "conversationId_example"; // String | conversationId
 String evaluationId = "evaluationId_example"; // String | evaluationId
 String expand = "expand_example"; // String | evaluatorId, evaluationForm
 try {
-    Evaluation result = apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, expand);
+    EvaluationResponse result = apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#deleteQualityConversationEvaluation");
@@ -190,7 +190,7 @@ try {
 
 ### Return type
 
-[**Evaluation**](Evaluation.html)
+[**EvaluationResponse**](EvaluationResponse.html)
 
 <a name="deleteQualityForm"></a>
 
@@ -607,7 +607,7 @@ try {
 
 
 
-> [Evaluation](Evaluation.html) getQualityConversationEvaluation(conversationId, evaluationId, expand)
+> [EvaluationResponse](EvaluationResponse.html) getQualityConversationEvaluation(conversationId, evaluationId, expand)
 
 Get an evaluation
 
@@ -643,7 +643,7 @@ String conversationId = "conversationId_example"; // String | conversationId
 String evaluationId = "evaluationId_example"; // String | evaluationId
 String expand = "expand_example"; // String | agent, evaluator, evaluationForm
 try {
-    Evaluation result = apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, expand);
+    EvaluationResponse result = apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityConversationEvaluation");
@@ -664,7 +664,7 @@ try {
 
 ### Return type
 
-[**Evaluation**](Evaluation.html)
+[**EvaluationResponse**](EvaluationResponse.html)
 
 <a name="getQualityConversationSurveys"></a>
 
@@ -3304,7 +3304,7 @@ try {
 
 
 
-> [Evaluation](Evaluation.html) putQualityConversationEvaluation(conversationId, evaluationId, body, expand)
+> [EvaluationResponse](EvaluationResponse.html) putQualityConversationEvaluation(conversationId, evaluationId, body, expand)
 
 Update an evaluation
 
@@ -3345,7 +3345,7 @@ String evaluationId = "evaluationId_example"; // String | evaluationId
 Evaluation body = new Evaluation(); // Evaluation | evaluation
 String expand = "expand_example"; // String | evaluatorId, evaluationForm
 try {
-    Evaluation result = apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body, expand);
+    EvaluationResponse result = apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#putQualityConversationEvaluation");
@@ -3367,7 +3367,7 @@ try {
 
 ### Return type
 
-[**Evaluation**](Evaluation.html)
+[**EvaluationResponse**](EvaluationResponse.html)
 
 <a name="putQualityForm"></a>
 

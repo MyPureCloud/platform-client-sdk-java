@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationParticipantSecureivrsessions**](ConversationsApi.html#getConversationParticipantSecureivrsessions) | Get a list of secure sessions for this participant. |
 | [**getConversationParticipantWrapup**](ConversationsApi.html#getConversationParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationParticipantWrapupcodes**](ConversationsApi.html#getConversationParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
+| [**getConversationSecureattributes**](ConversationsApi.html#getConversationSecureattributes) | Get the secure attributes on a conversation. |
 | [**getConversations**](ConversationsApi.html#getConversations) | Get active conversations for the logged in user |
 | [**getConversationsCall**](ConversationsApi.html#getConversationsCall) | Get call conversation |
 | [**getConversationsCallParticipantWrapup**](ConversationsApi.html#getConversationsCallParticipantWrapup) | Get the wrap-up for this conversation participant.  |
@@ -57,6 +58,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsEmailParticipantWrapupcodes**](ConversationsApi.html#getConversationsEmailParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsEmailSettings**](ConversationsApi.html#getConversationsEmailSettings) | Get emails settings for a given conversation |
 | [**getConversationsEmails**](ConversationsApi.html#getConversationsEmails) | Get active email conversations for the logged in user |
+| [**getConversationsKeyconfiguration**](ConversationsApi.html#getConversationsKeyconfiguration) | Get the encryption key configurations |
+| [**getConversationsKeyconfigurations**](ConversationsApi.html#getConversationsKeyconfigurations) | Get a list of key configurations data |
 | [**getConversationsMessage**](ConversationsApi.html#getConversationsMessage) | Get message conversation |
 | [**getConversationsMessageCommunicationMessagesMediaMediaId**](ConversationsApi.html#getConversationsMessageCommunicationMessagesMediaMediaId) | Get media |
 | [**getConversationsMessageDetails**](ConversationsApi.html#getConversationsMessageDetails) | Get message |
@@ -83,6 +86,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagingThreadingtimeline**](ConversationsApi.html#getConversationsMessagingThreadingtimeline) | Get conversation threading window timeline for each messaging type |
 | [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | Update a participant. |
 | [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
+| [**patchConversationSecureattributes**](ConversationsApi.html#patchConversationSecureattributes) | Update the secure attributes on a conversation. |
 | [**patchConversationsCall**](ConversationsApi.html#patchConversationsCall) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants |
 | [**patchConversationsCallParticipant**](ConversationsApi.html#patchConversationsCallParticipant) | Update conversation participant |
 | [**patchConversationsCallParticipantAttributes**](ConversationsApi.html#patchConversationsCallParticipantAttributes) | Update the attributes on a conversation participant. |
@@ -146,6 +150,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsEmailParticipantReplace**](ConversationsApi.html#postConversationsEmailParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | Create an email conversation |
 | [**postConversationsFaxes**](ConversationsApi.html#postConversationsFaxes) | Create Fax Conversation |
+| [**postConversationsKeyconfigurations**](ConversationsApi.html#postConversationsKeyconfigurations) | Setup configurations for encryption key creation |
+| [**postConversationsKeyconfigurationsValidate**](ConversationsApi.html#postConversationsKeyconfigurationsValidate) | Validate encryption key configurations without saving it |
 | [**postConversationsMessageCommunicationMessages**](ConversationsApi.html#postConversationsMessageCommunicationMessages) | Send message |
 | [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi.html#postConversationsMessageCommunicationMessagesMedia) | Create media |
 | [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | Get messages in batch |
@@ -160,6 +166,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | Create a WhatsApp Integration |
 | [**postConversationsMessagingSupportedcontent**](ConversationsApi.html#postConversationsMessagingSupportedcontent) | Create a Supported Content profile |
 | [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality. |
+| [**putConversationSecureattributes**](ConversationsApi.html#putConversationSecureattributes) | Set the secure attributes on a conversation. |
 | [**putConversationTags**](ConversationsApi.html#putConversationTags) | Update the tags on a conversation. |
 | [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | Set uuiData to be sent on future commands. |
 | [**putConversationsCallRecordingstate**](ConversationsApi.html#putConversationsCallRecordingstate) | Update a conversation by setting its recording state |
@@ -168,6 +175,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putConversationsCobrowsesessionRecordingstate**](ConversationsApi.html#putConversationsCobrowsesessionRecordingstate) | Update a conversation by setting its recording state |
 | [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | Update conversation draft reply |
 | [**putConversationsEmailRecordingstate**](ConversationsApi.html#putConversationsEmailRecordingstate) | Update a conversation by setting its recording state |
+| [**putConversationsKeyconfiguration**](ConversationsApi.html#putConversationsKeyconfiguration) | Update the encryption key configurations |
 | [**putConversationsMessageRecordingstate**](ConversationsApi.html#putConversationsMessageRecordingstate) | Update a conversation by setting its recording state |
 | [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | Update a LINE messenger integration |
 | [**putConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#putConversationsMessagingSupportedcontentDefault) | Set the organization's default supported content profile that may be assigned to an integration when it is created. |
@@ -1468,6 +1476,67 @@ try {
 ### Return type
 
 [**List&lt;WrapupCode&gt;**](WrapupCode.html)
+
+<a name="getConversationSecureattributes"></a>
+
+# **getConversationSecureattributes**
+
+
+
+> [ConversationSecureAttributes](ConversationSecureAttributes.html) getConversationSecureattributes(conversationId)
+
+Get the secure attributes on a conversation.
+
+Wraps GET /api/v2/conversations/{conversationId}/secureattributes  
+
+Requires ANY permissions: 
+
+* conversation:participant:attributesview
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+try {
+    ConversationSecureAttributes result = apiInstance.getConversationSecureattributes(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationSecureattributes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationSecureAttributes**](ConversationSecureAttributes.html)
 
 <a name="getConversations"></a>
 
@@ -3237,6 +3306,124 @@ This endpoint does not require any parameters.
 
 [**EmailConversationEntityListing**](EmailConversationEntityListing.html)
 
+<a name="getConversationsKeyconfiguration"></a>
+
+# **getConversationsKeyconfiguration**
+
+
+
+> [ConversationEncryptionConfiguration](ConversationEncryptionConfiguration.html) getConversationsKeyconfiguration(keyconfigurationsId)
+
+Get the encryption key configurations
+
+Wraps GET /api/v2/conversations/keyconfigurations/{keyconfigurationsId}  
+
+Requires ANY permissions: 
+
+* conversation:encryptionKey:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String keyconfigurationsId = "keyconfigurationsId_example"; // String | Key Configurations Id
+try {
+    ConversationEncryptionConfiguration result = apiInstance.getConversationsKeyconfiguration(keyconfigurationsId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsKeyconfiguration");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **keyconfigurationsId** | **String**| Key Configurations Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+
+<a name="getConversationsKeyconfigurations"></a>
+
+# **getConversationsKeyconfigurations**
+
+
+
+> [ConversationEncryptionConfigurationListing](ConversationEncryptionConfigurationListing.html) getConversationsKeyconfigurations()
+
+Get a list of key configurations data
+
+Wraps GET /api/v2/conversations/keyconfigurations  
+
+Requires ANY permissions: 
+
+* conversation:encryptionKey:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    ConversationEncryptionConfigurationListing result = apiInstance.getConversationsKeyconfigurations();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsKeyconfigurations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ConversationEncryptionConfigurationListing**](ConversationEncryptionConfigurationListing.html)
+
 <a name="getConversationsMessage"></a>
 
 # **getConversationsMessage**
@@ -4885,6 +5072,69 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="patchConversationSecureattributes"></a>
+
+# **patchConversationSecureattributes**
+
+
+
+> String patchConversationSecureattributes(conversationId, body)
+
+Update the secure attributes on a conversation.
+
+Wraps PATCH /api/v2/conversations/{conversationId}/secureattributes  
+
+Requires ANY permissions: 
+
+* conversation:participant:attributesedit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+ConversationSecureAttributes body = new ConversationSecureAttributes(); // ConversationSecureAttributes | Conversation Secure Attributes
+try {
+    String result = apiInstance.patchConversationSecureattributes(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationSecureattributes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes.html)| Conversation Secure Attributes | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
 
 <a name="patchConversationsCall"></a>
 
@@ -8861,6 +9111,128 @@ try {
 
 [**FaxSendResponse**](FaxSendResponse.html)
 
+<a name="postConversationsKeyconfigurations"></a>
+
+# **postConversationsKeyconfigurations**
+
+
+
+> [ConversationEncryptionConfiguration](ConversationEncryptionConfiguration.html) postConversationsKeyconfigurations(body)
+
+Setup configurations for encryption key creation
+
+Wraps POST /api/v2/conversations/keyconfigurations  
+
+Requires ANY permissions: 
+
+* conversation:encryptionKey:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+ConversationEncryptionConfiguration body = new ConversationEncryptionConfiguration(); // ConversationEncryptionConfiguration | Encryption Configuration
+try {
+    ConversationEncryptionConfiguration result = apiInstance.postConversationsKeyconfigurations(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsKeyconfigurations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption Configuration | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+
+<a name="postConversationsKeyconfigurationsValidate"></a>
+
+# **postConversationsKeyconfigurationsValidate**
+
+
+
+> [ConversationEncryptionConfiguration](ConversationEncryptionConfiguration.html) postConversationsKeyconfigurationsValidate(body)
+
+Validate encryption key configurations without saving it
+
+Wraps POST /api/v2/conversations/keyconfigurations/validate  
+
+Requires ANY permissions: 
+
+* conversation:encryptionKey:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+ConversationEncryptionConfiguration body = new ConversationEncryptionConfiguration(); // ConversationEncryptionConfiguration | Encryption Configuration
+try {
+    ConversationEncryptionConfiguration result = apiInstance.postConversationsKeyconfigurationsValidate(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsKeyconfigurationsValidate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption Configuration | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+
 <a name="postConversationsMessageCommunicationMessages"></a>
 
 # **postConversationsMessageCommunicationMessages**
@@ -9744,6 +10116,69 @@ try {
 
 null (empty response body)
 
+<a name="putConversationSecureattributes"></a>
+
+# **putConversationSecureattributes**
+
+
+
+> String putConversationSecureattributes(conversationId, body)
+
+Set the secure attributes on a conversation.
+
+Wraps PUT /api/v2/conversations/{conversationId}/secureattributes  
+
+Requires ANY permissions: 
+
+* conversation:participant:attributesedit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+ConversationSecureAttributes body = new ConversationSecureAttributes(); // ConversationSecureAttributes | Conversation Secure Attributes
+try {
+    String result = apiInstance.putConversationSecureattributes(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationSecureattributes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes.html)| Conversation Secure Attributes | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
 <a name="putConversationTags"></a>
 
 # **putConversationTags**
@@ -10249,6 +10684,69 @@ try {
 ### Return type
 
 **String**
+
+<a name="putConversationsKeyconfiguration"></a>
+
+# **putConversationsKeyconfiguration**
+
+
+
+> [ConversationEncryptionConfiguration](ConversationEncryptionConfiguration.html) putConversationsKeyconfiguration(keyconfigurationsId, body)
+
+Update the encryption key configurations
+
+Wraps PUT /api/v2/conversations/keyconfigurations/{keyconfigurationsId}  
+
+Requires ANY permissions: 
+
+* conversation:encryptionKey:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String keyconfigurationsId = "keyconfigurationsId_example"; // String | Key Configurations Id
+ConversationEncryptionConfiguration body = new ConversationEncryptionConfiguration(); // ConversationEncryptionConfiguration | Encryption key configuration metadata
+try {
+    ConversationEncryptionConfiguration result = apiInstance.putConversationsKeyconfiguration(keyconfigurationsId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsKeyconfiguration");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **keyconfigurationsId** | **String**| Key Configurations Id | 
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption key configuration metadata | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
 
 <a name="putConversationsMessageRecordingstate"></a>
 

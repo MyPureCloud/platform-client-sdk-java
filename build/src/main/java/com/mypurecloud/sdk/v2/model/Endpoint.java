@@ -177,75 +177,31 @@ public class Endpoint  implements Serializable {
   }
 
 
-  /**
-   * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public Endpoint dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
 
 
-  /**
-   * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public Endpoint dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
 
 
-  /**
-   * The ID of the user that last modified the resource.
-   **/
-  public Endpoint modifiedBy(String modifiedBy) {
-    this.modifiedBy = modifiedBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The ID of the user that last modified the resource.")
   @JsonProperty("modifiedBy")
   public String getModifiedBy() {
     return modifiedBy;
   }
-  public void setModifiedBy(String modifiedBy) {
-    this.modifiedBy = modifiedBy;
-  }
 
 
-  /**
-   * The ID of the user that created the resource.
-   **/
-  public Endpoint createdBy(String createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The ID of the user that created the resource.")
   @JsonProperty("createdBy")
   public String getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(String createdBy) {
-    this.createdBy = createdBy;
   }
 
 
@@ -256,39 +212,17 @@ public class Endpoint  implements Serializable {
   }
 
 
-  /**
-   * The application that last modified the resource.
-   **/
-  public Endpoint modifiedByApp(String modifiedByApp) {
-    this.modifiedByApp = modifiedByApp;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The application that last modified the resource.")
   @JsonProperty("modifiedByApp")
   public String getModifiedByApp() {
     return modifiedByApp;
   }
-  public void setModifiedByApp(String modifiedByApp) {
-    this.modifiedByApp = modifiedByApp;
-  }
 
 
-  /**
-   * The application that created the resource.
-   **/
-  public Endpoint createdByApp(String createdByApp) {
-    this.createdByApp = createdByApp;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The application that created the resource.")
   @JsonProperty("createdByApp")
   public String getCreatedByApp() {
     return createdByApp;
-  }
-  public void setCreatedByApp(String createdByApp) {
-    this.createdByApp = createdByApp;
   }
 
 

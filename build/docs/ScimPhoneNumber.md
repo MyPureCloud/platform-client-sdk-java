@@ -30,7 +30,7 @@ title: ScimPhoneNumber
 | OTHER | &quot;other&quot; | 
 | MICROSOFTTEAMS | &quot;microsoftteams&quot; | 
 | ZOOMPHONE | &quot;zoomphone&quot; | 
-| EIGHBYEIGHT | &quot;eighbyeight&quot; | 
+| EIGHTBYEIGHT | &quot;eightbyeight&quot; | 
 {: class="table table-striped"}
 
 

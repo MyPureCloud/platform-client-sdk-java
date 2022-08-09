@@ -28,9 +28,7 @@ title: EvaluationAggregationQueryMe
 | CONVERSATIONID | &quot;conversationId&quot; |
 | CONVERSATIONSTART | &quot;conversationStart&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
-| EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; |
 | EVALUATIONID | &quot;evaluationId&quot; |
-| EVALUATIONRELEASEDATE | &quot;evaluationReleaseDate&quot; |
 | EVALUATORID | &quot;evaluatorId&quot; |
 | FORMID | &quot;formId&quot; |
 | QUEUEID | &quot;queueId&quot; |

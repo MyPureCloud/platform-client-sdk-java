@@ -38,8 +38,11 @@ import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.ConversationEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationSecureAttributes;
 import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
 import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.ConversationUser;
@@ -135,6 +138,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrses
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupcodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallParticipantWrapupRequest;
@@ -164,6 +168,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapup
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageCommunicationMessagesMediaMediaIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageDetailsRequest;
@@ -190,6 +196,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcont
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingThreadingtimelineRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantAttributesRequest;
@@ -253,6 +260,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAtt
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsFaxesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
@@ -267,6 +276,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrations
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSupportedcontentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallRecordingstateRequest;
@@ -275,6 +285,7 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsChatRecordingstateRequ
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCobrowsesessionRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessageRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSupportedcontentDefaultRequest;
@@ -1952,6 +1963,84 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the secure attributes on a conversation.
+   * 
+   * @param conversationId conversation ID (required)
+   * @return ConversationSecureAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationSecureAttributes getConversationSecureattributes(String conversationId) throws IOException, ApiException {
+    return  getConversationSecureattributes(createGetConversationSecureattributesRequest(conversationId));
+  }
+
+  /**
+   * Get the secure attributes on a conversation.
+   * 
+   * @param conversationId conversation ID (required)
+   * @return ConversationSecureAttributes
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationSecureAttributes> getConversationSecureattributesWithHttpInfo(String conversationId) throws IOException {
+    return getConversationSecureattributes(createGetConversationSecureattributesRequest(conversationId).withHttpInfo());
+  }
+
+  private GetConversationSecureattributesRequest createGetConversationSecureattributesRequest(String conversationId) {
+    return GetConversationSecureattributesRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Get the secure attributes on a conversation.
+   * 
+   * @param request The request object
+   * @return ConversationSecureAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationSecureAttributes getConversationSecureattributes(GetConversationSecureattributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationSecureAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationSecureAttributes>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the secure attributes on a conversation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationSecureAttributes> getConversationSecureattributes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationSecureAttributes>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationSecureAttributes> response = (ApiResponse<ConversationSecureAttributes>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationSecureAttributes> response = (ApiResponse<ConversationSecureAttributes>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4291,6 +4380,158 @@ public class ConversationsApi {
   }
 
   /**
+   * Get the encryption key configurations
+   * 
+   * @param keyconfigurationsId Key Configurations Id (required)
+   * @return ConversationEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationEncryptionConfiguration getConversationsKeyconfiguration(String keyconfigurationsId) throws IOException, ApiException {
+    return  getConversationsKeyconfiguration(createGetConversationsKeyconfigurationRequest(keyconfigurationsId));
+  }
+
+  /**
+   * Get the encryption key configurations
+   * 
+   * @param keyconfigurationsId Key Configurations Id (required)
+   * @return ConversationEncryptionConfiguration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationEncryptionConfiguration> getConversationsKeyconfigurationWithHttpInfo(String keyconfigurationsId) throws IOException {
+    return getConversationsKeyconfiguration(createGetConversationsKeyconfigurationRequest(keyconfigurationsId).withHttpInfo());
+  }
+
+  private GetConversationsKeyconfigurationRequest createGetConversationsKeyconfigurationRequest(String keyconfigurationsId) {
+    return GetConversationsKeyconfigurationRequest.builder()
+            .withKeyconfigurationsId(keyconfigurationsId)
+
+            .build();
+  }
+
+  /**
+   * Get the encryption key configurations
+   * 
+   * @param request The request object
+   * @return ConversationEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationEncryptionConfiguration getConversationsKeyconfiguration(GetConversationsKeyconfigurationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationEncryptionConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the encryption key configurations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationEncryptionConfiguration> getConversationsKeyconfiguration(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationEncryptionConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of key configurations data
+   * 
+   * @return ConversationEncryptionConfigurationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationEncryptionConfigurationListing getConversationsKeyconfigurations() throws IOException, ApiException {
+    return  getConversationsKeyconfigurations(createGetConversationsKeyconfigurationsRequest());
+  }
+
+  /**
+   * Get a list of key configurations data
+   * 
+   * @return ConversationEncryptionConfigurationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationEncryptionConfigurationListing> getConversationsKeyconfigurationsWithHttpInfo() throws IOException {
+    return getConversationsKeyconfigurations(createGetConversationsKeyconfigurationsRequest().withHttpInfo());
+  }
+
+  private GetConversationsKeyconfigurationsRequest createGetConversationsKeyconfigurationsRequest() {
+    return GetConversationsKeyconfigurationsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of key configurations data
+   * 
+   * @param request The request object
+   * @return ConversationEncryptionConfigurationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationEncryptionConfigurationListing getConversationsKeyconfigurations(GetConversationsKeyconfigurationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationEncryptionConfigurationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationEncryptionConfigurationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of key configurations data
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationEncryptionConfigurationListing> getConversationsKeyconfigurations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationEncryptionConfigurationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEncryptionConfigurationListing> response = (ApiResponse<ConversationEncryptionConfigurationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEncryptionConfigurationListing> response = (ApiResponse<ConversationEncryptionConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get message conversation
    * 
    * @param conversationId conversationId (required)
@@ -6436,6 +6677,88 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the secure attributes on a conversation.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body Conversation Secure Attributes (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String patchConversationSecureattributes(String conversationId, ConversationSecureAttributes body) throws IOException, ApiException {
+    return  patchConversationSecureattributes(createPatchConversationSecureattributesRequest(conversationId, body));
+  }
+
+  /**
+   * Update the secure attributes on a conversation.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body Conversation Secure Attributes (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> patchConversationSecureattributesWithHttpInfo(String conversationId, ConversationSecureAttributes body) throws IOException {
+    return patchConversationSecureattributes(createPatchConversationSecureattributesRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PatchConversationSecureattributesRequest createPatchConversationSecureattributesRequest(String conversationId, ConversationSecureAttributes body) {
+    return PatchConversationSecureattributesRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the secure attributes on a conversation.
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String patchConversationSecureattributes(PatchConversationSecureattributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the secure attributes on a conversation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> patchConversationSecureattributes(ApiRequest<ConversationSecureAttributes> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11634,6 +11957,162 @@ public class ConversationsApi {
   }
 
   /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param body Encryption Configuration (required)
+   * @return ConversationEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationEncryptionConfiguration postConversationsKeyconfigurations(ConversationEncryptionConfiguration body) throws IOException, ApiException {
+    return  postConversationsKeyconfigurations(createPostConversationsKeyconfigurationsRequest(body));
+  }
+
+  /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param body Encryption Configuration (required)
+   * @return ConversationEncryptionConfiguration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationEncryptionConfiguration> postConversationsKeyconfigurationsWithHttpInfo(ConversationEncryptionConfiguration body) throws IOException {
+    return postConversationsKeyconfigurations(createPostConversationsKeyconfigurationsRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsKeyconfigurationsRequest createPostConversationsKeyconfigurationsRequest(ConversationEncryptionConfiguration body) {
+    return PostConversationsKeyconfigurationsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param request The request object
+   * @return ConversationEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationEncryptionConfiguration postConversationsKeyconfigurations(PostConversationsKeyconfigurationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationEncryptionConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationEncryptionConfiguration> postConversationsKeyconfigurations(ApiRequest<ConversationEncryptionConfiguration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationEncryptionConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param body Encryption Configuration (required)
+   * @return ConversationEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationEncryptionConfiguration postConversationsKeyconfigurationsValidate(ConversationEncryptionConfiguration body) throws IOException, ApiException {
+    return  postConversationsKeyconfigurationsValidate(createPostConversationsKeyconfigurationsValidateRequest(body));
+  }
+
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param body Encryption Configuration (required)
+   * @return ConversationEncryptionConfiguration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationEncryptionConfiguration> postConversationsKeyconfigurationsValidateWithHttpInfo(ConversationEncryptionConfiguration body) throws IOException {
+    return postConversationsKeyconfigurationsValidate(createPostConversationsKeyconfigurationsValidateRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsKeyconfigurationsValidateRequest createPostConversationsKeyconfigurationsValidateRequest(ConversationEncryptionConfiguration body) {
+    return PostConversationsKeyconfigurationsValidateRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param request The request object
+   * @return ConversationEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationEncryptionConfiguration postConversationsKeyconfigurationsValidate(PostConversationsKeyconfigurationsValidateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationEncryptionConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationEncryptionConfiguration> postConversationsKeyconfigurationsValidate(ApiRequest<ConversationEncryptionConfiguration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationEncryptionConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Send message
    * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
    * @param conversationId conversationId (required)
@@ -12748,6 +13227,88 @@ public class ConversationsApi {
   }
 
   /**
+   * Set the secure attributes on a conversation.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body Conversation Secure Attributes (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationSecureattributes(String conversationId, ConversationSecureAttributes body) throws IOException, ApiException {
+    return  putConversationSecureattributes(createPutConversationSecureattributesRequest(conversationId, body));
+  }
+
+  /**
+   * Set the secure attributes on a conversation.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body Conversation Secure Attributes (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationSecureattributesWithHttpInfo(String conversationId, ConversationSecureAttributes body) throws IOException {
+    return putConversationSecureattributes(createPutConversationSecureattributesRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationSecureattributesRequest createPutConversationSecureattributesRequest(String conversationId, ConversationSecureAttributes body) {
+    return PutConversationSecureattributesRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Set the secure attributes on a conversation.
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationSecureattributes(PutConversationSecureattributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Set the secure attributes on a conversation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationSecureattributes(ApiRequest<ConversationSecureAttributes> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the tags on a conversation.
    * 
    * @param conversationId conversation ID (required)
@@ -13407,6 +13968,88 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param keyconfigurationsId Key Configurations Id (required)
+   * @param body Encryption key configuration metadata (required)
+   * @return ConversationEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationEncryptionConfiguration putConversationsKeyconfiguration(String keyconfigurationsId, ConversationEncryptionConfiguration body) throws IOException, ApiException {
+    return  putConversationsKeyconfiguration(createPutConversationsKeyconfigurationRequest(keyconfigurationsId, body));
+  }
+
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param keyconfigurationsId Key Configurations Id (required)
+   * @param body Encryption key configuration metadata (required)
+   * @return ConversationEncryptionConfiguration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationEncryptionConfiguration> putConversationsKeyconfigurationWithHttpInfo(String keyconfigurationsId, ConversationEncryptionConfiguration body) throws IOException {
+    return putConversationsKeyconfiguration(createPutConversationsKeyconfigurationRequest(keyconfigurationsId, body).withHttpInfo());
+  }
+
+  private PutConversationsKeyconfigurationRequest createPutConversationsKeyconfigurationRequest(String keyconfigurationsId, ConversationEncryptionConfiguration body) {
+    return PutConversationsKeyconfigurationRequest.builder()
+            .withKeyconfigurationsId(keyconfigurationsId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param request The request object
+   * @return ConversationEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationEncryptionConfiguration putConversationsKeyconfiguration(PutConversationsKeyconfigurationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationEncryptionConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationEncryptionConfiguration> putConversationsKeyconfiguration(ApiRequest<ConversationEncryptionConfiguration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationEncryptionConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -78,12 +78,17 @@ public class GetOrganizationsLimitsChangerequestsRequest {
 	} 
 
 	public enum statusValues { 
-		OPEN("Open"),
 		APPROVED("Approved"),
-		IMPLEMENTINGCHANGE("ImplementingChange"),
-		CHANGEIMPLEMENTED("ChangeImplemented"),
 		REJECTED("Rejected"),
 		ROLLBACK("Rollback"),
+		PENDING("Pending"),
+		OPEN("Open"),
+		SECONDARYAPPROVALNAMESPACESADDED("SecondaryApprovalNamespacesAdded"),
+		REVIEWERAPPROVED("ReviewerApproved"),
+		REVIEWERREJECTED("ReviewerRejected"),
+		REVIEWERROLLBACK("ReviewerRollback"),
+		IMPLEMENTINGCHANGE("ImplementingChange"),
+		CHANGEIMPLEMENTED("ChangeImplemented"),
 		IMPLEMENTINGROLLBACK("ImplementingRollback"),
 		ROLLBACKIMPLEMENTED("RollbackImplemented");
 

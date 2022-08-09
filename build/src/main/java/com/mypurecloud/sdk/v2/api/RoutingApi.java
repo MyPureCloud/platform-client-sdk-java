@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.AssessmentListing;
+import com.mypurecloud.sdk.v2.model.AvailableMediaTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.BenefitAssessment;
 import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriod;
@@ -96,6 +97,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingAvailablemediatypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
@@ -1816,6 +1818,80 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AssessmentJobListing> response = (ApiResponse<AssessmentJobListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get available media types
+   * 
+   * @return AvailableMediaTypeEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AvailableMediaTypeEntityListing getRoutingAvailablemediatypes() throws IOException, ApiException {
+    return  getRoutingAvailablemediatypes(createGetRoutingAvailablemediatypesRequest());
+  }
+
+  /**
+   * Get available media types
+   * 
+   * @return AvailableMediaTypeEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AvailableMediaTypeEntityListing> getRoutingAvailablemediatypesWithHttpInfo() throws IOException {
+    return getRoutingAvailablemediatypes(createGetRoutingAvailablemediatypesRequest().withHttpInfo());
+  }
+
+  private GetRoutingAvailablemediatypesRequest createGetRoutingAvailablemediatypesRequest() {
+    return GetRoutingAvailablemediatypesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get available media types
+   * 
+   * @param request The request object
+   * @return AvailableMediaTypeEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AvailableMediaTypeEntityListing getRoutingAvailablemediatypes(GetRoutingAvailablemediatypesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AvailableMediaTypeEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AvailableMediaTypeEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get available media types
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AvailableMediaTypeEntityListing> getRoutingAvailablemediatypes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AvailableMediaTypeEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AvailableMediaTypeEntityListing> response = (ApiResponse<AvailableMediaTypeEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AvailableMediaTypeEntityListing> response = (ApiResponse<AvailableMediaTypeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

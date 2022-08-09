@@ -56,7 +56,8 @@ public class MessageDetails  implements Serializable {
     RECEIVED("received"),
     DELIVERY_SUCCESS("delivery-success"),
     DELIVERY_FAILED("delivery-failed"),
-    READ("read");
+    READ("read"),
+    REMOVED("removed");
 
     private String value;
 

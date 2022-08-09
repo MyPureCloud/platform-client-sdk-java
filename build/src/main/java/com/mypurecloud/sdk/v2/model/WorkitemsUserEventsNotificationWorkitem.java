@@ -12,11 +12,14 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationCustomAttribute;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationDelta;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -170,6 +173,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   private AssignmentStateEnum assignmentState = null;
   private String assignmentId = null;
   private Integer alertTimeoutSeconds = null;
+  private Map<String, WorkitemsUserEventsNotificationCustomAttribute> customFields = null;
 
   
   /**
@@ -614,6 +618,23 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   }
 
 
+  /**
+   **/
+  public WorkitemsUserEventsNotificationWorkitem customFields(Map<String, WorkitemsUserEventsNotificationCustomAttribute> customFields) {
+    this.customFields = customFields;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("customFields")
+  public Map<String, WorkitemsUserEventsNotificationCustomAttribute> getCustomFields() {
+    return customFields;
+  }
+  public void setCustomFields(Map<String, WorkitemsUserEventsNotificationCustomAttribute> customFields) {
+    this.customFields = customFields;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -649,12 +670,13 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
             Objects.equals(this.changes, workitemsUserEventsNotificationWorkitem.changes) &&
             Objects.equals(this.assignmentState, workitemsUserEventsNotificationWorkitem.assignmentState) &&
             Objects.equals(this.assignmentId, workitemsUserEventsNotificationWorkitem.assignmentId) &&
-            Objects.equals(this.alertTimeoutSeconds, workitemsUserEventsNotificationWorkitem.alertTimeoutSeconds);
+            Objects.equals(this.alertTimeoutSeconds, workitemsUserEventsNotificationWorkitem.alertTimeoutSeconds) &&
+            Objects.equals(this.customFields, workitemsUserEventsNotificationWorkitem.customFields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, durationSeconds, ttl, statusId, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds);
+    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, durationSeconds, ttl, statusId, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, customFields);
   }
 
   @Override
@@ -688,6 +710,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
     sb.append("    assignmentState: ").append(toIndentedString(assignmentState)).append("\n");
     sb.append("    assignmentId: ").append(toIndentedString(assignmentId)).append("\n");
     sb.append("    alertTimeoutSeconds: ").append(toIndentedString(alertTimeoutSeconds)).append("\n");
+    sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("}");
     return sb.toString();
   }

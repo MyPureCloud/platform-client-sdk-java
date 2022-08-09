@@ -43,7 +43,8 @@ public class IpAddressRange  implements Serializable {
   public enum ServiceEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DATA_ACTIONS("data-actions"),
-    SMTP("smtp");
+    SMTP("smtp"),
+    AUDIOHOOK("audiohook");
 
     private String value;
 

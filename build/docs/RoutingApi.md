@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingAssessments**](RoutingApi.html#getRoutingAssessments) | Retrieve all benefit assessments. |
 | [**getRoutingAssessmentsJob**](RoutingApi.html#getRoutingAssessmentsJob) | Retrieve a single benefit assessments job. |
 | [**getRoutingAssessmentsJobs**](RoutingApi.html#getRoutingAssessmentsJobs) | Retrieve all benefit assessment jobs. |
+| [**getRoutingAvailablemediatypes**](RoutingApi.html#getRoutingAvailablemediatypes) | Get available media types |
 | [**getRoutingEmailDomain**](RoutingApi.html#getRoutingEmailDomain) | Get domain |
 | [**getRoutingEmailDomainRoute**](RoutingApi.html#getRoutingEmailDomainRoute) | Get a route |
 | [**getRoutingEmailDomainRoutes**](RoutingApi.html#getRoutingEmailDomainRoutes) | Get routes |
@@ -1395,6 +1396,62 @@ try {
 ### Return type
 
 [**AssessmentJobListing**](AssessmentJobListing.html)
+
+<a name="getRoutingAvailablemediatypes"></a>
+
+# **getRoutingAvailablemediatypes**
+
+
+
+> [AvailableMediaTypeEntityListing](AvailableMediaTypeEntityListing.html) getRoutingAvailablemediatypes()
+
+Get available media types
+
+Wraps GET /api/v2/routing/availablemediatypes  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+try {
+    AvailableMediaTypeEntityListing result = apiInstance.getRoutingAvailablemediatypes();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingAvailablemediatypes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**AvailableMediaTypeEntityListing**](AvailableMediaTypeEntityListing.html)
 
 <a name="getRoutingEmailDomain"></a>
 

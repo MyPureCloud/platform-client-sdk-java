@@ -41,8 +41,11 @@ import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.ConversationEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationSecureAttributes;
 import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
 import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.ConversationUser;
@@ -138,6 +141,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrses
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupcodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallParticipantWrapupRequest;
@@ -167,6 +171,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapup
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsKeyconfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageCommunicationMessagesMediaMediaIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageDetailsRequest;
@@ -193,6 +199,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcont
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingThreadingtimelineRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantAttributesRequest;
@@ -256,6 +263,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAtt
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsFaxesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
@@ -270,6 +279,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrations
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSupportedcontentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallRecordingstateRequest;
@@ -278,6 +288,7 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsChatRecordingstateRequ
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCobrowsesessionRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessageRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSupportedcontentDefaultRequest;
@@ -1868,6 +1879,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the secure attributes on a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationSecureAttributes> getConversationSecureattributesAsync(GetConversationSecureattributesRequest request, final AsyncApiCallback<ConversationSecureAttributes> callback) {
+    try {
+      final SettableFuture<ConversationSecureAttributes> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationSecureAttributes>() {}, new AsyncApiCallback<ApiResponse<ConversationSecureAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationSecureAttributes> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the secure attributes on a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationSecureAttributes>> getConversationSecureattributesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationSecureAttributes>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationSecureAttributes>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationSecureAttributes>() {}, new AsyncApiCallback<ApiResponse<ConversationSecureAttributes>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationSecureAttributes> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationSecureAttributes> response = (ApiResponse<ConversationSecureAttributes>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationSecureAttributes> response = (ApiResponse<ConversationSecureAttributes>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4055,6 +4141,156 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Get the encryption key configurations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationEncryptionConfiguration> getConversationsKeyconfigurationAsync(GetConversationsKeyconfigurationRequest request, final AsyncApiCallback<ConversationEncryptionConfiguration> callback) {
+    try {
+      final SettableFuture<ConversationEncryptionConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the encryption key configurations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationEncryptionConfiguration>> getConversationsKeyconfigurationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationEncryptionConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of key configurations data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationEncryptionConfigurationListing> getConversationsKeyconfigurationsAsync(GetConversationsKeyconfigurationsRequest request, final AsyncApiCallback<ConversationEncryptionConfigurationListing> callback) {
+    try {
+      final SettableFuture<ConversationEncryptionConfigurationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationEncryptionConfigurationListing>() {}, new AsyncApiCallback<ApiResponse<ConversationEncryptionConfigurationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationEncryptionConfigurationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of key configurations data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationEncryptionConfigurationListing>> getConversationsKeyconfigurationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationEncryptionConfigurationListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationEncryptionConfigurationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationEncryptionConfigurationListing>() {}, new AsyncApiCallback<ApiResponse<ConversationEncryptionConfigurationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationEncryptionConfigurationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationEncryptionConfigurationListing> response = (ApiResponse<ConversationEncryptionConfigurationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationEncryptionConfigurationListing> response = (ApiResponse<ConversationEncryptionConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get message conversation
    * 
    * @param request the request object
@@ -5993,6 +6229,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the secure attributes on a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<String> patchConversationSecureattributesAsync(PatchConversationSecureattributesRequest request, final AsyncApiCallback<String> callback) {
+    try {
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the secure attributes on a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<String>> patchConversationSecureattributesAsync(ApiRequest<ConversationSecureAttributes> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+    try {
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10730,6 +11041,156 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationEncryptionConfiguration> postConversationsKeyconfigurationsAsync(PostConversationsKeyconfigurationsRequest request, final AsyncApiCallback<ConversationEncryptionConfiguration> callback) {
+    try {
+      final SettableFuture<ConversationEncryptionConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationEncryptionConfiguration>> postConversationsKeyconfigurationsAsync(ApiRequest<ConversationEncryptionConfiguration> request, final AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationEncryptionConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationEncryptionConfiguration> postConversationsKeyconfigurationsValidateAsync(PostConversationsKeyconfigurationsValidateRequest request, final AsyncApiCallback<ConversationEncryptionConfiguration> callback) {
+    try {
+      final SettableFuture<ConversationEncryptionConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationEncryptionConfiguration>> postConversationsKeyconfigurationsValidateAsync(ApiRequest<ConversationEncryptionConfiguration> request, final AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationEncryptionConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Send message
    * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
    * @param request the request object
@@ -11780,6 +12241,81 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Set the secure attributes on a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<String> putConversationSecureattributesAsync(PutConversationSecureattributesRequest request, final AsyncApiCallback<String> callback) {
+    try {
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Set the secure attributes on a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<String>> putConversationSecureattributesAsync(ApiRequest<ConversationSecureAttributes> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+    try {
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update the tags on a conversation.
    * 
    * @param request the request object
@@ -12368,6 +12904,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationEncryptionConfiguration> putConversationsKeyconfigurationAsync(PutConversationsKeyconfigurationRequest request, final AsyncApiCallback<ConversationEncryptionConfiguration> callback) {
+    try {
+      final SettableFuture<ConversationEncryptionConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationEncryptionConfiguration>> putConversationsKeyconfigurationAsync(ApiRequest<ConversationEncryptionConfiguration> request, final AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationEncryptionConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<ConversationEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationEncryptionConfiguration> response = (ApiResponse<ConversationEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

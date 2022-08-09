@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.AssessmentListing;
+import com.mypurecloud.sdk.v2.model.AvailableMediaTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.BenefitAssessment;
 import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriod;

@@ -124,14 +124,14 @@ public class RoutingData  implements Serializable {
 
 
   /**
-   * A list of scored agents for routing decisions
+   * A list of scored agents for routing decisions. For Agent Owned Callbacks use one scored agent with a score of 100.
    **/
   public RoutingData scoredAgents(List<ScoredAgent> scoredAgents) {
     this.scoredAgents = scoredAgents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of scored agents for routing decisions")
+  @ApiModelProperty(example = "null", value = "A list of scored agents for routing decisions. For Agent Owned Callbacks use one scored agent with a score of 100.")
   @JsonProperty("scoredAgents")
   public List<ScoredAgent> getScoredAgents() {
     return scoredAgents;
@@ -142,14 +142,14 @@ public class RoutingData  implements Serializable {
 
 
   /**
-   * An array of flags indicating how the conversation should be routed
+   * An array of flags indicating how the conversation should be routed. Use \"AGENT_OWNED_CALLBACK\" when creating an Agent Owned Callback.
    **/
   public RoutingData routingFlags(List<String> routingFlags) {
     this.routingFlags = routingFlags;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An array of flags indicating how the conversation should be routed")
+  @ApiModelProperty(example = "null", value = "An array of flags indicating how the conversation should be routed. Use \"AGENT_OWNED_CALLBACK\" when creating an Agent Owned Callback.")
   @JsonProperty("routingFlags")
   public List<String> getRoutingFlags() {
     return routingFlags;

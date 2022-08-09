@@ -42,6 +42,7 @@ title: Miner
 | ES_US | &quot;es-us&quot; | 
 | ES_ES | &quot;es-es&quot; | 
 | FR_FR | &quot;fr-fr&quot; | 
+| FR_CA | &quot;fr-ca&quot; | 
 {: class="table table-striped"}
 
 

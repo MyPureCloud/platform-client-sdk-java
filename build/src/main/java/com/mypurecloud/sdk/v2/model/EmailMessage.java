@@ -39,6 +39,8 @@ public class EmailMessage  implements Serializable {
   private String htmlBody = null;
   private Date time = null;
   private Boolean historyIncluded = null;
+  private Integer emailSizeBytes = null;
+  private Integer maxEmailSizeBytes = null;
   private String selfUri = null;
 
   
@@ -264,6 +266,20 @@ public class EmailMessage  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form.")
+  @JsonProperty("emailSizeBytes")
+  public Integer getEmailSizeBytes() {
+    return emailSizeBytes;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration")
+  @JsonProperty("maxEmailSizeBytes")
+  public Integer getMaxEmailSizeBytes() {
+    return maxEmailSizeBytes;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -294,12 +310,14 @@ public class EmailMessage  implements Serializable {
             Objects.equals(this.htmlBody, emailMessage.htmlBody) &&
             Objects.equals(this.time, emailMessage.time) &&
             Objects.equals(this.historyIncluded, emailMessage.historyIncluded) &&
+            Objects.equals(this.emailSizeBytes, emailMessage.emailSizeBytes) &&
+            Objects.equals(this.maxEmailSizeBytes, emailMessage.maxEmailSizeBytes) &&
             Objects.equals(this.selfUri, emailMessage.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, to, cc, bcc, from, replyTo, subject, attachments, textBody, htmlBody, time, historyIncluded, selfUri);
+    return Objects.hash(id, name, to, cc, bcc, from, replyTo, subject, attachments, textBody, htmlBody, time, historyIncluded, emailSizeBytes, maxEmailSizeBytes, selfUri);
   }
 
   @Override
@@ -320,6 +338,8 @@ public class EmailMessage  implements Serializable {
     sb.append("    htmlBody: ").append(toIndentedString(htmlBody)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
     sb.append("    historyIncluded: ").append(toIndentedString(historyIncluded)).append("\n");
+    sb.append("    emailSizeBytes: ").append(toIndentedString(emailSizeBytes)).append("\n");
+    sb.append("    maxEmailSizeBytes: ").append(toIndentedString(maxEmailSizeBytes)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
