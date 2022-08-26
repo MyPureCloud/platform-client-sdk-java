@@ -1,0 +1,198 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestSessionApp;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
+/**
+ * KnowledgeDocumentGuestSearchRequest
+ */
+
+public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
+  
+  private String query = null;
+  private Integer pageSize = null;
+  private Integer pageNumber = null;
+  private String searchId = null;
+  private Integer total = null;
+  private Integer pageCount = null;
+  private String sessionId = null;
+  private Boolean includeDraftDocuments = null;
+  private KnowledgeGuestSessionApp app = null;
+
+  
+  /**
+   * Query to search content in the knowledge base. Maximum of 30 records per query can be fetched.
+   **/
+  public KnowledgeDocumentGuestSearchRequest query(String query) {
+    this.query = query;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Query to search content in the knowledge base. Maximum of 30 records per query can be fetched.")
+  @JsonProperty("query")
+  public String getQuery() {
+    return query;
+  }
+  public void setQuery(String query) {
+    this.query = query;
+  }
+
+
+  /**
+   * Page size of the returned results.
+   **/
+  public KnowledgeDocumentGuestSearchRequest pageSize(Integer pageSize) {
+    this.pageSize = pageSize;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Page size of the returned results.")
+  @JsonProperty("pageSize")
+  public Integer getPageSize() {
+    return pageSize;
+  }
+  public void setPageSize(Integer pageSize) {
+    this.pageSize = pageSize;
+  }
+
+
+  /**
+   * Page number of the returned results.
+   **/
+  public KnowledgeDocumentGuestSearchRequest pageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Page number of the returned results.")
+  @JsonProperty("pageNumber")
+  public Integer getPageNumber() {
+    return pageNumber;
+  }
+  public void setPageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the search.")
+  @JsonProperty("searchId")
+  public String getSearchId() {
+    return searchId;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The total number of documents matching the query.")
+  @JsonProperty("total")
+  public Integer getTotal() {
+    return total;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Number of pages returned in the result calculated according to the pageSize and the total")
+  @JsonProperty("pageCount")
+  public Integer getPageCount() {
+    return pageCount;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Session ID of the search.")
+  @JsonProperty("sessionId")
+  public String getSessionId() {
+    return sessionId;
+  }
+
+
+  /**
+   * Indicates whether the search results would also include draft documents.
+   **/
+  public KnowledgeDocumentGuestSearchRequest includeDraftDocuments(Boolean includeDraftDocuments) {
+    this.includeDraftDocuments = includeDraftDocuments;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether the search results would also include draft documents.")
+  @JsonProperty("includeDraftDocuments")
+  public Boolean getIncludeDraftDocuments() {
+    return includeDraftDocuments;
+  }
+  public void setIncludeDraftDocuments(Boolean includeDraftDocuments) {
+    this.includeDraftDocuments = includeDraftDocuments;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The app where the session is started.")
+  @JsonProperty("app")
+  public KnowledgeGuestSessionApp getApp() {
+    return app;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    KnowledgeDocumentGuestSearchRequest knowledgeDocumentGuestSearchRequest = (KnowledgeDocumentGuestSearchRequest) o;
+
+    return Objects.equals(this.query, knowledgeDocumentGuestSearchRequest.query) &&
+            Objects.equals(this.pageSize, knowledgeDocumentGuestSearchRequest.pageSize) &&
+            Objects.equals(this.pageNumber, knowledgeDocumentGuestSearchRequest.pageNumber) &&
+            Objects.equals(this.searchId, knowledgeDocumentGuestSearchRequest.searchId) &&
+            Objects.equals(this.total, knowledgeDocumentGuestSearchRequest.total) &&
+            Objects.equals(this.pageCount, knowledgeDocumentGuestSearchRequest.pageCount) &&
+            Objects.equals(this.sessionId, knowledgeDocumentGuestSearchRequest.sessionId) &&
+            Objects.equals(this.includeDraftDocuments, knowledgeDocumentGuestSearchRequest.includeDraftDocuments) &&
+            Objects.equals(this.app, knowledgeDocumentGuestSearchRequest.app);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, sessionId, includeDraftDocuments, app);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class KnowledgeDocumentGuestSearchRequest {\n");
+    
+    sb.append("    query: ").append(toIndentedString(query)).append("\n");
+    sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
+    sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
+    sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    includeDraftDocuments: ").append(toIndentedString(includeDraftDocuments)).append("\n");
+    sb.append("    app: ").append(toIndentedString(app)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

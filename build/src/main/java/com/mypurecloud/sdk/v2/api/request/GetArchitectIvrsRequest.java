@@ -142,6 +142,20 @@ public class GetArchitectIvrsRequest {
 	    return this;
 	} 
 
+	private String dnis;
+	public String getDnis() {
+		return this.dnis;
+	}
+
+	public void setDnis(String dnis) {
+		this.dnis = dnis;
+	}
+
+	public GetArchitectIvrsRequest withDnis(String dnis) {
+	    this.setDnis(dnis);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -179,6 +193,9 @@ public class GetArchitectIvrsRequest {
         
 
                 .withQueryParameters("name", "", name)
+        
+
+                .withQueryParameters("dnis", "", dnis)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -223,6 +240,11 @@ public class GetArchitectIvrsRequest {
 
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+
+		public Builder withDnis(String dnis) {
+			request.setDnis(dnis);
 			return this;
 		}
 

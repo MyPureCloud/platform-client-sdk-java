@@ -15,7 +15,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ActionMapActionTemplate;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowFields;
 import com.mypurecloud.sdk.v2.model.OpenActionFields;
-import com.mypurecloud.sdk.v2.model.WebMessagingOfferFields;
+import com.mypurecloud.sdk.v2.model.PatchActionProperties;
+import com.mypurecloud.sdk.v2.model.PatchWebMessagingOfferFields;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -79,8 +80,11 @@ public class PatchAction  implements Serializable {
   }
   private MediaTypeEnum mediaType = null;
   private ActionMapActionTemplate actionTemplate = null;
+  private String actionTargetId = null;
+  private Boolean isPacingEnabled = null;
+  private PatchActionProperties props = null;
   private ArchitectFlowFields architectFlowFields = null;
-  private WebMessagingOfferFields webMessagingOfferFields = null;
+  private PatchWebMessagingOfferFields webMessagingOfferFields = null;
   private OpenActionFields openActionFields = null;
 
   
@@ -121,6 +125,60 @@ public class PatchAction  implements Serializable {
 
 
   /**
+   * Action target ID.
+   **/
+  public PatchAction actionTargetId(String actionTargetId) {
+    this.actionTargetId = actionTargetId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Action target ID.")
+  @JsonProperty("actionTargetId")
+  public String getActionTargetId() {
+    return actionTargetId;
+  }
+  public void setActionTargetId(String actionTargetId) {
+    this.actionTargetId = actionTargetId;
+  }
+
+
+  /**
+   * Whether this action should be throttled.
+   **/
+  public PatchAction isPacingEnabled(Boolean isPacingEnabled) {
+    this.isPacingEnabled = isPacingEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this action should be throttled.")
+  @JsonProperty("isPacingEnabled")
+  public Boolean getIsPacingEnabled() {
+    return isPacingEnabled;
+  }
+  public void setIsPacingEnabled(Boolean isPacingEnabled) {
+    this.isPacingEnabled = isPacingEnabled;
+  }
+
+
+  /**
+   * Additional properties.
+   **/
+  public PatchAction props(PatchActionProperties props) {
+    this.props = props;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Additional properties.")
+  @JsonProperty("props")
+  public PatchActionProperties getProps() {
+    return props;
+  }
+  public void setProps(PatchActionProperties props) {
+    this.props = props;
+  }
+
+
+  /**
    * Architect Flow Id and input contract.
    **/
   public PatchAction architectFlowFields(ArchitectFlowFields architectFlowFields) {
@@ -141,17 +199,17 @@ public class PatchAction  implements Serializable {
   /**
    * Admin-configurable fields of a web messaging offer action.
    **/
-  public PatchAction webMessagingOfferFields(WebMessagingOfferFields webMessagingOfferFields) {
+  public PatchAction webMessagingOfferFields(PatchWebMessagingOfferFields webMessagingOfferFields) {
     this.webMessagingOfferFields = webMessagingOfferFields;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Admin-configurable fields of a web messaging offer action.")
   @JsonProperty("webMessagingOfferFields")
-  public WebMessagingOfferFields getWebMessagingOfferFields() {
+  public PatchWebMessagingOfferFields getWebMessagingOfferFields() {
     return webMessagingOfferFields;
   }
-  public void setWebMessagingOfferFields(WebMessagingOfferFields webMessagingOfferFields) {
+  public void setWebMessagingOfferFields(PatchWebMessagingOfferFields webMessagingOfferFields) {
     this.webMessagingOfferFields = webMessagingOfferFields;
   }
 
@@ -186,6 +244,9 @@ public class PatchAction  implements Serializable {
 
     return Objects.equals(this.mediaType, patchAction.mediaType) &&
             Objects.equals(this.actionTemplate, patchAction.actionTemplate) &&
+            Objects.equals(this.actionTargetId, patchAction.actionTargetId) &&
+            Objects.equals(this.isPacingEnabled, patchAction.isPacingEnabled) &&
+            Objects.equals(this.props, patchAction.props) &&
             Objects.equals(this.architectFlowFields, patchAction.architectFlowFields) &&
             Objects.equals(this.webMessagingOfferFields, patchAction.webMessagingOfferFields) &&
             Objects.equals(this.openActionFields, patchAction.openActionFields);
@@ -193,7 +254,7 @@ public class PatchAction  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, actionTemplate, architectFlowFields, webMessagingOfferFields, openActionFields);
+    return Objects.hash(mediaType, actionTemplate, actionTargetId, isPacingEnabled, props, architectFlowFields, webMessagingOfferFields, openActionFields);
   }
 
   @Override
@@ -203,6 +264,9 @@ public class PatchAction  implements Serializable {
     
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    actionTemplate: ").append(toIndentedString(actionTemplate)).append("\n");
+    sb.append("    actionTargetId: ").append(toIndentedString(actionTargetId)).append("\n");
+    sb.append("    isPacingEnabled: ").append(toIndentedString(isPacingEnabled)).append("\n");
+    sb.append("    props: ").append(toIndentedString(props)).append("\n");
     sb.append("    architectFlowFields: ").append(toIndentedString(architectFlowFields)).append("\n");
     sb.append("    webMessagingOfferFields: ").append(toIndentedString(webMessagingOfferFields)).append("\n");
     sb.append("    openActionFields: ").append(toIndentedString(openActionFields)).append("\n");

@@ -19,6 +19,8 @@ title: FlowVersion
 | **createdByClient** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
 | **configurationUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **dateCreated** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **dateCheckedIn** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **dateSaved** | <!----><!---->**Long**<!----> |  |  [optional] |
 | **generationId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **publishResultUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **inputSchema** | <!----><!---->[**JsonSchemaDocument**](JsonSchemaDocument.html)<!----> |  |  [optional] |

@@ -136,6 +136,8 @@ title: AuditQueryEntity
 | QUEUE | &quot;Queue&quot; | 
 | RECORDING | &quot;Recording&quot; | 
 | RECORDINGANNOTATION | &quot;RecordingAnnotation&quot; | 
+| RECORDINGKEY | &quot;RecordingKey&quot; | 
+| RECORDINGKEYCONFIG | &quot;RecordingKeyConfig&quot; | 
 | RECORDINGSETTINGS | &quot;RecordingSettings&quot; | 
 | RESPONSE | &quot;Response&quot; | 
 | RESPONSEASSET | &quot;ResponseAsset&quot; | 
@@ -274,6 +276,8 @@ title: AuditQueryEntity
 | SOFTDELETE | &quot;SoftDelete&quot; |
 | HARDDELETE | &quot;HardDelete&quot; |
 | RESET | &quot;Reset&quot; |
+| ROTATE | &quot;Rotate&quot; |
+| RESTORE | &quot;Restore&quot; |
 | UNARCHIVE | &quot;Unarchive&quot; |
 {: class="table table-striped"}
 

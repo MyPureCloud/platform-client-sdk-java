@@ -121,6 +121,54 @@ public class AuditLogMessage  implements Serializable {
     }
   }
   private ServiceNameEnum serviceName = null;
+
+  private static class LevelEnumDeserializer extends StdDeserializer<LevelEnum> {
+    public LevelEnumDeserializer() {
+      super(LevelEnumDeserializer.class);
+    }
+
+    @Override
+    public LevelEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LevelEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Level of this audit message, USER or SYSTEM.
+   */
+ @JsonDeserialize(using = LevelEnumDeserializer.class)
+  public enum LevelEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    USER("USER"),
+    SYSTEM("SYSTEM");
+
+    private String value;
+
+    LevelEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static LevelEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (LevelEnum value : LevelEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return LevelEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private LevelEnum level = null;
   private Date eventDate = null;
   private MessageInfo message = null;
 
@@ -220,6 +268,8 @@ public class AuditLogMessage  implements Serializable {
     SOFTDELETE("SoftDelete"),
     HARDDELETE("HardDelete"),
     RESET("Reset"),
+    ROTATE("Rotate"),
+    RESTORE("Restore"),
     UNARCHIVE("Unarchive");
 
     private String value;
@@ -384,6 +434,8 @@ public class AuditLogMessage  implements Serializable {
     QUEUE("Queue"),
     RECORDING("Recording"),
     RECORDINGANNOTATION("RecordingAnnotation"),
+    RECORDINGKEY("RecordingKey"),
+    RECORDINGKEYCONFIG("RecordingKeyConfig"),
     RECORDINGSETTINGS("RecordingSettings"),
     RESPONSE("Response"),
     RESPONSEASSET("ResponseAsset"),
@@ -624,6 +676,24 @@ public class AuditLogMessage  implements Serializable {
 
 
   /**
+   * Level of this audit message, USER or SYSTEM.
+   **/
+  public AuditLogMessage level(LevelEnum level) {
+    this.level = level;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Level of this audit message, USER or SYSTEM.")
+  @JsonProperty("level")
+  public LevelEnum getLevel() {
+    return level;
+  }
+  public void setLevel(LevelEnum level) {
+    this.level = level;
+  }
+
+
+  /**
    * Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AuditLogMessage eventDate(Date eventDate) {
@@ -783,6 +853,7 @@ public class AuditLogMessage  implements Serializable {
             Objects.equals(this.client, auditLogMessage.client) &&
             Objects.equals(this.remoteIp, auditLogMessage.remoteIp) &&
             Objects.equals(this.serviceName, auditLogMessage.serviceName) &&
+            Objects.equals(this.level, auditLogMessage.level) &&
             Objects.equals(this.eventDate, auditLogMessage.eventDate) &&
             Objects.equals(this.message, auditLogMessage.message) &&
             Objects.equals(this.action, auditLogMessage.action) &&
@@ -795,7 +866,7 @@ public class AuditLogMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userHomeOrgId, user, client, remoteIp, serviceName, eventDate, message, action, entity, entityType, status, propertyChanges, context);
+    return Objects.hash(id, userHomeOrgId, user, client, remoteIp, serviceName, level, eventDate, message, action, entity, entityType, status, propertyChanges, context);
   }
 
   @Override
@@ -809,6 +880,7 @@ public class AuditLogMessage  implements Serializable {
     sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("    remoteIp: ").append(toIndentedString(remoteIp)).append("\n");
     sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
+    sb.append("    level: ").append(toIndentedString(level)).append("\n");
     sb.append("    eventDate: ").append(toIndentedString(eventDate)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");

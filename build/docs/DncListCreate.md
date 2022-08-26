@@ -18,6 +18,7 @@ title: DncListCreate
 | **dncSourceType** | [**DncSourceTypeEnum**](#DncSourceTypeEnum)<!----> | The type of the DncList. |  |
 | **contactMethod** | [**ContactMethodEnum**](#ContactMethodEnum)<!----> | The contact method. Required if dncSourceType is rds. |  [optional] |
 | **loginId** | <!----><!---->**String**<!----> | A dnc.com loginId. Required if the dncSourceType is dnc.com. |  [optional] |
+| **campaignId** | <!----><!---->**String**<!----> | A dnc.com campaignId. Optional if the dncSourceType is dnc.com. |  [optional] |
 | **dncCodes** | <!----><!---->**List&lt;String&gt;**<!----> | The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com. |  [optional] |
 | **licenseId** | <!----><!---->**String**<!----> | A gryphon license number. Required if the dncSourceType is gryphon. |  [optional] |
 | **division** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The division this DncList belongs to. |  [optional] |

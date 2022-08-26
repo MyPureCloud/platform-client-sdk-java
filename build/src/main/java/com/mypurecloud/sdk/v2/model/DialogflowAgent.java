@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialogflowIntent;
 import com.mypurecloud.sdk.v2.model.DialogflowProject;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class DialogflowAgent  implements Serializable {
   private List<String> languages = new ArrayList<String>();
   private List<DialogflowIntent> intents = new ArrayList<DialogflowIntent>();
   private List<String> environments = new ArrayList<String>();
+  private DomainEntityRef integration = null;
   private String selfUri = null;
 
   
@@ -130,6 +132,24 @@ public class DialogflowAgent  implements Serializable {
   }
 
 
+  /**
+   * The Integration this Dialogflow agent was referenced from.
+   **/
+  public DialogflowAgent integration(DomainEntityRef integration) {
+    this.integration = integration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Integration this Dialogflow agent was referenced from.")
+  @JsonProperty("integration")
+  public DomainEntityRef getIntegration() {
+    return integration;
+  }
+  public void setIntegration(DomainEntityRef integration) {
+    this.integration = integration;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -153,12 +173,13 @@ public class DialogflowAgent  implements Serializable {
             Objects.equals(this.languages, dialogflowAgent.languages) &&
             Objects.equals(this.intents, dialogflowAgent.intents) &&
             Objects.equals(this.environments, dialogflowAgent.environments) &&
+            Objects.equals(this.integration, dialogflowAgent.integration) &&
             Objects.equals(this.selfUri, dialogflowAgent.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, project, languages, intents, environments, selfUri);
+    return Objects.hash(id, name, project, languages, intents, environments, integration, selfUri);
   }
 
   @Override
@@ -172,6 +193,7 @@ public class DialogflowAgent  implements Serializable {
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
     sb.append("    environments: ").append(toIndentedString(environments)).append("\n");
+    sb.append("    integration: ").append(toIndentedString(integration)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

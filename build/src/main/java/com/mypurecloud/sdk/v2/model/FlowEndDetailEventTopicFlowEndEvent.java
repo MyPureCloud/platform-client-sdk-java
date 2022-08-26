@@ -283,7 +283,8 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     INBOUNDSHORTMESSAGE("INBOUNDSHORTMESSAGE"),
     INBOUNDCHAT("INBOUNDCHAT"),
     WORKFLOW("WORKFLOW"),
-    BOT("BOT");
+    BOT("BOT"),
+    DIGITALBOT("DIGITALBOT");
 
     private String value;
 

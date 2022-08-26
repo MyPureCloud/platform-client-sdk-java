@@ -13,6 +13,7 @@ title: ConversationAppSettings
 | **autoStartType** | [**AutoStartTypeEnum**](#AutoStartTypeEnum)<!----> | Deprecated. The auto start type for the messenger conversation |  [optional] |
 | **autoStart** | <!----><!---->[**AutoStart**](AutoStart.html)<!----> | The auto start for the messenger conversation |  [optional] |
 | **markdown** | <!----><!---->[**Markdown**](Markdown.html)<!----> | The markdown for the messenger app |  [optional] |
+| **conversationDisconnect** | <!----><!---->[**ConversationDisconnectSettings**](ConversationDisconnectSettings.html)<!----> | The conversation disconnect settings for the messenger app |  [optional] |
 {: class="table table-striped"}
 
 

@@ -1794,7 +1794,7 @@ try {
 
 
 
-> [IVREntityListing](IVREntityListing.html) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name)
+> [IVREntityListing](IVREntityListing.html) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis)
 
 Get IVR configs.
 
@@ -1831,8 +1831,9 @@ Integer pageSize = 25; // Integer | Page size
 String sortBy = "name"; // String | Sort by
 String sortOrder = "ASC"; // String | Sort order
 String name = "name_example"; // String | Name of the IVR to filter by.
+String dnis = "dnis_example"; // String | The phone number of the IVR to filter by.
 try {
-    IVREntityListing result = apiInstance.getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name);
+    IVREntityListing result = apiInstance.getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectIvrs");
@@ -1850,6 +1851,7 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
 | **name** | **String**| Name of the IVR to filter by. | [optional] 
+| **dnis** | **String**| The phone number of the IVR to filter by. | [optional] 
 {: class="table-striped"}
 
 

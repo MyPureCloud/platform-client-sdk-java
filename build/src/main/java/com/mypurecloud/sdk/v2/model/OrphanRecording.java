@@ -238,6 +238,64 @@ public class OrphanRecording  implements Serializable {
   }
   private OrphanStatusEnum orphanStatus = null;
   private String sourceOrphaningId = null;
+
+  private static class RegionEnumDeserializer extends StdDeserializer<RegionEnum> {
+    public RegionEnumDeserializer() {
+      super(RegionEnumDeserializer.class);
+    }
+
+    @Override
+    public RegionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RegionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets region
+   */
+ @JsonDeserialize(using = RegionEnumDeserializer.class)
+  public enum RegionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AF_SOUTH_1("af-south-1"),
+    AP_NORTHEAST_1("ap-northeast-1"),
+    AP_NORTHEAST_2("ap-northeast-2"),
+    AP_SOUTH_1("ap-south-1"),
+    AP_SOUTHEAST_2("ap-southeast-2"),
+    CA_CENTRAL_1("ca-central-1"),
+    EU_CENTRAL_1("eu-central-1"),
+    EU_WEST_1("eu-west-1"),
+    EU_WEST_2("eu-west-2"),
+    SA_EAST_1("sa-east-1"),
+    US_EAST_1("us-east-1"),
+    US_WEST_2("us-west-2");
+
+    private String value;
+
+    RegionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RegionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RegionEnum value : RegionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RegionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private RegionEnum region = null;
   private String selfUri = null;
 
   
@@ -439,6 +497,23 @@ public class OrphanRecording  implements Serializable {
   }
 
 
+  /**
+   **/
+  public OrphanRecording region(RegionEnum region) {
+    this.region = region;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("region")
+  public RegionEnum getRegion() {
+    return region;
+  }
+  public void setRegion(RegionEnum region) {
+    this.region = region;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -468,12 +543,13 @@ public class OrphanRecording  implements Serializable {
             Objects.equals(this.recording, orphanRecording.recording) &&
             Objects.equals(this.orphanStatus, orphanRecording.orphanStatus) &&
             Objects.equals(this.sourceOrphaningId, orphanRecording.sourceOrphaningId) &&
+            Objects.equals(this.region, orphanRecording.region) &&
             Objects.equals(this.selfUri, orphanRecording.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdTime, recoveredTime, providerType, mediaSizeBytes, mediaType, fileState, providerEndpoint, recording, orphanStatus, sourceOrphaningId, selfUri);
+    return Objects.hash(id, name, createdTime, recoveredTime, providerType, mediaSizeBytes, mediaType, fileState, providerEndpoint, recording, orphanStatus, sourceOrphaningId, region, selfUri);
   }
 
   @Override
@@ -493,6 +569,7 @@ public class OrphanRecording  implements Serializable {
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
     sb.append("    orphanStatus: ").append(toIndentedString(orphanStatus)).append("\n");
     sb.append("    sourceOrphaningId: ").append(toIndentedString(sourceOrphaningId)).append("\n");
+    sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

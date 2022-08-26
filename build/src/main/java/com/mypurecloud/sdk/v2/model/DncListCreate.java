@@ -131,6 +131,7 @@ public class DncListCreate  implements Serializable {
   }
   private ContactMethodEnum contactMethod = null;
   private String loginId = null;
+  private String campaignId = null;
   private List<String> dncCodes = new ArrayList<String>();
   private String licenseId = null;
   private DomainEntityRef division = null;
@@ -263,6 +264,24 @@ public class DncListCreate  implements Serializable {
 
 
   /**
+   * A dnc.com campaignId. Optional if the dncSourceType is dnc.com.
+   **/
+  public DncListCreate campaignId(String campaignId) {
+    this.campaignId = campaignId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A dnc.com campaignId. Optional if the dncSourceType is dnc.com.")
+  @JsonProperty("campaignId")
+  public String getCampaignId() {
+    return campaignId;
+  }
+  public void setCampaignId(String campaignId) {
+    this.campaignId = campaignId;
+  }
+
+
+  /**
    * The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com.
    **/
   public DncListCreate dncCodes(List<String> dncCodes) {
@@ -343,6 +362,7 @@ public class DncListCreate  implements Serializable {
             Objects.equals(this.dncSourceType, dncListCreate.dncSourceType) &&
             Objects.equals(this.contactMethod, dncListCreate.contactMethod) &&
             Objects.equals(this.loginId, dncListCreate.loginId) &&
+            Objects.equals(this.campaignId, dncListCreate.campaignId) &&
             Objects.equals(this.dncCodes, dncListCreate.dncCodes) &&
             Objects.equals(this.licenseId, dncListCreate.licenseId) &&
             Objects.equals(this.division, dncListCreate.division) &&
@@ -351,7 +371,7 @@ public class DncListCreate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, contactMethod, loginId, dncCodes, licenseId, division, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, contactMethod, loginId, campaignId, dncCodes, licenseId, division, selfUri);
   }
 
   @Override
@@ -369,6 +389,7 @@ public class DncListCreate  implements Serializable {
     sb.append("    dncSourceType: ").append(toIndentedString(dncSourceType)).append("\n");
     sb.append("    contactMethod: ").append(toIndentedString(contactMethod)).append("\n");
     sb.append("    loginId: ").append(toIndentedString(loginId)).append("\n");
+    sb.append("    campaignId: ").append(toIndentedString(campaignId)).append("\n");
     sb.append("    dncCodes: ").append(toIndentedString(dncCodes)).append("\n");
     sb.append("    licenseId: ").append(toIndentedString(licenseId)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");

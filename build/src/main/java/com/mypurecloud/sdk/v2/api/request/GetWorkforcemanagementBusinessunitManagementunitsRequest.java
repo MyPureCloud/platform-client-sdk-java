@@ -189,6 +189,7 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		AGENTSCHEDULE("AgentSchedule"),
 		AGENTTIMEOFFREQUEST("AgentTimeOffRequest"),
 		COACHING("Coaching"),
+		LEARNING("Learning"),
 		ACTIVITYCODES("ActivityCodes"),
 		AGENTS("Agents"),
 		BUACTIVITYCODES("BuActivityCodes"),

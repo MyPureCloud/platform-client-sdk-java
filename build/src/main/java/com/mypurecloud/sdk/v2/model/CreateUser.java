@@ -179,7 +179,7 @@ public class CreateUser  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "User's password")
+  @ApiModelProperty(example = "null", value = "User's password")
   @JsonProperty("password")
   public String getPassword() {
     return password;

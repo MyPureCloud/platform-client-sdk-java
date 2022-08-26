@@ -159,6 +159,8 @@ public class AuditQueryEntity  implements Serializable {
     QUEUE("Queue"),
     RECORDING("Recording"),
     RECORDINGANNOTATION("RecordingAnnotation"),
+    RECORDINGKEY("RecordingKey"),
+    RECORDINGKEYCONFIG("RecordingKeyConfig"),
     RECORDINGSETTINGS("RecordingSettings"),
     RESPONSE("Response"),
     RESPONSEASSET("ResponseAsset"),
@@ -333,6 +335,8 @@ public class AuditQueryEntity  implements Serializable {
     SOFTDELETE("SoftDelete"),
     HARDDELETE("HardDelete"),
     RESET("Reset"),
+    ROTATE("Rotate"),
+    RESTORE("Restore"),
     UNARCHIVE("Unarchive");
 
     private String value;

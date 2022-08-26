@@ -5496,7 +5496,7 @@ public class UsersApi {
 
   /**
    * Create user
-   * 
+   * If user creation is successful but the provided password is invalid or configuration fails, POST api/v2/users/{userId}/password can be used to re-attempt password configuration.
    * @param body User (required)
    * @return User
    * @throws ApiException if the request fails on the server
@@ -5508,7 +5508,7 @@ public class UsersApi {
 
   /**
    * Create user
-   * 
+   * If user creation is successful but the provided password is invalid or configuration fails, POST api/v2/users/{userId}/password can be used to re-attempt password configuration.
    * @param body User (required)
    * @return User
    * @throws IOException if the request fails to be processed
@@ -5526,7 +5526,7 @@ public class UsersApi {
 
   /**
    * Create user
-   * 
+   * If user creation is successful but the provided password is invalid or configuration fails, POST api/v2/users/{userId}/password can be used to re-attempt password configuration.
    * @param request The request object
    * @return User
    * @throws ApiException if the request fails on the server
@@ -5545,7 +5545,7 @@ public class UsersApi {
 
   /**
    * Create user
-   * 
+   * If user creation is successful but the provided password is invalid or configuration fails, POST api/v2/users/{userId}/password can be used to re-attempt password configuration.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

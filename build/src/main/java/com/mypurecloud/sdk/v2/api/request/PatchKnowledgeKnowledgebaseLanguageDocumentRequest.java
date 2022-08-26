@@ -21,8 +21,14 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.CategoryListing;
+import com.mypurecloud.sdk.v2.model.CategoryRequest;
+import com.mypurecloud.sdk.v2.model.CategoryResponse;
+import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
+import com.mypurecloud.sdk.v2.model.DocumentVariation;
+import com.mypurecloud.sdk.v2.model.DocumentVariationListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
@@ -30,13 +36,44 @@ import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearch;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearchRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentReq;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSearch;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSearchRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSuggestion;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSuggestionRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersion;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionVariation;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionVariationListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeExportJobRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeExportJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestion;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestSession;
 import com.mypurecloud.sdk.v2.model.KnowledgeImport;
+import com.mypurecloud.sdk.v2.model.KnowledgeImportJobRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeImportJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
+import com.mypurecloud.sdk.v2.model.LabelCreateRequest;
+import com.mypurecloud.sdk.v2.model.LabelListing;
+import com.mypurecloud.sdk.v2.model.LabelResponse;
+import com.mypurecloud.sdk.v2.model.LabelUpdateRequest;
+import com.mypurecloud.sdk.v2.model.SearchUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TrainingListing;
+import com.mypurecloud.sdk.v2.model.UnansweredGroup;
+import com.mypurecloud.sdk.v2.model.UnansweredGroups;
+import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroup;
+import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroupPatchRequestBody;
+import com.mypurecloud.sdk.v2.model.UnansweredPhraseGroupUpdateResponse;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
@@ -88,14 +125,31 @@ public class PatchKnowledgeKnowledgebaseLanguageDocumentRequest {
 		EN_US("en-US"),
 		EN_UK("en-UK"),
 		EN_AU("en-AU"),
+		EN_CA("en-CA"),
+		EN_HK("en-HK"),
+		EN_IN("en-IN"),
+		EN_IE("en-IE"),
+		EN_NZ("en-NZ"),
+		EN_PH("en-PH"),
+		EN_SG("en-SG"),
+		EN_ZA("en-ZA"),
 		DE_DE("de-DE"),
+		DE_AT("de-AT"),
+		DE_CH("de-CH"),
+		ES_AR("es-AR"),
+		ES_CO("es-CO"),
+		ES_MX("es-MX"),
 		ES_US("es-US"),
 		ES_ES("es-ES"),
 		FR_FR("fr-FR"),
+		FR_BE("fr-BE"),
+		FR_CA("fr-CA"),
+		FR_CH("fr-CH"),
 		PT_BR("pt-BR"),
+		PT_PT("pt-PT"),
 		NL_NL("nl-NL"),
-		IT_IT("it-IT"),
-		FR_CA("fr-CA");
+		NL_BE("nl-BE"),
+		IT_IT("it-IT");
 
 		private String value;
 

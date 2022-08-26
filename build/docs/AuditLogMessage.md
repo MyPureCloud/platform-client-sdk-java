@@ -14,6 +14,7 @@ title: AuditLogMessage
 | **client** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | Client associated with this audit message. |  [optional] |
 | **remoteIp** | <!----><!---->**List&lt;String&gt;**<!----> | List of IP addresses of systems that originated or handled the request. |  [optional] |
 | **serviceName** | [**ServiceNameEnum**](#ServiceNameEnum)<!----> | Name of the service that logged this audit message. |  [optional] |
+| **level** | [**LevelEnum**](#LevelEnum)<!----> | Level of this audit message, USER or SYSTEM. |  [optional] |
 | **eventDate** | <!----><!---->[**Date**](Date.html)<!----> | Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **message** | <!----><!---->[**MessageInfo**](MessageInfo.html)<!----> | Message describing the event being audited. |  [optional] |
 | **action** | [**ActionEnum**](#ActionEnum)<!----> | Action that took place. |  [optional] |
@@ -71,6 +72,18 @@ title: AuditLogMessage
 | SCIM | &quot;SCIM&quot; | 
 | NUMBERPURCHASING | &quot;NumberPurchasing&quot; | 
 | MARKETPLACE | &quot;Marketplace&quot; | 
+{: class="table table-striped"}
+
+
+<a name="LevelEnum"></a>
+
+## Enum: LevelEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| USER | &quot;USER&quot; | 
+| SYSTEM | &quot;SYSTEM&quot; | 
 {: class="table table-striped"}
 
 
@@ -159,6 +172,8 @@ title: AuditLogMessage
 | SOFTDELETE | &quot;SoftDelete&quot; | 
 | HARDDELETE | &quot;HardDelete&quot; | 
 | RESET | &quot;Reset&quot; | 
+| ROTATE | &quot;Rotate&quot; | 
+| RESTORE | &quot;Restore&quot; | 
 | UNARCHIVE | &quot;Unarchive&quot; | 
 {: class="table table-striped"}
 
@@ -286,6 +301,8 @@ title: AuditLogMessage
 | QUEUE | &quot;Queue&quot; | 
 | RECORDING | &quot;Recording&quot; | 
 | RECORDINGANNOTATION | &quot;RecordingAnnotation&quot; | 
+| RECORDINGKEY | &quot;RecordingKey&quot; | 
+| RECORDINGKEYCONFIG | &quot;RecordingKeyConfig&quot; | 
 | RECORDINGSETTINGS | &quot;RecordingSettings&quot; | 
 | RESPONSE | &quot;Response&quot; | 
 | RESPONSEASSET | &quot;ResponseAsset&quot; | 

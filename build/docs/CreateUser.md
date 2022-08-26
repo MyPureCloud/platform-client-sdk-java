@@ -13,7 +13,7 @@ title: CreateUser
 | **email** | <!----><!---->**String**<!----> | User's email and username |  |
 | **addresses** | <!----><!---->[**List&lt;Contact&gt;**](Contact.html)<!----> | Email addresses and phone numbers for this user |  [optional] |
 | **title** | <!----><!---->**String**<!----> |  |  [optional] |
-| **password** | <!----><!---->**String**<!----> | User's password |  |
+| **password** | <!----><!---->**String**<!----> | User's password |  [optional] |
 | **divisionId** | <!----><!---->**String**<!----> | The division to which this user will belong |  |
 | **state** | [**StateEnum**](#StateEnum)<!----> | Optional initialized state of the user. If not specified, state will be Active if invites are sent, otherwise Inactive. |  [optional] |
 {: class="table table-striped"}

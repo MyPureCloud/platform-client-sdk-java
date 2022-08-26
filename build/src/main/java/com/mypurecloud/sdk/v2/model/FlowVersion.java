@@ -88,6 +88,8 @@ public class FlowVersion  implements Serializable {
   private DomainEntityRef createdByClient = null;
   private String configurationUri = null;
   private Long dateCreated = null;
+  private Long dateCheckedIn = null;
+  private Long dateSaved = null;
   private String generationId = null;
   private String publishResultUri = null;
   private JsonSchemaDocument inputSchema = null;
@@ -350,6 +352,40 @@ public class FlowVersion  implements Serializable {
 
   /**
    **/
+  public FlowVersion dateCheckedIn(Long dateCheckedIn) {
+    this.dateCheckedIn = dateCheckedIn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dateCheckedIn")
+  public Long getDateCheckedIn() {
+    return dateCheckedIn;
+  }
+  public void setDateCheckedIn(Long dateCheckedIn) {
+    this.dateCheckedIn = dateCheckedIn;
+  }
+
+
+  /**
+   **/
+  public FlowVersion dateSaved(Long dateSaved) {
+    this.dateSaved = dateSaved;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dateSaved")
+  public Long getDateSaved() {
+    return dateSaved;
+  }
+  public void setDateSaved(Long dateSaved) {
+    this.dateSaved = dateSaved;
+  }
+
+
+  /**
+   **/
   public FlowVersion generationId(String generationId) {
     this.generationId = generationId;
     return this;
@@ -465,6 +501,8 @@ public class FlowVersion  implements Serializable {
             Objects.equals(this.createdByClient, flowVersion.createdByClient) &&
             Objects.equals(this.configurationUri, flowVersion.configurationUri) &&
             Objects.equals(this.dateCreated, flowVersion.dateCreated) &&
+            Objects.equals(this.dateCheckedIn, flowVersion.dateCheckedIn) &&
+            Objects.equals(this.dateSaved, flowVersion.dateSaved) &&
             Objects.equals(this.generationId, flowVersion.generationId) &&
             Objects.equals(this.publishResultUri, flowVersion.publishResultUri) &&
             Objects.equals(this.inputSchema, flowVersion.inputSchema) &&
@@ -477,7 +515,7 @@ public class FlowVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, debug, createdBy, createdByClient, configurationUri, dateCreated, generationId, publishResultUri, inputSchema, outputSchema, nluInfo, supportedLanguages, compatibleFlowTypes, selfUri);
+    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, debug, createdBy, createdByClient, configurationUri, dateCreated, dateCheckedIn, dateSaved, generationId, publishResultUri, inputSchema, outputSchema, nluInfo, supportedLanguages, compatibleFlowTypes, selfUri);
   }
 
   @Override
@@ -496,6 +534,8 @@ public class FlowVersion  implements Serializable {
     sb.append("    createdByClient: ").append(toIndentedString(createdByClient)).append("\n");
     sb.append("    configurationUri: ").append(toIndentedString(configurationUri)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateCheckedIn: ").append(toIndentedString(dateCheckedIn)).append("\n");
+    sb.append("    dateSaved: ").append(toIndentedString(dateSaved)).append("\n");
     sb.append("    generationId: ").append(toIndentedString(generationId)).append("\n");
     sb.append("    publishResultUri: ").append(toIndentedString(publishResultUri)).append("\n");
     sb.append("    inputSchema: ").append(toIndentedString(inputSchema)).append("\n");

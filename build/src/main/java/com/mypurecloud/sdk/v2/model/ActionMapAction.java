@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ActionMapActionTemplate;
+import com.mypurecloud.sdk.v2.model.ActionProperties;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowFields;
 import com.mypurecloud.sdk.v2.model.OpenActionFields;
 import com.mypurecloud.sdk.v2.model.WebMessagingOfferFields;
@@ -79,6 +80,9 @@ public class ActionMapAction  implements Serializable {
     }
   }
   private MediaTypeEnum mediaType = null;
+  private String actionTargetId = null;
+  private Boolean isPacingEnabled = null;
+  private ActionProperties props = null;
   private ArchitectFlowFields architectFlowFields = null;
   private WebMessagingOfferFields webMessagingOfferFields = null;
   private OpenActionFields openActionFields = null;
@@ -117,6 +121,60 @@ public class ActionMapAction  implements Serializable {
   }
   public void setMediaType(MediaTypeEnum mediaType) {
     this.mediaType = mediaType;
+  }
+
+
+  /**
+   * Action target ID.
+   **/
+  public ActionMapAction actionTargetId(String actionTargetId) {
+    this.actionTargetId = actionTargetId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Action target ID.")
+  @JsonProperty("actionTargetId")
+  public String getActionTargetId() {
+    return actionTargetId;
+  }
+  public void setActionTargetId(String actionTargetId) {
+    this.actionTargetId = actionTargetId;
+  }
+
+
+  /**
+   * Whether this action should be throttled.
+   **/
+  public ActionMapAction isPacingEnabled(Boolean isPacingEnabled) {
+    this.isPacingEnabled = isPacingEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this action should be throttled.")
+  @JsonProperty("isPacingEnabled")
+  public Boolean getIsPacingEnabled() {
+    return isPacingEnabled;
+  }
+  public void setIsPacingEnabled(Boolean isPacingEnabled) {
+    this.isPacingEnabled = isPacingEnabled;
+  }
+
+
+  /**
+   * Additional properties.
+   **/
+  public ActionMapAction props(ActionProperties props) {
+    this.props = props;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Additional properties.")
+  @JsonProperty("props")
+  public ActionProperties getProps() {
+    return props;
+  }
+  public void setProps(ActionProperties props) {
+    this.props = props;
   }
 
 
@@ -186,6 +244,9 @@ public class ActionMapAction  implements Serializable {
 
     return Objects.equals(this.actionTemplate, actionMapAction.actionTemplate) &&
             Objects.equals(this.mediaType, actionMapAction.mediaType) &&
+            Objects.equals(this.actionTargetId, actionMapAction.actionTargetId) &&
+            Objects.equals(this.isPacingEnabled, actionMapAction.isPacingEnabled) &&
+            Objects.equals(this.props, actionMapAction.props) &&
             Objects.equals(this.architectFlowFields, actionMapAction.architectFlowFields) &&
             Objects.equals(this.webMessagingOfferFields, actionMapAction.webMessagingOfferFields) &&
             Objects.equals(this.openActionFields, actionMapAction.openActionFields);
@@ -193,7 +254,7 @@ public class ActionMapAction  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionTemplate, mediaType, architectFlowFields, webMessagingOfferFields, openActionFields);
+    return Objects.hash(actionTemplate, mediaType, actionTargetId, isPacingEnabled, props, architectFlowFields, webMessagingOfferFields, openActionFields);
   }
 
   @Override
@@ -203,6 +264,9 @@ public class ActionMapAction  implements Serializable {
     
     sb.append("    actionTemplate: ").append(toIndentedString(actionTemplate)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    actionTargetId: ").append(toIndentedString(actionTargetId)).append("\n");
+    sb.append("    isPacingEnabled: ").append(toIndentedString(isPacingEnabled)).append("\n");
+    sb.append("    props: ").append(toIndentedString(props)).append("\n");
     sb.append("    architectFlowFields: ").append(toIndentedString(architectFlowFields)).append("\n");
     sb.append("    webMessagingOfferFields: ").append(toIndentedString(webMessagingOfferFields)).append("\n");
     sb.append("    openActionFields: ").append(toIndentedString(openActionFields)).append("\n");

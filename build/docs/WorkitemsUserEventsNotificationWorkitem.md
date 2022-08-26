@@ -84,6 +84,7 @@ title: WorkitemsUserEventsNotificationWorkitem
 | DISCONNECTED | &quot;Disconnected&quot; | 
 | PARKED | &quot;Parked&quot; | 
 | HELD | &quot;Held&quot; | 
+| ACDCANCELLED | &quot;AcdCancelled&quot; | 
 {: class="table table-striped"}
 
 

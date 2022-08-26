@@ -97,6 +97,7 @@ title: FlowStartDetailEventTopicFlowStartEvent
 | INBOUNDCHAT | &quot;INBOUNDCHAT&quot; | 
 | WORKFLOW | &quot;WORKFLOW&quot; | 
 | BOT | &quot;BOT&quot; | 
+| DIGITALBOT | &quot;DIGITALBOT&quot; | 
 {: class="table table-striped"}
 
 

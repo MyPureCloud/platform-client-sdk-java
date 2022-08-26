@@ -20,6 +20,7 @@ title: OrphanRecording
 | **recording** | <!----><!---->[**Recording**](Recording.html)<!----> |  |  [optional] |
 | **orphanStatus** | [**OrphanStatusEnum**](#OrphanStatusEnum)<!----> | The status of the orphaned recording's conversation. |  [optional] |
 | **sourceOrphaningId** | <!----><!---->**String**<!----> | An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with |  [optional] |
+| **region** | [**RegionEnum**](#RegionEnum)<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -82,6 +83,28 @@ title: OrphanRecording
 | CONVERSATION_NOT_COMPLETE | &quot;CONVERSATION_NOT_COMPLETE&quot; | 
 | CONVERSATION_NOT_EVALUATED | &quot;CONVERSATION_NOT_EVALUATED&quot; | 
 | EVALUATED | &quot;EVALUATED&quot; | 
+{: class="table table-striped"}
+
+
+<a name="RegionEnum"></a>
+
+## Enum: RegionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AF_SOUTH_1 | &quot;af-south-1&quot; | 
+| AP_NORTHEAST_1 | &quot;ap-northeast-1&quot; | 
+| AP_NORTHEAST_2 | &quot;ap-northeast-2&quot; | 
+| AP_SOUTH_1 | &quot;ap-south-1&quot; | 
+| AP_SOUTHEAST_2 | &quot;ap-southeast-2&quot; | 
+| CA_CENTRAL_1 | &quot;ca-central-1&quot; | 
+| EU_CENTRAL_1 | &quot;eu-central-1&quot; | 
+| EU_WEST_1 | &quot;eu-west-1&quot; | 
+| EU_WEST_2 | &quot;eu-west-2&quot; | 
+| SA_EAST_1 | &quot;sa-east-1&quot; | 
+| US_EAST_1 | &quot;us-east-1&quot; | 
+| US_WEST_2 | &quot;us-west-2&quot; | 
 {: class="table table-striped"}
 
 

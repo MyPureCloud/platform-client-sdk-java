@@ -2371,12 +2371,13 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
    * @param name Name of the IVR to filter by. (optional)
+   * @param dnis The phone number of the IVR to filter by. (optional)
    * @return IVREntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IVREntityListing getArchitectIvrs(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException, ApiException {
-    return  getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder, name));
+  public IVREntityListing getArchitectIvrs(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String dnis) throws IOException, ApiException {
+    return  getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder, name, dnis));
   }
 
   /**
@@ -2387,14 +2388,15 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
    * @param name Name of the IVR to filter by. (optional)
+   * @param dnis The phone number of the IVR to filter by. (optional)
    * @return IVREntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IVREntityListing> getArchitectIvrsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException {
-    return getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder, name).withHttpInfo());
+  public ApiResponse<IVREntityListing> getArchitectIvrsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String dnis) throws IOException {
+    return getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder, name, dnis).withHttpInfo());
   }
 
-  private GetArchitectIvrsRequest createGetArchitectIvrsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) {
+  private GetArchitectIvrsRequest createGetArchitectIvrsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String dnis) {
     return GetArchitectIvrsRequest.builder()
             .withPageNumber(pageNumber)
 
@@ -2405,6 +2407,8 @@ public class ArchitectApi {
             .withSortOrder(sortOrder)
 
             .withName(name)
+
+            .withDnis(dnis)
 
             .build();
   }

@@ -143,7 +143,8 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
     CONNECTED("Connected"),
     DISCONNECTED("Disconnected"),
     PARKED("Parked"),
-    HELD("Held");
+    HELD("Held"),
+    ACDCANCELLED("AcdCancelled");
 
     private String value;
 

@@ -43,6 +43,7 @@ title: Miner
 | ES_ES | &quot;es-es&quot; | 
 | FR_FR | &quot;fr-fr&quot; | 
 | FR_CA | &quot;fr-ca&quot; | 
+| DE_DE | &quot;de-de&quot; | 
 {: class="table table-striped"}
 
 
