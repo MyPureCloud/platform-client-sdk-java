@@ -17,6 +17,7 @@ title: ConversationMessageEventTopicMessageMediaParticipant
 | **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **purpose** | <!----><!---->**String**<!----> |  |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **initialState** | [**InitialStateEnum**](#InitialStateEnum)<!----> |  |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
 | **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
@@ -52,6 +53,28 @@ title: ConversationMessageEventTopicMessageMediaParticipant
 <a name="StateEnum"></a>
 
 ## Enum: StateEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERTING | &quot;alerting&quot; | 
+| DIALING | &quot;dialing&quot; | 
+| CONTACTING | &quot;contacting&quot; | 
+| OFFERING | &quot;offering&quot; | 
+| CONNECTED | &quot;connected&quot; | 
+| DISCONNECTED | &quot;disconnected&quot; | 
+| TERMINATED | &quot;terminated&quot; | 
+| CONVERTING | &quot;converting&quot; | 
+| UPLOADING | &quot;uploading&quot; | 
+| TRANSMITTING | &quot;transmitting&quot; | 
+| SCHEDULED | &quot;scheduled&quot; | 
+| NONE | &quot;none&quot; | 
+{: class="table table-striped"}
+
+
+<a name="InitialStateEnum"></a>
+
+## Enum: InitialStateEnum
 
 | Name | Value |
 | ---- | ----- |

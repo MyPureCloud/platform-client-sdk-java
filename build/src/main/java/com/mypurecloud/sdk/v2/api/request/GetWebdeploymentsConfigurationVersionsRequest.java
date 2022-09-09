@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
+import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;

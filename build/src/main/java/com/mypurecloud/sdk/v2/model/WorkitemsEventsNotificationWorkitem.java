@@ -41,6 +41,57 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
   private Integer durationSeconds = null;
   private Integer ttl = null;
   private String statusId = null;
+
+  private static class StatusCategoryEnumDeserializer extends StdDeserializer<StatusCategoryEnum> {
+    public StatusCategoryEnumDeserializer() {
+      super(StatusCategoryEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusCategoryEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusCategoryEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets statusCategory
+   */
+ @JsonDeserialize(using = StatusCategoryEnumDeserializer.class)
+  public enum StatusCategoryEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    OPEN("Open"),
+    INPROGRESS("InProgress"),
+    WAITING("Waiting"),
+    CLOSED("Closed");
+
+    private String value;
+
+    StatusCategoryEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StatusCategoryEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StatusCategoryEnum value : StatusCategoryEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StatusCategoryEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StatusCategoryEnum statusCategory = null;
   private String dateClosed = null;
   private String workbinId = null;
   private String reporterId = null;
@@ -174,6 +225,7 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
   private AssignmentStateEnum assignmentState = null;
   private String assignmentId = null;
   private Integer alertTimeoutSeconds = null;
+  private String queueId = null;
   private Map<String, WorkitemsEventsNotificationCustomAttribute> customFields = null;
 
   
@@ -400,6 +452,23 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
 
   /**
    **/
+  public WorkitemsEventsNotificationWorkitem statusCategory(StatusCategoryEnum statusCategory) {
+    this.statusCategory = statusCategory;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("statusCategory")
+  public StatusCategoryEnum getStatusCategory() {
+    return statusCategory;
+  }
+  public void setStatusCategory(StatusCategoryEnum statusCategory) {
+    this.statusCategory = statusCategory;
+  }
+
+
+  /**
+   **/
   public WorkitemsEventsNotificationWorkitem dateClosed(String dateClosed) {
     this.dateClosed = dateClosed;
     return this;
@@ -621,6 +690,23 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
 
   /**
    **/
+  public WorkitemsEventsNotificationWorkitem queueId(String queueId) {
+    this.queueId = queueId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueId")
+  public String getQueueId() {
+    return queueId;
+  }
+  public void setQueueId(String queueId) {
+    this.queueId = queueId;
+  }
+
+
+  /**
+   **/
   public WorkitemsEventsNotificationWorkitem customFields(Map<String, WorkitemsEventsNotificationCustomAttribute> customFields) {
     this.customFields = customFields;
     return this;
@@ -659,6 +745,7 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
             Objects.equals(this.durationSeconds, workitemsEventsNotificationWorkitem.durationSeconds) &&
             Objects.equals(this.ttl, workitemsEventsNotificationWorkitem.ttl) &&
             Objects.equals(this.statusId, workitemsEventsNotificationWorkitem.statusId) &&
+            Objects.equals(this.statusCategory, workitemsEventsNotificationWorkitem.statusCategory) &&
             Objects.equals(this.dateClosed, workitemsEventsNotificationWorkitem.dateClosed) &&
             Objects.equals(this.workbinId, workitemsEventsNotificationWorkitem.workbinId) &&
             Objects.equals(this.reporterId, workitemsEventsNotificationWorkitem.reporterId) &&
@@ -672,12 +759,13 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
             Objects.equals(this.assignmentState, workitemsEventsNotificationWorkitem.assignmentState) &&
             Objects.equals(this.assignmentId, workitemsEventsNotificationWorkitem.assignmentId) &&
             Objects.equals(this.alertTimeoutSeconds, workitemsEventsNotificationWorkitem.alertTimeoutSeconds) &&
+            Objects.equals(this.queueId, workitemsEventsNotificationWorkitem.queueId) &&
             Objects.equals(this.customFields, workitemsEventsNotificationWorkitem.customFields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, durationSeconds, ttl, statusId, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, customFields);
+    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields);
   }
 
   @Override
@@ -698,6 +786,7 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
     sb.append("    durationSeconds: ").append(toIndentedString(durationSeconds)).append("\n");
     sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
     sb.append("    statusId: ").append(toIndentedString(statusId)).append("\n");
+    sb.append("    statusCategory: ").append(toIndentedString(statusCategory)).append("\n");
     sb.append("    dateClosed: ").append(toIndentedString(dateClosed)).append("\n");
     sb.append("    workbinId: ").append(toIndentedString(workbinId)).append("\n");
     sb.append("    reporterId: ").append(toIndentedString(reporterId)).append("\n");
@@ -711,6 +800,7 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
     sb.append("    assignmentState: ").append(toIndentedString(assignmentState)).append("\n");
     sb.append("    assignmentId: ").append(toIndentedString(assignmentId)).append("\n");
     sb.append("    alertTimeoutSeconds: ").append(toIndentedString(alertTimeoutSeconds)).append("\n");
+    sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("}");
     return sb.toString();

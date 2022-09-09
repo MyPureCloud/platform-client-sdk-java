@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.ExternalMetricDataItem;
+import com.mypurecloud.sdk.v2.model.ExternalMetricDataProcessedItem;
 import com.mypurecloud.sdk.v2.model.ExternalMetricDataUnprocessedItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,24 +26,24 @@ import java.io.Serializable;
 
 public class ExternalMetricDataWriteResponse  implements Serializable {
   
-  private List<ExternalMetricDataItem> processedEntities = new ArrayList<ExternalMetricDataItem>();
+  private List<ExternalMetricDataProcessedItem> processedEntities = new ArrayList<ExternalMetricDataProcessedItem>();
   private List<ExternalMetricDataUnprocessedItem> unprocessedEntities = new ArrayList<ExternalMetricDataUnprocessedItem>();
 
   
   /**
    * The list of processed entities
    **/
-  public ExternalMetricDataWriteResponse processedEntities(List<ExternalMetricDataItem> processedEntities) {
+  public ExternalMetricDataWriteResponse processedEntities(List<ExternalMetricDataProcessedItem> processedEntities) {
     this.processedEntities = processedEntities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The list of processed entities")
   @JsonProperty("processedEntities")
-  public List<ExternalMetricDataItem> getProcessedEntities() {
+  public List<ExternalMetricDataProcessedItem> getProcessedEntities() {
     return processedEntities;
   }
-  public void setProcessedEntities(List<ExternalMetricDataItem> processedEntities) {
+  public void setProcessedEntities(List<ExternalMetricDataProcessedItem> processedEntities) {
     this.processedEntities = processedEntities;
   }
 

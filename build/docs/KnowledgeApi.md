@@ -1570,7 +1570,7 @@ try {
 
 
 
-> [KnowledgeDocumentResponseListing](KnowledgeDocumentResponseListing.html) getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, categoryId, includeSubcategories, includeDrafts, labelIds, expand)
+> [KnowledgeDocumentResponseListing](KnowledgeDocumentResponseListing.html) getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand)
 
 Get documents.
 
@@ -1607,13 +1607,14 @@ String before = "before_example"; // String | The cursor that points to the star
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 String interval = "interval_example"; // String | Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+List<String> documentId = Arrays.asList(null); // List<String> | Retrieves the specified documents, comma separated values expected.
 List<String> categoryId = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with category ids, comma separated values expected.
 Boolean includeSubcategories = true; // Boolean | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
 Boolean includeDrafts = true; // Boolean | If includeDrafts is true, Documents in the draft state are also returned in the response.
 List<String> labelIds = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with label ids, comma separated values expected.
 List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.
 try {
-    KnowledgeDocumentResponseListing result = apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, categoryId, includeSubcategories, includeDrafts, labelIds, expand);
+    KnowledgeDocumentResponseListing result = apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseDocuments");
@@ -1631,6 +1632,7 @@ try {
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **interval** | **String**| Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional] 
+| **documentId** | [**List&lt;String&gt;**](String.html)| Retrieves the specified documents, comma separated values expected. | [optional] 
 | **categoryId** | [**List&lt;String&gt;**](String.html)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional] 
 | **includeSubcategories** | **Boolean**| Works along with &#39;categoryId&#39; query parameter. If specified, retrieves documents associated with category ids and its children categories. | [optional] 
 | **includeDrafts** | **Boolean**| If includeDrafts is true, Documents in the draft state are also returned in the response. | [optional] 

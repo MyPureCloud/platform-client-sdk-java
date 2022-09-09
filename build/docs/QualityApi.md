@@ -1202,7 +1202,7 @@ Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
-String expand = "expand_example"; // String | Expand
+String expand = "expand_example"; // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 String name = "name_example"; // String | Name
 String sortOrder = "sortOrder_example"; // String | Order to sort results, either asc or desc
 try {
@@ -1224,7 +1224,7 @@ try {
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
-| **expand** | **String**| Expand | [optional] 
+| **expand** | **String**| If &#39;expand&#x3D;publishHistory&#39;, then each unpublished evaluation form includes a listing of its published versions | [optional]<br />**Values**: publishHistory 
 | **name** | **String**| Name | [optional] 
 | **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] 
 {: class="table-striped"}
@@ -1405,7 +1405,7 @@ Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
-String expand = "expand_example"; // String | Expand
+String expand = "expand_example"; // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 String name = "name_example"; // String | Name
 String sortOrder = "sortOrder_example"; // String | Order to sort results, either asc or desc
 try {
@@ -1427,7 +1427,7 @@ try {
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
-| **expand** | **String**| Expand | [optional] 
+| **expand** | **String**| If &#39;expand&#x3D;publishHistory&#39;, then each unpublished evaluation form includes a listing of its published versions | [optional]<br />**Values**: publishHistory 
 | **name** | **String**| Name | [optional] 
 | **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] 
 {: class="table-striped"}
@@ -1667,7 +1667,7 @@ Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
-String expand = "expand_example"; // String | Expand
+String expand = "expand_example"; // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 String name = "name_example"; // String | Name
 String sortOrder = "sortOrder_example"; // String | Order to sort results, either asc or desc
 try {
@@ -1689,7 +1689,7 @@ try {
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
-| **expand** | **String**| Expand | [optional] 
+| **expand** | **String**| If &#39;expand&#x3D;publishHistory&#39;, then each unpublished evaluation form includes a listing of its published versions | [optional]<br />**Values**: publishHistory 
 | **name** | **String**| Name | [optional] 
 | **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] 
 {: class="table-striped"}

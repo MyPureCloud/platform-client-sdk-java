@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
+import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
@@ -24,6 +25,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersions
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionsDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentConfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationVersionsDraftPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationsRequest;
@@ -588,6 +590,88 @@ public class WebDeploymentsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WebDeployment> response = (ApiResponse<WebDeployment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get active configuration for a given deployment
+   * 
+   * @param deploymentId The deployment ID (required)
+   * @param type Get active configuration on a deployment (optional)
+   * @return WebDeploymentActiveConfigurationOnDeployment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebDeploymentActiveConfigurationOnDeployment getWebdeploymentsDeploymentConfigurations(String deploymentId, String type) throws IOException, ApiException {
+    return  getWebdeploymentsDeploymentConfigurations(createGetWebdeploymentsDeploymentConfigurationsRequest(deploymentId, type));
+  }
+
+  /**
+   * Get active configuration for a given deployment
+   * 
+   * @param deploymentId The deployment ID (required)
+   * @param type Get active configuration on a deployment (optional)
+   * @return WebDeploymentActiveConfigurationOnDeployment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebDeploymentActiveConfigurationOnDeployment> getWebdeploymentsDeploymentConfigurationsWithHttpInfo(String deploymentId, String type) throws IOException {
+    return getWebdeploymentsDeploymentConfigurations(createGetWebdeploymentsDeploymentConfigurationsRequest(deploymentId, type).withHttpInfo());
+  }
+
+  private GetWebdeploymentsDeploymentConfigurationsRequest createGetWebdeploymentsDeploymentConfigurationsRequest(String deploymentId, String type) {
+    return GetWebdeploymentsDeploymentConfigurationsRequest.builder()
+            .withDeploymentId(deploymentId)
+
+            .withType(type)
+
+            .build();
+  }
+
+  /**
+   * Get active configuration for a given deployment
+   * 
+   * @param request The request object
+   * @return WebDeploymentActiveConfigurationOnDeployment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebDeploymentActiveConfigurationOnDeployment getWebdeploymentsDeploymentConfigurations(GetWebdeploymentsDeploymentConfigurationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WebDeploymentActiveConfigurationOnDeployment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WebDeploymentActiveConfigurationOnDeployment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get active configuration for a given deployment
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebDeploymentActiveConfigurationOnDeployment> getWebdeploymentsDeploymentConfigurations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WebDeploymentActiveConfigurationOnDeployment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebDeploymentActiveConfigurationOnDeployment> response = (ApiResponse<WebDeploymentActiveConfigurationOnDeployment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebDeploymentActiveConfigurationOnDeployment> response = (ApiResponse<WebDeploymentActiveConfigurationOnDeployment>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -21,6 +21,7 @@ title: WorkitemsUserEventsNotificationWorkitem
 | **durationSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **ttl** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **statusId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **statusCategory** | [**StatusCategoryEnum**](#StatusCategoryEnum)<!----> |  |  [optional] |
 | **dateClosed** | <!----><!---->**String**<!----> |  |  [optional] |
 | **workbinId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **reporterId** | <!----><!---->**String**<!----> |  |  [optional] |
@@ -34,7 +35,23 @@ title: WorkitemsUserEventsNotificationWorkitem
 | **assignmentState** | [**AssignmentStateEnum**](#AssignmentStateEnum)<!----> |  |  [optional] |
 | **assignmentId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **alertTimeoutSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **customFields** | <!----><!---->[**Map&lt;String, WorkitemsUserEventsNotificationCustomAttribute&gt;**](WorkitemsUserEventsNotificationCustomAttribute.html)<!----> |  |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="StatusCategoryEnum"></a>
+
+## Enum: StatusCategoryEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| OPEN | &quot;Open&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| WAITING | &quot;Waiting&quot; | 
+| CLOSED | &quot;Closed&quot; | 
 {: class="table table-striped"}
 
 

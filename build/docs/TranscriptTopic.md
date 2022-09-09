@@ -15,6 +15,8 @@ title: TranscriptTopic
 | **confidence** | <!----><!---->**Integer**<!----> | The detection confidence of the topic. |  [optional] |
 | **startTimeMilliseconds** | <!----><!---->**Long**<!----> | The start time of the topic phrase. |  [optional] |
 | **duration** | <!----><!---->[**TopicDuration**](TopicDuration.html)<!----> |  |  [optional] |
+| **offset** | <!----><!---->[**TopicOffset**](TopicOffset.html)<!----> | Location of the phrase |  [optional] |
+| **recordingLocation** | <!----><!---->**Long**<!----> | Location of the phrase in the recording in milliseconds |  [optional] |
 {: class="table table-striped"}
 
 

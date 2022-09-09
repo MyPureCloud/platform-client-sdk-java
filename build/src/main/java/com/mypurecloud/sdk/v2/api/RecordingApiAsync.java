@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.RecordingJob;
 import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.RecordingMetadata;
+import com.mypurecloud.sdk.v2.model.RecordingRetentionCursorEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
@@ -83,6 +84,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpolicyReques
 import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRotationscheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingsRetentionQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequest;
@@ -2444,6 +2446,81 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<RecordingSettings> response = (ApiResponse<RecordingSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for recording retention data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingRetentionCursorEntityListing> getRecordingsRetentionQueryAsync(GetRecordingsRetentionQueryRequest request, final AsyncApiCallback<RecordingRetentionCursorEntityListing> callback) {
+    try {
+      final SettableFuture<RecordingRetentionCursorEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingRetentionCursorEntityListing>() {}, new AsyncApiCallback<ApiResponse<RecordingRetentionCursorEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingRetentionCursorEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for recording retention data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingRetentionCursorEntityListing>> getRecordingsRetentionQueryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RecordingRetentionCursorEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingRetentionCursorEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingRetentionCursorEntityListing>() {}, new AsyncApiCallback<ApiResponse<RecordingRetentionCursorEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingRetentionCursorEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingRetentionCursorEntityListing> response = (ApiResponse<RecordingRetentionCursorEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingRetentionCursorEntityListing> response = (ApiResponse<RecordingRetentionCursorEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

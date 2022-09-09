@@ -17,9 +17,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Story object.
+ * An ephemeral story.
  */
-@ApiModel(description = "Story object.")
+@ApiModel(description = "An ephemeral story.")
 
 public class ConversationContentStory  implements Serializable {
   

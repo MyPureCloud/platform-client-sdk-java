@@ -81,6 +81,7 @@ public class ReportingTurnAction  implements Serializable {
     SHOWKNOWLEDGEARTICLEACTION("ShowKnowledgeArticleAction"),
     FINDSYSTEMPROMPTACTION("FindSystemPromptAction"),
     FINDUSERPROMPTACTION("FindUserPromptAction"),
+    TRANSFERPUREMATCHACTION("TransferPureMatchAction"),
     UNKNOWN("Unknown");
 
     private String value;

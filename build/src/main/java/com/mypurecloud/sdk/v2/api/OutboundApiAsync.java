@@ -45,6 +45,8 @@ import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
+import com.mypurecloud.sdk.v2.model.DigitalRuleSet;
+import com.mypurecloud.sdk.v2.model.DigitalRuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.DncListDivisionView;
@@ -85,6 +87,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactReques
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistsRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignProgressRequest;
@@ -123,6 +126,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundDigitalrulesetRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundDigitalrulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistImportstatusRequest;
@@ -168,6 +173,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundConversationDncRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundDigitalrulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
@@ -184,6 +190,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistfilterRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundRulesetRequest;
@@ -1004,6 +1011,81 @@ public class OutboundApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteOutboundContactlistsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an Outbound Digital Rule Set
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteOutboundDigitalrulesetAsync(DeleteOutboundDigitalrulesetRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an Outbound Digital Rule Set
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteOutboundDigitalrulesetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -3876,6 +3958,156 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ContactListDivisionViewListing> response = (ApiResponse<ContactListDivisionViewListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an Outbound Digital Rule Set
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DigitalRuleSet> getOutboundDigitalrulesetAsync(GetOutboundDigitalrulesetRequest request, final AsyncApiCallback<DigitalRuleSet> callback) {
+    try {
+      final SettableFuture<DigitalRuleSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DigitalRuleSet>() {}, new AsyncApiCallback<ApiResponse<DigitalRuleSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<DigitalRuleSet> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an Outbound Digital Rule Set
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DigitalRuleSet>> getOutboundDigitalrulesetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DigitalRuleSet>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DigitalRuleSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DigitalRuleSet>() {}, new AsyncApiCallback<ApiResponse<DigitalRuleSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<DigitalRuleSet> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query a list of Outbound Digital Rule Sets
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DigitalRuleSetEntityListing> getOutboundDigitalrulesetsAsync(GetOutboundDigitalrulesetsRequest request, final AsyncApiCallback<DigitalRuleSetEntityListing> callback) {
+    try {
+      final SettableFuture<DigitalRuleSetEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DigitalRuleSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<DigitalRuleSetEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DigitalRuleSetEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query a list of Outbound Digital Rule Sets
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DigitalRuleSetEntityListing>> getOutboundDigitalrulesetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DigitalRuleSetEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DigitalRuleSetEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DigitalRuleSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<DigitalRuleSetEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DigitalRuleSetEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DigitalRuleSetEntityListing> response = (ApiResponse<DigitalRuleSetEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DigitalRuleSetEntityListing> response = (ApiResponse<DigitalRuleSetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7263,6 +7495,81 @@ public class OutboundApiAsync {
   }
 
   /**
+   * Create an Outbound Digital Rule Set
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DigitalRuleSet> postOutboundDigitalrulesetsAsync(PostOutboundDigitalrulesetsRequest request, final AsyncApiCallback<DigitalRuleSet> callback) {
+    try {
+      final SettableFuture<DigitalRuleSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DigitalRuleSet>() {}, new AsyncApiCallback<ApiResponse<DigitalRuleSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<DigitalRuleSet> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an Outbound Digital Rule Set
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DigitalRuleSet>> postOutboundDigitalrulesetsAsync(ApiRequest<DigitalRuleSet> request, final AsyncApiCallback<ApiResponse<DigitalRuleSet>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DigitalRuleSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DigitalRuleSet>() {}, new AsyncApiCallback<ApiResponse<DigitalRuleSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<DigitalRuleSet> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Initiate the export of a dnc list.
    * Returns 200 if received OK.
    * @param request the request object
@@ -8451,6 +8758,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an Outbound Digital Rule Set
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DigitalRuleSet> putOutboundDigitalrulesetAsync(PutOutboundDigitalrulesetRequest request, final AsyncApiCallback<DigitalRuleSet> callback) {
+    try {
+      final SettableFuture<DigitalRuleSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DigitalRuleSet>() {}, new AsyncApiCallback<ApiResponse<DigitalRuleSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<DigitalRuleSet> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an Outbound Digital Rule Set
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DigitalRuleSet>> putOutboundDigitalrulesetAsync(ApiRequest<DigitalRuleSet> request, final AsyncApiCallback<ApiResponse<DigitalRuleSet>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DigitalRuleSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DigitalRuleSet>() {}, new AsyncApiCallback<ApiResponse<DigitalRuleSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<DigitalRuleSet> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

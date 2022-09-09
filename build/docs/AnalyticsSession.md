@@ -20,6 +20,7 @@ title: AnalyticsSession
 | **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller's number) |  [optional] |
 | **assignerId** | <!----><!---->**String**<!----> | ID of the user that manually assigned a conversation |  [optional] |
 | **authenticated** | <!----><!---->**Boolean**<!----> | Flag that indicates that the identity of the customer has been asserted as verified by the provider. |  [optional] |
+| **bargedParticipantId** | <!----><!---->**String**<!----> | The participantId being barged in on (if someone (e.g. an agent) is being barged in on, this would correspond to one of the other participantIds present in the conversation) |  [optional] |
 | **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> | Callback phone number(s) |  [optional] |
 | **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> | Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **callbackUserName** | <!----><!---->**String**<!----> | The name of the user requesting a call back |  [optional] |

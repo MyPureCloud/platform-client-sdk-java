@@ -122,6 +122,7 @@ public class AnalyticsConversationSegment  implements Serializable {
   public enum SegmentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERT("alert"),
+    BARGING("barging"),
     CALLBACK("callback"),
     COACHING("coaching"),
     CONTACTING("contacting"),

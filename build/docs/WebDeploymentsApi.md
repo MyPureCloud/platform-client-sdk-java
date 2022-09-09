@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersionsDraft) | Get the configuration draft |
 | [**getWebdeploymentsConfigurations**](WebDeploymentsApi.html#getWebdeploymentsConfigurations) | View configuration drafts |
 | [**getWebdeploymentsDeployment**](WebDeploymentsApi.html#getWebdeploymentsDeployment) | Get a deployment |
+| [**getWebdeploymentsDeploymentConfigurations**](WebDeploymentsApi.html#getWebdeploymentsDeploymentConfigurations) | Get active configuration for a given deployment |
 | [**getWebdeploymentsDeployments**](WebDeploymentsApi.html#getWebdeploymentsDeployments) | Get deployments |
 | [**postWebdeploymentsConfigurationVersionsDraftPublish**](WebDeploymentsApi.html#postWebdeploymentsConfigurationVersionsDraftPublish) | Publish the configuration draft and create a new version |
 | [**postWebdeploymentsConfigurations**](WebDeploymentsApi.html#postWebdeploymentsConfigurations) | Create a configuration draft |
@@ -450,6 +451,68 @@ try {
 ### Return type
 
 [**WebDeployment**](WebDeployment.html)
+
+<a name="getWebdeploymentsDeploymentConfigurations"></a>
+
+# **getWebdeploymentsDeploymentConfigurations**
+
+
+
+> [WebDeploymentActiveConfigurationOnDeployment](WebDeploymentActiveConfigurationOnDeployment.html) getWebdeploymentsDeploymentConfigurations(deploymentId, type)
+
+Get active configuration for a given deployment
+
+Wraps GET /api/v2/webdeployments/deployments/{deploymentId}/configurations  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WebDeploymentsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+String deploymentId = "deploymentId_example"; // String | The deployment ID
+String type = "type_example"; // String | Get active configuration on a deployment
+try {
+    WebDeploymentActiveConfigurationOnDeployment result = apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, type);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebDeploymentsApi#getWebdeploymentsDeploymentConfigurations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **deploymentId** | **String**| The deployment ID | 
+| **type** | **String**| Get active configuration on a deployment | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WebDeploymentActiveConfigurationOnDeployment**](WebDeploymentActiveConfigurationOnDeployment.html)
 
 <a name="getWebdeploymentsDeployments"></a>
 

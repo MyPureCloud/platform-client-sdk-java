@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.UserExternalIdentifier;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UserObservationQuery;
@@ -124,6 +125,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkaddRequest
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkremoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkreplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectDivisionRoleRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUserExternalidRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserInviteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserPasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
@@ -5168,6 +5170,88 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create mapping between external identifier and user. Limit 100 per entity.
+   * Authority Name and External key are case sensitive.
+   * @param userId User ID (required)
+   * @param body  (required)
+   * @return List<UserExternalIdentifier>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UserExternalIdentifier> postUserExternalid(String userId, UserExternalIdentifier body) throws IOException, ApiException {
+    return  postUserExternalid(createPostUserExternalidRequest(userId, body));
+  }
+
+  /**
+   * Create mapping between external identifier and user. Limit 100 per entity.
+   * Authority Name and External key are case sensitive.
+   * @param userId User ID (required)
+   * @param body  (required)
+   * @return List<UserExternalIdentifier>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UserExternalIdentifier>> postUserExternalidWithHttpInfo(String userId, UserExternalIdentifier body) throws IOException {
+    return postUserExternalid(createPostUserExternalidRequest(userId, body).withHttpInfo());
+  }
+
+  private PostUserExternalidRequest createPostUserExternalidRequest(String userId, UserExternalIdentifier body) {
+    return PostUserExternalidRequest.builder()
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create mapping between external identifier and user. Limit 100 per entity.
+   * Authority Name and External key are case sensitive.
+   * @param request The request object
+   * @return List<UserExternalIdentifier>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UserExternalIdentifier> postUserExternalid(PostUserExternalidRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<UserExternalIdentifier>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<UserExternalIdentifier>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create mapping between external identifier and user. Limit 100 per entity.
+   * Authority Name and External key are case sensitive.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UserExternalIdentifier>> postUserExternalid(ApiRequest<UserExternalIdentifier> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<UserExternalIdentifier>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UserExternalIdentifier>> response = (ApiResponse<List<UserExternalIdentifier>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UserExternalIdentifier>> response = (ApiResponse<List<UserExternalIdentifier>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

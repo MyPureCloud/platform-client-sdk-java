@@ -98,6 +98,64 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
   }
   private StateEnum state = null;
 
+  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
+    public InitialStateEnumDeserializer() {
+      super(InitialStateEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets initialState
+   */
+ @JsonDeserialize(using = InitialStateEnumDeserializer.class)
+  public enum InitialStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    CONVERTING("converting"),
+    UPLOADING("uploading"),
+    TRANSMITTING("transmitting"),
+    SCHEDULED("scheduled"),
+    NONE("none");
+
+    private String value;
+
+    InitialStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialStateEnum value : InitialStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialStateEnum initialState = null;
+
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
       super(DirectionEnumDeserializer.class);
@@ -430,6 +488,23 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+
+  /**
+   **/
+  public ConversationChatEventTopicChatMediaParticipant initialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("initialState")
+  public InitialStateEnum getInitialState() {
+    return initialState;
+  }
+  public void setInitialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
   }
 
 
@@ -911,6 +986,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
             Objects.equals(this.startHoldTime, conversationChatEventTopicChatMediaParticipant.startHoldTime) &&
             Objects.equals(this.purpose, conversationChatEventTopicChatMediaParticipant.purpose) &&
             Objects.equals(this.state, conversationChatEventTopicChatMediaParticipant.state) &&
+            Objects.equals(this.initialState, conversationChatEventTopicChatMediaParticipant.initialState) &&
             Objects.equals(this.direction, conversationChatEventTopicChatMediaParticipant.direction) &&
             Objects.equals(this.disconnectType, conversationChatEventTopicChatMediaParticipant.disconnectType) &&
             Objects.equals(this.held, conversationChatEventTopicChatMediaParticipant.held) &&
@@ -942,7 +1018,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, roomId, avatarImageUrl);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, roomId, avatarImageUrl);
   }
 
   @Override
@@ -959,6 +1035,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");

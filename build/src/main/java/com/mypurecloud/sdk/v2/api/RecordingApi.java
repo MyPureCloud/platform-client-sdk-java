@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.RecordingJob;
 import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.RecordingMetadata;
+import com.mypurecloud.sdk.v2.model.RecordingRetentionCursorEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
@@ -80,6 +81,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpolicyReques
 import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRotationscheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingsRetentionQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequest;
@@ -2770,6 +2772,92 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<RecordingSettings> response = (ApiResponse<RecordingSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for recording retention data
+   * 
+   * @param retentionThresholdDays Fetch retention data for recordings retained for more days than the provided value. (required)
+   * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @param pageSize Page size. Maximum is 500. (optional, default to 25)
+   * @return RecordingRetentionCursorEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingRetentionCursorEntityListing getRecordingsRetentionQuery(Integer retentionThresholdDays, String cursor, Integer pageSize) throws IOException, ApiException {
+    return  getRecordingsRetentionQuery(createGetRecordingsRetentionQueryRequest(retentionThresholdDays, cursor, pageSize));
+  }
+
+  /**
+   * Query for recording retention data
+   * 
+   * @param retentionThresholdDays Fetch retention data for recordings retained for more days than the provided value. (required)
+   * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @param pageSize Page size. Maximum is 500. (optional, default to 25)
+   * @return RecordingRetentionCursorEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingRetentionCursorEntityListing> getRecordingsRetentionQueryWithHttpInfo(Integer retentionThresholdDays, String cursor, Integer pageSize) throws IOException {
+    return getRecordingsRetentionQuery(createGetRecordingsRetentionQueryRequest(retentionThresholdDays, cursor, pageSize).withHttpInfo());
+  }
+
+  private GetRecordingsRetentionQueryRequest createGetRecordingsRetentionQueryRequest(Integer retentionThresholdDays, String cursor, Integer pageSize) {
+    return GetRecordingsRetentionQueryRequest.builder()
+            .withRetentionThresholdDays(retentionThresholdDays)
+
+            .withCursor(cursor)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Query for recording retention data
+   * 
+   * @param request The request object
+   * @return RecordingRetentionCursorEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingRetentionCursorEntityListing getRecordingsRetentionQuery(GetRecordingsRetentionQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingRetentionCursorEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingRetentionCursorEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for recording retention data
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingRetentionCursorEntityListing> getRecordingsRetentionQuery(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingRetentionCursorEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingRetentionCursorEntityListing> response = (ApiResponse<RecordingRetentionCursorEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingRetentionCursorEntityListing> response = (ApiResponse<RecordingRetentionCursorEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

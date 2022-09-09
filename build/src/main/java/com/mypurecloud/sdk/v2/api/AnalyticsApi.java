@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsDataRetentionResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsReportingSettings;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
@@ -56,6 +57,7 @@ import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregationQuery;
 import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAnalyticsDataRetentionRequest;
 import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
@@ -72,6 +74,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsReques
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsDataretentionSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingMetadataRequest;
@@ -108,6 +111,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryReque
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PutAnalyticsDataretentionSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAnalyticsReportingScheduleRequest;
 
 import java.io.IOException;
@@ -836,6 +840,80 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get analytics data retention setting
+   * 
+   * @return AnalyticsDataRetentionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsDataRetentionResponse getAnalyticsDataretentionSettings() throws IOException, ApiException {
+    return  getAnalyticsDataretentionSettings(createGetAnalyticsDataretentionSettingsRequest());
+  }
+
+  /**
+   * Get analytics data retention setting
+   * 
+   * @return AnalyticsDataRetentionResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsDataRetentionResponse> getAnalyticsDataretentionSettingsWithHttpInfo() throws IOException {
+    return getAnalyticsDataretentionSettings(createGetAnalyticsDataretentionSettingsRequest().withHttpInfo());
+  }
+
+  private GetAnalyticsDataretentionSettingsRequest createGetAnalyticsDataretentionSettingsRequest() {
+    return GetAnalyticsDataretentionSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get analytics data retention setting
+   * 
+   * @param request The request object
+   * @return AnalyticsDataRetentionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsDataRetentionResponse getAnalyticsDataretentionSettings(GetAnalyticsDataretentionSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AnalyticsDataRetentionResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsDataRetentionResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get analytics data retention setting
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsDataRetentionResponse> getAnalyticsDataretentionSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsDataRetentionResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsDataRetentionResponse> response = (ApiResponse<AnalyticsDataRetentionResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsDataRetentionResponse> response = (ApiResponse<AnalyticsDataRetentionResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3668,6 +3746,84 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserObservationQueryResponse> response = (ApiResponse<UserObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update analytics data retention setting
+   * 
+   * @param body retentionDays (required)
+   * @return AnalyticsDataRetentionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsDataRetentionResponse putAnalyticsDataretentionSettings(UpdateAnalyticsDataRetentionRequest body) throws IOException, ApiException {
+    return  putAnalyticsDataretentionSettings(createPutAnalyticsDataretentionSettingsRequest(body));
+  }
+
+  /**
+   * Update analytics data retention setting
+   * 
+   * @param body retentionDays (required)
+   * @return AnalyticsDataRetentionResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsDataRetentionResponse> putAnalyticsDataretentionSettingsWithHttpInfo(UpdateAnalyticsDataRetentionRequest body) throws IOException {
+    return putAnalyticsDataretentionSettings(createPutAnalyticsDataretentionSettingsRequest(body).withHttpInfo());
+  }
+
+  private PutAnalyticsDataretentionSettingsRequest createPutAnalyticsDataretentionSettingsRequest(UpdateAnalyticsDataRetentionRequest body) {
+    return PutAnalyticsDataretentionSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update analytics data retention setting
+   * 
+   * @param request The request object
+   * @return AnalyticsDataRetentionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsDataRetentionResponse putAnalyticsDataretentionSettings(PutAnalyticsDataretentionSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AnalyticsDataRetentionResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsDataRetentionResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update analytics data retention setting
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsDataRetentionResponse> putAnalyticsDataretentionSettings(ApiRequest<UpdateAnalyticsDataRetentionRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsDataRetentionResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsDataRetentionResponse> response = (ApiResponse<AnalyticsDataRetentionResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsDataRetentionResponse> response = (ApiResponse<AnalyticsDataRetentionResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

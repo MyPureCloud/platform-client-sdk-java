@@ -17,9 +17,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * CardAction Object
+ * A card action that a user can take.
  */
-@ApiModel(description = "CardAction Object")
+@ApiModel(description = "A card action that a user can take.")
 
 public class ConversationContentCardAction  implements Serializable {
   
@@ -114,14 +114,14 @@ public class ConversationContentCardAction  implements Serializable {
 
 
   /**
-   * Text to be returned as the payload from a ButtonResponse when a button is clicked.
+   * Text to be returned as the payload from a ButtonResponse when a button is clicked. The payload and text are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.
    **/
   public ConversationContentCardAction payload(String payload) {
     this.payload = payload;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text to be returned as the payload from a ButtonResponse when a button is clicked.")
+  @ApiModelProperty(example = "null", value = "Text to be returned as the payload from a ButtonResponse when a button is clicked. The payload and text are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.")
   @JsonProperty("payload")
   public String getPayload() {
     return payload;

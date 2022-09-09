@@ -136,6 +136,35 @@ public class GetQualityFormsRequest {
 	    return this;
 	} 
 
+	public enum expandValues { 
+		PUBLISHHISTORY("publishHistory");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -260,6 +289,15 @@ public class GetQualityFormsRequest {
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
+		}
+
+
+
+		
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+
+		    return this;
 		}
 
 		public Builder withName(String name) {

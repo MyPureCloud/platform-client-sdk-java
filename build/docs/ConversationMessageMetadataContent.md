@@ -22,14 +22,10 @@ title: ConversationMessageMetadataContent
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ATTACHMENT | &quot;Attachment&quot; | 
 | LOCATION | &quot;Location&quot; | 
-| STORY | &quot;Story&quot; | 
 | QUICKREPLY | &quot;QuickReply&quot; | 
 | NOTIFICATION | &quot;Notification&quot; | 
 | BUTTONRESPONSE | &quot;ButtonResponse&quot; | 
-| GENERICTEMPLATE | &quot;GenericTemplate&quot; | 
-| LISTTEMPLATE | &quot;ListTemplate&quot; | 
-| POSTBACK | &quot;Postback&quot; | 
-| REACTIONS | &quot;Reactions&quot; | 
+| STORY | &quot;Story&quot; | 
 | MENTION | &quot;Mention&quot; | 
 | CARD | &quot;Card&quot; | 
 | CAROUSEL | &quot;Carousel&quot; | 

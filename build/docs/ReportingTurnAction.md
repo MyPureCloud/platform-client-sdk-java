@@ -59,6 +59,7 @@ title: ReportingTurnAction
 | SHOWKNOWLEDGEARTICLEACTION | &quot;ShowKnowledgeArticleAction&quot; | 
 | FINDSYSTEMPROMPTACTION | &quot;FindSystemPromptAction&quot; | 
 | FINDUSERPROMPTACTION | &quot;FindUserPromptAction&quot; | 
+| TRANSFERPUREMATCHACTION | &quot;TransferPureMatchAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

@@ -45,6 +45,7 @@ title: SegmentDetailQueryPredicate
 | AGENTOWNED | &quot;agentOwned&quot; | 
 | ANI | &quot;ani&quot; | 
 | AUTHENTICATED | &quot;authenticated&quot; | 
+| BARGEDPARTICIPANTID | &quot;bargedParticipantId&quot; | 
 | CALLBACKNUMBER | &quot;callbackNumber&quot; | 
 | CALLBACKSCHEDULEDTIME | &quot;callbackScheduledTime&quot; | 
 | COACHEDPARTICIPANTID | &quot;coachedParticipantId&quot; | 

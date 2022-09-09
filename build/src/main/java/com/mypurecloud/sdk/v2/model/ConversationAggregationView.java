@@ -67,6 +67,7 @@ public class ConversationAggregationView  implements Serializable {
     TAGENTRESPONSETIME("tAgentResponseTime"),
     TALERT("tAlert"),
     TANSWERED("tAnswered"),
+    TBARGING("tBarging"),
     TCALLBACK("tCallback"),
     TCALLBACKCOMPLETE("tCallbackComplete"),
     TCOACHING("tCoaching"),

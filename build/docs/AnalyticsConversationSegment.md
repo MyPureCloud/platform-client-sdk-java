@@ -70,6 +70,7 @@ title: AnalyticsConversationSegment
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ALERT | &quot;alert&quot; | 
+| BARGING | &quot;barging&quot; | 
 | CALLBACK | &quot;callback&quot; | 
 | COACHING | &quot;coaching&quot; | 
 | CONTACTING | &quot;contacting&quot; | 

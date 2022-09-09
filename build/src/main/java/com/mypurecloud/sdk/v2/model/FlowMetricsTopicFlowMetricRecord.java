@@ -464,6 +464,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("bot"),
     COMMONMODULE("commonmodule"),
+    DIGITALBOT("digitalbot"),
     INBOUNDCALL("inboundcall"),
     INBOUNDCHAT("inboundchat"),
     INBOUNDEMAIL("inboundemail"),

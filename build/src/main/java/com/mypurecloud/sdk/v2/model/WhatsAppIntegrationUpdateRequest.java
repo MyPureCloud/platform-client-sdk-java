@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
+import com.mypurecloud.sdk.v2.model.MessagingSettingRequestReference;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,7 +27,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
   private String id = null;
   private String name = null;
   private SupportedContentReference supportedContent = null;
-  private MessagingSettingReference messagingSetting = null;
+  private MessagingSettingRequestReference messagingSetting = null;
 
   private static class ActionEnumDeserializer extends StdDeserializer<ActionEnum> {
     public ActionEnumDeserializer() {
@@ -173,18 +173,19 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
 
 
   /**
+   * Defines the message settings to be applied for this integration
    **/
-  public WhatsAppIntegrationUpdateRequest messagingSetting(MessagingSettingReference messagingSetting) {
+  public WhatsAppIntegrationUpdateRequest messagingSetting(MessagingSettingRequestReference messagingSetting) {
     this.messagingSetting = messagingSetting;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Defines the message settings to be applied for this integration")
   @JsonProperty("messagingSetting")
-  public MessagingSettingReference getMessagingSetting() {
+  public MessagingSettingRequestReference getMessagingSetting() {
     return messagingSetting;
   }
-  public void setMessagingSetting(MessagingSettingReference messagingSetting) {
+  public void setMessagingSetting(MessagingSettingRequestReference messagingSetting) {
     this.messagingSetting = messagingSetting;
   }
 

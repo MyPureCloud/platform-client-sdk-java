@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
+import com.mypurecloud.sdk.v2.model.MessagingSettingRequestReference;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,7 +29,7 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
   private String id = null;
   private String name = null;
   private SupportedContentReference supportedContent = null;
-  private MessagingSettingReference messagingSetting = null;
+  private MessagingSettingRequestReference messagingSetting = null;
   private String outboundNotificationWebhookUrl = null;
   private String outboundNotificationWebhookSignatureSecretToken = null;
   private Map<String, String> webhookHeaders = null;
@@ -80,18 +80,19 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
 
 
   /**
+   * Defines the message settings to be applied for this integration
    **/
-  public OpenIntegrationUpdateRequest messagingSetting(MessagingSettingReference messagingSetting) {
+  public OpenIntegrationUpdateRequest messagingSetting(MessagingSettingRequestReference messagingSetting) {
     this.messagingSetting = messagingSetting;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Defines the message settings to be applied for this integration")
   @JsonProperty("messagingSetting")
-  public MessagingSettingReference getMessagingSetting() {
+  public MessagingSettingRequestReference getMessagingSetting() {
     return messagingSetting;
   }
-  public void setMessagingSetting(MessagingSettingReference messagingSetting) {
+  public void setMessagingSetting(MessagingSettingRequestReference messagingSetting) {
     this.messagingSetting = messagingSetting;
   }
 

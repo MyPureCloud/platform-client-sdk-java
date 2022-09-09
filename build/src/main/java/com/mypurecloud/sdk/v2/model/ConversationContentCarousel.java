@@ -19,8 +19,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * ConversationContentCarousel
+ * Carousel content object.
  */
+@ApiModel(description = "Carousel content object.")
 
 public class ConversationContentCarousel  implements Serializable {
   
@@ -28,14 +29,14 @@ public class ConversationContentCarousel  implements Serializable {
 
   
   /**
-   * A List of card objects.
+   * An array of card objects.
    **/
   public ConversationContentCarousel cards(List<ConversationContentCard> cards) {
     this.cards = cards;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A List of card objects.")
+  @ApiModelProperty(example = "null", required = true, value = "An array of card objects.")
   @JsonProperty("cards")
   public List<ConversationContentCard> getCards() {
     return cards;

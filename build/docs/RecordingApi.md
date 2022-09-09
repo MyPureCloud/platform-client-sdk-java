@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRecordingRecordingkeys**](RecordingApi.html#getRecordingRecordingkeys) | Get encryption key list |
 | [**getRecordingRecordingkeysRotationschedule**](RecordingApi.html#getRecordingRecordingkeysRotationschedule) | Get key rotation schedule |
 | [**getRecordingSettings**](RecordingApi.html#getRecordingSettings) | Get the Recording Settings for the Organization |
+| [**getRecordingsRetentionQuery**](RecordingApi.html#getRecordingsRetentionQuery) | Query for recording retention data |
 | [**getRecordingsScreensessions**](RecordingApi.html#getRecordingsScreensessions) | Retrieves a paged listing of screen recording sessions |
 | [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#patchRecordingCrossplatformMediaretentionpolicy) | Patch a media retention policy |
 | [**patchRecordingMediaretentionpolicy**](RecordingApi.html#patchRecordingMediaretentionpolicy) | Patch a media retention policy |
@@ -2084,6 +2085,71 @@ try {
 ### Return type
 
 [**RecordingSettings**](RecordingSettings.html)
+
+<a name="getRecordingsRetentionQuery"></a>
+
+# **getRecordingsRetentionQuery**
+
+
+
+> [RecordingRetentionCursorEntityListing](RecordingRetentionCursorEntityListing.html) getRecordingsRetentionQuery(retentionThresholdDays, cursor, pageSize)
+
+Query for recording retention data
+
+Wraps GET /api/v2/recordings/retention/query  
+
+Requires ANY permissions: 
+
+* recording:recording:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+Integer retentionThresholdDays = 56; // Integer | Fetch retention data for recordings retained for more days than the provided value.
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
+Integer pageSize = 25; // Integer | Page size. Maximum is 500.
+try {
+    RecordingRetentionCursorEntityListing result = apiInstance.getRecordingsRetentionQuery(retentionThresholdDays, cursor, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getRecordingsRetentionQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **retentionThresholdDays** | **Integer**| Fetch retention data for recordings retained for more days than the provided value. | 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page) | [optional] 
+| **pageSize** | **Integer**| Page size. Maximum is 500. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RecordingRetentionCursorEntityListing**](RecordingRetentionCursorEntityListing.html)
 
 <a name="getRecordingsScreensessions"></a>
 

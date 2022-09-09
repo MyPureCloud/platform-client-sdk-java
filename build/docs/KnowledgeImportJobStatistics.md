@@ -16,6 +16,15 @@ title: KnowledgeImportJobStatistics
 | **countDocumentValidationFailure** | <!----><!---->**Integer**<!----> | Number of documents that failed validation for import. |  [optional] |
 | **countDocumentImportSuccess** | <!----><!---->**Integer**<!----> | Number of imported documents. |  [optional] |
 | **countDocumentImportFailure** | <!----><!---->**Integer**<!----> | Number of documents failed to import. |  [optional] |
+| **countCategoryValidationSuccess** | <!----><!---->**Integer**<!----> | Number of categories that validated successfully for import. |  [optional] |
+| **countCategoryValidationFailure** | <!----><!---->**Integer**<!----> | Number of categories that failed validation for import. |  [optional] |
+| **countCategoryImportSuccess** | <!----><!---->**Integer**<!----> | Number of imported categories. |  [optional] |
+| **countCategoryImportFailure** | <!----><!---->**Integer**<!----> | Number of categories failed to import. |  [optional] |
+| **countLabelValidationSuccess** | <!----><!---->**Integer**<!----> | Number of labels that validated successfully for import. |  [optional] |
+| **countLabelValidationFailure** | <!----><!---->**Integer**<!----> | Number of labels that failed validation for import. |  [optional] |
+| **countLabelImportSuccess** | <!----><!---->**Integer**<!----> | Number of imported labels. |  [optional] |
+| **countLabelImportFailure** | <!----><!---->**Integer**<!----> | Number of labels failed to import. |  [optional] |
+| **migrationDetected** | <!----><!---->**Boolean**<!----> | Shows whether the import treated as migration or not. |  [optional] |
 {: class="table table-striped"}
 
 

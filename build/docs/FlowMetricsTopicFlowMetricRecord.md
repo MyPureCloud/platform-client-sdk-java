@@ -242,6 +242,7 @@ title: FlowMetricsTopicFlowMetricRecord
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BOT | &quot;bot&quot; | 
 | COMMONMODULE | &quot;commonmodule&quot; | 
+| DIGITALBOT | &quot;digitalbot&quot; | 
 | INBOUNDCALL | &quot;inboundcall&quot; | 
 | INBOUNDCHAT | &quot;inboundchat&quot; | 
 | INBOUNDEMAIL | &quot;inboundemail&quot; | 

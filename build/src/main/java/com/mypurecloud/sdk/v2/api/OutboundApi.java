@@ -42,6 +42,8 @@ import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
+import com.mypurecloud.sdk.v2.model.DigitalRuleSet;
+import com.mypurecloud.sdk.v2.model.DigitalRuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.DncListDivisionView;
@@ -82,6 +84,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactReques
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistsRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignProgressRequest;
@@ -120,6 +123,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundDigitalrulesetRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundDigitalrulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistImportstatusRequest;
@@ -165,6 +170,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundConversationDncRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundDigitalrulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
@@ -181,6 +187,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistfilterRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundRulesetRequest;
@@ -1023,6 +1030,81 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOutboundContactlists(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an Outbound Digital Rule Set
+   * 
+   * @param digitalRuleSetId The Digital Rule Set ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundDigitalruleset(String digitalRuleSetId) throws IOException, ApiException {
+     deleteOutboundDigitalruleset(createDeleteOutboundDigitalrulesetRequest(digitalRuleSetId));
+  }
+
+  /**
+   * Delete an Outbound Digital Rule Set
+   * 
+   * @param digitalRuleSetId The Digital Rule Set ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundDigitalrulesetWithHttpInfo(String digitalRuleSetId) throws IOException {
+    return deleteOutboundDigitalruleset(createDeleteOutboundDigitalrulesetRequest(digitalRuleSetId).withHttpInfo());
+  }
+
+  private DeleteOutboundDigitalrulesetRequest createDeleteOutboundDigitalrulesetRequest(String digitalRuleSetId) {
+    return DeleteOutboundDigitalrulesetRequest.builder()
+            .withDigitalRuleSetId(digitalRuleSetId)
+
+            .build();
+  }
+
+  /**
+   * Delete an Outbound Digital Rule Set
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundDigitalruleset(DeleteOutboundDigitalrulesetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an Outbound Digital Rule Set
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundDigitalruleset(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -4320,6 +4402,182 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ContactListDivisionViewListing> response = (ApiResponse<ContactListDivisionViewListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an Outbound Digital Rule Set
+   * 
+   * @param digitalRuleSetId The Digital Rule Set ID (required)
+   * @return DigitalRuleSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DigitalRuleSet getOutboundDigitalruleset(String digitalRuleSetId) throws IOException, ApiException {
+    return  getOutboundDigitalruleset(createGetOutboundDigitalrulesetRequest(digitalRuleSetId));
+  }
+
+  /**
+   * Get an Outbound Digital Rule Set
+   * 
+   * @param digitalRuleSetId The Digital Rule Set ID (required)
+   * @return DigitalRuleSet
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DigitalRuleSet> getOutboundDigitalrulesetWithHttpInfo(String digitalRuleSetId) throws IOException {
+    return getOutboundDigitalruleset(createGetOutboundDigitalrulesetRequest(digitalRuleSetId).withHttpInfo());
+  }
+
+  private GetOutboundDigitalrulesetRequest createGetOutboundDigitalrulesetRequest(String digitalRuleSetId) {
+    return GetOutboundDigitalrulesetRequest.builder()
+            .withDigitalRuleSetId(digitalRuleSetId)
+
+            .build();
+  }
+
+  /**
+   * Get an Outbound Digital Rule Set
+   * 
+   * @param request The request object
+   * @return DigitalRuleSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DigitalRuleSet getOutboundDigitalruleset(GetOutboundDigitalrulesetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DigitalRuleSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DigitalRuleSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an Outbound Digital Rule Set
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DigitalRuleSet> getOutboundDigitalruleset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DigitalRuleSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query a list of Outbound Digital Rule Sets
+   * 
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy The field to sort by (optional, default to name)
+   * @param sortOrder The direction to sort (optional, default to ascending)
+   * @param name Name (optional)
+   * @param id A list of digital rule set ids to bulk fetch (optional)
+   * @return DigitalRuleSetEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DigitalRuleSetEntityListing getOutboundDigitalrulesets(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id) throws IOException, ApiException {
+    return  getOutboundDigitalrulesets(createGetOutboundDigitalrulesetsRequest(pageSize, pageNumber, sortBy, sortOrder, name, id));
+  }
+
+  /**
+   * Query a list of Outbound Digital Rule Sets
+   * 
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy The field to sort by (optional, default to name)
+   * @param sortOrder The direction to sort (optional, default to ascending)
+   * @param name Name (optional)
+   * @param id A list of digital rule set ids to bulk fetch (optional)
+   * @return DigitalRuleSetEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DigitalRuleSetEntityListing> getOutboundDigitalrulesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id) throws IOException {
+    return getOutboundDigitalrulesets(createGetOutboundDigitalrulesetsRequest(pageSize, pageNumber, sortBy, sortOrder, name, id).withHttpInfo());
+  }
+
+  private GetOutboundDigitalrulesetsRequest createGetOutboundDigitalrulesetsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id) {
+    return GetOutboundDigitalrulesetsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withName(name)
+
+            .withId(id)
+
+            .build();
+  }
+
+  /**
+   * Query a list of Outbound Digital Rule Sets
+   * 
+   * @param request The request object
+   * @return DigitalRuleSetEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DigitalRuleSetEntityListing getOutboundDigitalrulesets(GetOutboundDigitalrulesetsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DigitalRuleSetEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DigitalRuleSetEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query a list of Outbound Digital Rule Sets
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DigitalRuleSetEntityListing> getOutboundDigitalrulesets(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DigitalRuleSetEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DigitalRuleSetEntityListing> response = (ApiResponse<DigitalRuleSetEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DigitalRuleSetEntityListing> response = (ApiResponse<DigitalRuleSetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8074,6 +8332,84 @@ public class OutboundApi {
   }
 
   /**
+   * Create an Outbound Digital Rule Set
+   * 
+   * @param body Digital Rule Set (required)
+   * @return DigitalRuleSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DigitalRuleSet postOutboundDigitalrulesets(DigitalRuleSet body) throws IOException, ApiException {
+    return  postOutboundDigitalrulesets(createPostOutboundDigitalrulesetsRequest(body));
+  }
+
+  /**
+   * Create an Outbound Digital Rule Set
+   * 
+   * @param body Digital Rule Set (required)
+   * @return DigitalRuleSet
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DigitalRuleSet> postOutboundDigitalrulesetsWithHttpInfo(DigitalRuleSet body) throws IOException {
+    return postOutboundDigitalrulesets(createPostOutboundDigitalrulesetsRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundDigitalrulesetsRequest createPostOutboundDigitalrulesetsRequest(DigitalRuleSet body) {
+    return PostOutboundDigitalrulesetsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an Outbound Digital Rule Set
+   * 
+   * @param request The request object
+   * @return DigitalRuleSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DigitalRuleSet postOutboundDigitalrulesets(PostOutboundDigitalrulesetsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DigitalRuleSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DigitalRuleSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an Outbound Digital Rule Set
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DigitalRuleSet> postOutboundDigitalrulesets(ApiRequest<DigitalRuleSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DigitalRuleSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Initiate the export of a dnc list.
    * Returns 200 if received OK.
    * @param dncListId DncList ID (required)
@@ -9366,6 +9702,88 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an Outbound Digital Rule Set
+   * 
+   * @param digitalRuleSetId The Digital Rule Set ID (required)
+   * @param body Digital Rule Set (required)
+   * @return DigitalRuleSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DigitalRuleSet putOutboundDigitalruleset(String digitalRuleSetId, DigitalRuleSet body) throws IOException, ApiException {
+    return  putOutboundDigitalruleset(createPutOutboundDigitalrulesetRequest(digitalRuleSetId, body));
+  }
+
+  /**
+   * Update an Outbound Digital Rule Set
+   * 
+   * @param digitalRuleSetId The Digital Rule Set ID (required)
+   * @param body Digital Rule Set (required)
+   * @return DigitalRuleSet
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DigitalRuleSet> putOutboundDigitalrulesetWithHttpInfo(String digitalRuleSetId, DigitalRuleSet body) throws IOException {
+    return putOutboundDigitalruleset(createPutOutboundDigitalrulesetRequest(digitalRuleSetId, body).withHttpInfo());
+  }
+
+  private PutOutboundDigitalrulesetRequest createPutOutboundDigitalrulesetRequest(String digitalRuleSetId, DigitalRuleSet body) {
+    return PutOutboundDigitalrulesetRequest.builder()
+            .withDigitalRuleSetId(digitalRuleSetId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an Outbound Digital Rule Set
+   * 
+   * @param request The request object
+   * @return DigitalRuleSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DigitalRuleSet putOutboundDigitalruleset(PutOutboundDigitalrulesetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DigitalRuleSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DigitalRuleSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an Outbound Digital Rule Set
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DigitalRuleSet> putOutboundDigitalruleset(ApiRequest<DigitalRuleSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DigitalRuleSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

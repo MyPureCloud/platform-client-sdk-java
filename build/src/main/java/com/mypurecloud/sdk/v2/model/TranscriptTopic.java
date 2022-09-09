@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TopicDuration;
+import com.mypurecloud.sdk.v2.model.TopicOffset;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -29,6 +30,8 @@ public class TranscriptTopic  implements Serializable {
   private Integer confidence = null;
   private Long startTimeMilliseconds = null;
   private TopicDuration duration = null;
+  private TopicOffset offset = null;
+  private Long recordingLocation = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -90,6 +93,20 @@ public class TranscriptTopic  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Location of the phrase")
+  @JsonProperty("offset")
+  public TopicOffset getOffset() {
+    return offset;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Location of the phrase in the recording in milliseconds")
+  @JsonProperty("recordingLocation")
+  public Long getRecordingLocation() {
+    return recordingLocation;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -106,12 +123,14 @@ public class TranscriptTopic  implements Serializable {
             Objects.equals(this.transcriptPhrase, transcriptTopic.transcriptPhrase) &&
             Objects.equals(this.confidence, transcriptTopic.confidence) &&
             Objects.equals(this.startTimeMilliseconds, transcriptTopic.startTimeMilliseconds) &&
-            Objects.equals(this.duration, transcriptTopic.duration);
+            Objects.equals(this.duration, transcriptTopic.duration) &&
+            Objects.equals(this.offset, transcriptTopic.offset) &&
+            Objects.equals(this.recordingLocation, transcriptTopic.recordingLocation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, topicPhrase, transcriptPhrase, confidence, startTimeMilliseconds, duration);
+    return Objects.hash(id, name, topicPhrase, transcriptPhrase, confidence, startTimeMilliseconds, duration, offset, recordingLocation);
   }
 
   @Override
@@ -126,6 +145,8 @@ public class TranscriptTopic  implements Serializable {
     sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    startTimeMilliseconds: ").append(toIndentedString(startTimeMilliseconds)).append("\n");
     sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    sb.append("    recordingLocation: ").append(toIndentedString(recordingLocation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

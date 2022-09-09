@@ -149,6 +149,20 @@ public class GetKnowledgeKnowledgebaseDocumentsRequest {
 	    return this;
 	} 
 
+	private List<String> documentId;
+	public List<String> getDocumentId() {
+		return this.documentId;
+	}
+
+	public void setDocumentId(List<String> documentId) {
+		this.documentId = documentId;
+	}
+
+	public GetKnowledgeKnowledgebaseDocumentsRequest withDocumentId(List<String> documentId) {
+	    this.setDocumentId(documentId);
+	    return this;
+	} 
+
 	private List<String> categoryId;
 	public List<String> getCategoryId() {
 		return this.categoryId;
@@ -293,6 +307,9 @@ public class GetKnowledgeKnowledgebaseDocumentsRequest {
                 .withQueryParameters("interval", "", interval)
         
 
+                .withQueryParameters("documentId", "multi", documentId)
+        
+
                 .withQueryParameters("categoryId", "multi", categoryId)
         
 
@@ -355,6 +372,11 @@ public class GetKnowledgeKnowledgebaseDocumentsRequest {
 
 		public Builder withInterval(String interval) {
 			request.setInterval(interval);
+			return this;
+		}
+
+		public Builder withDocumentId(List<String> documentId) {
+			request.setDocumentId(documentId);
 			return this;
 		}
 

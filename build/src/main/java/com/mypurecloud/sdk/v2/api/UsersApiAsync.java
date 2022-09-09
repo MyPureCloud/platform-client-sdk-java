@@ -47,6 +47,7 @@ import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.UserExternalIdentifier;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UserObservationQuery;
@@ -127,6 +128,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkaddRequest
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkremoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkreplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectDivisionRoleRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUserExternalidRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserInviteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserPasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
@@ -4654,6 +4656,81 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create mapping between external identifier and user. Limit 100 per entity.
+   * Authority Name and External key are case sensitive.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<UserExternalIdentifier>> postUserExternalidAsync(PostUserExternalidRequest request, final AsyncApiCallback<List<UserExternalIdentifier>> callback) {
+    try {
+      final SettableFuture<List<UserExternalIdentifier>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<UserExternalIdentifier>>() {}, new AsyncApiCallback<ApiResponse<List<UserExternalIdentifier>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UserExternalIdentifier>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create mapping between external identifier and user. Limit 100 per entity.
+   * Authority Name and External key are case sensitive.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<UserExternalIdentifier>>> postUserExternalidAsync(ApiRequest<UserExternalIdentifier> request, final AsyncApiCallback<ApiResponse<List<UserExternalIdentifier>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<UserExternalIdentifier>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<UserExternalIdentifier>>() {}, new AsyncApiCallback<ApiResponse<List<UserExternalIdentifier>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UserExternalIdentifier>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UserExternalIdentifier>> response = (ApiResponse<List<UserExternalIdentifier>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UserExternalIdentifier>> response = (ApiResponse<List<UserExternalIdentifier>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

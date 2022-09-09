@@ -29,6 +29,15 @@ public class KnowledgeImportJobStatistics  implements Serializable {
   private Integer countDocumentValidationFailure = null;
   private Integer countDocumentImportSuccess = null;
   private Integer countDocumentImportFailure = null;
+  private Integer countCategoryValidationSuccess = null;
+  private Integer countCategoryValidationFailure = null;
+  private Integer countCategoryImportSuccess = null;
+  private Integer countCategoryImportFailure = null;
+  private Integer countLabelValidationSuccess = null;
+  private Integer countLabelValidationFailure = null;
+  private Integer countLabelImportSuccess = null;
+  private Integer countLabelImportFailure = null;
+  private Boolean migrationDetected = null;
 
   
   /**
@@ -175,6 +184,168 @@ public class KnowledgeImportJobStatistics  implements Serializable {
   }
 
 
+  /**
+   * Number of categories that validated successfully for import.
+   **/
+  public KnowledgeImportJobStatistics countCategoryValidationSuccess(Integer countCategoryValidationSuccess) {
+    this.countCategoryValidationSuccess = countCategoryValidationSuccess;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Number of categories that validated successfully for import.")
+  @JsonProperty("countCategoryValidationSuccess")
+  public Integer getCountCategoryValidationSuccess() {
+    return countCategoryValidationSuccess;
+  }
+  public void setCountCategoryValidationSuccess(Integer countCategoryValidationSuccess) {
+    this.countCategoryValidationSuccess = countCategoryValidationSuccess;
+  }
+
+
+  /**
+   * Number of categories that failed validation for import.
+   **/
+  public KnowledgeImportJobStatistics countCategoryValidationFailure(Integer countCategoryValidationFailure) {
+    this.countCategoryValidationFailure = countCategoryValidationFailure;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Number of categories that failed validation for import.")
+  @JsonProperty("countCategoryValidationFailure")
+  public Integer getCountCategoryValidationFailure() {
+    return countCategoryValidationFailure;
+  }
+  public void setCountCategoryValidationFailure(Integer countCategoryValidationFailure) {
+    this.countCategoryValidationFailure = countCategoryValidationFailure;
+  }
+
+
+  /**
+   * Number of imported categories.
+   **/
+  public KnowledgeImportJobStatistics countCategoryImportSuccess(Integer countCategoryImportSuccess) {
+    this.countCategoryImportSuccess = countCategoryImportSuccess;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Number of imported categories.")
+  @JsonProperty("countCategoryImportSuccess")
+  public Integer getCountCategoryImportSuccess() {
+    return countCategoryImportSuccess;
+  }
+  public void setCountCategoryImportSuccess(Integer countCategoryImportSuccess) {
+    this.countCategoryImportSuccess = countCategoryImportSuccess;
+  }
+
+
+  /**
+   * Number of categories failed to import.
+   **/
+  public KnowledgeImportJobStatistics countCategoryImportFailure(Integer countCategoryImportFailure) {
+    this.countCategoryImportFailure = countCategoryImportFailure;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Number of categories failed to import.")
+  @JsonProperty("countCategoryImportFailure")
+  public Integer getCountCategoryImportFailure() {
+    return countCategoryImportFailure;
+  }
+  public void setCountCategoryImportFailure(Integer countCategoryImportFailure) {
+    this.countCategoryImportFailure = countCategoryImportFailure;
+  }
+
+
+  /**
+   * Number of labels that validated successfully for import.
+   **/
+  public KnowledgeImportJobStatistics countLabelValidationSuccess(Integer countLabelValidationSuccess) {
+    this.countLabelValidationSuccess = countLabelValidationSuccess;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Number of labels that validated successfully for import.")
+  @JsonProperty("countLabelValidationSuccess")
+  public Integer getCountLabelValidationSuccess() {
+    return countLabelValidationSuccess;
+  }
+  public void setCountLabelValidationSuccess(Integer countLabelValidationSuccess) {
+    this.countLabelValidationSuccess = countLabelValidationSuccess;
+  }
+
+
+  /**
+   * Number of labels that failed validation for import.
+   **/
+  public KnowledgeImportJobStatistics countLabelValidationFailure(Integer countLabelValidationFailure) {
+    this.countLabelValidationFailure = countLabelValidationFailure;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Number of labels that failed validation for import.")
+  @JsonProperty("countLabelValidationFailure")
+  public Integer getCountLabelValidationFailure() {
+    return countLabelValidationFailure;
+  }
+  public void setCountLabelValidationFailure(Integer countLabelValidationFailure) {
+    this.countLabelValidationFailure = countLabelValidationFailure;
+  }
+
+
+  /**
+   * Number of imported labels.
+   **/
+  public KnowledgeImportJobStatistics countLabelImportSuccess(Integer countLabelImportSuccess) {
+    this.countLabelImportSuccess = countLabelImportSuccess;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Number of imported labels.")
+  @JsonProperty("countLabelImportSuccess")
+  public Integer getCountLabelImportSuccess() {
+    return countLabelImportSuccess;
+  }
+  public void setCountLabelImportSuccess(Integer countLabelImportSuccess) {
+    this.countLabelImportSuccess = countLabelImportSuccess;
+  }
+
+
+  /**
+   * Number of labels failed to import.
+   **/
+  public KnowledgeImportJobStatistics countLabelImportFailure(Integer countLabelImportFailure) {
+    this.countLabelImportFailure = countLabelImportFailure;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Number of labels failed to import.")
+  @JsonProperty("countLabelImportFailure")
+  public Integer getCountLabelImportFailure() {
+    return countLabelImportFailure;
+  }
+  public void setCountLabelImportFailure(Integer countLabelImportFailure) {
+    this.countLabelImportFailure = countLabelImportFailure;
+  }
+
+
+  /**
+   * Shows whether the import treated as migration or not.
+   **/
+  public KnowledgeImportJobStatistics migrationDetected(Boolean migrationDetected) {
+    this.migrationDetected = migrationDetected;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Shows whether the import treated as migration or not.")
+  @JsonProperty("migrationDetected")
+  public Boolean getMigrationDetected() {
+    return migrationDetected;
+  }
+  public void setMigrationDetected(Boolean migrationDetected) {
+    this.migrationDetected = migrationDetected;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -192,12 +363,21 @@ public class KnowledgeImportJobStatistics  implements Serializable {
             Objects.equals(this.countDocumentValidationSuccess, knowledgeImportJobStatistics.countDocumentValidationSuccess) &&
             Objects.equals(this.countDocumentValidationFailure, knowledgeImportJobStatistics.countDocumentValidationFailure) &&
             Objects.equals(this.countDocumentImportSuccess, knowledgeImportJobStatistics.countDocumentImportSuccess) &&
-            Objects.equals(this.countDocumentImportFailure, knowledgeImportJobStatistics.countDocumentImportFailure);
+            Objects.equals(this.countDocumentImportFailure, knowledgeImportJobStatistics.countDocumentImportFailure) &&
+            Objects.equals(this.countCategoryValidationSuccess, knowledgeImportJobStatistics.countCategoryValidationSuccess) &&
+            Objects.equals(this.countCategoryValidationFailure, knowledgeImportJobStatistics.countCategoryValidationFailure) &&
+            Objects.equals(this.countCategoryImportSuccess, knowledgeImportJobStatistics.countCategoryImportSuccess) &&
+            Objects.equals(this.countCategoryImportFailure, knowledgeImportJobStatistics.countCategoryImportFailure) &&
+            Objects.equals(this.countLabelValidationSuccess, knowledgeImportJobStatistics.countLabelValidationSuccess) &&
+            Objects.equals(this.countLabelValidationFailure, knowledgeImportJobStatistics.countLabelValidationFailure) &&
+            Objects.equals(this.countLabelImportSuccess, knowledgeImportJobStatistics.countLabelImportSuccess) &&
+            Objects.equals(this.countLabelImportFailure, knowledgeImportJobStatistics.countLabelImportFailure) &&
+            Objects.equals(this.migrationDetected, knowledgeImportJobStatistics.migrationDetected);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(countDocumentImportActivityCreate, countDocumentImportActivityUpdate, countDocumentStateDraft, countDocumentStatePublished, countDocumentValidationSuccess, countDocumentValidationFailure, countDocumentImportSuccess, countDocumentImportFailure);
+    return Objects.hash(countDocumentImportActivityCreate, countDocumentImportActivityUpdate, countDocumentStateDraft, countDocumentStatePublished, countDocumentValidationSuccess, countDocumentValidationFailure, countDocumentImportSuccess, countDocumentImportFailure, countCategoryValidationSuccess, countCategoryValidationFailure, countCategoryImportSuccess, countCategoryImportFailure, countLabelValidationSuccess, countLabelValidationFailure, countLabelImportSuccess, countLabelImportFailure, migrationDetected);
   }
 
   @Override
@@ -213,6 +393,15 @@ public class KnowledgeImportJobStatistics  implements Serializable {
     sb.append("    countDocumentValidationFailure: ").append(toIndentedString(countDocumentValidationFailure)).append("\n");
     sb.append("    countDocumentImportSuccess: ").append(toIndentedString(countDocumentImportSuccess)).append("\n");
     sb.append("    countDocumentImportFailure: ").append(toIndentedString(countDocumentImportFailure)).append("\n");
+    sb.append("    countCategoryValidationSuccess: ").append(toIndentedString(countCategoryValidationSuccess)).append("\n");
+    sb.append("    countCategoryValidationFailure: ").append(toIndentedString(countCategoryValidationFailure)).append("\n");
+    sb.append("    countCategoryImportSuccess: ").append(toIndentedString(countCategoryImportSuccess)).append("\n");
+    sb.append("    countCategoryImportFailure: ").append(toIndentedString(countCategoryImportFailure)).append("\n");
+    sb.append("    countLabelValidationSuccess: ").append(toIndentedString(countLabelValidationSuccess)).append("\n");
+    sb.append("    countLabelValidationFailure: ").append(toIndentedString(countLabelValidationFailure)).append("\n");
+    sb.append("    countLabelImportSuccess: ").append(toIndentedString(countLabelImportSuccess)).append("\n");
+    sb.append("    countLabelImportFailure: ").append(toIndentedString(countLabelImportFailure)).append("\n");
+    sb.append("    migrationDetected: ").append(toIndentedString(migrationDetected)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,8 +19,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * ConversationContentCard
+ * Card content object.
  */
+@ApiModel(description = "Card content object.")
 
 public class ConversationContentCard  implements Serializable {
   

@@ -318,6 +318,13 @@
     "return": "DataAvailabilityResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetAnalyticsConversationsDetailsJobsAvailability {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n                try { \n            // Lookup the datalake availability date and time\n            DataAvailabilityResponse result = apiInstance.getAnalyticsConversationsDetailsJobsAvailability();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getanalyticsdataretentionsettings": {
+    "operationId": "getanalyticsdataretentionsettings",
+    "functionName": "getAnalyticsDataretentionSettings",
+    "signature": "getAnalyticsDataretentionSettings()",
+    "return": "AnalyticsDataRetentionResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.AnalyticsApi;\nimport com.mypurecloud.sdk.v2.model.AnalyticsDataRetentionResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetAnalyticsDataretentionSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        AnalyticsApi apiInstance = new AnalyticsApi();\n                try { \n            // Get analytics data retention setting\n            AnalyticsDataRetentionResponse result = apiInstance.getAnalyticsDataretentionSettings();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling AnalyticsApi#getAnalyticsDataretentionSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "getanalyticsreportingexports": {
     "operationId": "getanalyticsreportingexports",
     "functionName": "getAnalyticsReportingExports",
@@ -841,6 +848,20 @@
     ],
     "return": "UserObservationQueryResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.UsersApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;import com.mypurecloud.sdk.v2.model.UserObservationQuery;\n\npublic class ExamplepostAnalyticsUsersObservationsQuery {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        UsersApi apiInstance = new UsersApi();\n        UserObservationQuery body = new UserObservationQuery(); // UserObservationQuery | query\n        try { \n            // Query for user observations\n            UserObservationQueryResponse result = apiInstance.postAnalyticsUsersObservationsQuery(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling UsersApi#postAnalyticsUsersObservationsQuery\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "putanalyticsdataretentionsettings": {
+    "operationId": "putanalyticsdataretentionsettings",
+    "functionName": "putAnalyticsDataretentionSettings",
+    "signature": "putAnalyticsDataretentionSettings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "UpdateAnalyticsDataRetentionRequest",
+        "required": "true"
+      }
+    ],
+    "return": "AnalyticsDataRetentionResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.AnalyticsApi;\nimport com.mypurecloud.sdk.v2.model.AnalyticsDataRetentionResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UpdateAnalyticsDataRetentionRequest;\n\npublic class ExampleputAnalyticsDataretentionSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        AnalyticsApi apiInstance = new AnalyticsApi();\n        UpdateAnalyticsDataRetentionRequest body = new UpdateAnalyticsDataRetentionRequest(); // UpdateAnalyticsDataRetentionRequest | retentionDays\n        try { \n            // Update analytics data retention setting\n            AnalyticsDataRetentionResponse result = apiInstance.putAnalyticsDataretentionSettings(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling AnalyticsApi#putAnalyticsDataretentionSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "putanalyticsreportingschedule": {
     "operationId": "putanalyticsreportingschedule",
@@ -14701,7 +14722,7 @@
   "getknowledgeknowledgebasedocuments": {
     "operationId": "getknowledgeknowledgebasedocuments",
     "functionName": "getKnowledgeKnowledgebaseDocuments",
-    "signature": "getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, categoryId, includeSubcategories, includeDrafts, labelIds, expand)",
+    "signature": "getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand)",
     "parameters": [
       {
         "name": "knowledgeBaseId",
@@ -14726,6 +14747,11 @@
       {
         "name": "interval",
         "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "documentId",
+        "type": "List<String>",
         "required": "false"
       },
       {
@@ -14755,7 +14781,7 @@
       }
     ],
     "return": "KnowledgeDocumentResponseListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponseListing;\n\npublic class ExamplegetKnowledgeKnowledgebaseDocuments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nString before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nString pageSize = \"pageSize_example\"; // String | Number of entities to return. Maximum of 200.\nString interval = \"interval_example\"; // String | Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ\nList<String> categoryId = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with category ids, comma separated values expected.\nBoolean includeSubcategories = true; // Boolean | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.\nBoolean includeDrafts = true; // Boolean | If includeDrafts is true, Documents in the draft state are also returned in the response.\nList<String> labelIds = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with label ids, comma separated values expected.\nList<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.\n        try { \n            // Get documents.\n            KnowledgeDocumentResponseListing result = apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, categoryId, includeSubcategories, includeDrafts, labelIds, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseDocuments\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponseListing;\n\npublic class ExamplegetKnowledgeKnowledgebaseDocuments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nString before = \"before_example\"; // String | The cursor that points to the start of the set of entities that has been returned.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned.\nString pageSize = \"pageSize_example\"; // String | Number of entities to return. Maximum of 200.\nString interval = \"interval_example\"; // String | Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ\nList<String> documentId = Arrays.asList(null); // List<String> | Retrieves the specified documents, comma separated values expected.\nList<String> categoryId = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with category ids, comma separated values expected.\nBoolean includeSubcategories = true; // Boolean | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.\nBoolean includeDrafts = true; // Boolean | If includeDrafts is true, Documents in the draft state are also returned in the response.\nList<String> labelIds = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with label ids, comma separated values expected.\nList<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.\n        try { \n            // Get documents.\n            KnowledgeDocumentResponseListing result = apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseDocuments\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getknowledgeknowledgebaseexportjob": {
     "operationId": "getknowledgeknowledgebaseexportjob",
@@ -19036,6 +19062,19 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOutboundContactlists {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        List<String> id = Arrays.asList(null); // List<String> | contact list id(s) to delete\n        try { \n            // Delete multiple contact lists.\n            apiInstance.deleteOutboundContactlists(id);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#deleteOutboundContactlists\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deleteoutbounddigitalruleset": {
+    "operationId": "deleteoutbounddigitalruleset",
+    "functionName": "deleteOutboundDigitalruleset",
+    "signature": "deleteOutboundDigitalruleset(digitalRuleSetId)",
+    "parameters": [
+      {
+        "name": "digitalRuleSetId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOutboundDigitalruleset {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String digitalRuleSetId = \"digitalRuleSetId_example\"; // String | The Digital Rule Set ID\n        try { \n            // Delete an Outbound Digital Rule Set\n            apiInstance.deleteOutboundDigitalruleset(digitalRuleSetId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#deleteOutboundDigitalruleset\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "deleteoutbounddnclist": {
     "operationId": "deleteoutbounddnclist",
     "functionName": "deleteOutboundDnclist",
@@ -19985,6 +20024,59 @@
     "return": "ContactListDivisionViewListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetOutboundContactlistsDivisionviews {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        Boolean includeImportStatus = false; // Boolean | Include import status\nBoolean includeSize = false; // Boolean | Include size\nInteger pageSize = 25; // Integer | Page size. The max that will be returned is 100.\nInteger pageNumber = 1; // Integer | Page number\nString filterType = \"Prefix\"; // String | Filter type\nString name = \"name_example\"; // String | Name\nList<String> id = Arrays.asList(null); // List<String> | id\nString sortBy = \"sortBy_example\"; // String | Sort by\nString sortOrder = \"a\"; // String | Sort order\n        try { \n            // Query a list of simplified contact list objects.\n            ContactListDivisionViewListing result = apiInstance.getOutboundContactlistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#getOutboundContactlistsDivisionviews\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getoutbounddigitalruleset": {
+    "operationId": "getoutbounddigitalruleset",
+    "functionName": "getOutboundDigitalruleset",
+    "signature": "getOutboundDigitalruleset(digitalRuleSetId)",
+    "parameters": [
+      {
+        "name": "digitalRuleSetId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "DigitalRuleSet",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DigitalRuleSet;\n\npublic class ExamplegetOutboundDigitalruleset {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String digitalRuleSetId = \"digitalRuleSetId_example\"; // String | The Digital Rule Set ID\n        try { \n            // Get an Outbound Digital Rule Set\n            DigitalRuleSet result = apiInstance.getOutboundDigitalruleset(digitalRuleSetId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#getOutboundDigitalruleset\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getoutbounddigitalrulesets": {
+    "operationId": "getoutbounddigitalrulesets",
+    "functionName": "getOutboundDigitalrulesets",
+    "signature": "getOutboundDigitalrulesets(pageSize, pageNumber, sortBy, sortOrder, name, id)",
+    "parameters": [
+      {
+        "name": "pageSize",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "sortBy",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "sortOrder",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "id",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "DigitalRuleSetEntityListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.DigitalRuleSetEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetOutboundDigitalrulesets {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.\nInteger pageNumber = 1; // Integer | Page number\nString sortBy = \"name\"; // String | The field to sort by\nString sortOrder = \"ascending\"; // String | The direction to sort\nString name = \"name_example\"; // String | Name\nList<String> id = Arrays.asList(null); // List<String> | A list of digital rule set ids to bulk fetch\n        try { \n            // Query a list of Outbound Digital Rule Sets\n            DigitalRuleSetEntityListing result = apiInstance.getOutboundDigitalrulesets(pageSize, pageNumber, sortBy, sortOrder, name, id);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#getOutboundDigitalrulesets\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "getoutbounddnclist": {
     "operationId": "getoutbounddnclist",
     "functionName": "getOutboundDnclist",
@@ -20910,6 +21002,20 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostOutboundConversationDnc {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String conversationId = \"conversationId_example\"; // String | Conversation ID\n        try { \n            // Add phone numbers to a Dialer DNC list.\n            apiInstance.postOutboundConversationDnc(conversationId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#postOutboundConversationDnc\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "postoutbounddigitalrulesets": {
+    "operationId": "postoutbounddigitalrulesets",
+    "functionName": "postOutboundDigitalrulesets",
+    "signature": "postOutboundDigitalrulesets(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "DigitalRuleSet",
+        "required": "true"
+      }
+    ],
+    "return": "DigitalRuleSet",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DigitalRuleSet;\n\npublic class ExamplepostOutboundDigitalrulesets {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        DigitalRuleSet body = new DigitalRuleSet(); // DigitalRuleSet | Digital Rule Set\n        try { \n            // Create an Outbound Digital Rule Set\n            DigitalRuleSet result = apiInstance.postOutboundDigitalrulesets(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#postOutboundDigitalrulesets\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "postoutbounddnclistexport": {
     "operationId": "postoutbounddnclistexport",
     "functionName": "postOutboundDnclistExport",
@@ -21197,6 +21303,25 @@
     ],
     "return": "ContactListFilter",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ContactListFilter;\n\npublic class ExampleputOutboundContactlistfilter {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String contactListFilterId = \"contactListFilterId_example\"; // String | Contact List Filter ID\nContactListFilter body = new ContactListFilter(); // ContactListFilter | ContactListFilter\n        try { \n            // Update Contact List Filter\n            ContactListFilter result = apiInstance.putOutboundContactlistfilter(contactListFilterId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#putOutboundContactlistfilter\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "putoutbounddigitalruleset": {
+    "operationId": "putoutbounddigitalruleset",
+    "functionName": "putOutboundDigitalruleset",
+    "signature": "putOutboundDigitalruleset(digitalRuleSetId, body)",
+    "parameters": [
+      {
+        "name": "digitalRuleSetId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "DigitalRuleSet",
+        "required": "true"
+      }
+    ],
+    "return": "DigitalRuleSet",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DigitalRuleSet;\n\npublic class ExampleputOutboundDigitalruleset {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String digitalRuleSetId = \"digitalRuleSetId_example\"; // String | The Digital Rule Set ID\nDigitalRuleSet body = new DigitalRuleSet(); // DigitalRuleSet | Digital Rule Set\n        try { \n            // Update an Outbound Digital Rule Set\n            DigitalRuleSet result = apiInstance.putOutboundDigitalruleset(digitalRuleSetId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#putOutboundDigitalruleset\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "putoutbounddnclist": {
     "operationId": "putoutbounddnclist",
@@ -22118,7 +22243,7 @@
       }
     ],
     "return": "EvaluationFormEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.QualityApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;\n\npublic class ExamplegetQualityForms {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        QualityApi apiInstance = new QualityApi();\n        Integer pageSize = 25; // Integer | The total page size requested\nInteger pageNumber = 1; // Integer | The page number requested\nString sortBy = \"sortBy_example\"; // String | variable name requested to sort by\nString nextPage = \"nextPage_example\"; // String | next page token\nString previousPage = \"previousPage_example\"; // String | Previous page token\nString expand = \"expand_example\"; // String | Expand\nString name = \"name_example\"; // String | Name\nString sortOrder = \"sortOrder_example\"; // String | Order to sort results, either asc or desc\n        try { \n            // Get the list of evaluation forms\n            EvaluationFormEntityListing result = apiInstance.getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling QualityApi#getQualityForms\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.QualityApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;\n\npublic class ExamplegetQualityForms {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        QualityApi apiInstance = new QualityApi();\n        Integer pageSize = 25; // Integer | The total page size requested\nInteger pageNumber = 1; // Integer | The page number requested\nString sortBy = \"sortBy_example\"; // String | variable name requested to sort by\nString nextPage = \"nextPage_example\"; // String | next page token\nString previousPage = \"previousPage_example\"; // String | Previous page token\nString expand = \"expand_example\"; // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions\nString name = \"name_example\"; // String | Name\nString sortOrder = \"sortOrder_example\"; // String | Order to sort results, either asc or desc\n        try { \n            // Get the list of evaluation forms\n            EvaluationFormEntityListing result = apiInstance.getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling QualityApi#getQualityForms\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getqualityformsevaluation": {
     "operationId": "getqualityformsevaluation",
@@ -22210,7 +22335,7 @@
       }
     ],
     "return": "EvaluationFormEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.QualityApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;\n\npublic class ExamplegetQualityFormsEvaluations {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        QualityApi apiInstance = new QualityApi();\n        Integer pageSize = 25; // Integer | The total page size requested\nInteger pageNumber = 1; // Integer | The page number requested\nString sortBy = \"sortBy_example\"; // String | variable name requested to sort by\nString nextPage = \"nextPage_example\"; // String | next page token\nString previousPage = \"previousPage_example\"; // String | Previous page token\nString expand = \"expand_example\"; // String | Expand\nString name = \"name_example\"; // String | Name\nString sortOrder = \"sortOrder_example\"; // String | Order to sort results, either asc or desc\n        try { \n            // Get the list of evaluation forms\n            EvaluationFormEntityListing result = apiInstance.getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling QualityApi#getQualityFormsEvaluations\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.QualityApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;\n\npublic class ExamplegetQualityFormsEvaluations {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        QualityApi apiInstance = new QualityApi();\n        Integer pageSize = 25; // Integer | The total page size requested\nInteger pageNumber = 1; // Integer | The page number requested\nString sortBy = \"sortBy_example\"; // String | variable name requested to sort by\nString nextPage = \"nextPage_example\"; // String | next page token\nString previousPage = \"previousPage_example\"; // String | Previous page token\nString expand = \"expand_example\"; // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions\nString name = \"name_example\"; // String | Name\nString sortOrder = \"sortOrder_example\"; // String | Order to sort results, either asc or desc\n        try { \n            // Get the list of evaluation forms\n            EvaluationFormEntityListing result = apiInstance.getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling QualityApi#getQualityFormsEvaluations\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getqualityformsevaluationsbulkcontexts": {
     "operationId": "getqualityformsevaluationsbulkcontexts",
@@ -22311,7 +22436,7 @@
       }
     ],
     "return": "SurveyFormEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.QualityApi;\nimport com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetQualityFormsSurveys {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        QualityApi apiInstance = new QualityApi();\n        Integer pageSize = 25; // Integer | The total page size requested\nInteger pageNumber = 1; // Integer | The page number requested\nString sortBy = \"sortBy_example\"; // String | variable name requested to sort by\nString nextPage = \"nextPage_example\"; // String | next page token\nString previousPage = \"previousPage_example\"; // String | Previous page token\nString expand = \"expand_example\"; // String | Expand\nString name = \"name_example\"; // String | Name\nString sortOrder = \"sortOrder_example\"; // String | Order to sort results, either asc or desc\n        try { \n            // Get the list of survey forms\n            SurveyFormEntityListing result = apiInstance.getQualityFormsSurveys(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling QualityApi#getQualityFormsSurveys\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.QualityApi;\nimport com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetQualityFormsSurveys {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        QualityApi apiInstance = new QualityApi();\n        Integer pageSize = 25; // Integer | The total page size requested\nInteger pageNumber = 1; // Integer | The page number requested\nString sortBy = \"sortBy_example\"; // String | variable name requested to sort by\nString nextPage = \"nextPage_example\"; // String | next page token\nString previousPage = \"previousPage_example\"; // String | Previous page token\nString expand = \"expand_example\"; // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions\nString name = \"name_example\"; // String | Name\nString sortOrder = \"sortOrder_example\"; // String | Order to sort results, either asc or desc\n        try { \n            // Get the list of survey forms\n            SurveyFormEntityListing result = apiInstance.getQualityFormsSurveys(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling QualityApi#getQualityFormsSurveys\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getqualityformssurveysbulk": {
     "operationId": "getqualityformssurveysbulk",
@@ -23560,6 +23685,30 @@
     ],
     "return": "RecordingSettings",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RecordingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.RecordingSettings;\n\npublic class ExamplegetRecordingSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RecordingApi apiInstance = new RecordingApi();\n        Boolean createDefault = false; // Boolean | If no settings are found, a new one is created with default values\n        try { \n            // Get the Recording Settings for the Organization\n            RecordingSettings result = apiInstance.getRecordingSettings(createDefault);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RecordingApi#getRecordingSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getrecordingsretentionquery": {
+    "operationId": "getrecordingsretentionquery",
+    "functionName": "getRecordingsRetentionQuery",
+    "signature": "getRecordingsRetentionQuery(retentionThresholdDays, cursor, pageSize)",
+    "parameters": [
+      {
+        "name": "retentionThresholdDays",
+        "type": "Integer",
+        "required": "true"
+      },
+      {
+        "name": "cursor",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "Integer",
+        "required": "false"
+      }
+    ],
+    "return": "RecordingRetentionCursorEntityListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RecordingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.RecordingRetentionCursorEntityListing;\n\npublic class ExamplegetRecordingsRetentionQuery {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RecordingApi apiInstance = new RecordingApi();\n        Integer retentionThresholdDays = 56; // Integer | Fetch retention data for recordings retained for more days than the provided value.\nString cursor = \"cursor_example\"; // String | Indicates where to resume query results (not required for first page)\nInteger pageSize = 25; // Integer | Page size. Maximum is 500.\n        try { \n            // Query for recording retention data\n            RecordingRetentionCursorEntityListing result = apiInstance.getRecordingsRetentionQuery(retentionThresholdDays, cursor, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RecordingApi#getRecordingsRetentionQuery\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getrecordingsscreensessions": {
     "operationId": "getrecordingsscreensessions",
@@ -31953,6 +32102,25 @@
     "return": "UserEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.UsersApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.List;import com.mypurecloud.sdk.v2.model.PatchUser;import com.mypurecloud.sdk.v2.model.UserEntityListing;\n\npublic class ExamplepatchUsersBulk {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        UsersApi apiInstance = new UsersApi();\n        List<PatchUser> body = Arrays.asList(new PatchUser()); // List<PatchUser> | Users\n        try { \n            // Update bulk acd autoanswer on users\n            UserEntityListing result = apiInstance.patchUsersBulk(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling UsersApi#patchUsersBulk\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "postuserexternalid": {
+    "operationId": "postuserexternalid",
+    "functionName": "postUserExternalid",
+    "signature": "postUserExternalid(userId, body)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UserExternalIdentifier",
+        "required": "true"
+      }
+    ],
+    "return": "List<UserExternalIdentifier>",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.UsersApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UserExternalIdentifier;\n\npublic class ExamplepostUserExternalid {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        UsersApi apiInstance = new UsersApi();\n        String userId = \"userId_example\"; // String | User ID\nUserExternalIdentifier body = new UserExternalIdentifier(); // UserExternalIdentifier | \n        try { \n            // Create mapping between external identifier and user. Limit 100 per entity.\n            List<UserExternalIdentifier> result = apiInstance.postUserExternalid(userId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling UsersApi#postUserExternalid\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "postuserinvite": {
     "operationId": "postuserinvite",
     "functionName": "postUserInvite",
@@ -32985,6 +33153,25 @@
     ],
     "return": "WebDeployment",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WebDeployment;\n\npublic class ExamplegetWebdeploymentsDeployment {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String deploymentId = \"deploymentId_example\"; // String | The deployment ID\n        try { \n            // Get a deployment\n            WebDeployment result = apiInstance.getWebdeploymentsDeployment(deploymentId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsDeployment\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getwebdeploymentsdeploymentconfigurations": {
+    "operationId": "getwebdeploymentsdeploymentconfigurations",
+    "functionName": "getWebdeploymentsDeploymentConfigurations",
+    "signature": "getWebdeploymentsDeploymentConfigurations(deploymentId, type)",
+    "parameters": [
+      {
+        "name": "deploymentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "type",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "WebDeploymentActiveConfigurationOnDeployment",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;\n\npublic class ExamplegetWebdeploymentsDeploymentConfigurations {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String deploymentId = \"deploymentId_example\"; // String | The deployment ID\nString type = \"type_example\"; // String | Get active configuration on a deployment\n        try { \n            // Get active configuration for a given deployment\n            WebDeploymentActiveConfigurationOnDeployment result = apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, type);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsDeploymentConfigurations\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getwebdeploymentsdeployments": {
     "operationId": "getwebdeploymentsdeployments",

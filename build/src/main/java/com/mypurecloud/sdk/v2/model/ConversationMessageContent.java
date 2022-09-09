@@ -16,7 +16,6 @@ import com.mypurecloud.sdk.v2.model.ConversationContentAttachment;
 import com.mypurecloud.sdk.v2.model.ConversationContentButtonResponse;
 import com.mypurecloud.sdk.v2.model.ConversationContentCard;
 import com.mypurecloud.sdk.v2.model.ConversationContentCarousel;
-import com.mypurecloud.sdk.v2.model.ConversationContentGeneric;
 import com.mypurecloud.sdk.v2.model.ConversationContentLocation;
 import com.mypurecloud.sdk.v2.model.ConversationContentNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.ConversationContentQuickReply;
@@ -26,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Message content element.
+ * Message content element. If contentType &#x3D; \&quot;Attachment\&quot; only one item is allowed.
  */
-@ApiModel(description = "Message content element.")
+@ApiModel(description = "Message content element. If contentType = \"Attachment\" only one item is allowed.")
 
 public class ConversationMessageContent  implements Serializable {
   
@@ -46,21 +45,17 @@ public class ConversationMessageContent  implements Serializable {
     }
   }
   /**
-   * Type of this content element. If contentType = \"Attachment\" only one item is allowed.
+   * Type of this content element.
    */
  @JsonDeserialize(using = ContentTypeEnumDeserializer.class)
   public enum ContentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ATTACHMENT("Attachment"),
     LOCATION("Location"),
-    STORY("Story"),
     QUICKREPLY("QuickReply"),
     NOTIFICATION("Notification"),
     BUTTONRESPONSE("ButtonResponse"),
-    GENERICTEMPLATE("GenericTemplate"),
-    LISTTEMPLATE("ListTemplate"),
-    POSTBACK("Postback"),
-    REACTIONS("Reactions"),
+    STORY("Story"),
     MENTION("Mention"),
     CARD("Card"),
     CAROUSEL("Carousel"),
@@ -93,25 +88,24 @@ public class ConversationMessageContent  implements Serializable {
   }
   private ContentTypeEnum contentType = null;
   private ConversationContentLocation location = null;
-  private ConversationContentStory story = null;
   private ConversationContentAttachment attachment = null;
   private ConversationContentQuickReply quickReply = null;
-  private ConversationContentNotificationTemplate template = null;
   private ConversationContentButtonResponse buttonResponse = null;
-  private ConversationContentGeneric generic = null;
+  private ConversationContentNotificationTemplate template = null;
+  private ConversationContentStory story = null;
   private ConversationContentCard card = null;
   private ConversationContentCarousel carousel = null;
 
   
   /**
-   * Type of this content element. If contentType = \"Attachment\" only one item is allowed.
+   * Type of this content element.
    **/
   public ConversationMessageContent contentType(ContentTypeEnum contentType) {
     this.contentType = contentType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Type of this content element. If contentType = \"Attachment\" only one item is allowed.")
+  @ApiModelProperty(example = "null", required = true, value = "Type of this content element.")
   @JsonProperty("contentType")
   public ContentTypeEnum getContentType() {
     return contentType;
@@ -136,24 +130,6 @@ public class ConversationMessageContent  implements Serializable {
   }
   public void setLocation(ConversationContentLocation location) {
     this.location = location;
-  }
-
-
-  /**
-   * Ephemeral story content.
-   **/
-  public ConversationMessageContent story(ConversationContentStory story) {
-    this.story = story;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Ephemeral story content.")
-  @JsonProperty("story")
-  public ConversationContentStory getStory() {
-    return story;
-  }
-  public void setStory(ConversationContentStory story) {
-    this.story = story;
   }
 
 
@@ -194,24 +170,6 @@ public class ConversationMessageContent  implements Serializable {
 
 
   /**
-   * Template notification content.
-   **/
-  public ConversationMessageContent template(ConversationContentNotificationTemplate template) {
-    this.template = template;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Template notification content.")
-  @JsonProperty("template")
-  public ConversationContentNotificationTemplate getTemplate() {
-    return template;
-  }
-  public void setTemplate(ConversationContentNotificationTemplate template) {
-    this.template = template;
-  }
-
-
-  /**
    * Button response content.
    **/
   public ConversationMessageContent buttonResponse(ConversationContentButtonResponse buttonResponse) {
@@ -230,32 +188,50 @@ public class ConversationMessageContent  implements Serializable {
 
 
   /**
-   * Generic Template Object (Deprecated).
+   * Template notification content.
    **/
-  public ConversationMessageContent generic(ConversationContentGeneric generic) {
-    this.generic = generic;
+  public ConversationMessageContent template(ConversationContentNotificationTemplate template) {
+    this.template = template;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Generic Template Object (Deprecated).")
-  @JsonProperty("generic")
-  public ConversationContentGeneric getGeneric() {
-    return generic;
+  @ApiModelProperty(example = "null", value = "Template notification content.")
+  @JsonProperty("template")
+  public ConversationContentNotificationTemplate getTemplate() {
+    return template;
   }
-  public void setGeneric(ConversationContentGeneric generic) {
-    this.generic = generic;
+  public void setTemplate(ConversationContentNotificationTemplate template) {
+    this.template = template;
   }
 
 
   /**
-   * Card (Generic Template) Object
+   * Ephemeral story content.
+   **/
+  public ConversationMessageContent story(ConversationContentStory story) {
+    this.story = story;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Ephemeral story content.")
+  @JsonProperty("story")
+  public ConversationContentStory getStory() {
+    return story;
+  }
+  public void setStory(ConversationContentStory story) {
+    this.story = story;
+  }
+
+
+  /**
+   * Card content
    **/
   public ConversationMessageContent card(ConversationContentCard card) {
     this.card = card;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Card (Generic Template) Object")
+  @ApiModelProperty(example = "null", value = "Card content")
   @JsonProperty("card")
   public ConversationContentCard getCard() {
     return card;
@@ -266,14 +242,14 @@ public class ConversationMessageContent  implements Serializable {
 
 
   /**
-   * Carousel (Multiple Generic Template) Object
+   * Carousel content
    **/
   public ConversationMessageContent carousel(ConversationContentCarousel carousel) {
     this.carousel = carousel;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Carousel (Multiple Generic Template) Object")
+  @ApiModelProperty(example = "null", value = "Carousel content")
   @JsonProperty("carousel")
   public ConversationContentCarousel getCarousel() {
     return carousel;
@@ -295,19 +271,18 @@ public class ConversationMessageContent  implements Serializable {
 
     return Objects.equals(this.contentType, conversationMessageContent.contentType) &&
             Objects.equals(this.location, conversationMessageContent.location) &&
-            Objects.equals(this.story, conversationMessageContent.story) &&
             Objects.equals(this.attachment, conversationMessageContent.attachment) &&
             Objects.equals(this.quickReply, conversationMessageContent.quickReply) &&
-            Objects.equals(this.template, conversationMessageContent.template) &&
             Objects.equals(this.buttonResponse, conversationMessageContent.buttonResponse) &&
-            Objects.equals(this.generic, conversationMessageContent.generic) &&
+            Objects.equals(this.template, conversationMessageContent.template) &&
+            Objects.equals(this.story, conversationMessageContent.story) &&
             Objects.equals(this.card, conversationMessageContent.card) &&
             Objects.equals(this.carousel, conversationMessageContent.carousel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, story, attachment, quickReply, template, buttonResponse, generic, card, carousel);
+    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, template, story, card, carousel);
   }
 
   @Override
@@ -317,12 +292,11 @@ public class ConversationMessageContent  implements Serializable {
     
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
-    sb.append("    story: ").append(toIndentedString(story)).append("\n");
     sb.append("    attachment: ").append(toIndentedString(attachment)).append("\n");
     sb.append("    quickReply: ").append(toIndentedString(quickReply)).append("\n");
-    sb.append("    template: ").append(toIndentedString(template)).append("\n");
     sb.append("    buttonResponse: ").append(toIndentedString(buttonResponse)).append("\n");
-    sb.append("    generic: ").append(toIndentedString(generic)).append("\n");
+    sb.append("    template: ").append(toIndentedString(template)).append("\n");
+    sb.append("    story: ").append(toIndentedString(story)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    carousel: ").append(toIndentedString(carousel)).append("\n");
     sb.append("}");

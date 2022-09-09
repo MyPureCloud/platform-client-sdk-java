@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
+import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
@@ -27,6 +28,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersions
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionsDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentConfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationVersionsDraftPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationsRequest;
@@ -566,6 +568,81 @@ public class WebDeploymentsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WebDeployment> response = (ApiResponse<WebDeployment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get active configuration for a given deployment
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WebDeploymentActiveConfigurationOnDeployment> getWebdeploymentsDeploymentConfigurationsAsync(GetWebdeploymentsDeploymentConfigurationsRequest request, final AsyncApiCallback<WebDeploymentActiveConfigurationOnDeployment> callback) {
+    try {
+      final SettableFuture<WebDeploymentActiveConfigurationOnDeployment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WebDeploymentActiveConfigurationOnDeployment>() {}, new AsyncApiCallback<ApiResponse<WebDeploymentActiveConfigurationOnDeployment>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebDeploymentActiveConfigurationOnDeployment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get active configuration for a given deployment
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WebDeploymentActiveConfigurationOnDeployment>> getWebdeploymentsDeploymentConfigurationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebDeploymentActiveConfigurationOnDeployment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WebDeploymentActiveConfigurationOnDeployment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WebDeploymentActiveConfigurationOnDeployment>() {}, new AsyncApiCallback<ApiResponse<WebDeploymentActiveConfigurationOnDeployment>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebDeploymentActiveConfigurationOnDeployment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebDeploymentActiveConfigurationOnDeployment> response = (ApiResponse<WebDeploymentActiveConfigurationOnDeployment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebDeploymentActiveConfigurationOnDeployment> response = (ApiResponse<WebDeploymentActiveConfigurationOnDeployment>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

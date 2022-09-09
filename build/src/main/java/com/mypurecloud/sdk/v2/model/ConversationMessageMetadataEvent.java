@@ -94,11 +94,11 @@ public class ConversationMessageMetadataEvent  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ON("On"),
     JOIN("Join"),
-    DISCONNECT("Disconnect"),
     OFFERING("Offering"),
     OFFERINGEXPIRED("OfferingExpired"),
     OFFERINGACCEPTED("OfferingAccepted"),
     OFFERINGREJECTED("OfferingRejected"),
+    DISCONNECT("Disconnect"),
     UNKNOWN("Unknown");
 
     private String value;

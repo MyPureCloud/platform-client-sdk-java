@@ -43,6 +43,7 @@ public class AnalyticsSession  implements Serializable {
   private String ani = null;
   private String assignerId = null;
   private Boolean authenticated = null;
+  private String bargedParticipantId = null;
   private List<String> callbackNumbers = new ArrayList<String>();
   private Date callbackScheduledTime = null;
   private String callbackUserName = null;
@@ -577,6 +578,24 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setAuthenticated(Boolean authenticated) {
     this.authenticated = authenticated;
+  }
+
+
+  /**
+   * The participantId being barged in on (if someone (e.g. an agent) is being barged in on, this would correspond to one of the other participantIds present in the conversation)
+   **/
+  public AnalyticsSession bargedParticipantId(String bargedParticipantId) {
+    this.bargedParticipantId = bargedParticipantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The participantId being barged in on (if someone (e.g. an agent) is being barged in on, this would correspond to one of the other participantIds present in the conversation)")
+  @JsonProperty("bargedParticipantId")
+  public String getBargedParticipantId() {
+    return bargedParticipantId;
+  }
+  public void setBargedParticipantId(String bargedParticipantId) {
+    this.bargedParticipantId = bargedParticipantId;
   }
 
 
@@ -1736,6 +1755,7 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.ani, analyticsSession.ani) &&
             Objects.equals(this.assignerId, analyticsSession.assignerId) &&
             Objects.equals(this.authenticated, analyticsSession.authenticated) &&
+            Objects.equals(this.bargedParticipantId, analyticsSession.bargedParticipantId) &&
             Objects.equals(this.callbackNumbers, analyticsSession.callbackNumbers) &&
             Objects.equals(this.callbackScheduledTime, analyticsSession.callbackScheduledTime) &&
             Objects.equals(this.callbackUserName, analyticsSession.callbackUserName) &&
@@ -1803,7 +1823,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, callbackNumbers, callbackScheduledTime, callbackUserName, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, proposedAgents, agentGroups, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, callbackNumbers, callbackScheduledTime, callbackUserName, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, proposedAgents, agentGroups, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -1823,6 +1843,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
     sb.append("    assignerId: ").append(toIndentedString(assignerId)).append("\n");
     sb.append("    authenticated: ").append(toIndentedString(authenticated)).append("\n");
+    sb.append("    bargedParticipantId: ").append(toIndentedString(bargedParticipantId)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");

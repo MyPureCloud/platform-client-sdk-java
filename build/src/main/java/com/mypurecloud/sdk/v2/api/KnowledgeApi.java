@@ -2197,6 +2197,7 @@ public class KnowledgeApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param interval Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)
+   * @param documentId Retrieves the specified documents, comma separated values expected. (optional)
    * @param categoryId If specified, retrieves documents associated with category ids, comma separated values expected. (optional)
    * @param includeSubcategories Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)
    * @param includeDrafts If includeDrafts is true, Documents in the draft state are also returned in the response. (optional)
@@ -2206,8 +2207,8 @@ public class KnowledgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeDocumentResponseListing getKnowledgeKnowledgebaseDocuments(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebaseDocuments(createGetKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, before, after, pageSize, interval, categoryId, includeSubcategories, includeDrafts, labelIds, expand));
+  public KnowledgeDocumentResponseListing getKnowledgeKnowledgebaseDocuments(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> documentId, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseDocuments(createGetKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand));
   }
 
   /**
@@ -2218,6 +2219,7 @@ public class KnowledgeApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param interval Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)
+   * @param documentId Retrieves the specified documents, comma separated values expected. (optional)
    * @param categoryId If specified, retrieves documents associated with category ids, comma separated values expected. (optional)
    * @param includeSubcategories Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)
    * @param includeDrafts If includeDrafts is true, Documents in the draft state are also returned in the response. (optional)
@@ -2226,11 +2228,11 @@ public class KnowledgeApi {
    * @return KnowledgeDocumentResponseListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeDocumentResponseListing> getKnowledgeKnowledgebaseDocumentsWithHttpInfo(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand) throws IOException {
-    return getKnowledgeKnowledgebaseDocuments(createGetKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, before, after, pageSize, interval, categoryId, includeSubcategories, includeDrafts, labelIds, expand).withHttpInfo());
+  public ApiResponse<KnowledgeDocumentResponseListing> getKnowledgeKnowledgebaseDocumentsWithHttpInfo(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> documentId, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand) throws IOException {
+    return getKnowledgeKnowledgebaseDocuments(createGetKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebaseDocumentsRequest createGetKnowledgeKnowledgebaseDocumentsRequest(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand) {
+  private GetKnowledgeKnowledgebaseDocumentsRequest createGetKnowledgeKnowledgebaseDocumentsRequest(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> documentId, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand) {
     return GetKnowledgeKnowledgebaseDocumentsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
@@ -2241,6 +2243,8 @@ public class KnowledgeApi {
             .withPageSize(pageSize)
 
             .withInterval(interval)
+
+            .withDocumentId(documentId)
 
             .withCategoryId(categoryId)
 

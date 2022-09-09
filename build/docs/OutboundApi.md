@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteOutboundContactlistContacts**](OutboundApi.html#deleteOutboundContactlistContacts) | Delete contacts from a contact list. |
 | [**deleteOutboundContactlistfilter**](OutboundApi.html#deleteOutboundContactlistfilter) | Delete Contact List Filter |
 | [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | Delete multiple contact lists. |
+| [**deleteOutboundDigitalruleset**](OutboundApi.html#deleteOutboundDigitalruleset) | Delete an Outbound Digital Rule Set |
 | [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | Delete dialer DNC list |
 | [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | Delete an Outbound Messaging Campaign |
 | [**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | Reset messaging campaign progress and recycle the messaging campaign |
@@ -56,6 +57,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | Query a list of contact lists. |
 | [**getOutboundContactlistsDivisionview**](OutboundApi.html#getOutboundContactlistsDivisionview) | Get a basic ContactList information object |
 | [**getOutboundContactlistsDivisionviews**](OutboundApi.html#getOutboundContactlistsDivisionviews) | Query a list of simplified contact list objects. |
+| [**getOutboundDigitalruleset**](OutboundApi.html#getOutboundDigitalruleset) | Get an Outbound Digital Rule Set |
+| [**getOutboundDigitalrulesets**](OutboundApi.html#getOutboundDigitalrulesets) | Query a list of Outbound Digital Rule Sets |
 | [**getOutboundDnclist**](OutboundApi.html#getOutboundDnclist) | Get dialer DNC list |
 | [**getOutboundDnclistExport**](OutboundApi.html#getOutboundDnclistExport) | Get the URI of a DNC list export. |
 | [**getOutboundDnclistImportstatus**](OutboundApi.html#getOutboundDnclistImportstatus) | Get dialer dncList import status. |
@@ -101,6 +104,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | Get a preview of the output of a contact list filter |
 | [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | Create a contact List. |
 | [**postOutboundConversationDnc**](OutboundApi.html#postOutboundConversationDnc) | Add phone numbers to a Dialer DNC list. |
+| [**postOutboundDigitalrulesets**](OutboundApi.html#postOutboundDigitalrulesets) | Create an Outbound Digital Rule Set |
 | [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | Initiate the export of a dnc list. |
 | [**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | Add phone numbers to a DNC list. |
 | [**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | Create dialer DNC list |
@@ -117,6 +121,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putOutboundContactlist**](OutboundApi.html#putOutboundContactlist) | Update a contact list. |
 | [**putOutboundContactlistContact**](OutboundApi.html#putOutboundContactlistContact) | Update a contact. |
 | [**putOutboundContactlistfilter**](OutboundApi.html#putOutboundContactlistfilter) | Update Contact List Filter |
+| [**putOutboundDigitalruleset**](OutboundApi.html#putOutboundDigitalruleset) | Update an Outbound Digital Rule Set |
 | [**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | Update dialer DNC list |
 | [**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | Update an Outbound Messaging Campaign |
 | [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | Update a Rule Set. |
@@ -786,6 +791,66 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | [**List&lt;String&gt;**](String.html)| contact list id(s) to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundDigitalruleset"></a>
+
+# **deleteOutboundDigitalruleset**
+
+
+
+> Void deleteOutboundDigitalruleset(digitalRuleSetId)
+
+Delete an Outbound Digital Rule Set
+
+Wraps DELETE /api/v2/outbound/digitalrulesets/{digitalRuleSetId}  
+
+Requires ANY permissions: 
+
+* outbound:digitalRuleSet:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
+try {
+    apiInstance.deleteOutboundDigitalruleset(digitalRuleSetId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundDigitalruleset");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **digitalRuleSetId** | **String**| The Digital Rule Set ID | 
 {: class="table-striped"}
 
 
@@ -3289,6 +3354,138 @@ try {
 ### Return type
 
 [**ContactListDivisionViewListing**](ContactListDivisionViewListing.html)
+
+<a name="getOutboundDigitalruleset"></a>
+
+# **getOutboundDigitalruleset**
+
+
+
+> [DigitalRuleSet](DigitalRuleSet.html) getOutboundDigitalruleset(digitalRuleSetId)
+
+Get an Outbound Digital Rule Set
+
+Wraps GET /api/v2/outbound/digitalrulesets/{digitalRuleSetId}  
+
+Requires ANY permissions: 
+
+* outbound:digitalRuleSet:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
+try {
+    DigitalRuleSet result = apiInstance.getOutboundDigitalruleset(digitalRuleSetId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundDigitalruleset");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **digitalRuleSetId** | **String**| The Digital Rule Set ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DigitalRuleSet**](DigitalRuleSet.html)
+
+<a name="getOutboundDigitalrulesets"></a>
+
+# **getOutboundDigitalrulesets**
+
+
+
+> [DigitalRuleSetEntityListing](DigitalRuleSetEntityListing.html) getOutboundDigitalrulesets(pageSize, pageNumber, sortBy, sortOrder, name, id)
+
+Query a list of Outbound Digital Rule Sets
+
+Wraps GET /api/v2/outbound/digitalrulesets  
+
+Requires ANY permissions: 
+
+* outbound:digitalRuleSet:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
+Integer pageNumber = 1; // Integer | Page number
+String sortBy = "name"; // String | The field to sort by
+String sortOrder = "ascending"; // String | The direction to sort
+String name = "name_example"; // String | Name
+List<String> id = Arrays.asList(null); // List<String> | A list of digital rule set ids to bulk fetch
+try {
+    DigitalRuleSetEntityListing result = apiInstance.getOutboundDigitalrulesets(pageSize, pageNumber, sortBy, sortOrder, name, id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundDigitalrulesets");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| The field to sort by | [optional] [default to name]<br />**Values**: name 
+| **sortOrder** | **String**| The direction to sort | [optional] [default to ascending]<br />**Values**: ascending, descending 
+| **name** | **String**| Name | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| A list of digital rule set ids to bulk fetch | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DigitalRuleSetEntityListing**](DigitalRuleSetEntityListing.html)
 
 <a name="getOutboundDnclist"></a>
 
@@ -6164,6 +6361,67 @@ try {
 
 null (empty response body)
 
+<a name="postOutboundDigitalrulesets"></a>
+
+# **postOutboundDigitalrulesets**
+
+
+
+> [DigitalRuleSet](DigitalRuleSet.html) postOutboundDigitalrulesets(body)
+
+Create an Outbound Digital Rule Set
+
+Wraps POST /api/v2/outbound/digitalrulesets  
+
+Requires ANY permissions: 
+
+* outbound:digitalRuleSet:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+DigitalRuleSet body = new DigitalRuleSet(); // DigitalRuleSet | Digital Rule Set
+try {
+    DigitalRuleSet result = apiInstance.postOutboundDigitalrulesets(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundDigitalrulesets");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DigitalRuleSet**](DigitalRuleSet.html)| Digital Rule Set | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DigitalRuleSet**](DigitalRuleSet.html)
+
 <a name="postOutboundDnclistExport"></a>
 
 # **postOutboundDnclistExport**
@@ -7172,6 +7430,69 @@ try {
 ### Return type
 
 [**ContactListFilter**](ContactListFilter.html)
+
+<a name="putOutboundDigitalruleset"></a>
+
+# **putOutboundDigitalruleset**
+
+
+
+> [DigitalRuleSet](DigitalRuleSet.html) putOutboundDigitalruleset(digitalRuleSetId, body)
+
+Update an Outbound Digital Rule Set
+
+Wraps PUT /api/v2/outbound/digitalrulesets/{digitalRuleSetId}  
+
+Requires ANY permissions: 
+
+* outbound:digitalRuleSet:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
+DigitalRuleSet body = new DigitalRuleSet(); // DigitalRuleSet | Digital Rule Set
+try {
+    DigitalRuleSet result = apiInstance.putOutboundDigitalruleset(digitalRuleSetId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#putOutboundDigitalruleset");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **digitalRuleSetId** | **String**| The Digital Rule Set ID | 
+| **body** | [**DigitalRuleSet**](DigitalRuleSet.html)| Digital Rule Set | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DigitalRuleSet**](DigitalRuleSet.html)
 
 <a name="putOutboundDnclist"></a>
 

@@ -36,11 +36,11 @@ title: ConversationMessageMetadataEvent
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ON | &quot;On&quot; | 
 | JOIN | &quot;Join&quot; | 
-| DISCONNECT | &quot;Disconnect&quot; | 
 | OFFERING | &quot;Offering&quot; | 
 | OFFERINGEXPIRED | &quot;OfferingExpired&quot; | 
 | OFFERINGACCEPTED | &quot;OfferingAccepted&quot; | 
 | OFFERINGREJECTED | &quot;OfferingRejected&quot; | 
+| DISCONNECT | &quot;Disconnect&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

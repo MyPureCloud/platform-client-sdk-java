@@ -291,14 +291,14 @@ public class ConversationNormalizedMessage  implements Serializable {
 
 
   /**
-   * List of content elements
+   * List of content elements.
    **/
   public ConversationNormalizedMessage content(List<ConversationMessageContent> content) {
     this.content = content;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of content elements")
+  @ApiModelProperty(example = "null", value = "List of content elements.")
   @JsonProperty("content")
   public List<ConversationMessageContent> getContent() {
     return content;

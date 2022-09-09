@@ -1597,7 +1597,7 @@ public class QualityApi {
    * @param sortBy variable name requested to sort by (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param expand Expand (optional)
+   * @param expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)
    * @param name Name (optional)
    * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return EvaluationFormEntityListing
@@ -1616,7 +1616,7 @@ public class QualityApi {
    * @param sortBy variable name requested to sort by (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param expand Expand (optional)
+   * @param expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)
    * @param name Name (optional)
    * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return EvaluationFormEntityListing
@@ -1871,7 +1871,7 @@ public class QualityApi {
    * @param sortBy variable name requested to sort by (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param expand Expand (optional)
+   * @param expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)
    * @param name Name (optional)
    * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return EvaluationFormEntityListing
@@ -1890,7 +1890,7 @@ public class QualityApi {
    * @param sortBy variable name requested to sort by (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param expand Expand (optional)
+   * @param expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)
    * @param name Name (optional)
    * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return EvaluationFormEntityListing
@@ -2219,7 +2219,7 @@ public class QualityApi {
    * @param sortBy variable name requested to sort by (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param expand Expand (optional)
+   * @param expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)
    * @param name Name (optional)
    * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return SurveyFormEntityListing
@@ -2238,7 +2238,7 @@ public class QualityApi {
    * @param sortBy variable name requested to sort by (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param expand Expand (optional)
+   * @param expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)
    * @param name Name (optional)
    * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return SurveyFormEntityListing

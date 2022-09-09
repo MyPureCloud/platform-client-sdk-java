@@ -67,6 +67,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAuthorizationSubjectBulkremove**](UsersApi.html#postAuthorizationSubjectBulkremove) | Bulk-remove grants from a subject. |
 | [**postAuthorizationSubjectBulkreplace**](UsersApi.html#postAuthorizationSubjectBulkreplace) | Replace subject's roles and divisions with the exact list supplied in the request. |
 | [**postAuthorizationSubjectDivisionRole**](UsersApi.html#postAuthorizationSubjectDivisionRole) | Make a grant of a role in a division |
+| [**postUserExternalid**](UsersApi.html#postUserExternalid) | Create mapping between external identifier and user. Limit 100 per entity. |
 | [**postUserInvite**](UsersApi.html#postUserInvite) | Send an activation email to the user |
 | [**postUserPassword**](UsersApi.html#postUserPassword) | Change a users password |
 | [**postUserRoutinglanguages**](UsersApi.html#postUserRoutinglanguages) | Add routing language to user |
@@ -3923,6 +3924,71 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postUserExternalid"></a>
+
+# **postUserExternalid**
+
+
+
+> [List&lt;UserExternalIdentifier&gt;](UserExternalIdentifier.html) postUserExternalid(userId, body)
+
+Create mapping between external identifier and user. Limit 100 per entity.
+
+Authority Name and External key are case sensitive.
+
+Wraps POST /api/v2/users/{userId}/externalid  
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+UserExternalIdentifier body = new UserExternalIdentifier(); // UserExternalIdentifier | 
+try {
+    List<UserExternalIdentifier> result = apiInstance.postUserExternalid(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUserExternalid");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **body** | [**UserExternalIdentifier**](UserExternalIdentifier.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**List&lt;UserExternalIdentifier&gt;**](UserExternalIdentifier.html)
 
 <a name="postUserInvite"></a>
 
