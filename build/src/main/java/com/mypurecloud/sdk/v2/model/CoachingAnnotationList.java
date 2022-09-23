@@ -29,11 +29,11 @@ public class CoachingAnnotationList  implements Serializable, PagedResource<Coac
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
+  private String lastUri = null;
   private String firstUri = null;
   private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
-  private String lastUri = null;
   private Integer pageCount = null;
 
   
@@ -107,6 +107,23 @@ public class CoachingAnnotationList  implements Serializable, PagedResource<Coac
 
   /**
    **/
+  public CoachingAnnotationList lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
   public CoachingAnnotationList firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -175,23 +192,6 @@ public class CoachingAnnotationList  implements Serializable, PagedResource<Coac
 
   /**
    **/
-  public CoachingAnnotationList lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public CoachingAnnotationList pageCount(Integer pageCount) {
     this.pageCount = pageCount;
     return this;
@@ -221,17 +221,17 @@ public class CoachingAnnotationList  implements Serializable, PagedResource<Coac
             Objects.equals(this.pageSize, coachingAnnotationList.pageSize) &&
             Objects.equals(this.pageNumber, coachingAnnotationList.pageNumber) &&
             Objects.equals(this.total, coachingAnnotationList.total) &&
+            Objects.equals(this.lastUri, coachingAnnotationList.lastUri) &&
             Objects.equals(this.firstUri, coachingAnnotationList.firstUri) &&
             Objects.equals(this.selfUri, coachingAnnotationList.selfUri) &&
             Objects.equals(this.nextUri, coachingAnnotationList.nextUri) &&
             Objects.equals(this.previousUri, coachingAnnotationList.previousUri) &&
-            Objects.equals(this.lastUri, coachingAnnotationList.lastUri) &&
             Objects.equals(this.pageCount, coachingAnnotationList.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,11 +243,11 @@ public class CoachingAnnotationList  implements Serializable, PagedResource<Coac
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -593,7 +593,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [GroupProfileEntityListing](GroupProfileEntityListing.html) getProfilesGroups(pageSize, pageNumber, id, sortOrder)
+> [GroupProfileEntityListing](GroupProfileEntityListing.html) getProfilesGroups(pageSize, pageNumber, id, jabberId, sortOrder)
 
 Get group profile listing
 
@@ -629,9 +629,10 @@ GroupsApi apiInstance = new GroupsApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 List<String> id = Arrays.asList(null); // List<String> | id
+List<String> jabberId = Arrays.asList(null); // List<String> | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 try {
-    GroupProfileEntityListing result = apiInstance.getProfilesGroups(pageSize, pageNumber, id, sortOrder);
+    GroupProfileEntityListing result = apiInstance.getProfilesGroups(pageSize, pageNumber, id, jabberId, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GroupsApi#getProfilesGroups");
@@ -647,6 +648,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **jabberId** | [**List&lt;String&gt;**](String.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
 {: class="table-striped"}
 

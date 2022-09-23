@@ -16,10 +16,10 @@ title: MessageData
 | **toAddress** | <!----><!---->**String**<!----> | The recipient of the text message. |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the message. |  [optional] |
 | **messengerType** | [**MessengerTypeEnum**](#MessengerTypeEnum)<!----> | Type of text messenger. |  [optional] |
-| **textBody** | <!----><!---->**String**<!----> | The body of the text message. |  |
+| **textBody** | <!----><!---->**String**<!----> | The body of the text message. (Deprecated - Instead use normalizedMessage.text) |  |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the message. |  |
-| **media** | <!----><!---->[**List&lt;MessageMedia&gt;**](MessageMedia.html)<!----> | The media details associated to a message. |  [optional] |
-| **stickers** | <!----><!---->[**List&lt;MessageSticker&gt;**](MessageSticker.html)<!----> | The sticker details associated to a message. |  [optional] |
+| **media** | <!----><!---->[**List&lt;MessageMedia&gt;**](MessageMedia.html)<!----> | The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment) |  [optional] |
+| **stickers** | <!----><!---->[**List&lt;MessageSticker&gt;**](MessageSticker.html)<!----> | The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment |  [optional] |
 | **normalizedMessage** | <!----><!---->[**ConversationNormalizedMessage**](ConversationNormalizedMessage.html)<!----> | The message into normalized format |  [optional] |
 | **normalizedReceipts** | <!----><!---->[**List&lt;ConversationNormalizedMessage&gt;**](ConversationNormalizedMessage.html)<!----> | The delivery event associated with this message in normalized format, if the message direction was outbound |  [optional] |
 | **createdBy** | <!----><!---->[**User**](User.html)<!----> | User who sent this message. |  [optional] |

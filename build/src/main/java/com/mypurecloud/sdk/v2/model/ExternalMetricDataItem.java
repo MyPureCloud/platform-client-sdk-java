@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import java.io.Serializable;
@@ -26,7 +27,7 @@ public class ExternalMetricDataItem  implements Serializable {
   private String userEmail = null;
   private String metricId = null;
   private LocalDate dateOccurred = null;
-  private Double value = null;
+  private BigDecimal value = null;
   private Integer count = null;
 
   
@@ -105,17 +106,17 @@ public class ExternalMetricDataItem  implements Serializable {
   /**
    * The value of the metric data. When value is null, the metric data will be deleted.
    **/
-  public ExternalMetricDataItem value(Double value) {
+  public ExternalMetricDataItem value(BigDecimal value) {
     this.value = value;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The value of the metric data. When value is null, the metric data will be deleted.")
   @JsonProperty("value")
-  public Double getValue() {
+  public BigDecimal getValue() {
     return value;
   }
-  public void setValue(Double value) {
+  public void setValue(BigDecimal value) {
     this.value = value;
   }
 

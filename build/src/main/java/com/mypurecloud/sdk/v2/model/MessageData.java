@@ -334,14 +334,14 @@ public class MessageData  implements Serializable {
 
 
   /**
-   * The body of the text message.
+   * The body of the text message. (Deprecated - Instead use normalizedMessage.text)
    **/
   public MessageData textBody(String textBody) {
     this.textBody = textBody;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The body of the text message.")
+  @ApiModelProperty(example = "null", required = true, value = "The body of the text message. (Deprecated - Instead use normalizedMessage.text)")
   @JsonProperty("textBody")
   public String getTextBody() {
     return textBody;
@@ -370,14 +370,14 @@ public class MessageData  implements Serializable {
 
 
   /**
-   * The media details associated to a message.
+   * The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment)
    **/
   public MessageData media(List<MessageMedia> media) {
     this.media = media;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The media details associated to a message.")
+  @ApiModelProperty(example = "null", value = "The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment)")
   @JsonProperty("media")
   public List<MessageMedia> getMedia() {
     return media;
@@ -388,14 +388,14 @@ public class MessageData  implements Serializable {
 
 
   /**
-   * The sticker details associated to a message.
+   * The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment
    **/
   public MessageData stickers(List<MessageSticker> stickers) {
     this.stickers = stickers;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The sticker details associated to a message.")
+  @ApiModelProperty(example = "null", value = "The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment")
   @JsonProperty("stickers")
   public List<MessageSticker> getStickers() {
     return stickers;

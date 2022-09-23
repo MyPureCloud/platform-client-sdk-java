@@ -30,8 +30,6 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Integration;
 import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
 import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.IntegrationEvent;
-import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
 import com.mypurecloud.sdk.v2.model.IntegrationType;
 import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
@@ -49,9 +47,7 @@ import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
 import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
-import com.mypurecloud.sdk.v2.model.UserActionCategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
-import com.mypurecloud.sdk.v2.model.VendorConnectionRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteIntegrationRequest;
@@ -80,8 +76,6 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsUnifiedcommun
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsTypesRequest;
-import com.mypurecloud.sdk.v2.api.request.GetIntegrationsEventlogRequest;
-import com.mypurecloud.sdk.v2.api.request.GetIntegrationsEventlogEventIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotAliasRequest;
@@ -108,7 +102,6 @@ import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionTestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionsDraftsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsCredentialsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostIntegrationsWorkforcemanagementVendorconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationConfigCurrentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsBotconnectorIntegrationIdBotsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsCredentialRequest;
@@ -2399,178 +2392,6 @@ public class IntegrationsApi {
   }
 
   /**
-   * List all events
-   * 
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to timestamp)
-   * @param sortOrder Order by (optional, default to descending)
-   * @param entityId Include only events with this entity ID (optional)
-   * @return IntegrationEventEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public IntegrationEventEntityListing getIntegrationsEventlog(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String entityId) throws IOException, ApiException {
-    return  getIntegrationsEventlog(createGetIntegrationsEventlogRequest(pageSize, pageNumber, sortBy, sortOrder, entityId));
-  }
-
-  /**
-   * List all events
-   * 
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to timestamp)
-   * @param sortOrder Order by (optional, default to descending)
-   * @param entityId Include only events with this entity ID (optional)
-   * @return IntegrationEventEntityListing
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<IntegrationEventEntityListing> getIntegrationsEventlogWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String entityId) throws IOException {
-    return getIntegrationsEventlog(createGetIntegrationsEventlogRequest(pageSize, pageNumber, sortBy, sortOrder, entityId).withHttpInfo());
-  }
-
-  private GetIntegrationsEventlogRequest createGetIntegrationsEventlogRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String entityId) {
-    return GetIntegrationsEventlogRequest.builder()
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .withSortBy(sortBy)
-
-            .withSortOrder(sortOrder)
-
-            .withEntityId(entityId)
-
-            .build();
-  }
-
-  /**
-   * List all events
-   * 
-   * @param request The request object
-   * @return IntegrationEventEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public IntegrationEventEntityListing getIntegrationsEventlog(GetIntegrationsEventlogRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<IntegrationEventEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IntegrationEventEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * List all events
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<IntegrationEventEntityListing> getIntegrationsEventlog(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<IntegrationEventEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<IntegrationEventEntityListing> response = (ApiResponse<IntegrationEventEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<IntegrationEventEntityListing> response = (ApiResponse<IntegrationEventEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get a single event
-   * 
-   * @param eventId Event Id (required)
-   * @return IntegrationEvent
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public IntegrationEvent getIntegrationsEventlogEventId(String eventId) throws IOException, ApiException {
-    return  getIntegrationsEventlogEventId(createGetIntegrationsEventlogEventIdRequest(eventId));
-  }
-
-  /**
-   * Get a single event
-   * 
-   * @param eventId Event Id (required)
-   * @return IntegrationEvent
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<IntegrationEvent> getIntegrationsEventlogEventIdWithHttpInfo(String eventId) throws IOException {
-    return getIntegrationsEventlogEventId(createGetIntegrationsEventlogEventIdRequest(eventId).withHttpInfo());
-  }
-
-  private GetIntegrationsEventlogEventIdRequest createGetIntegrationsEventlogEventIdRequest(String eventId) {
-    return GetIntegrationsEventlogEventIdRequest.builder()
-            .withEventId(eventId)
-
-            .build();
-  }
-
-  /**
-   * Get a single event
-   * 
-   * @param request The request object
-   * @return IntegrationEvent
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public IntegrationEvent getIntegrationsEventlogEventId(GetIntegrationsEventlogEventIdRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<IntegrationEvent> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IntegrationEvent>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a single event
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<IntegrationEvent> getIntegrationsEventlogEventId(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<IntegrationEvent>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<IntegrationEvent> response = (ApiResponse<IntegrationEvent>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<IntegrationEvent> response = (ApiResponse<IntegrationEvent>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Get details about a Dialogflow agent
    * 
    * @param agentId The agent ID (required)
@@ -4754,84 +4575,6 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CredentialInfo> response = (ApiResponse<CredentialInfo>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Add a vendor connection
-   * 
-   * @param body  (optional)
-   * @return UserActionCategoryEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public UserActionCategoryEntityListing postIntegrationsWorkforcemanagementVendorconnection(VendorConnectionRequest body) throws IOException, ApiException {
-    return  postIntegrationsWorkforcemanagementVendorconnection(createPostIntegrationsWorkforcemanagementVendorconnectionRequest(body));
-  }
-
-  /**
-   * Add a vendor connection
-   * 
-   * @param body  (optional)
-   * @return UserActionCategoryEntityListing
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<UserActionCategoryEntityListing> postIntegrationsWorkforcemanagementVendorconnectionWithHttpInfo(VendorConnectionRequest body) throws IOException {
-    return postIntegrationsWorkforcemanagementVendorconnection(createPostIntegrationsWorkforcemanagementVendorconnectionRequest(body).withHttpInfo());
-  }
-
-  private PostIntegrationsWorkforcemanagementVendorconnectionRequest createPostIntegrationsWorkforcemanagementVendorconnectionRequest(VendorConnectionRequest body) {
-    return PostIntegrationsWorkforcemanagementVendorconnectionRequest.builder()
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Add a vendor connection
-   * 
-   * @param request The request object
-   * @return UserActionCategoryEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public UserActionCategoryEntityListing postIntegrationsWorkforcemanagementVendorconnection(PostIntegrationsWorkforcemanagementVendorconnectionRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<UserActionCategoryEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserActionCategoryEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Add a vendor connection
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<UserActionCategoryEntityListing> postIntegrationsWorkforcemanagementVendorconnection(ApiRequest<VendorConnectionRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<UserActionCategoryEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<UserActionCategoryEntityListing> response = (ApiResponse<UserActionCategoryEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<UserActionCategoryEntityListing> response = (ApiResponse<UserActionCategoryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

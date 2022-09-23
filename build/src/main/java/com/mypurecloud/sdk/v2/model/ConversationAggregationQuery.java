@@ -203,6 +203,8 @@ public class ConversationAggregationQuery  implements Serializable {
     TCONNECTED("tConnected"),
     TCONTACTING("tContacting"),
     TDIALING("tDialing"),
+    TFIRSTCONNECT("tFirstConnect"),
+    TFIRSTDIAL("tFirstDial"),
     TFLOWOUT("tFlowOut"),
     THANDLE("tHandle"),
     THELD("tHeld"),

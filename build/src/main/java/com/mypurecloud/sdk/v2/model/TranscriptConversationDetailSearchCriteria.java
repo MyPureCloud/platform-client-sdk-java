@@ -27,7 +27,6 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
   private String endValue = null;
   private List<String> values = new ArrayList<String>();
   private String startValue = null;
-  private List<String> fields = new ArrayList<String>();
   private String value = null;
 
   private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
@@ -80,6 +79,7 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
   private OperatorEnum operator = null;
   private List<TranscriptConversationDetailSearchCriteria> group = new ArrayList<TranscriptConversationDetailSearchCriteria>();
   private String dateFormat = null;
+  private List<String> fields = new ArrayList<String>();
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -187,24 +187,6 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
 
 
   /**
-   * Field names to search against
-   **/
-  public TranscriptConversationDetailSearchCriteria fields(List<String> fields) {
-    this.fields = fields;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Field names to search against")
-  @JsonProperty("fields")
-  public List<String> getFields() {
-    return fields;
-  }
-  public void setFields(List<String> fields) {
-    this.fields = fields;
-  }
-
-
-  /**
    * A value for the search to match against
    **/
   public TranscriptConversationDetailSearchCriteria value(String value) {
@@ -277,6 +259,24 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
 
 
   /**
+   * Field names to search against
+   **/
+  public TranscriptConversationDetailSearchCriteria fields(List<String> fields) {
+    this.fields = fields;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Field names to search against")
+  @JsonProperty("fields")
+  public List<String> getFields() {
+    return fields;
+  }
+  public void setFields(List<String> fields) {
+    this.fields = fields;
+  }
+
+
+  /**
    **/
   public TranscriptConversationDetailSearchCriteria type(TypeEnum type) {
     this.type = type;
@@ -306,17 +306,17 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     return Objects.equals(this.endValue, transcriptConversationDetailSearchCriteria.endValue) &&
             Objects.equals(this.values, transcriptConversationDetailSearchCriteria.values) &&
             Objects.equals(this.startValue, transcriptConversationDetailSearchCriteria.startValue) &&
-            Objects.equals(this.fields, transcriptConversationDetailSearchCriteria.fields) &&
             Objects.equals(this.value, transcriptConversationDetailSearchCriteria.value) &&
             Objects.equals(this.operator, transcriptConversationDetailSearchCriteria.operator) &&
             Objects.equals(this.group, transcriptConversationDetailSearchCriteria.group) &&
             Objects.equals(this.dateFormat, transcriptConversationDetailSearchCriteria.dateFormat) &&
+            Objects.equals(this.fields, transcriptConversationDetailSearchCriteria.fields) &&
             Objects.equals(this.type, transcriptConversationDetailSearchCriteria.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(endValue, values, startValue, fields, value, operator, group, dateFormat, type);
+    return Objects.hash(endValue, values, startValue, value, operator, group, dateFormat, fields, type);
   }
 
   @Override
@@ -327,11 +327,11 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     sb.append("    endValue: ").append(toIndentedString(endValue)).append("\n");
     sb.append("    values: ").append(toIndentedString(values)).append("\n");
     sb.append("    startValue: ").append(toIndentedString(startValue)).append("\n");
-    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
+    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();

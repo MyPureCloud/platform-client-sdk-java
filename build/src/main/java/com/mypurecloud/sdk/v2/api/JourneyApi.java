@@ -11,12 +11,15 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ActionMap;
+import com.mypurecloud.sdk.v2.model.ActionMapEstimateRequest;
+import com.mypurecloud.sdk.v2.model.ActionMapEstimateResult;
 import com.mypurecloud.sdk.v2.model.ActionMapListing;
 import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.EstimateJobAsyncResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
@@ -38,6 +41,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActionmapsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyActionmapsEstimatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyActionmapsEstimatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplateRequest;
@@ -55,6 +60,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsEstimatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneySegmentsRequest;
@@ -560,6 +566,162 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActionMapListing> response = (ApiResponse<ActionMapListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status of job.
+   * 
+   * @param jobId ID of the job. (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String getJourneyActionmapsEstimatesJob(String jobId) throws IOException, ApiException {
+    return  getJourneyActionmapsEstimatesJob(createGetJourneyActionmapsEstimatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status of job.
+   * 
+   * @param jobId ID of the job. (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> getJourneyActionmapsEstimatesJobWithHttpInfo(String jobId) throws IOException {
+    return getJourneyActionmapsEstimatesJob(createGetJourneyActionmapsEstimatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetJourneyActionmapsEstimatesJobRequest createGetJourneyActionmapsEstimatesJobRequest(String jobId) {
+    return GetJourneyActionmapsEstimatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status of job.
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String getJourneyActionmapsEstimatesJob(GetJourneyActionmapsEstimatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status of job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> getJourneyActionmapsEstimatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get estimates from completed job.
+   * 
+   * @param jobId ID of the job. (required)
+   * @return ActionMapEstimateResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActionMapEstimateResult getJourneyActionmapsEstimatesJobResults(String jobId) throws IOException, ApiException {
+    return  getJourneyActionmapsEstimatesJobResults(createGetJourneyActionmapsEstimatesJobResultsRequest(jobId));
+  }
+
+  /**
+   * Get estimates from completed job.
+   * 
+   * @param jobId ID of the job. (required)
+   * @return ActionMapEstimateResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActionMapEstimateResult> getJourneyActionmapsEstimatesJobResultsWithHttpInfo(String jobId) throws IOException {
+    return getJourneyActionmapsEstimatesJobResults(createGetJourneyActionmapsEstimatesJobResultsRequest(jobId).withHttpInfo());
+  }
+
+  private GetJourneyActionmapsEstimatesJobResultsRequest createGetJourneyActionmapsEstimatesJobResultsRequest(String jobId) {
+    return GetJourneyActionmapsEstimatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get estimates from completed job.
+   * 
+   * @param request The request object
+   * @return ActionMapEstimateResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActionMapEstimateResult getJourneyActionmapsEstimatesJobResults(GetJourneyActionmapsEstimatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActionMapEstimateResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActionMapEstimateResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get estimates from completed job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActionMapEstimateResult> getJourneyActionmapsEstimatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActionMapEstimateResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActionMapEstimateResult> response = (ApiResponse<ActionMapEstimateResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActionMapEstimateResult> response = (ApiResponse<ActionMapEstimateResult>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1978,6 +2140,84 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActionMap> response = (ApiResponse<ActionMap>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for estimates
+   * 
+   * @param body audience estimator request (required)
+   * @return EstimateJobAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EstimateJobAsyncResponse postJourneyActionmapsEstimatesJobs(ActionMapEstimateRequest body) throws IOException, ApiException {
+    return  postJourneyActionmapsEstimatesJobs(createPostJourneyActionmapsEstimatesJobsRequest(body));
+  }
+
+  /**
+   * Query for estimates
+   * 
+   * @param body audience estimator request (required)
+   * @return EstimateJobAsyncResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EstimateJobAsyncResponse> postJourneyActionmapsEstimatesJobsWithHttpInfo(ActionMapEstimateRequest body) throws IOException {
+    return postJourneyActionmapsEstimatesJobs(createPostJourneyActionmapsEstimatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostJourneyActionmapsEstimatesJobsRequest createPostJourneyActionmapsEstimatesJobsRequest(ActionMapEstimateRequest body) {
+    return PostJourneyActionmapsEstimatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for estimates
+   * 
+   * @param request The request object
+   * @return EstimateJobAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EstimateJobAsyncResponse postJourneyActionmapsEstimatesJobs(PostJourneyActionmapsEstimatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EstimateJobAsyncResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EstimateJobAsyncResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for estimates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EstimateJobAsyncResponse> postJourneyActionmapsEstimatesJobs(ApiRequest<ActionMapEstimateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EstimateJobAsyncResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EstimateJobAsyncResponse> response = (ApiResponse<EstimateJobAsyncResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EstimateJobAsyncResponse> response = (ApiResponse<EstimateJobAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -45,10 +45,10 @@ import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
-import com.mypurecloud.sdk.v2.model.BusinessUnit;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
+import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
@@ -1716,11 +1716,11 @@ public class WorkforceManagementApi {
    * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param expand  (optional)
-   * @return BusinessUnit
+   * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnit getWorkforcemanagementBusinessunit(String businessUnitId, List<String> expand) throws IOException, ApiException {
+  public BusinessUnitResponse getWorkforcemanagementBusinessunit(String businessUnitId, List<String> expand) throws IOException, ApiException {
     return  getWorkforcemanagementBusinessunit(createGetWorkforcemanagementBusinessunitRequest(businessUnitId, expand));
   }
 
@@ -1729,10 +1729,10 @@ public class WorkforceManagementApi {
    * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param expand  (optional)
-   * @return BusinessUnit
+   * @return BusinessUnitResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnit> getWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId, List<String> expand) throws IOException {
+  public ApiResponse<BusinessUnitResponse> getWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId, List<String> expand) throws IOException {
     return getWorkforcemanagementBusinessunit(createGetWorkforcemanagementBusinessunitRequest(businessUnitId, expand).withHttpInfo());
   }
 
@@ -1749,13 +1749,13 @@ public class WorkforceManagementApi {
    * Get business unit
    * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
    * @param request The request object
-   * @return BusinessUnit
+   * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnit getWorkforcemanagementBusinessunit(GetWorkforcemanagementBusinessunitRequest request) throws IOException, ApiException {
+  public BusinessUnitResponse getWorkforcemanagementBusinessunit(GetWorkforcemanagementBusinessunitRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<BusinessUnit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnit>() {});
+      ApiResponse<BusinessUnitResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1771,13 +1771,13 @@ public class WorkforceManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnit> getWorkforcemanagementBusinessunit(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<BusinessUnitResponse> getWorkforcemanagementBusinessunit(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<BusinessUnit>() {});
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)exception;
+      ApiResponse<BusinessUnitResponse> response = (ApiResponse<BusinessUnitResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1788,7 +1788,7 @@ public class WorkforceManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<BusinessUnitResponse> response = (ApiResponse<BusinessUnitResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6590,11 +6590,11 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param body body (optional)
-   * @return BusinessUnit
+   * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnit patchWorkforcemanagementBusinessunit(String businessUnitId, UpdateBusinessUnitRequest body) throws IOException, ApiException {
+  public BusinessUnitResponse patchWorkforcemanagementBusinessunit(String businessUnitId, UpdateBusinessUnitRequest body) throws IOException, ApiException {
     return  patchWorkforcemanagementBusinessunit(createPatchWorkforcemanagementBusinessunitRequest(businessUnitId, body));
   }
 
@@ -6603,10 +6603,10 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param body body (optional)
-   * @return BusinessUnit
+   * @return BusinessUnitResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnit> patchWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId, UpdateBusinessUnitRequest body) throws IOException {
+  public ApiResponse<BusinessUnitResponse> patchWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId, UpdateBusinessUnitRequest body) throws IOException {
     return patchWorkforcemanagementBusinessunit(createPatchWorkforcemanagementBusinessunitRequest(businessUnitId, body).withHttpInfo());
   }
 
@@ -6623,13 +6623,13 @@ public class WorkforceManagementApi {
    * Update business unit
    * 
    * @param request The request object
-   * @return BusinessUnit
+   * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnit patchWorkforcemanagementBusinessunit(PatchWorkforcemanagementBusinessunitRequest request) throws IOException, ApiException {
+  public BusinessUnitResponse patchWorkforcemanagementBusinessunit(PatchWorkforcemanagementBusinessunitRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<BusinessUnit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnit>() {});
+      ApiResponse<BusinessUnitResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -6645,13 +6645,13 @@ public class WorkforceManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnit> patchWorkforcemanagementBusinessunit(ApiRequest<UpdateBusinessUnitRequest> request) throws IOException {
+  public ApiResponse<BusinessUnitResponse> patchWorkforcemanagementBusinessunit(ApiRequest<UpdateBusinessUnitRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<BusinessUnit>() {});
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)exception;
+      ApiResponse<BusinessUnitResponse> response = (ApiResponse<BusinessUnitResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -6662,7 +6662,7 @@ public class WorkforceManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<BusinessUnitResponse> response = (ApiResponse<BusinessUnitResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9440,11 +9440,11 @@ public class WorkforceManagementApi {
    * Add a new business unit
    * It may take a minute or two for a new business unit to be available for api operations
    * @param body body (optional)
-   * @return BusinessUnit
+   * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnit postWorkforcemanagementBusinessunits(CreateBusinessUnitRequest body) throws IOException, ApiException {
+  public BusinessUnitResponse postWorkforcemanagementBusinessunits(CreateBusinessUnitRequest body) throws IOException, ApiException {
     return  postWorkforcemanagementBusinessunits(createPostWorkforcemanagementBusinessunitsRequest(body));
   }
 
@@ -9452,10 +9452,10 @@ public class WorkforceManagementApi {
    * Add a new business unit
    * It may take a minute or two for a new business unit to be available for api operations
    * @param body body (optional)
-   * @return BusinessUnit
+   * @return BusinessUnitResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnit> postWorkforcemanagementBusinessunitsWithHttpInfo(CreateBusinessUnitRequest body) throws IOException {
+  public ApiResponse<BusinessUnitResponse> postWorkforcemanagementBusinessunitsWithHttpInfo(CreateBusinessUnitRequest body) throws IOException {
     return postWorkforcemanagementBusinessunits(createPostWorkforcemanagementBusinessunitsRequest(body).withHttpInfo());
   }
 
@@ -9470,13 +9470,13 @@ public class WorkforceManagementApi {
    * Add a new business unit
    * It may take a minute or two for a new business unit to be available for api operations
    * @param request The request object
-   * @return BusinessUnit
+   * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnit postWorkforcemanagementBusinessunits(PostWorkforcemanagementBusinessunitsRequest request) throws IOException, ApiException {
+  public BusinessUnitResponse postWorkforcemanagementBusinessunits(PostWorkforcemanagementBusinessunitsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<BusinessUnit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnit>() {});
+      ApiResponse<BusinessUnitResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -9492,13 +9492,13 @@ public class WorkforceManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnit> postWorkforcemanagementBusinessunits(ApiRequest<CreateBusinessUnitRequest> request) throws IOException {
+  public ApiResponse<BusinessUnitResponse> postWorkforcemanagementBusinessunits(ApiRequest<CreateBusinessUnitRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<BusinessUnit>() {});
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)exception;
+      ApiResponse<BusinessUnitResponse> response = (ApiResponse<BusinessUnitResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -9509,7 +9509,7 @@ public class WorkforceManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<BusinessUnitResponse> response = (ApiResponse<BusinessUnitResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -28,6 +28,7 @@ title: LearningModule
 | **assessmentForm** | <!----><!---->[**AssessmentForm**](AssessmentForm.html)<!----> | The assessment form for learning module |  [optional] |
 | **summaryData** | <!----><!---->[**LearningModuleSummary**](LearningModuleSummary.html)<!----> | The learning module summary data |  [optional] |
 | **coverArt** | <!----><!---->[**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse.html)<!----> | The cover art for the learning module |  [optional] |
+| **archivalMode** | [**ArchivalModeEnum**](#ArchivalModeEnum)<!----> | The mode of archival for learning module |  [optional] |
 {: class="table table-striped"}
 
 
@@ -53,6 +54,18 @@ title: LearningModule
 | INFORMATIONAL | &quot;Informational&quot; | 
 | ASSESSEDCONTENT | &quot;AssessedContent&quot; | 
 | ASSESSMENT | &quot;Assessment&quot; | 
+{: class="table table-striped"}
+
+
+<a name="ArchivalModeEnum"></a>
+
+## Enum: ArchivalModeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| GRACEFUL | &quot;Graceful&quot; | 
+| IMMEDIATE | &quot;Immediate&quot; | 
 {: class="table table-striped"}
 
 

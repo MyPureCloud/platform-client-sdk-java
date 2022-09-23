@@ -145,6 +145,8 @@ title: ConversationAggregationQuery
 | TCONNECTED | &quot;tConnected&quot; |
 | TCONTACTING | &quot;tContacting&quot; |
 | TDIALING | &quot;tDialing&quot; |
+| TFIRSTCONNECT | &quot;tFirstConnect&quot; |
+| TFIRSTDIAL | &quot;tFirstDial&quot; |
 | TFLOWOUT | &quot;tFlowOut&quot; |
 | THANDLE | &quot;tHandle&quot; |
 | THELD | &quot;tHeld&quot; |

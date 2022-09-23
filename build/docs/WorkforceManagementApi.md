@@ -1323,7 +1323,7 @@ This endpoint does not require any parameters.
 
 
 
-> [BusinessUnit](BusinessUnit.html) getWorkforcemanagementBusinessunit(businessUnitId, expand)
+> [BusinessUnitResponse](BusinessUnitResponse.html) getWorkforcemanagementBusinessunit(businessUnitId, expand)
 
 Get business unit
 
@@ -1423,7 +1423,7 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 List<String> expand = Arrays.asList(null); // List<String> | 
 try {
-    BusinessUnit result = apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, expand);
+    BusinessUnitResponse result = apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunit");
@@ -1443,7 +1443,7 @@ try {
 
 ### Return type
 
-[**BusinessUnit**](BusinessUnit.html)
+[**BusinessUnitResponse**](BusinessUnitResponse.html)
 
 <a name="getWorkforcemanagementBusinessunitActivitycode"></a>
 
@@ -5311,7 +5311,7 @@ try {
 
 
 
-> [BusinessUnit](BusinessUnit.html) patchWorkforcemanagementBusinessunit(businessUnitId, body)
+> [BusinessUnitResponse](BusinessUnitResponse.html) patchWorkforcemanagementBusinessunit(businessUnitId, body)
 
 Update business unit
 
@@ -5346,7 +5346,7 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 UpdateBusinessUnitRequest body = new UpdateBusinessUnitRequest(); // UpdateBusinessUnitRequest | body
 try {
-    BusinessUnit result = apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body);
+    BusinessUnitResponse result = apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunit");
@@ -5366,7 +5366,7 @@ try {
 
 ### Return type
 
-[**BusinessUnit**](BusinessUnit.html)
+[**BusinessUnitResponse**](BusinessUnitResponse.html)
 
 <a name="patchWorkforcemanagementBusinessunitActivitycode"></a>
 
@@ -7479,7 +7479,7 @@ try {
 
 
 
-> [BusinessUnit](BusinessUnit.html) postWorkforcemanagementBusinessunits(body)
+> [BusinessUnitResponse](BusinessUnitResponse.html) postWorkforcemanagementBusinessunits(body)
 
 Add a new business unit
 
@@ -7515,7 +7515,7 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 CreateBusinessUnitRequest body = new CreateBusinessUnitRequest(); // CreateBusinessUnitRequest | body
 try {
-    BusinessUnit result = apiInstance.postWorkforcemanagementBusinessunits(body);
+    BusinessUnitResponse result = apiInstance.postWorkforcemanagementBusinessunits(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunits");
@@ -7534,7 +7534,7 @@ try {
 
 ### Return type
 
-[**BusinessUnit**](BusinessUnit.html)
+[**BusinessUnitResponse**](BusinessUnitResponse.html)
 
 <a name="postWorkforcemanagementCalendarUrlIcs"></a>
 

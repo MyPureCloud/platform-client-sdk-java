@@ -27,6 +27,7 @@ public class ActionTemplate  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
+  private Integer version = null;
 
   private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
     public MediaTypeEnumDeserializer() {
@@ -177,6 +178,13 @@ public class ActionTemplate  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The version of the action template.")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+
+
   /**
    * Media type of action described by the action template.
    **/
@@ -265,6 +273,7 @@ public class ActionTemplate  implements Serializable {
     return Objects.equals(this.id, actionTemplate.id) &&
             Objects.equals(this.name, actionTemplate.name) &&
             Objects.equals(this.description, actionTemplate.description) &&
+            Objects.equals(this.version, actionTemplate.version) &&
             Objects.equals(this.mediaType, actionTemplate.mediaType) &&
             Objects.equals(this.state, actionTemplate.state) &&
             Objects.equals(this.contentOffer, actionTemplate.contentOffer) &&
@@ -275,7 +284,7 @@ public class ActionTemplate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, mediaType, state, contentOffer, selfUri, createdDate, modifiedDate);
+    return Objects.hash(id, name, description, version, mediaType, state, contentOffer, selfUri, createdDate, modifiedDate);
   }
 
   @Override
@@ -286,6 +295,7 @@ public class ActionTemplate  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    contentOffer: ").append(toIndentedString(contentOffer)).append("\n");

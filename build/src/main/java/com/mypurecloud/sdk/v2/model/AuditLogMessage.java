@@ -70,6 +70,7 @@ public class AuditLogMessage  implements Serializable {
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
     LEARNING("Learning"),
     LIMITS("Limits"),
+    LOGCAPTURE("LogCapture"),
     OUTBOUND("Outbound"),
     PEOPLEPERMISSIONS("PeoplePermissions"),
     EMPLOYEEPERFORMANCE("EmployeePerformance"),
@@ -270,7 +271,9 @@ public class AuditLogMessage  implements Serializable {
     RESET("Reset"),
     ROTATE("Rotate"),
     RESTORE("Restore"),
-    UNARCHIVE("Unarchive");
+    UNARCHIVE("Unarchive"),
+    ENABLECAPTURE("EnableCapture"),
+    DOWNLOADCAPTURE("DownloadCapture");
 
     private String value;
 
@@ -361,6 +364,7 @@ public class AuditLogMessage  implements Serializable {
     DEPLOYMENT("Deployment"),
     DID("DID"),
     DIDPOOL("DIDPool"),
+    DIGITALRULESET("DigitalRuleSet"),
     DNCLIST("DNCList"),
     DOCUMENT("Document"),
     DYNAMICGROUP("DynamicGroup"),
@@ -372,6 +376,7 @@ public class AuditLogMessage  implements Serializable {
     EDGEPCAPS("EdgePcaps"),
     EDGEPREFERENCES("EdgePreferences"),
     EDGETRACELEVEL("EdgeTraceLevel"),
+    EMAILCAMPAIGNSCHEDULE("EmailCampaignSchedule"),
     EMERGENCYGROUP("EmergencyGroup"),
     ENTERPRISEAGREEMENT("EnterpriseAgreement"),
     EVALUATION("Evaluation"),
@@ -405,6 +410,7 @@ public class AuditLogMessage  implements Serializable {
     MAXORGROUTINGUTILIZATIONCAPACITY("MaxOrgRoutingUtilizationCapacity"),
     MEDIADIAGNOSTICSTRACEFILE("MediaDiagnosticsTraceFile"),
     MESSAGINGCAMPAIGN("MessagingCampaign"),
+    MESSAGINGCAMPAIGNSCHEDULE("MessagingCampaignSchedule"),
     METRIC("Metric"),
     MODULE("Module"),
     NUMBERORDER("NumberOrder"),

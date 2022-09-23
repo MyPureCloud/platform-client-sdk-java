@@ -62,7 +62,6 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardBestpointsRe
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricdefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricdefinitionsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMetricRequest;
@@ -97,7 +96,6 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmployeeperformanceExternalmetricsDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDataRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDefinitionsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMembersRequest;
@@ -867,81 +865,6 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<GetMetricDefinitionsResponse> response = (ApiResponse<GetMetricDefinitionsResponse>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * All gamified metrics for a given profile
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<GetMetricsResponse> getGamificationMetricsAsync(GetGamificationMetricsRequest request, final AsyncApiCallback<GetMetricsResponse> callback) {
-    try {
-      final SettableFuture<GetMetricsResponse> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GetMetricsResponse>() {}, new AsyncApiCallback<ApiResponse<GetMetricsResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<GetMetricsResponse> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * All gamified metrics for a given profile
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<GetMetricsResponse>> getGamificationMetricsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GetMetricsResponse>> callback) {
-    try {
-      final SettableFuture<ApiResponse<GetMetricsResponse>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<GetMetricsResponse>() {}, new AsyncApiCallback<ApiResponse<GetMetricsResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<GetMetricsResponse> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<GetMetricsResponse> response = (ApiResponse<GetMetricsResponse>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<GetMetricsResponse> response = (ApiResponse<GetMetricsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3492,81 +3415,6 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Creates a gamified metric with a given metric definition and metric objective
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<Metric> postGamificationMetricsAsync(PostGamificationMetricsRequest request, final AsyncApiCallback<Metric> callback) {
-    try {
-      final SettableFuture<Metric> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Metric>() {}, new AsyncApiCallback<ApiResponse<Metric>>() {
-        @Override
-        public void onCompleted(ApiResponse<Metric> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Creates a gamified metric with a given metric definition and metric objective
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<Metric>> postGamificationMetricsAsync(ApiRequest<CreateMetric> request, final AsyncApiCallback<ApiResponse<Metric>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Metric>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Metric>() {}, new AsyncApiCallback<ApiResponse<Metric>>() {
-        @Override
-        public void onCompleted(ApiResponse<Metric> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

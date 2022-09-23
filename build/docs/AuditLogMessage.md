@@ -48,6 +48,7 @@ title: AuditLogMessage
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; | 
 | LEARNING | &quot;Learning&quot; | 
 | LIMITS | &quot;Limits&quot; | 
+| LOGCAPTURE | &quot;LogCapture&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; | 
 | EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; | 
@@ -175,6 +176,8 @@ title: AuditLogMessage
 | ROTATE | &quot;Rotate&quot; | 
 | RESTORE | &quot;Restore&quot; | 
 | UNARCHIVE | &quot;Unarchive&quot; | 
+| ENABLECAPTURE | &quot;EnableCapture&quot; | 
+| DOWNLOADCAPTURE | &quot;DownloadCapture&quot; | 
 {: class="table table-striped"}
 
 
@@ -228,6 +231,7 @@ title: AuditLogMessage
 | DEPLOYMENT | &quot;Deployment&quot; | 
 | DID | &quot;DID&quot; | 
 | DIDPOOL | &quot;DIDPool&quot; | 
+| DIGITALRULESET | &quot;DigitalRuleSet&quot; | 
 | DNCLIST | &quot;DNCList&quot; | 
 | DOCUMENT | &quot;Document&quot; | 
 | DYNAMICGROUP | &quot;DynamicGroup&quot; | 
@@ -239,6 +243,7 @@ title: AuditLogMessage
 | EDGEPCAPS | &quot;EdgePcaps&quot; | 
 | EDGEPREFERENCES | &quot;EdgePreferences&quot; | 
 | EDGETRACELEVEL | &quot;EdgeTraceLevel&quot; | 
+| EMAILCAMPAIGNSCHEDULE | &quot;EmailCampaignSchedule&quot; | 
 | EMERGENCYGROUP | &quot;EmergencyGroup&quot; | 
 | ENTERPRISEAGREEMENT | &quot;EnterpriseAgreement&quot; | 
 | EVALUATION | &quot;Evaluation&quot; | 
@@ -272,6 +277,7 @@ title: AuditLogMessage
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; | 
 | MEDIADIAGNOSTICSTRACEFILE | &quot;MediaDiagnosticsTraceFile&quot; | 
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; | 
+| MESSAGINGCAMPAIGNSCHEDULE | &quot;MessagingCampaignSchedule&quot; | 
 | METRIC | &quot;Metric&quot; | 
 | MODULE | &quot;Module&quot; | 
 | NUMBERORDER | &quot;NumberOrder&quot; | 

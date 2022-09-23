@@ -33,8 +33,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsCredential**](IntegrationsApi.html#getIntegrationsCredential) | Get a single credential with sensitive fields redacted |
 | [**getIntegrationsCredentials**](IntegrationsApi.html#getIntegrationsCredentials) | List multiple sets of credentials |
 | [**getIntegrationsCredentialsTypes**](IntegrationsApi.html#getIntegrationsCredentialsTypes) | List all credential types |
-| [**getIntegrationsEventlog**](IntegrationsApi.html#getIntegrationsEventlog) | List all events |
-| [**getIntegrationsEventlogEventId**](IntegrationsApi.html#getIntegrationsEventlogEventId) | Get a single event |
 | [**getIntegrationsSpeechDialogflowAgent**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgent) | Get details about a Dialogflow agent |
 | [**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | Get a list of Dialogflow agents in the customers' Google accounts |
 | [**getIntegrationsSpeechLexBotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexBotAlias) | Get details about a Lex bot alias |
@@ -61,7 +59,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postIntegrationsActions**](IntegrationsApi.html#postIntegrationsActions) | Create a new Action |
 | [**postIntegrationsActionsDrafts**](IntegrationsApi.html#postIntegrationsActionsDrafts) | Create a new Draft |
 | [**postIntegrationsCredentials**](IntegrationsApi.html#postIntegrationsCredentials) | Create a set of credentials |
-| [**postIntegrationsWorkforcemanagementVendorconnection**](IntegrationsApi.html#postIntegrationsWorkforcemanagementVendorconnection) | Add a vendor connection |
 | [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | Update integration configuration. |
 | [**putIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#putIntegrationsBotconnectorIntegrationIdBots) | Set a list of botConnector bots plus versions for this integration |
 | [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | Update a set of credentials |
@@ -1779,138 +1776,6 @@ This endpoint does not require any parameters.
 
 [**CredentialTypeListing**](CredentialTypeListing.html)
 
-<a name="getIntegrationsEventlog"></a>
-
-# **getIntegrationsEventlog**
-
-
-
-> [IntegrationEventEntityListing](IntegrationEventEntityListing.html) getIntegrationsEventlog(pageSize, pageNumber, sortBy, sortOrder, entityId)
-
-List all events
-
-Wraps GET /api/v2/integrations/eventlog  
-
-Requires ANY permissions: 
-
-* integrations:integration:view
-* bridge:notification:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.IntegrationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-IntegrationsApi apiInstance = new IntegrationsApi();
-Integer pageSize = 25; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
-String sortBy = "timestamp"; // String | Sort by
-String sortOrder = "descending"; // String | Order by
-String entityId = "entityId_example"; // String | Include only events with this entity ID
-try {
-    IntegrationEventEntityListing result = apiInstance.getIntegrationsEventlog(pageSize, pageNumber, sortBy, sortOrder, entityId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IntegrationsApi#getIntegrationsEventlog");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **sortBy** | **String**| Sort by | [optional] [default to timestamp] 
-| **sortOrder** | **String**| Order by | [optional] [default to descending] 
-| **entityId** | **String**| Include only events with this entity ID | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**IntegrationEventEntityListing**](IntegrationEventEntityListing.html)
-
-<a name="getIntegrationsEventlogEventId"></a>
-
-# **getIntegrationsEventlogEventId**
-
-
-
-> [IntegrationEvent](IntegrationEvent.html) getIntegrationsEventlogEventId(eventId)
-
-Get a single event
-
-Wraps GET /api/v2/integrations/eventlog/{eventId}  
-
-Requires ANY permissions: 
-
-* integrations:integration:view
-* bridge:notification:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.IntegrationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-IntegrationsApi apiInstance = new IntegrationsApi();
-String eventId = "eventId_example"; // String | Event Id
-try {
-    IntegrationEvent result = apiInstance.getIntegrationsEventlogEventId(eventId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IntegrationsApi#getIntegrationsEventlogEventId");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **eventId** | **String**| Event Id | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**IntegrationEvent**](IntegrationEvent.html)
-
 <a name="getIntegrationsSpeechDialogflowAgent"></a>
 
 # **getIntegrationsSpeechDialogflowAgent**
@@ -3574,66 +3439,6 @@ try {
 ### Return type
 
 [**CredentialInfo**](CredentialInfo.html)
-
-<a name="postIntegrationsWorkforcemanagementVendorconnection"></a>
-
-# **postIntegrationsWorkforcemanagementVendorconnection**
-
-
-
-> [UserActionCategoryEntityListing](UserActionCategoryEntityListing.html) postIntegrationsWorkforcemanagementVendorconnection(body)
-
-Add a vendor connection
-
-Wraps POST /api/v2/integrations/workforcemanagement/vendorconnection  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.IntegrationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-IntegrationsApi apiInstance = new IntegrationsApi();
-VendorConnectionRequest body = new VendorConnectionRequest(); // VendorConnectionRequest | 
-try {
-    UserActionCategoryEntityListing result = apiInstance.postIntegrationsWorkforcemanagementVendorconnection(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IntegrationsApi#postIntegrationsWorkforcemanagementVendorconnection");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**VendorConnectionRequest**](VendorConnectionRequest.html)|  | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**UserActionCategoryEntityListing**](UserActionCategoryEntityListing.html)
 
 <a name="putIntegrationConfigCurrent"></a>
 

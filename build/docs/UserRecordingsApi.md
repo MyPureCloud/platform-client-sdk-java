@@ -142,7 +142,7 @@ try {
 
 
 
-> [DownloadResponse](DownloadResponse.html) getUserrecordingMedia(recordingId, formatId)
+> [DownloadResponse](DownloadResponse.html) getUserrecordingMedia(recordingId, formatId, async)
 
 Download a user recording.
 
@@ -175,8 +175,9 @@ Configuration.setDefaultApiClient(apiClient);
 UserRecordingsApi apiInstance = new UserRecordingsApi();
 String recordingId = "recordingId_example"; // String | User Recording ID
 String formatId = "WEBM"; // String | The desired media format.
+Boolean async = true; // Boolean | When set to true, api will return 202 response until the recording is ready for download
 try {
-    DownloadResponse result = apiInstance.getUserrecordingMedia(recordingId, formatId);
+    DownloadResponse result = apiInstance.getUserrecordingMedia(recordingId, formatId, async);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserRecordingsApi#getUserrecordingMedia");
@@ -191,6 +192,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **recordingId** | **String**| User Recording ID | 
 | **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+| **async** | **Boolean**| When set to true, api will return 202 response until the recording is ready for download | [optional] 
 {: class="table-striped"}
 
 

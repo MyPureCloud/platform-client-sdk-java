@@ -63,6 +63,7 @@ title: AuditQueryEntity
 | DEPLOYMENT | &quot;Deployment&quot; | 
 | DID | &quot;DID&quot; | 
 | DIDPOOL | &quot;DIDPool&quot; | 
+| DIGITALRULESET | &quot;DigitalRuleSet&quot; | 
 | DNCLIST | &quot;DNCList&quot; | 
 | DOCUMENT | &quot;Document&quot; | 
 | DYNAMICGROUP | &quot;DynamicGroup&quot; | 
@@ -74,6 +75,7 @@ title: AuditQueryEntity
 | EDGEPCAPS | &quot;EdgePcaps&quot; | 
 | EDGEPREFERENCES | &quot;EdgePreferences&quot; | 
 | EDGETRACELEVEL | &quot;EdgeTraceLevel&quot; | 
+| EMAILCAMPAIGNSCHEDULE | &quot;EmailCampaignSchedule&quot; | 
 | EMERGENCYGROUP | &quot;EmergencyGroup&quot; | 
 | ENTERPRISEAGREEMENT | &quot;EnterpriseAgreement&quot; | 
 | EVALUATION | &quot;Evaluation&quot; | 
@@ -107,6 +109,7 @@ title: AuditQueryEntity
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; | 
 | MEDIADIAGNOSTICSTRACEFILE | &quot;MediaDiagnosticsTraceFile&quot; | 
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; | 
+| MESSAGINGCAMPAIGNSCHEDULE | &quot;MessagingCampaignSchedule&quot; | 
 | METRIC | &quot;Metric&quot; | 
 | MODULE | &quot;Module&quot; | 
 | NUMBERORDER | &quot;NumberOrder&quot; | 
@@ -279,6 +282,8 @@ title: AuditQueryEntity
 | ROTATE | &quot;Rotate&quot; |
 | RESTORE | &quot;Restore&quot; |
 | UNARCHIVE | &quot;Unarchive&quot; |
+| ENABLECAPTURE | &quot;EnableCapture&quot; |
+| DOWNLOADCAPTURE | &quot;DownloadCapture&quot; |
 {: class="table table-striped"}
 
 

@@ -13,6 +13,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteJourneySegment**](JourneyApi.html#deleteJourneySegment) | Delete a segment. |
 | [**getJourneyActionmap**](JourneyApi.html#getJourneyActionmap) | Retrieve a single action map. |
 | [**getJourneyActionmaps**](JourneyApi.html#getJourneyActionmaps) | Retrieve all action maps. |
+| [**getJourneyActionmapsEstimatesJob**](JourneyApi.html#getJourneyActionmapsEstimatesJob) | Get status of job. |
+| [**getJourneyActionmapsEstimatesJobResults**](JourneyApi.html#getJourneyActionmapsEstimatesJobResults) | Get estimates from completed job. |
 | [**getJourneyActiontarget**](JourneyApi.html#getJourneyActiontarget) | Retrieve a single action target. |
 | [**getJourneyActiontargets**](JourneyApi.html#getJourneyActiontargets) | Retrieve all action targets. |
 | [**getJourneyActiontemplate**](JourneyApi.html#getJourneyActiontemplate) | Retrieve a single action template. |
@@ -30,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchJourneySegment**](JourneyApi.html#patchJourneySegment) | Update a segment. |
 | [**postAnalyticsJourneysAggregatesQuery**](JourneyApi.html#postAnalyticsJourneysAggregatesQuery) | Query for journey aggregates |
 | [**postJourneyActionmaps**](JourneyApi.html#postJourneyActionmaps) | Create an action map. |
+| [**postJourneyActionmapsEstimatesJobs**](JourneyApi.html#postJourneyActionmapsEstimatesJobs) | Query for estimates |
 | [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | Create a single action template. |
 | [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | Create an outcome. |
 | [**postJourneySegments**](JourneyApi.html#postJourneySegments) | Create a segment. |
@@ -412,6 +415,128 @@ try {
 ### Return type
 
 [**ActionMapListing**](ActionMapListing.html)
+
+<a name="getJourneyActionmapsEstimatesJob"></a>
+
+# **getJourneyActionmapsEstimatesJob**
+
+
+
+> String getJourneyActionmapsEstimatesJob(jobId)
+
+Get status of job.
+
+Wraps GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* journey:actionmapEstimateJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String jobId = "jobId_example"; // String | ID of the job.
+try {
+    String result = apiInstance.getJourneyActionmapsEstimatesJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyActionmapsEstimatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| ID of the job. | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
+<a name="getJourneyActionmapsEstimatesJobResults"></a>
+
+# **getJourneyActionmapsEstimatesJobResults**
+
+
+
+> [ActionMapEstimateResult](ActionMapEstimateResult.html) getJourneyActionmapsEstimatesJobResults(jobId)
+
+Get estimates from completed job.
+
+Wraps GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results  
+
+Requires ALL permissions: 
+
+* journey:actionmapEstimate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String jobId = "jobId_example"; // String | ID of the job.
+try {
+    ActionMapEstimateResult result = apiInstance.getJourneyActionmapsEstimatesJobResults(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyActionmapsEstimatesJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| ID of the job. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionMapEstimateResult**](ActionMapEstimateResult.html)
 
 <a name="getJourneyActiontarget"></a>
 
@@ -1496,6 +1621,67 @@ try {
 ### Return type
 
 [**ActionMap**](ActionMap.html)
+
+<a name="postJourneyActionmapsEstimatesJobs"></a>
+
+# **postJourneyActionmapsEstimatesJobs**
+
+
+
+> [EstimateJobAsyncResponse](EstimateJobAsyncResponse.html) postJourneyActionmapsEstimatesJobs(body)
+
+Query for estimates
+
+Wraps POST /api/v2/journey/actionmaps/estimates/jobs  
+
+Requires ANY permissions: 
+
+* journey:actionmapEstimateJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+ActionMapEstimateRequest body = new ActionMapEstimateRequest(); // ActionMapEstimateRequest | audience estimator request
+try {
+    EstimateJobAsyncResponse result = apiInstance.postJourneyActionmapsEstimatesJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyActionmapsEstimatesJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ActionMapEstimateRequest**](ActionMapEstimateRequest.html)| audience estimator request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EstimateJobAsyncResponse**](EstimateJobAsyncResponse.html)
 
 <a name="postJourneyActiontemplates"></a>
 

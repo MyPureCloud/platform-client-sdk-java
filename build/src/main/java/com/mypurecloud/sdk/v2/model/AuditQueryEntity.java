@@ -86,6 +86,7 @@ public class AuditQueryEntity  implements Serializable {
     DEPLOYMENT("Deployment"),
     DID("DID"),
     DIDPOOL("DIDPool"),
+    DIGITALRULESET("DigitalRuleSet"),
     DNCLIST("DNCList"),
     DOCUMENT("Document"),
     DYNAMICGROUP("DynamicGroup"),
@@ -97,6 +98,7 @@ public class AuditQueryEntity  implements Serializable {
     EDGEPCAPS("EdgePcaps"),
     EDGEPREFERENCES("EdgePreferences"),
     EDGETRACELEVEL("EdgeTraceLevel"),
+    EMAILCAMPAIGNSCHEDULE("EmailCampaignSchedule"),
     EMERGENCYGROUP("EmergencyGroup"),
     ENTERPRISEAGREEMENT("EnterpriseAgreement"),
     EVALUATION("Evaluation"),
@@ -130,6 +132,7 @@ public class AuditQueryEntity  implements Serializable {
     MAXORGROUTINGUTILIZATIONCAPACITY("MaxOrgRoutingUtilizationCapacity"),
     MEDIADIAGNOSTICSTRACEFILE("MediaDiagnosticsTraceFile"),
     MESSAGINGCAMPAIGN("MessagingCampaign"),
+    MESSAGINGCAMPAIGNSCHEDULE("MessagingCampaignSchedule"),
     METRIC("Metric"),
     MODULE("Module"),
     NUMBERORDER("NumberOrder"),
@@ -337,7 +340,9 @@ public class AuditQueryEntity  implements Serializable {
     RESET("Reset"),
     ROTATE("Rotate"),
     RESTORE("Restore"),
-    UNARCHIVE("Unarchive");
+    UNARCHIVE("Unarchive"),
+    ENABLECAPTURE("EnableCapture"),
+    DOWNLOADCAPTURE("DownloadCapture");
 
     private String value;
 

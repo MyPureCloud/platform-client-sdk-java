@@ -25,6 +25,7 @@ public class PatchActionTemplate  implements Serializable {
   
   private String name = null;
   private String description = null;
+  private Integer version = null;
 
   private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
     public MediaTypeEnumDeserializer() {
@@ -166,6 +167,24 @@ public class PatchActionTemplate  implements Serializable {
 
 
   /**
+   * The version of the action template.
+   **/
+  public PatchActionTemplate version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The version of the action template.")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
+  }
+
+
+  /**
    * Media type of action described by the action template.
    **/
   public PatchActionTemplate mediaType(MediaTypeEnum mediaType) {
@@ -231,6 +250,7 @@ public class PatchActionTemplate  implements Serializable {
 
     return Objects.equals(this.name, patchActionTemplate.name) &&
             Objects.equals(this.description, patchActionTemplate.description) &&
+            Objects.equals(this.version, patchActionTemplate.version) &&
             Objects.equals(this.mediaType, patchActionTemplate.mediaType) &&
             Objects.equals(this.state, patchActionTemplate.state) &&
             Objects.equals(this.contentOffer, patchActionTemplate.contentOffer);
@@ -238,7 +258,7 @@ public class PatchActionTemplate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, mediaType, state, contentOffer);
+    return Objects.hash(name, description, version, mediaType, state, contentOffer);
   }
 
   @Override
@@ -248,6 +268,7 @@ public class PatchActionTemplate  implements Serializable {
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    contentOffer: ").append(toIndentedString(contentOffer)).append("\n");

@@ -17,7 +17,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGamificationMetric**](GamificationApi.html#getGamificationMetric) | Gamified metric by id |
 | [**getGamificationMetricdefinition**](GamificationApi.html#getGamificationMetricdefinition) | Metric definition by id |
 | [**getGamificationMetricdefinitions**](GamificationApi.html#getGamificationMetricdefinitions) | All metric definitions |
-| [**getGamificationMetrics**](GamificationApi.html#getGamificationMetrics) | All gamified metrics for a given profile |
 | [**getGamificationProfile**](GamificationApi.html#getGamificationProfile) | Performance profile by id |
 | [**getGamificationProfileMembers**](GamificationApi.html#getGamificationProfileMembers) | Members of a given performance profile |
 | [**getGamificationProfileMetric**](GamificationApi.html#getGamificationProfileMetric) | Performance profile gamified metric by id |
@@ -52,7 +51,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchEmployeeperformanceExternalmetricsDefinition**](GamificationApi.html#patchEmployeeperformanceExternalmetricsDefinition) | Update External Metric Definition |
 | [**postEmployeeperformanceExternalmetricsData**](GamificationApi.html#postEmployeeperformanceExternalmetricsData) | Write External Metric Data |
 | [**postEmployeeperformanceExternalmetricsDefinitions**](GamificationApi.html#postEmployeeperformanceExternalmetricsDefinitions) | Create External Metric Definition |
-| [**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | Creates a gamified metric with a given metric definition and metric objective |
 | [**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | Activate a performance profile |
 | [**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | Deactivate a performance profile |
 | [**postGamificationProfileMembers**](GamificationApi.html#postGamificationProfileMembers) | Assign members to a given performance profile |
@@ -692,73 +690,6 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**GetMetricDefinitionsResponse**](GetMetricDefinitionsResponse.html)
-
-<a name="getGamificationMetrics"></a>
-
-# **getGamificationMetrics**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [GetMetricsResponse](GetMetricsResponse.html) getGamificationMetrics(performanceProfileId, workday)
-
-All gamified metrics for a given profile
-
-This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-
-Wraps GET /api/v2/gamification/metrics  
-
-Requires ANY permissions: 
-
-* gamification:profile:view
-* gamification:leaderboard:view
-* gamification:scorecard:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.GamificationApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-GamificationApi apiInstance = new GamificationApi();
-String performanceProfileId = "performanceProfileId_example"; // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
-LocalDate workday = new LocalDate(); // LocalDate | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-try {
-    GetMetricsResponse result = apiInstance.getGamificationMetrics(performanceProfileId, workday);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GamificationApi#getGamificationMetrics");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **performanceProfileId** | **String**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional] 
-| **workday** | **LocalDate**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**GetMetricsResponse**](GetMetricsResponse.html)
 
 <a name="getGamificationProfile"></a>
 
@@ -2942,69 +2873,6 @@ try {
 ### Return type
 
 [**ExternalMetricDefinition**](ExternalMetricDefinition.html)
-
-<a name="postGamificationMetrics"></a>
-
-# **postGamificationMetrics**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [Metric](Metric.html) postGamificationMetrics(body)
-
-Creates a gamified metric with a given metric definition and metric objective
-
-This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-
-Wraps POST /api/v2/gamification/metrics  
-
-Requires ALL permissions: 
-
-* gamification:profile:update
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.GamificationApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-GamificationApi apiInstance = new GamificationApi();
-CreateMetric body = new CreateMetric(); // CreateMetric | Metric
-try {
-    Metric result = apiInstance.postGamificationMetrics(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GamificationApi#postGamificationMetrics");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateMetric**](CreateMetric.html)| Metric | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**Metric**](Metric.html)
 
 <a name="postGamificationProfileActivate"></a>
 

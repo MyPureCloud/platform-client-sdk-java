@@ -27,7 +27,6 @@ public class TeamSearchCriteria  implements Serializable {
   private String endValue = null;
   private List<String> values = new ArrayList<String>();
   private String startValue = null;
-  private List<String> fields = new ArrayList<String>();
   private String value = null;
 
   private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
@@ -80,6 +79,7 @@ public class TeamSearchCriteria  implements Serializable {
   private OperatorEnum operator = null;
   private List<TeamSearchCriteria> group = new ArrayList<TeamSearchCriteria>();
   private String dateFormat = null;
+  private List<String> fields = new ArrayList<String>();
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -185,24 +185,6 @@ public class TeamSearchCriteria  implements Serializable {
 
 
   /**
-   * Field names to search against
-   **/
-  public TeamSearchCriteria fields(List<String> fields) {
-    this.fields = fields;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Field names to search against")
-  @JsonProperty("fields")
-  public List<String> getFields() {
-    return fields;
-  }
-  public void setFields(List<String> fields) {
-    this.fields = fields;
-  }
-
-
-  /**
    * A value for the search to match against
    **/
   public TeamSearchCriteria value(String value) {
@@ -275,6 +257,24 @@ public class TeamSearchCriteria  implements Serializable {
 
 
   /**
+   * Field names to search against
+   **/
+  public TeamSearchCriteria fields(List<String> fields) {
+    this.fields = fields;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Field names to search against")
+  @JsonProperty("fields")
+  public List<String> getFields() {
+    return fields;
+  }
+  public void setFields(List<String> fields) {
+    this.fields = fields;
+  }
+
+
+  /**
    * Search Type
    **/
   public TeamSearchCriteria type(TypeEnum type) {
@@ -305,17 +305,17 @@ public class TeamSearchCriteria  implements Serializable {
     return Objects.equals(this.endValue, teamSearchCriteria.endValue) &&
             Objects.equals(this.values, teamSearchCriteria.values) &&
             Objects.equals(this.startValue, teamSearchCriteria.startValue) &&
-            Objects.equals(this.fields, teamSearchCriteria.fields) &&
             Objects.equals(this.value, teamSearchCriteria.value) &&
             Objects.equals(this.operator, teamSearchCriteria.operator) &&
             Objects.equals(this.group, teamSearchCriteria.group) &&
             Objects.equals(this.dateFormat, teamSearchCriteria.dateFormat) &&
+            Objects.equals(this.fields, teamSearchCriteria.fields) &&
             Objects.equals(this.type, teamSearchCriteria.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(endValue, values, startValue, fields, value, operator, group, dateFormat, type);
+    return Objects.hash(endValue, values, startValue, value, operator, group, dateFormat, fields, type);
   }
 
   @Override
@@ -326,11 +326,11 @@ public class TeamSearchCriteria  implements Serializable {
     sb.append("    endValue: ").append(toIndentedString(endValue)).append("\n");
     sb.append("    values: ").append(toIndentedString(values)).append("\n");
     sb.append("    startValue: ").append(toIndentedString(startValue)).append("\n");
-    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
+    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();

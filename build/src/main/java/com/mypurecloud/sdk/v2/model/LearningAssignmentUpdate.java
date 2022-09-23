@@ -46,7 +46,8 @@ public class LearningAssignmentUpdate  implements Serializable {
     INPROGRESS("InProgress"),
     COMPLETED("Completed"),
     DELETED("Deleted"),
-    NOTCOMPLETED("NotCompleted");
+    NOTCOMPLETED("NotCompleted"),
+    INVALIDSCHEDULE("InvalidSchedule");
 
     private String value;
 

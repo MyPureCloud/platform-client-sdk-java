@@ -115,6 +115,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
     LEARNING("Learning"),
     LIMITS("Limits"),
+    LOGCAPTURE("LogCapture"),
     OUTBOUND("Outbound"),
     PEOPLEPERMISSIONS("PeoplePermissions"),
     EMPLOYEEPERFORMANCE("EmployeePerformance"),

@@ -77,6 +77,20 @@ public class GetProfilesGroupsRequest {
 	    return this;
 	} 
 
+	private List<String> jabberId;
+	public List<String> getJabberId() {
+		return this.jabberId;
+	}
+
+	public void setJabberId(List<String> jabberId) {
+		this.jabberId = jabberId;
+	}
+
+	public GetProfilesGroupsRequest withJabberId(List<String> jabberId) {
+	    this.setJabberId(jabberId);
+	    return this;
+	} 
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -154,6 +168,9 @@ public class GetProfilesGroupsRequest {
                 .withQueryParameters("id", "multi", id)
         
 
+                .withQueryParameters("jabberId", "multi", jabberId)
+        
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
 		.withCustomHeaders(customHeaders)
@@ -189,6 +206,11 @@ public class GetProfilesGroupsRequest {
 
 		public Builder withId(List<String> id) {
 			request.setId(id);
+			return this;
+		}
+
+		public Builder withJabberId(List<String> jabberId) {
+			request.setJabberId(jabberId);
 			return this;
 		}
 

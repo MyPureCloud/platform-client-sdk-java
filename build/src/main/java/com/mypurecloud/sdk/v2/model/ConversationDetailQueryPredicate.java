@@ -183,6 +183,8 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     TCONTACTING("tContacting"),
     TCONVERSATIONDURATION("tConversationDuration"),
     TDIALING("tDialing"),
+    TFIRSTCONNECT("tFirstConnect"),
+    TFIRSTDIAL("tFirstDial"),
     TFLOW("tFlow"),
     TFLOWDISCONNECT("tFlowDisconnect"),
     TFLOWEXIT("tFlowExit"),

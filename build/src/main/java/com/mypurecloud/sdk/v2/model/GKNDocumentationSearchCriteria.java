@@ -27,7 +27,6 @@ public class GKNDocumentationSearchCriteria  implements Serializable {
   private String endValue = null;
   private List<String> values = new ArrayList<String>();
   private String startValue = null;
-  private List<String> fields = new ArrayList<String>();
   private String value = null;
 
   private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
@@ -127,6 +126,7 @@ public class GKNDocumentationSearchCriteria  implements Serializable {
     }
   }
   private TypeEnum type = null;
+  private List<String> fields = new ArrayList<String>();
 
   
   /**
@@ -180,24 +180,6 @@ public class GKNDocumentationSearchCriteria  implements Serializable {
   }
   public void setStartValue(String startValue) {
     this.startValue = startValue;
-  }
-
-
-  /**
-   * Field names to search against
-   **/
-  public GKNDocumentationSearchCriteria fields(List<String> fields) {
-    this.fields = fields;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Field names to search against")
-  @JsonProperty("fields")
-  public List<String> getFields() {
-    return fields;
-  }
-  public void setFields(List<String> fields) {
-    this.fields = fields;
   }
 
 
@@ -291,6 +273,24 @@ public class GKNDocumentationSearchCriteria  implements Serializable {
   }
 
 
+  /**
+   * Field names to search against
+   **/
+  public GKNDocumentationSearchCriteria fields(List<String> fields) {
+    this.fields = fields;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Field names to search against")
+  @JsonProperty("fields")
+  public List<String> getFields() {
+    return fields;
+  }
+  public void setFields(List<String> fields) {
+    this.fields = fields;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -304,17 +304,17 @@ public class GKNDocumentationSearchCriteria  implements Serializable {
     return Objects.equals(this.endValue, gKNDocumentationSearchCriteria.endValue) &&
             Objects.equals(this.values, gKNDocumentationSearchCriteria.values) &&
             Objects.equals(this.startValue, gKNDocumentationSearchCriteria.startValue) &&
-            Objects.equals(this.fields, gKNDocumentationSearchCriteria.fields) &&
             Objects.equals(this.value, gKNDocumentationSearchCriteria.value) &&
             Objects.equals(this.operator, gKNDocumentationSearchCriteria.operator) &&
             Objects.equals(this.group, gKNDocumentationSearchCriteria.group) &&
             Objects.equals(this.dateFormat, gKNDocumentationSearchCriteria.dateFormat) &&
-            Objects.equals(this.type, gKNDocumentationSearchCriteria.type);
+            Objects.equals(this.type, gKNDocumentationSearchCriteria.type) &&
+            Objects.equals(this.fields, gKNDocumentationSearchCriteria.fields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(endValue, values, startValue, fields, value, operator, group, dateFormat, type);
+    return Objects.hash(endValue, values, startValue, value, operator, group, dateFormat, type, fields);
   }
 
   @Override
@@ -325,12 +325,12 @@ public class GKNDocumentationSearchCriteria  implements Serializable {
     sb.append("    endValue: ").append(toIndentedString(endValue)).append("\n");
     sb.append("    values: ").append(toIndentedString(values)).append("\n");
     sb.append("    startValue: ").append(toIndentedString(startValue)).append("\n");
-    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("}");
     return sb.toString();
   }

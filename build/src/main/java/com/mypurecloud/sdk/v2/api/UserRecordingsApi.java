@@ -203,12 +203,13 @@ public class UserRecordingsApi {
    * 
    * @param recordingId User Recording ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
+   * @param async When set to true, api will return 202 response until the recording is ready for download (optional)
    * @return DownloadResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DownloadResponse getUserrecordingMedia(String recordingId, String formatId) throws IOException, ApiException {
-    return  getUserrecordingMedia(createGetUserrecordingMediaRequest(recordingId, formatId));
+  public DownloadResponse getUserrecordingMedia(String recordingId, String formatId, Boolean async) throws IOException, ApiException {
+    return  getUserrecordingMedia(createGetUserrecordingMediaRequest(recordingId, formatId, async));
   }
 
   /**
@@ -216,18 +217,21 @@ public class UserRecordingsApi {
    * 
    * @param recordingId User Recording ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
+   * @param async When set to true, api will return 202 response until the recording is ready for download (optional)
    * @return DownloadResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DownloadResponse> getUserrecordingMediaWithHttpInfo(String recordingId, String formatId) throws IOException {
-    return getUserrecordingMedia(createGetUserrecordingMediaRequest(recordingId, formatId).withHttpInfo());
+  public ApiResponse<DownloadResponse> getUserrecordingMediaWithHttpInfo(String recordingId, String formatId, Boolean async) throws IOException {
+    return getUserrecordingMedia(createGetUserrecordingMediaRequest(recordingId, formatId, async).withHttpInfo());
   }
 
-  private GetUserrecordingMediaRequest createGetUserrecordingMediaRequest(String recordingId, String formatId) {
+  private GetUserrecordingMediaRequest createGetUserrecordingMediaRequest(String recordingId, String formatId, Boolean async) {
     return GetUserrecordingMediaRequest.builder()
             .withRecordingId(recordingId)
 
             .withFormatId(formatId)
+
+            .withAsync(async)
 
             .build();
   }

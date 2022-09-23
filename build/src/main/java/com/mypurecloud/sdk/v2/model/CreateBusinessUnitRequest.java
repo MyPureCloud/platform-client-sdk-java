@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.CreateBusinessUnitSettings;
+import com.mypurecloud.sdk.v2.model.CreateBusinessUnitSettingsRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,7 +24,7 @@ public class CreateBusinessUnitRequest  implements Serializable {
   
   private String name = null;
   private String divisionId = null;
-  private CreateBusinessUnitSettings settings = null;
+  private CreateBusinessUnitSettingsRequest settings = null;
 
   
   /**
@@ -66,17 +66,17 @@ public class CreateBusinessUnitRequest  implements Serializable {
   /**
    * Configuration for the business unit
    **/
-  public CreateBusinessUnitRequest settings(CreateBusinessUnitSettings settings) {
+  public CreateBusinessUnitRequest settings(CreateBusinessUnitSettingsRequest settings) {
     this.settings = settings;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Configuration for the business unit")
   @JsonProperty("settings")
-  public CreateBusinessUnitSettings getSettings() {
+  public CreateBusinessUnitSettingsRequest getSettings() {
     return settings;
   }
-  public void setSettings(CreateBusinessUnitSettings settings) {
+  public void setSettings(CreateBusinessUnitSettingsRequest settings) {
     this.settings = settings;
   }
 

@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallRecord;
 import com.mypurecloud.sdk.v2.model.ConfigurationOverrides;
 import com.mypurecloud.sdk.v2.model.ContactColumnTimeZone;
+import com.mypurecloud.sdk.v2.model.ContactableStatus;
 import com.mypurecloud.sdk.v2.model.MessageEvaluation;
 import com.mypurecloud.sdk.v2.model.PhoneNumberStatus;
 import io.swagger.annotations.ApiModel;
@@ -37,6 +38,7 @@ public class DialerContact  implements Serializable {
   private Map<String, MessageEvaluation> latestSmsEvaluations = null;
   private Boolean callable = null;
   private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
+  private Map<String, ContactableStatus> contactableStatus = null;
   private Map<String, ContactColumnTimeZone> contactColumnTimeZones = null;
   private ConfigurationOverrides configurationOverrides = null;
   private String selfUri = null;
@@ -152,6 +154,24 @@ public class DialerContact  implements Serializable {
   }
 
 
+  /**
+   * A map of media types(voice, sms and email) to ContactableStatus, which indicates where or not the contact can be contacted using the specified media type.
+   **/
+  public DialerContact contactableStatus(Map<String, ContactableStatus> contactableStatus) {
+    this.contactableStatus = contactableStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A map of media types(voice, sms and email) to ContactableStatus, which indicates where or not the contact can be contacted using the specified media type.")
+  @JsonProperty("contactableStatus")
+  public Map<String, ContactableStatus> getContactableStatus() {
+    return contactableStatus;
+  }
+  public void setContactableStatus(Map<String, ContactableStatus> contactableStatus) {
+    this.contactableStatus = contactableStatus;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Map containing data about the timezone the contact is mapped to. This will only be populated if the contact list has automatic timezone mapping turned on. The key is the column name. The value is the timezone it mapped to and the type of column: Phone or Zip")
   @JsonProperty("contactColumnTimeZones")
   public Map<String, ContactColumnTimeZone> getContactColumnTimeZones() {
@@ -191,6 +211,7 @@ public class DialerContact  implements Serializable {
             Objects.equals(this.latestSmsEvaluations, dialerContact.latestSmsEvaluations) &&
             Objects.equals(this.callable, dialerContact.callable) &&
             Objects.equals(this.phoneNumberStatus, dialerContact.phoneNumberStatus) &&
+            Objects.equals(this.contactableStatus, dialerContact.contactableStatus) &&
             Objects.equals(this.contactColumnTimeZones, dialerContact.contactColumnTimeZones) &&
             Objects.equals(this.configurationOverrides, dialerContact.configurationOverrides) &&
             Objects.equals(this.selfUri, dialerContact.selfUri);
@@ -198,7 +219,7 @@ public class DialerContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, contactListId, data, callRecords, latestSmsEvaluations, callable, phoneNumberStatus, contactColumnTimeZones, configurationOverrides, selfUri);
+    return Objects.hash(id, name, contactListId, data, callRecords, latestSmsEvaluations, callable, phoneNumberStatus, contactableStatus, contactColumnTimeZones, configurationOverrides, selfUri);
   }
 
   @Override
@@ -214,6 +235,7 @@ public class DialerContact  implements Serializable {
     sb.append("    latestSmsEvaluations: ").append(toIndentedString(latestSmsEvaluations)).append("\n");
     sb.append("    callable: ").append(toIndentedString(callable)).append("\n");
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
+    sb.append("    contactableStatus: ").append(toIndentedString(contactableStatus)).append("\n");
     sb.append("    contactColumnTimeZones: ").append(toIndentedString(contactColumnTimeZones)).append("\n");
     sb.append("    configurationOverrides: ").append(toIndentedString(configurationOverrides)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

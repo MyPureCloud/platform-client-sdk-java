@@ -27,7 +27,6 @@ public class SuggestSearchCriteria  implements Serializable {
   private String endValue = null;
   private List<String> values = new ArrayList<String>();
   private String startValue = null;
-  private List<String> fields = new ArrayList<String>();
   private String value = null;
 
   private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
@@ -80,6 +79,7 @@ public class SuggestSearchCriteria  implements Serializable {
   private OperatorEnum operator = null;
   private List<SuggestSearchCriteria> group = new ArrayList<SuggestSearchCriteria>();
   private String dateFormat = null;
+  private List<String> fields = new ArrayList<String>();
 
   
   /**
@@ -133,24 +133,6 @@ public class SuggestSearchCriteria  implements Serializable {
   }
   public void setStartValue(String startValue) {
     this.startValue = startValue;
-  }
-
-
-  /**
-   * Field names to search against
-   **/
-  public SuggestSearchCriteria fields(List<String> fields) {
-    this.fields = fields;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Field names to search against")
-  @JsonProperty("fields")
-  public List<String> getFields() {
-    return fields;
-  }
-  public void setFields(List<String> fields) {
-    this.fields = fields;
   }
 
 
@@ -226,6 +208,24 @@ public class SuggestSearchCriteria  implements Serializable {
   }
 
 
+  /**
+   * Field names to search against
+   **/
+  public SuggestSearchCriteria fields(List<String> fields) {
+    this.fields = fields;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Field names to search against")
+  @JsonProperty("fields")
+  public List<String> getFields() {
+    return fields;
+  }
+  public void setFields(List<String> fields) {
+    this.fields = fields;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -239,16 +239,16 @@ public class SuggestSearchCriteria  implements Serializable {
     return Objects.equals(this.endValue, suggestSearchCriteria.endValue) &&
             Objects.equals(this.values, suggestSearchCriteria.values) &&
             Objects.equals(this.startValue, suggestSearchCriteria.startValue) &&
-            Objects.equals(this.fields, suggestSearchCriteria.fields) &&
             Objects.equals(this.value, suggestSearchCriteria.value) &&
             Objects.equals(this.operator, suggestSearchCriteria.operator) &&
             Objects.equals(this.group, suggestSearchCriteria.group) &&
-            Objects.equals(this.dateFormat, suggestSearchCriteria.dateFormat);
+            Objects.equals(this.dateFormat, suggestSearchCriteria.dateFormat) &&
+            Objects.equals(this.fields, suggestSearchCriteria.fields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(endValue, values, startValue, fields, value, operator, group, dateFormat);
+    return Objects.hash(endValue, values, startValue, value, operator, group, dateFormat, fields);
   }
 
   @Override
@@ -259,11 +259,11 @@ public class SuggestSearchCriteria  implements Serializable {
     sb.append("    endValue: ").append(toIndentedString(endValue)).append("\n");
     sb.append("    values: ").append(toIndentedString(values)).append("\n");
     sb.append("    startValue: ").append(toIndentedString(startValue)).append("\n");
-    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
+    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("}");
     return sb.toString();
   }

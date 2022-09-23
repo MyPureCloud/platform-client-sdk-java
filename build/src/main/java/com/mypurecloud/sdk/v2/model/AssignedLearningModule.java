@@ -150,6 +150,54 @@ public class AssignedLearningModule  implements Serializable {
   private LearningModuleSummary summaryData = null;
   private LearningModuleCoverArtResponse coverArt = null;
 
+  private static class ArchivalModeEnumDeserializer extends StdDeserializer<ArchivalModeEnum> {
+    public ArchivalModeEnumDeserializer() {
+      super(ArchivalModeEnumDeserializer.class);
+    }
+
+    @Override
+    public ArchivalModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ArchivalModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The mode of archival for learning module
+   */
+ @JsonDeserialize(using = ArchivalModeEnumDeserializer.class)
+  public enum ArchivalModeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GRACEFUL("Graceful"),
+    IMMEDIATE("Immediate");
+
+    private String value;
+
+    ArchivalModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ArchivalModeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ArchivalModeEnum value : ArchivalModeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ArchivalModeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ArchivalModeEnum archivalMode = null;
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
@@ -397,6 +445,24 @@ public class AssignedLearningModule  implements Serializable {
   }
 
 
+  /**
+   * The mode of archival for learning module
+   **/
+  public AssignedLearningModule archivalMode(ArchivalModeEnum archivalMode) {
+    this.archivalMode = archivalMode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The mode of archival for learning module")
+  @JsonProperty("archivalMode")
+  public ArchivalModeEnum getArchivalMode() {
+    return archivalMode;
+  }
+  public void setArchivalMode(ArchivalModeEnum archivalMode) {
+    this.archivalMode = archivalMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -427,12 +493,13 @@ public class AssignedLearningModule  implements Serializable {
             Objects.equals(this.informSteps, assignedLearningModule.informSteps) &&
             Objects.equals(this.assessmentForm, assignedLearningModule.assessmentForm) &&
             Objects.equals(this.summaryData, assignedLearningModule.summaryData) &&
-            Objects.equals(this.coverArt, assignedLearningModule.coverArt);
+            Objects.equals(this.coverArt, assignedLearningModule.coverArt) &&
+            Objects.equals(this.archivalMode, assignedLearningModule.archivalMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, currentAssignments, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, coverArt);
+    return Objects.hash(id, name, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, currentAssignments, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, coverArt, archivalMode);
   }
 
   @Override
@@ -461,6 +528,7 @@ public class AssignedLearningModule  implements Serializable {
     sb.append("    assessmentForm: ").append(toIndentedString(assessmentForm)).append("\n");
     sb.append("    summaryData: ").append(toIndentedString(summaryData)).append("\n");
     sb.append("    coverArt: ").append(toIndentedString(coverArt)).append("\n");
+    sb.append("    archivalMode: ").append(toIndentedString(archivalMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

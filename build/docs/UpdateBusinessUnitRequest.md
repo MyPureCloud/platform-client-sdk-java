@@ -10,7 +10,7 @@ title: UpdateBusinessUnitRequest
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | <!----><!---->**String**<!----> | The name of the business unit |  [optional] |
 | **divisionId** | <!----><!---->**String**<!----> | The ID of the division to which the business unit should be moved |  [optional] |
-| **settings** | <!----><!---->[**UpdateBusinessUnitSettings**](UpdateBusinessUnitSettings.html)<!----> | Configuration for the business unit |  [optional] |
+| **settings** | <!----><!---->[**UpdateBusinessUnitSettingsRequest**](UpdateBusinessUnitSettingsRequest.html)<!----> | Configuration for the business unit |  [optional] |
 {: class="table table-striped"}
 
 

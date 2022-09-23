@@ -11,6 +11,7 @@ title: ActionTemplate
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | Name of the action template. |  |
 | **description** | <!----><!---->**String**<!----> | Description of the action template's functionality. |  [optional] |
+| **version** | <!----><!---->**Integer**<!----> | The version of the action template. |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | Media type of action described by the action template. |  |
 | **state** | [**StateEnum**](#StateEnum)<!----> | Whether the action template is currently active, inactive or deleted. |  |
 | **contentOffer** | <!----><!---->[**ContentOffer**](ContentOffer.html)<!----> | Properties used to configure an action of type content offer |  [optional] |

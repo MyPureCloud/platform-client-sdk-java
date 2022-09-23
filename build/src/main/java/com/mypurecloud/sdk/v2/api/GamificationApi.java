@@ -59,7 +59,6 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardBestpointsRe
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricdefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricdefinitionsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMetricRequest;
@@ -94,7 +93,6 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmployeeperformanceExternalmetricsDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDataRequest;
 import com.mypurecloud.sdk.v2.api.request.PostEmployeeperformanceExternalmetricsDefinitionsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMembersRequest;
@@ -929,88 +927,6 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GetMetricDefinitionsResponse> response = (ApiResponse<GetMetricDefinitionsResponse>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * All gamified metrics for a given profile
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
-   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
-   * @return GetMetricsResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public GetMetricsResponse getGamificationMetrics(String performanceProfileId, LocalDate workday) throws IOException, ApiException {
-    return  getGamificationMetrics(createGetGamificationMetricsRequest(performanceProfileId, workday));
-  }
-
-  /**
-   * All gamified metrics for a given profile
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
-   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
-   * @return GetMetricsResponse
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<GetMetricsResponse> getGamificationMetricsWithHttpInfo(String performanceProfileId, LocalDate workday) throws IOException {
-    return getGamificationMetrics(createGetGamificationMetricsRequest(performanceProfileId, workday).withHttpInfo());
-  }
-
-  private GetGamificationMetricsRequest createGetGamificationMetricsRequest(String performanceProfileId, LocalDate workday) {
-    return GetGamificationMetricsRequest.builder()
-            .withPerformanceProfileId(performanceProfileId)
-
-            .withWorkday(workday)
-
-            .build();
-  }
-
-  /**
-   * All gamified metrics for a given profile
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param request The request object
-   * @return GetMetricsResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public GetMetricsResponse getGamificationMetrics(GetGamificationMetricsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<GetMetricsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetMetricsResponse>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * All gamified metrics for a given profile
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<GetMetricsResponse> getGamificationMetrics(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<GetMetricsResponse>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<GetMetricsResponse> response = (ApiResponse<GetMetricsResponse>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<GetMetricsResponse> response = (ApiResponse<GetMetricsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3871,84 +3787,6 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExternalMetricDefinition> response = (ApiResponse<ExternalMetricDefinition>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Creates a gamified metric with a given metric definition and metric objective
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param body Metric (required)
-   * @return Metric
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Metric postGamificationMetrics(CreateMetric body) throws IOException, ApiException {
-    return  postGamificationMetrics(createPostGamificationMetricsRequest(body));
-  }
-
-  /**
-   * Creates a gamified metric with a given metric definition and metric objective
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param body Metric (required)
-   * @return Metric
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Metric> postGamificationMetricsWithHttpInfo(CreateMetric body) throws IOException {
-    return postGamificationMetrics(createPostGamificationMetricsRequest(body).withHttpInfo());
-  }
-
-  private PostGamificationMetricsRequest createPostGamificationMetricsRequest(CreateMetric body) {
-    return PostGamificationMetricsRequest.builder()
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Creates a gamified metric with a given metric definition and metric objective
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param request The request object
-   * @return Metric
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Metric postGamificationMetrics(PostGamificationMetricsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Metric> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Metric>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Creates a gamified metric with a given metric definition and metric objective
-   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Metric> postGamificationMetrics(ApiRequest<CreateMetric> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<Metric>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

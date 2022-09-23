@@ -35,6 +35,7 @@ title: AuditQueryService
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; | 
 | LEARNING | &quot;Learning&quot; | 
 | LIMITS | &quot;Limits&quot; | 
+| LOGCAPTURE | &quot;LogCapture&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; | 
 | EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; | 

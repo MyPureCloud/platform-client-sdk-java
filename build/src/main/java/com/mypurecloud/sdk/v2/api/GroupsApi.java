@@ -805,13 +805,14 @@ public class GroupsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param id id (optional)
+   * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return GroupProfileEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public GroupProfileEntityListing getProfilesGroups(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) throws IOException, ApiException {
-    return  getProfilesGroups(createGetProfilesGroupsRequest(pageSize, pageNumber, id, sortOrder));
+  public GroupProfileEntityListing getProfilesGroups(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder) throws IOException, ApiException {
+    return  getProfilesGroups(createGetProfilesGroupsRequest(pageSize, pageNumber, id, jabberId, sortOrder));
   }
 
   /**
@@ -820,21 +821,24 @@ public class GroupsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param id id (optional)
+   * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return GroupProfileEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GroupProfileEntityListing> getProfilesGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) throws IOException {
-    return getProfilesGroups(createGetProfilesGroupsRequest(pageSize, pageNumber, id, sortOrder).withHttpInfo());
+  public ApiResponse<GroupProfileEntityListing> getProfilesGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder) throws IOException {
+    return getProfilesGroups(createGetProfilesGroupsRequest(pageSize, pageNumber, id, jabberId, sortOrder).withHttpInfo());
   }
 
-  private GetProfilesGroupsRequest createGetProfilesGroupsRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) {
+  private GetProfilesGroupsRequest createGetProfilesGroupsRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder) {
     return GetProfilesGroupsRequest.builder()
             .withPageSize(pageSize)
 
             .withPageNumber(pageNumber)
 
             .withId(id)
+
+            .withJabberId(jabberId)
 
             .withSortOrder(sortOrder)
 

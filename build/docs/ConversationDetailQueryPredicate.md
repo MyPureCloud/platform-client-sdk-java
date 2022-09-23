@@ -93,6 +93,8 @@ title: ConversationDetailQueryPredicate
 | TCONTACTING | &quot;tContacting&quot; | 
 | TCONVERSATIONDURATION | &quot;tConversationDuration&quot; | 
 | TDIALING | &quot;tDialing&quot; | 
+| TFIRSTCONNECT | &quot;tFirstConnect&quot; | 
+| TFIRSTDIAL | &quot;tFirstDial&quot; | 
 | TFLOW | &quot;tFlow&quot; | 
 | TFLOWDISCONNECT | &quot;tFlowDisconnect&quot; | 
 | TFLOWEXIT | &quot;tFlowExit&quot; | 
