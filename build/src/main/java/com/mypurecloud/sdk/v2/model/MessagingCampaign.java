@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactSort;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.EmailConfig;
 import com.mypurecloud.sdk.v2.model.RestErrorDetail;
 import com.mypurecloud.sdk.v2.model.SmsConfig;
 import io.swagger.annotations.ApiModel;
@@ -94,6 +95,7 @@ public class MessagingCampaign  implements Serializable {
   private Integer messagesPerMinute = null;
   private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
   private List<RestErrorDetail> errors = new ArrayList<RestErrorDetail>();
+  private EmailConfig emailConfig = null;
   private SmsConfig smsConfig = null;
   private String selfUri = null;
 
@@ -335,6 +337,24 @@ public class MessagingCampaign  implements Serializable {
 
 
   /**
+   * Configuration for this messaging campaign to send Email messages.
+   **/
+  public MessagingCampaign emailConfig(EmailConfig emailConfig) {
+    this.emailConfig = emailConfig;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Configuration for this messaging campaign to send Email messages.")
+  @JsonProperty("emailConfig")
+  public EmailConfig getEmailConfig() {
+    return emailConfig;
+  }
+  public void setEmailConfig(EmailConfig emailConfig) {
+    this.emailConfig = emailConfig;
+  }
+
+
+  /**
    * Configuration for this messaging campaign to send SMS messages.
    **/
   public MessagingCampaign smsConfig(SmsConfig smsConfig) {
@@ -384,13 +404,14 @@ public class MessagingCampaign  implements Serializable {
             Objects.equals(this.messagesPerMinute, messagingCampaign.messagesPerMinute) &&
             Objects.equals(this.contactListFilters, messagingCampaign.contactListFilters) &&
             Objects.equals(this.errors, messagingCampaign.errors) &&
+            Objects.equals(this.emailConfig, messagingCampaign.emailConfig) &&
             Objects.equals(this.smsConfig, messagingCampaign.smsConfig) &&
             Objects.equals(this.selfUri, messagingCampaign.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, division, campaignStatus, callableTimeSet, contactList, dncLists, alwaysRunning, contactSorts, messagesPerMinute, contactListFilters, errors, smsConfig, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, division, campaignStatus, callableTimeSet, contactList, dncLists, alwaysRunning, contactSorts, messagesPerMinute, contactListFilters, errors, emailConfig, smsConfig, selfUri);
   }
 
   @Override
@@ -413,6 +434,7 @@ public class MessagingCampaign  implements Serializable {
     sb.append("    messagesPerMinute: ").append(toIndentedString(messagesPerMinute)).append("\n");
     sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    emailConfig: ").append(toIndentedString(emailConfig)).append("\n");
     sb.append("    smsConfig: ").append(toIndentedString(smsConfig)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

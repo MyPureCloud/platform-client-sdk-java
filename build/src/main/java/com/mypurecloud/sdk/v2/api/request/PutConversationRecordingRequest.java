@@ -103,6 +103,20 @@ public class PutConversationRecordingRequest {
 	    return this;
 	} 
 
+	private Boolean clearExport;
+	public Boolean getClearExport() {
+		return this.clearExport;
+	}
+
+	public void setClearExport(Boolean clearExport) {
+		this.clearExport = clearExport;
+	}
+
+	public PutConversationRecordingRequest withClearExport(Boolean clearExport) {
+	    this.setClearExport(clearExport);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -145,6 +159,9 @@ public class PutConversationRecordingRequest {
         
                 .withPathParameter("recordingId", recordingId)
         
+
+                .withQueryParameters("clearExport", "", clearExport)
+        
                 .withBody(body)
 
 		.withCustomHeaders(customHeaders)
@@ -185,6 +202,11 @@ public class PutConversationRecordingRequest {
 
 		public Builder withBody(Recording body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withClearExport(Boolean clearExport) {
+			request.setClearExport(clearExport);
 			return this;
 		}
 

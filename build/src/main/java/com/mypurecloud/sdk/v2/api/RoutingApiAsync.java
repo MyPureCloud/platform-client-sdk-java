@@ -40,6 +40,8 @@ import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
+import com.mypurecloud.sdk.v2.model.PredictorModelFeatureListing;
+import com.mypurecloud.sdk.v2.model.PredictorModels;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMember;
@@ -110,6 +112,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorModelFeaturesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorModelsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsKeyperformanceindicatorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueRequest;
@@ -2517,6 +2521,156 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve Predictor Model Features.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PredictorModelFeatureListing> getRoutingPredictorModelFeaturesAsync(GetRoutingPredictorModelFeaturesRequest request, final AsyncApiCallback<PredictorModelFeatureListing> callback) {
+    try {
+      final SettableFuture<PredictorModelFeatureListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PredictorModelFeatureListing>() {}, new AsyncApiCallback<ApiResponse<PredictorModelFeatureListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PredictorModelFeatureListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve Predictor Model Features.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PredictorModelFeatureListing>> getRoutingPredictorModelFeaturesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PredictorModelFeatureListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PredictorModelFeatureListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PredictorModelFeatureListing>() {}, new AsyncApiCallback<ApiResponse<PredictorModelFeatureListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PredictorModelFeatureListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PredictorModelFeatureListing> response = (ApiResponse<PredictorModelFeatureListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PredictorModelFeatureListing> response = (ApiResponse<PredictorModelFeatureListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve Predictor Models and Top Features.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PredictorModels> getRoutingPredictorModelsAsync(GetRoutingPredictorModelsRequest request, final AsyncApiCallback<PredictorModels> callback) {
+    try {
+      final SettableFuture<PredictorModels> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PredictorModels>() {}, new AsyncApiCallback<ApiResponse<PredictorModels>>() {
+        @Override
+        public void onCompleted(ApiResponse<PredictorModels> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve Predictor Models and Top Features.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PredictorModels>> getRoutingPredictorModelsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PredictorModels>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PredictorModels>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PredictorModels>() {}, new AsyncApiCallback<ApiResponse<PredictorModels>>() {
+        @Override
+        public void onCompleted(ApiResponse<PredictorModels> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PredictorModels> response = (ApiResponse<PredictorModels>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PredictorModels> response = (ApiResponse<PredictorModels>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

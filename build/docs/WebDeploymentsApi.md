@@ -520,7 +520,7 @@ try {
 
 
 
-> [WebDeploymentEntityListing](WebDeploymentEntityListing.html) getWebdeploymentsDeployments()
+> [WebDeploymentEntityListing](WebDeploymentEntityListing.html) getWebdeploymentsDeployments(expand)
 
 Get deployments
 
@@ -552,8 +552,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected. Valid values:
 try {
-    WebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments();
+    WebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments(expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebDeploymentsApi#getWebdeploymentsDeployments");
@@ -563,8 +564,11 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **expand** | [**List&lt;String&gt;**](String.html)| The specified entity attributes will be filled. Comma separated values expected. Valid values: | [optional]<br />**Values**: Configuration 
+{: class="table-striped"}
 
 
 ### Return type

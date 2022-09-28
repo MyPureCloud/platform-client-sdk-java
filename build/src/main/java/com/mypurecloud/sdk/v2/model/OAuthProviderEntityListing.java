@@ -29,8 +29,8 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String lastUri = null;
   private String firstUri = null;
+  private String lastUri = null;
   private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
@@ -107,23 +107,6 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
 
   /**
    **/
-  public OAuthProviderEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public OAuthProviderEntityListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -136,6 +119,23 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
   }
   public void setFirstUri(String firstUri) {
     this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public OAuthProviderEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -221,8 +221,8 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
             Objects.equals(this.pageSize, oAuthProviderEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, oAuthProviderEntityListing.pageNumber) &&
             Objects.equals(this.total, oAuthProviderEntityListing.total) &&
-            Objects.equals(this.lastUri, oAuthProviderEntityListing.lastUri) &&
             Objects.equals(this.firstUri, oAuthProviderEntityListing.firstUri) &&
+            Objects.equals(this.lastUri, oAuthProviderEntityListing.lastUri) &&
             Objects.equals(this.selfUri, oAuthProviderEntityListing.selfUri) &&
             Objects.equals(this.nextUri, oAuthProviderEntityListing.nextUri) &&
             Objects.equals(this.previousUri, oAuthProviderEntityListing.previousUri) &&
@@ -231,7 +231,7 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,8 +243,8 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

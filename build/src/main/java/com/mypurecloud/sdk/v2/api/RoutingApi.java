@@ -37,6 +37,8 @@ import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.Predictor;
 import com.mypurecloud.sdk.v2.model.PredictorListing;
+import com.mypurecloud.sdk.v2.model.PredictorModelFeatureListing;
+import com.mypurecloud.sdk.v2.model.PredictorModels;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMember;
@@ -107,6 +109,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorModelFeaturesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorModelsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsKeyperformanceindicatorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueRequest;
@@ -2630,6 +2634,166 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve Predictor Model Features.
+   * 
+   * @param predictorId Predictor ID (required)
+   * @param modelId Model ID (required)
+   * @return PredictorModelFeatureListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PredictorModelFeatureListing getRoutingPredictorModelFeatures(String predictorId, String modelId) throws IOException, ApiException {
+    return  getRoutingPredictorModelFeatures(createGetRoutingPredictorModelFeaturesRequest(predictorId, modelId));
+  }
+
+  /**
+   * Retrieve Predictor Model Features.
+   * 
+   * @param predictorId Predictor ID (required)
+   * @param modelId Model ID (required)
+   * @return PredictorModelFeatureListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PredictorModelFeatureListing> getRoutingPredictorModelFeaturesWithHttpInfo(String predictorId, String modelId) throws IOException {
+    return getRoutingPredictorModelFeatures(createGetRoutingPredictorModelFeaturesRequest(predictorId, modelId).withHttpInfo());
+  }
+
+  private GetRoutingPredictorModelFeaturesRequest createGetRoutingPredictorModelFeaturesRequest(String predictorId, String modelId) {
+    return GetRoutingPredictorModelFeaturesRequest.builder()
+            .withPredictorId(predictorId)
+
+            .withModelId(modelId)
+
+            .build();
+  }
+
+  /**
+   * Retrieve Predictor Model Features.
+   * 
+   * @param request The request object
+   * @return PredictorModelFeatureListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PredictorModelFeatureListing getRoutingPredictorModelFeatures(GetRoutingPredictorModelFeaturesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PredictorModelFeatureListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PredictorModelFeatureListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve Predictor Model Features.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PredictorModelFeatureListing> getRoutingPredictorModelFeatures(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PredictorModelFeatureListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PredictorModelFeatureListing> response = (ApiResponse<PredictorModelFeatureListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PredictorModelFeatureListing> response = (ApiResponse<PredictorModelFeatureListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve Predictor Models and Top Features.
+   * 
+   * @param predictorId Predictor ID (required)
+   * @return PredictorModels
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PredictorModels getRoutingPredictorModels(String predictorId) throws IOException, ApiException {
+    return  getRoutingPredictorModels(createGetRoutingPredictorModelsRequest(predictorId));
+  }
+
+  /**
+   * Retrieve Predictor Models and Top Features.
+   * 
+   * @param predictorId Predictor ID (required)
+   * @return PredictorModels
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PredictorModels> getRoutingPredictorModelsWithHttpInfo(String predictorId) throws IOException {
+    return getRoutingPredictorModels(createGetRoutingPredictorModelsRequest(predictorId).withHttpInfo());
+  }
+
+  private GetRoutingPredictorModelsRequest createGetRoutingPredictorModelsRequest(String predictorId) {
+    return GetRoutingPredictorModelsRequest.builder()
+            .withPredictorId(predictorId)
+
+            .build();
+  }
+
+  /**
+   * Retrieve Predictor Models and Top Features.
+   * 
+   * @param request The request object
+   * @return PredictorModels
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PredictorModels getRoutingPredictorModels(GetRoutingPredictorModelsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PredictorModels> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PredictorModels>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve Predictor Models and Top Features.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PredictorModels> getRoutingPredictorModels(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PredictorModels>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PredictorModels> response = (ApiResponse<PredictorModels>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PredictorModels> response = (ApiResponse<PredictorModels>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

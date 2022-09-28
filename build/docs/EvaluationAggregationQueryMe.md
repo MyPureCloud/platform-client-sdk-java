@@ -26,7 +26,6 @@ title: EvaluationAggregationQueryMe
 | CALIBRATIONID | &quot;calibrationId&quot; |
 | CONTEXTID | &quot;contextId&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
-| CONVERSATIONSTART | &quot;conversationStart&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
 | EVALUATIONID | &quot;evaluationId&quot; |
 | EVALUATORID | &quot;evaluatorId&quot; |

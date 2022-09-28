@@ -28,6 +28,7 @@ title: Library
 | MESSAGINGTEMPLATE | &quot;MessagingTemplate&quot; | 
 | CAMPAIGNSMSTEMPLATE | &quot;CampaignSmsTemplate&quot; | 
 | CAMPAIGNEMAILTEMPLATE | &quot;CampaignEmailTemplate&quot; | 
+| FOOTER | &quot;Footer&quot; | 
 {: class="table table-striped"}
 
 

@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
-import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityRef;
+import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class WebDeployment  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
-  private WebDeploymentConfigurationVersionEntityRef _configuration = null;
+  private WebDeploymentConfigurationVersion _configuration = null;
   private Boolean allowAllDomains = null;
   private List<String> allowedDomains = new ArrayList<String>();
   private String snippet = null;
@@ -140,17 +140,17 @@ public class WebDeployment  implements Serializable {
   /**
    * The config version this deployment uses
    **/
-  public WebDeployment _configuration(WebDeploymentConfigurationVersionEntityRef _configuration) {
+  public WebDeployment _configuration(WebDeploymentConfigurationVersion _configuration) {
     this._configuration = _configuration;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The config version this deployment uses")
   @JsonProperty("configuration")
-  public WebDeploymentConfigurationVersionEntityRef getConfiguration() {
+  public WebDeploymentConfigurationVersion getConfiguration() {
     return _configuration;
   }
-  public void setConfiguration(WebDeploymentConfigurationVersionEntityRef _configuration) {
+  public void setConfiguration(WebDeploymentConfigurationVersion _configuration) {
     this._configuration = _configuration;
   }
 

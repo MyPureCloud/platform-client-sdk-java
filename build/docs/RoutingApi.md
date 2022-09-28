@@ -38,6 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingMessageRecipient**](RoutingApi.html#getRoutingMessageRecipient) | Get a recipient |
 | [**getRoutingMessageRecipients**](RoutingApi.html#getRoutingMessageRecipients) | Get recipients |
 | [**getRoutingPredictor**](RoutingApi.html#getRoutingPredictor) | Retrieve a single predictor. |
+| [**getRoutingPredictorModelFeatures**](RoutingApi.html#getRoutingPredictorModelFeatures) | Retrieve Predictor Model Features. |
+| [**getRoutingPredictorModels**](RoutingApi.html#getRoutingPredictorModels) | Retrieve Predictor Models and Top Features. |
 | [**getRoutingPredictors**](RoutingApi.html#getRoutingPredictors) | Retrieve all predictors. |
 | [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | Get a list of Key Performance Indicators |
 | [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | Get details about this queue. |
@@ -2016,6 +2018,130 @@ try {
 ### Return type
 
 [**Predictor**](Predictor.html)
+
+<a name="getRoutingPredictorModelFeatures"></a>
+
+# **getRoutingPredictorModelFeatures**
+
+
+
+> [PredictorModelFeatureListing](PredictorModelFeatureListing.html) getRoutingPredictorModelFeatures(predictorId, modelId)
+
+Retrieve Predictor Model Features.
+
+Wraps GET /api/v2/routing/predictors/{predictorId}/models/{modelId}/features  
+
+Requires ALL permissions: 
+
+* routing:predictorModelFeature:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String predictorId = "predictorId_example"; // String | Predictor ID
+String modelId = "modelId_example"; // String | Model ID
+try {
+    PredictorModelFeatureListing result = apiInstance.getRoutingPredictorModelFeatures(predictorId, modelId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingPredictorModelFeatures");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **predictorId** | **String**| Predictor ID | 
+| **modelId** | **String**| Model ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PredictorModelFeatureListing**](PredictorModelFeatureListing.html)
+
+<a name="getRoutingPredictorModels"></a>
+
+# **getRoutingPredictorModels**
+
+
+
+> [PredictorModels](PredictorModels.html) getRoutingPredictorModels(predictorId)
+
+Retrieve Predictor Models and Top Features.
+
+Wraps GET /api/v2/routing/predictors/{predictorId}/models  
+
+Requires ALL permissions: 
+
+* routing:predictorModel:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String predictorId = "predictorId_example"; // String | Predictor ID
+try {
+    PredictorModels result = apiInstance.getRoutingPredictorModels(predictorId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingPredictorModels");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **predictorId** | **String**| Predictor ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PredictorModels**](PredictorModels.html)
 
 <a name="getRoutingPredictors"></a>
 

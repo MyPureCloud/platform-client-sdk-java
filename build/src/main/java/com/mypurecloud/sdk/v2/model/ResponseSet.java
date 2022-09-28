@@ -33,6 +33,7 @@ public class ResponseSet  implements Serializable {
   private Integer version = null;
   private Map<String, Reaction> responses = null;
   private Boolean beepDetectionEnabled = null;
+  private Boolean amdSpeechDistinguishEnabled = null;
   private String selfUri = null;
 
   
@@ -129,6 +130,24 @@ public class ResponseSet  implements Serializable {
   }
 
 
+  /**
+   * Whether to enable answering machine detection
+   **/
+  public ResponseSet amdSpeechDistinguishEnabled(Boolean amdSpeechDistinguishEnabled) {
+    this.amdSpeechDistinguishEnabled = amdSpeechDistinguishEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to enable answering machine detection")
+  @JsonProperty("amdSpeechDistinguishEnabled")
+  public Boolean getAmdSpeechDistinguishEnabled() {
+    return amdSpeechDistinguishEnabled;
+  }
+  public void setAmdSpeechDistinguishEnabled(Boolean amdSpeechDistinguishEnabled) {
+    this.amdSpeechDistinguishEnabled = amdSpeechDistinguishEnabled;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -153,12 +172,13 @@ public class ResponseSet  implements Serializable {
             Objects.equals(this.version, responseSet.version) &&
             Objects.equals(this.responses, responseSet.responses) &&
             Objects.equals(this.beepDetectionEnabled, responseSet.beepDetectionEnabled) &&
+            Objects.equals(this.amdSpeechDistinguishEnabled, responseSet.amdSpeechDistinguishEnabled) &&
             Objects.equals(this.selfUri, responseSet.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, responses, beepDetectionEnabled, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, responses, beepDetectionEnabled, amdSpeechDistinguishEnabled, selfUri);
   }
 
   @Override
@@ -173,6 +193,7 @@ public class ResponseSet  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    responses: ").append(toIndentedString(responses)).append("\n");
     sb.append("    beepDetectionEnabled: ").append(toIndentedString(beepDetectionEnabled)).append("\n");
+    sb.append("    amdSpeechDistinguishEnabled: ").append(toIndentedString(amdSpeechDistinguishEnabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

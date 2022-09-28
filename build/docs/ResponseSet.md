@@ -15,6 +15,7 @@ title: ResponseSet
 | **version** | <!----><!---->**Integer**<!----> | Required for updates, must match the version number of the most recent update |  [optional] |
 | **responses** | <!----><!---->[**Map&lt;String, Reaction&gt;**](Reaction.html)<!----> | Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}. |  |
 | **beepDetectionEnabled** | <!----><!---->**Boolean**<!----> | Whether to enable answering machine beep detection |  [optional] |
+| **amdSpeechDistinguishEnabled** | <!----><!---->**Boolean**<!----> | Whether to enable answering machine detection |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

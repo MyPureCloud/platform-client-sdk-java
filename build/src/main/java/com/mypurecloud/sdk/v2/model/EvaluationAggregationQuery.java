@@ -50,7 +50,6 @@ public class EvaluationAggregationQuery  implements Serializable {
     CALIBRATIONID("calibrationId"),
     CONTEXTID("contextId"),
     CONVERSATIONID("conversationId"),
-    CONVERSATIONSTART("conversationStart"),
     DIVISIONID("divisionId"),
     EVALUATIONID("evaluationId"),
     EVALUATORID("evaluatorId"),

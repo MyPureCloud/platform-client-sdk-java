@@ -24079,7 +24079,7 @@
   "putconversationrecording": {
     "operationId": "putconversationrecording",
     "functionName": "putConversationRecording",
-    "signature": "putConversationRecording(conversationId, recordingId, body)",
+    "signature": "putConversationRecording(conversationId, recordingId, body, clearExport)",
     "parameters": [
       {
         "name": "conversationId",
@@ -24095,10 +24095,15 @@
         "name": "body",
         "type": "Recording",
         "required": "true"
+      },
+      {
+        "name": "clearExport",
+        "type": "Boolean",
+        "required": "false"
       }
     ],
     "return": "Recording",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RecordingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Recording;\n\npublic class ExampleputConversationRecording {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RecordingApi apiInstance = new RecordingApi();\n        String conversationId = \"conversationId_example\"; // String | Conversation ID\nString recordingId = \"recordingId_example\"; // String | Recording ID\nRecording body = new Recording(); // Recording | recording\n        try { \n            // Updates the retention records on a recording.\n            Recording result = apiInstance.putConversationRecording(conversationId, recordingId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RecordingApi#putConversationRecording\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RecordingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Recording;\n\npublic class ExampleputConversationRecording {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RecordingApi apiInstance = new RecordingApi();\n        String conversationId = \"conversationId_example\"; // String | Conversation ID\nString recordingId = \"recordingId_example\"; // String | Recording ID\nRecording body = new Recording(); // Recording | recording\nBoolean clearExport = true; // Boolean | Whether to clear the pending export for the recording\n        try { \n            // Updates the retention records on a recording.\n            Recording result = apiInstance.putConversationRecording(conversationId, recordingId, body, clearExport);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RecordingApi#putConversationRecording\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "putconversationrecordingannotation": {
     "operationId": "putconversationrecordingannotation",
@@ -25077,6 +25082,39 @@
     ],
     "return": "Predictor",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Predictor;\n\npublic class ExamplegetRoutingPredictor {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        String predictorId = \"predictorId_example\"; // String | Predictor ID\n        try { \n            // Retrieve a single predictor.\n            Predictor result = apiInstance.getRoutingPredictor(predictorId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingPredictor\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getroutingpredictormodelfeatures": {
+    "operationId": "getroutingpredictormodelfeatures",
+    "functionName": "getRoutingPredictorModelFeatures",
+    "signature": "getRoutingPredictorModelFeatures(predictorId, modelId)",
+    "parameters": [
+      {
+        "name": "predictorId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "modelId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "PredictorModelFeatureListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.PredictorModelFeatureListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetRoutingPredictorModelFeatures {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        String predictorId = \"predictorId_example\"; // String | Predictor ID\nString modelId = \"modelId_example\"; // String | Model ID\n        try { \n            // Retrieve Predictor Model Features.\n            PredictorModelFeatureListing result = apiInstance.getRoutingPredictorModelFeatures(predictorId, modelId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingPredictorModelFeatures\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getroutingpredictormodels": {
+    "operationId": "getroutingpredictormodels",
+    "functionName": "getRoutingPredictorModels",
+    "signature": "getRoutingPredictorModels(predictorId)",
+    "parameters": [
+      {
+        "name": "predictorId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "PredictorModels",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.PredictorModels;\n\npublic class ExamplegetRoutingPredictorModels {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        String predictorId = \"predictorId_example\"; // String | Predictor ID\n        try { \n            // Retrieve Predictor Models and Top Features.\n            PredictorModels result = apiInstance.getRoutingPredictorModels(predictorId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingPredictorModels\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getroutingpredictors": {
     "operationId": "getroutingpredictors",
@@ -33289,9 +33327,16 @@
   "getwebdeploymentsdeployments": {
     "operationId": "getwebdeploymentsdeployments",
     "functionName": "getWebdeploymentsDeployments",
-    "signature": "getWebdeploymentsDeployments()",
+    "signature": "getWebdeploymentsDeployments(expand)",
+    "parameters": [
+      {
+        "name": "expand",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
     "return": "WebDeploymentEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;\n\npublic class ExamplegetWebdeploymentsDeployments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n                try { \n            // Get deployments\n            WebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsDeployments\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;\n\npublic class ExamplegetWebdeploymentsDeployments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected. Valid values:\n        try { \n            // Get deployments\n            WebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments(expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsDeployments\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postwebdeploymentsconfigurationversionsdraftpublish": {
     "operationId": "postwebdeploymentsconfigurationversionsdraftpublish",

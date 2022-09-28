@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AutoStart;
 import com.mypurecloud.sdk.v2.model.ConversationDisconnectSettings;
+import com.mypurecloud.sdk.v2.model.Humanize;
 import com.mypurecloud.sdk.v2.model.Markdown;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -79,6 +80,7 @@ public class ConversationAppSettings  implements Serializable {
   private AutoStart autoStart = null;
   private Markdown markdown = null;
   private ConversationDisconnectSettings conversationDisconnect = null;
+  private Humanize humanize = null;
 
   
   /**
@@ -189,6 +191,24 @@ public class ConversationAppSettings  implements Serializable {
   }
 
 
+  /**
+   * The humanize conversations settings for the messenger app
+   **/
+  public ConversationAppSettings humanize(Humanize humanize) {
+    this.humanize = humanize;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The humanize conversations settings for the messenger app")
+  @JsonProperty("humanize")
+  public Humanize getHumanize() {
+    return humanize;
+  }
+  public void setHumanize(Humanize humanize) {
+    this.humanize = humanize;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -204,12 +224,13 @@ public class ConversationAppSettings  implements Serializable {
             Objects.equals(this.autoStartType, conversationAppSettings.autoStartType) &&
             Objects.equals(this.autoStart, conversationAppSettings.autoStart) &&
             Objects.equals(this.markdown, conversationAppSettings.markdown) &&
-            Objects.equals(this.conversationDisconnect, conversationAppSettings.conversationDisconnect);
+            Objects.equals(this.conversationDisconnect, conversationAppSettings.conversationDisconnect) &&
+            Objects.equals(this.humanize, conversationAppSettings.humanize);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(showAgentTypingIndicator, showUserTypingIndicator, autoStartType, autoStart, markdown, conversationDisconnect);
+    return Objects.hash(showAgentTypingIndicator, showUserTypingIndicator, autoStartType, autoStart, markdown, conversationDisconnect, humanize);
   }
 
   @Override
@@ -223,6 +244,7 @@ public class ConversationAppSettings  implements Serializable {
     sb.append("    autoStart: ").append(toIndentedString(autoStart)).append("\n");
     sb.append("    markdown: ").append(toIndentedString(markdown)).append("\n");
     sb.append("    conversationDisconnect: ").append(toIndentedString(conversationDisconnect)).append("\n");
+    sb.append("    humanize: ").append(toIndentedString(humanize)).append("\n");
     sb.append("}");
     return sb.toString();
   }

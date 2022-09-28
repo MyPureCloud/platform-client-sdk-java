@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
 import com.mypurecloud.sdk.v2.model.QueueMessagingAddresses;
 import com.mypurecloud.sdk.v2.model.RoutingRule;
 import com.mypurecloud.sdk.v2.model.Script;
+import com.mypurecloud.sdk.v2.model.VipRouting;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -111,6 +112,7 @@ public class UserQueue  implements Serializable {
   private Boolean enableTranscription = null;
   private Boolean enableManualAssignment = null;
   private AgentOwnedRouting agentOwnedRouting = null;
+  private VipRouting vipRouting = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
   private Map<String, Script> defaultScripts = null;
@@ -527,6 +529,24 @@ public class UserQueue  implements Serializable {
 
 
   /**
+   * The VIP Routing settings for the queue
+   **/
+  public UserQueue vipRouting(VipRouting vipRouting) {
+    this.vipRouting = vipRouting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The VIP Routing settings for the queue")
+  @JsonProperty("vipRouting")
+  public VipRouting getVipRouting() {
+    return vipRouting;
+  }
+  public void setVipRouting(VipRouting vipRouting) {
+    this.vipRouting = vipRouting;
+  }
+
+
+  /**
    * The name to use for caller identification for outbound calls from this queue.
    **/
   public UserQueue callingPartyName(String callingPartyName) {
@@ -692,6 +712,7 @@ public class UserQueue  implements Serializable {
             Objects.equals(this.enableTranscription, userQueue.enableTranscription) &&
             Objects.equals(this.enableManualAssignment, userQueue.enableManualAssignment) &&
             Objects.equals(this.agentOwnedRouting, userQueue.agentOwnedRouting) &&
+            Objects.equals(this.vipRouting, userQueue.vipRouting) &&
             Objects.equals(this.callingPartyName, userQueue.callingPartyName) &&
             Objects.equals(this.callingPartyNumber, userQueue.callingPartyNumber) &&
             Objects.equals(this.defaultScripts, userQueue.defaultScripts) &&
@@ -704,7 +725,7 @@ public class UserQueue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, enableTranscription, enableManualAssignment, agentOwnedRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, joined, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, enableTranscription, enableManualAssignment, agentOwnedRouting, vipRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, joined, selfUri);
   }
 
   @Override
@@ -737,6 +758,7 @@ public class UserQueue  implements Serializable {
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
     sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");
     sb.append("    agentOwnedRouting: ").append(toIndentedString(agentOwnedRouting)).append("\n");
+    sb.append("    vipRouting: ").append(toIndentedString(vipRouting)).append("\n");
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");
     sb.append("    callingPartyNumber: ").append(toIndentedString(callingPartyNumber)).append("\n");
     sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");

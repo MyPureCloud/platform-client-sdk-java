@@ -264,6 +264,7 @@ docs/BotConnectorBotVersion.md
 docs/BotConnectorBotVersionSummaryEntityListing.md
 docs/BotIntent.md
 docs/BotList.md
+docs/BotMessengerProfile.md
 docs/BotSearchResponse.md
 docs/BotSearchResponseEntityListing.md
 docs/BotSlot.md
@@ -1340,6 +1341,7 @@ docs/FlowVersion.md
 docs/FlowVersionEntityListing.md
 docs/FlowsApi.json
 docs/FlowsApi.md
+docs/FooterTemplate.md
 docs/ForecastAbandonRateResponse.md
 docs/ForecastAverageSpeedOfAnswerResponse.md
 docs/ForecastPlanningGroupData.md
@@ -1431,6 +1433,7 @@ docs/HistoricalImportStatusListing.md
 docs/HistoryEntry.md
 docs/HistoryListing.md
 docs/HomerRecord.md
+docs/Humanize.md
 docs/IVR.md
 docs/IVREntityListing.md
 docs/IdentityNow.md
@@ -1459,6 +1462,7 @@ docs/Integration.md
 docs/IntegrationAction.md
 docs/IntegrationActionFields.md
 docs/IntegrationConfiguration.md
+docs/IntegrationConfigurationCredential.md
 docs/IntegrationConfigurationInfo.md
 docs/IntegrationEntityListing.md
 docs/IntegrationExport.md
@@ -1940,6 +1944,7 @@ docs/OpenIntegrationEntityListing.md
 docs/OpenIntegrationRequest.md
 docs/OpenIntegrationUpdateRequest.md
 docs/OpenMessageContent.md
+docs/OpenMessageEvent.md
 docs/OpenMessagingChannel.md
 docs/OpenMessagingFromRecipient.md
 docs/OpenMessagingToRecipient.md
@@ -2082,6 +2087,10 @@ docs/PredictionResults.md
 docs/PredictiveRouting.md
 docs/Predictor.md
 docs/PredictorListing.md
+docs/PredictorModel.md
+docs/PredictorModelFeature.md
+docs/PredictorModelFeatureListing.md
+docs/PredictorModels.md
 docs/PredictorSchedule.md
 docs/PredictorWorkloadBalancing.md
 docs/PresenceApi.json
@@ -3114,6 +3123,10 @@ docs/ValueWrapperPlanningPeriodSettings.md
 docs/ValueWrapperString.md
 docs/Video.md
 docs/ViewFilter.md
+docs/VipBackup.md
+docs/VipCallMediaSettings.md
+docs/VipMediaSettings.md
+docs/VipRouting.md
 docs/VisibilityCondition.md
 docs/VmPairingInfo.md
 docs/Voicemail.md
@@ -3157,7 +3170,6 @@ docs/WebDeployment.md
 docs/WebDeploymentActiveConfigurationOnDeployment.md
 docs/WebDeploymentConfigurationVersion.md
 docs/WebDeploymentConfigurationVersionEntityListing.md
-docs/WebDeploymentConfigurationVersionEntityRef.md
 docs/WebDeploymentEntityListing.md
 docs/WebDeploymentsApi.json
 docs/WebDeploymentsApi.md
@@ -4218,6 +4230,8 @@ docs/getRoutingLanguages-example.txt
 docs/getRoutingMessageRecipient-example.txt
 docs/getRoutingMessageRecipients-example.txt
 docs/getRoutingPredictor-example.txt
+docs/getRoutingPredictorModelFeatures-example.txt
+docs/getRoutingPredictorModels-example.txt
 docs/getRoutingPredictors-example.txt
 docs/getRoutingPredictorsKeyperformanceindicators-example.txt
 docs/getRoutingQueue-example.txt
@@ -6269,6 +6283,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingLanguageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingLanguagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingMessageRecipientRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingMessageRecipientsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingPredictorModelFeaturesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingPredictorModelsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingPredictorRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingPredictorsKeyperformanceindicatorsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingPredictorsRequest.java
@@ -7602,6 +7618,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/BotConnectorBotVersion.java
 src/main/java/com/mypurecloud/sdk/v2/model/BotConnectorBotVersionSummaryEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/BotIntent.java
 src/main/java/com/mypurecloud/sdk/v2/model/BotList.java
+src/main/java/com/mypurecloud/sdk/v2/model/BotMessengerProfile.java
 src/main/java/com/mypurecloud/sdk/v2/model/BotSearchResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/BotSearchResponseEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/BotSlot.java
@@ -8662,6 +8679,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/FlowRuntimeExecution.java
 src/main/java/com/mypurecloud/sdk/v2/model/FlowStartDetailEventTopicFlowStartEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/FlowVersion.java
 src/main/java/com/mypurecloud/sdk/v2/model/FlowVersionEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/FooterTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ForecastAbandonRateResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ForecastAverageSpeedOfAnswerResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ForecastPlanningGroupData.java
@@ -8743,6 +8761,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/HistoricalImportStatusListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoryEntry.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoryListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/HomerRecord.java
+src/main/java/com/mypurecloud/sdk/v2/model/Humanize.java
 src/main/java/com/mypurecloud/sdk/v2/model/IVR.java
 src/main/java/com/mypurecloud/sdk/v2/model/IVREntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdentityNow.java
@@ -8769,6 +8788,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/Integration.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationActionFields.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationConfiguration.java
+src/main/java/com/mypurecloud/sdk/v2/model/IntegrationConfigurationCredential.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationConfigurationInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationExport.java
@@ -9224,6 +9244,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/OpenIntegrationEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenIntegrationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenIntegrationUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenMessageContent.java
+src/main/java/com/mypurecloud/sdk/v2/model/OpenMessageEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenMessagingChannel.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenMessagingFromRecipient.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenMessagingToRecipient.java
@@ -9360,6 +9381,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/PredictionResults.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictiveRouting.java
 src/main/java/com/mypurecloud/sdk/v2/model/Predictor.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/PredictorModel.java
+src/main/java/com/mypurecloud/sdk/v2/model/PredictorModelFeature.java
+src/main/java/com/mypurecloud/sdk/v2/model/PredictorModelFeatureListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/PredictorModels.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorSchedule.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorWorkloadBalancing.java
 src/main/java/com/mypurecloud/sdk/v2/model/PresenceDefinition.java
@@ -10348,6 +10373,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperPlanningPeriodSettings.ja
 src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperString.java
 src/main/java/com/mypurecloud/sdk/v2/model/Video.java
 src/main/java/com/mypurecloud/sdk/v2/model/ViewFilter.java
+src/main/java/com/mypurecloud/sdk/v2/model/VipBackup.java
+src/main/java/com/mypurecloud/sdk/v2/model/VipCallMediaSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/VipMediaSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/VipRouting.java
 src/main/java/com/mypurecloud/sdk/v2/model/VisibilityCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/VmPairingInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/Voicemail.java
@@ -10387,7 +10416,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/WebDeployment.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentActiveConfigurationOnDeployment.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentConfigurationVersion.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentConfigurationVersionEntityListing.java
-src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentConfigurationVersionEntityRef.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody.java

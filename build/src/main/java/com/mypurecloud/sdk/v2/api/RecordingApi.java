@@ -4205,12 +4205,13 @@ public class RecordingApi {
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param body recording (required)
+   * @param clearExport Whether to clear the pending export for the recording (optional)
    * @return Recording
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Recording putConversationRecording(String conversationId, String recordingId, Recording body) throws IOException, ApiException {
-    return  putConversationRecording(createPutConversationRecordingRequest(conversationId, recordingId, body));
+  public Recording putConversationRecording(String conversationId, String recordingId, Recording body, Boolean clearExport) throws IOException, ApiException {
+    return  putConversationRecording(createPutConversationRecordingRequest(conversationId, recordingId, body, clearExport));
   }
 
   /**
@@ -4219,20 +4220,23 @@ public class RecordingApi {
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param body recording (required)
+   * @param clearExport Whether to clear the pending export for the recording (optional)
    * @return Recording
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> putConversationRecordingWithHttpInfo(String conversationId, String recordingId, Recording body) throws IOException {
-    return putConversationRecording(createPutConversationRecordingRequest(conversationId, recordingId, body).withHttpInfo());
+  public ApiResponse<Recording> putConversationRecordingWithHttpInfo(String conversationId, String recordingId, Recording body, Boolean clearExport) throws IOException {
+    return putConversationRecording(createPutConversationRecordingRequest(conversationId, recordingId, body, clearExport).withHttpInfo());
   }
 
-  private PutConversationRecordingRequest createPutConversationRecordingRequest(String conversationId, String recordingId, Recording body) {
+  private PutConversationRecordingRequest createPutConversationRecordingRequest(String conversationId, String recordingId, Recording body, Boolean clearExport) {
     return PutConversationRecordingRequest.builder()
             .withConversationId(conversationId)
 
             .withRecordingId(recordingId)
 
             .withBody(body)
+
+            .withClearExport(clearExport)
 
             .build();
   }

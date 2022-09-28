@@ -50,7 +50,8 @@ public class Library  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MESSAGINGTEMPLATE("MessagingTemplate"),
     CAMPAIGNSMSTEMPLATE("CampaignSmsTemplate"),
-    CAMPAIGNEMAILTEMPLATE("CampaignEmailTemplate");
+    CAMPAIGNEMAILTEMPLATE("CampaignEmailTemplate"),
+    FOOTER("Footer");
 
     private String value;
 

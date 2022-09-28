@@ -29,8 +29,8 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String lastUri = null;
   private String firstUri = null;
+  private String lastUri = null;
   private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
@@ -107,23 +107,6 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
 
   /**
    **/
-  public EmailMessageListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public EmailMessageListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -136,6 +119,23 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
   }
   public void setFirstUri(String firstUri) {
     this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public EmailMessageListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -221,8 +221,8 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
             Objects.equals(this.pageSize, emailMessageListing.pageSize) &&
             Objects.equals(this.pageNumber, emailMessageListing.pageNumber) &&
             Objects.equals(this.total, emailMessageListing.total) &&
-            Objects.equals(this.lastUri, emailMessageListing.lastUri) &&
             Objects.equals(this.firstUri, emailMessageListing.firstUri) &&
+            Objects.equals(this.lastUri, emailMessageListing.lastUri) &&
             Objects.equals(this.selfUri, emailMessageListing.selfUri) &&
             Objects.equals(this.nextUri, emailMessageListing.nextUri) &&
             Objects.equals(this.previousUri, emailMessageListing.previousUri) &&
@@ -231,7 +231,7 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,8 +243,8 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

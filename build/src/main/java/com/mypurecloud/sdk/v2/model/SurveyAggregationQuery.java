@@ -55,7 +55,6 @@ public class SurveyAggregationQuery  implements Serializable {
     REQUESTEDLANGUAGEID("requestedLanguageId"),
     REQUESTEDROUTINGSKILLID("requestedRoutingSkillId"),
     SURVEYANSWERID("surveyAnswerId"),
-    SURVEYCREATEDDATE("surveyCreatedDate"),
     SURVEYERRORREASON("surveyErrorReason"),
     SURVEYFORMCONTEXTID("surveyFormContextId"),
     SURVEYFORMID("surveyFormId"),

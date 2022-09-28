@@ -3203,7 +3203,7 @@ null (empty response body)
 
 
 
-> [Recording](Recording.html) putConversationRecording(conversationId, recordingId, body)
+> [Recording](Recording.html) putConversationRecording(conversationId, recordingId, body, clearExport)
 
 Updates the retention records on a recording.
 
@@ -3242,8 +3242,9 @@ RecordingApi apiInstance = new RecordingApi();
 String conversationId = "conversationId_example"; // String | Conversation ID
 String recordingId = "recordingId_example"; // String | Recording ID
 Recording body = new Recording(); // Recording | recording
+Boolean clearExport = true; // Boolean | Whether to clear the pending export for the recording
 try {
-    Recording result = apiInstance.putConversationRecording(conversationId, recordingId, body);
+    Recording result = apiInstance.putConversationRecording(conversationId, recordingId, body, clearExport);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#putConversationRecording");
@@ -3259,6 +3260,7 @@ try {
 | **conversationId** | **String**| Conversation ID | 
 | **recordingId** | **String**| Recording ID | 
 | **body** | [**Recording**](Recording.html)| recording | 
+| **clearExport** | **Boolean**| Whether to clear the pending export for the recording | [optional] 
 {: class="table-striped"}
 
 

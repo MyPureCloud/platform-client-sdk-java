@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
 import com.mypurecloud.sdk.v2.model.QueueMessagingAddresses;
 import com.mypurecloud.sdk.v2.model.RoutingRule;
 import com.mypurecloud.sdk.v2.model.Script;
+import com.mypurecloud.sdk.v2.model.VipRouting;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -112,6 +113,7 @@ public class CreateQueueRequest  implements Serializable {
   private Boolean enableTranscription = null;
   private Boolean enableManualAssignment = null;
   private AgentOwnedRouting agentOwnedRouting = null;
+  private VipRouting vipRouting = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
   private Map<String, Script> defaultScripts = null;
@@ -547,6 +549,24 @@ public class CreateQueueRequest  implements Serializable {
 
 
   /**
+   * The VIP Routing settings for the queue
+   **/
+  public CreateQueueRequest vipRouting(VipRouting vipRouting) {
+    this.vipRouting = vipRouting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The VIP Routing settings for the queue")
+  @JsonProperty("vipRouting")
+  public VipRouting getVipRouting() {
+    return vipRouting;
+  }
+  public void setVipRouting(VipRouting vipRouting) {
+    this.vipRouting = vipRouting;
+  }
+
+
+  /**
    * The name to use for caller identification for outbound calls from this queue.
    **/
   public CreateQueueRequest callingPartyName(String callingPartyName) {
@@ -714,6 +734,7 @@ public class CreateQueueRequest  implements Serializable {
             Objects.equals(this.enableTranscription, createQueueRequest.enableTranscription) &&
             Objects.equals(this.enableManualAssignment, createQueueRequest.enableManualAssignment) &&
             Objects.equals(this.agentOwnedRouting, createQueueRequest.agentOwnedRouting) &&
+            Objects.equals(this.vipRouting, createQueueRequest.vipRouting) &&
             Objects.equals(this.callingPartyName, createQueueRequest.callingPartyName) &&
             Objects.equals(this.callingPartyNumber, createQueueRequest.callingPartyNumber) &&
             Objects.equals(this.defaultScripts, createQueueRequest.defaultScripts) &&
@@ -726,7 +747,7 @@ public class CreateQueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, agentOwnedRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, sourceQueueId, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, agentOwnedRouting, vipRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, sourceQueueId, selfUri);
   }
 
   @Override
@@ -760,6 +781,7 @@ public class CreateQueueRequest  implements Serializable {
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
     sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");
     sb.append("    agentOwnedRouting: ").append(toIndentedString(agentOwnedRouting)).append("\n");
+    sb.append("    vipRouting: ").append(toIndentedString(vipRouting)).append("\n");
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");
     sb.append("    callingPartyNumber: ").append(toIndentedString(callingPartyNumber)).append("\n");
     sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");

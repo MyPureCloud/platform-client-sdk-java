@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.FooterTemplate;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.MessagingTemplate;
 import com.mypurecloud.sdk.v2.model.ResponseSubstitution;
@@ -112,7 +113,8 @@ public class Response  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MESSAGINGTEMPLATE("MessagingTemplate"),
     CAMPAIGNSMSTEMPLATE("CampaignSmsTemplate"),
-    CAMPAIGNEMAILTEMPLATE("CampaignEmailTemplate");
+    CAMPAIGNEMAILTEMPLATE("CampaignEmailTemplate"),
+    FOOTER("Footer");
 
     private String value;
 
@@ -142,6 +144,7 @@ public class Response  implements Serializable {
   private ResponseTypeEnum responseType = null;
   private MessagingTemplate messagingTemplate = null;
   private List<AddressableEntityRef> assets = new ArrayList<AddressableEntityRef>();
+  private FooterTemplate footer = null;
   private String selfUri = null;
 
   
@@ -345,6 +348,24 @@ public class Response  implements Serializable {
   }
 
 
+  /**
+   * Footer template definition for responseType.Footer.
+   **/
+  public Response footer(FooterTemplate footer) {
+    this.footer = footer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Footer template definition for responseType.Footer.")
+  @JsonProperty("footer")
+  public FooterTemplate getFooter() {
+    return footer;
+  }
+  public void setFooter(FooterTemplate footer) {
+    this.footer = footer;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -375,12 +396,13 @@ public class Response  implements Serializable {
             Objects.equals(this.responseType, response.responseType) &&
             Objects.equals(this.messagingTemplate, response.messagingTemplate) &&
             Objects.equals(this.assets, response.assets) &&
+            Objects.equals(this.footer, response.footer) &&
             Objects.equals(this.selfUri, response.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, substitutionsSchema, responseType, messagingTemplate, assets, selfUri);
+    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, substitutionsSchema, responseType, messagingTemplate, assets, footer, selfUri);
   }
 
   @Override
@@ -401,6 +423,7 @@ public class Response  implements Serializable {
     sb.append("    responseType: ").append(toIndentedString(responseType)).append("\n");
     sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
     sb.append("    assets: ").append(toIndentedString(assets)).append("\n");
+    sb.append("    footer: ").append(toIndentedString(footer)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -34,7 +34,6 @@ title: SurveyAggregationQuery
 | REQUESTEDLANGUAGEID | &quot;requestedLanguageId&quot; |
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; |
 | SURVEYANSWERID | &quot;surveyAnswerId&quot; |
-| SURVEYCREATEDDATE | &quot;surveyCreatedDate&quot; |
 | SURVEYERRORREASON | &quot;surveyErrorReason&quot; |
 | SURVEYFORMCONTEXTID | &quot;surveyFormContextId&quot; |
 | SURVEYFORMID | &quot;surveyFormId&quot; |

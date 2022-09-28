@@ -679,26 +679,30 @@ public class WebDeploymentsApi {
   /**
    * Get deployments
    * 
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. Valid values: (optional)
    * @return WebDeploymentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WebDeploymentEntityListing getWebdeploymentsDeployments() throws IOException, ApiException {
-    return  getWebdeploymentsDeployments(createGetWebdeploymentsDeploymentsRequest());
+  public WebDeploymentEntityListing getWebdeploymentsDeployments(List<String> expand) throws IOException, ApiException {
+    return  getWebdeploymentsDeployments(createGetWebdeploymentsDeploymentsRequest(expand));
   }
 
   /**
    * Get deployments
    * 
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. Valid values: (optional)
    * @return WebDeploymentEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WebDeploymentEntityListing> getWebdeploymentsDeploymentsWithHttpInfo() throws IOException {
-    return getWebdeploymentsDeployments(createGetWebdeploymentsDeploymentsRequest().withHttpInfo());
+  public ApiResponse<WebDeploymentEntityListing> getWebdeploymentsDeploymentsWithHttpInfo(List<String> expand) throws IOException {
+    return getWebdeploymentsDeployments(createGetWebdeploymentsDeploymentsRequest(expand).withHttpInfo());
   }
 
-  private GetWebdeploymentsDeploymentsRequest createGetWebdeploymentsDeploymentsRequest() {
+  private GetWebdeploymentsDeploymentsRequest createGetWebdeploymentsDeploymentsRequest(List<String> expand) {
     return GetWebdeploymentsDeploymentsRequest.builder()
+            .withExpand(expand)
+
             .build();
   }
 
