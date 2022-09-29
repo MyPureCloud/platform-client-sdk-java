@@ -83,7 +83,7 @@ public class ListedTopic  implements Serializable {
   }
   private StrictnessEnum strictness = null;
   private Integer programsCount = null;
-  private List<String> tags = new ArrayList<String>();
+  private List<String> tags = null;
   private String dialect = null;
 
   private static class ParticipantsEnumDeserializer extends StdDeserializer<ParticipantsEnum> {

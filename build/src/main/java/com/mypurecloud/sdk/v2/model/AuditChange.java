@@ -26,8 +26,8 @@ public class AuditChange  implements Serializable {
   
   private String property = null;
   private AuditEntityReference entity = null;
-  private List<String> oldValues = new ArrayList<String>();
-  private List<String> newValues = new ArrayList<String>();
+  private List<String> oldValues = null;
+  private List<String> newValues = null;
 
   
   /**

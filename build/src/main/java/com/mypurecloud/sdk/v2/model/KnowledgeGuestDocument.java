@@ -33,7 +33,7 @@ public class KnowledgeGuestDocument  implements Serializable {
   private String id = null;
   private String title = null;
   private Boolean visible = null;
-  private List<KnowledgeDocumentAlternative> alternatives = new ArrayList<KnowledgeDocumentAlternative>();
+  private List<KnowledgeDocumentAlternative> alternatives = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -90,7 +90,7 @@ public class KnowledgeGuestDocument  implements Serializable {
   private UserReference createdBy = null;
   private UserReference modifiedBy = null;
   private AddressableEntityRef documentVersion = null;
-  private List<KnowledgeGuestDocumentVariation> variations = new ArrayList<KnowledgeGuestDocumentVariation>();
+  private List<KnowledgeGuestDocumentVariation> variations = null;
   private String sessionId = null;
   private GuestCategoryReference category = null;
   private String selfUri = null;

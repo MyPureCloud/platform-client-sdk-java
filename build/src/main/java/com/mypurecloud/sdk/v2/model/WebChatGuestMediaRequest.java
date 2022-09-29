@@ -73,7 +73,7 @@ public class WebChatGuestMediaRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<TypesEnum> types = new ArrayList<TypesEnum>();
+  private List<TypesEnum> types = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {

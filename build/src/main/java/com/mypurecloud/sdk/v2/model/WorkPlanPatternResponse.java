@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class WorkPlanPatternResponse  implements Serializable {
   
-  private List<WorkPlanReference> workPlans = new ArrayList<WorkPlanReference>();
+  private List<WorkPlanReference> workPlans = null;
 
   
   /**

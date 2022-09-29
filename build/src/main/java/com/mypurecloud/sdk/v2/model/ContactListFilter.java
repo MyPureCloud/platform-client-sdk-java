@@ -33,7 +33,7 @@ public class ContactListFilter  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private DomainEntityRef contactList = null;
-  private List<ContactListFilterClause> clauses = new ArrayList<ContactListFilterClause>();
+  private List<ContactListFilterClause> clauses = null;
 
   private static class FilterTypeEnumDeserializer extends StdDeserializer<FilterTypeEnum> {
     public FilterTypeEnumDeserializer() {

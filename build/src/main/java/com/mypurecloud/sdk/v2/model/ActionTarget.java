@@ -29,7 +29,7 @@ public class ActionTarget  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<KeyValue> userData = new ArrayList<KeyValue>();
+  private List<KeyValue> userData = null;
 
   private static class SupportedMediaTypesEnumDeserializer extends StdDeserializer<SupportedMediaTypesEnum> {
     public SupportedMediaTypesEnumDeserializer() {
@@ -81,7 +81,7 @@ public class ActionTarget  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SupportedMediaTypesEnum> supportedMediaTypes = new ArrayList<SupportedMediaTypesEnum>();
+  private List<SupportedMediaTypesEnum> supportedMediaTypes = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {

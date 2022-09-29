@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<Metabase> {
   
-  private List<Metabase> entities = new ArrayList<Metabase>();
+  private List<Metabase> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

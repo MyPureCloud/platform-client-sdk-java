@@ -81,7 +81,7 @@ public class MessagingRecipient  implements Serializable {
   private String firstName = null;
   private String lastName = null;
   private String email = null;
-  private List<RecipientAdditionalIdentifier> additionalIds = new ArrayList<RecipientAdditionalIdentifier>();
+  private List<RecipientAdditionalIdentifier> additionalIds = null;
 
   
   @ApiModelProperty(example = "null", value = "Nickname or display name of the recipient.")

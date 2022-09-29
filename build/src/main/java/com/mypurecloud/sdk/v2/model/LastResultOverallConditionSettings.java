@@ -23,8 +23,8 @@ import java.io.Serializable;
 
 public class LastResultOverallConditionSettings  implements Serializable {
   
-  private List<String> emailWrapupCodes = new ArrayList<String>();
-  private List<String> smsWrapupCodes = new ArrayList<String>();
+  private List<String> emailWrapupCodes = null;
+  private List<String> smsWrapupCodes = null;
 
   
   /**

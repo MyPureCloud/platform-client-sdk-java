@@ -27,8 +27,8 @@ import java.io.Serializable;
 public class QueueConversationSocialExpressionEventTopicMessageMetadata  implements Serializable {
   
   private String type = null;
-  private List<QueueConversationSocialExpressionEventTopicMessageMetadataEvent> events = new ArrayList<QueueConversationSocialExpressionEventTopicMessageMetadataEvent>();
-  private List<QueueConversationSocialExpressionEventTopicMessageMetadataContent> content = new ArrayList<QueueConversationSocialExpressionEventTopicMessageMetadataContent>();
+  private List<QueueConversationSocialExpressionEventTopicMessageMetadataEvent> events = null;
+  private List<QueueConversationSocialExpressionEventTopicMessageMetadataContent> content = null;
 
   
   /**

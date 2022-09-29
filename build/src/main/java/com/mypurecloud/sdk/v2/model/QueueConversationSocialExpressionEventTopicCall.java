@@ -319,7 +319,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   private String peerId = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
-  private List<QueueConversationSocialExpressionEventTopicDisconnectReason> disconnectReasons = new ArrayList<QueueConversationSocialExpressionEventTopicDisconnectReason>();
+  private List<QueueConversationSocialExpressionEventTopicDisconnectReason> disconnectReasons = null;
   private QueueConversationSocialExpressionEventTopicFaxStatus faxStatus = null;
   private String uuiData = null;
   private Date bargedTime = null;

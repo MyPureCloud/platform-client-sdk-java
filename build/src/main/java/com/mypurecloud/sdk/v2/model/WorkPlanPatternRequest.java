@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class WorkPlanPatternRequest  implements Serializable {
   
-  private List<String> workPlanIds = new ArrayList<String>();
+  private List<String> workPlanIds = null;
 
   
   /**

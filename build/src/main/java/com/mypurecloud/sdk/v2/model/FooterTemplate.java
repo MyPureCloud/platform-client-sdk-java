@@ -117,7 +117,7 @@ public class FooterTemplate  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ApplicableResourcesEnum> applicableResources = new ArrayList<ApplicableResourcesEnum>();
+  private List<ApplicableResourcesEnum> applicableResources = null;
 
   
   /**

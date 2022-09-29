@@ -25,8 +25,8 @@ public class ProgramRequest  implements Serializable {
   
   private String name = null;
   private String description = null;
-  private List<String> topicIds = new ArrayList<String>();
-  private List<String> tags = new ArrayList<String>();
+  private List<String> topicIds = null;
+  private List<String> tags = null;
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class GetProfilesResponse  implements Serializable {
   
   private Long total = null;
-  private List<PerformanceProfile> entities = new ArrayList<PerformanceProfile>();
+  private List<PerformanceProfile> entities = null;
   private String selfUri = null;
 
   

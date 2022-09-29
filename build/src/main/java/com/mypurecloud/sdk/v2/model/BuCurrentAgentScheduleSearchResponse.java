@@ -27,12 +27,12 @@ import java.io.Serializable;
 
 public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
   
-  private List<BuAgentScheduleSearchResponse> agentSchedules = new ArrayList<BuAgentScheduleSearchResponse>();
+  private List<BuAgentScheduleSearchResponse> agentSchedules = null;
   private String businessUnitTimeZone = null;
-  private List<BuAgentSchedulePublishedScheduleReference> publishedSchedules = new ArrayList<BuAgentSchedulePublishedScheduleReference>();
+  private List<BuAgentSchedulePublishedScheduleReference> publishedSchedules = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<BuAgentScheduleUpdate> updates = new ArrayList<BuAgentScheduleUpdate>();
+  private List<BuAgentScheduleUpdate> updates = null;
 
   
   /**

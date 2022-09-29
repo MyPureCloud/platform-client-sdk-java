@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVoiceEntity> {
   
-  private List<TtsVoiceEntity> entities = new ArrayList<TtsVoiceEntity>();
+  private List<TtsVoiceEntity> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

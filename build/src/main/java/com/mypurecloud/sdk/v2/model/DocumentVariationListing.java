@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class DocumentVariationListing  implements Serializable {
   
-  private List<DocumentVariation> entities = new ArrayList<DocumentVariation>();
+  private List<DocumentVariation> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

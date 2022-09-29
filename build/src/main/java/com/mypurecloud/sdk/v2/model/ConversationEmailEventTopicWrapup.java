@@ -26,7 +26,7 @@ public class ConversationEmailEventTopicWrapup  implements Serializable {
   
   private String code = null;
   private String notes = null;
-  private List<String> tags = new ArrayList<String>();
+  private List<String> tags = null;
   private Integer durationSeconds = null;
   private Date endTime = null;
 

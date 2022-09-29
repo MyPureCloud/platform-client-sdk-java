@@ -95,7 +95,7 @@ public class FlowVersion  implements Serializable {
   private JsonSchemaDocument inputSchema = null;
   private JsonSchemaDocument outputSchema = null;
   private NluInfo nluInfo = null;
-  private List<SupportedLanguage> supportedLanguages = new ArrayList<SupportedLanguage>();
+  private List<SupportedLanguage> supportedLanguages = null;
 
   private static class CompatibleFlowTypesEnumDeserializer extends StdDeserializer<CompatibleFlowTypesEnum> {
     public CompatibleFlowTypesEnumDeserializer() {
@@ -158,7 +158,7 @@ public class FlowVersion  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<CompatibleFlowTypesEnum> compatibleFlowTypes = new ArrayList<CompatibleFlowTypesEnum>();
+  private List<CompatibleFlowTypesEnum> compatibleFlowTypes = null;
   private String selfUri = null;
 
   

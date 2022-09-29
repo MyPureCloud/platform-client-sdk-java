@@ -79,11 +79,11 @@ public class BuIntradayDataGroup  implements Serializable {
   }
   private MediaTypeEnum mediaType = null;
   private BuIntradayForecastData forecastDataSummary = null;
-  private List<BuIntradayForecastData> forecastDataPerInterval = new ArrayList<BuIntradayForecastData>();
+  private List<BuIntradayForecastData> forecastDataPerInterval = null;
   private BuIntradayScheduleData scheduleDataSummary = null;
-  private List<BuIntradayScheduleData> scheduleDataPerInterval = new ArrayList<BuIntradayScheduleData>();
+  private List<BuIntradayScheduleData> scheduleDataPerInterval = null;
   private IntradayPerformancePredictionData performancePredictionDataSummary = null;
-  private List<IntradayPerformancePredictionData> performancePredictionDataPerInterval = new ArrayList<IntradayPerformancePredictionData>();
+  private List<IntradayPerformancePredictionData> performancePredictionDataPerInterval = null;
 
   
   /**

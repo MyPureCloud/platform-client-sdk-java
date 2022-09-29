@@ -23,8 +23,8 @@ import java.io.Serializable;
 
 public class ProgramMappingsRequest  implements Serializable {
   
-  private List<String> queueIds = new ArrayList<String>();
-  private List<String> flowIds = new ArrayList<String>();
+  private List<String> queueIds = null;
+  private List<String> flowIds = null;
 
   
   /**

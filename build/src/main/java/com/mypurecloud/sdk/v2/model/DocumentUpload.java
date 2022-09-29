@@ -26,8 +26,8 @@ public class DocumentUpload  implements Serializable {
   
   private String name = null;
   private DomainEntityRef workspace = null;
-  private List<String> tags = new ArrayList<String>();
-  private List<String> tagIds = new ArrayList<String>();
+  private List<String> tags = null;
+  private List<String> tagIds = null;
 
   
   /**

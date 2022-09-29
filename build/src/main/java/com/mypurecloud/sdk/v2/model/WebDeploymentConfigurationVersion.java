@@ -38,9 +38,9 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   private String name = null;
   private String version = null;
   private String description = null;
-  private List<String> languages = new ArrayList<String>();
+  private List<String> languages = null;
   private String defaultLanguage = null;
-  private List<CustomI18nLabels> customI18nLabels = new ArrayList<CustomI18nLabels>();
+  private List<CustomI18nLabels> customI18nLabels = null;
   private MessengerSettings messenger = null;
   private PositionSettings position = null;
   private SupportCenterSettings supportCenter = null;

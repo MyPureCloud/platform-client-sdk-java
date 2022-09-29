@@ -73,7 +73,7 @@ public class EvaluationAggregateQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<EvaluationAggregateQueryPredicate> predicates = new ArrayList<EvaluationAggregateQueryPredicate>();
+  private List<EvaluationAggregateQueryPredicate> predicates = null;
 
   
   /**

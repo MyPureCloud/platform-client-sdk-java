@@ -202,7 +202,7 @@ public class ConversationEventTopicMessage  implements Serializable {
   private Date disconnectedTime = null;
   private ConversationEventTopicAddress toAddress = null;
   private ConversationEventTopicAddress fromAddress = null;
-  private List<ConversationEventTopicMessageDetails> messages = new ArrayList<ConversationEventTopicMessageDetails>();
+  private List<ConversationEventTopicMessageDetails> messages = null;
   private String messagesTranscriptUri = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {

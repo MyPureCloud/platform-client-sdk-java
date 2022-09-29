@@ -24,8 +24,8 @@ import java.io.Serializable;
 public class ForecastPlanningGroupData  implements Serializable {
   
   private String planningGroupId = null;
-  private List<Double> offeredPerInterval = new ArrayList<Double>();
-  private List<Double> averageHandleTimeSecondsPerInterval = new ArrayList<Double>();
+  private List<Double> offeredPerInterval = null;
+  private List<Double> averageHandleTimeSecondsPerInterval = null;
 
   
   /**

@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class DraftValidationResult  implements Serializable {
   
   private Boolean valid = null;
-  private List<ErrorBody> errors = new ArrayList<ErrorBody>();
+  private List<ErrorBody> errors = null;
 
   
   /**

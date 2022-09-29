@@ -27,7 +27,7 @@ public class ScheduleGenerationResultSummary  implements Serializable {
   private Boolean failed = null;
   private String runId = null;
   private Integer messageCount = null;
-  private List<SchedulerMessageSeverityCount> messageSeverityCounts = new ArrayList<SchedulerMessageSeverityCount>();
+  private List<SchedulerMessageSeverityCount> messageSeverityCounts = null;
 
   
   /**

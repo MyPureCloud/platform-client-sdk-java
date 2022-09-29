@@ -78,10 +78,10 @@ public class TranscriptSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = new ArrayList<SearchSort>();
-  private List<String> returnFields = new ArrayList<String>();
-  private List<String> types = new ArrayList<String>();
-  private List<TranscriptSearchCriteria> query = new ArrayList<TranscriptSearchCriteria>();
+  private List<SearchSort> sort = null;
+  private List<String> returnFields = null;
+  private List<String> types = null;
+  private List<TranscriptSearchCriteria> query = null;
 
   
   /**

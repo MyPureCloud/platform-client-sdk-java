@@ -23,8 +23,8 @@ import java.io.Serializable;
 
 public class AvailableTranslations  implements Serializable {
   
-  private List<String> orgSpecific = new ArrayList<String>();
-  private List<String> builtin = new ArrayList<String>();
+  private List<String> orgSpecific = null;
+  private List<String> builtin = null;
 
   
   /**

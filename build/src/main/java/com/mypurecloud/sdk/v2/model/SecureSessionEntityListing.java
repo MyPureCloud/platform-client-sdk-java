@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class SecureSessionEntityListing  implements Serializable {
   
-  private List<SecureSession> entities = new ArrayList<SecureSession>();
+  private List<SecureSession> entities = null;
 
   
   /**

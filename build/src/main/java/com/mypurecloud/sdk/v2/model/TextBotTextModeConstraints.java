@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class TextBotTextModeConstraints  implements Serializable {
   
-  private List<String> languagePreferences = new ArrayList<String>();
+  private List<String> languagePreferences = null;
   private Integer noInputTimeoutMilliseconds = null;
 
   

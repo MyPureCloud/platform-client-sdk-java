@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class TrustMemberCreate  implements Serializable {
   
   private String id = null;
-  private List<String> roleIds = new ArrayList<String>();
+  private List<String> roleIds = null;
   private RoleDivisionGrants roleDivisions = null;
 
   

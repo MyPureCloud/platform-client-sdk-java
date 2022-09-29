@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CursorRelationshipListing  implements Serializable {
   
-  private List<Relationship> entities = new ArrayList<Relationship>();
+  private List<Relationship> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

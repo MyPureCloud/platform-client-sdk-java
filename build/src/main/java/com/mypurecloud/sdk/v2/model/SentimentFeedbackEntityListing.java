@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class SentimentFeedbackEntityListing  implements Serializable {
   
-  private List<SentimentFeedback> entities = new ArrayList<SentimentFeedback>();
+  private List<SentimentFeedback> entities = null;
 
   
   /**

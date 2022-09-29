@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class WfmUserEntityListing  implements Serializable {
   
-  private List<User> entities = new ArrayList<User>();
+  private List<User> entities = null;
 
   
   /**

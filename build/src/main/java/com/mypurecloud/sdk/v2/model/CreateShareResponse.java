@@ -128,8 +128,8 @@ public class CreateShareResponse  implements Serializable {
   private DomainEntityRef member = null;
   private DomainEntityRef sharedBy = null;
   private DomainEntityRef workspace = null;
-  private List<Share> succeeded = new ArrayList<Share>();
-  private List<Share> failed = new ArrayList<Share>();
+  private List<Share> succeeded = null;
+  private List<Share> failed = null;
   private String selfUri = null;
 
   

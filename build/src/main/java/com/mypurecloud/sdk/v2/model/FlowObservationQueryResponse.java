@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class FlowObservationQueryResponse  implements Serializable {
   
-  private List<FlowObservationDataContainer> results = new ArrayList<FlowObservationDataContainer>();
+  private List<FlowObservationDataContainer> results = null;
 
   
   /**

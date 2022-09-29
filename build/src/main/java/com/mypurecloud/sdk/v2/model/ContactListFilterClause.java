@@ -73,7 +73,7 @@ public class ContactListFilterClause  implements Serializable {
     }
   }
   private FilterTypeEnum filterType = null;
-  private List<ContactListFilterPredicate> predicates = new ArrayList<ContactListFilterPredicate>();
+  private List<ContactListFilterPredicate> predicates = null;
 
   
   /**

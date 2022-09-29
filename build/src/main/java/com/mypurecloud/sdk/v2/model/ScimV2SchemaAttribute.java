@@ -79,11 +79,11 @@ public class ScimV2SchemaAttribute  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<ScimV2SchemaAttribute> subAttributes = new ArrayList<ScimV2SchemaAttribute>();
+  private List<ScimV2SchemaAttribute> subAttributes = null;
   private Boolean multiValued = null;
   private String description = null;
   private Boolean required = null;
-  private List<String> canonicalValues = new ArrayList<String>();
+  private List<String> canonicalValues = null;
   private Boolean caseExact = null;
 
   private static class MutabilityEnumDeserializer extends StdDeserializer<MutabilityEnum> {
@@ -282,7 +282,7 @@ public class ScimV2SchemaAttribute  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ReferenceTypesEnum> referenceTypes = new ArrayList<ReferenceTypesEnum>();
+  private List<ReferenceTypesEnum> referenceTypes = null;
 
   
   @ApiModelProperty(example = "null", value = "The name of the attribute.")

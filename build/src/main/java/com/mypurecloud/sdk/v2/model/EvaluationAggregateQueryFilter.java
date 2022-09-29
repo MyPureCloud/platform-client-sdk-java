@@ -74,8 +74,8 @@ public class EvaluationAggregateQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<EvaluationAggregateQueryClause> clauses = new ArrayList<EvaluationAggregateQueryClause>();
-  private List<EvaluationAggregateQueryPredicate> predicates = new ArrayList<EvaluationAggregateQueryPredicate>();
+  private List<EvaluationAggregateQueryClause> clauses = null;
+  private List<EvaluationAggregateQueryPredicate> predicates = null;
 
   
   /**

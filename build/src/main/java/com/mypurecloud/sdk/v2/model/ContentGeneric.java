@@ -31,7 +31,7 @@ public class ContentGeneric  implements Serializable {
   private String image = null;
   private String video = null;
   private ContentActions actions = null;
-  private List<ButtonComponent> components = new ArrayList<ButtonComponent>();
+  private List<ButtonComponent> components = null;
 
   
   /**

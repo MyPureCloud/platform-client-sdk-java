@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CreatePredictorRequest  implements Serializable {
   
-  private List<String> queueIds = new ArrayList<String>();
+  private List<String> queueIds = null;
   private String kpi = null;
   private Integer routingTimeoutSeconds = null;
   private PredictorSchedule schedule = null;

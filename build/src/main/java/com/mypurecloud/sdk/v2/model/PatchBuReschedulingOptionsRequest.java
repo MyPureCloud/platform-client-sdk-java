@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class PatchBuReschedulingOptionsRequest  implements Serializable {
   
-  private List<PatchBuReschedulingOptionsManagementUnitRequest> managementUnits = new ArrayList<PatchBuReschedulingOptionsManagementUnitRequest>();
+  private List<PatchBuReschedulingOptionsManagementUnitRequest> managementUnits = null;
 
   
   /**

@@ -27,7 +27,7 @@ public class PropertyIndexRequest  implements Serializable {
   
   private String sessionId = null;
   private Date targetDate = null;
-  private List<AnalyticsProperty> properties = new ArrayList<AnalyticsProperty>();
+  private List<AnalyticsProperty> properties = null;
 
   
   /**

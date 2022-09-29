@@ -191,7 +191,7 @@ public class Condition  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<String> codes = new ArrayList<String>();
+  private List<String> codes = null;
   private String property = null;
 
   private static class PropertyTypeEnumDeserializer extends StdDeserializer<PropertyTypeEnum> {
@@ -248,8 +248,8 @@ public class Condition  implements Serializable {
   private String contactIdField = null;
   private String callAnalysisResultField = null;
   private String agentWrapupField = null;
-  private List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = new ArrayList<ContactColumnToDataActionFieldMapping>();
-  private List<DataActionConditionPredicate> predicates = new ArrayList<DataActionConditionPredicate>();
+  private List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = null;
+  private List<DataActionConditionPredicate> predicates = null;
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class PhoneBaseEntityListing  implements Serializable, PagedResource<PhoneBase> {
   
-  private List<PhoneBase> entities = new ArrayList<PhoneBase>();
+  private List<PhoneBase> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

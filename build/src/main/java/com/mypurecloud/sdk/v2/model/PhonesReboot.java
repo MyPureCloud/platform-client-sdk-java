@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class PhonesReboot  implements Serializable {
   
-  private List<String> phoneIds = new ArrayList<String>();
+  private List<String> phoneIds = null;
   private String siteId = null;
 
   

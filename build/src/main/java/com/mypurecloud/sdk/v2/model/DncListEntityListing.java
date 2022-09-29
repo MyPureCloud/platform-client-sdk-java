@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DncListEntityListing  implements Serializable, PagedResource<DncList> {
   
-  private List<DncList> entities = new ArrayList<DncList>();
+  private List<DncList> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

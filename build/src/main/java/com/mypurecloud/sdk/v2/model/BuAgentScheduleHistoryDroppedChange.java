@@ -26,8 +26,8 @@ import java.io.Serializable;
 public class BuAgentScheduleHistoryDroppedChange  implements Serializable {
   
   private BuAgentScheduleHistoryChangeMetadata metadata = null;
-  private List<String> shiftIds = new ArrayList<String>();
-  private List<LocalDate> fullDayTimeOffMarkerDates = new ArrayList<LocalDate>();
+  private List<String> shiftIds = null;
+  private List<LocalDate> fullDayTimeOffMarkerDates = null;
   private BuAgentScheduleHistoryDeletedChange deletes = null;
 
   

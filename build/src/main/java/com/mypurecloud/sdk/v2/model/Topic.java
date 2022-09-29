@@ -84,8 +84,8 @@ public class Topic  implements Serializable {
     }
   }
   private StrictnessEnum strictness = null;
-  private List<BaseProgramEntity> programs = new ArrayList<BaseProgramEntity>();
-  private List<String> tags = new ArrayList<String>();
+  private List<BaseProgramEntity> programs = null;
+  private List<String> tags = null;
   private String dialect = null;
 
   private static class ParticipantsEnumDeserializer extends StdDeserializer<ParticipantsEnum> {
@@ -136,7 +136,7 @@ public class Topic  implements Serializable {
     }
   }
   private ParticipantsEnum participants = null;
-  private List<Phrase> phrases = new ArrayList<Phrase>();
+  private List<Phrase> phrases = null;
   private AddressableEntityRef modifiedBy = null;
   private Date dateModified = null;
   private AddressableEntityRef publishedBy = null;

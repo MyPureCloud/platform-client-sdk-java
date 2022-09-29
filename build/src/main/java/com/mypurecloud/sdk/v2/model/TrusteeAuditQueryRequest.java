@@ -26,13 +26,13 @@ import java.io.Serializable;
 
 public class TrusteeAuditQueryRequest  implements Serializable {
   
-  private List<String> trusteeOrganizationIds = new ArrayList<String>();
-  private List<String> trusteeUserIds = new ArrayList<String>();
+  private List<String> trusteeOrganizationIds = null;
+  private List<String> trusteeUserIds = null;
   private Date startDate = null;
   private Date endDate = null;
   private String queryPhrase = null;
-  private List<Facet> facets = new ArrayList<Facet>();
-  private List<Filter> filters = new ArrayList<Filter>();
+  private List<Facet> facets = null;
+  private List<Filter> filters = null;
 
   
   /**

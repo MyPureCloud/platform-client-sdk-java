@@ -26,7 +26,7 @@ public class KnowledgeImportJobSettings  implements Serializable {
   private Boolean importAsNew = null;
   private Boolean visible = null;
   private String categoryId = null;
-  private List<String> labelIds = new ArrayList<String>();
+  private List<String> labelIds = null;
 
   
   /**

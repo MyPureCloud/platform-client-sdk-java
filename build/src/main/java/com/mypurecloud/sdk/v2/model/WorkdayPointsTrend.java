@@ -84,7 +84,7 @@ public class WorkdayPointsTrend  implements Serializable {
   }
   private DayOfWeekEnum dayOfWeek = null;
   private Double averagePoints = null;
-  private List<WorkdayPointsTrendItem> trend = new ArrayList<WorkdayPointsTrendItem>();
+  private List<WorkdayPointsTrendItem> trend = null;
 
   
   @ApiModelProperty(example = "null", value = "The start workday for the query range for the gamification points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")

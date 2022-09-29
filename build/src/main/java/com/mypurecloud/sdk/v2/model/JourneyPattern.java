@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class JourneyPattern  implements Serializable {
   
-  private List<Criteria> criteria = new ArrayList<Criteria>();
+  private List<Criteria> criteria = null;
   private Integer count = null;
 
   private static class StreamTypeEnumDeserializer extends StdDeserializer<StreamTypeEnum> {

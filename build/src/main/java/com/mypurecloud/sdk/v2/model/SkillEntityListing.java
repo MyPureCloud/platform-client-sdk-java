@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class SkillEntityListing  implements Serializable, PagedResource<RoutingSkill> {
   
-  private List<RoutingSkill> entities = new ArrayList<RoutingSkill>();
+  private List<RoutingSkill> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

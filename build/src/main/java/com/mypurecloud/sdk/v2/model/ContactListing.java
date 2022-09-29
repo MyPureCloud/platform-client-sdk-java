@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ContactListing  implements Serializable, PagedResource<ExternalContact> {
   
-  private List<ExternalContact> entities = new ArrayList<ExternalContact>();
+  private List<ExternalContact> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

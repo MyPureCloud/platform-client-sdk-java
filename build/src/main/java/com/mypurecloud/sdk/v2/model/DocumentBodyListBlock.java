@@ -72,7 +72,7 @@ public class DocumentBodyListBlock  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<DocumentContentBlock> blocks = new ArrayList<DocumentContentBlock>();
+  private List<DocumentContentBlock> blocks = null;
 
   
   /**

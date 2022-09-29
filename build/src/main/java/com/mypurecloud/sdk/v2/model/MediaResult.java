@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class MediaResult  implements Serializable {
   
   private String mediaUri = null;
-  private List<Float> waveformData = new ArrayList<Float>();
+  private List<Float> waveformData = null;
 
   
   /**

@@ -26,8 +26,8 @@ public class ChatConversation  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<ChatMediaParticipant> participants = new ArrayList<ChatMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ChatMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String selfUri = null;
 
   

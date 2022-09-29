@@ -26,7 +26,7 @@ public class KnowledgeDocumentSuggestion  implements Serializable {
   
   private String query = null;
   private Integer pageSize = null;
-  private List<KnowledgeDocumentSuggestionResult> results = new ArrayList<KnowledgeDocumentSuggestionResult>();
+  private List<KnowledgeDocumentSuggestionResult> results = null;
 
   
   /**

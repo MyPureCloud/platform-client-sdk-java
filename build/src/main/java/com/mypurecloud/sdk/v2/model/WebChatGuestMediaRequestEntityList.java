@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class WebChatGuestMediaRequestEntityList  implements Serializable {
   
-  private List<WebChatGuestMediaRequest> entities = new ArrayList<WebChatGuestMediaRequest>();
+  private List<WebChatGuestMediaRequest> entities = null;
 
   
   /**

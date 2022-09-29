@@ -26,8 +26,8 @@ import java.io.Serializable;
 public class StatisticalResponse  implements Serializable {
   
   private String interval = null;
-  private List<AggregateMetricData> metrics = new ArrayList<AggregateMetricData>();
-  private List<AggregateViewData> views = new ArrayList<AggregateViewData>();
+  private List<AggregateMetricData> metrics = null;
+  private List<AggregateViewData> views = null;
 
   
   /**

@@ -83,7 +83,7 @@ public class WorkdayValuesMetricItem  implements Serializable {
     }
   }
   private UnitTypeEnum unitType = null;
-  private List<WorkdayValuesTrendItem> trend = new ArrayList<WorkdayValuesTrendItem>();
+  private List<WorkdayValuesTrendItem> trend = null;
 
   
   @ApiModelProperty(example = "null", value = "Gamification metric for the average and the trend")

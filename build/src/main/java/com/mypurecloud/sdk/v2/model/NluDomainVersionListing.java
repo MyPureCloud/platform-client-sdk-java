@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class NluDomainVersionListing  implements Serializable, PagedResource<NluDomainVersion> {
   
-  private List<NluDomainVersion> entities = new ArrayList<NluDomainVersion>();
+  private List<NluDomainVersion> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

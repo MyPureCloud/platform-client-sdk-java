@@ -27,7 +27,7 @@ public class AuditQueryExecutionResultsResponse  implements Serializable {
   private String id = null;
   private Integer pageSize = null;
   private String cursor = null;
-  private List<AuditLogMessage> entities = new ArrayList<AuditLogMessage>();
+  private List<AuditLogMessage> entities = null;
 
   
   /**

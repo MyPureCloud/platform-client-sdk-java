@@ -25,10 +25,10 @@ import java.io.Serializable;
 public class Biography  implements Serializable {
   
   private String biography = null;
-  private List<String> interests = new ArrayList<String>();
-  private List<String> hobbies = new ArrayList<String>();
+  private List<String> interests = null;
+  private List<String> hobbies = null;
   private String spouse = null;
-  private List<Education> education = new ArrayList<Education>();
+  private List<Education> education = null;
 
   
   /**

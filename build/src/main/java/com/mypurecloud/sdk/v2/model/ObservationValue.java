@@ -29,7 +29,7 @@ public class ObservationValue  implements Serializable {
   private Date observationDate = null;
   private String conversationId = null;
   private String sessionId = null;
-  private List<String> requestedRoutingSkillIds = new ArrayList<String>();
+  private List<String> requestedRoutingSkillIds = null;
   private String requestedLanguageId = null;
   private Long routingPriority = null;
   private String participantName = null;
@@ -140,7 +140,7 @@ public class ObservationValue  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<RequestedRoutingsEnum> requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+  private List<RequestedRoutingsEnum> requestedRoutings = null;
 
   private static class UsedRoutingEnumDeserializer extends StdDeserializer<UsedRoutingEnum> {
     public UsedRoutingEnumDeserializer() {
@@ -194,7 +194,7 @@ public class ObservationValue  implements Serializable {
     }
   }
   private UsedRoutingEnum usedRouting = null;
-  private List<AnalyticsScoredAgent> scoredAgents = new ArrayList<AnalyticsScoredAgent>();
+  private List<AnalyticsScoredAgent> scoredAgents = null;
 
   
   /**

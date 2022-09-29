@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class WidgetDeploymentEntityListing  implements Serializable {
   
   private Long total = null;
-  private List<WidgetDeployment> entities = new ArrayList<WidgetDeployment>();
+  private List<WidgetDeployment> entities = null;
   private String selfUri = null;
 
   

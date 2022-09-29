@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class SupportedContentListing  implements Serializable, PagedResource<SupportedContent> {
   
-  private List<SupportedContent> entities = new ArrayList<SupportedContent>();
+  private List<SupportedContent> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

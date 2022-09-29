@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class SetTimeOffLimitValuesRequest  implements Serializable {
   
-  private List<TimeOffLimitRange> values = new ArrayList<TimeOffLimitRange>();
+  private List<TimeOffLimitRange> values = null;
   private WfmVersionedEntityMetadata metadata = null;
 
   

@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class PredictorListing  implements Serializable {
   
-  private List<Predictor> entities = new ArrayList<Predictor>();
+  private List<Predictor> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class HistoricalImportStatusListing  implements Serializable {
   
-  private List<HistoricalImportStatus> entities = new ArrayList<HistoricalImportStatus>();
+  private List<HistoricalImportStatus> entities = null;
 
   
   /**

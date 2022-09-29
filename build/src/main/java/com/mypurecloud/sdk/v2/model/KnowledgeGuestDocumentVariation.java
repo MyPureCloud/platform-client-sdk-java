@@ -32,7 +32,7 @@ public class KnowledgeGuestDocumentVariation  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private AddressableEntityRef documentVersion = null;
-  private List<KnowledgeGuestDocumentVariationContext> contexts = new ArrayList<KnowledgeGuestDocumentVariationContext>();
+  private List<KnowledgeGuestDocumentVariationContext> contexts = null;
   private AddressableEntityRef document = null;
   private String selfUri = null;
 

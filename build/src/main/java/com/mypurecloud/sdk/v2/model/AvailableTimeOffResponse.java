@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class AvailableTimeOffResponse  implements Serializable {
   
-  private List<AvailableTimeOffRange> values = new ArrayList<AvailableTimeOffRange>();
+  private List<AvailableTimeOffRange> values = null;
 
   
   /**

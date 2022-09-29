@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ReportingTurnsResponse  implements Serializable {
   
-  private List<ReportingTurn> entities = new ArrayList<ReportingTurn>();
+  private List<ReportingTurn> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

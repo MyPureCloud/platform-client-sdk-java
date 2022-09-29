@@ -87,7 +87,7 @@ public class OutboundRouteBase  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private List<String> classificationTypes = new ArrayList<String>();
+  private List<String> classificationTypes = null;
   private Boolean enabled = null;
 
   private static class DistributionEnumDeserializer extends StdDeserializer<DistributionEnum> {
@@ -137,7 +137,7 @@ public class OutboundRouteBase  implements Serializable {
     }
   }
   private DistributionEnum distribution = null;
-  private List<DomainEntityRef> externalTrunkBases = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> externalTrunkBases = null;
   private String selfUri = null;
 
   

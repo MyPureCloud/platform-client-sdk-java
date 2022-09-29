@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class RecipientListing  implements Serializable, PagedResource<Recipient> {
   
-  private List<Recipient> entities = new ArrayList<Recipient>();
+  private List<Recipient> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

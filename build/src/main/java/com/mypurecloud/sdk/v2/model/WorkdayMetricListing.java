@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class WorkdayMetricListing  implements Serializable {
   
-  private List<WorkdayMetric> entities = new ArrayList<WorkdayMetric>();
+  private List<WorkdayMetric> entities = null;
 
   
   /**

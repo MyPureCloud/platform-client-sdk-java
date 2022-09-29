@@ -28,11 +28,11 @@ public class EvaluationScoringSet  implements Serializable {
   private Float totalScore = null;
   private Float totalCriticalScore = null;
   private Float totalNonCriticalScore = null;
-  private List<EvaluationQuestionGroupScore> questionGroupScores = new ArrayList<EvaluationQuestionGroupScore>();
+  private List<EvaluationQuestionGroupScore> questionGroupScores = null;
   private Boolean anyFailedKillQuestions = null;
   private String comments = null;
   private String agentComments = null;
-  private List<TranscriptTopic> transcriptTopics = new ArrayList<TranscriptTopic>();
+  private List<TranscriptTopic> transcriptTopics = null;
 
   
   /**

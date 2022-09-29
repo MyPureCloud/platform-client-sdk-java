@@ -28,8 +28,8 @@ import java.io.Serializable;
 public class DialerContactlistfilterConfigChangeContactListFilter  implements Serializable {
   
   private DialerContactlistfilterConfigChangeUriReference contactList = null;
-  private List<String> contactListColumns = new ArrayList<String>();
-  private List<DialerContactlistfilterConfigChangeFilterClause> clauses = new ArrayList<DialerContactlistfilterConfigChangeFilterClause>();
+  private List<String> contactListColumns = null;
+  private List<DialerContactlistfilterConfigChangeFilterClause> clauses = null;
 
   private static class FilterTypeEnumDeserializer extends StdDeserializer<FilterTypeEnum> {
     public FilterTypeEnumDeserializer() {

@@ -82,7 +82,7 @@ public class EvaluationAggregationQueryMe  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
+  private List<GroupByEnum> groupBy = null;
 
   private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
     public MetricsEnumDeserializer() {
@@ -132,7 +132,7 @@ public class EvaluationAggregationQueryMe  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
+  private List<MetricsEnum> metrics = null;
 
   private static class AlternateTimeDimensionEnumDeserializer extends StdDeserializer<AlternateTimeDimensionEnum> {
     public AlternateTimeDimensionEnumDeserializer() {

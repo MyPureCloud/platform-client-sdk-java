@@ -83,8 +83,8 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
   }
   private TypeEnum type = null;
   private String text = null;
-  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent> content = new ArrayList<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent>();
-  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent> events = new ArrayList<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent>();
+  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent> content = null;
+  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent> events = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -137,7 +137,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     }
   }
   private StatusEnum status = null;
-  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationReason> reasons = new ArrayList<V2ConversationMessageTypingEventForWorkflowTopicConversationReason>();
+  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationReason> reasons = null;
 
   private static class OriginatingEntityEnumDeserializer extends StdDeserializer<OriginatingEntityEnum> {
     public OriginatingEntityEnumDeserializer() {

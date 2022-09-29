@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ScreenRecordingSessionListing  implements Serializable, PagedResource<ScreenRecordingSession> {
   
-  private List<ScreenRecordingSession> entities = new ArrayList<ScreenRecordingSession>();
+  private List<ScreenRecordingSession> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

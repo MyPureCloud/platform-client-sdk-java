@@ -73,7 +73,7 @@ public class LearningAssignmentAggregateQueryRequestFilter  implements Serializa
     }
   }
   private TypeEnum type = null;
-  private List<LearningAssignmentAggregateQueryRequestClause> clauses = new ArrayList<LearningAssignmentAggregateQueryRequestClause>();
+  private List<LearningAssignmentAggregateQueryRequestClause> clauses = null;
 
   
   /**

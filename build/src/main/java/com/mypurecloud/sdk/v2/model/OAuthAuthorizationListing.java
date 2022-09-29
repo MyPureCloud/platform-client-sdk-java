@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class OAuthAuthorizationListing  implements Serializable {
   
   private Long total = null;
-  private List<OAuthAuthorization> entities = new ArrayList<OAuthAuthorization>();
+  private List<OAuthAuthorization> entities = null;
   private String selfUri = null;
 
   

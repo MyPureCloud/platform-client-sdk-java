@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class DraftListing  implements Serializable {
   
-  private List<Draft> entities = new ArrayList<Draft>();
+  private List<Draft> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

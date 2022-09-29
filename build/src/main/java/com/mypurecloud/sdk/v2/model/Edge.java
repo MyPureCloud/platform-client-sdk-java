@@ -90,7 +90,7 @@ public class Edge  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private List<EdgeInterface> interfaces = new ArrayList<EdgeInterface>();
+  private List<EdgeInterface> interfaces = null;
   private String make = null;
   private String model = null;
   private String apiVersion = null;

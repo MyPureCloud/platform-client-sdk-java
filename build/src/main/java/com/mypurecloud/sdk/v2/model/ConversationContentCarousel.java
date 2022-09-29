@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ConversationContentCarousel  implements Serializable {
   
-  private List<ConversationContentCard> cards = new ArrayList<ConversationContentCard>();
+  private List<ConversationContentCard> cards = null;
 
   
   /**

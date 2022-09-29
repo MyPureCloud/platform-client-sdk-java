@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class IntegrationActionFields  implements Serializable {
   
   private IntegrationAction integrationAction = null;
-  private List<RequestMapping> requestMappings = new ArrayList<RequestMapping>();
+  private List<RequestMapping> requestMappings = null;
 
   
   /**

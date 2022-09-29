@@ -26,7 +26,7 @@ public class FilterPreviewResponse  implements Serializable {
   
   private Long filteredContacts = null;
   private Long totalContacts = null;
-  private List<DialerContact> preview = new ArrayList<DialerContact>();
+  private List<DialerContact> preview = null;
 
   
   /**

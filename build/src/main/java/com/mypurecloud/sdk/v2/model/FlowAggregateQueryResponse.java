@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class FlowAggregateQueryResponse  implements Serializable {
   
-  private List<FlowAggregateDataContainer> results = new ArrayList<FlowAggregateDataContainer>();
+  private List<FlowAggregateDataContainer> results = null;
 
   
   /**

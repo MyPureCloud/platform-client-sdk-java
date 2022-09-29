@@ -28,8 +28,8 @@ public class ConversationEmailEventTopicConversationRoutingData  implements Seri
   private ConversationEmailEventTopicUriReference queue = null;
   private ConversationEmailEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<ConversationEmailEventTopicUriReference> skills = new ArrayList<ConversationEmailEventTopicUriReference>();
-  private List<ConversationEmailEventTopicScoredAgent> scoredAgents = new ArrayList<ConversationEmailEventTopicScoredAgent>();
+  private List<ConversationEmailEventTopicUriReference> skills = null;
+  private List<ConversationEmailEventTopicScoredAgent> scoredAgents = null;
 
   
   /**

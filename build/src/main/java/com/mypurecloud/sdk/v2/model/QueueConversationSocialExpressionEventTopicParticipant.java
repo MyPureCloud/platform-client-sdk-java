@@ -118,15 +118,15 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   private ScreenRecordingStateEnum screenRecordingState = null;
   private String flaggedReason = null;
   private Map<String, String> attributes = null;
-  private List<QueueConversationSocialExpressionEventTopicCall> calls = new ArrayList<QueueConversationSocialExpressionEventTopicCall>();
-  private List<QueueConversationSocialExpressionEventTopicCallback> callbacks = new ArrayList<QueueConversationSocialExpressionEventTopicCallback>();
-  private List<QueueConversationSocialExpressionEventTopicChat> chats = new ArrayList<QueueConversationSocialExpressionEventTopicChat>();
-  private List<QueueConversationSocialExpressionEventTopicCobrowse> cobrowsesessions = new ArrayList<QueueConversationSocialExpressionEventTopicCobrowse>();
-  private List<QueueConversationSocialExpressionEventTopicEmail> emails = new ArrayList<QueueConversationSocialExpressionEventTopicEmail>();
-  private List<QueueConversationSocialExpressionEventTopicMessage> messages = new ArrayList<QueueConversationSocialExpressionEventTopicMessage>();
-  private List<QueueConversationSocialExpressionEventTopicScreenshare> screenshares = new ArrayList<QueueConversationSocialExpressionEventTopicScreenshare>();
-  private List<QueueConversationSocialExpressionEventTopicSocialExpression> socialExpressions = new ArrayList<QueueConversationSocialExpressionEventTopicSocialExpression>();
-  private List<QueueConversationSocialExpressionEventTopicVideo> videos = new ArrayList<QueueConversationSocialExpressionEventTopicVideo>();
+  private List<QueueConversationSocialExpressionEventTopicCall> calls = null;
+  private List<QueueConversationSocialExpressionEventTopicCallback> callbacks = null;
+  private List<QueueConversationSocialExpressionEventTopicChat> chats = null;
+  private List<QueueConversationSocialExpressionEventTopicCobrowse> cobrowsesessions = null;
+  private List<QueueConversationSocialExpressionEventTopicEmail> emails = null;
+  private List<QueueConversationSocialExpressionEventTopicMessage> messages = null;
+  private List<QueueConversationSocialExpressionEventTopicScreenshare> screenshares = null;
+  private List<QueueConversationSocialExpressionEventTopicSocialExpression> socialExpressions = null;
+  private List<QueueConversationSocialExpressionEventTopicVideo> videos = null;
   private QueueConversationSocialExpressionEventTopicWorkflow workflow = null;
 
   

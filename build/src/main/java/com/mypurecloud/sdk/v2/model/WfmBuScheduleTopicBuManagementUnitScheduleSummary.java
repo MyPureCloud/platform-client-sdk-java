@@ -29,7 +29,7 @@ public class WfmBuScheduleTopicBuManagementUnitScheduleSummary  implements Seria
   private WfmBuScheduleTopicManagementUnit managementUnit = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<WfmBuScheduleTopicUserReference> agents = new ArrayList<WfmBuScheduleTopicUserReference>();
+  private List<WfmBuScheduleTopicUserReference> agents = null;
   private Integer agentCount = null;
 
   

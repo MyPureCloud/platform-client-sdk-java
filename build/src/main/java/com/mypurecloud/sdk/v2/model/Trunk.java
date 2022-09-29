@@ -148,8 +148,8 @@ public class Trunk  implements Serializable {
   private Boolean enabled = null;
   private DomainEntityRef logicalInterface = null;
   private TrunkConnectedStatus connectedStatus = null;
-  private List<TrunkMetricsOptions> optionsStatus = new ArrayList<TrunkMetricsOptions>();
-  private List<TrunkMetricsRegisters> registersStatus = new ArrayList<TrunkMetricsRegisters>();
+  private List<TrunkMetricsOptions> optionsStatus = null;
+  private List<TrunkMetricsRegisters> registersStatus = null;
   private TrunkMetricsNetworkTypeIp ipStatus = null;
 
   private static class OptionsEnabledStatusEnumDeserializer extends StdDeserializer<OptionsEnabledStatusEnum> {
@@ -250,7 +250,7 @@ public class Trunk  implements Serializable {
   }
   private RegistersEnabledStatusEnum registersEnabledStatus = null;
   private Integer family = null;
-  private List<String> proxyAddressList = new ArrayList<String>();
+  private List<String> proxyAddressList = null;
   private String selfUri = null;
 
   

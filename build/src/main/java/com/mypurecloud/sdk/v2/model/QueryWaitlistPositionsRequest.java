@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class QueryWaitlistPositionsRequest  implements Serializable {
   
-  private List<UserTimeOffRequestReference> timeOffRequests = new ArrayList<UserTimeOffRequestReference>();
+  private List<UserTimeOffRequestReference> timeOffRequests = null;
 
   
   /**

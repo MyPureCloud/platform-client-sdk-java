@@ -26,8 +26,8 @@ public class ConversationChatEventTopicChatConversation  implements Serializable
   
   private String id = null;
   private String name = null;
-  private List<ConversationChatEventTopicChatMediaParticipant> participants = new ArrayList<ConversationChatEventTopicChatMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationChatEventTopicChatMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
 
   
   /**

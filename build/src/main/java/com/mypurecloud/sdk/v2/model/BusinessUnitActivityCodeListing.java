@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BusinessUnitActivityCodeListing  implements Serializable {
   
-  private List<BusinessUnitActivityCode> entities = new ArrayList<BusinessUnitActivityCode>();
+  private List<BusinessUnitActivityCode> entities = null;
 
   
   /**

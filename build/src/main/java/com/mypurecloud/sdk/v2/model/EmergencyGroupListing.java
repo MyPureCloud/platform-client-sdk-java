@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class EmergencyGroupListing  implements Serializable, PagedResource<EmergencyGroup> {
   
-  private List<EmergencyGroup> entities = new ArrayList<EmergencyGroup>();
+  private List<EmergencyGroup> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

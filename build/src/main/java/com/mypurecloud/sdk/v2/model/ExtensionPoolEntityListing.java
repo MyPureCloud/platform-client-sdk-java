@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ExtensionPoolEntityListing  implements Serializable, PagedResource<ExtensionPool> {
   
-  private List<ExtensionPool> entities = new ArrayList<ExtensionPool>();
+  private List<ExtensionPool> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

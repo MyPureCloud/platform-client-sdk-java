@@ -26,8 +26,8 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
   
   private String id = null;
   private String name = null;
-  private List<ConversationMessageEventTopicMessageMediaParticipant> participants = new ArrayList<ConversationMessageEventTopicMessageMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationMessageEventTopicMessageMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
 
   
   /**

@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class TriggerEntityListing  implements Serializable {
   
-  private List<Trigger> entities = new ArrayList<Trigger>();
+  private List<Trigger> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

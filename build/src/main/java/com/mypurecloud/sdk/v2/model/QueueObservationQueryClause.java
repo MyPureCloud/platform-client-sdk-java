@@ -73,7 +73,7 @@ public class QueueObservationQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<QueueObservationQueryPredicate> predicates = new ArrayList<QueueObservationQueryPredicate>();
+  private List<QueueObservationQueryPredicate> predicates = null;
 
   
   /**

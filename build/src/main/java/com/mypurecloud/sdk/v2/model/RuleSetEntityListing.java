@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSet> {
   
-  private List<RuleSet> entities = new ArrayList<RuleSet>();
+  private List<RuleSet> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

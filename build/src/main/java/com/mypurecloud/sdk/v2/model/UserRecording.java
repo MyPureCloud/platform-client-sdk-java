@@ -37,7 +37,7 @@ public class UserRecording  implements Serializable {
   private Conversation conversation = null;
   private Long contentLength = null;
   private Long durationMilliseconds = null;
-  private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
+  private List<DocumentThumbnail> thumbnails = null;
   private Boolean read = null;
   private String selfUri = null;
 

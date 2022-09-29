@@ -78,9 +78,9 @@ public class TranscriptConversationDetailSearchRequest  implements Serializable 
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = new ArrayList<SearchSort>();
-  private List<String> types = new ArrayList<String>();
-  private List<TranscriptConversationDetailSearchCriteria> query = new ArrayList<TranscriptConversationDetailSearchCriteria>();
+  private List<SearchSort> sort = null;
+  private List<String> types = null;
+  private List<TranscriptConversationDetailSearchCriteria> query = null;
 
   
   /**

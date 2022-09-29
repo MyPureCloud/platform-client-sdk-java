@@ -27,9 +27,9 @@ public class DomainOrganizationRoleCreate  implements Serializable {
   private String name = null;
   private String description = null;
   private String defaultRoleId = null;
-  private List<String> permissions = new ArrayList<String>();
-  private List<String> unusedPermissions = new ArrayList<String>();
-  private List<DomainPermissionPolicy> permissionPolicies = new ArrayList<DomainPermissionPolicy>();
+  private List<String> permissions = null;
+  private List<String> unusedPermissions = null;
+  private List<DomainPermissionPolicy> permissionPolicies = null;
   private Integer userCount = null;
   private Boolean roleNeedsUpdate = null;
   private Boolean base = null;

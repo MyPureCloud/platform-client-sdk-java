@@ -34,7 +34,7 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
   private String description = null;
   private Boolean published = null;
   private WfmBuScheduleTopicBuShortTermForecastReference shortTermForecast = null;
-  private List<WfmBuScheduleTopicBuManagementUnitScheduleSummary> managementUnits = new ArrayList<WfmBuScheduleTopicBuManagementUnitScheduleSummary>();
+  private List<WfmBuScheduleTopicBuManagementUnitScheduleSummary> managementUnits = null;
   private WfmBuScheduleTopicBuScheduleGenerationResultSummary generationResults = null;
   private WfmBuScheduleTopicWfmVersionedEntityMetadata metadata = null;
 

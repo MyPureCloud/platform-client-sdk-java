@@ -74,8 +74,8 @@ public class PresenceDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<PresenceDetailQueryClause> clauses = new ArrayList<PresenceDetailQueryClause>();
-  private List<PresenceDetailQueryPredicate> predicates = new ArrayList<PresenceDetailQueryPredicate>();
+  private List<PresenceDetailQueryClause> clauses = null;
+  private List<PresenceDetailQueryPredicate> predicates = null;
 
   
   /**

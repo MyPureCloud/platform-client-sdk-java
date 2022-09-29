@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class TranscriptConversationDetailSearchCriteria  implements Serializable {
   
   private String endValue = null;
-  private List<String> values = new ArrayList<String>();
+  private List<String> values = null;
   private String startValue = null;
   private String value = null;
 
@@ -77,9 +77,9 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     }
   }
   private OperatorEnum operator = null;
-  private List<TranscriptConversationDetailSearchCriteria> group = new ArrayList<TranscriptConversationDetailSearchCriteria>();
+  private List<TranscriptConversationDetailSearchCriteria> group = null;
   private String dateFormat = null;
-  private List<String> fields = new ArrayList<String>();
+  private List<String> fields = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {

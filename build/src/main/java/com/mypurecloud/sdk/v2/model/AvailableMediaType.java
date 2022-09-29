@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class AvailableMediaType  implements Serializable {
   
   private String mediaType = null;
-  private List<String> availableSubTypes = new ArrayList<String>();
+  private List<String> availableSubTypes = null;
 
   
   /**

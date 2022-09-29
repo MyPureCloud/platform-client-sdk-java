@@ -31,8 +31,8 @@ public class TrustRequest  implements Serializable {
   private OrgUser createdBy = null;
   private Date dateCreated = null;
   private Organization trustee = null;
-  private List<OrgUser> users = new ArrayList<OrgUser>();
-  private List<TrustGroup> groups = new ArrayList<TrustGroup>();
+  private List<OrgUser> users = null;
+  private List<TrustGroup> groups = null;
   private String selfUri = null;
 
   

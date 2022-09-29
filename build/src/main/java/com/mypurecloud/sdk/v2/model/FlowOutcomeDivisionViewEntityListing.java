@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class FlowOutcomeDivisionViewEntityListing  implements Serializable, PagedResource<FlowOutcomeDivisionView> {
   
-  private List<FlowOutcomeDivisionView> entities = new ArrayList<FlowOutcomeDivisionView>();
+  private List<FlowOutcomeDivisionView> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

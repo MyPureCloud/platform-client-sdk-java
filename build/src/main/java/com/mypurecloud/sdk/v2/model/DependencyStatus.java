@@ -86,7 +86,7 @@ public class DependencyStatus  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<FailedObject> failedObjects = new ArrayList<FailedObject>();
+  private List<FailedObject> failedObjects = null;
   private String selfUri = null;
 
   

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class EncryptionKeyEntityListing  implements Serializable, PagedResource<EncryptionKey> {
   
-  private List<EncryptionKey> entities = new ArrayList<EncryptionKey>();
+  private List<EncryptionKey> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

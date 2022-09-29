@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class ProgramJobRequest  implements Serializable {
   
-  private List<String> programIds = new ArrayList<String>();
+  private List<String> programIds = null;
 
   
   /**

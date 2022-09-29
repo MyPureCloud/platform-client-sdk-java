@@ -93,10 +93,10 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   private String eventType = null;
   private String resourceId = null;
   private String resourceType = null;
-  private List<String> divisionIds = new ArrayList<String>();
+  private List<String> divisionIds = null;
   private Boolean rescore = null;
   private Date conversationDate = null;
-  private List<String> mediaType = new ArrayList<String>();
+  private List<String> mediaType = null;
   private EvaluationQualityV2TopicCalibration calibration = null;
 
   

@@ -26,7 +26,7 @@ public class LearningModuleRule  implements Serializable {
   
   private String id = null;
   private Boolean isActive = null;
-  private List<LearningModuleRuleParts> parts = new ArrayList<LearningModuleRuleParts>();
+  private List<LearningModuleRuleParts> parts = null;
   private String selfUri = null;
 
   

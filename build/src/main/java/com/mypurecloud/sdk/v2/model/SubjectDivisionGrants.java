@@ -27,7 +27,7 @@ public class SubjectDivisionGrants  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<Division> divisions = new ArrayList<Division>();
+  private List<Division> divisions = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {

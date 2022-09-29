@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class OpenIntegrationEntityListing  implements Serializable, PagedResource<OpenIntegration> {
   
-  private List<OpenIntegration> entities = new ArrayList<OpenIntegration>();
+  private List<OpenIntegration> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

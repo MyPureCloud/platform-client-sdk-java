@@ -28,8 +28,8 @@ public class ConversationVideoEventTopicConversationRoutingData  implements Seri
   private ConversationVideoEventTopicUriReference queue = null;
   private ConversationVideoEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<ConversationVideoEventTopicUriReference> skills = new ArrayList<ConversationVideoEventTopicUriReference>();
-  private List<ConversationVideoEventTopicScoredAgent> scoredAgents = new ArrayList<ConversationVideoEventTopicScoredAgent>();
+  private List<ConversationVideoEventTopicUriReference> skills = null;
+  private List<ConversationVideoEventTopicScoredAgent> scoredAgents = null;
 
   
   /**

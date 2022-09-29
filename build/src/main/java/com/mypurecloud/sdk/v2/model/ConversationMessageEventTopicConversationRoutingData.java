@@ -28,8 +28,8 @@ public class ConversationMessageEventTopicConversationRoutingData  implements Se
   private ConversationMessageEventTopicUriReference queue = null;
   private ConversationMessageEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<ConversationMessageEventTopicUriReference> skills = new ArrayList<ConversationMessageEventTopicUriReference>();
-  private List<ConversationMessageEventTopicScoredAgent> scoredAgents = new ArrayList<ConversationMessageEventTopicScoredAgent>();
+  private List<ConversationMessageEventTopicUriReference> skills = null;
+  private List<ConversationMessageEventTopicScoredAgent> scoredAgents = null;
 
   
   /**

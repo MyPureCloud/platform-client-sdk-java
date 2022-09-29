@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ExternalMetricDataWriteRequest  implements Serializable {
   
-  private List<ExternalMetricDataItem> items = new ArrayList<ExternalMetricDataItem>();
+  private List<ExternalMetricDataItem> items = null;
 
   
   /**

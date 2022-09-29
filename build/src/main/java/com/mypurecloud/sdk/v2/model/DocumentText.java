@@ -70,7 +70,7 @@ public class DocumentText  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MarksEnum> marks = new ArrayList<MarksEnum>();
+  private List<MarksEnum> marks = null;
   private String hyperlink = null;
 
   

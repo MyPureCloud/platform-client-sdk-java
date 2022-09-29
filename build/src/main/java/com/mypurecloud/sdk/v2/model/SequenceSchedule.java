@@ -31,7 +31,7 @@ public class SequenceSchedule  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private List<ScheduleInterval> intervals = new ArrayList<ScheduleInterval>();
+  private List<ScheduleInterval> intervals = null;
   private String timeZone = null;
   private DomainEntityRef sequence = null;
   private String selfUri = null;

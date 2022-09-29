@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class FacetInfo  implements Serializable {
   
   private String name = null;
-  private List<Entry> entries = new ArrayList<Entry>();
+  private List<Entry> entries = null;
 
   
   /**

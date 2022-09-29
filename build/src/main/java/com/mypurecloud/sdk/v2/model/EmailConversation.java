@@ -26,8 +26,8 @@ public class EmailConversation  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<EmailMediaParticipant> participants = new ArrayList<EmailMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<EmailMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String selfUri = null;
 
   

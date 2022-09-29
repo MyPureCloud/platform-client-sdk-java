@@ -31,7 +31,7 @@ public class CreateCallbackOnConversationCommand  implements Serializable {
   private String queueId = null;
   private RoutingData routingData = null;
   private String callbackUserName = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
+  private List<String> callbackNumbers = null;
   private Date callbackScheduledTime = null;
   private String countryCode = null;
   private Boolean validateCallbackNumbers = null;

@@ -94,7 +94,7 @@ public class Endpoint  implements Serializable {
   private DomainEntityRef schema = null;
   private Boolean enabled = null;
   private DomainEntityRef site = null;
-  private List<String> dids = new ArrayList<String>();
+  private List<String> dids = null;
   private String selfUri = null;
 
   

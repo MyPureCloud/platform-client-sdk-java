@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BotAggregateQueryResponse  implements Serializable {
   
-  private List<BotAggregateDataContainer> results = new ArrayList<BotAggregateDataContainer>();
+  private List<BotAggregateDataContainer> results = null;
 
   
   /**

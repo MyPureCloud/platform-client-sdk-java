@@ -78,7 +78,7 @@ public class BillingUsageReport  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<BillingUsage> usages = new ArrayList<BillingUsage>();
+  private List<BillingUsage> usages = null;
   private String selfUri = null;
 
   

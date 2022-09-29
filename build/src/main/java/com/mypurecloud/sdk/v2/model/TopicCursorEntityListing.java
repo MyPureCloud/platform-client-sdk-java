@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class TopicCursorEntityListing  implements Serializable {
   
-  private List<String> entities = new ArrayList<String>();
+  private List<String> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

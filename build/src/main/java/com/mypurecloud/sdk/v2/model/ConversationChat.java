@@ -86,7 +86,7 @@ public class ConversationChat  implements Serializable {
   private String id = null;
   private String roomId = null;
   private String recordingId = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
   private Boolean held = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {

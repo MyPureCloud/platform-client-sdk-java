@@ -89,12 +89,12 @@ public class MessagingCampaign  implements Serializable {
   private CampaignStatusEnum campaignStatus = null;
   private DomainEntityRef callableTimeSet = null;
   private DomainEntityRef contactList = null;
-  private List<DomainEntityRef> dncLists = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> dncLists = null;
   private Boolean alwaysRunning = null;
-  private List<ContactSort> contactSorts = new ArrayList<ContactSort>();
+  private List<ContactSort> contactSorts = null;
   private Integer messagesPerMinute = null;
-  private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
-  private List<RestErrorDetail> errors = new ArrayList<RestErrorDetail>();
+  private List<DomainEntityRef> contactListFilters = null;
+  private List<RestErrorDetail> errors = null;
   private EmailConfig emailConfig = null;
   private SmsConfig smsConfig = null;
   private String selfUri = null;

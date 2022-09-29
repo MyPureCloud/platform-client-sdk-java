@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class AssessmentListing  implements Serializable {
   
-  private List<BenefitAssessment> entities = new ArrayList<BenefitAssessment>();
+  private List<BenefitAssessment> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

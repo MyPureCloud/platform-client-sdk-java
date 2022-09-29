@@ -27,9 +27,9 @@ import java.io.Serializable;
 public class RoutingConversationAttributesResponse  implements Serializable {
   
   private Integer priority = null;
-  private List<RoutingSkill> skills = new ArrayList<RoutingSkill>();
+  private List<RoutingSkill> skills = null;
   private Language language = null;
-  private List<ScoredAgent> scoredAgents = new ArrayList<ScoredAgent>();
+  private List<ScoredAgent> scoredAgents = null;
 
   
   /**

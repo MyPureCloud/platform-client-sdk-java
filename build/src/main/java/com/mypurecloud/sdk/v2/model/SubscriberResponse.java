@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class SubscriberResponse  implements Serializable {
   
-  private List<String> messageReturned = new ArrayList<String>();
+  private List<String> messageReturned = null;
   private String status = null;
 
   

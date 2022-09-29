@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class WaitlistPositionListing  implements Serializable {
   
-  private List<WaitlistPosition> entities = new ArrayList<WaitlistPosition>();
+  private List<WaitlistPosition> entities = null;
 
   
   /**

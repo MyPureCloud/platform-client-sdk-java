@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class UserSkillEntityListing  implements Serializable, PagedResource<UserRoutingSkill> {
   
-  private List<UserRoutingSkill> entities = new ArrayList<UserRoutingSkill>();
+  private List<UserRoutingSkill> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

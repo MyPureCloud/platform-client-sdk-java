@@ -24,7 +24,7 @@ public class SecurityProfile  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<String> permissions = new ArrayList<String>();
+  private List<String> permissions = null;
   private String selfUri = null;
 
   

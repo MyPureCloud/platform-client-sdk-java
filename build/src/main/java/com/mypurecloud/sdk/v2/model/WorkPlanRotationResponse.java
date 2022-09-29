@@ -33,7 +33,7 @@ public class WorkPlanRotationResponse  implements Serializable {
   private DateRangeWithOptionalEnd dateRange = null;
   private WorkPlanPatternResponse pattern = null;
   private Integer agentCount = null;
-  private List<WorkPlanRotationAgentResponse> agents = new ArrayList<WorkPlanRotationAgentResponse>();
+  private List<WorkPlanRotationAgentResponse> agents = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
 

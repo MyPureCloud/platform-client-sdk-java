@@ -88,7 +88,7 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
   private WfmBuScheduleRunTopicUserReference schedulingCanceledBy = null;
   private String schedulingCompletedTime = null;
   private Integer messageCount = null;
-  private List<WfmBuScheduleRunTopicSchedulerMessageSeverityCount> messageSeverityCounts = new ArrayList<WfmBuScheduleRunTopicSchedulerMessageSeverityCount>();
+  private List<WfmBuScheduleRunTopicSchedulerMessageSeverityCount> messageSeverityCounts = null;
 
   
   /**

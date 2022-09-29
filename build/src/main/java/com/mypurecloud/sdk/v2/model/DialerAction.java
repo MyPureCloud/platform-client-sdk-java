@@ -185,7 +185,7 @@ public class DialerAction  implements Serializable {
   private UpdateOptionEnum updateOption = null;
   private Map<String, String> properties = null;
   private DomainEntityRef dataAction = null;
-  private List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = new ArrayList<ContactColumnToDataActionFieldMapping>();
+  private List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = null;
   private String contactIdField = null;
   private String callAnalysisResultField = null;
   private String agentWrapupField = null;

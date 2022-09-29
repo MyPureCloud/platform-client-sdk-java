@@ -73,7 +73,7 @@ public class UserDetailQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<UserDetailQueryPredicate> predicates = new ArrayList<UserDetailQueryPredicate>();
+  private List<UserDetailQueryPredicate> predicates = null;
 
   
   /**

@@ -26,7 +26,7 @@ public class ObjectiveTemplate  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<ObjectiveZone> zones = new ArrayList<ObjectiveZone>();
+  private List<ObjectiveZone> zones = null;
   private String selfUri = null;
 
   

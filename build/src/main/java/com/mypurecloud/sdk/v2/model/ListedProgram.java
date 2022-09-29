@@ -30,7 +30,7 @@ public class ListedProgram  implements Serializable {
   private String description = null;
   private Boolean published = null;
   private Integer topicsCount = null;
-  private List<String> tags = new ArrayList<String>();
+  private List<String> tags = null;
   private AddressableEntityRef modifiedBy = null;
   private Date dateModified = null;
   private String selfUri = null;

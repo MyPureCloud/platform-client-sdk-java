@@ -29,7 +29,7 @@ public class SurveyQuestionGroup  implements Serializable {
   private String name = null;
   private String type = null;
   private Boolean naEnabled = null;
-  private List<SurveyQuestion> questions = new ArrayList<SurveyQuestion>();
+  private List<SurveyQuestion> questions = null;
   private VisibilityCondition visibilityCondition = null;
 
   

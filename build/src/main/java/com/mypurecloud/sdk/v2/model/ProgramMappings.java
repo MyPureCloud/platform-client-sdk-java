@@ -27,8 +27,8 @@ import java.io.Serializable;
 public class ProgramMappings  implements Serializable {
   
   private BaseProgramEntity program = null;
-  private List<AddressableEntityRef> queues = new ArrayList<AddressableEntityRef>();
-  private List<AddressableEntityRef> flows = new ArrayList<AddressableEntityRef>();
+  private List<AddressableEntityRef> queues = null;
+  private List<AddressableEntityRef> flows = null;
   private AddressableEntityRef modifiedBy = null;
   private Date dateModified = null;
 

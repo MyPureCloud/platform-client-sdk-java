@@ -29,8 +29,8 @@ public class ContactListDivisionView  implements Serializable {
   private String id = null;
   private String name = null;
   private Division division = null;
-  private List<String> columnNames = new ArrayList<String>();
-  private List<ContactPhoneNumberColumn> phoneColumns = new ArrayList<ContactPhoneNumberColumn>();
+  private List<String> columnNames = null;
+  private List<ContactPhoneNumberColumn> phoneColumns = null;
   private ImportStatus importStatus = null;
   private Long size = null;
   private String selfUri = null;

@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BuAgentSchedulesQueryResponse  implements Serializable {
   
-  private List<BuAgentScheduleQueryResponse> agentSchedules = new ArrayList<BuAgentScheduleQueryResponse>();
+  private List<BuAgentScheduleQueryResponse> agentSchedules = null;
   private String businessUnitTimeZone = null;
 
   

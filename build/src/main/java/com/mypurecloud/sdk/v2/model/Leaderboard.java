@@ -31,7 +31,7 @@ public class Leaderboard  implements Serializable {
   private AddressableEntityRef metric = null;
   private LocalDate dateStartWorkday = null;
   private LocalDate dateEndWorkday = null;
-  private List<LeaderboardItem> leaders = new ArrayList<LeaderboardItem>();
+  private List<LeaderboardItem> leaders = null;
   private LeaderboardItem userRank = null;
   private AddressableEntityRef performanceProfile = null;
 

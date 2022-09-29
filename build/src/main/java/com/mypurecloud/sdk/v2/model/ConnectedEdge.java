@@ -28,7 +28,7 @@ public class ConnectedEdge  implements Serializable {
   private String name = null;
   private String interfaceName = null;
   private String interfaceIpAddress = null;
-  private List<EdgeConnectionInfo> edgeConnectionList = new ArrayList<EdgeConnectionInfo>();
+  private List<EdgeConnectionInfo> edgeConnectionList = null;
   private String selfUri = null;
 
   

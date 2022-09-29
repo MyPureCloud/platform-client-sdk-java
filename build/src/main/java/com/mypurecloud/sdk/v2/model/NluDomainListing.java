@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class NluDomainListing  implements Serializable, PagedResource<NluDomain> {
   
-  private List<NluDomain> entities = new ArrayList<NluDomain>();
+  private List<NluDomain> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

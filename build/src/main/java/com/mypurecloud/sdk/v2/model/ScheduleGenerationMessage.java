@@ -116,7 +116,7 @@ public class ScheduleGenerationMessage  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<SchedulerMessageArgument> arguments = new ArrayList<SchedulerMessageArgument>();
+  private List<SchedulerMessageArgument> arguments = null;
 
   
   /**

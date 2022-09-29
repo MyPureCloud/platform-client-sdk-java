@@ -26,7 +26,7 @@ public class ReportingTurnIntent  implements Serializable {
   
   private String name = null;
   private Double confidence = null;
-  private List<ReportingTurnIntentSlot> slots = new ArrayList<ReportingTurnIntentSlot>();
+  private List<ReportingTurnIntentSlot> slots = null;
 
   
   /**

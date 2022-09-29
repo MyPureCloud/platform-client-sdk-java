@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class NluConfusionMatrixRow  implements Serializable {
   
   private String name = null;
-  private List<NluConfusionMatrixColumn> columns = new ArrayList<NluConfusionMatrixColumn>();
+  private List<NluConfusionMatrixColumn> columns = null;
 
   
   /**

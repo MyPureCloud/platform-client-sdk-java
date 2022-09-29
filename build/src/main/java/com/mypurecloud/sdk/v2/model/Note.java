@@ -81,7 +81,7 @@ public class Note  implements Serializable {
   private Date modifyDate = null;
   private Date createDate = null;
   private User createdBy = null;
-  private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
+  private List<ExternalDataSource> externalDataSources = null;
   private String selfUri = null;
 
   

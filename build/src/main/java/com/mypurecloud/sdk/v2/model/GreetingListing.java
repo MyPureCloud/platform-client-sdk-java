@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class GreetingListing  implements Serializable, PagedResource<Greeting> {
   
-  private List<Greeting> entities = new ArrayList<Greeting>();
+  private List<Greeting> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

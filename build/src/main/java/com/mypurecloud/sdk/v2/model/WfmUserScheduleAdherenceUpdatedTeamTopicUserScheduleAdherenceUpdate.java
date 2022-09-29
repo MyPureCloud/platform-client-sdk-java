@@ -148,7 +148,7 @@ public class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
   private WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation adherenceExplanation = null;
   private Date adherenceChangeTime = null;
   private Date presenceUpdateTime = null;
-  private List<WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference> activeQueues = new ArrayList<WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference>();
+  private List<WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference> activeQueues = null;
   private Date activeQueuesModifiedTime = null;
   private Boolean removedFromManagementUnit = null;
 

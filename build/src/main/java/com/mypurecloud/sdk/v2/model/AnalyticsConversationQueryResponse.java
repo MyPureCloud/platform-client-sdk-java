@@ -25,8 +25,8 @@ import java.io.Serializable;
 
 public class AnalyticsConversationQueryResponse  implements Serializable {
   
-  private List<AggregationResult> aggregations = new ArrayList<AggregationResult>();
-  private List<AnalyticsConversationWithoutAttributes> conversations = new ArrayList<AnalyticsConversationWithoutAttributes>();
+  private List<AggregationResult> aggregations = null;
+  private List<AnalyticsConversationWithoutAttributes> conversations = null;
   private Integer totalHits = null;
 
   

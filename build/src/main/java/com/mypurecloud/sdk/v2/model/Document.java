@@ -97,10 +97,10 @@ public class Document  implements Serializable {
   private Boolean read = null;
   private String callerAddress = null;
   private String receiverAddress = null;
-  private List<String> tags = new ArrayList<String>();
-  private List<TagValue> tagValues = new ArrayList<TagValue>();
-  private List<DocumentAttribute> attributes = new ArrayList<DocumentAttribute>();
-  private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
+  private List<String> tags = null;
+  private List<TagValue> tagValues = null;
+  private List<DocumentAttribute> attributes = null;
+  private List<DocumentThumbnail> thumbnails = null;
   private DomainEntityRef uploadStatus = null;
   private String uploadDestinationUri = null;
 
@@ -152,7 +152,7 @@ public class Document  implements Serializable {
   }
   private UploadMethodEnum uploadMethod = null;
   private LockInfo lockInfo = null;
-  private List<String> acl = new ArrayList<String>();
+  private List<String> acl = null;
 
   private static class SharingStatusEnumDeserializer extends StdDeserializer<SharingStatusEnum> {
     public SharingStatusEnumDeserializer() {

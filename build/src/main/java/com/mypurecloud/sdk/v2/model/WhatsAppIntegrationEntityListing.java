@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class WhatsAppIntegrationEntityListing  implements Serializable, PagedResource<WhatsAppIntegration> {
   
-  private List<WhatsAppIntegration> entities = new ArrayList<WhatsAppIntegration>();
+  private List<WhatsAppIntegration> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

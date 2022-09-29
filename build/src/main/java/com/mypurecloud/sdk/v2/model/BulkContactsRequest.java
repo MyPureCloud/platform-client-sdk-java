@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BulkContactsRequest  implements Serializable {
   
-  private List<ExternalContact> entities = new ArrayList<ExternalContact>();
+  private List<ExternalContact> entities = null;
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DIDEntityListing  implements Serializable, PagedResource<DID> {
   
-  private List<DID> entities = new ArrayList<DID>();
+  private List<DID> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

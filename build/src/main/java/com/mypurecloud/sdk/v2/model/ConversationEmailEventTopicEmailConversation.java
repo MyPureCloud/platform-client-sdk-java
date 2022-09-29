@@ -26,8 +26,8 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
   
   private String id = null;
   private String name = null;
-  private List<ConversationEmailEventTopicEmailMediaParticipant> participants = new ArrayList<ConversationEmailEventTopicEmailMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationEmailEventTopicEmailMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
 
   
   /**

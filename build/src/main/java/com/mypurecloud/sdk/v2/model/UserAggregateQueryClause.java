@@ -73,7 +73,7 @@ public class UserAggregateQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<UserAggregateQueryPredicate> predicates = new ArrayList<UserAggregateQueryPredicate>();
+  private List<UserAggregateQueryPredicate> predicates = null;
 
   
   /**

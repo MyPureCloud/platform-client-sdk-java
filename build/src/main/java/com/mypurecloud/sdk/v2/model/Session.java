@@ -50,8 +50,8 @@ public class Session  implements Serializable {
   private String externalId = null;
   private String externalUrl = null;
   private String shortId = null;
-  private List<OutcomeAchievement> outcomeAchievements = new ArrayList<OutcomeAchievement>();
-  private List<SessionSegmentAssignment> segmentAssignments = new ArrayList<SessionSegmentAssignment>();
+  private List<OutcomeAchievement> outcomeAchievements = null;
+  private List<SessionSegmentAssignment> segmentAssignments = null;
   private Map<String, CustomEventAttribute> attributes = null;
   private Map<String, CustomEventAttributeList> attributeLists = null;
   private Browser browser = null;
@@ -62,7 +62,7 @@ public class Session  implements Serializable {
   private JourneyPage lastPage = null;
   private JourneyCampaign mktCampaign = null;
   private Referrer referrer = null;
-  private List<String> searchTerms = new ArrayList<String>();
+  private List<String> searchTerms = null;
   private String userAgentString = null;
   private Integer durationInSeconds = null;
   private Integer eventCount = null;
@@ -72,7 +72,7 @@ public class Session  implements Serializable {
   private ConnectedQueue lastConnectedQueue = null;
   private ConnectedUser lastConnectedUser = null;
   private ConversationUserDisposition lastUserDisposition = null;
-  private List<ConversationChannel> conversationChannels = new ArrayList<ConversationChannel>();
+  private List<ConversationChannel> conversationChannels = null;
 
   private static class OriginatingDirectionEnumDeserializer extends StdDeserializer<OriginatingDirectionEnum> {
     public OriginatingDirectionEnumDeserializer() {

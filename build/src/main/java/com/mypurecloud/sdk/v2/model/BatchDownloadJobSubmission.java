@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BatchDownloadJobSubmission  implements Serializable {
   
-  private List<BatchDownloadRequest> batchDownloadRequestList = new ArrayList<BatchDownloadRequest>();
+  private List<BatchDownloadRequest> batchDownloadRequestList = null;
 
   
   /**

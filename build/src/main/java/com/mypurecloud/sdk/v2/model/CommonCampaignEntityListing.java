@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CommonCampaignEntityListing  implements Serializable, PagedResource<CommonCampaign> {
   
-  private List<CommonCampaign> entities = new ArrayList<CommonCampaign>();
+  private List<CommonCampaign> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

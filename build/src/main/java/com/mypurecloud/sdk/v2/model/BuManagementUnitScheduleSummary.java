@@ -29,7 +29,7 @@ public class BuManagementUnitScheduleSummary  implements Serializable {
   private Integer agentCount = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<UserReference> agents = new ArrayList<UserReference>();
+  private List<UserReference> agents = null;
 
   
   /**

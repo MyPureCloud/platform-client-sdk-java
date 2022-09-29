@@ -29,9 +29,9 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
   private BuScheduleReference existingSchedule = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<ReschedulingManagementUnitResponse> managementUnits = new ArrayList<ReschedulingManagementUnitResponse>();
+  private List<ReschedulingManagementUnitResponse> managementUnits = null;
   private Integer agentCount = null;
-  private List<String> activityCodeIds = new ArrayList<String>();
+  private List<String> activityCodeIds = null;
   private Boolean doNotChangeWeeklyPaidTime = null;
   private Boolean doNotChangeDailyPaidTime = null;
   private Boolean doNotChangeShiftStartTimes = null;

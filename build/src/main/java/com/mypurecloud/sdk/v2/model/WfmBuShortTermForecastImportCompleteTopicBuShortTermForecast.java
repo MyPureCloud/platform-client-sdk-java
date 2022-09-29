@@ -83,8 +83,8 @@ public class WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast  imple
   private String description = null;
   private Boolean legacy = null;
   private Date referenceStartDate = null;
-  private List<WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer> sourceDays = new ArrayList<WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer>();
-  private List<WfmBuShortTermForecastImportCompleteTopicBuForecastModification> modifications = new ArrayList<WfmBuShortTermForecastImportCompleteTopicBuForecastModification>();
+  private List<WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer> sourceDays = null;
+  private List<WfmBuShortTermForecastImportCompleteTopicBuForecastModification> modifications = null;
   private String timeZone = null;
   private Integer planningGroupsVersion = null;
   private Integer weekCount = null;

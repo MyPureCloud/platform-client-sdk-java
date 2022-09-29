@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class EmbeddedIntegration  implements Serializable {
   
   private Boolean enableWhitelist = null;
-  private List<String> domainWhitelist = new ArrayList<String>();
+  private List<String> domainWhitelist = null;
 
   
   /**

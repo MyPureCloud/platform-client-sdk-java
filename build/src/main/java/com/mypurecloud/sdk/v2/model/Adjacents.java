@@ -24,9 +24,9 @@ import java.io.Serializable;
 
 public class Adjacents  implements Serializable {
   
-  private List<User> superiors = new ArrayList<User>();
-  private List<User> siblings = new ArrayList<User>();
-  private List<User> directReports = new ArrayList<User>();
+  private List<User> superiors = null;
+  private List<User> siblings = null;
+  private List<User> directReports = null;
 
   
   /**

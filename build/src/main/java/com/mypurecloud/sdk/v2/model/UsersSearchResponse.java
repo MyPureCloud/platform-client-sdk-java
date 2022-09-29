@@ -31,8 +31,8 @@ public class UsersSearchResponse  implements Serializable {
   private String previousPage = null;
   private String currentPage = null;
   private String nextPage = null;
-  private List<String> types = new ArrayList<String>();
-  private List<User> results = new ArrayList<User>();
+  private List<String> types = null;
+  private List<User> results = null;
 
   
   /**

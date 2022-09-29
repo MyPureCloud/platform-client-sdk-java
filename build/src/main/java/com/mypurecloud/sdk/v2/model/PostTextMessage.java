@@ -75,7 +75,7 @@ public class PostTextMessage  implements Serializable {
   }
   private TypeEnum type = null;
   private String text = null;
-  private List<MessageContent> content = new ArrayList<MessageContent>();
+  private List<MessageContent> content = null;
 
   
   /**

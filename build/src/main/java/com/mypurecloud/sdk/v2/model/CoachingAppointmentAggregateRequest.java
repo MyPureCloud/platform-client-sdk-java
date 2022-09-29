@@ -75,7 +75,7 @@ public class CoachingAppointmentAggregateRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
+  private List<MetricsEnum> metrics = null;
 
   private static class GroupByEnumDeserializer extends StdDeserializer<GroupByEnum> {
     public GroupByEnumDeserializer() {
@@ -121,7 +121,7 @@ public class CoachingAppointmentAggregateRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
+  private List<GroupByEnum> groupBy = null;
   private QueryRequestFilter filter = null;
 
   

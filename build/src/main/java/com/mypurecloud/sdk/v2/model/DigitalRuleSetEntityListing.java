@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DigitalRuleSetEntityListing  implements Serializable, PagedResource<DigitalRuleSet> {
   
-  private List<DigitalRuleSet> entities = new ArrayList<DigitalRuleSet>();
+  private List<DigitalRuleSet> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

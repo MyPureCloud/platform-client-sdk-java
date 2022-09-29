@@ -74,7 +74,7 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate  implements Seria
     }
   }
   private UpdateTypeEnum updateType = null;
-  private List<Date> shiftStartDates = new ArrayList<Date>();
+  private List<Date> shiftStartDates = null;
 
   
   /**

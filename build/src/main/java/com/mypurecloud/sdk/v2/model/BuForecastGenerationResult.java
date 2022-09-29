@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BuForecastGenerationResult  implements Serializable {
   
-  private List<BuForecastGenerationPlanningGroupResult> planningGroupResults = new ArrayList<BuForecastGenerationPlanningGroupResult>();
+  private List<BuForecastGenerationPlanningGroupResult> planningGroupResults = null;
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class FileUploadSettings  implements Serializable {
   
-  private List<FileUploadMode> modes = new ArrayList<FileUploadMode>();
+  private List<FileUploadMode> modes = null;
 
   
   /**

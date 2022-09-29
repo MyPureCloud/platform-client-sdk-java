@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ReportingExportMetadataJobListing  implements Serializable, PagedResource<ReportingExportMetadataJobResponse> {
   
-  private List<ReportingExportMetadataJobResponse> entities = new ArrayList<ReportingExportMetadataJobResponse>();
+  private List<ReportingExportMetadataJobResponse> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

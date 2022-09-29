@@ -77,7 +77,7 @@ public class ProgramJob  implements Serializable {
     }
   }
   private StateEnum state = null;
-  private List<BaseProgramEntity> programs = new ArrayList<BaseProgramEntity>();
+  private List<BaseProgramEntity> programs = null;
   private AddressableEntityRef createdBy = null;
   private Date dateCreated = null;
   private Date dateModified = null;

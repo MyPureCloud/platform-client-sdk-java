@@ -33,8 +33,8 @@ public class Conversation  implements Serializable {
   private Date startTime = null;
   private Date endTime = null;
   private String address = null;
-  private List<Participant> participants = new ArrayList<Participant>();
-  private List<String> conversationIds = new ArrayList<String>();
+  private List<Participant> participants = null;
+  private List<String> conversationIds = null;
   private Integer maxParticipants = null;
 
   private static class RecordingStateEnumDeserializer extends StdDeserializer<RecordingStateEnum> {
@@ -142,7 +142,7 @@ public class Conversation  implements Serializable {
     }
   }
   private StateEnum state = null;
-  private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
+  private List<ConversationDivisionMembership> divisions = null;
   private String selfUri = null;
 
   

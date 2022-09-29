@@ -31,7 +31,7 @@ public class KnowledgeDocumentGuestSearch  implements Serializable {
   private Integer total = null;
   private Integer pageCount = null;
   private String sessionId = null;
-  private List<KnowledgeDocumentGuestSearchResult> results = new ArrayList<KnowledgeDocumentGuestSearchResult>();
+  private List<KnowledgeDocumentGuestSearchResult> results = null;
 
   
   /**

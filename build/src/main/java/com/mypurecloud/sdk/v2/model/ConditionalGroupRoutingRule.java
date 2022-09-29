@@ -124,7 +124,7 @@ public class ConditionalGroupRoutingRule  implements Serializable {
   }
   private OperatorEnum operator = null;
   private Double conditionValue = null;
-  private List<MemberGroup> groups = new ArrayList<MemberGroup>();
+  private List<MemberGroup> groups = null;
   private Integer waitSeconds = null;
 
   

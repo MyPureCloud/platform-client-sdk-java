@@ -143,7 +143,7 @@ public class LearningModule  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<LearningModuleInformStep> informSteps = new ArrayList<LearningModuleInformStep>();
+  private List<LearningModuleInformStep> informSteps = null;
   private AssessmentForm assessmentForm = null;
   private LearningModuleSummary summaryData = null;
   private LearningModuleCoverArtResponse coverArt = null;

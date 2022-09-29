@@ -89,9 +89,9 @@ public class ScheduleGroup  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private String timeZone = null;
-  private List<DomainEntityRef> openSchedules = new ArrayList<DomainEntityRef>();
-  private List<DomainEntityRef> closedSchedules = new ArrayList<DomainEntityRef>();
-  private List<DomainEntityRef> holidaySchedules = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> openSchedules = null;
+  private List<DomainEntityRef> closedSchedules = null;
+  private List<DomainEntityRef> holidaySchedules = null;
   private String selfUri = null;
 
   

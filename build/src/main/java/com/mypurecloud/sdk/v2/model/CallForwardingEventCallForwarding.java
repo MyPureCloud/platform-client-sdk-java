@@ -28,7 +28,7 @@ public class CallForwardingEventCallForwarding  implements Serializable {
   
   private CallForwardingEventUser user = null;
   private Boolean enabled = null;
-  private List<CallForwardingEventCall> calls = new ArrayList<CallForwardingEventCall>();
+  private List<CallForwardingEventCall> calls = null;
   private String voicemail = null;
   private Date modifiedDate = null;
 

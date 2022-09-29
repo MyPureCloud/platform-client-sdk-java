@@ -28,7 +28,7 @@ public class TestMatchesOperation  implements Serializable {
   private String name = null;
   private Integer step = null;
   private Boolean matches = null;
-  private List<MatchCriteriaTestResult> details = new ArrayList<MatchCriteriaTestResult>();
+  private List<MatchCriteriaTestResult> details = null;
 
   
   /**

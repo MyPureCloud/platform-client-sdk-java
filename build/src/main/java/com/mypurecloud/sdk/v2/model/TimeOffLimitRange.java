@@ -73,7 +73,7 @@ public class TimeOffLimitRange  implements Serializable {
     }
   }
   private GranularityEnum granularity = null;
-  private List<Integer> limitMinutesPerInterval = new ArrayList<Integer>();
+  private List<Integer> limitMinutesPerInterval = null;
 
   
   /**

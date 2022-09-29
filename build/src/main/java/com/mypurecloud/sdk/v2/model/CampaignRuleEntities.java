@@ -24,8 +24,8 @@ import java.io.Serializable;
 
 public class CampaignRuleEntities  implements Serializable {
   
-  private List<DomainEntityRef> campaigns = new ArrayList<DomainEntityRef>();
-  private List<DomainEntityRef> sequences = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> campaigns = null;
+  private List<DomainEntityRef> sequences = null;
 
   
   /**

@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class QueryResponseGroupedData  implements Serializable {
   
   private Map<String, String> group = null;
-  private List<QueryResponseData> data = new ArrayList<QueryResponseData>();
+  private List<QueryResponseData> data = null;
 
   
   /**

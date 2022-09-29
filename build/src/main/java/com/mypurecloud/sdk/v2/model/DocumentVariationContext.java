@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class DocumentVariationContext  implements Serializable {
   
   private KnowledgeContextReference context = null;
-  private List<KnowledgeContextValueReference> values = new ArrayList<KnowledgeContextValueReference>();
+  private List<KnowledgeContextValueReference> values = null;
 
   
   /**

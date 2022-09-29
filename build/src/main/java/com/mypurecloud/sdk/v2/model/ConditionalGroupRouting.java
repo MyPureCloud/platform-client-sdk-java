@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ConditionalGroupRouting  implements Serializable {
   
-  private List<ConditionalGroupRoutingRule> rules = new ArrayList<ConditionalGroupRoutingRule>();
+  private List<ConditionalGroupRoutingRule> rules = null;
 
   
   /**

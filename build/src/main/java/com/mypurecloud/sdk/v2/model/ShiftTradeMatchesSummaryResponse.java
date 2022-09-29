@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ShiftTradeMatchesSummaryResponse  implements Serializable {
   
-  private List<WeekShiftTradeMatchesSummaryResponse> entities = new ArrayList<WeekShiftTradeMatchesSummaryResponse>();
+  private List<WeekShiftTradeMatchesSummaryResponse> entities = null;
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ScriptEntityListing  implements Serializable, PagedResource<Script> {
   
-  private List<Script> entities = new ArrayList<Script>();
+  private List<Script> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

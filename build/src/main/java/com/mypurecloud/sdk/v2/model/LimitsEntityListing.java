@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class LimitsEntityListing  implements Serializable {
   
-  private List<Limit> entities = new ArrayList<Limit>();
+  private List<Limit> entities = null;
 
   
   /**

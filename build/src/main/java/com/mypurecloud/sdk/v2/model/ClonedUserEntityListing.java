@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class ClonedUserEntityListing  implements Serializable {
   
   private Long total = null;
-  private List<ClonedUser> entities = new ArrayList<ClonedUser>();
+  private List<ClonedUser> entities = null;
   private String selfUri = null;
 
   

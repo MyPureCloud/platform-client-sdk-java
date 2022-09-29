@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ExternalMetricDefinitionListing  implements Serializable, PagedResource<ExternalMetricDefinition> {
   
-  private List<ExternalMetricDefinition> entities = new ArrayList<ExternalMetricDefinition>();
+  private List<ExternalMetricDefinition> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

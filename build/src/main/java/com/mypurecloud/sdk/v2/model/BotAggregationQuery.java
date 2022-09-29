@@ -91,7 +91,7 @@ public class BotAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
+  private List<GroupByEnum> groupBy = null;
   private BotAggregateQueryFilter filter = null;
 
   private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
@@ -147,9 +147,9 @@ public class BotAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
+  private List<MetricsEnum> metrics = null;
   private Boolean flattenMultivaluedDimensions = null;
-  private List<BotAggregationView> views = new ArrayList<BotAggregationView>();
+  private List<BotAggregationView> views = null;
 
   private static class AlternateTimeDimensionEnumDeserializer extends StdDeserializer<AlternateTimeDimensionEnum> {
     public AlternateTimeDimensionEnumDeserializer() {

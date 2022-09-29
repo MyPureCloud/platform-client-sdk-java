@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class EstimatedWaitTimePredictions  implements Serializable {
   
-  private List<PredictionResults> results = new ArrayList<PredictionResults>();
+  private List<PredictionResults> results = null;
 
   
   /**

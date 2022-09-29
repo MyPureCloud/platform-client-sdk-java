@@ -77,7 +77,7 @@ public class SchedulingStatusResponse  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<SchedulingProcessingError> errorDetails = new ArrayList<SchedulingProcessingError>();
+  private List<SchedulingProcessingError> errorDetails = null;
   private String schedulingResultUri = null;
   private Integer percentComplete = null;
 

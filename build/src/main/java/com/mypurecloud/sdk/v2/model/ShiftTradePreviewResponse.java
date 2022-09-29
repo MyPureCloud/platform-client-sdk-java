@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ShiftTradePreviewResponse  implements Serializable {
   
-  private List<ShiftTradeActivityPreviewResponse> activities = new ArrayList<ShiftTradeActivityPreviewResponse>();
+  private List<ShiftTradeActivityPreviewResponse> activities = null;
 
   
   /**

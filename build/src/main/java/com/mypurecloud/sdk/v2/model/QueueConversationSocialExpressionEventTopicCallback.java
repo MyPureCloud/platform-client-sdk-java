@@ -256,7 +256,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
   private Date startHoldTime = null;
   private QueueConversationSocialExpressionEventTopicDialerPreview dialerPreview = null;
   private QueueConversationSocialExpressionEventTopicVoicemail voicemail = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
+  private List<String> callbackNumbers = null;
   private String callbackUserName = null;
   private String scriptId = null;
   private String peerId = null;

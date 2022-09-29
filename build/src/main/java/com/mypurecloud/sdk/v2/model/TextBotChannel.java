@@ -119,7 +119,7 @@ public class TextBotChannel  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<InputModesEnum> inputModes = new ArrayList<InputModesEnum>();
+  private List<InputModesEnum> inputModes = null;
 
   private static class OutputModesEnumDeserializer extends StdDeserializer<OutputModesEnum> {
     public OutputModesEnumDeserializer() {
@@ -165,7 +165,7 @@ public class TextBotChannel  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<OutputModesEnum> outputModes = new ArrayList<OutputModesEnum>();
+  private List<OutputModesEnum> outputModes = null;
   private TextBotUserAgent userAgent = null;
 
   

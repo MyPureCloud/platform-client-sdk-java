@@ -28,7 +28,7 @@ public class Prompt  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
-  private List<PromptAsset> resources = new ArrayList<PromptAsset>();
+  private List<PromptAsset> resources = null;
   private Operation currentOperation = null;
   private String selfUri = null;
 

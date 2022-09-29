@@ -26,7 +26,7 @@ public class ReportingTurnKnowledgeFeedback  implements Serializable {
   
   private String searchId = null;
   private Integer rating = null;
-  private List<ReportingTurnKnowledgeDocument> documents = new ArrayList<ReportingTurnKnowledgeDocument>();
+  private List<ReportingTurnKnowledgeDocument> documents = null;
 
   
   /**

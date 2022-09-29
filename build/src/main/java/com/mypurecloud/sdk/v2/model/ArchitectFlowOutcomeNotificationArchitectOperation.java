@@ -143,7 +143,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
   private String errorMessage = null;
   private String errorCode = null;
   private Object errorMessageParams = null;
-  private List<ArchitectFlowOutcomeNotificationErrorDetail> errorDetails = new ArrayList<ArchitectFlowOutcomeNotificationErrorDetail>();
+  private List<ArchitectFlowOutcomeNotificationErrorDetail> errorDetails = null;
 
   
   /**

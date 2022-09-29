@@ -28,8 +28,8 @@ public class ConversationSocialExpressionEventTopicConversationRoutingData  impl
   private ConversationSocialExpressionEventTopicUriReference queue = null;
   private ConversationSocialExpressionEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<ConversationSocialExpressionEventTopicUriReference> skills = new ArrayList<ConversationSocialExpressionEventTopicUriReference>();
-  private List<ConversationSocialExpressionEventTopicScoredAgent> scoredAgents = new ArrayList<ConversationSocialExpressionEventTopicScoredAgent>();
+  private List<ConversationSocialExpressionEventTopicUriReference> skills = null;
+  private List<ConversationSocialExpressionEventTopicScoredAgent> scoredAgents = null;
 
   
   /**

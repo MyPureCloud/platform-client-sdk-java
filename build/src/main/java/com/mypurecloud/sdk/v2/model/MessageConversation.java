@@ -26,8 +26,8 @@ public class MessageConversation  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<MessageMediaParticipant> participants = new ArrayList<MessageMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<MessageMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String selfUri = null;
 
   

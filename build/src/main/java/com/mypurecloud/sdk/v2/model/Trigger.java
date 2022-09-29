@@ -32,7 +32,7 @@ public class Trigger  implements Serializable {
   private TriggerTarget target = null;
   private Long version = null;
   private Boolean enabled = null;
-  private List<MatchCriteria> matchCriteria = new ArrayList<MatchCriteria>();
+  private List<MatchCriteria> matchCriteria = null;
   private Integer eventTTLSeconds = null;
   private String description = null;
   private String selfUri = null;

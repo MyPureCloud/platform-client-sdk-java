@@ -33,7 +33,7 @@ public class ComparisonPeriod  implements Serializable {
   private Long kpiTotalOff = null;
   private Long interactionCountOn = null;
   private Long interactionCountOff = null;
-  private List<KpiResult> kpiResults = new ArrayList<KpiResult>();
+  private List<KpiResult> kpiResults = null;
   private String selfUri = null;
 
   

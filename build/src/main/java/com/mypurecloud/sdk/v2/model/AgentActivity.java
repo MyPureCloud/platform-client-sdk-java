@@ -36,7 +36,7 @@ public class AgentActivity  implements Serializable {
   private Float lowestEvaluationScore = null;
   private Float highestCriticalScore = null;
   private Float lowestCriticalScore = null;
-  private List<AgentEvaluatorActivity> agentEvaluatorActivityList = new ArrayList<AgentEvaluatorActivity>();
+  private List<AgentEvaluatorActivity> agentEvaluatorActivityList = null;
   private Integer numEvaluationsWithoutViewPermission = null;
   private String selfUri = null;
 

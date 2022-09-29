@@ -23,8 +23,8 @@ import java.io.Serializable;
 
 public class TimeOffRequestQueryBody  implements Serializable {
   
-  private List<String> ids = new ArrayList<String>();
-  private List<String> userIds = new ArrayList<String>();
+  private List<String> ids = null;
+  private List<String> userIds = null;
 
   private static class StatusesEnumDeserializer extends StdDeserializer<StatusesEnum> {
     public StatusesEnumDeserializer() {
@@ -70,7 +70,7 @@ public class TimeOffRequestQueryBody  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<StatusesEnum> statuses = new ArrayList<StatusesEnum>();
+  private List<StatusesEnum> statuses = null;
 
   private static class SubstatusesEnumDeserializer extends StdDeserializer<SubstatusesEnum> {
     public SubstatusesEnumDeserializer() {
@@ -122,7 +122,7 @@ public class TimeOffRequestQueryBody  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<SubstatusesEnum> substatuses = new ArrayList<SubstatusesEnum>();
+  private List<SubstatusesEnum> substatuses = null;
   private DateRange dateRange = null;
 
   

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DncListDivisionViewListing  implements Serializable, PagedResource<DncListDivisionView> {
   
-  private List<DncListDivisionView> entities = new ArrayList<DncListDivisionView>();
+  private List<DncListDivisionView> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

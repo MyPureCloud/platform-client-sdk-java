@@ -89,8 +89,8 @@ public class BuShortTermForecast  implements Serializable {
   private WfmVersionedEntityMetadata metadata = null;
   private Boolean canUseForScheduling = null;
   private Date referenceStartDate = null;
-  private List<ForecastSourceDayPointer> sourceDays = new ArrayList<ForecastSourceDayPointer>();
-  private List<BuForecastModification> modifications = new ArrayList<BuForecastModification>();
+  private List<ForecastSourceDayPointer> sourceDays = null;
+  private List<BuForecastModification> modifications = null;
   private BuForecastGenerationResult generationResults = null;
   private String timeZone = null;
   private Integer planningGroupsVersion = null;

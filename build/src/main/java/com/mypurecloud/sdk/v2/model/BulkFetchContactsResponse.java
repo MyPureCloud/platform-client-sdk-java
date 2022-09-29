@@ -24,9 +24,9 @@ import java.io.Serializable;
 
 public class BulkFetchContactsResponse  implements Serializable {
   
-  private List<BulkResponseResultExternalContactEntity> results = new ArrayList<BulkResponseResultExternalContactEntity>();
+  private List<BulkResponseResultExternalContactEntity> results = null;
   private Integer errorCount = null;
-  private List<Integer> errorIndexes = new ArrayList<Integer>();
+  private List<Integer> errorIndexes = null;
 
   
   /**

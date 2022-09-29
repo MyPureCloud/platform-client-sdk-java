@@ -26,8 +26,8 @@ import java.io.Serializable;
 public class AnalyticsUserDetail  implements Serializable {
   
   private String userId = null;
-  private List<AnalyticsUserPresenceRecord> primaryPresence = new ArrayList<AnalyticsUserPresenceRecord>();
-  private List<AnalyticsRoutingStatusRecord> routingStatus = new ArrayList<AnalyticsRoutingStatusRecord>();
+  private List<AnalyticsUserPresenceRecord> primaryPresence = null;
+  private List<AnalyticsRoutingStatusRecord> routingStatus = null;
 
   
   /**

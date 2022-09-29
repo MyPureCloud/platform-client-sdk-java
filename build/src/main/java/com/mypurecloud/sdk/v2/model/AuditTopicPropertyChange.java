@@ -24,8 +24,8 @@ import java.io.Serializable;
 public class AuditTopicPropertyChange  implements Serializable {
   
   private String property = null;
-  private List<String> oldValues = new ArrayList<String>();
-  private List<String> newValues = new ArrayList<String>();
+  private List<String> oldValues = null;
+  private List<String> newValues = null;
 
   
   /**

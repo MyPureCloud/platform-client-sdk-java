@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class MediaUtilization  implements Serializable {
   
   private Integer maximumCapacity = null;
-  private List<String> interruptableMediaTypes = new ArrayList<String>();
+  private List<String> interruptableMediaTypes = null;
   private Boolean includeNonAcd = null;
 
   

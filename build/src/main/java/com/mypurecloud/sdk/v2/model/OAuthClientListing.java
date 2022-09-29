@@ -31,15 +31,15 @@ public class OAuthClientListing  implements Serializable {
   private String name = null;
   private Long accessTokenValiditySeconds = null;
   private String description = null;
-  private List<String> registeredRedirectUri = new ArrayList<String>();
+  private List<String> registeredRedirectUri = null;
   private String secret = null;
-  private List<String> roleIds = new ArrayList<String>();
+  private List<String> roleIds = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private DomainEntityRef createdBy = null;
   private DomainEntityRef modifiedBy = null;
-  private List<String> scope = new ArrayList<String>();
-  private List<RoleDivision> roleDivisions = new ArrayList<RoleDivision>();
+  private List<String> scope = null;
+  private List<RoleDivision> roleDivisions = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {

@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class RecordingRetentionCursorEntityListing  implements Serializable {
   
-  private List<RecordingRetention> entities = new ArrayList<RecordingRetention>();
+  private List<RecordingRetention> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

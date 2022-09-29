@@ -84,7 +84,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
   private WfmUserNotificationTopicTimeOffRequestNotification timeOffRequest = null;
   private WfmUserNotificationTopicAdherenceExplanationNotification adherenceExplanation = null;
   private Boolean agentNotification = null;
-  private List<String> otherNotificationIdsInGroup = new ArrayList<String>();
+  private List<String> otherNotificationIdsInGroup = null;
   private Boolean markedAsRead = null;
 
   

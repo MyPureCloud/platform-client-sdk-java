@@ -192,7 +192,7 @@ public class CallBasic  implements Serializable {
   private Boolean confined = null;
   private Boolean held = null;
   private String recordingId = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
   private ErrorInfo errorInfo = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
@@ -261,7 +261,7 @@ public class CallBasic  implements Serializable {
   private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
-  private List<DisconnectReason> disconnectReasons = new ArrayList<DisconnectReason>();
+  private List<DisconnectReason> disconnectReasons = null;
   private FaxStatus faxStatus = null;
   private String provider = null;
   private String scriptId = null;

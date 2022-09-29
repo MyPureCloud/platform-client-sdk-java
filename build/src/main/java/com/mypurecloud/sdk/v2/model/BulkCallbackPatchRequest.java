@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BulkCallbackPatchRequest  implements Serializable {
   
-  private List<PatchCallbackRequest> patchCallbackRequests = new ArrayList<PatchCallbackRequest>();
+  private List<PatchCallbackRequest> patchCallbackRequests = null;
 
   
   /**

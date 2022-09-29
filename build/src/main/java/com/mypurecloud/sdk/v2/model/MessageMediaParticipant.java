@@ -277,7 +277,7 @@ public class MessageMediaParticipant  implements Serializable {
   private Date endAcwTime = null;
   private Address toAddress = null;
   private Address fromAddress = null;
-  private List<MessageDetails> messages = new ArrayList<MessageDetails>();
+  private List<MessageDetails> messages = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {

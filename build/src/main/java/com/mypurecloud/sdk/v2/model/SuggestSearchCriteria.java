@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class SuggestSearchCriteria  implements Serializable {
   
   private String endValue = null;
-  private List<String> values = new ArrayList<String>();
+  private List<String> values = null;
   private String startValue = null;
   private String value = null;
 
@@ -77,9 +77,9 @@ public class SuggestSearchCriteria  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<SuggestSearchCriteria> group = new ArrayList<SuggestSearchCriteria>();
+  private List<SuggestSearchCriteria> group = null;
   private String dateFormat = null;
-  private List<String> fields = new ArrayList<String>();
+  private List<String> fields = null;
 
   
   /**

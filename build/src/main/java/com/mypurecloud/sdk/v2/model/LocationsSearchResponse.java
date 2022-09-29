@@ -31,8 +31,8 @@ public class LocationsSearchResponse  implements Serializable {
   private String previousPage = null;
   private String currentPage = null;
   private String nextPage = null;
-  private List<String> types = new ArrayList<String>();
-  private List<LocationDefinition> results = new ArrayList<LocationDefinition>();
+  private List<String> types = null;
+  private List<LocationDefinition> results = null;
 
   
   /**

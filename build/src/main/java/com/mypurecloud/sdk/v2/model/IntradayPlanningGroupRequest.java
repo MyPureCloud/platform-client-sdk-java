@@ -72,8 +72,8 @@ public class IntradayPlanningGroupRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<CategoriesEnum> categories = new ArrayList<CategoriesEnum>();
-  private List<String> planningGroupIds = new ArrayList<String>();
+  private List<CategoriesEnum> categories = null;
+  private List<String> planningGroupIds = null;
   private Integer intervalLengthMinutes = null;
 
   

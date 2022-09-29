@@ -85,8 +85,8 @@ public class ConversationNormalizedMessage  implements Serializable {
   }
   private TypeEnum type = null;
   private String text = null;
-  private List<ConversationMessageContent> content = new ArrayList<ConversationMessageContent>();
-  private List<ConversationMessageEvent> events = new ArrayList<ConversationMessageEvent>();
+  private List<ConversationMessageContent> content = null;
+  private List<ConversationMessageEvent> events = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -139,7 +139,7 @@ public class ConversationNormalizedMessage  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<ConversationReason> reasons = new ArrayList<ConversationReason>();
+  private List<ConversationReason> reasons = null;
 
   private static class OriginatingEntityEnumDeserializer extends StdDeserializer<OriginatingEntityEnum> {
     public OriginatingEntityEnumDeserializer() {

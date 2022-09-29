@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class EntityListing  implements Serializable {
   
-  private List<Object> entities = new ArrayList<Object>();
+  private List<Object> entities = null;
 
   
   /**

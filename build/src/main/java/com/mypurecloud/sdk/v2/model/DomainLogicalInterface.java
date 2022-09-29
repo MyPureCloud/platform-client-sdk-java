@@ -148,8 +148,8 @@ public class DomainLogicalInterface  implements Serializable {
   private InterfaceTypeEnum interfaceType = null;
   private String publicNatAddressIpV4 = null;
   private String publicNatAddressIpV6 = null;
-  private List<DomainNetworkRoute> routes = new ArrayList<DomainNetworkRoute>();
-  private List<DomainNetworkAddress> addresses = new ArrayList<DomainNetworkAddress>();
+  private List<DomainNetworkRoute> routes = null;
+  private List<DomainNetworkAddress> addresses = null;
   private DomainCapabilities ipv4Capabilities = null;
   private DomainCapabilities ipv6Capabilities = null;
 
@@ -206,15 +206,15 @@ public class DomainLogicalInterface  implements Serializable {
   private CurrentStateEnum currentState = null;
   private String lastModifiedUserId = null;
   private String lastModifiedCorrelationId = null;
-  private List<DomainNetworkCommandResponse> commandResponses = new ArrayList<DomainNetworkCommandResponse>();
+  private List<DomainNetworkCommandResponse> commandResponses = null;
   private Boolean inheritPhoneTrunkBasesIPv4 = null;
   private Boolean inheritPhoneTrunkBasesIPv6 = null;
   private Boolean useForInternalEdgeCommunication = null;
   private Boolean useForIndirectEdgeCommunication = null;
   private Boolean useForCloudProxyEdgeCommunication = null;
   private Boolean useForWanInterface = null;
-  private List<TrunkBaseAssignment> externalTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
-  private List<TrunkBaseAssignment> phoneTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
+  private List<TrunkBaseAssignment> externalTrunkBaseAssignments = null;
+  private List<TrunkBaseAssignment> phoneTrunkBaseAssignments = null;
   private Boolean traceEnabled = null;
   private Date startDate = null;
   private Date endDate = null;

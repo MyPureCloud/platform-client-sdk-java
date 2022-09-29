@@ -74,8 +74,8 @@ public class TranscriptAggregateQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<TranscriptAggregateQueryClause> clauses = new ArrayList<TranscriptAggregateQueryClause>();
-  private List<TranscriptAggregateQueryPredicate> predicates = new ArrayList<TranscriptAggregateQueryPredicate>();
+  private List<TranscriptAggregateQueryClause> clauses = null;
+  private List<TranscriptAggregateQueryPredicate> predicates = null;
 
   
   /**

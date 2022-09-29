@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class Criteria  implements Serializable {
   
   private String key = null;
-  private List<String> values = new ArrayList<String>();
+  private List<String> values = null;
   private Boolean shouldIgnoreCase = null;
 
   private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {

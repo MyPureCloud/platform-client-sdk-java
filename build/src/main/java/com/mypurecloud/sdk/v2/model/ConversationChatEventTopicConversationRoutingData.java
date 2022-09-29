@@ -28,8 +28,8 @@ public class ConversationChatEventTopicConversationRoutingData  implements Seria
   private ConversationChatEventTopicUriReference queue = null;
   private ConversationChatEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<ConversationChatEventTopicUriReference> skills = new ArrayList<ConversationChatEventTopicUriReference>();
-  private List<ConversationChatEventTopicScoredAgent> scoredAgents = new ArrayList<ConversationChatEventTopicScoredAgent>();
+  private List<ConversationChatEventTopicUriReference> skills = null;
+  private List<ConversationChatEventTopicScoredAgent> scoredAgents = null;
 
   
   /**

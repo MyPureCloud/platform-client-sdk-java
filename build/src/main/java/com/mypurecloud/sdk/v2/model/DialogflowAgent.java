@@ -29,9 +29,9 @@ public class DialogflowAgent  implements Serializable {
   private String id = null;
   private String name = null;
   private DialogflowProject project = null;
-  private List<String> languages = new ArrayList<String>();
-  private List<DialogflowIntent> intents = new ArrayList<DialogflowIntent>();
-  private List<String> environments = new ArrayList<String>();
+  private List<String> languages = null;
+  private List<DialogflowIntent> intents = null;
+  private List<String> environments = null;
   private DomainEntityRef integration = null;
   private String selfUri = null;
 

@@ -28,8 +28,8 @@ import java.io.Serializable;
 public class BenefitAssessment  implements Serializable {
   
   private String id = null;
-  private List<AddressableEntityRef> queues = new ArrayList<AddressableEntityRef>();
-  private List<KeyPerformanceIndicatorAssessment> kpiAssessments = new ArrayList<KeyPerformanceIndicatorAssessment>();
+  private List<AddressableEntityRef> queues = null;
+  private List<KeyPerformanceIndicatorAssessment> kpiAssessments = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {

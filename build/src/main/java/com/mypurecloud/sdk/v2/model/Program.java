@@ -30,8 +30,8 @@ public class Program  implements Serializable {
   private String name = null;
   private String description = null;
   private Boolean published = null;
-  private List<BaseTopicEntitiy> topics = new ArrayList<BaseTopicEntitiy>();
-  private List<String> tags = new ArrayList<String>();
+  private List<BaseTopicEntitiy> topics = null;
+  private List<String> tags = null;
   private AddressableEntityRef modifiedBy = null;
   private Date dateModified = null;
   private AddressableEntityRef publishedBy = null;

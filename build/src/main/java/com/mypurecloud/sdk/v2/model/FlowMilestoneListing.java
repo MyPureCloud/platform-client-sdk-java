@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMilestone> {
   
-  private List<FlowMilestone> entities = new ArrayList<FlowMilestone>();
+  private List<FlowMilestone> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

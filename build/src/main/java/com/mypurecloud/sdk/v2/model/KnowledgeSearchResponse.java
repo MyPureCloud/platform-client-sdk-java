@@ -29,7 +29,7 @@ public class KnowledgeSearchResponse  implements Serializable {
   private Integer pageCount = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<KnowledgeSearchDocument> results = new ArrayList<KnowledgeSearchDocument>();
+  private List<KnowledgeSearchDocument> results = null;
 
   
   @ApiModelProperty(example = "null", value = "Search Id")

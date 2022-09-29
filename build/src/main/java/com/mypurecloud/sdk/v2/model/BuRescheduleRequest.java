@@ -26,9 +26,9 @@ public class BuRescheduleRequest  implements Serializable {
   
   private Date startDate = null;
   private Date endDate = null;
-  private List<String> agentIds = new ArrayList<String>();
-  private List<String> activityCodeIds = new ArrayList<String>();
-  private List<String> managementUnitIds = new ArrayList<String>();
+  private List<String> agentIds = null;
+  private List<String> activityCodeIds = null;
+  private List<String> managementUnitIds = null;
   private Boolean doNotChangeWeeklyPaidTime = null;
   private Boolean doNotChangeDailyPaidTime = null;
   private Boolean doNotChangeShiftStartTimes = null;

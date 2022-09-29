@@ -99,7 +99,7 @@ public class CampaignInteraction  implements Serializable {
   private ConversationBasic conversation = null;
   private String dialerSystemParticipantId = null;
   private String dialingMode = null;
-  private List<DomainEntityRef> skills = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> skills = null;
 
   
   /**

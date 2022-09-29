@@ -38,9 +38,9 @@ public class RecordingMessagingMessage  implements Serializable {
   private Date timestamp = null;
   private String id = null;
   private String messageText = null;
-  private List<MessageMediaAttachment> messageMediaAttachments = new ArrayList<MessageMediaAttachment>();
-  private List<MessageStickerAttachment> messageStickerAttachments = new ArrayList<MessageStickerAttachment>();
-  private List<QuickReply> quickReplies = new ArrayList<QuickReply>();
+  private List<MessageMediaAttachment> messageMediaAttachments = null;
+  private List<MessageStickerAttachment> messageStickerAttachments = null;
+  private List<QuickReply> quickReplies = null;
   private ButtonResponse buttonResponse = null;
   private RecordingContentStory story = null;
 

@@ -131,8 +131,8 @@ public class Group  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<UserImage> images = new ArrayList<UserImage>();
-  private List<GroupContact> addresses = new ArrayList<GroupContact>();
+  private List<UserImage> images = null;
+  private List<GroupContact> addresses = null;
   private Boolean rulesVisible = null;
 
   private static class VisibilityEnumDeserializer extends StdDeserializer<VisibilityEnum> {
@@ -183,7 +183,7 @@ public class Group  implements Serializable {
     }
   }
   private VisibilityEnum visibility = null;
-  private List<User> owners = new ArrayList<User>();
+  private List<User> owners = null;
   private String selfUri = null;
 
   

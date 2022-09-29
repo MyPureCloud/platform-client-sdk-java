@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class SurveyAggregateQueryResponse  implements Serializable {
   
-  private List<SurveyAggregateDataContainer> results = new ArrayList<SurveyAggregateDataContainer>();
+  private List<SurveyAggregateDataContainer> results = null;
 
   
   /**

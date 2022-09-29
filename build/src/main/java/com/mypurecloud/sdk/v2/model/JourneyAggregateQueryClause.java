@@ -73,7 +73,7 @@ public class JourneyAggregateQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<JourneyAggregateQueryPredicate> predicates = new ArrayList<JourneyAggregateQueryPredicate>();
+  private List<JourneyAggregateQueryPredicate> predicates = null;
 
   
   /**

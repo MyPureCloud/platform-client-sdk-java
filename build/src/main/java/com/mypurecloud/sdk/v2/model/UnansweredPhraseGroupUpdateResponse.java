@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class UnansweredPhraseGroupUpdateResponse  implements Serializable {
   
-  private List<PhraseAssociations> phraseAssociations = new ArrayList<PhraseAssociations>();
+  private List<PhraseAssociations> phraseAssociations = null;
   private UnansweredGroup group = null;
 
   

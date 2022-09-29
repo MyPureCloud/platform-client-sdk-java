@@ -23,8 +23,8 @@ import java.io.Serializable;
 
 public class TranscriptTopics  implements Serializable {
   
-  private List<String> includes = new ArrayList<String>();
-  private List<String> excludes = new ArrayList<String>();
+  private List<String> includes = null;
+  private List<String> excludes = null;
 
   
   /**

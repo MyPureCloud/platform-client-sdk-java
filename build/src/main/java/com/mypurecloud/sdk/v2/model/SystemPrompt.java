@@ -27,7 +27,7 @@ public class SystemPrompt  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
-  private List<SystemPromptAsset> resources = new ArrayList<SystemPromptAsset>();
+  private List<SystemPromptAsset> resources = null;
   private String selfUri = null;
 
   

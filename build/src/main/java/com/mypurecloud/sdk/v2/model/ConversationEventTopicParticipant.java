@@ -118,15 +118,15 @@ public class ConversationEventTopicParticipant  implements Serializable {
   private ScreenRecordingStateEnum screenRecordingState = null;
   private String flaggedReason = null;
   private Map<String, String> attributes = null;
-  private List<ConversationEventTopicCall> calls = new ArrayList<ConversationEventTopicCall>();
-  private List<ConversationEventTopicCallback> callbacks = new ArrayList<ConversationEventTopicCallback>();
-  private List<ConversationEventTopicChat> chats = new ArrayList<ConversationEventTopicChat>();
-  private List<ConversationEventTopicCobrowse> cobrowsesessions = new ArrayList<ConversationEventTopicCobrowse>();
-  private List<ConversationEventTopicEmail> emails = new ArrayList<ConversationEventTopicEmail>();
-  private List<ConversationEventTopicMessage> messages = new ArrayList<ConversationEventTopicMessage>();
-  private List<ConversationEventTopicScreenshare> screenshares = new ArrayList<ConversationEventTopicScreenshare>();
-  private List<ConversationEventTopicSocialExpression> socialExpressions = new ArrayList<ConversationEventTopicSocialExpression>();
-  private List<ConversationEventTopicVideo> videos = new ArrayList<ConversationEventTopicVideo>();
+  private List<ConversationEventTopicCall> calls = null;
+  private List<ConversationEventTopicCallback> callbacks = null;
+  private List<ConversationEventTopicChat> chats = null;
+  private List<ConversationEventTopicCobrowse> cobrowsesessions = null;
+  private List<ConversationEventTopicEmail> emails = null;
+  private List<ConversationEventTopicMessage> messages = null;
+  private List<ConversationEventTopicScreenshare> screenshares = null;
+  private List<ConversationEventTopicSocialExpression> socialExpressions = null;
+  private List<ConversationEventTopicVideo> videos = null;
   private ConversationEventTopicWorkflow workflow = null;
 
   

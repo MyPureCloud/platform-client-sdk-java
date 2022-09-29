@@ -128,7 +128,7 @@ public class JourneySurveyQuestion  implements Serializable {
     }
   }
   private CustomerPropertyEnum customerProperty = null;
-  private List<String> choices = new ArrayList<String>();
+  private List<String> choices = null;
   private Boolean isMandatory = null;
 
   

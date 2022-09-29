@@ -50,8 +50,8 @@ public class User  implements Serializable {
   private Chat chat = null;
   private String department = null;
   private String email = null;
-  private List<Contact> primaryContactInfo = new ArrayList<Contact>();
-  private List<Contact> addresses = new ArrayList<Contact>();
+  private List<Contact> primaryContactInfo = null;
+  private List<Contact> addresses = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -104,9 +104,9 @@ public class User  implements Serializable {
   private String title = null;
   private String username = null;
   private User manager = null;
-  private List<UserImage> images = new ArrayList<UserImage>();
+  private List<UserImage> images = null;
   private Integer version = null;
-  private List<String> certifications = new ArrayList<String>();
+  private List<String> certifications = null;
   private Biography biography = null;
   private EmployerInfo employerInfo = null;
   private RoutingStatus routingStatus = null;
@@ -117,12 +117,12 @@ public class User  implements Serializable {
   private Geolocation geolocation = null;
   private UserStations station = null;
   private UserAuthorization authorization = null;
-  private List<String> profileSkills = new ArrayList<String>();
-  private List<Location> locations = new ArrayList<Location>();
-  private List<Group> groups = new ArrayList<Group>();
+  private List<String> profileSkills = null;
+  private List<Location> locations = null;
+  private List<Group> groups = null;
   private Team team = null;
-  private List<UserRoutingSkill> skills = new ArrayList<UserRoutingSkill>();
-  private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
+  private List<UserRoutingSkill> skills = null;
+  private List<UserRoutingLanguage> languages = null;
   private Boolean acdAutoAnswer = null;
   private String languagePreference = null;
   private OAuthLastTokenIssued lastTokenIssued = null;

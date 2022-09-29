@@ -73,7 +73,7 @@ public class BotAggregateQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<BotAggregateQueryPredicate> predicates = new ArrayList<BotAggregateQueryPredicate>();
+  private List<BotAggregateQueryPredicate> predicates = null;
 
   
   /**

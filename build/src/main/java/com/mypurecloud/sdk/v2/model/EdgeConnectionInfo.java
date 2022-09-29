@@ -28,7 +28,7 @@ public class EdgeConnectionInfo  implements Serializable {
   private String name = null;
   private String interfaceName = null;
   private String interfaceIpAddress = null;
-  private List<String> connectionErrors = new ArrayList<String>();
+  private List<String> connectionErrors = null;
   private AddressableEntityRef site = null;
   private String selfUri = null;
 

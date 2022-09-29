@@ -27,7 +27,7 @@ public class KnowledgeGuestDocumentSuggestion  implements Serializable {
   private String query = null;
   private Integer pageSize = null;
   private String sessionId = null;
-  private List<KnowledgeGuestDocumentSuggestionResult> results = new ArrayList<KnowledgeGuestDocumentSuggestionResult>();
+  private List<KnowledgeGuestDocumentSuggestionResult> results = null;
 
   
   /**

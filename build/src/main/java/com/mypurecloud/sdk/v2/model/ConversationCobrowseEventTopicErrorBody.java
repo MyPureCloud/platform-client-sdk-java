@@ -34,8 +34,8 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<ConversationCobrowseEventTopicDetail> details = new ArrayList<ConversationCobrowseEventTopicDetail>();
-  private List<ConversationCobrowseEventTopicErrorBody> errors = new ArrayList<ConversationCobrowseEventTopicErrorBody>();
+  private List<ConversationCobrowseEventTopicDetail> details = null;
+  private List<ConversationCobrowseEventTopicErrorBody> errors = null;
 
   
   /**

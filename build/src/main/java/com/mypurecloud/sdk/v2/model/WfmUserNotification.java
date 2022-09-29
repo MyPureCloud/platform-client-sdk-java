@@ -84,7 +84,7 @@ public class WfmUserNotification  implements Serializable {
   private AdherenceExplanationNotification adherenceExplanation = null;
   private Boolean markedAsRead = null;
   private Boolean agentNotification = null;
-  private List<String> otherNotificationIdsInGroup = new ArrayList<String>();
+  private List<String> otherNotificationIdsInGroup = null;
 
   
   /**

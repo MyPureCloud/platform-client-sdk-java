@@ -31,8 +31,8 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
   private String userId = null;
   private ValueWrapperString workPlanId = null;
   private ListWrapperString workPlanIdsPerWeek = null;
-  private List<BuAgentScheduleShift> shifts = new ArrayList<BuAgentScheduleShift>();
-  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
+  private List<BuAgentScheduleShift> shifts = null;
+  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = null;
   private WfmVersionedEntityMetadata metadata = null;
   private Boolean delete = null;
 

@@ -77,7 +77,7 @@ public class SmsAvailablePhoneNumber  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<CapabilitiesEnum> capabilities = new ArrayList<CapabilitiesEnum>();
+  private List<CapabilitiesEnum> capabilities = null;
 
   private static class PhoneNumberTypeEnumDeserializer extends StdDeserializer<PhoneNumberTypeEnum> {
     public PhoneNumberTypeEnumDeserializer() {

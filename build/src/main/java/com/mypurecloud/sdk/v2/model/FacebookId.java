@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class FacebookId  implements Serializable {
   
-  private List<FacebookScopedId> ids = new ArrayList<FacebookScopedId>();
+  private List<FacebookScopedId> ids = null;
   private String displayName = null;
 
   

@@ -97,9 +97,9 @@ public class AnalyticsConversation  implements Serializable {
   private ConversationInitiatorEnum conversationInitiator = null;
   private Date conversationStart = null;
   private Boolean customerParticipation = null;
-  private List<String> divisionIds = new ArrayList<String>();
+  private List<String> divisionIds = null;
   private String externalTag = null;
-  private List<String> knowledgeBaseIds = new ArrayList<String>();
+  private List<String> knowledgeBaseIds = null;
   private Double mediaStatsMinConversationMos = null;
   private Double mediaStatsMinConversationRFactor = null;
 
@@ -151,10 +151,10 @@ public class AnalyticsConversation  implements Serializable {
   }
   private OriginatingDirectionEnum originatingDirection = null;
   private Boolean selfServed = null;
-  private List<AnalyticsEvaluation> evaluations = new ArrayList<AnalyticsEvaluation>();
-  private List<AnalyticsSurvey> surveys = new ArrayList<AnalyticsSurvey>();
-  private List<AnalyticsResolution> resolutions = new ArrayList<AnalyticsResolution>();
-  private List<AnalyticsParticipant> participants = new ArrayList<AnalyticsParticipant>();
+  private List<AnalyticsEvaluation> evaluations = null;
+  private List<AnalyticsSurvey> surveys = null;
+  private List<AnalyticsResolution> resolutions = null;
+  private List<AnalyticsParticipant> participants = null;
 
   
   /**

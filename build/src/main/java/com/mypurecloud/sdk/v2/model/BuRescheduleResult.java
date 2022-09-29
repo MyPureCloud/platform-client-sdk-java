@@ -30,7 +30,7 @@ public class BuRescheduleResult  implements Serializable {
   private String generationResultsDownloadUrl = null;
   private BuHeadcountForecast headcountForecast = null;
   private String headcountForecastDownloadUrl = null;
-  private List<BuRescheduleAgentScheduleResult> agentSchedules = new ArrayList<BuRescheduleAgentScheduleResult>();
+  private List<BuRescheduleAgentScheduleResult> agentSchedules = null;
 
   
   /**

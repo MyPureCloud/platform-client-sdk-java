@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class ComparisonPeriodListing  implements Serializable {
   
   private Long total = null;
-  private List<ComparisonPeriod> entities = new ArrayList<ComparisonPeriod>();
+  private List<ComparisonPeriod> entities = null;
   private String selfUri = null;
 
   

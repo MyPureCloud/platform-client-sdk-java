@@ -254,7 +254,7 @@ public class QueueConversationEventTopicEmail  implements Serializable {
     }
   }
   private DirectionEnum direction = null;
-  private List<QueueConversationEventTopicAttachment> draftAttachments = new ArrayList<QueueConversationEventTopicAttachment>();
+  private List<QueueConversationEventTopicAttachment> draftAttachments = null;
   private Boolean spam = null;
   private QueueConversationEventTopicWrapup wrapup = null;
   private QueueConversationEventTopicAfterCallWork afterCallWork = null;

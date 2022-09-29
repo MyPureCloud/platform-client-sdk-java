@@ -290,7 +290,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
   private BigDecimal value = null;
   private Boolean inAlarm = null;
   private Boolean enabled = null;
-  private List<KlaxonInteractionStatsRulesTopicNotificationUser> notificationUsers = new ArrayList<KlaxonInteractionStatsRulesTopicNotificationUser>();
+  private List<KlaxonInteractionStatsRulesTopicNotificationUser> notificationUsers = null;
 
   private static class AlertTypesEnumDeserializer extends StdDeserializer<AlertTypesEnum> {
     public AlertTypesEnumDeserializer() {
@@ -338,7 +338,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
       return String.valueOf(value);
     }
   }
-  private List<AlertTypesEnum> alertTypes = new ArrayList<AlertTypesEnum>();
+  private List<AlertTypesEnum> alertTypes = null;
 
   
   /**

@@ -74,8 +74,8 @@ public class ConversationAggregateQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<ConversationAggregateQueryClause> clauses = new ArrayList<ConversationAggregateQueryClause>();
-  private List<ConversationAggregateQueryPredicate> predicates = new ArrayList<ConversationAggregateQueryPredicate>();
+  private List<ConversationAggregateQueryClause> clauses = null;
+  private List<ConversationAggregateQueryPredicate> predicates = null;
 
   
   /**

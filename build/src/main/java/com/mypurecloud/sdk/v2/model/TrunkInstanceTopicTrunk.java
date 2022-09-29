@@ -29,8 +29,8 @@ public class TrunkInstanceTopicTrunk  implements Serializable {
   
   private String id = null;
   private TrunkInstanceTopicTrunkConnectedStatus connectedStatus = null;
-  private List<TrunkInstanceTopicTrunkMetricsOptions> optionsStatus = new ArrayList<TrunkInstanceTopicTrunkMetricsOptions>();
-  private List<TrunkInstanceTopicTrunkMetricsRegisters> registersStatus = new ArrayList<TrunkInstanceTopicTrunkMetricsRegisters>();
+  private List<TrunkInstanceTopicTrunkMetricsOptions> optionsStatus = null;
+  private List<TrunkInstanceTopicTrunkMetricsRegisters> registersStatus = null;
   private TrunkInstanceTopicTrunkMetricsNetworkTypeIp ipStatus = null;
 
   

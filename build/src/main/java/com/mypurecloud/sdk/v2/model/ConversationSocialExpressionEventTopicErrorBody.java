@@ -34,8 +34,8 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<ConversationSocialExpressionEventTopicDetail> details = new ArrayList<ConversationSocialExpressionEventTopicDetail>();
-  private List<ConversationSocialExpressionEventTopicErrorBody> errors = new ArrayList<ConversationSocialExpressionEventTopicErrorBody>();
+  private List<ConversationSocialExpressionEventTopicDetail> details = null;
+  private List<ConversationSocialExpressionEventTopicErrorBody> errors = null;
 
   
   /**

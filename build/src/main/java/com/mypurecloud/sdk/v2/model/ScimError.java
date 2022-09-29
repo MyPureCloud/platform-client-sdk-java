@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ScimError  implements Serializable {
   
-  private List<String> schemas = new ArrayList<String>();
+  private List<String> schemas = null;
   private String status = null;
 
   private static class ScimTypeEnumDeserializer extends StdDeserializer<ScimTypeEnum> {

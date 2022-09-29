@@ -32,7 +32,7 @@ public class SupportCenterSettings  implements Serializable {
   
   private Boolean enabled = null;
   private AddressableEntityRef knowledgeBase = null;
-  private List<SupportCenterCustomMessage> customMessages = new ArrayList<SupportCenterCustomMessage>();
+  private List<SupportCenterCustomMessage> customMessages = null;
 
   private static class RouterTypeEnumDeserializer extends StdDeserializer<RouterTypeEnum> {
     public RouterTypeEnumDeserializer() {
@@ -81,8 +81,8 @@ public class SupportCenterSettings  implements Serializable {
     }
   }
   private RouterTypeEnum routerType = null;
-  private List<SupportCenterScreen> screens = new ArrayList<SupportCenterScreen>();
-  private List<AddressableEntityRef> enabledCategories = new ArrayList<AddressableEntityRef>();
+  private List<SupportCenterScreen> screens = null;
+  private List<AddressableEntityRef> enabledCategories = null;
   private SupportCenterStyleSetting styleSetting = null;
   private SupportCenterFeedbackSettings feedback = null;
 

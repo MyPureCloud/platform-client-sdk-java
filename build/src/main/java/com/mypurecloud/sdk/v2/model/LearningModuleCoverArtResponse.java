@@ -28,7 +28,7 @@ public class LearningModuleCoverArtResponse  implements Serializable {
   private String id = null;
   private String selfUri = null;
   private String url = null;
-  private List<LearningCoverArtThumbnail> thumbnails = new ArrayList<LearningCoverArtThumbnail>();
+  private List<LearningCoverArtThumbnail> thumbnails = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

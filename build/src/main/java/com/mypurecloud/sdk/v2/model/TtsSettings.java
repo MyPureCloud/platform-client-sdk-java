@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class TtsSettings  implements Serializable {
   
   private String defaultEngine = null;
-  private List<LanguageOverride> languageOverrides = new ArrayList<LanguageOverride>();
+  private List<LanguageOverride> languageOverrides = null;
 
   
   /**

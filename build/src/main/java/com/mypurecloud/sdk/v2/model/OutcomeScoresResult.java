@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class OutcomeScoresResult  implements Serializable {
   
-  private List<OutcomeEventScore> outcomeScores = new ArrayList<OutcomeEventScore>();
+  private List<OutcomeEventScore> outcomeScores = null;
   private Date modifiedDate = null;
 
   

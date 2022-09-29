@@ -29,10 +29,10 @@ public class QueryRequest  implements Serializable {
   private String queryPhrase = null;
   private Integer pageNumber = null;
   private Integer pageSize = null;
-  private List<String> facetNameRequests = new ArrayList<String>();
-  private List<SortItem> sort = new ArrayList<SortItem>();
-  private List<ContentFilterItem> filters = new ArrayList<ContentFilterItem>();
-  private List<AttributeFilterItem> attributeFilters = new ArrayList<AttributeFilterItem>();
+  private List<String> facetNameRequests = null;
+  private List<SortItem> sort = null;
+  private List<ContentFilterItem> filters = null;
+  private List<AttributeFilterItem> attributeFilters = null;
   private Boolean includeShares = null;
 
   

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class VoicemailMessageEntityListing  implements Serializable, PagedResource<VoicemailMessage> {
   
-  private List<VoicemailMessage> entities = new ArrayList<VoicemailMessage>();
+  private List<VoicemailMessage> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

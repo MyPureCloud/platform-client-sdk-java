@@ -76,7 +76,7 @@ public class ResponseAssetSearchRequest  implements Serializable {
   }
   private SortOrderEnum sortOrder = null;
   private String sortBy = null;
-  private List<ResponseAssetFilter> query = new ArrayList<ResponseAssetFilter>();
+  private List<ResponseAssetFilter> query = null;
 
   
   /**

@@ -70,7 +70,7 @@ public class FileUploadMode  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FileTypesEnum> fileTypes = new ArrayList<FileTypesEnum>();
+  private List<FileTypesEnum> fileTypes = null;
   private Long maxFileSizeKB = null;
 
   

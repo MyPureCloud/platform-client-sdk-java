@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class LineEntityListing  implements Serializable, PagedResource<Line> {
   
-  private List<Line> entities = new ArrayList<Line>();
+  private List<Line> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

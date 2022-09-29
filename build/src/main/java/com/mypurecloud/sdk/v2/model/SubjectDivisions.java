@@ -23,8 +23,8 @@ import java.io.Serializable;
 
 public class SubjectDivisions  implements Serializable {
   
-  private List<String> subjectIds = new ArrayList<String>();
-  private List<String> divisionIds = new ArrayList<String>();
+  private List<String> subjectIds = null;
+  private List<String> divisionIds = null;
 
   
   /**

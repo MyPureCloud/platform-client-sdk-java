@@ -28,7 +28,7 @@ public class GenericTemplate  implements Serializable {
   private String title = null;
   private String description = null;
   private String url = null;
-  private List<RecordingButtonComponent> components = new ArrayList<RecordingButtonComponent>();
+  private List<RecordingButtonComponent> components = null;
   private RecordingContentActions actions = null;
 
   

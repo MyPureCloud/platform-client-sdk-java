@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BuScheduleListing  implements Serializable {
   
-  private List<BuScheduleListItem> entities = new ArrayList<BuScheduleListItem>();
+  private List<BuScheduleListItem> entities = null;
 
   
   /**

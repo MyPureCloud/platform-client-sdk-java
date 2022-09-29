@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class OAuthClientEntityListing  implements Serializable, PagedResource<OAuthClientListing> {
   
-  private List<OAuthClientListing> entities = new ArrayList<OAuthClientListing>();
+  private List<OAuthClientListing> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

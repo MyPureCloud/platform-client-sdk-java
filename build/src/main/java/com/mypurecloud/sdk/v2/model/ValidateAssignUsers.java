@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class ValidateAssignUsers  implements Serializable {
   
-  private List<String> membersToAssign = new ArrayList<String>();
+  private List<String> membersToAssign = null;
 
   
   /**

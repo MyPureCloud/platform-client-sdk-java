@@ -126,8 +126,8 @@ public class ResourceConditionNode  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<ResourceConditionValue> operands = new ArrayList<ResourceConditionValue>();
-  private List<ResourceConditionNode> terms = new ArrayList<ResourceConditionNode>();
+  private List<ResourceConditionValue> operands = null;
+  private List<ResourceConditionNode> terms = null;
 
   
   /**

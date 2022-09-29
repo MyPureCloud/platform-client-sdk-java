@@ -26,7 +26,7 @@ public class ConversationEventTopicConversation  implements Serializable {
   
   private String id = null;
   private Integer maxParticipants = null;
-  private List<ConversationEventTopicParticipant> participants = new ArrayList<ConversationEventTopicParticipant>();
+  private List<ConversationEventTopicParticipant> participants = null;
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;

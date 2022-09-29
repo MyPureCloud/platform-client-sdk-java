@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class DraftRequest  implements Serializable {
   
-  private List<DraftIntents> intents = new ArrayList<DraftIntents>();
+  private List<DraftIntents> intents = null;
 
   
   /**

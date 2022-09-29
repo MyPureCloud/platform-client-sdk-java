@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DocumentEntityListing  implements Serializable, PagedResource<Document> {
   
-  private List<Document> entities = new ArrayList<Document>();
+  private List<Document> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

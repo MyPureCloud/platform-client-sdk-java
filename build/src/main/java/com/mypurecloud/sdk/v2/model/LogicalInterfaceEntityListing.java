@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class LogicalInterfaceEntityListing  implements Serializable, PagedResource<DomainLogicalInterface> {
   
-  private List<DomainLogicalInterface> entities = new ArrayList<DomainLogicalInterface>();
+  private List<DomainLogicalInterface> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

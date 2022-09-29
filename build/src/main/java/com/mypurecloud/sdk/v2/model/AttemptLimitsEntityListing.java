@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class AttemptLimitsEntityListing  implements Serializable, PagedResource<AttemptLimits> {
   
-  private List<AttemptLimits> entities = new ArrayList<AttemptLimits>();
+  private List<AttemptLimits> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

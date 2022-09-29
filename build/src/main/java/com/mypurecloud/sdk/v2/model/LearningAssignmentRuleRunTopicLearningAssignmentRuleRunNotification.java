@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification  implements Serializable {
   
-  private List<LearningAssignmentRuleRunTopicLearningAssignmentsCreated> entities = new ArrayList<LearningAssignmentRuleRunTopicLearningAssignmentsCreated>();
+  private List<LearningAssignmentRuleRunTopicLearningAssignmentsCreated> entities = null;
   private Integer total = null;
 
   

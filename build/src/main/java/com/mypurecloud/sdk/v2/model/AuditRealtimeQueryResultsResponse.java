@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class AuditRealtimeQueryResultsResponse  implements Serializable {
   
-  private List<AuditLogMessage> entities = new ArrayList<AuditLogMessage>();
+  private List<AuditLogMessage> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

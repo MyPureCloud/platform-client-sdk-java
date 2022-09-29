@@ -25,11 +25,11 @@ import java.io.Serializable;
 
 public class ScimV2SchemaListResponse  implements Serializable {
   
-  private List<String> schemas = new ArrayList<String>();
+  private List<String> schemas = null;
   private Long totalResults = null;
   private Long startIndex = null;
   private Long itemsPerPage = null;
-  private List<ScimV2SchemaDefinition> resources = new ArrayList<ScimV2SchemaDefinition>();
+  private List<ScimV2SchemaDefinition> resources = null;
 
   
   /**

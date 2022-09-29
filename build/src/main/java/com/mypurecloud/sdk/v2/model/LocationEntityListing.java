@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class LocationEntityListing  implements Serializable, PagedResource<LocationDefinition> {
   
-  private List<LocationDefinition> entities = new ArrayList<LocationDefinition>();
+  private List<LocationDefinition> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

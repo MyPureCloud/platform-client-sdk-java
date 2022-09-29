@@ -30,7 +30,7 @@ public class WebMessagingGeneric  implements Serializable {
   private String description = null;
   private String image = null;
   private ContentActions actions = null;
-  private List<ButtonComponent> components = new ArrayList<ButtonComponent>();
+  private List<ButtonComponent> components = null;
 
   
   /**

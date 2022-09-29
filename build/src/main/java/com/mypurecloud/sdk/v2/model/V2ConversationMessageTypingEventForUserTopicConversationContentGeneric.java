@@ -30,7 +30,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentGene
   private String image = null;
   private String video = null;
   private V2ConversationMessageTypingEventForUserTopicConversationContentActions actions = null;
-  private List<V2ConversationMessageTypingEventForUserTopicConversationButtonComponent> components = new ArrayList<V2ConversationMessageTypingEventForUserTopicConversationButtonComponent>();
+  private List<V2ConversationMessageTypingEventForUserTopicConversationButtonComponent> components = null;
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class GetTemplatesResponse  implements Serializable {
   
   private Long total = null;
-  private List<ObjectiveTemplate> entities = new ArrayList<ObjectiveTemplate>();
+  private List<ObjectiveTemplate> entities = null;
   private String selfUri = null;
 
   

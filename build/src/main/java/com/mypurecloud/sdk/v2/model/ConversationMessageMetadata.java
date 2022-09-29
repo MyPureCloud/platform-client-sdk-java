@@ -78,8 +78,8 @@ public class ConversationMessageMetadata  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<ConversationMessageMetadataEvent> events = new ArrayList<ConversationMessageMetadataEvent>();
-  private List<ConversationMessageMetadataContent> content = new ArrayList<ConversationMessageMetadataContent>();
+  private List<ConversationMessageMetadataEvent> events = null;
+  private List<ConversationMessageMetadataContent> content = null;
 
   
   /**

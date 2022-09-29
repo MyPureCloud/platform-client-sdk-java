@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class UserObservationQueryResponse  implements Serializable {
   
-  private List<UserObservationDataContainer> results = new ArrayList<UserObservationDataContainer>();
+  private List<UserObservationDataContainer> results = null;
 
   
   /**

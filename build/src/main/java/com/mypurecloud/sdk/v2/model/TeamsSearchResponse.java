@@ -31,8 +31,8 @@ public class TeamsSearchResponse  implements Serializable {
   private String previousPage = null;
   private String currentPage = null;
   private String nextPage = null;
-  private List<String> types = new ArrayList<String>();
-  private List<Team> results = new ArrayList<Team>();
+  private List<String> types = null;
+  private List<Team> results = null;
 
   
   /**

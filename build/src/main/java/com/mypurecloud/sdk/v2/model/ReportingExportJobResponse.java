@@ -391,9 +391,9 @@ public class ReportingExportJobResponse  implements Serializable {
     }
   }
   private CsvDelimiterEnum csvDelimiter = null;
-  private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
+  private List<SelectedColumns> selectedColumns = null;
   private Boolean hasCustomParticipantAttributes = null;
-  private List<String> recipientEmails = new ArrayList<String>();
+  private List<String> recipientEmails = null;
 
   private static class InnerEnumDeserializer extends StdDeserializer<InnerEnum> {
     public InnerEnumDeserializer() {

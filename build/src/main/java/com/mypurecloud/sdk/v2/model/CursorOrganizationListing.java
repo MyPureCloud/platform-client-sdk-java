@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CursorOrganizationListing  implements Serializable {
   
-  private List<ExternalOrganization> entities = new ArrayList<ExternalOrganization>();
+  private List<ExternalOrganization> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

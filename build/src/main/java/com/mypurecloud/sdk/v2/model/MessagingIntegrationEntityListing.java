@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class MessagingIntegrationEntityListing  implements Serializable, PagedResource<MessagingIntegration> {
   
-  private List<MessagingIntegration> entities = new ArrayList<MessagingIntegration>();
+  private List<MessagingIntegration> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

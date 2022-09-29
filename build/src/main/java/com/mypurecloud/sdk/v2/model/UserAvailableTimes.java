@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class UserAvailableTimes  implements Serializable {
   
   private UserReference user = null;
-  private List<AvailableTime> availableTimes = new ArrayList<AvailableTime>();
+  private List<AvailableTime> availableTimes = null;
 
   
   @ApiModelProperty(example = "null", value = "User reference")

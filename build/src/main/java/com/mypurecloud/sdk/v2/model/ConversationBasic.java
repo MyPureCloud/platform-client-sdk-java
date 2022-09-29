@@ -31,9 +31,9 @@ public class ConversationBasic  implements Serializable {
   private String externalTag = null;
   private Date startTime = null;
   private Date endTime = null;
-  private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
+  private List<ConversationDivisionMembership> divisions = null;
   private String selfUri = null;
-  private List<ParticipantBasic> participants = new ArrayList<ParticipantBasic>();
+  private List<ParticipantBasic> participants = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

@@ -138,25 +138,25 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     }
   }
   private CampaignStatusEnum campaignStatus = null;
-  private List<DialerCampaignConfigChangePhoneColumn> phoneColumns = new ArrayList<DialerCampaignConfigChangePhoneColumn>();
+  private List<DialerCampaignConfigChangePhoneColumn> phoneColumns = null;
   private BigDecimal abandonRate = null;
-  private List<DialerCampaignConfigChangeUriReference> dncLists = new ArrayList<DialerCampaignConfigChangeUriReference>();
+  private List<DialerCampaignConfigChangeUriReference> dncLists = null;
   private DialerCampaignConfigChangeUriReference callableTimeSet = null;
   private DialerCampaignConfigChangeUriReference callAnalysisResponseSet = null;
   private String callerName = null;
   private String callerAddress = null;
   private Integer outboundLineCount = null;
-  private List<DialerCampaignConfigChangeRestErrorDetail> errors = new ArrayList<DialerCampaignConfigChangeRestErrorDetail>();
-  private List<DialerCampaignConfigChangeUriReference> ruleSets = new ArrayList<DialerCampaignConfigChangeUriReference>();
+  private List<DialerCampaignConfigChangeRestErrorDetail> errors = null;
+  private List<DialerCampaignConfigChangeUriReference> ruleSets = null;
   private Boolean skipPreviewDisabled = null;
   private Integer previewTimeOutSeconds = null;
   private Boolean singleNumberPreview = null;
   private DialerCampaignConfigChangeContactSort contactSort = null;
-  private List<DialerCampaignConfigChangeContactSort> contactSorts = new ArrayList<DialerCampaignConfigChangeContactSort>();
+  private List<DialerCampaignConfigChangeContactSort> contactSorts = null;
   private Integer noAnswerTimeout = null;
   private String callAnalysisLanguage = null;
   private Integer priority = null;
-  private List<DialerCampaignConfigChangeUriReference> contactListFilters = new ArrayList<DialerCampaignConfigChangeUriReference>();
+  private List<DialerCampaignConfigChangeUriReference> contactListFilters = null;
   private DialerCampaignConfigChangeUriReference division = null;
   private String agentOwnedColumn = null;
   private String id = null;

@@ -25,7 +25,7 @@ public class DraftTopicRequest  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<String> phrases = new ArrayList<String>();
+  private List<String> phrases = null;
   private String selfUri = null;
 
   

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ParsedCertificate  implements Serializable {
   
-  private List<CertificateDetails> certificateDetails = new ArrayList<CertificateDetails>();
+  private List<CertificateDetails> certificateDetails = null;
 
   
   /**

@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class OverallBestPoints  implements Serializable {
   
   private Division division = null;
-  private List<OverallBestPointsItem> bestPoints = new ArrayList<OverallBestPointsItem>();
+  private List<OverallBestPointsItem> bestPoints = null;
   private AddressableEntityRef performanceProfile = null;
 
   

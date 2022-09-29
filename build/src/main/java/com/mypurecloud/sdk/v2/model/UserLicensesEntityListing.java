@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class UserLicensesEntityListing  implements Serializable {
   
-  private List<UserLicenses> entities = new ArrayList<UserLicenses>();
+  private List<UserLicenses> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

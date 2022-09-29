@@ -32,7 +32,7 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
   private String communicationId = null;
   private Integer sessionStartTimeMs = null;
   private Integer transcriptionStartTimeMs = null;
-  private List<TranscriptionTopicTranscriptResult> transcripts = new ArrayList<TranscriptionTopicTranscriptResult>();
+  private List<TranscriptionTopicTranscriptResult> transcripts = null;
   private TranscriptionTopicTranscriptionRequestStatus status = null;
 
   

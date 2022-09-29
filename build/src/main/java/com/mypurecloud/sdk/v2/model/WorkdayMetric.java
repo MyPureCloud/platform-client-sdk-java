@@ -30,7 +30,7 @@ public class WorkdayMetric  implements Serializable {
   private Objective objective = null;
   private Integer points = null;
   private Double value = null;
-  private List<PunctualityEvent> punctualityEvents = new ArrayList<PunctualityEvent>();
+  private List<PunctualityEvent> punctualityEvents = null;
 
   
   @ApiModelProperty(example = "null", value = "Gamification metric")

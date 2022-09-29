@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CommonCampaignDivisionViewEntityListing  implements Serializable, PagedResource<CommonCampaignDivisionView> {
   
-  private List<CommonCampaignDivisionView> entities = new ArrayList<CommonCampaignDivisionView>();
+  private List<CommonCampaignDivisionView> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

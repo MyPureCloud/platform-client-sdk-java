@@ -31,7 +31,7 @@ public class DraftTopics  implements Serializable {
   private Float conversationPercent = null;
   private Integer utteranceCount = null;
   private Integer phraseCount = null;
-  private List<String> phrases = new ArrayList<String>();
+  private List<String> phrases = null;
   private String selfUri = null;
 
   

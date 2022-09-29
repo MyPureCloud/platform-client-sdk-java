@@ -142,7 +142,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
   private PurposeEnum purpose = null;
   private String teamId = null;
   private String userId = null;
-  private List<AnalyticsSession> sessions = new ArrayList<AnalyticsSession>();
+  private List<AnalyticsSession> sessions = null;
 
   
   /**

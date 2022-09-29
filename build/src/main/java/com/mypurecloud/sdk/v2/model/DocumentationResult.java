@@ -25,25 +25,25 @@ import java.io.Serializable;
 public class DocumentationResult  implements Serializable {
   
   private Integer id = null;
-  private List<Integer> categories = new ArrayList<Integer>();
+  private List<Integer> categories = null;
   private String description = null;
   private String content = null;
   private String excerpt = null;
   private String link = null;
   private Date modified = null;
   private String name = null;
-  private List<Integer> service = new ArrayList<Integer>();
+  private List<Integer> service = null;
   private String slug = null;
   private String title = null;
   private String getType = null;
-  private List<Integer> facetFeature = new ArrayList<Integer>();
-  private List<Integer> facetRole = new ArrayList<Integer>();
-  private List<Integer> facetService = new ArrayList<Integer>();
-  private List<Integer> faqCategories = new ArrayList<Integer>();
-  private List<Integer> releasenoteCategory = new ArrayList<Integer>();
-  private List<Integer> releasenoteTag = new ArrayList<Integer>();
-  private List<Integer> serviceArea = new ArrayList<Integer>();
-  private List<Integer> videoCategories = new ArrayList<Integer>();
+  private List<Integer> facetFeature = null;
+  private List<Integer> facetRole = null;
+  private List<Integer> facetService = null;
+  private List<Integer> faqCategories = null;
+  private List<Integer> releasenoteCategory = null;
+  private List<Integer> releasenoteTag = null;
+  private List<Integer> serviceArea = null;
+  private List<Integer> videoCategories = null;
 
   
   /**

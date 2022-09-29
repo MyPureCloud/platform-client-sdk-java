@@ -39,8 +39,8 @@ public class Calibration  implements Serializable {
   private Integer highScore = null;
   private Integer lowScore = null;
   private Date createdDate = null;
-  private List<Evaluation> evaluations = new ArrayList<Evaluation>();
-  private List<User> evaluators = new ArrayList<User>();
+  private List<Evaluation> evaluations = null;
+  private List<User> evaluators = null;
   private Evaluation scoringIndex = null;
   private User expertEvaluator = null;
   private String selfUri = null;

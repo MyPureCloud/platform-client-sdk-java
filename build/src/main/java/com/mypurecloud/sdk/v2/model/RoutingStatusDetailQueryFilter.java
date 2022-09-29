@@ -74,8 +74,8 @@ public class RoutingStatusDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<RoutingStatusDetailQueryClause> clauses = new ArrayList<RoutingStatusDetailQueryClause>();
-  private List<RoutingStatusDetailQueryPredicate> predicates = new ArrayList<RoutingStatusDetailQueryPredicate>();
+  private List<RoutingStatusDetailQueryClause> clauses = null;
+  private List<RoutingStatusDetailQueryPredicate> predicates = null;
 
   
   /**

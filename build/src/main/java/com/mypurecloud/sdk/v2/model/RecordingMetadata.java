@@ -33,7 +33,7 @@ public class RecordingMetadata  implements Serializable {
   private String startTime = null;
   private String endTime = null;
   private String media = null;
-  private List<Annotation> annotations = new ArrayList<Annotation>();
+  private List<Annotation> annotations = null;
 
   private static class FileStateEnumDeserializer extends StdDeserializer<FileStateEnum> {
     public FileStateEnumDeserializer() {

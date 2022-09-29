@@ -35,7 +35,7 @@ public class AuditLogMessage  implements Serializable {
   private String userHomeOrgId = null;
   private DomainEntityRef user = null;
   private AddressableEntityRef client = null;
-  private List<String> remoteIp = new ArrayList<String>();
+  private List<String> remoteIp = null;
 
   private static class ServiceNameEnumDeserializer extends StdDeserializer<ServiceNameEnum> {
     public ServiceNameEnumDeserializer() {
@@ -569,7 +569,7 @@ public class AuditLogMessage  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<PropertyChange> propertyChanges = new ArrayList<PropertyChange>();
+  private List<PropertyChange> propertyChanges = null;
   private Map<String, String> context = null;
 
   

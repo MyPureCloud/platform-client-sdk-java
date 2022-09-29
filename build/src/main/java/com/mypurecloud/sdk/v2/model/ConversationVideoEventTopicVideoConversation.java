@@ -26,8 +26,8 @@ public class ConversationVideoEventTopicVideoConversation  implements Serializab
   
   private String id = null;
   private String name = null;
-  private List<ConversationVideoEventTopicVideoMediaParticipant> participants = new ArrayList<ConversationVideoEventTopicVideoMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationVideoEventTopicVideoMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
 
   
   /**

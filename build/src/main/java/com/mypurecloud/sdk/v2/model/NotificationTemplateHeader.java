@@ -77,7 +77,7 @@ public class NotificationTemplateHeader  implements Serializable {
   private TypeEnum type = null;
   private String text = null;
   private ContentAttachment media = null;
-  private List<NotificationTemplateParameter> parameters = new ArrayList<NotificationTemplateParameter>();
+  private List<NotificationTemplateParameter> parameters = null;
 
   
   /**

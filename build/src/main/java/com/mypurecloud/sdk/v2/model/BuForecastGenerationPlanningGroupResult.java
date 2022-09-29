@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class BuForecastGenerationPlanningGroupResult  implements Serializable {
   
   private String planningGroupId = null;
-  private List<BuForecastTimeSeriesResult> metricResults = new ArrayList<BuForecastTimeSeriesResult>();
+  private List<BuForecastTimeSeriesResult> metricResults = null;
 
   
   /**

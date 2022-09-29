@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BuShortTermForecastListing  implements Serializable {
   
-  private List<BuShortTermForecastListItem> entities = new ArrayList<BuShortTermForecastListItem>();
+  private List<BuShortTermForecastListItem> entities = null;
 
   
   /**

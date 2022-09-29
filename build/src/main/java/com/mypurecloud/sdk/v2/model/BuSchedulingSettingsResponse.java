@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BuSchedulingSettingsResponse  implements Serializable {
   
-  private List<SchedulerMessageTypeSeverity> messageSeverities = new ArrayList<SchedulerMessageTypeSeverity>();
+  private List<SchedulerMessageTypeSeverity> messageSeverities = null;
 
   
   /**

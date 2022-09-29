@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ActionSurvey  implements Serializable {
   
-  private List<JourneySurveyQuestion> questions = new ArrayList<JourneySurveyQuestion>();
+  private List<JourneySurveyQuestion> questions = null;
 
   
   /**

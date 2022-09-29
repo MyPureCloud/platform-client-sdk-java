@@ -104,8 +104,8 @@ public class WorkPlanListItemResponse  implements Serializable {
   }
   private ShiftStartVarianceTypeEnum shiftStartVarianceType = null;
   private ListWrapperShiftStartVariance shiftStartVariances = null;
-  private List<WorkPlanShift> shifts = new ArrayList<WorkPlanShift>();
-  private List<DeletableUserReference> agents = new ArrayList<DeletableUserReference>();
+  private List<WorkPlanShift> shifts = null;
+  private List<DeletableUserReference> agents = null;
   private Integer agentCount = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;

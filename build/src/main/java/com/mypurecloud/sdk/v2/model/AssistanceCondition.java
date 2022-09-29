@@ -72,7 +72,7 @@ public class AssistanceCondition  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<String> topicIds = new ArrayList<String>();
+  private List<String> topicIds = null;
 
   
   /**

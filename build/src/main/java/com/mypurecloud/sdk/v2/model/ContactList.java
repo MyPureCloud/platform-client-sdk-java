@@ -33,11 +33,11 @@ public class ContactList  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private DomainEntityRef division = null;
-  private List<String> columnNames = new ArrayList<String>();
-  private List<ContactPhoneNumberColumn> phoneColumns = new ArrayList<ContactPhoneNumberColumn>();
+  private List<String> columnNames = null;
+  private List<ContactPhoneNumberColumn> phoneColumns = null;
   private ImportStatus importStatus = null;
   private String previewModeColumnName = null;
-  private List<String> previewModeAcceptedValues = new ArrayList<String>();
+  private List<String> previewModeAcceptedValues = null;
   private Long size = null;
   private DomainEntityRef attemptLimits = null;
   private Boolean automaticTimeZoneMapping = null;

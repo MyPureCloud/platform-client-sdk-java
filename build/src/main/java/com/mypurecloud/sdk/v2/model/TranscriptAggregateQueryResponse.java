@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class TranscriptAggregateQueryResponse  implements Serializable {
   
-  private List<TranscriptAggregateDataContainer> results = new ArrayList<TranscriptAggregateDataContainer>();
+  private List<TranscriptAggregateDataContainer> results = null;
 
   
   /**

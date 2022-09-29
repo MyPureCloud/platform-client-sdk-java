@@ -78,7 +78,7 @@ public class DomainResourceConditionNode  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<DomainResourceConditionValue> operands = new ArrayList<DomainResourceConditionValue>();
+  private List<DomainResourceConditionValue> operands = null;
 
   private static class ConjunctionEnumDeserializer extends StdDeserializer<ConjunctionEnum> {
     public ConjunctionEnumDeserializer() {
@@ -127,7 +127,7 @@ public class DomainResourceConditionNode  implements Serializable {
     }
   }
   private ConjunctionEnum conjunction = null;
-  private List<DomainResourceConditionNode> terms = new ArrayList<DomainResourceConditionNode>();
+  private List<DomainResourceConditionNode> terms = null;
 
   
   /**

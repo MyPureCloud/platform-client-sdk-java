@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class UnpublishedProgramsEntityListing  implements Serializable {
   
-  private List<Program> entities = new ArrayList<Program>();
+  private List<Program> entities = null;
   private Integer pageSize = null;
   private String selfUri = null;
   private String nextUri = null;

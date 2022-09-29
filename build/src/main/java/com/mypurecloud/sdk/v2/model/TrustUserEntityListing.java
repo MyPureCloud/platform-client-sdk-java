@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TrustUserEntityListing  implements Serializable, PagedResource<TrustUser> {
   
-  private List<TrustUser> entities = new ArrayList<TrustUser>();
+  private List<TrustUser> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

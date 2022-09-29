@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class MuRescheduleResultWrapper  implements Serializable {
   
-  private List<BuAgentScheduleRescheduleResponse> agentSchedules = new ArrayList<BuAgentScheduleRescheduleResponse>();
+  private List<BuAgentScheduleRescheduleResponse> agentSchedules = null;
 
   
   /**

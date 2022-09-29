@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class AvailableMediaTypeEntityListing  implements Serializable {
   
-  private List<AvailableMediaType> entities = new ArrayList<AvailableMediaType>();
+  private List<AvailableMediaType> entities = null;
 
   
   /**

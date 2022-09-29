@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class LongTermForecastResult  implements Serializable {
   
-  private List<LongTermForecastPlanningGroupData> planningGroups = new ArrayList<LongTermForecastPlanningGroupData>();
+  private List<LongTermForecastPlanningGroupData> planningGroups = null;
   private LocalDate referenceStartDate = null;
   private Integer weekCount = null;
 

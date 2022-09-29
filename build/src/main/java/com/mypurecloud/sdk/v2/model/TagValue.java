@@ -26,7 +26,7 @@ public class TagValue  implements Serializable {
   private String id = null;
   private String name = null;
   private Boolean inUse = null;
-  private List<String> acl = new ArrayList<String>();
+  private List<String> acl = null;
   private String selfUri = null;
 
   

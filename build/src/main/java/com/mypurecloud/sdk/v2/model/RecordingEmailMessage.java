@@ -29,12 +29,12 @@ public class RecordingEmailMessage  implements Serializable {
   private String htmlBody = null;
   private String textBody = null;
   private String id = null;
-  private List<EmailAddress> to = new ArrayList<EmailAddress>();
-  private List<EmailAddress> cc = new ArrayList<EmailAddress>();
-  private List<EmailAddress> bcc = new ArrayList<EmailAddress>();
+  private List<EmailAddress> to = null;
+  private List<EmailAddress> cc = null;
+  private List<EmailAddress> bcc = null;
   private EmailAddress from = null;
   private String subject = null;
-  private List<EmailAttachment> attachments = new ArrayList<EmailAttachment>();
+  private List<EmailAttachment> attachments = null;
   private Date time = null;
 
   

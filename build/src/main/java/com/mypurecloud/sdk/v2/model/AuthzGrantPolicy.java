@@ -22,7 +22,7 @@ import java.io.Serializable;
 
 public class AuthzGrantPolicy  implements Serializable {
   
-  private List<String> actions = new ArrayList<String>();
+  private List<String> actions = null;
   private String condition = null;
   private String domain = null;
   private String entityName = null;

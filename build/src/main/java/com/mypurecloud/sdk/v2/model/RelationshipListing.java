@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class RelationshipListing  implements Serializable, PagedResource<Relationship> {
   
-  private List<Relationship> entities = new ArrayList<Relationship>();
+  private List<Relationship> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

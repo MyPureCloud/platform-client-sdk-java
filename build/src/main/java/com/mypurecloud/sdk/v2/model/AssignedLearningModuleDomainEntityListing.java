@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class AssignedLearningModuleDomainEntityListing  implements Serializable, PagedResource<AssignedLearningModule> {
   
-  private List<AssignedLearningModule> entities = new ArrayList<AssignedLearningModule>();
+  private List<AssignedLearningModule> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

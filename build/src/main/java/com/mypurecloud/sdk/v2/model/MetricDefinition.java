@@ -81,8 +81,8 @@ public class MetricDefinition  implements Serializable {
   }
   private UnitTypeEnum unitType = null;
   private String shortName = null;
-  private List<String> dividendMetrics = new ArrayList<String>();
-  private List<String> divisorMetrics = new ArrayList<String>();
+  private List<String> dividendMetrics = null;
+  private List<String> divisorMetrics = null;
   private DefaultObjective defaultObjective = null;
   private String lockTemplateId = null;
   private Boolean mediaTypeFilteringAllowed = null;

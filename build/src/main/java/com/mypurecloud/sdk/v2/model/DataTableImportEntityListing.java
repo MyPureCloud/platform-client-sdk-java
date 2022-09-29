@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class DataTableImportEntityListing  implements Serializable {
   
-  private List<DataTableImportJob> entities = new ArrayList<DataTableImportJob>();
+  private List<DataTableImportJob> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

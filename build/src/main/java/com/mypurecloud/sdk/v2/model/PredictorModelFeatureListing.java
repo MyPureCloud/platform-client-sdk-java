@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class PredictorModelFeatureListing  implements Serializable {
   
-  private List<PredictorModelFeature> entities = new ArrayList<PredictorModelFeature>();
+  private List<PredictorModelFeature> entities = null;
 
   
   /**

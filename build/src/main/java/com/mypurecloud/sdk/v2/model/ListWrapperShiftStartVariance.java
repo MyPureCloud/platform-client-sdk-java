@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ListWrapperShiftStartVariance  implements Serializable {
   
-  private List<ShiftStartVariance> values = new ArrayList<ShiftStartVariance>();
+  private List<ShiftStartVariance> values = null;
 
   
   /**

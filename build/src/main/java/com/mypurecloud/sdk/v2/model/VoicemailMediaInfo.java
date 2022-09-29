@@ -26,7 +26,7 @@ public class VoicemailMediaInfo  implements Serializable {
   private String id = null;
   private String mediaFileUri = null;
   private String mediaImageUri = null;
-  private List<Float> waveformData = new ArrayList<Float>();
+  private List<Float> waveformData = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

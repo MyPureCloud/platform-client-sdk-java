@@ -118,7 +118,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private Date metricDate = null;
   private Integer value = null;
   private String recordId = null;
-  private List<String> activeSkillIds = new ArrayList<String>();
+  private List<String> activeSkillIds = null;
   private String addressFrom = null;
   private String addressTo = null;
   private String agentAssistantId = null;
@@ -248,7 +248,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     }
   }
   private DeliveryStatusEnum deliveryStatus = null;
-  private List<String> destinationAddresses = new ArrayList<String>();
+  private List<String> destinationAddresses = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -359,10 +359,10 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     }
   }
   private DisconnectTypeEnum disconnectType = null;
-  private List<String> divisionIds = new ArrayList<String>();
+  private List<String> divisionIds = null;
   private String dnis = null;
   private String edgeId = null;
-  private List<Integer> eligibleAgentCounts = new ArrayList<Integer>();
+  private List<Integer> eligibleAgentCounts = null;
   private String extendedDeliveryStatus = null;
   private String externalContactId = null;
   private Integer externalMediaCount = null;
@@ -427,7 +427,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private String journeyCustomerIdType = null;
   private String journeyCustomerSessionId = null;
   private String journeyCustomerSessionIdType = null;
-  private List<String> knowledgeBaseIds = new ArrayList<String>();
+  private List<String> knowledgeBaseIds = null;
   private Integer mediaCount = null;
 
   private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
@@ -605,10 +605,10 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private PurposeEnum purpose = null;
   private String queueId = null;
   private String remote = null;
-  private List<String> removedSkillIds = new ArrayList<String>();
+  private List<String> removedSkillIds = null;
   private Boolean reoffered = null;
   private String requestedLanguageId = null;
-  private List<String> requestedRoutingSkillIds = new ArrayList<String>();
+  private List<String> requestedRoutingSkillIds = null;
 
   private static class RequestedRoutingsEnumDeserializer extends StdDeserializer<RequestedRoutingsEnum> {
     public RequestedRoutingsEnumDeserializer() {
@@ -660,7 +660,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
       return String.valueOf(value);
     }
   }
-  private List<RequestedRoutingsEnum> requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+  private List<RequestedRoutingsEnum> requestedRoutings = null;
   private String roomId = null;
   private Integer routingPriority = null;
   private Integer routingRing = null;
@@ -725,10 +725,10 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   }
   private UsedRoutingEnum usedRouting = null;
   private String userId = null;
-  private List<Integer> waitingInteractionCounts = new ArrayList<Integer>();
+  private List<Integer> waitingInteractionCounts = null;
   private String wrapUpCode = null;
-  private List<ConversationMetricsTopicConversationProposedAgent> proposedAgents = new ArrayList<ConversationMetricsTopicConversationProposedAgent>();
-  private List<ConversationMetricsTopicConversationScoredAgent> scoredAgents = new ArrayList<ConversationMetricsTopicConversationScoredAgent>();
+  private List<ConversationMetricsTopicConversationProposedAgent> proposedAgents = null;
+  private List<ConversationMetricsTopicConversationScoredAgent> scoredAgents = null;
 
   
   /**

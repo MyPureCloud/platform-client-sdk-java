@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class CoachingAppointmentAggregateResponse  implements Serializable {
   
-  private List<QueryResponseGroupedData> results = new ArrayList<QueryResponseGroupedData>();
+  private List<QueryResponseGroupedData> results = null;
 
   
   /**

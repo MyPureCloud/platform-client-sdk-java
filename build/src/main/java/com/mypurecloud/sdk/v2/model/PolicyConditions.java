@@ -29,7 +29,7 @@ import java.io.Serializable;
 
 public class PolicyConditions  implements Serializable {
   
-  private List<User> forUsers = new ArrayList<User>();
+  private List<User> forUsers = null;
 
   private static class DirectionsEnumDeserializer extends StdDeserializer<DirectionsEnum> {
     public DirectionsEnumDeserializer() {
@@ -76,8 +76,8 @@ public class PolicyConditions  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<DirectionsEnum> directions = new ArrayList<DirectionsEnum>();
-  private List<String> dateRanges = new ArrayList<String>();
+  private List<DirectionsEnum> directions = null;
+  private List<String> dateRanges = null;
 
   private static class MediaTypesEnumDeserializer extends StdDeserializer<MediaTypesEnum> {
     public MediaTypesEnumDeserializer() {
@@ -124,10 +124,10 @@ public class PolicyConditions  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
-  private List<Queue> forQueues = new ArrayList<Queue>();
+  private List<MediaTypesEnum> mediaTypes = null;
+  private List<Queue> forQueues = null;
   private DurationCondition duration = null;
-  private List<WrapupCode> wrapupCodes = new ArrayList<WrapupCode>();
+  private List<WrapupCode> wrapupCodes = null;
   private TimeAllowed timeAllowed = null;
 
   private static class CustomerParticipationEnumDeserializer extends StdDeserializer<CustomerParticipationEnum> {

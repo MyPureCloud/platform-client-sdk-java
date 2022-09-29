@@ -35,7 +35,7 @@ public class KnowledgeDocumentResponse  implements Serializable {
   private String id = null;
   private String title = null;
   private Boolean visible = null;
-  private List<KnowledgeDocumentAlternative> alternatives = new ArrayList<KnowledgeDocumentAlternative>();
+  private List<KnowledgeDocumentAlternative> alternatives = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -93,9 +93,9 @@ public class KnowledgeDocumentResponse  implements Serializable {
   private UserReference modifiedBy = null;
   private AddressableEntityRef documentVersion = null;
   private CategoryResponse category = null;
-  private List<LabelResponse> labels = new ArrayList<LabelResponse>();
+  private List<LabelResponse> labels = null;
   private KnowledgeBaseReference knowledgeBase = null;
-  private List<DocumentVariation> variations = new ArrayList<DocumentVariation>();
+  private List<DocumentVariation> variations = null;
   private String selfUri = null;
 
   

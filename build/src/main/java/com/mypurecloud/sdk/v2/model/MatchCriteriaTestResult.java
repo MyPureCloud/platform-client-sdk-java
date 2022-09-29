@@ -87,10 +87,10 @@ public class MatchCriteriaTestResult  implements Serializable {
   }
   private OperatorEnum operator = null;
   private JsonNode value = null;
-  private List<JsonNode> values = new ArrayList<JsonNode>();
+  private List<JsonNode> values = null;
   private String generatedJsonPathCondition = null;
   private Boolean match = null;
-  private List<MatchTestResult> jsonPathExtraction = new ArrayList<MatchTestResult>();
+  private List<MatchTestResult> jsonPathExtraction = null;
 
   
   /**

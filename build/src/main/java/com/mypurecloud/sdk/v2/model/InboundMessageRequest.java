@@ -28,7 +28,7 @@ public class InboundMessageRequest  implements Serializable {
   private String queueId = null;
   private String flowId = null;
   private String provider = null;
-  private List<String> skillIds = new ArrayList<String>();
+  private List<String> skillIds = null;
   private String languageId = null;
   private Integer priority = null;
   private Map<String, String> attributes = null;

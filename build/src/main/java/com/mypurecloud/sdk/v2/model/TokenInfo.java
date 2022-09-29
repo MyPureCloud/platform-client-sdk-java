@@ -28,7 +28,7 @@ public class TokenInfo  implements Serializable {
   
   private NamedEntity organization = null;
   private NamedEntity homeOrganization = null;
-  private List<String> authorizedScope = new ArrayList<String>();
+  private List<String> authorizedScope = null;
   private TokenInfoClonedUser clonedUser = null;
   private OrgOAuthClient oAuthClient = null;
 

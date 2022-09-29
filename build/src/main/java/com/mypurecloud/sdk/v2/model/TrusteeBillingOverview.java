@@ -31,7 +31,7 @@ public class TrusteeBillingOverview  implements Serializable {
   private String name = null;
   private NamedEntity organization = null;
   private String currency = null;
-  private List<String> enabledProducts = new ArrayList<String>();
+  private List<String> enabledProducts = null;
 
   private static class SubscriptionTypeEnumDeserializer extends StdDeserializer<SubscriptionTypeEnum> {
     public SubscriptionTypeEnumDeserializer() {
@@ -90,7 +90,7 @@ public class TrusteeBillingOverview  implements Serializable {
   private Date rampPeriodEndDate = null;
   private Date billingPeriodStartDate = null;
   private Date billingPeriodEndDate = null;
-  private List<SubscriptionOverviewUsage> usages = new ArrayList<SubscriptionOverviewUsage>();
+  private List<SubscriptionOverviewUsage> usages = null;
   private Date contractAmendmentDate = null;
   private Date contractEffectiveDate = null;
   private Date contractEndDate = null;

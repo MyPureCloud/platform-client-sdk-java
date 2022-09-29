@@ -78,7 +78,7 @@ public class FieldConfig  implements Serializable {
   }
   private EntityTypeEnum entityType = null;
   private String state = null;
-  private List<Section> sections = new ArrayList<Section>();
+  private List<Section> sections = null;
   private String version = null;
   private String schemaVersion = null;
   private String selfUri = null;

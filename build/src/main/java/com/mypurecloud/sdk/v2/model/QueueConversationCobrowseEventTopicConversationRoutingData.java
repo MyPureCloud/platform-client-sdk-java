@@ -28,8 +28,8 @@ public class QueueConversationCobrowseEventTopicConversationRoutingData  impleme
   private QueueConversationCobrowseEventTopicUriReference queue = null;
   private QueueConversationCobrowseEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<QueueConversationCobrowseEventTopicUriReference> skills = new ArrayList<QueueConversationCobrowseEventTopicUriReference>();
-  private List<QueueConversationCobrowseEventTopicScoredAgent> scoredAgents = new ArrayList<QueueConversationCobrowseEventTopicScoredAgent>();
+  private List<QueueConversationCobrowseEventTopicUriReference> skills = null;
+  private List<QueueConversationCobrowseEventTopicScoredAgent> scoredAgents = null;
 
   
   /**

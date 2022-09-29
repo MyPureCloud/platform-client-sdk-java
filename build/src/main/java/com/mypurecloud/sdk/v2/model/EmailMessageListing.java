@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class EmailMessageListing  implements Serializable, PagedResource<EmailMessage> {
   
-  private List<EmailMessage> entities = new ArrayList<EmailMessage>();
+  private List<EmailMessage> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

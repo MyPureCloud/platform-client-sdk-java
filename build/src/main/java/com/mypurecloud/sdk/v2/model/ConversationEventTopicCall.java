@@ -319,7 +319,7 @@ public class ConversationEventTopicCall  implements Serializable {
   private String peerId = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
-  private List<ConversationEventTopicDisconnectReason> disconnectReasons = new ArrayList<ConversationEventTopicDisconnectReason>();
+  private List<ConversationEventTopicDisconnectReason> disconnectReasons = null;
   private ConversationEventTopicFaxStatus faxStatus = null;
   private String uuiData = null;
   private Date bargedTime = null;

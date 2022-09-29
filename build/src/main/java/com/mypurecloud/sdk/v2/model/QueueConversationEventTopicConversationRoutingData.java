@@ -29,8 +29,8 @@ public class QueueConversationEventTopicConversationRoutingData  implements Seri
   private QueueConversationEventTopicUriReference queue = null;
   private QueueConversationEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<QueueConversationEventTopicUriReference> skills = new ArrayList<QueueConversationEventTopicUriReference>();
-  private List<QueueConversationEventTopicScoredAgent> scoredAgents = new ArrayList<QueueConversationEventTopicScoredAgent>();
+  private List<QueueConversationEventTopicUriReference> skills = null;
+  private List<QueueConversationEventTopicScoredAgent> scoredAgents = null;
 
   
   /**

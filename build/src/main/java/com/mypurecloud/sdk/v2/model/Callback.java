@@ -86,7 +86,7 @@ public class Callback  implements Serializable {
   }
   private StateEnum state = null;
   private String id = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -201,7 +201,7 @@ public class Callback  implements Serializable {
   private Date startHoldTime = null;
   private DialerPreview dialerPreview = null;
   private Voicemail voicemail = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
+  private List<String> callbackNumbers = null;
   private String callbackUserName = null;
   private String scriptId = null;
   private Boolean externalCampaign = null;

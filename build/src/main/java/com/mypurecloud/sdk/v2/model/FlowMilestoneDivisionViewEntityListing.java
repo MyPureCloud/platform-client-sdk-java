@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class FlowMilestoneDivisionViewEntityListing  implements Serializable, PagedResource<FlowMilestoneDivisionView> {
   
-  private List<FlowMilestoneDivisionView> entities = new ArrayList<FlowMilestoneDivisionView>();
+  private List<FlowMilestoneDivisionView> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

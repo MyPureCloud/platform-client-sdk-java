@@ -229,7 +229,7 @@ public class ShiftTradeSettings  implements Serializable {
   private Boolean requiresMatchingLanguages = null;
   private Boolean requiresMatchingSkills = null;
   private Boolean requiresMatchingPlanningGroups = null;
-  private List<ShiftTradeActivityRule> activityCategoryRules = new ArrayList<ShiftTradeActivityRule>();
+  private List<ShiftTradeActivityRule> activityCategoryRules = null;
 
   
   /**

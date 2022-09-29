@@ -36,7 +36,7 @@ public class QualityAuditLogMessage  implements Serializable {
   private String userTrusteeOrgId = null;
   private DomainEntityRef user = null;
   private AddressableEntityRef client = null;
-  private List<String> remoteIps = new ArrayList<String>();
+  private List<String> remoteIps = null;
 
   private static class ServiceNameEnumDeserializer extends StdDeserializer<ServiceNameEnum> {
     public ServiceNameEnumDeserializer() {
@@ -296,7 +296,7 @@ public class QualityAuditLogMessage  implements Serializable {
     }
   }
   private EntityTypeEnum entityType = null;
-  private List<PropertyChange> propertyChanges = new ArrayList<PropertyChange>();
+  private List<PropertyChange> propertyChanges = null;
   private Map<String, String> context = null;
 
   

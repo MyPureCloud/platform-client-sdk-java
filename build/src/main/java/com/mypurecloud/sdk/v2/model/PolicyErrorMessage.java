@@ -30,7 +30,7 @@ public class PolicyErrorMessage  implements Serializable {
   private String userParamsMessage = null;
   private String errorCode = null;
   private String correlationId = null;
-  private List<UserParam> userParams = new ArrayList<UserParam>();
+  private List<UserParam> userParams = null;
   private Date insertDate = null;
 
   

@@ -84,13 +84,13 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
   }
   private StatusEnum status = null;
   private WemCoachingAppointmentTopicUserReference facilitator = null;
-  private List<WemCoachingAppointmentTopicUserReference> attendees = new ArrayList<WemCoachingAppointmentTopicUserReference>();
+  private List<WemCoachingAppointmentTopicUserReference> attendees = null;
   private WemCoachingAppointmentTopicUserReference createdBy = null;
   private Date dateCreated = null;
   private WemCoachingAppointmentTopicUserReference modifiedBy = null;
   private Date dateModified = null;
-  private List<WemCoachingAppointmentTopicCoachingAppointmentConversation> conversations = new ArrayList<WemCoachingAppointmentTopicCoachingAppointmentConversation>();
-  private List<WemCoachingAppointmentTopicCoachingAppointmentDocument> documents = new ArrayList<WemCoachingAppointmentTopicCoachingAppointmentDocument>();
+  private List<WemCoachingAppointmentTopicCoachingAppointmentConversation> conversations = null;
+  private List<WemCoachingAppointmentTopicCoachingAppointmentDocument> documents = null;
 
   private static class ChangeTypeEnumDeserializer extends StdDeserializer<ChangeTypeEnum> {
     public ChangeTypeEnumDeserializer() {
@@ -142,7 +142,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
   }
   private ChangeTypeEnum changeType = null;
   private Date dateCompleted = null;
-  private List<WemCoachingAppointmentTopicCoachingAppointmentExternalLink> externalLinks = new ArrayList<WemCoachingAppointmentTopicCoachingAppointmentExternalLink>();
+  private List<WemCoachingAppointmentTopicCoachingAppointmentExternalLink> externalLinks = null;
 
   
   /**

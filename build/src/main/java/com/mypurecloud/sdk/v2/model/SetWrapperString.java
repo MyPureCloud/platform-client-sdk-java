@@ -22,7 +22,7 @@ import java.io.Serializable;
 
 public class SetWrapperString  implements Serializable {
   
-  private List<String> values = new ArrayList<String>();
+  private List<String> values = null;
 
   
   /**

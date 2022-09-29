@@ -181,11 +181,11 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification  im
   }
   private LegacyMetricEnum legacyMetric = null;
   private BigDecimal value = null;
-  private List<WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue> values = new ArrayList<WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue>();
+  private List<WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue> values = null;
   private Boolean enabled = null;
   private String granularity = null;
   private String displayGranularity = null;
-  private List<String> planningGroupIds = new ArrayList<String>();
+  private List<String> planningGroupIds = null;
 
   
   /**

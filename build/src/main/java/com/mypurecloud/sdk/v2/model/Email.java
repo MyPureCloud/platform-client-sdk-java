@@ -85,7 +85,7 @@ public class Email  implements Serializable {
   private Boolean held = null;
   private String subject = null;
   private Integer messagesSent = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -207,7 +207,7 @@ public class Email  implements Serializable {
   private String scriptId = null;
   private String peerId = null;
   private String messageId = null;
-  private List<Attachment> draftAttachments = new ArrayList<Attachment>();
+  private List<Attachment> draftAttachments = null;
   private Boolean spam = null;
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;

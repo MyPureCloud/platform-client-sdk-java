@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class FlowAggregateDataContainer  implements Serializable {
   
   private Map<String, String> group = null;
-  private List<StatisticalResponse> data = new ArrayList<StatisticalResponse>();
+  private List<StatisticalResponse> data = null;
 
   
   /**

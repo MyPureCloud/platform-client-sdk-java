@@ -77,7 +77,7 @@ public class ModelingStatusResponse  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<ModelingProcessingError> errorDetails = new ArrayList<ModelingProcessingError>();
+  private List<ModelingProcessingError> errorDetails = null;
   private String modelingResultUri = null;
 
   

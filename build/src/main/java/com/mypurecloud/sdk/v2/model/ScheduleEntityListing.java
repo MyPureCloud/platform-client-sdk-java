@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ScheduleEntityListing  implements Serializable, PagedResource<Schedule> {
   
-  private List<Schedule> entities = new ArrayList<Schedule>();
+  private List<Schedule> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

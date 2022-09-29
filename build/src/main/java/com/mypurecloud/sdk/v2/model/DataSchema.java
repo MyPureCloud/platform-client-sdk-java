@@ -77,7 +77,7 @@ public class DataSchema  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<AppliesToEnum> appliesTo = new ArrayList<AppliesToEnum>();
+  private List<AppliesToEnum> appliesTo = null;
   private Boolean enabled = null;
   private DomainEntityRef createdBy = null;
   private Date dateCreated = null;

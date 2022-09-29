@@ -26,7 +26,7 @@ public class ContactListFilterRange  implements Serializable {
   private String max = null;
   private Boolean minInclusive = null;
   private Boolean maxInclusive = null;
-  private List<String> inSet = new ArrayList<String>();
+  private List<String> inSet = null;
 
   
   /**

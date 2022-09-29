@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TestExecutionResult  implements Serializable {
   
-  private List<TestExecutionOperationResult> operations = new ArrayList<TestExecutionOperationResult>();
+  private List<TestExecutionOperationResult> operations = null;
   private ErrorBody error = null;
   private Object finalResult = null;
   private Boolean success = null;

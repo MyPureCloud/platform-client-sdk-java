@@ -94,7 +94,7 @@ public class WorkPlanShift  implements Serializable {
     }
   }
   private DayOffRuleEnum dayOffRule = null;
-  private List<WorkPlanActivity> activities = new ArrayList<WorkPlanActivity>();
+  private List<WorkPlanActivity> activities = null;
   private String id = null;
   private Boolean delete = null;
   private String validationId = null;

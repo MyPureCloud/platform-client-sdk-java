@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class InteractionStatsAlertContainer  implements Serializable, PagedResource<InteractionStatsAlert> {
   
-  private List<InteractionStatsAlert> entities = new ArrayList<InteractionStatsAlert>();
+  private List<InteractionStatsAlert> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

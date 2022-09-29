@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class AnalyticsMediaEndpointStat  implements Serializable {
   
-  private List<String> codecs = new ArrayList<String>();
+  private List<String> codecs = null;
   private Long discardedPackets = null;
   private Long duplicatePackets = null;
   private Date eventTime = null;

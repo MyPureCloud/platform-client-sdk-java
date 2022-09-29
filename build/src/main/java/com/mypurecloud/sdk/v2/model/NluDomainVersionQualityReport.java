@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class NluDomainVersionQualityReport  implements Serializable {
   
   private NluDomainVersion version = null;
-  private List<NluConfusionMatrixRow> confusionMatrix = new ArrayList<NluConfusionMatrixRow>();
+  private List<NluConfusionMatrixRow> confusionMatrix = null;
   private NluQualityReportSummary summary = null;
 
   

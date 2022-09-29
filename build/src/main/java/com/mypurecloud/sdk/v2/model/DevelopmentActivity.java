@@ -138,7 +138,7 @@ public class DevelopmentActivity  implements Serializable {
   private StatusEnum status = null;
   private Date dateDue = null;
   private UserReference facilitator = null;
-  private List<UserReference> attendees = new ArrayList<UserReference>();
+  private List<UserReference> attendees = null;
   private Boolean isOverdue = null;
 
   

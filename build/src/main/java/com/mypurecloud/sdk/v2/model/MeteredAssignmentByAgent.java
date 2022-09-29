@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class MeteredAssignmentByAgent  implements Serializable {
   
   private String evaluationContextId = null;
-  private List<User> evaluators = new ArrayList<User>();
+  private List<User> evaluators = null;
   private Integer maxNumberEvaluations = null;
   private EvaluationForm evaluationForm = null;
   private TimeInterval timeInterval = null;

@@ -23,7 +23,7 @@ import java.io.Serializable;
 public class SearchShiftTradesRequest  implements Serializable {
   
   private String receivingScheduleId = null;
-  private List<String> receivingShiftIds = new ArrayList<String>();
+  private List<String> receivingShiftIds = null;
 
   
   /**

@@ -29,11 +29,11 @@ import java.io.Serializable;
 
 public class CallMediaPolicyConditions  implements Serializable {
   
-  private List<User> forUsers = new ArrayList<User>();
-  private List<String> dateRanges = new ArrayList<String>();
-  private List<Queue> forQueues = new ArrayList<Queue>();
-  private List<WrapupCode> wrapupCodes = new ArrayList<WrapupCode>();
-  private List<Language> languages = new ArrayList<Language>();
+  private List<User> forUsers = null;
+  private List<String> dateRanges = null;
+  private List<Queue> forQueues = null;
+  private List<WrapupCode> wrapupCodes = null;
+  private List<Language> languages = null;
   private TimeAllowed timeAllowed = null;
 
   private static class DirectionsEnumDeserializer extends StdDeserializer<DirectionsEnum> {
@@ -81,7 +81,7 @@ public class CallMediaPolicyConditions  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<DirectionsEnum> directions = new ArrayList<DirectionsEnum>();
+  private List<DirectionsEnum> directions = null;
   private DurationCondition duration = null;
 
   

@@ -78,9 +78,9 @@ public class UserSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = new ArrayList<SearchSort>();
-  private List<String> expand = new ArrayList<String>();
-  private List<UserSearchCriteria> query = new ArrayList<UserSearchCriteria>();
+  private List<SearchSort> sort = null;
+  private List<String> expand = null;
+  private List<UserSearchCriteria> query = null;
 
   private static class IntegrationPresenceSourceEnumDeserializer extends StdDeserializer<IntegrationPresenceSourceEnum> {
     public IntegrationPresenceSourceEnumDeserializer() {

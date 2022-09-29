@@ -84,9 +84,9 @@ public class LocationDefinition  implements Serializable {
   private StateEnum state = null;
   private String notes = null;
   private Integer version = null;
-  private List<String> path = new ArrayList<String>();
-  private List<LocationImage> profileImage = new ArrayList<LocationImage>();
-  private List<LocationImage> floorplanImage = new ArrayList<LocationImage>();
+  private List<String> path = null;
+  private List<LocationImage> profileImage = null;
+  private List<LocationImage> floorplanImage = null;
   private LocationAddressVerificationDetails addressVerificationDetails = null;
   private Boolean addressVerified = null;
   private Boolean addressStored = null;

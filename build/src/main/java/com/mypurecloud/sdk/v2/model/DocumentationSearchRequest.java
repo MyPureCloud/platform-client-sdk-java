@@ -78,8 +78,8 @@ public class DocumentationSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = new ArrayList<SearchSort>();
-  private List<DocumentationSearchCriteria> query = new ArrayList<DocumentationSearchCriteria>();
+  private List<SearchSort> sort = null;
+  private List<DocumentationSearchCriteria> query = null;
 
   
   /**

@@ -28,7 +28,7 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
   private String contactId = null;
   private String contactListId = null;
   private String campaignId = null;
-  private List<QueueConversationCallbackEventTopicPhoneNumberColumn> phoneNumberColumns = new ArrayList<QueueConversationCallbackEventTopicPhoneNumberColumn>();
+  private List<QueueConversationCallbackEventTopicPhoneNumberColumn> phoneNumberColumns = null;
 
   
   /**

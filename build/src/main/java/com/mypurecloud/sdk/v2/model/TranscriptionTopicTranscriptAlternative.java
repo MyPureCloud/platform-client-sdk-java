@@ -29,7 +29,7 @@ public class TranscriptionTopicTranscriptAlternative  implements Serializable {
   private Integer offsetMs = null;
   private Integer durationMs = null;
   private String transcript = null;
-  private List<TranscriptionTopicTranscriptWord> words = new ArrayList<TranscriptionTopicTranscriptWord>();
+  private List<TranscriptionTopicTranscriptWord> words = null;
 
   
   /**

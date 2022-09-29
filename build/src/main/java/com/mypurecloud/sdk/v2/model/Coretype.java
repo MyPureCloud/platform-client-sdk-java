@@ -33,9 +33,9 @@ public class Coretype  implements Serializable {
   private Date dateCreated = null;
   private Schema schema = null;
   private Boolean current = null;
-  private List<String> validationFields = new ArrayList<String>();
+  private List<String> validationFields = null;
   private ValidationLimits validationLimits = null;
-  private List<String> itemValidationFields = new ArrayList<String>();
+  private List<String> itemValidationFields = null;
   private ItemValidationLimits itemValidationLimits = null;
   private String selfUri = null;
 

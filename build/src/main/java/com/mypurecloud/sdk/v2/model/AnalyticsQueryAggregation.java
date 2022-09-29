@@ -76,7 +76,7 @@ public class AnalyticsQueryAggregation  implements Serializable {
   private String dimension = null;
   private String metric = null;
   private Integer size = null;
-  private List<AggregationRange> ranges = new ArrayList<AggregationRange>();
+  private List<AggregationRange> ranges = null;
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DataTableRowEntityListing  implements Serializable, PagedResource<Map<String, Object>> {
   
-  private List<Map<String, Object>> entities = new ArrayList<Map<String, Object>>();
+  private List<Map<String, Object>> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

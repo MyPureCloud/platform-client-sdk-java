@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CredentialTypeListing  implements Serializable, PagedResource<CredentialType> {
   
-  private List<CredentialType> entities = new ArrayList<CredentialType>();
+  private List<CredentialType> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

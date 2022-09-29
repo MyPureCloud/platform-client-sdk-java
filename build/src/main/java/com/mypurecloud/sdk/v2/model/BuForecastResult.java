@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class BuForecastResult  implements Serializable {
   
   private Date referenceStartDate = null;
-  private List<ForecastPlanningGroupData> planningGroups = new ArrayList<ForecastPlanningGroupData>();
+  private List<ForecastPlanningGroupData> planningGroups = null;
   private Integer weekNumber = null;
   private Integer weekCount = null;
 

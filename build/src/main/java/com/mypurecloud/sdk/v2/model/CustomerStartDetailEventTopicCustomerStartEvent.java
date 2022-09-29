@@ -140,7 +140,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
   private String addressTo = null;
   private String addressFrom = null;
   private String callbackUserName = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
+  private List<String> callbackNumbers = null;
   private Integer callbackScheduledTime = null;
   private String subject = null;
 

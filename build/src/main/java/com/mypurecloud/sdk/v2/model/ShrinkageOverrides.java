@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class ShrinkageOverrides  implements Serializable {
   
   private Boolean clear = null;
-  private List<ShrinkageOverride> values = new ArrayList<ShrinkageOverride>();
+  private List<ShrinkageOverride> values = null;
 
   
   /**

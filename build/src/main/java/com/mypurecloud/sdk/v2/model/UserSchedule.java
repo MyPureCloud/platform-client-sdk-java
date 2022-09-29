@@ -26,8 +26,8 @@ import java.io.Serializable;
 
 public class UserSchedule  implements Serializable {
   
-  private List<UserScheduleShift> shifts = new ArrayList<UserScheduleShift>();
-  private List<UserScheduleFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<UserScheduleFullDayTimeOffMarker>();
+  private List<UserScheduleShift> shifts = null;
+  private List<UserScheduleFullDayTimeOffMarker> fullDayTimeOffMarkers = null;
   private Boolean delete = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String workPlanId = null;

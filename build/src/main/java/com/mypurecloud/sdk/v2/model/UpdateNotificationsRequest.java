@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class UpdateNotificationsRequest  implements Serializable {
   
-  private List<WfmUserNotification> entities = new ArrayList<WfmUserNotification>();
+  private List<WfmUserNotification> entities = null;
 
   
   /**

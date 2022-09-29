@@ -32,7 +32,7 @@ public class WebChatDeployment  implements Serializable {
   private String authenticationUrl = null;
   private Boolean disabled = null;
   private WebChatConfig webChatConfig = null;
-  private List<String> allowedDomains = new ArrayList<String>();
+  private List<String> allowedDomains = null;
   private DomainEntityRef flow = null;
   private String selfUri = null;
 

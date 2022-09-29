@@ -128,10 +128,10 @@ public class SiteConnection  implements Serializable {
     }
   }
   private MediaModelEnum mediaModel = null;
-  private List<ConnectedEdge> edgeList = new ArrayList<ConnectedEdge>();
+  private List<ConnectedEdge> edgeList = null;
   private Boolean coreSite = null;
-  private List<DomainEntityRef> primaryCoreSites = new ArrayList<DomainEntityRef>();
-  private List<DomainEntityRef> secondaryCoreSites = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> primaryCoreSites = null;
+  private List<DomainEntityRef> secondaryCoreSites = null;
 
   
   /**

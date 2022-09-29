@@ -27,8 +27,8 @@ public class DomainPermissionPolicy  implements Serializable {
   private String entityName = null;
   private String policyName = null;
   private String policyDescription = null;
-  private List<String> actionSet = new ArrayList<String>();
-  private List<String> namedResources = new ArrayList<String>();
+  private List<String> actionSet = null;
+  private List<String> namedResources = null;
   private Boolean allowConditions = null;
   private DomainResourceConditionNode resourceConditionNode = null;
 

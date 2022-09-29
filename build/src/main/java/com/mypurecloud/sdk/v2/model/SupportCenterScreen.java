@@ -75,7 +75,7 @@ public class SupportCenterScreen  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<SupportCenterModuleSetting> moduleSettings = new ArrayList<SupportCenterModuleSetting>();
+  private List<SupportCenterModuleSetting> moduleSettings = null;
 
   
   /**

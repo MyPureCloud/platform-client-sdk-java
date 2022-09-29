@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CommandStatusEntityListing  implements Serializable, PagedResource<CommandStatus> {
   
-  private List<CommandStatus> entities = new ArrayList<CommandStatus>();
+  private List<CommandStatus> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

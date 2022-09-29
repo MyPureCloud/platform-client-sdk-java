@@ -73,7 +73,7 @@ public class ResolutionDetailQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<ResolutionDetailQueryPredicate> predicates = new ArrayList<ResolutionDetailQueryPredicate>();
+  private List<ResolutionDetailQueryPredicate> predicates = null;
 
   
   /**

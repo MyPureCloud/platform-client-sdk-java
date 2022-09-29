@@ -31,7 +31,7 @@ import java.io.Serializable;
 
 public class AnalyticsSession  implements Serializable {
   
-  private List<String> activeSkillIds = new ArrayList<String>();
+  private List<String> activeSkillIds = null;
   private Boolean acwSkipped = null;
   private String addressFrom = null;
   private String addressOther = null;
@@ -44,7 +44,7 @@ public class AnalyticsSession  implements Serializable {
   private String assignerId = null;
   private Boolean authenticated = null;
   private String bargedParticipantId = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
+  private List<String> callbackNumbers = null;
   private Date callbackScheduledTime = null;
   private String callbackUserName = null;
   private String coachedParticipantId = null;
@@ -104,7 +104,7 @@ public class AnalyticsSession  implements Serializable {
   }
   private DeliveryStatusEnum deliveryStatus = null;
   private Date deliveryStatusChangeDate = null;
-  private List<String> destinationAddresses = new ArrayList<String>();
+  private List<String> destinationAddresses = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -157,7 +157,7 @@ public class AnalyticsSession  implements Serializable {
   private String dispositionName = null;
   private String dnis = null;
   private String edgeId = null;
-  private List<Integer> eligibleAgentCounts = new ArrayList<Integer>();
+  private List<Integer> eligibleAgentCounts = null;
   private String extendedDeliveryStatus = null;
   private String flowInType = null;
   private String flowOutType = null;
@@ -236,7 +236,7 @@ public class AnalyticsSession  implements Serializable {
   private Boolean recording = null;
   private String remote = null;
   private String remoteNameDisplayable = null;
-  private List<String> removedSkillIds = new ArrayList<String>();
+  private List<String> removedSkillIds = null;
 
   private static class RequestedRoutingsEnumDeserializer extends StdDeserializer<RequestedRoutingsEnum> {
     public RequestedRoutingsEnumDeserializer() {
@@ -288,7 +288,7 @@ public class AnalyticsSession  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<RequestedRoutingsEnum> requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+  private List<RequestedRoutingsEnum> requestedRoutings = null;
   private String roomId = null;
   private Integer routingRing = null;
   private String screenShareAddressSelf = null;
@@ -356,13 +356,13 @@ public class AnalyticsSession  implements Serializable {
   private UsedRoutingEnum usedRouting = null;
   private String videoAddressSelf = null;
   private String videoRoomId = null;
-  private List<Integer> waitingInteractionCounts = new ArrayList<Integer>();
-  private List<AnalyticsProposedAgent> proposedAgents = new ArrayList<AnalyticsProposedAgent>();
-  private List<AnalyticsAgentGroup> agentGroups = new ArrayList<AnalyticsAgentGroup>();
-  private List<AnalyticsMediaEndpointStat> mediaEndpointStats = new ArrayList<AnalyticsMediaEndpointStat>();
+  private List<Integer> waitingInteractionCounts = null;
+  private List<AnalyticsProposedAgent> proposedAgents = null;
+  private List<AnalyticsAgentGroup> agentGroups = null;
+  private List<AnalyticsMediaEndpointStat> mediaEndpointStats = null;
   private AnalyticsFlow flow = null;
-  private List<AnalyticsSessionMetric> metrics = new ArrayList<AnalyticsSessionMetric>();
-  private List<AnalyticsConversationSegment> segments = new ArrayList<AnalyticsConversationSegment>();
+  private List<AnalyticsSessionMetric> metrics = null;
+  private List<AnalyticsConversationSegment> segments = null;
 
   
   /**

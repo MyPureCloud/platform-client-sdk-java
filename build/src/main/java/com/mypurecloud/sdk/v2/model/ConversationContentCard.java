@@ -30,7 +30,7 @@ public class ConversationContentCard  implements Serializable {
   private String image = null;
   private String video = null;
   private ConversationContentCardAction defaultAction = null;
-  private List<ConversationContentCardAction> actions = new ArrayList<ConversationContentCardAction>();
+  private List<ConversationContentCardAction> actions = null;
 
   
   /**

@@ -165,7 +165,7 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
     }
   }
   private OperationEnum operation = null;
-  private List<WorkitemsEventsNotificationDelta> changes = new ArrayList<WorkitemsEventsNotificationDelta>();
+  private List<WorkitemsEventsNotificationDelta> changes = null;
 
   private static class AssignmentStateEnumDeserializer extends StdDeserializer<AssignmentStateEnum> {
     public AssignmentStateEnumDeserializer() {

@@ -86,7 +86,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
   private Date metricDate = null;
   private Integer value = null;
   private String recordId = null;
-  private List<String> activeSkillIds = new ArrayList<String>();
+  private List<String> activeSkillIds = null;
   private String addressFrom = null;
   private String addressTo = null;
   private String agentAssistantId = null;
@@ -216,7 +216,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     }
   }
   private DeliveryStatusEnum deliveryStatus = null;
-  private List<String> destinationAddresses = new ArrayList<String>();
+  private List<String> destinationAddresses = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -327,10 +327,10 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     }
   }
   private DisconnectTypeEnum disconnectType = null;
-  private List<String> divisionIds = new ArrayList<String>();
+  private List<String> divisionIds = null;
   private String dnis = null;
   private String edgeId = null;
-  private List<Integer> eligibleAgentCounts = new ArrayList<Integer>();
+  private List<Integer> eligibleAgentCounts = null;
   private String endingLanguage = null;
   private String entryReason = null;
 
@@ -440,7 +440,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
   private FlaggedReasonEnum flaggedReason = null;
   private String flowId = null;
   private String flowInType = null;
-  private List<String> flowMilestoneIds = new ArrayList<String>();
+  private List<String> flowMilestoneIds = null;
   private String flowName = null;
   private String flowOutType = null;
 
@@ -693,10 +693,10 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
   private String queueId = null;
   private String recognitionFailureReason = null;
   private String remote = null;
-  private List<String> removedSkillIds = new ArrayList<String>();
+  private List<String> removedSkillIds = null;
   private Boolean reoffered = null;
   private String requestedLanguageId = null;
-  private List<String> requestedRoutingSkillIds = new ArrayList<String>();
+  private List<String> requestedRoutingSkillIds = null;
 
   private static class RequestedRoutingsEnumDeserializer extends StdDeserializer<RequestedRoutingsEnum> {
     public RequestedRoutingsEnumDeserializer() {
@@ -748,7 +748,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<RequestedRoutingsEnum> requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+  private List<RequestedRoutingsEnum> requestedRoutings = null;
   private String roomId = null;
   private Integer routingPriority = null;
   private Integer routingRing = null;
@@ -817,11 +817,11 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
   }
   private UsedRoutingEnum usedRouting = null;
   private String userId = null;
-  private List<Integer> waitingInteractionCounts = new ArrayList<Integer>();
+  private List<Integer> waitingInteractionCounts = null;
   private String wrapUpCode = null;
-  private List<FlowMetricsTopicFlowProposedAgent> proposedAgents = new ArrayList<FlowMetricsTopicFlowProposedAgent>();
-  private List<FlowMetricsTopicFlowOutcome> outcomes = new ArrayList<FlowMetricsTopicFlowOutcome>();
-  private List<FlowMetricsTopicFlowScoredAgent> scoredAgents = new ArrayList<FlowMetricsTopicFlowScoredAgent>();
+  private List<FlowMetricsTopicFlowProposedAgent> proposedAgents = null;
+  private List<FlowMetricsTopicFlowOutcome> outcomes = null;
+  private List<FlowMetricsTopicFlowScoredAgent> scoredAgents = null;
 
   
   /**

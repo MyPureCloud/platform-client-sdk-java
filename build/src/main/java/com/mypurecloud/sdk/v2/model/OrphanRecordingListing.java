@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class OrphanRecordingListing  implements Serializable, PagedResource<OrphanRecording> {
   
-  private List<OrphanRecording> entities = new ArrayList<OrphanRecording>();
+  private List<OrphanRecording> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

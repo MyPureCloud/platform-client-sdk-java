@@ -81,12 +81,12 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
     }
   }
   private MediaTypeEnum mediaType = null;
-  private List<WfmIntradayDataUpdateTopicIntradayForecastData> forecastDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayForecastData>();
-  private List<WfmIntradayDataUpdateTopicIntradayScheduleData> scheduleDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayScheduleData>();
-  private List<WfmIntradayDataUpdateTopicIntradayHistoricalAgentData> historicalAgentDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayHistoricalAgentData>();
-  private List<WfmIntradayDataUpdateTopicIntradayHistoricalQueueData> historicalQueueDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayHistoricalQueueData>();
-  private List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData> performancePredictionAgentDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData>();
-  private List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData> performancePredictionQueueDataPerInterval = new ArrayList<WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData>();
+  private List<WfmIntradayDataUpdateTopicIntradayForecastData> forecastDataPerInterval = null;
+  private List<WfmIntradayDataUpdateTopicIntradayScheduleData> scheduleDataPerInterval = null;
+  private List<WfmIntradayDataUpdateTopicIntradayHistoricalAgentData> historicalAgentDataPerInterval = null;
+  private List<WfmIntradayDataUpdateTopicIntradayHistoricalQueueData> historicalQueueDataPerInterval = null;
+  private List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData> performancePredictionAgentDataPerInterval = null;
+  private List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData> performancePredictionQueueDataPerInterval = null;
 
   
   /**

@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class TestMessage  implements Serializable {
   
   private String id = null;
-  private List<EmailAddress> to = new ArrayList<EmailAddress>();
+  private List<EmailAddress> to = null;
   private EmailAddress from = null;
   private String subject = null;
   private String textBody = null;

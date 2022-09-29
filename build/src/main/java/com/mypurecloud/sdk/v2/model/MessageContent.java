@@ -104,7 +104,7 @@ public class MessageContent  implements Serializable {
   private ContentGeneric generic = null;
   private ContentList list = null;
   private ContentNotificationTemplate template = null;
-  private List<ContentReaction> reactions = new ArrayList<ContentReaction>();
+  private List<ContentReaction> reactions = null;
   private MessagingRecipient mention = null;
   private ContentPostback postback = null;
   private ContentStory story = null;

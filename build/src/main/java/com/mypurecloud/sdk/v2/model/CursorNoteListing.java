@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CursorNoteListing  implements Serializable {
   
-  private List<Note> entities = new ArrayList<Note>();
+  private List<Note> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

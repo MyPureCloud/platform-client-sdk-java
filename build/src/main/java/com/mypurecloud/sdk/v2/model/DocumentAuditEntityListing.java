@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DocumentAuditEntityListing  implements Serializable, PagedResource<DocumentAudit> {
   
-  private List<DocumentAudit> entities = new ArrayList<DocumentAudit>();
+  private List<DocumentAudit> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

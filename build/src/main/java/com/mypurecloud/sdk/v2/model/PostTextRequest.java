@@ -84,7 +84,7 @@ public class PostTextRequest  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<BotChannelsEnum> botChannels = new ArrayList<BotChannelsEnum>();
+  private List<BotChannelsEnum> botChannels = null;
   private String botCorrelationId = null;
 
   private static class MessagingPlatformTypeEnumDeserializer extends StdDeserializer<MessagingPlatformTypeEnum> {

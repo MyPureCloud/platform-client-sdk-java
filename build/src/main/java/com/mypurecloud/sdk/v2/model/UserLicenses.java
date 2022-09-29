@@ -23,7 +23,7 @@ import java.io.Serializable;
 public class UserLicenses  implements Serializable {
   
   private String id = null;
-  private List<String> licenses = new ArrayList<String>();
+  private List<String> licenses = null;
   private String selfUri = null;
 
   

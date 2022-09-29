@@ -22,7 +22,7 @@ import java.io.Serializable;
 
 public class WrapUpCodeConfig  implements Serializable {
   
-  private List<String> values = new ArrayList<String>();
+  private List<String> values = null;
 
   
   /**

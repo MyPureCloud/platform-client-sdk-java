@@ -25,9 +25,9 @@ import java.io.Serializable;
 
 public class Assignment  implements Serializable {
   
-  private List<UserReference> assignedMembers = new ArrayList<UserReference>();
-  private List<UserReference> removedMembers = new ArrayList<UserReference>();
-  private List<AssignmentError> assignmentErrors = new ArrayList<AssignmentError>();
+  private List<UserReference> assignedMembers = null;
+  private List<UserReference> removedMembers = null;
+  private List<AssignmentError> assignmentErrors = null;
 
   
   /**

@@ -78,9 +78,9 @@ public class LocationSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = new ArrayList<SearchSort>();
-  private List<String> expand = new ArrayList<String>();
-  private List<LocationSearchCriteria> query = new ArrayList<LocationSearchCriteria>();
+  private List<SearchSort> sort = null;
+  private List<String> expand = null;
+  private List<LocationSearchCriteria> query = null;
 
   
   /**

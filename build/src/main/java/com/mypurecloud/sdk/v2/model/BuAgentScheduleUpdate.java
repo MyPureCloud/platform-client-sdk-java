@@ -74,7 +74,7 @@ public class BuAgentScheduleUpdate  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<Date> shiftStartDates = new ArrayList<Date>();
+  private List<Date> shiftStartDates = null;
 
   
   /**

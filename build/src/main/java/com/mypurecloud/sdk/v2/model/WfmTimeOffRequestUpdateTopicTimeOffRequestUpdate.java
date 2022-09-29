@@ -133,8 +133,8 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     }
   }
   private SubstatusEnum substatus = null;
-  private List<String> partialDayStartDateTimes = new ArrayList<String>();
-  private List<String> fullDayManagementUnitDates = new ArrayList<String>();
+  private List<String> partialDayStartDateTimes = null;
+  private List<String> fullDayManagementUnitDates = null;
   private Integer dailyDurationMinutes = null;
   private String notes = null;
   private String reviewedDate = null;

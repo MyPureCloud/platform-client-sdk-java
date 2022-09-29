@@ -127,7 +127,7 @@ public class ArchitectJobStateResponse  implements Serializable {
     }
   }
   private CommandEnum command = null;
-  private List<ArchitectJobMessage> messages = new ArrayList<ArchitectJobMessage>();
+  private List<ArchitectJobMessage> messages = null;
   private String selfUri = null;
 
   

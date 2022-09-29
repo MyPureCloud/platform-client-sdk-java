@@ -27,8 +27,8 @@ public class TestMatchesEventOperation  implements Serializable {
   
   private String name = null;
   private Integer step = null;
-  private List<TestModeTrigger> matchedTriggers = new ArrayList<TestModeTrigger>();
-  private List<TestModeTrigger> unmatchedTriggers = new ArrayList<TestModeTrigger>();
+  private List<TestModeTrigger> matchedTriggers = null;
+  private List<TestModeTrigger> unmatchedTriggers = null;
 
   
   /**

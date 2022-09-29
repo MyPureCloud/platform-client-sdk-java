@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class PatchActionSurvey  implements Serializable {
   
-  private List<PatchSurveyQuestion> questions = new ArrayList<PatchSurveyQuestion>();
+  private List<PatchSurveyQuestion> questions = null;
 
   
   /**

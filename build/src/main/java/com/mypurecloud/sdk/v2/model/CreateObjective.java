@@ -28,9 +28,9 @@ public class CreateObjective  implements Serializable {
   
   private String id = null;
   private String templateId = null;
-  private List<ObjectiveZone> zones = new ArrayList<ObjectiveZone>();
+  private List<ObjectiveZone> zones = null;
   private Boolean enabled = null;
-  private List<String> topicIds = new ArrayList<String>();
+  private List<String> topicIds = null;
 
   private static class MediaTypesEnumDeserializer extends StdDeserializer<MediaTypesEnum> {
     public MediaTypesEnumDeserializer() {
@@ -84,8 +84,8 @@ public class CreateObjective  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
-  private List<String> queueIds = new ArrayList<String>();
+  private List<MediaTypesEnum> mediaTypes = null;
+  private List<String> queueIds = null;
 
   private static class TopicIdsFilterTypeEnumDeserializer extends StdDeserializer<TopicIdsFilterTypeEnum> {
     public TopicIdsFilterTypeEnumDeserializer() {

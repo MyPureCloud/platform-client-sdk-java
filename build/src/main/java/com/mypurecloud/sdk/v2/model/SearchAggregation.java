@@ -129,7 +129,7 @@ public class SearchAggregation  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<OrderEnum> order = new ArrayList<OrderEnum>();
+  private List<OrderEnum> order = null;
 
   
   /**

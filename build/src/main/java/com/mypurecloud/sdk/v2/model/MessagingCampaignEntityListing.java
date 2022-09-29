@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class MessagingCampaignEntityListing  implements Serializable, PagedResource<MessagingCampaign> {
   
-  private List<MessagingCampaign> entities = new ArrayList<MessagingCampaign>();
+  private List<MessagingCampaign> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

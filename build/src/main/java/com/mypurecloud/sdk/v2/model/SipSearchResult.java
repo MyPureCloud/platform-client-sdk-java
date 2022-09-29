@@ -29,7 +29,7 @@ public class SipSearchResult  implements Serializable {
   private String sid = null;
   private String auth = null;
   private String message = null;
-  private List<HomerRecord> data = new ArrayList<HomerRecord>();
+  private List<HomerRecord> data = null;
   private Integer count = null;
   private String selfUri = null;
 

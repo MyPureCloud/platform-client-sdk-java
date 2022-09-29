@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class SpeechTextAnalyticsSettingsResponse  implements Serializable {
   
   private AddressableEntityRef defaultProgram = null;
-  private List<String> expectedDialects = new ArrayList<String>();
+  private List<String> expectedDialects = null;
 
   
   /**

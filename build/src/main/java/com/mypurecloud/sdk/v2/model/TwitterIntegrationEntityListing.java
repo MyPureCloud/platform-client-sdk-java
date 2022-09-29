@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TwitterIntegrationEntityListing  implements Serializable, PagedResource<TwitterIntegration> {
   
-  private List<TwitterIntegration> entities = new ArrayList<TwitterIntegration>();
+  private List<TwitterIntegration> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

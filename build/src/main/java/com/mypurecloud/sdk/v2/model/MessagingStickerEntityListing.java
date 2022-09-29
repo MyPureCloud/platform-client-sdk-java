@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class MessagingStickerEntityListing  implements Serializable, PagedResource<MessagingSticker> {
   
-  private List<MessagingSticker> entities = new ArrayList<MessagingSticker>();
+  private List<MessagingSticker> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

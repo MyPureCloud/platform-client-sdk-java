@@ -319,7 +319,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
   private String peerId = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
-  private List<QueueConversationVideoEventTopicDisconnectReason> disconnectReasons = new ArrayList<QueueConversationVideoEventTopicDisconnectReason>();
+  private List<QueueConversationVideoEventTopicDisconnectReason> disconnectReasons = null;
   private QueueConversationVideoEventTopicFaxStatus faxStatus = null;
   private String uuiData = null;
   private Date bargedTime = null;

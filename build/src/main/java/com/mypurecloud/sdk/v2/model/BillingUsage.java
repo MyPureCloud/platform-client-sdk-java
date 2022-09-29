@@ -26,7 +26,7 @@ public class BillingUsage  implements Serializable {
   
   private String name = null;
   private String totalUsage = null;
-  private List<BillingUsageResource> resources = new ArrayList<BillingUsageResource>();
+  private List<BillingUsageResource> resources = null;
 
   
   /**

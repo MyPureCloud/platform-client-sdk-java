@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class WhatsAppAvailablePhoneNumberDetailsListing  implements Serializable {
   
-  private List<WhatsAppAvailablePhoneNumberDetails> entities = new ArrayList<WhatsAppAvailablePhoneNumberDetails>();
+  private List<WhatsAppAvailablePhoneNumberDetails> entities = null;
 
   
   /**

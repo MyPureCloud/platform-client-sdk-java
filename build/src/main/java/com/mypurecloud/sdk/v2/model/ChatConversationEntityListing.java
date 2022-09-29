@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ChatConversationEntityListing  implements Serializable, PagedResource<ChatConversation> {
   
-  private List<ChatConversation> entities = new ArrayList<ChatConversation>();
+  private List<ChatConversation> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

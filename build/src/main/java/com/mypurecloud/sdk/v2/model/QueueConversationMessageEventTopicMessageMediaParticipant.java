@@ -336,7 +336,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   private QueueConversationMessageEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
-  private List<QueueConversationMessageEventTopicMessageDetails> messages = new ArrayList<QueueConversationMessageEventTopicMessageDetails>();
+  private List<QueueConversationMessageEventTopicMessageDetails> messages = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ExternalOrganizationListing  implements Serializable, PagedResource<ExternalOrganization> {
   
-  private List<ExternalOrganization> entities = new ArrayList<ExternalOrganization>();
+  private List<ExternalOrganization> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

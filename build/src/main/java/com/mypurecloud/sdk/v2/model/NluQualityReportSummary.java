@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class NluQualityReportSummary  implements Serializable {
   
-  private List<NluQualityReportSummaryMetric> metrics = new ArrayList<NluQualityReportSummaryMetric>();
+  private List<NluQualityReportSummaryMetric> metrics = null;
 
   
   /**

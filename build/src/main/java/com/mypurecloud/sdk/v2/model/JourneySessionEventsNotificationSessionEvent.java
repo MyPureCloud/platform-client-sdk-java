@@ -54,8 +54,8 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   private String type = null;
   private String externalId = null;
   private String externalUrl = null;
-  private List<JourneySessionEventsNotificationOutcomeAchievement> outcomeAchievements = new ArrayList<JourneySessionEventsNotificationOutcomeAchievement>();
-  private List<JourneySessionEventsNotificationSegmentAssignment> segmentAssignments = new ArrayList<JourneySessionEventsNotificationSegmentAssignment>();
+  private List<JourneySessionEventsNotificationOutcomeAchievement> outcomeAchievements = null;
+  private List<JourneySessionEventsNotificationSegmentAssignment> segmentAssignments = null;
   private Map<String, JourneySessionEventsNotificationCustomEventAttribute> attributes = null;
   private Map<String, JourneySessionEventsNotificationCustomEventAttributeList> attributeLists = null;
   private Date awayDate = null;
@@ -68,7 +68,7 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   private JourneySessionEventsNotificationPage lastPage = null;
   private JourneySessionEventsNotificationMktCampaign mktCampaign = null;
   private JourneySessionEventsNotificationReferrer referrer = null;
-  private List<String> searchTerms = new ArrayList<String>();
+  private List<String> searchTerms = null;
   private String userAgentString = null;
   private Integer durationInSeconds = null;
   private Integer eventCount = null;
@@ -129,7 +129,7 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   private JourneySessionEventsNotificationConversationUserDisposition lastUserDisposition = null;
   private JourneySessionEventsNotificationUser lastConnectedUser = null;
   private JourneySessionEventsNotificationConnectedQueue lastConnectedQueue = null;
-  private List<JourneySessionEventsNotificationConversationChannel> conversationChannels = new ArrayList<JourneySessionEventsNotificationConversationChannel>();
+  private List<JourneySessionEventsNotificationConversationChannel> conversationChannels = null;
 
   private static class LastUserDisconnectTypeEnumDeserializer extends StdDeserializer<LastUserDisconnectTypeEnum> {
     public LastUserDisconnectTypeEnumDeserializer() {

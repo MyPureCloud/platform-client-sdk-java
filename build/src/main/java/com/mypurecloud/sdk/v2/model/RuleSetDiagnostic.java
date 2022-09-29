@@ -73,7 +73,7 @@ public class RuleSetDiagnostic  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<WarningsEnum> warnings = new ArrayList<WarningsEnum>();
+  private List<WarningsEnum> warnings = null;
 
   
   @ApiModelProperty(example = "null", value = "A campaign rule set")

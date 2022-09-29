@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ActionTemplateListing  implements Serializable, PagedResource<ActionTemplate> {
   
-  private List<ActionTemplate> entities = new ArrayList<ActionTemplate>();
+  private List<ActionTemplate> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

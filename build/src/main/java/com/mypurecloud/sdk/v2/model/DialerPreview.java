@@ -28,7 +28,7 @@ public class DialerPreview  implements Serializable {
   private String contactId = null;
   private String contactListId = null;
   private String campaignId = null;
-  private List<PhoneNumberColumn> phoneNumberColumns = new ArrayList<PhoneNumberColumn>();
+  private List<PhoneNumberColumn> phoneNumberColumns = null;
 
   
   /**

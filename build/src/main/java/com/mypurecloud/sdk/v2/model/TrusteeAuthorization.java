@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class TrusteeAuthorization  implements Serializable {
   
-  private List<String> permissions = new ArrayList<String>();
+  private List<String> permissions = null;
 
   
   @ApiModelProperty(example = "null", value = "Permissions that the trustee user has in the trustor organization")

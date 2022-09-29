@@ -74,8 +74,8 @@ public class ConversationDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<ConversationDetailQueryClause> clauses = new ArrayList<ConversationDetailQueryClause>();
-  private List<ConversationDetailQueryPredicate> predicates = new ArrayList<ConversationDetailQueryPredicate>();
+  private List<ConversationDetailQueryClause> clauses = null;
+  private List<ConversationDetailQueryPredicate> predicates = null;
 
   
   /**

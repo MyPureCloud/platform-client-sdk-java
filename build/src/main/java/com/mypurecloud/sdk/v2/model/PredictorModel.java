@@ -29,7 +29,7 @@ public class PredictorModel  implements Serializable {
   
   private String id = null;
   private String kpi = null;
-  private List<AddressableEntityRef> queues = new ArrayList<AddressableEntityRef>();
+  private List<AddressableEntityRef> queues = null;
   private Date dateCreated = null;
   private Date dateTrained = null;
 
@@ -81,7 +81,7 @@ public class PredictorModel  implements Serializable {
     }
   }
   private MediaTypeEnum mediaType = null;
-  private List<PredictorModelFeature> features = new ArrayList<PredictorModelFeature>();
+  private List<PredictorModelFeature> features = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

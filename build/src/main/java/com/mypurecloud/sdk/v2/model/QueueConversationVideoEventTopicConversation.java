@@ -26,7 +26,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
   
   private String id = null;
   private Integer maxParticipants = null;
-  private List<QueueConversationVideoEventTopicParticipant> participants = new ArrayList<QueueConversationVideoEventTopicParticipant>();
+  private List<QueueConversationVideoEventTopicParticipant> participants = null;
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;

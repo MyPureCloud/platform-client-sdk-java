@@ -27,7 +27,7 @@ public class RecordingArchiveRestoreTopicMediaResult  implements Serializable {
   private String channelId = null;
   private String waveUri = null;
   private String mediaUri = null;
-  private List<BigDecimal> waveformData = new ArrayList<BigDecimal>();
+  private List<BigDecimal> waveformData = null;
 
   
   /**

@@ -28,7 +28,7 @@ public class CreateUser  implements Serializable {
   private String name = null;
   private String department = null;
   private String email = null;
-  private List<Contact> addresses = new ArrayList<Contact>();
+  private List<Contact> addresses = null;
   private String title = null;
   private String password = null;
   private String divisionId = null;

@@ -73,7 +73,7 @@ public class FlowAggregateQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<FlowAggregateQueryPredicate> predicates = new ArrayList<FlowAggregateQueryPredicate>();
+  private List<FlowAggregateQueryPredicate> predicates = null;
 
   
   /**

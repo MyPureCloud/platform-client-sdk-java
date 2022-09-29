@@ -83,8 +83,8 @@ public class OpenNormalizedMessage  implements Serializable {
   }
   private TypeEnum type = null;
   private String text = null;
-  private List<OpenMessageContent> content = new ArrayList<OpenMessageContent>();
-  private List<OpenMessageEvent> events = new ArrayList<OpenMessageEvent>();
+  private List<OpenMessageContent> content = null;
+  private List<OpenMessageEvent> events = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -137,7 +137,7 @@ public class OpenNormalizedMessage  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<Reason> reasons = new ArrayList<Reason>();
+  private List<Reason> reasons = null;
   private Boolean isFinalReceipt = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {

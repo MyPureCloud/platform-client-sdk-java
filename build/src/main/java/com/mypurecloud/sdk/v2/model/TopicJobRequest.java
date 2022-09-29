@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class TopicJobRequest  implements Serializable {
   
-  private List<String> topicIds = new ArrayList<String>();
+  private List<String> topicIds = null;
 
   
   /**

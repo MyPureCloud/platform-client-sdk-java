@@ -27,7 +27,7 @@ public class IntentFeedback  implements Serializable {
   
   private String name = null;
   private Double probability = null;
-  private List<DetectedNamedEntity> entities = new ArrayList<DetectedNamedEntity>();
+  private List<DetectedNamedEntity> entities = null;
 
   private static class AssessmentEnumDeserializer extends StdDeserializer<AssessmentEnum> {
     public AssessmentEnumDeserializer() {

@@ -34,10 +34,10 @@ public class ActionMap  implements Serializable {
   private Integer version = null;
   private Boolean isActive = null;
   private String displayName = null;
-  private List<String> triggerWithSegments = new ArrayList<String>();
-  private List<EventCondition> triggerWithEventConditions = new ArrayList<EventCondition>();
-  private List<OutcomeProbabilityCondition> triggerWithOutcomeProbabilityConditions = new ArrayList<OutcomeProbabilityCondition>();
-  private List<UrlCondition> pageUrlConditions = new ArrayList<UrlCondition>();
+  private List<String> triggerWithSegments = null;
+  private List<EventCondition> triggerWithEventConditions = null;
+  private List<OutcomeProbabilityCondition> triggerWithOutcomeProbabilityConditions = null;
+  private List<UrlCondition> pageUrlConditions = null;
   private Activation activation = null;
   private Integer weight = null;
   private ActionMapAction action = null;

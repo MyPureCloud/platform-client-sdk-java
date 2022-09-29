@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class LearningAssignmentAggregateQueryResponseData  implements Serializable {
   
   private String interval = null;
-  private List<LearningAssignmentAggregateQueryResponseMetric> metrics = new ArrayList<LearningAssignmentAggregateQueryResponseMetric>();
+  private List<LearningAssignmentAggregateQueryResponseMetric> metrics = null;
 
   
   /**

@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class UserAggregateQueryResponse  implements Serializable {
   
   private Map<String, List<String>> systemToOrganizationMappings = null;
-  private List<UserAggregateDataContainer> results = new ArrayList<UserAggregateDataContainer>();
+  private List<UserAggregateDataContainer> results = null;
 
   
   /**

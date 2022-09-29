@@ -26,7 +26,7 @@ public class Schema  implements Serializable {
   
   private String title = null;
   private String description = null;
-  private List<String> type = new ArrayList<String>();
+  private List<String> type = null;
   private Items items = null;
   private String pattern = null;
 

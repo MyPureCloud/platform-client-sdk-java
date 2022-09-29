@@ -26,7 +26,7 @@ import java.io.Serializable;
 
 public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Serializable {
   
-  private List<DialerSequenceScheduleConfigChangeScheduleInterval> intervals = new ArrayList<DialerSequenceScheduleConfigChangeScheduleInterval>();
+  private List<DialerSequenceScheduleConfigChangeScheduleInterval> intervals = null;
   private String timeZone = null;
   private DialerSequenceScheduleConfigChangeUriReference sequence = null;
   private String id = null;

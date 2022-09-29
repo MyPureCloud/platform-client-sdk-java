@@ -27,8 +27,8 @@ public class ConversationCallEventTopicCallConversation  implements Serializable
   
   private String id = null;
   private String name = null;
-  private List<ConversationCallEventTopicCallMediaParticipant> participants = new ArrayList<ConversationCallEventTopicCallMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<ConversationCallEventTopicCallMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
 
   private static class RecordingStateEnumDeserializer extends StdDeserializer<RecordingStateEnum> {
     public RecordingStateEnumDeserializer() {

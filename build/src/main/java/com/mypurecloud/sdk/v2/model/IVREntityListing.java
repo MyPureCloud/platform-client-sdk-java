@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class IVREntityListing  implements Serializable, PagedResource<IVR> {
   
-  private List<IVR> entities = new ArrayList<IVR>();
+  private List<IVR> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

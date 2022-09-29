@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class KnowledgeImportJobReport  implements Serializable {
   
-  private List<KnowledgeImportJobError> errors = new ArrayList<KnowledgeImportJobError>();
+  private List<KnowledgeImportJobError> errors = null;
   private KnowledgeImportJobStatistics statistics = null;
 
   

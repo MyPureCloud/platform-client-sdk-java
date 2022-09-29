@@ -23,8 +23,8 @@ import java.io.Serializable;
 public class ProcessScheduleUpdateUploadRequest  implements Serializable {
   
   private String uploadKey = null;
-  private List<String> teamIds = new ArrayList<String>();
-  private List<String> managementUnitIdsForAddedTeamUsers = new ArrayList<String>();
+  private List<String> teamIds = null;
+  private List<String> managementUnitIdsForAddedTeamUsers = null;
 
   
   /**

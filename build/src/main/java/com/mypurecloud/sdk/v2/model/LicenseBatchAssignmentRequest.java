@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class LicenseBatchAssignmentRequest  implements Serializable {
   
-  private List<LicenseAssignmentRequest> assignments = new ArrayList<LicenseAssignmentRequest>();
+  private List<LicenseAssignmentRequest> assignments = null;
 
   
   /**

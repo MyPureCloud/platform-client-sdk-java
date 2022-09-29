@@ -91,7 +91,7 @@ public class EdgeGroup  implements Serializable {
   private Boolean managed = null;
   private Boolean hybrid = null;
   private TrunkBaseAssignment edgeTrunkBaseAssignment = null;
-  private List<TrunkBase> phoneTrunkBases = new ArrayList<TrunkBase>();
+  private List<TrunkBase> phoneTrunkBases = null;
   private String selfUri = null;
 
   

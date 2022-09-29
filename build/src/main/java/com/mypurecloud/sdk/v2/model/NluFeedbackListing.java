@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedbackResponse> {
   
-  private List<NluFeedbackResponse> entities = new ArrayList<NluFeedbackResponse>();
+  private List<NluFeedbackResponse> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -29,7 +29,7 @@ public class BuAgentScheduleShift  implements Serializable {
   private String id = null;
   private Date startDate = null;
   private Integer lengthMinutes = null;
-  private List<BuAgentScheduleActivity> activities = new ArrayList<BuAgentScheduleActivity>();
+  private List<BuAgentScheduleActivity> activities = null;
   private Boolean manuallyEdited = null;
   private BuScheduleReference schedule = null;
 

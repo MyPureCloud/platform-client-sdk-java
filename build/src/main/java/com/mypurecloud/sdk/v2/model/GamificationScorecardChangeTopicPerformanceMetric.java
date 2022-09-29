@@ -29,7 +29,7 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
   private GamificationScorecardChangeTopicMetric metric = null;
   private Integer points = null;
   private BigDecimal value = null;
-  private List<GamificationScorecardChangeTopicPunctualityEvent> punctualityEvents = new ArrayList<GamificationScorecardChangeTopicPunctualityEvent>();
+  private List<GamificationScorecardChangeTopicPunctualityEvent> punctualityEvents = null;
 
   
   /**

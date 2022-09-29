@@ -34,7 +34,7 @@ public class WebDeployment  implements Serializable {
   private String description = null;
   private WebDeploymentConfigurationVersion _configuration = null;
   private Boolean allowAllDomains = null;
-  private List<String> allowedDomains = new ArrayList<String>();
+  private List<String> allowedDomains = null;
   private String snippet = null;
   private Date dateCreated = null;
   private Date dateModified = null;

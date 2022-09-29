@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class FlowObservationDataContainer  implements Serializable {
   
   private Map<String, String> group = null;
-  private List<ObservationMetricData> data = new ArrayList<ObservationMetricData>();
+  private List<ObservationMetricData> data = null;
 
   
   /**

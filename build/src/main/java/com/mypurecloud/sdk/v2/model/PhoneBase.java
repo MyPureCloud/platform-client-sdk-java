@@ -92,7 +92,7 @@ public class PhoneBase  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private DomainEntityRef phoneMetaBase = null;
-  private List<LineBase> lines = new ArrayList<LineBase>();
+  private List<LineBase> lines = null;
   private Map<String, Object> properties = null;
   private PhoneCapabilities capabilities = null;
   private String selfUri = null;

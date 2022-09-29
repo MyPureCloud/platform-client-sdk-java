@@ -28,7 +28,7 @@ public class ConversationCallbackEventTopicDialerPreview  implements Serializabl
   private String contactId = null;
   private String contactListId = null;
   private String campaignId = null;
-  private List<ConversationCallbackEventTopicPhoneNumberColumn> phoneNumberColumns = new ArrayList<ConversationCallbackEventTopicPhoneNumberColumn>();
+  private List<ConversationCallbackEventTopicPhoneNumberColumn> phoneNumberColumns = null;
 
   
   /**

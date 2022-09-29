@@ -28,8 +28,8 @@ public class QueueConversationEmailEventTopicConversationRoutingData  implements
   private QueueConversationEmailEventTopicUriReference queue = null;
   private QueueConversationEmailEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<QueueConversationEmailEventTopicUriReference> skills = new ArrayList<QueueConversationEmailEventTopicUriReference>();
-  private List<QueueConversationEmailEventTopicScoredAgent> scoredAgents = new ArrayList<QueueConversationEmailEventTopicScoredAgent>();
+  private List<QueueConversationEmailEventTopicUriReference> skills = null;
+  private List<QueueConversationEmailEventTopicScoredAgent> scoredAgents = null;
 
   
   /**

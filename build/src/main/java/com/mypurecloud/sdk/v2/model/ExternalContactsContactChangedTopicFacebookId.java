@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ExternalContactsContactChangedTopicFacebookId  implements Serializable {
   
-  private List<ExternalContactsContactChangedTopicFacebookScopedId> ids = new ArrayList<ExternalContactsContactChangedTopicFacebookScopedId>();
+  private List<ExternalContactsContactChangedTopicFacebookScopedId> ids = null;
   private String displayName = null;
 
   

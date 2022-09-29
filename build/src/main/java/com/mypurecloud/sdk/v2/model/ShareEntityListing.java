@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ShareEntityListing  implements Serializable, PagedResource<Share> {
   
-  private List<Share> entities = new ArrayList<Share>();
+  private List<Share> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -27,8 +27,8 @@ import java.io.Serializable;
 public class WfmScheduleActivity  implements Serializable {
   
   private UserReference userReference = null;
-  private List<ScheduleActivity> activities = new ArrayList<ScheduleActivity>();
-  private List<FullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<FullDayTimeOffMarker>();
+  private List<ScheduleActivity> activities = null;
+  private List<FullDayTimeOffMarker> fullDayTimeOffMarkers = null;
 
   
   @ApiModelProperty(example = "null", value = "ID of user that the schedule is for")

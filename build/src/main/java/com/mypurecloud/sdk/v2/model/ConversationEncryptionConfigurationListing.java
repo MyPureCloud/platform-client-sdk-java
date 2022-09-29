@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class ConversationEncryptionConfigurationListing  implements Serializable {
   
   private Long total = null;
-  private List<ConversationEncryptionConfiguration> entities = new ArrayList<ConversationEncryptionConfiguration>();
+  private List<ConversationEncryptionConfiguration> entities = null;
   private String selfUri = null;
 
   

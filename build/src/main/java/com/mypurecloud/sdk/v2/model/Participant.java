@@ -120,16 +120,16 @@ public class Participant  implements Serializable {
   private String monitoredParticipantId = null;
   private String coachedParticipantId = null;
   private Map<String, String> attributes = null;
-  private List<Call> calls = new ArrayList<Call>();
-  private List<Callback> callbacks = new ArrayList<Callback>();
-  private List<ConversationChat> chats = new ArrayList<ConversationChat>();
-  private List<Cobrowsesession> cobrowsesessions = new ArrayList<Cobrowsesession>();
-  private List<Email> emails = new ArrayList<Email>();
-  private List<Message> messages = new ArrayList<Message>();
-  private List<Screenshare> screenshares = new ArrayList<Screenshare>();
-  private List<SocialExpression> socialExpressions = new ArrayList<SocialExpression>();
-  private List<Video> videos = new ArrayList<Video>();
-  private List<Evaluation> evaluations = new ArrayList<Evaluation>();
+  private List<Call> calls = null;
+  private List<Callback> callbacks = null;
+  private List<ConversationChat> chats = null;
+  private List<Cobrowsesession> cobrowsesessions = null;
+  private List<Email> emails = null;
+  private List<Message> messages = null;
+  private List<Screenshare> screenshares = null;
+  private List<SocialExpression> socialExpressions = null;
+  private List<Video> videos = null;
+  private List<Evaluation> evaluations = null;
 
   private static class ScreenRecordingStateEnumDeserializer extends StdDeserializer<ScreenRecordingStateEnum> {
     public ScreenRecordingStateEnumDeserializer() {

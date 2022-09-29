@@ -28,7 +28,7 @@ public class FieldList  implements Serializable {
   private Boolean customLabels = null;
   private String instructionText = null;
   private String key = null;
-  private List<String> labelKeys = new ArrayList<String>();
+  private List<String> labelKeys = null;
   private Map<String, Object> params = null;
   private Boolean repeatable = null;
   private String state = null;

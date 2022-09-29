@@ -75,7 +75,7 @@ public class OverallBestPointsItem  implements Serializable {
     }
   }
   private GranularityTypeEnum granularityType = null;
-  private List<UserReference> users = new ArrayList<UserReference>();
+  private List<UserReference> users = null;
   private Integer count = null;
   private Integer points = null;
   private LocalDate dateStartWorkday = null;

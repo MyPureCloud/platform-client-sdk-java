@@ -27,7 +27,7 @@ public class ResponseQueryRequest  implements Serializable {
   
   private String queryPhrase = null;
   private Integer pageSize = null;
-  private List<ResponseFilter> filters = new ArrayList<ResponseFilter>();
+  private List<ResponseFilter> filters = null;
 
   
   /**

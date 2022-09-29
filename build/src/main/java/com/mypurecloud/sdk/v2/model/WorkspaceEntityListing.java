@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class WorkspaceEntityListing  implements Serializable, PagedResource<Workspace> {
   
-  private List<Workspace> entities = new ArrayList<Workspace>();
+  private List<Workspace> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

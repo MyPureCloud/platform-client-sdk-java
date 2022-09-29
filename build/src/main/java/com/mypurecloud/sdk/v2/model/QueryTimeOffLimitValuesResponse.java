@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class QueryTimeOffLimitValuesResponse  implements Serializable {
   
-  private List<TimeOffLimitValueRange> values = new ArrayList<TimeOffLimitValueRange>();
+  private List<TimeOffLimitValueRange> values = null;
 
   
   /**

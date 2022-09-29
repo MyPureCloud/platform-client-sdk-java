@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class WebDeploymentConfigurationVersionEntityListing  implements Serializable {
   
   private Long total = null;
-  private List<WebDeploymentConfigurationVersion> entities = new ArrayList<WebDeploymentConfigurationVersion>();
+  private List<WebDeploymentConfigurationVersion> entities = null;
   private String selfUri = null;
 
   

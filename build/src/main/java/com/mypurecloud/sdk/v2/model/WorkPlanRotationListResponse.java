@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class WorkPlanRotationListResponse  implements Serializable {
   
-  private List<WorkPlanRotationResponse> entities = new ArrayList<WorkPlanRotationResponse>();
+  private List<WorkPlanRotationResponse> entities = null;
 
   
   /**

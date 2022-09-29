@@ -74,8 +74,8 @@ public class EvaluationDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<EvaluationDetailQueryClause> clauses = new ArrayList<EvaluationDetailQueryClause>();
-  private List<EvaluationDetailQueryPredicate> predicates = new ArrayList<EvaluationDetailQueryPredicate>();
+  private List<EvaluationDetailQueryClause> clauses = null;
+  private List<EvaluationDetailQueryPredicate> predicates = null;
 
   
   /**

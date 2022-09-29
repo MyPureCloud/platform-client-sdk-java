@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class LearningAssignmentAggregateQueryResponseGroupedData  implements Serializable {
   
   private Map<String, String> group = null;
-  private List<LearningAssignmentAggregateQueryResponseData> data = new ArrayList<LearningAssignmentAggregateQueryResponseData>();
+  private List<LearningAssignmentAggregateQueryResponseData> data = null;
 
   
   /**

@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class AvailableLanguageList  implements Serializable {
   
-  private List<String> languages = new ArrayList<String>();
+  private List<String> languages = null;
 
   
   /**

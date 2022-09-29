@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class CreatePlanningGroupRequest  implements Serializable {
   
   private String name = null;
-  private List<RoutePathRequest> routePaths = new ArrayList<RoutePathRequest>();
+  private List<RoutePathRequest> routePaths = null;
   private String serviceGoalTemplateId = null;
 
   

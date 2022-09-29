@@ -26,7 +26,7 @@ import java.io.Serializable;
 
 public class DialerRulesetConfigChangeRule  implements Serializable {
   
-  private List<DialerRulesetConfigChangeCondition> conditions = new ArrayList<DialerRulesetConfigChangeCondition>();
+  private List<DialerRulesetConfigChangeCondition> conditions = null;
   private String id = null;
   private String name = null;
   private Integer order = null;
@@ -78,7 +78,7 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     }
   }
   private CategoryEnum category = null;
-  private List<DialerRulesetConfigChangeAction> actions = new ArrayList<DialerRulesetConfigChangeAction>();
+  private List<DialerRulesetConfigChangeAction> actions = null;
 
   
   /**

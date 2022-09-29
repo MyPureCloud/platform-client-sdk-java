@@ -26,7 +26,7 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
   
   private String id = null;
   private String downloadUrl = null;
-  private List<String> downloadUrls = new ArrayList<String>();
+  private List<String> downloadUrls = null;
 
   private static class QueryStateEnumDeserializer extends StdDeserializer<QueryStateEnum> {
     public QueryStateEnumDeserializer() {

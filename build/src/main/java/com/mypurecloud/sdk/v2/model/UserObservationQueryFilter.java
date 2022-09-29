@@ -74,8 +74,8 @@ public class UserObservationQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<UserObservationQueryClause> clauses = new ArrayList<UserObservationQueryClause>();
-  private List<UserObservationQueryPredicate> predicates = new ArrayList<UserObservationQueryPredicate>();
+  private List<UserObservationQueryClause> clauses = null;
+  private List<UserObservationQueryPredicate> predicates = null;
 
   
   /**

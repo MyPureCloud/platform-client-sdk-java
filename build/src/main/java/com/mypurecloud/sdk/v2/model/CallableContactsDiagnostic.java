@@ -25,9 +25,9 @@ import java.io.Serializable;
 public class CallableContactsDiagnostic  implements Serializable {
   
   private DomainEntityRef attemptLimits = null;
-  private List<DomainEntityRef> dncLists = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> dncLists = null;
   private DomainEntityRef callableTimeSet = null;
-  private List<DomainEntityRef> ruleSets = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> ruleSets = null;
 
   
   @ApiModelProperty(example = "null", value = "Attempt limits for the campaign's contact list")

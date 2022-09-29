@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class SearchShiftTradeResponse  implements Serializable {
   
   private ShiftTradeResponse trade = null;
-  private List<String> matchingReceivingShiftIds = new ArrayList<String>();
+  private List<String> matchingReceivingShiftIds = null;
   private ShiftTradePreviewResponse preview = null;
 
   

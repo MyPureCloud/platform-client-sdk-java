@@ -29,7 +29,7 @@ public class KnowledgeGuestSession  implements Serializable {
   private KnowledgeGuestSessionApp app = null;
   private String customerId = null;
   private String pageUrl = null;
-  private List<KnowledgeGuestSessionContext> contexts = new ArrayList<KnowledgeGuestSessionContext>();
+  private List<KnowledgeGuestSessionContext> contexts = null;
 
   
   @ApiModelProperty(example = "null", value = "Session ID.")

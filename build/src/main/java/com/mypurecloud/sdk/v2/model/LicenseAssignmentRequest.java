@@ -23,8 +23,8 @@ import java.io.Serializable;
 public class LicenseAssignmentRequest  implements Serializable {
   
   private String licenseId = null;
-  private List<String> userIdsAdd = new ArrayList<String>();
-  private List<String> userIdsRemove = new ArrayList<String>();
+  private List<String> userIdsAdd = null;
+  private List<String> userIdsRemove = null;
 
   
   /**

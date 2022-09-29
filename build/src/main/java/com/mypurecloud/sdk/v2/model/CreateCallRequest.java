@@ -32,9 +32,9 @@ public class CreateCallRequest  implements Serializable {
   private String callUserId = null;
   private Integer priority = null;
   private String languageId = null;
-  private List<String> routingSkillsIds = new ArrayList<String>();
-  private List<String> conversationIds = new ArrayList<String>();
-  private List<Destination> participants = new ArrayList<Destination>();
+  private List<String> routingSkillsIds = null;
+  private List<String> conversationIds = null;
+  private List<Destination> participants = null;
   private String uuiData = null;
   private String externalContactId = null;
 

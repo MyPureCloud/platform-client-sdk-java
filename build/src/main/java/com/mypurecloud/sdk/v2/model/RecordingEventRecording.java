@@ -27,7 +27,7 @@ public class RecordingEventRecording  implements Serializable {
   private String id = null;
   private String conversationId = null;
   private String fileState = null;
-  private List<RecordingEventMediaResult> mediaUris = new ArrayList<RecordingEventMediaResult>();
+  private List<RecordingEventMediaResult> mediaUris = null;
   private Integer estimatedTranscodeTimeMs = null;
   private Integer actualTranscodeTimeMs = null;
 

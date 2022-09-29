@@ -75,8 +75,8 @@ public class AvailableTimeOffRange  implements Serializable {
     }
   }
   private GranularityEnum granularity = null;
-  private List<Integer> availableMinutesPerInterval = new ArrayList<Integer>();
-  private List<Integer> waitlistedRequestsPerInterval = new ArrayList<Integer>();
+  private List<Integer> availableMinutesPerInterval = null;
+  private List<Integer> waitlistedRequestsPerInterval = null;
   private Boolean waitlistEnabled = null;
 
   

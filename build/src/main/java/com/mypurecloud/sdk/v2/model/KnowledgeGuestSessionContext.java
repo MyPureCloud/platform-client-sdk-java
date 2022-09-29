@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class KnowledgeGuestSessionContext  implements Serializable {
   
   private String id = null;
-  private List<Entity> values = new ArrayList<Entity>();
+  private List<Entity> values = null;
 
   
   /**

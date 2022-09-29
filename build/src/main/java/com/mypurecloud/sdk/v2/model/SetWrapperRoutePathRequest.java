@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class SetWrapperRoutePathRequest  implements Serializable {
   
-  private List<RoutePathRequest> values = new ArrayList<RoutePathRequest>();
+  private List<RoutePathRequest> values = null;
 
   
   /**

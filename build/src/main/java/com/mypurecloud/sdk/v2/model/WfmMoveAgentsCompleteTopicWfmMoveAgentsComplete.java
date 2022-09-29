@@ -28,7 +28,7 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete  implements Seriali
   
   private WfmMoveAgentsCompleteTopicUserReference requestingUser = null;
   private WfmMoveAgentsCompleteTopicManagementUnit destinationManagementUnit = null;
-  private List<WfmMoveAgentsCompleteTopicWfmMoveAgentData> results = new ArrayList<WfmMoveAgentsCompleteTopicWfmMoveAgentData>();
+  private List<WfmMoveAgentsCompleteTopicWfmMoveAgentData> results = null;
 
   
   /**

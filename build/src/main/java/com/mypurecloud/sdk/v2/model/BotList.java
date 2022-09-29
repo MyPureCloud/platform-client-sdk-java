@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class BotList  implements Serializable {
   
-  private List<BotConnectorBot> chatBots = new ArrayList<BotConnectorBot>();
+  private List<BotConnectorBot> chatBots = null;
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class OrganizationRoleEntityListing  implements Serializable, PagedResource<DomainOrganizationRole> {
   
-  private List<DomainOrganizationRole> entities = new ArrayList<DomainOrganizationRole>();
+  private List<DomainOrganizationRole> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

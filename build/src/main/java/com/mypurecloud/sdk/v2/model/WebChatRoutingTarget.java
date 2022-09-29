@@ -72,7 +72,7 @@ public class WebChatRoutingTarget  implements Serializable {
   }
   private TargetTypeEnum targetType = null;
   private String targetAddress = null;
-  private List<String> skills = new ArrayList<String>();
+  private List<String> skills = null;
   private String language = null;
   private Long priority = null;
 

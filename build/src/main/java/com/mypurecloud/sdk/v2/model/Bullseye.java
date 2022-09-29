@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class Bullseye  implements Serializable {
   
-  private List<Ring> rings = new ArrayList<Ring>();
+  private List<Ring> rings = null;
 
   
   /**

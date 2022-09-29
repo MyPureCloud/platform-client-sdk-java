@@ -26,8 +26,8 @@ import java.io.Serializable;
 public class MatchShiftTradeResponse  implements Serializable {
   
   private ShiftTradeResponse trade = null;
-  private List<ShiftTradeMatchViolation> violations = new ArrayList<ShiftTradeMatchViolation>();
-  private List<ShiftTradeMatchViolation> adminReviewViolations = new ArrayList<ShiftTradeMatchViolation>();
+  private List<ShiftTradeMatchViolation> violations = null;
+  private List<ShiftTradeMatchViolation> adminReviewViolations = null;
 
   
   /**

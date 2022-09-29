@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class NoteListing  implements Serializable, PagedResource<Note> {
   
-  private List<Note> entities = new ArrayList<Note>();
+  private List<Note> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

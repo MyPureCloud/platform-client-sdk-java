@@ -26,8 +26,8 @@ public class CobrowseConversation  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<CobrowseMediaParticipant> participants = new ArrayList<CobrowseMediaParticipant>();
-  private List<String> otherMediaUris = new ArrayList<String>();
+  private List<CobrowseMediaParticipant> participants = null;
+  private List<String> otherMediaUris = null;
   private String selfUri = null;
 
   

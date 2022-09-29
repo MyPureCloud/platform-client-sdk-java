@@ -146,7 +146,7 @@ public class EvaluationResponse  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaTypeEnum> mediaType = new ArrayList<MediaTypeEnum>();
+  private List<MediaTypeEnum> mediaType = null;
   private Boolean rescore = null;
   private Date conversationDate = null;
   private Date conversationEndDate = null;
@@ -201,7 +201,7 @@ public class EvaluationResponse  implements Serializable {
   private ResourceTypeEnum resourceType = null;
   private Boolean redacted = null;
   private Boolean isScoringIndex = null;
-  private List<String> authorizedActions = new ArrayList<String>();
+  private List<String> authorizedActions = null;
   private Boolean hasAssistanceFailed = null;
   private String selfUri = null;
 

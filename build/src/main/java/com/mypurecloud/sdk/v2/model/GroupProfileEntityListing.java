@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class GroupProfileEntityListing  implements Serializable, PagedResource<GroupProfile> {
   
-  private List<GroupProfile> entities = new ArrayList<GroupProfile>();
+  private List<GroupProfile> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

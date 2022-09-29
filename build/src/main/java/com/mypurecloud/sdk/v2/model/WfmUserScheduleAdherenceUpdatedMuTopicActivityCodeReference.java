@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference  implements Serializable {
   
   private String id = null;
-  private List<WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference> secondaryPresences = new ArrayList<WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference>();
+  private List<WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference> secondaryPresences = null;
 
   
   /**

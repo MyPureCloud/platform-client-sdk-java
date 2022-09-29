@@ -79,8 +79,8 @@ public class TopicRequest  implements Serializable {
     }
   }
   private StrictnessEnum strictness = null;
-  private List<String> programIds = new ArrayList<String>();
-  private List<String> tags = new ArrayList<String>();
+  private List<String> programIds = null;
+  private List<String> tags = null;
   private String dialect = null;
 
   private static class ParticipantsEnumDeserializer extends StdDeserializer<ParticipantsEnum> {
@@ -131,7 +131,7 @@ public class TopicRequest  implements Serializable {
     }
   }
   private ParticipantsEnum participants = null;
-  private List<Phrase> phrases = new ArrayList<Phrase>();
+  private List<Phrase> phrases = null;
 
   
   /**

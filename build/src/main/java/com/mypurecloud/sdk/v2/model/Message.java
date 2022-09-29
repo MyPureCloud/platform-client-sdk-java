@@ -83,7 +83,7 @@ public class Message  implements Serializable {
   private StateEnum state = null;
   private String id = null;
   private Boolean held = null;
-  private List<Segment> segments = new ArrayList<Segment>();
+  private List<Segment> segments = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -265,7 +265,7 @@ public class Message  implements Serializable {
   private String peerId = null;
   private Address toAddress = null;
   private Address fromAddress = null;
-  private List<MessageDetails> messages = new ArrayList<MessageDetails>();
+  private List<MessageDetails> messages = null;
   private JourneyContext journeyContext = null;
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;

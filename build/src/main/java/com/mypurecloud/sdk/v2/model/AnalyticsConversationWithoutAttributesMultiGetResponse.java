@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class AnalyticsConversationWithoutAttributesMultiGetResponse  implements Serializable {
   
-  private List<AnalyticsConversationWithoutAttributes> conversations = new ArrayList<AnalyticsConversationWithoutAttributes>();
+  private List<AnalyticsConversationWithoutAttributes> conversations = null;
 
   
   /**

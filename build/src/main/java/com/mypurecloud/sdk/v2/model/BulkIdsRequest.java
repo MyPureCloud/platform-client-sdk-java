@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BulkIdsRequest  implements Serializable {
   
-  private List<WritableEntity> entities = new ArrayList<WritableEntity>();
+  private List<WritableEntity> entities = null;
 
   
   /**

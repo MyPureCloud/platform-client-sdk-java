@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class DocumentAttribute  implements Serializable {
   
   private Attribute attribute = null;
-  private List<String> values = new ArrayList<String>();
+  private List<String> values = null;
 
   
   /**

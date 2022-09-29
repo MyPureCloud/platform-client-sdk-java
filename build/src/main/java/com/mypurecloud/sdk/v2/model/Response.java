@@ -37,8 +37,8 @@ public class Response  implements Serializable {
   private String id = null;
   private String name = null;
   private Integer version = null;
-  private List<DomainEntityRef> libraries = new ArrayList<DomainEntityRef>();
-  private List<ResponseText> texts = new ArrayList<ResponseText>();
+  private List<DomainEntityRef> libraries = null;
+  private List<ResponseText> texts = null;
   private User createdBy = null;
   private Date dateCreated = null;
 
@@ -90,7 +90,7 @@ public class Response  implements Serializable {
     }
   }
   private InteractionTypeEnum interactionType = null;
-  private List<ResponseSubstitution> substitutions = new ArrayList<ResponseSubstitution>();
+  private List<ResponseSubstitution> substitutions = null;
   private JsonSchemaDocument substitutionsSchema = null;
 
   private static class ResponseTypeEnumDeserializer extends StdDeserializer<ResponseTypeEnum> {
@@ -143,7 +143,7 @@ public class Response  implements Serializable {
   }
   private ResponseTypeEnum responseType = null;
   private MessagingTemplate messagingTemplate = null;
-  private List<AddressableEntityRef> assets = new ArrayList<AddressableEntityRef>();
+  private List<AddressableEntityRef> assets = null;
   private FooterTemplate footer = null;
   private String selfUri = null;
 

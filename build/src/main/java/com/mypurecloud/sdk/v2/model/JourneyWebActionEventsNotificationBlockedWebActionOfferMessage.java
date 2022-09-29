@@ -140,7 +140,7 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     }
   }
   private BlockingFrequencyCapBehaviourEnum blockingFrequencyCapBehaviour = null;
-  private List<JourneyWebActionEventsNotificationActionMapPageUrlCondition> blockingPageUrlConditions = new ArrayList<JourneyWebActionEventsNotificationActionMapPageUrlCondition>();
+  private List<JourneyWebActionEventsNotificationActionMapPageUrlCondition> blockingPageUrlConditions = null;
   private JourneyWebActionEventsNotificationScheduleGroup blockingScheduleGroup = null;
   private JourneyWebActionEventsNotificationEmergencyGroup blockingEmergencyScheduleGroup = null;
 

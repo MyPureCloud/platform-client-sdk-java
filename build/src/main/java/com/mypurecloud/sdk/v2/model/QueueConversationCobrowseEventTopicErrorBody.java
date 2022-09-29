@@ -34,8 +34,8 @@ public class QueueConversationCobrowseEventTopicErrorBody  implements Serializab
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<QueueConversationCobrowseEventTopicDetail> details = new ArrayList<QueueConversationCobrowseEventTopicDetail>();
-  private List<QueueConversationCobrowseEventTopicErrorBody> errors = new ArrayList<QueueConversationCobrowseEventTopicErrorBody>();
+  private List<QueueConversationCobrowseEventTopicDetail> details = null;
+  private List<QueueConversationCobrowseEventTopicErrorBody> errors = null;
 
   
   /**

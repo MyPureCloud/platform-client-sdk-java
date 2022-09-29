@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ContactListEntityListing  implements Serializable, PagedResource<ContactList> {
   
-  private List<ContactList> entities = new ArrayList<ContactList>();
+  private List<ContactList> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -98,7 +98,7 @@ public class FlowDivisionView  implements Serializable {
   private String description = null;
   private JsonSchemaDocument inputSchema = null;
   private JsonSchemaDocument outputSchema = null;
-  private List<SupportedLanguage> supportedLanguages = new ArrayList<SupportedLanguage>();
+  private List<SupportedLanguage> supportedLanguages = null;
   private FlowVersion publishedVersion = null;
   private FlowVersion debugVersion = null;
   private String selfUri = null;

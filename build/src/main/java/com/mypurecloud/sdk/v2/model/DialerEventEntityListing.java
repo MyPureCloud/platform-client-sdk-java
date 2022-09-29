@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DialerEventEntityListing  implements Serializable, PagedResource<EventLog> {
   
-  private List<EventLog> entities = new ArrayList<EventLog>();
+  private List<EventLog> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

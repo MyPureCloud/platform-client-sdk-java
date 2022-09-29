@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CampaignSequenceEntityListing  implements Serializable, PagedResource<CampaignSequence> {
   
-  private List<CampaignSequence> entities = new ArrayList<CampaignSequence>();
+  private List<CampaignSequence> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

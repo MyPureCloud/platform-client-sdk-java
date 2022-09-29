@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CoachingNotificationList  implements Serializable, PagedResource<CoachingNotification> {
   
-  private List<CoachingNotification> entities = new ArrayList<CoachingNotification>();
+  private List<CoachingNotification> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DomainEntityListingSurveyForm  implements Serializable, PagedResource<SurveyForm> {
   
-  private List<SurveyForm> entities = new ArrayList<SurveyForm>();
+  private List<SurveyForm> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

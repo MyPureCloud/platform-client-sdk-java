@@ -184,8 +184,8 @@ public class DomainCertificateAuthority  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ServicesEnum> services = new ArrayList<ServicesEnum>();
-  private List<CertificateDetails> certificateDetails = new ArrayList<CertificateDetails>();
+  private List<ServicesEnum> services = null;
+  private List<CertificateDetails> certificateDetails = null;
   private String selfUri = null;
 
   

@@ -108,7 +108,7 @@ public class KnowledgeExtendedCategory  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private KnowledgeCategory parent = null;
-  private List<KnowledgeCategory> children = new ArrayList<KnowledgeCategory>();
+  private List<KnowledgeCategory> children = null;
   private String selfUri = null;
 
   

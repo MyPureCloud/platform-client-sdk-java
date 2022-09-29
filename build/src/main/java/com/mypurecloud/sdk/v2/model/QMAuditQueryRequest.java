@@ -26,8 +26,8 @@ import java.io.Serializable;
 public class QMAuditQueryRequest  implements Serializable {
   
   private String interval = null;
-  private List<QualityAuditQueryFilter> filters = new ArrayList<QualityAuditQueryFilter>();
-  private List<AuditQuerySort> sort = new ArrayList<AuditQuerySort>();
+  private List<QualityAuditQueryFilter> filters = null;
+  private List<AuditQuerySort> sort = null;
 
   
   /**

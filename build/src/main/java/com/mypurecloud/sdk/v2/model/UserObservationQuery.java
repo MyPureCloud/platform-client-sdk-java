@@ -71,7 +71,7 @@ public class UserObservationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
+  private List<MetricsEnum> metrics = null;
 
   private static class DetailMetricsEnumDeserializer extends StdDeserializer<DetailMetricsEnum> {
     public DetailMetricsEnumDeserializer() {
@@ -118,7 +118,7 @@ public class UserObservationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<DetailMetricsEnum> detailMetrics = new ArrayList<DetailMetricsEnum>();
+  private List<DetailMetricsEnum> detailMetrics = null;
 
   
   /**

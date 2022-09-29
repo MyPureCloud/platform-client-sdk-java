@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class ConversationDivisionMembership  implements Serializable {
   
   private DomainEntityRef division = null;
-  private List<DomainEntityRef> entities = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> entities = null;
 
   
   /**

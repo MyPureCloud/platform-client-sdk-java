@@ -34,8 +34,8 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<ConversationVideoEventTopicDetail> details = new ArrayList<ConversationVideoEventTopicDetail>();
-  private List<ConversationVideoEventTopicErrorBody> errors = new ArrayList<ConversationVideoEventTopicErrorBody>();
+  private List<ConversationVideoEventTopicDetail> details = null;
+  private List<ConversationVideoEventTopicErrorBody> errors = null;
 
   
   /**

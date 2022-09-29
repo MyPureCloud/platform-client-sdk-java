@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class GuestCategoryResponseListing  implements Serializable {
   
-  private List<GuestCategoryResponse> entities = new ArrayList<GuestCategoryResponse>();
+  private List<GuestCategoryResponse> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

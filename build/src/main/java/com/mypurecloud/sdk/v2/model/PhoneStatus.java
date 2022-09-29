@@ -131,7 +131,7 @@ public class PhoneStatus  implements Serializable {
   private EdgesStatusEnum edgesStatus = null;
   private String eventCreationTime = null;
   private ProvisionInfo provision = null;
-  private List<LineStatus> lineStatuses = new ArrayList<LineStatus>();
+  private List<LineStatus> lineStatuses = null;
 
   private static class PhoneAssignmentToEdgeTypeEnumDeserializer extends StdDeserializer<PhoneAssignmentToEdgeTypeEnum> {
     public PhoneAssignmentToEdgeTypeEnumDeserializer() {

@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ForecastPlanningGroupsResponse  implements Serializable {
   
-  private List<ForecastPlanningGroupResponse> entities = new ArrayList<ForecastPlanningGroupResponse>();
+  private List<ForecastPlanningGroupResponse> entities = null;
 
   
   /**

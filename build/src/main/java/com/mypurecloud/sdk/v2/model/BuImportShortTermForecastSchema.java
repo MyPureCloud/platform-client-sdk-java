@@ -27,8 +27,8 @@ public class BuImportShortTermForecastSchema  implements Serializable {
   
   private String description = null;
   private Integer weekCount = null;
-  private List<ForecastPlanningGroupData> planningGroups = new ArrayList<ForecastPlanningGroupData>();
-  private List<LongTermForecastPlanningGroupData> longTermPlanningGroups = new ArrayList<LongTermForecastPlanningGroupData>();
+  private List<ForecastPlanningGroupData> planningGroups = null;
+  private List<LongTermForecastPlanningGroupData> longTermPlanningGroups = null;
   private Boolean canUseForScheduling = null;
 
   

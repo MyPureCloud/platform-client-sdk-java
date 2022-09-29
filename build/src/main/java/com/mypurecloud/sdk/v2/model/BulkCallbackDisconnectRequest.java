@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BulkCallbackDisconnectRequest  implements Serializable {
   
-  private List<CallbackDisconnectIdentifier> callbackDisconnectIdentifiers = new ArrayList<CallbackDisconnectIdentifier>();
+  private List<CallbackDisconnectIdentifier> callbackDisconnectIdentifiers = null;
 
   
   /**

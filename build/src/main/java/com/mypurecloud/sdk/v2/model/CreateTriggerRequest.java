@@ -27,7 +27,7 @@ public class CreateTriggerRequest  implements Serializable {
   
   private TriggerTarget target = null;
   private Boolean enabled = null;
-  private List<MatchCriteria> matchCriteria = new ArrayList<MatchCriteria>();
+  private List<MatchCriteria> matchCriteria = null;
   private String name = null;
   private String topicName = null;
   private Integer eventTTLSeconds = null;

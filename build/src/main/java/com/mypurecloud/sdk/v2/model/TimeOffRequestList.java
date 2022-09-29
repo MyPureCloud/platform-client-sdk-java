@@ -26,7 +26,7 @@ public class TimeOffRequestList  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<TimeOffRequestResponse> timeOffRequests = new ArrayList<TimeOffRequestResponse>();
+  private List<TimeOffRequestResponse> timeOffRequests = null;
   private String selfUri = null;
 
   

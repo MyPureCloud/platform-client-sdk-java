@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ServiceGoalTemplateList  implements Serializable {
   
-  private List<ServiceGoalTemplate> entities = new ArrayList<ServiceGoalTemplate>();
+  private List<ServiceGoalTemplate> entities = null;
 
   
   /**

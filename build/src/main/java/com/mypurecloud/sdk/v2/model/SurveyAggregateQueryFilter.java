@@ -74,8 +74,8 @@ public class SurveyAggregateQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<SurveyAggregateQueryClause> clauses = new ArrayList<SurveyAggregateQueryClause>();
-  private List<SurveyAggregateQueryPredicate> predicates = new ArrayList<SurveyAggregateQueryPredicate>();
+  private List<SurveyAggregateQueryClause> clauses = null;
+  private List<SurveyAggregateQueryPredicate> predicates = null;
 
   
   /**

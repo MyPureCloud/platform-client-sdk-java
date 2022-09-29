@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class ListWrapperInterval  implements Serializable {
   
-  private List<String> values = new ArrayList<String>();
+  private List<String> values = null;
 
   
   /**

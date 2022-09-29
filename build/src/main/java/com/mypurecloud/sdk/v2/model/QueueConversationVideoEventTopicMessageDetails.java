@@ -85,9 +85,9 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
   }
   private MessageStatusEnum messageStatus = null;
   private Integer messageSegmentCount = null;
-  private List<QueueConversationVideoEventTopicMessageMedia> media = new ArrayList<QueueConversationVideoEventTopicMessageMedia>();
+  private List<QueueConversationVideoEventTopicMessageMedia> media = null;
   private QueueConversationVideoEventTopicErrorDetails errorInfo = null;
-  private List<QueueConversationVideoEventTopicMessageSticker> stickers = new ArrayList<QueueConversationVideoEventTopicMessageSticker>();
+  private List<QueueConversationVideoEventTopicMessageSticker> stickers = null;
   private QueueConversationVideoEventTopicMessageMetadata messageMetadata = null;
 
   

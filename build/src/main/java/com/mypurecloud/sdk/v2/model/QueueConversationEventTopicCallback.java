@@ -256,7 +256,7 @@ public class QueueConversationEventTopicCallback  implements Serializable {
   private Date startHoldTime = null;
   private QueueConversationEventTopicDialerPreview dialerPreview = null;
   private QueueConversationEventTopicVoicemail voicemail = null;
-  private List<String> callbackNumbers = new ArrayList<String>();
+  private List<String> callbackNumbers = null;
   private String callbackUserName = null;
   private String scriptId = null;
   private String peerId = null;

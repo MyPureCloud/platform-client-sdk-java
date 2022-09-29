@@ -94,7 +94,7 @@ public class ShiftTradeResponse  implements Serializable {
   private Date receivingShiftEnd = null;
   private Date expiration = null;
   private Boolean oneSided = null;
-  private List<String> acceptableIntervals = new ArrayList<String>();
+  private List<String> acceptableIntervals = null;
   private UserReference reviewedBy = null;
   private Date reviewedDate = null;
   private WfmVersionedEntityMetadata metadata = null;

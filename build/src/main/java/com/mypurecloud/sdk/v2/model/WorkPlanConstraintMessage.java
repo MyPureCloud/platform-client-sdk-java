@@ -105,7 +105,7 @@ public class WorkPlanConstraintMessage  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<WorkPlanValidationMessageArgument> arguments = new ArrayList<WorkPlanValidationMessageArgument>();
+  private List<WorkPlanValidationMessageArgument> arguments = null;
 
   
   /**

@@ -28,9 +28,9 @@ public class ReportMetaData  implements Serializable {
   private String name = null;
   private String title = null;
   private String description = null;
-  private List<String> keywords = new ArrayList<String>();
-  private List<String> availableLocales = new ArrayList<String>();
-  private List<Parameter> parameters = new ArrayList<Parameter>();
+  private List<String> keywords = null;
+  private List<String> availableLocales = null;
+  private List<Parameter> parameters = null;
   private String exampleUrl = null;
   private String selfUri = null;
 

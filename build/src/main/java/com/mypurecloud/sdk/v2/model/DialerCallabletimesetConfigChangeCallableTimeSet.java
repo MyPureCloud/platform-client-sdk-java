@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serializable {
   
-  private List<DialerCallabletimesetConfigChangeCallableTime> callableTimes = new ArrayList<DialerCallabletimesetConfigChangeCallableTime>();
+  private List<DialerCallabletimesetConfigChangeCallableTime> callableTimes = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;

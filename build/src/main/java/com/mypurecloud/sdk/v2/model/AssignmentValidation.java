@@ -26,10 +26,10 @@ import java.io.Serializable;
 
 public class AssignmentValidation  implements Serializable {
   
-  private List<UserReference> membersNotAssigned = new ArrayList<UserReference>();
-  private List<UserReference> membersAlreadyAssigned = new ArrayList<UserReference>();
-  private List<OtherProfileAssignment> membersAlreadyAssignedToOther = new ArrayList<OtherProfileAssignment>();
-  private List<InvalidAssignment> invalidMemberAssignments = new ArrayList<InvalidAssignment>();
+  private List<UserReference> membersNotAssigned = null;
+  private List<UserReference> membersAlreadyAssigned = null;
+  private List<OtherProfileAssignment> membersAlreadyAssignedToOther = null;
+  private List<InvalidAssignment> invalidMemberAssignments = null;
 
   
   /**

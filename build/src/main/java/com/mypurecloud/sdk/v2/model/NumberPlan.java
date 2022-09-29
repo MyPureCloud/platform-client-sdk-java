@@ -91,7 +91,7 @@ public class NumberPlan  implements Serializable {
   private String match = null;
   private String normalizedFormat = null;
   private Integer priority = null;
-  private List<Number> numbers = new ArrayList<Number>();
+  private List<Number> numbers = null;
   private DigitLength digitLength = null;
   private String classification = null;
   private String matchType = null;

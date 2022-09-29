@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class AuthzDivisionGrantEntityListing  implements Serializable {
   
-  private List<AuthzGrant> entities = new ArrayList<AuthzGrant>();
+  private List<AuthzGrant> entities = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

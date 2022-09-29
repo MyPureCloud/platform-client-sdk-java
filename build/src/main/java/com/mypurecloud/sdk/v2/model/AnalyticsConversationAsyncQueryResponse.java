@@ -27,7 +27,7 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
   
   private String cursor = null;
   private Date dataAvailabilityDate = null;
-  private List<AnalyticsConversation> conversations = new ArrayList<AnalyticsConversation>();
+  private List<AnalyticsConversation> conversations = null;
 
   
   /**

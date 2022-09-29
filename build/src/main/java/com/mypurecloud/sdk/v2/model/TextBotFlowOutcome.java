@@ -78,7 +78,7 @@ public class TextBotFlowOutcome  implements Serializable {
   private OutcomeValueEnum outcomeValue = null;
   private Date dateStart = null;
   private Date dateEnd = null;
-  private List<TextBotFlowMilestone> milestones = new ArrayList<TextBotFlowMilestone>();
+  private List<TextBotFlowMilestone> milestones = null;
 
   
   /**

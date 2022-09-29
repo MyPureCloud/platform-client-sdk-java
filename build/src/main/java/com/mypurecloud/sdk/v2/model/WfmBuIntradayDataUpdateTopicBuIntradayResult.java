@@ -30,7 +30,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
   private Date startDate = null;
   private Date endDate = null;
   private Integer intervalLengthMinutes = null;
-  private List<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup> intradayDataGroupings = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup>();
+  private List<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup> intradayDataGroupings = null;
 
   private static class CategoriesEnumDeserializer extends StdDeserializer<CategoriesEnum> {
     public CategoriesEnumDeserializer() {
@@ -78,7 +78,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
       return String.valueOf(value);
     }
   }
-  private List<CategoriesEnum> categories = new ArrayList<CategoriesEnum>();
+  private List<CategoriesEnum> categories = null;
   private String noDataReason = null;
   private WfmBuIntradayDataUpdateTopicBuScheduleReference schedule = null;
   private WfmBuIntradayDataUpdateTopicBuShortTermForecastReference shortTermForecast = null;

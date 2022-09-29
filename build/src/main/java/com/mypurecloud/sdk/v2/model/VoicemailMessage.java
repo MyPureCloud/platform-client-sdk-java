@@ -47,7 +47,7 @@ public class VoicemailMessage  implements Serializable {
   private Group group = null;
   private Queue queue = null;
   private VoicemailCopyRecord copiedFrom = null;
-  private List<VoicemailCopyRecord> copiedTo = new ArrayList<VoicemailCopyRecord>();
+  private List<VoicemailCopyRecord> copiedTo = null;
   private VoicemailRetentionPolicy deleteRetentionPolicy = null;
   private String selfUri = null;
 

@@ -26,7 +26,7 @@ public class ActionMapEstimateResult  implements Serializable {
   
   private Integer qualifiedSessionCount = null;
   private Integer totalSessionCount = null;
-  private List<SegmentEstimateCount> perSegmentCounts = new ArrayList<SegmentEstimateCount>();
+  private List<SegmentEstimateCount> perSegmentCounts = null;
   private Integer outcomesScoresCount = null;
 
   
