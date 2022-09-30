@@ -79,7 +79,7 @@ public class RoutePathResponse  implements Serializable {
   }
   private MediaTypeEnum mediaType = null;
   private LanguageReference language = null;
-  private List<RoutingSkillReference> skills = null;
+  private List<RoutingSkillReference> skills = new ArrayList<RoutingSkillReference>();
 
   
   /**

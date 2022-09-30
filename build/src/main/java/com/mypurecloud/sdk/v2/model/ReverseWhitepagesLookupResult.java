@@ -25,8 +25,8 @@ import java.io.Serializable;
 
 public class ReverseWhitepagesLookupResult  implements Serializable {
   
-  private List<ExternalContact> contacts = null;
-  private List<ExternalOrganization> externalOrganizations = null;
+  private List<ExternalContact> contacts = new ArrayList<ExternalContact>();
+  private List<ExternalOrganization> externalOrganizations = new ArrayList<ExternalOrganization>();
 
   
   /**

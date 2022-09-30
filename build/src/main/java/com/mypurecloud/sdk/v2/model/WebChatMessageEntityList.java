@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class WebChatMessageEntityList  implements Serializable {
   
   private Integer pageSize = null;
-  private List<WebChatMessage> entities = null;
+  private List<WebChatMessage> entities = new ArrayList<WebChatMessage>();
   private String previousPage = null;
   private String next = null;
   private String selfUri = null;

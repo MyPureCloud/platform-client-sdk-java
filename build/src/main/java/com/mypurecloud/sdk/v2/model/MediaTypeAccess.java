@@ -25,8 +25,8 @@ import java.io.Serializable;
 
 public class MediaTypeAccess  implements Serializable {
   
-  private List<MediaType> inbound = null;
-  private List<MediaType> outbound = null;
+  private List<MediaType> inbound = new ArrayList<MediaType>();
+  private List<MediaType> outbound = new ArrayList<MediaType>();
 
   
   /**

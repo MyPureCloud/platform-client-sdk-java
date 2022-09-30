@@ -293,7 +293,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
   private Boolean unread = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<KlaxonInteractionStatsAlertsTopicNotificationUser> notificationUsers = null;
+  private List<KlaxonInteractionStatsAlertsTopicNotificationUser> notificationUsers = new ArrayList<KlaxonInteractionStatsAlertsTopicNotificationUser>();
 
   private static class AlertTypesEnumDeserializer extends StdDeserializer<AlertTypesEnum> {
     public AlertTypesEnumDeserializer() {
@@ -341,7 +341,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
       return String.valueOf(value);
     }
   }
-  private List<AlertTypesEnum> alertTypes = null;
+  private List<AlertTypesEnum> alertTypes = new ArrayList<AlertTypesEnum>();
 
   
   /**

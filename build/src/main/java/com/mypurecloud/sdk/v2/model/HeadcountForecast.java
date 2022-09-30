@@ -24,8 +24,8 @@ import java.io.Serializable;
 
 public class HeadcountForecast  implements Serializable {
   
-  private List<HeadcountInterval> required = null;
-  private List<HeadcountInterval> requiredWithoutShrinkage = null;
+  private List<HeadcountInterval> required = new ArrayList<HeadcountInterval>();
+  private List<HeadcountInterval> requiredWithoutShrinkage = new ArrayList<HeadcountInterval>();
 
   
   /**

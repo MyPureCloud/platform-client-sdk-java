@@ -32,7 +32,7 @@ public class SingleWorkdayAverageValues  implements Serializable {
   private Division division = null;
   private UserReference user = null;
   private String timezone = null;
-  private List<WorkdayValuesMetricItem> results = null;
+  private List<WorkdayValuesMetricItem> results = new ArrayList<WorkdayValuesMetricItem>();
   private AddressableEntityRef performanceProfile = null;
 
   

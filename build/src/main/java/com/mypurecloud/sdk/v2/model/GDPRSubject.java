@@ -33,9 +33,9 @@ public class GDPRSubject  implements Serializable {
   private GDPRJourneyCustomer journeyCustomer = null;
   private SocialHandle socialHandle = null;
   private String externalId = null;
-  private List<String> addresses = null;
-  private List<String> phoneNumbers = null;
-  private List<String> emailAddresses = null;
+  private List<String> addresses = new ArrayList<String>();
+  private List<String> phoneNumbers = new ArrayList<String>();
+  private List<String> emailAddresses = new ArrayList<String>();
 
   
   /**

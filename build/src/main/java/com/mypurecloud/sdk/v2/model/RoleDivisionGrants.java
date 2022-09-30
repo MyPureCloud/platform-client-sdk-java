@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class RoleDivisionGrants  implements Serializable {
   
-  private List<RoleDivisionPair> grants = null;
+  private List<RoleDivisionPair> grants = new ArrayList<RoleDivisionPair>();
 
   
   /**

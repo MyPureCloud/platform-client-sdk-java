@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class NTPSettings  implements Serializable {
   
-  private List<String> servers = null;
+  private List<String> servers = new ArrayList<String>();
 
   
   /**

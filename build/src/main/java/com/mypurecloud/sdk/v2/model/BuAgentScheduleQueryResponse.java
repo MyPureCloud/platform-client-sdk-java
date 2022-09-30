@@ -29,10 +29,10 @@ import java.io.Serializable;
 public class BuAgentScheduleQueryResponse  implements Serializable {
   
   private UserReference user = null;
-  private List<BuAgentScheduleShift> shifts = null;
-  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = null;
+  private List<BuAgentScheduleShift> shifts = new ArrayList<BuAgentScheduleShift>();
+  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
   private WorkPlanReference workPlan = null;
-  private List<WorkPlanReference> workPlansPerWeek = null;
+  private List<WorkPlanReference> workPlansPerWeek = new ArrayList<WorkPlanReference>();
   private WfmVersionedEntityMetadata metadata = null;
 
   

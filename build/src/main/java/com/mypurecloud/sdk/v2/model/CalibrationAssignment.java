@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class CalibrationAssignment  implements Serializable {
   
   private User calibrator = null;
-  private List<User> evaluators = null;
+  private List<User> evaluators = new ArrayList<User>();
   private EvaluationForm evaluationForm = null;
   private User expertEvaluator = null;
 

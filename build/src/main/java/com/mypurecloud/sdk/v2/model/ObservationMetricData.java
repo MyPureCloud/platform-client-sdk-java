@@ -29,7 +29,7 @@ public class ObservationMetricData  implements Serializable {
   private String qualifier = null;
   private StatisticalSummary stats = null;
   private Boolean truncated = null;
-  private List<ObservationValue> observations = null;
+  private List<ObservationValue> observations = new ArrayList<ObservationValue>();
 
   
   /**

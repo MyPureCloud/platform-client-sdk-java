@@ -27,7 +27,7 @@ public class RecordingTranscodeCompleteTopicMediaResult  implements Serializable
   private String channelId = null;
   private String waveUri = null;
   private String mediaUri = null;
-  private List<BigDecimal> waveformData = null;
+  private List<BigDecimal> waveformData = new ArrayList<BigDecimal>();
 
   
   /**

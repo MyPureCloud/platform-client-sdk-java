@@ -79,7 +79,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
   }
   private DncSourceTypeEnum dncSourceType = null;
   private String loginId = null;
-  private List<String> dncCodes = null;
+  private List<String> dncCodes = new ArrayList<String>();
   private String licenseId = null;
 
   private static class ContactMethodEnumDeserializer extends StdDeserializer<ContactMethodEnum> {

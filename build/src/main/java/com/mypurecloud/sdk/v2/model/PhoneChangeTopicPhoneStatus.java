@@ -80,7 +80,7 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
   private OperationalStatusEnum operationalStatus = null;
   private PhoneChangeTopicEdgeReference edge = null;
   private PhoneChangeTopicProvisionInfo provision = null;
-  private List<PhoneChangeTopicLineStatus> lineStatuses = null;
+  private List<PhoneChangeTopicLineStatus> lineStatuses = new ArrayList<PhoneChangeTopicLineStatus>();
   private Date eventCreationTime = null;
 
   

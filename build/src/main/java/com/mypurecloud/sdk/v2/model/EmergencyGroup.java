@@ -89,7 +89,7 @@ public class EmergencyGroup  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private Boolean enabled = null;
-  private List<EmergencyCallFlow> emergencyCallFlows = null;
+  private List<EmergencyCallFlow> emergencyCallFlows = new ArrayList<EmergencyCallFlow>();
   private String selfUri = null;
 
   

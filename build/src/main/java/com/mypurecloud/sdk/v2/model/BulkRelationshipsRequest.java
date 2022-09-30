@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BulkRelationshipsRequest  implements Serializable {
   
-  private List<Relationship> entities = null;
+  private List<Relationship> entities = new ArrayList<Relationship>();
 
   
   /**

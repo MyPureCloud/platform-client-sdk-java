@@ -94,7 +94,7 @@ public class CreateWorkPlanShift  implements Serializable {
     }
   }
   private DayOffRuleEnum dayOffRule = null;
-  private List<CreateWorkPlanActivity> activities = null;
+  private List<CreateWorkPlanActivity> activities = new ArrayList<CreateWorkPlanActivity>();
 
   
   /**

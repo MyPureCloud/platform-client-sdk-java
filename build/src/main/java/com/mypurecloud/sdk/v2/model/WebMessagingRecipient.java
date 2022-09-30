@@ -28,7 +28,7 @@ public class WebMessagingRecipient  implements Serializable {
   private String firstName = null;
   private String lastName = null;
   private String nickname = null;
-  private List<RecipientAdditionalIdentifier> additionalIds = null;
+  private List<RecipientAdditionalIdentifier> additionalIds = new ArrayList<RecipientAdditionalIdentifier>();
 
   
   @ApiModelProperty(example = "null", value = "First name of the recipient.")

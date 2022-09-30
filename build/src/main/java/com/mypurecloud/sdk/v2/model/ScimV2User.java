@@ -32,17 +32,17 @@ import java.io.Serializable;
 public class ScimV2User  implements Serializable {
   
   private String id = null;
-  private List<String> schemas = null;
+  private List<String> schemas = new ArrayList<String>();
   private Boolean active = null;
   private String userName = null;
   private String displayName = null;
   private String password = null;
   private String title = null;
-  private List<ScimPhoneNumber> phoneNumbers = null;
-  private List<ScimEmail> emails = null;
+  private List<ScimPhoneNumber> phoneNumbers = new ArrayList<ScimPhoneNumber>();
+  private List<ScimEmail> emails = new ArrayList<ScimEmail>();
   private String externalId = null;
-  private List<ScimV2GroupReference> groups = null;
-  private List<ScimUserRole> roles = null;
+  private List<ScimV2GroupReference> groups = new ArrayList<ScimV2GroupReference>();
+  private List<ScimUserRole> roles = new ArrayList<ScimUserRole>();
   private ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User = null;
   private ScimUserExtensions urnietfparamsscimschemasextensiongenesyspurecloud20User = null;
   private ScimMetadata meta = null;

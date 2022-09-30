@@ -77,8 +77,8 @@ public class DialerRule  implements Serializable {
     }
   }
   private CategoryEnum category = null;
-  private List<Condition> conditions = null;
-  private List<DialerAction> actions = null;
+  private List<Condition> conditions = new ArrayList<Condition>();
+  private List<DialerAction> actions = new ArrayList<DialerAction>();
 
   
   @ApiModelProperty(example = "null", value = "The identifier of the rule.")

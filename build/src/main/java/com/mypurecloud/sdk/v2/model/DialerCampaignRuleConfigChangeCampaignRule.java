@@ -28,8 +28,8 @@ import java.io.Serializable;
 public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable {
   
   private DialerCampaignRuleConfigChangeCampaignRuleEntities campaignRuleEntities = null;
-  private List<DialerCampaignRuleConfigChangeCampaignRuleCondition> campaignRuleConditions = null;
-  private List<DialerCampaignRuleConfigChangeCampaignRuleAction> campaignRuleActions = null;
+  private List<DialerCampaignRuleConfigChangeCampaignRuleCondition> campaignRuleConditions = new ArrayList<DialerCampaignRuleConfigChangeCampaignRuleCondition>();
+  private List<DialerCampaignRuleConfigChangeCampaignRuleAction> campaignRuleActions = new ArrayList<DialerCampaignRuleConfigChangeCampaignRuleAction>();
   private Boolean matchAnyConditions = null;
   private Boolean enabled = null;
   private String id = null;

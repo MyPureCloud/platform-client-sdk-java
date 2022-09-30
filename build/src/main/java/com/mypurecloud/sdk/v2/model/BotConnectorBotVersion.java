@@ -26,8 +26,8 @@ import java.io.Serializable;
 public class BotConnectorBotVersion  implements Serializable {
   
   private String version = null;
-  private List<String> supportedLanguages = null;
-  private List<BotIntent> intents = null;
+  private List<String> supportedLanguages = new ArrayList<String>();
+  private List<BotIntent> intents = new ArrayList<BotIntent>();
 
   
   /**

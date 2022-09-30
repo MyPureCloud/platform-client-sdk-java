@@ -86,8 +86,8 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
     }
   }
   private MessageStatusEnum messageStatus = null;
-  private List<QueueConversationMessageEventTopicMessageMedia> media = null;
-  private List<QueueConversationMessageEventTopicMessageSticker> stickers = null;
+  private List<QueueConversationMessageEventTopicMessageMedia> media = new ArrayList<QueueConversationMessageEventTopicMessageMedia>();
+  private List<QueueConversationMessageEventTopicMessageSticker> stickers = new ArrayList<QueueConversationMessageEventTopicMessageSticker>();
   private QueueConversationMessageEventTopicErrorDetails errorInfo = null;
   private QueueConversationMessageEventTopicMessageMetadata messageMetadata = null;
 

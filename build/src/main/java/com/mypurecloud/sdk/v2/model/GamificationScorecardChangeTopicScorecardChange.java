@@ -29,7 +29,7 @@ public class GamificationScorecardChangeTopicScorecardChange  implements Seriali
   private String teamId = null;
   private String performanceProfileId = null;
   private String userId = null;
-  private List<GamificationScorecardChangeTopicPerformanceMetric> performanceMetrics = null;
+  private List<GamificationScorecardChangeTopicPerformanceMetric> performanceMetrics = new ArrayList<GamificationScorecardChangeTopicPerformanceMetric>();
 
   
   /**

@@ -27,12 +27,12 @@ public class DocumentUpdate  implements Serializable {
   private Integer changeNumber = null;
   private String name = null;
   private Boolean read = null;
-  private List<String> addTags = null;
-  private List<String> removeTags = null;
-  private List<String> addTagIds = null;
-  private List<String> removeTagIds = null;
-  private List<DocumentAttribute> updateAttributes = null;
-  private List<String> removeAttributes = null;
+  private List<String> addTags = new ArrayList<String>();
+  private List<String> removeTags = new ArrayList<String>();
+  private List<String> addTagIds = new ArrayList<String>();
+  private List<String> removeTagIds = new ArrayList<String>();
+  private List<DocumentAttribute> updateAttributes = new ArrayList<DocumentAttribute>();
+  private List<String> removeAttributes = new ArrayList<String>();
 
   
   /**

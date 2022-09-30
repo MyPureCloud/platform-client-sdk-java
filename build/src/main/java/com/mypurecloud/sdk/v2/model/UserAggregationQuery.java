@@ -74,7 +74,7 @@ public class UserAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = null;
+  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
   private UserAggregateQueryFilter filter = null;
 
   private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
@@ -123,9 +123,9 @@ public class UserAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = null;
+  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
   private Boolean flattenMultivaluedDimensions = null;
-  private List<UserAggregationView> views = null;
+  private List<UserAggregationView> views = new ArrayList<UserAggregationView>();
 
   private static class AlternateTimeDimensionEnumDeserializer extends StdDeserializer<AlternateTimeDimensionEnum> {
     public AlternateTimeDimensionEnumDeserializer() {

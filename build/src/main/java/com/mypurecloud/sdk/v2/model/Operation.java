@@ -35,7 +35,7 @@ public class Operation  implements Serializable {
   private DomainEntityRef client = null;
   private String errorMessage = null;
   private String errorCode = null;
-  private List<Detail> errorDetails = null;
+  private List<Detail> errorDetails = new ArrayList<Detail>();
   private Map<String, String> errorMessageParams = null;
 
   private static class ActionNameEnumDeserializer extends StdDeserializer<ActionNameEnum> {

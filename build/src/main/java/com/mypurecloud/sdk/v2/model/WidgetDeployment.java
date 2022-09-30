@@ -32,7 +32,7 @@ public class WidgetDeployment  implements Serializable {
   private Boolean authenticationRequired = null;
   private Boolean disabled = null;
   private DomainEntityRef flow = null;
-  private List<String> allowedDomains = null;
+  private List<String> allowedDomains = new ArrayList<String>();
 
   private static class ClientTypeEnumDeserializer extends StdDeserializer<ClientTypeEnum> {
     public ClientTypeEnumDeserializer() {

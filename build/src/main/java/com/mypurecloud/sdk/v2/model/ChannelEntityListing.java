@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ChannelEntityListing  implements Serializable {
   
-  private List<Channel> entities = null;
+  private List<Channel> entities = new ArrayList<Channel>();
 
   
   /**

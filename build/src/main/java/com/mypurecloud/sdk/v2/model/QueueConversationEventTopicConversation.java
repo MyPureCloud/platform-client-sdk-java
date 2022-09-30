@@ -26,7 +26,7 @@ public class QueueConversationEventTopicConversation  implements Serializable {
   
   private String id = null;
   private Integer maxParticipants = null;
-  private List<QueueConversationEventTopicParticipant> participants = null;
+  private List<QueueConversationEventTopicParticipant> participants = new ArrayList<QueueConversationEventTopicParticipant>();
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;

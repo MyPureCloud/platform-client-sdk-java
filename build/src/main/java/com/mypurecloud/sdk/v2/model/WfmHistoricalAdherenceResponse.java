@@ -28,7 +28,7 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
   private String id = null;
   private String downloadUrl = null;
   private WfmHistoricalAdherenceResultWrapper downloadResult = null;
-  private List<String> downloadUrls = null;
+  private List<String> downloadUrls = new ArrayList<String>();
 
   private static class QueryStateEnumDeserializer extends StdDeserializer<QueryStateEnum> {
     public QueryStateEnumDeserializer() {

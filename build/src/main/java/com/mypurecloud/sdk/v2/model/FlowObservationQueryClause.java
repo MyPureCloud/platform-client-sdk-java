@@ -73,7 +73,7 @@ public class FlowObservationQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<FlowObservationQueryPredicate> predicates = null;
+  private List<FlowObservationQueryPredicate> predicates = new ArrayList<FlowObservationQueryPredicate>();
 
   
   /**

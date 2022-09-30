@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class GroupEntityListing  implements Serializable, PagedResource<Group> {
   
-  private List<Group> entities = null;
+  private List<Group> entities = new ArrayList<Group>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

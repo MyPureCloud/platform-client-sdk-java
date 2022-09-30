@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ExpiredEdgeListing  implements Serializable {
   
-  private List<DomainEntityRef> entities = null;
+  private List<DomainEntityRef> entities = new ArrayList<DomainEntityRef>();
 
   
   /**

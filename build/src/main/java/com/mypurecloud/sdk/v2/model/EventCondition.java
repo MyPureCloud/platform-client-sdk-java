@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class EventCondition  implements Serializable {
   
   private String key = null;
-  private List<String> values = null;
+  private List<String> values = new ArrayList<String>();
 
   private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
     public OperatorEnumDeserializer() {

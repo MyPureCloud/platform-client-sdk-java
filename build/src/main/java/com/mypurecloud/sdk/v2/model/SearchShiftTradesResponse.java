@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class SearchShiftTradesResponse  implements Serializable {
   
-  private List<SearchShiftTradeResponse> trades = null;
+  private List<SearchShiftTradeResponse> trades = new ArrayList<SearchShiftTradeResponse>();
 
   
   /**

@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class GroupMembersUpdate  implements Serializable {
   
-  private List<String> memberIds = null;
+  private List<String> memberIds = new ArrayList<String>();
   private Integer version = null;
 
   

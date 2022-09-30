@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DirectoryUserDevicesListing  implements Serializable, PagedResource<UserDevice> {
   
-  private List<UserDevice> entities = null;
+  private List<UserDevice> entities = new ArrayList<UserDevice>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

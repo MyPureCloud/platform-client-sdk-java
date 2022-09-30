@@ -73,7 +73,7 @@ public class QueryRequestFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<QueryRequestClause> clauses = null;
+  private List<QueryRequestClause> clauses = new ArrayList<QueryRequestClause>();
 
   
   /**

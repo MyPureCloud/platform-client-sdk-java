@@ -73,7 +73,7 @@ public class QueryRequestClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<QueryRequestPredicate> predicates = null;
+  private List<QueryRequestPredicate> predicates = new ArrayList<QueryRequestPredicate>();
 
   
   /**

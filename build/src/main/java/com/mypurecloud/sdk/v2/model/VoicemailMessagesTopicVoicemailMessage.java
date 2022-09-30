@@ -37,7 +37,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
   private String note = null;
   private Boolean deleted = null;
   private String modifiedByUserId = null;
-  private List<VoicemailMessagesTopicVoicemailCopyRecord> copiedTo = null;
+  private List<VoicemailMessagesTopicVoicemailCopyRecord> copiedTo = new ArrayList<VoicemailMessagesTopicVoicemailCopyRecord>();
   private VoicemailMessagesTopicVoicemailCopyRecord copiedFrom = null;
 
   

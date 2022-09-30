@@ -72,7 +72,7 @@ public class VisibilityCondition  implements Serializable {
     }
   }
   private CombiningOperationEnum combiningOperation = null;
-  private List<Object> predicates = null;
+  private List<Object> predicates = new ArrayList<Object>();
 
   
   /**

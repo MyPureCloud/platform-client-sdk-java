@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class WebChatDeploymentEntityListing  implements Serializable {
   
   private Long total = null;
-  private List<WebChatDeployment> entities = null;
+  private List<WebChatDeployment> entities = new ArrayList<WebChatDeployment>();
   private String selfUri = null;
 
   

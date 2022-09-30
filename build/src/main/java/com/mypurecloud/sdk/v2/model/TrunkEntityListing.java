@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TrunkEntityListing  implements Serializable, PagedResource<Trunk> {
   
-  private List<Trunk> entities = null;
+  private List<Trunk> entities = new ArrayList<Trunk>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

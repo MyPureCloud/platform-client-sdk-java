@@ -23,9 +23,9 @@ import java.io.Serializable;
 
 public class Transcripts  implements Serializable {
   
-  private List<String> exactMatch = null;
-  private List<String> contains = null;
-  private List<String> doesNotContain = null;
+  private List<String> exactMatch = new ArrayList<String>();
+  private List<String> contains = new ArrayList<String>();
+  private List<String> doesNotContain = new ArrayList<String>();
 
   
   /**

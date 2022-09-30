@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class StationEntityListing  implements Serializable, PagedResource<Station> {
   
-  private List<Station> entities = null;
+  private List<Station> entities = new ArrayList<Station>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

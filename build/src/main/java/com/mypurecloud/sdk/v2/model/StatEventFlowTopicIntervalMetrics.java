@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class StatEventFlowTopicIntervalMetrics  implements Serializable {
   
   private String interval = null;
-  private List<StatEventFlowTopicMetricStats> metrics = null;
+  private List<StatEventFlowTopicMetricStats> metrics = new ArrayList<StatEventFlowTopicMetricStats>();
 
   
   /**

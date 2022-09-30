@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class Usage  implements Serializable {
   
-  private List<UsageItem> types = null;
+  private List<UsageItem> types = new ArrayList<UsageItem>();
 
   
   /**

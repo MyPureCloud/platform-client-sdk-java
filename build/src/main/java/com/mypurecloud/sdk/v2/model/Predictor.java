@@ -29,7 +29,7 @@ import java.io.Serializable;
 public class Predictor  implements Serializable {
   
   private String id = null;
-  private List<AddressableEntityRef> queues = null;
+  private List<AddressableEntityRef> queues = new ArrayList<AddressableEntityRef>();
   private String kpi = null;
   private Integer routingTimeoutSeconds = null;
   private PredictorSchedule schedule = null;

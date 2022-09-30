@@ -73,7 +73,7 @@ public class TranscriptAggregateQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<TranscriptAggregateQueryPredicate> predicates = null;
+  private List<TranscriptAggregateQueryPredicate> predicates = new ArrayList<TranscriptAggregateQueryPredicate>();
 
   
   /**

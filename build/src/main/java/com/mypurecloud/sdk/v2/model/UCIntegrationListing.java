@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class UCIntegrationListing  implements Serializable, PagedResource<UCIntegration> {
   
-  private List<UCIntegration> entities = null;
+  private List<UCIntegration> entities = new ArrayList<UCIntegration>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

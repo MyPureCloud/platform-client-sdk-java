@@ -309,7 +309,7 @@ public class DocumentAudit  implements Serializable {
   }
   private ActionEnum action = null;
   private AuditEntityReference entity = null;
-  private List<AuditChange> changes = null;
+  private List<AuditChange> changes = new ArrayList<AuditChange>();
   private String selfUri = null;
 
   

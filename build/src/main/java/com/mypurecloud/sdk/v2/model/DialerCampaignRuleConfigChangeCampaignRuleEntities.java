@@ -24,8 +24,8 @@ import java.io.Serializable;
 
 public class DialerCampaignRuleConfigChangeCampaignRuleEntities  implements Serializable {
   
-  private List<DialerCampaignRuleConfigChangeUriReference> campaigns = null;
-  private List<DialerCampaignRuleConfigChangeUriReference> sequences = null;
+  private List<DialerCampaignRuleConfigChangeUriReference> campaigns = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
+  private List<DialerCampaignRuleConfigChangeUriReference> sequences = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
 
   
   /**

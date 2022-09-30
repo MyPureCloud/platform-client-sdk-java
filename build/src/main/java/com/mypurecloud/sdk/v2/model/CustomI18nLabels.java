@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class CustomI18nLabels  implements Serializable {
   
   private String language = null;
-  private List<LocalizedLabels> localizedLabels = null;
+  private List<LocalizedLabels> localizedLabels = new ArrayList<LocalizedLabels>();
 
   
   /**

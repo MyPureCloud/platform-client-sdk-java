@@ -78,8 +78,8 @@ public class TeamSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = null;
-  private List<TeamSearchCriteria> query = null;
+  private List<SearchSort> sort = new ArrayList<SearchSort>();
+  private List<TeamSearchCriteria> query = new ArrayList<TeamSearchCriteria>();
 
   
   /**

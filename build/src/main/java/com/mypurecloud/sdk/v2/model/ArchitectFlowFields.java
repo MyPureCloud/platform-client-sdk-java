@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class ArchitectFlowFields  implements Serializable {
   
   private AddressableEntityRef architectFlow = null;
-  private List<RequestMapping> flowRequestMappings = null;
+  private List<RequestMapping> flowRequestMappings = new ArrayList<RequestMapping>();
 
   
   /**

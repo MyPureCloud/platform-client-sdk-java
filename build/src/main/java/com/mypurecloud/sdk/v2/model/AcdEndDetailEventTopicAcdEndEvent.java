@@ -201,7 +201,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
   private String addressTo = null;
   private String addressFrom = null;
   private String callbackUserName = null;
-  private List<String> callbackNumbers = null;
+  private List<String> callbackNumbers = new ArrayList<String>();
   private Integer callbackScheduledTime = null;
   private String subject = null;
 
@@ -365,7 +365,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<RequestedRoutingsEnum> requestedRoutings = null;
+  private List<RequestedRoutingsEnum> requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
 
   private static class UsedRoutingEnumDeserializer extends StdDeserializer<UsedRoutingEnum> {
     public UsedRoutingEnumDeserializer() {
@@ -421,9 +421,9 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     }
   }
   private UsedRoutingEnum usedRouting = null;
-  private List<String> requestedRoutingSkillIds = null;
+  private List<String> requestedRoutingSkillIds = new ArrayList<String>();
   private String requestedLanguageId = null;
-  private List<String> requestedRoutingUserIds = null;
+  private List<String> requestedRoutingUserIds = new ArrayList<String>();
   private Integer routingPriority = null;
   private Integer connectedDurationMs = null;
 

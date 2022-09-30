@@ -30,7 +30,7 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
   private String correlationId = null;
   private String userMessage = null;
   private String userParamsMessage = null;
-  private List<UserRoutingStatusUserParam> userParams = null;
+  private List<UserRoutingStatusUserParam> userParams = new ArrayList<UserRoutingStatusUserParam>();
 
   
   /**

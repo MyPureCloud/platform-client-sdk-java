@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DomainEntityListingQueryResult  implements Serializable, PagedResource<QueryResult> {
   
-  private List<QueryResult> entities = null;
+  private List<QueryResult> entities = new ArrayList<QueryResult>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class BotConnectorBotVersionSummaryEntityListing  implements Serializable, PagedResource<BotVersionSummary> {
   
-  private List<BotVersionSummary> entities = null;
+  private List<BotVersionSummary> entities = new ArrayList<BotVersionSummary>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

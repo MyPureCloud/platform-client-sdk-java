@@ -38,7 +38,7 @@ public class AssessmentQuestionGroupScore  implements Serializable {
   private Float maxTotalCriticalScoreUnweighted = null;
   private Float totalNonCriticalScoreUnweighted = null;
   private Float maxTotalNonCriticalScoreUnweighted = null;
-  private List<AssessmentQuestionScore> questionScores = null;
+  private List<AssessmentQuestionScore> questionScores = new ArrayList<AssessmentQuestionScore>();
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class EvaluatorActivityEntityListing  implements Serializable, PagedResource<EvaluatorActivity> {
   
-  private List<EvaluatorActivity> entities = null;
+  private List<EvaluatorActivity> entities = new ArrayList<EvaluatorActivity>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

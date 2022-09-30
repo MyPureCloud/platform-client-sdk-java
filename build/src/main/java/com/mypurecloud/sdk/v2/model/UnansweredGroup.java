@@ -28,8 +28,8 @@ public class UnansweredGroup  implements Serializable {
   
   private String id = null;
   private String label = null;
-  private List<UnansweredPhraseGroup> phraseGroups = null;
-  private List<UnansweredGroupSuggestedDocument> suggestedDocuments = null;
+  private List<UnansweredPhraseGroup> phraseGroups = new ArrayList<UnansweredPhraseGroup>();
+  private List<UnansweredGroupSuggestedDocument> suggestedDocuments = new ArrayList<UnansweredGroupSuggestedDocument>();
   private KnowledgeGroupStatistics statistics = null;
   private String selfUri = null;
 

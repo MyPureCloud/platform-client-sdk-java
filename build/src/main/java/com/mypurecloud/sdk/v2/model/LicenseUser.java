@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class LicenseUser  implements Serializable {
   
   private String id = null;
-  private List<LicenseDefinition> licenses = null;
+  private List<LicenseDefinition> licenses = new ArrayList<LicenseDefinition>();
   private String selfUri = null;
 
   

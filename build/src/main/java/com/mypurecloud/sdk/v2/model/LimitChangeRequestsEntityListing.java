@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class LimitChangeRequestsEntityListing  implements Serializable {
   
-  private List<LimitChangeRequestDetails> entities = null;
+  private List<LimitChangeRequestDetails> entities = new ArrayList<LimitChangeRequestDetails>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

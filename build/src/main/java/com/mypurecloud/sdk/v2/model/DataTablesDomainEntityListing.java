@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DataTablesDomainEntityListing  implements Serializable, PagedResource<DataTable> {
   
-  private List<DataTable> entities = null;
+  private List<DataTable> entities = new ArrayList<DataTable>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

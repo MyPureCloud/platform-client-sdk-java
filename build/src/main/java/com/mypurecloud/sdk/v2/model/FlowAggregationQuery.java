@@ -167,7 +167,7 @@ public class FlowAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = null;
+  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
   private FlowAggregateQueryFilter filter = null;
 
   private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
@@ -222,9 +222,9 @@ public class FlowAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = null;
+  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
   private Boolean flattenMultivaluedDimensions = null;
-  private List<FlowAggregationView> views = null;
+  private List<FlowAggregationView> views = new ArrayList<FlowAggregationView>();
 
   private static class AlternateTimeDimensionEnumDeserializer extends StdDeserializer<AlternateTimeDimensionEnum> {
     public AlternateTimeDimensionEnumDeserializer() {

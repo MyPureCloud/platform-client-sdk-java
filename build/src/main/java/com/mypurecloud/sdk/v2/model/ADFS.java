@@ -32,7 +32,7 @@ public class ADFS  implements Serializable {
   private String sloBinding = null;
   private String relyingPartyIdentifier = null;
   private String certificate = null;
-  private List<String> certificates = null;
+  private List<String> certificates = new ArrayList<String>();
   private String selfUri = null;
 
   

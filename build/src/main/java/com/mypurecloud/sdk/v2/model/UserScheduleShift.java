@@ -30,7 +30,7 @@ public class UserScheduleShift  implements Serializable {
   private String id = null;
   private Date startDate = null;
   private Integer lengthInMinutes = null;
-  private List<UserScheduleActivity> activities = null;
+  private List<UserScheduleActivity> activities = new ArrayList<UserScheduleActivity>();
   private Boolean delete = null;
   private Boolean manuallyEdited = null;
 

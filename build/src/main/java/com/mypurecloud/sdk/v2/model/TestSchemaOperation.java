@@ -27,7 +27,7 @@ public class TestSchemaOperation  implements Serializable {
   private String name = null;
   private Integer step = null;
   private Boolean matches = null;
-  private List<String> details = null;
+  private List<String> details = new ArrayList<String>();
 
   
   /**

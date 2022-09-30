@@ -28,9 +28,9 @@ import java.io.Serializable;
 public class AsyncUserDetailsQuery  implements Serializable {
   
   private String interval = null;
-  private List<UserDetailQueryFilter> userFilters = null;
-  private List<PresenceDetailQueryFilter> presenceFilters = null;
-  private List<RoutingStatusDetailQueryFilter> routingStatusFilters = null;
+  private List<UserDetailQueryFilter> userFilters = new ArrayList<UserDetailQueryFilter>();
+  private List<PresenceDetailQueryFilter> presenceFilters = new ArrayList<PresenceDetailQueryFilter>();
+  private List<RoutingStatusDetailQueryFilter> routingStatusFilters = new ArrayList<RoutingStatusDetailQueryFilter>();
 
   private static class OrderEnumDeserializer extends StdDeserializer<OrderEnum> {
     public OrderEnumDeserializer() {

@@ -140,7 +140,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
   private String addressTo = null;
   private String addressFrom = null;
   private String callbackUserName = null;
-  private List<String> callbackNumbers = null;
+  private List<String> callbackNumbers = new ArrayList<String>();
   private Integer callbackScheduledTime = null;
   private String subject = null;
 

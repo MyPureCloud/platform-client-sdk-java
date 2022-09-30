@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class KnowledgeBaseListing  implements Serializable {
   
-  private List<KnowledgeBase> entities = null;
+  private List<KnowledgeBase> entities = new ArrayList<KnowledgeBase>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

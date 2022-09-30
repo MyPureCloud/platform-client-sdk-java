@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ListWrapperSecondaryPresence  implements Serializable {
   
-  private List<SecondaryPresence> values = null;
+  private List<SecondaryPresence> values = new ArrayList<SecondaryPresence>();
 
   
   /**

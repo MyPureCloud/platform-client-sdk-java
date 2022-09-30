@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DependencyObjectEntityListing  implements Serializable, PagedResource<DependencyObject> {
   
-  private List<DependencyObject> entities = null;
+  private List<DependencyObject> entities = new ArrayList<DependencyObject>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

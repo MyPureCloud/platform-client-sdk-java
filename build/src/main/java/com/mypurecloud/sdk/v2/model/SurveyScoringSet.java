@@ -26,7 +26,7 @@ public class SurveyScoringSet  implements Serializable {
   
   private Float totalScore = null;
   private Integer npsScore = null;
-  private List<SurveyQuestionGroupScore> questionGroupScores = null;
+  private List<SurveyQuestionGroupScore> questionGroupScores = new ArrayList<SurveyQuestionGroupScore>();
 
   
   /**

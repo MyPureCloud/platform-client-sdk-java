@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BulkNotesRequest  implements Serializable {
   
-  private List<Note> entities = null;
+  private List<Note> entities = new ArrayList<Note>();
 
   
   /**

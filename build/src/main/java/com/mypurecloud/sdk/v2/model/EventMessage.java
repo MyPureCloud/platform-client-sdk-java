@@ -148,7 +148,7 @@ public class EventMessage  implements Serializable {
   private String messageWithParams = null;
   private Map<String, Object> messageParams = null;
   private String documentationUri = null;
-  private List<String> resourceURIs = null;
+  private List<String> resourceURIs = new ArrayList<String>();
 
   
   /**

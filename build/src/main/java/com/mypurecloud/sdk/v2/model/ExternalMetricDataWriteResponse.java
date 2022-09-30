@@ -26,8 +26,8 @@ import java.io.Serializable;
 
 public class ExternalMetricDataWriteResponse  implements Serializable {
   
-  private List<ExternalMetricDataProcessedItem> processedEntities = null;
-  private List<ExternalMetricDataUnprocessedItem> unprocessedEntities = null;
+  private List<ExternalMetricDataProcessedItem> processedEntities = new ArrayList<ExternalMetricDataProcessedItem>();
+  private List<ExternalMetricDataUnprocessedItem> unprocessedEntities = new ArrayList<ExternalMetricDataUnprocessedItem>();
 
   
   /**

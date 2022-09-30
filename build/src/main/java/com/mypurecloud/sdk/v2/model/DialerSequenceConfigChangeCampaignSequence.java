@@ -26,7 +26,7 @@ import java.io.Serializable;
 
 public class DialerSequenceConfigChangeCampaignSequence  implements Serializable {
   
-  private List<DialerSequenceConfigChangeUriReference> campaigns = null;
+  private List<DialerSequenceConfigChangeUriReference> campaigns = new ArrayList<DialerSequenceConfigChangeUriReference>();
   private Integer currentCampaign = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {

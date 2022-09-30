@@ -31,7 +31,7 @@ public class LearningModuleRequest  implements Serializable {
   private String name = null;
   private String description = null;
   private Integer completionTimeInDays = null;
-  private List<LearningModuleInformStepRequest> informSteps = null;
+  private List<LearningModuleInformStepRequest> informSteps = new ArrayList<LearningModuleInformStepRequest>();
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {

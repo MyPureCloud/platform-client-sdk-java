@@ -29,8 +29,8 @@ public class AvailableTopic  implements Serializable {
   
   private String description = null;
   private String id = null;
-  private List<PermissionDetails> permissionDetails = null;
-  private List<String> requiresPermissions = null;
+  private List<PermissionDetails> permissionDetails = new ArrayList<PermissionDetails>();
+  private List<String> requiresPermissions = new ArrayList<String>();
   private Boolean requiresDivisionPermissions = null;
   private Boolean requiresAnyValidator = null;
   private Boolean enforced = null;
@@ -133,9 +133,9 @@ public class AvailableTopic  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<TransportsEnum> transports = null;
-  private List<String> publicApiTemplateUriPaths = null;
-  private List<String> topicParameters = null;
+  private List<TransportsEnum> transports = new ArrayList<TransportsEnum>();
+  private List<String> publicApiTemplateUriPaths = new ArrayList<String>();
+  private List<String> topicParameters = new ArrayList<String>();
 
   
   /**

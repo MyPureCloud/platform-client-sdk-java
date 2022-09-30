@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class WebMessagingMessageEntityList  implements Serializable {
   
-  private List<WebMessagingMessage> entities = null;
+  private List<WebMessagingMessage> entities = new ArrayList<WebMessagingMessage>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class StatEventQueueTopicStatsNotification  implements Serializable {
   
   private Map<String, String> group = null;
-  private List<StatEventQueueTopicIntervalMetrics> data = null;
+  private List<StatEventQueueTopicIntervalMetrics> data = new ArrayList<StatEventQueueTopicIntervalMetrics>();
 
   
   /**

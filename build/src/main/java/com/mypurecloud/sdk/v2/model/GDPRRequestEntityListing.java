@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class GDPRRequestEntityListing  implements Serializable, PagedResource<GDPRRequest> {
   
-  private List<GDPRRequest> entities = null;
+  private List<GDPRRequest> entities = new ArrayList<GDPRRequest>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

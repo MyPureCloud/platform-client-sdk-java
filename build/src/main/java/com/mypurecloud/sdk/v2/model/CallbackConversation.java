@@ -26,8 +26,8 @@ public class CallbackConversation  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<CallbackMediaParticipant> participants = null;
-  private List<String> otherMediaUris = null;
+  private List<CallbackMediaParticipant> participants = new ArrayList<CallbackMediaParticipant>();
+  private List<String> otherMediaUris = new ArrayList<String>();
   private String selfUri = null;
 
   

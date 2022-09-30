@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CoachingAnnotationList  implements Serializable, PagedResource<CoachingAnnotation> {
   
-  private List<CoachingAnnotation> entities = null;
+  private List<CoachingAnnotation> entities = new ArrayList<CoachingAnnotation>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

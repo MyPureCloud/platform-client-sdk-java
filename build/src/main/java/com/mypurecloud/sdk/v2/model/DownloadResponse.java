@@ -26,7 +26,7 @@ public class DownloadResponse  implements Serializable {
   
   private String contentLocationUri = null;
   private String imageUri = null;
-  private List<DocumentThumbnail> thumbnails = null;
+  private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
 
   
   /**

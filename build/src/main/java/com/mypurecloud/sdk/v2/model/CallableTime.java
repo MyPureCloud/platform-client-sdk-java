@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class CallableTime  implements Serializable {
   
-  private List<CampaignTimeSlot> timeSlots = null;
+  private List<CampaignTimeSlot> timeSlots = new ArrayList<CampaignTimeSlot>();
   private String timeZoneId = null;
 
   

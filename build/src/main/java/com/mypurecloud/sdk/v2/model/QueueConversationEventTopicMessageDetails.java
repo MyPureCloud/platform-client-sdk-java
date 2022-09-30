@@ -85,9 +85,9 @@ public class QueueConversationEventTopicMessageDetails  implements Serializable 
   }
   private MessageStatusEnum messageStatus = null;
   private Integer messageSegmentCount = null;
-  private List<QueueConversationEventTopicMessageMedia> media = null;
+  private List<QueueConversationEventTopicMessageMedia> media = new ArrayList<QueueConversationEventTopicMessageMedia>();
   private QueueConversationEventTopicErrorDetails errorInfo = null;
-  private List<QueueConversationEventTopicMessageSticker> stickers = null;
+  private List<QueueConversationEventTopicMessageSticker> stickers = new ArrayList<QueueConversationEventTopicMessageSticker>();
   private QueueConversationEventTopicMessageMetadata messageMetadata = null;
 
   

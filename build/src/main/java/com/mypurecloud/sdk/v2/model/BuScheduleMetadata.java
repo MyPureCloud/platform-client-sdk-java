@@ -36,7 +36,7 @@ public class BuScheduleMetadata  implements Serializable {
   private BuShortTermForecastReference shortTermForecast = null;
   private ScheduleGenerationResultSummary generationResults = null;
   private WfmVersionedEntityMetadata metadata = null;
-  private List<BuManagementUnitScheduleSummary> managementUnits = null;
+  private List<BuManagementUnitScheduleSummary> managementUnits = new ArrayList<BuManagementUnitScheduleSummary>();
   private String selfUri = null;
 
   

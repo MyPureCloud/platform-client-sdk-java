@@ -30,7 +30,7 @@ public class KnowledgeDocumentSearch  implements Serializable {
   private String searchId = null;
   private Integer total = null;
   private Integer pageCount = null;
-  private List<KnowledgeDocumentSearchResult> results = null;
+  private List<KnowledgeDocumentSearchResult> results = new ArrayList<KnowledgeDocumentSearchResult>();
 
   
   /**

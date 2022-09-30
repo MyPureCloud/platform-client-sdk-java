@@ -26,7 +26,7 @@ public class DetectedIntent  implements Serializable {
   
   private String name = null;
   private Double probability = null;
-  private List<DetectedNamedEntity> entities = null;
+  private List<DetectedNamedEntity> entities = new ArrayList<DetectedNamedEntity>();
 
   
   @ApiModelProperty(example = "null", value = "The name of the detected intent.")

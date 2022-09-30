@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class MetaData  implements Serializable {
   
   private String pairingToken = null;
-  private List<String> pairingTrust = null;
+  private List<String> pairingTrust = new ArrayList<String>();
   private String pairingUrl = null;
 
   

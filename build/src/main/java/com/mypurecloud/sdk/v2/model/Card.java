@@ -28,7 +28,7 @@ public class Card  implements Serializable {
   private String description = null;
   private String url = null;
   private CardAction defaultAction = null;
-  private List<CardAction> actions = null;
+  private List<CardAction> actions = new ArrayList<CardAction>();
 
   
   /**

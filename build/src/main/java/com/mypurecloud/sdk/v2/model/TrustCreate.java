@@ -27,8 +27,8 @@ public class TrustCreate  implements Serializable {
   
   private String pairingId = null;
   private Boolean enabled = null;
-  private List<TrustMemberCreate> users = null;
-  private List<TrustMemberCreate> groups = null;
+  private List<TrustMemberCreate> users = new ArrayList<TrustMemberCreate>();
+  private List<TrustMemberCreate> groups = new ArrayList<TrustMemberCreate>();
   private Date dateExpired = null;
 
   

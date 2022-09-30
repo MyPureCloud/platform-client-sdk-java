@@ -31,7 +31,7 @@ public class GDPRRequest  implements Serializable {
   private String id = null;
   private String name = null;
   private DomainEntityRef createdBy = null;
-  private List<ReplacementTerm> replacementTerms = null;
+  private List<ReplacementTerm> replacementTerms = new ArrayList<ReplacementTerm>();
 
   private static class RequestTypeEnumDeserializer extends StdDeserializer<RequestTypeEnum> {
     public RequestTypeEnumDeserializer() {

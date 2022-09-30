@@ -24,9 +24,9 @@ import java.io.Serializable;
 
 public class BulkContactsResponse  implements Serializable {
   
-  private List<BulkResponseResultExternalContactExternalContact> results = null;
+  private List<BulkResponseResultExternalContactExternalContact> results = new ArrayList<BulkResponseResultExternalContactExternalContact>();
   private Integer errorCount = null;
-  private List<Integer> errorIndexes = null;
+  private List<Integer> errorIndexes = new ArrayList<Integer>();
 
   
   /**

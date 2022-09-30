@@ -41,7 +41,7 @@ public class FaxDocument  implements Serializable {
   private Long pageCount = null;
   private String callerAddress = null;
   private String receiverAddress = null;
-  private List<DocumentThumbnail> thumbnails = null;
+  private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
   private String downloadSharingUri = null;
   private String selfUri = null;
 

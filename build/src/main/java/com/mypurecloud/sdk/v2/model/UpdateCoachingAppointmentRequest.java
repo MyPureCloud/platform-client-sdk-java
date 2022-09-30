@@ -31,8 +31,8 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
   private String description = null;
   private Date dateStart = null;
   private Integer lengthInMinutes = null;
-  private List<String> conversationIds = null;
-  private List<String> documentIds = null;
+  private List<String> conversationIds = new ArrayList<String>();
+  private List<String> documentIds = new ArrayList<String>();
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -83,7 +83,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
   }
   private StatusEnum status = null;
   private WfmScheduleReference wfmSchedule = null;
-  private List<String> externalLinks = null;
+  private List<String> externalLinks = new ArrayList<String>();
 
   
   /**

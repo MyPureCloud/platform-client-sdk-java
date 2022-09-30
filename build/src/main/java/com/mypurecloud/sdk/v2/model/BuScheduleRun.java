@@ -95,7 +95,7 @@ public class BuScheduleRun  implements Serializable {
   private UserReference schedulingCanceledBy = null;
   private Date schedulingCompletedTime = null;
   private Integer messageCount = null;
-  private List<SchedulerMessageSeverityCount> messageSeverityCounts = null;
+  private List<SchedulerMessageSeverityCount> messageSeverityCounts = new ArrayList<SchedulerMessageSeverityCount>();
   private ReschedulingOptionsRunResponse reschedulingOptions = null;
   private Date reschedulingResultExpiration = null;
   private String selfUri = null;

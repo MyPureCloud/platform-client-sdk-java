@@ -27,7 +27,7 @@ public class RecordingTranscodeCompleteTopicRecording  implements Serializable {
   private String id = null;
   private String conversationId = null;
   private String fileState = null;
-  private List<RecordingTranscodeCompleteTopicMediaResult> mediaUris = null;
+  private List<RecordingTranscodeCompleteTopicMediaResult> mediaUris = new ArrayList<RecordingTranscodeCompleteTopicMediaResult>();
   private Integer estimatedTranscodeTimeMs = null;
   private Integer actualTranscodeTimeMs = null;
 

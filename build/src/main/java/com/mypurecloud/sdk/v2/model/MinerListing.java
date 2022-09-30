@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class MinerListing  implements Serializable {
   
-  private List<Miner> entities = null;
+  private List<Miner> entities = new ArrayList<Miner>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

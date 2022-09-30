@@ -275,7 +275,7 @@ public class CobrowseMediaParticipant  implements Serializable {
   private Date endAcwTime = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
-  private List<String> controlling = null;
+  private List<String> controlling = new ArrayList<String>();
   private String viewerUrl = null;
   private Date providerEventTime = null;
 

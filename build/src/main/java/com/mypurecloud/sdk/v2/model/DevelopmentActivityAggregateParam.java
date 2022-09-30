@@ -79,7 +79,7 @@ public class DevelopmentActivityAggregateParam  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = null;
+  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
 
   private static class GroupByEnumDeserializer extends StdDeserializer<GroupByEnum> {
     public GroupByEnumDeserializer() {
@@ -125,7 +125,7 @@ public class DevelopmentActivityAggregateParam  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = null;
+  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
   private DevelopmentActivityAggregateQueryRequestFilter filter = null;
 
   

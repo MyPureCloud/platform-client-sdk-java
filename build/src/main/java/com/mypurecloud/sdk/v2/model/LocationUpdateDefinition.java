@@ -76,7 +76,7 @@ public class LocationUpdateDefinition  implements Serializable {
     }
   }
   private StateEnum state = null;
-  private List<String> path = null;
+  private List<String> path = new ArrayList<String>();
   private String notes = null;
   private String contactUser = null;
   private LocationEmergencyNumber emergencyNumber = null;

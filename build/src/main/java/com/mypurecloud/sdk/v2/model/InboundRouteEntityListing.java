@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class InboundRouteEntityListing  implements Serializable, PagedResource<InboundRoute> {
   
-  private List<InboundRoute> entities = null;
+  private List<InboundRoute> entities = new ArrayList<InboundRoute>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

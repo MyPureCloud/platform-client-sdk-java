@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class NamedEntityTypeMechanism  implements Serializable {
   
-  private List<NamedEntityTypeItem> items = null;
+  private List<NamedEntityTypeItem> items = new ArrayList<NamedEntityTypeItem>();
   private Boolean restricted = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {

@@ -24,8 +24,8 @@ import java.io.Serializable;
 
 public class PredictorModels  implements Serializable {
   
-  private List<PredictorModel> entities = null;
-  private List<PredictorModel> predictorModels = null;
+  private List<PredictorModel> entities = new ArrayList<PredictorModel>();
+  private List<PredictorModel> predictorModels = new ArrayList<PredictorModel>();
 
   
   /**

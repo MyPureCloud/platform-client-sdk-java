@@ -28,7 +28,7 @@ public class AddShiftTradeRequest  implements Serializable {
   private String initiatingShiftId = null;
   private String receivingUserId = null;
   private Date expiration = null;
-  private List<String> acceptableIntervals = null;
+  private List<String> acceptableIntervals = new ArrayList<String>();
 
   
   /**

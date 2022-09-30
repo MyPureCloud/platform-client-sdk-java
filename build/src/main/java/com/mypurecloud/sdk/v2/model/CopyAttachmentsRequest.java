@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class CopyAttachmentsRequest  implements Serializable {
   
   private DomainEntityRef sourceMessage = null;
-  private List<Attachment> attachments = null;
+  private List<Attachment> attachments = new ArrayList<Attachment>();
 
   
   /**

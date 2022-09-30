@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class UserScheduleAdherenceListing  implements Serializable {
   
-  private List<UserScheduleAdherence> entities = null;
+  private List<UserScheduleAdherence> entities = new ArrayList<UserScheduleAdherence>();
   private String downloadUrl = null;
 
   

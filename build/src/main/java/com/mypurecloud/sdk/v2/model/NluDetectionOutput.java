@@ -25,8 +25,8 @@ import java.io.Serializable;
 
 public class NluDetectionOutput  implements Serializable {
   
-  private List<DetectedIntent> intents = null;
-  private List<DetectedDialogAct> dialogActs = null;
+  private List<DetectedIntent> intents = new ArrayList<DetectedIntent>();
+  private List<DetectedDialogAct> dialogActs = new ArrayList<DetectedDialogAct>();
 
   
   @ApiModelProperty(example = "null", value = "The detected intents.")

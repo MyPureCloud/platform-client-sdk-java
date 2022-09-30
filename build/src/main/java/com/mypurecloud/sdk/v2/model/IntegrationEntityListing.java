@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class IntegrationEntityListing  implements Serializable, PagedResource<Integration> {
   
-  private List<Integration> entities = null;
+  private List<Integration> entities = new ArrayList<Integration>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class BuHeadcountForecast  implements Serializable {
   
-  private List<BuPlanningGroupHeadcountForecast> entities = null;
+  private List<BuPlanningGroupHeadcountForecast> entities = new ArrayList<BuPlanningGroupHeadcountForecast>();
   private Date referenceStartDate = null;
 
   

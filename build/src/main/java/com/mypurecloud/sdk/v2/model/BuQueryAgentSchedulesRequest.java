@@ -23,8 +23,8 @@ import java.io.Serializable;
 public class BuQueryAgentSchedulesRequest  implements Serializable {
   
   private String managementUnitId = null;
-  private List<String> userIds = null;
-  private List<String> teamIds = null;
+  private List<String> userIds = new ArrayList<String>();
+  private List<String> teamIds = new ArrayList<String>();
 
   
   /**

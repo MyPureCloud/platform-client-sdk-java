@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class CategoryListing  implements Serializable {
   
-  private List<KnowledgeCategory> entities = null;
+  private List<KnowledgeCategory> entities = new ArrayList<KnowledgeCategory>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

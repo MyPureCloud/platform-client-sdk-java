@@ -143,7 +143,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
   private String errorMessage = null;
   private String errorCode = null;
   private Object errorMessageParams = null;
-  private List<ArchitectFlowNotificationErrorDetail> errorDetails = null;
+  private List<ArchitectFlowNotificationErrorDetail> errorDetails = new ArrayList<ArchitectFlowNotificationErrorDetail>();
 
   
   /**

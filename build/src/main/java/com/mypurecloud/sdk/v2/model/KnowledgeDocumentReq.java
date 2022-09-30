@@ -27,9 +27,9 @@ public class KnowledgeDocumentReq  implements Serializable {
   private String id = null;
   private String title = null;
   private Boolean visible = null;
-  private List<KnowledgeDocumentAlternative> alternatives = null;
+  private List<KnowledgeDocumentAlternative> alternatives = new ArrayList<KnowledgeDocumentAlternative>();
   private String categoryId = null;
-  private List<String> labelIds = null;
+  private List<String> labelIds = new ArrayList<String>();
   private String selfUri = null;
 
   

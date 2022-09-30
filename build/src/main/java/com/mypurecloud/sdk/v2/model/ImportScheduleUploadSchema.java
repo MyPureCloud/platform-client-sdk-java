@@ -31,7 +31,7 @@ public class ImportScheduleUploadSchema  implements Serializable {
   private Boolean published = null;
   private BuShortTermForecastReference shortTermForecast = null;
   private BuHeadcountForecast headcountForecast = null;
-  private List<BuImportAgentScheduleUploadSchema> agentSchedules = null;
+  private List<BuImportAgentScheduleUploadSchema> agentSchedules = new ArrayList<BuImportAgentScheduleUploadSchema>();
 
   
   /**

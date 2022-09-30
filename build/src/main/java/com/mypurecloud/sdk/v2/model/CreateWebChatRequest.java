@@ -27,7 +27,7 @@ public class CreateWebChatRequest  implements Serializable {
   
   private String queueId = null;
   private String provider = null;
-  private List<String> skillIds = null;
+  private List<String> skillIds = new ArrayList<String>();
   private String languageId = null;
   private Long priority = null;
   private Map<String, String> attributes = null;

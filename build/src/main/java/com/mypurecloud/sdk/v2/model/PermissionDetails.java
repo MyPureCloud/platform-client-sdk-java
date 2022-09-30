@@ -75,7 +75,7 @@ public class PermissionDetails  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<String> permissions = null;
+  private List<String> permissions = new ArrayList<String>();
   private Boolean allowsCurrentUser = null;
   private Boolean enforced = null;
 

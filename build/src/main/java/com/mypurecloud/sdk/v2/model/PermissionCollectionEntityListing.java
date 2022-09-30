@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class PermissionCollectionEntityListing  implements Serializable, PagedResource<DomainPermissionCollection> {
   
-  private List<DomainPermissionCollection> entities = null;
+  private List<DomainPermissionCollection> entities = new ArrayList<DomainPermissionCollection>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

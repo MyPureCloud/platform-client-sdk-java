@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class AgentOwnedMappingPreviewListing  implements Serializable {
   
-  private List<AgentOwnedMappingPreview> entities = null;
+  private List<AgentOwnedMappingPreview> entities = new ArrayList<AgentOwnedMappingPreview>();
 
   
   /**

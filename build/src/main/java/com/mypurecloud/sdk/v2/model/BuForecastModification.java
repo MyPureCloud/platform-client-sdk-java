@@ -180,11 +180,11 @@ public class BuForecastModification  implements Serializable {
   }
   private LegacyMetricEnum legacyMetric = null;
   private Double value = null;
-  private List<WfmForecastModificationIntervalOffsetValue> values = null;
+  private List<WfmForecastModificationIntervalOffsetValue> values = new ArrayList<WfmForecastModificationIntervalOffsetValue>();
   private String displayGranularity = null;
   private String granularity = null;
   private Boolean enabled = null;
-  private List<String> planningGroupIds = null;
+  private List<String> planningGroupIds = new ArrayList<String>();
 
   
   /**

@@ -26,7 +26,7 @@ public class AuditFilter  implements Serializable {
   private String name = null;
   private String type = null;
   private String operator = null;
-  private List<String> values = null;
+  private List<String> values = new ArrayList<String>();
 
   
   /**

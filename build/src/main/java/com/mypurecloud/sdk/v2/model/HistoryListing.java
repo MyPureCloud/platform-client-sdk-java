@@ -37,7 +37,7 @@ public class HistoryListing  implements Serializable {
   private DomainEntityRef client = null;
   private String errorMessage = null;
   private String errorCode = null;
-  private List<Detail> errorDetails = null;
+  private List<Detail> errorDetails = new ArrayList<Detail>();
   private Map<String, String> errorMessageParams = null;
 
   private static class ActionNameEnumDeserializer extends StdDeserializer<ActionNameEnum> {
@@ -155,7 +155,7 @@ public class HistoryListing  implements Serializable {
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private List<HistoryEntry> entities = null;
+  private List<HistoryEntry> entities = new ArrayList<HistoryEntry>();
   private Integer pageCount = null;
 
   

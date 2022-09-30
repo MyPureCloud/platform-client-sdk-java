@@ -26,7 +26,7 @@ public class CobrowseSettings  implements Serializable {
   
   private Boolean enabled = null;
   private Boolean allowAgentControl = null;
-  private List<String> maskSelectors = null;
+  private List<String> maskSelectors = new ArrayList<String>();
 
   
   /**

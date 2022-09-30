@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class JourneyOutcomeEventsNotificationOutcomeTouchpoint  implements Serializable {
   
   private String id = null;
-  private List<JourneyOutcomeEventsNotificationOutcomeTouchpointChannel> channels = null;
+  private List<JourneyOutcomeEventsNotificationOutcomeTouchpointChannel> channels = new ArrayList<JourneyOutcomeEventsNotificationOutcomeTouchpointChannel>();
   private Date createdDate = null;
   private JourneyOutcomeEventsNotificationActionMap actionMap = null;
 

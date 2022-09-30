@@ -27,9 +27,9 @@ import java.io.Serializable;
 
 public class ScimUserExtensions  implements Serializable {
   
-  private List<ScimUserRoutingSkill> routingSkills = null;
-  private List<ScimUserRoutingLanguage> routingLanguages = null;
-  private List<ScimGenesysUserExternalId> externalIds = null;
+  private List<ScimUserRoutingSkill> routingSkills = new ArrayList<ScimUserRoutingSkill>();
+  private List<ScimUserRoutingLanguage> routingLanguages = new ArrayList<ScimUserRoutingLanguage>();
+  private List<ScimGenesysUserExternalId> externalIds = new ArrayList<ScimGenesysUserExternalId>();
 
   
   /**

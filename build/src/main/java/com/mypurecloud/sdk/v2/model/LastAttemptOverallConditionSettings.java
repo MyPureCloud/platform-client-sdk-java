@@ -71,7 +71,7 @@ public class LastAttemptOverallConditionSettings  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaTypesEnum> mediaTypes = null;
+  private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
 
   private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
     public OperatorEnumDeserializer() {

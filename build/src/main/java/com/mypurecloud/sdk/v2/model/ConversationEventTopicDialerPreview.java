@@ -29,7 +29,7 @@ public class ConversationEventTopicDialerPreview  implements Serializable {
   private String contactId = null;
   private String contactListId = null;
   private String campaignId = null;
-  private List<ConversationEventTopicPhoneNumberColumn> phoneNumberColumns = null;
+  private List<ConversationEventTopicPhoneNumberColumn> phoneNumberColumns = new ArrayList<ConversationEventTopicPhoneNumberColumn>();
 
   
   /**

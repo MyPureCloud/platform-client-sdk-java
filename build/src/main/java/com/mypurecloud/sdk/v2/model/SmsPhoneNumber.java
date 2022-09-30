@@ -181,7 +181,7 @@ public class SmsPhoneNumber  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<CapabilitiesEnum> capabilities = null;
+  private List<CapabilitiesEnum> capabilities = new ArrayList<CapabilitiesEnum>();
   private String countryCode = null;
   private Date dateCreated = null;
   private Date dateModified = null;

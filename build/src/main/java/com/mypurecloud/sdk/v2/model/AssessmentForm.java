@@ -31,7 +31,7 @@ public class AssessmentForm  implements Serializable {
   private String selfUri = null;
   private Boolean published = null;
   private Integer passPercent = null;
-  private List<AssessmentFormQuestionGroup> questionGroups = null;
+  private List<AssessmentFormQuestionGroup> questionGroups = new ArrayList<AssessmentFormQuestionGroup>();
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

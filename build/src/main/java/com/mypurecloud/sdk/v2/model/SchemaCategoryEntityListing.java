@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class SchemaCategoryEntityListing  implements Serializable, PagedResource<SchemaCategory> {
   
-  private List<SchemaCategory> entities = null;
+  private List<SchemaCategory> entities = new ArrayList<SchemaCategory>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

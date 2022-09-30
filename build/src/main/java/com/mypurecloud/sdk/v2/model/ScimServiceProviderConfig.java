@@ -29,7 +29,7 @@ import java.io.Serializable;
 
 public class ScimServiceProviderConfig  implements Serializable {
   
-  private List<String> schemas = null;
+  private List<String> schemas = new ArrayList<String>();
   private String documentationUri = null;
   private ScimServiceProviderConfigSimpleFeature patch = null;
   private ScimServiceProviderConfigFilterFeature filter = null;
@@ -37,7 +37,7 @@ public class ScimServiceProviderConfig  implements Serializable {
   private ScimServiceProviderConfigSimpleFeature sort = null;
   private ScimServiceProviderConfigBulkFeature bulk = null;
   private ScimServiceProviderConfigSimpleFeature changePassword = null;
-  private List<ScimServiceProviderConfigAuthenticationScheme> authenticationSchemes = null;
+  private List<ScimServiceProviderConfigAuthenticationScheme> authenticationSchemes = new ArrayList<ScimServiceProviderConfigAuthenticationScheme>();
   private ScimMetadata meta = null;
 
   

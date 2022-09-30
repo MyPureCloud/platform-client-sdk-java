@@ -79,12 +79,12 @@ public class SearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = null;
-  private List<String> returnFields = null;
-  private List<String> expand = null;
-  private List<String> types = null;
-  private List<SearchCriteria> query = null;
-  private List<SearchAggregation> aggregations = null;
+  private List<SearchSort> sort = new ArrayList<SearchSort>();
+  private List<String> returnFields = new ArrayList<String>();
+  private List<String> expand = new ArrayList<String>();
+  private List<String> types = new ArrayList<String>();
+  private List<SearchCriteria> query = new ArrayList<SearchCriteria>();
+  private List<SearchAggregation> aggregations = new ArrayList<SearchAggregation>();
 
   
   /**

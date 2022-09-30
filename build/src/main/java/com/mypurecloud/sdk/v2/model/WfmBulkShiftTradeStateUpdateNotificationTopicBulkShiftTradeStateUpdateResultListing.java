@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing  implements Serializable {
   
-  private List<WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult> entities = null;
+  private List<WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult> entities = new ArrayList<WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult>();
 
   
   /**

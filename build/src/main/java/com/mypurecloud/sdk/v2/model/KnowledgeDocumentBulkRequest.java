@@ -77,7 +77,7 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
   private TypeEnum type = null;
   private String externalUrl = null;
   private DocumentFaq faq = null;
-  private List<DocumentCategoryInput> categories = null;
+  private List<DocumentCategoryInput> categories = new ArrayList<DocumentCategoryInput>();
   private DocumentArticle article = null;
   private String id = null;
 

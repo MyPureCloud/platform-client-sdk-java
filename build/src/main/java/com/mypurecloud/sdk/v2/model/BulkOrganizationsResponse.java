@@ -24,9 +24,9 @@ import java.io.Serializable;
 
 public class BulkOrganizationsResponse  implements Serializable {
   
-  private List<BulkResponseResultExternalOrganizationExternalOrganization> results = null;
+  private List<BulkResponseResultExternalOrganizationExternalOrganization> results = new ArrayList<BulkResponseResultExternalOrganizationExternalOrganization>();
   private Integer errorCount = null;
-  private List<Integer> errorIndexes = null;
+  private List<Integer> errorIndexes = new ArrayList<Integer>();
 
   
   /**

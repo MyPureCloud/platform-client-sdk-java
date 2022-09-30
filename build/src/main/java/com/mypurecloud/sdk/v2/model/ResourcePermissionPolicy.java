@@ -32,9 +32,9 @@ public class ResourcePermissionPolicy  implements Serializable {
   private String actionSetKey = null;
   private Boolean allowConditions = null;
   private ResourceConditionNode resourceConditionNode = null;
-  private List<String> namedResources = null;
+  private List<String> namedResources = new ArrayList<String>();
   private String resourceCondition = null;
-  private List<String> actionSet = null;
+  private List<String> actionSet = new ArrayList<String>();
 
   
   /**

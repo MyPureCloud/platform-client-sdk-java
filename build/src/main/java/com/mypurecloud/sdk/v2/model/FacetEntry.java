@@ -85,7 +85,7 @@ public class FacetEntry  implements Serializable {
     }
   }
   private TermTypeEnum termType = null;
-  private List<FacetTerm> terms = null;
+  private List<FacetTerm> terms = new ArrayList<FacetTerm>();
 
   
   /**

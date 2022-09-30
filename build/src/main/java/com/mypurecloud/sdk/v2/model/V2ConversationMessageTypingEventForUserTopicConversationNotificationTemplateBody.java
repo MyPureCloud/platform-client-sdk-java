@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateBody  implements Serializable {
   
   private String text = null;
-  private List<V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateParameter> parameters = null;
+  private List<V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateParameter> parameters = new ArrayList<V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateParameter>();
 
   
   /**

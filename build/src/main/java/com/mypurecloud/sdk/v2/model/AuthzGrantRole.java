@@ -27,7 +27,7 @@ public class AuthzGrantRole  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
-  private List<AuthzGrantPolicy> policies = null;
+  private List<AuthzGrantPolicy> policies = new ArrayList<AuthzGrantPolicy>();
   private Boolean _default = null;
   private String selfUri = null;
 

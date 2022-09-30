@@ -26,8 +26,8 @@ public class CredentialType  implements Serializable {
   private String id = null;
   private String name = null;
   private Object properties = null;
-  private List<String> displayOrder = null;
-  private List<String> required = null;
+  private List<String> displayOrder = new ArrayList<String>();
+  private List<String> required = new ArrayList<String>();
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

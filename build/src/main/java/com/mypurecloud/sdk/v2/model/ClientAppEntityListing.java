@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ClientAppEntityListing  implements Serializable, PagedResource<ClientApp> {
   
-  private List<ClientApp> entities = null;
+  private List<ClientApp> entities = new ArrayList<ClientApp>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

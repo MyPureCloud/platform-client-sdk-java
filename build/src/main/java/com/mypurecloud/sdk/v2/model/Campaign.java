@@ -144,25 +144,25 @@ public class Campaign  implements Serializable {
     }
   }
   private CampaignStatusEnum campaignStatus = null;
-  private List<PhoneColumn> phoneColumns = null;
+  private List<PhoneColumn> phoneColumns = new ArrayList<PhoneColumn>();
   private Double abandonRate = null;
-  private List<DomainEntityRef> dncLists = null;
+  private List<DomainEntityRef> dncLists = new ArrayList<DomainEntityRef>();
   private DomainEntityRef callableTimeSet = null;
   private DomainEntityRef callAnalysisResponseSet = null;
-  private List<RestErrorDetail> errors = null;
+  private List<RestErrorDetail> errors = new ArrayList<RestErrorDetail>();
   private String callerName = null;
   private String callerAddress = null;
   private Integer outboundLineCount = null;
-  private List<DomainEntityRef> ruleSets = null;
+  private List<DomainEntityRef> ruleSets = new ArrayList<DomainEntityRef>();
   private Boolean skipPreviewDisabled = null;
   private Long previewTimeOutSeconds = null;
   private Boolean alwaysRunning = null;
   private ContactSort contactSort = null;
-  private List<ContactSort> contactSorts = null;
+  private List<ContactSort> contactSorts = new ArrayList<ContactSort>();
   private Integer noAnswerTimeout = null;
   private String callAnalysisLanguage = null;
   private Integer priority = null;
-  private List<DomainEntityRef> contactListFilters = null;
+  private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
   private DomainEntityRef division = null;
   private String selfUri = null;
 

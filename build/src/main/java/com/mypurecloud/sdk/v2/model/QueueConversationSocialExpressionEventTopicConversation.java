@@ -26,7 +26,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
   
   private String id = null;
   private Integer maxParticipants = null;
-  private List<QueueConversationSocialExpressionEventTopicParticipant> participants = null;
+  private List<QueueConversationSocialExpressionEventTopicParticipant> participants = new ArrayList<QueueConversationSocialExpressionEventTopicParticipant>();
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;

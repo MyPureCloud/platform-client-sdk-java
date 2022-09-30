@@ -30,7 +30,7 @@ public class ContentCard  implements Serializable {
   private String image = null;
   private String video = null;
   private ContentCardAction defaultAction = null;
-  private List<ContentCardAction> actions = null;
+  private List<ContentCardAction> actions = new ArrayList<ContentCardAction>();
 
   
   /**

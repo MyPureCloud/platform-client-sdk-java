@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class AvailableTopicEntityListing  implements Serializable {
   
-  private List<AvailableTopic> entities = null;
+  private List<AvailableTopic> entities = new ArrayList<AvailableTopic>();
 
   
   /**

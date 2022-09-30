@@ -25,11 +25,11 @@ import java.io.Serializable;
 
 public class ScimConfigResourceTypesListResponse  implements Serializable {
   
-  private List<String> schemas = null;
+  private List<String> schemas = new ArrayList<String>();
   private Long totalResults = null;
   private Long startIndex = null;
   private Long itemsPerPage = null;
-  private List<ScimConfigResourceType> resources = null;
+  private List<ScimConfigResourceType> resources = new ArrayList<ScimConfigResourceType>();
 
   
   /**

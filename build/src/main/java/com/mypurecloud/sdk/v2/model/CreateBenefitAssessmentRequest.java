@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class CreateBenefitAssessmentRequest  implements Serializable {
   
-  private List<String> queueIds = null;
+  private List<String> queueIds = new ArrayList<String>();
 
   
   /**

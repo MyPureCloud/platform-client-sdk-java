@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class PatchCallbackResponse  implements Serializable {
   
   private DomainEntityRef conversation = null;
-  private List<CallbackIdentifier> callbackIdentifiers = null;
+  private List<CallbackIdentifier> callbackIdentifiers = new ArrayList<CallbackIdentifier>();
 
   
   /**

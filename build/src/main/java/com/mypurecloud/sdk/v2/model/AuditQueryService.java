@@ -111,7 +111,7 @@ public class AuditQueryService  implements Serializable {
     }
   }
   private NameEnum name = null;
-  private List<AuditQueryEntity> entities = null;
+  private List<AuditQueryEntity> entities = new ArrayList<AuditQueryEntity>();
 
   
   /**

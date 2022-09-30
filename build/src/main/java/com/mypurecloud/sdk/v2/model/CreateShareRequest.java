@@ -124,7 +124,7 @@ public class CreateShareRequest  implements Serializable {
   }
   private MemberTypeEnum memberType = null;
   private SharedEntity member = null;
-  private List<CreateShareRequestMember> members = null;
+  private List<CreateShareRequestMember> members = new ArrayList<CreateShareRequestMember>();
 
   
   /**

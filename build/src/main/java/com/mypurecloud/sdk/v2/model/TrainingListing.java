@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class TrainingListing  implements Serializable {
   
-  private List<KnowledgeTraining> entities = null;
+  private List<KnowledgeTraining> entities = new ArrayList<KnowledgeTraining>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

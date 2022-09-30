@@ -28,8 +28,8 @@ import java.io.Serializable;
 public class BuAgentScheduleHistoryChange  implements Serializable {
   
   private BuAgentScheduleHistoryChangeMetadata metadata = null;
-  private List<BuAgentScheduleShift> shifts = null;
-  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = null;
+  private List<BuAgentScheduleShift> shifts = new ArrayList<BuAgentScheduleShift>();
+  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
   private BuAgentScheduleHistoryDeletedChange deletes = null;
 
   

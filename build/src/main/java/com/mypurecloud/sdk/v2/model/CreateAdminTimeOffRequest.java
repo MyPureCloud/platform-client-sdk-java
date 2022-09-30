@@ -74,11 +74,11 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<UserReference> users = null;
+  private List<UserReference> users = new ArrayList<UserReference>();
   private String activityCodeId = null;
   private String notes = null;
-  private List<String> fullDayManagementUnitDates = null;
-  private List<Date> partialDayStartDateTimes = null;
+  private List<String> fullDayManagementUnitDates = new ArrayList<String>();
+  private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
   private Integer dailyDurationMinutes = null;
   private Boolean paid = null;
 

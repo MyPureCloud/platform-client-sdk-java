@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class AnalyticsUserDetailsAsyncQueryResponse  implements Serializable {
   
-  private List<AnalyticsUserDetail> userDetails = null;
+  private List<AnalyticsUserDetail> userDetails = new ArrayList<AnalyticsUserDetail>();
   private String cursor = null;
   private Date dataAvailabilityDate = null;
 

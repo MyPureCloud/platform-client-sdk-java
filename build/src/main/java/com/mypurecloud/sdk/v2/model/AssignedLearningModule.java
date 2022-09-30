@@ -90,7 +90,7 @@ public class AssignedLearningModule  implements Serializable {
   }
   private SourceEnum source = null;
   private LearningModuleRule rule = null;
-  private List<LearningAssignment> currentAssignments = null;
+  private List<LearningAssignment> currentAssignments = new ArrayList<LearningAssignment>();
   private String selfUri = null;
   private Boolean isArchived = null;
   private Boolean isPublished = null;
@@ -145,7 +145,7 @@ public class AssignedLearningModule  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<LearningModuleInformStep> informSteps = null;
+  private List<LearningModuleInformStep> informSteps = new ArrayList<LearningModuleInformStep>();
   private AssessmentForm assessmentForm = null;
   private LearningModuleSummary summaryData = null;
   private LearningModuleCoverArtResponse coverArt = null;

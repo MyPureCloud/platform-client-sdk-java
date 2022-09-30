@@ -88,7 +88,7 @@ public class SocialExpression  implements Serializable {
   private String socialUserName = null;
   private String previewText = null;
   private String recordingId = null;
-  private List<Segment> segments = null;
+  private List<Segment> segments = new ArrayList<Segment>();
   private Boolean held = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {

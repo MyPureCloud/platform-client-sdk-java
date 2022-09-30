@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DevelopmentActivityListing  implements Serializable, PagedResource<DevelopmentActivity> {
   
-  private List<DevelopmentActivity> entities = null;
+  private List<DevelopmentActivity> entities = new ArrayList<DevelopmentActivity>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class TimeAllowed  implements Serializable {
   
-  private List<TimeSlot> timeSlots = null;
+  private List<TimeSlot> timeSlots = new ArrayList<TimeSlot>();
   private String timeZoneId = null;
   private Boolean empty = null;
 

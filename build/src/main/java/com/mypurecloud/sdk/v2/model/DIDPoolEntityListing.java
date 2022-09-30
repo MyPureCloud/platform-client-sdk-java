@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPool> {
   
-  private List<DIDPool> entities = null;
+  private List<DIDPool> entities = new ArrayList<DIDPool>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

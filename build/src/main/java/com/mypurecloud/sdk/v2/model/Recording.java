@@ -40,10 +40,10 @@ public class Recording  implements Serializable {
   private String startTime = null;
   private String endTime = null;
   private String media = null;
-  private List<Annotation> annotations = null;
-  private List<ChatMessage> transcript = null;
-  private List<RecordingEmailMessage> emailTranscript = null;
-  private List<RecordingMessagingMessage> messagingTranscript = null;
+  private List<Annotation> annotations = new ArrayList<Annotation>();
+  private List<ChatMessage> transcript = new ArrayList<ChatMessage>();
+  private List<RecordingEmailMessage> emailTranscript = new ArrayList<RecordingEmailMessage>();
+  private List<RecordingMessagingMessage> messagingTranscript = new ArrayList<RecordingMessagingMessage>();
 
   private static class FileStateEnumDeserializer extends StdDeserializer<FileStateEnum> {
     public FileStateEnumDeserializer() {
@@ -157,7 +157,7 @@ public class Recording  implements Serializable {
   private Integer maxAllowedRestorationsForOrg = null;
   private Integer remainingRestorationsAllowedForOrg = null;
   private String sessionId = null;
-  private List<User> users = null;
+  private List<User> users = new ArrayList<User>();
 
   private static class RecordingFileRoleEnumDeserializer extends StdDeserializer<RecordingFileRoleEnum> {
     public RecordingFileRoleEnumDeserializer() {

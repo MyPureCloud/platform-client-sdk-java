@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class AvailableTimeOffRequest  implements Serializable {
   
   private String activityCodeId = null;
-  private List<LocalDateRange> dateRanges = null;
+  private List<LocalDateRange> dateRanges = new ArrayList<LocalDateRange>();
 
   
   /**

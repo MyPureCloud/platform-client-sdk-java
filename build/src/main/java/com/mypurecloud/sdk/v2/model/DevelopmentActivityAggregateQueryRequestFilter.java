@@ -73,7 +73,7 @@ public class DevelopmentActivityAggregateQueryRequestFilter  implements Serializ
     }
   }
   private TypeEnum type = null;
-  private List<DevelopmentActivityAggregateQueryRequestClause> clauses = null;
+  private List<DevelopmentActivityAggregateQueryRequestClause> clauses = new ArrayList<DevelopmentActivityAggregateQueryRequestClause>();
 
   
   /**

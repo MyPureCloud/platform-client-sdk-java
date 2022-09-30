@@ -27,8 +27,8 @@ import java.io.Serializable;
 public class BuAgentScheduleSearchResponse  implements Serializable {
   
   private UserReference user = null;
-  private List<BuAgentScheduleShift> shifts = null;
-  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = null;
+  private List<BuAgentScheduleShift> shifts = new ArrayList<BuAgentScheduleShift>();
+  private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
 
   
   /**

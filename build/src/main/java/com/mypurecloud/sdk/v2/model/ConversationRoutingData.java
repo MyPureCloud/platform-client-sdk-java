@@ -28,8 +28,8 @@ public class ConversationRoutingData  implements Serializable {
   private AddressableEntityRef queue = null;
   private AddressableEntityRef language = null;
   private Integer priority = null;
-  private List<AddressableEntityRef> skills = null;
-  private List<ScoredAgent> scoredAgents = null;
+  private List<AddressableEntityRef> skills = new ArrayList<AddressableEntityRef>();
+  private List<ScoredAgent> scoredAgents = new ArrayList<ScoredAgent>();
 
   
   /**

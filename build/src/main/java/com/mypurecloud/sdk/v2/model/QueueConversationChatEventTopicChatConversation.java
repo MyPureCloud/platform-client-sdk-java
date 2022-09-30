@@ -26,8 +26,8 @@ public class QueueConversationChatEventTopicChatConversation  implements Seriali
   
   private String id = null;
   private String name = null;
-  private List<QueueConversationChatEventTopicChatMediaParticipant> participants = null;
-  private List<String> otherMediaUris = null;
+  private List<QueueConversationChatEventTopicChatMediaParticipant> participants = new ArrayList<QueueConversationChatEventTopicChatMediaParticipant>();
+  private List<String> otherMediaUris = new ArrayList<String>();
 
   
   /**

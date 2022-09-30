@@ -83,8 +83,8 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
   private String description = null;
   private Boolean legacy = null;
   private Date referenceStartDate = null;
-  private List<WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer> sourceDays = null;
-  private List<WfmBuShortTermForecastGenerateProgressTopicBuForecastModification> modifications = null;
+  private List<WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer> sourceDays = new ArrayList<WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer>();
+  private List<WfmBuShortTermForecastGenerateProgressTopicBuForecastModification> modifications = new ArrayList<WfmBuShortTermForecastGenerateProgressTopicBuForecastModification>();
   private String timeZone = null;
   private Integer planningGroupsVersion = null;
   private Integer weekCount = null;

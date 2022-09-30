@@ -86,7 +86,7 @@ public class MatchCriteria  implements Serializable {
   }
   private OperatorEnum operator = null;
   private JsonNode value = null;
-  private List<JsonNode> values = null;
+  private List<JsonNode> values = new ArrayList<JsonNode>();
 
   
   /**

@@ -141,8 +141,8 @@ public class DependencyObject  implements Serializable {
   private Boolean deleted = null;
   private Boolean updated = null;
   private Boolean stateUnknown = null;
-  private List<Dependency> consumedResources = null;
-  private List<Dependency> consumingResources = null;
+  private List<Dependency> consumedResources = new ArrayList<Dependency>();
+  private List<Dependency> consumingResources = new ArrayList<Dependency>();
   private String selfUri = null;
 
   

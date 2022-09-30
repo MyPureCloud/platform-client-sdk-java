@@ -78,8 +78,8 @@ public class GKNDocumentationSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = null;
-  private List<GKNDocumentationSearchCriteria> query = null;
+  private List<SearchSort> sort = new ArrayList<SearchSort>();
+  private List<GKNDocumentationSearchCriteria> query = new ArrayList<GKNDocumentationSearchCriteria>();
 
   
   /**

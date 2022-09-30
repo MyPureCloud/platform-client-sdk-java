@@ -26,9 +26,9 @@ import java.io.Serializable;
 public class DialerAuditRequest  implements Serializable {
   
   private String queryPhrase = null;
-  private List<String> queryFields = null;
-  private List<AuditFacet> facets = null;
-  private List<AuditFilter> filters = null;
+  private List<String> queryFields = new ArrayList<String>();
+  private List<AuditFacet> facets = new ArrayList<AuditFacet>();
+  private List<AuditFilter> filters = new ArrayList<AuditFilter>();
 
   
   /**

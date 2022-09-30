@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class KnowledgeDocumentVersionListing  implements Serializable {
   
-  private List<KnowledgeDocumentVersion> entities = null;
+  private List<KnowledgeDocumentVersion> entities = new ArrayList<KnowledgeDocumentVersion>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

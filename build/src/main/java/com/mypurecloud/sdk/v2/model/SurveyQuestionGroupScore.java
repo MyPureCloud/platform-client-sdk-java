@@ -28,7 +28,7 @@ public class SurveyQuestionGroupScore  implements Serializable {
   private Float totalScore = null;
   private Float maxTotalScore = null;
   private Boolean markedNA = null;
-  private List<SurveyQuestionScore> questionScores = null;
+  private List<SurveyQuestionScore> questionScores = new ArrayList<SurveyQuestionScore>();
 
   
   /**

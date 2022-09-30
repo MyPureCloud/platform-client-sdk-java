@@ -30,7 +30,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
   private String image = null;
   private String video = null;
   private V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions actions = null;
-  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationButtonComponent> components = null;
+  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationButtonComponent> components = new ArrayList<V2ConversationMessageTypingEventForWorkflowTopicConversationButtonComponent>();
 
   
   /**

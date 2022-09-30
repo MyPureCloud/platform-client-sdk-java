@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class MessagingTemplateRequest  implements Serializable {
   
   private String responseId = null;
-  private List<TemplateParameter> parameters = null;
+  private List<TemplateParameter> parameters = new ArrayList<TemplateParameter>();
 
   
   /**

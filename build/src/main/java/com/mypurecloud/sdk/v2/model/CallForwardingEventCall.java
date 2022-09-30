@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class CallForwardingEventCall  implements Serializable {
   
-  private List<CallForwardingEventTarget> targets = null;
+  private List<CallForwardingEventTarget> targets = new ArrayList<CallForwardingEventTarget>();
 
   
   /**

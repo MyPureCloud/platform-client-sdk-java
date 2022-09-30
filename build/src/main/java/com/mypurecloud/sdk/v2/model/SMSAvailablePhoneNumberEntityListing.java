@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class SMSAvailablePhoneNumberEntityListing  implements Serializable {
   
-  private List<SmsAvailablePhoneNumber> entities = null;
+  private List<SmsAvailablePhoneNumber> entities = new ArrayList<SmsAvailablePhoneNumber>();
 
   
   /**

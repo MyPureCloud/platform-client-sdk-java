@@ -95,11 +95,11 @@ public class AnalyticsConversationSegment  implements Serializable {
   private DisconnectTypeEnum disconnectType = null;
   private String errorCode = null;
   private String groupId = null;
-  private List<Long> q850ResponseCodes = null;
+  private List<Long> q850ResponseCodes = new ArrayList<Long>();
   private String queueId = null;
   private String requestedLanguageId = null;
-  private List<String> requestedRoutingSkillIds = null;
-  private List<String> requestedRoutingUserIds = null;
+  private List<String> requestedRoutingSkillIds = new ArrayList<String>();
+  private List<String> requestedRoutingUserIds = new ArrayList<String>();
   private Date segmentEnd = null;
   private Date segmentStart = null;
 
@@ -168,16 +168,16 @@ public class AnalyticsConversationSegment  implements Serializable {
     }
   }
   private SegmentTypeEnum segmentType = null;
-  private List<Long> sipResponseCodes = null;
+  private List<Long> sipResponseCodes = new ArrayList<Long>();
   private String sourceConversationId = null;
   private String sourceSessionId = null;
   private String subject = null;
   private Boolean videoMuted = null;
   private String wrapUpCode = null;
   private String wrapUpNote = null;
-  private List<String> wrapUpTags = null;
-  private List<AnalyticsScoredAgent> scoredAgents = null;
-  private List<AnalyticsProperty> properties = null;
+  private List<String> wrapUpTags = new ArrayList<String>();
+  private List<AnalyticsScoredAgent> scoredAgents = new ArrayList<AnalyticsScoredAgent>();
+  private List<AnalyticsProperty> properties = new ArrayList<AnalyticsProperty>();
 
   
   /**

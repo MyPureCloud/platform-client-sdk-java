@@ -103,7 +103,7 @@ public class JourneyAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = null;
+  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
   private JourneyAggregateQueryFilter filter = null;
 
   private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
@@ -170,9 +170,9 @@ public class JourneyAggregationQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = null;
+  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
   private Boolean flattenMultivaluedDimensions = null;
-  private List<JourneyAggregationView> views = null;
+  private List<JourneyAggregationView> views = new ArrayList<JourneyAggregationView>();
 
   private static class AlternateTimeDimensionEnumDeserializer extends StdDeserializer<AlternateTimeDimensionEnum> {
     public AlternateTimeDimensionEnumDeserializer() {

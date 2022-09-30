@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class KnowledgeGuestDocumentVariationContext  implements Serializable {
   
   private AddressableEntityRef context = null;
-  private List<AddressableEntityRef> values = null;
+  private List<AddressableEntityRef> values = new ArrayList<AddressableEntityRef>();
 
   
   /**

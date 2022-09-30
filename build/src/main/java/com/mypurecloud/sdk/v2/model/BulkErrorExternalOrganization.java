@@ -30,7 +30,7 @@ public class BulkErrorExternalOrganization  implements Serializable {
   private Integer status = null;
   private Boolean retryable = null;
   private ExternalOrganization entity = null;
-  private List<BulkErrorDetail> details = null;
+  private List<BulkErrorDetail> details = new ArrayList<BulkErrorDetail>();
 
   
   /**

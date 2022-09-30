@@ -132,7 +132,7 @@ public class DncListCreate  implements Serializable {
   private ContactMethodEnum contactMethod = null;
   private String loginId = null;
   private String campaignId = null;
-  private List<String> dncCodes = null;
+  private List<String> dncCodes = new ArrayList<String>();
   private String licenseId = null;
   private DomainEntityRef division = null;
   private String selfUri = null;

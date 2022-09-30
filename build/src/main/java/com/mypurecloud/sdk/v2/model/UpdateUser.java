@@ -36,16 +36,16 @@ public class UpdateUser  implements Serializable {
   private Chat chat = null;
   private String department = null;
   private String email = null;
-  private List<Contact> primaryContactInfo = null;
-  private List<Contact> addresses = null;
+  private List<Contact> primaryContactInfo = new ArrayList<Contact>();
+  private List<Contact> addresses = new ArrayList<Contact>();
   private String title = null;
   private String username = null;
   private String manager = null;
-  private List<UserImage> images = null;
+  private List<UserImage> images = new ArrayList<UserImage>();
   private Integer version = null;
-  private List<String> profileSkills = null;
-  private List<Location> locations = null;
-  private List<Group> groups = null;
+  private List<String> profileSkills = new ArrayList<String>();
+  private List<Location> locations = new ArrayList<Location>();
+  private List<Group> groups = new ArrayList<Group>();
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -96,7 +96,7 @@ public class UpdateUser  implements Serializable {
   }
   private StateEnum state = null;
   private Boolean acdAutoAnswer = null;
-  private List<String> certifications = null;
+  private List<String> certifications = new ArrayList<String>();
   private Biography biography = null;
   private EmployerInfo employerInfo = null;
   private String selfUri = null;

@@ -33,7 +33,7 @@ public class Geolocation  implements Serializable {
   private String country = null;
   private String region = null;
   private String city = null;
-  private List<LocationDefinition> locations = null;
+  private List<LocationDefinition> locations = new ArrayList<LocationDefinition>();
   private String selfUri = null;
 
   

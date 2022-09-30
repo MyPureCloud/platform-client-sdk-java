@@ -277,7 +277,7 @@ public class CallbackMediaParticipant  implements Serializable {
   private Date endAcwTime = null;
   private DialerPreview outboundPreview = null;
   private Voicemail voicemail = null;
-  private List<String> callbackNumbers = null;
+  private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private Boolean externalCampaign = null;
   private Boolean skipEnabled = null;

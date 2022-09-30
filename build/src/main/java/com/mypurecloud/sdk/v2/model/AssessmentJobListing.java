@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class AssessmentJobListing  implements Serializable {
   
   private Long total = null;
-  private List<BenefitAssessmentJob> entities = null;
+  private List<BenefitAssessmentJob> entities = new ArrayList<BenefitAssessmentJob>();
   private String selfUri = null;
 
   

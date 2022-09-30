@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CursorContactListing  implements Serializable {
   
-  private List<ExternalContact> entities = null;
+  private List<ExternalContact> entities = new ArrayList<ExternalContact>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

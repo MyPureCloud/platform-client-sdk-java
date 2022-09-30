@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TimeZoneEntityListing  implements Serializable, PagedResource<RegionTimeZone> {
   
-  private List<RegionTimeZone> entities = null;
+  private List<RegionTimeZone> entities = new ArrayList<RegionTimeZone>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

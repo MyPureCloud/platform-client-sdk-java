@@ -28,7 +28,7 @@ import java.io.Serializable;
 public class UserScheduleContainer  implements Serializable {
   
   private String managementUnitTimeZone = null;
-  private List<WeekScheduleReference> publishedSchedules = null;
+  private List<WeekScheduleReference> publishedSchedules = new ArrayList<WeekScheduleReference>();
   private Map<String, UserSchedule> userSchedules = null;
 
   

@@ -81,7 +81,7 @@ public class SurveyQuestion  implements Serializable {
   private TypeEnum type = null;
   private Boolean naEnabled = null;
   private VisibilityCondition visibilityCondition = null;
-  private List<AnswerOption> answerOptions = null;
+  private List<AnswerOption> answerOptions = new ArrayList<AnswerOption>();
   private Integer maxResponseCharacters = null;
   private String explanationPrompt = null;
 

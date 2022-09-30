@@ -80,7 +80,7 @@ public class ContentList  implements Serializable {
   private String description = null;
   private String submitLabel = null;
   private ContentActions actions = null;
-  private List<ListItemComponent> components = null;
+  private List<ListItemComponent> components = new ArrayList<ListItemComponent>();
 
   
   /**

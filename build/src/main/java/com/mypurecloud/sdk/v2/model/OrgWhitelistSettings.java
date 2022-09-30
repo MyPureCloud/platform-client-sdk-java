@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class OrgWhitelistSettings  implements Serializable {
   
   private Boolean enableWhitelist = null;
-  private List<String> domainWhitelist = null;
+  private List<String> domainWhitelist = new ArrayList<String>();
 
   
   /**

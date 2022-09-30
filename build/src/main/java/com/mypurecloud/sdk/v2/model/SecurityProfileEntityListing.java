@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class SecurityProfileEntityListing  implements Serializable, PagedResource<SecurityProfile> {
   
-  private List<SecurityProfile> entities = null;
+  private List<SecurityProfile> entities = new ArrayList<SecurityProfile>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

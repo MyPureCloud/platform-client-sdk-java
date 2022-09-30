@@ -369,7 +369,7 @@ public class AuditQueryEntity  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ActionsEnum> actions = null;
+  private List<ActionsEnum> actions = new ArrayList<ActionsEnum>();
 
   
   /**

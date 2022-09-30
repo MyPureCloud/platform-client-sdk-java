@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class JourneyWebActionEventsNotificationActionMapPageUrlCondition  implements Serializable {
   
-  private List<String> values = null;
+  private List<String> values = new ArrayList<String>();
 
   private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
     public OperatorEnumDeserializer() {

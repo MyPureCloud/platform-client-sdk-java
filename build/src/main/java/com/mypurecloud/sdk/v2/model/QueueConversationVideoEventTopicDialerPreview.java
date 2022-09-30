@@ -29,7 +29,7 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
   private String contactId = null;
   private String contactListId = null;
   private String campaignId = null;
-  private List<QueueConversationVideoEventTopicPhoneNumberColumn> phoneNumberColumns = null;
+  private List<QueueConversationVideoEventTopicPhoneNumberColumn> phoneNumberColumns = new ArrayList<QueueConversationVideoEventTopicPhoneNumberColumn>();
 
   
   /**

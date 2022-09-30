@@ -79,11 +79,11 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup  implements Seriali
   }
   private MediaTypeEnum mediaType = null;
   private WfmBuIntradayDataUpdateTopicBuIntradayForecastData forecastDataSummary = null;
-  private List<WfmBuIntradayDataUpdateTopicBuIntradayForecastData> forecastDataPerInterval = null;
+  private List<WfmBuIntradayDataUpdateTopicBuIntradayForecastData> forecastDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayForecastData>();
   private WfmBuIntradayDataUpdateTopicBuIntradayScheduleData scheduleDataSummary = null;
-  private List<WfmBuIntradayDataUpdateTopicBuIntradayScheduleData> scheduleDataPerInterval = null;
+  private List<WfmBuIntradayDataUpdateTopicBuIntradayScheduleData> scheduleDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayScheduleData>();
   private WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData performancePredictionDataSummary = null;
-  private List<WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData> performancePredictionDataPerInterval = null;
+  private List<WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData> performancePredictionDataPerInterval = new ArrayList<WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData>();
 
   
   /**

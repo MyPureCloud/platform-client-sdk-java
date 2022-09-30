@@ -30,9 +30,9 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
   private Date endDate = null;
   private Integer intervalLengthMinutes = null;
   private Integer numberOfIntervals = null;
-  private List<WfmIntradayDataUpdateTopicIntradayMetric> metrics = null;
-  private List<String> queueIds = null;
-  private List<WfmIntradayDataUpdateTopicIntradayDataGroup> intradayDataGroupings = null;
+  private List<WfmIntradayDataUpdateTopicIntradayMetric> metrics = new ArrayList<WfmIntradayDataUpdateTopicIntradayMetric>();
+  private List<String> queueIds = new ArrayList<String>();
+  private List<WfmIntradayDataUpdateTopicIntradayDataGroup> intradayDataGroupings = new ArrayList<WfmIntradayDataUpdateTopicIntradayDataGroup>();
 
   
   /**

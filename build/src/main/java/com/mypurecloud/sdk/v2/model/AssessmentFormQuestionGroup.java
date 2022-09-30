@@ -33,7 +33,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
   private Boolean naEnabled = null;
   private Float weight = null;
   private Boolean manualWeight = null;
-  private List<AssessmentFormQuestion> questions = null;
+  private List<AssessmentFormQuestion> questions = new ArrayList<AssessmentFormQuestion>();
   private VisibilityCondition visibilityCondition = null;
   private String selfUri = null;
 

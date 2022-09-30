@@ -30,7 +30,7 @@ public class CallableTimeSet  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private List<CallableTime> callableTimes = null;
+  private List<CallableTime> callableTimes = new ArrayList<CallableTime>();
   private String selfUri = null;
 
   

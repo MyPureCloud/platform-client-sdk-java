@@ -63,8 +63,8 @@ public class UserMe  implements Serializable {
   private Chat chat = null;
   private String department = null;
   private String email = null;
-  private List<Contact> primaryContactInfo = null;
-  private List<Contact> addresses = null;
+  private List<Contact> primaryContactInfo = new ArrayList<Contact>();
+  private List<Contact> addresses = new ArrayList<Contact>();
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -117,9 +117,9 @@ public class UserMe  implements Serializable {
   private String title = null;
   private String username = null;
   private User manager = null;
-  private List<UserImage> images = null;
+  private List<UserImage> images = new ArrayList<UserImage>();
   private Integer version = null;
-  private List<String> certifications = null;
+  private List<String> certifications = new ArrayList<String>();
   private Biography biography = null;
   private EmployerInfo employerInfo = null;
   private RoutingStatus routingStatus = null;
@@ -130,12 +130,12 @@ public class UserMe  implements Serializable {
   private Geolocation geolocation = null;
   private UserStations station = null;
   private UserAuthorization authorization = null;
-  private List<String> profileSkills = null;
-  private List<Location> locations = null;
-  private List<Group> groups = null;
+  private List<String> profileSkills = new ArrayList<String>();
+  private List<Location> locations = new ArrayList<Location>();
+  private List<Group> groups = new ArrayList<Group>();
   private Team team = null;
-  private List<UserRoutingSkill> skills = null;
-  private List<UserRoutingLanguage> languages = null;
+  private List<UserRoutingSkill> skills = new ArrayList<UserRoutingSkill>();
+  private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
   private Boolean acdAutoAnswer = null;
   private String languagePreference = null;
   private OAuthLastTokenIssued lastTokenIssued = null;
@@ -143,18 +143,18 @@ public class UserMe  implements Serializable {
   private ServerDate date = null;
   private GeolocationSettings geolocationSettings = null;
   private Organization organization = null;
-  private List<OrganizationPresence> presenceDefinitions = null;
-  private List<LocationDefinition> locationDefinitions = null;
-  private List<DomainOrganizationRole> orgAuthorization = null;
-  private List<User> favorites = null;
-  private List<User> superiors = null;
-  private List<User> directReports = null;
+  private List<OrganizationPresence> presenceDefinitions = new ArrayList<OrganizationPresence>();
+  private List<LocationDefinition> locationDefinitions = new ArrayList<LocationDefinition>();
+  private List<DomainOrganizationRole> orgAuthorization = new ArrayList<DomainOrganizationRole>();
+  private List<User> favorites = new ArrayList<User>();
+  private List<User> superiors = new ArrayList<User>();
+  private List<User> directReports = new ArrayList<User>();
   private Adjacents adjacents = null;
-  private List<RoutingSkill> routingSkills = null;
+  private List<RoutingSkill> routingSkills = new ArrayList<RoutingSkill>();
   private FieldConfigs fieldConfigs = null;
   private TokenInfo token = null;
-  private List<Trustor> trustors = null;
-  private List<DomainOrganizationProduct> orgProducts = null;
+  private List<Trustor> trustors = new ArrayList<Trustor>();
+  private List<DomainOrganizationProduct> orgProducts = new ArrayList<DomainOrganizationProduct>();
   private String selfUri = null;
 
   

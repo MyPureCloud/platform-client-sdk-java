@@ -28,8 +28,8 @@ import java.io.Serializable;
 public class JourneyOutcomeEventsNotificationOutcomeAttributionMessage  implements Serializable {
   
   private JourneyOutcomeEventsNotificationOutcome outcome = null;
-  private List<JourneyOutcomeEventsNotificationOutcomeTouchpoint> outcomeTouchpoints = null;
-  private List<JourneyOutcomeEventsNotificationSegment> segmentAssignments = null;
+  private List<JourneyOutcomeEventsNotificationOutcomeTouchpoint> outcomeTouchpoints = new ArrayList<JourneyOutcomeEventsNotificationOutcomeTouchpoint>();
+  private List<JourneyOutcomeEventsNotificationSegment> segmentAssignments = new ArrayList<JourneyOutcomeEventsNotificationSegment>();
   private JourneyOutcomeEventsNotificationAssociatedValue associatedValue = null;
 
   

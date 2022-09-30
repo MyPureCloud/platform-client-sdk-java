@@ -25,8 +25,8 @@ import java.io.Serializable;
 public class BuPlanningGroupHeadcountForecast  implements Serializable {
   
   private PlanningGroupReference planningGroup = null;
-  private List<Double> requiredPerInterval = null;
-  private List<Double> requiredWithoutShrinkagePerInterval = null;
+  private List<Double> requiredPerInterval = new ArrayList<Double>();
+  private List<Double> requiredWithoutShrinkagePerInterval = new ArrayList<Double>();
 
   
   /**

@@ -26,7 +26,7 @@ public class AuthzSubject  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<AuthzGrant> grants = null;
+  private List<AuthzGrant> grants = new ArrayList<AuthzGrant>();
   private Integer version = null;
   private String selfUri = null;
 

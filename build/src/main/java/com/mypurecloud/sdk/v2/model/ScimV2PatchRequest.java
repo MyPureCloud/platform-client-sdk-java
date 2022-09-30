@@ -25,8 +25,8 @@ import java.io.Serializable;
 
 public class ScimV2PatchRequest  implements Serializable {
   
-  private List<String> schemas = null;
-  private List<ScimV2PatchOperation> operations = null;
+  private List<String> schemas = new ArrayList<String>();
+  private List<ScimV2PatchOperation> operations = new ArrayList<ScimV2PatchOperation>();
 
   
   /**

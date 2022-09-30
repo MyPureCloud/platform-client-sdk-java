@@ -27,8 +27,8 @@ public class ShiftTradeMatchReviewResponse  implements Serializable {
   
   private ShiftTradeMatchReviewUserResponse initiatingUser = null;
   private ShiftTradeMatchReviewUserResponse receivingUser = null;
-  private List<ShiftTradeMatchViolation> violations = null;
-  private List<ShiftTradeMatchViolation> adminReviewViolations = null;
+  private List<ShiftTradeMatchViolation> violations = new ArrayList<ShiftTradeMatchViolation>();
+  private List<ShiftTradeMatchViolation> adminReviewViolations = new ArrayList<ShiftTradeMatchViolation>();
 
   
   /**

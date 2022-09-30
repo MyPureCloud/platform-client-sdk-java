@@ -24,9 +24,9 @@ import java.io.Serializable;
 public class LastResultByColumnConditionSettings  implements Serializable {
   
   private String emailColumnName = null;
-  private List<String> emailWrapupCodes = null;
+  private List<String> emailWrapupCodes = new ArrayList<String>();
   private String smsColumnName = null;
-  private List<String> smsWrapupCodes = null;
+  private List<String> smsWrapupCodes = new ArrayList<String>();
 
   
   /**

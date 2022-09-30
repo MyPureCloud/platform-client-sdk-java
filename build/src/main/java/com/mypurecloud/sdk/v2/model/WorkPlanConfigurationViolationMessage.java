@@ -105,7 +105,7 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<WorkPlanValidationMessageArgument> arguments = null;
+  private List<WorkPlanValidationMessageArgument> arguments = new ArrayList<WorkPlanValidationMessageArgument>();
 
   private static class SeverityEnumDeserializer extends StdDeserializer<SeverityEnum> {
     public SeverityEnumDeserializer() {

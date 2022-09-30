@@ -27,7 +27,7 @@ public class AssessmentScoringSet  implements Serializable {
   private Float totalScore = null;
   private Float totalCriticalScore = null;
   private Float totalNonCriticalScore = null;
-  private List<AssessmentQuestionGroupScore> questionGroupScores = null;
+  private List<AssessmentQuestionGroupScore> questionGroupScores = new ArrayList<AssessmentQuestionGroupScore>();
 
   private static class FailureReasonsEnumDeserializer extends StdDeserializer<FailureReasonsEnum> {
     public FailureReasonsEnumDeserializer() {
@@ -75,7 +75,7 @@ public class AssessmentScoringSet  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FailureReasonsEnum> failureReasons = null;
+  private List<FailureReasonsEnum> failureReasons = new ArrayList<FailureReasonsEnum>();
   private String comments = null;
   private String agentComments = null;
   private Boolean isPassed = null;

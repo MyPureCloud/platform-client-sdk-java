@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class TimeOffPlanListing  implements Serializable {
   
-  private List<TimeOffPlan> entities = null;
+  private List<TimeOffPlan> entities = new ArrayList<TimeOffPlan>();
 
   
   /**

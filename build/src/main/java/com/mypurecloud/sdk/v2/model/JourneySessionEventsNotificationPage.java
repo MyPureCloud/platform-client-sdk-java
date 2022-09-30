@@ -32,7 +32,7 @@ public class JourneySessionEventsNotificationPage  implements Serializable {
   private String lang = null;
   private String pathname = null;
   private String queryString = null;
-  private List<String> breadcrumb = null;
+  private List<String> breadcrumb = new ArrayList<String>();
 
   
   /**

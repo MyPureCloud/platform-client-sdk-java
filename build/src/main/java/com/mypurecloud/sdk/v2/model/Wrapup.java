@@ -27,7 +27,7 @@ public class Wrapup  implements Serializable {
   private String code = null;
   private String name = null;
   private String notes = null;
-  private List<String> tags = null;
+  private List<String> tags = new ArrayList<String>();
   private Integer durationSeconds = null;
   private Date endTime = null;
   private Boolean provisional = null;

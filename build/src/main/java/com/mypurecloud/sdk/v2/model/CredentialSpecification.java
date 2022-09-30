@@ -26,7 +26,7 @@ public class CredentialSpecification  implements Serializable {
   
   private Boolean required = null;
   private String title = null;
-  private List<String> credentialTypes = null;
+  private List<String> credentialTypes = new ArrayList<String>();
 
   
   @ApiModelProperty(example = "null", value = "Indicates if the credential must be provided in order for the integration configuration to be valid.")

@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class TeamEntityListing  implements Serializable {
   
-  private List<Team> entities = null;
+  private List<Team> entities = new ArrayList<Team>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

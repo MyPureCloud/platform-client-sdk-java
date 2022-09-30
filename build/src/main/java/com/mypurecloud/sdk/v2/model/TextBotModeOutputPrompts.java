@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TextBotModeOutputPrompts  implements Serializable {
   
-  private List<TextBotPromptSegment> segments = null;
+  private List<TextBotPromptSegment> segments = new ArrayList<TextBotPromptSegment>();
 
   
   /**

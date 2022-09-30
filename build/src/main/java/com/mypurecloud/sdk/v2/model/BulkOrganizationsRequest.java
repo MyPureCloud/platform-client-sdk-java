@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BulkOrganizationsRequest  implements Serializable {
   
-  private List<ExternalOrganization> entities = null;
+  private List<ExternalOrganization> entities = new ArrayList<ExternalOrganization>();
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class AuthzDivisionEntityListing  implements Serializable, PagedResource<AuthzDivision> {
   
-  private List<AuthzDivision> entities = null;
+  private List<AuthzDivision> entities = new ArrayList<AuthzDivision>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class Actions  implements Serializable {
   
-  private List<SkillsToRemove> skillsToRemove = null;
+  private List<SkillsToRemove> skillsToRemove = new ArrayList<SkillsToRemove>();
 
   
   /**

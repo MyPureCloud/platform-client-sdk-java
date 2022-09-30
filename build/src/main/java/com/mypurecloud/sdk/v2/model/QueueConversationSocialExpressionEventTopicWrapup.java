@@ -27,7 +27,7 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
   
   private String code = null;
   private String notes = null;
-  private List<String> tags = null;
+  private List<String> tags = new ArrayList<String>();
   private Integer durationSeconds = null;
   private Date endTime = null;
 

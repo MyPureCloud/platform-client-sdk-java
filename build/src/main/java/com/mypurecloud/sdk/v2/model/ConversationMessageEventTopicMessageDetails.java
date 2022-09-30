@@ -86,8 +86,8 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
     }
   }
   private MessageStatusEnum messageStatus = null;
-  private List<ConversationMessageEventTopicMessageMedia> media = null;
-  private List<ConversationMessageEventTopicMessageSticker> stickers = null;
+  private List<ConversationMessageEventTopicMessageMedia> media = new ArrayList<ConversationMessageEventTopicMessageMedia>();
+  private List<ConversationMessageEventTopicMessageSticker> stickers = new ArrayList<ConversationMessageEventTopicMessageSticker>();
   private ConversationMessageEventTopicErrorDetails errorInfo = null;
   private ConversationMessageEventTopicMessageMetadata messageMetadata = null;
 

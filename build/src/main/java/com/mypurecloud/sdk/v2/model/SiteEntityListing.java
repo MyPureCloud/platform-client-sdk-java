@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class SiteEntityListing  implements Serializable, PagedResource<Site> {
   
-  private List<Site> entities = null;
+  private List<Site> entities = new ArrayList<Site>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

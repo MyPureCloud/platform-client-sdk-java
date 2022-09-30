@@ -77,7 +77,7 @@ public class MinerExecuteRequest  implements Serializable {
     }
   }
   private MediaTypeEnum mediaType = null;
-  private List<String> queueIds = null;
+  private List<String> queueIds = new ArrayList<String>();
 
   
   /**

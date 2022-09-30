@@ -28,7 +28,7 @@ public class ChatMessageUser  implements Serializable {
   private String name = null;
   private String displayName = null;
   private String username = null;
-  private List<UserImage> images = null;
+  private List<UserImage> images = new ArrayList<UserImage>();
 
   
   /**

@@ -26,7 +26,7 @@ public class DocumentArticle  implements Serializable {
   
   private String title = null;
   private ArticleContent content = null;
-  private List<String> alternatives = null;
+  private List<String> alternatives = new ArrayList<String>();
 
   
   /**

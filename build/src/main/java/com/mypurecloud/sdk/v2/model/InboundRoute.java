@@ -31,13 +31,13 @@ public class InboundRoute  implements Serializable {
   private String pattern = null;
   private DomainEntityRef queue = null;
   private Integer priority = null;
-  private List<DomainEntityRef> skills = null;
+  private List<DomainEntityRef> skills = new ArrayList<DomainEntityRef>();
   private DomainEntityRef language = null;
   private String fromName = null;
   private String fromEmail = null;
   private DomainEntityRef flow = null;
   private QueueEmailAddress replyEmailAddress = null;
-  private List<EmailAddress> autoBcc = null;
+  private List<EmailAddress> autoBcc = new ArrayList<EmailAddress>();
   private DomainEntityRef spamFlow = null;
   private String selfUri = null;
 

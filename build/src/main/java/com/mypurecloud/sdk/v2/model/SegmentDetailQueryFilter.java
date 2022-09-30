@@ -74,8 +74,8 @@ public class SegmentDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<SegmentDetailQueryClause> clauses = null;
-  private List<SegmentDetailQueryPredicate> predicates = null;
+  private List<SegmentDetailQueryClause> clauses = new ArrayList<SegmentDetailQueryClause>();
+  private List<SegmentDetailQueryPredicate> predicates = new ArrayList<SegmentDetailQueryPredicate>();
 
   
   /**

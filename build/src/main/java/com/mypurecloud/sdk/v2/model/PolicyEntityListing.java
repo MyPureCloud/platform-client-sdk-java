@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class PolicyEntityListing  implements Serializable, PagedResource<Policy> {
   
-  private List<Policy> entities = null;
+  private List<Policy> entities = new ArrayList<Policy>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

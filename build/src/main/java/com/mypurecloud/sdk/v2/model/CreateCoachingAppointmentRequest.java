@@ -31,11 +31,11 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
   private Date dateStart = null;
   private Integer lengthInMinutes = null;
   private String facilitatorId = null;
-  private List<String> attendeeIds = null;
-  private List<String> conversationIds = null;
-  private List<String> documentIds = null;
+  private List<String> attendeeIds = new ArrayList<String>();
+  private List<String> conversationIds = new ArrayList<String>();
+  private List<String> documentIds = new ArrayList<String>();
   private WfmScheduleReference wfmSchedule = null;
-  private List<String> externalLinks = null;
+  private List<String> externalLinks = new ArrayList<String>();
 
   
   /**

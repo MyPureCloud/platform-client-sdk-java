@@ -83,10 +83,10 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     }
   }
   private ImpactEnum impact = null;
-  private List<HistoricalAdherenceExceptionInfo> exceptionInfo = null;
-  private List<HistoricalAdherenceDayMetrics> dayMetrics = null;
+  private List<HistoricalAdherenceExceptionInfo> exceptionInfo = new ArrayList<HistoricalAdherenceExceptionInfo>();
+  private List<HistoricalAdherenceDayMetrics> dayMetrics = new ArrayList<HistoricalAdherenceDayMetrics>();
   private Date actualsEndDate = null;
-  private List<HistoricalAdherenceActuals> actuals = null;
+  private List<HistoricalAdherenceActuals> actuals = new ArrayList<HistoricalAdherenceActuals>();
 
   
   /**

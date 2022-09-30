@@ -86,7 +86,7 @@ public class UCIntegration  implements Serializable {
   private Map<String, UCIcon> badgeIcons = null;
   private Map<String, UCI10n> i10n = null;
   private Boolean polledPresence = null;
-  private List<String> userPermissions = null;
+  private List<String> userPermissions = new ArrayList<String>();
   private String selfUri = null;
 
   

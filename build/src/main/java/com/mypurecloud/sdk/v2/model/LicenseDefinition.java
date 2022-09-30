@@ -27,8 +27,8 @@ public class LicenseDefinition  implements Serializable {
   private String id = null;
   private String description = null;
   private Permissions permissions = null;
-  private List<AddressableLicenseDefinition> prerequisites = null;
-  private List<LicenseDefinition> comprises = null;
+  private List<AddressableLicenseDefinition> prerequisites = new ArrayList<AddressableLicenseDefinition>();
+  private List<LicenseDefinition> comprises = new ArrayList<LicenseDefinition>();
   private String selfUri = null;
 
   

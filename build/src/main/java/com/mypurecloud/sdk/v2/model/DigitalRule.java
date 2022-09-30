@@ -77,8 +77,8 @@ public class DigitalRule  implements Serializable {
     }
   }
   private CategoryEnum category = null;
-  private List<DigitalCondition> conditions = null;
-  private List<DigitalAction> actions = null;
+  private List<DigitalCondition> conditions = new ArrayList<DigitalCondition>();
+  private List<DigitalAction> actions = new ArrayList<DigitalAction>();
 
   
   @ApiModelProperty(example = "null", value = "The identifier of the rule.")

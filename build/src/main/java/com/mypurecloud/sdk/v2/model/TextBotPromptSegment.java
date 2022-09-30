@@ -77,7 +77,7 @@ public class TextBotPromptSegment  implements Serializable {
   }
   private TypeEnum type = null;
   private Format format = null;
-  private List<MessageContent> content = null;
+  private List<MessageContent> content = new ArrayList<MessageContent>();
 
   
   /**

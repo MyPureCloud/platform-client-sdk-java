@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class OutboundRouteEntityListing  implements Serializable, PagedResource<OutboundRoute> {
   
-  private List<OutboundRoute> entities = null;
+  private List<OutboundRoute> entities = new ArrayList<OutboundRoute>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

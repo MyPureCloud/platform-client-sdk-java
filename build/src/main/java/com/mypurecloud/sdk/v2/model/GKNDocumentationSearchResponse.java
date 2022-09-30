@@ -31,8 +31,8 @@ public class GKNDocumentationSearchResponse  implements Serializable {
   private String previousPage = null;
   private String currentPage = null;
   private String nextPage = null;
-  private List<String> types = null;
-  private List<GKNDocumentationResult> results = null;
+  private List<String> types = new ArrayList<String>();
+  private List<GKNDocumentationResult> results = new ArrayList<GKNDocumentationResult>();
 
   
   /**

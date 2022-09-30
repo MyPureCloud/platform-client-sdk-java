@@ -40,7 +40,7 @@ public class AuditMessage  implements Serializable {
   private String status = null;
   private String actionContext = null;
   private String action = null;
-  private List<Change> changes = null;
+  private List<Change> changes = new ArrayList<Change>();
   private AuditEntity entity = null;
   private ServiceContext serviceContext = null;
 

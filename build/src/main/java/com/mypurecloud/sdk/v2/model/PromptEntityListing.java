@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class PromptEntityListing  implements Serializable, PagedResource<Prompt> {
   
-  private List<Prompt> entities = null;
+  private List<Prompt> entities = new ArrayList<Prompt>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

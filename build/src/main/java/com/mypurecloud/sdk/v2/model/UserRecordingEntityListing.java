@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class UserRecordingEntityListing  implements Serializable, PagedResource<UserRecording> {
   
-  private List<UserRecording> entities = null;
+  private List<UserRecording> entities = new ArrayList<UserRecording>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

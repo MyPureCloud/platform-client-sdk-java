@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BusinessUnitListing  implements Serializable {
   
-  private List<BusinessUnitListItem> entities = null;
+  private List<BusinessUnitListItem> entities = new ArrayList<BusinessUnitListItem>();
 
   
   /**

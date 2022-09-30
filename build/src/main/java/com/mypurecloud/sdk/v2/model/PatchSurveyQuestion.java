@@ -128,7 +128,7 @@ public class PatchSurveyQuestion  implements Serializable {
     }
   }
   private CustomerPropertyEnum customerProperty = null;
-  private List<String> choices = null;
+  private List<String> choices = new ArrayList<String>();
   private Boolean isMandatory = null;
 
   

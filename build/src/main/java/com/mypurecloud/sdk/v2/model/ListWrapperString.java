@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class ListWrapperString  implements Serializable {
   
-  private List<String> values = null;
+  private List<String> values = new ArrayList<String>();
 
   
   /**

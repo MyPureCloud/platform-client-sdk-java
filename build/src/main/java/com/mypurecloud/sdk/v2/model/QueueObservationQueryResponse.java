@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class QueueObservationQueryResponse  implements Serializable {
   
   private Map<String, List<String>> systemToOrganizationMappings = null;
-  private List<QueueObservationDataContainer> results = null;
+  private List<QueueObservationDataContainer> results = new ArrayList<QueueObservationDataContainer>();
 
   
   /**

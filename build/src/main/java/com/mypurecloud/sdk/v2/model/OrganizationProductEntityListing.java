@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class OrganizationProductEntityListing  implements Serializable {
   
-  private List<DomainOrganizationProduct> entities = null;
+  private List<DomainOrganizationProduct> entities = new ArrayList<DomainOrganizationProduct>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

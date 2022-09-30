@@ -25,10 +25,10 @@ import java.io.Serializable;
 
 public class UserAuthorization  implements Serializable {
   
-  private List<DomainRole> roles = null;
-  private List<DomainRole> unusedRoles = null;
-  private List<String> permissions = null;
-  private List<ResourcePermissionPolicy> permissionPolicies = null;
+  private List<DomainRole> roles = new ArrayList<DomainRole>();
+  private List<DomainRole> unusedRoles = new ArrayList<DomainRole>();
+  private List<String> permissions = new ArrayList<String>();
+  private List<ResourcePermissionPolicy> permissionPolicies = new ArrayList<ResourcePermissionPolicy>();
 
   
   /**

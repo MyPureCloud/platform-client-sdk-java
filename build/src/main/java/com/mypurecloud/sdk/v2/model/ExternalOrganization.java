@@ -43,9 +43,9 @@ public class ExternalOrganization  implements Serializable {
   private PhoneNumber faxNumber = null;
   private Long employeeCount = null;
   private Long revenue = null;
-  private List<String> tags = null;
-  private List<String> websites = null;
-  private List<Ticker> tickers = null;
+  private List<String> tags = new ArrayList<String>();
+  private List<String> websites = new ArrayList<String>();
+  private List<Ticker> tickers = new ArrayList<Ticker>();
   private TwitterId twitterId = null;
   private String externalSystemUrl = null;
   private Date modifyDate = null;
@@ -53,7 +53,7 @@ public class ExternalOrganization  implements Serializable {
   private Trustor trustor = null;
   private DataSchema schema = null;
   private Map<String, Object> customFields = null;
-  private List<ExternalDataSource> externalDataSources = null;
+  private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
   private String selfUri = null;
 
   

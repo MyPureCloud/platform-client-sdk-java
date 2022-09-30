@@ -73,7 +73,7 @@ public class ShiftStartVariance  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ApplicableDaysEnum> applicableDays = null;
+  private List<ApplicableDaysEnum> applicableDays = new ArrayList<ApplicableDaysEnum>();
   private Integer maxShiftStartVarianceMinutes = null;
 
   

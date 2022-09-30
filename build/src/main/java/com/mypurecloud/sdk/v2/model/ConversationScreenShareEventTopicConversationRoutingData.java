@@ -28,8 +28,8 @@ public class ConversationScreenShareEventTopicConversationRoutingData  implement
   private ConversationScreenShareEventTopicUriReference queue = null;
   private ConversationScreenShareEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<ConversationScreenShareEventTopicUriReference> skills = null;
-  private List<ConversationScreenShareEventTopicScoredAgent> scoredAgents = null;
+  private List<ConversationScreenShareEventTopicUriReference> skills = new ArrayList<ConversationScreenShareEventTopicUriReference>();
+  private List<ConversationScreenShareEventTopicScoredAgent> scoredAgents = new ArrayList<ConversationScreenShareEventTopicScoredAgent>();
 
   
   /**

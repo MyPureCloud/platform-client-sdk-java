@@ -26,7 +26,7 @@ public class ScreenRecordingMetaDataRequest  implements Serializable {
   
   private String participantJid = null;
   private String roomId = null;
-  private List<ScreenRecordingMetaData> metaData = null;
+  private List<ScreenRecordingMetaData> metaData = new ArrayList<ScreenRecordingMetaData>();
 
   
   /**

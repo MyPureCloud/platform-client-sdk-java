@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class WfmHistoricalAdherenceResultWrapper  implements Serializable {
   
   private String entityId = null;
-  private List<HistoricalAdherenceQueryResult> data = null;
+  private List<HistoricalAdherenceQueryResult> data = new ArrayList<HistoricalAdherenceQueryResult>();
   private Map<String, String> lookupIdToSecondaryPresenceId = null;
 
   

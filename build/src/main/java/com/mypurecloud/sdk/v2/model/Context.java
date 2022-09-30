@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class Context  implements Serializable {
   
-  private List<ContextPattern> patterns = null;
+  private List<ContextPattern> patterns = new ArrayList<ContextPattern>();
 
   
   /**

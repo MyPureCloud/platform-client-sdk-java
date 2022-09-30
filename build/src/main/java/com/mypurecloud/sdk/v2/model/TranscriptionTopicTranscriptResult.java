@@ -77,7 +77,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     }
   }
   private ChannelEnum channel = null;
-  private List<TranscriptionTopicTranscriptAlternative> alternatives = null;
+  private List<TranscriptionTopicTranscriptAlternative> alternatives = new ArrayList<TranscriptionTopicTranscriptAlternative>();
   private String agentAssistantId = null;
   private String engineId = null;
   private String dialect = null;

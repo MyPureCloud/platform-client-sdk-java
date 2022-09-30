@@ -79,8 +79,8 @@ public class GroupUpdate  implements Serializable {
   }
   private StateEnum state = null;
   private Integer version = null;
-  private List<UserImage> images = null;
-  private List<GroupContact> addresses = null;
+  private List<UserImage> images = new ArrayList<UserImage>();
+  private List<GroupContact> addresses = new ArrayList<GroupContact>();
   private Boolean rulesVisible = null;
 
   private static class VisibilityEnumDeserializer extends StdDeserializer<VisibilityEnum> {
@@ -131,7 +131,7 @@ public class GroupUpdate  implements Serializable {
     }
   }
   private VisibilityEnum visibility = null;
-  private List<String> ownerIds = null;
+  private List<String> ownerIds = new ArrayList<String>();
   private String selfUri = null;
 
   

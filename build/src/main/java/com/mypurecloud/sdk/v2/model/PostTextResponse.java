@@ -76,7 +76,7 @@ public class PostTextResponse  implements Serializable {
     }
   }
   private BotStateEnum botState = null;
-  private List<PostTextMessage> replyMessages = null;
+  private List<PostTextMessage> replyMessages = new ArrayList<PostTextMessage>();
   private String intentName = null;
   private Map<String, String> slots = null;
   private String botCorrelationId = null;

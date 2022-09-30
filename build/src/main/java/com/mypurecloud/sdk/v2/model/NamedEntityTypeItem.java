@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class NamedEntityTypeItem  implements Serializable {
   
   private String value = null;
-  private List<String> synonyms = null;
+  private List<String> synonyms = new ArrayList<String>();
 
   
   /**

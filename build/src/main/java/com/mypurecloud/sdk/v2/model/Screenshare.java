@@ -153,7 +153,7 @@ public class Screenshare  implements Serializable {
   private Date disconnectedTime = null;
   private String provider = null;
   private String peerId = null;
-  private List<Segment> segments = null;
+  private List<Segment> segments = new ArrayList<Segment>();
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;

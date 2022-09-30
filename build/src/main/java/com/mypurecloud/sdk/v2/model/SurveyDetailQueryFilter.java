@@ -74,8 +74,8 @@ public class SurveyDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<SurveyDetailQueryClause> clauses = null;
-  private List<SurveyDetailQueryPredicate> predicates = null;
+  private List<SurveyDetailQueryClause> clauses = new ArrayList<SurveyDetailQueryClause>();
+  private List<SurveyDetailQueryPredicate> predicates = new ArrayList<SurveyDetailQueryPredicate>();
 
   
   /**

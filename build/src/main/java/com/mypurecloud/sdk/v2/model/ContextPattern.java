@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ContextPattern  implements Serializable {
   
-  private List<EntityTypeCriteria> criteria = null;
+  private List<EntityTypeCriteria> criteria = new ArrayList<EntityTypeCriteria>();
 
   
   /**

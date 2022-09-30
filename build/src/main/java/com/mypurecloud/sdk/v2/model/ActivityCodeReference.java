@@ -26,7 +26,7 @@ public class ActivityCodeReference  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<SecondaryPresence> secondaryPresences = null;
+  private List<SecondaryPresence> secondaryPresences = new ArrayList<SecondaryPresence>();
   private String selfUri = null;
 
   

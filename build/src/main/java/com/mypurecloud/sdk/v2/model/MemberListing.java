@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class MemberListing  implements Serializable {
   
-  private List<Member> entities = null;
+  private List<Member> entities = new ArrayList<Member>();
 
   
   /**

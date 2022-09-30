@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class DocumentListing  implements Serializable {
   
-  private List<KnowledgeDocument> entities = null;
+  private List<KnowledgeDocument> entities = new ArrayList<KnowledgeDocument>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

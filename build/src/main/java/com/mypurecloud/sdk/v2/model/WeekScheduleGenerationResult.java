@@ -26,7 +26,7 @@ public class WeekScheduleGenerationResult  implements Serializable {
   
   private Boolean failed = null;
   private String runId = null;
-  private List<ScheduleGenerationWarning> agentWarnings = null;
+  private List<ScheduleGenerationWarning> agentWarnings = new ArrayList<ScheduleGenerationWarning>();
   private Integer agentWarningCount = null;
 
   

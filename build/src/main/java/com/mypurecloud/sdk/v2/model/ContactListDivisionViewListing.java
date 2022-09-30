@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ContactListDivisionViewListing  implements Serializable, PagedResource<ContactListDivisionView> {
   
-  private List<ContactListDivisionView> entities = null;
+  private List<ContactListDivisionView> entities = new ArrayList<ContactListDivisionView>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

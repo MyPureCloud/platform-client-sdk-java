@@ -164,11 +164,11 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
   }
   private ViewTypeEnum viewType = null;
   private String dateLimitations = null;
-  private List<String> requiredFilters = null;
-  private List<String> supportedFilters = null;
-  private List<String> requiredColumnIds = null;
+  private List<String> requiredFilters = new ArrayList<String>();
+  private List<String> supportedFilters = new ArrayList<String>();
+  private List<String> requiredColumnIds = new ArrayList<String>();
   private Map<String, List<String>> dependentColumnIds = null;
-  private List<String> availableColumnIds = null;
+  private List<String> availableColumnIds = new ArrayList<String>();
   private String selfUri = null;
 
   

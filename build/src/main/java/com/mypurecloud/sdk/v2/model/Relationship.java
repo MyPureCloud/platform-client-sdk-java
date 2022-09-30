@@ -30,7 +30,7 @@ public class Relationship  implements Serializable {
   private User user = null;
   private ExternalOrganization externalOrganization = null;
   private String relationship = null;
-  private List<ExternalDataSource> externalDataSources = null;
+  private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
   private String selfUri = null;
 
   

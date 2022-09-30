@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class ConstraintConflictMessage  implements Serializable {
   
   private WorkPlanConstraintConflictMessage message = null;
-  private List<WorkPlanConstraintMessage> conflictedConstraintMessages = null;
+  private List<WorkPlanConstraintMessage> conflictedConstraintMessages = new ArrayList<WorkPlanConstraintMessage>();
 
   
   /**

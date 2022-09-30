@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ManagementUnitListing  implements Serializable, PagedResource<ManagementUnit> {
   
-  private List<ManagementUnit> entities = null;
+  private List<ManagementUnit> entities = new ArrayList<ManagementUnit>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

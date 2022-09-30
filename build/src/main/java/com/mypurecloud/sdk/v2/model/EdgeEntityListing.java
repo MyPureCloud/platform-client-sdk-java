@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class EdgeEntityListing  implements Serializable, PagedResource<Edge> {
   
-  private List<Edge> entities = null;
+  private List<Edge> entities = new ArrayList<Edge>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

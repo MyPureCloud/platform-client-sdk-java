@@ -155,7 +155,7 @@ public class Video  implements Serializable {
   private Date disconnectedTime = null;
   private String provider = null;
   private String peerId = null;
-  private List<String> msids = null;
+  private List<String> msids = new ArrayList<String>();
   private Address self = null;
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;

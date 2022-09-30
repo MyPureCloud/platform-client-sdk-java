@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class LabelListing  implements Serializable {
   
-  private List<LabelResponse> entities = null;
+  private List<LabelResponse> entities = new ArrayList<LabelResponse>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;

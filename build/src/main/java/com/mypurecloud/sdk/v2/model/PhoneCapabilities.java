@@ -79,7 +79,7 @@ public class PhoneCapabilities  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaCodecsEnum> mediaCodecs = null;
+  private List<MediaCodecsEnum> mediaCodecs = new ArrayList<MediaCodecsEnum>();
   private Boolean cdm = null;
 
   

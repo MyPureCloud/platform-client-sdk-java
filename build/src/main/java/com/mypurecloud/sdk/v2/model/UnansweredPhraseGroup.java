@@ -26,7 +26,7 @@ public class UnansweredPhraseGroup  implements Serializable {
   
   private String id = null;
   private String label = null;
-  private List<UnansweredPhrase> phrases = null;
+  private List<UnansweredPhrase> phrases = new ArrayList<UnansweredPhrase>();
   private Integer unlinkedPhraseHitCount = null;
   private Integer unlinkedPhraseCount = null;
   private String selfUri = null;

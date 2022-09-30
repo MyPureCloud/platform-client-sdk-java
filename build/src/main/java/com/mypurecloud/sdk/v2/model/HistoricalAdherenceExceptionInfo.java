@@ -81,7 +81,7 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     }
   }
   private ScheduledActivityCategoryEnum scheduledActivityCategory = null;
-  private List<String> scheduledSecondaryPresenceLookupIds = null;
+  private List<String> scheduledSecondaryPresenceLookupIds = new ArrayList<String>();
   private String actualActivityCodeId = null;
 
   private static class ActualActivityCategoryEnumDeserializer extends StdDeserializer<ActualActivityCategoryEnum> {

@@ -24,9 +24,9 @@ import java.io.Serializable;
 
 public class SuggestSearchRequest  implements Serializable {
   
-  private List<String> expand = null;
-  private List<String> types = null;
-  private List<SuggestSearchCriteria> query = null;
+  private List<String> expand = new ArrayList<String>();
+  private List<String> types = new ArrayList<String>();
+  private List<SuggestSearchCriteria> query = new ArrayList<SuggestSearchCriteria>();
 
   
   /**

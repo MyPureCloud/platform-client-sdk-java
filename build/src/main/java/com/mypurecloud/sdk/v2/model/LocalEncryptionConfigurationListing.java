@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class LocalEncryptionConfigurationListing  implements Serializable {
   
   private Long total = null;
-  private List<LocalEncryptionConfiguration> entities = null;
+  private List<LocalEncryptionConfiguration> entities = new ArrayList<LocalEncryptionConfiguration>();
   private String selfUri = null;
 
   

@@ -26,7 +26,7 @@ import java.io.Serializable;
 
 public class EmailConfig  implements Serializable {
   
-  private List<String> emailColumns = null;
+  private List<String> emailColumns = new ArrayList<String>();
   private DomainEntityRef contentTemplate = null;
   private FromEmailAddress fromAddress = null;
   private ReplyToEmailAddress replyToAddress = null;

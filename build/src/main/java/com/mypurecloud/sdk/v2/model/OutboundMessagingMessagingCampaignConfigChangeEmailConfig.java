@@ -27,7 +27,7 @@ import java.io.Serializable;
 
 public class OutboundMessagingMessagingCampaignConfigChangeEmailConfig  implements Serializable {
   
-  private List<String> emailColumns = null;
+  private List<String> emailColumns = new ArrayList<String>();
   private OutboundMessagingMessagingCampaignConfigChangeResponseRef contentTemplate = null;
   private OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress fromAddress = null;
   private OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress replyToAddress = null;

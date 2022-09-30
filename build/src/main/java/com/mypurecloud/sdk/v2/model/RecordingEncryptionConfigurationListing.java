@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class RecordingEncryptionConfigurationListing  implements Serializable {
   
   private Long total = null;
-  private List<RecordingEncryptionConfiguration> entities = null;
+  private List<RecordingEncryptionConfiguration> entities = new ArrayList<RecordingEncryptionConfiguration>();
   private String selfUri = null;
 
   

@@ -74,8 +74,8 @@ public class UserDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<UserDetailQueryClause> clauses = null;
-  private List<UserDetailQueryPredicate> predicates = null;
+  private List<UserDetailQueryClause> clauses = new ArrayList<UserDetailQueryClause>();
+  private List<UserDetailQueryPredicate> predicates = new ArrayList<UserDetailQueryPredicate>();
 
   
   /**

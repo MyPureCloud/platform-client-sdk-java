@@ -35,9 +35,9 @@ public class WfmAgent  implements Serializable {
   private WorkPlanReference workPlan = null;
   private WorkPlanRotationReference workPlanRotation = null;
   private Boolean acceptDirectShiftTrades = null;
-  private List<QueueReference> queues = null;
-  private List<LanguageReference> languages = null;
-  private List<RoutingSkillReference> skills = null;
+  private List<QueueReference> queues = new ArrayList<QueueReference>();
+  private List<LanguageReference> languages = new ArrayList<LanguageReference>();
+  private List<RoutingSkillReference> skills = new ArrayList<RoutingSkillReference>();
   private Boolean schedulable = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;

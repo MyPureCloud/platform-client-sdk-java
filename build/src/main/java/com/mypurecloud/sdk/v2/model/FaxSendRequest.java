@@ -28,7 +28,7 @@ public class FaxSendRequest  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<String> addresses = null;
+  private List<String> addresses = new ArrayList<String>();
   private String documentId = null;
 
   private static class ContentTypeEnumDeserializer extends StdDeserializer<ContentTypeEnum> {

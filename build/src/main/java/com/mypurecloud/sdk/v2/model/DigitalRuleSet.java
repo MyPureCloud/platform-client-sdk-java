@@ -32,7 +32,7 @@ public class DigitalRuleSet  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private DomainEntityRef contactList = null;
-  private List<DigitalRule> rules = null;
+  private List<DigitalRule> rules = new ArrayList<DigitalRule>();
   private String selfUri = null;
 
   

@@ -33,8 +33,8 @@ public class CampaignRule  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private CampaignRuleEntities campaignRuleEntities = null;
-  private List<CampaignRuleCondition> campaignRuleConditions = null;
-  private List<CampaignRuleAction> campaignRuleActions = null;
+  private List<CampaignRuleCondition> campaignRuleConditions = new ArrayList<CampaignRuleCondition>();
+  private List<CampaignRuleAction> campaignRuleActions = new ArrayList<CampaignRuleAction>();
   private Boolean matchAnyConditions = null;
   private Boolean enabled = null;
   private String selfUri = null;

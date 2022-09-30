@@ -26,8 +26,8 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
   
   private String id = null;
   private String name = null;
-  private List<ConversationScreenShareEventTopicScreenShareMediaParticipant> participants = null;
-  private List<String> otherMediaUris = null;
+  private List<ConversationScreenShareEventTopicScreenShareMediaParticipant> participants = new ArrayList<ConversationScreenShareEventTopicScreenShareMediaParticipant>();
+  private List<String> otherMediaUris = new ArrayList<String>();
 
   
   /**

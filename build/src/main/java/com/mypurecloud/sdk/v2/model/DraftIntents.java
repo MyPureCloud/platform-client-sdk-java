@@ -25,7 +25,7 @@ public class DraftIntents  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<String> utterances = null;
+  private List<String> utterances = new ArrayList<String>();
   private String selfUri = null;
 
   

@@ -136,8 +136,8 @@ public class TimeOffRequest  implements Serializable {
     }
   }
   private SubstatusEnum substatus = null;
-  private List<Date> partialDayStartDateTimes = null;
-  private List<String> fullDayManagementUnitDates = null;
+  private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
+  private List<String> fullDayManagementUnitDates = new ArrayList<String>();
   private Integer dailyDurationMinutes = null;
   private String notes = null;
   private UserReference submittedBy = null;

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CallConversationEntityListing  implements Serializable, PagedResource<CallConversation> {
   
-  private List<CallConversation> entities = null;
+  private List<CallConversation> entities = new ArrayList<CallConversation>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

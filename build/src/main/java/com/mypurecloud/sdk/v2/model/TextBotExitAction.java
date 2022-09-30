@@ -83,7 +83,7 @@ public class TextBotExitAction  implements Serializable {
   private String activeIntent = null;
   private TextBotFlowLocation flowLocation = null;
   private TextBotInputOutputData outputData = null;
-  private List<TextBotFlowOutcome> flowOutcomes = null;
+  private List<TextBotFlowOutcome> flowOutcomes = new ArrayList<TextBotFlowOutcome>();
 
   
   /**

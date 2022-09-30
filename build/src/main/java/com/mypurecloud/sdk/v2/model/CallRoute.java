@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class CallRoute  implements Serializable {
   
-  private List<CallTarget> targets = null;
+  private List<CallTarget> targets = new ArrayList<CallTarget>();
 
   
   /**

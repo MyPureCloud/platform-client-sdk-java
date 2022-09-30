@@ -30,9 +30,9 @@ public class CreatePerformanceProfile  implements Serializable {
   private String name = null;
   private WritableDivision division = null;
   private String description = null;
-  private List<String> metricOrders = null;
+  private List<String> metricOrders = new ArrayList<String>();
   private Date dateCreated = null;
-  private List<ReportingInterval> reportingIntervals = null;
+  private List<ReportingInterval> reportingIntervals = new ArrayList<ReportingInterval>();
   private Boolean active = null;
   private Integer memberCount = null;
   private Integer maxLeaderboardRankSize = null;

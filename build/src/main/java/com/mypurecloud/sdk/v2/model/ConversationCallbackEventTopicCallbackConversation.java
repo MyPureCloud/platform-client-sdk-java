@@ -26,8 +26,8 @@ public class ConversationCallbackEventTopicCallbackConversation  implements Seri
   
   private String id = null;
   private String name = null;
-  private List<ConversationCallbackEventTopicCallbackMediaParticipant> participants = null;
-  private List<String> otherMediaUris = null;
+  private List<ConversationCallbackEventTopicCallbackMediaParticipant> participants = new ArrayList<ConversationCallbackEventTopicCallbackMediaParticipant>();
+  private List<String> otherMediaUris = new ArrayList<String>();
 
   
   /**

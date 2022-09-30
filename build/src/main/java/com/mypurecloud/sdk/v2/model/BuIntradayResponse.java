@@ -126,10 +126,10 @@ public class BuIntradayResponse  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<CategoriesEnum> categories = null;
+  private List<CategoriesEnum> categories = new ArrayList<CategoriesEnum>();
   private BuShortTermForecastReference shortTermForecast = null;
   private BuScheduleReference schedule = null;
-  private List<BuIntradayDataGroup> intradayDataGroupings = null;
+  private List<BuIntradayDataGroup> intradayDataGroupings = new ArrayList<BuIntradayDataGroup>();
 
   
   /**

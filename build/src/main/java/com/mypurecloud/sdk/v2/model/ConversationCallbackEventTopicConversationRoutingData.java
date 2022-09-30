@@ -28,8 +28,8 @@ public class ConversationCallbackEventTopicConversationRoutingData  implements S
   private ConversationCallbackEventTopicUriReference queue = null;
   private ConversationCallbackEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<ConversationCallbackEventTopicUriReference> skills = null;
-  private List<ConversationCallbackEventTopicScoredAgent> scoredAgents = null;
+  private List<ConversationCallbackEventTopicUriReference> skills = new ArrayList<ConversationCallbackEventTopicUriReference>();
+  private List<ConversationCallbackEventTopicScoredAgent> scoredAgents = new ArrayList<ConversationCallbackEventTopicScoredAgent>();
 
   
   /**

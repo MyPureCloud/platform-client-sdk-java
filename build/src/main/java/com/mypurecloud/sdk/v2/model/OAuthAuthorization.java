@@ -28,8 +28,8 @@ import java.io.Serializable;
 public class OAuthAuthorization  implements Serializable {
   
   private OAuthClient client = null;
-  private List<String> scope = null;
-  private List<String> roles = null;
+  private List<String> scope = new ArrayList<String>();
+  private List<String> roles = new ArrayList<String>();
   private DomainEntityRef resourceOwner = null;
   private Date dateCreated = null;
   private Date dateModified = null;

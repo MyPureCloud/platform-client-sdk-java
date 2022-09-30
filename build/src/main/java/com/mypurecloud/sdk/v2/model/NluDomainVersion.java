@@ -139,9 +139,9 @@ public class NluDomainVersion  implements Serializable {
     }
   }
   private EvaluationStatusEnum evaluationStatus = null;
-  private List<IntentDefinition> intents = null;
-  private List<NamedEntityTypeDefinition> entityTypes = null;
-  private List<NamedEntityDefinition> entities = null;
+  private List<IntentDefinition> intents = new ArrayList<IntentDefinition>();
+  private List<NamedEntityTypeDefinition> entityTypes = new ArrayList<NamedEntityTypeDefinition>();
+  private List<NamedEntityDefinition> entities = new ArrayList<NamedEntityDefinition>();
   private String selfUri = null;
 
   

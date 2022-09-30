@@ -138,7 +138,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<String> codes = null;
+  private List<String> codes = new ArrayList<String>();
 
   private static class PropertyTypeEnumDeserializer extends StdDeserializer<PropertyTypeEnum> {
     public PropertyTypeEnumDeserializer() {
@@ -194,8 +194,8 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
   private String contactIdField = null;
   private String callAnalysisResultField = null;
   private String agentWrapupField = null;
-  private List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = null;
-  private List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates = null;
+  private List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = new ArrayList<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping>();
+  private List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates = new ArrayList<DialerRulesetConfigChangeDataActionConditionPredicate>();
 
   
   /**

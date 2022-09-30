@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class GetMetricResponse  implements Serializable {
   
   private Long total = null;
-  private List<Metric> entities = null;
+  private List<Metric> entities = new ArrayList<Metric>();
   private String selfUri = null;
 
   

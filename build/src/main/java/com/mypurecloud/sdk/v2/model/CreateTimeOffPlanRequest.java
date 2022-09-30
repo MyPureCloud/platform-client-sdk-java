@@ -24,8 +24,8 @@ import java.io.Serializable;
 public class CreateTimeOffPlanRequest  implements Serializable {
   
   private String name = null;
-  private List<String> activityCodeIds = null;
-  private List<String> timeOffLimitIds = null;
+  private List<String> activityCodeIds = new ArrayList<String>();
+  private List<String> timeOffLimitIds = new ArrayList<String>();
 
   private static class AutoApprovalRuleEnumDeserializer extends StdDeserializer<AutoApprovalRuleEnum> {
     public AutoApprovalRuleEnumDeserializer() {

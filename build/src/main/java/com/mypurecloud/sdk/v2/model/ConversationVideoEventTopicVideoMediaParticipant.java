@@ -340,7 +340,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
   private Boolean sharingScreen = null;
   private Integer peerCount = null;
   private String context = null;
-  private List<String> msids = null;
+  private List<String> msids = new ArrayList<String>();
 
   
   /**

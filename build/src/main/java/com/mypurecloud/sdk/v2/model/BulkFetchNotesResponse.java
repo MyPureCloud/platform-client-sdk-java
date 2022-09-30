@@ -24,9 +24,9 @@ import java.io.Serializable;
 
 public class BulkFetchNotesResponse  implements Serializable {
   
-  private List<BulkResponseResultNoteEntity> results = null;
+  private List<BulkResponseResultNoteEntity> results = new ArrayList<BulkResponseResultNoteEntity>();
   private Integer errorCount = null;
-  private List<Integer> errorIndexes = null;
+  private List<Integer> errorIndexes = new ArrayList<Integer>();
 
   
   /**

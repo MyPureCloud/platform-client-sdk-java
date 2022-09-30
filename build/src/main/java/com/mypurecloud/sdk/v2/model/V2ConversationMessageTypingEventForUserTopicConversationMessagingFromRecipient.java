@@ -80,7 +80,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingFr
   private String firstName = null;
   private String lastName = null;
   private String email = null;
-  private List<V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier> additionalIds = null;
+  private List<V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier> additionalIds = new ArrayList<V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier>();
 
   
   /**

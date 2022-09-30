@@ -126,7 +126,7 @@ public class LearningModuleRuleParts  implements Serializable {
     }
   }
   private SelectorEnum selector = null;
-  private List<String> value = null;
+  private List<String> value = new ArrayList<String>();
   private Integer order = null;
 
   

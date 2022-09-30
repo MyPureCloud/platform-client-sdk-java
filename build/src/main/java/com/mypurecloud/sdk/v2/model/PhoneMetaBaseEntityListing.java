@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class PhoneMetaBaseEntityListing  implements Serializable, PagedResource<Metabase> {
   
-  private List<Metabase> entities = null;
+  private List<Metabase> entities = new ArrayList<Metabase>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

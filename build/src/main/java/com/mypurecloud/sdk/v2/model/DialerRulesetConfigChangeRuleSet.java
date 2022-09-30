@@ -28,7 +28,7 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
   
   private DialerRulesetConfigChangeUriReference contactList = null;
   private DialerRulesetConfigChangeUriReference queue = null;
-  private List<DialerRulesetConfigChangeRule> rules = null;
+  private List<DialerRulesetConfigChangeRule> rules = new ArrayList<DialerRulesetConfigChangeRule>();
   private String id = null;
   private String name = null;
   private Date dateCreated = null;

@@ -118,15 +118,15 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   private ScreenRecordingStateEnum screenRecordingState = null;
   private String flaggedReason = null;
   private Map<String, String> attributes = null;
-  private List<QueueConversationVideoEventTopicCall> calls = null;
-  private List<QueueConversationVideoEventTopicCallback> callbacks = null;
-  private List<QueueConversationVideoEventTopicChat> chats = null;
-  private List<QueueConversationVideoEventTopicCobrowse> cobrowsesessions = null;
-  private List<QueueConversationVideoEventTopicEmail> emails = null;
-  private List<QueueConversationVideoEventTopicMessage> messages = null;
-  private List<QueueConversationVideoEventTopicScreenshare> screenshares = null;
-  private List<QueueConversationVideoEventTopicSocialExpression> socialExpressions = null;
-  private List<QueueConversationVideoEventTopicVideo> videos = null;
+  private List<QueueConversationVideoEventTopicCall> calls = new ArrayList<QueueConversationVideoEventTopicCall>();
+  private List<QueueConversationVideoEventTopicCallback> callbacks = new ArrayList<QueueConversationVideoEventTopicCallback>();
+  private List<QueueConversationVideoEventTopicChat> chats = new ArrayList<QueueConversationVideoEventTopicChat>();
+  private List<QueueConversationVideoEventTopicCobrowse> cobrowsesessions = new ArrayList<QueueConversationVideoEventTopicCobrowse>();
+  private List<QueueConversationVideoEventTopicEmail> emails = new ArrayList<QueueConversationVideoEventTopicEmail>();
+  private List<QueueConversationVideoEventTopicMessage> messages = new ArrayList<QueueConversationVideoEventTopicMessage>();
+  private List<QueueConversationVideoEventTopicScreenshare> screenshares = new ArrayList<QueueConversationVideoEventTopicScreenshare>();
+  private List<QueueConversationVideoEventTopicSocialExpression> socialExpressions = new ArrayList<QueueConversationVideoEventTopicSocialExpression>();
+  private List<QueueConversationVideoEventTopicVideo> videos = new ArrayList<QueueConversationVideoEventTopicVideo>();
   private QueueConversationVideoEventTopicWorkflow workflow = null;
 
   

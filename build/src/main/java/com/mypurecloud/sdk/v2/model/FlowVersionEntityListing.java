@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class FlowVersionEntityListing  implements Serializable, PagedResource<FlowVersion> {
   
-  private List<FlowVersion> entities = null;
+  private List<FlowVersion> entities = new ArrayList<FlowVersion>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

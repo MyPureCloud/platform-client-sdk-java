@@ -32,7 +32,7 @@ public class CallForwarding  implements Serializable {
   private User user = null;
   private Boolean enabled = null;
   private String phoneNumber = null;
-  private List<CallRoute> calls = null;
+  private List<CallRoute> calls = new ArrayList<CallRoute>();
 
   private static class VoicemailEnumDeserializer extends StdDeserializer<VoicemailEnum> {
     public VoicemailEnumDeserializer() {

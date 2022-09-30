@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CallableTimeSetEntityListing  implements Serializable, PagedResource<CallableTimeSet> {
   
-  private List<CallableTimeSet> entities = null;
+  private List<CallableTimeSet> entities = new ArrayList<CallableTimeSet>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

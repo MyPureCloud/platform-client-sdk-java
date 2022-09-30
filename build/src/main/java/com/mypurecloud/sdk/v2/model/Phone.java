@@ -98,7 +98,7 @@ public class Phone  implements Serializable {
   private DomainEntityRef phoneBaseSettings = null;
   private DomainEntityRef lineBaseSettings = null;
   private DomainEntityRef phoneMetaBase = null;
-  private List<Line> lines = null;
+  private List<Line> lines = new ArrayList<Line>();
   private PhoneStatus status = null;
   private PhoneStatus secondaryStatus = null;
   private UserAgentInfo userAgentInfo = null;

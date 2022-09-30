@@ -290,7 +290,7 @@ public class InteractionStatsAlert  implements Serializable {
   private Boolean unread = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<User> notificationUsers = null;
+  private List<User> notificationUsers = new ArrayList<User>();
 
   private static class AlertTypesEnumDeserializer extends StdDeserializer<AlertTypesEnum> {
     public AlertTypesEnumDeserializer() {
@@ -338,7 +338,7 @@ public class InteractionStatsAlert  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<AlertTypesEnum> alertTypes = null;
+  private List<AlertTypesEnum> alertTypes = new ArrayList<AlertTypesEnum>();
   private String ruleUri = null;
   private String selfUri = null;
 

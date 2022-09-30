@@ -128,7 +128,7 @@ public class LexBotAlias  implements Serializable {
     }
   }
   private LanguageEnum language = null;
-  private List<LexIntent> intents = null;
+  private List<LexIntent> intents = new ArrayList<LexIntent>();
   private String selfUri = null;
 
   

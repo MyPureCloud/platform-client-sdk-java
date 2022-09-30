@@ -26,8 +26,8 @@ public class QueueConversationCallbackEventTopicCallbackConversation  implements
   
   private String id = null;
   private String name = null;
-  private List<QueueConversationCallbackEventTopicCallbackMediaParticipant> participants = null;
-  private List<String> otherMediaUris = null;
+  private List<QueueConversationCallbackEventTopicCallbackMediaParticipant> participants = new ArrayList<QueueConversationCallbackEventTopicCallbackMediaParticipant>();
+  private List<String> otherMediaUris = new ArrayList<String>();
 
   
   /**

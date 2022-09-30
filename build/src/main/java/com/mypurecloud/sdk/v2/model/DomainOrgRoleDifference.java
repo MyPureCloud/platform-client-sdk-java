@@ -25,9 +25,9 @@ import java.io.Serializable;
 
 public class DomainOrgRoleDifference  implements Serializable {
   
-  private List<DomainPermissionPolicy> removedPermissionPolicies = null;
-  private List<DomainPermissionPolicy> addedPermissionPolicies = null;
-  private List<DomainPermissionPolicy> samePermissionPolicies = null;
+  private List<DomainPermissionPolicy> removedPermissionPolicies = new ArrayList<DomainPermissionPolicy>();
+  private List<DomainPermissionPolicy> addedPermissionPolicies = new ArrayList<DomainPermissionPolicy>();
+  private List<DomainPermissionPolicy> samePermissionPolicies = new ArrayList<DomainPermissionPolicy>();
   private DomainOrganizationRole userOrgRole = null;
   private DomainOrganizationRole roleFromDefault = null;
 

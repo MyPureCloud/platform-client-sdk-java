@@ -28,7 +28,7 @@ public class ResponseAssetSearchResults  implements Serializable {
   private Integer pageCount = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<ResponseAsset> results = null;
+  private List<ResponseAsset> results = new ArrayList<ResponseAsset>();
 
   
   /**

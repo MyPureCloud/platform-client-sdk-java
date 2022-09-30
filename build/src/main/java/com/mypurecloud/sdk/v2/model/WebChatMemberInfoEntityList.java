@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class WebChatMemberInfoEntityList  implements Serializable, PagedResource<WebChatMemberInfo> {
   
-  private List<WebChatMemberInfo> entities = null;
+  private List<WebChatMemberInfo> entities = new ArrayList<WebChatMemberInfo>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

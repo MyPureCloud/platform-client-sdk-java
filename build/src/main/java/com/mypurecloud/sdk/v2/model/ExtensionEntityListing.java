@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ExtensionEntityListing  implements Serializable, PagedResource<Extension> {
   
-  private List<Extension> entities = null;
+  private List<Extension> entities = new ArrayList<Extension>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

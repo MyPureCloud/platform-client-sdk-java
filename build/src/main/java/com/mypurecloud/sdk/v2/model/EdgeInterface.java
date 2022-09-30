@@ -29,7 +29,7 @@ public class EdgeInterface  implements Serializable {
   private String name = null;
   private String macAddress = null;
   private String ifName = null;
-  private List<DomainEntityRef> endpoints = null;
+  private List<DomainEntityRef> endpoints = new ArrayList<DomainEntityRef>();
 
   private static class LineTypesEnumDeserializer extends StdDeserializer<LineTypesEnum> {
     public LineTypesEnumDeserializer() {
@@ -78,7 +78,7 @@ public class EdgeInterface  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<LineTypesEnum> lineTypes = null;
+  private List<LineTypesEnum> lineTypes = new ArrayList<LineTypesEnum>();
   private String addressFamilyId = null;
 
   

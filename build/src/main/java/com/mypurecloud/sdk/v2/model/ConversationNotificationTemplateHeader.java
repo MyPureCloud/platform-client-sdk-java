@@ -77,7 +77,7 @@ public class ConversationNotificationTemplateHeader  implements Serializable {
   private TypeEnum type = null;
   private String text = null;
   private ConversationContentAttachment media = null;
-  private List<ConversationNotificationTemplateParameter> parameters = null;
+  private List<ConversationNotificationTemplateParameter> parameters = new ArrayList<ConversationNotificationTemplateParameter>();
 
   
   /**

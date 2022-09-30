@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BulkUpdateShiftTradeStateResult  implements Serializable {
   
-  private List<BulkUpdateShiftTradeStateResultItem> entities = null;
+  private List<BulkUpdateShiftTradeStateResultItem> entities = new ArrayList<BulkUpdateShiftTradeStateResultItem>();
 
   
   /**

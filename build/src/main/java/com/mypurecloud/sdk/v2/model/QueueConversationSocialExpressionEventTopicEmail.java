@@ -254,7 +254,7 @@ public class QueueConversationSocialExpressionEventTopicEmail  implements Serial
     }
   }
   private DirectionEnum direction = null;
-  private List<QueueConversationSocialExpressionEventTopicAttachment> draftAttachments = null;
+  private List<QueueConversationSocialExpressionEventTopicAttachment> draftAttachments = new ArrayList<QueueConversationSocialExpressionEventTopicAttachment>();
   private Boolean spam = null;
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;

@@ -83,7 +83,7 @@ public class Workspace  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private WorkspaceSummary summary = null;
-  private List<String> acl = null;
+  private List<String> acl = new ArrayList<String>();
   private String description = null;
   private String selfUri = null;
 

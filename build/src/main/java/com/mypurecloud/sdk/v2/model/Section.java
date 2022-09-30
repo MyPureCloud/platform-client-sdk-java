@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class Section  implements Serializable {
   
-  private List<FieldList> fieldList = null;
+  private List<FieldList> fieldList = new ArrayList<FieldList>();
   private String instructionText = null;
   private String key = null;
   private String state = null;

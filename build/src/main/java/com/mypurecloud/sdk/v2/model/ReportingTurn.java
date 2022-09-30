@@ -31,7 +31,7 @@ import java.io.Serializable;
 public class ReportingTurn  implements Serializable {
   
   private String userInput = null;
-  private List<String> botPrompts = null;
+  private List<String> botPrompts = new ArrayList<String>();
   private String sessionId = null;
   private ReportingTurnAction askAction = null;
   private ReportingTurnIntent intent = null;

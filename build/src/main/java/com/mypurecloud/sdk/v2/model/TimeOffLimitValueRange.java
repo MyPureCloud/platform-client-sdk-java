@@ -76,10 +76,10 @@ public class TimeOffLimitValueRange  implements Serializable {
     }
   }
   private GranularityEnum granularity = null;
-  private List<Integer> limitMinutesPerInterval = null;
-  private List<Integer> allocatedMinutesPerInterval = null;
-  private List<Integer> waitlistedMinutesPerInterval = null;
-  private List<Integer> waitlistedRequestsPerInterval = null;
+  private List<Integer> limitMinutesPerInterval = new ArrayList<Integer>();
+  private List<Integer> allocatedMinutesPerInterval = new ArrayList<Integer>();
+  private List<Integer> waitlistedMinutesPerInterval = new ArrayList<Integer>();
+  private List<Integer> waitlistedRequestsPerInterval = new ArrayList<Integer>();
   private WfmVersionedEntityMetadata metadata = null;
 
   

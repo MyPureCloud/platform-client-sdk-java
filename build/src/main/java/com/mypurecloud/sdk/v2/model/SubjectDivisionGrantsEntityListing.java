@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class SubjectDivisionGrantsEntityListing  implements Serializable, PagedResource<SubjectDivisionGrants> {
   
-  private List<SubjectDivisionGrants> entities = null;
+  private List<SubjectDivisionGrants> entities = new ArrayList<SubjectDivisionGrants>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -23,8 +23,8 @@ import java.io.Serializable;
 
 public class AssignUsers  implements Serializable {
   
-  private List<String> membersToAssign = null;
-  private List<String> membersToRemove = null;
+  private List<String> membersToAssign = new ArrayList<String>();
+  private List<String> membersToRemove = new ArrayList<String>();
 
   
   /**

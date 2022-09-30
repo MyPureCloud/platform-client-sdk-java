@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class TopicsEntityListing  implements Serializable {
   
-  private List<ListedTopic> entities = null;
+  private List<ListedTopic> entities = new ArrayList<ListedTopic>();
   private Integer pageSize = null;
   private Integer total = null;
   private String selfUri = null;

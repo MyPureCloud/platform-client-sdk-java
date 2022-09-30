@@ -26,7 +26,7 @@ import java.io.Serializable;
 
 public class LearningAssignmentUserListing  implements Serializable, PagedResource<LearningAssignmentUser> {
   
-  private List<LearningAssignmentUser> entities = null;
+  private List<LearningAssignmentUser> entities = new ArrayList<LearningAssignmentUser>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

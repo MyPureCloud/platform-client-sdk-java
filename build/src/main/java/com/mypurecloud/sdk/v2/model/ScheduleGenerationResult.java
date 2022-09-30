@@ -28,8 +28,8 @@ public class ScheduleGenerationResult  implements Serializable {
   private Boolean failed = null;
   private String runId = null;
   private Integer messageCount = null;
-  private List<ScheduleGenerationMessage> messages = null;
-  private List<SchedulerMessageTypeSeverity> messageSeverities = null;
+  private List<ScheduleGenerationMessage> messages = new ArrayList<ScheduleGenerationMessage>();
+  private List<SchedulerMessageTypeSeverity> messageSeverities = new ArrayList<SchedulerMessageTypeSeverity>();
 
   
   /**

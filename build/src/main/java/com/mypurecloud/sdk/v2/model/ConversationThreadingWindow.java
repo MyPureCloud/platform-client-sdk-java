@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class ConversationThreadingWindow  implements Serializable {
   
   private String id = null;
-  private List<ConversationThreadingWindowSetting> settings = null;
+  private List<ConversationThreadingWindowSetting> settings = new ArrayList<ConversationThreadingWindowSetting>();
   private Long defaultTimeoutMinutes = null;
 
   

@@ -269,9 +269,9 @@ public class ReportingExportJobRequest  implements Serializable {
     }
   }
   private CsvDelimiterEnum csvDelimiter = null;
-  private List<SelectedColumns> selectedColumns = null;
+  private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
   private Boolean hasCustomParticipantAttributes = null;
-  private List<String> recipientEmails = null;
+  private List<String> recipientEmails = new ArrayList<String>();
 
   
   /**

@@ -24,9 +24,9 @@ import java.io.Serializable;
 
 public class BulkCallbackPatchResponse  implements Serializable {
   
-  private List<BulkResult> results = null;
+  private List<BulkResult> results = new ArrayList<BulkResult>();
   private Integer errorCount = null;
-  private List<Integer> errorIndexes = null;
+  private List<Integer> errorIndexes = new ArrayList<Integer>();
 
   
   /**

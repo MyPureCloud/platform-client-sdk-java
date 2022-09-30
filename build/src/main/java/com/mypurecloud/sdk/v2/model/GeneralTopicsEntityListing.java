@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class GeneralTopicsEntityListing  implements Serializable {
   
-  private List<GeneralTopic> entities = null;
+  private List<GeneralTopic> entities = new ArrayList<GeneralTopic>();
 
   
   /**

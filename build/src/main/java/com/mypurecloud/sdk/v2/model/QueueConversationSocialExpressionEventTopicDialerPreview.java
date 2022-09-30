@@ -29,7 +29,7 @@ public class QueueConversationSocialExpressionEventTopicDialerPreview  implement
   private String contactId = null;
   private String contactListId = null;
   private String campaignId = null;
-  private List<QueueConversationSocialExpressionEventTopicPhoneNumberColumn> phoneNumberColumns = null;
+  private List<QueueConversationSocialExpressionEventTopicPhoneNumberColumn> phoneNumberColumns = new ArrayList<QueueConversationSocialExpressionEventTopicPhoneNumberColumn>();
 
   
   /**

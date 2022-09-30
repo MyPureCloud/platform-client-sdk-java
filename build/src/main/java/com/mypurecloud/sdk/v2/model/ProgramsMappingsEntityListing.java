@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ProgramsMappingsEntityListing  implements Serializable {
   
-  private List<ProgramMappings> entities = null;
+  private List<ProgramMappings> entities = new ArrayList<ProgramMappings>();
   private Integer pageSize = null;
   private String selfUri = null;
   private String nextUri = null;

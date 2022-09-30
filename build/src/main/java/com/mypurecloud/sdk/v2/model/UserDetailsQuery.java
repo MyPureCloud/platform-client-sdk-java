@@ -30,9 +30,9 @@ import java.io.Serializable;
 public class UserDetailsQuery  implements Serializable {
   
   private String interval = null;
-  private List<UserDetailQueryFilter> userFilters = null;
-  private List<PresenceDetailQueryFilter> presenceFilters = null;
-  private List<RoutingStatusDetailQueryFilter> routingStatusFilters = null;
+  private List<UserDetailQueryFilter> userFilters = new ArrayList<UserDetailQueryFilter>();
+  private List<PresenceDetailQueryFilter> presenceFilters = new ArrayList<PresenceDetailQueryFilter>();
+  private List<RoutingStatusDetailQueryFilter> routingStatusFilters = new ArrayList<RoutingStatusDetailQueryFilter>();
 
   private static class OrderEnumDeserializer extends StdDeserializer<OrderEnum> {
     public OrderEnumDeserializer() {
@@ -81,8 +81,8 @@ public class UserDetailsQuery  implements Serializable {
     }
   }
   private OrderEnum order = null;
-  private List<AnalyticsQueryAggregation> presenceAggregations = null;
-  private List<AnalyticsQueryAggregation> routingStatusAggregations = null;
+  private List<AnalyticsQueryAggregation> presenceAggregations = new ArrayList<AnalyticsQueryAggregation>();
+  private List<AnalyticsQueryAggregation> routingStatusAggregations = new ArrayList<AnalyticsQueryAggregation>();
   private PagingSpec paging = null;
 
   

@@ -192,10 +192,10 @@ public class MessageData  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<MessageMedia> media = null;
-  private List<MessageSticker> stickers = null;
+  private List<MessageMedia> media = new ArrayList<MessageMedia>();
+  private List<MessageSticker> stickers = new ArrayList<MessageSticker>();
   private ConversationNormalizedMessage normalizedMessage = null;
-  private List<ConversationNormalizedMessage> normalizedReceipts = null;
+  private List<ConversationNormalizedMessage> normalizedReceipts = new ArrayList<ConversationNormalizedMessage>();
   private User createdBy = null;
   private String conversationId = null;
   private String selfUri = null;

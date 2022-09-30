@@ -28,7 +28,7 @@ public class BotConnectorBot  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
-  private List<BotConnectorBotVersion> versions = null;
+  private List<BotConnectorBotVersion> versions = new ArrayList<BotConnectorBotVersion>();
   private String botCompositeTag = null;
   private String selfUri = null;
 

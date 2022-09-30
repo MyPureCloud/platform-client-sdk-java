@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ResponseSetEntityListing  implements Serializable, PagedResource<ResponseSet> {
   
-  private List<ResponseSet> entities = null;
+  private List<ResponseSet> entities = new ArrayList<ResponseSet>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -27,7 +27,7 @@ public class RecordingArchiveRestoreTopicRecording  implements Serializable {
   private String id = null;
   private String conversationId = null;
   private String fileState = null;
-  private List<RecordingArchiveRestoreTopicMediaResult> mediaUris = null;
+  private List<RecordingArchiveRestoreTopicMediaResult> mediaUris = new ArrayList<RecordingArchiveRestoreTopicMediaResult>();
   private Integer estimatedTranscodeTimeMs = null;
   private Integer actualTranscodeTimeMs = null;
 

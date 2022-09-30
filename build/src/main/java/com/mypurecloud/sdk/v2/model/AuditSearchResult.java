@@ -29,8 +29,8 @@ public class AuditSearchResult  implements Serializable {
   private Integer pageSize = null;
   private Integer total = null;
   private Integer pageCount = null;
-  private List<FacetInfo> facetInfo = null;
-  private List<AuditMessage> auditMessages = null;
+  private List<FacetInfo> facetInfo = new ArrayList<FacetInfo>();
+  private List<AuditMessage> auditMessages = new ArrayList<AuditMessage>();
 
   
   /**

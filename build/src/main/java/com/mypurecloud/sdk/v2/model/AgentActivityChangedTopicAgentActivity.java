@@ -31,7 +31,7 @@ public class AgentActivityChangedTopicAgentActivity  implements Serializable {
   private AgentActivityChangedTopicRoutingStatus routingStatus = null;
   private AgentActivityChangedTopicPresence presence = null;
   private AgentActivityChangedTopicOutOfOffice outOfOffice = null;
-  private List<String> activeQueueIds = null;
+  private List<String> activeQueueIds = new ArrayList<String>();
   private Date dateActiveQueuesChanged = null;
 
   

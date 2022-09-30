@@ -256,7 +256,7 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
   private Date startHoldTime = null;
   private QueueConversationVideoEventTopicDialerPreview dialerPreview = null;
   private QueueConversationVideoEventTopicVoicemail voicemail = null;
-  private List<String> callbackNumbers = null;
+  private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private String scriptId = null;
   private String peerId = null;

@@ -73,7 +73,7 @@ public class ConversationAggregateQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<ConversationAggregateQueryPredicate> predicates = null;
+  private List<ConversationAggregateQueryPredicate> predicates = new ArrayList<ConversationAggregateQueryPredicate>();
 
   
   /**

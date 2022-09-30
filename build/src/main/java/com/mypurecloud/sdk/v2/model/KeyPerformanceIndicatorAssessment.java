@@ -77,7 +77,7 @@ public class KeyPerformanceIndicatorAssessment  implements Serializable {
     }
   }
   private AssessmentResultEnum assessmentResult = null;
-  private List<Check> checks = null;
+  private List<Check> checks = new ArrayList<Check>();
 
   
   @ApiModelProperty(example = "null", value = "Name of the key performance indicator assessed.")

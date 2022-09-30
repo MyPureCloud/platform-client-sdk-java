@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ActionMapEstimateRequest  implements Serializable {
   
-  private List<String> segmentIds = null;
+  private List<String> segmentIds = new ArrayList<String>();
   private ActionMapEstimateOutcomeCriteria outcomeCriteria = null;
 
   

@@ -28,12 +28,12 @@ import java.io.Serializable;
 
 public class DialerContactlistConfigChangeContactList  implements Serializable {
   
-  private List<String> columnNames = null;
-  private List<DialerContactlistConfigChangeContactPhoneNumberColumn> phoneColumns = null;
-  private List<DialerContactlistConfigChangeEmailColumn> emailColumns = null;
+  private List<String> columnNames = new ArrayList<String>();
+  private List<DialerContactlistConfigChangeContactPhoneNumberColumn> phoneColumns = new ArrayList<DialerContactlistConfigChangeContactPhoneNumberColumn>();
+  private List<DialerContactlistConfigChangeEmailColumn> emailColumns = new ArrayList<DialerContactlistConfigChangeEmailColumn>();
   private DialerContactlistConfigChangeImportStatus importStatus = null;
   private String previewModeColumnName = null;
-  private List<String> previewModeAcceptedValues = null;
+  private List<String> previewModeAcceptedValues = new ArrayList<String>();
   private Integer size = null;
   private DialerContactlistConfigChangeUriReference attemptLimits = null;
   private Boolean automaticTimeZoneMapping = null;

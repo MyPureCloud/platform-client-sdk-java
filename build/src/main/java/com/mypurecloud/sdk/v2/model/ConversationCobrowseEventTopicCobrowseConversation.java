@@ -26,8 +26,8 @@ public class ConversationCobrowseEventTopicCobrowseConversation  implements Seri
   
   private String id = null;
   private String name = null;
-  private List<ConversationCobrowseEventTopicCobrowseMediaParticipant> participants = null;
-  private List<String> otherMediaUris = null;
+  private List<ConversationCobrowseEventTopicCobrowseMediaParticipant> participants = new ArrayList<ConversationCobrowseEventTopicCobrowseMediaParticipant>();
+  private List<String> otherMediaUris = new ArrayList<String>();
 
   
   /**

@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class CategoryEntityListing  implements Serializable {
   
-  private List<Category> entities = null;
+  private List<Category> entities = new ArrayList<Category>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

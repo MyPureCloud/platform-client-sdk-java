@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class Permissions  implements Serializable {
   
-  private List<String> ids = null;
+  private List<String> ids = new ArrayList<String>();
 
   
   /**

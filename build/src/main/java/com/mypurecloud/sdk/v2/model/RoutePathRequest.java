@@ -77,7 +77,7 @@ public class RoutePathRequest  implements Serializable {
   }
   private MediaTypeEnum mediaType = null;
   private String languageId = null;
-  private List<String> skillIds = null;
+  private List<String> skillIds = new ArrayList<String>();
   private SourcePlanningGroupRequest sourcePlanningGroup = null;
 
   

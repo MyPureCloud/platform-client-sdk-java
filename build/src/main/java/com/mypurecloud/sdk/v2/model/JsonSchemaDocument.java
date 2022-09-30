@@ -31,7 +31,7 @@ public class JsonSchemaDocument  implements Serializable {
   private String title = null;
   private String description = null;
   private String type = null;
-  private List<String> required = null;
+  private List<String> required = new ArrayList<String>();
   private Map<String, Object> properties = null;
   private Object additionalProperties = null;
 

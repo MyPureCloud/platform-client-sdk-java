@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class IpAddressAuthentication  implements Serializable {
   
-  private List<String> networkWhitelist = null;
+  private List<String> networkWhitelist = new ArrayList<String>();
 
   
   /**

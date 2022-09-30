@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class InteractionStatsRuleContainer  implements Serializable, PagedResource<InteractionStatsRule> {
   
-  private List<InteractionStatsRule> entities = null;
+  private List<InteractionStatsRule> entities = new ArrayList<InteractionStatsRule>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

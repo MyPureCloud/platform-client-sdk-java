@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class Journey  implements Serializable {
   
-  private List<JourneyPattern> patterns = null;
+  private List<JourneyPattern> patterns = new ArrayList<JourneyPattern>();
 
   
   /**

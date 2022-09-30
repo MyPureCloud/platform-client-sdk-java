@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CobrowseConversationEntityListing  implements Serializable, PagedResource<CobrowseConversation> {
   
-  private List<CobrowseConversation> entities = null;
+  private List<CobrowseConversation> entities = new ArrayList<CobrowseConversation>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

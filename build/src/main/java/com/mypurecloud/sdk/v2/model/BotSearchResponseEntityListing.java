@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class BotSearchResponseEntityListing  implements Serializable {
   
-  private List<BotSearchResponse> entities = null;
+  private List<BotSearchResponse> entities = new ArrayList<BotSearchResponse>();
 
   
   /**

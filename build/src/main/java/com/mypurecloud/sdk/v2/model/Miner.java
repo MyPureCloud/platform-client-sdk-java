@@ -204,7 +204,7 @@ public class Miner  implements Serializable {
     }
   }
   private MediaTypeEnum mediaType = null;
-  private List<String> queueIds = null;
+  private List<String> queueIds = new ArrayList<String>();
   private Date dateTriggered = null;
   private Date dateModified = null;
   private Draft latestDraftVersion = null;

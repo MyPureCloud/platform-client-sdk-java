@@ -31,7 +31,7 @@ public class CampaignSchedule  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private List<ScheduleInterval> intervals = null;
+  private List<ScheduleInterval> intervals = new ArrayList<ScheduleInterval>();
   private String timeZone = null;
   private DomainEntityRef campaign = null;
   private String selfUri = null;

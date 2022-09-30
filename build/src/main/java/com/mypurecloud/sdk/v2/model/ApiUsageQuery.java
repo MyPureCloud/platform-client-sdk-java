@@ -123,7 +123,7 @@ public class ApiUsageQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<GroupByEnum> groupBy = null;
+  private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
 
   private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
     public MetricsEnumDeserializer() {
@@ -174,7 +174,7 @@ public class ApiUsageQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MetricsEnum> metrics = null;
+  private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
 
   
   /**

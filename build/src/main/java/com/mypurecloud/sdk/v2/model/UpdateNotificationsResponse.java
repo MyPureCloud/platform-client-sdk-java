@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class UpdateNotificationsResponse  implements Serializable {
   
-  private List<UpdateNotificationResponse> entities = null;
+  private List<UpdateNotificationResponse> entities = new ArrayList<UpdateNotificationResponse>();
 
   
   /**

@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class LineId  implements Serializable {
   
-  private List<LineUserId> ids = null;
+  private List<LineUserId> ids = new ArrayList<LineUserId>();
   private String displayName = null;
 
   

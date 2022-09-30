@@ -83,8 +83,8 @@ public class WebMessagingMessage  implements Serializable {
   }
   private TypeEnum type = null;
   private String text = null;
-  private List<WebMessagingContent> content = null;
-  private List<WebMessagingEvent> events = null;
+  private List<WebMessagingContent> content = new ArrayList<WebMessagingContent>();
+  private List<WebMessagingEvent> events = new ArrayList<WebMessagingEvent>();
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {

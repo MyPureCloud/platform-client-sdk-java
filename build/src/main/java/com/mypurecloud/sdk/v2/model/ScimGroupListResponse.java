@@ -25,11 +25,11 @@ import java.io.Serializable;
 
 public class ScimGroupListResponse  implements Serializable {
   
-  private List<String> schemas = null;
+  private List<String> schemas = new ArrayList<String>();
   private Long totalResults = null;
   private Long startIndex = null;
   private Long itemsPerPage = null;
-  private List<ScimV2Group> resources = null;
+  private List<ScimV2Group> resources = new ArrayList<ScimV2Group>();
 
   
   /**

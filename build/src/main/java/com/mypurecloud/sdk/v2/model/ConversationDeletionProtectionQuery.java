@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class ConversationDeletionProtectionQuery  implements Serializable {
   
-  private List<String> conversationIds = null;
+  private List<String> conversationIds = new ArrayList<String>();
 
   
   /**

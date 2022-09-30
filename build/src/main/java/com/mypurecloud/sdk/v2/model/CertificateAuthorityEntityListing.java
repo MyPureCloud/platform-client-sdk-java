@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CertificateAuthorityEntityListing  implements Serializable, PagedResource<DomainCertificateAuthority> {
   
-  private List<DomainCertificateAuthority> entities = null;
+  private List<DomainCertificateAuthority> entities = new ArrayList<DomainCertificateAuthority>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

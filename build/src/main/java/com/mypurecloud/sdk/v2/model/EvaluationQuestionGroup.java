@@ -33,7 +33,7 @@ public class EvaluationQuestionGroup  implements Serializable {
   private Boolean naEnabled = null;
   private Float weight = null;
   private Boolean manualWeight = null;
-  private List<EvaluationQuestion> questions = null;
+  private List<EvaluationQuestion> questions = new ArrayList<EvaluationQuestion>();
   private VisibilityCondition visibilityCondition = null;
 
   

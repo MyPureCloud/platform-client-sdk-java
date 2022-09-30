@@ -27,8 +27,8 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
   
   private String id = null;
   private String name = null;
-  private List<QueueConversationCallEventTopicCallMediaParticipant> participants = null;
-  private List<String> otherMediaUris = null;
+  private List<QueueConversationCallEventTopicCallMediaParticipant> participants = new ArrayList<QueueConversationCallEventTopicCallMediaParticipant>();
+  private List<String> otherMediaUris = new ArrayList<String>();
 
   private static class RecordingStateEnumDeserializer extends StdDeserializer<RecordingStateEnum> {
     public RecordingStateEnumDeserializer() {

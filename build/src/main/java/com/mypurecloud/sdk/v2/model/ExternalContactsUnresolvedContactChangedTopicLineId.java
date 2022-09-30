@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ExternalContactsUnresolvedContactChangedTopicLineId  implements Serializable {
   
-  private List<ExternalContactsUnresolvedContactChangedTopicLineUserId> ids = null;
+  private List<ExternalContactsUnresolvedContactChangedTopicLineUserId> ids = new ArrayList<ExternalContactsUnresolvedContactChangedTopicLineUserId>();
   private String displayName = null;
 
   

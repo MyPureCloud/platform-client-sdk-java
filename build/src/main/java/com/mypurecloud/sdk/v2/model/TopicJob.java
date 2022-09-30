@@ -77,7 +77,7 @@ public class TopicJob  implements Serializable {
     }
   }
   private StateEnum state = null;
-  private List<BaseTopicEntitiy> topics = null;
+  private List<BaseTopicEntitiy> topics = new ArrayList<BaseTopicEntitiy>();
   private AddressableEntityRef createdBy = null;
   private Date dateCreated = null;
   private Date dateModified = null;

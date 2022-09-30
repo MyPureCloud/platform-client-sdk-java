@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class EvaluationAggregateQueryResponse  implements Serializable {
   
-  private List<EvaluationAggregateDataContainer> results = null;
+  private List<EvaluationAggregateDataContainer> results = new ArrayList<EvaluationAggregateDataContainer>();
 
   
   /**

@@ -73,7 +73,7 @@ public class TextBotUserInputEvent  implements Serializable {
     }
   }
   private ModeEnum mode = null;
-  private List<TextBotUserInputAlternative> alternatives = null;
+  private List<TextBotUserInputAlternative> alternatives = new ArrayList<TextBotUserInputAlternative>();
 
   
   /**

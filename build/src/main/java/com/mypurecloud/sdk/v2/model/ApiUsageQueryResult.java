@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ApiUsageQueryResult  implements Serializable {
   
-  private List<ApiUsageRow> results = null;
+  private List<ApiUsageRow> results = new ArrayList<ApiUsageRow>();
 
   private static class QueryStatusEnumDeserializer extends StdDeserializer<QueryStatusEnum> {
     public QueryStatusEnumDeserializer() {

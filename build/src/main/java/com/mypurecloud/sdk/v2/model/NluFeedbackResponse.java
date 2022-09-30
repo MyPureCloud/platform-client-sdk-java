@@ -28,7 +28,7 @@ public class NluFeedbackResponse  implements Serializable {
   
   private String id = null;
   private String text = null;
-  private List<IntentFeedback> intents = null;
+  private List<IntentFeedback> intents = new ArrayList<IntentFeedback>();
   private NluDomainVersion version = null;
   private Date dateCreated = null;
   private String selfUri = null;

@@ -30,7 +30,7 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleShift  implements Serializabl
   private String id = null;
   private Date startDate = null;
   private Integer lengthInMinutes = null;
-  private List<WfmAgentScheduleUpdateTopicWfmScheduleActivity> activities = null;
+  private List<WfmAgentScheduleUpdateTopicWfmScheduleActivity> activities = new ArrayList<WfmAgentScheduleUpdateTopicWfmScheduleActivity>();
 
   
   /**

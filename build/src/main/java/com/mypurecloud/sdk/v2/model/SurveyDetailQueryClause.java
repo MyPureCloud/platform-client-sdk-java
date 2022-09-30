@@ -73,7 +73,7 @@ public class SurveyDetailQueryClause  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<SurveyDetailQueryPredicate> predicates = null;
+  private List<SurveyDetailQueryPredicate> predicates = new ArrayList<SurveyDetailQueryPredicate>();
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class UserEntityListing  implements Serializable, PagedResource<User> {
   
-  private List<User> entities = null;
+  private List<User> entities = new ArrayList<User>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

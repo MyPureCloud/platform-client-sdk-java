@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class DocumentBody  implements Serializable {
   
-  private List<DocumentBodyBlock> blocks = null;
+  private List<DocumentBodyBlock> blocks = new ArrayList<DocumentBodyBlock>();
 
   
   /**

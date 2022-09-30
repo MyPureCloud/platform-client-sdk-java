@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class PolicyErrors  implements Serializable {
   
-  private List<PolicyErrorMessage> policyErrorMessages = null;
+  private List<PolicyErrorMessage> policyErrorMessages = new ArrayList<PolicyErrorMessage>();
 
   
   /**

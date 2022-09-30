@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class SmsAddressEntityListing  implements Serializable, PagedResource<SmsAddress> {
   
-  private List<SmsAddress> entities = null;
+  private List<SmsAddress> entities = new ArrayList<SmsAddress>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

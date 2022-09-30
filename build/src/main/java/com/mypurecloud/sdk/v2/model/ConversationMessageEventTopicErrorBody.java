@@ -34,8 +34,8 @@ public class ConversationMessageEventTopicErrorBody  implements Serializable {
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<ConversationMessageEventTopicDetail> details = null;
-  private List<ConversationMessageEventTopicErrorBody> errors = null;
+  private List<ConversationMessageEventTopicDetail> details = new ArrayList<ConversationMessageEventTopicDetail>();
+  private List<ConversationMessageEventTopicErrorBody> errors = new ArrayList<ConversationMessageEventTopicErrorBody>();
 
   
   /**

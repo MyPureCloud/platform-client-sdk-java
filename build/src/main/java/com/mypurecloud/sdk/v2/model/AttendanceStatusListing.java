@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class AttendanceStatusListing  implements Serializable {
   
-  private List<AttendanceStatus> entities = null;
+  private List<AttendanceStatus> entities = new ArrayList<AttendanceStatus>();
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class EmailConversationEntityListing  implements Serializable, PagedResource<EmailConversation> {
   
-  private List<EmailConversation> entities = null;
+  private List<EmailConversation> entities = new ArrayList<EmailConversation>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

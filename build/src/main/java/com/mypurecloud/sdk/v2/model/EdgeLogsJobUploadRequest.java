@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class EdgeLogsJobUploadRequest  implements Serializable {
   
-  private List<String> fileIds = null;
+  private List<String> fileIds = new ArrayList<String>();
 
   
   /**

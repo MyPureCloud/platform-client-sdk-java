@@ -26,7 +26,7 @@ public class BuSearchAgentSchedulesRequest  implements Serializable {
   
   private Date startDate = null;
   private Date endDate = null;
-  private List<String> userIds = null;
+  private List<String> userIds = new ArrayList<String>();
 
   
   /**

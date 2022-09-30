@@ -82,7 +82,7 @@ public class EvaluationQuestion  implements Serializable {
   private Boolean naEnabled = null;
   private Boolean commentsRequired = null;
   private VisibilityCondition visibilityCondition = null;
-  private List<AnswerOption> answerOptions = null;
+  private List<AnswerOption> answerOptions = new ArrayList<AnswerOption>();
   private Boolean isKill = null;
   private Boolean isCritical = null;
 

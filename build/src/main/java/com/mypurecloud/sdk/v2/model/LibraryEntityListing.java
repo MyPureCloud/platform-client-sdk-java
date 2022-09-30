@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class LibraryEntityListing  implements Serializable, PagedResource<Library> {
   
-  private List<Library> entities = null;
+  private List<Library> entities = new ArrayList<Library>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

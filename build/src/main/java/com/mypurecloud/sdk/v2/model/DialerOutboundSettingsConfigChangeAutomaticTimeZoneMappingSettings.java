@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings  implements Serializable {
   
-  private List<DialerOutboundSettingsConfigChangeCallableWindow> callableWindows = null;
+  private List<DialerOutboundSettingsConfigChangeCallableWindow> callableWindows = new ArrayList<DialerOutboundSettingsConfigChangeCallableWindow>();
 
   
   /**

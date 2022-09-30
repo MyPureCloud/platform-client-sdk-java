@@ -210,7 +210,7 @@ public class ConversationEventTopicVideo  implements Serializable {
   private DisconnectTypeEnum disconnectType = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
-  private List<String> msids = null;
+  private List<String> msids = new ArrayList<String>();
   private ConversationEventTopicWrapup wrapup = null;
   private ConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;

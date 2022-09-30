@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class AuditQueryServiceMapping  implements Serializable {
   
-  private List<AuditQueryService> services = null;
+  private List<AuditQueryService> services = new ArrayList<AuditQueryService>();
 
   
   /**

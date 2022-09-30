@@ -148,7 +148,7 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
   private WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation adherenceExplanation = null;
   private Date adherenceChangeTime = null;
   private Date presenceUpdateTime = null;
-  private List<WfmUserScheduleAdherenceUpdatedMuTopicQueueReference> activeQueues = null;
+  private List<WfmUserScheduleAdherenceUpdatedMuTopicQueueReference> activeQueues = new ArrayList<WfmUserScheduleAdherenceUpdatedMuTopicQueueReference>();
   private Date activeQueuesModifiedTime = null;
   private Boolean removedFromManagementUnit = null;
 

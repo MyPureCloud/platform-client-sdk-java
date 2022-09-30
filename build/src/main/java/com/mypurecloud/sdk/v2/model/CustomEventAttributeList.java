@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class CustomEventAttributeList  implements Serializable {
   
   private String dataType = null;
-  private List<String> values = null;
+  private List<String> values = new ArrayList<String>();
 
   
   /**

@@ -24,8 +24,8 @@ import java.io.Serializable;
 public class LongTermForecastPlanningGroupData  implements Serializable {
   
   private String planningGroupId = null;
-  private List<Double> offeredPerDay = null;
-  private List<Double> averageHandleTimeSecondsPerDay = null;
+  private List<Double> offeredPerDay = new ArrayList<Double>();
+  private List<Double> averageHandleTimeSecondsPerDay = new ArrayList<Double>();
 
   
   /**

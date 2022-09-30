@@ -31,8 +31,8 @@ public class VoicemailsSearchResponse  implements Serializable {
   private String previousPage = null;
   private String currentPage = null;
   private String nextPage = null;
-  private List<String> types = null;
-  private List<VoicemailMessage> results = null;
+  private List<String> types = new ArrayList<String>();
+  private List<VoicemailMessage> results = new ArrayList<VoicemailMessage>();
 
   
   /**

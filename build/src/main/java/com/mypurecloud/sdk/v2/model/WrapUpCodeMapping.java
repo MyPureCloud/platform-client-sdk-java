@@ -77,7 +77,7 @@ public class WrapUpCodeMapping  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<DefaultSetEnum> defaultSet = null;
+  private List<DefaultSetEnum> defaultSet = new ArrayList<DefaultSetEnum>();
   private Map<String, List<String>> mapping = null;
   private String selfUri = null;
 

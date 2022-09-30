@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ActionMapListing  implements Serializable, PagedResource<ActionMap> {
   
-  private List<ActionMap> entities = null;
+  private List<ActionMap> entities = new ArrayList<ActionMap>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

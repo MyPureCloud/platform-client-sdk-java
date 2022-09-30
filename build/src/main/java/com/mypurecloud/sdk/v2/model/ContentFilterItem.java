@@ -131,7 +131,7 @@ public class ContentFilterItem  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<String> values = null;
+  private List<String> values = new ArrayList<String>();
 
   
   /**

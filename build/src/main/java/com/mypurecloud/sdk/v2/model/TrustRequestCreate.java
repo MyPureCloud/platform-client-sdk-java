@@ -23,8 +23,8 @@ import java.io.Serializable;
 
 public class TrustRequestCreate  implements Serializable {
   
-  private List<String> userIds = null;
-  private List<String> groupIds = null;
+  private List<String> userIds = new ArrayList<String>();
+  private List<String> groupIds = new ArrayList<String>();
 
   
   /**

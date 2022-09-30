@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class QueueMemberEntityListing  implements Serializable {
   
-  private List<QueueMember> entities = null;
+  private List<QueueMember> entities = new ArrayList<QueueMember>();
   private Integer pageNumber = null;
   private Integer pageSize = null;
   private String firstUri = null;

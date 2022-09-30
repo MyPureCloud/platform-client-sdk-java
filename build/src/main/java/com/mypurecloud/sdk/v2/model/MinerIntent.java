@@ -28,7 +28,7 @@ public class MinerIntent  implements Serializable {
   private String id = null;
   private String name = null;
   private Miner miner = null;
-  private List<Utterance> utterances = null;
+  private List<Utterance> utterances = new ArrayList<Utterance>();
   private Double analyticVolumePercent = null;
   private String selfUri = null;
 

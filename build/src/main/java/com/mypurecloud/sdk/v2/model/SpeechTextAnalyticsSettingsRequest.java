@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
   
   private String defaultProgramId = null;
-  private List<String> expectedDialects = null;
+  private List<String> expectedDialects = new ArrayList<String>();
 
   
   /**

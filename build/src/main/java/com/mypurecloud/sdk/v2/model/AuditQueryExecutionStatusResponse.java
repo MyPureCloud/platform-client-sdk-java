@@ -167,8 +167,8 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     }
   }
   private ServiceNameEnum serviceName = null;
-  private List<AuditQueryFilter> filters = null;
-  private List<AuditQuerySort> sort = null;
+  private List<AuditQueryFilter> filters = new ArrayList<AuditQueryFilter>();
+  private List<AuditQuerySort> sort = new ArrayList<AuditQuerySort>();
 
   
   /**

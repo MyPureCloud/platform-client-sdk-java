@@ -27,7 +27,7 @@ public class PhoneChangeTopicLineStatus  implements Serializable {
   private String id = null;
   private Boolean reachable = null;
   private String addressOfRecord = null;
-  private List<String> contactAddresses = null;
+  private List<String> contactAddresses = new ArrayList<String>();
   private Date reachableStateTime = null;
 
   

@@ -27,10 +27,10 @@ public class RoutingData  implements Serializable {
   private String queueId = null;
   private String languageId = null;
   private Integer priority = null;
-  private List<String> skillIds = null;
-  private List<String> preferredAgentIds = null;
-  private List<ScoredAgent> scoredAgents = null;
-  private List<String> routingFlags = null;
+  private List<String> skillIds = new ArrayList<String>();
+  private List<String> preferredAgentIds = new ArrayList<String>();
+  private List<ScoredAgent> scoredAgents = new ArrayList<ScoredAgent>();
+  private List<String> routingFlags = new ArrayList<String>();
 
   
   /**

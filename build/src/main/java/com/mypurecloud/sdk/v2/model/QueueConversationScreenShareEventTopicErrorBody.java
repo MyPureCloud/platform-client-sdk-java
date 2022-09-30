@@ -34,8 +34,8 @@ public class QueueConversationScreenShareEventTopicErrorBody  implements Seriali
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<QueueConversationScreenShareEventTopicDetail> details = null;
-  private List<QueueConversationScreenShareEventTopicErrorBody> errors = null;
+  private List<QueueConversationScreenShareEventTopicDetail> details = new ArrayList<QueueConversationScreenShareEventTopicDetail>();
+  private List<QueueConversationScreenShareEventTopicErrorBody> errors = new ArrayList<QueueConversationScreenShareEventTopicErrorBody>();
 
   
   /**

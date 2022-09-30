@@ -29,8 +29,8 @@ public class QueueConversationVideoEventTopicConversationRoutingData  implements
   private QueueConversationVideoEventTopicUriReference queue = null;
   private QueueConversationVideoEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<QueueConversationVideoEventTopicUriReference> skills = null;
-  private List<QueueConversationVideoEventTopicScoredAgent> scoredAgents = null;
+  private List<QueueConversationVideoEventTopicUriReference> skills = new ArrayList<QueueConversationVideoEventTopicUriReference>();
+  private List<QueueConversationVideoEventTopicScoredAgent> scoredAgents = new ArrayList<QueueConversationVideoEventTopicScoredAgent>();
 
   
   /**

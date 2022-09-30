@@ -31,7 +31,7 @@ public class UpdateScheduleUploadSchema  implements Serializable {
   private Boolean published = null;
   private BuShortTermForecastReference shortTermForecast = null;
   private BuHeadcountForecast headcountForecast = null;
-  private List<BuUpdateAgentScheduleUploadSchema> agentSchedules = null;
+  private List<BuUpdateAgentScheduleUploadSchema> agentSchedules = new ArrayList<BuUpdateAgentScheduleUploadSchema>();
   private WfmVersionedEntityMetadata metadata = null;
 
   

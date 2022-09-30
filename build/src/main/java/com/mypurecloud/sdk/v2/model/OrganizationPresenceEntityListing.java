@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class OrganizationPresenceEntityListing  implements Serializable, PagedResource<OrganizationPresence> {
   
-  private List<OrganizationPresence> entities = null;
+  private List<OrganizationPresence> entities = new ArrayList<OrganizationPresence>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

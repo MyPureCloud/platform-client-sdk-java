@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class UserBestPoints  implements Serializable {
   
   private UserReference user = null;
-  private List<UserBestPointsItem> bestPoints = null;
+  private List<UserBestPointsItem> bestPoints = new ArrayList<UserBestPointsItem>();
 
   
   @ApiModelProperty(example = "null", value = "The requested user for the best points")

@@ -34,7 +34,7 @@ public class IntegrationType  implements Serializable {
   private String description = null;
   private String provider = null;
   private String category = null;
-  private List<UserImage> images = null;
+  private List<UserImage> images = new ArrayList<UserImage>();
   private String configPropertiesSchemaUri = null;
   private String configAdvancedSchemaUri = null;
   private String helpUri = null;
@@ -46,12 +46,12 @@ public class IntegrationType  implements Serializable {
   private String privacyPolicyUri = null;
   private String supportContactUri = null;
   private String salesContactUri = null;
-  private List<HelpLink> helpLinks = null;
+  private List<HelpLink> helpLinks = new ArrayList<HelpLink>();
   private Map<String, CredentialSpecification> credentials = null;
   private Boolean nonInstallable = null;
   private Integer maxInstances = null;
-  private List<String> userPermissions = null;
-  private List<String> vendorOAuthClientIds = null;
+  private List<String> userPermissions = new ArrayList<String>();
+  private List<String> vendorOAuthClientIds = new ArrayList<String>();
   private String selfUri = null;
 
   

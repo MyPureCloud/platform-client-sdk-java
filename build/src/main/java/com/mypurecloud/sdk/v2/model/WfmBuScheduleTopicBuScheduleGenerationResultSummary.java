@@ -27,7 +27,7 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
   private Boolean failed = null;
   private String runId = null;
   private Integer messageCount = null;
-  private List<WfmBuScheduleTopicSchedulerMessageSeverityCount> messageSeverityCounts = null;
+  private List<WfmBuScheduleTopicSchedulerMessageSeverityCount> messageSeverityCounts = new ArrayList<WfmBuScheduleTopicSchedulerMessageSeverityCount>();
 
   
   /**

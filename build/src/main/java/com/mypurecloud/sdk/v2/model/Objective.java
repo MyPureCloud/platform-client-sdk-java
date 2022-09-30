@@ -29,7 +29,7 @@ public class Objective  implements Serializable {
   
   private String id = null;
   private String templateId = null;
-  private List<ObjectiveZone> zones = null;
+  private List<ObjectiveZone> zones = new ArrayList<ObjectiveZone>();
   private Boolean enabled = null;
 
   private static class MediaTypesEnumDeserializer extends StdDeserializer<MediaTypesEnum> {
@@ -84,9 +84,9 @@ public class Objective  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<MediaTypesEnum> mediaTypes = null;
-  private List<AddressableEntityRef> queues = null;
-  private List<AddressableEntityRef> topics = null;
+  private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
+  private List<AddressableEntityRef> queues = new ArrayList<AddressableEntityRef>();
+  private List<AddressableEntityRef> topics = new ArrayList<AddressableEntityRef>();
 
   private static class TopicIdsFilterTypeEnumDeserializer extends StdDeserializer<TopicIdsFilterTypeEnum> {
     public TopicIdsFilterTypeEnumDeserializer() {

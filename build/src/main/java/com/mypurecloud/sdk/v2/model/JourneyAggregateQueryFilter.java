@@ -74,8 +74,8 @@ public class JourneyAggregateQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<JourneyAggregateQueryClause> clauses = null;
-  private List<JourneyAggregateQueryPredicate> predicates = null;
+  private List<JourneyAggregateQueryClause> clauses = new ArrayList<JourneyAggregateQueryClause>();
+  private List<JourneyAggregateQueryPredicate> predicates = new ArrayList<JourneyAggregateQueryPredicate>();
 
   
   /**

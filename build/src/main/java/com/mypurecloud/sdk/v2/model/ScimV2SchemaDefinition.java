@@ -29,7 +29,7 @@ public class ScimV2SchemaDefinition  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
-  private List<ScimV2SchemaAttribute> attributes = null;
+  private List<ScimV2SchemaAttribute> attributes = new ArrayList<ScimV2SchemaAttribute>();
   private ScimMetadata meta = null;
 
   

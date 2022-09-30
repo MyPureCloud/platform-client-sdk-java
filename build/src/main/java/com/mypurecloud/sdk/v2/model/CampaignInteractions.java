@@ -26,11 +26,11 @@ import java.io.Serializable;
 public class CampaignInteractions  implements Serializable {
   
   private DomainEntityRef campaign = null;
-  private List<CampaignInteraction> pendingInteractions = null;
-  private List<CampaignInteraction> proceedingInteractions = null;
-  private List<CampaignInteraction> previewingInteractions = null;
-  private List<CampaignInteraction> interactingInteractions = null;
-  private List<CampaignInteraction> scheduledInteractions = null;
+  private List<CampaignInteraction> pendingInteractions = new ArrayList<CampaignInteraction>();
+  private List<CampaignInteraction> proceedingInteractions = new ArrayList<CampaignInteraction>();
+  private List<CampaignInteraction> previewingInteractions = new ArrayList<CampaignInteraction>();
+  private List<CampaignInteraction> interactingInteractions = new ArrayList<CampaignInteraction>();
+  private List<CampaignInteraction> scheduledInteractions = new ArrayList<CampaignInteraction>();
 
   
   /**

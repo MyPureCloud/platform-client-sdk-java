@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class DataSchemaListing  implements Serializable {
   
   private Long total = null;
-  private List<DataSchema> entities = null;
+  private List<DataSchema> entities = new ArrayList<DataSchema>();
   private String selfUri = null;
 
   

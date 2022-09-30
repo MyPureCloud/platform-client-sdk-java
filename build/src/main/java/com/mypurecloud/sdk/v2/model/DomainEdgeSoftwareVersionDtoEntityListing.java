@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable, PagedResource<DomainEdgeSoftwareVersionDto> {
   
-  private List<DomainEdgeSoftwareVersionDto> entities = null;
+  private List<DomainEdgeSoftwareVersionDto> entities = new ArrayList<DomainEdgeSoftwareVersionDto>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

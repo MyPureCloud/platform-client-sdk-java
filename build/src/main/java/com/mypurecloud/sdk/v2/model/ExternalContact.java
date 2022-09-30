@@ -63,7 +63,7 @@ public class ExternalContact  implements Serializable {
   private String externalSystemUrl = null;
   private DataSchema schema = null;
   private Map<String, Object> customFields = null;
-  private List<ExternalDataSource> externalDataSources = null;
+  private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -114,7 +114,7 @@ public class ExternalContact  implements Serializable {
   }
   private TypeEnum type = null;
   private ContactAddressableEntityRef canonicalContact = null;
-  private List<ContactAddressableEntityRef> mergeSet = null;
+  private List<ContactAddressableEntityRef> mergeSet = new ArrayList<ContactAddressableEntityRef>();
   private MergeOperation mergeOperation = null;
   private String selfUri = null;
 

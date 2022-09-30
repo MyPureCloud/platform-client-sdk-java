@@ -34,7 +34,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
   private String ruleId = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<KlaxonHeartBeatAlertsTopicNotificationUser> notificationUsers = null;
+  private List<KlaxonHeartBeatAlertsTopicNotificationUser> notificationUsers = new ArrayList<KlaxonHeartBeatAlertsTopicNotificationUser>();
 
   private static class AlertTypesEnumDeserializer extends StdDeserializer<AlertTypesEnum> {
     public AlertTypesEnumDeserializer() {
@@ -82,7 +82,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<AlertTypesEnum> alertTypes = null;
+  private List<AlertTypesEnum> alertTypes = new ArrayList<AlertTypesEnum>();
 
   private static class RuleTypeEnumDeserializer extends StdDeserializer<RuleTypeEnum> {
     public RuleTypeEnumDeserializer() {

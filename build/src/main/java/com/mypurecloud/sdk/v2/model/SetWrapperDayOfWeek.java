@@ -73,7 +73,7 @@ public class SetWrapperDayOfWeek  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<ValuesEnum> values = null;
+  private List<ValuesEnum> values = new ArrayList<ValuesEnum>();
 
   
   /**

@@ -339,7 +339,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
   private String cobrowseRole = null;
   private String viewerUrl = null;
   private Date providerEventTime = null;
-  private List<String> controlling = null;
+  private List<String> controlling = new ArrayList<String>();
 
   
   /**

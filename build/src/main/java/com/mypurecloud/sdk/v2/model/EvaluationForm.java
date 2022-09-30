@@ -31,7 +31,7 @@ public class EvaluationForm  implements Serializable {
   private Date modifiedDate = null;
   private Boolean published = null;
   private String contextId = null;
-  private List<EvaluationQuestionGroup> questionGroups = null;
+  private List<EvaluationQuestionGroup> questionGroups = new ArrayList<EvaluationQuestionGroup>();
   private DomainEntityListingEvaluationForm publishedVersions = null;
   private String selfUri = null;
 

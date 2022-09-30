@@ -25,8 +25,8 @@ import java.io.Serializable;
 public class AdditionalMessage  implements Serializable {
   
   private String textBody = null;
-  private List<String> mediaIds = null;
-  private List<String> stickerIds = null;
+  private List<String> mediaIds = new ArrayList<String>();
+  private List<String> stickerIds = new ArrayList<String>();
   private MessagingTemplateRequest messagingTemplate = null;
 
   

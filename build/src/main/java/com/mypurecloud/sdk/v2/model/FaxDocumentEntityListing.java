@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class FaxDocumentEntityListing  implements Serializable, PagedResource<FaxDocument> {
   
-  private List<FaxDocument> entities = null;
+  private List<FaxDocument> entities = new ArrayList<FaxDocument>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

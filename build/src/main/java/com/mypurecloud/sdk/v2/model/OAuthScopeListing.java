@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class OAuthScopeListing  implements Serializable {
   
   private Long total = null;
-  private List<OAuthScope> entities = null;
+  private List<OAuthScope> entities = new ArrayList<OAuthScope>();
   private String selfUri = null;
 
   

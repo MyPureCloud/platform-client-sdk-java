@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class WrapupCodeEntityListing  implements Serializable, PagedResource<WrapupCode> {
   
-  private List<WrapupCode> entities = null;
+  private List<WrapupCode> entities = new ArrayList<WrapupCode>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class FailedRecordingEntityListing  implements Serializable, PagedResource<RecordingJobFailedRecording> {
   
-  private List<RecordingJobFailedRecording> entities = null;
+  private List<RecordingJobFailedRecording> entities = new ArrayList<RecordingJobFailedRecording>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

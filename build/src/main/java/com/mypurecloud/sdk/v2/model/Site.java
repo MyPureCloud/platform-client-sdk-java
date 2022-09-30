@@ -93,12 +93,12 @@ public class Site  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private List<DomainEntityRef> primarySites = null;
-  private List<DomainEntityRef> secondarySites = null;
-  private List<Edge> primaryEdges = null;
-  private List<Edge> secondaryEdges = null;
-  private List<Contact> addresses = null;
-  private List<Edge> edges = null;
+  private List<DomainEntityRef> primarySites = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> secondarySites = new ArrayList<DomainEntityRef>();
+  private List<Edge> primaryEdges = new ArrayList<Edge>();
+  private List<Edge> secondaryEdges = new ArrayList<Edge>();
+  private List<Contact> addresses = new ArrayList<Contact>();
+  private List<Edge> edges = new ArrayList<Edge>();
   private EdgeAutoUpdateConfig edgeAutoUpdateConfig = null;
   private Boolean mediaRegionsUseLatencyBased = null;
   private LocationDefinition location = null;
@@ -153,7 +153,7 @@ public class Site  implements Serializable {
   }
   private MediaModelEnum mediaModel = null;
   private Boolean coreSite = null;
-  private List<SiteConnection> siteConnections = null;
+  private List<SiteConnection> siteConnections = new ArrayList<SiteConnection>();
   private String selfUri = null;
 
   

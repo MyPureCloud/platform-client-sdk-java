@@ -28,7 +28,7 @@ public class CampaignDiagnostics  implements Serializable {
   
   private CallableContactsDiagnostic callableContacts = null;
   private QueueUtilizationDiagnostic queueUtilizationDiagnostic = null;
-  private List<RuleSetDiagnostic> ruleSetDiagnostics = null;
+  private List<RuleSetDiagnostic> ruleSetDiagnostics = new ArrayList<RuleSetDiagnostic>();
   private Integer outstandingInteractionsCount = null;
   private Integer scheduledInteractionsCount = null;
 

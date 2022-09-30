@@ -78,8 +78,8 @@ public class GroupSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = null;
-  private List<GroupSearchCriteria> query = null;
+  private List<SearchSort> sort = new ArrayList<SearchSort>();
+  private List<GroupSearchCriteria> query = new ArrayList<GroupSearchCriteria>();
 
   
   /**

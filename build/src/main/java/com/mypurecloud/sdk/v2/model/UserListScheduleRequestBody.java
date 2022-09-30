@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class UserListScheduleRequestBody  implements Serializable {
   
-  private List<String> userIds = null;
+  private List<String> userIds = new ArrayList<String>();
   private Date startDate = null;
   private Date endDate = null;
   private Boolean loadFullWeeks = null;

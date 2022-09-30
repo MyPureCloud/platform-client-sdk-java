@@ -24,9 +24,9 @@ import java.io.Serializable;
 
 public class BulkDeleteResponse  implements Serializable {
   
-  private List<BulkResponseResultVoidEntity> results = null;
+  private List<BulkResponseResultVoidEntity> results = new ArrayList<BulkResponseResultVoidEntity>();
   private Integer errorCount = null;
-  private List<Integer> errorIndexes = null;
+  private List<Integer> errorIndexes = new ArrayList<Integer>();
 
   
   /**

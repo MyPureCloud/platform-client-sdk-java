@@ -26,9 +26,9 @@ import java.io.Serializable;
 public class IntentDefinition  implements Serializable {
   
   private String name = null;
-  private List<NamedEntityTypeBinding> entityTypeBindings = null;
-  private List<String> entityNameReferences = null;
-  private List<NluUtterance> utterances = null;
+  private List<NamedEntityTypeBinding> entityTypeBindings = new ArrayList<NamedEntityTypeBinding>();
+  private List<String> entityNameReferences = new ArrayList<String>();
+  private List<NluUtterance> utterances = new ArrayList<NluUtterance>();
 
   
   /**

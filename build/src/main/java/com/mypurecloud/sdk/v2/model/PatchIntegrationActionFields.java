@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class PatchIntegrationActionFields  implements Serializable {
   
   private PatchIntegrationAction integrationAction = null;
-  private List<RequestMapping> requestMappings = null;
+  private List<RequestMapping> requestMappings = new ArrayList<RequestMapping>();
 
   
   /**

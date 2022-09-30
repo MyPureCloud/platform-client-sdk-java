@@ -88,7 +88,7 @@ public class IVR  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private List<String> dnis = null;
+  private List<String> dnis = new ArrayList<String>();
   private DomainEntityRef openHoursFlow = null;
   private DomainEntityRef closedHoursFlow = null;
   private DomainEntityRef holidayHoursFlow = null;

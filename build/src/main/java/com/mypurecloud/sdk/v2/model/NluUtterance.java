@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class NluUtterance  implements Serializable {
   
-  private List<NluUtteranceSegment> segments = null;
+  private List<NluUtteranceSegment> segments = new ArrayList<NluUtteranceSegment>();
 
   
   /**

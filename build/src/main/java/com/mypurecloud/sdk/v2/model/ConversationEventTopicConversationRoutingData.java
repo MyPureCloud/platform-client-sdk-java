@@ -29,8 +29,8 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
   private ConversationEventTopicUriReference queue = null;
   private ConversationEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<ConversationEventTopicUriReference> skills = null;
-  private List<ConversationEventTopicScoredAgent> scoredAgents = null;
+  private List<ConversationEventTopicUriReference> skills = new ArrayList<ConversationEventTopicUriReference>();
+  private List<ConversationEventTopicScoredAgent> scoredAgents = new ArrayList<ConversationEventTopicScoredAgent>();
 
   
   /**

@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TtsEngineEntityListing  implements Serializable, PagedResource<TtsEngineEntity> {
   
-  private List<TtsEngineEntity> entities = null;
+  private List<TtsEngineEntity> entities = new ArrayList<TtsEngineEntity>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

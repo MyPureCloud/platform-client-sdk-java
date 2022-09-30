@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CoachingAppointmentResponseList  implements Serializable, PagedResource<CoachingAppointmentResponse> {
   
-  private List<CoachingAppointmentResponse> entities = null;
+  private List<CoachingAppointmentResponse> entities = new ArrayList<CoachingAppointmentResponse>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

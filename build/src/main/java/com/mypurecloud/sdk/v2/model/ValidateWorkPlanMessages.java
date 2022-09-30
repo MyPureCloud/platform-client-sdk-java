@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ValidateWorkPlanMessages  implements Serializable {
   
-  private List<WorkPlanConfigurationViolationMessage> violationMessages = null;
+  private List<WorkPlanConfigurationViolationMessage> violationMessages = new ArrayList<WorkPlanConfigurationViolationMessage>();
   private ConstraintConflictMessage constraintConflictMessage = null;
 
   

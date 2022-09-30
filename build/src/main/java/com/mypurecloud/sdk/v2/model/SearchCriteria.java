@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class SearchCriteria  implements Serializable {
   
   private String endValue = null;
-  private List<String> values = null;
+  private List<String> values = new ArrayList<String>();
   private String startValue = null;
   private String value = null;
 
@@ -77,7 +77,7 @@ public class SearchCriteria  implements Serializable {
     }
   }
   private OperatorEnum operator = null;
-  private List<SearchCriteria> group = null;
+  private List<SearchCriteria> group = new ArrayList<SearchCriteria>();
   private String dateFormat = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -141,7 +141,7 @@ public class SearchCriteria  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<String> fields = null;
+  private List<String> fields = new ArrayList<String>();
 
   
   /**

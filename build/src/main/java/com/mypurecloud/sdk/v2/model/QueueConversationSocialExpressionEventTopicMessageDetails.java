@@ -85,9 +85,9 @@ public class QueueConversationSocialExpressionEventTopicMessageDetails  implemen
   }
   private MessageStatusEnum messageStatus = null;
   private Integer messageSegmentCount = null;
-  private List<QueueConversationSocialExpressionEventTopicMessageMedia> media = null;
+  private List<QueueConversationSocialExpressionEventTopicMessageMedia> media = new ArrayList<QueueConversationSocialExpressionEventTopicMessageMedia>();
   private QueueConversationSocialExpressionEventTopicErrorDetails errorInfo = null;
-  private List<QueueConversationSocialExpressionEventTopicMessageSticker> stickers = null;
+  private List<QueueConversationSocialExpressionEventTopicMessageSticker> stickers = new ArrayList<QueueConversationSocialExpressionEventTopicMessageSticker>();
   private QueueConversationSocialExpressionEventTopicMessageMetadata messageMetadata = null;
 
   

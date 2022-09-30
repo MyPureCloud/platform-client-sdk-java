@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class DevelopmentActivityAggregateResponse  implements Serializable {
   
-  private List<DevelopmentActivityAggregateQueryResponseGroupedData> results = null;
+  private List<DevelopmentActivityAggregateQueryResponseGroupedData> results = new ArrayList<DevelopmentActivityAggregateQueryResponseGroupedData>();
 
   
   /**

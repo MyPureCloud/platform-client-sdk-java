@@ -29,7 +29,7 @@ public class Draft  implements Serializable {
   private String id = null;
   private String name = null;
   private Miner miner = null;
-  private List<DraftIntents> intents = null;
+  private List<DraftIntents> intents = new ArrayList<DraftIntents>();
   private Date dateCreated = null;
   private Date dateModified = null;
   private String selfUri = null;

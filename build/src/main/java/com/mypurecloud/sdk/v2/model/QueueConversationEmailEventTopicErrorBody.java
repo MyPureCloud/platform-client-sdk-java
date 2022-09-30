@@ -34,8 +34,8 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<QueueConversationEmailEventTopicDetail> details = null;
-  private List<QueueConversationEmailEventTopicErrorBody> errors = null;
+  private List<QueueConversationEmailEventTopicDetail> details = new ArrayList<QueueConversationEmailEventTopicDetail>();
+  private List<QueueConversationEmailEventTopicErrorBody> errors = new ArrayList<QueueConversationEmailEventTopicErrorBody>();
 
   
   /**

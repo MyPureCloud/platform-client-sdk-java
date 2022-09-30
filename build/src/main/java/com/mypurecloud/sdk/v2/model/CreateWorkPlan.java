@@ -101,8 +101,8 @@ public class CreateWorkPlan  implements Serializable {
   }
   private ShiftStartVarianceTypeEnum shiftStartVarianceType = null;
   private ListWrapperShiftStartVariance shiftStartVariances = null;
-  private List<CreateWorkPlanShift> shifts = null;
-  private List<UserReference> agents = null;
+  private List<CreateWorkPlanShift> shifts = new ArrayList<CreateWorkPlanShift>();
+  private List<UserReference> agents = new ArrayList<UserReference>();
 
   
   /**

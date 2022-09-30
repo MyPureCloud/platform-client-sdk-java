@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class IpAddressRangeListing  implements Serializable {
   
-  private List<IpAddressRange> entities = null;
+  private List<IpAddressRange> entities = new ArrayList<IpAddressRange>();
 
   
   /**

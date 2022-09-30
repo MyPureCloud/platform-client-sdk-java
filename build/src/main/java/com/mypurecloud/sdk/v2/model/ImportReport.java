@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ImportReport  implements Serializable {
   
-  private List<ImportError> errors = null;
+  private List<ImportError> errors = new ArrayList<ImportError>();
   private ResultCounters validated = null;
   private ResultCounters imported = null;
   private Integer totalDocuments = null;

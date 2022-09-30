@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class NluFeedbackRequest  implements Serializable {
   
   private String text = null;
-  private List<IntentFeedback> intents = null;
+  private List<IntentFeedback> intents = new ArrayList<IntentFeedback>();
   private String versionId = null;
 
   

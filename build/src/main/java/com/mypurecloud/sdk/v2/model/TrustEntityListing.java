@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TrustEntityListing  implements Serializable, PagedResource<Trustee> {
   
-  private List<Trustee> entities = null;
+  private List<Trustee> entities = new ArrayList<Trustee>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

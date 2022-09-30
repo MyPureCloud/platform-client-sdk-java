@@ -76,7 +76,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
   private TypeEnum type = null;
   private String text = null;
   private V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment media = null;
-  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter> parameters = null;
+  private List<V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter> parameters = new ArrayList<V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter>();
 
   
   /**

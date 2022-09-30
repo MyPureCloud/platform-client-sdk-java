@@ -28,7 +28,7 @@ public class AddWorkPlanRotationRequest  implements Serializable {
   
   private String name = null;
   private DateRangeWithOptionalEnd dateRange = null;
-  private List<AddWorkPlanRotationAgentRequest> agents = null;
+  private List<AddWorkPlanRotationAgentRequest> agents = new ArrayList<AddWorkPlanRotationAgentRequest>();
   private WorkPlanPatternRequest pattern = null;
 
   

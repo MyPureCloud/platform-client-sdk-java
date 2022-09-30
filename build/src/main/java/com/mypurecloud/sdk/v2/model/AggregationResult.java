@@ -76,7 +76,7 @@ public class AggregationResult  implements Serializable {
   private String dimension = null;
   private String metric = null;
   private Long count = null;
-  private List<AggregationResultEntry> results = null;
+  private List<AggregationResultEntry> results = new ArrayList<AggregationResultEntry>();
 
   
   /**

@@ -79,8 +79,8 @@ public class WfmUserNotificationTopicTimeOffRequestNotification  implements Seri
     }
   }
   private StatusEnum status = null;
-  private List<Date> partialDayStartDateTimes = null;
-  private List<String> fullDayManagementUnitDates = null;
+  private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
+  private List<String> fullDayManagementUnitDates = new ArrayList<String>();
 
   
   /**

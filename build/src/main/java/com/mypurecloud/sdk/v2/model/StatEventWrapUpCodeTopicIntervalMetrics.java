@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class StatEventWrapUpCodeTopicIntervalMetrics  implements Serializable {
   
   private String interval = null;
-  private List<StatEventWrapUpCodeTopicMetricStats> metrics = null;
+  private List<StatEventWrapUpCodeTopicMetricStats> metrics = new ArrayList<StatEventWrapUpCodeTopicMetricStats>();
 
   
   /**

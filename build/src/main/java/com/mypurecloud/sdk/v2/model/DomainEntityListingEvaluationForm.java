@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DomainEntityListingEvaluationForm  implements Serializable, PagedResource<EvaluationForm> {
   
-  private List<EvaluationForm> entities = null;
+  private List<EvaluationForm> entities = new ArrayList<EvaluationForm>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

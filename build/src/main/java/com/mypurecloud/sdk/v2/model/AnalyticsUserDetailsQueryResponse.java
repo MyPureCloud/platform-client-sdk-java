@@ -25,8 +25,8 @@ import java.io.Serializable;
 
 public class AnalyticsUserDetailsQueryResponse  implements Serializable {
   
-  private List<AnalyticsUserDetail> userDetails = null;
-  private List<AggregationResult> aggregations = null;
+  private List<AnalyticsUserDetail> userDetails = new ArrayList<AnalyticsUserDetail>();
+  private List<AggregationResult> aggregations = new ArrayList<AggregationResult>();
   private Integer totalHits = null;
 
   

@@ -28,7 +28,7 @@ public class JsonSearchResponse  implements Serializable {
   private Integer pageCount = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<String> types = null;
+  private List<String> types = new ArrayList<String>();
   private ArrayNode results = null;
   private ArrayNode aggregations = null;
 

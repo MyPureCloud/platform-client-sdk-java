@@ -92,7 +92,7 @@ public class BusinessUnitActivityCode  implements Serializable {
   private Boolean countsTowardShrinkage = null;
   private Boolean plannedShrinkage = null;
   private Boolean interruptible = null;
-  private List<SecondaryPresence> secondaryPresences = null;
+  private List<SecondaryPresence> secondaryPresences = new ArrayList<SecondaryPresence>();
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
 

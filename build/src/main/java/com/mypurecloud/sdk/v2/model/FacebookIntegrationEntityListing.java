@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class FacebookIntegrationEntityListing  implements Serializable, PagedResource<FacebookIntegration> {
   
-  private List<FacebookIntegration> entities = null;
+  private List<FacebookIntegration> entities = new ArrayList<FacebookIntegration>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

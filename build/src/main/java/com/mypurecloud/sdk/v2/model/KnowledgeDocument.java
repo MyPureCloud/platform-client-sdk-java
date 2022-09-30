@@ -156,7 +156,7 @@ public class KnowledgeDocument  implements Serializable {
   private DocumentFaq faq = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private List<KnowledgeCategory> categories = null;
+  private List<KnowledgeCategory> categories = new ArrayList<KnowledgeCategory>();
   private KnowledgeBase knowledgeBase = null;
   private String externalUrl = null;
   private DocumentArticle article = null;

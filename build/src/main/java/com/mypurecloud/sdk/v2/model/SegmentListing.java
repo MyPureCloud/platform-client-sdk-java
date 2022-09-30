@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class SegmentListing  implements Serializable, PagedResource<JourneySegment> {
   
-  private List<JourneySegment> entities = null;
+  private List<JourneySegment> entities = new ArrayList<JourneySegment>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

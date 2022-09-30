@@ -34,8 +34,8 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<ConversationScreenShareEventTopicDetail> details = null;
-  private List<ConversationScreenShareEventTopicErrorBody> errors = null;
+  private List<ConversationScreenShareEventTopicDetail> details = new ArrayList<ConversationScreenShareEventTopicDetail>();
+  private List<ConversationScreenShareEventTopicErrorBody> errors = new ArrayList<ConversationScreenShareEventTopicErrorBody>();
 
   
   /**

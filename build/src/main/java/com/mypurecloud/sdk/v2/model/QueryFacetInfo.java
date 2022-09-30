@@ -25,8 +25,8 @@ import java.io.Serializable;
 
 public class QueryFacetInfo  implements Serializable {
   
-  private List<FacetKeyAttribute> attributes = null;
-  private List<FacetEntry> facets = null;
+  private List<FacetKeyAttribute> attributes = new ArrayList<FacetKeyAttribute>();
+  private List<FacetEntry> facets = new ArrayList<FacetEntry>();
 
   
   /**

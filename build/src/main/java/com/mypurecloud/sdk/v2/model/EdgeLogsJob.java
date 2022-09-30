@@ -87,7 +87,7 @@ public class EdgeLogsJob  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private List<EdgeLogsJobFile> files = null;
+  private List<EdgeLogsJobFile> files = new ArrayList<EdgeLogsJobFile>();
   private String selfUri = null;
 
   

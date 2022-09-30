@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TagValueEntityListing  implements Serializable, PagedResource<TagValue> {
   
-  private List<TagValue> entities = null;
+  private List<TagValue> entities = new ArrayList<TagValue>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

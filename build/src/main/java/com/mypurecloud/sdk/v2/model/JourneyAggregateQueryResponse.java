@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class JourneyAggregateQueryResponse  implements Serializable {
   
-  private List<JourneyAggregateDataContainer> results = null;
+  private List<JourneyAggregateDataContainer> results = new ArrayList<JourneyAggregateDataContainer>();
 
   
   /**

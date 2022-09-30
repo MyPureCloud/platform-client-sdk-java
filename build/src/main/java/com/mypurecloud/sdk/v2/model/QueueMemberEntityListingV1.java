@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class QueueMemberEntityListingV1  implements Serializable, PagedResource<QueueMember> {
   
-  private List<QueueMember> entities = null;
+  private List<QueueMember> entities = new ArrayList<QueueMember>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -27,7 +27,7 @@ public class AnswerOption  implements Serializable {
   private String id = null;
   private String text = null;
   private Integer value = null;
-  private List<AssistanceCondition> assistanceConditions = null;
+  private List<AssistanceCondition> assistanceConditions = new ArrayList<AssistanceCondition>();
 
   
   /**

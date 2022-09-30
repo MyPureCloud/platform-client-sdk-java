@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class CoachingAppointmentStatusResponseList  implements Serializable {
   
-  private List<CoachingAppointmentStatusResponse> entities = null;
+  private List<CoachingAppointmentStatusResponse> entities = new ArrayList<CoachingAppointmentStatusResponse>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -78,9 +78,9 @@ public class VoicemailSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<SearchSort> sort = null;
-  private List<String> expand = null;
-  private List<VoicemailSearchCriteria> query = null;
+  private List<SearchSort> sort = new ArrayList<SearchSort>();
+  private List<String> expand = new ArrayList<String>();
+  private List<VoicemailSearchCriteria> query = new ArrayList<VoicemailSearchCriteria>();
 
   
   /**

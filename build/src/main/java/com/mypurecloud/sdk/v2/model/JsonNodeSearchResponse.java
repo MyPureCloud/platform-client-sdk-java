@@ -31,7 +31,7 @@ public class JsonNodeSearchResponse  implements Serializable {
   private String previousPage = null;
   private String currentPage = null;
   private String nextPage = null;
-  private List<String> types = null;
+  private List<String> types = new ArrayList<String>();
   private ArrayNode results = null;
   private ArrayNode aggregations = null;
 

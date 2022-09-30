@@ -39,7 +39,7 @@ public class Script  implements Serializable {
   private Object features = null;
   private Object variables = null;
   private Object customActions = null;
-  private List<Page> pages = null;
+  private List<Page> pages = new ArrayList<Page>();
   private String selfUri = null;
 
   

@@ -27,7 +27,7 @@ public class QualityAuditQueryExecutionResultsResponse  implements Serializable 
   private String id = null;
   private Integer pageSize = null;
   private String cursor = null;
-  private List<QualityAuditLogMessage> entities = null;
+  private List<QualityAuditLogMessage> entities = new ArrayList<QualityAuditLogMessage>();
 
   
   /**

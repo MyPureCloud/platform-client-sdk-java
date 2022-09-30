@@ -152,7 +152,7 @@ public class AnalyticsFlow  implements Serializable {
   private String transferTargetAddress = null;
   private String transferTargetName = null;
   private String transferType = null;
-  private List<AnalyticsFlowOutcome> outcomes = null;
+  private List<AnalyticsFlowOutcome> outcomes = new ArrayList<AnalyticsFlowOutcome>();
 
   
   /**

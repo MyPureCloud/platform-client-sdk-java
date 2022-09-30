@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class SchemaReferenceEntityListing  implements Serializable, PagedResource<DomainSchemaReference> {
   
-  private List<DomainSchemaReference> entities = null;
+  private List<DomainSchemaReference> entities = new ArrayList<DomainSchemaReference>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

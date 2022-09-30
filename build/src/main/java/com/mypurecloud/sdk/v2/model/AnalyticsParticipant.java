@@ -144,7 +144,7 @@ public class AnalyticsParticipant  implements Serializable {
   private PurposeEnum purpose = null;
   private String teamId = null;
   private String userId = null;
-  private List<AnalyticsSession> sessions = null;
+  private List<AnalyticsSession> sessions = new ArrayList<AnalyticsSession>();
   private Map<String, String> attributes = null;
 
   

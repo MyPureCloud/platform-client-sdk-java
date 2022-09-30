@@ -31,9 +31,9 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification  impl
   private WfmAgentScheduleUpdateTopicUserReference user = null;
   private Date startDate = null;
   private Date endDate = null;
-  private List<WfmAgentScheduleUpdateTopicWfmScheduleShift> shifts = null;
-  private List<WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker> fullDayTimeOffMarkers = null;
-  private List<WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate> updates = null;
+  private List<WfmAgentScheduleUpdateTopicWfmScheduleShift> shifts = new ArrayList<WfmAgentScheduleUpdateTopicWfmScheduleShift>();
+  private List<WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker>();
+  private List<WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate> updates = new ArrayList<WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate>();
 
   
   /**

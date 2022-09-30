@@ -202,7 +202,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
   private Date disconnectedTime = null;
   private QueueConversationSocialExpressionEventTopicAddress toAddress = null;
   private QueueConversationSocialExpressionEventTopicAddress fromAddress = null;
-  private List<QueueConversationSocialExpressionEventTopicMessageDetails> messages = null;
+  private List<QueueConversationSocialExpressionEventTopicMessageDetails> messages = new ArrayList<QueueConversationSocialExpressionEventTopicMessageDetails>();
   private String messagesTranscriptUri = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {

@@ -361,7 +361,7 @@ public class UserScheduleAdherence  implements Serializable {
   private ImpactEnum impact = null;
   private Date timeOfAdherenceChange = null;
   private Date presenceUpdateTime = null;
-  private List<QueueReference> activeQueues = null;
+  private List<QueueReference> activeQueues = new ArrayList<QueueReference>();
   private Date activeQueuesModifiedTime = null;
   private Boolean removedFromManagementUnit = null;
   private String selfUri = null;

@@ -33,7 +33,7 @@ public class RuleSet  implements Serializable {
   private Integer version = null;
   private DomainEntityRef contactList = null;
   private DomainEntityRef queue = null;
-  private List<DialerRule> rules = null;
+  private List<DialerRule> rules = new ArrayList<DialerRule>();
   private String selfUri = null;
 
   

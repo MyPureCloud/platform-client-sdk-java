@@ -153,7 +153,7 @@ public class CallHistoryParticipant  implements Serializable {
   private ExternalContact externalContact = null;
   private ExternalOrganization externalOrganization = null;
   private Boolean didInteract = null;
-  private List<Long> sipResponseCodes = null;
+  private List<Long> sipResponseCodes = new ArrayList<Long>();
 
   private static class FlaggedReasonEnumDeserializer extends StdDeserializer<FlaggedReasonEnum> {
     public FlaggedReasonEnumDeserializer() {

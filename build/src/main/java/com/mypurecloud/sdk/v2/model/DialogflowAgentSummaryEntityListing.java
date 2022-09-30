@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class DialogflowAgentSummaryEntityListing  implements Serializable, PagedResource<DialogflowAgentSummary> {
   
-  private List<DialogflowAgentSummary> entities = null;
+  private List<DialogflowAgentSummary> entities = new ArrayList<DialogflowAgentSummary>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

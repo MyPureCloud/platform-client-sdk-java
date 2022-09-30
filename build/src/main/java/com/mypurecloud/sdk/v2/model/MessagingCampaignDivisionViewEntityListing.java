@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class MessagingCampaignDivisionViewEntityListing  implements Serializable, PagedResource<MessagingCampaignDivisionView> {
   
-  private List<MessagingCampaignDivisionView> entities = null;
+  private List<MessagingCampaignDivisionView> entities = new ArrayList<MessagingCampaignDivisionView>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

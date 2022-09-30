@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class UnansweredGroups  implements Serializable {
   
-  private List<UnansweredGroup> entities = null;
+  private List<UnansweredGroup> entities = new ArrayList<UnansweredGroup>();
 
   
   /**

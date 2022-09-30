@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class ConversationAggregateQueryResponse  implements Serializable {
   
-  private List<ConversationAggregateDataContainer> results = null;
+  private List<ConversationAggregateDataContainer> results = new ArrayList<ConversationAggregateDataContainer>();
 
   
   /**

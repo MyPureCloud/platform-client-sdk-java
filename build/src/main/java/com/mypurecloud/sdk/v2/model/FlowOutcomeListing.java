@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutcome> {
   
-  private List<FlowOutcome> entities = null;
+  private List<FlowOutcome> entities = new ArrayList<FlowOutcome>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

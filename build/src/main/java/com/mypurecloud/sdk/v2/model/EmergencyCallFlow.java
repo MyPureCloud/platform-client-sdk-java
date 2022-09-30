@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class EmergencyCallFlow  implements Serializable {
   
   private DomainEntityRef emergencyFlow = null;
-  private List<DomainEntityRef> ivrs = null;
+  private List<DomainEntityRef> ivrs = new ArrayList<DomainEntityRef>();
 
   
   /**

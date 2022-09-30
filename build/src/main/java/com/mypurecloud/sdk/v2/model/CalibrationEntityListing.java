@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class CalibrationEntityListing  implements Serializable, PagedResource<Calibration> {
   
-  private List<Calibration> entities = null;
+  private List<Calibration> entities = new ArrayList<Calibration>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

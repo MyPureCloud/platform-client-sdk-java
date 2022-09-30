@@ -86,17 +86,17 @@ public class CoachingAppointmentResponse  implements Serializable {
   }
   private StatusEnum status = null;
   private UserReference facilitator = null;
-  private List<UserReference> attendees = null;
+  private List<UserReference> attendees = new ArrayList<UserReference>();
   private UserReference createdBy = null;
   private Date dateCreated = null;
   private UserReference modifiedBy = null;
   private Date dateModified = null;
-  private List<ConversationReference> conversations = null;
-  private List<DocumentReference> documents = null;
+  private List<ConversationReference> conversations = new ArrayList<ConversationReference>();
+  private List<DocumentReference> documents = new ArrayList<DocumentReference>();
   private Boolean isOverdue = null;
   private WfmScheduleReference wfmSchedule = null;
   private Date dateCompleted = null;
-  private List<String> externalLinks = null;
+  private List<String> externalLinks = new ArrayList<String>();
   private String selfUri = null;
 
   

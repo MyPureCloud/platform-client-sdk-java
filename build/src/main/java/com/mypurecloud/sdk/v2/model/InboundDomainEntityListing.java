@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class InboundDomainEntityListing  implements Serializable, PagedResource<InboundDomain> {
   
-  private List<InboundDomain> entities = null;
+  private List<InboundDomain> entities = new ArrayList<InboundDomain>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

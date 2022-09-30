@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class JourneySessionEventsNotificationCustomEventAttributeList  implements Serializable {
   
-  private List<String> values = null;
+  private List<String> values = new ArrayList<String>();
 
   private static class DataTypeEnumDeserializer extends StdDeserializer<DataTypeEnum> {
     public DataTypeEnumDeserializer() {

@@ -27,11 +27,11 @@ import java.io.Serializable;
 public class ScimConfigResourceType  implements Serializable {
   
   private String id = null;
-  private List<String> schemas = null;
+  private List<String> schemas = new ArrayList<String>();
   private String name = null;
   private String description = null;
   private String schema = null;
-  private List<ScimConfigResourceTypeSchemaExtension> schemaExtensions = null;
+  private List<ScimConfigResourceTypeSchemaExtension> schemaExtensions = new ArrayList<ScimConfigResourceTypeSchemaExtension>();
   private String endpoint = null;
   private ScimMetadata meta = null;
 

@@ -34,8 +34,8 @@ public class QueueConversationCallbackEventTopicErrorBody  implements Serializab
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
-  private List<QueueConversationCallbackEventTopicDetail> details = null;
-  private List<QueueConversationCallbackEventTopicErrorBody> errors = null;
+  private List<QueueConversationCallbackEventTopicDetail> details = new ArrayList<QueueConversationCallbackEventTopicDetail>();
+  private List<QueueConversationCallbackEventTopicErrorBody> errors = new ArrayList<QueueConversationCallbackEventTopicErrorBody>();
 
   
   /**

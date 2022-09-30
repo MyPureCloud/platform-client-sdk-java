@@ -76,7 +76,7 @@ public class ScheduleGenerationWarning  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<UnableToScheduleRequiredDaysEnum> unableToScheduleRequiredDays = null;
+  private List<UnableToScheduleRequiredDaysEnum> unableToScheduleRequiredDays = new ArrayList<UnableToScheduleRequiredDaysEnum>();
   private Boolean unableToMeetMinPaidForTheWeek = null;
   private Boolean unableToMeetMaxPaidForTheWeek = null;
 
@@ -130,7 +130,7 @@ public class ScheduleGenerationWarning  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<NoNeedDaysEnum> noNeedDays = null;
+  private List<NoNeedDaysEnum> noNeedDays = new ArrayList<NoNeedDaysEnum>();
   private Boolean shiftsTooCloseTogether = null;
 
   

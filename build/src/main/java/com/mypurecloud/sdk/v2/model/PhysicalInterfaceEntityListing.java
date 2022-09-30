@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class PhysicalInterfaceEntityListing  implements Serializable, PagedResource<DomainPhysicalInterface> {
   
-  private List<DomainPhysicalInterface> entities = null;
+  private List<DomainPhysicalInterface> entities = new ArrayList<DomainPhysicalInterface>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

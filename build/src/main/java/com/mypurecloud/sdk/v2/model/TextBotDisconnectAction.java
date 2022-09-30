@@ -80,7 +80,7 @@ public class TextBotDisconnectAction  implements Serializable {
   private ReasonEnum reason = null;
   private String reasonExtendedInfo = null;
   private TextBotFlowLocation flowLocation = null;
-  private List<TextBotFlowOutcome> flowOutcomes = null;
+  private List<TextBotFlowOutcome> flowOutcomes = new ArrayList<TextBotFlowOutcome>();
 
   
   /**

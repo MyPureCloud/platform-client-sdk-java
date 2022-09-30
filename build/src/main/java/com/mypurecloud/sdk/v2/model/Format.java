@@ -110,7 +110,7 @@ public class Format  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private List<FlagsEnum> flags = null;
+  private List<FlagsEnum> flags = new ArrayList<FlagsEnum>();
 
   
   /**

@@ -35,7 +35,7 @@ public class SurveyForm  implements Serializable {
   private String language = null;
   private String header = null;
   private String footer = null;
-  private List<SurveyQuestionGroup> questionGroups = null;
+  private List<SurveyQuestionGroup> questionGroups = new ArrayList<SurveyQuestionGroup>();
   private DomainEntityListingSurveyForm publishedVersions = null;
   private String selfUri = null;
 

@@ -74,8 +74,8 @@ public class UserAggregateQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<UserAggregateQueryClause> clauses = null;
-  private List<UserAggregateQueryPredicate> predicates = null;
+  private List<UserAggregateQueryClause> clauses = new ArrayList<UserAggregateQueryClause>();
+  private List<UserAggregateQueryPredicate> predicates = new ArrayList<UserAggregateQueryPredicate>();
 
   
   /**

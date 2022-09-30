@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ReportMetaDataEntityListing  implements Serializable, PagedResource<ReportMetaData> {
   
-  private List<ReportMetaData> entities = null;
+  private List<ReportMetaData> entities = new ArrayList<ReportMetaData>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

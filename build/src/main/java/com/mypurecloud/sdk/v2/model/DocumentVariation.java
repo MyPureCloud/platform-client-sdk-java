@@ -33,7 +33,7 @@ public class DocumentVariation  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private AddressableEntityRef documentVersion = null;
-  private List<DocumentVariationContext> contexts = null;
+  private List<DocumentVariationContext> contexts = new ArrayList<DocumentVariationContext>();
   private KnowledgeDocumentReference document = null;
   private String selfUri = null;
 

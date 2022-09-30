@@ -36,7 +36,7 @@ public class ResponseAsset  implements Serializable {
   private DomainEntityRef createdBy = null;
   private Date dateModified = null;
   private DomainEntityRef modifiedBy = null;
-  private List<DomainEntityRef> responses = null;
+  private List<DomainEntityRef> responses = new ArrayList<DomainEntityRef>();
   private String selfUri = null;
 
   

@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class CreateBenefitAssessmentJobRequest  implements Serializable {
   
-  private List<String> divisionIds = null;
+  private List<String> divisionIds = new ArrayList<String>();
 
   
   /**

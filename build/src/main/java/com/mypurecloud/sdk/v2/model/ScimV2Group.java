@@ -27,10 +27,10 @@ import java.io.Serializable;
 public class ScimV2Group  implements Serializable {
   
   private String id = null;
-  private List<String> schemas = null;
+  private List<String> schemas = new ArrayList<String>();
   private String displayName = null;
   private String externalId = null;
-  private List<ScimV2MemberReference> members = null;
+  private List<ScimV2MemberReference> members = new ArrayList<ScimV2MemberReference>();
   private ScimMetadata meta = null;
 
   

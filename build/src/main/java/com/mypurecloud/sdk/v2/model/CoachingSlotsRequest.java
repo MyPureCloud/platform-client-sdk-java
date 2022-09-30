@@ -24,9 +24,9 @@ public class CoachingSlotsRequest  implements Serializable {
   
   private String interval = null;
   private Integer lengthInMinutes = null;
-  private List<String> attendeeIds = null;
-  private List<String> facilitatorIds = null;
-  private List<String> interruptibleAppointmentIds = null;
+  private List<String> attendeeIds = new ArrayList<String>();
+  private List<String> facilitatorIds = new ArrayList<String>();
+  private List<String> interruptibleAppointmentIds = new ArrayList<String>();
 
   
   /**

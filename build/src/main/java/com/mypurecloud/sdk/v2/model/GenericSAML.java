@@ -33,7 +33,7 @@ public class GenericSAML  implements Serializable {
   private String sloBinding = null;
   private String relyingPartyIdentifier = null;
   private String certificate = null;
-  private List<String> certificates = null;
+  private List<String> certificates = new ArrayList<String>();
   private String logoImageData = null;
   private Boolean endpointCompression = null;
 

@@ -25,8 +25,8 @@ import java.io.Serializable;
 
 public class LearningAssignmentBulkAddResponse  implements Serializable {
   
-  private List<LearningAssignment> entities = null;
-  private List<DisallowedEntityLearningAssignmentItem> disallowedEntities = null;
+  private List<LearningAssignment> entities = new ArrayList<LearningAssignment>();
+  private List<DisallowedEntityLearningAssignmentItem> disallowedEntities = new ArrayList<DisallowedEntityLearningAssignmentItem>();
 
   
   /**

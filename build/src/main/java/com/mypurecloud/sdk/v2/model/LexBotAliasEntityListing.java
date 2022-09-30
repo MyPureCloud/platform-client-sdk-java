@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class LexBotAliasEntityListing  implements Serializable, PagedResource<LexBotAlias> {
   
-  private List<LexBotAlias> entities = null;
+  private List<LexBotAlias> entities = new ArrayList<LexBotAlias>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

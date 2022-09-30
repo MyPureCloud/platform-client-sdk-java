@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class CoretypeListing  implements Serializable {
   
   private Long total = null;
-  private List<Coretype> entities = null;
+  private List<Coretype> entities = new ArrayList<Coretype>();
   private String selfUri = null;
 
   

@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class UserAggregateDataContainer  implements Serializable {
   
   private Map<String, String> group = null;
-  private List<StatisticalResponse> data = null;
+  private List<StatisticalResponse> data = new ArrayList<StatisticalResponse>();
 
   
   /**

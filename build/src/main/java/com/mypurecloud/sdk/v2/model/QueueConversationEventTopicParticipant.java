@@ -118,15 +118,15 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   private ScreenRecordingStateEnum screenRecordingState = null;
   private String flaggedReason = null;
   private Map<String, String> attributes = null;
-  private List<QueueConversationEventTopicCall> calls = null;
-  private List<QueueConversationEventTopicCallback> callbacks = null;
-  private List<QueueConversationEventTopicChat> chats = null;
-  private List<QueueConversationEventTopicCobrowse> cobrowsesessions = null;
-  private List<QueueConversationEventTopicEmail> emails = null;
-  private List<QueueConversationEventTopicMessage> messages = null;
-  private List<QueueConversationEventTopicScreenshare> screenshares = null;
-  private List<QueueConversationEventTopicSocialExpression> socialExpressions = null;
-  private List<QueueConversationEventTopicVideo> videos = null;
+  private List<QueueConversationEventTopicCall> calls = new ArrayList<QueueConversationEventTopicCall>();
+  private List<QueueConversationEventTopicCallback> callbacks = new ArrayList<QueueConversationEventTopicCallback>();
+  private List<QueueConversationEventTopicChat> chats = new ArrayList<QueueConversationEventTopicChat>();
+  private List<QueueConversationEventTopicCobrowse> cobrowsesessions = new ArrayList<QueueConversationEventTopicCobrowse>();
+  private List<QueueConversationEventTopicEmail> emails = new ArrayList<QueueConversationEventTopicEmail>();
+  private List<QueueConversationEventTopicMessage> messages = new ArrayList<QueueConversationEventTopicMessage>();
+  private List<QueueConversationEventTopicScreenshare> screenshares = new ArrayList<QueueConversationEventTopicScreenshare>();
+  private List<QueueConversationEventTopicSocialExpression> socialExpressions = new ArrayList<QueueConversationEventTopicSocialExpression>();
+  private List<QueueConversationEventTopicVideo> videos = new ArrayList<QueueConversationEventTopicVideo>();
   private QueueConversationEventTopicWorkflow workflow = null;
 
   

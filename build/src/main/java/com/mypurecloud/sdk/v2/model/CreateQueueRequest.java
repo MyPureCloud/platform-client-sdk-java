@@ -51,7 +51,7 @@ public class CreateQueueRequest  implements Serializable {
   private Integer userMemberCount = null;
   private Integer joinedMemberCount = null;
   private Map<String, MediaSetting> mediaSettings = null;
-  private List<RoutingRule> routingRules = null;
+  private List<RoutingRule> routingRules = new ArrayList<RoutingRule>();
   private Bullseye bullseye = null;
   private AcwSettings acwSettings = null;
 
@@ -103,7 +103,7 @@ public class CreateQueueRequest  implements Serializable {
     }
   }
   private SkillEvaluationMethodEnum skillEvaluationMethod = null;
-  private List<MemberGroup> memberGroups = null;
+  private List<MemberGroup> memberGroups = new ArrayList<MemberGroup>();
   private DomainEntityRef queueFlow = null;
   private DomainEntityRef emailInQueueFlow = null;
   private DomainEntityRef messageInQueueFlow = null;

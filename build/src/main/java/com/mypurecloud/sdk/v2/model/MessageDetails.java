@@ -87,8 +87,8 @@ public class MessageDetails  implements Serializable {
   private MessageStatusEnum messageStatus = null;
   private Integer messageSegmentCount = null;
   private Date messageTime = null;
-  private List<MessageMedia> media = null;
-  private List<MessageSticker> stickers = null;
+  private List<MessageMedia> media = new ArrayList<MessageMedia>();
+  private List<MessageSticker> stickers = new ArrayList<MessageSticker>();
   private ConversationMessageMetadata messageMetadata = null;
   private ErrorBody errorInfo = null;
 

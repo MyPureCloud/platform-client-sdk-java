@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class ReportingTurnKnowledgeSearch  implements Serializable {
   
   private String searchId = null;
-  private List<ReportingTurnKnowledgeDocument> documents = null;
+  private List<ReportingTurnKnowledgeDocument> documents = new ArrayList<ReportingTurnKnowledgeDocument>();
   private String query = null;
 
   

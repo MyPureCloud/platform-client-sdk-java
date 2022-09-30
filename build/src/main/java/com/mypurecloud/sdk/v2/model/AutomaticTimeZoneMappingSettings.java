@@ -24,8 +24,8 @@ import java.io.Serializable;
 
 public class AutomaticTimeZoneMappingSettings  implements Serializable {
   
-  private List<CallableWindow> callableWindows = null;
-  private List<String> supportedCountries = null;
+  private List<CallableWindow> callableWindows = new ArrayList<CallableWindow>();
+  private List<String> supportedCountries = new ArrayList<String>();
 
   
   /**

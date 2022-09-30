@@ -75,7 +75,7 @@ public class MailFromResult  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<Record> records = null;
+  private List<Record> records = new ArrayList<Record>();
   private String mailFromDomain = null;
 
   

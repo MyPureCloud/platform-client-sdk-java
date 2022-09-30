@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ConsumedResourcesEntityListing  implements Serializable, PagedResource<Dependency> {
   
-  private List<Dependency> entities = null;
+  private List<Dependency> entities = new ArrayList<Dependency>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

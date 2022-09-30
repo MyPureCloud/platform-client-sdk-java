@@ -73,7 +73,7 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
     }
   }
   private FilterTypeEnum filterType = null;
-  private List<DialerContactlistfilterConfigChangeFilterPredicate> predicates = null;
+  private List<DialerContactlistfilterConfigChangeFilterPredicate> predicates = new ArrayList<DialerContactlistfilterConfigChangeFilterPredicate>();
 
   
   /**

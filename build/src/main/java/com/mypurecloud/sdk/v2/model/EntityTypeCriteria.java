@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class EntityTypeCriteria  implements Serializable {
   
   private String key = null;
-  private List<String> values = null;
+  private List<String> values = new ArrayList<String>();
   private Boolean shouldIgnoreCase = null;
 
   private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {

@@ -30,7 +30,7 @@ public class BulkErrorEntity  implements Serializable {
   private Integer status = null;
   private Boolean retryable = null;
   private Entity entity = null;
-  private List<BulkErrorDetail> details = null;
+  private List<BulkErrorDetail> details = new ArrayList<BulkErrorDetail>();
 
   
   /**

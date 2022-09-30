@@ -74,8 +74,8 @@ public class ResolutionDetailQueryFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<ResolutionDetailQueryClause> clauses = null;
-  private List<ResolutionDetailQueryPredicate> predicates = null;
+  private List<ResolutionDetailQueryClause> clauses = new ArrayList<ResolutionDetailQueryClause>();
+  private List<ResolutionDetailQueryPredicate> predicates = new ArrayList<ResolutionDetailQueryPredicate>();
 
   
   /**

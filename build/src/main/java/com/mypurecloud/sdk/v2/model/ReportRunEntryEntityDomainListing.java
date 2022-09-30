@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class ReportRunEntryEntityDomainListing  implements Serializable, PagedResource<ReportRunEntry> {
   
-  private List<ReportRunEntry> entities = null;
+  private List<ReportRunEntry> entities = new ArrayList<ReportRunEntry>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

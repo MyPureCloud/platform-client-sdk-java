@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class UserObservationDataContainer  implements Serializable {
   
   private Map<String, String> group = null;
-  private List<ObservationMetricData> data = null;
+  private List<ObservationMetricData> data = new ArrayList<ObservationMetricData>();
 
   
   /**

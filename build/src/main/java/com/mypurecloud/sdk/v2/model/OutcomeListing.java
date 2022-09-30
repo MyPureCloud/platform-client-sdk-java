@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class OutcomeListing  implements Serializable, PagedResource<Outcome> {
   
-  private List<Outcome> entities = null;
+  private List<Outcome> entities = new ArrayList<Outcome>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

@@ -23,8 +23,8 @@ import java.io.Serializable;
 
 public class BuAgentScheduleHistoryDeletedChange  implements Serializable {
   
-  private List<String> shiftIds = null;
-  private List<LocalDate> fullDayTimeOffMarkerDates = null;
+  private List<String> shiftIds = new ArrayList<String>();
+  private List<LocalDate> fullDayTimeOffMarkerDates = new ArrayList<LocalDate>();
   private Boolean agentSchedule = null;
 
   

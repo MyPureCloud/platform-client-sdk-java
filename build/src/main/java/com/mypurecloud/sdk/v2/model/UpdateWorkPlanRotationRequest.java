@@ -30,7 +30,7 @@ public class UpdateWorkPlanRotationRequest  implements Serializable {
   private String name = null;
   private Boolean enabled = null;
   private DateRangeWithOptionalEnd dateRange = null;
-  private List<UpdateWorkPlanRotationAgentRequest> agents = null;
+  private List<UpdateWorkPlanRotationAgentRequest> agents = new ArrayList<UpdateWorkPlanRotationAgentRequest>();
   private WorkPlanPatternRequest pattern = null;
   private WfmVersionedEntityMetadata metadata = null;
 

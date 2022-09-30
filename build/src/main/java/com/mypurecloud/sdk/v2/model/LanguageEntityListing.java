@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class LanguageEntityListing  implements Serializable, PagedResource<Language> {
   
-  private List<Language> entities = null;
+  private List<Language> entities = new ArrayList<Language>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

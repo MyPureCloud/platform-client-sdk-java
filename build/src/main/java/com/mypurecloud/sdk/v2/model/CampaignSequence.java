@@ -31,7 +31,7 @@ public class CampaignSequence  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private List<DomainEntityRef> campaigns = null;
+  private List<DomainEntityRef> campaigns = new ArrayList<DomainEntityRef>();
   private Integer currentCampaign = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {

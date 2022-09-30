@@ -26,9 +26,9 @@ import java.io.Serializable;
 
 public class Ring  implements Serializable {
   
-  private List<ExpansionCriterium> expansionCriteria = null;
+  private List<ExpansionCriterium> expansionCriteria = new ArrayList<ExpansionCriterium>();
   private Actions actions = null;
-  private List<MemberGroup> memberGroups = null;
+  private List<MemberGroup> memberGroups = new ArrayList<MemberGroup>();
 
   
   /**

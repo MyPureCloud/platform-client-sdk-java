@@ -26,8 +26,8 @@ public class QueueConversationMessageEventTopicMessageConversation  implements S
   
   private String id = null;
   private String name = null;
-  private List<QueueConversationMessageEventTopicMessageMediaParticipant> participants = null;
-  private List<String> otherMediaUris = null;
+  private List<QueueConversationMessageEventTopicMessageMediaParticipant> participants = new ArrayList<QueueConversationMessageEventTopicMessageMediaParticipant>();
+  private List<String> otherMediaUris = new ArrayList<String>();
 
   
   /**

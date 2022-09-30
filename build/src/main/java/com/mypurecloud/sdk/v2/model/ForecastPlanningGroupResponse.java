@@ -27,7 +27,7 @@ public class ForecastPlanningGroupResponse  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<RoutePathResponse> routePaths = null;
+  private List<RoutePathResponse> routePaths = new ArrayList<RoutePathResponse>();
   private ForecastServiceGoalTemplateResponse serviceGoalTemplate = null;
 
   

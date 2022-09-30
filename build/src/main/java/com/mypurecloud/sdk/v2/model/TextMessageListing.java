@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class TextMessageListing  implements Serializable, PagedResource<MessageData> {
   
-  private List<MessageData> entities = null;
+  private List<MessageData> entities = new ArrayList<MessageData>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;

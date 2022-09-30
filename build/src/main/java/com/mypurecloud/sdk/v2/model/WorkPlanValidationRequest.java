@@ -103,8 +103,8 @@ public class WorkPlanValidationRequest  implements Serializable {
   }
   private ShiftStartVarianceTypeEnum shiftStartVarianceType = null;
   private ListWrapperShiftStartVariance shiftStartVariances = null;
-  private List<WorkPlanShift> shifts = null;
-  private List<DeletableUserReference> agents = null;
+  private List<WorkPlanShift> shifts = new ArrayList<WorkPlanShift>();
+  private List<DeletableUserReference> agents = new ArrayList<DeletableUserReference>();
   private Integer agentCount = null;
   private String selfUri = null;
 

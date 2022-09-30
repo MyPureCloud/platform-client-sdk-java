@@ -29,7 +29,7 @@ public class BatchDownloadJobStatusResult  implements Serializable {
   private Integer expectedResultCount = null;
   private Integer resultCount = null;
   private Integer errorCount = null;
-  private List<BatchDownloadJobResult> results = null;
+  private List<BatchDownloadJobResult> results = new ArrayList<BatchDownloadJobResult>();
   private String selfUri = null;
 
   

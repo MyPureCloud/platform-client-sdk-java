@@ -85,8 +85,8 @@ public class OrgOAuthClient  implements Serializable {
     }
   }
   private AuthorizedGrantTypeEnum authorizedGrantType = null;
-  private List<String> scope = null;
-  private List<RoleDivision> roleDivisions = null;
+  private List<String> scope = new ArrayList<String>();
+  private List<RoleDivision> roleDivisions = new ArrayList<RoleDivision>();
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {

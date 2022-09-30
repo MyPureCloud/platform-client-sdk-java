@@ -25,7 +25,7 @@ public class DocumentFaq  implements Serializable {
   
   private String question = null;
   private String answer = null;
-  private List<String> alternatives = null;
+  private List<String> alternatives = new ArrayList<String>();
 
   
   /**

@@ -339,7 +339,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
   private Date endAcwTime = null;
   private QueueConversationCallbackEventTopicDialerPreview outboundPreview = null;
   private QueueConversationCallbackEventTopicVoicemail voicemail = null;
-  private List<String> callbackNumbers = null;
+  private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private Boolean skipEnabled = null;
   private Boolean externalCampaign = null;

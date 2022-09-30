@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class ConversationNotificationTemplateBody  implements Serializable {
   
   private String text = null;
-  private List<ConversationNotificationTemplateParameter> parameters = null;
+  private List<ConversationNotificationTemplateParameter> parameters = new ArrayList<ConversationNotificationTemplateParameter>();
 
   
   /**

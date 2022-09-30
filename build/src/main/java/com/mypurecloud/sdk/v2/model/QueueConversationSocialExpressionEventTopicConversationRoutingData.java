@@ -29,8 +29,8 @@ public class QueueConversationSocialExpressionEventTopicConversationRoutingData 
   private QueueConversationSocialExpressionEventTopicUriReference queue = null;
   private QueueConversationSocialExpressionEventTopicUriReference language = null;
   private Integer priority = null;
-  private List<QueueConversationSocialExpressionEventTopicUriReference> skills = null;
-  private List<QueueConversationSocialExpressionEventTopicScoredAgent> scoredAgents = null;
+  private List<QueueConversationSocialExpressionEventTopicUriReference> skills = new ArrayList<QueueConversationSocialExpressionEventTopicUriReference>();
+  private List<QueueConversationSocialExpressionEventTopicScoredAgent> scoredAgents = new ArrayList<QueueConversationSocialExpressionEventTopicScoredAgent>();
 
   
   /**

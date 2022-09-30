@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class PlanningGroupList  implements Serializable {
   
-  private List<PlanningGroup> entities = null;
+  private List<PlanningGroup> entities = new ArrayList<PlanningGroup>();
 
   
   /**

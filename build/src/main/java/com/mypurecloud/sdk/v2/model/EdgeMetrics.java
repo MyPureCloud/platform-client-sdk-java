@@ -33,11 +33,11 @@ public class EdgeMetrics  implements Serializable {
   private DomainEntityRef edge = null;
   private Date eventTime = null;
   private Long upTimeMsec = null;
-  private List<EdgeMetricsProcessor> processors = null;
-  private List<EdgeMetricsMemory> memory = null;
-  private List<EdgeMetricsDisk> disks = null;
-  private List<EdgeMetricsSubsystem> subsystems = null;
-  private List<EdgeMetricsNetwork> networks = null;
+  private List<EdgeMetricsProcessor> processors = new ArrayList<EdgeMetricsProcessor>();
+  private List<EdgeMetricsMemory> memory = new ArrayList<EdgeMetricsMemory>();
+  private List<EdgeMetricsDisk> disks = new ArrayList<EdgeMetricsDisk>();
+  private List<EdgeMetricsSubsystem> subsystems = new ArrayList<EdgeMetricsSubsystem>();
+  private List<EdgeMetricsNetwork> networks = new ArrayList<EdgeMetricsNetwork>();
 
   
   /**

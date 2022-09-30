@@ -196,7 +196,7 @@ public class LimitChangeRequestDetails  implements Serializable {
   private StatusEnum status = null;
   private Double currentValue = null;
   private Date dateCreated = null;
-  private List<StatusChange> statusHistory = null;
+  private List<StatusChange> statusHistory = new ArrayList<StatusChange>();
   private Date dateCompleted = null;
 
   private static class RejectReasonEnumDeserializer extends StdDeserializer<RejectReasonEnum> {

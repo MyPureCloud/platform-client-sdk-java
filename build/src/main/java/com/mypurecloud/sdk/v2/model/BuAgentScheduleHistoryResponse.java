@@ -26,10 +26,10 @@ import java.io.Serializable;
 
 public class BuAgentScheduleHistoryResponse  implements Serializable {
   
-  private List<BuScheduleReference> priorPublishedSchedules = null;
+  private List<BuScheduleReference> priorPublishedSchedules = new ArrayList<BuScheduleReference>();
   private BuAgentScheduleHistoryChange basePublishedSchedule = null;
-  private List<BuAgentScheduleHistoryDroppedChange> droppedChanges = null;
-  private List<BuAgentScheduleHistoryChange> changes = null;
+  private List<BuAgentScheduleHistoryDroppedChange> droppedChanges = new ArrayList<BuAgentScheduleHistoryDroppedChange>();
+  private List<BuAgentScheduleHistoryChange> changes = new ArrayList<BuAgentScheduleHistoryChange>();
 
   
   /**

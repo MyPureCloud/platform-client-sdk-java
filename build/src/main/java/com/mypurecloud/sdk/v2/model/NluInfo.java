@@ -28,7 +28,7 @@ public class NluInfo  implements Serializable {
   
   private AddressableEntityRef domain = null;
   private NluDomainVersion version = null;
-  private List<Intent> intents = null;
+  private List<Intent> intents = new ArrayList<Intent>();
   private String engineVersion = null;
 
   

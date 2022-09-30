@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class WfmIntradayPlanningGroupListing  implements Serializable {
   
-  private List<ForecastPlanningGroupResponse> entities = null;
+  private List<ForecastPlanningGroupResponse> entities = new ArrayList<ForecastPlanningGroupResponse>();
 
   private static class NoDataReasonEnumDeserializer extends StdDeserializer<NoDataReasonEnum> {
     public NoDataReasonEnumDeserializer() {

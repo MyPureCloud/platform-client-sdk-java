@@ -24,9 +24,9 @@ import java.io.Serializable;
 
 public class BulkFetchOrganizationsResponse  implements Serializable {
   
-  private List<BulkResponseResultExternalOrganizationEntity> results = null;
+  private List<BulkResponseResultExternalOrganizationEntity> results = new ArrayList<BulkResponseResultExternalOrganizationEntity>();
   private Integer errorCount = null;
-  private List<Integer> errorIndexes = null;
+  private List<Integer> errorIndexes = new ArrayList<Integer>();
 
   
   /**
