@@ -56,6 +56,7 @@ import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocument;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestion;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestionRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestSession;
 import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobRequest;
@@ -93,16 +94,16 @@ public class PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest {
 	    return this;
 	} 
 
-	private KnowledgeDocumentSuggestionRequest body;
-	public KnowledgeDocumentSuggestionRequest getBody() {
+	private KnowledgeGuestDocumentSuggestionRequest body;
+	public KnowledgeGuestDocumentSuggestionRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(KnowledgeDocumentSuggestionRequest body) {
+	public void setBody(KnowledgeGuestDocumentSuggestionRequest body) {
 		this.body = body;
 	}
 
-	public PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest withBody(KnowledgeDocumentSuggestionRequest body) {
+	public PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest withBody(KnowledgeGuestDocumentSuggestionRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -126,7 +127,7 @@ public class PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest {
         return this;
     }
 
-    public ApiRequest<KnowledgeDocumentSuggestionRequest> withHttpInfo() {
+    public ApiRequest<KnowledgeGuestDocumentSuggestionRequest> withHttpInfo() {
         
         // verify the required parameter 'sessionId' is set
         if (this.sessionId == null) {
@@ -170,7 +171,7 @@ public class PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest {
 			return this;
 		}
 
-		public Builder withBody(KnowledgeDocumentSuggestionRequest body) {
+		public Builder withBody(KnowledgeGuestDocumentSuggestionRequest body) {
 			request.setBody(body);
 			return this;
 		}

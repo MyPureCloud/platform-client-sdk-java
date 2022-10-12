@@ -20,6 +20,9 @@ title: LearningModuleJobRequest
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | REASSIGN | &quot;Reassign&quot; | 
+| GRACEFULARCHIVE | &quot;GracefulArchive&quot; | 
+| IMMEDIATEARCHIVE | &quot;ImmediateArchive&quot; | 
+| UNARCHIVE | &quot;Unarchive&quot; | 
 {: class="table table-striped"}
 
 

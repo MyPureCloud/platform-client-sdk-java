@@ -30,9 +30,9 @@ public class SkillEntityListing  implements Serializable, PagedResource<RoutingS
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
+  private String nextUri = null;
   private String lastUri = null;
   private String selfUri = null;
-  private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
 
@@ -124,6 +124,23 @@ public class SkillEntityListing  implements Serializable, PagedResource<RoutingS
 
   /**
    **/
+  public SkillEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
   public SkillEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -153,23 +170,6 @@ public class SkillEntityListing  implements Serializable, PagedResource<RoutingS
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public SkillEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
   }
 
 
@@ -222,16 +222,16 @@ public class SkillEntityListing  implements Serializable, PagedResource<RoutingS
             Objects.equals(this.pageNumber, skillEntityListing.pageNumber) &&
             Objects.equals(this.total, skillEntityListing.total) &&
             Objects.equals(this.firstUri, skillEntityListing.firstUri) &&
+            Objects.equals(this.nextUri, skillEntityListing.nextUri) &&
             Objects.equals(this.lastUri, skillEntityListing.lastUri) &&
             Objects.equals(this.selfUri, skillEntityListing.selfUri) &&
-            Objects.equals(this.nextUri, skillEntityListing.nextUri) &&
             Objects.equals(this.previousUri, skillEntityListing.previousUri) &&
             Objects.equals(this.pageCount, skillEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, lastUri, selfUri, previousUri, pageCount);
   }
 
   @Override
@@ -244,9 +244,9 @@ public class SkillEntityListing  implements Serializable, PagedResource<RoutingS
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

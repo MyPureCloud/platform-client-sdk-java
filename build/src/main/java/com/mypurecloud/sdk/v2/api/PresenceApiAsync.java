@@ -16,11 +16,18 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceEntityListing;
+import com.mypurecloud.sdk.v2.model.Source;
+import com.mypurecloud.sdk.v2.model.SourceEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
+import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeletePresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeletePresencedefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceSourceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceSourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceUserPrimarysourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresencedefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresencedefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSystempresencesRequest;
@@ -28,7 +35,10 @@ import com.mypurecloud.sdk.v2.api.request.GetUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresencesPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.PostPresenceSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutPresenceSourceRequest;
+import com.mypurecloud.sdk.v2.api.request.PutPresenceUserPrimarysourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresencedefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUsersPresencesBulkRequest;
 
@@ -48,6 +58,81 @@ public class PresenceApiAsync {
 
   public PresenceApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete a Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deletePresenceSourceAsync(DeletePresenceSourceRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deletePresenceSourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
@@ -114,6 +199,231 @@ public class PresenceApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Source> getPresenceSourceAsync(GetPresenceSourceRequest request, final AsyncApiCallback<Source> callback) {
+    try {
+      final SettableFuture<Source> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Source>() {}, new AsyncApiCallback<ApiResponse<Source>>() {
+        @Override
+        public void onCompleted(ApiResponse<Source> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Source>> getPresenceSourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Source>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Source>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Source>() {}, new AsyncApiCallback<ApiResponse<Source>>() {
+        @Override
+        public void onCompleted(ApiResponse<Source> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Presence Sources
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SourceEntityListing> getPresenceSourcesAsync(GetPresenceSourcesRequest request, final AsyncApiCallback<SourceEntityListing> callback) {
+    try {
+      final SettableFuture<SourceEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SourceEntityListing>() {}, new AsyncApiCallback<ApiResponse<SourceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SourceEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Presence Sources
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SourceEntityListing>> getPresenceSourcesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SourceEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SourceEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SourceEntityListing>() {}, new AsyncApiCallback<ApiResponse<SourceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SourceEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SourceEntityListing> response = (ApiResponse<SourceEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SourceEntityListing> response = (ApiResponse<SourceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a user's Primary Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserPrimarySource> getPresenceUserPrimarysourceAsync(GetPresenceUserPrimarysourceRequest request, final AsyncApiCallback<UserPrimarySource> callback) {
+    try {
+      final SettableFuture<UserPrimarySource> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserPrimarySource>() {}, new AsyncApiCallback<ApiResponse<UserPrimarySource>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserPrimarySource> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a user's Primary Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserPrimarySource>> getPresenceUserPrimarysourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserPrimarySource>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserPrimarySource>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserPrimarySource>() {}, new AsyncApiCallback<ApiResponse<UserPrimarySource>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserPrimarySource> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserPrimarySource> response = (ApiResponse<UserPrimarySource>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserPrimarySource> response = (ApiResponse<UserPrimarySource>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -651,6 +961,81 @@ public class PresenceApiAsync {
   }
 
   /**
+   * Create a Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Source> postPresenceSourcesAsync(PostPresenceSourcesRequest request, final AsyncApiCallback<Source> callback) {
+    try {
+      final SettableFuture<Source> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Source>() {}, new AsyncApiCallback<ApiResponse<Source>>() {
+        @Override
+        public void onCompleted(ApiResponse<Source> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Source>> postPresenceSourcesAsync(ApiRequest<Source> request, final AsyncApiCallback<ApiResponse<Source>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Source>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Source>() {}, new AsyncApiCallback<ApiResponse<Source>>() {
+        @Override
+        public void onCompleted(ApiResponse<Source> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create a Presence Definition
    * 
    * @param request the request object
@@ -714,6 +1099,156 @@ public class PresenceApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Source> putPresenceSourceAsync(PutPresenceSourceRequest request, final AsyncApiCallback<Source> callback) {
+    try {
+      final SettableFuture<Source> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Source>() {}, new AsyncApiCallback<ApiResponse<Source>>() {
+        @Override
+        public void onCompleted(ApiResponse<Source> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Source>> putPresenceSourceAsync(ApiRequest<Source> request, final AsyncApiCallback<ApiResponse<Source>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Source>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Source>() {}, new AsyncApiCallback<ApiResponse<Source>>() {
+        @Override
+        public void onCompleted(ApiResponse<Source> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a user's Primary Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserPrimarySource> putPresenceUserPrimarysourceAsync(PutPresenceUserPrimarysourceRequest request, final AsyncApiCallback<UserPrimarySource> callback) {
+    try {
+      final SettableFuture<UserPrimarySource> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserPrimarySource>() {}, new AsyncApiCallback<ApiResponse<UserPrimarySource>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserPrimarySource> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a user's Primary Presence Source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserPrimarySource>> putPresenceUserPrimarysourceAsync(ApiRequest<UserPrimarySource> request, final AsyncApiCallback<ApiResponse<UserPrimarySource>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserPrimarySource>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserPrimarySource>() {}, new AsyncApiCallback<ApiResponse<UserPrimarySource>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserPrimarySource> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserPrimarySource> response = (ApiResponse<UserPrimarySource>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserPrimarySource> response = (ApiResponse<UserPrimarySource>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

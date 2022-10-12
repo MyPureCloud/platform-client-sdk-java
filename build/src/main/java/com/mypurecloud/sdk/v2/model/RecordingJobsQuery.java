@@ -74,7 +74,9 @@ public class RecordingJobsQuery  implements Serializable {
   private ActionEnum action = null;
   private Date actionDate = null;
   private String integrationId = null;
+  private Boolean includeRecordingsWithSensitiveData = null;
   private Boolean includeScreenRecordings = null;
+  private Boolean clearExport = null;
   private AsyncConversationQuery conversationQuery = null;
 
   
@@ -133,6 +135,24 @@ public class RecordingJobsQuery  implements Serializable {
 
 
   /**
+   * Whether to include recordings with PCI DSS and/or PII data, default value = false 
+   **/
+  public RecordingJobsQuery includeRecordingsWithSensitiveData(Boolean includeRecordingsWithSensitiveData) {
+    this.includeRecordingsWithSensitiveData = includeRecordingsWithSensitiveData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to include recordings with PCI DSS and/or PII data, default value = false ")
+  @JsonProperty("includeRecordingsWithSensitiveData")
+  public Boolean getIncludeRecordingsWithSensitiveData() {
+    return includeRecordingsWithSensitiveData;
+  }
+  public void setIncludeRecordingsWithSensitiveData(Boolean includeRecordingsWithSensitiveData) {
+    this.includeRecordingsWithSensitiveData = includeRecordingsWithSensitiveData;
+  }
+
+
+  /**
    * Whether to include Screen recordings for the action, default value = true 
    **/
   public RecordingJobsQuery includeScreenRecordings(Boolean includeScreenRecordings) {
@@ -147,6 +167,24 @@ public class RecordingJobsQuery  implements Serializable {
   }
   public void setIncludeScreenRecordings(Boolean includeScreenRecordings) {
     this.includeScreenRecordings = includeScreenRecordings;
+  }
+
+
+  /**
+   * For DELETE action, setting this to true will clear any pending exports for recordings. This field is not used for EXPORT action. Default value = false
+   **/
+  public RecordingJobsQuery clearExport(Boolean clearExport) {
+    this.clearExport = clearExport;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "For DELETE action, setting this to true will clear any pending exports for recordings. This field is not used for EXPORT action. Default value = false")
+  @JsonProperty("clearExport")
+  public Boolean getClearExport() {
+    return clearExport;
+  }
+  public void setClearExport(Boolean clearExport) {
+    this.clearExport = clearExport;
   }
 
 
@@ -181,13 +219,15 @@ public class RecordingJobsQuery  implements Serializable {
     return Objects.equals(this.action, recordingJobsQuery.action) &&
             Objects.equals(this.actionDate, recordingJobsQuery.actionDate) &&
             Objects.equals(this.integrationId, recordingJobsQuery.integrationId) &&
+            Objects.equals(this.includeRecordingsWithSensitiveData, recordingJobsQuery.includeRecordingsWithSensitiveData) &&
             Objects.equals(this.includeScreenRecordings, recordingJobsQuery.includeScreenRecordings) &&
+            Objects.equals(this.clearExport, recordingJobsQuery.clearExport) &&
             Objects.equals(this.conversationQuery, recordingJobsQuery.conversationQuery);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, actionDate, integrationId, includeScreenRecordings, conversationQuery);
+    return Objects.hash(action, actionDate, integrationId, includeRecordingsWithSensitiveData, includeScreenRecordings, clearExport, conversationQuery);
   }
 
   @Override
@@ -198,7 +238,9 @@ public class RecordingJobsQuery  implements Serializable {
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    actionDate: ").append(toIndentedString(actionDate)).append("\n");
     sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
+    sb.append("    includeRecordingsWithSensitiveData: ").append(toIndentedString(includeRecordingsWithSensitiveData)).append("\n");
     sb.append("    includeScreenRecordings: ").append(toIndentedString(includeScreenRecordings)).append("\n");
+    sb.append("    clearExport: ").append(toIndentedString(clearExport)).append("\n");
     sb.append("    conversationQuery: ").append(toIndentedString(conversationQuery)).append("\n");
     sb.append("}");
     return sb.toString();

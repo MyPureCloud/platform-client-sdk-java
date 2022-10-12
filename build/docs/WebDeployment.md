@@ -11,7 +11,6 @@ title: WebDeployment
 | **id** | <!----><!---->**String**<!----> | The deployment ID |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The deployment name |  |
 | **description** | <!----><!---->**String**<!----> | The description of the config |  [optional] |
-| **_configuration** | <!----><!---->[**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html)<!----> | The config version this deployment uses |  |
 | **allowAllDomains** | <!----><!---->**Boolean**<!----> | Property indicates whether all domains are allowed or not. allowedDomains must be empty when this is set as true. |  [optional] |
 | **allowedDomains** | <!----><!---->**List&lt;String&gt;**<!----> | The list of domains that are approved to use this deployment; the list will be added to CORS headers for ease of web use. |  [optional] |
 | **snippet** | <!----><!---->**String**<!----> | Javascript snippet used to load the config |  [optional] |
@@ -20,6 +19,7 @@ title: WebDeployment
 | **lastModifiedUser** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | A reference to the user who most recently modified the deployment |  [optional] |
 | **flow** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | A reference to the inboundshortmessage flow used by this deployment |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The current status of the deployment |  [optional] |
+| **_configuration** | <!----><!---->[**WebDeploymentConfigurationVersionEntityRef**](WebDeploymentConfigurationVersionEntityRef.html)<!----> | The config version this deployment uses |  |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

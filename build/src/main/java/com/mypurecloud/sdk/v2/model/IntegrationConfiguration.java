@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.IntegrationConfigurationCredential;
+import com.mypurecloud.sdk.v2.model.CredentialInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
@@ -32,7 +32,7 @@ public class IntegrationConfiguration  implements Serializable {
   private Object properties = null;
   private Object advanced = null;
   private String notes = null;
-  private Map<String, IntegrationConfigurationCredential> credentials = null;
+  private Map<String, CredentialInfo> credentials = null;
   private String selfUri = null;
 
   
@@ -136,17 +136,17 @@ public class IntegrationConfiguration  implements Serializable {
   /**
    * Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type
    **/
-  public IntegrationConfiguration credentials(Map<String, IntegrationConfigurationCredential> credentials) {
+  public IntegrationConfiguration credentials(Map<String, CredentialInfo> credentials) {
     this.credentials = credentials;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type")
   @JsonProperty("credentials")
-  public Map<String, IntegrationConfigurationCredential> getCredentials() {
+  public Map<String, CredentialInfo> getCredentials() {
     return credentials;
   }
-  public void setCredentials(Map<String, IntegrationConfigurationCredential> credentials) {
+  public void setCredentials(Map<String, CredentialInfo> credentials) {
     this.credentials = credentials;
   }
 

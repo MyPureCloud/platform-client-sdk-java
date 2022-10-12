@@ -100,6 +100,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
  @JsonDeserialize(using = ServiceNameEnumDeserializer.class)
   public enum ServiceNameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AGENTCONFIG("AgentConfig"),
     ANALYTICSREPORTING("AnalyticsReporting"),
     ARCHITECT("Architect"),
     COACHING("Coaching"),

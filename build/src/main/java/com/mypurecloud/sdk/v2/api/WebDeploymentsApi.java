@@ -11,11 +11,11 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsConfigurationRequest;
@@ -680,11 +680,11 @@ public class WebDeploymentsApi {
    * Get deployments
    * 
    * @param expand The specified entity attributes will be filled. Comma separated values expected. Valid values: (optional)
-   * @return WebDeploymentEntityListing
+   * @return ExpandableWebDeploymentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WebDeploymentEntityListing getWebdeploymentsDeployments(List<String> expand) throws IOException, ApiException {
+  public ExpandableWebDeploymentEntityListing getWebdeploymentsDeployments(List<String> expand) throws IOException, ApiException {
     return  getWebdeploymentsDeployments(createGetWebdeploymentsDeploymentsRequest(expand));
   }
 
@@ -692,10 +692,10 @@ public class WebDeploymentsApi {
    * Get deployments
    * 
    * @param expand The specified entity attributes will be filled. Comma separated values expected. Valid values: (optional)
-   * @return WebDeploymentEntityListing
+   * @return ExpandableWebDeploymentEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WebDeploymentEntityListing> getWebdeploymentsDeploymentsWithHttpInfo(List<String> expand) throws IOException {
+  public ApiResponse<ExpandableWebDeploymentEntityListing> getWebdeploymentsDeploymentsWithHttpInfo(List<String> expand) throws IOException {
     return getWebdeploymentsDeployments(createGetWebdeploymentsDeploymentsRequest(expand).withHttpInfo());
   }
 
@@ -710,13 +710,13 @@ public class WebDeploymentsApi {
    * Get deployments
    * 
    * @param request The request object
-   * @return WebDeploymentEntityListing
+   * @return ExpandableWebDeploymentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WebDeploymentEntityListing getWebdeploymentsDeployments(GetWebdeploymentsDeploymentsRequest request) throws IOException, ApiException {
+  public ExpandableWebDeploymentEntityListing getWebdeploymentsDeployments(GetWebdeploymentsDeploymentsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<WebDeploymentEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WebDeploymentEntityListing>() {});
+      ApiResponse<ExpandableWebDeploymentEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExpandableWebDeploymentEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -732,13 +732,13 @@ public class WebDeploymentsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WebDeploymentEntityListing> getWebdeploymentsDeployments(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<ExpandableWebDeploymentEntityListing> getWebdeploymentsDeployments(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<WebDeploymentEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<ExpandableWebDeploymentEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<WebDeploymentEntityListing> response = (ApiResponse<WebDeploymentEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<ExpandableWebDeploymentEntityListing> response = (ApiResponse<ExpandableWebDeploymentEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -749,7 +749,7 @@ public class WebDeploymentsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<WebDeploymentEntityListing> response = (ApiResponse<WebDeploymentEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ExpandableWebDeploymentEntityListing> response = (ApiResponse<ExpandableWebDeploymentEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

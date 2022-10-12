@@ -29,6 +29,8 @@ title: ConversationMessageMetadataContent
 | MENTION | &quot;Mention&quot; | 
 | CARD | &quot;Card&quot; | 
 | CAROUSEL | &quot;Carousel&quot; | 
+| TEXT | &quot;Text&quot; | 
+| QUICKREPLYV2 | &quot;QuickReplyV2&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

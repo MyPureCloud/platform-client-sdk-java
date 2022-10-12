@@ -9,6 +9,7 @@ title: Video
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **state** | [**StateEnum**](#StateEnum)<!----> | The connection state of this communication. |  [optional] |
+| **initialState** | [**InitialStateEnum**](#InitialStateEnum)<!----> | The initial connection state of this communication. |  [optional] |
 | **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
 | **context** | <!----><!---->**String**<!----> | The room id context (xmpp jid) for the conference session. |  [optional] |
 | **audioMuted** | <!----><!---->**Boolean**<!----> | Indicates whether this participant has muted their outgoing audio. |  [optional] |
@@ -26,13 +27,30 @@ title: Video
 | **wrapup** | <!----><!---->[**Wrapup**](Wrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
 | **afterCallWork** | <!----><!---->[**AfterCallWork**](AfterCallWork.html)<!----> | After-call work for the communication. |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
-| **initialState** | [**InitialStateEnum**](#InitialStateEnum)<!----> | The initial connection state of this communication. |  [optional] |
 {: class="table table-striped"}
 
 
 <a name="StateEnum"></a>
 
 ## Enum: StateEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERTING | &quot;alerting&quot; | 
+| DIALING | &quot;dialing&quot; | 
+| CONTACTING | &quot;contacting&quot; | 
+| OFFERING | &quot;offering&quot; | 
+| CONNECTED | &quot;connected&quot; | 
+| DISCONNECTED | &quot;disconnected&quot; | 
+| TERMINATED | &quot;terminated&quot; | 
+| NONE | &quot;none&quot; | 
+{: class="table table-striped"}
+
+
+<a name="InitialStateEnum"></a>
+
+## Enum: InitialStateEnum
 
 | Name | Value |
 | ---- | ----- |
@@ -71,24 +89,6 @@ title: Video
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
-
-
-<a name="InitialStateEnum"></a>
-
-## Enum: InitialStateEnum
-
-| Name | Value |
-| ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| ALERTING | &quot;alerting&quot; | 
-| DIALING | &quot;dialing&quot; | 
-| CONTACTING | &quot;contacting&quot; | 
-| OFFERING | &quot;offering&quot; | 
-| CONNECTED | &quot;connected&quot; | 
-| DISCONNECTED | &quot;disconnected&quot; | 
-| TERMINATED | &quot;terminated&quot; | 
-| NONE | &quot;none&quot; | 
 {: class="table table-striped"}
 
 

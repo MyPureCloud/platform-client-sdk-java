@@ -14,6 +14,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
+import com.mypurecloud.sdk.v2.model.AgentlessEmailSendRequestDto;
+import com.mypurecloud.sdk.v2.model.AgentlessEmailSendResponseDto;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
@@ -262,6 +264,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAttachmentsCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsAgentlessRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsFaxesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsValidateRequest;
@@ -10954,6 +10957,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EmailConversation> response = (ApiResponse<EmailConversation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an email conversation, per API
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentlessEmailSendResponseDto> postConversationsEmailsAgentlessAsync(PostConversationsEmailsAgentlessRequest request, final AsyncApiCallback<AgentlessEmailSendResponseDto> callback) {
+    try {
+      final SettableFuture<AgentlessEmailSendResponseDto> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentlessEmailSendResponseDto>() {}, new AsyncApiCallback<ApiResponse<AgentlessEmailSendResponseDto>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentlessEmailSendResponseDto> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an email conversation, per API
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentlessEmailSendResponseDto>> postConversationsEmailsAgentlessAsync(ApiRequest<AgentlessEmailSendRequestDto> request, final AsyncApiCallback<ApiResponse<AgentlessEmailSendResponseDto>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentlessEmailSendResponseDto>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentlessEmailSendResponseDto>() {}, new AsyncApiCallback<ApiResponse<AgentlessEmailSendResponseDto>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentlessEmailSendResponseDto> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentlessEmailSendResponseDto> response = (ApiResponse<AgentlessEmailSendResponseDto>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentlessEmailSendResponseDto> response = (ApiResponse<AgentlessEmailSendResponseDto>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

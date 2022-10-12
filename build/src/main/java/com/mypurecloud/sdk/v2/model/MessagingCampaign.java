@@ -93,6 +93,7 @@ public class MessagingCampaign  implements Serializable {
   private Boolean alwaysRunning = null;
   private List<ContactSort> contactSorts = new ArrayList<ContactSort>();
   private Integer messagesPerMinute = null;
+  private List<DomainEntityRef> ruleSets = new ArrayList<DomainEntityRef>();
   private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
   private List<RestErrorDetail> errors = new ArrayList<RestErrorDetail>();
   private EmailConfig emailConfig = null;
@@ -301,6 +302,24 @@ public class MessagingCampaign  implements Serializable {
 
 
   /**
+   * Rule Sets to be applied while this campaign is sending messages
+   **/
+  public MessagingCampaign ruleSets(List<DomainEntityRef> ruleSets) {
+    this.ruleSets = ruleSets;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Rule Sets to be applied while this campaign is sending messages")
+  @JsonProperty("ruleSets")
+  public List<DomainEntityRef> getRuleSets() {
+    return ruleSets;
+  }
+  public void setRuleSets(List<DomainEntityRef> ruleSets) {
+    this.ruleSets = ruleSets;
+  }
+
+
+  /**
    * The contact list filter to check before sending a message for this messaging campaign.
    **/
   public MessagingCampaign contactListFilters(List<DomainEntityRef> contactListFilters) {
@@ -402,6 +421,7 @@ public class MessagingCampaign  implements Serializable {
             Objects.equals(this.alwaysRunning, messagingCampaign.alwaysRunning) &&
             Objects.equals(this.contactSorts, messagingCampaign.contactSorts) &&
             Objects.equals(this.messagesPerMinute, messagingCampaign.messagesPerMinute) &&
+            Objects.equals(this.ruleSets, messagingCampaign.ruleSets) &&
             Objects.equals(this.contactListFilters, messagingCampaign.contactListFilters) &&
             Objects.equals(this.errors, messagingCampaign.errors) &&
             Objects.equals(this.emailConfig, messagingCampaign.emailConfig) &&
@@ -411,7 +431,7 @@ public class MessagingCampaign  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, division, campaignStatus, callableTimeSet, contactList, dncLists, alwaysRunning, contactSorts, messagesPerMinute, contactListFilters, errors, emailConfig, smsConfig, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, division, campaignStatus, callableTimeSet, contactList, dncLists, alwaysRunning, contactSorts, messagesPerMinute, ruleSets, contactListFilters, errors, emailConfig, smsConfig, selfUri);
   }
 
   @Override
@@ -432,6 +452,7 @@ public class MessagingCampaign  implements Serializable {
     sb.append("    alwaysRunning: ").append(toIndentedString(alwaysRunning)).append("\n");
     sb.append("    contactSorts: ").append(toIndentedString(contactSorts)).append("\n");
     sb.append("    messagesPerMinute: ").append(toIndentedString(messagesPerMinute)).append("\n");
+    sb.append("    ruleSets: ").append(toIndentedString(ruleSets)).append("\n");
     sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    emailConfig: ").append(toIndentedString(emailConfig)).append("\n");

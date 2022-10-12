@@ -13,11 +13,18 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceEntityListing;
+import com.mypurecloud.sdk.v2.model.Source;
+import com.mypurecloud.sdk.v2.model.SourceEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
+import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeletePresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeletePresencedefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceSourceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceSourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceUserPrimarysourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresencedefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresencedefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSystempresencesRequest;
@@ -25,7 +32,10 @@ import com.mypurecloud.sdk.v2.api.request.GetUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresencesPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.PostPresenceSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutPresenceSourceRequest;
+import com.mypurecloud.sdk.v2.api.request.PutPresenceUserPrimarysourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresencedefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUsersPresencesBulkRequest;
 
@@ -44,6 +54,81 @@ public class PresenceApi {
 
   public PresenceApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete a Presence Source
+   * 
+   * @param sourceId Presence Source ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deletePresenceSource(String sourceId) throws IOException, ApiException {
+     deletePresenceSource(createDeletePresenceSourceRequest(sourceId));
+  }
+
+  /**
+   * Delete a Presence Source
+   * 
+   * @param sourceId Presence Source ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deletePresenceSourceWithHttpInfo(String sourceId) throws IOException {
+    return deletePresenceSource(createDeletePresenceSourceRequest(sourceId).withHttpInfo());
+  }
+
+  private DeletePresenceSourceRequest createDeletePresenceSourceRequest(String sourceId) {
+    return DeletePresenceSourceRequest.builder()
+            .withSourceId(sourceId)
+
+            .build();
+  }
+
+  /**
+   * Delete a Presence Source
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deletePresenceSource(DeletePresenceSourceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Presence Source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deletePresenceSource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -117,6 +202,240 @@ public class PresenceApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Presence Source
+   * 
+   * @param sourceId Presence Source ID (required)
+   * @return Source
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Source getPresenceSource(String sourceId) throws IOException, ApiException {
+    return  getPresenceSource(createGetPresenceSourceRequest(sourceId));
+  }
+
+  /**
+   * Get a Presence Source
+   * 
+   * @param sourceId Presence Source ID (required)
+   * @return Source
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Source> getPresenceSourceWithHttpInfo(String sourceId) throws IOException {
+    return getPresenceSource(createGetPresenceSourceRequest(sourceId).withHttpInfo());
+  }
+
+  private GetPresenceSourceRequest createGetPresenceSourceRequest(String sourceId) {
+    return GetPresenceSourceRequest.builder()
+            .withSourceId(sourceId)
+
+            .build();
+  }
+
+  /**
+   * Get a Presence Source
+   * 
+   * @param request The request object
+   * @return Source
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Source getPresenceSource(GetPresenceSourceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Source> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Source>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Presence Source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Source> getPresenceSource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Source>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Presence Sources
+   * 
+   * @param deleted Deleted query can be TRUE or FALSE (optional, default to false)
+   * @return SourceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SourceEntityListing getPresenceSources(String deleted) throws IOException, ApiException {
+    return  getPresenceSources(createGetPresenceSourcesRequest(deleted));
+  }
+
+  /**
+   * Get a list of Presence Sources
+   * 
+   * @param deleted Deleted query can be TRUE or FALSE (optional, default to false)
+   * @return SourceEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SourceEntityListing> getPresenceSourcesWithHttpInfo(String deleted) throws IOException {
+    return getPresenceSources(createGetPresenceSourcesRequest(deleted).withHttpInfo());
+  }
+
+  private GetPresenceSourcesRequest createGetPresenceSourcesRequest(String deleted) {
+    return GetPresenceSourcesRequest.builder()
+            .withDeleted(deleted)
+
+            .build();
+  }
+
+  /**
+   * Get a list of Presence Sources
+   * 
+   * @param request The request object
+   * @return SourceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SourceEntityListing getPresenceSources(GetPresenceSourcesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SourceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SourceEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Presence Sources
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SourceEntityListing> getPresenceSources(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SourceEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SourceEntityListing> response = (ApiResponse<SourceEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SourceEntityListing> response = (ApiResponse<SourceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a user's Primary Presence Source
+   * 
+   * @param userId user ID (required)
+   * @return UserPrimarySource
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserPrimarySource getPresenceUserPrimarysource(String userId) throws IOException, ApiException {
+    return  getPresenceUserPrimarysource(createGetPresenceUserPrimarysourceRequest(userId));
+  }
+
+  /**
+   * Get a user's Primary Presence Source
+   * 
+   * @param userId user ID (required)
+   * @return UserPrimarySource
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserPrimarySource> getPresenceUserPrimarysourceWithHttpInfo(String userId) throws IOException {
+    return getPresenceUserPrimarysource(createGetPresenceUserPrimarysourceRequest(userId).withHttpInfo());
+  }
+
+  private GetPresenceUserPrimarysourceRequest createGetPresenceUserPrimarysourceRequest(String userId) {
+    return GetPresenceUserPrimarysourceRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Get a user's Primary Presence Source
+   * 
+   * @param request The request object
+   * @return UserPrimarySource
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserPrimarySource getPresenceUserPrimarysource(GetPresenceUserPrimarysourceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserPrimarySource> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPrimarySource>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a user's Primary Presence Source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserPrimarySource> getPresenceUserPrimarysource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPrimarySource>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPrimarySource> response = (ApiResponse<UserPrimarySource>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPrimarySource> response = (ApiResponse<UserPrimarySource>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -696,6 +1015,84 @@ public class PresenceApi {
   }
 
   /**
+   * Create a Presence Source
+   * 
+   * @param body The Presence Source to create (required)
+   * @return Source
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Source postPresenceSources(Source body) throws IOException, ApiException {
+    return  postPresenceSources(createPostPresenceSourcesRequest(body));
+  }
+
+  /**
+   * Create a Presence Source
+   * 
+   * @param body The Presence Source to create (required)
+   * @return Source
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Source> postPresenceSourcesWithHttpInfo(Source body) throws IOException {
+    return postPresenceSources(createPostPresenceSourcesRequest(body).withHttpInfo());
+  }
+
+  private PostPresenceSourcesRequest createPostPresenceSourcesRequest(Source body) {
+    return PostPresenceSourcesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a Presence Source
+   * 
+   * @param request The request object
+   * @return Source
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Source postPresenceSources(PostPresenceSourcesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Source> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Source>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Presence Source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Source> postPresenceSources(ApiRequest<Source> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Source>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a Presence Definition
    * 
    * @param body The Presence Definition to create (required)
@@ -769,6 +1166,170 @@ public class PresenceApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a Presence Source
+   * 
+   * @param sourceId Presence Source ID (required)
+   * @param body The updated Presence Source (required)
+   * @return Source
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Source putPresenceSource(String sourceId, Source body) throws IOException, ApiException {
+    return  putPresenceSource(createPutPresenceSourceRequest(sourceId, body));
+  }
+
+  /**
+   * Update a Presence Source
+   * 
+   * @param sourceId Presence Source ID (required)
+   * @param body The updated Presence Source (required)
+   * @return Source
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Source> putPresenceSourceWithHttpInfo(String sourceId, Source body) throws IOException {
+    return putPresenceSource(createPutPresenceSourceRequest(sourceId, body).withHttpInfo());
+  }
+
+  private PutPresenceSourceRequest createPutPresenceSourceRequest(String sourceId, Source body) {
+    return PutPresenceSourceRequest.builder()
+            .withSourceId(sourceId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a Presence Source
+   * 
+   * @param request The request object
+   * @return Source
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Source putPresenceSource(PutPresenceSourceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Source> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Source>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a Presence Source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Source> putPresenceSource(ApiRequest<Source> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Source>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Source> response = (ApiResponse<Source>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a user's Primary Presence Source
+   * 
+   * @param userId user ID (required)
+   * @param body Primary Source (required)
+   * @return UserPrimarySource
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserPrimarySource putPresenceUserPrimarysource(String userId, UserPrimarySource body) throws IOException, ApiException {
+    return  putPresenceUserPrimarysource(createPutPresenceUserPrimarysourceRequest(userId, body));
+  }
+
+  /**
+   * Update a user's Primary Presence Source
+   * 
+   * @param userId user ID (required)
+   * @param body Primary Source (required)
+   * @return UserPrimarySource
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserPrimarySource> putPresenceUserPrimarysourceWithHttpInfo(String userId, UserPrimarySource body) throws IOException {
+    return putPresenceUserPrimarysource(createPutPresenceUserPrimarysourceRequest(userId, body).withHttpInfo());
+  }
+
+  private PutPresenceUserPrimarysourceRequest createPutPresenceUserPrimarysourceRequest(String userId, UserPrimarySource body) {
+    return PutPresenceUserPrimarysourceRequest.builder()
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a user's Primary Presence Source
+   * 
+   * @param request The request object
+   * @return UserPrimarySource
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserPrimarySource putPresenceUserPrimarysource(PutPresenceUserPrimarysourceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserPrimarySource> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPrimarySource>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a user's Primary Presence Source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserPrimarySource> putPresenceUserPrimarysource(ApiRequest<UserPrimarySource> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPrimarySource>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPrimarySource> response = (ApiResponse<UserPrimarySource>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPrimarySource> response = (ApiResponse<UserPrimarySource>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

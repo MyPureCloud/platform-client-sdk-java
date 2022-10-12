@@ -34,6 +34,7 @@ title: LearningAssignmentTopicLearningAssignmentNotification
 | COMPLETED | &quot;Completed&quot; | 
 | DELETED | &quot;Deleted&quot; | 
 | NOTCOMPLETED | &quot;NotCompleted&quot; | 
+| INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
 {: class="table table-striped"}
 
 

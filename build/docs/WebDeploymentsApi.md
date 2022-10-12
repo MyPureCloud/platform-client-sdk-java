@@ -520,7 +520,7 @@ try {
 
 
 
-> [WebDeploymentEntityListing](WebDeploymentEntityListing.html) getWebdeploymentsDeployments(expand)
+> [ExpandableWebDeploymentEntityListing](ExpandableWebDeploymentEntityListing.html) getWebdeploymentsDeployments(expand)
 
 Get deployments
 
@@ -554,7 +554,7 @@ Configuration.setDefaultApiClient(apiClient);
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
 List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected. Valid values:
 try {
-    WebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments(expand);
+    ExpandableWebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments(expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebDeploymentsApi#getWebdeploymentsDeployments");
@@ -573,7 +573,7 @@ try {
 
 ### Return type
 
-[**WebDeploymentEntityListing**](WebDeploymentEntityListing.html)
+[**ExpandableWebDeploymentEntityListing**](ExpandableWebDeploymentEntityListing.html)
 
 <a name="postWebdeploymentsConfigurationVersionsDraftPublish"></a>
 

@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocument;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestion;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestionRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestSession;
 import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobRequest;
@@ -4253,7 +4254,7 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KnowledgeGuestDocumentSuggestion>> postKnowledgeGuestSessionDocumentsSearchSuggestionsAsync(ApiRequest<KnowledgeDocumentSuggestionRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeGuestDocumentSuggestion>> callback) {
+  public Future<ApiResponse<KnowledgeGuestDocumentSuggestion>> postKnowledgeGuestSessionDocumentsSearchSuggestionsAsync(ApiRequest<KnowledgeGuestDocumentSuggestionRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeGuestDocumentSuggestion>> callback) {
     try {
       final SettableFuture<ApiResponse<KnowledgeGuestDocumentSuggestion>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

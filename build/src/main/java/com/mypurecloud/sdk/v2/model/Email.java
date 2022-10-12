@@ -81,6 +81,57 @@ public class Email  implements Serializable {
     }
   }
   private StateEnum state = null;
+
+  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
+    public InitialStateEnumDeserializer() {
+      super(InitialStateEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The initial connection state of this communication.
+   */
+ @JsonDeserialize(using = InitialStateEnumDeserializer.class)
+  public enum InitialStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("alerting"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    NONE("none"),
+    TRANSMITTING("transmitting");
+
+    private String value;
+
+    InitialStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialStateEnum value : InitialStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialStateEnum initialState = null;
   private String id = null;
   private Boolean held = null;
   private String subject = null;
@@ -213,57 +264,6 @@ public class Email  implements Serializable {
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
 
-  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
-    public InitialStateEnumDeserializer() {
-      super(InitialStateEnumDeserializer.class);
-    }
-
-    @Override
-    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * The initial connection state of this communication.
-   */
- @JsonDeserialize(using = InitialStateEnumDeserializer.class)
-  public enum InitialStateEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ALERTING("alerting"),
-    CONNECTED("connected"),
-    DISCONNECTED("disconnected"),
-    NONE("none"),
-    TRANSMITTING("transmitting");
-
-    private String value;
-
-    InitialStateEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static InitialStateEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (InitialStateEnum value : InitialStateEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return InitialStateEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private InitialStateEnum initialState = null;
-
   
   /**
    * The connection state of this communication.
@@ -280,6 +280,24 @@ public class Email  implements Serializable {
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+
+  /**
+   * The initial connection state of this communication.
+   **/
+  public Email initialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The initial connection state of this communication.")
+  @JsonProperty("initialState")
+  public InitialStateEnum getInitialState() {
+    return initialState;
+  }
+  public void setInitialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
   }
 
 
@@ -696,24 +714,6 @@ public class Email  implements Serializable {
   }
 
 
-  /**
-   * The initial connection state of this communication.
-   **/
-  public Email initialState(InitialStateEnum initialState) {
-    this.initialState = initialState;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The initial connection state of this communication.")
-  @JsonProperty("initialState")
-  public InitialStateEnum getInitialState() {
-    return initialState;
-  }
-  public void setInitialState(InitialStateEnum initialState) {
-    this.initialState = initialState;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -725,6 +725,7 @@ public class Email  implements Serializable {
     Email email = (Email) o;
 
     return Objects.equals(this.state, email.state) &&
+            Objects.equals(this.initialState, email.initialState) &&
             Objects.equals(this.id, email.id) &&
             Objects.equals(this.held, email.held) &&
             Objects.equals(this.subject, email.subject) &&
@@ -747,13 +748,12 @@ public class Email  implements Serializable {
             Objects.equals(this.spam, email.spam) &&
             Objects.equals(this.wrapup, email.wrapup) &&
             Objects.equals(this.afterCallWork, email.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, email.afterCallWorkRequired) &&
-            Objects.equals(this.initialState, email.initialState);
+            Objects.equals(this.afterCallWorkRequired, email.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, held, subject, messagesSent, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, autoGenerated, provider, scriptId, peerId, messageId, draftAttachments, spam, wrapup, afterCallWork, afterCallWorkRequired, initialState);
+    return Objects.hash(state, initialState, id, held, subject, messagesSent, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, autoGenerated, provider, scriptId, peerId, messageId, draftAttachments, spam, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -762,6 +762,7 @@ public class Email  implements Serializable {
     sb.append("class Email {\n");
     
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
@@ -785,7 +786,6 @@ public class Email  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
-    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("}");
     return sb.toString();
   }

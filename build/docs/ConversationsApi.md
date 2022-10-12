@@ -149,6 +149,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi.html#postConversationsEmailMessagesDraftAttachmentsCopy) | Copy attachments from an email message to the current draft. |
 | [**postConversationsEmailParticipantReplace**](ConversationsApi.html#postConversationsEmailParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | Create an email conversation |
+| [**postConversationsEmailsAgentless**](ConversationsApi.html#postConversationsEmailsAgentless) | Create an email conversation, per API |
 | [**postConversationsFaxes**](ConversationsApi.html#postConversationsFaxes) | Create Fax Conversation |
 | [**postConversationsKeyconfigurations**](ConversationsApi.html#postConversationsKeyconfigurations) | Setup configurations for encryption key creation |
 | [**postConversationsKeyconfigurationsValidate**](ConversationsApi.html#postConversationsKeyconfigurationsValidate) | Validate encryption key configurations without saving it |
@@ -3558,7 +3559,7 @@ try {
 
 
 
-> [MessageData](MessageData.html) getConversationsMessageDetails(messageId)
+> [MessageData](MessageData.html) getConversationsMessageDetails(messageId, useNormalizedMessage)
 
 Get message
 
@@ -3592,8 +3593,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 String messageId = "messageId_example"; // String | messageId
+Boolean useNormalizedMessage = false; // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
 try {
-    MessageData result = apiInstance.getConversationsMessageDetails(messageId);
+    MessageData result = apiInstance.getConversationsMessageDetails(messageId, useNormalizedMessage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessageDetails");
@@ -3607,6 +3609,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **messageId** | **String**| messageId | 
+| **useNormalizedMessage** | **Boolean**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3620,7 +3623,7 @@ try {
 
 
 
-> [MessageData](MessageData.html) getConversationsMessageMessage(conversationId, messageId)
+> [MessageData](MessageData.html) getConversationsMessageMessage(conversationId, messageId, useNormalizedMessage)
 
 Get conversation message
 
@@ -3655,8 +3658,9 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String messageId = "messageId_example"; // String | messageId
+Boolean useNormalizedMessage = false; // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
 try {
-    MessageData result = apiInstance.getConversationsMessageMessage(conversationId, messageId);
+    MessageData result = apiInstance.getConversationsMessageMessage(conversationId, messageId, useNormalizedMessage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessageMessage");
@@ -3671,6 +3675,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **messageId** | **String**| messageId | 
+| **useNormalizedMessage** | **Boolean**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -9051,6 +9056,68 @@ try {
 
 [**EmailConversation**](EmailConversation.html)
 
+<a name="postConversationsEmailsAgentless"></a>
+
+# **postConversationsEmailsAgentless**
+
+
+
+> [AgentlessEmailSendResponseDto](AgentlessEmailSendResponseDto.html) postConversationsEmailsAgentless(body)
+
+Create an email conversation, per API
+
+Wraps POST /api/v2/conversations/emails/agentless  
+
+Requires ANY permissions: 
+
+* conversation:email:create
+* conversation:agentlessEmail:send
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+AgentlessEmailSendRequestDto body = new AgentlessEmailSendRequestDto(); // AgentlessEmailSendRequestDto | Create agentless email request
+try {
+    AgentlessEmailSendResponseDto result = apiInstance.postConversationsEmailsAgentless(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsEmailsAgentless");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AgentlessEmailSendRequestDto**](AgentlessEmailSendRequestDto.html)| Create agentless email request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentlessEmailSendResponseDto**](AgentlessEmailSendResponseDto.html)
+
 <a name="postConversationsFaxes"></a>
 
 # **postConversationsFaxes**
@@ -9239,7 +9306,7 @@ try {
 
 
 
-> [MessageData](MessageData.html) postConversationsMessageCommunicationMessages(conversationId, communicationId, body)
+> [MessageData](MessageData.html) postConversationsMessageCommunicationMessages(conversationId, communicationId, body, useNormalizedMessage)
 
 Send message
 
@@ -9277,8 +9344,9 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String communicationId = "communicationId_example"; // String | communicationId
 AdditionalMessage body = new AdditionalMessage(); // AdditionalMessage | Message
+Boolean useNormalizedMessage = false; // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
 try {
-    MessageData result = apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body);
+    MessageData result = apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body, useNormalizedMessage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsMessageCommunicationMessages");
@@ -9294,6 +9362,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **communicationId** | **String**| communicationId | 
 | **body** | [**AdditionalMessage**](AdditionalMessage.html)| Message | 
+| **useNormalizedMessage** | **Boolean**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -9373,7 +9442,7 @@ try {
 
 
 
-> [TextMessageListing](TextMessageListing.html) postConversationsMessageMessagesBulk(conversationId, body)
+> [TextMessageListing](TextMessageListing.html) postConversationsMessageMessagesBulk(conversationId, useNormalizedMessage, body)
 
 Get messages in batch
 
@@ -9409,9 +9478,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | 
+Boolean useNormalizedMessage = false; // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
 List<String> body = Arrays.asList(null); // List<String> | messageIds
 try {
-    TextMessageListing result = apiInstance.postConversationsMessageMessagesBulk(conversationId, body);
+    TextMessageListing result = apiInstance.postConversationsMessageMessagesBulk(conversationId, useNormalizedMessage, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsMessageMessagesBulk");
@@ -9425,6 +9495,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**|  | 
+| **useNormalizedMessage** | **Boolean**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] 
 | **body** | [**List&lt;String&gt;**](String.html)| messageIds | [optional] 
 {: class="table-striped"}
 

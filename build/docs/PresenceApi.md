@@ -7,7 +7,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deletePresenceSource**](PresenceApi.html#deletePresenceSource) | Delete a Presence Source |
 | [**deletePresencedefinition**](PresenceApi.html#deletePresencedefinition) | Delete a Presence Definition |
+| [**getPresenceSource**](PresenceApi.html#getPresenceSource) | Get a Presence Source |
+| [**getPresenceSources**](PresenceApi.html#getPresenceSources) | Get a list of Presence Sources |
+| [**getPresenceUserPrimarysource**](PresenceApi.html#getPresenceUserPrimarysource) | Get a user's Primary Presence Source |
 | [**getPresencedefinition**](PresenceApi.html#getPresencedefinition) | Get a Presence Definition |
 | [**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | Get an Organization's list of Presence Definitions |
 | [**getSystempresences**](PresenceApi.html#getSystempresences) | Get the list of SystemPresences |
@@ -15,10 +19,74 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | Get a user's Genesys Cloud presence. |
 | [**patchUserPresence**](PresenceApi.html#patchUserPresence) | Patch a user's Presence |
 | [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | Patch a Genesys Cloud user's presence |
+| [**postPresenceSources**](PresenceApi.html#postPresenceSources) | Create a Presence Source |
 | [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | Create a Presence Definition |
+| [**putPresenceSource**](PresenceApi.html#putPresenceSource) | Update a Presence Source |
+| [**putPresenceUserPrimarysource**](PresenceApi.html#putPresenceUserPrimarysource) | Update a user's Primary Presence Source |
 | [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | Update a Presence Definition |
 | [**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | Update bulk user Presences |
 {: class="table-striped"}
+
+<a name="deletePresenceSource"></a>
+
+# **deletePresenceSource**
+
+
+
+> Void deletePresenceSource(sourceId)
+
+Delete a Presence Source
+
+Wraps DELETE /api/v2/presence/sources/{sourceId}  
+
+Requires ANY permissions: 
+
+* presence:source:delete
+* presence:source:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String sourceId = "sourceId_example"; // String | Presence Source ID
+try {
+    apiInstance.deletePresenceSource(sourceId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#deletePresenceSource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Presence Source ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deletePresencedefinition"></a>
 
@@ -79,6 +147,189 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="getPresenceSource"></a>
+
+# **getPresenceSource**
+
+
+
+> [Source](Source.html) getPresenceSource(sourceId)
+
+Get a Presence Source
+
+Wraps GET /api/v2/presence/sources/{sourceId}  
+
+Requires ALL permissions: 
+
+* presence:source:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String sourceId = "sourceId_example"; // String | Presence Source ID
+try {
+    Source result = apiInstance.getPresenceSource(sourceId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#getPresenceSource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Presence Source ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Source**](Source.html)
+
+<a name="getPresenceSources"></a>
+
+# **getPresenceSources**
+
+
+
+> [SourceEntityListing](SourceEntityListing.html) getPresenceSources(deleted)
+
+Get a list of Presence Sources
+
+Wraps GET /api/v2/presence/sources  
+
+Requires ALL permissions: 
+
+* presence:source:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String deleted = "false"; // String | Deleted query can be TRUE or FALSE
+try {
+    SourceEntityListing result = apiInstance.getPresenceSources(deleted);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#getPresenceSources");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **deleted** | **String**| Deleted query can be TRUE or FALSE | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SourceEntityListing**](SourceEntityListing.html)
+
+<a name="getPresenceUserPrimarysource"></a>
+
+# **getPresenceUserPrimarysource**
+
+
+
+> [UserPrimarySource](UserPrimarySource.html) getPresenceUserPrimarysource(userId)
+
+Get a user's Primary Presence Source
+
+Wraps GET /api/v2/presence/users/{userId}/primarysource  
+
+Requires ALL permissions: 
+
+* presence:userPrimarySource:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String userId = "userId_example"; // String | user ID
+try {
+    UserPrimarySource result = apiInstance.getPresenceUserPrimarysource(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#getPresenceUserPrimarysource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserPrimarySource**](UserPrimarySource.html)
 
 <a name="getPresencedefinition"></a>
 
@@ -520,6 +771,67 @@ try {
 
 [**UserPresence**](UserPresence.html)
 
+<a name="postPresenceSources"></a>
+
+# **postPresenceSources**
+
+
+
+> [Source](Source.html) postPresenceSources(body)
+
+Create a Presence Source
+
+Wraps POST /api/v2/presence/sources  
+
+Requires ALL permissions: 
+
+* presence:source:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+Source body = new Source(); // Source | The Presence Source to create
+try {
+    Source result = apiInstance.postPresenceSources(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#postPresenceSources");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**Source**](Source.html)| The Presence Source to create | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Source**](Source.html)
+
 <a name="postPresencedefinitions"></a>
 
 # **postPresencedefinitions**
@@ -580,6 +892,132 @@ try {
 ### Return type
 
 [**OrganizationPresence**](OrganizationPresence.html)
+
+<a name="putPresenceSource"></a>
+
+# **putPresenceSource**
+
+
+
+> [Source](Source.html) putPresenceSource(sourceId, body)
+
+Update a Presence Source
+
+Wraps PUT /api/v2/presence/sources/{sourceId}  
+
+Requires ALL permissions: 
+
+* presence:source:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String sourceId = "sourceId_example"; // String | Presence Source ID
+Source body = new Source(); // Source | The updated Presence Source
+try {
+    Source result = apiInstance.putPresenceSource(sourceId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#putPresenceSource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| Presence Source ID | 
+| **body** | [**Source**](Source.html)| The updated Presence Source | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Source**](Source.html)
+
+<a name="putPresenceUserPrimarysource"></a>
+
+# **putPresenceUserPrimarysource**
+
+
+
+> [UserPrimarySource](UserPrimarySource.html) putPresenceUserPrimarysource(userId, body)
+
+Update a user's Primary Presence Source
+
+Wraps PUT /api/v2/presence/users/{userId}/primarysource  
+
+Requires ALL permissions: 
+
+* presence:userPrimarySource:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String userId = "userId_example"; // String | user ID
+UserPrimarySource body = new UserPrimarySource(); // UserPrimarySource | Primary Source
+try {
+    UserPrimarySource result = apiInstance.putPresenceUserPrimarysource(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#putPresenceUserPrimarysource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user ID | 
+| **body** | [**UserPrimarySource**](UserPrimarySource.html)| Primary Source | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserPrimarySource**](UserPrimarySource.html)
 
 <a name="putPresencedefinition"></a>
 

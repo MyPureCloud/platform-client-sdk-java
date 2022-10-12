@@ -3431,7 +3431,7 @@ public class RecordingApi {
 
   /**
    * Create a recording bulk job.
-   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
    * @param body query (required)
    * @return RecordingJob
    * @throws ApiException if the request fails on the server
@@ -3443,7 +3443,7 @@ public class RecordingApi {
 
   /**
    * Create a recording bulk job.
-   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
    * @param body query (required)
    * @return RecordingJob
    * @throws IOException if the request fails to be processed
@@ -3461,7 +3461,7 @@ public class RecordingApi {
 
   /**
    * Create a recording bulk job.
-   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
    * @param request The request object
    * @return RecordingJob
    * @throws ApiException if the request fails on the server
@@ -3480,7 +3480,7 @@ public class RecordingApi {
 
   /**
    * Create a recording bulk job.
-   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

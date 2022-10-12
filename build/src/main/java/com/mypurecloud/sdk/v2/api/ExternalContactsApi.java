@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
 import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.ContactIdentifier;
 import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.CursorContactListing;
@@ -32,11 +33,14 @@ import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
 import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
+import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
+import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
+import com.mypurecloud.sdk.v2.model.MergeRequest;
 import com.mypurecloud.sdk.v2.model.Note;
 import com.mypurecloud.sdk.v2.model.NoteListing;
 import com.mypurecloud.sdk.v2.model.Relationship;
@@ -52,8 +56,10 @@ import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationNote
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationTrustorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactNotesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactUnresolvedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaVersionRequest;
@@ -75,9 +81,11 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanContactsRequest
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchExternalcontactsContactIdentifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUnresolvedRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesAddRequest;
@@ -92,8 +100,11 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsA
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactNotesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactPromotionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsMergeContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsSchemasRequest;
@@ -756,6 +767,84 @@ public class ExternalContactsApi {
   }
 
   /**
+   * List the identifiers for a contact
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @return EntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EntityListing getExternalcontactsContactIdentifiers(String contactId) throws IOException, ApiException {
+    return  getExternalcontactsContactIdentifiers(createGetExternalcontactsContactIdentifiersRequest(contactId));
+  }
+
+  /**
+   * List the identifiers for a contact
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @return EntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EntityListing> getExternalcontactsContactIdentifiersWithHttpInfo(String contactId) throws IOException {
+    return getExternalcontactsContactIdentifiers(createGetExternalcontactsContactIdentifiersRequest(contactId).withHttpInfo());
+  }
+
+  private GetExternalcontactsContactIdentifiersRequest createGetExternalcontactsContactIdentifiersRequest(String contactId) {
+    return GetExternalcontactsContactIdentifiersRequest.builder()
+            .withContactId(contactId)
+
+            .build();
+  }
+
+  /**
+   * List the identifiers for a contact
+   * 
+   * @param request The request object
+   * @return EntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EntityListing getExternalcontactsContactIdentifiers(GetExternalcontactsContactIdentifiersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List the identifiers for a contact
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EntityListing> getExternalcontactsContactIdentifiers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Fetch a note for an external contact
    * 
    * @param contactId ExternalContact Id (required)
@@ -931,6 +1020,88 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<NoteListing> response = (ApiResponse<NoteListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch an unresolved external contact
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources) (optional)
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact getExternalcontactsContactUnresolved(String contactId, List<String> expand) throws IOException, ApiException {
+    return  getExternalcontactsContactUnresolved(createGetExternalcontactsContactUnresolvedRequest(contactId, expand));
+  }
+
+  /**
+   * Fetch an unresolved external contact
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources) (optional)
+   * @return ExternalContact
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> getExternalcontactsContactUnresolvedWithHttpInfo(String contactId, List<String> expand) throws IOException {
+    return getExternalcontactsContactUnresolved(createGetExternalcontactsContactUnresolvedRequest(contactId, expand).withHttpInfo());
+  }
+
+  private GetExternalcontactsContactUnresolvedRequest createGetExternalcontactsContactUnresolvedRequest(String contactId, List<String> expand) {
+    return GetExternalcontactsContactUnresolvedRequest.builder()
+            .withContactId(contactId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Fetch an unresolved external contact
+   * 
+   * @param request The request object
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact getExternalcontactsContactUnresolved(GetExternalcontactsContactUnresolvedRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch an unresolved external contact
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> getExternalcontactsContactUnresolved(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2706,6 +2877,88 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Claim or release identifiers for a contact
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param body ClaimRequest (required)
+   * @return ContactIdentifier
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactIdentifier patchExternalcontactsContactIdentifiers(String contactId, IdentifierClaimRequest body) throws IOException, ApiException {
+    return  patchExternalcontactsContactIdentifiers(createPatchExternalcontactsContactIdentifiersRequest(contactId, body));
+  }
+
+  /**
+   * Claim or release identifiers for a contact
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param body ClaimRequest (required)
+   * @return ContactIdentifier
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactIdentifier> patchExternalcontactsContactIdentifiersWithHttpInfo(String contactId, IdentifierClaimRequest body) throws IOException {
+    return patchExternalcontactsContactIdentifiers(createPatchExternalcontactsContactIdentifiersRequest(contactId, body).withHttpInfo());
+  }
+
+  private PatchExternalcontactsContactIdentifiersRequest createPatchExternalcontactsContactIdentifiersRequest(String contactId, IdentifierClaimRequest body) {
+    return PatchExternalcontactsContactIdentifiersRequest.builder()
+            .withContactId(contactId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Claim or release identifiers for a contact
+   * 
+   * @param request The request object
+   * @return ContactIdentifier
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactIdentifier patchExternalcontactsContactIdentifiers(PatchExternalcontactsContactIdentifiersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactIdentifier> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactIdentifier>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Claim or release identifiers for a contact
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactIdentifier> patchExternalcontactsContactIdentifiers(ApiRequest<IdentifierClaimRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactIdentifier>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactIdentifier> response = (ApiResponse<ContactIdentifier>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactIdentifier> response = (ApiResponse<ContactIdentifier>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Bulk fetch contacts
    * 
    * @param body Contact ids (required)
@@ -2935,6 +3188,84 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BulkDeleteResponse> response = (ApiResponse<BulkDeleteResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk fetch unresolved ancestor contacts
+   * 
+   * @param body Contact ids (required)
+   * @return BulkFetchContactsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkFetchContactsResponse postExternalcontactsBulkContactsUnresolved(BulkIdsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsBulkContactsUnresolved(createPostExternalcontactsBulkContactsUnresolvedRequest(body));
+  }
+
+  /**
+   * Bulk fetch unresolved ancestor contacts
+   * 
+   * @param body Contact ids (required)
+   * @return BulkFetchContactsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkFetchContactsResponse> postExternalcontactsBulkContactsUnresolvedWithHttpInfo(BulkIdsRequest body) throws IOException {
+    return postExternalcontactsBulkContactsUnresolved(createPostExternalcontactsBulkContactsUnresolvedRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkContactsUnresolvedRequest createPostExternalcontactsBulkContactsUnresolvedRequest(BulkIdsRequest body) {
+    return PostExternalcontactsBulkContactsUnresolvedRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk fetch unresolved ancestor contacts
+   * 
+   * @param request The request object
+   * @return BulkFetchContactsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkFetchContactsResponse postExternalcontactsBulkContactsUnresolved(PostExternalcontactsBulkContactsUnresolvedRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkFetchContactsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkFetchContactsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk fetch unresolved ancestor contacts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkFetchContactsResponse> postExternalcontactsBulkContactsUnresolved(ApiRequest<BulkIdsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkFetchContactsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkFetchContactsResponse> response = (ApiResponse<BulkFetchContactsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkFetchContactsResponse> response = (ApiResponse<BulkFetchContactsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4036,6 +4367,84 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Promote an observed contact (ephemeral or identified) to a curated contact
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsContactPromotion(String contactId) throws IOException, ApiException {
+    return  postExternalcontactsContactPromotion(createPostExternalcontactsContactPromotionRequest(contactId));
+  }
+
+  /**
+   * Promote an observed contact (ephemeral or identified) to a curated contact
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @return ExternalContact
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsContactPromotionWithHttpInfo(String contactId) throws IOException {
+    return postExternalcontactsContactPromotion(createPostExternalcontactsContactPromotionRequest(contactId).withHttpInfo());
+  }
+
+  private PostExternalcontactsContactPromotionRequest createPostExternalcontactsContactPromotionRequest(String contactId) {
+    return PostExternalcontactsContactPromotionRequest.builder()
+            .withContactId(contactId)
+
+            .build();
+  }
+
+  /**
+   * Promote an observed contact (ephemeral or identified) to a curated contact
+   * 
+   * @param request The request object
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsContactPromotion(PostExternalcontactsContactPromotionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Promote an observed contact (ephemeral or identified) to a curated contact
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsContactPromotion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create an external contact
    * 
    * @param body ExternalContact (required)
@@ -4187,6 +4596,162 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a contact using an identifier type and value.
+   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * @param identifier  (required)
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsIdentifierlookup(ContactIdentifier identifier) throws IOException, ApiException {
+    return  postExternalcontactsIdentifierlookup(createPostExternalcontactsIdentifierlookupRequest(identifier));
+  }
+
+  /**
+   * Fetch a contact using an identifier type and value.
+   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * @param identifier  (required)
+   * @return ExternalContact
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsIdentifierlookupWithHttpInfo(ContactIdentifier identifier) throws IOException {
+    return postExternalcontactsIdentifierlookup(createPostExternalcontactsIdentifierlookupRequest(identifier).withHttpInfo());
+  }
+
+  private PostExternalcontactsIdentifierlookupRequest createPostExternalcontactsIdentifierlookupRequest(ContactIdentifier identifier) {
+    return PostExternalcontactsIdentifierlookupRequest.builder()
+            .withIdentifier(identifier)
+
+            .build();
+  }
+
+  /**
+   * Fetch a contact using an identifier type and value.
+   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * @param request The request object
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsIdentifierlookup(PostExternalcontactsIdentifierlookupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a contact using an identifier type and value.
+   * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsIdentifierlookup(ApiRequest<ContactIdentifier> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Merge two contacts into a new contact record
+   * 
+   * @param body MergeRequest (required)
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsMergeContacts(MergeRequest body) throws IOException, ApiException {
+    return  postExternalcontactsMergeContacts(createPostExternalcontactsMergeContactsRequest(body));
+  }
+
+  /**
+   * Merge two contacts into a new contact record
+   * 
+   * @param body MergeRequest (required)
+   * @return ExternalContact
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsMergeContactsWithHttpInfo(MergeRequest body) throws IOException {
+    return postExternalcontactsMergeContacts(createPostExternalcontactsMergeContactsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsMergeContactsRequest createPostExternalcontactsMergeContactsRequest(MergeRequest body) {
+    return PostExternalcontactsMergeContactsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Merge two contacts into a new contact record
+   * 
+   * @param request The request object
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalContact postExternalcontactsMergeContacts(PostExternalcontactsMergeContactsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Merge two contacts into a new contact record
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalContact> postExternalcontactsMergeContacts(ApiRequest<MergeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

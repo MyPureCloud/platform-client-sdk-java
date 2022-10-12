@@ -30,6 +30,7 @@ title: WebMessagingAttachment
 | VIDEO | &quot;Video&quot; | 
 | AUDIO | &quot;Audio&quot; | 
 | FILE | &quot;File&quot; | 
+| LINK | &quot;Link&quot; | 
 {: class="table table-striped"}
 
 

@@ -30,9 +30,9 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
+  private String nextUri = null;
   private String lastUri = null;
   private String selfUri = null;
-  private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
 
@@ -124,6 +124,23 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
 
   /**
    **/
+  public DevelopmentActivityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
   public DevelopmentActivityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -153,23 +170,6 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public DevelopmentActivityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
   }
 
 
@@ -222,16 +222,16 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
             Objects.equals(this.pageNumber, developmentActivityListing.pageNumber) &&
             Objects.equals(this.total, developmentActivityListing.total) &&
             Objects.equals(this.firstUri, developmentActivityListing.firstUri) &&
+            Objects.equals(this.nextUri, developmentActivityListing.nextUri) &&
             Objects.equals(this.lastUri, developmentActivityListing.lastUri) &&
             Objects.equals(this.selfUri, developmentActivityListing.selfUri) &&
-            Objects.equals(this.nextUri, developmentActivityListing.nextUri) &&
             Objects.equals(this.previousUri, developmentActivityListing.previousUri) &&
             Objects.equals(this.pageCount, developmentActivityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, lastUri, selfUri, previousUri, pageCount);
   }
 
   @Override
@@ -244,9 +244,9 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

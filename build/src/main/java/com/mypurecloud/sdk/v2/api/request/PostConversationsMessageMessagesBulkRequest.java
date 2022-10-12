@@ -21,6 +21,8 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
+import com.mypurecloud.sdk.v2.model.AgentlessEmailSendRequestDto;
+import com.mypurecloud.sdk.v2.model.AgentlessEmailSendResponseDto;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
@@ -142,6 +144,20 @@ public class PostConversationsMessageMessagesBulkRequest {
 	    return this;
 	} 
 
+	private Boolean useNormalizedMessage;
+	public Boolean getUseNormalizedMessage() {
+		return this.useNormalizedMessage;
+	}
+
+	public void setUseNormalizedMessage(Boolean useNormalizedMessage) {
+		this.useNormalizedMessage = useNormalizedMessage;
+	}
+
+	public PostConversationsMessageMessagesBulkRequest withUseNormalizedMessage(Boolean useNormalizedMessage) {
+	    this.setUseNormalizedMessage(useNormalizedMessage);
+	    return this;
+	} 
+
 	private List<String> body;
 	public List<String> getBody() {
 		return this.body;
@@ -186,6 +202,9 @@ public class PostConversationsMessageMessagesBulkRequest {
         return ApiRequestBuilder.create("POST", "/api/v2/conversations/messages/{conversationId}/messages/bulk")
                 .withPathParameter("conversationId", conversationId)
         
+
+                .withQueryParameters("useNormalizedMessage", "", useNormalizedMessage)
+        
                 .withBody(body)
 
 		.withCustomHeaders(customHeaders)
@@ -216,6 +235,11 @@ public class PostConversationsMessageMessagesBulkRequest {
 
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
+			return this;
+		}
+
+		public Builder withUseNormalizedMessage(Boolean useNormalizedMessage) {
+			request.setUseNormalizedMessage(useNormalizedMessage);
 			return this;
 		}
 

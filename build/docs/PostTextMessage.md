@@ -24,6 +24,7 @@ title: PostTextMessage
 | TEXT | &quot;Text&quot; | 
 | STRUCTURED | &quot;Structured&quot; | 
 | RECEIPT | &quot;Receipt&quot; | 
+| MESSAGE | &quot;Message&quot; | 
 {: class="table table-striped"}
 
 

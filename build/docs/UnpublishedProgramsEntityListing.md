@@ -10,9 +10,9 @@ title: UnpublishedProgramsEntityListing
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | <!----><!---->[**List&lt;Program&gt;**](Program.html)<!----> |  |  [optional] |
 | **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

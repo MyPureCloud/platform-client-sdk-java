@@ -42,7 +42,10 @@ public class LearningModuleJobRequest  implements Serializable {
  @JsonDeserialize(using = ActionEnumDeserializer.class)
   public enum ActionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    REASSIGN("Reassign");
+    REASSIGN("Reassign"),
+    GRACEFULARCHIVE("GracefulArchive"),
+    IMMEDIATEARCHIVE("ImmediateArchive"),
+    UNARCHIVE("Unarchive");
 
     private String value;
 

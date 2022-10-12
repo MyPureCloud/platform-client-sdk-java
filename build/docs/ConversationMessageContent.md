@@ -17,6 +17,8 @@ title: ConversationMessageContent
 | **story** | <!----><!---->[**ConversationContentStory**](ConversationContentStory.html)<!----> | Ephemeral story content. |  [optional] |
 | **card** | <!----><!---->[**ConversationContentCard**](ConversationContentCard.html)<!----> | Card content |  [optional] |
 | **carousel** | <!----><!---->[**ConversationContentCarousel**](ConversationContentCarousel.html)<!----> | Carousel content |  [optional] |
+| **text** | <!----><!---->[**ConversationContentText**](ConversationContentText.html)<!----> | Text content. |  [optional] |
+| **quickReplyV2** | <!----><!---->[**ConversationContentQuickReplyV2**](ConversationContentQuickReplyV2.html)<!----> | Quick reply V2 content. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -36,6 +38,8 @@ title: ConversationMessageContent
 | MENTION | &quot;Mention&quot; | 
 | CARD | &quot;Card&quot; | 
 | CAROUSEL | &quot;Carousel&quot; | 
+| TEXT | &quot;Text&quot; | 
+| QUICKREPLYV2 | &quot;QuickReplyV2&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

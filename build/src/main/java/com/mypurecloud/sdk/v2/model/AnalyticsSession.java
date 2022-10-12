@@ -44,9 +44,11 @@ public class AnalyticsSession  implements Serializable {
   private String assignerId = null;
   private Boolean authenticated = null;
   private String bargedParticipantId = null;
+  private List<String> bcc = new ArrayList<String>();
   private List<String> callbackNumbers = new ArrayList<String>();
   private Date callbackScheduledTime = null;
   private String callbackUserName = null;
+  private List<String> cc = new ArrayList<String>();
   private String coachedParticipantId = null;
   private String cobrowseRole = null;
   private String cobrowseRoomId = null;
@@ -600,6 +602,24 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
+   * Blind carbon copy email address(es)
+   **/
+  public AnalyticsSession bcc(List<String> bcc) {
+    this.bcc = bcc;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Blind carbon copy email address(es)")
+  @JsonProperty("bcc")
+  public List<String> getBcc() {
+    return bcc;
+  }
+  public void setBcc(List<String> bcc) {
+    this.bcc = bcc;
+  }
+
+
+  /**
    * Callback phone number(s)
    **/
   public AnalyticsSession callbackNumbers(List<String> callbackNumbers) {
@@ -650,6 +670,24 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setCallbackUserName(String callbackUserName) {
     this.callbackUserName = callbackUserName;
+  }
+
+
+  /**
+   * Carbon copy email address(es)
+   **/
+  public AnalyticsSession cc(List<String> cc) {
+    this.cc = cc;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Carbon copy email address(es)")
+  @JsonProperty("cc")
+  public List<String> getCc() {
+    return cc;
+  }
+  public void setCc(List<String> cc) {
+    this.cc = cc;
   }
 
 
@@ -1756,9 +1794,11 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.assignerId, analyticsSession.assignerId) &&
             Objects.equals(this.authenticated, analyticsSession.authenticated) &&
             Objects.equals(this.bargedParticipantId, analyticsSession.bargedParticipantId) &&
+            Objects.equals(this.bcc, analyticsSession.bcc) &&
             Objects.equals(this.callbackNumbers, analyticsSession.callbackNumbers) &&
             Objects.equals(this.callbackScheduledTime, analyticsSession.callbackScheduledTime) &&
             Objects.equals(this.callbackUserName, analyticsSession.callbackUserName) &&
+            Objects.equals(this.cc, analyticsSession.cc) &&
             Objects.equals(this.coachedParticipantId, analyticsSession.coachedParticipantId) &&
             Objects.equals(this.cobrowseRole, analyticsSession.cobrowseRole) &&
             Objects.equals(this.cobrowseRoomId, analyticsSession.cobrowseRoomId) &&
@@ -1823,7 +1863,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, callbackNumbers, callbackScheduledTime, callbackUserName, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, proposedAgents, agentGroups, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, proposedAgents, agentGroups, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -1844,9 +1884,11 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    assignerId: ").append(toIndentedString(assignerId)).append("\n");
     sb.append("    authenticated: ").append(toIndentedString(authenticated)).append("\n");
     sb.append("    bargedParticipantId: ").append(toIndentedString(bargedParticipantId)).append("\n");
+    sb.append("    bcc: ").append(toIndentedString(bcc)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
+    sb.append("    cc: ").append(toIndentedString(cc)).append("\n");
     sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    cobrowseRoomId: ").append(toIndentedString(cobrowseRoomId)).append("\n");

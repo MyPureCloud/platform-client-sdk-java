@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocument;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestion;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestionRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestSession;
 import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobRequest;
@@ -4986,7 +4987,7 @@ public class KnowledgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeGuestDocumentSuggestion postKnowledgeGuestSessionDocumentsSearchSuggestions(String sessionId, KnowledgeDocumentSuggestionRequest body) throws IOException, ApiException {
+  public KnowledgeGuestDocumentSuggestion postKnowledgeGuestSessionDocumentsSearchSuggestions(String sessionId, KnowledgeGuestDocumentSuggestionRequest body) throws IOException, ApiException {
     return  postKnowledgeGuestSessionDocumentsSearchSuggestions(createPostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest(sessionId, body));
   }
 
@@ -4998,11 +4999,11 @@ public class KnowledgeApi {
    * @return KnowledgeGuestDocumentSuggestion
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeGuestDocumentSuggestion> postKnowledgeGuestSessionDocumentsSearchSuggestionsWithHttpInfo(String sessionId, KnowledgeDocumentSuggestionRequest body) throws IOException {
+  public ApiResponse<KnowledgeGuestDocumentSuggestion> postKnowledgeGuestSessionDocumentsSearchSuggestionsWithHttpInfo(String sessionId, KnowledgeGuestDocumentSuggestionRequest body) throws IOException {
     return postKnowledgeGuestSessionDocumentsSearchSuggestions(createPostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest(sessionId, body).withHttpInfo());
   }
 
-  private PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest createPostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest(String sessionId, KnowledgeDocumentSuggestionRequest body) {
+  private PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest createPostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest(String sessionId, KnowledgeGuestDocumentSuggestionRequest body) {
     return PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest.builder()
             .withSessionId(sessionId)
 
@@ -5037,7 +5038,7 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeGuestDocumentSuggestion> postKnowledgeGuestSessionDocumentsSearchSuggestions(ApiRequest<KnowledgeDocumentSuggestionRequest> request) throws IOException {
+  public ApiResponse<KnowledgeGuestDocumentSuggestion> postKnowledgeGuestSessionDocumentsSearchSuggestions(ApiRequest<KnowledgeGuestDocumentSuggestionRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<KnowledgeGuestDocumentSuggestion>() {});
     }

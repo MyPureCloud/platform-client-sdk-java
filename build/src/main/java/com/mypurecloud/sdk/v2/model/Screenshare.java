@@ -82,6 +82,60 @@ public class Screenshare  implements Serializable {
     }
   }
   private StateEnum state = null;
+
+  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
+    public InitialStateEnumDeserializer() {
+      super(InitialStateEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The initial connection state of this communication.
+   */
+ @JsonDeserialize(using = InitialStateEnumDeserializer.class)
+  public enum InitialStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    NONE("none");
+
+    private String value;
+
+    InitialStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialStateEnum value : InitialStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialStateEnum initialState = null;
   private String id = null;
   private String context = null;
   private Boolean sharing = null;
@@ -158,60 +212,6 @@ public class Screenshare  implements Serializable {
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
 
-  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
-    public InitialStateEnumDeserializer() {
-      super(InitialStateEnumDeserializer.class);
-    }
-
-    @Override
-    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * The initial connection state of this communication.
-   */
- @JsonDeserialize(using = InitialStateEnumDeserializer.class)
-  public enum InitialStateEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ALERTING("alerting"),
-    DIALING("dialing"),
-    CONTACTING("contacting"),
-    OFFERING("offering"),
-    CONNECTED("connected"),
-    DISCONNECTED("disconnected"),
-    TERMINATED("terminated"),
-    NONE("none");
-
-    private String value;
-
-    InitialStateEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static InitialStateEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (InitialStateEnum value : InitialStateEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return InitialStateEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private InitialStateEnum initialState = null;
-
   
   /**
    * The connection state of this communication.
@@ -228,6 +228,24 @@ public class Screenshare  implements Serializable {
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+
+  /**
+   * The initial connection state of this communication.
+   **/
+  public Screenshare initialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The initial connection state of this communication.")
+  @JsonProperty("initialState")
+  public InitialStateEnum getInitialState() {
+    return initialState;
+  }
+  public void setInitialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
   }
 
 
@@ -483,24 +501,6 @@ public class Screenshare  implements Serializable {
   }
 
 
-  /**
-   * The initial connection state of this communication.
-   **/
-  public Screenshare initialState(InitialStateEnum initialState) {
-    this.initialState = initialState;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The initial connection state of this communication.")
-  @JsonProperty("initialState")
-  public InitialStateEnum getInitialState() {
-    return initialState;
-  }
-  public void setInitialState(InitialStateEnum initialState) {
-    this.initialState = initialState;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -512,6 +512,7 @@ public class Screenshare  implements Serializable {
     Screenshare screenshare = (Screenshare) o;
 
     return Objects.equals(this.state, screenshare.state) &&
+            Objects.equals(this.initialState, screenshare.initialState) &&
             Objects.equals(this.id, screenshare.id) &&
             Objects.equals(this.context, screenshare.context) &&
             Objects.equals(this.sharing, screenshare.sharing) &&
@@ -525,13 +526,12 @@ public class Screenshare  implements Serializable {
             Objects.equals(this.segments, screenshare.segments) &&
             Objects.equals(this.wrapup, screenshare.wrapup) &&
             Objects.equals(this.afterCallWork, screenshare.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, screenshare.afterCallWorkRequired) &&
-            Objects.equals(this.initialState, screenshare.initialState);
+            Objects.equals(this.afterCallWorkRequired, screenshare.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, context, sharing, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments, wrapup, afterCallWork, afterCallWorkRequired, initialState);
+    return Objects.hash(state, initialState, id, context, sharing, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -540,6 +540,7 @@ public class Screenshare  implements Serializable {
     sb.append("class Screenshare {\n");
     
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    sharing: ").append(toIndentedString(sharing)).append("\n");
@@ -554,7 +555,6 @@ public class Screenshare  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
-    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("}");
     return sb.toString();
   }

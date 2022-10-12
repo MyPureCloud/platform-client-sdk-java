@@ -23,6 +23,7 @@ public class EmailColumn  implements Serializable {
   
   private String columnName = null;
   private String type = null;
+  private String contactableTimeColumn = null;
 
   
   /**
@@ -61,6 +62,24 @@ public class EmailColumn  implements Serializable {
   }
 
 
+  /**
+   * A column that indicates the timezone to use for a given contact when checking contactable times.
+   **/
+  public EmailColumn contactableTimeColumn(String contactableTimeColumn) {
+    this.contactableTimeColumn = contactableTimeColumn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A column that indicates the timezone to use for a given contact when checking contactable times.")
+  @JsonProperty("contactableTimeColumn")
+  public String getContactableTimeColumn() {
+    return contactableTimeColumn;
+  }
+  public void setContactableTimeColumn(String contactableTimeColumn) {
+    this.contactableTimeColumn = contactableTimeColumn;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +91,13 @@ public class EmailColumn  implements Serializable {
     EmailColumn emailColumn = (EmailColumn) o;
 
     return Objects.equals(this.columnName, emailColumn.columnName) &&
-            Objects.equals(this.type, emailColumn.type);
+            Objects.equals(this.type, emailColumn.type) &&
+            Objects.equals(this.contactableTimeColumn, emailColumn.contactableTimeColumn);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, type);
+    return Objects.hash(columnName, type, contactableTimeColumn);
   }
 
   @Override
@@ -87,6 +107,7 @@ public class EmailColumn  implements Serializable {
     
     sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    contactableTimeColumn: ").append(toIndentedString(contactableTimeColumn)).append("\n");
     sb.append("}");
     return sb.toString();
   }

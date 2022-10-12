@@ -84,6 +84,61 @@ public class Cobrowsesession  implements Serializable {
     }
   }
   private StateEnum state = null;
+
+  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
+    public InitialStateEnumDeserializer() {
+      super(InitialStateEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The initial connection state of this communication.
+   */
+ @JsonDeserialize(using = InitialStateEnumDeserializer.class)
+  public enum InitialStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    SCHEDULED("scheduled"),
+    NONE("none");
+
+    private String value;
+
+    InitialStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialStateEnum value : InitialStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialStateEnum initialState = null;
   private String id = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
@@ -161,61 +216,6 @@ public class Cobrowsesession  implements Serializable {
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
 
-  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
-    public InitialStateEnumDeserializer() {
-      super(InitialStateEnumDeserializer.class);
-    }
-
-    @Override
-    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * The initial connection state of this communication.
-   */
- @JsonDeserialize(using = InitialStateEnumDeserializer.class)
-  public enum InitialStateEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ALERTING("alerting"),
-    DIALING("dialing"),
-    CONTACTING("contacting"),
-    OFFERING("offering"),
-    CONNECTED("connected"),
-    DISCONNECTED("disconnected"),
-    TERMINATED("terminated"),
-    SCHEDULED("scheduled"),
-    NONE("none");
-
-    private String value;
-
-    InitialStateEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static InitialStateEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (InitialStateEnum value : InitialStateEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return InitialStateEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private InitialStateEnum initialState = null;
-
   
   /**
    * The connection state of this communication.
@@ -232,6 +232,24 @@ public class Cobrowsesession  implements Serializable {
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+
+  /**
+   * The initial connection state of this communication.
+   **/
+  public Cobrowsesession initialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The initial connection state of this communication.")
+  @JsonProperty("initialState")
+  public InitialStateEnum getInitialState() {
+    return initialState;
+  }
+  public void setInitialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
   }
 
 
@@ -541,24 +559,6 @@ public class Cobrowsesession  implements Serializable {
   }
 
 
-  /**
-   * The initial connection state of this communication.
-   **/
-  public Cobrowsesession initialState(InitialStateEnum initialState) {
-    this.initialState = initialState;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The initial connection state of this communication.")
-  @JsonProperty("initialState")
-  public InitialStateEnum getInitialState() {
-    return initialState;
-  }
-  public void setInitialState(InitialStateEnum initialState) {
-    this.initialState = initialState;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -570,6 +570,7 @@ public class Cobrowsesession  implements Serializable {
     Cobrowsesession cobrowsesession = (Cobrowsesession) o;
 
     return Objects.equals(this.state, cobrowsesession.state) &&
+            Objects.equals(this.initialState, cobrowsesession.initialState) &&
             Objects.equals(this.id, cobrowsesession.id) &&
             Objects.equals(this.disconnectType, cobrowsesession.disconnectType) &&
             Objects.equals(this.self, cobrowsesession.self) &&
@@ -586,13 +587,12 @@ public class Cobrowsesession  implements Serializable {
             Objects.equals(this.segments, cobrowsesession.segments) &&
             Objects.equals(this.wrapup, cobrowsesession.wrapup) &&
             Objects.equals(this.afterCallWork, cobrowsesession.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, cobrowsesession.afterCallWorkRequired) &&
-            Objects.equals(this.initialState, cobrowsesession.initialState);
+            Objects.equals(this.afterCallWorkRequired, cobrowsesession.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, disconnectType, self, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments, wrapup, afterCallWork, afterCallWorkRequired, initialState);
+    return Objects.hash(state, initialState, id, disconnectType, self, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -601,6 +601,7 @@ public class Cobrowsesession  implements Serializable {
     sb.append("class Cobrowsesession {\n");
     
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
@@ -618,7 +619,6 @@ public class Cobrowsesession  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
-    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("}");
     return sb.toString();
   }

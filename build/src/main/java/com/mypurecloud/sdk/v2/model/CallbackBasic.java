@@ -85,6 +85,61 @@ public class CallbackBasic  implements Serializable {
     }
   }
   private StateEnum state = null;
+
+  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
+    public InitialStateEnumDeserializer() {
+      super(InitialStateEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The initial connection state of this communication.
+   */
+ @JsonDeserialize(using = InitialStateEnumDeserializer.class)
+  public enum InitialStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    SCHEDULED("scheduled"),
+    NONE("none");
+
+    private String value;
+
+    InitialStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialStateEnum value : InitialStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialStateEnum initialState = null;
   private String id = null;
   private List<Segment> segments = new ArrayList<Segment>();
 
@@ -220,61 +275,6 @@ public class CallbackBasic  implements Serializable {
   private String callerId = null;
   private String callerIdName = null;
 
-  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
-    public InitialStateEnumDeserializer() {
-      super(InitialStateEnumDeserializer.class);
-    }
-
-    @Override
-    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * The initial connection state of this communication.
-   */
- @JsonDeserialize(using = InitialStateEnumDeserializer.class)
-  public enum InitialStateEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ALERTING("alerting"),
-    DIALING("dialing"),
-    CONTACTING("contacting"),
-    OFFERING("offering"),
-    CONNECTED("connected"),
-    DISCONNECTED("disconnected"),
-    TERMINATED("terminated"),
-    SCHEDULED("scheduled"),
-    NONE("none");
-
-    private String value;
-
-    InitialStateEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static InitialStateEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (InitialStateEnum value : InitialStateEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return InitialStateEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private InitialStateEnum initialState = null;
-
   
   /**
    * The connection state of this communication.
@@ -291,6 +291,24 @@ public class CallbackBasic  implements Serializable {
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+
+  /**
+   * The initial connection state of this communication.
+   **/
+  public CallbackBasic initialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The initial connection state of this communication.")
+  @JsonProperty("initialState")
+  public InitialStateEnum getInitialState() {
+    return initialState;
+  }
+  public void setInitialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
   }
 
 
@@ -762,24 +780,6 @@ public class CallbackBasic  implements Serializable {
   }
 
 
-  /**
-   * The initial connection state of this communication.
-   **/
-  public CallbackBasic initialState(InitialStateEnum initialState) {
-    this.initialState = initialState;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The initial connection state of this communication.")
-  @JsonProperty("initialState")
-  public InitialStateEnum getInitialState() {
-    return initialState;
-  }
-  public void setInitialState(InitialStateEnum initialState) {
-    this.initialState = initialState;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -791,6 +791,7 @@ public class CallbackBasic  implements Serializable {
     CallbackBasic callbackBasic = (CallbackBasic) o;
 
     return Objects.equals(this.state, callbackBasic.state) &&
+            Objects.equals(this.initialState, callbackBasic.initialState) &&
             Objects.equals(this.id, callbackBasic.id) &&
             Objects.equals(this.segments, callbackBasic.segments) &&
             Objects.equals(this.direction, callbackBasic.direction) &&
@@ -816,13 +817,12 @@ public class CallbackBasic  implements Serializable {
             Objects.equals(this.afterCallWork, callbackBasic.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, callbackBasic.afterCallWorkRequired) &&
             Objects.equals(this.callerId, callbackBasic.callerId) &&
-            Objects.equals(this.callerIdName, callbackBasic.callerIdName) &&
-            Objects.equals(this.initialState, callbackBasic.initialState);
+            Objects.equals(this.callerIdName, callbackBasic.callerIdName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, externalCampaign, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName, initialState);
+    return Objects.hash(state, initialState, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, externalCampaign, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName);
   }
 
   @Override
@@ -831,6 +831,7 @@ public class CallbackBasic  implements Serializable {
     sb.append("class CallbackBasic {\n");
     
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
@@ -857,7 +858,6 @@ public class CallbackBasic  implements Serializable {
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
     sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
-    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("}");
     return sb.toString();
   }

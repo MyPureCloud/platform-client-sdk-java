@@ -14,11 +14,11 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsConfigurationRequest;
@@ -661,13 +661,13 @@ public class WebDeploymentsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WebDeploymentEntityListing> getWebdeploymentsDeploymentsAsync(GetWebdeploymentsDeploymentsRequest request, final AsyncApiCallback<WebDeploymentEntityListing> callback) {
+  public Future<ExpandableWebDeploymentEntityListing> getWebdeploymentsDeploymentsAsync(GetWebdeploymentsDeploymentsRequest request, final AsyncApiCallback<ExpandableWebDeploymentEntityListing> callback) {
     try {
-      final SettableFuture<WebDeploymentEntityListing> future = SettableFuture.create();
+      final SettableFuture<ExpandableWebDeploymentEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WebDeploymentEntityListing>() {}, new AsyncApiCallback<ApiResponse<WebDeploymentEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExpandableWebDeploymentEntityListing>() {}, new AsyncApiCallback<ApiResponse<ExpandableWebDeploymentEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<WebDeploymentEntityListing> response) {
+        public void onCompleted(ApiResponse<ExpandableWebDeploymentEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -695,13 +695,13 @@ public class WebDeploymentsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WebDeploymentEntityListing>> getWebdeploymentsDeploymentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebDeploymentEntityListing>> callback) {
+  public Future<ApiResponse<ExpandableWebDeploymentEntityListing>> getWebdeploymentsDeploymentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExpandableWebDeploymentEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<WebDeploymentEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ExpandableWebDeploymentEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<WebDeploymentEntityListing>() {}, new AsyncApiCallback<ApiResponse<WebDeploymentEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ExpandableWebDeploymentEntityListing>() {}, new AsyncApiCallback<ApiResponse<ExpandableWebDeploymentEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<WebDeploymentEntityListing> response) {
+        public void onCompleted(ApiResponse<ExpandableWebDeploymentEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -709,7 +709,7 @@ public class WebDeploymentsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<WebDeploymentEntityListing> response = (ApiResponse<WebDeploymentEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<ExpandableWebDeploymentEntityListing> response = (ApiResponse<ExpandableWebDeploymentEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -717,7 +717,7 @@ public class WebDeploymentsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<WebDeploymentEntityListing> response = (ApiResponse<WebDeploymentEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ExpandableWebDeploymentEntityListing> response = (ApiResponse<ExpandableWebDeploymentEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

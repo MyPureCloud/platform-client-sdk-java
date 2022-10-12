@@ -71,6 +71,8 @@ docs/AgentOwnedMappingPreview.md
 docs/AgentOwnedMappingPreviewListing.md
 docs/AgentOwnedRouting.md
 docs/AgentTimeOffRequestPatch.md
+docs/AgentlessEmailSendRequestDto.md
+docs/AgentlessEmailSendResponseDto.md
 docs/AggregateMetricData.md
 docs/AggregateViewData.md
 docs/AggregationRange.md
@@ -186,6 +188,8 @@ docs/AttributeDetailEventTopicAttributeUpdateEvent.md
 docs/AttributeFilterItem.md
 docs/AtzmTimeSlot.md
 docs/AtzmTimeSlotWithTimeZone.md
+docs/AudioState.md
+docs/AudioUpdatedEvent.md
 docs/AuditApi.json
 docs/AuditApi.md
 docs/AuditChange.md
@@ -238,11 +242,15 @@ docs/AvailableTranslations.md
 docs/BaseMediaSettings.md
 docs/BaseProgramEntity.md
 docs/BaseTopicEntitiy.md
+docs/BatchConversationEventRequest.md
 docs/BatchDownloadJobResult.md
 docs/BatchDownloadJobStatusResult.md
 docs/BatchDownloadJobSubmission.md
 docs/BatchDownloadJobSubmissionResult.md
 docs/BatchDownloadRequest.md
+docs/BatchEventResponse.md
+docs/BatchUserPresenceEventRequest.md
+docs/BatchUserRoutingStatusEventRequest.md
 docs/BenefitAssessment.md
 docs/BenefitAssessmentJob.md
 docs/BillingApi.json
@@ -511,6 +519,9 @@ docs/CommonCampaign.md
 docs/CommonCampaignDivisionView.md
 docs/CommonCampaignDivisionViewEntityListing.md
 docs/CommonCampaignEntityListing.md
+docs/CommunicationAnsweredEvent.md
+docs/CommunicationDispositionAppliedEvent.md
+docs/CommunicationEndedEvent.md
 docs/ComparisonPeriod.md
 docs/ComparisonPeriodListing.md
 docs/Condition.md
@@ -523,6 +534,7 @@ docs/ConnectedQueue.md
 docs/ConnectedUser.md
 docs/ConstraintConflictMessage.md
 docs/ConsultTransfer.md
+docs/ConsultTransferEvent.md
 docs/ConsultTransferResponse.md
 docs/ConsultTransferUpdate.md
 docs/ConsumedResourcesEntityListing.md
@@ -538,6 +550,7 @@ docs/ContactColumnConditionSettings.md
 docs/ContactColumnTimeZone.md
 docs/ContactColumnToDataActionFieldMapping.md
 docs/ContactDetailEventTopicContactUpdateEvent.md
+docs/ContactIdentifier.md
 docs/ContactList.md
 docs/ContactListDivisionView.md
 docs/ContactListDivisionViewListing.md
@@ -583,10 +596,12 @@ docs/ContentPositionProperties.md
 docs/ContentPostback.md
 docs/ContentQueryRequest.md
 docs/ContentQuickReply.md
+docs/ContentQuickReplyV2.md
 docs/ContentReaction.md
 docs/ContentSetting.md
 docs/ContentSortItem.md
 docs/ContentStory.md
+docs/ContentText.md
 docs/Context.md
 docs/ContextEntity.md
 docs/ContextIntent.md
@@ -669,7 +684,9 @@ docs/ConversationContentCarousel.md
 docs/ConversationContentLocation.md
 docs/ConversationContentNotificationTemplate.md
 docs/ConversationContentQuickReply.md
+docs/ConversationContentQuickReplyV2.md
 docs/ConversationContentStory.md
+docs/ConversationContentText.md
 docs/ConversationDeletionProtectionQuery.md
 docs/ConversationDetailQueryClause.md
 docs/ConversationDetailQueryFilter.md
@@ -1040,6 +1057,7 @@ docs/DncListDivisionViewListing.md
 docs/DncListEntityListing.md
 docs/DnclistDownloadReadyExportUri.md
 docs/DnclistImportStatusImportStatus.md
+docs/DnsRecordEntry.md
 docs/DoNotSendActionSettings.md
 docs/Document.md
 docs/DocumentArticle.md
@@ -1058,6 +1076,10 @@ docs/DocumentContentBlock.md
 docs/DocumentEntityListing.md
 docs/DocumentFaq.md
 docs/DocumentListing.md
+docs/DocumentQuery.md
+docs/DocumentQueryClause.md
+docs/DocumentQueryInterval.md
+docs/DocumentQueryPredicate.md
 docs/DocumentReference.md
 docs/DocumentText.md
 docs/DocumentThumbnail.md
@@ -1100,6 +1122,8 @@ docs/DomainResourceConditionValue.md
 docs/DomainRole.md
 docs/DomainSchemaReference.md
 docs/DownloadResponse.md
+docs/DownloadsApi.json
+docs/DownloadsApi.md
 docs/Draft.md
 docs/DraftIntents.md
 docs/DraftListing.md
@@ -1164,6 +1188,7 @@ docs/EmailMediaPolicy.md
 docs/EmailMediaPolicyConditions.md
 docs/EmailMessage.md
 docs/EmailMessageListing.md
+docs/EmailOutboundDomainResult.md
 docs/EmailSetup.md
 docs/EmailsSettings.md
 docs/EmbeddedIntegration.md
@@ -1174,8 +1199,11 @@ docs/EmployerInfo.md
 docs/Empty.md
 docs/EncryptionKey.md
 docs/EncryptionKeyEntityListing.md
+docs/EndConsultTransferEvent.md
+docs/EndTransferEvent.md
 docs/Endpoint.md
 docs/Entity.md
+docs/EntityChange.md
 docs/EntityListing.md
 docs/EntityTypeCriteria.md
 docs/Entry.md
@@ -1216,12 +1244,17 @@ docs/EvaluatorActivity.md
 docs/EvaluatorActivityEntityListing.md
 docs/EventCoBrowse.md
 docs/EventCondition.md
+docs/EventError.md
 docs/EventLog.md
 docs/EventMessage.md
 docs/EventPresence.md
 docs/EventSetting.md
 docs/EventTyping.md
+docs/EventsApi.json
+docs/EventsApi.md
 docs/ExecuteRecordingJobsQuery.md
+docs/ExpandableWebDeployment.md
+docs/ExpandableWebDeploymentEntityListing.md
 docs/ExpansionCriterium.md
 docs/ExpiredEdgeListing.md
 docs/ExportScriptRequest.md
@@ -1254,6 +1287,7 @@ docs/ExternalContactsUnresolvedContactChangedTopicPhoneNumber.md
 docs/ExternalContactsUnresolvedContactChangedTopicTwitterId.md
 docs/ExternalContactsUnresolvedContactChangedTopicWhatsAppId.md
 docs/ExternalDataSource.md
+docs/ExternalEstablishedEvent.md
 docs/ExternalMetricDataItem.md
 docs/ExternalMetricDataProcessedItem.md
 docs/ExternalMetricDataUnprocessedItem.md
@@ -1432,10 +1466,12 @@ docs/HistoricalImportStatus.md
 docs/HistoricalImportStatusListing.md
 docs/HistoryEntry.md
 docs/HistoryListing.md
+docs/HoldUpdatedEvent.md
 docs/HomerRecord.md
 docs/Humanize.md
 docs/IVR.md
 docs/IVREntityListing.md
+docs/IdentifierClaimRequest.md
 docs/IdentityNow.md
 docs/IdentityProviderApi.json
 docs/IdentityProviderApi.md
@@ -1457,12 +1493,13 @@ docs/InboundMessageRequest.md
 docs/InboundOnlySetting.md
 docs/InboundRoute.md
 docs/InboundRouteEntityListing.md
+docs/InitialConfiguration.md
 docs/InitiateScreenRecording.md
+docs/InitiatingAction.md
 docs/Integration.md
 docs/IntegrationAction.md
 docs/IntegrationActionFields.md
 docs/IntegrationConfiguration.md
-docs/IntegrationConfigurationCredential.md
 docs/IntegrationConfigurationInfo.md
 docs/IntegrationEntityListing.md
 docs/IntegrationExport.md
@@ -1486,6 +1523,7 @@ docs/IpAddressRange.md
 docs/IpAddressRangeListing.md
 docs/ItemValidationLimits.md
 docs/Items.md
+docs/IvrEstablishedEvent.md
 docs/Journey.md
 docs/JourneyAction.md
 docs/JourneyActionMap.md
@@ -1634,6 +1672,7 @@ docs/KnowledgeGroupStatistics.md
 docs/KnowledgeGuestDocument.md
 docs/KnowledgeGuestDocumentResponseListing.md
 docs/KnowledgeGuestDocumentSuggestion.md
+docs/KnowledgeGuestDocumentSuggestionRequest.md
 docs/KnowledgeGuestDocumentSuggestionResult.md
 docs/KnowledgeGuestDocumentVariation.md
 docs/KnowledgeGuestDocumentVariationContext.md
@@ -1814,6 +1853,7 @@ docs/MemberEntity.md
 docs/MemberGroup.md
 docs/MemberListing.md
 docs/MergeOperation.md
+docs/MergeRequest.md
 docs/Message.md
 docs/MessageContent.md
 docs/MessageConversation.md
@@ -1973,6 +2013,8 @@ docs/OutOfOfficeEventUser.md
 docs/OutboundApi.json
 docs/OutboundApi.md
 docs/OutboundDetailEventTopicOutboundInitEvent.md
+docs/OutboundDomain.md
+docs/OutboundDomainEntityListing.md
 docs/OutboundMessagingMessagingCampaignConfigChangeContactSort.md
 docs/OutboundMessagingMessagingCampaignConfigChangeEmailConfig.md
 docs/OutboundMessagingMessagingCampaignConfigChangeErrorDetail.md
@@ -2054,11 +2096,13 @@ docs/PhoneChangeTopicProvisionInfo.md
 docs/PhoneChangeTopicUserAgentInfo.md
 docs/PhoneColumn.md
 docs/PhoneEntityListing.md
+docs/PhoneEstablishedEvent.md
 docs/PhoneMetaBaseEntityListing.md
 docs/PhoneNumber.md
 docs/PhoneNumberColumn.md
 docs/PhoneNumberStatus.md
 docs/PhoneStatus.md
+docs/PhoneTransferEvent.md
 docs/PhonesReboot.md
 docs/Phrase.md
 docs/PhraseAssociations.md
@@ -2113,6 +2157,8 @@ docs/ProgramMappingsRequest.md
 docs/ProgramRequest.md
 docs/ProgramsEntityListing.md
 docs/ProgramsMappingsEntityListing.md
+docs/ProgressConsultTransferEvent.md
+docs/ProgressTransferEvent.md
 docs/Prompt.md
 docs/PromptAsset.md
 docs/PromptAssetCreate.md
@@ -2493,6 +2539,7 @@ docs/RoutingApi.md
 docs/RoutingConversationAttributesRequest.md
 docs/RoutingConversationAttributesResponse.md
 docs/RoutingData.md
+docs/RoutingEstablishedEvent.md
 docs/RoutingRule.md
 docs/RoutingSettings.md
 docs/RoutingSkill.md
@@ -2501,6 +2548,7 @@ docs/RoutingStatus.md
 docs/RoutingStatusDetailQueryClause.md
 docs/RoutingStatusDetailQueryFilter.md
 docs/RoutingStatusDetailQueryPredicate.md
+docs/RoutingTransferEvent.md
 docs/RuleSet.md
 docs/RuleSetDiagnostic.md
 docs/RuleSetEntityListing.md
@@ -2648,6 +2696,7 @@ docs/ShortTermForecastReference.md
 docs/ShortTermForecastingSettings.md
 docs/ShrinkageOverride.md
 docs/ShrinkageOverrides.md
+docs/Signature.md
 docs/SignedUrlResponse.md
 docs/SingleWorkdayAveragePoints.md
 docs/SingleWorkdayAverageValues.md
@@ -2671,6 +2720,9 @@ docs/SmsProvisioningStatus.md
 docs/SocialExpression.md
 docs/SocialHandle.md
 docs/SortItem.md
+docs/Source.md
+docs/SourceConfiguration.md
+docs/SourceEntityListing.md
 docs/SourcePlanningGroupRequest.md
 docs/SpeechTextAnalyticsApi.json
 docs/SpeechTextAnalyticsApi.md
@@ -2998,6 +3050,7 @@ docs/UserDetailsQuery.md
 docs/UserDevice.md
 docs/UserEndDetailEventTopicUserEndEvent.md
 docs/UserEntityListing.md
+docs/UserEstablishedEvent.md
 docs/UserExpands.md
 docs/UserExternalIdentifier.md
 docs/UserGreetingEventGreeting.md
@@ -3017,6 +3070,8 @@ docs/UserObservationQueryPredicate.md
 docs/UserObservationQueryResponse.md
 docs/UserParam.md
 docs/UserPresence.md
+docs/UserPresenceEvent.md
+docs/UserPrimarySource.md
 docs/UserProfile.md
 docs/UserProfileEntityListing.md
 docs/UserQueue.md
@@ -3031,6 +3086,7 @@ docs/UserRoutingLanguagePost.md
 docs/UserRoutingSkill.md
 docs/UserRoutingSkillPost.md
 docs/UserRoutingStatusErrorInfo.md
+docs/UserRoutingStatusEvent.md
 docs/UserRoutingStatusRoutingStatus.md
 docs/UserRoutingStatusUserParam.md
 docs/UserRoutingStatusUserRoutingStatus.md
@@ -3054,6 +3110,7 @@ docs/UserStations.md
 docs/UserTimeOffRequestReference.md
 docs/UserTokensTopicTokenNotification.md
 docs/UserTokensTopicUriReference.md
+docs/UserTransferEvent.md
 docs/UsersApi.json
 docs/UsersApi.md
 docs/UsersSearchResponse.md
@@ -3121,6 +3178,7 @@ docs/ValidationServiceRequest.md
 docs/ValueWrapperDate.md
 docs/ValueWrapperPlanningPeriodSettings.md
 docs/ValueWrapperString.md
+docs/VerificationResult.md
 docs/Video.md
 docs/ViewFilter.md
 docs/VipBackup.md
@@ -3170,7 +3228,9 @@ docs/WebDeployment.md
 docs/WebDeploymentActiveConfigurationOnDeployment.md
 docs/WebDeploymentConfigurationVersion.md
 docs/WebDeploymentConfigurationVersionEntityListing.md
-docs/WebDeploymentEntityListing.md
+docs/WebDeploymentConfigurationVersionEntityRef.md
+docs/WebDeploymentConfigurationVersionResponse.md
+docs/WebDeploymentHeadlessMode.md
 docs/WebDeploymentsApi.json
 docs/WebDeploymentsApi.md
 docs/WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.md
@@ -3525,6 +3585,7 @@ docs/deleteOutboundSchedulesEmailcampaign-example.txt
 docs/deleteOutboundSchedulesMessagingcampaign-example.txt
 docs/deleteOutboundSchedulesSequence-example.txt
 docs/deleteOutboundSequence-example.txt
+docs/deletePresenceSource-example.txt
 docs/deletePresencedefinition-example.txt
 docs/deleteProcessautomationTrigger-example.txt
 docs/deleteQualityCalibration-example.txt
@@ -3543,6 +3604,7 @@ docs/deleteResponsemanagementResponseasset-example.txt
 docs/deleteRoutingAssessment-example.txt
 docs/deleteRoutingEmailDomain-example.txt
 docs/deleteRoutingEmailDomainRoute-example.txt
+docs/deleteRoutingEmailOutboundDomain-example.txt
 docs/deleteRoutingLanguage-example.txt
 docs/deleteRoutingPredictor-example.txt
 docs/deleteRoutingQueue-example.txt
@@ -3812,11 +3874,14 @@ docs/getDataextensionsLimits-example.txt
 docs/getDate-example.txt
 docs/getDocumentationGknSearch-example.txt
 docs/getDocumentationSearch-example.txt
+docs/getDownload-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/getExternalcontactsContact-example.txt
+docs/getExternalcontactsContactIdentifiers-example.txt
 docs/getExternalcontactsContactNote-example.txt
 docs/getExternalcontactsContactNotes-example.txt
+docs/getExternalcontactsContactUnresolved-example.txt
 docs/getExternalcontactsContacts-example.txt
 docs/getExternalcontactsContactsSchema-example.txt
 docs/getExternalcontactsContactsSchemaVersion-example.txt
@@ -4156,6 +4221,9 @@ docs/getOutboundSequence-example.txt
 docs/getOutboundSequences-example.txt
 docs/getOutboundSettings-example.txt
 docs/getOutboundWrapupcodemappings-example.txt
+docs/getPresenceSource-example.txt
+docs/getPresenceSources-example.txt
+docs/getPresenceUserPrimarysource-example.txt
 docs/getPresencedefinition-example.txt
 docs/getPresencedefinitions-example.txt
 docs/getProcessautomationTrigger-example.txt
@@ -4224,6 +4292,10 @@ docs/getRoutingEmailDomain-example.txt
 docs/getRoutingEmailDomainRoute-example.txt
 docs/getRoutingEmailDomainRoutes-example.txt
 docs/getRoutingEmailDomains-example.txt
+docs/getRoutingEmailOutboundDomain-example.txt
+docs/getRoutingEmailOutboundDomainActivation-example.txt
+docs/getRoutingEmailOutboundDomainSearch-example.txt
+docs/getRoutingEmailOutboundDomains-example.txt
 docs/getRoutingEmailSetup-example.txt
 docs/getRoutingLanguage-example.txt
 docs/getRoutingLanguages-example.txt
@@ -4573,6 +4645,7 @@ docs/patchConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/patchConversationsMessagingSupportedcontentSupportedContentId-example.txt
 docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
+docs/patchExternalcontactsContactIdentifiers-example.txt
 docs/patchGeolocationsSettings-example.txt
 docs/patchIntegration-example.txt
 docs/patchIntegrationsAction-example.txt
@@ -4766,6 +4839,7 @@ docs/postConversationsEmailMessages-example.txt
 docs/postConversationsEmailMessagesDraftAttachmentsCopy-example.txt
 docs/postConversationsEmailParticipantReplace-example.txt
 docs/postConversationsEmails-example.txt
+docs/postConversationsEmailsAgentless-example.txt
 docs/postConversationsFaxes-example.txt
 docs/postConversationsKeyconfigurations-example.txt
 docs/postConversationsKeyconfigurationsValidate-example.txt
@@ -4786,9 +4860,13 @@ docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
 docs/postEmployeeperformanceExternalmetricsData-example.txt
 docs/postEmployeeperformanceExternalmetricsDefinitions-example.txt
+docs/postEventsConversations-example.txt
+docs/postEventsUsersPresence-example.txt
+docs/postEventsUsersRoutingstatus-example.txt
 docs/postExternalcontactsBulkContacts-example.txt
 docs/postExternalcontactsBulkContactsAdd-example.txt
 docs/postExternalcontactsBulkContactsRemove-example.txt
+docs/postExternalcontactsBulkContactsUnresolved-example.txt
 docs/postExternalcontactsBulkContactsUpdate-example.txt
 docs/postExternalcontactsBulkNotes-example.txt
 docs/postExternalcontactsBulkNotesAdd-example.txt
@@ -4803,8 +4881,11 @@ docs/postExternalcontactsBulkRelationshipsAdd-example.txt
 docs/postExternalcontactsBulkRelationshipsRemove-example.txt
 docs/postExternalcontactsBulkRelationshipsUpdate-example.txt
 docs/postExternalcontactsContactNotes-example.txt
+docs/postExternalcontactsContactPromotion-example.txt
 docs/postExternalcontactsContacts-example.txt
 docs/postExternalcontactsContactsSchemas-example.txt
+docs/postExternalcontactsIdentifierlookup-example.txt
+docs/postExternalcontactsMergeContacts-example.txt
 docs/postExternalcontactsOrganizationNotes-example.txt
 docs/postExternalcontactsOrganizations-example.txt
 docs/postExternalcontactsOrganizationsSchemas-example.txt
@@ -4943,6 +5024,7 @@ docs/postOutboundMessagingcampaigns-example.txt
 docs/postOutboundMessagingcampaignsProgress-example.txt
 docs/postOutboundRulesets-example.txt
 docs/postOutboundSequences-example.txt
+docs/postPresenceSources-example.txt
 docs/postPresencedefinitions-example.txt
 docs/postProcessautomationTriggerTest-example.txt
 docs/postProcessautomationTriggers-example.txt
@@ -4981,6 +5063,8 @@ docs/postRoutingAssessmentsJobs-example.txt
 docs/postRoutingEmailDomainRoutes-example.txt
 docs/postRoutingEmailDomainTestconnection-example.txt
 docs/postRoutingEmailDomains-example.txt
+docs/postRoutingEmailOutboundDomains-example.txt
+docs/postRoutingEmailOutboundDomainsSimulated-example.txt
 docs/postRoutingLanguages-example.txt
 docs/postRoutingPredictors-example.txt
 docs/postRoutingQueueMembers-example.txt
@@ -5230,6 +5314,8 @@ docs/putOutboundSchedulesMessagingcampaign-example.txt
 docs/putOutboundSchedulesSequence-example.txt
 docs/putOutboundSequence-example.txt
 docs/putOutboundWrapupcodemappings-example.txt
+docs/putPresenceSource-example.txt
+docs/putPresenceUserPrimarysource-example.txt
 docs/putPresencedefinition-example.txt
 docs/putProcessautomationTrigger-example.txt
 docs/putQualityCalibration-example.txt
@@ -5250,6 +5336,7 @@ docs/putResponsemanagementLibrary-example.txt
 docs/putResponsemanagementResponse-example.txt
 docs/putResponsemanagementResponseasset-example.txt
 docs/putRoutingEmailDomainRoute-example.txt
+docs/putRoutingEmailOutboundDomainActivation-example.txt
 docs/putRoutingMessageRecipient-example.txt
 docs/putRoutingQueue-example.txt
 docs/putRoutingSettings-example.txt
@@ -5345,6 +5432,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/ConversationsApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/ConversationsApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/DataExtensionsApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/DataExtensionsApiAsync.java
+src/main/java/com/mypurecloud/sdk/v2/api/DownloadsApi.java
+src/main/java/com/mypurecloud/sdk/v2/api/DownloadsApiAsync.java
+src/main/java/com/mypurecloud/sdk/v2/api/EventsApi.java
+src/main/java/com/mypurecloud/sdk/v2/api/EventsApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/ExternalContactsApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/ExternalContactsApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/FaxApi.java
@@ -5579,6 +5670,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundSchedulesEmailcam
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundSchedulesMessagingcampaignRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundSchedulesSequenceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundSequenceRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeletePresenceSourceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeletePresencedefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteProcessautomationTriggerRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteQualityCalibrationRequest.java
@@ -5597,6 +5689,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteResponsemanagementRespons
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingAssessmentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingEmailDomainRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingEmailDomainRouteRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingEmailOutboundDomainRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingLanguageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingPredictorRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingQueueMemberRequest.java
@@ -5866,11 +5959,14 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsLimitsRequest.
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDocumentationGknSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDocumentationSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetDownloadRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetEmployeeperformanceExternalmetricsDefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetEmployeeperformanceExternalmetricsDefinitionsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactIdentifiersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactNoteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactNotesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactUnresolvedRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactsSchemaRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetExternalcontactsContactsSchemaVersionRequest.java
@@ -6210,6 +6306,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundSequenceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundSequencesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundWrapupcodemappingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetPresenceSourceRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetPresenceSourcesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetPresenceUserPrimarysourceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetPresencedefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetPresencedefinitionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetProcessautomationTriggerRequest.java
@@ -6278,6 +6377,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingEmailDomainRequest.ja
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingEmailDomainRouteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingEmailDomainRoutesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingEmailDomainsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingEmailOutboundDomainActivationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingEmailOutboundDomainRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingEmailOutboundDomainSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingEmailOutboundDomainsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingEmailSetupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingLanguageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingLanguagesRequest.java
@@ -6627,6 +6730,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingInte
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingSupportedcontentSupportedContentIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchEmployeeperformanceExternalmetricsDefinitionRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchExternalcontactsContactIdentifiersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchGeolocationsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchIntegrationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchIntegrationsActionDraftRequest.java
@@ -6819,6 +6923,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailInboundme
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailMessagesDraftAttachmentsCopyRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailMessagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailParticipantReplaceRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailsAgentlessRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsFaxesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsKeyconfigurationsRequest.java
@@ -6840,9 +6945,13 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationGknSearchReque
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostEmployeeperformanceExternalmetricsDataRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostEmployeeperformanceExternalmetricsDefinitionsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostEventsConversationsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostEventsUsersPresenceRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostEventsUsersRoutingstatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkContactsAddRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkContactsRemoveRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkContactsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkContactsUnresolvedRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkContactsUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkNotesAddRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkNotesRemoveRequest.java
@@ -6857,8 +6966,11 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkRelatio
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkRelationshipsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsBulkRelationshipsUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsContactNotesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsContactPromotionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsContactsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsContactsSchemasRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsIdentifierlookupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsMergeContactsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsOrganizationNotesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsOrganizationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostExternalcontactsOrganizationsSchemasRequest.java
@@ -6997,6 +7109,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundMessagingcampaignsP
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundMessagingcampaignsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundRulesetsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundSequencesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostPresenceSourcesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostPresencedefinitionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostProcessautomationTriggerTestRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostProcessautomationTriggersRequest.java
@@ -7035,6 +7148,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingAssessmentsRequest.j
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingEmailDomainRoutesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingEmailDomainTestconnectionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingEmailDomainsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingEmailOutboundDomainsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingEmailOutboundDomainsSimulatedRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingLanguagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingPredictorsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingQueueMembersRequest.java
@@ -7284,6 +7399,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundSchedulesMessagingca
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundSchedulesSequenceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundSequenceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundWrapupcodemappingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutPresenceSourceRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutPresenceUserPrimarysourceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutPresencedefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutProcessautomationTriggerRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutQualityCalibrationRequest.java
@@ -7304,6 +7421,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutResponsemanagementLibraryReq
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutResponsemanagementResponseRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutResponsemanagementResponseassetRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutRoutingEmailDomainRouteRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutRoutingEmailOutboundDomainActivationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutRoutingMessageRecipientRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutRoutingQueueRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutRoutingSettingsRequest.java
@@ -7437,6 +7555,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/AgentOwnedMappingPreview.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentOwnedMappingPreviewListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentOwnedRouting.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentTimeOffRequestPatch.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentlessEmailSendRequestDto.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentlessEmailSendResponseDto.java
 src/main/java/com/mypurecloud/sdk/v2/model/AggregateMetricData.java
 src/main/java/com/mypurecloud/sdk/v2/model/AggregateViewData.java
 src/main/java/com/mypurecloud/sdk/v2/model/AggregationRange.java
@@ -7546,6 +7666,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/AttributeDetailEventTopicAttributeUpd
 src/main/java/com/mypurecloud/sdk/v2/model/AttributeFilterItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/AtzmTimeSlot.java
 src/main/java/com/mypurecloud/sdk/v2/model/AtzmTimeSlotWithTimeZone.java
+src/main/java/com/mypurecloud/sdk/v2/model/AudioState.java
+src/main/java/com/mypurecloud/sdk/v2/model/AudioUpdatedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuditChange.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuditEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuditEntityReference.java
@@ -7594,11 +7716,15 @@ src/main/java/com/mypurecloud/sdk/v2/model/AvailableTranslations.java
 src/main/java/com/mypurecloud/sdk/v2/model/BaseMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/BaseProgramEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/BaseTopicEntitiy.java
+src/main/java/com/mypurecloud/sdk/v2/model/BatchConversationEventRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BatchDownloadJobResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/BatchDownloadJobStatusResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/BatchDownloadJobSubmission.java
 src/main/java/com/mypurecloud/sdk/v2/model/BatchDownloadJobSubmissionResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/BatchDownloadRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/BatchEventResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/BatchUserPresenceEventRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/BatchUserRoutingStatusEventRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BenefitAssessment.java
 src/main/java/com/mypurecloud/sdk/v2/model/BenefitAssessmentJob.java
 src/main/java/com/mypurecloud/sdk/v2/model/BillingUsage.java
@@ -7861,6 +7987,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/CommonCampaign.java
 src/main/java/com/mypurecloud/sdk/v2/model/CommonCampaignDivisionView.java
 src/main/java/com/mypurecloud/sdk/v2/model/CommonCampaignDivisionViewEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/CommonCampaignEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/CommunicationAnsweredEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/CommunicationDispositionAppliedEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/CommunicationEndedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ComparisonPeriod.java
 src/main/java/com/mypurecloud/sdk/v2/model/ComparisonPeriodListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Condition.java
@@ -7873,6 +8002,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConnectedQueue.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConnectedUser.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConstraintConflictMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConsultTransfer.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConsultTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConsultTransferResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConsultTransferUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConsumedResourcesEntityListing.java
@@ -7888,6 +8018,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ContactColumnConditionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactColumnTimeZone.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactColumnToDataActionFieldMapping.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactDetailEventTopicContactUpdateEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactIdentifier.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactList.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactListDivisionView.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactListDivisionViewListing.java
@@ -7931,10 +8062,12 @@ src/main/java/com/mypurecloud/sdk/v2/model/ContentPositionProperties.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentPostback.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentQuickReply.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContentQuickReplyV2.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentReaction.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentSetting.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentSortItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentStory.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContentText.java
 src/main/java/com/mypurecloud/sdk/v2/model/Context.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContextEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContextIntent.java
@@ -8017,7 +8150,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentCarousel.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentLocation.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentNotificationTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentQuickReply.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentQuickReplyV2.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentStory.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentText.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationDeletionProtectionQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationDetailQueryClause.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationDetailQueryFilter.java
@@ -8384,6 +8519,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/DncListDivisionViewListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DncListEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DnclistDownloadReadyExportUri.java
 src/main/java/com/mypurecloud/sdk/v2/model/DnclistImportStatusImportStatus.java
+src/main/java/com/mypurecloud/sdk/v2/model/DnsRecordEntry.java
 src/main/java/com/mypurecloud/sdk/v2/model/DoNotSendActionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Document.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentArticle.java
@@ -8402,6 +8538,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/DocumentContentBlock.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentFaq.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/DocumentQuery.java
+src/main/java/com/mypurecloud/sdk/v2/model/DocumentQueryClause.java
+src/main/java/com/mypurecloud/sdk/v2/model/DocumentQueryInterval.java
+src/main/java/com/mypurecloud/sdk/v2/model/DocumentQueryPredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentText.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentThumbnail.java
@@ -8508,6 +8648,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/EmailMediaPolicy.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailMediaPolicyConditions.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailMessageListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailOutboundDomainResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailSetup.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailsSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmbeddedIntegration.java
@@ -8518,8 +8659,11 @@ src/main/java/com/mypurecloud/sdk/v2/model/EmployerInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/Empty.java
 src/main/java/com/mypurecloud/sdk/v2/model/EncryptionKey.java
 src/main/java/com/mypurecloud/sdk/v2/model/EncryptionKeyEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/EndConsultTransferEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EndTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/Endpoint.java
 src/main/java/com/mypurecloud/sdk/v2/model/Entity.java
+src/main/java/com/mypurecloud/sdk/v2/model/EntityChange.java
 src/main/java/com/mypurecloud/sdk/v2/model/EntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EntityTypeCriteria.java
 src/main/java/com/mypurecloud/sdk/v2/model/Entry.java
@@ -8560,12 +8704,15 @@ src/main/java/com/mypurecloud/sdk/v2/model/EvaluatorActivity.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluatorActivityEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EventCoBrowse.java
 src/main/java/com/mypurecloud/sdk/v2/model/EventCondition.java
+src/main/java/com/mypurecloud/sdk/v2/model/EventError.java
 src/main/java/com/mypurecloud/sdk/v2/model/EventLog.java
 src/main/java/com/mypurecloud/sdk/v2/model/EventMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/EventPresence.java
 src/main/java/com/mypurecloud/sdk/v2/model/EventSetting.java
 src/main/java/com/mypurecloud/sdk/v2/model/EventTyping.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExecuteRecordingJobsQuery.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExpandableWebDeployment.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExpandableWebDeploymentEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExpansionCriterium.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExpiredEdgeListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExportScriptRequest.java
@@ -8596,6 +8743,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChan
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicTwitterId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicWhatsAppId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalDataSource.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalEstablishedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDataItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDataProcessedItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDataUnprocessedItem.java
@@ -8760,10 +8908,12 @@ src/main/java/com/mypurecloud/sdk/v2/model/HistoricalImportStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoricalImportStatusListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoryEntry.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoryListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/HoldUpdatedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/HomerRecord.java
 src/main/java/com/mypurecloud/sdk/v2/model/Humanize.java
 src/main/java/com/mypurecloud/sdk/v2/model/IVR.java
 src/main/java/com/mypurecloud/sdk/v2/model/IVREntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/IdentifierClaimRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdentityNow.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdleEventTrigger.java
 src/main/java/com/mypurecloud/sdk/v2/model/IgnoredActivityCategories.java
@@ -8783,12 +8933,13 @@ src/main/java/com/mypurecloud/sdk/v2/model/InboundMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/InboundOnlySetting.java
 src/main/java/com/mypurecloud/sdk/v2/model/InboundRoute.java
 src/main/java/com/mypurecloud/sdk/v2/model/InboundRouteEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/InitialConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/InitiateScreenRecording.java
+src/main/java/com/mypurecloud/sdk/v2/model/InitiatingAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/Integration.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationActionFields.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationConfiguration.java
-src/main/java/com/mypurecloud/sdk/v2/model/IntegrationConfigurationCredential.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationConfigurationInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationExport.java
@@ -8810,6 +8961,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/IpAddressRange.java
 src/main/java/com/mypurecloud/sdk/v2/model/IpAddressRangeListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ItemValidationLimits.java
 src/main/java/com/mypurecloud/sdk/v2/model/Items.java
+src/main/java/com/mypurecloud/sdk/v2/model/IvrEstablishedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/Journey.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyActionMap.java
@@ -8954,6 +9106,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeGroupStatistics.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeGuestDocument.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeGuestDocumentResponseListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeGuestDocumentSuggestion.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeGuestDocumentSuggestionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeGuestDocumentSuggestionResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeGuestDocumentVariation.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeGuestDocumentVariationContext.java
@@ -9124,6 +9277,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/MemberEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/MemberGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/MemberListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/MergeOperation.java
+src/main/java/com/mypurecloud/sdk/v2/model/MergeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/Message.java
 src/main/java/com/mypurecloud/sdk/v2/model/MessageContent.java
 src/main/java/com/mypurecloud/sdk/v2/model/MessageConversation.java
@@ -9267,6 +9421,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/OutOfOffice.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutOfOfficeEventOutOfOffice.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutOfOfficeEventUser.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundDetailEventTopicOutboundInitEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundDomain.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundDomainEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingMessagingCampaignConfigChangeContactSort.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingMessagingCampaignConfigChangeEmailConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingMessagingCampaignConfigChangeErrorDetail.java
@@ -9348,11 +9504,13 @@ src/main/java/com/mypurecloud/sdk/v2/model/PhoneChangeTopicProvisionInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhoneChangeTopicUserAgentInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhoneColumn.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhoneEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/PhoneEstablishedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhoneMetaBaseEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhoneNumber.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhoneNumberColumn.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhoneNumberStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhoneStatus.java
+src/main/java/com/mypurecloud/sdk/v2/model/PhoneTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhonesReboot.java
 src/main/java/com/mypurecloud/sdk/v2/model/Phrase.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhraseAssociations.java
@@ -9403,6 +9561,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ProgramMappingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramsEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramsMappingsEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/ProgressConsultTransferEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/ProgressTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/Prompt.java
 src/main/java/com/mypurecloud/sdk/v2/model/PromptAsset.java
 src/main/java/com/mypurecloud/sdk/v2/model/PromptAssetCreate.java
@@ -9775,6 +9935,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/RoutePathResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutingConversationAttributesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutingConversationAttributesResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutingData.java
+src/main/java/com/mypurecloud/sdk/v2/model/RoutingEstablishedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutingRule.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutingSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutingSkill.java
@@ -9783,6 +9944,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/RoutingStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutingStatusDetailQueryClause.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutingStatusDetailQueryFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutingStatusDetailQueryPredicate.java
+src/main/java/com/mypurecloud/sdk/v2/model/RoutingTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/RuleSet.java
 src/main/java/com/mypurecloud/sdk/v2/model/RuleSetDiagnostic.java
 src/main/java/com/mypurecloud/sdk/v2/model/RuleSetEntityListing.java
@@ -9924,6 +10086,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ShortTermForecastReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/ShortTermForecastingSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ShrinkageOverride.java
 src/main/java/com/mypurecloud/sdk/v2/model/ShrinkageOverrides.java
+src/main/java/com/mypurecloud/sdk/v2/model/Signature.java
 src/main/java/com/mypurecloud/sdk/v2/model/SignedUrlResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/SingleWorkdayAveragePoints.java
 src/main/java/com/mypurecloud/sdk/v2/model/SingleWorkdayAverageValues.java
@@ -9947,6 +10110,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/SmsProvisioningStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/SocialExpression.java
 src/main/java/com/mypurecloud/sdk/v2/model/SocialHandle.java
 src/main/java/com/mypurecloud/sdk/v2/model/SortItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/Source.java
+src/main/java/com/mypurecloud/sdk/v2/model/SourceConfiguration.java
+src/main/java/com/mypurecloud/sdk/v2/model/SourceEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SourcePlanningGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SpeechTextAnalyticsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SpeechTextAnalyticsSettingsResponse.java
@@ -10254,6 +10420,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/UserDetailsQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserDevice.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserEndDetailEventTopicUserEndEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserEstablishedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserExpands.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserExternalIdentifier.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserGreetingEventGreeting.java
@@ -10273,6 +10440,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/UserObservationQueryPredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserObservationQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserParam.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserPresence.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserPresenceEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserPrimarySource.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserProfile.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserProfileEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserQueue.java
@@ -10285,6 +10454,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/UserRoutingLanguagePost.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserRoutingSkill.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserRoutingSkillPost.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserRoutingStatusErrorInfo.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserRoutingStatusEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserRoutingStatusRoutingStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserRoutingStatusUserParam.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserRoutingStatusUserRoutingStatus.java
@@ -10308,6 +10478,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/UserStations.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserTimeOffRequestReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserTokensTopicTokenNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserTokensTopicUriReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/UsersSearchResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Utilization.java
 src/main/java/com/mypurecloud/sdk/v2/model/Utterance.java
@@ -10371,6 +10542,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ValidationServiceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperDate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperPlanningPeriodSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperString.java
+src/main/java/com/mypurecloud/sdk/v2/model/VerificationResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/Video.java
 src/main/java/com/mypurecloud/sdk/v2/model/ViewFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/VipBackup.java
@@ -10416,7 +10588,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/WebDeployment.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentActiveConfigurationOnDeployment.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentConfigurationVersion.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentConfigurationVersionEntityListing.java
-src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentConfigurationVersionEntityRef.java
+src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentConfigurationVersionResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentHeadlessMode.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody.java
 src/main/java/com/mypurecloud/sdk/v2/model/WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody.java

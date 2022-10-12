@@ -56,7 +56,8 @@ public class QueueConversationSocialExpressionEventTopicMessageDetails  implemen
     RECEIVED("received"),
     DELIVERY_SUCCESS("delivery-success"),
     DELIVERY_FAILED("delivery-failed"),
-    READ("read");
+    READ("read"),
+    REMOVED("removed");
 
     private String value;
 

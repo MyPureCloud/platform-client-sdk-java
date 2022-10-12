@@ -24,6 +24,7 @@ title: AuditRealtimeQueryRequest
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AGENTCONFIG | &quot;AgentConfig&quot; | 
 | ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; | 
 | ARCHITECT | &quot;Architect&quot; | 
 | COACHING | &quot;Coaching&quot; | 

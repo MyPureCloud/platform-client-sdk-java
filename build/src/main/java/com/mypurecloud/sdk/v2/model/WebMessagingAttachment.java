@@ -46,7 +46,8 @@ public class WebMessagingAttachment  implements Serializable {
     IMAGE("Image"),
     VIDEO("Video"),
     AUDIO("Audio"),
-    FILE("File");
+    FILE("File"),
+    LINK("Link");
 
     private String value;
 

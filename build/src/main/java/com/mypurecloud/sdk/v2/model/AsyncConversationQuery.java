@@ -54,7 +54,8 @@ public class AsyncConversationQuery  implements Serializable {
   public enum OrderEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ASC("asc"),
-    DESC("desc");
+    DESC("desc"),
+    UNORDERED("unordered");
 
     private String value;
 

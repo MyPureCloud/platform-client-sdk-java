@@ -44,6 +44,7 @@ public class AuditQueryService  implements Serializable {
  @JsonDeserialize(using = NameEnumDeserializer.class)
   public enum NameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AGENTCONFIG("AgentConfig"),
     ANALYTICSREPORTING("AnalyticsReporting"),
     ARCHITECT("Architect"),
     COACHING("Coaching"),

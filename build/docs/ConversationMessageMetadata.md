@@ -25,6 +25,7 @@ title: ConversationMessageMetadata
 | STRUCTURED | &quot;Structured&quot; | 
 | RECEIPT | &quot;Receipt&quot; | 
 | EVENT | &quot;Event&quot; | 
+| MESSAGE | &quot;Message&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

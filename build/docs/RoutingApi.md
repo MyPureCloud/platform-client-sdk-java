@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingAssessment**](RoutingApi.html#deleteRoutingAssessment) | Delete single benefit assessment. |
 | [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | Delete a domain |
 | [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | Delete a route |
+| [**deleteRoutingEmailOutboundDomain**](RoutingApi.html#deleteRoutingEmailOutboundDomain) | Delete an outbound domain |
 | [**deleteRoutingPredictor**](RoutingApi.html#deleteRoutingPredictor) | Delete single predictor. |
 | [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | Delete a queue |
 | [**deleteRoutingQueueMember**](RoutingApi.html#deleteRoutingQueueMember) | Delete a queue member. |
@@ -33,6 +34,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingEmailDomainRoute**](RoutingApi.html#getRoutingEmailDomainRoute) | Get a route |
 | [**getRoutingEmailDomainRoutes**](RoutingApi.html#getRoutingEmailDomainRoutes) | Get routes |
 | [**getRoutingEmailDomains**](RoutingApi.html#getRoutingEmailDomains) | Get domains |
+| [**getRoutingEmailOutboundDomain**](RoutingApi.html#getRoutingEmailOutboundDomain) | Get domain |
+| [**getRoutingEmailOutboundDomainActivation**](RoutingApi.html#getRoutingEmailOutboundDomainActivation) | Get activation status (cname + dkim) of an outbound domain |
+| [**getRoutingEmailOutboundDomainSearch**](RoutingApi.html#getRoutingEmailOutboundDomainSearch) | Search a domain across organizations |
+| [**getRoutingEmailOutboundDomains**](RoutingApi.html#getRoutingEmailOutboundDomains) | Get outbound domains |
 | [**getRoutingEmailSetup**](RoutingApi.html#getRoutingEmailSetup) | Get email setup |
 | [**getRoutingLanguages**](RoutingApi.html#getRoutingLanguages) | Get the list of supported languages. |
 | [**getRoutingMessageRecipient**](RoutingApi.html#getRoutingMessageRecipient) | Get a recipient |
@@ -91,6 +96,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | Create a route |
 | [**postRoutingEmailDomainTestconnection**](RoutingApi.html#postRoutingEmailDomainTestconnection) | Tests the custom SMTP server integration connection set on this domain |
 | [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | Create a domain |
+| [**postRoutingEmailOutboundDomains**](RoutingApi.html#postRoutingEmailOutboundDomains) | Create a domain |
+| [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi.html#postRoutingEmailOutboundDomainsSimulated) | Create a simulated domain |
 | [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | Create Language |
 | [**postRoutingPredictors**](RoutingApi.html#postRoutingPredictors) | Create a predictor. |
 | [**postRoutingQueueMembers**](RoutingApi.html#postRoutingQueueMembers) | Bulk add or delete up to 100 queue members |
@@ -104,6 +111,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postUserRoutinglanguages**](RoutingApi.html#postUserRoutinglanguages) | Add routing language to user |
 | [**postUserRoutingskills**](RoutingApi.html#postUserRoutingskills) | Add routing skill to user |
 | [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | Update a route |
+| [**putRoutingEmailOutboundDomainActivation**](RoutingApi.html#putRoutingEmailOutboundDomainActivation) | Request an activation status (cname + dkim) update of an outbound domain |
 | [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | Update a recipient |
 | [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | Update a queue |
 | [**putRoutingSettings**](RoutingApi.html#putRoutingSettings) | Update an organization's routing settings |
@@ -291,6 +299,66 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domainName** | **String**| email domain | 
 | **routeId** | **String**| route ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingEmailOutboundDomain"></a>
+
+# **deleteRoutingEmailOutboundDomain**
+
+
+
+> Void deleteRoutingEmailOutboundDomain(domainId)
+
+Delete an outbound domain
+
+Wraps DELETE /api/v2/routing/email/outbound/domains/{domainId}  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+try {
+    apiInstance.deleteRoutingEmailOutboundDomain(domainId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingEmailOutboundDomain");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
 {: class="table-striped"}
 
 
@@ -1706,6 +1774,246 @@ try {
 ### Return type
 
 [**InboundDomainEntityListing**](InboundDomainEntityListing.html)
+
+<a name="getRoutingEmailOutboundDomain"></a>
+
+# **getRoutingEmailOutboundDomain**
+
+
+
+> [OutboundDomain](OutboundDomain.html) getRoutingEmailOutboundDomain(domainId)
+
+Get domain
+
+Wraps GET /api/v2/routing/email/outbound/domains/{domainId}  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+try {
+    OutboundDomain result = apiInstance.getRoutingEmailOutboundDomain(domainId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingEmailOutboundDomain");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutboundDomain**](OutboundDomain.html)
+
+<a name="getRoutingEmailOutboundDomainActivation"></a>
+
+# **getRoutingEmailOutboundDomainActivation**
+
+
+
+> [EmailOutboundDomainResult](EmailOutboundDomainResult.html) getRoutingEmailOutboundDomainActivation(domainId)
+
+Get activation status (cname + dkim) of an outbound domain
+
+Wraps GET /api/v2/routing/email/outbound/domains/{domainId}/activation  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+try {
+    EmailOutboundDomainResult result = apiInstance.getRoutingEmailOutboundDomainActivation(domainId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingEmailOutboundDomainActivation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+
+<a name="getRoutingEmailOutboundDomainSearch"></a>
+
+# **getRoutingEmailOutboundDomainSearch**
+
+
+
+> [OutboundDomain](OutboundDomain.html) getRoutingEmailOutboundDomainSearch(domainId)
+
+Search a domain across organizations
+
+Wraps GET /api/v2/routing/email/outbound/domains/{domainId}/search  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+try {
+    OutboundDomain result = apiInstance.getRoutingEmailOutboundDomainSearch(domainId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingEmailOutboundDomainSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutboundDomain**](OutboundDomain.html)
+
+<a name="getRoutingEmailOutboundDomains"></a>
+
+# **getRoutingEmailOutboundDomains**
+
+
+
+> [OutboundDomainEntityListing](OutboundDomainEntityListing.html) getRoutingEmailOutboundDomains()
+
+Get outbound domains
+
+Wraps GET /api/v2/routing/email/outbound/domains  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+try {
+    OutboundDomainEntityListing result = apiInstance.getRoutingEmailOutboundDomains();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingEmailOutboundDomains");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**OutboundDomainEntityListing**](OutboundDomainEntityListing.html)
 
 <a name="getRoutingEmailSetup"></a>
 
@@ -5459,6 +5767,128 @@ try {
 
 [**InboundDomain**](InboundDomain.html)
 
+<a name="postRoutingEmailOutboundDomains"></a>
+
+# **postRoutingEmailOutboundDomains**
+
+
+
+> [EmailOutboundDomainResult](EmailOutboundDomainResult.html) postRoutingEmailOutboundDomains(body)
+
+Create a domain
+
+Wraps POST /api/v2/routing/email/outbound/domains  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+OutboundDomain body = new OutboundDomain(); // OutboundDomain | Domain
+try {
+    EmailOutboundDomainResult result = apiInstance.postRoutingEmailOutboundDomains(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingEmailOutboundDomains");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OutboundDomain**](OutboundDomain.html)| Domain | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+
+<a name="postRoutingEmailOutboundDomainsSimulated"></a>
+
+# **postRoutingEmailOutboundDomainsSimulated**
+
+
+
+> [EmailOutboundDomainResult](EmailOutboundDomainResult.html) postRoutingEmailOutboundDomainsSimulated(body)
+
+Create a simulated domain
+
+Wraps POST /api/v2/routing/email/outbound/domains/simulated  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+OutboundDomain body = new OutboundDomain(); // OutboundDomain | Domain
+try {
+    EmailOutboundDomainResult result = apiInstance.postRoutingEmailOutboundDomainsSimulated(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingEmailOutboundDomainsSimulated");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OutboundDomain**](OutboundDomain.html)| Domain | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+
 <a name="postRoutingLanguages"></a>
 
 # **postRoutingLanguages**
@@ -6271,6 +6701,67 @@ try {
 ### Return type
 
 [**InboundRoute**](InboundRoute.html)
+
+<a name="putRoutingEmailOutboundDomainActivation"></a>
+
+# **putRoutingEmailOutboundDomainActivation**
+
+
+
+> [EmailOutboundDomainResult](EmailOutboundDomainResult.html) putRoutingEmailOutboundDomainActivation(domainId)
+
+Request an activation status (cname + dkim) update of an outbound domain
+
+Wraps PUT /api/v2/routing/email/outbound/domains/{domainId}/activation  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+try {
+    EmailOutboundDomainResult result = apiInstance.putRoutingEmailOutboundDomainActivation(domainId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#putRoutingEmailOutboundDomainActivation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
 
 <a name="putRoutingMessageRecipient"></a>
 

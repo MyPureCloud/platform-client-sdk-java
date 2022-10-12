@@ -3640,7 +3640,7 @@ import com.mypurecloud.sdk.v2.api.KnowledgeApi;
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String sessionId = "sessionId_example"; // String | Knowledge guest session ID.
-KnowledgeDocumentSuggestionRequest body = new KnowledgeDocumentSuggestionRequest(); // KnowledgeDocumentSuggestionRequest | 
+KnowledgeGuestDocumentSuggestionRequest body = new KnowledgeGuestDocumentSuggestionRequest(); // KnowledgeGuestDocumentSuggestionRequest | 
 try {
     KnowledgeGuestDocumentSuggestion result = apiInstance.postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId, body);
     System.out.println(result);
@@ -3656,7 +3656,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
-| **body** | [**KnowledgeDocumentSuggestionRequest**](KnowledgeDocumentSuggestionRequest.html)|  | [optional] 
+| **body** | [**KnowledgeGuestDocumentSuggestionRequest**](KnowledgeGuestDocumentSuggestionRequest.html)|  | [optional] 
 {: class="table-striped"}
 
 

@@ -51,6 +51,8 @@ public class ConversationMessageMetadataContent  implements Serializable {
     MENTION("Mention"),
     CARD("Card"),
     CAROUSEL("Carousel"),
+    TEXT("Text"),
+    QUICKREPLYV2("QuickReplyV2"),
     UNKNOWN("Unknown");
 
     private String value;

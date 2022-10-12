@@ -33,6 +33,8 @@ public class StatisticalSummary  implements Serializable {
   private BigDecimal numerator = null;
   private BigDecimal denominator = null;
   private BigDecimal target = null;
+  private Long p95 = null;
+  private Long p99 = null;
 
   
   /**
@@ -222,6 +224,40 @@ public class StatisticalSummary  implements Serializable {
   }
 
 
+  /**
+   **/
+  public StatisticalSummary p95(Long p95) {
+    this.p95 = p95;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("p95")
+  public Long getP95() {
+    return p95;
+  }
+  public void setP95(Long p95) {
+    this.p95 = p95;
+  }
+
+
+  /**
+   **/
+  public StatisticalSummary p99(Long p99) {
+    this.p99 = p99;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("p99")
+  public Long getP99() {
+    return p99;
+  }
+  public void setP99(Long p99) {
+    this.p99 = p99;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -242,12 +278,14 @@ public class StatisticalSummary  implements Serializable {
             Objects.equals(this.ratio, statisticalSummary.ratio) &&
             Objects.equals(this.numerator, statisticalSummary.numerator) &&
             Objects.equals(this.denominator, statisticalSummary.denominator) &&
-            Objects.equals(this.target, statisticalSummary.target);
+            Objects.equals(this.target, statisticalSummary.target) &&
+            Objects.equals(this.p95, statisticalSummary.p95) &&
+            Objects.equals(this.p99, statisticalSummary.p99);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(max, min, count, countNegative, countPositive, sum, current, ratio, numerator, denominator, target);
+    return Objects.hash(max, min, count, countNegative, countPositive, sum, current, ratio, numerator, denominator, target, p95, p99);
   }
 
   @Override
@@ -266,6 +304,8 @@ public class StatisticalSummary  implements Serializable {
     sb.append("    numerator: ").append(toIndentedString(numerator)).append("\n");
     sb.append("    denominator: ").append(toIndentedString(denominator)).append("\n");
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
+    sb.append("    p95: ").append(toIndentedString(p95)).append("\n");
+    sb.append("    p99: ").append(toIndentedString(p99)).append("\n");
     sb.append("}");
     return sb.toString();
   }

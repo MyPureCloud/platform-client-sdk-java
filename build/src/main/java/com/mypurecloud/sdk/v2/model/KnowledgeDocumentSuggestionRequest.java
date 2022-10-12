@@ -11,6 +11,8 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DocumentQuery;
+import com.mypurecloud.sdk.v2.model.DocumentQueryInterval;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,6 +26,8 @@ public class KnowledgeDocumentSuggestionRequest  implements Serializable {
   private String query = null;
   private Integer pageSize = null;
   private Boolean includeDraftDocuments = null;
+  private DocumentQueryInterval interval = null;
+  private DocumentQuery filter = null;
 
   
   /**
@@ -80,6 +84,42 @@ public class KnowledgeDocumentSuggestionRequest  implements Serializable {
   }
 
 
+  /**
+   * Retrieves the documents created/modified/published in specified date and time range.
+   **/
+  public KnowledgeDocumentSuggestionRequest interval(DocumentQueryInterval interval) {
+    this.interval = interval;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Retrieves the documents created/modified/published in specified date and time range.")
+  @JsonProperty("interval")
+  public DocumentQueryInterval getInterval() {
+    return interval;
+  }
+  public void setInterval(DocumentQueryInterval interval) {
+    this.interval = interval;
+  }
+
+
+  /**
+   * Filter for the document suggestions.
+   **/
+  public KnowledgeDocumentSuggestionRequest filter(DocumentQuery filter) {
+    this.filter = filter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter for the document suggestions.")
+  @JsonProperty("filter")
+  public DocumentQuery getFilter() {
+    return filter;
+  }
+  public void setFilter(DocumentQuery filter) {
+    this.filter = filter;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -92,12 +132,14 @@ public class KnowledgeDocumentSuggestionRequest  implements Serializable {
 
     return Objects.equals(this.query, knowledgeDocumentSuggestionRequest.query) &&
             Objects.equals(this.pageSize, knowledgeDocumentSuggestionRequest.pageSize) &&
-            Objects.equals(this.includeDraftDocuments, knowledgeDocumentSuggestionRequest.includeDraftDocuments);
+            Objects.equals(this.includeDraftDocuments, knowledgeDocumentSuggestionRequest.includeDraftDocuments) &&
+            Objects.equals(this.interval, knowledgeDocumentSuggestionRequest.interval) &&
+            Objects.equals(this.filter, knowledgeDocumentSuggestionRequest.filter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, includeDraftDocuments);
+    return Objects.hash(query, pageSize, includeDraftDocuments, interval, filter);
   }
 
   @Override
@@ -108,6 +150,8 @@ public class KnowledgeDocumentSuggestionRequest  implements Serializable {
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    includeDraftDocuments: ").append(toIndentedString(includeDraftDocuments)).append("\n");
+    sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
+    sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("}");
     return sb.toString();
   }

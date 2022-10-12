@@ -30,6 +30,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
   private Boolean pinRequired = null;
   private Boolean interactiveResponseRequired = null;
   private Boolean sendEmailNotifications = null;
+  private Boolean includeEmailTranscriptions = null;
   private Boolean disableEmailPii = null;
   private Date modifiedDate = null;
 
@@ -150,6 +151,24 @@ public class VoicemailOrganizationPolicy  implements Serializable {
 
 
   /**
+   * Whether to include the voicemail transcription in the notification email
+   **/
+  public VoicemailOrganizationPolicy includeEmailTranscriptions(Boolean includeEmailTranscriptions) {
+    this.includeEmailTranscriptions = includeEmailTranscriptions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to include the voicemail transcription in the notification email")
+  @JsonProperty("includeEmailTranscriptions")
+  public Boolean getIncludeEmailTranscriptions() {
+    return includeEmailTranscriptions;
+  }
+  public void setIncludeEmailTranscriptions(Boolean includeEmailTranscriptions) {
+    this.includeEmailTranscriptions = includeEmailTranscriptions;
+  }
+
+
+  /**
    * Removes any PII from emails. This overrides any analogous group configuration value. This is always true if HIPAA is enabled or unknown for an organization.
    **/
   public VoicemailOrganizationPolicy disableEmailPii(Boolean disableEmailPii) {
@@ -191,13 +210,14 @@ public class VoicemailOrganizationPolicy  implements Serializable {
             Objects.equals(this.pinRequired, voicemailOrganizationPolicy.pinRequired) &&
             Objects.equals(this.interactiveResponseRequired, voicemailOrganizationPolicy.interactiveResponseRequired) &&
             Objects.equals(this.sendEmailNotifications, voicemailOrganizationPolicy.sendEmailNotifications) &&
+            Objects.equals(this.includeEmailTranscriptions, voicemailOrganizationPolicy.includeEmailTranscriptions) &&
             Objects.equals(this.disableEmailPii, voicemailOrganizationPolicy.disableEmailPii) &&
             Objects.equals(this.modifiedDate, voicemailOrganizationPolicy.modifiedDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, alertTimeoutSeconds, pinConfiguration, voicemailExtension, pinRequired, interactiveResponseRequired, sendEmailNotifications, disableEmailPii, modifiedDate);
+    return Objects.hash(enabled, alertTimeoutSeconds, pinConfiguration, voicemailExtension, pinRequired, interactiveResponseRequired, sendEmailNotifications, includeEmailTranscriptions, disableEmailPii, modifiedDate);
   }
 
   @Override
@@ -212,6 +232,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     sb.append("    pinRequired: ").append(toIndentedString(pinRequired)).append("\n");
     sb.append("    interactiveResponseRequired: ").append(toIndentedString(interactiveResponseRequired)).append("\n");
     sb.append("    sendEmailNotifications: ").append(toIndentedString(sendEmailNotifications)).append("\n");
+    sb.append("    includeEmailTranscriptions: ").append(toIndentedString(includeEmailTranscriptions)).append("\n");
     sb.append("    disableEmailPii: ").append(toIndentedString(disableEmailPii)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("}");

@@ -56,6 +56,7 @@ public class ConversationNormalizedMessage  implements Serializable {
     STRUCTURED("Structured"),
     RECEIPT("Receipt"),
     EVENT("Event"),
+    MESSAGE("Message"),
     UNKNOWN("Unknown");
 
     private String value;

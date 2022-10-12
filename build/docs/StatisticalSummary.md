@@ -19,6 +19,8 @@ title: StatisticalSummary
 | **numerator** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
 | **denominator** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
 | **target** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
+| **p95** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **p99** | <!----><!---->**Long**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

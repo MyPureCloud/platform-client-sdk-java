@@ -49,7 +49,8 @@ public class ScheduleActivity  implements Serializable {
  @JsonDeserialize(using = ExternalActivityTypeEnumDeserializer.class)
   public enum ExternalActivityTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    COACHING("Coaching");
+    COACHING("Coaching"),
+    LEARNING("Learning");
 
     private String value;
 

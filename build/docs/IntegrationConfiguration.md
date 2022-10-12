@@ -14,7 +14,7 @@ title: IntegrationConfiguration
 | **properties** | <!----><!---->**Object**<!----> | Key-value configuration settings described by the schema in the propertiesSchemaUri field. |  |
 | **advanced** | <!----><!---->**Object**<!----> | Advanced configuration described by the schema in the advancedSchemaUri field. |  |
 | **notes** | <!----><!---->**String**<!----> | Notes about the integration. |  |
-| **credentials** | <!----><!---->[**Map&lt;String, IntegrationConfigurationCredential&gt;**](IntegrationConfigurationCredential.html)<!----> | Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type |  |
+| **credentials** | <!----><!---->[**Map&lt;String, CredentialInfo&gt;**](CredentialInfo.html)<!----> | Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type |  |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

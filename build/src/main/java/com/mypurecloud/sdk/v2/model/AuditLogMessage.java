@@ -14,6 +14,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.EntityChange;
+import com.mypurecloud.sdk.v2.model.InitiatingAction;
 import com.mypurecloud.sdk.v2.model.MessageInfo;
 import com.mypurecloud.sdk.v2.model.PropertyChange;
 import io.swagger.annotations.ApiModel;
@@ -55,6 +57,7 @@ public class AuditLogMessage  implements Serializable {
  @JsonDeserialize(using = ServiceNameEnumDeserializer.class)
   public enum ServiceNameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AGENTCONFIG("AgentConfig"),
     ANALYTICSREPORTING("AnalyticsReporting"),
     ARCHITECT("Architect"),
     COACHING("Coaching"),
@@ -360,11 +363,13 @@ public class AuditLogMessage  implements Serializable {
     CONVERSATIONTHREADINGWINDOW("ConversationThreadingWindow"),
     CREDENTIAL("Credential"),
     DASHBOARDSETTINGS("DashboardSettings"),
+    DEFAULTPANELSETTINGS("DefaultPanelSettings"),
     DEPENDENCYTRACKINGBUILD("DependencyTrackingBuild"),
     DEPLOYMENT("Deployment"),
     DID("DID"),
     DIDPOOL("DIDPool"),
     DIGITALRULESET("DigitalRuleSet"),
+    DIRECTORYGROUP("DirectoryGroup"),
     DNCLIST("DNCList"),
     DOCUMENT("Document"),
     DYNAMICGROUP("DynamicGroup"),
@@ -393,6 +398,7 @@ public class AuditLogMessage  implements Serializable {
     FLOWMILESTONE("FlowMilestone"),
     FLOWOUTCOME("FlowOutcome"),
     FORECAST("Forecast"),
+    GDPRREQUEST("GdprRequest"),
     HISTORICALDATA("HistoricalData"),
     INSIGHTSETTINGS("InsightSettings"),
     INTEGRATION("Integration"),
@@ -401,6 +407,7 @@ public class AuditLogMessage  implements Serializable {
     KNOWLEDGECATEGORY("KnowledgeCategory"),
     KNOWLEDGEDOCUMENT("KnowledgeDocument"),
     KNOWLEDGEDOCUMENTVARIATION("KnowledgeDocumentVariation"),
+    KNOWLEDGELABEL("KnowledgeLabel"),
     KNOWLEDGESEARCHFEEDBACK("KnowledgeSearchFeedback"),
     KNOWLEDGETRAINING("KnowledgeTraining"),
     LINE("Line"),
@@ -464,6 +471,7 @@ public class AuditLogMessage  implements Serializable {
     SESSIONTYPE("SessionType"),
     SHIFTTRADE("ShiftTrade"),
     SITE("Site"),
+    SKILLSGROUP("SkillsGroup"),
     SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
     STATUS("Status"),
     SUPPORTEDCONTENT("SupportedContent"),
@@ -569,8 +577,12 @@ public class AuditLogMessage  implements Serializable {
     }
   }
   private StatusEnum status = null;
+  private String application = null;
+  private InitiatingAction initiatingAction = null;
+  private Boolean transactionInitiator = null;
   private List<PropertyChange> propertyChanges = new ArrayList<PropertyChange>();
   private Map<String, String> context = null;
+  private List<EntityChange> entityChanges = new ArrayList<EntityChange>();
 
   
   /**
@@ -808,6 +820,60 @@ public class AuditLogMessage  implements Serializable {
 
 
   /**
+   * Name of the application used to perform the audit's action
+   **/
+  public AuditLogMessage application(String application) {
+    this.application = application;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Name of the application used to perform the audit's action")
+  @JsonProperty("application")
+  public String getApplication() {
+    return application;
+  }
+  public void setApplication(String application) {
+    this.application = application;
+  }
+
+
+  /**
+   * Id and action of the audit initiating the transaction
+   **/
+  public AuditLogMessage initiatingAction(InitiatingAction initiatingAction) {
+    this.initiatingAction = initiatingAction;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Id and action of the audit initiating the transaction")
+  @JsonProperty("initiatingAction")
+  public InitiatingAction getInitiatingAction() {
+    return initiatingAction;
+  }
+  public void setInitiatingAction(InitiatingAction initiatingAction) {
+    this.initiatingAction = initiatingAction;
+  }
+
+
+  /**
+   * Whether the current audit is the initiator of the transaction
+   **/
+  public AuditLogMessage transactionInitiator(Boolean transactionInitiator) {
+    this.transactionInitiator = transactionInitiator;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the current audit is the initiator of the transaction")
+  @JsonProperty("transactionInitiator")
+  public Boolean getTransactionInitiator() {
+    return transactionInitiator;
+  }
+  public void setTransactionInitiator(Boolean transactionInitiator) {
+    this.transactionInitiator = transactionInitiator;
+  }
+
+
+  /**
    * List of properties that were changed and changes made to those properties.
    **/
   public AuditLogMessage propertyChanges(List<PropertyChange> propertyChanges) {
@@ -843,6 +909,24 @@ public class AuditLogMessage  implements Serializable {
   }
 
 
+  /**
+   * List of entities that were changed and changes made to those entities.
+   **/
+  public AuditLogMessage entityChanges(List<EntityChange> entityChanges) {
+    this.entityChanges = entityChanges;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of entities that were changed and changes made to those entities.")
+  @JsonProperty("entityChanges")
+  public List<EntityChange> getEntityChanges() {
+    return entityChanges;
+  }
+  public void setEntityChanges(List<EntityChange> entityChanges) {
+    this.entityChanges = entityChanges;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -866,13 +950,17 @@ public class AuditLogMessage  implements Serializable {
             Objects.equals(this.entity, auditLogMessage.entity) &&
             Objects.equals(this.entityType, auditLogMessage.entityType) &&
             Objects.equals(this.status, auditLogMessage.status) &&
+            Objects.equals(this.application, auditLogMessage.application) &&
+            Objects.equals(this.initiatingAction, auditLogMessage.initiatingAction) &&
+            Objects.equals(this.transactionInitiator, auditLogMessage.transactionInitiator) &&
             Objects.equals(this.propertyChanges, auditLogMessage.propertyChanges) &&
-            Objects.equals(this.context, auditLogMessage.context);
+            Objects.equals(this.context, auditLogMessage.context) &&
+            Objects.equals(this.entityChanges, auditLogMessage.entityChanges);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userHomeOrgId, user, client, remoteIp, serviceName, level, eventDate, message, action, entity, entityType, status, propertyChanges, context);
+    return Objects.hash(id, userHomeOrgId, user, client, remoteIp, serviceName, level, eventDate, message, action, entity, entityType, status, application, initiatingAction, transactionInitiator, propertyChanges, context, entityChanges);
   }
 
   @Override
@@ -893,8 +981,12 @@ public class AuditLogMessage  implements Serializable {
     sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    application: ").append(toIndentedString(application)).append("\n");
+    sb.append("    initiatingAction: ").append(toIndentedString(initiatingAction)).append("\n");
+    sb.append("    transactionInitiator: ").append(toIndentedString(transactionInitiator)).append("\n");
     sb.append("    propertyChanges: ").append(toIndentedString(propertyChanges)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
+    sb.append("    entityChanges: ").append(toIndentedString(entityChanges)).append("\n");
     sb.append("}");
     return sb.toString();
   }

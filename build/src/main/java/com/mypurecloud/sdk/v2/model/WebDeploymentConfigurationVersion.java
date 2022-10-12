@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.JourneyEventsSettings;
 import com.mypurecloud.sdk.v2.model.MessengerSettings;
 import com.mypurecloud.sdk.v2.model.PositionSettings;
 import com.mypurecloud.sdk.v2.model.SupportCenterSettings;
+import com.mypurecloud.sdk.v2.model.WebDeploymentHeadlessMode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   private String id = null;
   private String name = null;
   private String version = null;
+  private WebDeploymentHeadlessMode headlessMode = null;
   private String description = null;
   private List<String> languages = new ArrayList<String>();
   private String defaultLanguage = null;
@@ -136,6 +138,24 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   @JsonProperty("version")
   public String getVersion() {
     return version;
+  }
+
+
+  /**
+   * Headless Mode Support which Controls UI components. When enabled, native UI components will be disabled and allows for custom-built UI.
+   **/
+  public WebDeploymentConfigurationVersion headlessMode(WebDeploymentHeadlessMode headlessMode) {
+    this.headlessMode = headlessMode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Headless Mode Support which Controls UI components. When enabled, native UI components will be disabled and allows for custom-built UI.")
+  @JsonProperty("headlessMode")
+  public WebDeploymentHeadlessMode getHeadlessMode() {
+    return headlessMode;
+  }
+  public void setHeadlessMode(WebDeploymentHeadlessMode headlessMode) {
+    this.headlessMode = headlessMode;
   }
 
 
@@ -399,6 +419,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     return Objects.equals(this.id, webDeploymentConfigurationVersion.id) &&
             Objects.equals(this.name, webDeploymentConfigurationVersion.name) &&
             Objects.equals(this.version, webDeploymentConfigurationVersion.version) &&
+            Objects.equals(this.headlessMode, webDeploymentConfigurationVersion.headlessMode) &&
             Objects.equals(this.description, webDeploymentConfigurationVersion.description) &&
             Objects.equals(this.languages, webDeploymentConfigurationVersion.languages) &&
             Objects.equals(this.defaultLanguage, webDeploymentConfigurationVersion.defaultLanguage) &&
@@ -421,7 +442,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, description, languages, defaultLanguage, customI18nLabels, messenger, position, supportCenter, cobrowse, journeyEvents, authenticationSettings, dateCreated, dateModified, datePublished, lastModifiedUser, createdUser, publishedUser, status, selfUri);
+    return Objects.hash(id, name, version, headlessMode, description, languages, defaultLanguage, customI18nLabels, messenger, position, supportCenter, cobrowse, journeyEvents, authenticationSettings, dateCreated, dateModified, datePublished, lastModifiedUser, createdUser, publishedUser, status, selfUri);
   }
 
   @Override
@@ -432,6 +453,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    headlessMode: ").append(toIndentedString(headlessMode)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");

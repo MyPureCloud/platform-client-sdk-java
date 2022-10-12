@@ -21,9 +21,11 @@ title: AnalyticsSession
 | **assignerId** | <!----><!---->**String**<!----> | ID of the user that manually assigned a conversation |  [optional] |
 | **authenticated** | <!----><!---->**Boolean**<!----> | Flag that indicates that the identity of the customer has been asserted as verified by the provider. |  [optional] |
 | **bargedParticipantId** | <!----><!---->**String**<!----> | The participantId being barged in on (if someone (e.g. an agent) is being barged in on, this would correspond to one of the other participantIds present in the conversation) |  [optional] |
+| **bcc** | <!----><!---->**List&lt;String&gt;**<!----> | Blind carbon copy email address(es) |  [optional] |
 | **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> | Callback phone number(s) |  [optional] |
 | **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> | Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **callbackUserName** | <!----><!---->**String**<!----> | The name of the user requesting a call back |  [optional] |
+| **cc** | <!----><!---->**List&lt;String&gt;**<!----> | Carbon copy email address(es) |  [optional] |
 | **coachedParticipantId** | <!----><!---->**String**<!----> | The participantId being coached (if someone (e.g. an agent) is being coached, this would correspond to one of the other participantIds present in the conversation) |  [optional] |
 | **cobrowseRole** | <!----><!---->**String**<!----> | Describes side of the cobrowse (sharer or viewer) |  [optional] |
 | **cobrowseRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud cobrowse room |  [optional] |

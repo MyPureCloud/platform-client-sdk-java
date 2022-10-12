@@ -21,8 +21,12 @@ title: AuditLogMessage
 | **entity** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | Entity that was impacted. |  [optional] |
 | **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> | Type of the entity that was impacted. |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | Status of the event being audited |  [optional] |
+| **application** | <!----><!---->**String**<!----> | Name of the application used to perform the audit's action |  [optional] |
+| **initiatingAction** | <!----><!---->[**InitiatingAction**](InitiatingAction.html)<!----> | Id and action of the audit initiating the transaction |  [optional] |
+| **transactionInitiator** | <!----><!---->**Boolean**<!----> | Whether the current audit is the initiator of the transaction |  [optional] |
 | **propertyChanges** | <!----><!---->[**List&lt;PropertyChange&gt;**](PropertyChange.html)<!----> | List of properties that were changed and changes made to those properties. |  [optional] |
 | **context** | <!----><!---->**Map&lt;String, String&gt;**<!----> | Additional context for this message. |  [optional] |
+| **entityChanges** | <!----><!---->[**List&lt;EntityChange&gt;**](EntityChange.html)<!----> | List of entities that were changed and changes made to those entities. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -33,6 +37,7 @@ title: AuditLogMessage
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AGENTCONFIG | &quot;AgentConfig&quot; | 
 | ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; | 
 | ARCHITECT | &quot;Architect&quot; | 
 | COACHING | &quot;Coaching&quot; | 
@@ -227,11 +232,13 @@ title: AuditLogMessage
 | CONVERSATIONTHREADINGWINDOW | &quot;ConversationThreadingWindow&quot; | 
 | CREDENTIAL | &quot;Credential&quot; | 
 | DASHBOARDSETTINGS | &quot;DashboardSettings&quot; | 
+| DEFAULTPANELSETTINGS | &quot;DefaultPanelSettings&quot; | 
 | DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; | 
 | DEPLOYMENT | &quot;Deployment&quot; | 
 | DID | &quot;DID&quot; | 
 | DIDPOOL | &quot;DIDPool&quot; | 
 | DIGITALRULESET | &quot;DigitalRuleSet&quot; | 
+| DIRECTORYGROUP | &quot;DirectoryGroup&quot; | 
 | DNCLIST | &quot;DNCList&quot; | 
 | DOCUMENT | &quot;Document&quot; | 
 | DYNAMICGROUP | &quot;DynamicGroup&quot; | 
@@ -260,6 +267,7 @@ title: AuditLogMessage
 | FLOWMILESTONE | &quot;FlowMilestone&quot; | 
 | FLOWOUTCOME | &quot;FlowOutcome&quot; | 
 | FORECAST | &quot;Forecast&quot; | 
+| GDPRREQUEST | &quot;GdprRequest&quot; | 
 | HISTORICALDATA | &quot;HistoricalData&quot; | 
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; | 
 | INTEGRATION | &quot;Integration&quot; | 
@@ -268,6 +276,7 @@ title: AuditLogMessage
 | KNOWLEDGECATEGORY | &quot;KnowledgeCategory&quot; | 
 | KNOWLEDGEDOCUMENT | &quot;KnowledgeDocument&quot; | 
 | KNOWLEDGEDOCUMENTVARIATION | &quot;KnowledgeDocumentVariation&quot; | 
+| KNOWLEDGELABEL | &quot;KnowledgeLabel&quot; | 
 | KNOWLEDGESEARCHFEEDBACK | &quot;KnowledgeSearchFeedback&quot; | 
 | KNOWLEDGETRAINING | &quot;KnowledgeTraining&quot; | 
 | LINE | &quot;Line&quot; | 
@@ -331,6 +340,7 @@ title: AuditLogMessage
 | SESSIONTYPE | &quot;SessionType&quot; | 
 | SHIFTTRADE | &quot;ShiftTrade&quot; | 
 | SITE | &quot;Site&quot; | 
+| SKILLSGROUP | &quot;SkillsGroup&quot; | 
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; | 
 | STATUS | &quot;Status&quot; | 
 | SUPPORTEDCONTENT | &quot;SupportedContent&quot; | 

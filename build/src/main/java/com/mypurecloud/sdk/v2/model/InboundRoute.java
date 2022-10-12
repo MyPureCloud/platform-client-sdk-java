@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailAddress;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
+import com.mypurecloud.sdk.v2.model.Signature;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public class InboundRoute  implements Serializable {
   private QueueEmailAddress replyEmailAddress = null;
   private List<EmailAddress> autoBcc = new ArrayList<EmailAddress>();
   private DomainEntityRef spamFlow = null;
+  private Signature signature = null;
   private String selfUri = null;
 
   
@@ -229,14 +231,14 @@ public class InboundRoute  implements Serializable {
 
 
   /**
-   * The recipients that should be  automatically blind copied on outbound emails associated with this InboundRoute.
+   * The recipients that should be automatically blind copied on outbound emails associated with this InboundRoute.
    **/
   public InboundRoute autoBcc(List<EmailAddress> autoBcc) {
     this.autoBcc = autoBcc;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The recipients that should be  automatically blind copied on outbound emails associated with this InboundRoute.")
+  @ApiModelProperty(example = "null", value = "The recipients that should be automatically blind copied on outbound emails associated with this InboundRoute.")
   @JsonProperty("autoBcc")
   public List<EmailAddress> getAutoBcc() {
     return autoBcc;
@@ -261,6 +263,24 @@ public class InboundRoute  implements Serializable {
   }
   public void setSpamFlow(DomainEntityRef spamFlow) {
     this.spamFlow = spamFlow;
+  }
+
+
+  /**
+   * The configuration for the canned response signature that will be appended to outbound emails sent via this route
+   **/
+  public InboundRoute signature(Signature signature) {
+    this.signature = signature;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The configuration for the canned response signature that will be appended to outbound emails sent via this route")
+  @JsonProperty("signature")
+  public Signature getSignature() {
+    return signature;
+  }
+  public void setSignature(Signature signature) {
+    this.signature = signature;
   }
 
 
@@ -294,12 +314,13 @@ public class InboundRoute  implements Serializable {
             Objects.equals(this.replyEmailAddress, inboundRoute.replyEmailAddress) &&
             Objects.equals(this.autoBcc, inboundRoute.autoBcc) &&
             Objects.equals(this.spamFlow, inboundRoute.spamFlow) &&
+            Objects.equals(this.signature, inboundRoute.signature) &&
             Objects.equals(this.selfUri, inboundRoute.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, autoBcc, spamFlow, selfUri);
+    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, autoBcc, spamFlow, signature, selfUri);
   }
 
   @Override
@@ -320,6 +341,7 @@ public class InboundRoute  implements Serializable {
     sb.append("    replyEmailAddress: ").append(toIndentedString(replyEmailAddress)).append("\n");
     sb.append("    autoBcc: ").append(toIndentedString(autoBcc)).append("\n");
     sb.append("    spamFlow: ").append(toIndentedString(spamFlow)).append("\n");
+    sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

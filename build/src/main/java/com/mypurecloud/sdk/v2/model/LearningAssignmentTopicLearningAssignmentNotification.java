@@ -52,7 +52,8 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     INPROGRESS("InProgress"),
     COMPLETED("Completed"),
     DELETED("Deleted"),
-    NOTCOMPLETED("NotCompleted");
+    NOTCOMPLETED("NotCompleted"),
+    INVALIDSCHEDULE("InvalidSchedule");
 
     private String value;
 

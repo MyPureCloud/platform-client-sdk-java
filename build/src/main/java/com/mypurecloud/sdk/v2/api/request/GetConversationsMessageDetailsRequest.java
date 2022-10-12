@@ -21,6 +21,8 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
+import com.mypurecloud.sdk.v2.model.AgentlessEmailSendRequestDto;
+import com.mypurecloud.sdk.v2.model.AgentlessEmailSendResponseDto;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
@@ -142,6 +144,20 @@ public class GetConversationsMessageDetailsRequest {
 	    return this;
 	} 
 
+	private Boolean useNormalizedMessage;
+	public Boolean getUseNormalizedMessage() {
+		return this.useNormalizedMessage;
+	}
+
+	public void setUseNormalizedMessage(Boolean useNormalizedMessage) {
+		this.useNormalizedMessage = useNormalizedMessage;
+	}
+
+	public GetConversationsMessageDetailsRequest withUseNormalizedMessage(Boolean useNormalizedMessage) {
+	    this.setUseNormalizedMessage(useNormalizedMessage);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -172,6 +188,9 @@ public class GetConversationsMessageDetailsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/conversations/messages/{messageId}/details")
                 .withPathParameter("messageId", messageId)
         
+
+                .withQueryParameters("useNormalizedMessage", "", useNormalizedMessage)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -200,6 +219,11 @@ public class GetConversationsMessageDetailsRequest {
 
 		public Builder withMessageId(String messageId) {
 			request.setMessageId(messageId);
+			return this;
+		}
+
+		public Builder withUseNormalizedMessage(Boolean useNormalizedMessage) {
+			request.setUseNormalizedMessage(useNormalizedMessage);
 			return this;
 		}
 

@@ -19,7 +19,9 @@ import com.mypurecloud.sdk.v2.model.ConversationContentCarousel;
 import com.mypurecloud.sdk.v2.model.ConversationContentLocation;
 import com.mypurecloud.sdk.v2.model.ConversationContentNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.ConversationContentQuickReply;
+import com.mypurecloud.sdk.v2.model.ConversationContentQuickReplyV2;
 import com.mypurecloud.sdk.v2.model.ConversationContentStory;
+import com.mypurecloud.sdk.v2.model.ConversationContentText;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -59,6 +61,8 @@ public class ConversationMessageContent  implements Serializable {
     MENTION("Mention"),
     CARD("Card"),
     CAROUSEL("Carousel"),
+    TEXT("Text"),
+    QUICKREPLYV2("QuickReplyV2"),
     UNKNOWN("Unknown");
 
     private String value;
@@ -95,6 +99,8 @@ public class ConversationMessageContent  implements Serializable {
   private ConversationContentStory story = null;
   private ConversationContentCard card = null;
   private ConversationContentCarousel carousel = null;
+  private ConversationContentText text = null;
+  private ConversationContentQuickReplyV2 quickReplyV2 = null;
 
   
   /**
@@ -259,6 +265,42 @@ public class ConversationMessageContent  implements Serializable {
   }
 
 
+  /**
+   * Text content.
+   **/
+  public ConversationMessageContent text(ConversationContentText text) {
+    this.text = text;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Text content.")
+  @JsonProperty("text")
+  public ConversationContentText getText() {
+    return text;
+  }
+  public void setText(ConversationContentText text) {
+    this.text = text;
+  }
+
+
+  /**
+   * Quick reply V2 content.
+   **/
+  public ConversationMessageContent quickReplyV2(ConversationContentQuickReplyV2 quickReplyV2) {
+    this.quickReplyV2 = quickReplyV2;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Quick reply V2 content.")
+  @JsonProperty("quickReplyV2")
+  public ConversationContentQuickReplyV2 getQuickReplyV2() {
+    return quickReplyV2;
+  }
+  public void setQuickReplyV2(ConversationContentQuickReplyV2 quickReplyV2) {
+    this.quickReplyV2 = quickReplyV2;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -277,12 +319,14 @@ public class ConversationMessageContent  implements Serializable {
             Objects.equals(this.template, conversationMessageContent.template) &&
             Objects.equals(this.story, conversationMessageContent.story) &&
             Objects.equals(this.card, conversationMessageContent.card) &&
-            Objects.equals(this.carousel, conversationMessageContent.carousel);
+            Objects.equals(this.carousel, conversationMessageContent.carousel) &&
+            Objects.equals(this.text, conversationMessageContent.text) &&
+            Objects.equals(this.quickReplyV2, conversationMessageContent.quickReplyV2);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, template, story, card, carousel);
+    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, template, story, card, carousel, text, quickReplyV2);
   }
 
   @Override
@@ -299,6 +343,8 @@ public class ConversationMessageContent  implements Serializable {
     sb.append("    story: ").append(toIndentedString(story)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    carousel: ").append(toIndentedString(carousel)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    quickReplyV2: ").append(toIndentedString(quickReplyV2)).append("\n");
     sb.append("}");
     return sb.toString();
   }

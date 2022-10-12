@@ -76,6 +76,8 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     TCONNECTED("tConnected"),
     TCONTACTING("tContacting"),
     TDIALING("tDialing"),
+    TFIRSTCONNECT("tFirstConnect"),
+    TFIRSTDIAL("tFirstDial"),
     TFLOWOUT("tFlowOut"),
     THANDLE("tHandle"),
     THELD("tHeld"),

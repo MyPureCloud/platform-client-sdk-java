@@ -59,11 +59,13 @@ title: AuditQueryEntity
 | CONVERSATIONTHREADINGWINDOW | &quot;ConversationThreadingWindow&quot; | 
 | CREDENTIAL | &quot;Credential&quot; | 
 | DASHBOARDSETTINGS | &quot;DashboardSettings&quot; | 
+| DEFAULTPANELSETTINGS | &quot;DefaultPanelSettings&quot; | 
 | DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; | 
 | DEPLOYMENT | &quot;Deployment&quot; | 
 | DID | &quot;DID&quot; | 
 | DIDPOOL | &quot;DIDPool&quot; | 
 | DIGITALRULESET | &quot;DigitalRuleSet&quot; | 
+| DIRECTORYGROUP | &quot;DirectoryGroup&quot; | 
 | DNCLIST | &quot;DNCList&quot; | 
 | DOCUMENT | &quot;Document&quot; | 
 | DYNAMICGROUP | &quot;DynamicGroup&quot; | 
@@ -92,6 +94,7 @@ title: AuditQueryEntity
 | FLOWMILESTONE | &quot;FlowMilestone&quot; | 
 | FLOWOUTCOME | &quot;FlowOutcome&quot; | 
 | FORECAST | &quot;Forecast&quot; | 
+| GDPRREQUEST | &quot;GdprRequest&quot; | 
 | HISTORICALDATA | &quot;HistoricalData&quot; | 
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; | 
 | INTEGRATION | &quot;Integration&quot; | 
@@ -100,6 +103,7 @@ title: AuditQueryEntity
 | KNOWLEDGECATEGORY | &quot;KnowledgeCategory&quot; | 
 | KNOWLEDGEDOCUMENT | &quot;KnowledgeDocument&quot; | 
 | KNOWLEDGEDOCUMENTVARIATION | &quot;KnowledgeDocumentVariation&quot; | 
+| KNOWLEDGELABEL | &quot;KnowledgeLabel&quot; | 
 | KNOWLEDGESEARCHFEEDBACK | &quot;KnowledgeSearchFeedback&quot; | 
 | KNOWLEDGETRAINING | &quot;KnowledgeTraining&quot; | 
 | LINE | &quot;Line&quot; | 
@@ -163,6 +167,7 @@ title: AuditQueryEntity
 | SESSIONTYPE | &quot;SessionType&quot; | 
 | SHIFTTRADE | &quot;ShiftTrade&quot; | 
 | SITE | &quot;Site&quot; | 
+| SKILLSGROUP | &quot;SkillsGroup&quot; | 
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; | 
 | STATUS | &quot;Status&quot; | 
 | SUPPORTEDCONTENT | &quot;SupportedContent&quot; | 

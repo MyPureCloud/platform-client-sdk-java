@@ -46,7 +46,8 @@ public class PostTextMessage  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXT("Text"),
     STRUCTURED("Structured"),
-    RECEIPT("Receipt");
+    RECEIPT("Receipt"),
+    MESSAGE("Message");
 
     private String value;
 
