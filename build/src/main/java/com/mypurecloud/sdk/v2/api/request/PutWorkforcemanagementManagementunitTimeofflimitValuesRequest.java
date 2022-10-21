@@ -112,6 +112,8 @@ import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.TimeOffBalanceRequest;
+import com.mypurecloud.sdk.v2.model.TimeOffBalancesResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffLimit;
 import com.mypurecloud.sdk.v2.model.TimeOffLimitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffPlan;

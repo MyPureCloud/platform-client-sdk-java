@@ -102,6 +102,8 @@ import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.TimeOffBalanceRequest;
+import com.mypurecloud.sdk.v2.model.TimeOffBalancesResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffLimit;
 import com.mypurecloud.sdk.v2.model.TimeOffLimitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffPlan;
@@ -270,6 +272,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitT
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitUserTimeoffbalanceJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest;
@@ -10565,6 +10569,178 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WaitlistPositionListing> response = (ApiResponse<WaitlistPositionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query time off balances for a given user for specified activity code and dates
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @param userId The ID of the user (required)
+   * @param body The request body (required)
+   * @return TimeOffBalancesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(String managementUnitId, String userId, TimeOffBalanceRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(createPostWorkforcemanagementManagementunitUserTimeoffbalanceJobsRequest(managementUnitId, userId, body));
+  }
+
+  /**
+   * Query time off balances for a given user for specified activity code and dates
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @param userId The ID of the user (required)
+   * @param body The request body (required)
+   * @return TimeOffBalancesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffBalancesResponse> postWorkforcemanagementManagementunitUserTimeoffbalanceJobsWithHttpInfo(String managementUnitId, String userId, TimeOffBalanceRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(createPostWorkforcemanagementManagementunitUserTimeoffbalanceJobsRequest(managementUnitId, userId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitUserTimeoffbalanceJobsRequest createPostWorkforcemanagementManagementunitUserTimeoffbalanceJobsRequest(String managementUnitId, String userId, TimeOffBalanceRequest body) {
+    return PostWorkforcemanagementManagementunitUserTimeoffbalanceJobsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query time off balances for a given user for specified activity code and dates
+   * 
+   * @param request The request object
+   * @return TimeOffBalancesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(PostWorkforcemanagementManagementunitUserTimeoffbalanceJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffBalancesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffBalancesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query time off balances for a given user for specified activity code and dates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffBalancesResponse> postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(ApiRequest<TimeOffBalanceRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffBalancesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffBalancesResponse> response = (ApiResponse<TimeOffBalancesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffBalancesResponse> response = (ApiResponse<TimeOffBalancesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query time off balances for dates spanned by a given time off request
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param userId The userId to whom the time off request applies. (required)
+   * @param timeOffRequestId The time off request id. (required)
+   * @return TimeOffBalancesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(String managementUnitId, String userId, String timeOffRequestId) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(createPostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobsRequest(managementUnitId, userId, timeOffRequestId));
+  }
+
+  /**
+   * Query time off balances for dates spanned by a given time off request
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param userId The userId to whom the time off request applies. (required)
+   * @param timeOffRequestId The time off request id. (required)
+   * @return TimeOffBalancesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffBalancesResponse> postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobsWithHttpInfo(String managementUnitId, String userId, String timeOffRequestId) throws IOException {
+    return postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(createPostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobsRequest(managementUnitId, userId, timeOffRequestId).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobsRequest createPostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobsRequest(String managementUnitId, String userId, String timeOffRequestId) {
+    return PostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .withUserId(userId)
+
+            .withTimeOffRequestId(timeOffRequestId)
+
+            .build();
+  }
+
+  /**
+   * Query time off balances for dates spanned by a given time off request
+   * 
+   * @param request The request object
+   * @return TimeOffBalancesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(PostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffBalancesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffBalancesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query time off balances for dates spanned by a given time off request
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffBalancesResponse> postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffBalancesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffBalancesResponse> response = (ApiResponse<TimeOffBalancesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffBalancesResponse> response = (ApiResponse<TimeOffBalancesResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

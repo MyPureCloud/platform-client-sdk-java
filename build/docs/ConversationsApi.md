@@ -155,6 +155,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsKeyconfigurationsValidate**](ConversationsApi.html#postConversationsKeyconfigurationsValidate) | Validate encryption key configurations without saving it |
 | [**postConversationsMessageCommunicationMessages**](ConversationsApi.html#postConversationsMessageCommunicationMessages) | Send message |
 | [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi.html#postConversationsMessageCommunicationMessagesMedia) | Create media |
+| [**postConversationsMessageCommunicationTyping**](ConversationsApi.html#postConversationsMessageCommunicationTyping) | Send message typing event |
 | [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | Get messages in batch |
 | [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | Create an outbound messaging conversation. |
@@ -4964,8 +4965,9 @@ Update conversation participant.
 
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -5216,8 +5218,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -5535,8 +5538,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -5851,8 +5855,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -6106,8 +6111,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -6361,8 +6367,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -6616,8 +6623,9 @@ Update conversation participant
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:participant:wrapup
 
 ### Example
 
@@ -9435,6 +9443,73 @@ try {
 ### Return type
 
 [**MessageMediaData**](MessageMediaData.html)
+
+<a name="postConversationsMessageCommunicationTyping"></a>
+
+# **postConversationsMessageCommunicationTyping**
+
+
+
+> Void postConversationsMessageCommunicationTyping(conversationId, communicationId, body)
+
+Send message typing event
+
+Send message typing event for existing conversation/communication.
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing  
+
+Requires ANY permissions: 
+
+* conversation:message:create
+* conversation:webmessaging:create
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String communicationId = "communicationId_example"; // String | communicationId
+MessageTypingEventRequest body = new MessageTypingEventRequest(); // MessageTypingEventRequest | MessageTypingEvent
+try {
+    apiInstance.postConversationsMessageCommunicationTyping(conversationId, communicationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageCommunicationTyping");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**MessageTypingEventRequest**](MessageTypingEventRequest.html)| MessageTypingEvent | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="postConversationsMessageMessagesBulk"></a>
 

@@ -16,14 +16,20 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Team;
 import com.mypurecloud.sdk.v2.model.TeamEntityListing;
+import com.mypurecloud.sdk.v2.model.TeamMemberAddListingResponse;
+import com.mypurecloud.sdk.v2.model.TeamMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.TeamMembers;
 import com.mypurecloud.sdk.v2.model.TeamSearchRequest;
 import com.mypurecloud.sdk.v2.model.TeamsSearchResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTeamRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTeamMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTeamRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTeamMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTeamsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTeamRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTeamMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTeamsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTeamsSearchRequest;
 
@@ -121,6 +127,81 @@ public class TeamsApiAsync {
   }
 
   /**
+   * Delete team members
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteTeamMembersAsync(DeleteTeamMembersRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete team members
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteTeamMembersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get team
    * 
    * @param request the request object
@@ -184,6 +265,81 @@ public class TeamsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Team> response = (ApiResponse<Team>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get team membership
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TeamMemberEntityListing> getTeamMembersAsync(GetTeamMembersRequest request, final AsyncApiCallback<TeamMemberEntityListing> callback) {
+    try {
+      final SettableFuture<TeamMemberEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TeamMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<TeamMemberEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TeamMemberEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get team membership
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TeamMemberEntityListing>> getTeamMembersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TeamMemberEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TeamMemberEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TeamMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<TeamMemberEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TeamMemberEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TeamMemberEntityListing> response = (ApiResponse<TeamMemberEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TeamMemberEntityListing> response = (ApiResponse<TeamMemberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -334,6 +490,81 @@ public class TeamsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Team> response = (ApiResponse<Team>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add team members
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TeamMemberAddListingResponse> postTeamMembersAsync(PostTeamMembersRequest request, final AsyncApiCallback<TeamMemberAddListingResponse> callback) {
+    try {
+      final SettableFuture<TeamMemberAddListingResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TeamMemberAddListingResponse>() {}, new AsyncApiCallback<ApiResponse<TeamMemberAddListingResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TeamMemberAddListingResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add team members
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TeamMemberAddListingResponse>> postTeamMembersAsync(ApiRequest<TeamMembers> request, final AsyncApiCallback<ApiResponse<TeamMemberAddListingResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TeamMemberAddListingResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TeamMemberAddListingResponse>() {}, new AsyncApiCallback<ApiResponse<TeamMemberAddListingResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TeamMemberAddListingResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TeamMemberAddListingResponse> response = (ApiResponse<TeamMemberAddListingResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TeamMemberAddListingResponse> response = (ApiResponse<TeamMemberAddListingResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

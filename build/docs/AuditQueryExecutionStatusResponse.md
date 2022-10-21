@@ -48,6 +48,7 @@ title: AuditQueryExecutionStatusResponse
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; | 
 | DATATABLES | &quot;Datatables&quot; | 
 | DIRECTORY | &quot;Directory&quot; | 
+| EMAILS | &quot;Emails&quot; | 
 | DYNAMICSCHEMA | &quot;DynamicSchema&quot; | 
 | GAMIFICATION | &quot;Gamification&quot; | 
 | GROUPS | &quot;Groups&quot; | 

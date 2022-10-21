@@ -29,10 +29,6 @@ public class ComparisonPeriod  implements Serializable {
   private String kpi = null;
   private Date dateStarted = null;
   private Date dateEnded = null;
-  private Long kpiTotalOn = null;
-  private Long kpiTotalOff = null;
-  private Long interactionCountOn = null;
-  private Long interactionCountOff = null;
   private List<KpiResult> kpiResults = new ArrayList<KpiResult>();
   private String selfUri = null;
 
@@ -65,34 +61,6 @@ public class ComparisonPeriod  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "Absolute metric (in which the KPI is based) total for the interactions handled by predictive routing (GPR was on)")
-  @JsonProperty("kpiTotalOn")
-  public Long getKpiTotalOn() {
-    return kpiTotalOn;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "Absolute metric (in which the KPI is based) total for the interactions not routed by predictive routing (GPR was off)")
-  @JsonProperty("kpiTotalOff")
-  public Long getKpiTotalOff() {
-    return kpiTotalOff;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "Total interactions handled by predictive routing (GPR was on)")
-  @JsonProperty("interactionCountOn")
-  public Long getInteractionCountOn() {
-    return interactionCountOn;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "Total interactions not routed by predictive routing (GPR was off)")
-  @JsonProperty("interactionCountOff")
-  public Long getInteractionCountOff() {
-    return interactionCountOff;
-  }
-
-
   @ApiModelProperty(example = "null", value = "KPI results for each metric")
   @JsonProperty("kpiResults")
   public List<KpiResult> getKpiResults() {
@@ -121,17 +89,13 @@ public class ComparisonPeriod  implements Serializable {
             Objects.equals(this.kpi, comparisonPeriod.kpi) &&
             Objects.equals(this.dateStarted, comparisonPeriod.dateStarted) &&
             Objects.equals(this.dateEnded, comparisonPeriod.dateEnded) &&
-            Objects.equals(this.kpiTotalOn, comparisonPeriod.kpiTotalOn) &&
-            Objects.equals(this.kpiTotalOff, comparisonPeriod.kpiTotalOff) &&
-            Objects.equals(this.interactionCountOn, comparisonPeriod.interactionCountOn) &&
-            Objects.equals(this.interactionCountOff, comparisonPeriod.interactionCountOff) &&
             Objects.equals(this.kpiResults, comparisonPeriod.kpiResults) &&
             Objects.equals(this.selfUri, comparisonPeriod.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, kpi, dateStarted, dateEnded, kpiTotalOn, kpiTotalOff, interactionCountOn, interactionCountOff, kpiResults, selfUri);
+    return Objects.hash(id, kpi, dateStarted, dateEnded, kpiResults, selfUri);
   }
 
   @Override
@@ -143,10 +107,6 @@ public class ComparisonPeriod  implements Serializable {
     sb.append("    kpi: ").append(toIndentedString(kpi)).append("\n");
     sb.append("    dateStarted: ").append(toIndentedString(dateStarted)).append("\n");
     sb.append("    dateEnded: ").append(toIndentedString(dateEnded)).append("\n");
-    sb.append("    kpiTotalOn: ").append(toIndentedString(kpiTotalOn)).append("\n");
-    sb.append("    kpiTotalOff: ").append(toIndentedString(kpiTotalOff)).append("\n");
-    sb.append("    interactionCountOn: ").append(toIndentedString(interactionCountOn)).append("\n");
-    sb.append("    interactionCountOff: ").append(toIndentedString(interactionCountOff)).append("\n");
     sb.append("    kpiResults: ").append(toIndentedString(kpiResults)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

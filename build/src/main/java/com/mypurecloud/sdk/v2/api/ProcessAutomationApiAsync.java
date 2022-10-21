@@ -126,7 +126,7 @@ public class ProcessAutomationApiAsync {
   }
 
   /**
-   * Retrieve a single Trigger matching id.
+   * Retrieve a single Trigger matching id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -160,7 +160,7 @@ public class ProcessAutomationApiAsync {
   }
 
   /**
-   * Retrieve a single Trigger matching id.
+   * Retrieve a single Trigger matching id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -201,7 +201,7 @@ public class ProcessAutomationApiAsync {
   }
 
   /**
-   * Retrieves all triggers
+   * Retrieves all triggers, optionally filtered by query parameters.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -235,7 +235,7 @@ public class ProcessAutomationApiAsync {
   }
 
   /**
-   * Retrieves all triggers
+   * Retrieves all triggers, optionally filtered by query parameters.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

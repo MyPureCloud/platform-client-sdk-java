@@ -122,7 +122,7 @@ public class ProcessAutomationApi {
   }
 
   /**
-   * Retrieve a single Trigger matching id.
+   * Retrieve a single Trigger matching id
    * 
    * @param triggerId triggerId (required)
    * @return Trigger
@@ -134,7 +134,7 @@ public class ProcessAutomationApi {
   }
 
   /**
-   * Retrieve a single Trigger matching id.
+   * Retrieve a single Trigger matching id
    * 
    * @param triggerId triggerId (required)
    * @return Trigger
@@ -152,7 +152,7 @@ public class ProcessAutomationApi {
   }
 
   /**
-   * Retrieve a single Trigger matching id.
+   * Retrieve a single Trigger matching id
    * 
    * @param request The request object
    * @return Trigger
@@ -171,7 +171,7 @@ public class ProcessAutomationApi {
   }
 
   /**
-   * Retrieve a single Trigger matching id.
+   * Retrieve a single Trigger matching id
    * 
    * @param request The request object
    * @return the response
@@ -200,12 +200,12 @@ public class ProcessAutomationApi {
   }
 
   /**
-   * Retrieves all triggers
+   * Retrieves all triggers, optionally filtered by query parameters.
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
-   * @param topicName Topic name (optional)
+   * @param topicName Topic name(s). Separated by commas (optional)
    * @param enabled Boolean indicating desired enabled state of triggers (optional)
    * @return TriggerEntityListing
    * @throws ApiException if the request fails on the server
@@ -216,12 +216,12 @@ public class ProcessAutomationApi {
   }
 
   /**
-   * Retrieves all triggers
+   * Retrieves all triggers, optionally filtered by query parameters.
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
-   * @param topicName Topic name (optional)
+   * @param topicName Topic name(s). Separated by commas (optional)
    * @param enabled Boolean indicating desired enabled state of triggers (optional)
    * @return TriggerEntityListing
    * @throws IOException if the request fails to be processed
@@ -246,7 +246,7 @@ public class ProcessAutomationApi {
   }
 
   /**
-   * Retrieves all triggers
+   * Retrieves all triggers, optionally filtered by query parameters.
    * 
    * @param request The request object
    * @return TriggerEntityListing
@@ -265,7 +265,7 @@ public class ProcessAutomationApi {
   }
 
   /**
-   * Retrieves all triggers
+   * Retrieves all triggers, optionally filtered by query parameters.
    * 
    * @param request The request object
    * @return the response

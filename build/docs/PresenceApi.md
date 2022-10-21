@@ -215,7 +215,7 @@ try {
 
 
 
-> [SourceEntityListing](SourceEntityListing.html) getPresenceSources(deleted)
+> [SourceEntityListing](SourceEntityListing.html) getPresenceSources(deactivated)
 
 Get a list of Presence Sources
 
@@ -247,9 +247,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 PresenceApi apiInstance = new PresenceApi();
-String deleted = "false"; // String | Deleted query can be TRUE or FALSE
+String deactivated = "false"; // String | Deactivated query can be TRUE or FALSE
 try {
-    SourceEntityListing result = apiInstance.getPresenceSources(deleted);
+    SourceEntityListing result = apiInstance.getPresenceSources(deactivated);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PresenceApi#getPresenceSources");
@@ -262,7 +262,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **deleted** | **String**| Deleted query can be TRUE or FALSE | [optional] [default to false] 
+| **deactivated** | **String**| Deactivated query can be TRUE or FALSE | [optional] [default to false] 
 {: class="table-striped"}
 
 

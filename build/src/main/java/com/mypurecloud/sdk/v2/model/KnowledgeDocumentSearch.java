@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSearchResult;
+import com.mypurecloud.sdk.v2.model.KnowledgeSearchClientApplication;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class KnowledgeDocumentSearch  implements Serializable {
   private Integer total = null;
   private Integer pageCount = null;
   private List<KnowledgeDocumentSearchResult> results = new ArrayList<KnowledgeDocumentSearchResult>();
+  private KnowledgeSearchClientApplication application = null;
 
   
   /**
@@ -115,6 +117,24 @@ public class KnowledgeDocumentSearch  implements Serializable {
   }
 
 
+  /**
+   * The client application details from which search happened.
+   **/
+  public KnowledgeDocumentSearch application(KnowledgeSearchClientApplication application) {
+    this.application = application;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The client application details from which search happened.")
+  @JsonProperty("application")
+  public KnowledgeSearchClientApplication getApplication() {
+    return application;
+  }
+  public void setApplication(KnowledgeSearchClientApplication application) {
+    this.application = application;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -131,12 +151,13 @@ public class KnowledgeDocumentSearch  implements Serializable {
             Objects.equals(this.searchId, knowledgeDocumentSearch.searchId) &&
             Objects.equals(this.total, knowledgeDocumentSearch.total) &&
             Objects.equals(this.pageCount, knowledgeDocumentSearch.pageCount) &&
-            Objects.equals(this.results, knowledgeDocumentSearch.results);
+            Objects.equals(this.results, knowledgeDocumentSearch.results) &&
+            Objects.equals(this.application, knowledgeDocumentSearch.application);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, results);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, results, application);
   }
 
   @Override
@@ -151,6 +172,7 @@ public class KnowledgeDocumentSearch  implements Serializable {
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    sb.append("    application: ").append(toIndentedString(application)).append("\n");
     sb.append("}");
     return sb.toString();
   }

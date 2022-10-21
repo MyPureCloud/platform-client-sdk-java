@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentQuery;
 import com.mypurecloud.sdk.v2.model.DocumentQueryInterval;
+import com.mypurecloud.sdk.v2.model.KnowledgeSearchClientApplication;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -139,6 +140,7 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
     }
   }
   private SortByEnum sortBy = null;
+  private KnowledgeSearchClientApplication application = null;
 
   
   /**
@@ -306,6 +308,24 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
   }
 
 
+  /**
+   * The client application details from which search request was sent.
+   **/
+  public KnowledgeDocumentSearchRequest application(KnowledgeSearchClientApplication application) {
+    this.application = application;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The client application details from which search request was sent.")
+  @JsonProperty("application")
+  public KnowledgeSearchClientApplication getApplication() {
+    return application;
+  }
+  public void setApplication(KnowledgeSearchClientApplication application) {
+    this.application = application;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -326,12 +346,13 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
             Objects.equals(this.interval, knowledgeDocumentSearchRequest.interval) &&
             Objects.equals(this.filter, knowledgeDocumentSearchRequest.filter) &&
             Objects.equals(this.sortOrder, knowledgeDocumentSearchRequest.sortOrder) &&
-            Objects.equals(this.sortBy, knowledgeDocumentSearchRequest.sortBy);
+            Objects.equals(this.sortBy, knowledgeDocumentSearchRequest.sortBy) &&
+            Objects.equals(this.application, knowledgeDocumentSearchRequest.application);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, includeDraftDocuments, interval, filter, sortOrder, sortBy);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, includeDraftDocuments, interval, filter, sortOrder, sortBy, application);
   }
 
   @Override
@@ -350,6 +371,7 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    sortOrder: ").append(toIndentedString(sortOrder)).append("\n");
     sb.append("    sortBy: ").append(toIndentedString(sortBy)).append("\n");
+    sb.append("    application: ").append(toIndentedString(application)).append("\n");
     sb.append("}");
     return sb.toString();
   }

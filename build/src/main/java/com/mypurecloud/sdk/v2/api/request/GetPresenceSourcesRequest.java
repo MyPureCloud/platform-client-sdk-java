@@ -31,17 +31,17 @@ import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 
 public class GetPresenceSourcesRequest {
 
-	private String deleted;
-	public String getDeleted() {
-		return this.deleted;
+	private String deactivated;
+	public String getDeactivated() {
+		return this.deactivated;
 	}
 
-	public void setDeleted(String deleted) {
-		this.deleted = deleted;
+	public void setDeactivated(String deactivated) {
+		this.deactivated = deactivated;
 	}
 
-	public GetPresenceSourcesRequest withDeleted(String deleted) {
-	    this.setDeleted(deleted);
+	public GetPresenceSourcesRequest withDeactivated(String deactivated) {
+	    this.setDeactivated(deactivated);
 	    return this;
 	} 
 
@@ -69,7 +69,7 @@ public class GetPresenceSourcesRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/presence/sources")
 
-                .withQueryParameters("deleted", "", deleted)
+                .withQueryParameters("deactivated", "", deactivated)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -92,8 +92,8 @@ public class GetPresenceSourcesRequest {
 		}
 
 
-		public Builder withDeleted(String deleted) {
-			request.setDeleted(deleted);
+		public Builder withDeactivated(String deactivated) {
+			request.setDeactivated(deactivated);
 			return this;
 		}
 

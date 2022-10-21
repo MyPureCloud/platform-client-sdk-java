@@ -19,6 +19,7 @@ title: KnowledgeDocumentSearchRequest
 | **filter** | <!----><!---->[**DocumentQuery**](DocumentQuery.html)<!----> | Filter for the document search. |  [optional] |
 | **sortOrder** | [**SortOrderEnum**](#SortOrderEnum)<!----> | The sort order for search results. |  [optional] |
 | **sortBy** | [**SortByEnum**](#SortByEnum)<!----> | The field in the documents that you want to sort the search results by. |  [optional] |
+| **application** | <!----><!---->[**KnowledgeSearchClientApplication**](KnowledgeSearchClientApplication.html)<!----> | The client application details from which search request was sent. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
+import com.mypurecloud.sdk.v2.model.MessageTypingEventRequest;
 import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
 import com.mypurecloud.sdk.v2.model.OpenIntegration;
@@ -267,6 +268,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsRequ
 import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationTypingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesRequest;
@@ -12369,6 +12371,89 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MessageMediaData> response = (ApiResponse<MessageMediaData>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Send message typing event
+   * Send message typing event for existing conversation/communication.
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param body MessageTypingEvent (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsMessageCommunicationTyping(String conversationId, String communicationId, MessageTypingEventRequest body) throws IOException, ApiException {
+     postConversationsMessageCommunicationTyping(createPostConversationsMessageCommunicationTypingRequest(conversationId, communicationId, body));
+  }
+
+  /**
+   * Send message typing event
+   * Send message typing event for existing conversation/communication.
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param body MessageTypingEvent (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsMessageCommunicationTypingWithHttpInfo(String conversationId, String communicationId, MessageTypingEventRequest body) throws IOException {
+    return postConversationsMessageCommunicationTyping(createPostConversationsMessageCommunicationTypingRequest(conversationId, communicationId, body).withHttpInfo());
+  }
+
+  private PostConversationsMessageCommunicationTypingRequest createPostConversationsMessageCommunicationTypingRequest(String conversationId, String communicationId, MessageTypingEventRequest body) {
+    return PostConversationsMessageCommunicationTypingRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Send message typing event
+   * Send message typing event for existing conversation/communication.
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsMessageCommunicationTyping(PostConversationsMessageCommunicationTypingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Send message typing event
+   * Send message typing event for existing conversation/communication.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsMessageCommunicationTyping(ApiRequest<MessageTypingEventRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

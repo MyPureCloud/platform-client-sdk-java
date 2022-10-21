@@ -134,6 +134,7 @@ import com.mypurecloud.sdk.v2.api.request.PostUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersDevelopmentActivitiesAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersMePasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersSearchTeamsAssignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserCallforwardingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserOutofofficeRequest;
@@ -5866,6 +5867,84 @@ public class UsersApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<UsersSearchResponse> postUsersSearch(ApiRequest<UserSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UsersSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search users assigned to teams
+   * 
+   * @param body Search request options (required)
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UsersSearchResponse postUsersSearchTeamsAssign(UserSearchRequest body) throws IOException, ApiException {
+    return  postUsersSearchTeamsAssign(createPostUsersSearchTeamsAssignRequest(body));
+  }
+
+  /**
+   * Search users assigned to teams
+   * 
+   * @param body Search request options (required)
+   * @return UsersSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UsersSearchResponse> postUsersSearchTeamsAssignWithHttpInfo(UserSearchRequest body) throws IOException {
+    return postUsersSearchTeamsAssign(createPostUsersSearchTeamsAssignRequest(body).withHttpInfo());
+  }
+
+  private PostUsersSearchTeamsAssignRequest createPostUsersSearchTeamsAssignRequest(UserSearchRequest body) {
+    return PostUsersSearchTeamsAssignRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search users assigned to teams
+   * 
+   * @param request The request object
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UsersSearchResponse postUsersSearchTeamsAssign(PostUsersSearchTeamsAssignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UsersSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search users assigned to teams
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UsersSearchResponse> postUsersSearchTeamsAssign(ApiRequest<UserSearchRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<UsersSearchResponse>() {});
     }

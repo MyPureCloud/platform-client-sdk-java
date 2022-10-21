@@ -26,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi.html#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
 | [**postTeamsSearch**](SearchApi.html#postTeamsSearch) | Search resources. |
 | [**postUsersSearch**](SearchApi.html#postUsersSearch) | Search users |
+| [**postUsersSearchTeamsAssign**](SearchApi.html#postUsersSearchTeamsAssign) | Search users assigned to teams |
 | [**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | Search voicemails |
 {: class="table-striped"}
 
@@ -1135,6 +1136,67 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SearchApi#postUsersSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="postUsersSearchTeamsAssign"></a>
+
+# **postUsersSearchTeamsAssign**
+
+
+
+> [UsersSearchResponse](UsersSearchResponse.html) postUsersSearchTeamsAssign(body)
+
+Search users assigned to teams
+
+Wraps POST /api/v2/users/search/teams/assign  
+
+Requires ANY permissions: 
+
+* groups:team:assign
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SearchApi apiInstance = new SearchApi();
+UserSearchRequest body = new UserSearchRequest(); // UserSearchRequest | Search request options
+try {
+    UsersSearchResponse result = apiInstance.postUsersSearchTeamsAssign(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#postUsersSearchTeamsAssign");
     e.printStackTrace();
 }
 ```

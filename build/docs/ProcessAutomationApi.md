@@ -8,8 +8,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteProcessautomationTrigger**](ProcessAutomationApi.html#deleteProcessautomationTrigger) | Delete a Trigger |
-| [**getProcessautomationTrigger**](ProcessAutomationApi.html#getProcessautomationTrigger) | Retrieve a single Trigger matching id. |
-| [**getProcessautomationTriggers**](ProcessAutomationApi.html#getProcessautomationTriggers) | Retrieves all triggers |
+| [**getProcessautomationTrigger**](ProcessAutomationApi.html#getProcessautomationTrigger) | Retrieve a single Trigger matching id |
+| [**getProcessautomationTriggers**](ProcessAutomationApi.html#getProcessautomationTriggers) | Retrieves all triggers, optionally filtered by query parameters. |
 | [**getProcessautomationTriggersTopics**](ProcessAutomationApi.html#getProcessautomationTriggersTopics) | Get topics available for organization |
 | [**postProcessautomationTriggerTest**](ProcessAutomationApi.html#postProcessautomationTriggerTest) | Test the matching of a Trigger based on provided event body |
 | [**postProcessautomationTriggers**](ProcessAutomationApi.html#postProcessautomationTriggers) | Create a Trigger |
@@ -85,7 +85,7 @@ null (empty response body)
 
 > [Trigger](Trigger.html) getProcessautomationTrigger(triggerId)
 
-Retrieve a single Trigger matching id.
+Retrieve a single Trigger matching id
 
 Wraps GET /api/v2/processautomation/triggers/{triggerId}  
 
@@ -147,7 +147,7 @@ try {
 
 > [TriggerEntityListing](TriggerEntityListing.html) getProcessautomationTriggers(before, after, pageSize, topicName, enabled)
 
-Retrieves all triggers
+Retrieves all triggers, optionally filtered by query parameters.
 
 Wraps GET /api/v2/processautomation/triggers  
 
@@ -181,7 +181,7 @@ ProcessAutomationApi apiInstance = new ProcessAutomationApi();
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
-String topicName = "topicName_example"; // String | Topic name
+String topicName = "topicName_example"; // String | Topic name(s). Separated by commas
 Boolean enabled = true; // Boolean | Boolean indicating desired enabled state of triggers
 try {
     TriggerEntityListing result = apiInstance.getProcessautomationTriggers(before, after, pageSize, topicName, enabled);
@@ -200,7 +200,7 @@ try {
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **topicName** | **String**| Topic name | [optional] 
+| **topicName** | **String**| Topic name(s). Separated by commas | [optional] 
 | **enabled** | **Boolean**| Boolean indicating desired enabled state of triggers | [optional] 
 {: class="table-striped"}
 

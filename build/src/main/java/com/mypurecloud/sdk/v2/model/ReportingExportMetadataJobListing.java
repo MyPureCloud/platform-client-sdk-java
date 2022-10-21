@@ -31,9 +31,9 @@ public class ReportingExportMetadataJobListing  implements Serializable, PagedRe
   private Long total = null;
   private String firstUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private String lastUri = null;
   private String selfUri = null;
-  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -141,6 +141,23 @@ public class ReportingExportMetadataJobListing  implements Serializable, PagedRe
 
   /**
    **/
+  public ReportingExportMetadataJobListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
   public ReportingExportMetadataJobListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -170,23 +187,6 @@ public class ReportingExportMetadataJobListing  implements Serializable, PagedRe
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public ReportingExportMetadataJobListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
   }
 
 
@@ -223,15 +223,15 @@ public class ReportingExportMetadataJobListing  implements Serializable, PagedRe
             Objects.equals(this.total, reportingExportMetadataJobListing.total) &&
             Objects.equals(this.firstUri, reportingExportMetadataJobListing.firstUri) &&
             Objects.equals(this.nextUri, reportingExportMetadataJobListing.nextUri) &&
+            Objects.equals(this.previousUri, reportingExportMetadataJobListing.previousUri) &&
             Objects.equals(this.lastUri, reportingExportMetadataJobListing.lastUri) &&
             Objects.equals(this.selfUri, reportingExportMetadataJobListing.selfUri) &&
-            Objects.equals(this.previousUri, reportingExportMetadataJobListing.previousUri) &&
             Objects.equals(this.pageCount, reportingExportMetadataJobListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, lastUri, selfUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -245,9 +245,9 @@ public class ReportingExportMetadataJobListing  implements Serializable, PagedRe
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

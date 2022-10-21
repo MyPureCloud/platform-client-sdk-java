@@ -23,6 +23,9 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Team;
 import com.mypurecloud.sdk.v2.model.TeamEntityListing;
+import com.mypurecloud.sdk.v2.model.TeamMemberAddListingResponse;
+import com.mypurecloud.sdk.v2.model.TeamMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.TeamMembers;
 import com.mypurecloud.sdk.v2.model.TeamSearchRequest;
 import com.mypurecloud.sdk.v2.model.TeamsSearchResponse;
 

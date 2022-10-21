@@ -45,6 +45,7 @@ title: AuditLogMessage
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; | 
 | DATATABLES | &quot;Datatables&quot; | 
 | DIRECTORY | &quot;Directory&quot; | 
+| EMAILS | &quot;Emails&quot; | 
 | DYNAMICSCHEMA | &quot;DynamicSchema&quot; | 
 | GAMIFICATION | &quot;Gamification&quot; | 
 | GROUPS | &quot;Groups&quot; | 
@@ -269,6 +270,8 @@ title: AuditLogMessage
 | FORECAST | &quot;Forecast&quot; | 
 | GDPRREQUEST | &quot;GdprRequest&quot; | 
 | HISTORICALDATA | &quot;HistoricalData&quot; | 
+| INBOUNDDOMAIN | &quot;InboundDomain&quot; | 
+| INBOUNDROUTE | &quot;InboundRoute&quot; | 
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; | 
 | INTEGRATION | &quot;Integration&quot; | 
 | IVR | &quot;IVR&quot; | 
@@ -297,8 +300,10 @@ title: AuditLogMessage
 | ORGANIZATIONAUTHORIZATIONUSERTRUST | &quot;OrganizationAuthorizationUserTrust&quot; | 
 | ORGANIZATIONFEATURE | &quot;OrganizationFeature&quot; | 
 | ORGANIZATIONINTEGRATIONSACCESS | &quot;OrganizationIntegrationsAccess&quot; | 
+| ORGANIZATIONLIMITS | &quot;OrganizationLimits&quot; | 
 | ORGANIZATIONSETTINGS | &quot;OrganizationSettings&quot; | 
 | ORPHANEDRECORDING | &quot;OrphanedRecording&quot; | 
+| OUTBOUNDDOMAIN | &quot;OutboundDomain&quot; | 
 | OUTBOUNDROUTE | &quot;OutboundRoute&quot; | 
 | OUTCOME | &quot;Outcome&quot; | 
 | PCAPS | &quot;Pcaps&quot; | 

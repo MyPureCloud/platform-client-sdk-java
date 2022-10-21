@@ -22,6 +22,8 @@ import java.io.Serializable;
 public class PredictorWorkloadBalancing  implements Serializable {
   
   private Boolean enabled = null;
+  private Integer minimumOccupancy = null;
+  private Integer maximumOccupancy = null;
 
   
   /**
@@ -42,6 +44,42 @@ public class PredictorWorkloadBalancing  implements Serializable {
   }
 
 
+  /**
+   * Desired minimum occupancy threshold of agents. Must be between 0 and 100.
+   **/
+  public PredictorWorkloadBalancing minimumOccupancy(Integer minimumOccupancy) {
+    this.minimumOccupancy = minimumOccupancy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Desired minimum occupancy threshold of agents. Must be between 0 and 100.")
+  @JsonProperty("minimumOccupancy")
+  public Integer getMinimumOccupancy() {
+    return minimumOccupancy;
+  }
+  public void setMinimumOccupancy(Integer minimumOccupancy) {
+    this.minimumOccupancy = minimumOccupancy;
+  }
+
+
+  /**
+   * Desired maximum occupancy threshold of agents. Must be between 0 and 100.
+   **/
+  public PredictorWorkloadBalancing maximumOccupancy(Integer maximumOccupancy) {
+    this.maximumOccupancy = maximumOccupancy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Desired maximum occupancy threshold of agents. Must be between 0 and 100.")
+  @JsonProperty("maximumOccupancy")
+  public Integer getMaximumOccupancy() {
+    return maximumOccupancy;
+  }
+  public void setMaximumOccupancy(Integer maximumOccupancy) {
+    this.maximumOccupancy = maximumOccupancy;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -52,12 +90,14 @@ public class PredictorWorkloadBalancing  implements Serializable {
     }
     PredictorWorkloadBalancing predictorWorkloadBalancing = (PredictorWorkloadBalancing) o;
 
-    return Objects.equals(this.enabled, predictorWorkloadBalancing.enabled);
+    return Objects.equals(this.enabled, predictorWorkloadBalancing.enabled) &&
+            Objects.equals(this.minimumOccupancy, predictorWorkloadBalancing.minimumOccupancy) &&
+            Objects.equals(this.maximumOccupancy, predictorWorkloadBalancing.maximumOccupancy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled);
+    return Objects.hash(enabled, minimumOccupancy, maximumOccupancy);
   }
 
   @Override
@@ -66,6 +106,8 @@ public class PredictorWorkloadBalancing  implements Serializable {
     sb.append("class PredictorWorkloadBalancing {\n");
     
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    minimumOccupancy: ").append(toIndentedString(minimumOccupancy)).append("\n");
+    sb.append("    maximumOccupancy: ").append(toIndentedString(maximumOccupancy)).append("\n");
     sb.append("}");
     return sb.toString();
   }

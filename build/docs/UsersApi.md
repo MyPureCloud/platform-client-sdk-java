@@ -76,6 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi.html#postUsersDevelopmentActivitiesAggregatesQuery) | Retrieve aggregated development activity data |
 | [**postUsersMePassword**](UsersApi.html#postUsersMePassword) | Change your password |
 | [**postUsersSearch**](UsersApi.html#postUsersSearch) | Search users |
+| [**postUsersSearchTeamsAssign**](UsersApi.html#postUsersSearchTeamsAssign) | Search users assigned to teams |
 | [**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | Update a user's CallForwarding |
 | [**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | Update an OutOfOffice |
@@ -4471,6 +4472,67 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#postUsersSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="postUsersSearchTeamsAssign"></a>
+
+# **postUsersSearchTeamsAssign**
+
+
+
+> [UsersSearchResponse](UsersSearchResponse.html) postUsersSearchTeamsAssign(body)
+
+Search users assigned to teams
+
+Wraps POST /api/v2/users/search/teams/assign  
+
+Requires ANY permissions: 
+
+* groups:team:assign
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+UserSearchRequest body = new UserSearchRequest(); // UserSearchRequest | Search request options
+try {
+    UsersSearchResponse result = apiInstance.postUsersSearchTeamsAssign(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUsersSearchTeamsAssign");
     e.printStackTrace();
 }
 ```

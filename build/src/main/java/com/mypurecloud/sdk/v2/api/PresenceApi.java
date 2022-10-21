@@ -287,29 +287,29 @@ public class PresenceApi {
   /**
    * Get a list of Presence Sources
    * 
-   * @param deleted Deleted query can be TRUE or FALSE (optional, default to false)
+   * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
    * @return SourceEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SourceEntityListing getPresenceSources(String deleted) throws IOException, ApiException {
-    return  getPresenceSources(createGetPresenceSourcesRequest(deleted));
+  public SourceEntityListing getPresenceSources(String deactivated) throws IOException, ApiException {
+    return  getPresenceSources(createGetPresenceSourcesRequest(deactivated));
   }
 
   /**
    * Get a list of Presence Sources
    * 
-   * @param deleted Deleted query can be TRUE or FALSE (optional, default to false)
+   * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
    * @return SourceEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SourceEntityListing> getPresenceSourcesWithHttpInfo(String deleted) throws IOException {
-    return getPresenceSources(createGetPresenceSourcesRequest(deleted).withHttpInfo());
+  public ApiResponse<SourceEntityListing> getPresenceSourcesWithHttpInfo(String deactivated) throws IOException {
+    return getPresenceSources(createGetPresenceSourcesRequest(deactivated).withHttpInfo());
   }
 
-  private GetPresenceSourcesRequest createGetPresenceSourcesRequest(String deleted) {
+  private GetPresenceSourcesRequest createGetPresenceSourcesRequest(String deactivated) {
     return GetPresenceSourcesRequest.builder()
-            .withDeleted(deleted)
+            .withDeactivated(deactivated)
 
             .build();
   }

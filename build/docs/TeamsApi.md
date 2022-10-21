@@ -8,9 +8,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteTeam**](TeamsApi.html#deleteTeam) | Delete team |
+| [**deleteTeamMembers**](TeamsApi.html#deleteTeamMembers) | Delete team members |
 | [**getTeam**](TeamsApi.html#getTeam) | Get team |
+| [**getTeamMembers**](TeamsApi.html#getTeamMembers) | Get team membership |
 | [**getTeams**](TeamsApi.html#getTeams) | Get Team listing |
 | [**patchTeam**](TeamsApi.html#patchTeam) | Update team |
+| [**postTeamMembers**](TeamsApi.html#postTeamMembers) | Add team members |
 | [**postTeams**](TeamsApi.html#postTeams) | Create a team |
 | [**postTeamsSearch**](TeamsApi.html#postTeamsSearch) | Search resources. |
 {: class="table-striped"}
@@ -68,6 +71,68 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **teamId** | **String**| Team ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteTeamMembers"></a>
+
+# **deleteTeamMembers**
+
+
+
+> Void deleteTeamMembers(teamId, id)
+
+Delete team members
+
+Wraps DELETE /api/v2/teams/{teamId}/members  
+
+Requires ANY permissions: 
+
+* groups:team:assign
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TeamsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TeamsApi apiInstance = new TeamsApi();
+String teamId = "teamId_example"; // String | Team ID
+String id = "id_example"; // String | Comma separated list of member ids to remove
+try {
+    apiInstance.deleteTeamMembers(teamId, id);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TeamsApi#deleteTeamMembers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **teamId** | **String**| Team ID | 
+| **id** | **String**| Comma separated list of member ids to remove | 
 {: class="table-striped"}
 
 
@@ -135,6 +200,75 @@ try {
 ### Return type
 
 [**Team**](Team.html)
+
+<a name="getTeamMembers"></a>
+
+# **getTeamMembers**
+
+
+
+> [TeamMemberEntityListing](TeamMemberEntityListing.html) getTeamMembers(teamId, pageSize, before, after, expand)
+
+Get team membership
+
+Wraps GET /api/v2/teams/{teamId}/members  
+
+Requires ANY permissions: 
+
+* groups:team:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TeamsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TeamsApi apiInstance = new TeamsApi();
+String teamId = "teamId_example"; // String | Team ID
+Integer pageSize = 25; // Integer | Page size
+String before = "before_example"; // String | The cursor that points to the previous item in the complete list of teams
+String after = "after_example"; // String | The cursor that points to the next item in the complete list of teams
+String expand = "expand_example"; // String | Expand the name on each user
+try {
+    TeamMemberEntityListing result = apiInstance.getTeamMembers(teamId, pageSize, before, after, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TeamsApi#getTeamMembers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **teamId** | **String**| Team ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **before** | **String**| The cursor that points to the previous item in the complete list of teams | [optional] 
+| **after** | **String**| The cursor that points to the next item in the complete list of teams | [optional] 
+| **expand** | **String**| Expand the name on each user | [optional]<br />**Values**: entities 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TeamMemberEntityListing**](TeamMemberEntityListing.html)
 
 <a name="getTeams"></a>
 
@@ -267,6 +401,69 @@ try {
 ### Return type
 
 [**Team**](Team.html)
+
+<a name="postTeamMembers"></a>
+
+# **postTeamMembers**
+
+
+
+> [TeamMemberAddListingResponse](TeamMemberAddListingResponse.html) postTeamMembers(teamId, body)
+
+Add team members
+
+Wraps POST /api/v2/teams/{teamId}/members  
+
+Requires ANY permissions: 
+
+* groups:team:assign
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TeamsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TeamsApi apiInstance = new TeamsApi();
+String teamId = "teamId_example"; // String | Team ID
+TeamMembers body = new TeamMembers(); // TeamMembers | TeamMembers
+try {
+    TeamMemberAddListingResponse result = apiInstance.postTeamMembers(teamId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TeamsApi#postTeamMembers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **teamId** | **String**| Team ID | 
+| **body** | [**TeamMembers**](TeamMembers.html)| TeamMembers | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TeamMemberAddListingResponse**](TeamMemberAddListingResponse.html)
 
 <a name="postTeams"></a>
 

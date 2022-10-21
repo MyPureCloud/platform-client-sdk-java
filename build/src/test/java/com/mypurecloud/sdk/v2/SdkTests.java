@@ -1,5 +1,6 @@
 package com.mypurecloud.sdk.v2;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mypurecloud.sdk.v2.api.PresenceApi;
 import com.mypurecloud.sdk.v2.api.UsersApi;
 import com.mypurecloud.sdk.v2.connector.ApiClientConnectorProperty;
@@ -13,6 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -224,6 +226,27 @@ public class SdkTests {
     }
 
     @Test(priority = 8)
+    public void testObjectMapperIgnoresUnknownProperties() {
+        try {
+            final String ID = "12345";
+            final String API_CLIENT_FIELD = "objectMapper";
+            final String JSON_STRING = "{\"id\":\"12345\",\"name\":\"John Doe\"}";
+            // get private field objectMapper from ApiClient
+            Field privateField = ApiClient.class.getDeclaredField(API_CLIENT_FIELD); 
+            // Set the accessibility as true 
+            privateField.setAccessible(true); 
+            // Store the value of private field
+            ObjectMapper objectMapper = (ObjectMapper) privateField.get(apiClient);
+            MockPojo mockPojo = objectMapper.readValue(JSON_STRING, MockPojo.class);
+            System.out.println(mockPojo.toString());
+            Assert.assertEquals(mockPojo.getId(), ID);
+        } catch (Exception ex) {
+            System.out.println(ex);
+            Assert.fail();
+        }
+    }
+
+    @Test(priority = 9)
     public void deleteUser() {
         try {
             usersApi.deleteUser(userId);

@@ -31,9 +31,9 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
   private Long total = null;
   private String firstUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private String lastUri = null;
   private String selfUri = null;
-  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -141,6 +141,23 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
 
   /**
    **/
+  public AttemptLimitsEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
   public AttemptLimitsEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -170,23 +187,6 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public AttemptLimitsEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
   }
 
 
@@ -223,15 +223,15 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
             Objects.equals(this.total, attemptLimitsEntityListing.total) &&
             Objects.equals(this.firstUri, attemptLimitsEntityListing.firstUri) &&
             Objects.equals(this.nextUri, attemptLimitsEntityListing.nextUri) &&
+            Objects.equals(this.previousUri, attemptLimitsEntityListing.previousUri) &&
             Objects.equals(this.lastUri, attemptLimitsEntityListing.lastUri) &&
             Objects.equals(this.selfUri, attemptLimitsEntityListing.selfUri) &&
-            Objects.equals(this.previousUri, attemptLimitsEntityListing.previousUri) &&
             Objects.equals(this.pageCount, attemptLimitsEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, lastUri, selfUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -245,9 +245,9 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

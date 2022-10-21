@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.NoteListing;
 import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.RelationshipListing;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
+import com.mypurecloud.sdk.v2.model.SessionListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactRequest;
@@ -57,6 +58,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationTrus
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactIdentifiersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactJourneySessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactUnresolvedRequest;
@@ -840,6 +842,96 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve all sessions for a given external contact.
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param includeMerged Indicates whether to return sessions from all external contacts in the merge-set of the given one. (optional)
+   * @return SessionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SessionListing getExternalcontactsContactJourneySessions(String contactId, String pageSize, String after, Boolean includeMerged) throws IOException, ApiException {
+    return  getExternalcontactsContactJourneySessions(createGetExternalcontactsContactJourneySessionsRequest(contactId, pageSize, after, includeMerged));
+  }
+
+  /**
+   * Retrieve all sessions for a given external contact.
+   * 
+   * @param contactId ExternalContact ID (required)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param includeMerged Indicates whether to return sessions from all external contacts in the merge-set of the given one. (optional)
+   * @return SessionListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SessionListing> getExternalcontactsContactJourneySessionsWithHttpInfo(String contactId, String pageSize, String after, Boolean includeMerged) throws IOException {
+    return getExternalcontactsContactJourneySessions(createGetExternalcontactsContactJourneySessionsRequest(contactId, pageSize, after, includeMerged).withHttpInfo());
+  }
+
+  private GetExternalcontactsContactJourneySessionsRequest createGetExternalcontactsContactJourneySessionsRequest(String contactId, String pageSize, String after, Boolean includeMerged) {
+    return GetExternalcontactsContactJourneySessionsRequest.builder()
+            .withContactId(contactId)
+
+            .withPageSize(pageSize)
+
+            .withAfter(after)
+
+            .withIncludeMerged(includeMerged)
+
+            .build();
+  }
+
+  /**
+   * Retrieve all sessions for a given external contact.
+   * 
+   * @param request The request object
+   * @return SessionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SessionListing getExternalcontactsContactJourneySessions(GetExternalcontactsContactJourneySessionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SessionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SessionListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all sessions for a given external contact.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SessionListing> getExternalcontactsContactJourneySessions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SessionListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SessionListing> response = (ApiResponse<SessionListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SessionListing> response = (ApiResponse<SessionListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
