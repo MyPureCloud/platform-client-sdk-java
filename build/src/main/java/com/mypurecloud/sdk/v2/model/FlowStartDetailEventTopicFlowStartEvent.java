@@ -221,7 +221,13 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     INBOUNDCHAT("INBOUNDCHAT"),
     WORKFLOW("WORKFLOW"),
     BOT("BOT"),
-    DIGITALBOT("DIGITALBOT");
+    DIGITALBOT("DIGITALBOT"),
+    COMMONMODULE("COMMONMODULE"),
+    INQUEUEEMAIL("INQUEUEEMAIL"),
+    INQUEUESHORTMESSAGE("INQUEUESHORTMESSAGE"),
+    VOICE("VOICE"),
+    VOICEMAIL("VOICEMAIL"),
+    WORKITEM("WORKITEM");
 
     private String value;
 

@@ -130,6 +130,54 @@ public class QueueConversationEventTopicMessage  implements Serializable {
     }
   }
   private InitialStateEnum initialState = null;
+
+  private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
+    public DirectionEnumDeserializer() {
+      super(DirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public DirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Whether a message is inbound or outbound.
+   */
+ @JsonDeserialize(using = DirectionEnumDeserializer.class)
+  public enum DirectionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    OUTBOUND("outbound"),
+    INBOUND("inbound");
+
+    private String value;
+
+    DirectionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DirectionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DirectionEnum value : DirectionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DirectionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DirectionEnum direction = null;
   private Boolean held = null;
   private QueueConversationEventTopicErrorDetails errorInfo = null;
   private String provider = null;
@@ -321,6 +369,24 @@ public class QueueConversationEventTopicMessage  implements Serializable {
   }
   public void setInitialState(InitialStateEnum initialState) {
     this.initialState = initialState;
+  }
+
+
+  /**
+   * Whether a message is inbound or outbound.
+   **/
+  public QueueConversationEventTopicMessage direction(DirectionEnum direction) {
+    this.direction = direction;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether a message is inbound or outbound.")
+  @JsonProperty("direction")
+  public DirectionEnum getDirection() {
+    return direction;
+  }
+  public void setDirection(DirectionEnum direction) {
+    this.direction = direction;
   }
 
 
@@ -715,6 +781,7 @@ public class QueueConversationEventTopicMessage  implements Serializable {
     return Objects.equals(this.id, queueConversationEventTopicMessage.id) &&
             Objects.equals(this.state, queueConversationEventTopicMessage.state) &&
             Objects.equals(this.initialState, queueConversationEventTopicMessage.initialState) &&
+            Objects.equals(this.direction, queueConversationEventTopicMessage.direction) &&
             Objects.equals(this.held, queueConversationEventTopicMessage.held) &&
             Objects.equals(this.errorInfo, queueConversationEventTopicMessage.errorInfo) &&
             Objects.equals(this.provider, queueConversationEventTopicMessage.provider) &&
@@ -740,7 +807,7 @@ public class QueueConversationEventTopicMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
+    return Objects.hash(id, state, initialState, direction, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
   }
 
   @Override
@@ -751,6 +818,7 @@ public class QueueConversationEventTopicMessage  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
+    sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");

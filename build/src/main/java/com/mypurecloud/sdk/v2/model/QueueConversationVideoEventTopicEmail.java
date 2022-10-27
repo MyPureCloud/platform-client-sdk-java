@@ -220,7 +220,7 @@ public class QueueConversationVideoEventTopicEmail  implements Serializable {
     }
   }
   /**
-   * Whether a call is inbound or outbound.
+   * Whether an email is inbound or outbound.
    */
  @JsonDeserialize(using = DirectionEnumDeserializer.class)
   public enum DirectionEnum {
@@ -548,14 +548,14 @@ public class QueueConversationVideoEventTopicEmail  implements Serializable {
 
 
   /**
-   * Whether a call is inbound or outbound.
+   * Whether an email is inbound or outbound.
    **/
   public QueueConversationVideoEventTopicEmail direction(DirectionEnum direction) {
     this.direction = direction;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether a call is inbound or outbound.")
+  @ApiModelProperty(example = "null", value = "Whether an email is inbound or outbound.")
   @JsonProperty("direction")
   public DirectionEnum getDirection() {
     return direction;

@@ -11,6 +11,7 @@ title: QueueConversationEventTopicMessage
 | **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
 | **initialState** | [**InitialStateEnum**](#InitialStateEnum)<!----> |  |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | Whether a message is inbound or outbound. |  [optional] |
 | **held** | <!----><!---->**Boolean**<!----> | True if this call is held and the person on this side hears silence. |  [optional] |
 | **errorInfo** | <!----><!---->[**QueueConversationEventTopicErrorDetails**](QueueConversationEventTopicErrorDetails.html)<!----> | Detailed information about an error response. |  [optional] |
 | **provider** | <!----><!---->**String**<!----> | The source provider of the email. |  [optional] |
@@ -58,6 +59,18 @@ title: QueueConversationEventTopicMessage
 | ALERTING | &quot;alerting&quot; | 
 | CONNECTED | &quot;connected&quot; | 
 | DISCONNECTED | &quot;disconnected&quot; | 
+{: class="table table-striped"}
+
+
+<a name="DirectionEnum"></a>
+
+## Enum: DirectionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
+| INBOUND | &quot;inbound&quot; | 
 {: class="table table-striped"}
 
 

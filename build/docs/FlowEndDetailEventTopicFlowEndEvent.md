@@ -127,6 +127,12 @@ title: FlowEndDetailEventTopicFlowEndEvent
 | WORKFLOW | &quot;WORKFLOW&quot; | 
 | BOT | &quot;BOT&quot; | 
 | DIGITALBOT | &quot;DIGITALBOT&quot; | 
+| COMMONMODULE | &quot;COMMONMODULE&quot; | 
+| INQUEUEEMAIL | &quot;INQUEUEEMAIL&quot; | 
+| INQUEUESHORTMESSAGE | &quot;INQUEUESHORTMESSAGE&quot; | 
+| VOICE | &quot;VOICE&quot; | 
+| VOICEMAIL | &quot;VOICEMAIL&quot; | 
+| WORKITEM | &quot;WORKITEM&quot; | 
 {: class="table table-striped"}
 
 

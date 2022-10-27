@@ -33,6 +33,7 @@ title: AuditTopicAuditLogMessage
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AGENTCONFIG | &quot;AgentConfig&quot; | 
 | ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; | 
 | ARCHITECT | &quot;Architect&quot; | 
 | COACHING | &quot;Coaching&quot; | 
@@ -40,6 +41,7 @@ title: AuditTopicAuditLogMessage
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; | 
 | DATATABLES | &quot;Datatables&quot; | 
 | DIRECTORY | &quot;Directory&quot; | 
+| EMAILS | &quot;Emails&quot; | 
 | DYNAMICSCHEMA | &quot;DynamicSchema&quot; | 
 | GAMIFICATION | &quot;Gamification&quot; | 
 | GROUPS | &quot;Groups&quot; | 
@@ -215,11 +217,13 @@ title: AuditTopicAuditLogMessage
 | CONVERSATIONTHREADINGWINDOW | &quot;ConversationThreadingWindow&quot; | 
 | CREDENTIAL | &quot;Credential&quot; | 
 | DASHBOARDSETTINGS | &quot;DashboardSettings&quot; | 
+| DEFAULTPANELSETTINGS | &quot;DefaultPanelSettings&quot; | 
 | DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; | 
 | DEPLOYMENT | &quot;Deployment&quot; | 
 | DID | &quot;DID&quot; | 
 | DIDPOOL | &quot;DIDPool&quot; | 
 | DIGITALRULESET | &quot;DigitalRuleSet&quot; | 
+| DIRECTORYGROUPS | &quot;DirectoryGroups&quot; | 
 | DNCLIST | &quot;DNCList&quot; | 
 | DOCUMENT | &quot;Document&quot; | 
 | DYNAMICGROUP | &quot;DynamicGroup&quot; | 
@@ -248,7 +252,10 @@ title: AuditTopicAuditLogMessage
 | FLOWMILESTONE | &quot;FlowMilestone&quot; | 
 | FLOWOUTCOME | &quot;FlowOutcome&quot; | 
 | FORECAST | &quot;Forecast&quot; | 
+| GDPRREQUEST | &quot;GdprRequest&quot; | 
 | HISTORICALDATA | &quot;HistoricalData&quot; | 
+| INBOUNDDOMAIN | &quot;InboundDomain&quot; | 
+| INBOUNDROUTE | &quot;InboundRoute&quot; | 
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; | 
 | INTEGRATION | &quot;Integration&quot; | 
 | IVR | &quot;IVR&quot; | 
@@ -256,6 +263,7 @@ title: AuditTopicAuditLogMessage
 | KNOWLEDGECATEGORY | &quot;KnowledgeCategory&quot; | 
 | KNOWLEDGEDOCUMENT | &quot;KnowledgeDocument&quot; | 
 | KNOWLEDGEDOCUMENTVARIATION | &quot;KnowledgeDocumentVariation&quot; | 
+| KNOWLEDGELABEL | &quot;KnowledgeLabel&quot; | 
 | KNOWLEDGESEARCHFEEDBACK | &quot;KnowledgeSearchFeedback&quot; | 
 | KNOWLEDGETRAINING | &quot;KnowledgeTraining&quot; | 
 | LINE | &quot;Line&quot; | 
@@ -276,8 +284,10 @@ title: AuditTopicAuditLogMessage
 | ORGANIZATIONAUTHORIZATIONUSERTRUST | &quot;OrganizationAuthorizationUserTrust&quot; | 
 | ORGANIZATIONFEATURE | &quot;OrganizationFeature&quot; | 
 | ORGANIZATIONINTEGRATIONSACCESS | &quot;OrganizationIntegrationsAccess&quot; | 
+| ORGANIZATIONLIMITS | &quot;OrganizationLimits&quot; | 
 | ORGANIZATIONSETTINGS | &quot;OrganizationSettings&quot; | 
 | ORPHANEDRECORDING | &quot;OrphanedRecording&quot; | 
+| OUTBOUNDDOMAIN | &quot;OutboundDomain&quot; | 
 | OUTBOUNDROUTE | &quot;OutboundRoute&quot; | 
 | OUTCOME | &quot;Outcome&quot; | 
 | PCAPS | &quot;Pcaps&quot; | 
@@ -319,6 +329,7 @@ title: AuditTopicAuditLogMessage
 | SESSIONTYPE | &quot;SessionType&quot; | 
 | SHIFTTRADE | &quot;ShiftTrade&quot; | 
 | SITE | &quot;Site&quot; | 
+| SKILLSGROUPS | &quot;SkillsGroups&quot; | 
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; | 
 | STATUS | &quot;Status&quot; | 
 | SUPPORTEDCONTENT | &quot;SupportedContent&quot; | 

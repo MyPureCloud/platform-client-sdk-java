@@ -24,7 +24,7 @@ title: ConversationEventTopicEmail
 | **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication was connected in the cloud clock. |  [optional] |
 | **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication disconnected from the conversation in the provider clock. |  [optional] |
 | **messageId** | <!----><!---->**String**<!----> | A globally unique identifier for the stored content of this communication. |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | Whether a call is inbound or outbound. |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | Whether an email is inbound or outbound. |  [optional] |
 | **draftAttachments** | <!----><!---->[**List&lt;ConversationEventTopicAttachment&gt;**](ConversationEventTopicAttachment.html)<!----> | A list of uploaded attachments on the email draft. |  [optional] |
 | **spam** | <!----><!---->**Boolean**<!----> | Indicates if the inbound email was marked as spam. |  [optional] |
 | **wrapup** | <!----><!---->[**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
