@@ -13,8 +13,8 @@ title: QueueMemberEntityListing
 | **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

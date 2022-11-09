@@ -94,6 +94,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     ROUTING("routing"),
     SCIM("scim"),
     SEARCH("search"),
+    SECONDARY_AUTOMATION_TESTING("secondary.automation.testing"),
     SKILLS("skills"),
     SPEECH_AND_TEXT_ANALYTICS("speech.and.text.analytics"),
     SPEECH_INTEGRATION("speech.integration"),

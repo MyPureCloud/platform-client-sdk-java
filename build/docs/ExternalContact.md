@@ -9,9 +9,9 @@ title: ExternalContact
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **firstName** | <!----><!---->**String**<!----> | The first name of the contact. |  |
+| **firstName** | <!----><!---->**String**<!----> | The first name of the contact. |  [optional] |
 | **middleName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **lastName** | <!----><!---->**String**<!----> | The last name of the contact. |  |
+| **lastName** | <!----><!---->**String**<!----> | The last name of the contact. |  [optional] |
 | **salutation** | <!----><!---->**String**<!----> |  |  [optional] |
 | **title** | <!----><!---->**String**<!----> |  |  [optional] |
 | **workPhone** | <!----><!---->[**PhoneNumber**](PhoneNumber.html)<!----> |  |  [optional] |

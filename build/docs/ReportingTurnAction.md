@@ -60,6 +60,8 @@ title: ReportingTurnAction
 | FINDSYSTEMPROMPTACTION | &quot;FindSystemPromptAction&quot; | 
 | FINDUSERPROMPTACTION | &quot;FindUserPromptAction&quot; | 
 | TRANSFERPUREMATCHACTION | &quot;TransferPureMatchAction&quot; | 
+| FINDQUEUEACTION | &quot;FindQueueAction&quot; | 
+| FINDQUEUEBYIDACTION | &quot;FindQueueByIdAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

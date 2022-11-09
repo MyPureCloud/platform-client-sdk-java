@@ -10,6 +10,8 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.ActionAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ActionAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
@@ -91,6 +93,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAnalyticsReportingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsActionsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
@@ -364,12 +367,13 @@ public class AnalyticsApi {
    * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
    * @param actionId Optional action ID to get the reporting turns associated to a particular flow action (optional)
    * @param sessionId Optional session ID to get the reporting turns for a particular session (optional)
+   * @param language Optional language code to get the reporting turns for a particular language (optional, default to null)
    * @return ReportingTurnsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ReportingTurnsResponse getAnalyticsBotflowReportingturns(String botFlowId, String after, String pageSize, String actionId, String sessionId) throws IOException, ApiException {
-    return  getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId));
+  public ReportingTurnsResponse getAnalyticsBotflowReportingturns(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language) throws IOException, ApiException {
+    return  getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId, language));
   }
 
   /**
@@ -380,14 +384,15 @@ public class AnalyticsApi {
    * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
    * @param actionId Optional action ID to get the reporting turns associated to a particular flow action (optional)
    * @param sessionId Optional session ID to get the reporting turns for a particular session (optional)
+   * @param language Optional language code to get the reporting turns for a particular language (optional, default to null)
    * @return ReportingTurnsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowReportingturnsWithHttpInfo(String botFlowId, String after, String pageSize, String actionId, String sessionId) throws IOException {
-    return getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId).withHttpInfo());
+  public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowReportingturnsWithHttpInfo(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language) throws IOException {
+    return getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId, language).withHttpInfo());
   }
 
-  private GetAnalyticsBotflowReportingturnsRequest createGetAnalyticsBotflowReportingturnsRequest(String botFlowId, String after, String pageSize, String actionId, String sessionId) {
+  private GetAnalyticsBotflowReportingturnsRequest createGetAnalyticsBotflowReportingturnsRequest(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language) {
     return GetAnalyticsBotflowReportingturnsRequest.builder()
             .withBotFlowId(botFlowId)
 
@@ -398,6 +403,8 @@ public class AnalyticsApi {
             .withActionId(actionId)
 
             .withSessionId(sessionId)
+
+            .withLanguage(language)
 
             .build();
   }
@@ -2182,6 +2189,84 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsReportingSettings> response = (ApiResponse<AnalyticsReportingSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for action aggregates
+   * 
+   * @param body query (required)
+   * @return ActionAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActionAggregateQueryResponse postAnalyticsActionsAggregatesQuery(ActionAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsActionsAggregatesQuery(createPostAnalyticsActionsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for action aggregates
+   * 
+   * @param body query (required)
+   * @return ActionAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActionAggregateQueryResponse> postAnalyticsActionsAggregatesQueryWithHttpInfo(ActionAggregationQuery body) throws IOException {
+    return postAnalyticsActionsAggregatesQuery(createPostAnalyticsActionsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsActionsAggregatesQueryRequest createPostAnalyticsActionsAggregatesQueryRequest(ActionAggregationQuery body) {
+    return PostAnalyticsActionsAggregatesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for action aggregates
+   * 
+   * @param request The request object
+   * @return ActionAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActionAggregateQueryResponse postAnalyticsActionsAggregatesQuery(PostAnalyticsActionsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActionAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActionAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for action aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActionAggregateQueryResponse> postAnalyticsActionsAggregatesQuery(ApiRequest<ActionAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActionAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActionAggregateQueryResponse> response = (ApiResponse<ActionAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActionAggregateQueryResponse> response = (ApiResponse<ActionAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

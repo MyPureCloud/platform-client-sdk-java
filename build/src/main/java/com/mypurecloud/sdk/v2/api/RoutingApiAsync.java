@@ -61,6 +61,11 @@ import com.mypurecloud.sdk.v2.model.RoutingSettings;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillGroup;
+import com.mypurecloud.sdk.v2.model.SkillGroupEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisionList;
+import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisions;
+import com.mypurecloud.sdk.v2.model.SkillGroupMemberEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
@@ -95,6 +100,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
@@ -140,6 +146,10 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsContactcenterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupMembersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupMembersDivisionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressesRequest;
@@ -162,6 +172,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsContactcenterRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
@@ -181,6 +192,8 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueuesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillgroupMembersDivisionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersRequest;
@@ -1010,6 +1023,81 @@ public class RoutingApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteRoutingSkillAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove skill group definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRoutingSkillgroupAsync(DeleteRoutingSkillgroupRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove skill group definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRoutingSkillgroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -4419,6 +4507,306 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Get skill group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SkillGroup> getRoutingSkillgroupAsync(GetRoutingSkillgroupRequest request, final AsyncApiCallback<SkillGroup> callback) {
+    try {
+      final SettableFuture<SkillGroup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SkillGroup>() {}, new AsyncApiCallback<ApiResponse<SkillGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroup> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get skill group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SkillGroup>> getRoutingSkillgroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SkillGroup>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SkillGroup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SkillGroup>() {}, new AsyncApiCallback<ApiResponse<SkillGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroup> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get skill group members
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SkillGroupMemberEntityListing> getRoutingSkillgroupMembersAsync(GetRoutingSkillgroupMembersRequest request, final AsyncApiCallback<SkillGroupMemberEntityListing> callback) {
+    try {
+      final SettableFuture<SkillGroupMemberEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SkillGroupMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<SkillGroupMemberEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroupMemberEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get skill group members
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SkillGroupMemberEntityListing>> getRoutingSkillgroupMembersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SkillGroupMemberEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SkillGroupMemberEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SkillGroupMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<SkillGroupMemberEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroupMemberEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroupMemberEntityListing> response = (ApiResponse<SkillGroupMemberEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroupMemberEntityListing> response = (ApiResponse<SkillGroupMemberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of member divisions for this skill group.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SkillGroupMemberDivisionList> getRoutingSkillgroupMembersDivisionsAsync(GetRoutingSkillgroupMembersDivisionsRequest request, final AsyncApiCallback<SkillGroupMemberDivisionList> callback) {
+    try {
+      final SettableFuture<SkillGroupMemberDivisionList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SkillGroupMemberDivisionList>() {}, new AsyncApiCallback<ApiResponse<SkillGroupMemberDivisionList>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroupMemberDivisionList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of member divisions for this skill group.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SkillGroupMemberDivisionList>> getRoutingSkillgroupMembersDivisionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SkillGroupMemberDivisionList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SkillGroupMemberDivisionList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SkillGroupMemberDivisionList>() {}, new AsyncApiCallback<ApiResponse<SkillGroupMemberDivisionList>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroupMemberDivisionList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroupMemberDivisionList> response = (ApiResponse<SkillGroupMemberDivisionList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroupMemberDivisionList> response = (ApiResponse<SkillGroupMemberDivisionList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get skill group listing
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SkillGroupEntityListing> getRoutingSkillgroupsAsync(GetRoutingSkillgroupsRequest request, final AsyncApiCallback<SkillGroupEntityListing> callback) {
+    try {
+      final SettableFuture<SkillGroupEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SkillGroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<SkillGroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroupEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get skill group listing
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SkillGroupEntityListing>> getRoutingSkillgroupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SkillGroupEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SkillGroupEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SkillGroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<SkillGroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroupEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroupEntityListing> response = (ApiResponse<SkillGroupEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroupEntityListing> response = (ApiResponse<SkillGroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the list of routing skills.
    * 
    * @param request the request object
@@ -6069,6 +6457,81 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Update skill group definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SkillGroup> patchRoutingSkillgroupAsync(PatchRoutingSkillgroupRequest request, final AsyncApiCallback<SkillGroup> callback) {
+    try {
+      final SettableFuture<SkillGroup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SkillGroup>() {}, new AsyncApiCallback<ApiResponse<SkillGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroup> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update skill group definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SkillGroup>> patchRoutingSkillgroupAsync(ApiRequest<SkillGroup> request, final AsyncApiCallback<ApiResponse<SkillGroup>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SkillGroup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SkillGroup>() {}, new AsyncApiCallback<ApiResponse<SkillGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroup> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Join or unjoin a queue for a user
    * 
    * @param request the request object
@@ -7482,6 +7945,156 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Queue> response = (ApiResponse<Queue>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add or remove member divisions for this skill group.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postRoutingSkillgroupMembersDivisionsAsync(PostRoutingSkillgroupMembersDivisionsRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add or remove member divisions for this skill group.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postRoutingSkillgroupMembersDivisionsAsync(ApiRequest<SkillGroupMemberDivisions> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a skill group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SkillGroup> postRoutingSkillgroupsAsync(PostRoutingSkillgroupsRequest request, final AsyncApiCallback<SkillGroup> callback) {
+    try {
+      final SettableFuture<SkillGroup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SkillGroup>() {}, new AsyncApiCallback<ApiResponse<SkillGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroup> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a skill group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SkillGroup>> postRoutingSkillgroupsAsync(ApiRequest<SkillGroup> request, final AsyncApiCallback<ApiResponse<SkillGroup>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SkillGroup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SkillGroup>() {}, new AsyncApiCallback<ApiResponse<SkillGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<SkillGroup> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

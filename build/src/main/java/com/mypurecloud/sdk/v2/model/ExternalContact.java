@@ -145,7 +145,7 @@ public class ExternalContact  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The first name of the contact.")
+  @ApiModelProperty(example = "null", value = "The first name of the contact.")
   @JsonProperty("firstName")
   public String getFirstName() {
     return firstName;
@@ -180,7 +180,7 @@ public class ExternalContact  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The last name of the contact.")
+  @ApiModelProperty(example = "null", value = "The last name of the contact.")
   @JsonProperty("lastName")
   public String getLastName() {
     return lastName;

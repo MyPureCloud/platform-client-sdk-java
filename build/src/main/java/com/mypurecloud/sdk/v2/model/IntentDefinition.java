@@ -25,12 +25,20 @@ import java.io.Serializable;
 
 public class IntentDefinition  implements Serializable {
   
+  private String id = null;
   private String name = null;
   private List<NamedEntityTypeBinding> entityTypeBindings = new ArrayList<NamedEntityTypeBinding>();
   private List<String> entityNameReferences = new ArrayList<String>();
   private List<NluUtterance> utterances = new ArrayList<NluUtterance>();
 
   
+  @ApiModelProperty(example = "null", value = "ID of the intent.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+
+
   /**
    * The name of the intent.
    **/
@@ -102,7 +110,8 @@ public class IntentDefinition  implements Serializable {
     }
     IntentDefinition intentDefinition = (IntentDefinition) o;
 
-    return Objects.equals(this.name, intentDefinition.name) &&
+    return Objects.equals(this.id, intentDefinition.id) &&
+            Objects.equals(this.name, intentDefinition.name) &&
             Objects.equals(this.entityTypeBindings, intentDefinition.entityTypeBindings) &&
             Objects.equals(this.entityNameReferences, intentDefinition.entityNameReferences) &&
             Objects.equals(this.utterances, intentDefinition.utterances);
@@ -110,7 +119,7 @@ public class IntentDefinition  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, entityTypeBindings, entityNameReferences, utterances);
+    return Objects.hash(id, name, entityTypeBindings, entityNameReferences, utterances);
   }
 
   @Override
@@ -118,6 +127,7 @@ public class IntentDefinition  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class IntentDefinition {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    entityTypeBindings: ").append(toIndentedString(entityTypeBindings)).append("\n");
     sb.append("    entityNameReferences: ").append(toIndentedString(entityNameReferences)).append("\n");

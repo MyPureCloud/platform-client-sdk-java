@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | Delete a wrap-up code from a queue |
 | [**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | Delete an organization's routing settings |
 | [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | Delete Routing Skill |
+| [**deleteRoutingSkillgroup**](RoutingApi.html#deleteRoutingSkillgroup) | Remove skill group definition |
 | [**deleteRoutingSmsAddress**](RoutingApi.html#deleteRoutingSmsAddress) | Delete an Address by Id for SMS |
 | [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | Delete a phone number provisioned for SMS. |
 | [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | Delete the user's max utilization settings and revert to the organization-wide default. |
@@ -63,6 +64,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingSettingsContactcenter**](RoutingApi.html#getRoutingSettingsContactcenter) | Get Contact Center Settings |
 | [**getRoutingSettingsTranscription**](RoutingApi.html#getRoutingSettingsTranscription) | Get Transcription Settings |
 | [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | Get Routing Skill |
+| [**getRoutingSkillgroup**](RoutingApi.html#getRoutingSkillgroup) | Get skill group |
+| [**getRoutingSkillgroupMembers**](RoutingApi.html#getRoutingSkillgroupMembers) | Get skill group members |
+| [**getRoutingSkillgroupMembersDivisions**](RoutingApi.html#getRoutingSkillgroupMembersDivisions) | Get list of member divisions for this skill group. |
+| [**getRoutingSkillgroups**](RoutingApi.html#getRoutingSkillgroups) | Get skill group listing |
 | [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | Get the list of routing skills. |
 | [**getRoutingSmsAddress**](RoutingApi.html#getRoutingSmsAddress) | Get an Address by Id for SMS |
 | [**getRoutingSmsAddresses**](RoutingApi.html#getRoutingSmsAddresses) | Get a list of Addresses for SMS |
@@ -85,6 +90,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue. |
 | [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue. |
 | [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | Update Contact Center Settings |
+| [**patchRoutingSkillgroup**](RoutingApi.html#patchRoutingSkillgroup) | Update skill group definition |
 | [**patchUserQueue**](RoutingApi.html#patchUserQueue) | Join or unjoin a queue for a user |
 | [**patchUserQueues**](RoutingApi.html#patchUserQueues) | Join or unjoin a set of queues for a user |
 | [**patchUserRoutinglanguage**](RoutingApi.html#patchUserRoutinglanguage) | Update routing language proficiency or state. |
@@ -104,6 +110,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members. |
 | [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | Add up to 100 wrap-up codes to a queue |
 | [**postRoutingQueues**](RoutingApi.html#postRoutingQueues) | Create a queue |
+| [**postRoutingSkillgroupMembersDivisions**](RoutingApi.html#postRoutingSkillgroupMembersDivisions) | Add or remove member divisions for this skill group. |
+| [**postRoutingSkillgroups**](RoutingApi.html#postRoutingSkillgroups) | Create a skill group |
 | [**postRoutingSkills**](RoutingApi.html#postRoutingSkills) | Create Skill |
 | [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | Provision an Address for SMS |
 | [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | Provision a phone number for SMS |
@@ -786,6 +794,66 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **skillId** | **String**| Skill ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingSkillgroup"></a>
+
+# **deleteRoutingSkillgroup**
+
+
+
+> Void deleteRoutingSkillgroup(skillGroupId)
+
+Remove skill group definition
+
+Wraps DELETE /api/v2/routing/skillgroups/{skillGroupId}  
+
+Requires ANY permissions: 
+
+* routing:skillGroup:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+try {
+    apiInstance.deleteRoutingSkillgroup(skillGroupId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingSkillgroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **skillGroupId** | **String**| Skill Group ID | 
 {: class="table-striped"}
 
 
@@ -3640,6 +3708,266 @@ try {
 
 [**RoutingSkill**](RoutingSkill.html)
 
+<a name="getRoutingSkillgroup"></a>
+
+# **getRoutingSkillgroup**
+
+
+
+> [SkillGroup](SkillGroup.html) getRoutingSkillgroup(skillGroupId)
+
+Get skill group
+
+Wraps GET /api/v2/routing/skillgroups/{skillGroupId}  
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+try {
+    SkillGroup result = apiInstance.getRoutingSkillgroup(skillGroupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSkillgroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **skillGroupId** | **String**| Skill Group ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SkillGroup**](SkillGroup.html)
+
+<a name="getRoutingSkillgroupMembers"></a>
+
+# **getRoutingSkillgroupMembers**
+
+
+
+> [SkillGroupMemberEntityListing](SkillGroupMemberEntityListing.html) getRoutingSkillgroupMembers(skillGroupId, pageSize, after, before, expand)
+
+Get skill group members
+
+Wraps GET /api/v2/routing/skillgroups/{skillGroupId}/members  
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+Integer pageSize = 25; // Integer | Page size
+String after = "after_example"; // String | The cursor that points to the next item
+String before = "before_example"; // String | The cursor that points to the previous item
+String expand = "expand_example"; // String | Expand the name on each user
+try {
+    SkillGroupMemberEntityListing result = apiInstance.getRoutingSkillgroupMembers(skillGroupId, pageSize, after, before, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSkillgroupMembers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **skillGroupId** | **String**| Skill Group ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **after** | **String**| The cursor that points to the next item | [optional] 
+| **before** | **String**| The cursor that points to the previous item | [optional] 
+| **expand** | **String**| Expand the name on each user | [optional]<br />**Values**: entities 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SkillGroupMemberEntityListing**](SkillGroupMemberEntityListing.html)
+
+<a name="getRoutingSkillgroupMembersDivisions"></a>
+
+# **getRoutingSkillgroupMembersDivisions**
+
+
+
+> [SkillGroupMemberDivisionList](SkillGroupMemberDivisionList.html) getRoutingSkillgroupMembersDivisions(skillGroupId, expand)
+
+Get list of member divisions for this skill group.
+
+Wraps GET /api/v2/routing/skillgroups/{skillGroupId}/members/divisions  
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+String expand = "expand_example"; // String | Expand the name on each user
+try {
+    SkillGroupMemberDivisionList result = apiInstance.getRoutingSkillgroupMembersDivisions(skillGroupId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSkillgroupMembersDivisions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **skillGroupId** | **String**| Skill Group ID | 
+| **expand** | **String**| Expand the name on each user | [optional]<br />**Values**: entities 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SkillGroupMemberDivisionList**](SkillGroupMemberDivisionList.html)
+
+<a name="getRoutingSkillgroups"></a>
+
+# **getRoutingSkillgroups**
+
+
+
+> [SkillGroupEntityListing](SkillGroupEntityListing.html) getRoutingSkillgroups(pageSize, name, after, before)
+
+Get skill group listing
+
+Wraps GET /api/v2/routing/skillgroups  
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+Integer pageSize = 25; // Integer | Page size
+String name = "name_example"; // String | Return only skill group names whose names start with this value (case-insensitive matching)
+String after = "after_example"; // String | The cursor that points to the next item
+String before = "before_example"; // String | The cursor that points to the previous item
+try {
+    SkillGroupEntityListing result = apiInstance.getRoutingSkillgroups(pageSize, name, after, before);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSkillgroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **name** | **String**| Return only skill group names whose names start with this value (case-insensitive matching) | [optional] 
+| **after** | **String**| The cursor that points to the next item | [optional] 
+| **before** | **String**| The cursor that points to the previous item | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SkillGroupEntityListing**](SkillGroupEntityListing.html)
+
 <a name="getRoutingSkills"></a>
 
 # **getRoutingSkills**
@@ -5069,6 +5397,69 @@ try {
 
 null (empty response body)
 
+<a name="patchRoutingSkillgroup"></a>
+
+# **patchRoutingSkillgroup**
+
+
+
+> [SkillGroup](SkillGroup.html) patchRoutingSkillgroup(skillGroupId, body)
+
+Update skill group definition
+
+Wraps PATCH /api/v2/routing/skillgroups/{skillGroupId}  
+
+Requires ANY permissions: 
+
+* routing:skillGroup:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+SkillGroup body = new SkillGroup(); // SkillGroup | Update skill groups
+try {
+    SkillGroup result = apiInstance.patchRoutingSkillgroup(skillGroupId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingSkillgroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **skillGroupId** | **String**| Skill Group ID | 
+| **body** | [**SkillGroup**](SkillGroup.html)| Update skill groups | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SkillGroup**](SkillGroup.html)
+
 <a name="patchUserQueue"></a>
 
 # **patchUserQueue**
@@ -6265,6 +6656,129 @@ try {
 ### Return type
 
 [**Queue**](Queue.html)
+
+<a name="postRoutingSkillgroupMembersDivisions"></a>
+
+# **postRoutingSkillgroupMembersDivisions**
+
+
+
+> Void postRoutingSkillgroupMembersDivisions(skillGroupId, body)
+
+Add or remove member divisions for this skill group.
+
+Wraps POST /api/v2/routing/skillgroups/{skillGroupId}/members/divisions  
+
+Requires ALL permissions: 
+
+* routing:skillGroup:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+SkillGroupMemberDivisions body = new SkillGroupMemberDivisions(); // SkillGroupMemberDivisions | 
+try {
+    apiInstance.postRoutingSkillgroupMembersDivisions(skillGroupId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingSkillgroupMembersDivisions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **skillGroupId** | **String**| Skill Group ID | 
+| **body** | [**SkillGroupMemberDivisions**](SkillGroupMemberDivisions.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="postRoutingSkillgroups"></a>
+
+# **postRoutingSkillgroups**
+
+
+
+> [SkillGroup](SkillGroup.html) postRoutingSkillgroups(body)
+
+Create a skill group
+
+Wraps POST /api/v2/routing/skillgroups  
+
+Requires ANY permissions: 
+
+* routing:skillGroup:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+SkillGroup body = new SkillGroup(); // SkillGroup | Create skill group
+try {
+    SkillGroup result = apiInstance.postRoutingSkillgroups(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingSkillgroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SkillGroup**](SkillGroup.html)| Create skill group | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SkillGroup**](SkillGroup.html)
 
 <a name="postRoutingSkills"></a>
 

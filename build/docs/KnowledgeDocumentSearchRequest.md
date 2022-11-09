@@ -30,9 +30,8 @@ title: KnowledgeDocumentSearchRequest
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| ASC | &quot;ASC&quot; | 
-| DESC | &quot;DESC&quot; | 
-| SCORE | &quot;SCORE&quot; | 
+| ASC | &quot;Asc&quot; | 
+| DESC | &quot;Desc&quot; | 
 {: class="table table-striped"}
 
 

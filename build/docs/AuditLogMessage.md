@@ -269,6 +269,7 @@ title: AuditLogMessage
 | FLOWOUTCOME | &quot;FlowOutcome&quot; | 
 | FORECAST | &quot;Forecast&quot; | 
 | GDPRREQUEST | &quot;GdprRequest&quot; | 
+| GROUP | &quot;Group&quot; | 
 | HISTORICALDATA | &quot;HistoricalData&quot; | 
 | INBOUNDDOMAIN | &quot;InboundDomain&quot; | 
 | INBOUNDROUTE | &quot;InboundRoute&quot; | 
@@ -318,6 +319,7 @@ title: AuditLogMessage
 | PROGRAM | &quot;Program&quot; | 
 | PROMPT | &quot;Prompt&quot; | 
 | PROMPTRESOURCE | &quot;PromptResource&quot; | 
+| PUBLIC | &quot;Public&quot; | 
 | QUEUE | &quot;Queue&quot; | 
 | RECORDING | &quot;Recording&quot; | 
 | RECORDINGANNOTATION | &quot;RecordingAnnotation&quot; | 
@@ -352,6 +354,7 @@ title: AuditLogMessage
 | SUPPORTFILE | &quot;SupportFile&quot; | 
 | SURVEY | &quot;Survey&quot; | 
 | SURVEYFORM | &quot;SurveyForm&quot; | 
+| TAG | &quot;Tag&quot; | 
 | TEAM | &quot;Team&quot; | 
 | TIMEOFFLIMIT | &quot;TimeOffLimit&quot; | 
 | TIMEOFFPLAN | &quot;TimeOffPlan&quot; | 

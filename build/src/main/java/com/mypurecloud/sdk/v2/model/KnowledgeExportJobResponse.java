@@ -28,6 +28,55 @@ public class KnowledgeExportJobResponse  implements Serializable {
   
   private String id = null;
   private String downloadURL = null;
+
+  private static class FileTypeEnumDeserializer extends StdDeserializer<FileTypeEnum> {
+    public FileTypeEnumDeserializer() {
+      super(FileTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public FileTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FileTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * File type of the document
+   */
+ @JsonDeserialize(using = FileTypeEnumDeserializer.class)
+  public enum FileTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    JSON("Json"),
+    CSV("Csv"),
+    XLSX("Xlsx");
+
+    private String value;
+
+    FileTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FileTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FileTypeEnum value : FileTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FileTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FileTypeEnum fileType = null;
   private Integer countDocumentProcessed = null;
   private KnowledgeExportJobFilter exportFilter = null;
 
@@ -127,6 +176,24 @@ public class KnowledgeExportJobResponse  implements Serializable {
   }
   public void setDownloadURL(String downloadURL) {
     this.downloadURL = downloadURL;
+  }
+
+
+  /**
+   * File type of the document
+   **/
+  public KnowledgeExportJobResponse fileType(FileTypeEnum fileType) {
+    this.fileType = fileType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "File type of the document")
+  @JsonProperty("fileType")
+  public FileTypeEnum getFileType() {
+    return fileType;
+  }
+  public void setFileType(FileTypeEnum fileType) {
+    this.fileType = fileType;
   }
 
 
@@ -275,6 +342,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
 
     return Objects.equals(this.id, knowledgeExportJobResponse.id) &&
             Objects.equals(this.downloadURL, knowledgeExportJobResponse.downloadURL) &&
+            Objects.equals(this.fileType, knowledgeExportJobResponse.fileType) &&
             Objects.equals(this.countDocumentProcessed, knowledgeExportJobResponse.countDocumentProcessed) &&
             Objects.equals(this.exportFilter, knowledgeExportJobResponse.exportFilter) &&
             Objects.equals(this.status, knowledgeExportJobResponse.status) &&
@@ -287,7 +355,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, downloadURL, countDocumentProcessed, exportFilter, status, knowledgeBase, dateCreated, dateModified, errorInformation, selfUri);
+    return Objects.hash(id, downloadURL, fileType, countDocumentProcessed, exportFilter, status, knowledgeBase, dateCreated, dateModified, errorInformation, selfUri);
   }
 
   @Override
@@ -297,6 +365,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    downloadURL: ").append(toIndentedString(downloadURL)).append("\n");
+    sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
     sb.append("    countDocumentProcessed: ").append(toIndentedString(countDocumentProcessed)).append("\n");
     sb.append("    exportFilter: ").append(toIndentedString(exportFilter)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

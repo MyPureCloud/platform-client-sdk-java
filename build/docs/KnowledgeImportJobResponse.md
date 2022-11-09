@@ -10,7 +10,7 @@ title: KnowledgeImportJobResponse
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | Id of the import job |  [optional] |
 | **uploadKey** | <!----><!---->**String**<!----> | Upload key |  |
-| **fileType** | [**FileTypeEnum**](#FileTypeEnum)<!----> | file type of the document |  |
+| **fileType** | [**FileTypeEnum**](#FileTypeEnum)<!----> | File type of the document |  |
 | **settings** | <!----><!---->[**KnowledgeImportJobSettings**](KnowledgeImportJobSettings.html)<!----> | Additional optional settings |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | Status of the import job |  [optional] |
 | **report** | <!----><!---->[**KnowledgeImportJobReport**](KnowledgeImportJobReport.html)<!----> | Report of the import job |  [optional] |
@@ -30,6 +30,7 @@ title: KnowledgeImportJobResponse
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | JSON | &quot;Json&quot; | 
 | CSV | &quot;Csv&quot; | 
+| XLSX | &quot;Xlsx&quot; | 
 {: class="table table-striped"}
 
 

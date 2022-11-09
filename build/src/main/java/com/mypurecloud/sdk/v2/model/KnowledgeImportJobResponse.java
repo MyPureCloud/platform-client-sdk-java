@@ -42,13 +42,14 @@ public class KnowledgeImportJobResponse  implements Serializable {
     }
   }
   /**
-   * file type of the document
+   * File type of the document
    */
  @JsonDeserialize(using = FileTypeEnumDeserializer.class)
   public enum FileTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     JSON("Json"),
-    CSV("Csv");
+    CSV("Csv"),
+    XLSX("Xlsx");
 
     private String value;
 
@@ -167,14 +168,14 @@ public class KnowledgeImportJobResponse  implements Serializable {
 
 
   /**
-   * file type of the document
+   * File type of the document
    **/
   public KnowledgeImportJobResponse fileType(FileTypeEnum fileType) {
     this.fileType = fileType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "file type of the document")
+  @ApiModelProperty(example = "null", required = true, value = "File type of the document")
   @JsonProperty("fileType")
   public FileTypeEnum getFileType() {
     return fileType;

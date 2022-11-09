@@ -160,7 +160,8 @@ public class GetConversationsMessagingIntegrationsOpenIntegrationIdRequest {
 	} 
 
 	public enum expandValues { 
-		SUPPORTEDCONTENT("supportedContent");
+		SUPPORTEDCONTENT("supportedContent"),
+		MESSAGINGSETTING("messagingSetting");
 
 		private String value;
 

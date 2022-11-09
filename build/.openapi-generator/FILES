@@ -8,6 +8,13 @@ docs/AcdStartDetailEventTopicAcdStartEvent.md
 docs/AchievedOutcome.md
 docs/AcknowledgeScreenRecordingRequest.md
 docs/Action.md
+docs/ActionAggregateDataContainer.md
+docs/ActionAggregateQueryClause.md
+docs/ActionAggregateQueryFilter.md
+docs/ActionAggregateQueryPredicate.md
+docs/ActionAggregateQueryResponse.md
+docs/ActionAggregationQuery.md
+docs/ActionAggregationView.md
 docs/ActionConfig.md
 docs/ActionContract.md
 docs/ActionContractInput.md
@@ -2135,8 +2142,10 @@ docs/PredictiveRouting.md
 docs/Predictor.md
 docs/PredictorListing.md
 docs/PredictorModel.md
+docs/PredictorModelBrief.md
 docs/PredictorModelFeature.md
 docs/PredictorModelFeatureListing.md
+docs/PredictorModelRetrainingError.md
 docs/PredictorModels.md
 docs/PredictorSchedule.md
 docs/PredictorWorkloadBalancing.md
@@ -2710,6 +2719,14 @@ docs/Site.md
 docs/SiteConnection.md
 docs/SiteEntityListing.md
 docs/SkillEntityListing.md
+docs/SkillGroup.md
+docs/SkillGroupCondition.md
+docs/SkillGroupEntityListing.md
+docs/SkillGroupLanguageCondition.md
+docs/SkillGroupMemberDivisionList.md
+docs/SkillGroupMemberDivisions.md
+docs/SkillGroupMemberEntityListing.md
+docs/SkillGroupRoutingCondition.md
 docs/SkillsToRemove.md
 docs/SmsAddress.md
 docs/SmsAddressEntityListing.md
@@ -3626,6 +3643,7 @@ docs/deleteRoutingQueueUser-example.txt
 docs/deleteRoutingQueueWrapupcode-example.txt
 docs/deleteRoutingSettings-example.txt
 docs/deleteRoutingSkill-example.txt
+docs/deleteRoutingSkillgroup-example.txt
 docs/deleteRoutingSmsAddress-example.txt
 docs/deleteRoutingSmsPhonenumber-example.txt
 docs/deleteRoutingUserUtilization-example.txt
@@ -3954,7 +3972,6 @@ docs/getGamificationLeaderboard-example.txt
 docs/getGamificationLeaderboardAll-example.txt
 docs/getGamificationLeaderboardAllBestpoints-example.txt
 docs/getGamificationLeaderboardBestpoints-example.txt
-docs/getGamificationMetric-example.txt
 docs/getGamificationMetricdefinition-example.txt
 docs/getGamificationMetricdefinitions-example.txt
 docs/getGamificationProfile-example.txt
@@ -4337,6 +4354,10 @@ docs/getRoutingSettings-example.txt
 docs/getRoutingSettingsContactcenter-example.txt
 docs/getRoutingSettingsTranscription-example.txt
 docs/getRoutingSkill-example.txt
+docs/getRoutingSkillgroup-example.txt
+docs/getRoutingSkillgroupMembers-example.txt
+docs/getRoutingSkillgroupMembersDivisions-example.txt
+docs/getRoutingSkillgroups-example.txt
 docs/getRoutingSkills-example.txt
 docs/getRoutingSmsAddress-example.txt
 docs/getRoutingSmsAddresses-example.txt
@@ -4704,6 +4725,7 @@ docs/patchRoutingQueueMembers-example.txt
 docs/patchRoutingQueueUser-example.txt
 docs/patchRoutingQueueUsers-example.txt
 docs/patchRoutingSettingsContactcenter-example.txt
+docs/patchRoutingSkillgroup-example.txt
 docs/patchScimGroup-example.txt
 docs/patchScimUser-example.txt
 docs/patchScimV2Group-example.txt
@@ -4747,6 +4769,7 @@ docs/patchWorkforcemanagementManagementunitWorkplan-example.txt
 docs/patchWorkforcemanagementManagementunitWorkplanrotation-example.txt
 docs/patchWorkforcemanagementTimeoffrequest-example.txt
 docs/postAlertingInteractionstatsRules-example.txt
+docs/postAnalyticsActionsAggregatesQuery-example.txt
 docs/postAnalyticsBotsAggregatesQuery-example.txt
 docs/postAnalyticsConversationDetailsProperties-example.txt
 docs/postAnalyticsConversationDetailsProperties-example.txt
@@ -5088,6 +5111,8 @@ docs/postRoutingQueueMembers-example.txt
 docs/postRoutingQueueUsers-example.txt
 docs/postRoutingQueueWrapupcodes-example.txt
 docs/postRoutingQueues-example.txt
+docs/postRoutingSkillgroupMembersDivisions-example.txt
+docs/postRoutingSkillgroups-example.txt
 docs/postRoutingSkills-example.txt
 docs/postRoutingSmsAddresses-example.txt
 docs/postRoutingSmsPhonenumbers-example.txt
@@ -5278,7 +5303,6 @@ docs/putFlowsDatatable-example.txt
 docs/putFlowsDatatableRow-example.txt
 docs/putFlowsMilestone-example.txt
 docs/putFlowsOutcome-example.txt
-docs/putGamificationMetric-example.txt
 docs/putGamificationProfile-example.txt
 docs/putGamificationProfileMetric-example.txt
 docs/putGamificationStatus-example.txt
@@ -5720,6 +5744,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingQueueUserRequest.j
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingQueueWrapupcodeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingSkillRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingSkillgroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingSmsAddressRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingSmsPhonenumberRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingUserUtilizationRequest.java
@@ -6048,7 +6073,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationLeaderboardAllBe
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationLeaderboardAllRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationLeaderboardBestpointsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationLeaderboardRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationMetricRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationMetricdefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationMetricdefinitionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationProfileMembersRequest.java
@@ -6431,6 +6455,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingSettingsContactcenter
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingSettingsTranscriptionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingSkillRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingSkillgroupMembersDivisionsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingSkillgroupMembersRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingSkillgroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingSkillgroupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingSkillsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingSmsAddressRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingSmsAddressesRequest.java
@@ -6798,6 +6826,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingQueueMembersRequest
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingQueueUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingQueueUsersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingSettingsContactcenterRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingSkillgroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchScimGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchScimUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchScimV2GroupRequest.java
@@ -6841,6 +6870,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementManagem
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementManagementunitWorkplanrotationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementTimeoffrequestRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAlertingInteractionstatsRulesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsActionsAggregatesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsBotsAggregatesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsConversationDetailsPropertiesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAnalyticsConversationDetailsPropertiesRequest.java
@@ -7182,6 +7212,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingQueueMembersRequest.
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingQueueUsersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingQueueWrapupcodesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingQueuesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingSkillgroupMembersDivisionsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingSkillgroupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingSkillsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingSmsAddressesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingSmsPhonenumbersRequest.java
@@ -7372,7 +7404,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutFlowsDatatableRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutFlowsDatatableRowRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutFlowsMilestoneRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutFlowsOutcomeRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/PutGamificationMetricRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutGamificationProfileMetricRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutGamificationProfileRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutGamificationStatusRequest.java
@@ -7523,6 +7554,13 @@ src/main/java/com/mypurecloud/sdk/v2/model/AcdStartDetailEventTopicAcdStartEvent
 src/main/java/com/mypurecloud/sdk/v2/model/AchievedOutcome.java
 src/main/java/com/mypurecloud/sdk/v2/model/AcknowledgeScreenRecordingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/Action.java
+src/main/java/com/mypurecloud/sdk/v2/model/ActionAggregateDataContainer.java
+src/main/java/com/mypurecloud/sdk/v2/model/ActionAggregateQueryClause.java
+src/main/java/com/mypurecloud/sdk/v2/model/ActionAggregateQueryFilter.java
+src/main/java/com/mypurecloud/sdk/v2/model/ActionAggregateQueryPredicate.java
+src/main/java/com/mypurecloud/sdk/v2/model/ActionAggregateQueryResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/ActionAggregationQuery.java
+src/main/java/com/mypurecloud/sdk/v2/model/ActionAggregationView.java
 src/main/java/com/mypurecloud/sdk/v2/model/ActionConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/ActionContract.java
 src/main/java/com/mypurecloud/sdk/v2/model/ActionContractInput.java
@@ -9574,8 +9612,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/PredictiveRouting.java
 src/main/java/com/mypurecloud/sdk/v2/model/Predictor.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorModel.java
+src/main/java/com/mypurecloud/sdk/v2/model/PredictorModelBrief.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorModelFeature.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorModelFeatureListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/PredictorModelRetrainingError.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorModels.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorSchedule.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorWorkloadBalancing.java
@@ -10131,6 +10171,14 @@ src/main/java/com/mypurecloud/sdk/v2/model/Site.java
 src/main/java/com/mypurecloud/sdk/v2/model/SiteConnection.java
 src/main/java/com/mypurecloud/sdk/v2/model/SiteEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SkillEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/SkillGroup.java
+src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupCondition.java
+src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupLanguageCondition.java
+src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupMemberDivisionList.java
+src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupMemberDivisions.java
+src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupMemberEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupRoutingCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/SkillsToRemove.java
 src/main/java/com/mypurecloud/sdk/v2/model/SmsAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/SmsAddressEntityListing.java

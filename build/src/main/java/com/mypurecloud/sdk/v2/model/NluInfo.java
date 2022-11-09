@@ -30,6 +30,7 @@ public class NluInfo  implements Serializable {
   private NluDomainVersion version = null;
   private List<Intent> intents = new ArrayList<Intent>();
   private String engineVersion = null;
+  private NluDomainVersion nluData = null;
 
   
   @ApiModelProperty(example = "null", value = "")
@@ -80,6 +81,23 @@ public class NluInfo  implements Serializable {
   }
 
 
+  /**
+   **/
+  public NluInfo nluData(NluDomainVersion nluData) {
+    this.nluData = nluData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nluData")
+  public NluDomainVersion getNluData() {
+    return nluData;
+  }
+  public void setNluData(NluDomainVersion nluData) {
+    this.nluData = nluData;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -93,12 +111,13 @@ public class NluInfo  implements Serializable {
     return Objects.equals(this.domain, nluInfo.domain) &&
             Objects.equals(this.version, nluInfo.version) &&
             Objects.equals(this.intents, nluInfo.intents) &&
-            Objects.equals(this.engineVersion, nluInfo.engineVersion);
+            Objects.equals(this.engineVersion, nluInfo.engineVersion) &&
+            Objects.equals(this.nluData, nluInfo.nluData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(domain, version, intents, engineVersion);
+    return Objects.hash(domain, version, intents, engineVersion, nluData);
   }
 
   @Override
@@ -110,6 +129,7 @@ public class NluInfo  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
     sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
+    sb.append("    nluData: ").append(toIndentedString(nluData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

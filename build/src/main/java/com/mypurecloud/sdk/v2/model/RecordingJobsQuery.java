@@ -38,7 +38,7 @@ public class RecordingJobsQuery  implements Serializable {
     }
   }
   /**
-   * Operation to perform bulk task. The date when the action will be performed can either be specified as an absolute date for all recordings with the actionDate/screenRecordingActionDate parameters, or as the number of days after each recording's creation time with the actionAge/screenRecordingActionAge parameters. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
+   * Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
    */
  @JsonDeserialize(using = ActionEnumDeserializer.class)
   public enum ActionEnum {
@@ -81,14 +81,14 @@ public class RecordingJobsQuery  implements Serializable {
 
   
   /**
-   * Operation to perform bulk task. The date when the action will be performed can either be specified as an absolute date for all recordings with the actionDate/screenRecordingActionDate parameters, or as the number of days after each recording's creation time with the actionAge/screenRecordingActionAge parameters. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
+   * Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
    **/
   public RecordingJobsQuery action(ActionEnum action) {
     this.action = action;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Operation to perform bulk task. The date when the action will be performed can either be specified as an absolute date for all recordings with the actionDate/screenRecordingActionDate parameters, or as the number of days after each recording's creation time with the actionAge/screenRecordingActionAge parameters. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.")
+  @ApiModelProperty(example = "null", required = true, value = "Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.")
   @JsonProperty("action")
   public ActionEnum getAction() {
     return action;
@@ -99,14 +99,14 @@ public class RecordingJobsQuery  implements Serializable {
 
 
   /**
-   * The date when the action will be performed. If screenRecordingActionDate is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * The date when the action will be performed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public RecordingJobsQuery actionDate(Date actionDate) {
     this.actionDate = actionDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date when the action will be performed. If screenRecordingActionDate is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "The date when the action will be performed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("actionDate")
   public Date getActionDate() {
     return actionDate;

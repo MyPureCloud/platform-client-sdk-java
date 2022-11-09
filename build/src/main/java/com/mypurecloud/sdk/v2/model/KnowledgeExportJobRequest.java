@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,6 +24,55 @@ import java.io.Serializable;
 public class KnowledgeExportJobRequest  implements Serializable {
   
   private KnowledgeExportJobFilter exportFilter = null;
+
+  private static class FileTypeEnumDeserializer extends StdDeserializer<FileTypeEnum> {
+    public FileTypeEnumDeserializer() {
+      super(FileTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public FileTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FileTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * File type of the document
+   */
+ @JsonDeserialize(using = FileTypeEnumDeserializer.class)
+  public enum FileTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    JSON("Json"),
+    CSV("Csv"),
+    XLSX("Xlsx");
+
+    private String value;
+
+    FileTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FileTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FileTypeEnum value : FileTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FileTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FileTypeEnum fileType = null;
 
   
   /**
@@ -43,6 +93,24 @@ public class KnowledgeExportJobRequest  implements Serializable {
   }
 
 
+  /**
+   * File type of the document
+   **/
+  public KnowledgeExportJobRequest fileType(FileTypeEnum fileType) {
+    this.fileType = fileType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "File type of the document")
+  @JsonProperty("fileType")
+  public FileTypeEnum getFileType() {
+    return fileType;
+  }
+  public void setFileType(FileTypeEnum fileType) {
+    this.fileType = fileType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -53,12 +121,13 @@ public class KnowledgeExportJobRequest  implements Serializable {
     }
     KnowledgeExportJobRequest knowledgeExportJobRequest = (KnowledgeExportJobRequest) o;
 
-    return Objects.equals(this.exportFilter, knowledgeExportJobRequest.exportFilter);
+    return Objects.equals(this.exportFilter, knowledgeExportJobRequest.exportFilter) &&
+            Objects.equals(this.fileType, knowledgeExportJobRequest.fileType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exportFilter);
+    return Objects.hash(exportFilter, fileType);
   }
 
   @Override
@@ -67,6 +136,7 @@ public class KnowledgeExportJobRequest  implements Serializable {
     sb.append("class KnowledgeExportJobRequest {\n");
     
     sb.append("    exportFilter: ").append(toIndentedString(exportFilter)).append("\n");
+    sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

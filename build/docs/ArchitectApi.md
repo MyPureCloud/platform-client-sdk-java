@@ -3637,7 +3637,7 @@ try {
 
 
 
-> [DataTableRowEntityListing](DataTableRowEntityListing.html) getFlowsDatatableRows(datatableId, pageNumber, pageSize, showbrief)
+> [DataTableRowEntityListing](DataTableRowEntityListing.html) getFlowsDatatableRows(datatableId, pageNumber, pageSize, showbrief, sortOrder)
 
 Returns the rows for the datatable with the given id
 
@@ -3676,8 +3676,9 @@ String datatableId = "datatableId_example"; // String | id of datatable
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 Boolean showbrief = true; // Boolean | If true returns just the key value of the row
+String sortOrder = "ascending"; // String | Sort order
 try {
-    DataTableRowEntityListing result = apiInstance.getFlowsDatatableRows(datatableId, pageNumber, pageSize, showbrief);
+    DataTableRowEntityListing result = apiInstance.getFlowsDatatableRows(datatableId, pageNumber, pageSize, showbrief, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsDatatableRows");
@@ -3694,6 +3695,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **showbrief** | **Boolean**| If true returns just the key value of the row | [optional] [default to true] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending 
 {: class="table-striped"}
 
 
@@ -3747,7 +3749,7 @@ Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "ascending"; // String | Sort order
 List<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)
-String name = "name_example"; // String | Name to filter by
+String name = exactMatch, beginsWith*, *endsWith, *contains*; // String | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
 try {
     DataTablesDomainEntityListing result = apiInstance.getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name);
     System.out.println(result);
@@ -3768,7 +3770,7 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to id]<br />**Values**: id, name 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending] 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
-| **name** | **String**| Name to filter by | [optional] 
+| **name** | **String**| Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. | [optional] [default to null] 
 {: class="table-striped"}
 
 
@@ -3887,7 +3889,7 @@ Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "ascending"; // String | Sort order
 List<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)
-String name = "name_example"; // String | Name to filter by
+String name = exactMatch, beginsWith*, *endsWith, *contains*; // String | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
 try {
     DataTablesDomainEntityListing result = apiInstance.getFlowsDatatablesDivisionviews(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name);
     System.out.println(result);
@@ -3908,7 +3910,7 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to id]<br />**Values**: id, name 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending] 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
-| **name** | **String**| Name to filter by | [optional] 
+| **name** | **String**| Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. | [optional] [default to null] 
 {: class="table-striped"}
 
 

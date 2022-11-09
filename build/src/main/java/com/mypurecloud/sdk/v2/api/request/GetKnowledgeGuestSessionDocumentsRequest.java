@@ -122,16 +122,16 @@ public class GetKnowledgeGuestSessionDocumentsRequest {
 	    return this;
 	} 
 
-	private String pageSize;
-	public String getPageSize() {
+	private Integer pageSize;
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 
-	public GetKnowledgeGuestSessionDocumentsRequest withPageSize(String pageSize) {
+	public GetKnowledgeGuestSessionDocumentsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
@@ -216,7 +216,7 @@ public class GetKnowledgeGuestSessionDocumentsRequest {
 			return this;
 		}
 
-		public Builder withPageSize(String pageSize) {
+		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}

@@ -53,9 +53,8 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
  @JsonDeserialize(using = SortOrderEnumDeserializer.class)
   public enum SortOrderEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ASC("ASC"),
-    DESC("DESC"),
-    SCORE("SCORE");
+    ASC("Asc"),
+    DESC("Desc");
 
     private String value;
 

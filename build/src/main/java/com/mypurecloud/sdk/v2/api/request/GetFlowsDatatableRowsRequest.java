@@ -128,6 +128,50 @@ public class GetFlowsDatatableRowsRequest {
 	    return this;
 	} 
 
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetFlowsDatatableRowsRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+
+	public enum sortOrderValues { 
+		ASCENDING("ascending"),
+		DESCENDING("descending");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -166,6 +210,9 @@ public class GetFlowsDatatableRowsRequest {
         
 
                 .withQueryParameters("showbrief", "", showbrief)
+        
+
+                .withQueryParameters("sortOrder", "", sortOrder)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -211,6 +258,20 @@ public class GetFlowsDatatableRowsRequest {
 		public Builder withShowbrief(Boolean showbrief) {
 			request.setShowbrief(showbrief);
 			return this;
+		}
+
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
+			return this;
+		}
+
+
+
+		
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+
+		    return this;
 		}
 
 

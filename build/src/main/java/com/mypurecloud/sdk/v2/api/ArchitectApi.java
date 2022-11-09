@@ -4828,12 +4828,13 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param showbrief If true returns just the key value of the row (optional, default to true)
+   * @param sortOrder Sort order (optional, default to ascending)
    * @return DataTableRowEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataTableRowEntityListing getFlowsDatatableRows(String datatableId, Integer pageNumber, Integer pageSize, Boolean showbrief) throws IOException, ApiException {
-    return  getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, pageNumber, pageSize, showbrief));
+  public DataTableRowEntityListing getFlowsDatatableRows(String datatableId, Integer pageNumber, Integer pageSize, Boolean showbrief, String sortOrder) throws IOException, ApiException {
+    return  getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, pageNumber, pageSize, showbrief, sortOrder));
   }
 
   /**
@@ -4843,14 +4844,15 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param showbrief If true returns just the key value of the row (optional, default to true)
+   * @param sortOrder Sort order (optional, default to ascending)
    * @return DataTableRowEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataTableRowEntityListing> getFlowsDatatableRowsWithHttpInfo(String datatableId, Integer pageNumber, Integer pageSize, Boolean showbrief) throws IOException {
-    return getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, pageNumber, pageSize, showbrief).withHttpInfo());
+  public ApiResponse<DataTableRowEntityListing> getFlowsDatatableRowsWithHttpInfo(String datatableId, Integer pageNumber, Integer pageSize, Boolean showbrief, String sortOrder) throws IOException {
+    return getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, pageNumber, pageSize, showbrief, sortOrder).withHttpInfo());
   }
 
-  private GetFlowsDatatableRowsRequest createGetFlowsDatatableRowsRequest(String datatableId, Integer pageNumber, Integer pageSize, Boolean showbrief) {
+  private GetFlowsDatatableRowsRequest createGetFlowsDatatableRowsRequest(String datatableId, Integer pageNumber, Integer pageSize, Boolean showbrief, String sortOrder) {
     return GetFlowsDatatableRowsRequest.builder()
             .withDatatableId(datatableId)
 
@@ -4859,6 +4861,8 @@ public class ArchitectApi {
             .withPageSize(pageSize)
 
             .withShowbrief(showbrief)
+
+            .withSortOrder(sortOrder)
 
             .build();
   }
@@ -4920,7 +4924,7 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to ascending)
    * @param divisionId division ID(s) (optional)
-   * @param name Name to filter by (optional)
+   * @param name Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. (optional, default to null)
    * @return DataTablesDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4938,7 +4942,7 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to ascending)
    * @param divisionId division ID(s) (optional)
-   * @param name Name to filter by (optional)
+   * @param name Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. (optional, default to null)
    * @return DataTablesDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -5104,7 +5108,7 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to ascending)
    * @param divisionId division ID(s) (optional)
-   * @param name Name to filter by (optional)
+   * @param name Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. (optional, default to null)
    * @return DataTablesDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5122,7 +5126,7 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to ascending)
    * @param divisionId division ID(s) (optional)
-   * @param name Name to filter by (optional)
+   * @param name Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. (optional, default to null)
    * @return DataTablesDomainEntityListing
    * @throws IOException if the request fails to be processed
    */

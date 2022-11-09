@@ -23,6 +23,7 @@ title: KnowledgeImportJobRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | JSON | &quot;Json&quot; | 
 | CSV | &quot;Csv&quot; | 
+| XLSX | &quot;Xlsx&quot; | 
 {: class="table table-striped"}
 
 

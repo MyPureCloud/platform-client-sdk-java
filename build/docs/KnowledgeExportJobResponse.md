@@ -10,6 +10,7 @@ title: KnowledgeExportJobResponse
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | Id of the export job. |  [optional] |
 | **downloadURL** | <!----><!---->**String**<!----> | The URL of the location at which the caller can download the export file, when available. |  [optional] |
+| **fileType** | [**FileTypeEnum**](#FileTypeEnum)<!----> | File type of the document |  |
 | **countDocumentProcessed** | <!----><!---->**Integer**<!----> | The current count of the number of records processed. |  [optional] |
 | **exportFilter** | <!----><!---->[**KnowledgeExportJobFilter**](KnowledgeExportJobFilter.html)<!----> | Filters to narrow down what to export. |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the export job. |  [optional] |
@@ -18,6 +19,19 @@ title: KnowledgeExportJobResponse
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp of when the export stopped. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **errorInformation** | <!----><!---->[**ErrorBody**](ErrorBody.html)<!----> | Any error information, or null of the processing is not in failed state. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="FileTypeEnum"></a>
+
+## Enum: FileTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| JSON | &quot;Json&quot; | 
+| CSV | &quot;Csv&quot; | 
+| XLSX | &quot;Xlsx&quot; | 
 {: class="table table-striped"}
 
 

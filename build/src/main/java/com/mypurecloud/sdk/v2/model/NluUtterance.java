@@ -24,9 +24,17 @@ import java.io.Serializable;
 
 public class NluUtterance  implements Serializable {
   
+  private String id = null;
   private List<NluUtteranceSegment> segments = new ArrayList<NluUtteranceSegment>();
 
   
+  @ApiModelProperty(example = "null", value = "ID of the utterance.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+
+
   /**
    * The list of segments that that constitute this utterance for the given intent.
    **/
@@ -55,12 +63,13 @@ public class NluUtterance  implements Serializable {
     }
     NluUtterance nluUtterance = (NluUtterance) o;
 
-    return Objects.equals(this.segments, nluUtterance.segments);
+    return Objects.equals(this.id, nluUtterance.id) &&
+            Objects.equals(this.segments, nluUtterance.segments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(segments);
+    return Objects.hash(id, segments);
   }
 
   @Override
@@ -68,6 +77,7 @@ public class NluUtterance  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class NluUtterance {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
     sb.append("}");
     return sb.toString();

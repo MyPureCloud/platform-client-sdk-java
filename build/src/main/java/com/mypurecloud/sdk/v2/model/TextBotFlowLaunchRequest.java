@@ -30,6 +30,7 @@ public class TextBotFlowLaunchRequest  implements Serializable {
   private String conversationId = null;
   private TextBotInputOutputData inputData = null;
   private TextBotChannel channel = null;
+  private String language = null;
 
   
   /**
@@ -122,6 +123,24 @@ public class TextBotFlowLaunchRequest  implements Serializable {
   }
 
 
+  /**
+   * The language that the bot will use in the session. Validated against list of supported languages and if the value is omitted or is invalid, the default language will be used.
+   **/
+  public TextBotFlowLaunchRequest language(String language) {
+    this.language = language;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The language that the bot will use in the session. Validated against list of supported languages and if the value is omitted or is invalid, the default language will be used.")
+  @JsonProperty("language")
+  public String getLanguage() {
+    return language;
+  }
+  public void setLanguage(String language) {
+    this.language = language;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -136,12 +155,13 @@ public class TextBotFlowLaunchRequest  implements Serializable {
             Objects.equals(this.externalSessionId, textBotFlowLaunchRequest.externalSessionId) &&
             Objects.equals(this.conversationId, textBotFlowLaunchRequest.conversationId) &&
             Objects.equals(this.inputData, textBotFlowLaunchRequest.inputData) &&
-            Objects.equals(this.channel, textBotFlowLaunchRequest.channel);
+            Objects.equals(this.channel, textBotFlowLaunchRequest.channel) &&
+            Objects.equals(this.language, textBotFlowLaunchRequest.language);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(flow, externalSessionId, conversationId, inputData, channel);
+    return Objects.hash(flow, externalSessionId, conversationId, inputData, channel, language);
   }
 
   @Override
@@ -154,6 +174,7 @@ public class TextBotFlowLaunchRequest  implements Serializable {
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    inputData: ").append(toIndentedString(inputData)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("}");
     return sb.toString();
   }

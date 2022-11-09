@@ -33,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsUsersDetailsJobResults**](AnalyticsApi.html#getAnalyticsUsersDetailsJobResults) | Fetch a page of results for an async query |
 | [**getAnalyticsUsersDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsUsersDetailsJobsAvailability) | Lookup the datalake availability date and time |
 | [**patchAnalyticsReportingSettings**](AnalyticsApi.html#patchAnalyticsReportingSettings) | Patch AnalyticsReportingSettings values for an organization |
+| [**postAnalyticsActionsAggregatesQuery**](AnalyticsApi.html#postAnalyticsActionsAggregatesQuery) | Query for action aggregates |
 | [**postAnalyticsBotsAggregatesQuery**](AnalyticsApi.html#postAnalyticsBotsAggregatesQuery) | Query for bot aggregates |
 | [**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | Index conversation properties |
 | [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
@@ -243,7 +244,7 @@ null (empty response body)
 
 
 
-> [ReportingTurnsResponse](ReportingTurnsResponse.html) getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId)
+> [ReportingTurnsResponse](ReportingTurnsResponse.html) getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId, language)
 
 Get Reporting Turns.
 
@@ -280,8 +281,9 @@ String after = "after_example"; // String | The cursor that points to the ID of 
 String pageSize = "50"; // String | Max number of entities to return. Maximum of 250
 String actionId = "actionId_example"; // String | Optional action ID to get the reporting turns associated to a particular flow action
 String sessionId = "sessionId_example"; // String | Optional session ID to get the reporting turns for a particular session
+String language = en-us; // String | Optional language code to get the reporting turns for a particular language
 try {
-    ReportingTurnsResponse result = apiInstance.getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId);
+    ReportingTurnsResponse result = apiInstance.getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId, language);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#getAnalyticsBotflowReportingturns");
@@ -299,6 +301,7 @@ try {
 | **pageSize** | **String**| Max number of entities to return. Maximum of 250 | [optional] [default to 50] 
 | **actionId** | **String**| Optional action ID to get the reporting turns associated to a particular flow action | [optional] 
 | **sessionId** | **String**| Optional session ID to get the reporting turns for a particular session | [optional] 
+| **language** | **String**| Optional language code to get the reporting turns for a particular language | [optional] [default to null] 
 {: class="table-striped"}
 
 
@@ -1649,6 +1652,68 @@ try {
 ### Return type
 
 [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)
+
+<a name="postAnalyticsActionsAggregatesQuery"></a>
+
+# **postAnalyticsActionsAggregatesQuery**
+
+
+
+> [ActionAggregateQueryResponse](ActionAggregateQueryResponse.html) postAnalyticsActionsAggregatesQuery(body)
+
+Query for action aggregates
+
+Wraps POST /api/v2/analytics/actions/aggregates/query  
+
+Requires ANY permissions: 
+
+* integrations:action:view
+* bridge:actions:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+ActionAggregationQuery body = new ActionAggregationQuery(); // ActionAggregationQuery | query
+try {
+    ActionAggregateQueryResponse result = apiInstance.postAnalyticsActionsAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsActionsAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ActionAggregationQuery**](ActionAggregationQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionAggregateQueryResponse**](ActionAggregateQueryResponse.html)
 
 <a name="postAnalyticsBotsAggregatesQuery"></a>
 

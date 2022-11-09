@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.PredictorModelBrief;
 import com.mypurecloud.sdk.v2.model.PredictorSchedule;
 import com.mypurecloud.sdk.v2.model.PredictorWorkloadBalancing;
 import io.swagger.annotations.ApiModel;
@@ -86,6 +87,7 @@ public class Predictor  implements Serializable {
   private Date dateModified = null;
   private PredictorWorkloadBalancing workloadBalancingConfig = null;
   private String errorCode = null;
+  private List<PredictorModelBrief> models = new ArrayList<PredictorModelBrief>();
   private String selfUri = null;
 
   
@@ -214,6 +216,13 @@ public class Predictor  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Predictor's models")
+  @JsonProperty("models")
+  public List<PredictorModelBrief> getModels() {
+    return models;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -241,12 +250,13 @@ public class Predictor  implements Serializable {
             Objects.equals(this.dateModified, predictor.dateModified) &&
             Objects.equals(this.workloadBalancingConfig, predictor.workloadBalancingConfig) &&
             Objects.equals(this.errorCode, predictor.errorCode) &&
+            Objects.equals(this.models, predictor.models) &&
             Objects.equals(this.selfUri, predictor.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, queues, kpi, routingTimeoutSeconds, schedule, state, dateCreated, dateModified, workloadBalancingConfig, errorCode, selfUri);
+    return Objects.hash(id, queues, kpi, routingTimeoutSeconds, schedule, state, dateCreated, dateModified, workloadBalancingConfig, errorCode, models, selfUri);
   }
 
   @Override
@@ -264,6 +274,7 @@ public class Predictor  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    workloadBalancingConfig: ").append(toIndentedString(workloadBalancingConfig)).append("\n");
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+    sb.append("    models: ").append(toIndentedString(models)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

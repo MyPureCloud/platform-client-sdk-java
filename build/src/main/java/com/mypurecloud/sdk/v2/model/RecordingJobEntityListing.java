@@ -31,9 +31,9 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
   private Long total = null;
   private String firstUri = null;
   private String nextUri = null;
-  private String previousUri = null;
   private String lastUri = null;
   private String selfUri = null;
+  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -141,23 +141,6 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
 
   /**
    **/
-  public RecordingJobEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
   public RecordingJobEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -187,6 +170,23 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public RecordingJobEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -223,15 +223,15 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
             Objects.equals(this.total, recordingJobEntityListing.total) &&
             Objects.equals(this.firstUri, recordingJobEntityListing.firstUri) &&
             Objects.equals(this.nextUri, recordingJobEntityListing.nextUri) &&
-            Objects.equals(this.previousUri, recordingJobEntityListing.previousUri) &&
             Objects.equals(this.lastUri, recordingJobEntityListing.lastUri) &&
             Objects.equals(this.selfUri, recordingJobEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, recordingJobEntityListing.previousUri) &&
             Objects.equals(this.pageCount, recordingJobEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, lastUri, selfUri, previousUri, pageCount);
   }
 
   @Override
@@ -245,9 +245,9 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

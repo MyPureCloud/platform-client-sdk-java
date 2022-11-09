@@ -44,7 +44,8 @@ public class KnowledgeImportJobRequest  implements Serializable {
   public enum FileTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     JSON("Json"),
-    CSV("Csv");
+    CSV("Csv"),
+    XLSX("Xlsx");
 
     private String value;
 

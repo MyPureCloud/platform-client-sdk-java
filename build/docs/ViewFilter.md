@@ -154,6 +154,7 @@ title: ViewFilter
 | **hasFax** | <!----><!---->**Boolean**<!----> | Filters to indicate if interaction has FAX |  [optional] |
 | **dataActionIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Data Action IDs  |  [optional] |
 | **actionCategoryName** | <!----><!---->**String**<!----> | Action Category Name |  [optional] |
+| **integrationIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of integration IDs for Data Action |  [optional] |
 | **responseStatuses** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Response codes for Data Action |  [optional] |
 | **availableDashboard** | [**AvailableDashboardEnum**](#AvailableDashboardEnum)<!----> | Filter to indicate the availability of the dashboard is public or private. |  [optional] |
 | **favouriteDashboard** | <!----><!---->**Boolean**<!----> | Filter to indicate whether the dashboard is favorite or unfavorite. |  [optional] |

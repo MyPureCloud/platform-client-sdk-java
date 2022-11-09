@@ -3929,7 +3929,7 @@ This endpoint does not require any parameters.
 
 
 
-> [MessagingIntegrationEntityListing](MessagingIntegrationEntityListing.html) getConversationsMessagingIntegrations(pageSize, pageNumber, expand, supportedContentId)
+> [MessagingIntegrationEntityListing](MessagingIntegrationEntityListing.html) getConversationsMessagingIntegrations(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
 
 Get a list of Integrations
 
@@ -3963,10 +3963,11 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-String expand = "expand_example"; // String | Expand instructions for the return value.
+List<String> expand = Arrays.asList(null); // List<String> | Expand instructions for the return value.
 String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
+String messagingSettingId = "messagingSettingId_example"; // String | Filter integrations returned based on the setting ID
 try {
-    MessagingIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrations(pageSize, pageNumber, expand, supportedContentId);
+    MessagingIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrations(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrations");
@@ -3981,8 +3982,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **expand** | [**List&lt;String&gt;**](String.html)| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
+| **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
 
 
@@ -3996,7 +3998,7 @@ try {
 
 
 
-> [FacebookIntegrationEntityListing](FacebookIntegrationEntityListing.html) getConversationsMessagingIntegrationsFacebook(pageSize, pageNumber, expand, supportedContentId)
+> [FacebookIntegrationEntityListing](FacebookIntegrationEntityListing.html) getConversationsMessagingIntegrationsFacebook(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
 
 Get a list of Facebook Integrations
 
@@ -4032,8 +4034,9 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String expand = "expand_example"; // String | Expand instructions for the return value.
 String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
+String messagingSettingId = "messagingSettingId_example"; // String | Filter integrations returned based on the setting ID
 try {
-    FacebookIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsFacebook(pageSize, pageNumber, expand, supportedContentId);
+    FacebookIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsFacebook(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsFacebook");
@@ -4048,8 +4051,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
+| **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
 
 
@@ -4112,7 +4116,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
 {: class="table-striped"}
 
 
@@ -4126,7 +4130,7 @@ try {
 
 
 
-> [LineIntegrationEntityListing](LineIntegrationEntityListing.html) getConversationsMessagingIntegrationsLine(pageSize, pageNumber, expand, supportedContentId)
+> [LineIntegrationEntityListing](LineIntegrationEntityListing.html) getConversationsMessagingIntegrationsLine(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
 
 Get a list of LINE messenger Integrations
 
@@ -4162,8 +4166,9 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String expand = "expand_example"; // String | Expand instructions for the return value.
 String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
+String messagingSettingId = "messagingSettingId_example"; // String | Filter integrations returned based on the setting ID
 try {
-    LineIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsLine(pageSize, pageNumber, expand, supportedContentId);
+    LineIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsLine(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsLine");
@@ -4178,8 +4183,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
+| **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
 
 
@@ -4242,7 +4248,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
 {: class="table-striped"}
 
 
@@ -4256,7 +4262,7 @@ try {
 
 
 
-> [OpenIntegrationEntityListing](OpenIntegrationEntityListing.html) getConversationsMessagingIntegrationsOpen(pageSize, pageNumber, expand, supportedContentId)
+> [OpenIntegrationEntityListing](OpenIntegrationEntityListing.html) getConversationsMessagingIntegrationsOpen(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
 
 Get a list of Open messaging integrations
 
@@ -4294,8 +4300,9 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String expand = "expand_example"; // String | Expand instructions for the return value.
 String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
+String messagingSettingId = "messagingSettingId_example"; // String | Filter integrations returned based on the setting ID
 try {
-    OpenIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsOpen(pageSize, pageNumber, expand, supportedContentId);
+    OpenIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsOpen(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpen");
@@ -4310,8 +4317,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
+| **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
 
 
@@ -4376,7 +4384,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
 {: class="table-striped"}
 
 
@@ -4390,7 +4398,7 @@ try {
 
 
 
-> [TwitterIntegrationEntityListing](TwitterIntegrationEntityListing.html) getConversationsMessagingIntegrationsTwitter(pageSize, pageNumber, expand, supportedContentId)
+> [TwitterIntegrationEntityListing](TwitterIntegrationEntityListing.html) getConversationsMessagingIntegrationsTwitter(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
 
 Get a list of Twitter Integrations
 
@@ -4426,8 +4434,9 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String expand = "expand_example"; // String | Expand instructions for the return value.
 String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
+String messagingSettingId = "messagingSettingId_example"; // String | Filter integrations returned based on the setting ID
 try {
-    TwitterIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsTwitter(pageSize, pageNumber, expand, supportedContentId);
+    TwitterIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsTwitter(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsTwitter");
@@ -4442,8 +4451,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
+| **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
 
 
@@ -4506,7 +4516,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
 {: class="table-striped"}
 
 
@@ -4520,7 +4530,7 @@ try {
 
 
 
-> [WhatsAppIntegrationEntityListing](WhatsAppIntegrationEntityListing.html) getConversationsMessagingIntegrationsWhatsapp(pageSize, pageNumber, expand, supportedContentId)
+> [WhatsAppIntegrationEntityListing](WhatsAppIntegrationEntityListing.html) getConversationsMessagingIntegrationsWhatsapp(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
 
 Get a list of WhatsApp Integrations
 
@@ -4556,8 +4566,9 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String expand = "expand_example"; // String | Expand instructions for the return value.
 String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
+String messagingSettingId = "messagingSettingId_example"; // String | Filter integrations returned based on the setting ID
 try {
-    WhatsAppIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsWhatsapp(pageSize, pageNumber, expand, supportedContentId);
+    WhatsAppIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsWhatsapp(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsWhatsapp");
@@ -4572,8 +4583,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
 | **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
+| **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
 {: class="table-striped"}
 
 
@@ -4636,7 +4648,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
 {: class="table-striped"}
 
 

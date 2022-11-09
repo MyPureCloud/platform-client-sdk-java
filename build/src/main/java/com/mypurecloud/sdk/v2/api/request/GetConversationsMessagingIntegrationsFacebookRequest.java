@@ -174,7 +174,8 @@ public class GetConversationsMessagingIntegrationsFacebookRequest {
 	} 
 
 	public enum expandValues { 
-		SUPPORTEDCONTENT("supportedContent");
+		SUPPORTEDCONTENT("supportedContent"),
+		MESSAGINGSETTING("messagingSetting");
 
 		private String value;
 
@@ -216,6 +217,20 @@ public class GetConversationsMessagingIntegrationsFacebookRequest {
 	    return this;
 	} 
 
+	private String messagingSettingId;
+	public String getMessagingSettingId() {
+		return this.messagingSettingId;
+	}
+
+	public void setMessagingSettingId(String messagingSettingId) {
+		this.messagingSettingId = messagingSettingId;
+	}
+
+	public GetConversationsMessagingIntegrationsFacebookRequest withMessagingSettingId(String messagingSettingId) {
+	    this.setMessagingSettingId(messagingSettingId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -250,6 +265,9 @@ public class GetConversationsMessagingIntegrationsFacebookRequest {
         
 
                 .withQueryParameters("supportedContent.id", "", supportedContentId)
+        
+
+                .withQueryParameters("messagingSetting.id", "", messagingSettingId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -298,6 +316,11 @@ public class GetConversationsMessagingIntegrationsFacebookRequest {
 
 		public Builder withSupportedContentId(String supportedContentId) {
 			request.setSupportedContentId(supportedContentId);
+			return this;
+		}
+
+		public Builder withMessagingSettingId(String messagingSettingId) {
+			request.setMessagingSettingId(messagingSettingId);
 			return this;
 		}
 

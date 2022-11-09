@@ -20,6 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.ActionAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ActionAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
@@ -146,6 +148,20 @@ public class GetAnalyticsBotflowReportingturnsRequest {
 	    return this;
 	} 
 
+	private String language;
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public GetAnalyticsBotflowReportingturnsRequest withLanguage(String language) {
+	    this.setLanguage(language);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -187,6 +203,9 @@ public class GetAnalyticsBotflowReportingturnsRequest {
         
 
                 .withQueryParameters("sessionId", "", sessionId)
+        
+
+                .withQueryParameters("language", "", language)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -236,6 +255,11 @@ public class GetAnalyticsBotflowReportingturnsRequest {
 
 		public Builder withSessionId(String sessionId) {
 			request.setSessionId(sessionId);
+			return this;
+		}
+
+		public Builder withLanguage(String language) {
+			request.setLanguage(language);
 			return this;
 		}
 

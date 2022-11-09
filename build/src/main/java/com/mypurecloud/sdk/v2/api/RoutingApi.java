@@ -58,6 +58,11 @@ import com.mypurecloud.sdk.v2.model.RoutingSettings;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillGroup;
+import com.mypurecloud.sdk.v2.model.SkillGroupEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisionList;
+import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisions;
+import com.mypurecloud.sdk.v2.model.SkillGroupMemberEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
@@ -92,6 +97,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
@@ -137,6 +143,10 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsContactcenterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupMembersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupMembersDivisionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressesRequest;
@@ -159,6 +169,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsContactcenterRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
@@ -178,6 +189,8 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueuesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillgroupMembersDivisionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersRequest;
@@ -1034,6 +1047,81 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingSkill(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Remove skill group definition
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSkillgroup(String skillGroupId) throws IOException, ApiException {
+     deleteRoutingSkillgroup(createDeleteRoutingSkillgroupRequest(skillGroupId));
+  }
+
+  /**
+   * Remove skill group definition
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSkillgroupWithHttpInfo(String skillGroupId) throws IOException {
+    return deleteRoutingSkillgroup(createDeleteRoutingSkillgroupRequest(skillGroupId).withHttpInfo());
+  }
+
+  private DeleteRoutingSkillgroupRequest createDeleteRoutingSkillgroupRequest(String skillGroupId) {
+    return DeleteRoutingSkillgroupRequest.builder()
+            .withSkillGroupId(skillGroupId)
+
+            .build();
+  }
+
+  /**
+   * Remove skill group definition
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSkillgroup(DeleteRoutingSkillgroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Remove skill group definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSkillgroup(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -4785,6 +4873,350 @@ public class RoutingApi {
   }
 
   /**
+   * Get skill group
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @return SkillGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroup getRoutingSkillgroup(String skillGroupId) throws IOException, ApiException {
+    return  getRoutingSkillgroup(createGetRoutingSkillgroupRequest(skillGroupId));
+  }
+
+  /**
+   * Get skill group
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @return SkillGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroup> getRoutingSkillgroupWithHttpInfo(String skillGroupId) throws IOException {
+    return getRoutingSkillgroup(createGetRoutingSkillgroupRequest(skillGroupId).withHttpInfo());
+  }
+
+  private GetRoutingSkillgroupRequest createGetRoutingSkillgroupRequest(String skillGroupId) {
+    return GetRoutingSkillgroupRequest.builder()
+            .withSkillGroupId(skillGroupId)
+
+            .build();
+  }
+
+  /**
+   * Get skill group
+   * 
+   * @param request The request object
+   * @return SkillGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroup getRoutingSkillgroup(GetRoutingSkillgroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SkillGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get skill group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroup> getRoutingSkillgroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SkillGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get skill group members
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param after The cursor that points to the next item (optional)
+   * @param before The cursor that points to the previous item (optional)
+   * @param expand Expand the name on each user (optional)
+   * @return SkillGroupMemberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroupMemberEntityListing getRoutingSkillgroupMembers(String skillGroupId, Integer pageSize, String after, String before, String expand) throws IOException, ApiException {
+    return  getRoutingSkillgroupMembers(createGetRoutingSkillgroupMembersRequest(skillGroupId, pageSize, after, before, expand));
+  }
+
+  /**
+   * Get skill group members
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param after The cursor that points to the next item (optional)
+   * @param before The cursor that points to the previous item (optional)
+   * @param expand Expand the name on each user (optional)
+   * @return SkillGroupMemberEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroupMemberEntityListing> getRoutingSkillgroupMembersWithHttpInfo(String skillGroupId, Integer pageSize, String after, String before, String expand) throws IOException {
+    return getRoutingSkillgroupMembers(createGetRoutingSkillgroupMembersRequest(skillGroupId, pageSize, after, before, expand).withHttpInfo());
+  }
+
+  private GetRoutingSkillgroupMembersRequest createGetRoutingSkillgroupMembersRequest(String skillGroupId, Integer pageSize, String after, String before, String expand) {
+    return GetRoutingSkillgroupMembersRequest.builder()
+            .withSkillGroupId(skillGroupId)
+
+            .withPageSize(pageSize)
+
+            .withAfter(after)
+
+            .withBefore(before)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get skill group members
+   * 
+   * @param request The request object
+   * @return SkillGroupMemberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroupMemberEntityListing getRoutingSkillgroupMembers(GetRoutingSkillgroupMembersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SkillGroupMemberEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillGroupMemberEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get skill group members
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroupMemberEntityListing> getRoutingSkillgroupMembers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SkillGroupMemberEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroupMemberEntityListing> response = (ApiResponse<SkillGroupMemberEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroupMemberEntityListing> response = (ApiResponse<SkillGroupMemberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of member divisions for this skill group.
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @param expand Expand the name on each user (optional)
+   * @return SkillGroupMemberDivisionList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroupMemberDivisionList getRoutingSkillgroupMembersDivisions(String skillGroupId, String expand) throws IOException, ApiException {
+    return  getRoutingSkillgroupMembersDivisions(createGetRoutingSkillgroupMembersDivisionsRequest(skillGroupId, expand));
+  }
+
+  /**
+   * Get list of member divisions for this skill group.
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @param expand Expand the name on each user (optional)
+   * @return SkillGroupMemberDivisionList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroupMemberDivisionList> getRoutingSkillgroupMembersDivisionsWithHttpInfo(String skillGroupId, String expand) throws IOException {
+    return getRoutingSkillgroupMembersDivisions(createGetRoutingSkillgroupMembersDivisionsRequest(skillGroupId, expand).withHttpInfo());
+  }
+
+  private GetRoutingSkillgroupMembersDivisionsRequest createGetRoutingSkillgroupMembersDivisionsRequest(String skillGroupId, String expand) {
+    return GetRoutingSkillgroupMembersDivisionsRequest.builder()
+            .withSkillGroupId(skillGroupId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get list of member divisions for this skill group.
+   * 
+   * @param request The request object
+   * @return SkillGroupMemberDivisionList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroupMemberDivisionList getRoutingSkillgroupMembersDivisions(GetRoutingSkillgroupMembersDivisionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SkillGroupMemberDivisionList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillGroupMemberDivisionList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of member divisions for this skill group.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroupMemberDivisionList> getRoutingSkillgroupMembersDivisions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SkillGroupMemberDivisionList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroupMemberDivisionList> response = (ApiResponse<SkillGroupMemberDivisionList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroupMemberDivisionList> response = (ApiResponse<SkillGroupMemberDivisionList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get skill group listing
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Return only skill group names whose names start with this value (case-insensitive matching) (optional)
+   * @param after The cursor that points to the next item (optional)
+   * @param before The cursor that points to the previous item (optional)
+   * @return SkillGroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroupEntityListing getRoutingSkillgroups(Integer pageSize, String name, String after, String before) throws IOException, ApiException {
+    return  getRoutingSkillgroups(createGetRoutingSkillgroupsRequest(pageSize, name, after, before));
+  }
+
+  /**
+   * Get skill group listing
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Return only skill group names whose names start with this value (case-insensitive matching) (optional)
+   * @param after The cursor that points to the next item (optional)
+   * @param before The cursor that points to the previous item (optional)
+   * @return SkillGroupEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroupEntityListing> getRoutingSkillgroupsWithHttpInfo(Integer pageSize, String name, String after, String before) throws IOException {
+    return getRoutingSkillgroups(createGetRoutingSkillgroupsRequest(pageSize, name, after, before).withHttpInfo());
+  }
+
+  private GetRoutingSkillgroupsRequest createGetRoutingSkillgroupsRequest(Integer pageSize, String name, String after, String before) {
+    return GetRoutingSkillgroupsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withName(name)
+
+            .withAfter(after)
+
+            .withBefore(before)
+
+            .build();
+  }
+
+  /**
+   * Get skill group listing
+   * 
+   * @param request The request object
+   * @return SkillGroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroupEntityListing getRoutingSkillgroups(GetRoutingSkillgroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SkillGroupEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillGroupEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get skill group listing
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroupEntityListing> getRoutingSkillgroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SkillGroupEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroupEntityListing> response = (ApiResponse<SkillGroupEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroupEntityListing> response = (ApiResponse<SkillGroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get the list of routing skills.
    * 
    * @param pageSize Page size (optional, default to 25)
@@ -6656,6 +7088,88 @@ public class RoutingApi {
   }
 
   /**
+   * Update skill group definition
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @param body Update skill groups (required)
+   * @return SkillGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroup patchRoutingSkillgroup(String skillGroupId, SkillGroup body) throws IOException, ApiException {
+    return  patchRoutingSkillgroup(createPatchRoutingSkillgroupRequest(skillGroupId, body));
+  }
+
+  /**
+   * Update skill group definition
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @param body Update skill groups (required)
+   * @return SkillGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroup> patchRoutingSkillgroupWithHttpInfo(String skillGroupId, SkillGroup body) throws IOException {
+    return patchRoutingSkillgroup(createPatchRoutingSkillgroupRequest(skillGroupId, body).withHttpInfo());
+  }
+
+  private PatchRoutingSkillgroupRequest createPatchRoutingSkillgroupRequest(String skillGroupId, SkillGroup body) {
+    return PatchRoutingSkillgroupRequest.builder()
+            .withSkillGroupId(skillGroupId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update skill group definition
+   * 
+   * @param request The request object
+   * @return SkillGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroup patchRoutingSkillgroup(PatchRoutingSkillgroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SkillGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update skill group definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroup> patchRoutingSkillgroup(ApiRequest<SkillGroup> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SkillGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Join or unjoin a queue for a user
    * 
    * @param queueId Queue ID (required)
@@ -8187,6 +8701,163 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Queue> response = (ApiResponse<Queue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add or remove member divisions for this skill group.
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postRoutingSkillgroupMembersDivisions(String skillGroupId, SkillGroupMemberDivisions body) throws IOException, ApiException {
+     postRoutingSkillgroupMembersDivisions(createPostRoutingSkillgroupMembersDivisionsRequest(skillGroupId, body));
+  }
+
+  /**
+   * Add or remove member divisions for this skill group.
+   * 
+   * @param skillGroupId Skill Group ID (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postRoutingSkillgroupMembersDivisionsWithHttpInfo(String skillGroupId, SkillGroupMemberDivisions body) throws IOException {
+    return postRoutingSkillgroupMembersDivisions(createPostRoutingSkillgroupMembersDivisionsRequest(skillGroupId, body).withHttpInfo());
+  }
+
+  private PostRoutingSkillgroupMembersDivisionsRequest createPostRoutingSkillgroupMembersDivisionsRequest(String skillGroupId, SkillGroupMemberDivisions body) {
+    return PostRoutingSkillgroupMembersDivisionsRequest.builder()
+            .withSkillGroupId(skillGroupId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add or remove member divisions for this skill group.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postRoutingSkillgroupMembersDivisions(PostRoutingSkillgroupMembersDivisionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Add or remove member divisions for this skill group.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postRoutingSkillgroupMembersDivisions(ApiRequest<SkillGroupMemberDivisions> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a skill group
+   * 
+   * @param body Create skill group (required)
+   * @return SkillGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroup postRoutingSkillgroups(SkillGroup body) throws IOException, ApiException {
+    return  postRoutingSkillgroups(createPostRoutingSkillgroupsRequest(body));
+  }
+
+  /**
+   * Create a skill group
+   * 
+   * @param body Create skill group (required)
+   * @return SkillGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroup> postRoutingSkillgroupsWithHttpInfo(SkillGroup body) throws IOException {
+    return postRoutingSkillgroups(createPostRoutingSkillgroupsRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingSkillgroupsRequest createPostRoutingSkillgroupsRequest(SkillGroup body) {
+    return PostRoutingSkillgroupsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a skill group
+   * 
+   * @param request The request object
+   * @return SkillGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SkillGroup postRoutingSkillgroups(PostRoutingSkillgroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SkillGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a skill group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SkillGroup> postRoutingSkillgroups(ApiRequest<SkillGroup> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SkillGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
