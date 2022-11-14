@@ -2327,28 +2327,36 @@ public class RoutingApi {
   /**
    * Get domains
    * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
    * @param excludeStatus Exclude MX record data (optional, default to false)
    * @return InboundDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public InboundDomainEntityListing getRoutingEmailDomains(Boolean excludeStatus) throws IOException, ApiException {
-    return  getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(excludeStatus));
+  public InboundDomainEntityListing getRoutingEmailDomains(Integer pageSize, Integer pageNumber, Boolean excludeStatus) throws IOException, ApiException {
+    return  getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(pageSize, pageNumber, excludeStatus));
   }
 
   /**
    * Get domains
    * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
    * @param excludeStatus Exclude MX record data (optional, default to false)
    * @return InboundDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomainsWithHttpInfo(Boolean excludeStatus) throws IOException {
-    return getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(excludeStatus).withHttpInfo());
+  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomainsWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean excludeStatus) throws IOException {
+    return getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(pageSize, pageNumber, excludeStatus).withHttpInfo());
   }
 
-  private GetRoutingEmailDomainsRequest createGetRoutingEmailDomainsRequest(Boolean excludeStatus) {
+  private GetRoutingEmailDomainsRequest createGetRoutingEmailDomainsRequest(Integer pageSize, Integer pageNumber, Boolean excludeStatus) {
     return GetRoutingEmailDomainsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
             .withExcludeStatus(excludeStatus)
 
             .build();

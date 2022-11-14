@@ -9,6 +9,7 @@ title: HistoricalAdherenceQueryResult
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **userId** | <!----><!---->**String**<!----> | The ID of the user for whom the adherence is queried |  [optional] |
+| **managementUnitId** | <!----><!---->**String**<!----> | The ID of the management unit of the user for whom the adherence is queried |  [optional] |
 | **startDate** | <!----><!---->[**Date**](Date.html)<!----> | Beginning of the date range that was queried, in ISO-8601 format |  [optional] |
 | **endDate** | <!----><!---->[**Date**](Date.html)<!----> | End of the date range that was queried, in ISO-8601 format. If it was not set, end date will be set to the queried time |  [optional] |
 | **adherencePercentage** | <!----><!---->**Double**<!----> | Adherence percentage for this user, in the scale of 0 - 100 |  [optional] |

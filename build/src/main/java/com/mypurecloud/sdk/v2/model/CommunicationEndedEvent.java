@@ -51,10 +51,8 @@ public class CommunicationEndedEvent  implements Serializable {
     SYSTEM("System"),
     ERROR("Error"),
     TRANSFER("Transfer"),
-    TRANSFERACD("TransferACD"),
     TRANSFERCONSULT("TransferConsult"),
-    TRANSFERCONFERENCE("TransferConference"),
-    TRANSFERUSER("TransferUser");
+    TRANSFERCONFERENCE("TransferConference");
 
     private String value;
 

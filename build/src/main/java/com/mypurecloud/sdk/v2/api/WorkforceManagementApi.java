@@ -11,10 +11,17 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
+import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAdminRequest;
+import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAgentRequest;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
+import com.mypurecloud.sdk.v2.model.AdherenceExplanationAsyncResponse;
+import com.mypurecloud.sdk.v2.model.AdherenceExplanationJob;
+import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
+import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
+import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
 import com.mypurecloud.sdk.v2.model.AsyncIntradayResponse;
@@ -33,6 +40,8 @@ import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
+import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsRequest;
+import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
 import com.mypurecloud.sdk.v2.model.BuRescheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuRescheduleResult;
@@ -88,6 +97,7 @@ import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.PlanningGroup;
 import com.mypurecloud.sdk.v2.model.PlanningGroupList;
 import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
+import com.mypurecloud.sdk.v2.model.QueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
@@ -113,6 +123,7 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
@@ -138,6 +149,8 @@ import com.mypurecloud.sdk.v2.model.WfmAgent;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageRequest;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageResponse;
 import com.mypurecloud.sdk.v2.model.WfmIntradayPlanningGroupListing;
 import com.mypurecloud.sdk.v2.model.WfmProcessUploadRequest;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
@@ -162,8 +175,11 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementuni
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplanationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplanationsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdhocmodelingjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitRequest;
@@ -222,9 +238,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsD
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementNotificationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShrinkageJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAgentAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
@@ -238,9 +256,14 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunit
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivitycodesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
@@ -266,6 +289,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitA
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitMoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitSchedulesSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitShrinkageJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffplansRequest;
@@ -1408,6 +1432,162 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get an adherence explanation for the current user
+   * 
+   * @param explanationId The ID of the explanation to update (required)
+   * @return AdherenceExplanationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationResponse getWorkforcemanagementAdherenceExplanation(String explanationId) throws IOException, ApiException {
+    return  getWorkforcemanagementAdherenceExplanation(createGetWorkforcemanagementAdherenceExplanationRequest(explanationId));
+  }
+
+  /**
+   * Get an adherence explanation for the current user
+   * 
+   * @param explanationId The ID of the explanation to update (required)
+   * @return AdherenceExplanationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationResponse> getWorkforcemanagementAdherenceExplanationWithHttpInfo(String explanationId) throws IOException {
+    return getWorkforcemanagementAdherenceExplanation(createGetWorkforcemanagementAdherenceExplanationRequest(explanationId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAdherenceExplanationRequest createGetWorkforcemanagementAdherenceExplanationRequest(String explanationId) {
+    return GetWorkforcemanagementAdherenceExplanationRequest.builder()
+            .withExplanationId(explanationId)
+
+            .build();
+  }
+
+  /**
+   * Get an adherence explanation for the current user
+   * 
+   * @param request The request object
+   * @return AdherenceExplanationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationResponse getWorkforcemanagementAdherenceExplanation(GetWorkforcemanagementAdherenceExplanationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceExplanationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceExplanationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an adherence explanation for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationResponse> getWorkforcemanagementAdherenceExplanation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceExplanationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationResponse> response = (ApiResponse<AdherenceExplanationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationResponse> response = (ApiResponse<AdherenceExplanationResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return AdherenceExplanationJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationJob getWorkforcemanagementAdherenceExplanationsJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementAdherenceExplanationsJob(createGetWorkforcemanagementAdherenceExplanationsJobRequest(jobId));
+  }
+
+  /**
+   * Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return AdherenceExplanationJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationJob> getWorkforcemanagementAdherenceExplanationsJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementAdherenceExplanationsJob(createGetWorkforcemanagementAdherenceExplanationsJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAdherenceExplanationsJobRequest createGetWorkforcemanagementAdherenceExplanationsJobRequest(String jobId) {
+    return GetWorkforcemanagementAdherenceExplanationsJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return AdherenceExplanationJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationJob getWorkforcemanagementAdherenceExplanationsJob(GetWorkforcemanagementAdherenceExplanationsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceExplanationJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceExplanationJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationJob> getWorkforcemanagementAdherenceExplanationsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceExplanationJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationJob> response = (ApiResponse<AdherenceExplanationJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationJob> response = (ApiResponse<AdherenceExplanationJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
    * Job details are only retained if the initial request returned a 202 ACCEPTED response
    * @param jobId jobId (required)
@@ -1559,6 +1739,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ModelingStatusResponse> response = (ApiResponse<ModelingStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an adherence explanation
+   * 
+   * @param agentId The ID of the agent to query (required)
+   * @param explanationId The ID of the explanation to update (required)
+   * @return AdherenceExplanationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationResponse getWorkforcemanagementAgentAdherenceExplanation(String agentId, String explanationId) throws IOException, ApiException {
+    return  getWorkforcemanagementAgentAdherenceExplanation(createGetWorkforcemanagementAgentAdherenceExplanationRequest(agentId, explanationId));
+  }
+
+  /**
+   * Get an adherence explanation
+   * 
+   * @param agentId The ID of the agent to query (required)
+   * @param explanationId The ID of the explanation to update (required)
+   * @return AdherenceExplanationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationResponse> getWorkforcemanagementAgentAdherenceExplanationWithHttpInfo(String agentId, String explanationId) throws IOException {
+    return getWorkforcemanagementAgentAdherenceExplanation(createGetWorkforcemanagementAgentAdherenceExplanationRequest(agentId, explanationId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAgentAdherenceExplanationRequest createGetWorkforcemanagementAgentAdherenceExplanationRequest(String agentId, String explanationId) {
+    return GetWorkforcemanagementAgentAdherenceExplanationRequest.builder()
+            .withAgentId(agentId)
+
+            .withExplanationId(explanationId)
+
+            .build();
+  }
+
+  /**
+   * Get an adherence explanation
+   * 
+   * @param request The request object
+   * @return AdherenceExplanationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationResponse getWorkforcemanagementAgentAdherenceExplanation(GetWorkforcemanagementAgentAdherenceExplanationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceExplanationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceExplanationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an adherence explanation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationResponse> getWorkforcemanagementAgentAdherenceExplanation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceExplanationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationResponse> response = (ApiResponse<AdherenceExplanationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationResponse> response = (ApiResponse<AdherenceExplanationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6356,6 +6618,84 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Request to fetch the status of the historical shrinkage query
+   * 
+   * @param jobId jobId (required)
+   * @return WfmHistoricalShrinkageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalShrinkageResponse getWorkforcemanagementShrinkageJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementShrinkageJob(createGetWorkforcemanagementShrinkageJobRequest(jobId));
+  }
+
+  /**
+   * Request to fetch the status of the historical shrinkage query
+   * 
+   * @param jobId jobId (required)
+   * @return WfmHistoricalShrinkageResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalShrinkageResponse> getWorkforcemanagementShrinkageJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementShrinkageJob(createGetWorkforcemanagementShrinkageJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementShrinkageJobRequest createGetWorkforcemanagementShrinkageJobRequest(String jobId) {
+    return GetWorkforcemanagementShrinkageJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Request to fetch the status of the historical shrinkage query
+   * 
+   * @param request The request object
+   * @return WfmHistoricalShrinkageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalShrinkageResponse getWorkforcemanagementShrinkageJob(GetWorkforcemanagementShrinkageJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmHistoricalShrinkageResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmHistoricalShrinkageResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request to fetch the status of the historical shrinkage query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalShrinkageResponse> getWorkforcemanagementShrinkageJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmHistoricalShrinkageResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalShrinkageResponse> response = (ApiResponse<WfmHistoricalShrinkageResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalShrinkageResponse> response = (ApiResponse<WfmHistoricalShrinkageResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a time off request for the current user
    * 
    * @param timeOffRequestId The ID of the time off request (required)
@@ -6585,6 +6925,92 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TimeOffRequestList> response = (ApiResponse<TimeOffRequestList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an adherence explanation
+   * 
+   * @param agentId The ID of the agent to query (required)
+   * @param explanationId The ID of the explanation to update (required)
+   * @param body The request body (required)
+   * @return AdherenceExplanationAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationAsyncResponse patchWorkforcemanagementAgentAdherenceExplanation(String agentId, String explanationId, UpdateAdherenceExplanationStatusRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementAgentAdherenceExplanation(createPatchWorkforcemanagementAgentAdherenceExplanationRequest(agentId, explanationId, body));
+  }
+
+  /**
+   * Update an adherence explanation
+   * 
+   * @param agentId The ID of the agent to query (required)
+   * @param explanationId The ID of the explanation to update (required)
+   * @param body The request body (required)
+   * @return AdherenceExplanationAsyncResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationAsyncResponse> patchWorkforcemanagementAgentAdherenceExplanationWithHttpInfo(String agentId, String explanationId, UpdateAdherenceExplanationStatusRequest body) throws IOException {
+    return patchWorkforcemanagementAgentAdherenceExplanation(createPatchWorkforcemanagementAgentAdherenceExplanationRequest(agentId, explanationId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementAgentAdherenceExplanationRequest createPatchWorkforcemanagementAgentAdherenceExplanationRequest(String agentId, String explanationId, UpdateAdherenceExplanationStatusRequest body) {
+    return PatchWorkforcemanagementAgentAdherenceExplanationRequest.builder()
+            .withAgentId(agentId)
+
+            .withExplanationId(explanationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an adherence explanation
+   * 
+   * @param request The request object
+   * @return AdherenceExplanationAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationAsyncResponse patchWorkforcemanagementAgentAdherenceExplanation(PatchWorkforcemanagementAgentAdherenceExplanationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceExplanationAsyncResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceExplanationAsyncResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an adherence explanation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationAsyncResponse> patchWorkforcemanagementAgentAdherenceExplanation(ApiRequest<UpdateAdherenceExplanationStatusRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceExplanationAsyncResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7705,6 +8131,170 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Submit an adherence explanation for the current user
+   * 
+   * @param body The request body (required)
+   * @return AdherenceExplanationAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationAsyncResponse postWorkforcemanagementAdherenceExplanations(AddAdherenceExplanationAgentRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAdherenceExplanations(createPostWorkforcemanagementAdherenceExplanationsRequest(body));
+  }
+
+  /**
+   * Submit an adherence explanation for the current user
+   * 
+   * @param body The request body (required)
+   * @return AdherenceExplanationAsyncResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationAsyncResponse> postWorkforcemanagementAdherenceExplanationsWithHttpInfo(AddAdherenceExplanationAgentRequest body) throws IOException {
+    return postWorkforcemanagementAdherenceExplanations(createPostWorkforcemanagementAdherenceExplanationsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAdherenceExplanationsRequest createPostWorkforcemanagementAdherenceExplanationsRequest(AddAdherenceExplanationAgentRequest body) {
+    return PostWorkforcemanagementAdherenceExplanationsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Submit an adherence explanation for the current user
+   * 
+   * @param request The request object
+   * @return AdherenceExplanationAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationAsyncResponse postWorkforcemanagementAdherenceExplanations(PostWorkforcemanagementAdherenceExplanationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceExplanationAsyncResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceExplanationAsyncResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Submit an adherence explanation for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationAsyncResponse> postWorkforcemanagementAdherenceExplanations(ApiRequest<AddAdherenceExplanationAgentRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceExplanationAsyncResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query adherence explanations for the current user
+   * 
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return QueryAdherenceExplanationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryAdherenceExplanationsResponse postWorkforcemanagementAdherenceExplanationsQuery(AgentQueryAdherenceExplanationsRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementAdherenceExplanationsQuery(createPostWorkforcemanagementAdherenceExplanationsQueryRequest(body, forceAsync, forceDownloadService));
+  }
+
+  /**
+   * Query adherence explanations for the current user
+   * 
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return QueryAdherenceExplanationsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryAdherenceExplanationsResponse> postWorkforcemanagementAdherenceExplanationsQueryWithHttpInfo(AgentQueryAdherenceExplanationsRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementAdherenceExplanationsQuery(createPostWorkforcemanagementAdherenceExplanationsQueryRequest(body, forceAsync, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAdherenceExplanationsQueryRequest createPostWorkforcemanagementAdherenceExplanationsQueryRequest(AgentQueryAdherenceExplanationsRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+    return PostWorkforcemanagementAdherenceExplanationsQueryRequest.builder()
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Query adherence explanations for the current user
+   * 
+   * @param request The request object
+   * @return QueryAdherenceExplanationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryAdherenceExplanationsResponse postWorkforcemanagementAdherenceExplanationsQuery(PostWorkforcemanagementAdherenceExplanationsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueryAdherenceExplanationsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryAdherenceExplanationsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query adherence explanations for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryAdherenceExplanationsResponse> postWorkforcemanagementAdherenceExplanationsQuery(ApiRequest<AgentQueryAdherenceExplanationsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryAdherenceExplanationsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryAdherenceExplanationsResponse> response = (ApiResponse<QueryAdherenceExplanationsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryAdherenceExplanationsResponse> response = (ApiResponse<QueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Request a historical adherence report for users across management units
    * 
    * @param body body (optional)
@@ -7778,6 +8368,178 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add an adherence explanation for the requested user
+   * 
+   * @param agentId The ID of the agent to query (required)
+   * @param body The request body (required)
+   * @return AdherenceExplanationAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationAsyncResponse postWorkforcemanagementAgentAdherenceExplanations(String agentId, AddAdherenceExplanationAdminRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentAdherenceExplanations(createPostWorkforcemanagementAgentAdherenceExplanationsRequest(agentId, body));
+  }
+
+  /**
+   * Add an adherence explanation for the requested user
+   * 
+   * @param agentId The ID of the agent to query (required)
+   * @param body The request body (required)
+   * @return AdherenceExplanationAsyncResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationAsyncResponse> postWorkforcemanagementAgentAdherenceExplanationsWithHttpInfo(String agentId, AddAdherenceExplanationAdminRequest body) throws IOException {
+    return postWorkforcemanagementAgentAdherenceExplanations(createPostWorkforcemanagementAgentAdherenceExplanationsRequest(agentId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentAdherenceExplanationsRequest createPostWorkforcemanagementAgentAdherenceExplanationsRequest(String agentId, AddAdherenceExplanationAdminRequest body) {
+    return PostWorkforcemanagementAgentAdherenceExplanationsRequest.builder()
+            .withAgentId(agentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add an adherence explanation for the requested user
+   * 
+   * @param request The request object
+   * @return AdherenceExplanationAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceExplanationAsyncResponse postWorkforcemanagementAgentAdherenceExplanations(PostWorkforcemanagementAgentAdherenceExplanationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceExplanationAsyncResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceExplanationAsyncResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add an adherence explanation for the requested user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceExplanationAsyncResponse> postWorkforcemanagementAgentAdherenceExplanations(ApiRequest<AddAdherenceExplanationAdminRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceExplanationAsyncResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query adherence explanations for the given agent across a specified range
+   * 
+   * @param agentId The ID of the agent to query (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return AgentQueryAdherenceExplanationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentQueryAdherenceExplanationsResponse postWorkforcemanagementAgentAdherenceExplanationsQuery(String agentId, AgentQueryAdherenceExplanationsRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentAdherenceExplanationsQuery(createPostWorkforcemanagementAgentAdherenceExplanationsQueryRequest(agentId, body, forceAsync, forceDownloadService));
+  }
+
+  /**
+   * Query adherence explanations for the given agent across a specified range
+   * 
+   * @param agentId The ID of the agent to query (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return AgentQueryAdherenceExplanationsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentQueryAdherenceExplanationsResponse> postWorkforcemanagementAgentAdherenceExplanationsQueryWithHttpInfo(String agentId, AgentQueryAdherenceExplanationsRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementAgentAdherenceExplanationsQuery(createPostWorkforcemanagementAgentAdherenceExplanationsQueryRequest(agentId, body, forceAsync, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest createPostWorkforcemanagementAgentAdherenceExplanationsQueryRequest(String agentId, AgentQueryAdherenceExplanationsRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+    return PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest.builder()
+            .withAgentId(agentId)
+
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Query adherence explanations for the given agent across a specified range
+   * 
+   * @param request The request object
+   * @return AgentQueryAdherenceExplanationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentQueryAdherenceExplanationsResponse postWorkforcemanagementAgentAdherenceExplanationsQuery(PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentQueryAdherenceExplanationsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentQueryAdherenceExplanationsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query adherence explanations for the given agent across a specified range
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentQueryAdherenceExplanationsResponse> postWorkforcemanagementAgentAdherenceExplanationsQuery(ApiRequest<AgentQueryAdherenceExplanationsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentQueryAdherenceExplanationsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentQueryAdherenceExplanationsResponse> response = (ApiResponse<AgentQueryAdherenceExplanationsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentQueryAdherenceExplanationsResponse> response = (ApiResponse<AgentQueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7938,6 +8700,96 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query adherence explanations across an entire business unit for the requested period
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return BuQueryAdherenceExplanationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuQueryAdherenceExplanationsResponse postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(String businessUnitId, BuQueryAdherenceExplanationsRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(createPostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest(businessUnitId, body, forceAsync, forceDownloadService));
+  }
+
+  /**
+   * Query adherence explanations across an entire business unit for the requested period
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return BuQueryAdherenceExplanationsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuQueryAdherenceExplanationsResponse> postWorkforcemanagementBusinessunitAdherenceExplanationsQueryWithHttpInfo(String businessUnitId, BuQueryAdherenceExplanationsRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(createPostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest(businessUnitId, body, forceAsync, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest createPostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest(String businessUnitId, BuQueryAdherenceExplanationsRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+    return PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Query adherence explanations across an entire business unit for the requested period
+   * 
+   * @param request The request object
+   * @return BuQueryAdherenceExplanationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuQueryAdherenceExplanationsResponse postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuQueryAdherenceExplanationsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuQueryAdherenceExplanationsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query adherence explanations across an entire business unit for the requested period
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuQueryAdherenceExplanationsResponse> postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(ApiRequest<BuQueryAdherenceExplanationsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuQueryAdherenceExplanationsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuQueryAdherenceExplanationsResponse> response = (ApiResponse<BuQueryAdherenceExplanationsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuQueryAdherenceExplanationsResponse> response = (ApiResponse<BuQueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10077,6 +10929,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Request a historical shrinkage report
+   * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+   * @param managementUnitId The ID of the management unit (required)
+   * @param body body (optional)
+   * @return WfmHistoricalShrinkageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalShrinkageResponse postWorkforcemanagementManagementunitShrinkageJobs(String managementUnitId, WfmHistoricalShrinkageRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitShrinkageJobs(createPostWorkforcemanagementManagementunitShrinkageJobsRequest(managementUnitId, body));
+  }
+
+  /**
+   * Request a historical shrinkage report
+   * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+   * @param managementUnitId The ID of the management unit (required)
+   * @param body body (optional)
+   * @return WfmHistoricalShrinkageResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalShrinkageResponse> postWorkforcemanagementManagementunitShrinkageJobsWithHttpInfo(String managementUnitId, WfmHistoricalShrinkageRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitShrinkageJobs(createPostWorkforcemanagementManagementunitShrinkageJobsRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitShrinkageJobsRequest createPostWorkforcemanagementManagementunitShrinkageJobsRequest(String managementUnitId, WfmHistoricalShrinkageRequest body) {
+    return PostWorkforcemanagementManagementunitShrinkageJobsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Request a historical shrinkage report
+   * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+   * @param request The request object
+   * @return WfmHistoricalShrinkageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalShrinkageResponse postWorkforcemanagementManagementunitShrinkageJobs(PostWorkforcemanagementManagementunitShrinkageJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmHistoricalShrinkageResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmHistoricalShrinkageResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request a historical shrinkage report
+   * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalShrinkageResponse> postWorkforcemanagementManagementunitShrinkageJobs(ApiRequest<WfmHistoricalShrinkageRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmHistoricalShrinkageResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalShrinkageResponse> response = (ApiResponse<WfmHistoricalShrinkageResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalShrinkageResponse> response = (ApiResponse<WfmHistoricalShrinkageResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

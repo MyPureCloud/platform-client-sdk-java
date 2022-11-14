@@ -97,6 +97,34 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class GetRoutingEmailDomainsRequest {
 
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetRoutingEmailDomainsRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
+	    return this;
+	} 
+
+	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public GetRoutingEmailDomainsRequest withPageNumber(Integer pageNumber) {
+	    this.setPageNumber(pageNumber);
+	    return this;
+	} 
+
 	private Boolean excludeStatus;
 	public Boolean getExcludeStatus() {
 		return this.excludeStatus;
@@ -135,6 +163,12 @@ public class GetRoutingEmailDomainsRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/email/domains")
 
+                .withQueryParameters("pageSize", "", pageSize)
+        
+
+                .withQueryParameters("pageNumber", "", pageNumber)
+        
+
                 .withQueryParameters("excludeStatus", "", excludeStatus)
         
 		.withCustomHeaders(customHeaders)
@@ -157,6 +191,16 @@ public class GetRoutingEmailDomainsRequest {
 			request = new GetRoutingEmailDomainsRequest();
 		}
 
+
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
+			return this;
+		}
+
+		public Builder withPageNumber(Integer pageNumber) {
+			request.setPageNumber(pageNumber);
+			return this;
+		}
 
 		public Builder withExcludeStatus(Boolean excludeStatus) {
 			request.setExcludeStatus(excludeStatus);

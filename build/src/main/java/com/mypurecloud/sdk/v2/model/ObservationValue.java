@@ -113,7 +113,8 @@ public class ObservationValue  implements Serializable {
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    STANDARD("Standard");
+    STANDARD("Standard"),
+    VIP("Vip");
 
     private String value;
 
@@ -166,7 +167,8 @@ public class ObservationValue  implements Serializable {
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    STANDARD("Standard");
+    STANDARD("Standard"),
+    VIP("Vip");
 
     private String value;
 

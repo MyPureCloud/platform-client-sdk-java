@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.ActivityCodeReference;
 import com.mypurecloud.sdk.v2.model.BusinessUnitReference;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.QueueReference;
+import com.mypurecloud.sdk.v2.model.RealTimeAdherenceExplanation;
 import com.mypurecloud.sdk.v2.model.TeamReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
@@ -359,6 +360,7 @@ public class UserScheduleAdherence  implements Serializable {
     }
   }
   private ImpactEnum impact = null;
+  private RealTimeAdherenceExplanation adherenceExplanation = null;
   private Date timeOfAdherenceChange = null;
   private Date presenceUpdateTime = null;
   private List<QueueReference> activeQueues = new ArrayList<QueueReference>();
@@ -482,6 +484,13 @@ public class UserScheduleAdherence  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Currently applicable explanation for the adherence state")
+  @JsonProperty("adherenceExplanation")
+  public RealTimeAdherenceExplanation getAdherenceExplanation() {
+    return adherenceExplanation;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Time when the user entered the current adherenceState in ISO-8601 format")
   @JsonProperty("timeOfAdherenceChange")
   public Date getTimeOfAdherenceChange() {
@@ -549,6 +558,7 @@ public class UserScheduleAdherence  implements Serializable {
             Objects.equals(this.isOutOfOffice, userScheduleAdherence.isOutOfOffice) &&
             Objects.equals(this.adherenceState, userScheduleAdherence.adherenceState) &&
             Objects.equals(this.impact, userScheduleAdherence.impact) &&
+            Objects.equals(this.adherenceExplanation, userScheduleAdherence.adherenceExplanation) &&
             Objects.equals(this.timeOfAdherenceChange, userScheduleAdherence.timeOfAdherenceChange) &&
             Objects.equals(this.presenceUpdateTime, userScheduleAdherence.presenceUpdateTime) &&
             Objects.equals(this.activeQueues, userScheduleAdherence.activeQueues) &&
@@ -559,7 +569,7 @@ public class UserScheduleAdherence  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, businessUnit, managementUnit, team, scheduledActivityCategory, scheduledActivityCode, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, timeOfAdherenceChange, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit, selfUri);
+    return Objects.hash(id, name, user, businessUnit, managementUnit, team, scheduledActivityCategory, scheduledActivityCode, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceExplanation, timeOfAdherenceChange, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit, selfUri);
   }
 
   @Override
@@ -582,6 +592,7 @@ public class UserScheduleAdherence  implements Serializable {
     sb.append("    isOutOfOffice: ").append(toIndentedString(isOutOfOffice)).append("\n");
     sb.append("    adherenceState: ").append(toIndentedString(adherenceState)).append("\n");
     sb.append("    impact: ").append(toIndentedString(impact)).append("\n");
+    sb.append("    adherenceExplanation: ").append(toIndentedString(adherenceExplanation)).append("\n");
     sb.append("    timeOfAdherenceChange: ").append(toIndentedString(timeOfAdherenceChange)).append("\n");
     sb.append("    presenceUpdateTime: ").append(toIndentedString(presenceUpdateTime)).append("\n");
     sb.append("    activeQueues: ").append(toIndentedString(activeQueues)).append("\n");

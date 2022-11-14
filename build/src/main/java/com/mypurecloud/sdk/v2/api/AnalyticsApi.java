@@ -135,7 +135,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Delete/cancel an async request
+   * Delete/cancel an async details job
    * 
    * @param jobId jobId (required)
    * @throws ApiException if the request fails on the server
@@ -146,7 +146,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Delete/cancel an async request
+   * Delete/cancel an async details job
    * 
    * @param jobId jobId (required)
    * @throws IOException if the request fails to be processed
@@ -163,7 +163,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Delete/cancel an async request
+   * Delete/cancel an async details job
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -181,7 +181,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Delete/cancel an async request
+   * Delete/cancel an async details job
    * 
    * @param request The request object
    * @return the response
@@ -692,7 +692,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Fetch a page of results for an async query
+   * Fetch a page of results for an async details job
    * 
    * @param jobId jobId (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
@@ -706,7 +706,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Fetch a page of results for an async query
+   * Fetch a page of results for an async details job
    * 
    * @param jobId jobId (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
@@ -730,7 +730,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Fetch a page of results for an async query
+   * Fetch a page of results for an async details job
    * 
    * @param request The request object
    * @return AnalyticsConversationAsyncQueryResponse
@@ -749,7 +749,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Fetch a page of results for an async query
+   * Fetch a page of results for an async details job
    * 
    * @param request The request object
    * @return the response

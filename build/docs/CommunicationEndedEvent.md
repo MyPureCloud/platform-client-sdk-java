@@ -29,10 +29,8 @@ title: CommunicationEndedEvent
 | SYSTEM | &quot;System&quot; | 
 | ERROR | &quot;Error&quot; | 
 | TRANSFER | &quot;Transfer&quot; | 
-| TRANSFERACD | &quot;TransferACD&quot; | 
 | TRANSFERCONSULT | &quot;TransferConsult&quot; | 
 | TRANSFERCONFERENCE | &quot;TransferConference&quot; | 
-| TRANSFERUSER | &quot;TransferUser&quot; | 
 {: class="table table-striped"}
 
 

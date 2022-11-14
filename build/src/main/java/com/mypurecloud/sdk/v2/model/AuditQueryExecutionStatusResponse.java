@@ -128,7 +128,6 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     ROUTING("Routing"),
     SPEECHANDTEXTANALYTICS("SpeechAndTextAnalytics"),
     TELEPHONY("Telephony"),
-    TOPICSDEFINITIONS("TopicsDefinitions"),
     TRIGGERS("Triggers"),
     PROCESSAUTOMATION("ProcessAutomation"),
     VOICEMAIL("Voicemail"),

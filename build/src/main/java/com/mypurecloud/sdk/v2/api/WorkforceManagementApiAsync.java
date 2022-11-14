@@ -14,10 +14,17 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
+import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAdminRequest;
+import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAgentRequest;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
+import com.mypurecloud.sdk.v2.model.AdherenceExplanationAsyncResponse;
+import com.mypurecloud.sdk.v2.model.AdherenceExplanationJob;
+import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
+import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
+import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
 import com.mypurecloud.sdk.v2.model.AsyncIntradayResponse;
@@ -36,6 +43,8 @@ import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
+import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsRequest;
+import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
 import com.mypurecloud.sdk.v2.model.BuRescheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuRescheduleResult;
@@ -91,6 +100,7 @@ import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.PlanningGroup;
 import com.mypurecloud.sdk.v2.model.PlanningGroupList;
 import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
+import com.mypurecloud.sdk.v2.model.QueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
@@ -116,6 +126,7 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
@@ -141,6 +152,8 @@ import com.mypurecloud.sdk.v2.model.WfmAgent;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageRequest;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageResponse;
 import com.mypurecloud.sdk.v2.model.WfmIntradayPlanningGroupListing;
 import com.mypurecloud.sdk.v2.model.WfmProcessUploadRequest;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
@@ -165,8 +178,11 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementuni
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplanationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplanationsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdhocmodelingjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitRequest;
@@ -225,9 +241,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsD
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementNotificationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShrinkageJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAgentAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
@@ -241,9 +259,14 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunit
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivitycodesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
@@ -269,6 +292,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitA
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitMoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitSchedulesSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitShrinkageJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffplansRequest;
@@ -1362,6 +1386,156 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Get an adherence explanation for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceExplanationResponse> getWorkforcemanagementAdherenceExplanationAsync(GetWorkforcemanagementAdherenceExplanationRequest request, final AsyncApiCallback<AdherenceExplanationResponse> callback) {
+    try {
+      final SettableFuture<AdherenceExplanationResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceExplanationResponse>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an adherence explanation for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceExplanationResponse>> getWorkforcemanagementAdherenceExplanationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AdherenceExplanationResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceExplanationResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceExplanationResponse>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationResponse> response = (ApiResponse<AdherenceExplanationResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationResponse> response = (ApiResponse<AdherenceExplanationResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceExplanationJob> getWorkforcemanagementAdherenceExplanationsJobAsync(GetWorkforcemanagementAdherenceExplanationsJobRequest request, final AsyncApiCallback<AdherenceExplanationJob> callback) {
+    try {
+      final SettableFuture<AdherenceExplanationJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceExplanationJob>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceExplanationJob>> getWorkforcemanagementAdherenceExplanationsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AdherenceExplanationJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceExplanationJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceExplanationJob>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationJob> response = (ApiResponse<AdherenceExplanationJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationJob> response = (ApiResponse<AdherenceExplanationJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
    * Job details are only retained if the initial request returned a 202 ACCEPTED response
    * @param request the request object
@@ -1500,6 +1674,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ModelingStatusResponse> response = (ApiResponse<ModelingStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an adherence explanation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceExplanationResponse> getWorkforcemanagementAgentAdherenceExplanationAsync(GetWorkforcemanagementAgentAdherenceExplanationRequest request, final AsyncApiCallback<AdherenceExplanationResponse> callback) {
+    try {
+      final SettableFuture<AdherenceExplanationResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceExplanationResponse>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an adherence explanation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceExplanationResponse>> getWorkforcemanagementAgentAdherenceExplanationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AdherenceExplanationResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceExplanationResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceExplanationResponse>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationResponse> response = (ApiResponse<AdherenceExplanationResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationResponse> response = (ApiResponse<AdherenceExplanationResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5862,6 +6111,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Request to fetch the status of the historical shrinkage query
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WfmHistoricalShrinkageResponse> getWorkforcemanagementShrinkageJobAsync(GetWorkforcemanagementShrinkageJobRequest request, final AsyncApiCallback<WfmHistoricalShrinkageResponse> callback) {
+    try {
+      final SettableFuture<WfmHistoricalShrinkageResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WfmHistoricalShrinkageResponse>() {}, new AsyncApiCallback<ApiResponse<WfmHistoricalShrinkageResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmHistoricalShrinkageResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request to fetch the status of the historical shrinkage query
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WfmHistoricalShrinkageResponse>> getWorkforcemanagementShrinkageJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WfmHistoricalShrinkageResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WfmHistoricalShrinkageResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WfmHistoricalShrinkageResponse>() {}, new AsyncApiCallback<ApiResponse<WfmHistoricalShrinkageResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmHistoricalShrinkageResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmHistoricalShrinkageResponse> response = (ApiResponse<WfmHistoricalShrinkageResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmHistoricalShrinkageResponse> response = (ApiResponse<WfmHistoricalShrinkageResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a time off request for the current user
    * 
    * @param request the request object
@@ -6075,6 +6399,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TimeOffRequestList> response = (ApiResponse<TimeOffRequestList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an adherence explanation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceExplanationAsyncResponse> patchWorkforcemanagementAgentAdherenceExplanationAsync(PatchWorkforcemanagementAgentAdherenceExplanationRequest request, final AsyncApiCallback<AdherenceExplanationAsyncResponse> callback) {
+    try {
+      final SettableFuture<AdherenceExplanationAsyncResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceExplanationAsyncResponse>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationAsyncResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationAsyncResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an adherence explanation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceExplanationAsyncResponse>> patchWorkforcemanagementAgentAdherenceExplanationAsync(ApiRequest<UpdateAdherenceExplanationStatusRequest> request, final AsyncApiCallback<ApiResponse<AdherenceExplanationAsyncResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceExplanationAsyncResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceExplanationAsyncResponse>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationAsyncResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationAsyncResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7062,6 +7461,156 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Submit an adherence explanation for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceExplanationAsyncResponse> postWorkforcemanagementAdherenceExplanationsAsync(PostWorkforcemanagementAdherenceExplanationsRequest request, final AsyncApiCallback<AdherenceExplanationAsyncResponse> callback) {
+    try {
+      final SettableFuture<AdherenceExplanationAsyncResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceExplanationAsyncResponse>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationAsyncResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationAsyncResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Submit an adherence explanation for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceExplanationAsyncResponse>> postWorkforcemanagementAdherenceExplanationsAsync(ApiRequest<AddAdherenceExplanationAgentRequest> request, final AsyncApiCallback<ApiResponse<AdherenceExplanationAsyncResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceExplanationAsyncResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceExplanationAsyncResponse>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationAsyncResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationAsyncResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence explanations for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<QueryAdherenceExplanationsResponse> postWorkforcemanagementAdherenceExplanationsQueryAsync(PostWorkforcemanagementAdherenceExplanationsQueryRequest request, final AsyncApiCallback<QueryAdherenceExplanationsResponse> callback) {
+    try {
+      final SettableFuture<QueryAdherenceExplanationsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueryAdherenceExplanationsResponse>() {}, new AsyncApiCallback<ApiResponse<QueryAdherenceExplanationsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryAdherenceExplanationsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence explanations for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<QueryAdherenceExplanationsResponse>> postWorkforcemanagementAdherenceExplanationsQueryAsync(ApiRequest<AgentQueryAdherenceExplanationsRequest> request, final AsyncApiCallback<ApiResponse<QueryAdherenceExplanationsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<QueryAdherenceExplanationsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<QueryAdherenceExplanationsResponse>() {}, new AsyncApiCallback<ApiResponse<QueryAdherenceExplanationsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QueryAdherenceExplanationsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryAdherenceExplanationsResponse> response = (ApiResponse<QueryAdherenceExplanationsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QueryAdherenceExplanationsResponse> response = (ApiResponse<QueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Request a historical adherence report for users across management units
    * 
    * @param request the request object
@@ -7125,6 +7674,156 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add an adherence explanation for the requested user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceExplanationAsyncResponse> postWorkforcemanagementAgentAdherenceExplanationsAsync(PostWorkforcemanagementAgentAdherenceExplanationsRequest request, final AsyncApiCallback<AdherenceExplanationAsyncResponse> callback) {
+    try {
+      final SettableFuture<AdherenceExplanationAsyncResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceExplanationAsyncResponse>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationAsyncResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationAsyncResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add an adherence explanation for the requested user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceExplanationAsyncResponse>> postWorkforcemanagementAgentAdherenceExplanationsAsync(ApiRequest<AddAdherenceExplanationAdminRequest> request, final AsyncApiCallback<ApiResponse<AdherenceExplanationAsyncResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceExplanationAsyncResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceExplanationAsyncResponse>() {}, new AsyncApiCallback<ApiResponse<AdherenceExplanationAsyncResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceExplanationAsyncResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence explanations for the given agent across a specified range
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentQueryAdherenceExplanationsResponse> postWorkforcemanagementAgentAdherenceExplanationsQueryAsync(PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest request, final AsyncApiCallback<AgentQueryAdherenceExplanationsResponse> callback) {
+    try {
+      final SettableFuture<AgentQueryAdherenceExplanationsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentQueryAdherenceExplanationsResponse>() {}, new AsyncApiCallback<ApiResponse<AgentQueryAdherenceExplanationsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentQueryAdherenceExplanationsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence explanations for the given agent across a specified range
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentQueryAdherenceExplanationsResponse>> postWorkforcemanagementAgentAdherenceExplanationsQueryAsync(ApiRequest<AgentQueryAdherenceExplanationsRequest> request, final AsyncApiCallback<ApiResponse<AgentQueryAdherenceExplanationsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentQueryAdherenceExplanationsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentQueryAdherenceExplanationsResponse>() {}, new AsyncApiCallback<ApiResponse<AgentQueryAdherenceExplanationsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentQueryAdherenceExplanationsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentQueryAdherenceExplanationsResponse> response = (ApiResponse<AgentQueryAdherenceExplanationsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentQueryAdherenceExplanationsResponse> response = (ApiResponse<AgentQueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7275,6 +7974,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence explanations across an entire business unit for the requested period
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuQueryAdherenceExplanationsResponse> postWorkforcemanagementBusinessunitAdherenceExplanationsQueryAsync(PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest request, final AsyncApiCallback<BuQueryAdherenceExplanationsResponse> callback) {
+    try {
+      final SettableFuture<BuQueryAdherenceExplanationsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuQueryAdherenceExplanationsResponse>() {}, new AsyncApiCallback<ApiResponse<BuQueryAdherenceExplanationsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuQueryAdherenceExplanationsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence explanations across an entire business unit for the requested period
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuQueryAdherenceExplanationsResponse>> postWorkforcemanagementBusinessunitAdherenceExplanationsQueryAsync(ApiRequest<BuQueryAdherenceExplanationsRequest> request, final AsyncApiCallback<ApiResponse<BuQueryAdherenceExplanationsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuQueryAdherenceExplanationsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuQueryAdherenceExplanationsResponse>() {}, new AsyncApiCallback<ApiResponse<BuQueryAdherenceExplanationsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuQueryAdherenceExplanationsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuQueryAdherenceExplanationsResponse> response = (ApiResponse<BuQueryAdherenceExplanationsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuQueryAdherenceExplanationsResponse> response = (ApiResponse<BuQueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -9150,6 +9924,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request a historical shrinkage report
+   * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WfmHistoricalShrinkageResponse> postWorkforcemanagementManagementunitShrinkageJobsAsync(PostWorkforcemanagementManagementunitShrinkageJobsRequest request, final AsyncApiCallback<WfmHistoricalShrinkageResponse> callback) {
+    try {
+      final SettableFuture<WfmHistoricalShrinkageResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WfmHistoricalShrinkageResponse>() {}, new AsyncApiCallback<ApiResponse<WfmHistoricalShrinkageResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmHistoricalShrinkageResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request a historical shrinkage report
+   * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WfmHistoricalShrinkageResponse>> postWorkforcemanagementManagementunitShrinkageJobsAsync(ApiRequest<WfmHistoricalShrinkageRequest> request, final AsyncApiCallback<ApiResponse<WfmHistoricalShrinkageResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WfmHistoricalShrinkageResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WfmHistoricalShrinkageResponse>() {}, new AsyncApiCallback<ApiResponse<WfmHistoricalShrinkageResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmHistoricalShrinkageResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmHistoricalShrinkageResponse> response = (ApiResponse<WfmHistoricalShrinkageResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmHistoricalShrinkageResponse> response = (ApiResponse<WfmHistoricalShrinkageResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

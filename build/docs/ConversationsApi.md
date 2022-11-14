@@ -7,7 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteAnalyticsConversationsDetailsJob**](ConversationsApi.html#deleteAnalyticsConversationsDetailsJob) | Delete/cancel an async request |
+| [**deleteAnalyticsConversationsDetailsJob**](ConversationsApi.html#deleteAnalyticsConversationsDetailsJob) | Delete/cancel an async details job |
 | [**deleteConversationParticipantCode**](ConversationsApi.html#deleteConversationParticipantCode) | Delete a code used to add a communication to this participant |
 | [**deleteConversationParticipantFlaggedreason**](ConversationsApi.html#deleteConversationParticipantFlaggedreason) | Remove flagged reason from conversation participant. |
 | [**deleteConversationsCallParticipantConsult**](ConversationsApi.html#deleteConversationsCallParticipantConsult) | Cancel the transfer |
@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | Get a conversation by id |
 | [**getAnalyticsConversationsDetails**](ConversationsApi.html#getAnalyticsConversationsDetails) | Gets multiple conversations by id |
 | [**getAnalyticsConversationsDetailsJob**](ConversationsApi.html#getAnalyticsConversationsDetailsJob) | Get status for async query for conversation details |
-| [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi.html#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async query |
+| [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi.html#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async details job |
 | [**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi.html#getAnalyticsConversationsDetailsJobsAvailability) | Lookup the datalake availability date and time |
 | [**getConversation**](ConversationsApi.html#getConversation) | Get conversation |
 | [**getConversationParticipantSecureivrsession**](ConversationsApi.html#getConversationParticipantSecureivrsession) | Fetch info on a secure session |
@@ -195,7 +195,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > Void deleteAnalyticsConversationsDetailsJob(jobId)
 
-Delete/cancel an async request
+Delete/cancel an async details job
 
 Wraps DELETE /api/v2/analytics/conversations/details/jobs/{jobId}  
 
@@ -1051,7 +1051,7 @@ try {
 
 > [AnalyticsConversationAsyncQueryResponse](AnalyticsConversationAsyncQueryResponse.html) getAnalyticsConversationsDetailsJobResults(jobId, cursor, pageSize)
 
-Fetch a page of results for an async query
+Fetch a page of results for an async details job
 
 Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId}/results  
 

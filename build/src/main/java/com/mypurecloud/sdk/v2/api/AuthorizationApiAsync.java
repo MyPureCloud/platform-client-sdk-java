@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AuthorizationSettings;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
@@ -51,11 +52,13 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleComparedefaultRigh
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleSubjectgrantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRolesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsRolecountsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAuthorizationRoleRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchAuthorizationSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionObjectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionRestoreRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionsRequest;
@@ -1443,6 +1446,81 @@ public class AuthorizationApiAsync {
   }
 
   /**
+   * Get authorization settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthorizationSettings> getAuthorizationSettingsAsync(GetAuthorizationSettingsRequest request, final AsyncApiCallback<AuthorizationSettings> callback) {
+    try {
+      final SettableFuture<AuthorizationSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthorizationSettings>() {}, new AsyncApiCallback<ApiResponse<AuthorizationSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get authorization settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthorizationSettings>> getAuthorizationSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuthorizationSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthorizationSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthorizationSettings>() {}, new AsyncApiCallback<ApiResponse<AuthorizationSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationSettings> response = (ApiResponse<AuthorizationSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationSettings> response = (ApiResponse<AuthorizationSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Returns a listing of roles and permissions for a user.
    * 
    * @param request the request object
@@ -1806,6 +1884,81 @@ public class AuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DomainOrganizationRole> response = (ApiResponse<DomainOrganizationRole>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Change authorization settings
+   * Change authorization settings
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthorizationSettings> patchAuthorizationSettingsAsync(PatchAuthorizationSettingsRequest request, final AsyncApiCallback<AuthorizationSettings> callback) {
+    try {
+      final SettableFuture<AuthorizationSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthorizationSettings>() {}, new AsyncApiCallback<ApiResponse<AuthorizationSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Change authorization settings
+   * Change authorization settings
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthorizationSettings>> patchAuthorizationSettingsAsync(ApiRequest<AuthorizationSettings> request, final AsyncApiCallback<ApiResponse<AuthorizationSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthorizationSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthorizationSettings>() {}, new AsyncApiCallback<ApiResponse<AuthorizationSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthorizationSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationSettings> response = (ApiResponse<AuthorizationSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthorizationSettings> response = (ApiResponse<AuthorizationSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

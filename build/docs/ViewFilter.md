@@ -314,6 +314,7 @@ title: ViewFilter
 | PREDICTIVE | &quot;Predictive&quot; |
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
+| VIP | &quot;Vip&quot; |
 {: class="table table-striped"}
 
 
@@ -330,6 +331,7 @@ title: ViewFilter
 | PREDICTIVE | &quot;Predictive&quot; |
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
+| VIP | &quot;Vip&quot; |
 {: class="table table-striped"}
 
 

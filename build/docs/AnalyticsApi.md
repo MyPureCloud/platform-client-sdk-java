@@ -7,14 +7,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi.html#deleteAnalyticsConversationsDetailsJob) | Delete/cancel an async request |
+| [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi.html#deleteAnalyticsConversationsDetailsJob) | Delete/cancel an async details job |
 | [**deleteAnalyticsReportingSchedule**](AnalyticsApi.html#deleteAnalyticsReportingSchedule) | Delete a scheduled report job. |
 | [**deleteAnalyticsUsersDetailsJob**](AnalyticsApi.html#deleteAnalyticsUsersDetailsJob) | Delete/cancel an async request |
 | [**getAnalyticsBotflowReportingturns**](AnalyticsApi.html#getAnalyticsBotflowReportingturns) | Get Reporting Turns. |
 | [**getAnalyticsConversationDetails**](AnalyticsApi.html#getAnalyticsConversationDetails) | Get a conversation by id |
 | [**getAnalyticsConversationsDetails**](AnalyticsApi.html#getAnalyticsConversationsDetails) | Gets multiple conversations by id |
 | [**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | Get status for async query for conversation details |
-| [**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async query |
+| [**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async details job |
 | [**getAnalyticsConversationsDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobsAvailability) | Lookup the datalake availability date and time |
 | [**getAnalyticsDataretentionSettings**](AnalyticsApi.html#getAnalyticsDataretentionSettings) | Get analytics data retention setting |
 | [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | Get all view export requests for a user |
@@ -66,7 +66,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > Void deleteAnalyticsConversationsDetailsJob(jobId)
 
-Delete/cancel an async request
+Delete/cancel an async details job
 
 Wraps DELETE /api/v2/analytics/conversations/details/jobs/{jobId}  
 
@@ -503,7 +503,7 @@ try {
 
 > [AnalyticsConversationAsyncQueryResponse](AnalyticsConversationAsyncQueryResponse.html) getAnalyticsConversationsDetailsJobResults(jobId, cursor, pageSize)
 
-Fetch a page of results for an async query
+Fetch a page of results for an async details job
 
 Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId}/results  
 

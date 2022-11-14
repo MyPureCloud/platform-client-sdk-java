@@ -84,6 +84,7 @@ public class ReportingTurnAction  implements Serializable {
     TRANSFERPUREMATCHACTION("TransferPureMatchAction"),
     FINDQUEUEACTION("FindQueueAction"),
     FINDQUEUEBYIDACTION("FindQueueByIdAction"),
+    SETLOCALEACTION("SetLocaleAction"),
     UNKNOWN("Unknown");
 
     private String value;

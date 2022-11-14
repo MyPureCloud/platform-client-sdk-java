@@ -263,7 +263,8 @@ public class AnalyticsSession  implements Serializable {
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    STANDARD("Standard");
+    STANDARD("Standard"),
+    VIP("Vip");
 
     private String value;
 
@@ -328,7 +329,8 @@ public class AnalyticsSession  implements Serializable {
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    STANDARD("Standard");
+    STANDARD("Standard"),
+    VIP("Vip");
 
     private String value;
 

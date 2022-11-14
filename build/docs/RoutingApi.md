@@ -1788,7 +1788,7 @@ try {
 
 
 
-> [InboundDomainEntityListing](InboundDomainEntityListing.html) getRoutingEmailDomains(excludeStatus)
+> [InboundDomainEntityListing](InboundDomainEntityListing.html) getRoutingEmailDomains(pageSize, pageNumber, excludeStatus)
 
 Get domains
 
@@ -1820,9 +1820,11 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
 Boolean excludeStatus = false; // Boolean | Exclude MX record data
 try {
-    InboundDomainEntityListing result = apiInstance.getRoutingEmailDomains(excludeStatus);
+    InboundDomainEntityListing result = apiInstance.getRoutingEmailDomains(pageSize, pageNumber, excludeStatus);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailDomains");
@@ -1835,6 +1837,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **excludeStatus** | **Boolean**| Exclude MX record data | [optional] [default to false] 
 {: class="table-striped"}
 

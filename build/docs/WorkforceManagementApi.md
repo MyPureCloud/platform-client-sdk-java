@@ -21,8 +21,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplan) | Delete a work plan |
 | [**deleteWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplanrotation) | Delete a work plan rotation |
 | [**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | Get a list of UserScheduleAdherence records for the requested users |
+| [**getWorkforcemanagementAdherenceExplanation**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceExplanation) | Get an adherence explanation for the current user |
+| [**getWorkforcemanagementAdherenceExplanationsJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceExplanationsJob) | Query the status of an adherence explanation operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAdherenceHistoricalJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceHistoricalJob) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAdhocmodelingjob**](WorkforceManagementApi.html#getWorkforcemanagementAdhocmodelingjob) | Get status of the modeling job |
+| [**getWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi.html#getWorkforcemanagementAgentAdherenceExplanation) | Get an adherence explanation |
 | [**getWorkforcemanagementAgentManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentManagementunit) | Get the management unit to which the agent belongs |
 | [**getWorkforcemanagementAgentsMeManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentsMeManagementunit) | Get the management unit to which the currently logged in agent belongs |
 | [**getWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunit) | Get business unit |
@@ -81,9 +84,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementNotifications**](WorkforceManagementApi.html#getWorkforcemanagementNotifications) | Get a list of notifications for the current user |
 | [**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi.html#getWorkforcemanagementSchedulingjob) | Get status of the scheduling job |
 | [**getWorkforcemanagementShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementShifttrades) | Gets all of my shift trades |
+| [**getWorkforcemanagementShrinkageJob**](WorkforceManagementApi.html#getWorkforcemanagementShrinkageJob) | Request to fetch the status of the historical shrinkage query |
 | [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | Get a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequestWaitlistpositions**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequestWaitlistpositions) | Get the daily waitlist positions of a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | Get a list of time off requests for the current user |
+| [**patchWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi.html#patchWorkforcemanagementAgentAdherenceExplanation) | Update an adherence explanation |
 | [**patchWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunit) | Update business unit |
 | [**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitActivitycode) | Update an activity code |
 | [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitPlanninggroup) | Updates the planning group |
@@ -97,9 +102,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplan) | Update a work plan |
 | [**patchWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplanrotation) | Update a work plan rotation |
 | [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | Update a time off request for the current user |
+| [**postWorkforcemanagementAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanations) | Submit an adherence explanation for the current user |
+| [**postWorkforcemanagementAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanationsQuery) | Query adherence explanations for the current user |
 | [**postWorkforcemanagementAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistorical) | Request a historical adherence report for users across management units |
+| [**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanations) | Add an adherence explanation for the requested user |
+| [**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanationsQuery) | Query adherence explanations for the given agent across a specified range |
 | [**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi.html#postWorkforcemanagementAgentschedulesMine) | Get published schedule for the current user |
 | [**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitActivitycodes) | Create a new activity code |
+| [**postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitAdherenceExplanationsQuery) | Query adherence explanations across an entire business unit for the requested period |
 | [**postWorkforcemanagementBusinessunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitAgentschedulesSearch) | Search published schedules |
 | [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitIntraday) | Get intraday data for the given date for the requested planningGroupIds |
 | [**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitPlanninggroups) | Adds a new planning group |
@@ -125,6 +135,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | Request a historical adherence report |
 | [**postWorkforcemanagementManagementunitMove**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitMove) | Move the requested management unit to a new business unit |
 | [**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | Query published schedules for given given time range for set of users |
+| [**postWorkforcemanagementManagementunitShrinkageJobs**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitShrinkageJobs) | Request a historical shrinkage report |
 | [**postWorkforcemanagementManagementunitTimeofflimits**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeofflimits) | Creates a new time off limit object under management unit. |
 | [**postWorkforcemanagementManagementunitTimeofflimitsValuesQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeofflimitsValuesQuery) | Retrieves time off limit related values based on a given set of filters. |
 | [**postWorkforcemanagementManagementunitTimeoffplans**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffplans) | Creates a new time off plan |
@@ -1016,6 +1027,129 @@ try {
 
 [**List&lt;UserScheduleAdherence&gt;**](UserScheduleAdherence.html)
 
+<a name="getWorkforcemanagementAdherenceExplanation"></a>
+
+# **getWorkforcemanagementAdherenceExplanation**
+
+
+
+> [AdherenceExplanationResponse](AdherenceExplanationResponse.html) getWorkforcemanagementAdherenceExplanation(explanationId)
+
+Get an adherence explanation for the current user
+
+Wraps GET /api/v2/workforcemanagement/adherence/explanations/{explanationId}  
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceExplanation:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String explanationId = "explanationId_example"; // String | The ID of the explanation to update
+try {
+    AdherenceExplanationResponse result = apiInstance.getWorkforcemanagementAdherenceExplanation(explanationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAdherenceExplanation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **explanationId** | **String**| The ID of the explanation to update | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceExplanationResponse**](AdherenceExplanationResponse.html)
+
+<a name="getWorkforcemanagementAdherenceExplanationsJob"></a>
+
+# **getWorkforcemanagementAdherenceExplanationsJob**
+
+
+
+> [AdherenceExplanationJob](AdherenceExplanationJob.html) getWorkforcemanagementAdherenceExplanationsJob(jobId)
+
+Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    AdherenceExplanationJob result = apiInstance.getWorkforcemanagementAdherenceExplanationsJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAdherenceExplanationsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceExplanationJob**](AdherenceExplanationJob.html)
+
 <a name="getWorkforcemanagementAdherenceHistoricalJob"></a>
 
 # **getWorkforcemanagementAdherenceHistoricalJob**
@@ -1139,6 +1273,69 @@ try {
 ### Return type
 
 [**ModelingStatusResponse**](ModelingStatusResponse.html)
+
+<a name="getWorkforcemanagementAgentAdherenceExplanation"></a>
+
+# **getWorkforcemanagementAgentAdherenceExplanation**
+
+
+
+> [AdherenceExplanationResponse](AdherenceExplanationResponse.html) getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId)
+
+Get an adherence explanation
+
+Wraps GET /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}  
+
+Requires ANY permissions: 
+
+* wfm:adherenceExplanation:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String agentId = "agentId_example"; // String | The ID of the agent to query
+String explanationId = "explanationId_example"; // String | The ID of the explanation to update
+try {
+    AdherenceExplanationResponse result = apiInstance.getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAgentAdherenceExplanation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The ID of the agent to query | 
+| **explanationId** | **String**| The ID of the explanation to update | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceExplanationResponse**](AdherenceExplanationResponse.html)
 
 <a name="getWorkforcemanagementAgentManagementunit"></a>
 
@@ -5126,6 +5323,66 @@ This endpoint does not require any parameters.
 
 [**ShiftTradeListResponse**](ShiftTradeListResponse.html)
 
+<a name="getWorkforcemanagementShrinkageJob"></a>
+
+# **getWorkforcemanagementShrinkageJob**
+
+
+
+> [WfmHistoricalShrinkageResponse](WfmHistoricalShrinkageResponse.html) getWorkforcemanagementShrinkageJob(jobId)
+
+Request to fetch the status of the historical shrinkage query
+
+Wraps GET /api/v2/workforcemanagement/shrinkage/jobs/{jobId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    WfmHistoricalShrinkageResponse result = apiInstance.getWorkforcemanagementShrinkageJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementShrinkageJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
+
 <a name="getWorkforcemanagementTimeoffrequest"></a>
 
 # **getWorkforcemanagementTimeoffrequest**
@@ -5310,6 +5567,71 @@ try {
 ### Return type
 
 [**TimeOffRequestList**](TimeOffRequestList.html)
+
+<a name="patchWorkforcemanagementAgentAdherenceExplanation"></a>
+
+# **patchWorkforcemanagementAgentAdherenceExplanation**
+
+
+
+> [AdherenceExplanationAsyncResponse](AdherenceExplanationAsyncResponse.html) patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body)
+
+Update an adherence explanation
+
+Wraps PATCH /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}  
+
+Requires ANY permissions: 
+
+* wfm:adherenceExplanation:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String agentId = "agentId_example"; // String | The ID of the agent to query
+String explanationId = "explanationId_example"; // String | The ID of the explanation to update
+UpdateAdherenceExplanationStatusRequest body = new UpdateAdherenceExplanationStatusRequest(); // UpdateAdherenceExplanationStatusRequest | The request body
+try {
+    AdherenceExplanationAsyncResponse result = apiInstance.patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementAgentAdherenceExplanation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The ID of the agent to query | 
+| **explanationId** | **String**| The ID of the explanation to update | 
+| **body** | [**UpdateAdherenceExplanationStatusRequest**](UpdateAdherenceExplanationStatusRequest.html)| The request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html)
 
 <a name="patchWorkforcemanagementBusinessunit"></a>
 
@@ -6157,6 +6479,132 @@ try {
 
 [**TimeOffRequestResponse**](TimeOffRequestResponse.html)
 
+<a name="postWorkforcemanagementAdherenceExplanations"></a>
+
+# **postWorkforcemanagementAdherenceExplanations**
+
+
+
+> [AdherenceExplanationAsyncResponse](AdherenceExplanationAsyncResponse.html) postWorkforcemanagementAdherenceExplanations(body)
+
+Submit an adherence explanation for the current user
+
+Wraps POST /api/v2/workforcemanagement/adherence/explanations  
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceExplanation:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+AddAdherenceExplanationAgentRequest body = new AddAdherenceExplanationAgentRequest(); // AddAdherenceExplanationAgentRequest | The request body
+try {
+    AdherenceExplanationAsyncResponse result = apiInstance.postWorkforcemanagementAdherenceExplanations(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAdherenceExplanations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AddAdherenceExplanationAgentRequest**](AddAdherenceExplanationAgentRequest.html)| The request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html)
+
+<a name="postWorkforcemanagementAdherenceExplanationsQuery"></a>
+
+# **postWorkforcemanagementAdherenceExplanationsQuery**
+
+
+
+> [QueryAdherenceExplanationsResponse](QueryAdherenceExplanationsResponse.html) postWorkforcemanagementAdherenceExplanationsQuery(body, forceAsync, forceDownloadService)
+
+Query adherence explanations for the current user
+
+Wraps POST /api/v2/workforcemanagement/adherence/explanations/query  
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceExplanation:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+AgentQueryAdherenceExplanationsRequest body = new AgentQueryAdherenceExplanationsRequest(); // AgentQueryAdherenceExplanationsRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+try {
+    QueryAdherenceExplanationsResponse result = apiInstance.postWorkforcemanagementAdherenceExplanationsQuery(body, forceAsync, forceDownloadService);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAdherenceExplanationsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AgentQueryAdherenceExplanationsRequest**](AgentQueryAdherenceExplanationsRequest.html)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**QueryAdherenceExplanationsResponse**](QueryAdherenceExplanationsResponse.html)
+
 <a name="postWorkforcemanagementAdherenceHistorical"></a>
 
 # **postWorkforcemanagementAdherenceHistorical**
@@ -6217,6 +6665,136 @@ try {
 ### Return type
 
 [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
+
+<a name="postWorkforcemanagementAgentAdherenceExplanations"></a>
+
+# **postWorkforcemanagementAgentAdherenceExplanations**
+
+
+
+> [AdherenceExplanationAsyncResponse](AdherenceExplanationAsyncResponse.html) postWorkforcemanagementAgentAdherenceExplanations(agentId, body)
+
+Add an adherence explanation for the requested user
+
+Wraps POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations  
+
+Requires ANY permissions: 
+
+* wfm:adherenceExplanation:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String agentId = "agentId_example"; // String | The ID of the agent to query
+AddAdherenceExplanationAdminRequest body = new AddAdherenceExplanationAdminRequest(); // AddAdherenceExplanationAdminRequest | The request body
+try {
+    AdherenceExplanationAsyncResponse result = apiInstance.postWorkforcemanagementAgentAdherenceExplanations(agentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The ID of the agent to query | 
+| **body** | [**AddAdherenceExplanationAdminRequest**](AddAdherenceExplanationAdminRequest.html)| The request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html)
+
+<a name="postWorkforcemanagementAgentAdherenceExplanationsQuery"></a>
+
+# **postWorkforcemanagementAgentAdherenceExplanationsQuery**
+
+
+
+> [AgentQueryAdherenceExplanationsResponse](AgentQueryAdherenceExplanationsResponse.html) postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, forceAsync, forceDownloadService)
+
+Query adherence explanations for the given agent across a specified range
+
+Wraps POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query  
+
+Requires ANY permissions: 
+
+* wfm:adherenceExplanation:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String agentId = "agentId_example"; // String | The ID of the agent to query
+AgentQueryAdherenceExplanationsRequest body = new AgentQueryAdherenceExplanationsRequest(); // AgentQueryAdherenceExplanationsRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+try {
+    AgentQueryAdherenceExplanationsResponse result = apiInstance.postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, forceAsync, forceDownloadService);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanationsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The ID of the agent to query | 
+| **body** | [**AgentQueryAdherenceExplanationsRequest**](AgentQueryAdherenceExplanationsRequest.html)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse.html)
 
 <a name="postWorkforcemanagementAgentschedulesMine"></a>
 
@@ -6341,6 +6919,73 @@ try {
 ### Return type
 
 [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
+
+<a name="postWorkforcemanagementBusinessunitAdherenceExplanationsQuery"></a>
+
+# **postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**
+
+
+
+> [BuQueryAdherenceExplanationsResponse](BuQueryAdherenceExplanationsResponse.html) postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, forceAsync, forceDownloadService)
+
+Query adherence explanations across an entire business unit for the requested period
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query  
+
+Requires ANY permissions: 
+
+* wfm:adherenceExplanation:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+BuQueryAdherenceExplanationsRequest body = new BuQueryAdherenceExplanationsRequest(); // BuQueryAdherenceExplanationsRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+try {
+    BuQueryAdherenceExplanationsResponse result = apiInstance.postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, forceAsync, forceDownloadService);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceExplanationsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**BuQueryAdherenceExplanationsRequest**](BuQueryAdherenceExplanationsRequest.html)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuQueryAdherenceExplanationsResponse**](BuQueryAdherenceExplanationsResponse.html)
 
 <a name="postWorkforcemanagementBusinessunitAgentschedulesSearch"></a>
 
@@ -7982,6 +8627,71 @@ try {
 ### Return type
 
 [**UserScheduleContainer**](UserScheduleContainer.html)
+
+<a name="postWorkforcemanagementManagementunitShrinkageJobs"></a>
+
+# **postWorkforcemanagementManagementunitShrinkageJobs**
+
+
+
+> [WfmHistoricalShrinkageResponse](WfmHistoricalShrinkageResponse.html) postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body)
+
+Request a historical shrinkage report
+
+The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs  
+
+Requires ANY permissions: 
+
+* wfm:shrinkage:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
+WfmHistoricalShrinkageRequest body = new WfmHistoricalShrinkageRequest(); // WfmHistoricalShrinkageRequest | body
+try {
+    WfmHistoricalShrinkageResponse result = apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitShrinkageJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit | 
+| **body** | [**WfmHistoricalShrinkageRequest**](WfmHistoricalShrinkageRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
 
 <a name="postWorkforcemanagementManagementunitTimeofflimits"></a>
 

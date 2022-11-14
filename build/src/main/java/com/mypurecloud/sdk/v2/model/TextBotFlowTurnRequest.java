@@ -51,7 +51,8 @@ public class TextBotFlowTurnRequest  implements Serializable {
     ERROR("Error"),
     NOMATCH("NoMatch"),
     NOINPUT("NoInput"),
-    USERDISCONNECT("UserDisconnect");
+    USERDISCONNECT("UserDisconnect"),
+    CLIENTSESSIONEXPIRED("ClientSessionExpired");
 
     private String value;
 

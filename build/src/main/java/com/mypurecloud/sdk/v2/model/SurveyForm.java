@@ -72,10 +72,21 @@ public class SurveyForm  implements Serializable {
   }
 
 
+  /**
+   * Is this form published
+   **/
+  public SurveyForm published(Boolean published) {
+    this.published = published;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "Is this form published")
   @JsonProperty("published")
   public Boolean getPublished() {
     return published;
+  }
+  public void setPublished(Boolean published) {
+    this.published = published;
   }
 
 
@@ -166,7 +177,7 @@ public class SurveyForm  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A list of question groups")
+  @ApiModelProperty(example = "null", value = "A list of question groups")
   @JsonProperty("questionGroups")
   public List<SurveyQuestionGroup> getQuestionGroups() {
     return questionGroups;

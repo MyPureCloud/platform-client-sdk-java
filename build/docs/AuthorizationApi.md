@@ -25,11 +25,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAuthorizationRoleSubjectgrants**](AuthorizationApi.html#getAuthorizationRoleSubjectgrants) | Get the subjects' granted divisions in the specified role. |
 | [**getAuthorizationRoleUsers**](AuthorizationApi.html#getAuthorizationRoleUsers) | Get a list of the users in a specified role. |
 | [**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | Retrieve a list of all roles defined for the organization |
+| [**getAuthorizationSettings**](AuthorizationApi.html#getAuthorizationSettings) | Get authorization settings |
 | [**getAuthorizationSubject**](AuthorizationApi.html#getAuthorizationSubject) | Returns a listing of roles and permissions for a user. |
 | [**getAuthorizationSubjectsMe**](AuthorizationApi.html#getAuthorizationSubjectsMe) | Returns a listing of roles and permissions for the currently authenticated user. |
 | [**getAuthorizationSubjectsRolecounts**](AuthorizationApi.html#getAuthorizationSubjectsRolecounts) | Get the count of roles granted to a list of subjects |
 | [**getUserRoles**](AuthorizationApi.html#getUserRoles) | Returns a listing of roles and permissions for a user. |
 | [**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | Patch Organization Role for needsUpdate Field |
+| [**patchAuthorizationSettings**](AuthorizationApi.html#patchAuthorizationSettings) | Change authorization settings |
 | [**postAuthorizationDivisionObject**](AuthorizationApi.html#postAuthorizationDivisionObject) | Assign a list of objects to a division |
 | [**postAuthorizationDivisionRestore**](AuthorizationApi.html#postAuthorizationDivisionRestore) | Recreate a previously deleted division. |
 | [**postAuthorizationDivisions**](AuthorizationApi.html#postAuthorizationDivisions) | Create a division. |
@@ -1230,6 +1232,64 @@ try {
 
 [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
 
+<a name="getAuthorizationSettings"></a>
+
+# **getAuthorizationSettings**
+
+
+
+> [AuthorizationSettings](AuthorizationSettings.html) getAuthorizationSettings()
+
+Get authorization settings
+
+Wraps GET /api/v2/authorization/settings  
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+* authorization:settings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+try {
+    AuthorizationSettings result = apiInstance.getAuthorizationSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**AuthorizationSettings**](AuthorizationSettings.html)
+
 <a name="getAuthorizationSubject"></a>
 
 # **getAuthorizationSubject**
@@ -1533,6 +1593,70 @@ try {
 ### Return type
 
 [**DomainOrganizationRole**](DomainOrganizationRole.html)
+
+<a name="patchAuthorizationSettings"></a>
+
+# **patchAuthorizationSettings**
+
+
+
+> [AuthorizationSettings](AuthorizationSettings.html) patchAuthorizationSettings(body)
+
+Change authorization settings
+
+Change authorization settings
+
+Wraps PATCH /api/v2/authorization/settings  
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+* authorization:settings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+AuthorizationSettings body = new AuthorizationSettings(); // AuthorizationSettings | Authorization Settings
+try {
+    AuthorizationSettings result = apiInstance.patchAuthorizationSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#patchAuthorizationSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AuthorizationSettings**](AuthorizationSettings.html)| Authorization Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthorizationSettings**](AuthorizationSettings.html)
 
 <a name="postAuthorizationDivisionObject"></a>
 

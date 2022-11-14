@@ -62,6 +62,7 @@ title: ReportingTurnAction
 | TRANSFERPUREMATCHACTION | &quot;TransferPureMatchAction&quot; | 
 | FINDQUEUEACTION | &quot;FindQueueAction&quot; | 
 | FINDQUEUEBYIDACTION | &quot;FindQueueByIdAction&quot; | 
+| SETLOCALEACTION | &quot;SetLocaleAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

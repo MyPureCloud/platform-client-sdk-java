@@ -28,6 +28,7 @@ title: TextBotFlowTurnRequest
 | NOMATCH | &quot;NoMatch&quot; | 
 | NOINPUT | &quot;NoInput&quot; | 
 | USERDISCONNECT | &quot;UserDisconnect&quot; | 
+| CLIENTSESSIONEXPIRED | &quot;ClientSessionExpired&quot; | 
 {: class="table table-striped"}
 
 

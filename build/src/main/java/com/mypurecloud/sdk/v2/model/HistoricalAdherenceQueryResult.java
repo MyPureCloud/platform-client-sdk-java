@@ -29,6 +29,7 @@ import java.io.Serializable;
 public class HistoricalAdherenceQueryResult  implements Serializable {
   
   private String userId = null;
+  private String managementUnitId = null;
   private Date startDate = null;
   private Date endDate = null;
   private Double adherencePercentage = null;
@@ -104,6 +105,24 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
   }
   public void setUserId(String userId) {
     this.userId = userId;
+  }
+
+
+  /**
+   * The ID of the management unit of the user for whom the adherence is queried
+   **/
+  public HistoricalAdherenceQueryResult managementUnitId(String managementUnitId) {
+    this.managementUnitId = managementUnitId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the management unit of the user for whom the adherence is queried")
+  @JsonProperty("managementUnitId")
+  public String getManagementUnitId() {
+    return managementUnitId;
+  }
+  public void setManagementUnitId(String managementUnitId) {
+    this.managementUnitId = managementUnitId;
   }
 
 
@@ -280,6 +299,7 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     HistoricalAdherenceQueryResult historicalAdherenceQueryResult = (HistoricalAdherenceQueryResult) o;
 
     return Objects.equals(this.userId, historicalAdherenceQueryResult.userId) &&
+            Objects.equals(this.managementUnitId, historicalAdherenceQueryResult.managementUnitId) &&
             Objects.equals(this.startDate, historicalAdherenceQueryResult.startDate) &&
             Objects.equals(this.endDate, historicalAdherenceQueryResult.endDate) &&
             Objects.equals(this.adherencePercentage, historicalAdherenceQueryResult.adherencePercentage) &&
@@ -293,7 +313,7 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, startDate, endDate, adherencePercentage, conformancePercentage, impact, exceptionInfo, dayMetrics, actualsEndDate, actuals);
+    return Objects.hash(userId, managementUnitId, startDate, endDate, adherencePercentage, conformancePercentage, impact, exceptionInfo, dayMetrics, actualsEndDate, actuals);
   }
 
   @Override
@@ -302,6 +322,7 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     sb.append("class HistoricalAdherenceQueryResult {\n");
     
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    managementUnitId: ").append(toIndentedString(managementUnitId)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    adherencePercentage: ").append(toIndentedString(adherencePercentage)).append("\n");

@@ -50,7 +50,6 @@ title: AuditQueryRequest
 | ROUTING | &quot;Routing&quot; | 
 | SPEECHANDTEXTANALYTICS | &quot;SpeechAndTextAnalytics&quot; | 
 | TELEPHONY | &quot;Telephony&quot; | 
-| TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; | 
 | TRIGGERS | &quot;Triggers&quot; | 
 | PROCESSAUTOMATION | &quot;ProcessAutomation&quot; | 
 | VOICEMAIL | &quot;Voicemail&quot; | 
