@@ -58,7 +58,7 @@ public class DataActionConditionSettings  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The input field from the data action that the contactId will be passed into.")
+  @ApiModelProperty(example = "null", value = "The input field from the data action that the contactId will be passed into.")
   @JsonProperty("contactIdField")
   public String getContactIdField() {
     return contactIdField;

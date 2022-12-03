@@ -13,6 +13,9 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -23,6 +26,7 @@ public class DialerCampaignConfigChangePhoneColumn  implements Serializable {
   
   private String columnName = null;
   private String type = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -61,6 +65,23 @@ public class DialerCampaignConfigChangePhoneColumn  implements Serializable {
   }
 
 
+  /**
+   **/
+  public DialerCampaignConfigChangePhoneColumn additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +93,13 @@ public class DialerCampaignConfigChangePhoneColumn  implements Serializable {
     DialerCampaignConfigChangePhoneColumn dialerCampaignConfigChangePhoneColumn = (DialerCampaignConfigChangePhoneColumn) o;
 
     return Objects.equals(this.columnName, dialerCampaignConfigChangePhoneColumn.columnName) &&
-            Objects.equals(this.type, dialerCampaignConfigChangePhoneColumn.type);
+            Objects.equals(this.type, dialerCampaignConfigChangePhoneColumn.type) &&
+            Objects.equals(this.additionalProperties, dialerCampaignConfigChangePhoneColumn.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, type);
+    return Objects.hash(columnName, type, additionalProperties);
   }
 
   @Override
@@ -87,6 +109,7 @@ public class DialerCampaignConfigChangePhoneColumn  implements Serializable {
     
     sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

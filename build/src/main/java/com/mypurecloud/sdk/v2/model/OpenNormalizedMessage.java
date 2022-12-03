@@ -13,7 +13,6 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.OpenMessageContent;
-import com.mypurecloud.sdk.v2.model.OpenMessageEvent;
 import com.mypurecloud.sdk.v2.model.OpenMessagingChannel;
 import com.mypurecloud.sdk.v2.model.Reason;
 import io.swagger.annotations.ApiModel;
@@ -53,8 +52,7 @@ public class OpenNormalizedMessage  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXT("Text"),
-    RECEIPT("Receipt"),
-    EVENT("Event");
+    RECEIPT("Receipt");
 
     private String value;
 
@@ -84,7 +82,6 @@ public class OpenNormalizedMessage  implements Serializable {
   private TypeEnum type = null;
   private String text = null;
   private List<OpenMessageContent> content = new ArrayList<OpenMessageContent>();
-  private List<OpenMessageEvent> events = new ArrayList<OpenMessageEvent>();
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -281,24 +278,6 @@ public class OpenNormalizedMessage  implements Serializable {
 
 
   /**
-   * List of event elements.
-   **/
-  public OpenNormalizedMessage events(List<OpenMessageEvent> events) {
-    this.events = events;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "List of event elements.")
-  @JsonProperty("events")
-  public List<OpenMessageEvent> getEvents() {
-    return events;
-  }
-  public void setEvents(List<OpenMessageEvent> events) {
-    this.events = events;
-  }
-
-
-  /**
    * Message receipt status, only used with type Receipt.
    **/
   public OpenNormalizedMessage status(StatusEnum status) {
@@ -403,7 +382,6 @@ public class OpenNormalizedMessage  implements Serializable {
             Objects.equals(this.type, openNormalizedMessage.type) &&
             Objects.equals(this.text, openNormalizedMessage.text) &&
             Objects.equals(this.content, openNormalizedMessage.content) &&
-            Objects.equals(this.events, openNormalizedMessage.events) &&
             Objects.equals(this.status, openNormalizedMessage.status) &&
             Objects.equals(this.reasons, openNormalizedMessage.reasons) &&
             Objects.equals(this.isFinalReceipt, openNormalizedMessage.isFinalReceipt) &&
@@ -413,7 +391,7 @@ public class OpenNormalizedMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, channel, type, text, content, events, status, reasons, isFinalReceipt, direction, metadata);
+    return Objects.hash(id, channel, type, text, content, status, reasons, isFinalReceipt, direction, metadata);
   }
 
   @Override
@@ -426,7 +404,6 @@ public class OpenNormalizedMessage  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
-    sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reasons: ").append(toIndentedString(reasons)).append("\n");
     sb.append("    isFinalReceipt: ").append(toIndentedString(isFinalReceipt)).append("\n");

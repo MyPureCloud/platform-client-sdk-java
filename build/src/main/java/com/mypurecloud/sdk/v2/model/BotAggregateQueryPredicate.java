@@ -91,6 +91,8 @@ public class BotAggregateQueryPredicate  implements Serializable {
  @JsonDeserialize(using = DimensionEnumDeserializer.class)
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ASKACTIONID("askActionId"),
+    ASKACTIONRESULT("askActionResult"),
     BOTFINALINTENT("botFinalIntent"),
     BOTID("botId"),
     BOTINTENT("botIntent"),

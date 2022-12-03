@@ -31,8 +31,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | Get the status of all jobs within the user's organization |
 | [**getRecordingKeyconfiguration**](RecordingApi.html#getRecordingKeyconfiguration) | Get the encryption key configurations |
 | [**getRecordingKeyconfigurations**](RecordingApi.html#getRecordingKeyconfigurations) | Get a list of key configurations data |
-| [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | Get the local encryption settings |
-| [**getRecordingLocalkeysSettings**](RecordingApi.html#getRecordingLocalkeysSettings) | gets a list local key settings data |
+| [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId} |
+| [**getRecordingLocalkeysSettings**](RecordingApi.html#getRecordingLocalkeysSettings) | gets a list local key settings data. Replaced by API recording/keyconfigurations |
 | [**getRecordingMediaretentionpolicies**](RecordingApi.html#getRecordingMediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled. |
 | [**getRecordingMediaretentionpolicy**](RecordingApi.html#getRecordingMediaretentionpolicy) | Get a media retention policy |
 | [**getRecordingRecordingkeys**](RecordingApi.html#getRecordingRecordingkeys) | Get encryption key list |
@@ -49,8 +49,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRecordingJobs**](RecordingApi.html#postRecordingJobs) | Create a recording bulk job. |
 | [**postRecordingKeyconfigurations**](RecordingApi.html#postRecordingKeyconfigurations) | Setup configurations for encryption key creation |
 | [**postRecordingKeyconfigurationsValidate**](RecordingApi.html#postRecordingKeyconfigurationsValidate) | Validate encryption key configurations without saving it |
-| [**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | create a local recording key |
-| [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | create settings for local key creation |
+| [**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | create a local key management recording key |
+| [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | create settings for local key creation. Replaced by API recording/keyconfigurations |
 | [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | Create media retention policy |
 | [**postRecordingRecordingkeys**](RecordingApi.html#postRecordingRecordingkeys) | Create encryption key |
 | [**postRecordingsDeletionprotection**](RecordingApi.html#postRecordingsDeletionprotection) | Get a list of conversations with protected recordings |
@@ -62,7 +62,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#putRecordingCrossplatformMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingJob**](RecordingApi.html#putRecordingJob) | Execute the recording bulk job. |
 | [**putRecordingKeyconfiguration**](RecordingApi.html#putRecordingKeyconfiguration) | Update the encryption key configurations |
-| [**putRecordingLocalkeysSetting**](RecordingApi.html#putRecordingLocalkeysSetting) | Update the local encryption settings |
+| [**putRecordingLocalkeysSetting**](RecordingApi.html#putRecordingLocalkeysSetting) | Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId} |
 | [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | Update key rotation schedule |
 | [**putRecordingSettings**](RecordingApi.html#putRecordingSettings) | Update the Recording Settings for the Organization |
@@ -1646,11 +1646,11 @@ This endpoint does not require any parameters.
 
 # **getRecordingLocalkeysSetting**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [LocalEncryptionConfiguration](LocalEncryptionConfiguration.html) getRecordingLocalkeysSetting(settingsId)
 
-Get the local encryption settings
+Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
 
 Wraps GET /api/v2/recording/localkeys/settings/{settingsId}  
 
@@ -1707,11 +1707,11 @@ try {
 
 # **getRecordingLocalkeysSettings**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [LocalEncryptionConfigurationListing](LocalEncryptionConfigurationListing.html) getRecordingLocalkeysSettings()
 
-gets a list local key settings data
+gets a list local key settings data. Replaced by API recording/keyconfigurations
 
 Wraps GET /api/v2/recording/localkeys/settings  
 
@@ -2785,7 +2785,7 @@ try {
 
 > [EncryptionKey](EncryptionKey.html) postRecordingLocalkeys(body)
 
-create a local recording key
+create a local key management recording key
 
 Wraps POST /api/v2/recording/localkeys  
 
@@ -2842,11 +2842,11 @@ try {
 
 # **postRecordingLocalkeysSettings**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [LocalEncryptionConfiguration](LocalEncryptionConfiguration.html) postRecordingLocalkeysSettings(body)
 
-create settings for local key creation
+create settings for local key creation. Replaced by API recording/keyconfigurations
 
 Wraps POST /api/v2/recording/localkeys/settings  
 
@@ -3601,11 +3601,11 @@ try {
 
 # **putRecordingLocalkeysSetting**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [LocalEncryptionConfiguration](LocalEncryptionConfiguration.html) putRecordingLocalkeysSetting(settingsId, body)
 
-Update the local encryption settings
+Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
 
 Wraps PUT /api/v2/recording/localkeys/settings/{settingsId}  
 

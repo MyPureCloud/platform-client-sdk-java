@@ -31,6 +31,7 @@ public class WritableDialerContact  implements Serializable {
   private String contactListId = null;
   private Map<String, Object> data = null;
   private Map<String, MessageEvaluation> latestSmsEvaluations = null;
+  private Map<String, MessageEvaluation> latestEmailEvaluations = null;
   private Boolean callable = null;
   private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
   private Map<String, ContactableStatus> contactableStatus = null;
@@ -94,6 +95,13 @@ public class WritableDialerContact  implements Serializable {
   @JsonProperty("latestSmsEvaluations")
   public Map<String, MessageEvaluation> getLatestSmsEvaluations() {
     return latestSmsEvaluations;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "A map of email records for the contact email columns.")
+  @JsonProperty("latestEmailEvaluations")
+  public Map<String, MessageEvaluation> getLatestEmailEvaluations() {
+    return latestEmailEvaluations;
   }
 
 
@@ -165,6 +173,7 @@ public class WritableDialerContact  implements Serializable {
             Objects.equals(this.contactListId, writableDialerContact.contactListId) &&
             Objects.equals(this.data, writableDialerContact.data) &&
             Objects.equals(this.latestSmsEvaluations, writableDialerContact.latestSmsEvaluations) &&
+            Objects.equals(this.latestEmailEvaluations, writableDialerContact.latestEmailEvaluations) &&
             Objects.equals(this.callable, writableDialerContact.callable) &&
             Objects.equals(this.phoneNumberStatus, writableDialerContact.phoneNumberStatus) &&
             Objects.equals(this.contactableStatus, writableDialerContact.contactableStatus);
@@ -172,7 +181,7 @@ public class WritableDialerContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactListId, data, latestSmsEvaluations, callable, phoneNumberStatus, contactableStatus);
+    return Objects.hash(id, contactListId, data, latestSmsEvaluations, latestEmailEvaluations, callable, phoneNumberStatus, contactableStatus);
   }
 
   @Override
@@ -184,6 +193,7 @@ public class WritableDialerContact  implements Serializable {
     sb.append("    contactListId: ").append(toIndentedString(contactListId)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    latestSmsEvaluations: ").append(toIndentedString(latestSmsEvaluations)).append("\n");
+    sb.append("    latestEmailEvaluations: ").append(toIndentedString(latestEmailEvaluations)).append("\n");
     sb.append("    callable: ").append(toIndentedString(callable)).append("\n");
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
     sb.append("    contactableStatus: ").append(toIndentedString(contactableStatus)).append("\n");

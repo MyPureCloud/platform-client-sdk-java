@@ -12,6 +12,7 @@ title: DialerContactlistfilterConfigChangeContactListFilter
 | **contactListColumns** | <!----><!---->**List&lt;String&gt;**<!----> | The list of contact list columns |  [optional] |
 | **clauses** | <!----><!---->[**List&lt;DialerContactlistfilterConfigChangeFilterClause&gt;**](DialerContactlistfilterConfigChangeFilterClause.html)<!----> |  |  [optional] |
 | **filterType** | [**FilterTypeEnum**](#FilterTypeEnum)<!----> | Contact list filter type |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The UI-visible name of the object |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Creation time of the entity |  [optional] |

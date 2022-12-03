@@ -137,7 +137,8 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
     REASSIGNED("reassigned"),
     REASSIGN("reassign"),
     ARCHIVE("archive"),
-    UNARCHIVE("unarchive");
+    UNARCHIVE("unarchive"),
+    RESCHEDULE("reschedule");
 
     private String value;
 
@@ -195,7 +196,8 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
     DISCONNECTED("Disconnected"),
     PARKED("Parked"),
     HELD("Held"),
-    ACDCANCELLED("AcdCancelled");
+    ACDCANCELLED("AcdCancelled"),
+    TERMINATED("Terminated");
 
     private String value;
 

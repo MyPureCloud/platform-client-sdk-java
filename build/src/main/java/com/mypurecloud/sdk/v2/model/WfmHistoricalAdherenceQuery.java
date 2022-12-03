@@ -75,7 +75,7 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The time zone, in olson format, to use in defining days when computing adherence. The results will be returned as UTC timestamps regardless of the time zone input.")
+  @ApiModelProperty(example = "null", value = "The time zone, in olson format, to use in defining days when computing adherence. The results will be returned as UTC timestamps regardless of the time zone input.")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;

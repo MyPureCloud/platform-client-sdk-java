@@ -20,7 +20,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -273,6 +275,7 @@ public class ConversationEventTopicCallback  implements Serializable {
   private Boolean afterCallWorkRequired = null;
   private String callerId = null;
   private String callerIdName = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -739,6 +742,23 @@ public class ConversationEventTopicCallback  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ConversationEventTopicCallback additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -774,12 +794,13 @@ public class ConversationEventTopicCallback  implements Serializable {
             Objects.equals(this.afterCallWork, conversationEventTopicCallback.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, conversationEventTopicCallback.afterCallWorkRequired) &&
             Objects.equals(this.callerId, conversationEventTopicCallback.callerId) &&
-            Objects.equals(this.callerIdName, conversationEventTopicCallback.callerIdName);
+            Objects.equals(this.callerIdName, conversationEventTopicCallback.callerIdName) &&
+            Objects.equals(this.additionalProperties, conversationEventTopicCallback.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName);
+    return Objects.hash(state, initialState, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName, additionalProperties);
   }
 
   @Override
@@ -813,6 +834,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
     sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

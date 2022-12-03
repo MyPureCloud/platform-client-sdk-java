@@ -1,0 +1,176 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicConditionRulePredicate;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
+
+import java.io.Serializable;
+/**
+ * V2MobiusAlertsTopicCondition
+ */
+
+public class V2MobiusAlertsTopicCondition  implements Serializable {
+  
+  private List<V2MobiusAlertsTopicCondition> conditions = new ArrayList<V2MobiusAlertsTopicCondition>();
+  private List<V2MobiusAlertsTopicConditionRulePredicate> predicates = new ArrayList<V2MobiusAlertsTopicConditionRulePredicate>();
+
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets type
+   */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AND("And"),
+    OR("Or"),
+    NOT("Not"),
+    UNKNOWN("Unknown");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
+
+  
+  /**
+   **/
+  public V2MobiusAlertsTopicCondition conditions(List<V2MobiusAlertsTopicCondition> conditions) {
+    this.conditions = conditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conditions")
+  public List<V2MobiusAlertsTopicCondition> getConditions() {
+    return conditions;
+  }
+  public void setConditions(List<V2MobiusAlertsTopicCondition> conditions) {
+    this.conditions = conditions;
+  }
+
+
+  /**
+   **/
+  public V2MobiusAlertsTopicCondition predicates(List<V2MobiusAlertsTopicConditionRulePredicate> predicates) {
+    this.predicates = predicates;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("predicates")
+  public List<V2MobiusAlertsTopicConditionRulePredicate> getPredicates() {
+    return predicates;
+  }
+  public void setPredicates(List<V2MobiusAlertsTopicConditionRulePredicate> predicates) {
+    this.predicates = predicates;
+  }
+
+
+  /**
+   **/
+  public V2MobiusAlertsTopicCondition type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    V2MobiusAlertsTopicCondition v2MobiusAlertsTopicCondition = (V2MobiusAlertsTopicCondition) o;
+
+    return Objects.equals(this.conditions, v2MobiusAlertsTopicCondition.conditions) &&
+            Objects.equals(this.predicates, v2MobiusAlertsTopicCondition.predicates) &&
+            Objects.equals(this.type, v2MobiusAlertsTopicCondition.type);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(conditions, predicates, type);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class V2MobiusAlertsTopicCondition {\n");
+    
+    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+    sb.append("    predicates: ").append(toIndentedString(predicates)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

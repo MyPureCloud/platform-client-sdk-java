@@ -14,6 +14,7 @@ title: DialerAttemptLimitsConfigChangeAttemptLimits
 | **resetPeriod** | [**ResetPeriodEnum**](#ResetPeriodEnum)<!----> | After how long the number of attempts will be set back to 0 |  [optional] |
 | **recallEntries** | <!----><!---->[**Map&lt;String, DialerAttemptLimitsConfigChangeRecallEntry&gt;**](DialerAttemptLimitsConfigChangeRecallEntry.html)<!----> | Configuration for recall attempts |  [optional] |
 | **breadthFirstRecalls** | <!----><!---->**Boolean**<!----> | Whether recalls are performed before considering other numbers (true) or after (false) |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The UI-visible name of the object |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Creation time of the entity |  [optional] |

@@ -14,6 +14,8 @@ title: IvrEstablishedEvent
 | **communicationId** | <!----><!---->**String**<!----> | A unique Id (V4 UUID) identifying this communication |  |
 | **ivrPhoneNumber** | <!----><!---->**String**<!----> | The phone number for this IVR, if any is known |  [optional] |
 | **ivrName** | <!----><!---->**String**<!----> | A displayable name for this IVR, if any is known. |  [optional] |
+| **ani** | <!----><!---->**String**<!----> | The automatic number identification if it is available for this conversation. |  [optional] |
+| **dnis** | <!----><!---->**String**<!----> | The dialed number identification if it is available for this conversation. |  [optional] |
 | **initialConfiguration** | <!----><!---->[**InitialConfiguration**](InitialConfiguration.html)<!----> | Metadata about this communication. |  |
 | **sourceConfiguration** | <!----><!---->[**SourceConfiguration**](SourceConfiguration.html)<!----> | Metadata about the source of this communication's interaction. |  |
 {: class="table table-striped"}

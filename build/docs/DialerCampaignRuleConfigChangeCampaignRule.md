@@ -13,6 +13,7 @@ title: DialerCampaignRuleConfigChangeCampaignRule
 | **campaignRuleActions** | <!----><!---->[**List&lt;DialerCampaignRuleConfigChangeCampaignRuleAction&gt;**](DialerCampaignRuleConfigChangeCampaignRuleAction.html)<!----> | The list of actions that will be taken when this Campaign Rule's conditions are met |  [optional] |
 | **matchAnyConditions** | <!----><!---->**Boolean**<!----> | Whether this Campaign Rule should match any conditions (inclusive OR) or match all conditions (ALL) |  [optional] |
 | **enabled** | <!----><!---->**Boolean**<!----> | Whether this campaign rule is enabled |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The UI-visible name of the object |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Creation time of the entity |  [optional] |

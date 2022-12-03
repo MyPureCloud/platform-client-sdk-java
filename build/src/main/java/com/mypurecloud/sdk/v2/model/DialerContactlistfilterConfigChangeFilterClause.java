@@ -16,7 +16,9 @@ import com.mypurecloud.sdk.v2.model.DialerContactlistfilterConfigChangeFilterPre
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -74,6 +76,7 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
   }
   private FilterTypeEnum filterType = null;
   private List<DialerContactlistfilterConfigChangeFilterPredicate> predicates = new ArrayList<DialerContactlistfilterConfigChangeFilterPredicate>();
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -112,6 +115,23 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
   }
 
 
+  /**
+   **/
+  public DialerContactlistfilterConfigChangeFilterClause additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -123,12 +143,13 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
     DialerContactlistfilterConfigChangeFilterClause dialerContactlistfilterConfigChangeFilterClause = (DialerContactlistfilterConfigChangeFilterClause) o;
 
     return Objects.equals(this.filterType, dialerContactlistfilterConfigChangeFilterClause.filterType) &&
-            Objects.equals(this.predicates, dialerContactlistfilterConfigChangeFilterClause.predicates);
+            Objects.equals(this.predicates, dialerContactlistfilterConfigChangeFilterClause.predicates) &&
+            Objects.equals(this.additionalProperties, dialerContactlistfilterConfigChangeFilterClause.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filterType, predicates);
+    return Objects.hash(filterType, predicates, additionalProperties);
   }
 
   @Override
@@ -138,6 +159,7 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
     
     sb.append("    filterType: ").append(toIndentedString(filterType)).append("\n");
     sb.append("    predicates: ").append(toIndentedString(predicates)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

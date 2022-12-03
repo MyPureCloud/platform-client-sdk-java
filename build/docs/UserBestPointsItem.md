@@ -23,9 +23,9 @@ title: UserBestPointsItem
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| MONTHLY | &quot;Monthly&quot; | 
-| WEEKLY | &quot;Weekly&quot; | 
 | DAILY | &quot;Daily&quot; | 
+| WEEKLY | &quot;Weekly&quot; | 
+| MONTHLY | &quot;Monthly&quot; | 
 {: class="table table-striped"}
 
 

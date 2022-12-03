@@ -16,7 +16,7 @@ title: ArchitectFlowNotificationArchitectOperation
 | **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum)<!----> | The action status |  [optional] |
 | **errorMessage** | <!----><!---->**String**<!----> | The error message, if the action failed |  [optional] |
 | **errorCode** | <!----><!---->**String**<!----> | The error code, if the action failed |  [optional] |
-| **errorMessageParams** | <!----><!---->**Object**<!----> | The error message params, if the action failed |  [optional] |
+| **errorMessageParams** | <!----><!---->[**ArchitectFlowNotificationErrorMessageParams**](ArchitectFlowNotificationErrorMessageParams.html)<!----> |  |  [optional] |
 | **errorDetails** | <!----><!---->[**List&lt;ArchitectFlowNotificationErrorDetail&gt;**](ArchitectFlowNotificationErrorDetail.html)<!----> | The error details, if the action failed |  [optional] |
 {: class="table table-striped"}
 

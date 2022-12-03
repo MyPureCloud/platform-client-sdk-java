@@ -1794,7 +1794,7 @@ try {
 
 
 
-> [IVREntityListing](IVREntityListing.html) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis)
+> [IVREntityListing](IVREntityListing.html) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup)
 
 Get IVR configs.
 
@@ -1832,8 +1832,9 @@ String sortBy = "name"; // String | Sort by
 String sortOrder = "ASC"; // String | Sort order
 String name = "name_example"; // String | Name of the IVR to filter by.
 String dnis = "dnis_example"; // String | The phone number of the IVR to filter by.
+String scheduleGroup = "scheduleGroup_example"; // String | The Schedule Group of the IVR to filter by.
 try {
-    IVREntityListing result = apiInstance.getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis);
+    IVREntityListing result = apiInstance.getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectIvrs");
@@ -1852,6 +1853,7 @@ try {
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
 | **name** | **String**| Name of the IVR to filter by. | [optional] 
 | **dnis** | **String**| The phone number of the IVR to filter by. | [optional] 
+| **scheduleGroup** | **String**| The Schedule Group of the IVR to filter by. | [optional] 
 {: class="table-striped"}
 
 

@@ -10,6 +10,7 @@ title: DialerCampaignConfigChangePhoneColumn
 | ------------ | ------------- | ------------- | ------------- |
 | **columnName** | <!----><!---->**String**<!----> | The name of the phone column |  [optional] |
 | **type** | <!----><!---->**String**<!----> | The type of the phone column, for example, 'cell' or 'home' |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

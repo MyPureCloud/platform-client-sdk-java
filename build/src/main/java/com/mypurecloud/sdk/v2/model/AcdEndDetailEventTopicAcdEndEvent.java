@@ -338,7 +338,8 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     BULLSEYE("BULLSEYE"),
     STANDARD("STANDARD"),
     OTHER("OTHER"),
-    CONDITIONAL("CONDITIONAL");
+    CONDITIONAL("CONDITIONAL"),
+    VIP("VIP");
 
     private String value;
 
@@ -393,7 +394,8 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     BULLSEYE("BULLSEYE"),
     STANDARD("STANDARD"),
     OTHER("OTHER"),
-    CONDITIONAL("CONDITIONAL");
+    CONDITIONAL("CONDITIONAL"),
+    VIP("VIP");
 
     private String value;
 

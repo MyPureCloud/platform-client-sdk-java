@@ -45,9 +45,9 @@ public class OverallBestPointsItem  implements Serializable {
  @JsonDeserialize(using = GranularityTypeEnumDeserializer.class)
   public enum GranularityTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    MONTHLY("Monthly"),
+    DAILY("Daily"),
     WEEKLY("Weekly"),
-    DAILY("Daily");
+    MONTHLY("Monthly");
 
     private String value;
 

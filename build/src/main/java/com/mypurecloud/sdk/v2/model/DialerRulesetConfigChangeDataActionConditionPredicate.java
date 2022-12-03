@@ -14,6 +14,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -82,6 +85,7 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
   private String comparisonValue = null;
   private Boolean outputFieldMissingResolution = null;
   private Boolean inverted = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -174,6 +178,23 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
   }
 
 
+  /**
+   **/
+  public DialerRulesetConfigChangeDataActionConditionPredicate additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -188,12 +209,13 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
             Objects.equals(this.outputOperator, dialerRulesetConfigChangeDataActionConditionPredicate.outputOperator) &&
             Objects.equals(this.comparisonValue, dialerRulesetConfigChangeDataActionConditionPredicate.comparisonValue) &&
             Objects.equals(this.outputFieldMissingResolution, dialerRulesetConfigChangeDataActionConditionPredicate.outputFieldMissingResolution) &&
-            Objects.equals(this.inverted, dialerRulesetConfigChangeDataActionConditionPredicate.inverted);
+            Objects.equals(this.inverted, dialerRulesetConfigChangeDataActionConditionPredicate.inverted) &&
+            Objects.equals(this.additionalProperties, dialerRulesetConfigChangeDataActionConditionPredicate.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(outputField, outputOperator, comparisonValue, outputFieldMissingResolution, inverted);
+    return Objects.hash(outputField, outputOperator, comparisonValue, outputFieldMissingResolution, inverted, additionalProperties);
   }
 
   @Override
@@ -206,6 +228,7 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
     sb.append("    comparisonValue: ").append(toIndentedString(comparisonValue)).append("\n");
     sb.append("    outputFieldMissingResolution: ").append(toIndentedString(outputFieldMissingResolution)).append("\n");
     sb.append("    inverted: ").append(toIndentedString(inverted)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

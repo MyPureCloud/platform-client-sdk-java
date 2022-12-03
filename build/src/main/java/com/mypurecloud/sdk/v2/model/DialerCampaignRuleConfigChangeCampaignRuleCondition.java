@@ -75,6 +75,7 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
     }
   }
   private ConditionTypeEnum conditionType = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -131,6 +132,23 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
   }
 
 
+  /**
+   **/
+  public DialerCampaignRuleConfigChangeCampaignRuleCondition additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -143,12 +161,13 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
 
     return Objects.equals(this.id, dialerCampaignRuleConfigChangeCampaignRuleCondition.id) &&
             Objects.equals(this.parameters, dialerCampaignRuleConfigChangeCampaignRuleCondition.parameters) &&
-            Objects.equals(this.conditionType, dialerCampaignRuleConfigChangeCampaignRuleCondition.conditionType);
+            Objects.equals(this.conditionType, dialerCampaignRuleConfigChangeCampaignRuleCondition.conditionType) &&
+            Objects.equals(this.additionalProperties, dialerCampaignRuleConfigChangeCampaignRuleCondition.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, parameters, conditionType);
+    return Objects.hash(id, parameters, conditionType, additionalProperties);
   }
 
   @Override
@@ -159,6 +178,7 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    conditionType: ").append(toIndentedString(conditionType)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

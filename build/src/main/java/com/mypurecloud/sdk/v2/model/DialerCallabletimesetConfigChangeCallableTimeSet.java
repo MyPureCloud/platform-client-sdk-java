@@ -16,7 +16,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -26,6 +28,7 @@ import java.io.Serializable;
 public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serializable {
   
   private List<DialerCallabletimesetConfigChangeCallableTime> callableTimes = new ArrayList<DialerCallabletimesetConfigChangeCallableTime>();
+  private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
@@ -48,6 +51,23 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
   }
   public void setCallableTimes(List<DialerCallabletimesetConfigChangeCallableTime> callableTimes) {
     this.callableTimes = callableTimes;
+  }
+
+
+  /**
+   **/
+  public DialerCallabletimesetConfigChangeCallableTimeSet additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
   }
 
 
@@ -152,6 +172,7 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
     DialerCallabletimesetConfigChangeCallableTimeSet dialerCallabletimesetConfigChangeCallableTimeSet = (DialerCallabletimesetConfigChangeCallableTimeSet) o;
 
     return Objects.equals(this.callableTimes, dialerCallabletimesetConfigChangeCallableTimeSet.callableTimes) &&
+            Objects.equals(this.additionalProperties, dialerCallabletimesetConfigChangeCallableTimeSet.additionalProperties) &&
             Objects.equals(this.id, dialerCallabletimesetConfigChangeCallableTimeSet.id) &&
             Objects.equals(this.name, dialerCallabletimesetConfigChangeCallableTimeSet.name) &&
             Objects.equals(this.dateCreated, dialerCallabletimesetConfigChangeCallableTimeSet.dateCreated) &&
@@ -161,7 +182,7 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(callableTimes, id, name, dateCreated, dateModified, version);
+    return Objects.hash(callableTimes, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -170,6 +191,7 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
     sb.append("class DialerCallabletimesetConfigChangeCallableTimeSet {\n");
     
     sb.append("    callableTimes: ").append(toIndentedString(callableTimes)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

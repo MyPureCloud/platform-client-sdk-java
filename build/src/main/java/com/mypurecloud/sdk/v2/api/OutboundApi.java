@@ -171,6 +171,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewR
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundConversationDncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDigitalrulesetsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
@@ -8405,6 +8406,85 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add email addresses to a DNC list.
+   * Only Internal DNC lists may be appended to
+   * @param dncListId DncList ID (required)
+   * @param body DNC email addresses (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundDnclistEmailaddresses(String dncListId, List<String> body) throws IOException, ApiException {
+     postOutboundDnclistEmailaddresses(createPostOutboundDnclistEmailaddressesRequest(dncListId, body));
+  }
+
+  /**
+   * Add email addresses to a DNC list.
+   * Only Internal DNC lists may be appended to
+   * @param dncListId DncList ID (required)
+   * @param body DNC email addresses (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundDnclistEmailaddressesWithHttpInfo(String dncListId, List<String> body) throws IOException {
+    return postOutboundDnclistEmailaddresses(createPostOutboundDnclistEmailaddressesRequest(dncListId, body).withHttpInfo());
+  }
+
+  private PostOutboundDnclistEmailaddressesRequest createPostOutboundDnclistEmailaddressesRequest(String dncListId, List<String> body) {
+    return PostOutboundDnclistEmailaddressesRequest.builder()
+            .withDncListId(dncListId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add email addresses to a DNC list.
+   * Only Internal DNC lists may be appended to
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundDnclistEmailaddresses(PostOutboundDnclistEmailaddressesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Add email addresses to a DNC list.
+   * Only Internal DNC lists may be appended to
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundDnclistEmailaddresses(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

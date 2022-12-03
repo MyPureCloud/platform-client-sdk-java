@@ -18,6 +18,9 @@ import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -210,6 +213,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
   private QueueConversationEventTopicWrapup wrapup = null;
   private QueueConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -515,6 +519,23 @@ public class QueueConversationEventTopicChat  implements Serializable {
   }
 
 
+  /**
+   **/
+  public QueueConversationEventTopicChat additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -541,12 +562,13 @@ public class QueueConversationEventTopicChat  implements Serializable {
             Objects.equals(this.journeyContext, queueConversationEventTopicChat.journeyContext) &&
             Objects.equals(this.wrapup, queueConversationEventTopicChat.wrapup) &&
             Objects.equals(this.afterCallWork, queueConversationEventTopicChat.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicChat.afterCallWorkRequired);
+            Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicChat.afterCallWorkRequired) &&
+            Objects.equals(this.additionalProperties, queueConversationEventTopicChat.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, provider, scriptId, peerId, roomId, avatarImageUrl, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, initialState, id, provider, scriptId, peerId, roomId, avatarImageUrl, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -571,6 +593,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

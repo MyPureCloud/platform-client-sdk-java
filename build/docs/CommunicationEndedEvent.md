@@ -24,13 +24,15 @@ title: CommunicationEndedEvent
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| SELF | &quot;Self&quot; | 
-| PEER | &quot;Peer&quot; | 
-| SYSTEM | &quot;System&quot; | 
 | ERROR | &quot;Error&quot; | 
+| PEER | &quot;Peer&quot; | 
+| SELF | &quot;Self&quot; | 
+| SYSTEM | &quot;System&quot; | 
 | TRANSFER | &quot;Transfer&quot; | 
-| TRANSFERCONSULT | &quot;TransferConsult&quot; | 
+| TRANSFERACD | &quot;TransferACD&quot; | 
 | TRANSFERCONFERENCE | &quot;TransferConference&quot; | 
+| TRANSFERCONSULT | &quot;TransferConsult&quot; | 
+| TRANSFERUSER | &quot;TransferUser&quot; | 
 {: class="table table-striped"}
 
 

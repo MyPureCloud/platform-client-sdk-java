@@ -22,6 +22,7 @@ import java.io.Serializable;
 public class DocumentBodyImage  implements Serializable {
   
   private String url = null;
+  private String hyperlink = null;
 
   
   /**
@@ -42,6 +43,24 @@ public class DocumentBodyImage  implements Serializable {
   }
 
 
+  /**
+   * The URL of the page that the hyperlink goes to.
+   **/
+  public DocumentBodyImage hyperlink(String hyperlink) {
+    this.hyperlink = hyperlink;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The URL of the page that the hyperlink goes to.")
+  @JsonProperty("hyperlink")
+  public String getHyperlink() {
+    return hyperlink;
+  }
+  public void setHyperlink(String hyperlink) {
+    this.hyperlink = hyperlink;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -52,12 +71,13 @@ public class DocumentBodyImage  implements Serializable {
     }
     DocumentBodyImage documentBodyImage = (DocumentBodyImage) o;
 
-    return Objects.equals(this.url, documentBodyImage.url);
+    return Objects.equals(this.url, documentBodyImage.url) &&
+            Objects.equals(this.hyperlink, documentBodyImage.hyperlink);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url);
+    return Objects.hash(url, hyperlink);
   }
 
   @Override
@@ -66,6 +86,7 @@ public class DocumentBodyImage  implements Serializable {
     sb.append("class DocumentBodyImage {\n");
     
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    hyperlink: ").append(toIndentedString(hyperlink)).append("\n");
     sb.append("}");
     return sb.toString();
   }

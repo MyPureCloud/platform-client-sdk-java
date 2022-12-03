@@ -17,7 +17,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -79,6 +81,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
   private StatusEnum status = null;
   private String stopMessage = null;
   private Boolean repeat = null;
+  private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
@@ -172,6 +175,23 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
   }
   public void setRepeat(Boolean repeat) {
     this.repeat = repeat;
+  }
+
+
+  /**
+   **/
+  public DialerSequenceConfigChangeCampaignSequence additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
   }
 
 
@@ -280,6 +300,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
             Objects.equals(this.status, dialerSequenceConfigChangeCampaignSequence.status) &&
             Objects.equals(this.stopMessage, dialerSequenceConfigChangeCampaignSequence.stopMessage) &&
             Objects.equals(this.repeat, dialerSequenceConfigChangeCampaignSequence.repeat) &&
+            Objects.equals(this.additionalProperties, dialerSequenceConfigChangeCampaignSequence.additionalProperties) &&
             Objects.equals(this.id, dialerSequenceConfigChangeCampaignSequence.id) &&
             Objects.equals(this.name, dialerSequenceConfigChangeCampaignSequence.name) &&
             Objects.equals(this.dateCreated, dialerSequenceConfigChangeCampaignSequence.dateCreated) &&
@@ -289,7 +310,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaigns, currentCampaign, status, stopMessage, repeat, id, name, dateCreated, dateModified, version);
+    return Objects.hash(campaigns, currentCampaign, status, stopMessage, repeat, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -302,6 +323,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    stopMessage: ").append(toIndentedString(stopMessage)).append("\n");
     sb.append("    repeat: ").append(toIndentedString(repeat)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

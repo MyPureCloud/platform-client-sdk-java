@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationClient;
 import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationErrorDetail;
+import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationErrorMessageParams;
 import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -142,7 +143,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
   private ActionStatusEnum actionStatus = null;
   private String errorMessage = null;
   private String errorCode = null;
-  private Object errorMessageParams = null;
+  private ArchitectPromptNotificationErrorMessageParams errorMessageParams = null;
   private List<ArchitectPromptNotificationErrorDetail> errorDetails = new ArrayList<ArchitectPromptNotificationErrorDetail>();
 
   
@@ -289,19 +290,18 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
 
 
   /**
-   * The error message params, if the action failed
    **/
-  public ArchitectPromptNotificationArchitectOperation errorMessageParams(Object errorMessageParams) {
+  public ArchitectPromptNotificationArchitectOperation errorMessageParams(ArchitectPromptNotificationErrorMessageParams errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The error message params, if the action failed")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("errorMessageParams")
-  public Object getErrorMessageParams() {
+  public ArchitectPromptNotificationErrorMessageParams getErrorMessageParams() {
     return errorMessageParams;
   }
-  public void setErrorMessageParams(Object errorMessageParams) {
+  public void setErrorMessageParams(ArchitectPromptNotificationErrorMessageParams errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
   }
 

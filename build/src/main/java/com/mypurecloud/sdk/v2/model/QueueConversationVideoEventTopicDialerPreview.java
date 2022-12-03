@@ -15,7 +15,9 @@ import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicPhoneNumberC
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -30,6 +32,7 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
   private String contactListId = null;
   private String campaignId = null;
   private List<QueueConversationVideoEventTopicPhoneNumberColumn> phoneNumberColumns = new ArrayList<QueueConversationVideoEventTopicPhoneNumberColumn>();
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -121,6 +124,23 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
   }
 
 
+  /**
+   **/
+  public QueueConversationVideoEventTopicDialerPreview additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -135,12 +155,13 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
             Objects.equals(this.contactId, queueConversationVideoEventTopicDialerPreview.contactId) &&
             Objects.equals(this.contactListId, queueConversationVideoEventTopicDialerPreview.contactListId) &&
             Objects.equals(this.campaignId, queueConversationVideoEventTopicDialerPreview.campaignId) &&
-            Objects.equals(this.phoneNumberColumns, queueConversationVideoEventTopicDialerPreview.phoneNumberColumns);
+            Objects.equals(this.phoneNumberColumns, queueConversationVideoEventTopicDialerPreview.phoneNumberColumns) &&
+            Objects.equals(this.additionalProperties, queueConversationVideoEventTopicDialerPreview.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns);
+    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns, additionalProperties);
   }
 
   @Override
@@ -153,6 +174,7 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
     sb.append("    contactListId: ").append(toIndentedString(contactListId)).append("\n");
     sb.append("    campaignId: ").append(toIndentedString(campaignId)).append("\n");
     sb.append("    phoneNumberColumns: ").append(toIndentedString(phoneNumberColumns)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

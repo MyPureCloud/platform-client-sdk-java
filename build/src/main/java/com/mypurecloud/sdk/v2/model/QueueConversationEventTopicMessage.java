@@ -22,7 +22,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -318,6 +320,7 @@ public class QueueConversationEventTopicMessage  implements Serializable {
   private QueueConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -768,6 +771,23 @@ public class QueueConversationEventTopicMessage  implements Serializable {
   }
 
 
+  /**
+   **/
+  public QueueConversationEventTopicMessage additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -802,12 +822,13 @@ public class QueueConversationEventTopicMessage  implements Serializable {
             Objects.equals(this.wrapup, queueConversationEventTopicMessage.wrapup) &&
             Objects.equals(this.afterCallWork, queueConversationEventTopicMessage.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicMessage.afterCallWorkRequired) &&
-            Objects.equals(this.agentAssistantId, queueConversationEventTopicMessage.agentAssistantId);
+            Objects.equals(this.agentAssistantId, queueConversationEventTopicMessage.agentAssistantId) &&
+            Objects.equals(this.additionalProperties, queueConversationEventTopicMessage.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, direction, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
+    return Objects.hash(id, state, initialState, direction, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, additionalProperties);
   }
 
   @Override
@@ -840,6 +861,7 @@ public class QueueConversationEventTopicMessage  implements Serializable {
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

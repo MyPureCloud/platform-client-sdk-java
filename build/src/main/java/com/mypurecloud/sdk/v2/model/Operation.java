@@ -58,10 +58,13 @@ public class Operation  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CREATE("CREATE"),
     CHECKIN("CHECKIN"),
+    CHECKOUT("CHECKOUT"),
     DEBUG("DEBUG"),
     DELETE("DELETE"),
     HISTORY("HISTORY"),
     PUBLISH("PUBLISH"),
+    REVERT("REVERT"),
+    SAVE("SAVE"),
     STATE_CHANGE("STATE_CHANGE"),
     UPDATE("UPDATE"),
     VALIDATE("VALIDATE");

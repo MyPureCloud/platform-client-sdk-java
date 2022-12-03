@@ -21,7 +21,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -159,6 +161,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   private List<DialerCampaignConfigChangeUriReference> contactListFilters = new ArrayList<DialerCampaignConfigChangeUriReference>();
   private DialerCampaignConfigChangeUriReference division = null;
   private String agentOwnedColumn = null;
+  private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
@@ -668,6 +671,23 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
 
   /**
+   **/
+  public DialerCampaignConfigChangeCampaign additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
+  /**
    * The globally unique identifier for the object.
    **/
   public DialerCampaignConfigChangeCampaign id(String id) {
@@ -795,6 +815,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
             Objects.equals(this.contactListFilters, dialerCampaignConfigChangeCampaign.contactListFilters) &&
             Objects.equals(this.division, dialerCampaignConfigChangeCampaign.division) &&
             Objects.equals(this.agentOwnedColumn, dialerCampaignConfigChangeCampaign.agentOwnedColumn) &&
+            Objects.equals(this.additionalProperties, dialerCampaignConfigChangeCampaign.additionalProperties) &&
             Objects.equals(this.id, dialerCampaignConfigChangeCampaign.id) &&
             Objects.equals(this.name, dialerCampaignConfigChangeCampaign.name) &&
             Objects.equals(this.dateCreated, dialerCampaignConfigChangeCampaign.dateCreated) &&
@@ -804,7 +825,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, id, name, dateCreated, dateModified, version);
+    return Objects.hash(contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -840,6 +861,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    agentOwnedColumn: ").append(toIndentedString(agentOwnedColumn)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

@@ -26,6 +26,8 @@ title: BotAggregationQuery
 
 | Name | Value |
 | ---- | ----- |
+| ASKACTIONID | &quot;askActionId&quot; |
+| ASKACTIONRESULT | &quot;askActionResult&quot; |
 | BOTFINALINTENT | &quot;botFinalIntent&quot; |
 | BOTID | &quot;botId&quot; |
 | BOTINTENT | &quot;botIntent&quot; |
@@ -53,6 +55,7 @@ title: BotAggregationQuery
 
 | Name | Value |
 | ---- | ----- |
+| NBOTSESSIONTURNS | &quot;nBotSessionTurns&quot; |
 | NBOTSESSIONS | &quot;nBotSessions&quot; |
 | OBOTINTENT | &quot;oBotIntent&quot; |
 | OBOTSESSIONQUERY | &quot;oBotSessionQuery&quot; |

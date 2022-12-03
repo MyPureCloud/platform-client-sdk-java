@@ -10,6 +10,7 @@ title: DialerContactlistfilterConfigChangeFilterClause
 | ------------ | ------------- | ------------- | ------------- |
 | **filterType** | [**FilterTypeEnum**](#FilterTypeEnum)<!----> | Contact list filter type |  [optional] |
 | **predicates** | <!----><!---->[**List&lt;DialerContactlistfilterConfigChangeFilterPredicate&gt;**](DialerContactlistfilterConfigChangeFilterPredicate.html)<!----> | The list of predicates in that clause |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

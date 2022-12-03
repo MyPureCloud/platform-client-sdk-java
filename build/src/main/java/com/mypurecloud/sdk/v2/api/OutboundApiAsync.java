@@ -174,6 +174,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewR
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundConversationDncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDigitalrulesetsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
@@ -7558,6 +7559,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DigitalRuleSet> response = (ApiResponse<DigitalRuleSet>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add email addresses to a DNC list.
+   * Only Internal DNC lists may be appended to
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postOutboundDnclistEmailaddressesAsync(PostOutboundDnclistEmailaddressesRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add email addresses to a DNC list.
+   * Only Internal DNC lists may be appended to
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postOutboundDnclistEmailaddressesAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -18,7 +18,9 @@ import com.mypurecloud.sdk.v2.model.DialerRulesetConfigChangeUriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -28,6 +30,7 @@ import java.io.Serializable;
 public class DialerRulesetConfigChangeCondition  implements Serializable {
   
   private DialerRulesetConfigChangeUriReference dataAction = null;
+  private Map<String, Object> additionalProperties = null;
   private String type = null;
   private Boolean inverted = null;
   private String attributeName = null;
@@ -213,6 +216,23 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
   }
   public void setDataAction(DialerRulesetConfigChangeUriReference dataAction) {
     this.dataAction = dataAction;
+  }
+
+
+  /**
+   **/
+  public DialerRulesetConfigChangeCondition additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
   }
 
 
@@ -497,6 +517,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     DialerRulesetConfigChangeCondition dialerRulesetConfigChangeCondition = (DialerRulesetConfigChangeCondition) o;
 
     return Objects.equals(this.dataAction, dialerRulesetConfigChangeCondition.dataAction) &&
+            Objects.equals(this.additionalProperties, dialerRulesetConfigChangeCondition.additionalProperties) &&
             Objects.equals(this.type, dialerRulesetConfigChangeCondition.type) &&
             Objects.equals(this.inverted, dialerRulesetConfigChangeCondition.inverted) &&
             Objects.equals(this.attributeName, dialerRulesetConfigChangeCondition.attributeName) &&
@@ -516,7 +537,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dataAction, type, inverted, attributeName, value, valueType, operator, codes, propertyType, property, dataNotFoundResolution, contactIdField, callAnalysisResultField, agentWrapupField, contactColumnToDataActionFieldMappings, predicates);
+    return Objects.hash(dataAction, additionalProperties, type, inverted, attributeName, value, valueType, operator, codes, propertyType, property, dataNotFoundResolution, contactIdField, callAnalysisResultField, agentWrapupField, contactColumnToDataActionFieldMappings, predicates);
   }
 
   @Override
@@ -525,6 +546,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     sb.append("class DialerRulesetConfigChangeCondition {\n");
     
     sb.append("    dataAction: ").append(toIndentedString(dataAction)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    inverted: ").append(toIndentedString(inverted)).append("\n");
     sb.append("    attributeName: ").append(toIndentedString(attributeName)).append("\n");

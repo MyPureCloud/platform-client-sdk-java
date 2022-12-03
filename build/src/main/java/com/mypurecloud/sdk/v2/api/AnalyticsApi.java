@@ -368,12 +368,13 @@ public class AnalyticsApi {
    * @param actionId Optional action ID to get the reporting turns associated to a particular flow action (optional)
    * @param sessionId Optional session ID to get the reporting turns for a particular session (optional)
    * @param language Optional language code to get the reporting turns for a particular language (optional, default to null)
+   * @param askActionResults Optional case-insensitive comma separated list of ask action results to filter the reporting turns. (optional)
    * @return ReportingTurnsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ReportingTurnsResponse getAnalyticsBotflowReportingturns(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language) throws IOException, ApiException {
-    return  getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId, language));
+  public ReportingTurnsResponse getAnalyticsBotflowReportingturns(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language, String askActionResults) throws IOException, ApiException {
+    return  getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId, language, askActionResults));
   }
 
   /**
@@ -385,14 +386,15 @@ public class AnalyticsApi {
    * @param actionId Optional action ID to get the reporting turns associated to a particular flow action (optional)
    * @param sessionId Optional session ID to get the reporting turns for a particular session (optional)
    * @param language Optional language code to get the reporting turns for a particular language (optional, default to null)
+   * @param askActionResults Optional case-insensitive comma separated list of ask action results to filter the reporting turns. (optional)
    * @return ReportingTurnsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowReportingturnsWithHttpInfo(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language) throws IOException {
-    return getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId, language).withHttpInfo());
+  public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowReportingturnsWithHttpInfo(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language, String askActionResults) throws IOException {
+    return getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId, language, askActionResults).withHttpInfo());
   }
 
-  private GetAnalyticsBotflowReportingturnsRequest createGetAnalyticsBotflowReportingturnsRequest(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language) {
+  private GetAnalyticsBotflowReportingturnsRequest createGetAnalyticsBotflowReportingturnsRequest(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language, String askActionResults) {
     return GetAnalyticsBotflowReportingturnsRequest.builder()
             .withBotFlowId(botFlowId)
 
@@ -405,6 +407,8 @@ public class AnalyticsApi {
             .withSessionId(sessionId)
 
             .withLanguage(language)
+
+            .withAskActionResults(askActionResults)
 
             .build();
   }

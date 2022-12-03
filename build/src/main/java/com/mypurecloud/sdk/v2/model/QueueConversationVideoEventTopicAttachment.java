@@ -13,6 +13,9 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -26,6 +29,7 @@ public class QueueConversationVideoEventTopicAttachment  implements Serializable
   private String contentUri = null;
   private String contentType = null;
   private Integer contentLength = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -118,6 +122,23 @@ public class QueueConversationVideoEventTopicAttachment  implements Serializable
   }
 
 
+  /**
+   **/
+  public QueueConversationVideoEventTopicAttachment additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -132,12 +153,13 @@ public class QueueConversationVideoEventTopicAttachment  implements Serializable
             Objects.equals(this.name, queueConversationVideoEventTopicAttachment.name) &&
             Objects.equals(this.contentUri, queueConversationVideoEventTopicAttachment.contentUri) &&
             Objects.equals(this.contentType, queueConversationVideoEventTopicAttachment.contentType) &&
-            Objects.equals(this.contentLength, queueConversationVideoEventTopicAttachment.contentLength);
+            Objects.equals(this.contentLength, queueConversationVideoEventTopicAttachment.contentLength) &&
+            Objects.equals(this.additionalProperties, queueConversationVideoEventTopicAttachment.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(attachmentId, name, contentUri, contentType, contentLength);
+    return Objects.hash(attachmentId, name, contentUri, contentType, contentLength, additionalProperties);
   }
 
   @Override
@@ -150,6 +172,7 @@ public class QueueConversationVideoEventTopicAttachment  implements Serializable
     sb.append("    contentUri: ").append(toIndentedString(contentUri)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    contentLength: ").append(toIndentedString(contentLength)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

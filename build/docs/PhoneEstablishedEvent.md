@@ -13,6 +13,8 @@ title: PhoneEstablishedEvent
 | **conversationId** | <!----><!---->**String**<!----> | A unique Id (V4 UUID) identifying this conversation |  |
 | **communicationId** | <!----><!---->**String**<!----> | A unique Id (V4 UUID) identifying this communication |  |
 | **phoneNumber** | <!----><!---->**String**<!----> | The phone number for this phone. |  [optional] |
+| **ani** | <!----><!---->**String**<!----> | The automatic number identification if it is available for this conversation. |  [optional] |
+| **dnis** | <!----><!---->**String**<!----> | The dialed number identification if it is available for this conversation. |  [optional] |
 | **initialConfiguration** | <!----><!---->[**InitialConfiguration**](InitialConfiguration.html)<!----> | Metadata about this communication. |  |
 | **sourceConfiguration** | <!----><!---->[**SourceConfiguration**](SourceConfiguration.html)<!----> | Metadata about the source of this communication's interaction. |  |
 {: class="table table-striped"}

@@ -13,6 +13,9 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -23,6 +26,7 @@ public class ContactlistDownloadReadyExportUri  implements Serializable {
   
   private String uri = null;
   private String exportTimestamp = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -59,6 +63,23 @@ public class ContactlistDownloadReadyExportUri  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ContactlistDownloadReadyExportUri additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -70,12 +91,13 @@ public class ContactlistDownloadReadyExportUri  implements Serializable {
     ContactlistDownloadReadyExportUri contactlistDownloadReadyExportUri = (ContactlistDownloadReadyExportUri) o;
 
     return Objects.equals(this.uri, contactlistDownloadReadyExportUri.uri) &&
-            Objects.equals(this.exportTimestamp, contactlistDownloadReadyExportUri.exportTimestamp);
+            Objects.equals(this.exportTimestamp, contactlistDownloadReadyExportUri.exportTimestamp) &&
+            Objects.equals(this.additionalProperties, contactlistDownloadReadyExportUri.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uri, exportTimestamp);
+    return Objects.hash(uri, exportTimestamp, additionalProperties);
   }
 
   @Override
@@ -85,6 +107,7 @@ public class ContactlistDownloadReadyExportUri  implements Serializable {
     
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    exportTimestamp: ").append(toIndentedString(exportTimestamp)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

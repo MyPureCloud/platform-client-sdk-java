@@ -2195,7 +2195,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get the local encryption settings
+   * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param settingsId Settings Id (required)
    * @return LocalEncryptionConfiguration
@@ -2207,7 +2207,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get the local encryption settings
+   * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param settingsId Settings Id (required)
    * @return LocalEncryptionConfiguration
@@ -2225,7 +2225,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get the local encryption settings
+   * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param request The request object
    * @return LocalEncryptionConfiguration
@@ -2244,7 +2244,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get the local encryption settings
+   * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param request The request object
    * @return the response
@@ -2273,7 +2273,7 @@ public class RecordingApi {
   }
 
   /**
-   * gets a list local key settings data
+   * gets a list local key settings data. Replaced by API recording/keyconfigurations
    * 
    * @return LocalEncryptionConfigurationListing
    * @throws ApiException if the request fails on the server
@@ -2284,7 +2284,7 @@ public class RecordingApi {
   }
 
   /**
-   * gets a list local key settings data
+   * gets a list local key settings data. Replaced by API recording/keyconfigurations
    * 
    * @return LocalEncryptionConfigurationListing
    * @throws IOException if the request fails to be processed
@@ -2299,7 +2299,7 @@ public class RecordingApi {
   }
 
   /**
-   * gets a list local key settings data
+   * gets a list local key settings data. Replaced by API recording/keyconfigurations
    * 
    * @param request The request object
    * @return LocalEncryptionConfigurationListing
@@ -2318,7 +2318,7 @@ public class RecordingApi {
   }
 
   /**
-   * gets a list local key settings data
+   * gets a list local key settings data. Replaced by API recording/keyconfigurations
    * 
    * @param request The request object
    * @return the response
@@ -3664,7 +3664,7 @@ public class RecordingApi {
   }
 
   /**
-   * create a local recording key
+   * create a local key management recording key
    * 
    * @param body Local Encryption body (required)
    * @return EncryptionKey
@@ -3676,7 +3676,7 @@ public class RecordingApi {
   }
 
   /**
-   * create a local recording key
+   * create a local key management recording key
    * 
    * @param body Local Encryption body (required)
    * @return EncryptionKey
@@ -3694,7 +3694,7 @@ public class RecordingApi {
   }
 
   /**
-   * create a local recording key
+   * create a local key management recording key
    * 
    * @param request The request object
    * @return EncryptionKey
@@ -3713,7 +3713,7 @@ public class RecordingApi {
   }
 
   /**
-   * create a local recording key
+   * create a local key management recording key
    * 
    * @param request The request object
    * @return the response
@@ -3742,7 +3742,7 @@ public class RecordingApi {
   }
 
   /**
-   * create settings for local key creation
+   * create settings for local key creation. Replaced by API recording/keyconfigurations
    * 
    * @param body Local Encryption Configuration (required)
    * @return LocalEncryptionConfiguration
@@ -3754,7 +3754,7 @@ public class RecordingApi {
   }
 
   /**
-   * create settings for local key creation
+   * create settings for local key creation. Replaced by API recording/keyconfigurations
    * 
    * @param body Local Encryption Configuration (required)
    * @return LocalEncryptionConfiguration
@@ -3772,7 +3772,7 @@ public class RecordingApi {
   }
 
   /**
-   * create settings for local key creation
+   * create settings for local key creation. Replaced by API recording/keyconfigurations
    * 
    * @param request The request object
    * @return LocalEncryptionConfiguration
@@ -3791,7 +3791,7 @@ public class RecordingApi {
   }
 
   /**
-   * create settings for local key creation
+   * create settings for local key creation. Replaced by API recording/keyconfigurations
    * 
    * @param request The request object
    * @return the response
@@ -4708,7 +4708,7 @@ public class RecordingApi {
   }
 
   /**
-   * Update the local encryption settings
+   * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param settingsId Settings Id (required)
    * @param body Local Encryption metadata (required)
@@ -4721,7 +4721,7 @@ public class RecordingApi {
   }
 
   /**
-   * Update the local encryption settings
+   * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param settingsId Settings Id (required)
    * @param body Local Encryption metadata (required)
@@ -4742,7 +4742,7 @@ public class RecordingApi {
   }
 
   /**
-   * Update the local encryption settings
+   * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param request The request object
    * @return LocalEncryptionConfiguration
@@ -4761,7 +4761,7 @@ public class RecordingApi {
   }
 
   /**
-   * Update the local encryption settings
+   * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param request The request object
    * @return the response

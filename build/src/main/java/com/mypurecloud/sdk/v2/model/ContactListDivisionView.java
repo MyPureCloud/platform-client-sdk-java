@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactPhoneNumberColumn;
 import com.mypurecloud.sdk.v2.model.Division;
+import com.mypurecloud.sdk.v2.model.EmailColumn;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,6 +32,7 @@ public class ContactListDivisionView  implements Serializable {
   private Division division = null;
   private List<String> columnNames = new ArrayList<String>();
   private List<ContactPhoneNumberColumn> phoneColumns = new ArrayList<ContactPhoneNumberColumn>();
+  private List<EmailColumn> emailColumns = new ArrayList<EmailColumn>();
   private ImportStatus importStatus = null;
   private Long size = null;
   private String selfUri = null;
@@ -114,6 +116,24 @@ public class ContactListDivisionView  implements Serializable {
   }
 
 
+  /**
+   * Indicates which columns are email addresses.
+   **/
+  public ContactListDivisionView emailColumns(List<EmailColumn> emailColumns) {
+    this.emailColumns = emailColumns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates which columns are email addresses.")
+  @JsonProperty("emailColumns")
+  public List<EmailColumn> getEmailColumns() {
+    return emailColumns;
+  }
+  public void setEmailColumns(List<EmailColumn> emailColumns) {
+    this.emailColumns = emailColumns;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The status of the import process.")
   @JsonProperty("importStatus")
   public ImportStatus getImportStatus() {
@@ -150,6 +170,7 @@ public class ContactListDivisionView  implements Serializable {
             Objects.equals(this.division, contactListDivisionView.division) &&
             Objects.equals(this.columnNames, contactListDivisionView.columnNames) &&
             Objects.equals(this.phoneColumns, contactListDivisionView.phoneColumns) &&
+            Objects.equals(this.emailColumns, contactListDivisionView.emailColumns) &&
             Objects.equals(this.importStatus, contactListDivisionView.importStatus) &&
             Objects.equals(this.size, contactListDivisionView.size) &&
             Objects.equals(this.selfUri, contactListDivisionView.selfUri);
@@ -157,7 +178,7 @@ public class ContactListDivisionView  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, columnNames, phoneColumns, importStatus, size, selfUri);
+    return Objects.hash(id, name, division, columnNames, phoneColumns, emailColumns, importStatus, size, selfUri);
   }
 
   @Override
@@ -170,6 +191,7 @@ public class ContactListDivisionView  implements Serializable {
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    columnNames: ").append(toIndentedString(columnNames)).append("\n");
     sb.append("    phoneColumns: ").append(toIndentedString(phoneColumns)).append("\n");
+    sb.append("    emailColumns: ").append(toIndentedString(emailColumns)).append("\n");
     sb.append("    importStatus: ").append(toIndentedString(importStatus)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

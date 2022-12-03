@@ -13,7 +13,6 @@ title: DigitalDataActionConditionPredicate
 | **comparisonValue** | <!----><!---->**String**<!----> | The value to compare against for this condition |  |
 | **inverted** | <!----><!---->**Boolean**<!----> | If true, inverts the result of evaluating this Predicate. Default is false. |  |
 | **outputFieldMissingResolution** | <!----><!---->**Boolean**<!----> | The result of this predicate if the requested output field is missing from the data action's result |  |
-| **valueType** | [**ValueTypeEnum**](#ValueTypeEnum)<!----> | The data type the value should be treated as. |  |
 {: class="table table-striped"}
 
 
@@ -34,20 +33,6 @@ title: DigitalDataActionConditionPredicate
 | ENDSWITH | &quot;EndsWith&quot; | 
 | BEFORE | &quot;Before&quot; | 
 | AFTER | &quot;After&quot; | 
-{: class="table table-striped"}
-
-
-<a name="ValueTypeEnum"></a>
-
-## Enum: ValueTypeEnum
-
-| Name | Value |
-| ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| DATETIME | &quot;DateTime&quot; | 
-| NUMERIC | &quot;Numeric&quot; | 
-| PERIOD | &quot;Period&quot; | 
-| STRING | &quot;String&quot; | 
 {: class="table table-striped"}
 
 

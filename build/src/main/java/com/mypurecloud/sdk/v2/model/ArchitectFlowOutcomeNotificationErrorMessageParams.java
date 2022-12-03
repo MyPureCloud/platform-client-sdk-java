@@ -10,7 +10,12 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -20,8 +25,26 @@ import java.io.Serializable;
 
 public class ArchitectFlowOutcomeNotificationErrorMessageParams  implements Serializable {
   
+  private Map<String, String> additionalProperties = null;
 
   
+  /**
+   **/
+  public ArchitectFlowOutcomeNotificationErrorMessageParams additionalProperties(Map<String, String> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, String> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, String> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -30,13 +53,14 @@ public class ArchitectFlowOutcomeNotificationErrorMessageParams  implements Seri
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
+    ArchitectFlowOutcomeNotificationErrorMessageParams architectFlowOutcomeNotificationErrorMessageParams = (ArchitectFlowOutcomeNotificationErrorMessageParams) o;
 
-    return true;
+    return Objects.equals(this.additionalProperties, architectFlowOutcomeNotificationErrorMessageParams.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(additionalProperties);
   }
 
   @Override
@@ -44,6 +68,7 @@ public class ArchitectFlowOutcomeNotificationErrorMessageParams  implements Seri
     StringBuilder sb = new StringBuilder();
     sb.append("class ArchitectFlowOutcomeNotificationErrorMessageParams {\n");
     
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

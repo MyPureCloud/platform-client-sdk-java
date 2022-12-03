@@ -12,6 +12,7 @@ title: DialerCampaignRuleConfigChangeCampaignRuleAction
 | **parameters** | <!----><!---->**Map&lt;String, String&gt;**<!----> | The parameters to match this action |  [optional] |
 | **actionType** | [**ActionTypeEnum**](#ActionTypeEnum)<!----> | The type of this action |  [optional] |
 | **campaignRuleActionEntities** | <!----><!---->[**DialerCampaignRuleConfigChangeCampaignRuleActionEntities**](DialerCampaignRuleConfigChangeCampaignRuleActionEntities.html)<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -46,13 +46,15 @@ public class CommunicationEndedEvent  implements Serializable {
  @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SELF("Self"),
-    PEER("Peer"),
-    SYSTEM("System"),
     ERROR("Error"),
+    PEER("Peer"),
+    SELF("Self"),
+    SYSTEM("System"),
     TRANSFER("Transfer"),
+    TRANSFERACD("TransferACD"),
+    TRANSFERCONFERENCE("TransferConference"),
     TRANSFERCONSULT("TransferConsult"),
-    TRANSFERCONFERENCE("TransferConference");
+    TRANSFERUSER("TransferUser");
 
     private String value;
 

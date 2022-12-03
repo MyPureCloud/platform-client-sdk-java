@@ -153,7 +153,7 @@ title: ViewFilter
 | **isAcdInteraction** | <!----><!---->**Boolean**<!----> | Filter to indicate if interaction was ACD or non-ACD |  [optional] |
 | **hasFax** | <!----><!---->**Boolean**<!----> | Filters to indicate if interaction has FAX |  [optional] |
 | **dataActionIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Data Action IDs  |  [optional] |
-| **actionCategoryName** | <!----><!---->**String**<!----> | Action Category Name |  [optional] |
+| **actionCategoryName** | <!----><!---->**String**<!----> | Deprecated - Please use integrationIds instead |  [optional] |
 | **integrationIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of integration IDs for Data Action |  [optional] |
 | **responseStatuses** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Response codes for Data Action |  [optional] |
 | **availableDashboard** | [**AvailableDashboardEnum**](#AvailableDashboardEnum)<!----> | Filter to indicate the availability of the dashboard is public or private. |  [optional] |
@@ -456,6 +456,7 @@ title: ViewFilter
 | GENESYSBYOB | &quot;GenesysByob&quot; |
 | AMAZONLEXV2 | &quot;AmazonLexV2&quot; |
 | GOOGLEDIALOGFLOWCXRESELL | &quot;GoogleDialogFlowCxResell&quot; |
+| GOOGLESTTBOTFLOW | &quot;GoogleSttBotFlow&quot; |
 | MICROSOFTSTTBOTFLOW | &quot;MicrosoftSttBotFlow&quot; |
 {: class="table table-striped"}
 

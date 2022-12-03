@@ -244,7 +244,7 @@ null (empty response body)
 
 
 
-> [ReportingTurnsResponse](ReportingTurnsResponse.html) getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId, language)
+> [ReportingTurnsResponse](ReportingTurnsResponse.html) getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId, language, askActionResults)
 
 Get Reporting Turns.
 
@@ -282,8 +282,9 @@ String pageSize = "50"; // String | Max number of entities to return. Maximum of
 String actionId = "actionId_example"; // String | Optional action ID to get the reporting turns associated to a particular flow action
 String sessionId = "sessionId_example"; // String | Optional session ID to get the reporting turns for a particular session
 String language = en-us; // String | Optional language code to get the reporting turns for a particular language
+String askActionResults = "askActionResults_example"; // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
 try {
-    ReportingTurnsResponse result = apiInstance.getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId, language);
+    ReportingTurnsResponse result = apiInstance.getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId, language, askActionResults);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#getAnalyticsBotflowReportingturns");
@@ -302,6 +303,7 @@ try {
 | **actionId** | **String**| Optional action ID to get the reporting turns associated to a particular flow action | [optional] 
 | **sessionId** | **String**| Optional session ID to get the reporting turns for a particular session | [optional] 
 | **language** | **String**| Optional language code to get the reporting turns for a particular language | [optional] [default to null] 
+| **askActionResults** | **String**| Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional]<br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone 
 {: class="table-striped"}
 
 

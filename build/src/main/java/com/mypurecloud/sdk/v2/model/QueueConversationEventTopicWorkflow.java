@@ -13,6 +13,9 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -23,6 +26,7 @@ import java.io.Serializable;
 public class QueueConversationEventTopicWorkflow  implements Serializable {
   
   private String workflowId = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -43,6 +47,23 @@ public class QueueConversationEventTopicWorkflow  implements Serializable {
   }
 
 
+  /**
+   **/
+  public QueueConversationEventTopicWorkflow additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -53,12 +74,13 @@ public class QueueConversationEventTopicWorkflow  implements Serializable {
     }
     QueueConversationEventTopicWorkflow queueConversationEventTopicWorkflow = (QueueConversationEventTopicWorkflow) o;
 
-    return Objects.equals(this.workflowId, queueConversationEventTopicWorkflow.workflowId);
+    return Objects.equals(this.workflowId, queueConversationEventTopicWorkflow.workflowId) &&
+            Objects.equals(this.additionalProperties, queueConversationEventTopicWorkflow.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(workflowId);
+    return Objects.hash(workflowId, additionalProperties);
   }
 
   @Override
@@ -67,6 +89,7 @@ public class QueueConversationEventTopicWorkflow  implements Serializable {
     sb.append("class QueueConversationEventTopicWorkflow {\n");
     
     sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

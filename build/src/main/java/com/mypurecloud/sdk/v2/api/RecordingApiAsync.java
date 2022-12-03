@@ -1933,7 +1933,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Get the local encryption settings
+   * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1967,7 +1967,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Get the local encryption settings
+   * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2008,7 +2008,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * gets a list local key settings data
+   * gets a list local key settings data. Replaced by API recording/keyconfigurations
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2042,7 +2042,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * gets a list local key settings data
+   * gets a list local key settings data. Replaced by API recording/keyconfigurations
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3283,7 +3283,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * create a local recording key
+   * create a local key management recording key
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3317,7 +3317,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * create a local recording key
+   * create a local key management recording key
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3358,7 +3358,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * create settings for local key creation
+   * create settings for local key creation. Replaced by API recording/keyconfigurations
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3392,7 +3392,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * create settings for local key creation
+   * create settings for local key creation. Replaced by API recording/keyconfigurations
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4258,7 +4258,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Update the local encryption settings
+   * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4292,7 +4292,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Update the local encryption settings
+   * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

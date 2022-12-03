@@ -26,6 +26,7 @@ public class TimeOffBalanceResponse  implements Serializable {
   
   private String activityCodeId = null;
   private String hrisTimeOffTypeId = null;
+  private String hrisTimeOffTypeSecondaryId = null;
   private LocalDate startDate = null;
   private List<Integer> balanceMinutesPerDay = new ArrayList<Integer>();
 
@@ -63,6 +64,24 @@ public class TimeOffBalanceResponse  implements Serializable {
   }
   public void setHrisTimeOffTypeId(String hrisTimeOffTypeId) {
     this.hrisTimeOffTypeId = hrisTimeOffTypeId;
+  }
+
+
+  /**
+   * The secondary ID of the time off type configured in HRIS integration
+   **/
+  public TimeOffBalanceResponse hrisTimeOffTypeSecondaryId(String hrisTimeOffTypeSecondaryId) {
+    this.hrisTimeOffTypeSecondaryId = hrisTimeOffTypeSecondaryId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The secondary ID of the time off type configured in HRIS integration")
+  @JsonProperty("hrisTimeOffTypeSecondaryId")
+  public String getHrisTimeOffTypeSecondaryId() {
+    return hrisTimeOffTypeSecondaryId;
+  }
+  public void setHrisTimeOffTypeSecondaryId(String hrisTimeOffTypeSecondaryId) {
+    this.hrisTimeOffTypeSecondaryId = hrisTimeOffTypeSecondaryId;
   }
 
 
@@ -114,13 +133,14 @@ public class TimeOffBalanceResponse  implements Serializable {
 
     return Objects.equals(this.activityCodeId, timeOffBalanceResponse.activityCodeId) &&
             Objects.equals(this.hrisTimeOffTypeId, timeOffBalanceResponse.hrisTimeOffTypeId) &&
+            Objects.equals(this.hrisTimeOffTypeSecondaryId, timeOffBalanceResponse.hrisTimeOffTypeSecondaryId) &&
             Objects.equals(this.startDate, timeOffBalanceResponse.startDate) &&
             Objects.equals(this.balanceMinutesPerDay, timeOffBalanceResponse.balanceMinutesPerDay);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activityCodeId, hrisTimeOffTypeId, startDate, balanceMinutesPerDay);
+    return Objects.hash(activityCodeId, hrisTimeOffTypeId, hrisTimeOffTypeSecondaryId, startDate, balanceMinutesPerDay);
   }
 
   @Override
@@ -130,6 +150,7 @@ public class TimeOffBalanceResponse  implements Serializable {
     
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
     sb.append("    hrisTimeOffTypeId: ").append(toIndentedString(hrisTimeOffTypeId)).append("\n");
+    sb.append("    hrisTimeOffTypeSecondaryId: ").append(toIndentedString(hrisTimeOffTypeSecondaryId)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    balanceMinutesPerDay: ").append(toIndentedString(balanceMinutesPerDay)).append("\n");
     sb.append("}");

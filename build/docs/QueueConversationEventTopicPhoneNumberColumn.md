@@ -10,6 +10,7 @@ title: QueueConversationEventTopicPhoneNumberColumn
 | ------------ | ------------- | ------------- | ------------- |
 | **columnName** | <!----><!---->**String**<!----> |  |  [optional] |
 | **type** | <!----><!---->**String**<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

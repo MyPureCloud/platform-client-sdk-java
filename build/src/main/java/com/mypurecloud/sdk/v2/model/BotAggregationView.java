@@ -42,6 +42,7 @@ public class BotAggregationView  implements Serializable {
  @JsonDeserialize(using = TargetEnumDeserializer.class)
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NBOTSESSIONTURNS("nBotSessionTurns"),
     NBOTSESSIONS("nBotSessions"),
     OBOTINTENT("oBotIntent"),
     OBOTSESSIONQUERY("oBotSessionQuery"),

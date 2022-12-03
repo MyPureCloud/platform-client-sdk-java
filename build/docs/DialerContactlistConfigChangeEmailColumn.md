@@ -10,6 +10,7 @@ title: DialerContactlistConfigChangeEmailColumn
 | ------------ | ------------- | ------------- | ------------- |
 | **columnName** | <!----><!---->**String**<!----> | The name of the email address column |  [optional] |
 | **type** | <!----><!---->**String**<!----> | The type of the email address column, for example, 'work' or 'home' |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

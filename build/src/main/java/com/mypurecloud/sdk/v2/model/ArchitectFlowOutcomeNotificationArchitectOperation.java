@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationClient;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationErrorDetail;
+import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationErrorMessageParams;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -142,7 +143,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
   private ActionStatusEnum actionStatus = null;
   private String errorMessage = null;
   private String errorCode = null;
-  private Object errorMessageParams = null;
+  private ArchitectFlowOutcomeNotificationErrorMessageParams errorMessageParams = null;
   private List<ArchitectFlowOutcomeNotificationErrorDetail> errorDetails = new ArrayList<ArchitectFlowOutcomeNotificationErrorDetail>();
 
   
@@ -289,19 +290,18 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
 
 
   /**
-   * The error message params, if the action failed
    **/
-  public ArchitectFlowOutcomeNotificationArchitectOperation errorMessageParams(Object errorMessageParams) {
+  public ArchitectFlowOutcomeNotificationArchitectOperation errorMessageParams(ArchitectFlowOutcomeNotificationErrorMessageParams errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The error message params, if the action failed")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("errorMessageParams")
-  public Object getErrorMessageParams() {
+  public ArchitectFlowOutcomeNotificationErrorMessageParams getErrorMessageParams() {
     return errorMessageParams;
   }
-  public void setErrorMessageParams(Object errorMessageParams) {
+  public void setErrorMessageParams(ArchitectFlowOutcomeNotificationErrorMessageParams errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
   }
 

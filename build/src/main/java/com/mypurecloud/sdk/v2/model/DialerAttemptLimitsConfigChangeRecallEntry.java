@@ -13,6 +13,9 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -23,6 +26,7 @@ public class DialerAttemptLimitsConfigChangeRecallEntry  implements Serializable
   
   private Integer nbrAttempts = null;
   private Integer minutesBetweenAttempts = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -61,6 +65,23 @@ public class DialerAttemptLimitsConfigChangeRecallEntry  implements Serializable
   }
 
 
+  /**
+   **/
+  public DialerAttemptLimitsConfigChangeRecallEntry additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +93,13 @@ public class DialerAttemptLimitsConfigChangeRecallEntry  implements Serializable
     DialerAttemptLimitsConfigChangeRecallEntry dialerAttemptLimitsConfigChangeRecallEntry = (DialerAttemptLimitsConfigChangeRecallEntry) o;
 
     return Objects.equals(this.nbrAttempts, dialerAttemptLimitsConfigChangeRecallEntry.nbrAttempts) &&
-            Objects.equals(this.minutesBetweenAttempts, dialerAttemptLimitsConfigChangeRecallEntry.minutesBetweenAttempts);
+            Objects.equals(this.minutesBetweenAttempts, dialerAttemptLimitsConfigChangeRecallEntry.minutesBetweenAttempts) &&
+            Objects.equals(this.additionalProperties, dialerAttemptLimitsConfigChangeRecallEntry.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nbrAttempts, minutesBetweenAttempts);
+    return Objects.hash(nbrAttempts, minutesBetweenAttempts, additionalProperties);
   }
 
   @Override
@@ -87,6 +109,7 @@ public class DialerAttemptLimitsConfigChangeRecallEntry  implements Serializable
     
     sb.append("    nbrAttempts: ").append(toIndentedString(nbrAttempts)).append("\n");
     sb.append("    minutesBetweenAttempts: ").append(toIndentedString(minutesBetweenAttempts)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

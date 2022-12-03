@@ -105,6 +105,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | Create a contact List. |
 | [**postOutboundConversationDnc**](OutboundApi.html#postOutboundConversationDnc) | Add phone numbers to a Dialer DNC list. |
 | [**postOutboundDigitalrulesets**](OutboundApi.html#postOutboundDigitalrulesets) | Create an Outbound Digital Rule Set |
+| [**postOutboundDnclistEmailaddresses**](OutboundApi.html#postOutboundDnclistEmailaddresses) | Add email addresses to a DNC list. |
 | [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | Initiate the export of a dnc list. |
 | [**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | Add phone numbers to a DNC list. |
 | [**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | Create dialer DNC list |
@@ -3747,7 +3748,7 @@ try {
 | **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
-| **dncSourceType** | **String**| DncSourceType | [optional]<br />**Values**: rds, dnc.com, gryphon 
+| **dncSourceType** | **String**| DncSourceType | [optional]<br />**Values**: rds, rds_custom, dnc.com, gryphon 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **sortOrder** | **String**| Sort order | [optional]<br />**Values**: ascending, descending 
@@ -3895,7 +3896,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
-| **dncSourceType** | **String**| DncSourceType | [optional]<br />**Values**: rds, dnc.com, gryphon 
+| **dncSourceType** | **String**| DncSourceType | [optional]<br />**Values**: rds, rds_custom, dnc.com, gryphon 
 | **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
@@ -6421,6 +6422,70 @@ try {
 ### Return type
 
 [**DigitalRuleSet**](DigitalRuleSet.html)
+
+<a name="postOutboundDnclistEmailaddresses"></a>
+
+# **postOutboundDnclistEmailaddresses**
+
+
+
+> Void postOutboundDnclistEmailaddresses(dncListId, body)
+
+Add email addresses to a DNC list.
+
+Only Internal DNC lists may be appended to
+
+Wraps POST /api/v2/outbound/dnclists/{dncListId}/emailaddresses  
+
+Requires ANY permissions: 
+
+* outbound:dnc:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String dncListId = "dncListId_example"; // String | DncList ID
+List<String> body = Arrays.asList(null); // List<String> | DNC email addresses
+try {
+    apiInstance.postOutboundDnclistEmailaddresses(dncListId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundDnclistEmailaddresses");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dncListId** | **String**| DncList ID | 
+| **body** | [**List&lt;String&gt;**](String.html)| DNC email addresses | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="postOutboundDnclistExport"></a>
 

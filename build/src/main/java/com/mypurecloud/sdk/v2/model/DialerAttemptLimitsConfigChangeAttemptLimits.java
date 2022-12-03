@@ -80,6 +80,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
   private ResetPeriodEnum resetPeriod = null;
   private Map<String, DialerAttemptLimitsConfigChangeRecallEntry> recallEntries = null;
   private Boolean breadthFirstRecalls = null;
+  private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
@@ -194,6 +195,23 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
 
 
   /**
+   **/
+  public DialerAttemptLimitsConfigChangeAttemptLimits additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
+  /**
    * The globally unique identifier for the object.
    **/
   public DialerAttemptLimitsConfigChangeAttemptLimits id(String id) {
@@ -299,6 +317,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
             Objects.equals(this.resetPeriod, dialerAttemptLimitsConfigChangeAttemptLimits.resetPeriod) &&
             Objects.equals(this.recallEntries, dialerAttemptLimitsConfigChangeAttemptLimits.recallEntries) &&
             Objects.equals(this.breadthFirstRecalls, dialerAttemptLimitsConfigChangeAttemptLimits.breadthFirstRecalls) &&
+            Objects.equals(this.additionalProperties, dialerAttemptLimitsConfigChangeAttemptLimits.additionalProperties) &&
             Objects.equals(this.id, dialerAttemptLimitsConfigChangeAttemptLimits.id) &&
             Objects.equals(this.name, dialerAttemptLimitsConfigChangeAttemptLimits.name) &&
             Objects.equals(this.dateCreated, dialerAttemptLimitsConfigChangeAttemptLimits.dateCreated) &&
@@ -308,7 +327,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxAttemptsPerContact, maxAttemptsPerNumber, timeZoneId, resetPeriod, recallEntries, breadthFirstRecalls, id, name, dateCreated, dateModified, version);
+    return Objects.hash(maxAttemptsPerContact, maxAttemptsPerNumber, timeZoneId, resetPeriod, recallEntries, breadthFirstRecalls, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -322,6 +341,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     sb.append("    resetPeriod: ").append(toIndentedString(resetPeriod)).append("\n");
     sb.append("    recallEntries: ").append(toIndentedString(recallEntries)).append("\n");
     sb.append("    breadthFirstRecalls: ").append(toIndentedString(breadthFirstRecalls)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

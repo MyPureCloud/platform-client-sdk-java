@@ -14,6 +14,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -73,6 +76,7 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
   }
   private DirectionEnum direction = null;
   private Boolean numeric = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -127,6 +131,23 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
   }
 
 
+  /**
+   **/
+  public DialerCampaignConfigChangeContactSort additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -139,12 +160,13 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
 
     return Objects.equals(this.fieldName, dialerCampaignConfigChangeContactSort.fieldName) &&
             Objects.equals(this.direction, dialerCampaignConfigChangeContactSort.direction) &&
-            Objects.equals(this.numeric, dialerCampaignConfigChangeContactSort.numeric);
+            Objects.equals(this.numeric, dialerCampaignConfigChangeContactSort.numeric) &&
+            Objects.equals(this.additionalProperties, dialerCampaignConfigChangeContactSort.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fieldName, direction, numeric);
+    return Objects.hash(fieldName, direction, numeric, additionalProperties);
   }
 
   @Override
@@ -155,6 +177,7 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
     sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    numeric: ").append(toIndentedString(numeric)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

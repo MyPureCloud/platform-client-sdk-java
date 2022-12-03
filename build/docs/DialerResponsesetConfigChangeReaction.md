@@ -11,6 +11,7 @@ title: DialerResponsesetConfigChangeReaction
 | **data** | <!----><!---->**String**<!----> |  |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **reactionType** | [**ReactionTypeEnum**](#ReactionTypeEnum)<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

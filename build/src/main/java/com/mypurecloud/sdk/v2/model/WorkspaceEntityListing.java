@@ -31,9 +31,9 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
   private Long total = null;
   private String firstUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private String lastUri = null;
   private String selfUri = null;
-  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -141,6 +141,23 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
 
   /**
    **/
+  public WorkspaceEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
   public WorkspaceEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -170,23 +187,6 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public WorkspaceEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
   }
 
 
@@ -223,15 +223,15 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
             Objects.equals(this.total, workspaceEntityListing.total) &&
             Objects.equals(this.firstUri, workspaceEntityListing.firstUri) &&
             Objects.equals(this.nextUri, workspaceEntityListing.nextUri) &&
+            Objects.equals(this.previousUri, workspaceEntityListing.previousUri) &&
             Objects.equals(this.lastUri, workspaceEntityListing.lastUri) &&
             Objects.equals(this.selfUri, workspaceEntityListing.selfUri) &&
-            Objects.equals(this.previousUri, workspaceEntityListing.previousUri) &&
             Objects.equals(this.pageCount, workspaceEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, lastUri, selfUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -245,9 +245,9 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

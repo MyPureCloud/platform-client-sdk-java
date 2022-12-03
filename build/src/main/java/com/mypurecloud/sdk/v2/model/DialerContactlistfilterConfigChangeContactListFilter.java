@@ -18,7 +18,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -78,6 +80,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     }
   }
   private FilterTypeEnum filterType = null;
+  private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
@@ -152,6 +155,23 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
   }
   public void setFilterType(FilterTypeEnum filterType) {
     this.filterType = filterType;
+  }
+
+
+  /**
+   **/
+  public DialerContactlistfilterConfigChangeContactListFilter additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
   }
 
 
@@ -259,6 +279,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
             Objects.equals(this.contactListColumns, dialerContactlistfilterConfigChangeContactListFilter.contactListColumns) &&
             Objects.equals(this.clauses, dialerContactlistfilterConfigChangeContactListFilter.clauses) &&
             Objects.equals(this.filterType, dialerContactlistfilterConfigChangeContactListFilter.filterType) &&
+            Objects.equals(this.additionalProperties, dialerContactlistfilterConfigChangeContactListFilter.additionalProperties) &&
             Objects.equals(this.id, dialerContactlistfilterConfigChangeContactListFilter.id) &&
             Objects.equals(this.name, dialerContactlistfilterConfigChangeContactListFilter.name) &&
             Objects.equals(this.dateCreated, dialerContactlistfilterConfigChangeContactListFilter.dateCreated) &&
@@ -268,7 +289,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactList, contactListColumns, clauses, filterType, id, name, dateCreated, dateModified, version);
+    return Objects.hash(contactList, contactListColumns, clauses, filterType, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -280,6 +301,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     sb.append("    contactListColumns: ").append(toIndentedString(contactListColumns)).append("\n");
     sb.append("    clauses: ").append(toIndentedString(clauses)).append("\n");
     sb.append("    filterType: ").append(toIndentedString(filterType)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

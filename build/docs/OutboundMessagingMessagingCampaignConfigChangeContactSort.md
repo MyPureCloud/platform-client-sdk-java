@@ -11,6 +11,7 @@ title: OutboundMessagingMessagingCampaignConfigChangeContactSort
 | **fieldName** | <!----><!---->**String**<!----> |  |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
 | **numeric** | <!----><!---->**Boolean**<!----> | Whether that column contains numeric data |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

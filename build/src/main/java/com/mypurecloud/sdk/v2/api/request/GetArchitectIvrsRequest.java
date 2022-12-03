@@ -156,6 +156,20 @@ public class GetArchitectIvrsRequest {
 	    return this;
 	} 
 
+	private String scheduleGroup;
+	public String getScheduleGroup() {
+		return this.scheduleGroup;
+	}
+
+	public void setScheduleGroup(String scheduleGroup) {
+		this.scheduleGroup = scheduleGroup;
+	}
+
+	public GetArchitectIvrsRequest withScheduleGroup(String scheduleGroup) {
+	    this.setScheduleGroup(scheduleGroup);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -196,6 +210,9 @@ public class GetArchitectIvrsRequest {
         
 
                 .withQueryParameters("dnis", "", dnis)
+        
+
+                .withQueryParameters("scheduleGroup", "", scheduleGroup)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -245,6 +262,11 @@ public class GetArchitectIvrsRequest {
 
 		public Builder withDnis(String dnis) {
 			request.setDnis(dnis);
+			return this;
+		}
+
+		public Builder withScheduleGroup(String scheduleGroup) {
+			request.setScheduleGroup(scheduleGroup);
 			return this;
 		}
 

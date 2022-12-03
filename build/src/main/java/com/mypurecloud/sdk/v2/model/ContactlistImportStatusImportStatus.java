@@ -14,6 +14,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -74,6 +77,7 @@ public class ContactlistImportStatusImportStatus  implements Serializable {
   private Integer completedRecords = null;
   private Integer percentageComplete = null;
   private String failureReason = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -166,6 +170,23 @@ public class ContactlistImportStatusImportStatus  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ContactlistImportStatusImportStatus additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -180,12 +201,13 @@ public class ContactlistImportStatusImportStatus  implements Serializable {
             Objects.equals(this.totalRecords, contactlistImportStatusImportStatus.totalRecords) &&
             Objects.equals(this.completedRecords, contactlistImportStatusImportStatus.completedRecords) &&
             Objects.equals(this.percentageComplete, contactlistImportStatusImportStatus.percentageComplete) &&
-            Objects.equals(this.failureReason, contactlistImportStatusImportStatus.failureReason);
+            Objects.equals(this.failureReason, contactlistImportStatusImportStatus.failureReason) &&
+            Objects.equals(this.additionalProperties, contactlistImportStatusImportStatus.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(importState, totalRecords, completedRecords, percentageComplete, failureReason);
+    return Objects.hash(importState, totalRecords, completedRecords, percentageComplete, failureReason, additionalProperties);
   }
 
   @Override
@@ -198,6 +220,7 @@ public class ContactlistImportStatusImportStatus  implements Serializable {
     sb.append("    completedRecords: ").append(toIndentedString(completedRecords)).append("\n");
     sb.append("    percentageComplete: ").append(toIndentedString(percentageComplete)).append("\n");
     sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -657,7 +657,7 @@ try {
 
 
 
-> [LearningModulesDomainEntityListing](LearningModulesDomainEntityListing.html) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished)
+> [LearningModulesDomainEntityListing](LearningModulesDomainEntityListing.html) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses)
 
 Get all learning modules of an organization
 
@@ -698,8 +698,9 @@ String sortBy = "name"; // String | Sort by
 String searchTerm = "searchTerm_example"; // String | Search Term (searchable by name)
 List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)
 String isPublished = "Any"; // String | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
+List<String> statuses = Arrays.asList(null); // List<String> | Specifies the module statuses to filter by
 try {
-    LearningModulesDomainEntityListing result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished);
+    LearningModulesDomainEntityListing result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LearningApi#getLearningModules");
@@ -721,6 +722,7 @@ try {
 | **searchTerm** | **String**| Search Term (searchable by name) | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: rule, summaryData 
 | **isPublished** | **String**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
+| **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the module statuses to filter by | [optional]<br />**Values**: Unpublished, Published, Archived 
 {: class="table-striped"}
 
 

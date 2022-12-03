@@ -32,6 +32,8 @@ public class RoutingEstablishedEvent  implements Serializable {
   private String communicationId = null;
   private String phoneNumber = null;
   private String queueId = null;
+  private String ani = null;
+  private String dnis = null;
   private List<String> skillIds = new ArrayList<String>();
   private String languageId = null;
   private InitialConfiguration initialConfiguration = null;
@@ -147,6 +149,42 @@ public class RoutingEstablishedEvent  implements Serializable {
 
 
   /**
+   * The automatic number identification if it is available for this conversation.
+   **/
+  public RoutingEstablishedEvent ani(String ani) {
+    this.ani = ani;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The automatic number identification if it is available for this conversation.")
+  @JsonProperty("ani")
+  public String getAni() {
+    return ani;
+  }
+  public void setAni(String ani) {
+    this.ani = ani;
+  }
+
+
+  /**
+   * The dialed number identification if it is available for this conversation.
+   **/
+  public RoutingEstablishedEvent dnis(String dnis) {
+    this.dnis = dnis;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The dialed number identification if it is available for this conversation.")
+  @JsonProperty("dnis")
+  public String getDnis() {
+    return dnis;
+  }
+  public void setDnis(String dnis) {
+    this.dnis = dnis;
+  }
+
+
+  /**
    * The unique identifiers (V4 UUID) for the skills that should be used to determine the destination for the conversation.
    **/
   public RoutingEstablishedEvent skillIds(List<String> skillIds) {
@@ -234,6 +272,8 @@ public class RoutingEstablishedEvent  implements Serializable {
             Objects.equals(this.communicationId, routingEstablishedEvent.communicationId) &&
             Objects.equals(this.phoneNumber, routingEstablishedEvent.phoneNumber) &&
             Objects.equals(this.queueId, routingEstablishedEvent.queueId) &&
+            Objects.equals(this.ani, routingEstablishedEvent.ani) &&
+            Objects.equals(this.dnis, routingEstablishedEvent.dnis) &&
             Objects.equals(this.skillIds, routingEstablishedEvent.skillIds) &&
             Objects.equals(this.languageId, routingEstablishedEvent.languageId) &&
             Objects.equals(this.initialConfiguration, routingEstablishedEvent.initialConfiguration) &&
@@ -242,7 +282,7 @@ public class RoutingEstablishedEvent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventId, eventDateTime, conversationId, communicationId, phoneNumber, queueId, skillIds, languageId, initialConfiguration, sourceConfiguration);
+    return Objects.hash(eventId, eventDateTime, conversationId, communicationId, phoneNumber, queueId, ani, dnis, skillIds, languageId, initialConfiguration, sourceConfiguration);
   }
 
   @Override
@@ -256,6 +296,8 @@ public class RoutingEstablishedEvent  implements Serializable {
     sb.append("    communicationId: ").append(toIndentedString(communicationId)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
+    sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
+    sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
     sb.append("    initialConfiguration: ").append(toIndentedString(initialConfiguration)).append("\n");

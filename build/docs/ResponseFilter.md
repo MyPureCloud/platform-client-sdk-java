@@ -8,9 +8,9 @@ title: ResponseFilter
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | Field to filter on. Allowed values are 'name' and 'libraryId. |  |
+| **name** | <!----><!---->**String**<!----> | Field to filter on. Allowed values are 'name', 'libraryId', 'text.contentType', 'messagingTemplate' and 'responseType' |  |
 | **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | Filter operation: IN, EQUALS, NOTEQUALS. |  |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> | Values to filter on. |  |
+| **values** | <!----><!---->**List&lt;String&gt;**<!----> | Values to filter on. If name is 'responseType' then allowed values are 'CampaignSmsTemplate', 'CampaignEmailTemplate', 'Footer' and 'Signature' |  |
 {: class="table table-striped"}
 
 

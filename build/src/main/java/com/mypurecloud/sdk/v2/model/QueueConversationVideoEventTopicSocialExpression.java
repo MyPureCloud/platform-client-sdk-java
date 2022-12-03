@@ -17,6 +17,9 @@ import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -211,6 +214,7 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
   private QueueConversationVideoEventTopicWrapup wrapup = null;
   private QueueConversationVideoEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -553,6 +557,23 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
   }
 
 
+  /**
+   **/
+  public QueueConversationVideoEventTopicSocialExpression additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -581,12 +602,13 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
             Objects.equals(this.disconnectedTime, queueConversationVideoEventTopicSocialExpression.disconnectedTime) &&
             Objects.equals(this.wrapup, queueConversationVideoEventTopicSocialExpression.wrapup) &&
             Objects.equals(this.afterCallWork, queueConversationVideoEventTopicSocialExpression.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicSocialExpression.afterCallWorkRequired);
+            Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicSocialExpression.afterCallWorkRequired) &&
+            Objects.equals(this.additionalProperties, queueConversationVideoEventTopicSocialExpression.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, initialState, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -613,6 +635,7 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

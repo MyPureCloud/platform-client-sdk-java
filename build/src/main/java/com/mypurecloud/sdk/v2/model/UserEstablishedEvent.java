@@ -31,6 +31,8 @@ public class UserEstablishedEvent  implements Serializable {
   private String phoneNumber = null;
   private String userId = null;
   private String stationId = null;
+  private String ani = null;
+  private String dnis = null;
   private Boolean afterCallWorkRequired = null;
   private String queueId = null;
   private InitialConfiguration initialConfiguration = null;
@@ -164,6 +166,42 @@ public class UserEstablishedEvent  implements Serializable {
 
 
   /**
+   * The automatic number identification if it is available for this conversation.
+   **/
+  public UserEstablishedEvent ani(String ani) {
+    this.ani = ani;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The automatic number identification if it is available for this conversation.")
+  @JsonProperty("ani")
+  public String getAni() {
+    return ani;
+  }
+  public void setAni(String ani) {
+    this.ani = ani;
+  }
+
+
+  /**
+   * The dialed number identification if it is available for this conversation.
+   **/
+  public UserEstablishedEvent dnis(String dnis) {
+    this.dnis = dnis;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The dialed number identification if it is available for this conversation.")
+  @JsonProperty("dnis")
+  public String getDnis() {
+    return dnis;
+  }
+  public void setDnis(String dnis) {
+    this.dnis = dnis;
+  }
+
+
+  /**
    * Indicates whether or not this user will be required to complete after call work.
    **/
   public UserEstablishedEvent afterCallWorkRequired(Boolean afterCallWorkRequired) {
@@ -252,6 +290,8 @@ public class UserEstablishedEvent  implements Serializable {
             Objects.equals(this.phoneNumber, userEstablishedEvent.phoneNumber) &&
             Objects.equals(this.userId, userEstablishedEvent.userId) &&
             Objects.equals(this.stationId, userEstablishedEvent.stationId) &&
+            Objects.equals(this.ani, userEstablishedEvent.ani) &&
+            Objects.equals(this.dnis, userEstablishedEvent.dnis) &&
             Objects.equals(this.afterCallWorkRequired, userEstablishedEvent.afterCallWorkRequired) &&
             Objects.equals(this.queueId, userEstablishedEvent.queueId) &&
             Objects.equals(this.initialConfiguration, userEstablishedEvent.initialConfiguration) &&
@@ -260,7 +300,7 @@ public class UserEstablishedEvent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventId, eventDateTime, conversationId, communicationId, phoneNumber, userId, stationId, afterCallWorkRequired, queueId, initialConfiguration, sourceConfiguration);
+    return Objects.hash(eventId, eventDateTime, conversationId, communicationId, phoneNumber, userId, stationId, ani, dnis, afterCallWorkRequired, queueId, initialConfiguration, sourceConfiguration);
   }
 
   @Override
@@ -275,6 +315,8 @@ public class UserEstablishedEvent  implements Serializable {
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    stationId: ").append(toIndentedString(stationId)).append("\n");
+    sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
+    sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    initialConfiguration: ").append(toIndentedString(initialConfiguration)).append("\n");

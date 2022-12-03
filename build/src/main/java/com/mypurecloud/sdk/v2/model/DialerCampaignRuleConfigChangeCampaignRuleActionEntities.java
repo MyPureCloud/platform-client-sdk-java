@@ -15,7 +15,9 @@ import com.mypurecloud.sdk.v2.model.DialerCampaignRuleConfigChangeUriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -26,6 +28,7 @@ import java.io.Serializable;
 public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implements Serializable {
   
   private Boolean useTriggeringEntity = null;
+  private Map<String, Object> additionalProperties = null;
   private List<DialerCampaignRuleConfigChangeUriReference> campaigns = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
   private List<DialerCampaignRuleConfigChangeUriReference> sequences = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
 
@@ -45,6 +48,23 @@ public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implement
   }
   public void setUseTriggeringEntity(Boolean useTriggeringEntity) {
     this.useTriggeringEntity = useTriggeringEntity;
+  }
+
+
+  /**
+   **/
+  public DialerCampaignRuleConfigChangeCampaignRuleActionEntities additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
   }
 
 
@@ -95,13 +115,14 @@ public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implement
     DialerCampaignRuleConfigChangeCampaignRuleActionEntities dialerCampaignRuleConfigChangeCampaignRuleActionEntities = (DialerCampaignRuleConfigChangeCampaignRuleActionEntities) o;
 
     return Objects.equals(this.useTriggeringEntity, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.useTriggeringEntity) &&
+            Objects.equals(this.additionalProperties, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.additionalProperties) &&
             Objects.equals(this.campaigns, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.campaigns) &&
             Objects.equals(this.sequences, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.sequences);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(useTriggeringEntity, campaigns, sequences);
+    return Objects.hash(useTriggeringEntity, additionalProperties, campaigns, sequences);
   }
 
   @Override
@@ -110,6 +131,7 @@ public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implement
     sb.append("class DialerCampaignRuleConfigChangeCampaignRuleActionEntities {\n");
     
     sb.append("    useTriggeringEntity: ").append(toIndentedString(useTriggeringEntity)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    campaigns: ").append(toIndentedString(campaigns)).append("\n");
     sb.append("    sequences: ").append(toIndentedString(sequences)).append("\n");
     sb.append("}");

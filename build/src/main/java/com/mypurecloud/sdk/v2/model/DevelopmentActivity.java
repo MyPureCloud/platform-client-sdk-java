@@ -33,6 +33,7 @@ public class DevelopmentActivity  implements Serializable {
   private Date dateCreated = null;
   private Float percentageScore = null;
   private Boolean isPassed = null;
+  private Boolean isLatest = null;
   private String selfUri = null;
   private String name = null;
 
@@ -181,6 +182,24 @@ public class DevelopmentActivity  implements Serializable {
   @JsonProperty("isPassed")
   public Boolean getIsPassed() {
     return isPassed;
+  }
+
+
+  /**
+   * True if this is the latest version of assignment assigned to the user
+   **/
+  public DevelopmentActivity isLatest(Boolean isLatest) {
+    this.isLatest = isLatest;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True if this is the latest version of assignment assigned to the user")
+  @JsonProperty("isLatest")
+  public Boolean getIsLatest() {
+    return isLatest;
+  }
+  public void setIsLatest(Boolean isLatest) {
+    this.isLatest = isLatest;
   }
 
 
@@ -333,6 +352,7 @@ public class DevelopmentActivity  implements Serializable {
             Objects.equals(this.dateCreated, developmentActivity.dateCreated) &&
             Objects.equals(this.percentageScore, developmentActivity.percentageScore) &&
             Objects.equals(this.isPassed, developmentActivity.isPassed) &&
+            Objects.equals(this.isLatest, developmentActivity.isLatest) &&
             Objects.equals(this.selfUri, developmentActivity.selfUri) &&
             Objects.equals(this.name, developmentActivity.name) &&
             Objects.equals(this.type, developmentActivity.type) &&
@@ -345,7 +365,7 @@ public class DevelopmentActivity  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateCompleted, createdBy, dateCreated, percentageScore, isPassed, selfUri, name, type, status, dateDue, facilitator, attendees, isOverdue);
+    return Objects.hash(id, dateCompleted, createdBy, dateCreated, percentageScore, isPassed, isLatest, selfUri, name, type, status, dateDue, facilitator, attendees, isOverdue);
   }
 
   @Override
@@ -359,6 +379,7 @@ public class DevelopmentActivity  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    percentageScore: ").append(toIndentedString(percentageScore)).append("\n");
     sb.append("    isPassed: ").append(toIndentedString(isPassed)).append("\n");
+    sb.append("    isLatest: ").append(toIndentedString(isLatest)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

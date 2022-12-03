@@ -146,6 +146,7 @@ title: AcdEndDetailEventTopicAcdEndEvent
 | STANDARD | &quot;STANDARD&quot; |
 | OTHER | &quot;OTHER&quot; |
 | CONDITIONAL | &quot;CONDITIONAL&quot; |
+| VIP | &quot;VIP&quot; |
 {: class="table table-striped"}
 
 
@@ -165,6 +166,7 @@ title: AcdEndDetailEventTopicAcdEndEvent
 | STANDARD | &quot;STANDARD&quot; | 
 | OTHER | &quot;OTHER&quot; | 
 | CONDITIONAL | &quot;CONDITIONAL&quot; | 
+| VIP | &quot;VIP&quot; | 
 {: class="table table-striped"}
 
 

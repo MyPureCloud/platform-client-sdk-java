@@ -36,6 +36,7 @@ title: DialerCampaignConfigChangeCampaign
 | **contactListFilters** | <!----><!---->[**List&lt;DialerCampaignConfigChangeUriReference&gt;**](DialerCampaignConfigChangeUriReference.html)<!----> | List of contact filters |  [optional] |
 | **division** | <!----><!---->[**DialerCampaignConfigChangeUriReference**](DialerCampaignConfigChangeUriReference.html)<!----> | A UriReference for a resource |  [optional] |
 | **agentOwnedColumn** | <!----><!---->**String**<!----> | For Preview Campaigns. Name of the contact column in the contact list containing the userIds of agents to assign specific contact records to. |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The UI-visible name of the object |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Creation time of the entity |  [optional] |

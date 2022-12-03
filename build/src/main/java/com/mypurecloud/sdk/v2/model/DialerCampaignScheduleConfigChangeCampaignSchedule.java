@@ -17,7 +17,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -29,6 +31,7 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
   private List<DialerCampaignScheduleConfigChangeScheduleInterval> intervals = new ArrayList<DialerCampaignScheduleConfigChangeScheduleInterval>();
   private String timeZone = null;
   private DialerCampaignScheduleConfigChangeUriReference campaign = null;
+  private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
@@ -86,6 +89,23 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
   }
   public void setCampaign(DialerCampaignScheduleConfigChangeUriReference campaign) {
     this.campaign = campaign;
+  }
+
+
+  /**
+   **/
+  public DialerCampaignScheduleConfigChangeCampaignSchedule additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
   }
 
 
@@ -192,6 +212,7 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
     return Objects.equals(this.intervals, dialerCampaignScheduleConfigChangeCampaignSchedule.intervals) &&
             Objects.equals(this.timeZone, dialerCampaignScheduleConfigChangeCampaignSchedule.timeZone) &&
             Objects.equals(this.campaign, dialerCampaignScheduleConfigChangeCampaignSchedule.campaign) &&
+            Objects.equals(this.additionalProperties, dialerCampaignScheduleConfigChangeCampaignSchedule.additionalProperties) &&
             Objects.equals(this.id, dialerCampaignScheduleConfigChangeCampaignSchedule.id) &&
             Objects.equals(this.name, dialerCampaignScheduleConfigChangeCampaignSchedule.name) &&
             Objects.equals(this.dateCreated, dialerCampaignScheduleConfigChangeCampaignSchedule.dateCreated) &&
@@ -201,7 +222,7 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
 
   @Override
   public int hashCode() {
-    return Objects.hash(intervals, timeZone, campaign, id, name, dateCreated, dateModified, version);
+    return Objects.hash(intervals, timeZone, campaign, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -212,6 +233,7 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
     sb.append("    intervals: ").append(toIndentedString(intervals)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    campaign: ").append(toIndentedString(campaign)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

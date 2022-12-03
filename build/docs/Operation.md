@@ -30,10 +30,13 @@ title: Operation
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CREATE | &quot;CREATE&quot; | 
 | CHECKIN | &quot;CHECKIN&quot; | 
+| CHECKOUT | &quot;CHECKOUT&quot; | 
 | DEBUG | &quot;DEBUG&quot; | 
 | DELETE | &quot;DELETE&quot; | 
 | HISTORY | &quot;HISTORY&quot; | 
 | PUBLISH | &quot;PUBLISH&quot; | 
+| REVERT | &quot;REVERT&quot; | 
+| SAVE | &quot;SAVE&quot; | 
 | STATE_CHANGE | &quot;STATE_CHANGE&quot; | 
 | UPDATE | &quot;UPDATE&quot; | 
 | VALIDATE | &quot;VALIDATE&quot; | 

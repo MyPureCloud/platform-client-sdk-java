@@ -31,6 +31,7 @@ public class QueueConversationMessageEventTopicErrorDetails  implements Serializ
   private Map<String, String> messageParams = null;
   private String contextId = null;
   private String uri = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -158,6 +159,23 @@ public class QueueConversationMessageEventTopicErrorDetails  implements Serializ
   }
 
 
+  /**
+   **/
+  public QueueConversationMessageEventTopicErrorDetails additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -174,12 +192,13 @@ public class QueueConversationMessageEventTopicErrorDetails  implements Serializ
             Objects.equals(this.messageWithParams, queueConversationMessageEventTopicErrorDetails.messageWithParams) &&
             Objects.equals(this.messageParams, queueConversationMessageEventTopicErrorDetails.messageParams) &&
             Objects.equals(this.contextId, queueConversationMessageEventTopicErrorDetails.contextId) &&
-            Objects.equals(this.uri, queueConversationMessageEventTopicErrorDetails.uri);
+            Objects.equals(this.uri, queueConversationMessageEventTopicErrorDetails.uri) &&
+            Objects.equals(this.additionalProperties, queueConversationMessageEventTopicErrorDetails.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, code, message, messageWithParams, messageParams, contextId, uri);
+    return Objects.hash(status, code, message, messageWithParams, messageParams, contextId, uri, additionalProperties);
   }
 
   @Override
@@ -194,6 +213,7 @@ public class QueueConversationMessageEventTopicErrorDetails  implements Serializ
     sb.append("    messageParams: ").append(toIndentedString(messageParams)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

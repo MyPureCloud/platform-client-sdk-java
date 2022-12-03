@@ -126,6 +126,7 @@ title: EntityChange
 | NUMBERPLAN | &quot;NumberPlan&quot; | 
 | OAUTHCLIENT | &quot;OAuthClient&quot; | 
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; | 
+| ORGANIZATION | &quot;Organization&quot; | 
 | ORGANIZATIONAUTHORIZATIONTRUST | &quot;OrganizationAuthorizationTrust&quot; | 
 | ORGANIZATIONAUTHORIZATIONUSERTRUST | &quot;OrganizationAuthorizationUserTrust&quot; | 
 | ORGANIZATIONFEATURE | &quot;OrganizationFeature&quot; | 

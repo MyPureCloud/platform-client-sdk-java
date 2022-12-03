@@ -13,6 +13,7 @@ title: DialerContactlistConfigChangeImportStatus
 | **completedRecords** | <!----><!---->**Integer**<!----> | number of records finished importing |  [optional] |
 | **percentageComplete** | <!----><!---->**Integer**<!----> | percentage of records finished importing |  [optional] |
 | **failureReason** | <!----><!---->**String**<!----> | if the import has failed, the reason for the failure |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

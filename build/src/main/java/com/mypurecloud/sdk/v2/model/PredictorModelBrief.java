@@ -78,6 +78,56 @@ public class PredictorModelBrief  implements Serializable {
   private Date dateModified = null;
   private List<PredictorModelRetrainingError> retrainingErrors = new ArrayList<PredictorModelRetrainingError>();
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The state of the model
+   */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
+  public enum StateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    TRAINED("Trained"),
+    ERROR("Error"),
+    INVALIDDATASET("InvalidDataset"),
+    INACTIVE("Inactive");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StateEnum value : StateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StateEnum state = null;
+
   
   @ApiModelProperty(example = "null", value = "The media type of the model.")
   @JsonProperty("mediaType")
@@ -100,6 +150,13 @@ public class PredictorModelBrief  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The state of the model")
+  @JsonProperty("state")
+  public StateEnum getState() {
+    return state;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -112,12 +169,13 @@ public class PredictorModelBrief  implements Serializable {
 
     return Objects.equals(this.mediaType, predictorModelBrief.mediaType) &&
             Objects.equals(this.dateModified, predictorModelBrief.dateModified) &&
-            Objects.equals(this.retrainingErrors, predictorModelBrief.retrainingErrors);
+            Objects.equals(this.retrainingErrors, predictorModelBrief.retrainingErrors) &&
+            Objects.equals(this.state, predictorModelBrief.state);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, dateModified, retrainingErrors);
+    return Objects.hash(mediaType, dateModified, retrainingErrors, state);
   }
 
   @Override
@@ -128,6 +186,7 @@ public class PredictorModelBrief  implements Serializable {
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    retrainingErrors: ").append(toIndentedString(retrainingErrors)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("}");
     return sb.toString();
   }

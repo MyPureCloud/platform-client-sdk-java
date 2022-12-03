@@ -17,7 +17,9 @@ import com.mypurecloud.sdk.v2.model.DialerRulesetConfigChangeCondition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -27,6 +29,7 @@ import java.io.Serializable;
 public class DialerRulesetConfigChangeRule  implements Serializable {
   
   private List<DialerRulesetConfigChangeCondition> conditions = new ArrayList<DialerRulesetConfigChangeCondition>();
+  private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Integer order = null;
@@ -96,6 +99,23 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
   }
   public void setConditions(List<DialerRulesetConfigChangeCondition> conditions) {
     this.conditions = conditions;
+  }
+
+
+  /**
+   **/
+  public DialerRulesetConfigChangeRule additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
   }
 
 
@@ -200,6 +220,7 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     DialerRulesetConfigChangeRule dialerRulesetConfigChangeRule = (DialerRulesetConfigChangeRule) o;
 
     return Objects.equals(this.conditions, dialerRulesetConfigChangeRule.conditions) &&
+            Objects.equals(this.additionalProperties, dialerRulesetConfigChangeRule.additionalProperties) &&
             Objects.equals(this.id, dialerRulesetConfigChangeRule.id) &&
             Objects.equals(this.name, dialerRulesetConfigChangeRule.name) &&
             Objects.equals(this.order, dialerRulesetConfigChangeRule.order) &&
@@ -209,7 +230,7 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, id, name, order, category, actions);
+    return Objects.hash(conditions, additionalProperties, id, name, order, category, actions);
   }
 
   @Override
@@ -218,6 +239,7 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     sb.append("class DialerRulesetConfigChangeRule {\n");
     
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");

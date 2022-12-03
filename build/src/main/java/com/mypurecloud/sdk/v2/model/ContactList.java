@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactPhoneNumberColumn;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.EmailColumn;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -35,6 +36,7 @@ public class ContactList  implements Serializable {
   private DomainEntityRef division = null;
   private List<String> columnNames = new ArrayList<String>();
   private List<ContactPhoneNumberColumn> phoneColumns = new ArrayList<ContactPhoneNumberColumn>();
+  private List<EmailColumn> emailColumns = new ArrayList<EmailColumn>();
   private ImportStatus importStatus = null;
   private String previewModeColumnName = null;
   private List<String> previewModeAcceptedValues = new ArrayList<String>();
@@ -152,6 +154,24 @@ public class ContactList  implements Serializable {
   }
   public void setPhoneColumns(List<ContactPhoneNumberColumn> phoneColumns) {
     this.phoneColumns = phoneColumns;
+  }
+
+
+  /**
+   * Indicates which columns are email addresses
+   **/
+  public ContactList emailColumns(List<EmailColumn> emailColumns) {
+    this.emailColumns = emailColumns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates which columns are email addresses")
+  @JsonProperty("emailColumns")
+  public List<EmailColumn> getEmailColumns() {
+    return emailColumns;
+  }
+  public void setEmailColumns(List<EmailColumn> emailColumns) {
+    this.emailColumns = emailColumns;
   }
 
 
@@ -284,6 +304,7 @@ public class ContactList  implements Serializable {
             Objects.equals(this.division, contactList.division) &&
             Objects.equals(this.columnNames, contactList.columnNames) &&
             Objects.equals(this.phoneColumns, contactList.phoneColumns) &&
+            Objects.equals(this.emailColumns, contactList.emailColumns) &&
             Objects.equals(this.importStatus, contactList.importStatus) &&
             Objects.equals(this.previewModeColumnName, contactList.previewModeColumnName) &&
             Objects.equals(this.previewModeAcceptedValues, contactList.previewModeAcceptedValues) &&
@@ -296,7 +317,7 @@ public class ContactList  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, division, columnNames, phoneColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, division, columnNames, phoneColumns, emailColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, selfUri);
   }
 
   @Override
@@ -312,6 +333,7 @@ public class ContactList  implements Serializable {
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    columnNames: ").append(toIndentedString(columnNames)).append("\n");
     sb.append("    phoneColumns: ").append(toIndentedString(phoneColumns)).append("\n");
+    sb.append("    emailColumns: ").append(toIndentedString(emailColumns)).append("\n");
     sb.append("    importStatus: ").append(toIndentedString(importStatus)).append("\n");
     sb.append("    previewModeColumnName: ").append(toIndentedString(previewModeColumnName)).append("\n");
     sb.append("    previewModeAcceptedValues: ").append(toIndentedString(previewModeAcceptedValues)).append("\n");

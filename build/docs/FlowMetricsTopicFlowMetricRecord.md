@@ -254,7 +254,10 @@ title: FlowMetricsTopicFlowMetricRecord
 | SECURECALL | &quot;securecall&quot; | 
 | SPEECH | &quot;speech&quot; | 
 | SURVEYINVITE | &quot;surveyinvite&quot; | 
+| VOICE | &quot;voice&quot; | 
+| VOICEMAIL | &quot;voicemail&quot; | 
 | WORKFLOW | &quot;workflow&quot; | 
+| WORKITEM | &quot;workitem&quot; | 
 {: class="table table-striped"}
 
 
@@ -330,6 +333,7 @@ title: FlowMetricsTopicFlowMetricRecord
 | PREDICTIVE | &quot;Predictive&quot; |
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
+| VIP | &quot;Vip&quot; |
 {: class="table table-striped"}
 
 
@@ -347,6 +351,7 @@ title: FlowMetricsTopicFlowMetricRecord
 | PREDICTIVE | &quot;Predictive&quot; | 
 | PREFERRED | &quot;Preferred&quot; | 
 | STANDARD | &quot;Standard&quot; | 
+| VIP | &quot;Vip&quot; | 
 {: class="table table-striped"}
 
 

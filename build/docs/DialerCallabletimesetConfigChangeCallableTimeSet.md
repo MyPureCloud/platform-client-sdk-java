@@ -9,6 +9,7 @@ title: DialerCallabletimesetConfigChangeCallableTimeSet
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **callableTimes** | <!----><!---->[**List&lt;DialerCallabletimesetConfigChangeCallableTime&gt;**](DialerCallabletimesetConfigChangeCallableTime.html)<!----> | The list of callable times |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The UI-visible name of the object |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Creation time of the entity |  [optional] |

@@ -87,6 +87,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
   private LearningAssignmentTopicUserReference modifiedBy = null;
   private Date dateModified = null;
   private Boolean isOverdue = null;
+  private Integer lengthInMinutes = null;
 
   
   /**
@@ -276,6 +277,23 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
   }
 
 
+  /**
+   **/
+  public LearningAssignmentTopicLearningAssignmentNotification lengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lengthInMinutes")
+  public Integer getLengthInMinutes() {
+    return lengthInMinutes;
+  }
+  public void setLengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -296,12 +314,13 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
             Objects.equals(this.dateCreated, learningAssignmentTopicLearningAssignmentNotification.dateCreated) &&
             Objects.equals(this.modifiedBy, learningAssignmentTopicLearningAssignmentNotification.modifiedBy) &&
             Objects.equals(this.dateModified, learningAssignmentTopicLearningAssignmentNotification.dateModified) &&
-            Objects.equals(this.isOverdue, learningAssignmentTopicLearningAssignmentNotification.isOverdue);
+            Objects.equals(this.isOverdue, learningAssignmentTopicLearningAssignmentNotification.isOverdue) &&
+            Objects.equals(this.lengthInMinutes, learningAssignmentTopicLearningAssignmentNotification.lengthInMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, module, version, state, dateRecommendedForCompletion, createdBy, dateCreated, modifiedBy, dateModified, isOverdue);
+    return Objects.hash(id, user, module, version, state, dateRecommendedForCompletion, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, lengthInMinutes);
   }
 
   @Override
@@ -320,6 +339,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    isOverdue: ").append(toIndentedString(isOverdue)).append("\n");
+    sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

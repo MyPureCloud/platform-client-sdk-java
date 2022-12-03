@@ -81,6 +81,7 @@ title: WorkitemsEventsNotificationWorkitem
 | REASSIGN | &quot;reassign&quot; | 
 | ARCHIVE | &quot;archive&quot; | 
 | UNARCHIVE | &quot;unarchive&quot; | 
+| RESCHEDULE | &quot;reschedule&quot; | 
 {: class="table table-striped"}
 
 
@@ -102,6 +103,7 @@ title: WorkitemsEventsNotificationWorkitem
 | PARKED | &quot;Parked&quot; | 
 | HELD | &quot;Held&quot; | 
 | ACDCANCELLED | &quot;AcdCancelled&quot; | 
+| TERMINATED | &quot;Terminated&quot; | 
 {: class="table table-striped"}
 
 

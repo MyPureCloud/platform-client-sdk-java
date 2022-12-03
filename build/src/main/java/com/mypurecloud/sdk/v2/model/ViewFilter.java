@@ -1075,6 +1075,7 @@ public class ViewFilter  implements Serializable {
     GENESYSBYOB("GenesysByob"),
     AMAZONLEXV2("AmazonLexV2"),
     GOOGLEDIALOGFLOWCXRESELL("GoogleDialogFlowCxResell"),
+    GOOGLESTTBOTFLOW("GoogleSttBotFlow"),
     MICROSOFTSTTBOTFLOW("MicrosoftSttBotFlow");
 
     private String value;
@@ -4009,14 +4010,14 @@ public class ViewFilter  implements Serializable {
 
 
   /**
-   * Action Category Name
+   * Deprecated - Please use integrationIds instead
    **/
   public ViewFilter actionCategoryName(String actionCategoryName) {
     this.actionCategoryName = actionCategoryName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Action Category Name")
+  @ApiModelProperty(example = "null", value = "Deprecated - Please use integrationIds instead")
   @JsonProperty("actionCategoryName")
   public String getActionCategoryName() {
     return actionCategoryName;

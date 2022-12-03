@@ -30,6 +30,8 @@ public class IvrEstablishedEvent  implements Serializable {
   private String communicationId = null;
   private String ivrPhoneNumber = null;
   private String ivrName = null;
+  private String ani = null;
+  private String dnis = null;
   private InitialConfiguration initialConfiguration = null;
   private SourceConfiguration sourceConfiguration = null;
 
@@ -143,6 +145,42 @@ public class IvrEstablishedEvent  implements Serializable {
 
 
   /**
+   * The automatic number identification if it is available for this conversation.
+   **/
+  public IvrEstablishedEvent ani(String ani) {
+    this.ani = ani;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The automatic number identification if it is available for this conversation.")
+  @JsonProperty("ani")
+  public String getAni() {
+    return ani;
+  }
+  public void setAni(String ani) {
+    this.ani = ani;
+  }
+
+
+  /**
+   * The dialed number identification if it is available for this conversation.
+   **/
+  public IvrEstablishedEvent dnis(String dnis) {
+    this.dnis = dnis;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The dialed number identification if it is available for this conversation.")
+  @JsonProperty("dnis")
+  public String getDnis() {
+    return dnis;
+  }
+  public void setDnis(String dnis) {
+    this.dnis = dnis;
+  }
+
+
+  /**
    * Metadata about this communication.
    **/
   public IvrEstablishedEvent initialConfiguration(InitialConfiguration initialConfiguration) {
@@ -194,13 +232,15 @@ public class IvrEstablishedEvent  implements Serializable {
             Objects.equals(this.communicationId, ivrEstablishedEvent.communicationId) &&
             Objects.equals(this.ivrPhoneNumber, ivrEstablishedEvent.ivrPhoneNumber) &&
             Objects.equals(this.ivrName, ivrEstablishedEvent.ivrName) &&
+            Objects.equals(this.ani, ivrEstablishedEvent.ani) &&
+            Objects.equals(this.dnis, ivrEstablishedEvent.dnis) &&
             Objects.equals(this.initialConfiguration, ivrEstablishedEvent.initialConfiguration) &&
             Objects.equals(this.sourceConfiguration, ivrEstablishedEvent.sourceConfiguration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventId, eventDateTime, conversationId, communicationId, ivrPhoneNumber, ivrName, initialConfiguration, sourceConfiguration);
+    return Objects.hash(eventId, eventDateTime, conversationId, communicationId, ivrPhoneNumber, ivrName, ani, dnis, initialConfiguration, sourceConfiguration);
   }
 
   @Override
@@ -214,6 +254,8 @@ public class IvrEstablishedEvent  implements Serializable {
     sb.append("    communicationId: ").append(toIndentedString(communicationId)).append("\n");
     sb.append("    ivrPhoneNumber: ").append(toIndentedString(ivrPhoneNumber)).append("\n");
     sb.append("    ivrName: ").append(toIndentedString(ivrName)).append("\n");
+    sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
+    sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
     sb.append("    initialConfiguration: ").append(toIndentedString(initialConfiguration)).append("\n");
     sb.append("    sourceConfiguration: ").append(toIndentedString(sourceConfiguration)).append("\n");
     sb.append("}");

@@ -22,6 +22,7 @@ title: BotAggregationView
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NBOTSESSIONTURNS | &quot;nBotSessionTurns&quot; | 
 | NBOTSESSIONS | &quot;nBotSessions&quot; | 
 | OBOTINTENT | &quot;oBotIntent&quot; | 
 | OBOTSESSIONQUERY | &quot;oBotSessionQuery&quot; | 

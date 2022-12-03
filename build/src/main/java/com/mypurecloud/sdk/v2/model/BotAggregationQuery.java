@@ -47,6 +47,8 @@ public class BotAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    ASKACTIONID("askActionId"),
+    ASKACTIONRESULT("askActionResult"),
     BOTFINALINTENT("botFinalIntent"),
     BOTID("botId"),
     BOTINTENT("botIntent"),
@@ -111,6 +113,7 @@ public class BotAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    NBOTSESSIONTURNS("nBotSessionTurns"),
     NBOTSESSIONS("nBotSessions"),
     OBOTINTENT("oBotIntent"),
     OBOTSESSIONQUERY("oBotSessionQuery"),

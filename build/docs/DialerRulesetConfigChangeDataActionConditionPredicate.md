@@ -13,6 +13,7 @@ title: DialerRulesetConfigChangeDataActionConditionPredicate
 | **comparisonValue** | <!----><!---->**String**<!----> | The value to compare against for this condition |  [optional] |
 | **outputFieldMissingResolution** | <!----><!---->**Boolean**<!----> | The result of this predicate if the requested output field is missing from the data action's result |  [optional] |
 | **inverted** | <!----><!---->**Boolean**<!----> | If true, inverts the result of evaluating this Predicate. Default is false. |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

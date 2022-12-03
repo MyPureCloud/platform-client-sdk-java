@@ -146,6 +146,7 @@ public class AuditQueryEntity  implements Serializable {
     NUMBERPLAN("NumberPlan"),
     OAUTHCLIENT("OAuthClient"),
     OAUTHCLIENTAUTHORIZATION("OAuthClientAuthorization"),
+    ORGANIZATION("Organization"),
     ORGANIZATIONAUTHORIZATIONTRUST("OrganizationAuthorizationTrust"),
     ORGANIZATIONAUTHORIZATIONUSERTRUST("OrganizationAuthorizationUserTrust"),
     ORGANIZATIONFEATURE("OrganizationFeature"),

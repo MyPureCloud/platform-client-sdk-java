@@ -83,56 +83,6 @@ public class DigitalDataActionConditionPredicate  implements Serializable {
   private Boolean inverted = null;
   private Boolean outputFieldMissingResolution = null;
 
-  private static class ValueTypeEnumDeserializer extends StdDeserializer<ValueTypeEnum> {
-    public ValueTypeEnumDeserializer() {
-      super(ValueTypeEnumDeserializer.class);
-    }
-
-    @Override
-    public ValueTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return ValueTypeEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * The data type the value should be treated as.
-   */
- @JsonDeserialize(using = ValueTypeEnumDeserializer.class)
-  public enum ValueTypeEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    DATETIME("DateTime"),
-    NUMERIC("Numeric"),
-    PERIOD("Period"),
-    STRING("String");
-
-    private String value;
-
-    ValueTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static ValueTypeEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (ValueTypeEnum value : ValueTypeEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return ValueTypeEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private ValueTypeEnum valueType = null;
-
   
   /**
    * The name of an output field from the data action's output to use for this condition
@@ -224,24 +174,6 @@ public class DigitalDataActionConditionPredicate  implements Serializable {
   }
 
 
-  /**
-   * The data type the value should be treated as.
-   **/
-  public DigitalDataActionConditionPredicate valueType(ValueTypeEnum valueType) {
-    this.valueType = valueType;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The data type the value should be treated as.")
-  @JsonProperty("valueType")
-  public ValueTypeEnum getValueType() {
-    return valueType;
-  }
-  public void setValueType(ValueTypeEnum valueType) {
-    this.valueType = valueType;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -256,13 +188,12 @@ public class DigitalDataActionConditionPredicate  implements Serializable {
             Objects.equals(this.outputOperator, digitalDataActionConditionPredicate.outputOperator) &&
             Objects.equals(this.comparisonValue, digitalDataActionConditionPredicate.comparisonValue) &&
             Objects.equals(this.inverted, digitalDataActionConditionPredicate.inverted) &&
-            Objects.equals(this.outputFieldMissingResolution, digitalDataActionConditionPredicate.outputFieldMissingResolution) &&
-            Objects.equals(this.valueType, digitalDataActionConditionPredicate.valueType);
+            Objects.equals(this.outputFieldMissingResolution, digitalDataActionConditionPredicate.outputFieldMissingResolution);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(outputField, outputOperator, comparisonValue, inverted, outputFieldMissingResolution, valueType);
+    return Objects.hash(outputField, outputOperator, comparisonValue, inverted, outputFieldMissingResolution);
   }
 
   @Override
@@ -275,7 +206,6 @@ public class DigitalDataActionConditionPredicate  implements Serializable {
     sb.append("    comparisonValue: ").append(toIndentedString(comparisonValue)).append("\n");
     sb.append("    inverted: ").append(toIndentedString(inverted)).append("\n");
     sb.append("    outputFieldMissingResolution: ").append(toIndentedString(outputFieldMissingResolution)).append("\n");
-    sb.append("    valueType: ").append(toIndentedString(valueType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

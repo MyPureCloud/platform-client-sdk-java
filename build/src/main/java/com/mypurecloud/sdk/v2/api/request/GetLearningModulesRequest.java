@@ -326,6 +326,51 @@ public class GetLearningModulesRequest {
 		}
 	}
 
+	private List<String> statuses;
+	public List<String> getStatuses() {
+		return this.statuses;
+	}
+
+	public void setStatuses(List<String> statuses) {
+		this.statuses = statuses;
+	}
+
+	public GetLearningModulesRequest withStatuses(List<String> statuses) {
+	    this.setStatuses(statuses);
+	    return this;
+	} 
+
+	public enum statusesValues { 
+		UNPUBLISHED("Unpublished"),
+		PUBLISHED("Published"),
+		ARCHIVED("Archived");
+
+		private String value;
+
+		statusesValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static statusesValues fromString(String key) {
+			if (key == null) return null;
+
+			for (statusesValues value : statusesValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return statusesValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -375,6 +420,9 @@ public class GetLearningModulesRequest {
         
 
                 .withQueryParameters("isPublished", "", isPublished)
+        
+
+                .withQueryParameters("statuses", "multi", statuses)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -488,6 +536,22 @@ public class GetLearningModulesRequest {
 		public Builder withIsPublished(isPublishedValues isPublished) {
 		    request.setIsPublished(isPublished.toString());
 
+		    return this;
+		}
+
+		public Builder withStatuses(List<String> statuses) {
+			request.setStatuses(statuses);
+			return this;
+		}
+
+
+
+		public Builder withStatusesEnumValues(List<statusesValues> statuses) {
+		    List<String> stringList = new ArrayList<>();
+	      for (statusesValues e : statuses) {
+	        stringList.add(e.toString());
+	      }
+	      request.setStatuses(stringList);
 		    return this;
 		}
 

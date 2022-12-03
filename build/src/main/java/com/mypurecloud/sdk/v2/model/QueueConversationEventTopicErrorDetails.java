@@ -32,6 +32,7 @@ public class QueueConversationEventTopicErrorDetails  implements Serializable {
   private Map<String, String> messageParams = null;
   private String contextId = null;
   private String uri = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -159,6 +160,23 @@ public class QueueConversationEventTopicErrorDetails  implements Serializable {
   }
 
 
+  /**
+   **/
+  public QueueConversationEventTopicErrorDetails additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -175,12 +193,13 @@ public class QueueConversationEventTopicErrorDetails  implements Serializable {
             Objects.equals(this.messageWithParams, queueConversationEventTopicErrorDetails.messageWithParams) &&
             Objects.equals(this.messageParams, queueConversationEventTopicErrorDetails.messageParams) &&
             Objects.equals(this.contextId, queueConversationEventTopicErrorDetails.contextId) &&
-            Objects.equals(this.uri, queueConversationEventTopicErrorDetails.uri);
+            Objects.equals(this.uri, queueConversationEventTopicErrorDetails.uri) &&
+            Objects.equals(this.additionalProperties, queueConversationEventTopicErrorDetails.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, code, message, messageWithParams, messageParams, contextId, uri);
+    return Objects.hash(status, code, message, messageWithParams, messageParams, contextId, uri, additionalProperties);
   }
 
   @Override
@@ -195,6 +214,7 @@ public class QueueConversationEventTopicErrorDetails  implements Serializable {
     sb.append("    messageParams: ").append(toIndentedString(messageParams)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

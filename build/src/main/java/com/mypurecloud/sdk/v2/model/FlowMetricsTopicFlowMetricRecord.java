@@ -476,7 +476,10 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     SECURECALL("securecall"),
     SPEECH("speech"),
     SURVEYINVITE("surveyinvite"),
-    WORKFLOW("workflow");
+    VOICE("voice"),
+    VOICEMAIL("voicemail"),
+    WORKFLOW("workflow"),
+    WORKITEM("workitem");
 
     private String value;
 
@@ -721,7 +724,8 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    STANDARD("Standard");
+    STANDARD("Standard"),
+    VIP("Vip");
 
     private String value;
 
@@ -788,7 +792,8 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    STANDARD("Standard");
+    STANDARD("Standard"),
+    VIP("Vip");
 
     private String value;
 

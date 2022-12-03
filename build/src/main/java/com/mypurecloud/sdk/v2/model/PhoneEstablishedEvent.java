@@ -29,6 +29,8 @@ public class PhoneEstablishedEvent  implements Serializable {
   private String conversationId = null;
   private String communicationId = null;
   private String phoneNumber = null;
+  private String ani = null;
+  private String dnis = null;
   private InitialConfiguration initialConfiguration = null;
   private SourceConfiguration sourceConfiguration = null;
 
@@ -124,6 +126,42 @@ public class PhoneEstablishedEvent  implements Serializable {
 
 
   /**
+   * The automatic number identification if it is available for this conversation.
+   **/
+  public PhoneEstablishedEvent ani(String ani) {
+    this.ani = ani;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The automatic number identification if it is available for this conversation.")
+  @JsonProperty("ani")
+  public String getAni() {
+    return ani;
+  }
+  public void setAni(String ani) {
+    this.ani = ani;
+  }
+
+
+  /**
+   * The dialed number identification if it is available for this conversation.
+   **/
+  public PhoneEstablishedEvent dnis(String dnis) {
+    this.dnis = dnis;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The dialed number identification if it is available for this conversation.")
+  @JsonProperty("dnis")
+  public String getDnis() {
+    return dnis;
+  }
+  public void setDnis(String dnis) {
+    this.dnis = dnis;
+  }
+
+
+  /**
    * Metadata about this communication.
    **/
   public PhoneEstablishedEvent initialConfiguration(InitialConfiguration initialConfiguration) {
@@ -174,13 +212,15 @@ public class PhoneEstablishedEvent  implements Serializable {
             Objects.equals(this.conversationId, phoneEstablishedEvent.conversationId) &&
             Objects.equals(this.communicationId, phoneEstablishedEvent.communicationId) &&
             Objects.equals(this.phoneNumber, phoneEstablishedEvent.phoneNumber) &&
+            Objects.equals(this.ani, phoneEstablishedEvent.ani) &&
+            Objects.equals(this.dnis, phoneEstablishedEvent.dnis) &&
             Objects.equals(this.initialConfiguration, phoneEstablishedEvent.initialConfiguration) &&
             Objects.equals(this.sourceConfiguration, phoneEstablishedEvent.sourceConfiguration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventId, eventDateTime, conversationId, communicationId, phoneNumber, initialConfiguration, sourceConfiguration);
+    return Objects.hash(eventId, eventDateTime, conversationId, communicationId, phoneNumber, ani, dnis, initialConfiguration, sourceConfiguration);
   }
 
   @Override
@@ -193,6 +233,8 @@ public class PhoneEstablishedEvent  implements Serializable {
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    communicationId: ").append(toIndentedString(communicationId)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
+    sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
     sb.append("    initialConfiguration: ").append(toIndentedString(initialConfiguration)).append("\n");
     sb.append("    sourceConfiguration: ").append(toIndentedString(sourceConfiguration)).append("\n");
     sb.append("}");

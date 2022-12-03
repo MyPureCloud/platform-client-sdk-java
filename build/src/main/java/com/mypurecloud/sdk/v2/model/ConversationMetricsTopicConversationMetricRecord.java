@@ -635,7 +635,8 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    STANDARD("Standard");
+    STANDARD("Standard"),
+    VIP("Vip");
 
     private String value;
 
@@ -698,7 +699,8 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    STANDARD("Standard");
+    STANDARD("Standard"),
+    VIP("Vip");
 
     private String value;
 

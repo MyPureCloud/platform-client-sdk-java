@@ -36,6 +36,7 @@ public class DialerContact  implements Serializable {
   private Map<String, Object> data = null;
   private Map<String, CallRecord> callRecords = null;
   private Map<String, MessageEvaluation> latestSmsEvaluations = null;
+  private Map<String, MessageEvaluation> latestEmailEvaluations = null;
   private Boolean callable = null;
   private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
   private Map<String, ContactableStatus> contactableStatus = null;
@@ -115,6 +116,13 @@ public class DialerContact  implements Serializable {
   @JsonProperty("latestSmsEvaluations")
   public Map<String, MessageEvaluation> getLatestSmsEvaluations() {
     return latestSmsEvaluations;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "A map of email records for the contact email columns.")
+  @JsonProperty("latestEmailEvaluations")
+  public Map<String, MessageEvaluation> getLatestEmailEvaluations() {
+    return latestEmailEvaluations;
   }
 
 
@@ -209,6 +217,7 @@ public class DialerContact  implements Serializable {
             Objects.equals(this.data, dialerContact.data) &&
             Objects.equals(this.callRecords, dialerContact.callRecords) &&
             Objects.equals(this.latestSmsEvaluations, dialerContact.latestSmsEvaluations) &&
+            Objects.equals(this.latestEmailEvaluations, dialerContact.latestEmailEvaluations) &&
             Objects.equals(this.callable, dialerContact.callable) &&
             Objects.equals(this.phoneNumberStatus, dialerContact.phoneNumberStatus) &&
             Objects.equals(this.contactableStatus, dialerContact.contactableStatus) &&
@@ -219,7 +228,7 @@ public class DialerContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, contactListId, data, callRecords, latestSmsEvaluations, callable, phoneNumberStatus, contactableStatus, contactColumnTimeZones, configurationOverrides, selfUri);
+    return Objects.hash(id, name, contactListId, data, callRecords, latestSmsEvaluations, latestEmailEvaluations, callable, phoneNumberStatus, contactableStatus, contactColumnTimeZones, configurationOverrides, selfUri);
   }
 
   @Override
@@ -233,6 +242,7 @@ public class DialerContact  implements Serializable {
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    callRecords: ").append(toIndentedString(callRecords)).append("\n");
     sb.append("    latestSmsEvaluations: ").append(toIndentedString(latestSmsEvaluations)).append("\n");
+    sb.append("    latestEmailEvaluations: ").append(toIndentedString(latestEmailEvaluations)).append("\n");
     sb.append("    callable: ").append(toIndentedString(callable)).append("\n");
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
     sb.append("    contactableStatus: ").append(toIndentedString(contactableStatus)).append("\n");

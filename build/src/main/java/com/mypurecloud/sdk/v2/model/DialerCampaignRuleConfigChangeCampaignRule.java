@@ -18,7 +18,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -32,6 +34,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
   private List<DialerCampaignRuleConfigChangeCampaignRuleAction> campaignRuleActions = new ArrayList<DialerCampaignRuleConfigChangeCampaignRuleAction>();
   private Boolean matchAnyConditions = null;
   private Boolean enabled = null;
+  private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
@@ -125,6 +128,23 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
   }
   public void setEnabled(Boolean enabled) {
     this.enabled = enabled;
+  }
+
+
+  /**
+   **/
+  public DialerCampaignRuleConfigChangeCampaignRule additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
   }
 
 
@@ -233,6 +253,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
             Objects.equals(this.campaignRuleActions, dialerCampaignRuleConfigChangeCampaignRule.campaignRuleActions) &&
             Objects.equals(this.matchAnyConditions, dialerCampaignRuleConfigChangeCampaignRule.matchAnyConditions) &&
             Objects.equals(this.enabled, dialerCampaignRuleConfigChangeCampaignRule.enabled) &&
+            Objects.equals(this.additionalProperties, dialerCampaignRuleConfigChangeCampaignRule.additionalProperties) &&
             Objects.equals(this.id, dialerCampaignRuleConfigChangeCampaignRule.id) &&
             Objects.equals(this.name, dialerCampaignRuleConfigChangeCampaignRule.name) &&
             Objects.equals(this.dateCreated, dialerCampaignRuleConfigChangeCampaignRule.dateCreated) &&
@@ -242,7 +263,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaignRuleEntities, campaignRuleConditions, campaignRuleActions, matchAnyConditions, enabled, id, name, dateCreated, dateModified, version);
+    return Objects.hash(campaignRuleEntities, campaignRuleConditions, campaignRuleActions, matchAnyConditions, enabled, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -255,6 +276,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     sb.append("    campaignRuleActions: ").append(toIndentedString(campaignRuleActions)).append("\n");
     sb.append("    matchAnyConditions: ").append(toIndentedString(matchAnyConditions)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

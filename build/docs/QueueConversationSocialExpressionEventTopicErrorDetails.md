@@ -15,6 +15,7 @@ title: QueueConversationSocialExpressionEventTopicErrorDetails
 | **messageParams** | <!----><!---->**Map&lt;String, String&gt;**<!----> | Used in conjunction with messageWithParams. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe' |  [optional] |
 | **contextId** | <!----><!---->**String**<!----> | The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead. |  [optional] |
 | **uri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

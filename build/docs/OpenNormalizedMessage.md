@@ -13,7 +13,6 @@ title: OpenNormalizedMessage
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | Message type. |  |
 | **text** | <!----><!---->**String**<!----> | Message text. |  [optional] |
 | **content** | <!----><!---->[**List&lt;OpenMessageContent&gt;**](OpenMessageContent.html)<!----> | List of content elements. |  [optional] |
-| **events** | <!----><!---->[**List&lt;OpenMessageEvent&gt;**](OpenMessageEvent.html)<!----> | List of event elements. |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | Message receipt status, only used with type Receipt. |  [optional] |
 | **reasons** | <!----><!---->[**List&lt;Reason&gt;**](Reason.html)<!----> | List of reasons for a message receipt that indicates the message has failed. Only used with Failed status. |  [optional] |
 | **isFinalReceipt** | <!----><!---->**Boolean**<!----> | Indicates if this is the last message receipt for this message, or if another message receipt can be expected. |  [optional] |
@@ -31,7 +30,6 @@ title: OpenNormalizedMessage
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TEXT | &quot;Text&quot; | 
 | RECEIPT | &quot;Receipt&quot; | 
-| EVENT | &quot;Event&quot; | 
 {: class="table table-striped"}
 
 

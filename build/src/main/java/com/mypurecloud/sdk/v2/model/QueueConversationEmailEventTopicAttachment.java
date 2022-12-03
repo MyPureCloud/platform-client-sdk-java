@@ -13,6 +13,9 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -26,6 +29,7 @@ public class QueueConversationEmailEventTopicAttachment  implements Serializable
   private String contentUri = null;
   private String contentType = null;
   private Integer contentLength = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -118,6 +122,23 @@ public class QueueConversationEmailEventTopicAttachment  implements Serializable
   }
 
 
+  /**
+   **/
+  public QueueConversationEmailEventTopicAttachment additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -132,12 +153,13 @@ public class QueueConversationEmailEventTopicAttachment  implements Serializable
             Objects.equals(this.name, queueConversationEmailEventTopicAttachment.name) &&
             Objects.equals(this.contentUri, queueConversationEmailEventTopicAttachment.contentUri) &&
             Objects.equals(this.contentType, queueConversationEmailEventTopicAttachment.contentType) &&
-            Objects.equals(this.contentLength, queueConversationEmailEventTopicAttachment.contentLength);
+            Objects.equals(this.contentLength, queueConversationEmailEventTopicAttachment.contentLength) &&
+            Objects.equals(this.additionalProperties, queueConversationEmailEventTopicAttachment.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(attachmentId, name, contentUri, contentType, contentLength);
+    return Objects.hash(attachmentId, name, contentUri, contentType, contentLength, additionalProperties);
   }
 
   @Override
@@ -150,6 +172,7 @@ public class QueueConversationEmailEventTopicAttachment  implements Serializable
     sb.append("    contentUri: ").append(toIndentedString(contentUri)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    contentLength: ").append(toIndentedString(contentLength)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

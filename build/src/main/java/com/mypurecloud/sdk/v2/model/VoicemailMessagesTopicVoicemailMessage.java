@@ -31,6 +31,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
   private Integer audioRecordingSizeBytes = null;
   private Date createdDate = null;
   private Date modifiedDate = null;
+  private String createdDateString = null;
   private String callerAddress = null;
   private String callerName = null;
   private String action = null;
@@ -39,6 +40,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
   private String modifiedByUserId = null;
   private List<VoicemailMessagesTopicVoicemailCopyRecord> copiedTo = new ArrayList<VoicemailMessagesTopicVoicemailCopyRecord>();
   private VoicemailMessagesTopicVoicemailCopyRecord copiedFrom = null;
+  private String modifiedDateString = null;
 
   
   /**
@@ -140,6 +142,23 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
   }
   public void setModifiedDate(Date modifiedDate) {
     this.modifiedDate = modifiedDate;
+  }
+
+
+  /**
+   **/
+  public VoicemailMessagesTopicVoicemailMessage createdDateString(String createdDateString) {
+    this.createdDateString = createdDateString;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("createdDateString")
+  public String getCreatedDateString() {
+    return createdDateString;
+  }
+  public void setCreatedDateString(String createdDateString) {
+    this.createdDateString = createdDateString;
   }
 
 
@@ -279,6 +298,23 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
   }
 
 
+  /**
+   **/
+  public VoicemailMessagesTopicVoicemailMessage modifiedDateString(String modifiedDateString) {
+    this.modifiedDateString = modifiedDateString;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("modifiedDateString")
+  public String getModifiedDateString() {
+    return modifiedDateString;
+  }
+  public void setModifiedDateString(String modifiedDateString) {
+    this.modifiedDateString = modifiedDateString;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -295,6 +331,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
             Objects.equals(this.audioRecordingSizeBytes, voicemailMessagesTopicVoicemailMessage.audioRecordingSizeBytes) &&
             Objects.equals(this.createdDate, voicemailMessagesTopicVoicemailMessage.createdDate) &&
             Objects.equals(this.modifiedDate, voicemailMessagesTopicVoicemailMessage.modifiedDate) &&
+            Objects.equals(this.createdDateString, voicemailMessagesTopicVoicemailMessage.createdDateString) &&
             Objects.equals(this.callerAddress, voicemailMessagesTopicVoicemailMessage.callerAddress) &&
             Objects.equals(this.callerName, voicemailMessagesTopicVoicemailMessage.callerName) &&
             Objects.equals(this.action, voicemailMessagesTopicVoicemailMessage.action) &&
@@ -302,12 +339,13 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
             Objects.equals(this.deleted, voicemailMessagesTopicVoicemailMessage.deleted) &&
             Objects.equals(this.modifiedByUserId, voicemailMessagesTopicVoicemailMessage.modifiedByUserId) &&
             Objects.equals(this.copiedTo, voicemailMessagesTopicVoicemailMessage.copiedTo) &&
-            Objects.equals(this.copiedFrom, voicemailMessagesTopicVoicemailMessage.copiedFrom);
+            Objects.equals(this.copiedFrom, voicemailMessagesTopicVoicemailMessage.copiedFrom) &&
+            Objects.equals(this.modifiedDateString, voicemailMessagesTopicVoicemailMessage.modifiedDateString);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, read, audioRecordingDurationSeconds, audioRecordingSizeBytes, createdDate, modifiedDate, callerAddress, callerName, action, note, deleted, modifiedByUserId, copiedTo, copiedFrom);
+    return Objects.hash(id, read, audioRecordingDurationSeconds, audioRecordingSizeBytes, createdDate, modifiedDate, createdDateString, callerAddress, callerName, action, note, deleted, modifiedByUserId, copiedTo, copiedFrom, modifiedDateString);
   }
 
   @Override
@@ -321,6 +359,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     sb.append("    audioRecordingSizeBytes: ").append(toIndentedString(audioRecordingSizeBytes)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
+    sb.append("    createdDateString: ").append(toIndentedString(createdDateString)).append("\n");
     sb.append("    callerAddress: ").append(toIndentedString(callerAddress)).append("\n");
     sb.append("    callerName: ").append(toIndentedString(callerName)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
@@ -329,6 +368,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     sb.append("    modifiedByUserId: ").append(toIndentedString(modifiedByUserId)).append("\n");
     sb.append("    copiedTo: ").append(toIndentedString(copiedTo)).append("\n");
     sb.append("    copiedFrom: ").append(toIndentedString(copiedFrom)).append("\n");
+    sb.append("    modifiedDateString: ").append(toIndentedString(modifiedDateString)).append("\n");
     sb.append("}");
     return sb.toString();
   }

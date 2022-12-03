@@ -79,14 +79,14 @@ public class ResponseFilter  implements Serializable {
 
   
   /**
-   * Field to filter on. Allowed values are 'name' and 'libraryId.
+   * Field to filter on. Allowed values are 'name', 'libraryId', 'text.contentType', 'messagingTemplate' and 'responseType'
    **/
   public ResponseFilter name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Field to filter on. Allowed values are 'name' and 'libraryId.")
+  @ApiModelProperty(example = "null", required = true, value = "Field to filter on. Allowed values are 'name', 'libraryId', 'text.contentType', 'messagingTemplate' and 'responseType'")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -115,14 +115,14 @@ public class ResponseFilter  implements Serializable {
 
 
   /**
-   * Values to filter on.
+   * Values to filter on. If name is 'responseType' then allowed values are 'CampaignSmsTemplate', 'CampaignEmailTemplate', 'Footer' and 'Signature'
    **/
   public ResponseFilter values(List<String> values) {
     this.values = values;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Values to filter on.")
+  @ApiModelProperty(example = "null", required = true, value = "Values to filter on. If name is 'responseType' then allowed values are 'CampaignSmsTemplate', 'CampaignEmailTemplate', 'Footer' and 'Signature'")
   @JsonProperty("values")
   public List<String> getValues() {
     return values;

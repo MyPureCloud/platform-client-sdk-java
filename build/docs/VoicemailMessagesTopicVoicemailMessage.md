@@ -14,6 +14,7 @@ title: VoicemailMessagesTopicVoicemailMessage
 | **audioRecordingSizeBytes** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **createdDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **modifiedDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **createdDateString** | <!----><!---->**String**<!----> |  |  [optional] |
 | **callerAddress** | <!----><!---->**String**<!----> |  |  [optional] |
 | **callerName** | <!----><!---->**String**<!----> |  |  [optional] |
 | **action** | <!----><!---->**String**<!----> |  |  [optional] |
@@ -22,6 +23,7 @@ title: VoicemailMessagesTopicVoicemailMessage
 | **modifiedByUserId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **copiedTo** | <!----><!---->[**List&lt;VoicemailMessagesTopicVoicemailCopyRecord&gt;**](VoicemailMessagesTopicVoicemailCopyRecord.html)<!----> |  |  [optional] |
 | **copiedFrom** | <!----><!---->[**VoicemailMessagesTopicVoicemailCopyRecord**](VoicemailMessagesTopicVoicemailCopyRecord.html)<!----> |  |  [optional] |
+| **modifiedDateString** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

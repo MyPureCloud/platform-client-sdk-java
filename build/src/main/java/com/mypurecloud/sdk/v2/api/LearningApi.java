@@ -915,12 +915,13 @@ public class LearningApi {
    * @param searchTerm Search Term (searchable by name) (optional)
    * @param expand Fields to expand in response(case insensitive) (optional)
    * @param isPublished Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional, default to Any)
+   * @param statuses Specifies the module statuses to filter by (optional)
    * @return LearningModulesDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LearningModulesDomainEntityListing getLearningModules(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished) throws IOException, ApiException {
-    return  getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished));
+  public LearningModulesDomainEntityListing getLearningModules(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses) throws IOException, ApiException {
+    return  getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses));
   }
 
   /**
@@ -935,14 +936,15 @@ public class LearningApi {
    * @param searchTerm Search Term (searchable by name) (optional)
    * @param expand Fields to expand in response(case insensitive) (optional)
    * @param isPublished Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional, default to Any)
+   * @param statuses Specifies the module statuses to filter by (optional)
    * @return LearningModulesDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LearningModulesDomainEntityListing> getLearningModulesWithHttpInfo(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished) throws IOException {
-    return getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished).withHttpInfo());
+  public ApiResponse<LearningModulesDomainEntityListing> getLearningModulesWithHttpInfo(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses) throws IOException {
+    return getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses).withHttpInfo());
   }
 
-  private GetLearningModulesRequest createGetLearningModulesRequest(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished) {
+  private GetLearningModulesRequest createGetLearningModulesRequest(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses) {
     return GetLearningModulesRequest.builder()
             .withIsArchived(isArchived)
 
@@ -961,6 +963,8 @@ public class LearningApi {
             .withExpand(expand)
 
             .withIsPublished(isPublished)
+
+            .withStatuses(statuses)
 
             .build();
   }

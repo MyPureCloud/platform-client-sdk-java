@@ -49,6 +49,7 @@ public class DncListDivisionView  implements Serializable {
   public enum DncSourceTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     RDS("rds"),
+    RDS_CUSTOM("rds_custom"),
     DNC_COM("dnc.com"),
     GRYPHON("gryphon");
 
@@ -98,7 +99,8 @@ public class DncListDivisionView  implements Serializable {
   public enum ContactMethodEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EMAIL("Email"),
-    PHONE("Phone");
+    PHONE("Phone"),
+    ANY("Any");
 
     private String value;
 

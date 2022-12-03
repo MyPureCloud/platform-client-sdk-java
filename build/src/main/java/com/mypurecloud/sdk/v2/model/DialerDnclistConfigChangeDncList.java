@@ -18,7 +18,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -130,6 +132,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
   }
   private ContactMethodEnum contactMethod = null;
   private DialerDnclistConfigChangeUriReference division = null;
+  private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
@@ -279,6 +282,23 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
 
 
   /**
+   **/
+  public DialerDnclistConfigChangeDncList additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
+  /**
    * The globally unique identifier for the object.
    **/
   public DialerDnclistConfigChangeDncList id(String id) {
@@ -386,6 +406,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
             Objects.equals(this.licenseId, dialerDnclistConfigChangeDncList.licenseId) &&
             Objects.equals(this.contactMethod, dialerDnclistConfigChangeDncList.contactMethod) &&
             Objects.equals(this.division, dialerDnclistConfigChangeDncList.division) &&
+            Objects.equals(this.additionalProperties, dialerDnclistConfigChangeDncList.additionalProperties) &&
             Objects.equals(this.id, dialerDnclistConfigChangeDncList.id) &&
             Objects.equals(this.name, dialerDnclistConfigChangeDncList.name) &&
             Objects.equals(this.dateCreated, dialerDnclistConfigChangeDncList.dateCreated) &&
@@ -395,7 +416,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(importStatus, size, dncSourceType, loginId, dncCodes, licenseId, contactMethod, division, id, name, dateCreated, dateModified, version);
+    return Objects.hash(importStatus, size, dncSourceType, loginId, dncCodes, licenseId, contactMethod, division, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -411,6 +432,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     sb.append("    licenseId: ").append(toIndentedString(licenseId)).append("\n");
     sb.append("    contactMethod: ").append(toIndentedString(contactMethod)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

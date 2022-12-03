@@ -162,6 +162,64 @@ public class GetAnalyticsBotflowReportingturnsRequest {
 	    return this;
 	} 
 
+	private String askActionResults;
+	public String getAskActionResults() {
+		return this.askActionResults;
+	}
+
+	public void setAskActionResults(String askActionResults) {
+		this.askActionResults = askActionResults;
+	}
+
+	public GetAnalyticsBotflowReportingturnsRequest withAskActionResults(String askActionResults) {
+	    this.setAskActionResults(askActionResults);
+	    return this;
+	} 
+
+	public enum askActionResultsValues { 
+		AGENTREQUESTEDBYUSER("AgentRequestedByUser"),
+		CONFIRMATIONREQUIRED("ConfirmationRequired"),
+		DISAMBIGUATIONREQUIRED("DisambiguationRequired"),
+		ERROR("Error"),
+		EXPRESSIONERROR("ExpressionError"),
+		NOINPUTCOLLECTION("NoInputCollection"),
+		NOINPUTCONFIRMATION("NoInputConfirmation"),
+		NOINPUTDISAMBIGUATION("NoInputDisambiguation"),
+		NOMATCHCOLLECTION("NoMatchCollection"),
+		NOMATCHCONFIRMATION("NoMatchConfirmation"),
+		NOMATCHDISAMBIGUATION("NoMatchDisambiguation"),
+		SUCCESSCOLLECTION("SuccessCollection"),
+		SUCCESSCONFIRMATIONNO("SuccessConfirmationNo"),
+		SUCCESSCONFIRMATIONYES("SuccessConfirmationYes"),
+		SUCCESSDISAMBIGUATION("SuccessDisambiguation"),
+		SUCCESSDISAMBIGUATIONNONE("SuccessDisambiguationNone");
+
+		private String value;
+
+		askActionResultsValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static askActionResultsValues fromString(String key) {
+			if (key == null) return null;
+
+			for (askActionResultsValues value : askActionResultsValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return askActionResultsValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -206,6 +264,9 @@ public class GetAnalyticsBotflowReportingturnsRequest {
         
 
                 .withQueryParameters("language", "", language)
+        
+
+                .withQueryParameters("askActionResults", "", askActionResults)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -261,6 +322,20 @@ public class GetAnalyticsBotflowReportingturnsRequest {
 		public Builder withLanguage(String language) {
 			request.setLanguage(language);
 			return this;
+		}
+
+		public Builder withAskActionResults(String askActionResults) {
+			request.setAskActionResults(askActionResults);
+			return this;
+		}
+
+
+
+		
+		public Builder withAskActionResults(askActionResultsValues askActionResults) {
+		    request.setAskActionResults(askActionResults.toString());
+
+		    return this;
 		}
 
 

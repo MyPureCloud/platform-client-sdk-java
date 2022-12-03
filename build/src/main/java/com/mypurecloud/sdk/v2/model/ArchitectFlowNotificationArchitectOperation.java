@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationClient;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationErrorDetail;
+import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationErrorMessageParams;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -142,7 +143,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
   private ActionStatusEnum actionStatus = null;
   private String errorMessage = null;
   private String errorCode = null;
-  private Object errorMessageParams = null;
+  private ArchitectFlowNotificationErrorMessageParams errorMessageParams = null;
   private List<ArchitectFlowNotificationErrorDetail> errorDetails = new ArrayList<ArchitectFlowNotificationErrorDetail>();
 
   
@@ -289,19 +290,18 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
 
 
   /**
-   * The error message params, if the action failed
    **/
-  public ArchitectFlowNotificationArchitectOperation errorMessageParams(Object errorMessageParams) {
+  public ArchitectFlowNotificationArchitectOperation errorMessageParams(ArchitectFlowNotificationErrorMessageParams errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The error message params, if the action failed")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("errorMessageParams")
-  public Object getErrorMessageParams() {
+  public ArchitectFlowNotificationErrorMessageParams getErrorMessageParams() {
     return errorMessageParams;
   }
-  public void setErrorMessageParams(Object errorMessageParams) {
+  public void setErrorMessageParams(ArchitectFlowNotificationErrorMessageParams errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
   }
 

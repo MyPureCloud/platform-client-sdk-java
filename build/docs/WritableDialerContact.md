@@ -12,6 +12,7 @@ title: WritableDialerContact
 | **contactListId** | <!----><!---->**String**<!----> | The identifier of the contact list containing this contact. |  |
 | **data** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | An ordered map of the contact's columns and corresponding values. |  |
 | **latestSmsEvaluations** | <!----><!---->[**Map&lt;String, MessageEvaluation&gt;**](MessageEvaluation.html)<!----> | A map of SMS records for the contact phone columns. |  [optional] |
+| **latestEmailEvaluations** | <!----><!---->[**Map&lt;String, MessageEvaluation&gt;**](MessageEvaluation.html)<!----> | A map of email records for the contact email columns. |  [optional] |
 | **callable** | <!----><!---->**Boolean**<!----> | Indicates whether or not the contact can be called. |  [optional] |
 | **phoneNumberStatus** | <!----><!---->[**Map&lt;String, PhoneNumberStatus&gt;**](PhoneNumberStatus.html)<!----> | A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not. |  [optional] |
 | **contactableStatus** | <!----><!---->[**Map&lt;String, ContactableStatus&gt;**](ContactableStatus.html)<!----> | A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type. |  [optional] |

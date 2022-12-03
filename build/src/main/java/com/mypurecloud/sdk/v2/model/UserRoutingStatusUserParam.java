@@ -13,6 +13,9 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -23,6 +26,7 @@ public class UserRoutingStatusUserParam  implements Serializable {
   
   private String key = null;
   private String value = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -59,6 +63,23 @@ public class UserRoutingStatusUserParam  implements Serializable {
   }
 
 
+  /**
+   **/
+  public UserRoutingStatusUserParam additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -70,12 +91,13 @@ public class UserRoutingStatusUserParam  implements Serializable {
     UserRoutingStatusUserParam userRoutingStatusUserParam = (UserRoutingStatusUserParam) o;
 
     return Objects.equals(this.key, userRoutingStatusUserParam.key) &&
-            Objects.equals(this.value, userRoutingStatusUserParam.value);
+            Objects.equals(this.value, userRoutingStatusUserParam.value) &&
+            Objects.equals(this.additionalProperties, userRoutingStatusUserParam.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, value);
+    return Objects.hash(key, value, additionalProperties);
   }
 
   @Override
@@ -85,6 +107,7 @@ public class UserRoutingStatusUserParam  implements Serializable {
     
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -17,7 +17,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -29,6 +31,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
   private List<DialerSequenceScheduleConfigChangeScheduleInterval> intervals = new ArrayList<DialerSequenceScheduleConfigChangeScheduleInterval>();
   private String timeZone = null;
   private DialerSequenceScheduleConfigChangeUriReference sequence = null;
+  private Map<String, Object> additionalProperties = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
@@ -86,6 +89,23 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
   }
   public void setSequence(DialerSequenceScheduleConfigChangeUriReference sequence) {
     this.sequence = sequence;
+  }
+
+
+  /**
+   **/
+  public DialerSequenceScheduleConfigChangeSequenceSchedule additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
   }
 
 
@@ -192,6 +212,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     return Objects.equals(this.intervals, dialerSequenceScheduleConfigChangeSequenceSchedule.intervals) &&
             Objects.equals(this.timeZone, dialerSequenceScheduleConfigChangeSequenceSchedule.timeZone) &&
             Objects.equals(this.sequence, dialerSequenceScheduleConfigChangeSequenceSchedule.sequence) &&
+            Objects.equals(this.additionalProperties, dialerSequenceScheduleConfigChangeSequenceSchedule.additionalProperties) &&
             Objects.equals(this.id, dialerSequenceScheduleConfigChangeSequenceSchedule.id) &&
             Objects.equals(this.name, dialerSequenceScheduleConfigChangeSequenceSchedule.name) &&
             Objects.equals(this.dateCreated, dialerSequenceScheduleConfigChangeSequenceSchedule.dateCreated) &&
@@ -201,7 +222,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
 
   @Override
   public int hashCode() {
-    return Objects.hash(intervals, timeZone, sequence, id, name, dateCreated, dateModified, version);
+    return Objects.hash(intervals, timeZone, sequence, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -212,6 +233,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     sb.append("    intervals: ").append(toIndentedString(intervals)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

@@ -236,6 +236,7 @@ public class GetOutboundDnclistsRequest {
 
 	public enum dncSourceTypeValues { 
 		RDS("rds"),
+		RDS_CUSTOM("rds_custom"),
 		DNC_COM("dnc.com"),
 		GRYPHON("gryphon");
 

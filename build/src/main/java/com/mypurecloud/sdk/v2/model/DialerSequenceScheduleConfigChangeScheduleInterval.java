@@ -13,6 +13,9 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -23,6 +26,7 @@ public class DialerSequenceScheduleConfigChangeScheduleInterval  implements Seri
   
   private String start = null;
   private String end = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -61,6 +65,23 @@ public class DialerSequenceScheduleConfigChangeScheduleInterval  implements Seri
   }
 
 
+  /**
+   **/
+  public DialerSequenceScheduleConfigChangeScheduleInterval additionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +93,13 @@ public class DialerSequenceScheduleConfigChangeScheduleInterval  implements Seri
     DialerSequenceScheduleConfigChangeScheduleInterval dialerSequenceScheduleConfigChangeScheduleInterval = (DialerSequenceScheduleConfigChangeScheduleInterval) o;
 
     return Objects.equals(this.start, dialerSequenceScheduleConfigChangeScheduleInterval.start) &&
-            Objects.equals(this.end, dialerSequenceScheduleConfigChangeScheduleInterval.end);
+            Objects.equals(this.end, dialerSequenceScheduleConfigChangeScheduleInterval.end) &&
+            Objects.equals(this.additionalProperties, dialerSequenceScheduleConfigChangeScheduleInterval.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(start, end);
+    return Objects.hash(start, end, additionalProperties);
   }
 
   @Override
@@ -87,6 +109,7 @@ public class DialerSequenceScheduleConfigChangeScheduleInterval  implements Seri
     
     sb.append("    start: ").append(toIndentedString(start)).append("\n");
     sb.append("    end: ").append(toIndentedString(end)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

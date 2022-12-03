@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ApprovalNamespace;
 import com.mypurecloud.sdk.v2.model.StatusChange;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -250,6 +251,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     }
   }
   private RejectReasonEnum rejectReason = null;
+  private List<ApprovalNamespace> approvalNamespaces = new ArrayList<ApprovalNamespace>();
   private String selfUri = null;
 
   
@@ -392,6 +394,13 @@ public class LimitChangeRequestDetails  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The approval breakdown for this override request.")
+  @JsonProperty("approvalNamespaces")
+  public List<ApprovalNamespace> getApprovalNamespaces() {
+    return approvalNamespaces;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -421,12 +430,13 @@ public class LimitChangeRequestDetails  implements Serializable {
             Objects.equals(this.statusHistory, limitChangeRequestDetails.statusHistory) &&
             Objects.equals(this.dateCompleted, limitChangeRequestDetails.dateCompleted) &&
             Objects.equals(this.rejectReason, limitChangeRequestDetails.rejectReason) &&
+            Objects.equals(this.approvalNamespaces, limitChangeRequestDetails.approvalNamespaces) &&
             Objects.equals(this.selfUri, limitChangeRequestDetails.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, key, namespace, requestedValue, description, supportCaseUrl, status, currentValue, dateCreated, statusHistory, dateCompleted, rejectReason, selfUri);
+    return Objects.hash(id, key, namespace, requestedValue, description, supportCaseUrl, status, currentValue, dateCreated, statusHistory, dateCompleted, rejectReason, approvalNamespaces, selfUri);
   }
 
   @Override
@@ -446,6 +456,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     sb.append("    statusHistory: ").append(toIndentedString(statusHistory)).append("\n");
     sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
     sb.append("    rejectReason: ").append(toIndentedString(rejectReason)).append("\n");
+    sb.append("    approvalNamespaces: ").append(toIndentedString(approvalNamespaces)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
