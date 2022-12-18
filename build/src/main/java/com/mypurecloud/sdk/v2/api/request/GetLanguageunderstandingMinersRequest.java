@@ -30,6 +30,9 @@ import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
 import com.mypurecloud.sdk.v2.model.MinerIntent;
 import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.MinerTopic;
+import com.mypurecloud.sdk.v2.model.MinerTopicPhrase;
+import com.mypurecloud.sdk.v2.model.MinerTopicsListing;
 import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
 import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
 import com.mypurecloud.sdk.v2.model.NluDomain;
@@ -43,6 +46,20 @@ import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
 import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 
 public class GetLanguageunderstandingMinersRequest {
+
+	private String minerType;
+	public String getMinerType() {
+		return this.minerType;
+	}
+
+	public void setMinerType(String minerType) {
+		this.minerType = minerType;
+	}
+
+	public GetLanguageunderstandingMinersRequest withMinerType(String minerType) {
+	    this.setMinerType(minerType);
+	    return this;
+	} 
 
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -67,6 +84,9 @@ public class GetLanguageunderstandingMinersRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/languageunderstanding/miners")
+
+                .withQueryParameters("minerType", "", minerType)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -87,6 +107,11 @@ public class GetLanguageunderstandingMinersRequest {
 			request = new GetLanguageunderstandingMinersRequest();
 		}
 
+
+		public Builder withMinerType(String minerType) {
+			request.setMinerType(minerType);
+			return this;
+		}
 
 
 

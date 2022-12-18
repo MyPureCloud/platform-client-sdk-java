@@ -161,6 +161,7 @@ title: AuditLogMessage
 | WRITE | &quot;Write&quot; | 
 | PURGE | &quot;Purge&quot; | 
 | PROCESSED | &quot;Processed&quot; | 
+| REMOVE | &quot;Remove&quot; | 
 | REPLACE | &quot;Replace&quot; | 
 | UPDATEINSERVICE | &quot;UpdateInService&quot; | 
 | UPDATEOUTOFSERVICE | &quot;UpdateOutOfService&quot; | 
@@ -365,7 +366,9 @@ title: AuditLogMessage
 | TRUNK | &quot;Trunk&quot; | 
 | TRUNKBASE | &quot;TrunkBase&quot; | 
 | USER | &quot;User&quot; | 
+| USERLANGUAGE | &quot;UserLanguage&quot; | 
 | USERPRESENCE | &quot;UserPresence&quot; | 
+| USERSKILL | &quot;UserSkill&quot; | 
 | VOICEMAILPOLICY | &quot;VoicemailPolicy&quot; | 
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; | 
 | WEBHOOK | &quot;Webhook&quot; | 

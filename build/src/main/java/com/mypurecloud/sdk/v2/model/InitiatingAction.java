@@ -103,6 +103,7 @@ public class InitiatingAction  implements Serializable {
     WRITE("Write"),
     PURGE("Purge"),
     PROCESSED("Processed"),
+    REMOVE("Remove"),
     REPLACE("Replace"),
     UPDATEINSERVICE("UpdateInService"),
     UPDATEOUTOFSERVICE("UpdateOutOfService"),

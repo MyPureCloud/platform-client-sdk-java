@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ColumnDataTypeSpecification;
 import com.mypurecloud.sdk.v2.model.ContactPhoneNumberColumn;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailColumn;
@@ -44,6 +45,7 @@ public class ContactList  implements Serializable {
   private DomainEntityRef attemptLimits = null;
   private Boolean automaticTimeZoneMapping = null;
   private String zipCodeColumnName = null;
+  private List<ColumnDataTypeSpecification> columnDataTypeSpecifications = new ArrayList<ColumnDataTypeSpecification>();
   private String selfUri = null;
 
   
@@ -279,6 +281,24 @@ public class ContactList  implements Serializable {
   }
 
 
+  /**
+   * The settings of the columns selected for dynamic queueing
+   **/
+  public ContactList columnDataTypeSpecifications(List<ColumnDataTypeSpecification> columnDataTypeSpecifications) {
+    this.columnDataTypeSpecifications = columnDataTypeSpecifications;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The settings of the columns selected for dynamic queueing")
+  @JsonProperty("columnDataTypeSpecifications")
+  public List<ColumnDataTypeSpecification> getColumnDataTypeSpecifications() {
+    return columnDataTypeSpecifications;
+  }
+  public void setColumnDataTypeSpecifications(List<ColumnDataTypeSpecification> columnDataTypeSpecifications) {
+    this.columnDataTypeSpecifications = columnDataTypeSpecifications;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -312,12 +332,13 @@ public class ContactList  implements Serializable {
             Objects.equals(this.attemptLimits, contactList.attemptLimits) &&
             Objects.equals(this.automaticTimeZoneMapping, contactList.automaticTimeZoneMapping) &&
             Objects.equals(this.zipCodeColumnName, contactList.zipCodeColumnName) &&
+            Objects.equals(this.columnDataTypeSpecifications, contactList.columnDataTypeSpecifications) &&
             Objects.equals(this.selfUri, contactList.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, division, columnNames, phoneColumns, emailColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, division, columnNames, phoneColumns, emailColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, columnDataTypeSpecifications, selfUri);
   }
 
   @Override
@@ -341,6 +362,7 @@ public class ContactList  implements Serializable {
     sb.append("    attemptLimits: ").append(toIndentedString(attemptLimits)).append("\n");
     sb.append("    automaticTimeZoneMapping: ").append(toIndentedString(automaticTimeZoneMapping)).append("\n");
     sb.append("    zipCodeColumnName: ").append(toIndentedString(zipCodeColumnName)).append("\n");
+    sb.append("    columnDataTypeSpecifications: ").append(toIndentedString(columnDataTypeSpecifications)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -22,7 +22,21 @@ title: InboundRoute
 | **autoBcc** | <!----><!---->[**List&lt;EmailAddress&gt;**](EmailAddress.html)<!----> | The recipients that should be automatically blind copied on outbound emails associated with this InboundRoute. |  [optional] |
 | **spamFlow** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The flow to use for processing inbound emails that have been marked as spam. |  [optional] |
 | **signature** | <!----><!---->[**Signature**](Signature.html)<!----> | The configuration for the canned response signature that will be appended to outbound emails sent via this route |  [optional] |
+| **historyInclusion** | [**HistoryInclusionEnum**](#HistoryInclusionEnum)<!----> | The configuration to indicate how the history of a conversation has to be included in a draft |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="HistoryInclusionEnum"></a>
+
+## Enum: HistoryInclusionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INCLUDE | &quot;Include&quot; | 
+| EXCLUDE | &quot;Exclude&quot; | 
+| OPTIONAL | &quot;Optional&quot; | 
 {: class="table table-striped"}
 
 

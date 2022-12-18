@@ -15,12 +15,14 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.MediaRegions;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
 import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
 import com.mypurecloud.sdk.v2.model.SipDownloadResponse;
 import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesDownloadDownloadIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonySiptracesDownloadRequest;
@@ -41,6 +43,81 @@ public class TelephonyApiAsync {
 
   public TelephonyApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Retrieve the list of AWS regions media can stream through.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MediaRegions> getTelephonyMediaregionsAsync(GetTelephonyMediaregionsRequest request, final AsyncApiCallback<MediaRegions> callback) {
+    try {
+      final SettableFuture<MediaRegions> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MediaRegions>() {}, new AsyncApiCallback<ApiResponse<MediaRegions>>() {
+        @Override
+        public void onCompleted(ApiResponse<MediaRegions> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve the list of AWS regions media can stream through.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MediaRegions>> getTelephonyMediaregionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MediaRegions>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MediaRegions>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MediaRegions>() {}, new AsyncApiCallback<ApiResponse<MediaRegions>>() {
+        @Override
+        public void onCompleted(ApiResponse<MediaRegions> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MediaRegions> response = (ApiResponse<MediaRegions>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MediaRegions> response = (ApiResponse<MediaRegions>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**

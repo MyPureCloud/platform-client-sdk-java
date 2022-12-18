@@ -31,6 +31,7 @@ public class NluFeedbackResponse  implements Serializable {
   private List<IntentFeedback> intents = new ArrayList<IntentFeedback>();
   private NluDomainVersion version = null;
   private Date dateCreated = null;
+  private String language = null;
   private String selfUri = null;
 
   
@@ -91,6 +92,24 @@ public class NluFeedbackResponse  implements Serializable {
   }
 
 
+  /**
+   * The language of the version to which feedback is linked, e.g. en-us, de-de
+   **/
+  public NluFeedbackResponse language(String language) {
+    this.language = language;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The language of the version to which feedback is linked, e.g. en-us, de-de")
+  @JsonProperty("language")
+  public String getLanguage() {
+    return language;
+  }
+  public void setLanguage(String language) {
+    this.language = language;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -113,12 +132,13 @@ public class NluFeedbackResponse  implements Serializable {
             Objects.equals(this.intents, nluFeedbackResponse.intents) &&
             Objects.equals(this.version, nluFeedbackResponse.version) &&
             Objects.equals(this.dateCreated, nluFeedbackResponse.dateCreated) &&
+            Objects.equals(this.language, nluFeedbackResponse.language) &&
             Objects.equals(this.selfUri, nluFeedbackResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, intents, version, dateCreated, selfUri);
+    return Objects.hash(id, text, intents, version, dateCreated, language, selfUri);
   }
 
   @Override
@@ -131,6 +151,7 @@ public class NluFeedbackResponse  implements Serializable {
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

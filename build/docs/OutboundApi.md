@@ -20,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | Delete multiple contact lists. |
 | [**deleteOutboundDigitalruleset**](OutboundApi.html#deleteOutboundDigitalruleset) | Delete an Outbound Digital Rule Set |
 | [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | Delete dialer DNC list |
+| [**deleteOutboundDnclistEmailaddresses**](OutboundApi.html#deleteOutboundDnclistEmailaddresses) | Deletes all or expired email addresses from a DNC list. |
+| [**deleteOutboundDnclistPhonenumbers**](OutboundApi.html#deleteOutboundDnclistPhonenumbers) | Deletes all or expired phone numbers from a DNC list. |
 | [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | Delete an Outbound Messaging Campaign |
 | [**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | Reset messaging campaign progress and recycle the messaging campaign |
 | [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | Delete a Rule Set. |
@@ -86,6 +88,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundSequences**](OutboundApi.html#getOutboundSequences) | Query a list of dialer campaign sequences. |
 | [**getOutboundSettings**](OutboundApi.html#getOutboundSettings) | Get the outbound settings for this organization |
 | [**getOutboundWrapupcodemappings**](OutboundApi.html#getOutboundWrapupcodemappings) | Get the Dialer wrap up code mapping. |
+| [**patchOutboundDnclistEmailaddresses**](OutboundApi.html#patchOutboundDnclistEmailaddresses) | Add emails to or Delete emails from a DNC list. |
+| [**patchOutboundDnclistPhonenumbers**](OutboundApi.html#patchOutboundDnclistPhonenumbers) | Add numbers to or delete numbers from a DNC list. |
 | [**patchOutboundSettings**](OutboundApi.html#patchOutboundSettings) | Update the outbound settings for this organization |
 | [**postOutboundAttemptlimits**](OutboundApi.html#postOutboundAttemptlimits) | Create attempt limits |
 | [**postOutboundAudits**](OutboundApi.html#postOutboundAudits) | Retrieves audits for dialer. |
@@ -912,6 +916,134 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundDnclistEmailaddresses"></a>
+
+# **deleteOutboundDnclistEmailaddresses**
+
+
+
+> Void deleteOutboundDnclistEmailaddresses(dncListId, expiredOnly)
+
+Deletes all or expired email addresses from a DNC list.
+
+This operation is Only for Internal DNC lists of email addresses
+
+Wraps DELETE /api/v2/outbound/dnclists/{dncListId}/emailaddresses  
+
+Requires ANY permissions: 
+
+* outbound:dnc:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String dncListId = "dncListId_example"; // String | DncList ID
+Boolean expiredOnly = false; // Boolean | Set to true to only remove DNC entries that are expired
+try {
+    apiInstance.deleteOutboundDnclistEmailaddresses(dncListId, expiredOnly);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundDnclistEmailaddresses");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dncListId** | **String**| DncList ID | 
+| **expiredOnly** | **Boolean**| Set to true to only remove DNC entries that are expired | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundDnclistPhonenumbers"></a>
+
+# **deleteOutboundDnclistPhonenumbers**
+
+
+
+> Void deleteOutboundDnclistPhonenumbers(dncListId, expiredOnly)
+
+Deletes all or expired phone numbers from a DNC list.
+
+This operation is Only for Internal DNC lists of phone numbers
+
+Wraps DELETE /api/v2/outbound/dnclists/{dncListId}/phonenumbers  
+
+Requires ANY permissions: 
+
+* outbound:dnc:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String dncListId = "dncListId_example"; // String | DncList ID
+Boolean expiredOnly = false; // Boolean | Set to true to only remove DNC entries that are expired
+try {
+    apiInstance.deleteOutboundDnclistPhonenumbers(dncListId, expiredOnly);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundDnclistPhonenumbers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dncListId** | **String**| DncList ID | 
+| **expiredOnly** | **Boolean**| Set to true to only remove DNC entries that are expired | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -5238,6 +5370,134 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**WrapUpCodeMapping**](WrapUpCodeMapping.html)
+
+<a name="patchOutboundDnclistEmailaddresses"></a>
+
+# **patchOutboundDnclistEmailaddresses**
+
+
+
+> Void patchOutboundDnclistEmailaddresses(dncListId, body)
+
+Add emails to or Delete emails from a DNC list.
+
+Only Internal DNC lists may be added to or deleted from
+
+Wraps PATCH /api/v2/outbound/dnclists/{dncListId}/emailaddresses  
+
+Requires ANY permissions: 
+
+* outbound:dnc:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String dncListId = "dncListId_example"; // String | DncList ID
+DncPatchEmailsRequest body = new DncPatchEmailsRequest(); // DncPatchEmailsRequest | DNC Emails
+try {
+    apiInstance.patchOutboundDnclistEmailaddresses(dncListId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#patchOutboundDnclistEmailaddresses");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dncListId** | **String**| DncList ID | 
+| **body** | [**DncPatchEmailsRequest**](DncPatchEmailsRequest.html)| DNC Emails | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="patchOutboundDnclistPhonenumbers"></a>
+
+# **patchOutboundDnclistPhonenumbers**
+
+
+
+> Void patchOutboundDnclistPhonenumbers(dncListId, body)
+
+Add numbers to or delete numbers from a DNC list.
+
+Only Internal DNC lists may be added to deleted from
+
+Wraps PATCH /api/v2/outbound/dnclists/{dncListId}/phonenumbers  
+
+Requires ANY permissions: 
+
+* outbound:dnc:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String dncListId = "dncListId_example"; // String | DncList ID
+DncPatchPhoneNumbersRequest body = new DncPatchPhoneNumbersRequest(); // DncPatchPhoneNumbersRequest | DNC Phone Numbers
+try {
+    apiInstance.patchOutboundDnclistPhonenumbers(dncListId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#patchOutboundDnclistPhonenumbers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dncListId** | **String**| DncList ID | 
+| **body** | [**DncPatchPhoneNumbersRequest**](DncPatchPhoneNumbersRequest.html)| DNC Phone Numbers | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="patchOutboundSettings"></a>
 

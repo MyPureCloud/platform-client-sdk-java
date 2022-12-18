@@ -32,6 +32,7 @@ title: JourneyWebEventsNotificationWebEventsNotification
 | WEBEVENT | &quot;WebEvent&quot; | 
 | WEBACTIONEVENT | &quot;WebActionEvent&quot; | 
 | OUTCOMEACHIEVEDEVENT | &quot;OutcomeAchievedEvent&quot; | 
+| SEGMENTASSIGNMENTEVENT | &quot;SegmentAssignmentEvent&quot; | 
 {: class="table table-striped"}
 
 

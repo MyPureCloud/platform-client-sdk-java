@@ -40,6 +40,7 @@ title: Campaign
 | **priority** | <!----><!---->**Integer**<!----> | The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest. |  [optional] |
 | **contactListFilters** | <!----><!---->[**List&lt;DomainEntityRef&gt;**](DomainEntityRef.html)<!----> | Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied. |  [optional] |
 | **division** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The division this campaign belongs to. |  [optional] |
+| **dynamicContactQueueingSettings** | <!----><!---->[**DynamicContactQueueingSettings**](DynamicContactQueueingSettings.html)<!----> | Settings for dynamic queueing of contacts. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

@@ -159,6 +159,7 @@ title: ViewFilter
 | **availableDashboard** | [**AvailableDashboardEnum**](#AvailableDashboardEnum)<!----> | Filter to indicate the availability of the dashboard is public or private. |  [optional] |
 | **favouriteDashboard** | <!----><!---->**Boolean**<!----> | Filter to indicate whether the dashboard is favorite or unfavorite. |  [optional] |
 | **myDashboard** | <!----><!---->**Boolean**<!----> | Filter to indicate the dashboard owned by the user. |  [optional] |
+| **stationErrors** | <!----><!---->**List&lt;String&gt;**<!----> | The list of agent errors that are related to station |  [optional] |
 {: class="table table-striped"}
 
 

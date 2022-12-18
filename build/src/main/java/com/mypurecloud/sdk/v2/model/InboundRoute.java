@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailAddress;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
@@ -41,6 +42,55 @@ public class InboundRoute  implements Serializable {
   private List<EmailAddress> autoBcc = new ArrayList<EmailAddress>();
   private DomainEntityRef spamFlow = null;
   private Signature signature = null;
+
+  private static class HistoryInclusionEnumDeserializer extends StdDeserializer<HistoryInclusionEnum> {
+    public HistoryInclusionEnumDeserializer() {
+      super(HistoryInclusionEnumDeserializer.class);
+    }
+
+    @Override
+    public HistoryInclusionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return HistoryInclusionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The configuration to indicate how the history of a conversation has to be included in a draft
+   */
+ @JsonDeserialize(using = HistoryInclusionEnumDeserializer.class)
+  public enum HistoryInclusionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INCLUDE("Include"),
+    EXCLUDE("Exclude"),
+    OPTIONAL("Optional");
+
+    private String value;
+
+    HistoryInclusionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static HistoryInclusionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (HistoryInclusionEnum value : HistoryInclusionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return HistoryInclusionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private HistoryInclusionEnum historyInclusion = null;
   private String selfUri = null;
 
   
@@ -284,6 +334,24 @@ public class InboundRoute  implements Serializable {
   }
 
 
+  /**
+   * The configuration to indicate how the history of a conversation has to be included in a draft
+   **/
+  public InboundRoute historyInclusion(HistoryInclusionEnum historyInclusion) {
+    this.historyInclusion = historyInclusion;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The configuration to indicate how the history of a conversation has to be included in a draft")
+  @JsonProperty("historyInclusion")
+  public HistoryInclusionEnum getHistoryInclusion() {
+    return historyInclusion;
+  }
+  public void setHistoryInclusion(HistoryInclusionEnum historyInclusion) {
+    this.historyInclusion = historyInclusion;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -315,12 +383,13 @@ public class InboundRoute  implements Serializable {
             Objects.equals(this.autoBcc, inboundRoute.autoBcc) &&
             Objects.equals(this.spamFlow, inboundRoute.spamFlow) &&
             Objects.equals(this.signature, inboundRoute.signature) &&
+            Objects.equals(this.historyInclusion, inboundRoute.historyInclusion) &&
             Objects.equals(this.selfUri, inboundRoute.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, autoBcc, spamFlow, signature, selfUri);
+    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, autoBcc, spamFlow, signature, historyInclusion, selfUri);
   }
 
   @Override
@@ -342,6 +411,7 @@ public class InboundRoute  implements Serializable {
     sb.append("    autoBcc: ").append(toIndentedString(autoBcc)).append("\n");
     sb.append("    spamFlow: ").append(toIndentedString(spamFlow)).append("\n");
     sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
+    sb.append("    historyInclusion: ").append(toIndentedString(historyInclusion)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

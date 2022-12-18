@@ -51,6 +51,8 @@ docs/AddConversationResponse.md
 docs/AddShiftTradeRequest.md
 docs/AddWorkPlanRotationAgentRequest.md
 docs/AddWorkPlanRotationRequest.md
+docs/AdditionalLanguagesIntent.md
+docs/AdditionalLanguagesSynonyms.md
 docs/AdditionalMessage.md
 docs/Address.md
 docs/AddressableEntityRef.md
@@ -1092,6 +1094,9 @@ docs/DigitalRule.md
 docs/DigitalRuleSet.md
 docs/DigitalRuleSetEntityListing.md
 docs/Digits.md
+docs/DirectRouting.md
+docs/DirectRoutingCallMediaSettings.md
+docs/DirectRoutingMediaSettings.md
 docs/DirectoryUserDevicesListing.md
 docs/DisallowedEntityLearningAssignmentItem.md
 docs/DisallowedEntityLearningAssignmentReference.md
@@ -1104,6 +1109,8 @@ docs/DncListCreate.md
 docs/DncListDivisionView.md
 docs/DncListDivisionViewListing.md
 docs/DncListEntityListing.md
+docs/DncPatchEmailsRequest.md
+docs/DncPatchPhoneNumbersRequest.md
 docs/DnclistDownloadReadyExportUri.md
 docs/DnclistDownloadReadyObject.md
 docs/DnclistImportStatusImportStatus.md
@@ -1593,6 +1600,7 @@ docs/JourneyAggregationQuery.md
 docs/JourneyAggregationView.md
 docs/JourneyApi.json
 docs/JourneyApi.md
+docs/JourneyApp.md
 docs/JourneyCampaign.md
 docs/JourneyContext.md
 docs/JourneyCustomer.md
@@ -1897,6 +1905,7 @@ docs/MaxLength.md
 docs/MaxParticipants.md
 docs/MediaParticipantRequest.md
 docs/MediaPolicies.md
+docs/MediaRegions.md
 docs/MediaResult.md
 docs/MediaSetting.md
 docs/MediaSummary.md
@@ -1965,6 +1974,9 @@ docs/Miner.md
 docs/MinerExecuteRequest.md
 docs/MinerIntent.md
 docs/MinerListing.md
+docs/MinerTopic.md
+docs/MinerTopicPhrase.md
+docs/MinerTopicsListing.md
 docs/MobileDevicesApi.json
 docs/MobileDevicesApi.md
 docs/ModelVoid.md
@@ -1981,6 +1993,7 @@ docs/NamedEntityTypeBinding.md
 docs/NamedEntityTypeDefinition.md
 docs/NamedEntityTypeItem.md
 docs/NamedEntityTypeMechanism.md
+docs/NetworkConnectivity.md
 docs/NluConfusionMatrixColumn.md
 docs/NluConfusionMatrixRow.md
 docs/NluDetectionContext.md
@@ -2510,6 +2523,8 @@ docs/RecipientAdditionalIdentifier.md
 docs/RecipientListing.md
 docs/Record.md
 docs/Recording.md
+docs/RecordingAnnotationFlow.md
+docs/RecordingAnnotationQueue.md
 docs/RecordingApi.json
 docs/RecordingApi.md
 docs/RecordingArchiveRestoreTopicMediaResult.md
@@ -2697,6 +2712,7 @@ docs/ScriptEntityListing.md
 docs/ScriptsApi.json
 docs/ScriptsApi.md
 docs/ScrollPercentageEventTrigger.md
+docs/SdkLibrary.md
 docs/SearchAggregation.md
 docs/SearchApi.json
 docs/SearchApi.md
@@ -2979,6 +2995,7 @@ docs/TopicDuration.md
 docs/TopicJob.md
 docs/TopicJobRequest.md
 docs/TopicOffset.md
+docs/TopicPhrase.md
 docs/TopicRequest.md
 docs/TopicsEntityListing.md
 docs/TrainingListing.md
@@ -3282,10 +3299,6 @@ docs/ValueWrapperString.md
 docs/VerificationResult.md
 docs/Video.md
 docs/ViewFilter.md
-docs/VipBackup.md
-docs/VipCallMediaSettings.md
-docs/VipMediaSettings.md
-docs/VipRouting.md
 docs/VisibilityCondition.md
 docs/VmPairingInfo.md
 docs/Voicemail.md
@@ -3442,6 +3455,9 @@ docs/WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
 docs/WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification.md
 docs/WfmHistoricalShrinkageRequest.md
 docs/WfmHistoricalShrinkageResponse.md
+docs/WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody.md
+docs/WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType.md
+docs/WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification.md
 docs/WfmIntradayDataUpdateTopicIntradayDataGroup.md
 docs/WfmIntradayDataUpdateTopicIntradayDataUpdate.md
 docs/WfmIntradayDataUpdateTopicIntradayForecastData.md
@@ -3462,6 +3478,9 @@ docs/WfmProcessUploadRequest.md
 docs/WfmScheduleActivity.md
 docs/WfmScheduleReference.md
 docs/WfmScheduleTopicWfmScheduleNotification.md
+docs/WfmTimeOffBalanceJobTopicErrorBody.md
+docs/WfmTimeOffBalanceJobTopicTimeOffBalance.md
+docs/WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification.md
 docs/WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.md
 docs/WfmTimeOffRequestUpdateTopicUserReference.md
 docs/WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete.md
@@ -3681,6 +3700,8 @@ docs/deleteOutboundContactlistfilter-example.txt
 docs/deleteOutboundContactlists-example.txt
 docs/deleteOutboundDigitalruleset-example.txt
 docs/deleteOutboundDnclist-example.txt
+docs/deleteOutboundDnclistEmailaddresses-example.txt
+docs/deleteOutboundDnclistPhonenumbers-example.txt
 docs/deleteOutboundMessagingcampaign-example.txt
 docs/deleteOutboundMessagingcampaignProgress-example.txt
 docs/deleteOutboundRuleset-example.txt
@@ -4207,6 +4228,9 @@ docs/getLanguageunderstandingMinerDraft-example.txt
 docs/getLanguageunderstandingMinerDrafts-example.txt
 docs/getLanguageunderstandingMinerIntent-example.txt
 docs/getLanguageunderstandingMinerIntents-example.txt
+docs/getLanguageunderstandingMinerTopic-example.txt
+docs/getLanguageunderstandingMinerTopicPhrase-example.txt
+docs/getLanguageunderstandingMinerTopics-example.txt
 docs/getLanguageunderstandingMiners-example.txt
 docs/getLearningAssignment-example.txt
 docs/getLearningAssignments-example.txt
@@ -4502,6 +4526,7 @@ docs/getSystempresences-example.txt
 docs/getTeam-example.txt
 docs/getTeamMembers-example.txt
 docs/getTeams-example.txt
+docs/getTelephonyMediaregions-example.txt
 docs/getTelephonyProvidersEdge-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticPing-example.txt
@@ -4791,6 +4816,8 @@ docs/patchLearningAssignment-example.txt
 docs/patchLocation-example.txt
 docs/patchMessagingSupportedcontentSupportedContentId-example.txt
 docs/patchOrganizationsFeature-example.txt
+docs/patchOutboundDnclistEmailaddresses-example.txt
+docs/patchOutboundDnclistPhonenumbers-example.txt
 docs/patchOutboundSettings-example.txt
 docs/patchQualityFormsSurvey-example.txt
 docs/patchRecordingCrossplatformMediaretentionpolicy-example.txt
@@ -5795,6 +5822,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundContactlistReques
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundContactlistfilterRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundContactlistsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundDigitalrulesetRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundDnclistEmailaddressesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundDnclistPhonenumbersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundDnclistRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundMessagingcampaignProgressRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundMessagingcampaignRequest.java
@@ -6322,6 +6351,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingMinerDr
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingMinerIntentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingMinerIntentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingMinerRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingMinerTopicPhraseRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingMinerTopicRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingMinerTopicsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingMinersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningAssignmentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningAssignmentsMeRequest.java
@@ -6617,6 +6649,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetSystempresencesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTeamMembersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTeamRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTeamsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyMediaregionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeDiagnosticNslookupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeDiagnosticPingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeDiagnosticRouteRequest.java
@@ -6906,6 +6939,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchLearningAssignmentRequest.
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchLocationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchMessagingSupportedcontentSupportedContentIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchOrganizationsFeatureRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchOutboundDnclistEmailaddressesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchOutboundDnclistPhonenumbersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchOutboundSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchQualityFormsSurveyRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRecordingCrossplatformMediaretentionpolicyRequest.java
@@ -7699,6 +7734,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/AddConversationResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AddShiftTradeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AddWorkPlanRotationAgentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AddWorkPlanRotationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/AdditionalLanguagesIntent.java
+src/main/java/com/mypurecloud/sdk/v2/model/AdditionalLanguagesSynonyms.java
 src/main/java/com/mypurecloud/sdk/v2/model/AdditionalMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/Address.java
 src/main/java/com/mypurecloud/sdk/v2/model/AddressableEntityRef.java
@@ -8718,6 +8755,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/DigitalRule.java
 src/main/java/com/mypurecloud/sdk/v2/model/DigitalRuleSet.java
 src/main/java/com/mypurecloud/sdk/v2/model/DigitalRuleSetEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Digits.java
+src/main/java/com/mypurecloud/sdk/v2/model/DirectRouting.java
+src/main/java/com/mypurecloud/sdk/v2/model/DirectRoutingCallMediaSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/DirectRoutingMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/DirectoryUserDevicesListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DisallowedEntityLearningAssignmentItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/DisallowedEntityLearningAssignmentReference.java
@@ -8730,6 +8770,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/DncListCreate.java
 src/main/java/com/mypurecloud/sdk/v2/model/DncListDivisionView.java
 src/main/java/com/mypurecloud/sdk/v2/model/DncListDivisionViewListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DncListEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/DncPatchEmailsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/DncPatchPhoneNumbersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/DnclistDownloadReadyExportUri.java
 src/main/java/com/mypurecloud/sdk/v2/model/DnclistDownloadReadyObject.java
 src/main/java/com/mypurecloud/sdk/v2/model/DnclistImportStatusImportStatus.java
@@ -9193,6 +9235,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/JourneyAggregateQueryPredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAggregateQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAggregationQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAggregationView.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyApp.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyCampaign.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyCustomer.java
@@ -9485,6 +9528,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/MaxLength.java
 src/main/java/com/mypurecloud/sdk/v2/model/MaxParticipants.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaParticipantRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaPolicies.java
+src/main/java/com/mypurecloud/sdk/v2/model/MediaRegions.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaSetting.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaSummary.java
@@ -9551,6 +9595,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/Miner.java
 src/main/java/com/mypurecloud/sdk/v2/model/MinerExecuteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/MinerIntent.java
 src/main/java/com/mypurecloud/sdk/v2/model/MinerListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/MinerTopic.java
+src/main/java/com/mypurecloud/sdk/v2/model/MinerTopicPhrase.java
+src/main/java/com/mypurecloud/sdk/v2/model/MinerTopicsListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ModelVoid.java
 src/main/java/com/mypurecloud/sdk/v2/model/ModelingProcessingError.java
 src/main/java/com/mypurecloud/sdk/v2/model/ModelingStatusResponse.java
@@ -9565,6 +9612,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/NamedEntityTypeBinding.java
 src/main/java/com/mypurecloud/sdk/v2/model/NamedEntityTypeDefinition.java
 src/main/java/com/mypurecloud/sdk/v2/model/NamedEntityTypeItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/NamedEntityTypeMechanism.java
+src/main/java/com/mypurecloud/sdk/v2/model/NetworkConnectivity.java
 src/main/java/com/mypurecloud/sdk/v2/model/NluConfusionMatrixColumn.java
 src/main/java/com/mypurecloud/sdk/v2/model/NluConfusionMatrixRow.java
 src/main/java/com/mypurecloud/sdk/v2/model/NluDetectionContext.java
@@ -10076,6 +10124,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/RecipientAdditionalIdentifier.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecipientListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Record.java
 src/main/java/com/mypurecloud/sdk/v2/model/Recording.java
+src/main/java/com/mypurecloud/sdk/v2/model/RecordingAnnotationFlow.java
+src/main/java/com/mypurecloud/sdk/v2/model/RecordingAnnotationQueue.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingArchiveRestoreTopicMediaResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingArchiveRestoreTopicRecording.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingButtonComponent.java
@@ -10253,6 +10303,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/Screenshare.java
 src/main/java/com/mypurecloud/sdk/v2/model/Script.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScriptEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScrollPercentageEventTrigger.java
+src/main/java/com/mypurecloud/sdk/v2/model/SdkLibrary.java
 src/main/java/com/mypurecloud/sdk/v2/model/SearchAggregation.java
 src/main/java/com/mypurecloud/sdk/v2/model/SearchCriteria.java
 src/main/java/com/mypurecloud/sdk/v2/model/SearchRequest.java
@@ -10517,6 +10568,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/TopicDuration.java
 src/main/java/com/mypurecloud/sdk/v2/model/TopicJob.java
 src/main/java/com/mypurecloud/sdk/v2/model/TopicJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TopicOffset.java
+src/main/java/com/mypurecloud/sdk/v2/model/TopicPhrase.java
 src/main/java/com/mypurecloud/sdk/v2/model/TopicRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TopicsEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/TrainingListing.java
@@ -10810,10 +10862,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperString.java
 src/main/java/com/mypurecloud/sdk/v2/model/VerificationResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/Video.java
 src/main/java/com/mypurecloud/sdk/v2/model/ViewFilter.java
-src/main/java/com/mypurecloud/sdk/v2/model/VipBackup.java
-src/main/java/com/mypurecloud/sdk/v2/model/VipCallMediaSettings.java
-src/main/java/com/mypurecloud/sdk/v2/model/VipMediaSettings.java
-src/main/java/com/mypurecloud/sdk/v2/model/VipRouting.java
 src/main/java/com/mypurecloud/sdk/v2/model/VisibilityCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/VmPairingInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/Voicemail.java
@@ -10962,6 +11010,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalDataUploadRequestStatusT
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalShrinkageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalShrinkageResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmIntradayDataUpdateTopicIntradayDataGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmIntradayDataUpdateTopicIntradayDataUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmIntradayDataUpdateTopicIntradayForecastData.java
@@ -10982,6 +11033,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/WfmProcessUploadRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmScheduleActivity.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmScheduleReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmScheduleTopicWfmScheduleNotification.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmTimeOffBalanceJobTopicErrorBody.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmTimeOffBalanceJobTopicTimeOffBalance.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmTimeOffRequestUpdateTopicUserReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete.java

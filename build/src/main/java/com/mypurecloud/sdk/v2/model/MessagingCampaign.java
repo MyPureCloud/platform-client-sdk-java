@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactSort;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.DynamicContactQueueingSettings;
 import com.mypurecloud.sdk.v2.model.EmailConfig;
 import com.mypurecloud.sdk.v2.model.RestErrorDetail;
 import com.mypurecloud.sdk.v2.model.SmsConfig;
@@ -96,6 +97,7 @@ public class MessagingCampaign  implements Serializable {
   private List<DomainEntityRef> ruleSets = new ArrayList<DomainEntityRef>();
   private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
   private List<RestErrorDetail> errors = new ArrayList<RestErrorDetail>();
+  private DynamicContactQueueingSettings dynamicContactQueueingSettings = null;
   private EmailConfig emailConfig = null;
   private SmsConfig smsConfig = null;
   private String selfUri = null;
@@ -356,6 +358,24 @@ public class MessagingCampaign  implements Serializable {
 
 
   /**
+   * Indicates (when true) that the campaign supports dynamic queueing of the contact list at the time of a request for contacts.
+   **/
+  public MessagingCampaign dynamicContactQueueingSettings(DynamicContactQueueingSettings dynamicContactQueueingSettings) {
+    this.dynamicContactQueueingSettings = dynamicContactQueueingSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates (when true) that the campaign supports dynamic queueing of the contact list at the time of a request for contacts.")
+  @JsonProperty("dynamicContactQueueingSettings")
+  public DynamicContactQueueingSettings getDynamicContactQueueingSettings() {
+    return dynamicContactQueueingSettings;
+  }
+  public void setDynamicContactQueueingSettings(DynamicContactQueueingSettings dynamicContactQueueingSettings) {
+    this.dynamicContactQueueingSettings = dynamicContactQueueingSettings;
+  }
+
+
+  /**
    * Configuration for this messaging campaign to send Email messages.
    **/
   public MessagingCampaign emailConfig(EmailConfig emailConfig) {
@@ -424,6 +444,7 @@ public class MessagingCampaign  implements Serializable {
             Objects.equals(this.ruleSets, messagingCampaign.ruleSets) &&
             Objects.equals(this.contactListFilters, messagingCampaign.contactListFilters) &&
             Objects.equals(this.errors, messagingCampaign.errors) &&
+            Objects.equals(this.dynamicContactQueueingSettings, messagingCampaign.dynamicContactQueueingSettings) &&
             Objects.equals(this.emailConfig, messagingCampaign.emailConfig) &&
             Objects.equals(this.smsConfig, messagingCampaign.smsConfig) &&
             Objects.equals(this.selfUri, messagingCampaign.selfUri);
@@ -431,7 +452,7 @@ public class MessagingCampaign  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, division, campaignStatus, callableTimeSet, contactList, dncLists, alwaysRunning, contactSorts, messagesPerMinute, ruleSets, contactListFilters, errors, emailConfig, smsConfig, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, division, campaignStatus, callableTimeSet, contactList, dncLists, alwaysRunning, contactSorts, messagesPerMinute, ruleSets, contactListFilters, errors, dynamicContactQueueingSettings, emailConfig, smsConfig, selfUri);
   }
 
   @Override
@@ -455,6 +476,7 @@ public class MessagingCampaign  implements Serializable {
     sb.append("    ruleSets: ").append(toIndentedString(ruleSets)).append("\n");
     sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    dynamicContactQueueingSettings: ").append(toIndentedString(dynamicContactQueueingSettings)).append("\n");
     sb.append("    emailConfig: ").append(toIndentedString(emailConfig)).append("\n");
     sb.append("    smsConfig: ").append(toIndentedString(smsConfig)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Draft;
+import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
@@ -85,6 +86,54 @@ public class Miner  implements Serializable {
     }
   }
   private LanguageEnum language = null;
+
+  private static class MinerTypeEnumDeserializer extends StdDeserializer<MinerTypeEnum> {
+    public MinerTypeEnumDeserializer() {
+      super(MinerTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MinerTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MinerTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Type of the miner, intent or topic.
+   */
+ @JsonDeserialize(using = MinerTypeEnumDeserializer.class)
+  public enum MinerTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INTENT("Intent"),
+    TOPIC("Topic");
+
+    private String value;
+
+    MinerTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MinerTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MinerTypeEnum value : MinerTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MinerTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MinerTypeEnum minerType = null;
   private Date dateCreated = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
@@ -154,6 +203,8 @@ public class Miner  implements Serializable {
   private LocalDate conversationsDateRangeEnd = null;
   private Date dateCompleted = null;
   private String message = null;
+  private ErrorInfo errorInfo = null;
+  private ErrorInfo warningInfo = null;
   private Boolean conversationDataUploaded = null;
 
   private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
@@ -204,10 +255,62 @@ public class Miner  implements Serializable {
     }
   }
   private MediaTypeEnum mediaType = null;
+
+  private static class ParticipantTypeEnumDeserializer extends StdDeserializer<ParticipantTypeEnum> {
+    public ParticipantTypeEnumDeserializer() {
+      super(ParticipantTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ParticipantTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ParticipantTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Type of the participant, either agent, customer or both.
+   */
+ @JsonDeserialize(using = ParticipantTypeEnumDeserializer.class)
+  public enum ParticipantTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CUSTOMER("Customer"),
+    AGENT("Agent"),
+    BOTH("Both");
+
+    private String value;
+
+    ParticipantTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ParticipantTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ParticipantTypeEnum value : ParticipantTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ParticipantTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ParticipantTypeEnum participantType = null;
   private List<String> queueIds = new ArrayList<String>();
   private Date dateTriggered = null;
   private Date dateModified = null;
   private Draft latestDraftVersion = null;
+  private Integer conversationsFetchedCount = null;
+  private Integer conversationsValidCount = null;
+  private Integer getminedItemCount = null;
   private String selfUri = null;
 
   
@@ -254,6 +357,24 @@ public class Miner  implements Serializable {
   }
 
 
+  /**
+   * Type of the miner, intent or topic.
+   **/
+  public Miner minerType(MinerTypeEnum minerType) {
+    this.minerType = minerType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Type of the miner, intent or topic.")
+  @JsonProperty("minerType")
+  public MinerTypeEnum getMinerType() {
+    return minerType;
+  }
+  public void setMinerType(MinerTypeEnum minerType) {
+    this.minerType = minerType;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Date when the miner was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
@@ -296,6 +417,20 @@ public class Miner  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Error Information")
+  @JsonProperty("errorInfo")
+  public ErrorInfo getErrorInfo() {
+    return errorInfo;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Warning Information")
+  @JsonProperty("warningInfo")
+  public ErrorInfo getWarningInfo() {
+    return warningInfo;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Flag to indicate whether data file to be mined was uploaded.")
   @JsonProperty("conversationDataUploaded")
   public Boolean getConversationDataUploaded() {
@@ -307,6 +442,13 @@ public class Miner  implements Serializable {
   @JsonProperty("mediaType")
   public MediaTypeEnum getMediaType() {
     return mediaType;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Type of the participant, either agent, customer or both.")
+  @JsonProperty("participantType")
+  public ParticipantTypeEnum getParticipantType() {
+    return participantType;
   }
 
 
@@ -338,6 +480,27 @@ public class Miner  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Number of conversations/transcripts fetched.")
+  @JsonProperty("conversationsFetchedCount")
+  public Integer getConversationsFetchedCount() {
+    return conversationsFetchedCount;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Number of conversations/recordings/transcripts that were found valid for mining purposes.")
+  @JsonProperty("conversationsValidCount")
+  public Integer getConversationsValidCount() {
+    return conversationsValidCount;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Number of intents or topics based on the miner type.")
+  @JsonProperty("getminedItemCount")
+  public Integer getGetminedItemCount() {
+    return getminedItemCount;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -358,24 +521,31 @@ public class Miner  implements Serializable {
     return Objects.equals(this.id, miner.id) &&
             Objects.equals(this.name, miner.name) &&
             Objects.equals(this.language, miner.language) &&
+            Objects.equals(this.minerType, miner.minerType) &&
             Objects.equals(this.dateCreated, miner.dateCreated) &&
             Objects.equals(this.status, miner.status) &&
             Objects.equals(this.conversationsDateRangeStart, miner.conversationsDateRangeStart) &&
             Objects.equals(this.conversationsDateRangeEnd, miner.conversationsDateRangeEnd) &&
             Objects.equals(this.dateCompleted, miner.dateCompleted) &&
             Objects.equals(this.message, miner.message) &&
+            Objects.equals(this.errorInfo, miner.errorInfo) &&
+            Objects.equals(this.warningInfo, miner.warningInfo) &&
             Objects.equals(this.conversationDataUploaded, miner.conversationDataUploaded) &&
             Objects.equals(this.mediaType, miner.mediaType) &&
+            Objects.equals(this.participantType, miner.participantType) &&
             Objects.equals(this.queueIds, miner.queueIds) &&
             Objects.equals(this.dateTriggered, miner.dateTriggered) &&
             Objects.equals(this.dateModified, miner.dateModified) &&
             Objects.equals(this.latestDraftVersion, miner.latestDraftVersion) &&
+            Objects.equals(this.conversationsFetchedCount, miner.conversationsFetchedCount) &&
+            Objects.equals(this.conversationsValidCount, miner.conversationsValidCount) &&
+            Objects.equals(this.getminedItemCount, miner.getminedItemCount) &&
             Objects.equals(this.selfUri, miner.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, language, dateCreated, status, conversationsDateRangeStart, conversationsDateRangeEnd, dateCompleted, message, conversationDataUploaded, mediaType, queueIds, dateTriggered, dateModified, latestDraftVersion, selfUri);
+    return Objects.hash(id, name, language, minerType, dateCreated, status, conversationsDateRangeStart, conversationsDateRangeEnd, dateCompleted, message, errorInfo, warningInfo, conversationDataUploaded, mediaType, participantType, queueIds, dateTriggered, dateModified, latestDraftVersion, conversationsFetchedCount, conversationsValidCount, getminedItemCount, selfUri);
   }
 
   @Override
@@ -386,18 +556,25 @@ public class Miner  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    minerType: ").append(toIndentedString(minerType)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    conversationsDateRangeStart: ").append(toIndentedString(conversationsDateRangeStart)).append("\n");
     sb.append("    conversationsDateRangeEnd: ").append(toIndentedString(conversationsDateRangeEnd)).append("\n");
     sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
+    sb.append("    warningInfo: ").append(toIndentedString(warningInfo)).append("\n");
     sb.append("    conversationDataUploaded: ").append(toIndentedString(conversationDataUploaded)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    participantType: ").append(toIndentedString(participantType)).append("\n");
     sb.append("    queueIds: ").append(toIndentedString(queueIds)).append("\n");
     sb.append("    dateTriggered: ").append(toIndentedString(dateTriggered)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    latestDraftVersion: ").append(toIndentedString(latestDraftVersion)).append("\n");
+    sb.append("    conversationsFetchedCount: ").append(toIndentedString(conversationsFetchedCount)).append("\n");
+    sb.append("    conversationsValidCount: ").append(toIndentedString(conversationsValidCount)).append("\n");
+    sb.append("    getminedItemCount: ").append(toIndentedString(getminedItemCount)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

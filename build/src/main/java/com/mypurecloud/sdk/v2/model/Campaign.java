@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactSort;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.DynamicContactQueueingSettings;
 import com.mypurecloud.sdk.v2.model.PhoneColumn;
 import com.mypurecloud.sdk.v2.model.RestErrorDetail;
 import io.swagger.annotations.ApiModel;
@@ -164,6 +165,7 @@ public class Campaign  implements Serializable {
   private Integer priority = null;
   private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
   private DomainEntityRef division = null;
+  private DynamicContactQueueingSettings dynamicContactQueueingSettings = null;
   private String selfUri = null;
 
   
@@ -699,6 +701,24 @@ public class Campaign  implements Serializable {
   }
 
 
+  /**
+   * Settings for dynamic queueing of contacts.
+   **/
+  public Campaign dynamicContactQueueingSettings(DynamicContactQueueingSettings dynamicContactQueueingSettings) {
+    this.dynamicContactQueueingSettings = dynamicContactQueueingSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Settings for dynamic queueing of contacts.")
+  @JsonProperty("dynamicContactQueueingSettings")
+  public DynamicContactQueueingSettings getDynamicContactQueueingSettings() {
+    return dynamicContactQueueingSettings;
+  }
+  public void setDynamicContactQueueingSettings(DynamicContactQueueingSettings dynamicContactQueueingSettings) {
+    this.dynamicContactQueueingSettings = dynamicContactQueueingSettings;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -748,12 +768,13 @@ public class Campaign  implements Serializable {
             Objects.equals(this.priority, campaign.priority) &&
             Objects.equals(this.contactListFilters, campaign.contactListFilters) &&
             Objects.equals(this.division, campaign.division) &&
+            Objects.equals(this.dynamicContactQueueingSettings, campaign.dynamicContactQueueingSettings) &&
             Objects.equals(this.selfUri, campaign.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, dynamicContactQueueingSettings, selfUri);
   }
 
   @Override
@@ -793,6 +814,7 @@ public class Campaign  implements Serializable {
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
+    sb.append("    dynamicContactQueueingSettings: ").append(toIndentedString(dynamicContactQueueingSettings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

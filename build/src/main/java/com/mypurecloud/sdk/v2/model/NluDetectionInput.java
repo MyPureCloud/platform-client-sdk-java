@@ -22,6 +22,7 @@ import java.io.Serializable;
 public class NluDetectionInput  implements Serializable {
   
   private String text = null;
+  private String language = null;
 
   
   /**
@@ -42,6 +43,24 @@ public class NluDetectionInput  implements Serializable {
   }
 
 
+  /**
+   * Language of the version for multilingual detection, e.g. `en-us`, `de-de`
+   **/
+  public NluDetectionInput language(String language) {
+    this.language = language;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Language of the version for multilingual detection, e.g. `en-us`, `de-de`")
+  @JsonProperty("language")
+  public String getLanguage() {
+    return language;
+  }
+  public void setLanguage(String language) {
+    this.language = language;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -52,12 +71,13 @@ public class NluDetectionInput  implements Serializable {
     }
     NluDetectionInput nluDetectionInput = (NluDetectionInput) o;
 
-    return Objects.equals(this.text, nluDetectionInput.text);
+    return Objects.equals(this.text, nluDetectionInput.text) &&
+            Objects.equals(this.language, nluDetectionInput.language);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text);
+    return Objects.hash(text, language);
   }
 
   @Override
@@ -66,6 +86,7 @@ public class NluDetectionInput  implements Serializable {
     sb.append("class NluDetectionInput {\n");
     
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("}");
     return sb.toString();
   }

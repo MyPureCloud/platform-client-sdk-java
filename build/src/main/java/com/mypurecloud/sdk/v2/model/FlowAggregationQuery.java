@@ -74,6 +74,7 @@ public class FlowAggregationQuery  implements Serializable {
     ENDINGLANGUAGE("endingLanguage"),
     ENTRYREASON("entryReason"),
     ENTRYTYPE("entryType"),
+    ERRORCODE("errorCode"),
     EXITREASON("exitReason"),
     EXTENDEDDELIVERYSTATUS("extendedDeliveryStatus"),
     EXTERNALCONTACTID("externalContactId"),

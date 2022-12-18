@@ -24,6 +24,7 @@ title: MessagingCampaign
 | **ruleSets** | <!----><!---->[**List&lt;DomainEntityRef&gt;**](DomainEntityRef.html)<!----> | Rule Sets to be applied while this campaign is sending messages |  [optional] |
 | **contactListFilters** | <!----><!---->[**List&lt;DomainEntityRef&gt;**](DomainEntityRef.html)<!----> | The contact list filter to check before sending a message for this messaging campaign. |  [optional] |
 | **errors** | <!----><!---->[**List&lt;RestErrorDetail&gt;**](RestErrorDetail.html)<!----> | A list of current error conditions associated with this messaging campaign. |  [optional] |
+| **dynamicContactQueueingSettings** | <!----><!---->[**DynamicContactQueueingSettings**](DynamicContactQueueingSettings.html)<!----> | Indicates (when true) that the campaign supports dynamic queueing of the contact list at the time of a request for contacts. |  [optional] |
 | **emailConfig** | <!----><!---->[**EmailConfig**](EmailConfig.html)<!----> | Configuration for this messaging campaign to send Email messages. |  [optional] |
 | **smsConfig** | <!----><!---->[**SmsConfig**](SmsConfig.html)<!----> | Configuration for this messaging campaign to send SMS messages. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |

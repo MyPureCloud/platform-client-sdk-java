@@ -77,6 +77,55 @@ public class MinerExecuteRequest  implements Serializable {
     }
   }
   private MediaTypeEnum mediaType = null;
+
+  private static class ParticipantTypeEnumDeserializer extends StdDeserializer<ParticipantTypeEnum> {
+    public ParticipantTypeEnumDeserializer() {
+      super(ParticipantTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ParticipantTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ParticipantTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Type of the participant, either agent, customer or both.
+   */
+ @JsonDeserialize(using = ParticipantTypeEnumDeserializer.class)
+  public enum ParticipantTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CUSTOMER("Customer"),
+    AGENT("Agent"),
+    BOTH("Both");
+
+    private String value;
+
+    ParticipantTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ParticipantTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ParticipantTypeEnum value : ParticipantTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ParticipantTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ParticipantTypeEnum participantType = null;
   private List<String> queueIds = new ArrayList<String>();
 
   
@@ -153,6 +202,24 @@ public class MinerExecuteRequest  implements Serializable {
 
 
   /**
+   * Type of the participant, either agent, customer or both.
+   **/
+  public MinerExecuteRequest participantType(ParticipantTypeEnum participantType) {
+    this.participantType = participantType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Type of the participant, either agent, customer or both.")
+  @JsonProperty("participantType")
+  public ParticipantTypeEnum getParticipantType() {
+    return participantType;
+  }
+  public void setParticipantType(ParticipantTypeEnum participantType) {
+    this.participantType = participantType;
+  }
+
+
+  /**
    * List of queue IDs for filtering conversations.
    **/
   public MinerExecuteRequest queueIds(List<String> queueIds) {
@@ -184,12 +251,13 @@ public class MinerExecuteRequest  implements Serializable {
             Objects.equals(this.dateEnd, minerExecuteRequest.dateEnd) &&
             Objects.equals(this.uploadKey, minerExecuteRequest.uploadKey) &&
             Objects.equals(this.mediaType, minerExecuteRequest.mediaType) &&
+            Objects.equals(this.participantType, minerExecuteRequest.participantType) &&
             Objects.equals(this.queueIds, minerExecuteRequest.queueIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateStart, dateEnd, uploadKey, mediaType, queueIds);
+    return Objects.hash(dateStart, dateEnd, uploadKey, mediaType, participantType, queueIds);
   }
 
   @Override
@@ -201,6 +269,7 @@ public class MinerExecuteRequest  implements Serializable {
     sb.append("    dateEnd: ").append(toIndentedString(dateEnd)).append("\n");
     sb.append("    uploadKey: ").append(toIndentedString(uploadKey)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    participantType: ").append(toIndentedString(participantType)).append("\n");
     sb.append("    queueIds: ").append(toIndentedString(queueIds)).append("\n");
     sb.append("}");
     return sb.toString();

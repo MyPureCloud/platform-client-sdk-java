@@ -49,6 +49,8 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.DncListDivisionView;
 import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.DncListEntityListing;
+import com.mypurecloud.sdk.v2.model.DncPatchEmailsRequest;
+import com.mypurecloud.sdk.v2.model.DncPatchPhoneNumbersRequest;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -86,6 +88,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistfilterRequest
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistEmailaddressesRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundRulesetRequest;
@@ -152,6 +156,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSequencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundWrapupcodemappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistEmailaddressesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundAttemptlimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundAuditsRequest;
@@ -1181,6 +1187,164 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOutboundDnclist(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Deletes all or expired email addresses from a DNC list.
+   * This operation is Only for Internal DNC lists of email addresses
+   * @param dncListId DncList ID (required)
+   * @param expiredOnly Set to true to only remove DNC entries that are expired (optional, default to false)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundDnclistEmailaddresses(String dncListId, Boolean expiredOnly) throws IOException, ApiException {
+     deleteOutboundDnclistEmailaddresses(createDeleteOutboundDnclistEmailaddressesRequest(dncListId, expiredOnly));
+  }
+
+  /**
+   * Deletes all or expired email addresses from a DNC list.
+   * This operation is Only for Internal DNC lists of email addresses
+   * @param dncListId DncList ID (required)
+   * @param expiredOnly Set to true to only remove DNC entries that are expired (optional, default to false)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundDnclistEmailaddressesWithHttpInfo(String dncListId, Boolean expiredOnly) throws IOException {
+    return deleteOutboundDnclistEmailaddresses(createDeleteOutboundDnclistEmailaddressesRequest(dncListId, expiredOnly).withHttpInfo());
+  }
+
+  private DeleteOutboundDnclistEmailaddressesRequest createDeleteOutboundDnclistEmailaddressesRequest(String dncListId, Boolean expiredOnly) {
+    return DeleteOutboundDnclistEmailaddressesRequest.builder()
+            .withDncListId(dncListId)
+
+            .withExpiredOnly(expiredOnly)
+
+            .build();
+  }
+
+  /**
+   * Deletes all or expired email addresses from a DNC list.
+   * This operation is Only for Internal DNC lists of email addresses
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundDnclistEmailaddresses(DeleteOutboundDnclistEmailaddressesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes all or expired email addresses from a DNC list.
+   * This operation is Only for Internal DNC lists of email addresses
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundDnclistEmailaddresses(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Deletes all or expired phone numbers from a DNC list.
+   * This operation is Only for Internal DNC lists of phone numbers
+   * @param dncListId DncList ID (required)
+   * @param expiredOnly Set to true to only remove DNC entries that are expired (optional, default to false)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundDnclistPhonenumbers(String dncListId, Boolean expiredOnly) throws IOException, ApiException {
+     deleteOutboundDnclistPhonenumbers(createDeleteOutboundDnclistPhonenumbersRequest(dncListId, expiredOnly));
+  }
+
+  /**
+   * Deletes all or expired phone numbers from a DNC list.
+   * This operation is Only for Internal DNC lists of phone numbers
+   * @param dncListId DncList ID (required)
+   * @param expiredOnly Set to true to only remove DNC entries that are expired (optional, default to false)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundDnclistPhonenumbersWithHttpInfo(String dncListId, Boolean expiredOnly) throws IOException {
+    return deleteOutboundDnclistPhonenumbers(createDeleteOutboundDnclistPhonenumbersRequest(dncListId, expiredOnly).withHttpInfo());
+  }
+
+  private DeleteOutboundDnclistPhonenumbersRequest createDeleteOutboundDnclistPhonenumbersRequest(String dncListId, Boolean expiredOnly) {
+    return DeleteOutboundDnclistPhonenumbersRequest.builder()
+            .withDncListId(dncListId)
+
+            .withExpiredOnly(expiredOnly)
+
+            .build();
+  }
+
+  /**
+   * Deletes all or expired phone numbers from a DNC list.
+   * This operation is Only for Internal DNC lists of phone numbers
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundDnclistPhonenumbers(DeleteOutboundDnclistPhonenumbersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes all or expired phone numbers from a DNC list.
+   * This operation is Only for Internal DNC lists of phone numbers
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundDnclistPhonenumbers(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -6889,6 +7053,164 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WrapUpCodeMapping> response = (ApiResponse<WrapUpCodeMapping>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add emails to or Delete emails from a DNC list.
+   * Only Internal DNC lists may be added to or deleted from
+   * @param dncListId DncList ID (required)
+   * @param body DNC Emails (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundDnclistEmailaddresses(String dncListId, DncPatchEmailsRequest body) throws IOException, ApiException {
+     patchOutboundDnclistEmailaddresses(createPatchOutboundDnclistEmailaddressesRequest(dncListId, body));
+  }
+
+  /**
+   * Add emails to or Delete emails from a DNC list.
+   * Only Internal DNC lists may be added to or deleted from
+   * @param dncListId DncList ID (required)
+   * @param body DNC Emails (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundDnclistEmailaddressesWithHttpInfo(String dncListId, DncPatchEmailsRequest body) throws IOException {
+    return patchOutboundDnclistEmailaddresses(createPatchOutboundDnclistEmailaddressesRequest(dncListId, body).withHttpInfo());
+  }
+
+  private PatchOutboundDnclistEmailaddressesRequest createPatchOutboundDnclistEmailaddressesRequest(String dncListId, DncPatchEmailsRequest body) {
+    return PatchOutboundDnclistEmailaddressesRequest.builder()
+            .withDncListId(dncListId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add emails to or Delete emails from a DNC list.
+   * Only Internal DNC lists may be added to or deleted from
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundDnclistEmailaddresses(PatchOutboundDnclistEmailaddressesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Add emails to or Delete emails from a DNC list.
+   * Only Internal DNC lists may be added to or deleted from
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundDnclistEmailaddresses(ApiRequest<DncPatchEmailsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add numbers to or delete numbers from a DNC list.
+   * Only Internal DNC lists may be added to deleted from
+   * @param dncListId DncList ID (required)
+   * @param body DNC Phone Numbers (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundDnclistPhonenumbers(String dncListId, DncPatchPhoneNumbersRequest body) throws IOException, ApiException {
+     patchOutboundDnclistPhonenumbers(createPatchOutboundDnclistPhonenumbersRequest(dncListId, body));
+  }
+
+  /**
+   * Add numbers to or delete numbers from a DNC list.
+   * Only Internal DNC lists may be added to deleted from
+   * @param dncListId DncList ID (required)
+   * @param body DNC Phone Numbers (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundDnclistPhonenumbersWithHttpInfo(String dncListId, DncPatchPhoneNumbersRequest body) throws IOException {
+    return patchOutboundDnclistPhonenumbers(createPatchOutboundDnclistPhonenumbersRequest(dncListId, body).withHttpInfo());
+  }
+
+  private PatchOutboundDnclistPhonenumbersRequest createPatchOutboundDnclistPhonenumbersRequest(String dncListId, DncPatchPhoneNumbersRequest body) {
+    return PatchOutboundDnclistPhonenumbersRequest.builder()
+            .withDncListId(dncListId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add numbers to or delete numbers from a DNC list.
+   * Only Internal DNC lists may be added to deleted from
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundDnclistPhonenumbers(PatchOutboundDnclistPhonenumbersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Add numbers to or delete numbers from a DNC list.
+   * Only Internal DNC lists may be added to deleted from
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundDnclistPhonenumbers(ApiRequest<DncPatchPhoneNumbersRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

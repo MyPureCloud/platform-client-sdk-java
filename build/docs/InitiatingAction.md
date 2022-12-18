@@ -81,6 +81,7 @@ title: InitiatingAction
 | WRITE | &quot;Write&quot; | 
 | PURGE | &quot;Purge&quot; | 
 | PROCESSED | &quot;Processed&quot; | 
+| REMOVE | &quot;Remove&quot; | 
 | REPLACE | &quot;Replace&quot; | 
 | UPDATEINSERVICE | &quot;UpdateInService&quot; | 
 | UPDATEOUTOFSERVICE | &quot;UpdateOutOfService&quot; | 

@@ -24,6 +24,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerDrafts) | Retrieve the list of drafts created. |
 | [**getLanguageunderstandingMinerIntent**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerIntent) | Get information about a mined intent |
 | [**getLanguageunderstandingMinerIntents**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerIntents) | Retrieve a list of mined intents. |
+| [**getLanguageunderstandingMinerTopic**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopic) | Retrieves details of a particular topic. |
+| [**getLanguageunderstandingMinerTopicPhrase**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopicPhrase) | Retrieves utterances related to a phrase in a topic. |
+| [**getLanguageunderstandingMinerTopics**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopics) | Retrieve a list of mined topics. |
 | [**getLanguageunderstandingMiners**](LanguageUnderstandingApi.html#getLanguageunderstandingMiners) | Retrieve the list of miners created. |
 | [**patchLanguageunderstandingDomain**](LanguageUnderstandingApi.html#patchLanguageunderstandingDomain) | Update an NLU Domain. |
 | [**patchLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#patchLanguageunderstandingMinerDraft) | Save information for the draft. Either topic draft or intent draft should be sent. |
@@ -416,7 +419,7 @@ try {
 
 
 
-> [NluFeedbackListing](NluFeedbackListing.html) getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields)
+> [NluFeedbackListing](NluFeedbackListing.html) getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields)
 
 Get all feedback in the given NLU Domain Version.
 
@@ -455,13 +458,14 @@ String assessment = "assessment_example"; // String | The top assessment to retr
 LocalDate dateStart = new LocalDate(); // LocalDate | Begin of time window as ISO-8601 date.
 LocalDate dateEnd = new LocalDate(); // LocalDate | End of time window as ISO-8601 date.
 Boolean includeDeleted = true; // Boolean | Whether to include soft-deleted items in the result.
+String language = "language_example"; // String | Whether to filter response based on the language, e.g. en-us, pt-br.
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 Boolean enableCursorPagination = false; // Boolean | Enable Cursor Pagination
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
 List<String> fields = Arrays.asList(null); // List<String> | Fields and properties to get, comma-separated
 try {
-    NluFeedbackListing result = apiInstance.getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields);
+    NluFeedbackListing result = apiInstance.getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingDomainFeedback");
@@ -480,6 +484,7 @@ try {
 | **dateStart** | **LocalDate**| Begin of time window as ISO-8601 date. | [optional] 
 | **dateEnd** | **LocalDate**| End of time window as ISO-8601 date. | [optional] 
 | **includeDeleted** | **Boolean**| Whether to include soft-deleted items in the result. | [optional] 
+| **language** | **String**| Whether to filter response based on the language, e.g. en-us, pt-br. | [optional] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **enableCursorPagination** | **Boolean**| Enable Cursor Pagination | [optional] [default to false] 
@@ -887,7 +892,7 @@ try {
 
 
 
-> [Draft](Draft.html) getLanguageunderstandingMinerDraft(minerId, draftId)
+> [Draft](Draft.html) getLanguageunderstandingMinerDraft(minerId, draftId, draftIntentId, draftTopicId)
 
 Get information about a draft.
 
@@ -921,8 +926,10 @@ Configuration.setDefaultApiClient(apiClient);
 LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
 String minerId = "minerId_example"; // String | Miner ID
 String draftId = "draftId_example"; // String | Draft ID
+String draftIntentId = "draftIntentId_example"; // String | Parameter to filter a specific intent.
+String draftTopicId = "draftTopicId_example"; // String | Parameter to filter a specific topic.
 try {
-    Draft result = apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId);
+    Draft result = apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId, draftIntentId, draftTopicId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerDraft");
@@ -937,6 +944,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **minerId** | **String**| Miner ID | 
 | **draftId** | **String**| Draft ID | 
+| **draftIntentId** | **String**| Parameter to filter a specific intent. | [optional] 
+| **draftTopicId** | **String**| Parameter to filter a specific topic. | [optional] 
 {: class="table-striped"}
 
 
@@ -1133,13 +1142,204 @@ try {
 
 [**MinedIntentsListing**](MinedIntentsListing.html)
 
+<a name="getLanguageunderstandingMinerTopic"></a>
+
+# **getLanguageunderstandingMinerTopic**
+
+
+
+> [MinerTopic](MinerTopic.html) getLanguageunderstandingMinerTopic(minerId, topicId, expand)
+
+Retrieves details of a particular topic.
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+String topicId = "topicId_example"; // String | The ID of the topic to be retrieved.
+String expand = "expand_example"; // String | Option to fetch phrases
+try {
+    MinerTopic result = apiInstance.getLanguageunderstandingMinerTopic(minerId, topicId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerTopic");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+| **topicId** | **String**| The ID of the topic to be retrieved. | 
+| **expand** | **String**| Option to fetch phrases | [optional]<br />**Values**: phrases, utterances 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MinerTopic**](MinerTopic.html)
+
+<a name="getLanguageunderstandingMinerTopicPhrase"></a>
+
+# **getLanguageunderstandingMinerTopicPhrase**
+
+
+
+> [MinerTopicPhrase](MinerTopicPhrase.html) getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)
+
+Retrieves utterances related to a phrase in a topic.
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+String topicId = "topicId_example"; // String | The ID of the topic to be retrieved.
+String phraseId = "phraseId_example"; // String | The ID of the phrase to be retrieved.
+try {
+    MinerTopicPhrase result = apiInstance.getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerTopicPhrase");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+| **topicId** | **String**| The ID of the topic to be retrieved. | 
+| **phraseId** | **String**| The ID of the phrase to be retrieved. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MinerTopicPhrase**](MinerTopicPhrase.html)
+
+<a name="getLanguageunderstandingMinerTopics"></a>
+
+# **getLanguageunderstandingMinerTopics**
+
+
+
+> [MinerTopicsListing](MinerTopicsListing.html) getLanguageunderstandingMinerTopics(minerId)
+
+Retrieve a list of mined topics.
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/topics  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+try {
+    MinerTopicsListing result = apiInstance.getLanguageunderstandingMinerTopics(minerId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerTopics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MinerTopicsListing**](MinerTopicsListing.html)
+
 <a name="getLanguageunderstandingMiners"></a>
 
 # **getLanguageunderstandingMiners**
 
 
 
-> [MinerListing](MinerListing.html) getLanguageunderstandingMiners()
+> [MinerListing](MinerListing.html) getLanguageunderstandingMiners(minerType)
 
 Retrieve the list of miners created.
 
@@ -1171,8 +1371,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerType = "minerType_example"; // String | Type of miner, either intent or topic
 try {
-    MinerListing result = apiInstance.getLanguageunderstandingMiners();
+    MinerListing result = apiInstance.getLanguageunderstandingMiners(minerType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMiners");
@@ -1182,8 +1383,11 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerType** | **String**| Type of miner, either intent or topic | [optional] 
+{: class="table-striped"}
 
 
 ### Return type
@@ -1583,7 +1787,7 @@ try {
 
 
 
-> [NluDomainVersion](NluDomainVersion.html) postLanguageunderstandingDomainVersions(domainId, body)
+> [NluDomainVersion](NluDomainVersion.html) postLanguageunderstandingDomainVersions(domainId, body, includeUtterances)
 
 Create an NLU Domain Version.
 
@@ -1618,8 +1822,9 @@ Configuration.setDefaultApiClient(apiClient);
 LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
 String domainId = "domainId_example"; // String | ID of the NLU domain.
 NluDomainVersion body = new NluDomainVersion(); // NluDomainVersion | The NLU Domain Version to create.
+Boolean includeUtterances = true; // Boolean | Whether utterances for intent definition should be included when marshalling response.
 try {
-    NluDomainVersion result = apiInstance.postLanguageunderstandingDomainVersions(domainId, body);
+    NluDomainVersion result = apiInstance.postLanguageunderstandingDomainVersions(domainId, body, includeUtterances);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LanguageUnderstandingApi#postLanguageunderstandingDomainVersions");
@@ -1634,6 +1839,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| ID of the NLU domain. | 
 | **body** | [**NluDomainVersion**](NluDomainVersion.html)| The NLU Domain Version to create. | 
+| **includeUtterances** | **Boolean**| Whether utterances for intent definition should be included when marshalling response. | [optional] 
 {: class="table-striped"}
 
 

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DraftIntents;
+import com.mypurecloud.sdk.v2.model.DraftTopics;
 import com.mypurecloud.sdk.v2.model.Miner;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,6 +31,7 @@ public class Draft  implements Serializable {
   private String name = null;
   private Miner miner = null;
   private List<DraftIntents> intents = new ArrayList<DraftIntents>();
+  private List<DraftTopics> topics = new ArrayList<DraftTopics>();
   private Date dateCreated = null;
   private Date dateModified = null;
   private String selfUri = null;
@@ -74,6 +76,13 @@ public class Draft  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Draft topic object.")
+  @JsonProperty("topics")
+  public List<DraftTopics> getTopics() {
+    return topics;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Date when the draft was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
@@ -109,6 +118,7 @@ public class Draft  implements Serializable {
             Objects.equals(this.name, draft.name) &&
             Objects.equals(this.miner, draft.miner) &&
             Objects.equals(this.intents, draft.intents) &&
+            Objects.equals(this.topics, draft.topics) &&
             Objects.equals(this.dateCreated, draft.dateCreated) &&
             Objects.equals(this.dateModified, draft.dateModified) &&
             Objects.equals(this.selfUri, draft.selfUri);
@@ -116,7 +126,7 @@ public class Draft  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, miner, intents, dateCreated, dateModified, selfUri);
+    return Objects.hash(id, name, miner, intents, topics, dateCreated, dateModified, selfUri);
   }
 
   @Override
@@ -128,6 +138,7 @@ public class Draft  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    miner: ").append(toIndentedString(miner)).append("\n");
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
+    sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -11,12 +11,15 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AdditionalLanguagesIntent;
 import com.mypurecloud.sdk.v2.model.NamedEntityTypeBinding;
 import com.mypurecloud.sdk.v2.model.NluUtterance;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -30,6 +33,7 @@ public class IntentDefinition  implements Serializable {
   private List<NamedEntityTypeBinding> entityTypeBindings = new ArrayList<NamedEntityTypeBinding>();
   private List<String> entityNameReferences = new ArrayList<String>();
   private List<NluUtterance> utterances = new ArrayList<NluUtterance>();
+  private Map<String, AdditionalLanguagesIntent> additionalLanguages = null;
 
   
   @ApiModelProperty(example = "null", value = "ID of the intent.")
@@ -100,6 +104,24 @@ public class IntentDefinition  implements Serializable {
   }
 
 
+  /**
+   * Additional languages for intents
+   **/
+  public IntentDefinition additionalLanguages(Map<String, AdditionalLanguagesIntent> additionalLanguages) {
+    this.additionalLanguages = additionalLanguages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Additional languages for intents")
+  @JsonProperty("additionalLanguages")
+  public Map<String, AdditionalLanguagesIntent> getAdditionalLanguages() {
+    return additionalLanguages;
+  }
+  public void setAdditionalLanguages(Map<String, AdditionalLanguagesIntent> additionalLanguages) {
+    this.additionalLanguages = additionalLanguages;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -114,12 +136,13 @@ public class IntentDefinition  implements Serializable {
             Objects.equals(this.name, intentDefinition.name) &&
             Objects.equals(this.entityTypeBindings, intentDefinition.entityTypeBindings) &&
             Objects.equals(this.entityNameReferences, intentDefinition.entityNameReferences) &&
-            Objects.equals(this.utterances, intentDefinition.utterances);
+            Objects.equals(this.utterances, intentDefinition.utterances) &&
+            Objects.equals(this.additionalLanguages, intentDefinition.additionalLanguages);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, entityTypeBindings, entityNameReferences, utterances);
+    return Objects.hash(id, name, entityTypeBindings, entityNameReferences, utterances, additionalLanguages);
   }
 
   @Override
@@ -132,6 +155,7 @@ public class IntentDefinition  implements Serializable {
     sb.append("    entityTypeBindings: ").append(toIndentedString(entityTypeBindings)).append("\n");
     sb.append("    entityNameReferences: ").append(toIndentedString(entityNameReferences)).append("\n");
     sb.append("    utterances: ").append(toIndentedString(utterances)).append("\n");
+    sb.append("    additionalLanguages: ").append(toIndentedString(additionalLanguages)).append("\n");
     sb.append("}");
     return sb.toString();
   }

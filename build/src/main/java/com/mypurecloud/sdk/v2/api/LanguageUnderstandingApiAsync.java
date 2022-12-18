@@ -23,6 +23,9 @@ import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
 import com.mypurecloud.sdk.v2.model.MinerIntent;
 import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.MinerTopic;
+import com.mypurecloud.sdk.v2.model.MinerTopicPhrase;
+import com.mypurecloud.sdk.v2.model.MinerTopicsListing;
 import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
 import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
 import com.mypurecloud.sdk.v2.model.NluDomain;
@@ -53,6 +56,9 @@ import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerDraftRequ
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerDraftsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerIntentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerIntentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicPhraseRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLanguageunderstandingDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLanguageunderstandingMinerDraftRequest;
@@ -1349,6 +1355,231 @@ public class LanguageUnderstandingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MinedIntentsListing> response = (ApiResponse<MinedIntentsListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves details of a particular topic.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MinerTopic> getLanguageunderstandingMinerTopicAsync(GetLanguageunderstandingMinerTopicRequest request, final AsyncApiCallback<MinerTopic> callback) {
+    try {
+      final SettableFuture<MinerTopic> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MinerTopic>() {}, new AsyncApiCallback<ApiResponse<MinerTopic>>() {
+        @Override
+        public void onCompleted(ApiResponse<MinerTopic> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves details of a particular topic.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MinerTopic>> getLanguageunderstandingMinerTopicAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MinerTopic>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MinerTopic>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MinerTopic>() {}, new AsyncApiCallback<ApiResponse<MinerTopic>>() {
+        @Override
+        public void onCompleted(ApiResponse<MinerTopic> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MinerTopic> response = (ApiResponse<MinerTopic>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MinerTopic> response = (ApiResponse<MinerTopic>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves utterances related to a phrase in a topic.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MinerTopicPhrase> getLanguageunderstandingMinerTopicPhraseAsync(GetLanguageunderstandingMinerTopicPhraseRequest request, final AsyncApiCallback<MinerTopicPhrase> callback) {
+    try {
+      final SettableFuture<MinerTopicPhrase> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MinerTopicPhrase>() {}, new AsyncApiCallback<ApiResponse<MinerTopicPhrase>>() {
+        @Override
+        public void onCompleted(ApiResponse<MinerTopicPhrase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves utterances related to a phrase in a topic.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MinerTopicPhrase>> getLanguageunderstandingMinerTopicPhraseAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MinerTopicPhrase>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MinerTopicPhrase>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MinerTopicPhrase>() {}, new AsyncApiCallback<ApiResponse<MinerTopicPhrase>>() {
+        @Override
+        public void onCompleted(ApiResponse<MinerTopicPhrase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MinerTopicPhrase> response = (ApiResponse<MinerTopicPhrase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MinerTopicPhrase> response = (ApiResponse<MinerTopicPhrase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of mined topics.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MinerTopicsListing> getLanguageunderstandingMinerTopicsAsync(GetLanguageunderstandingMinerTopicsRequest request, final AsyncApiCallback<MinerTopicsListing> callback) {
+    try {
+      final SettableFuture<MinerTopicsListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MinerTopicsListing>() {}, new AsyncApiCallback<ApiResponse<MinerTopicsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MinerTopicsListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of mined topics.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MinerTopicsListing>> getLanguageunderstandingMinerTopicsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MinerTopicsListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MinerTopicsListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MinerTopicsListing>() {}, new AsyncApiCallback<ApiResponse<MinerTopicsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MinerTopicsListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MinerTopicsListing> response = (ApiResponse<MinerTopicsListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MinerTopicsListing> response = (ApiResponse<MinerTopicsListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

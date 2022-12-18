@@ -168,7 +168,7 @@ public class OpenMessagingChannel  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Unique provider ID of the message such as a Facebook message ID.")
+  @ApiModelProperty(example = "null", value = "Unique provider ID of the message such as a Facebook message ID.")
   @JsonProperty("messageId")
   public String getMessageId() {
     return messageId;

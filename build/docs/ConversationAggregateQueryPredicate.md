@@ -60,6 +60,7 @@ title: ConversationAggregateQueryPredicate
 | DNIS | &quot;dnis&quot; | 
 | EDGEID | &quot;edgeId&quot; | 
 | ELIGIBLEAGENTCOUNT | &quot;eligibleAgentCount&quot; | 
+| ERRORCODE | &quot;errorCode&quot; | 
 | EXTENDEDDELIVERYSTATUS | &quot;extendedDeliveryStatus&quot; | 
 | EXTERNALCONTACTID | &quot;externalContactId&quot; | 
 | EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; | 

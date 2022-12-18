@@ -12,12 +12,14 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.MediaRegions;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
 import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
 import com.mypurecloud.sdk.v2.model.SipDownloadResponse;
 import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesDownloadDownloadIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonySiptracesDownloadRequest;
@@ -37,6 +39,80 @@ public class TelephonyApi {
 
   public TelephonyApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Retrieve the list of AWS regions media can stream through.
+   * 
+   * @return MediaRegions
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MediaRegions getTelephonyMediaregions() throws IOException, ApiException {
+    return  getTelephonyMediaregions(createGetTelephonyMediaregionsRequest());
+  }
+
+  /**
+   * Retrieve the list of AWS regions media can stream through.
+   * 
+   * @return MediaRegions
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MediaRegions> getTelephonyMediaregionsWithHttpInfo() throws IOException {
+    return getTelephonyMediaregions(createGetTelephonyMediaregionsRequest().withHttpInfo());
+  }
+
+  private GetTelephonyMediaregionsRequest createGetTelephonyMediaregionsRequest() {
+    return GetTelephonyMediaregionsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Retrieve the list of AWS regions media can stream through.
+   * 
+   * @param request The request object
+   * @return MediaRegions
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MediaRegions getTelephonyMediaregions(GetTelephonyMediaregionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MediaRegions> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MediaRegions>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve the list of AWS regions media can stream through.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MediaRegions> getTelephonyMediaregions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MediaRegions>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MediaRegions> response = (ApiResponse<MediaRegions>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MediaRegions> response = (ApiResponse<MediaRegions>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**

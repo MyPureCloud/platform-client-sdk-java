@@ -20,6 +20,9 @@ import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
 import com.mypurecloud.sdk.v2.model.MinerIntent;
 import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.MinerTopic;
+import com.mypurecloud.sdk.v2.model.MinerTopicPhrase;
+import com.mypurecloud.sdk.v2.model.MinerTopicsListing;
 import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
 import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
 import com.mypurecloud.sdk.v2.model.NluDomain;
@@ -50,6 +53,9 @@ import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerDraftRequ
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerDraftsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerIntentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerIntentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicPhraseRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLanguageunderstandingDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLanguageunderstandingMinerDraftRequest;
@@ -555,6 +561,7 @@ public class LanguageUnderstandingApi {
    * @param dateStart Begin of time window as ISO-8601 date. (optional)
    * @param dateEnd End of time window as ISO-8601 date. (optional)
    * @param includeDeleted Whether to include soft-deleted items in the result. (optional)
+   * @param language Whether to filter response based on the language, e.g. en-us, pt-br. (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param enableCursorPagination Enable Cursor Pagination (optional, default to false)
@@ -564,8 +571,8 @@ public class LanguageUnderstandingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public NluFeedbackListing getLanguageunderstandingDomainFeedback(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) throws IOException, ApiException {
-    return  getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields));
+  public NluFeedbackListing getLanguageunderstandingDomainFeedback(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, String language, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) throws IOException, ApiException {
+    return  getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields));
   }
 
   /**
@@ -577,6 +584,7 @@ public class LanguageUnderstandingApi {
    * @param dateStart Begin of time window as ISO-8601 date. (optional)
    * @param dateEnd End of time window as ISO-8601 date. (optional)
    * @param includeDeleted Whether to include soft-deleted items in the result. (optional)
+   * @param language Whether to filter response based on the language, e.g. en-us, pt-br. (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param enableCursorPagination Enable Cursor Pagination (optional, default to false)
@@ -585,11 +593,11 @@ public class LanguageUnderstandingApi {
    * @return NluFeedbackListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<NluFeedbackListing> getLanguageunderstandingDomainFeedbackWithHttpInfo(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) throws IOException {
-    return getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields).withHttpInfo());
+  public ApiResponse<NluFeedbackListing> getLanguageunderstandingDomainFeedbackWithHttpInfo(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, String language, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) throws IOException {
+    return getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields).withHttpInfo());
   }
 
-  private GetLanguageunderstandingDomainFeedbackRequest createGetLanguageunderstandingDomainFeedbackRequest(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) {
+  private GetLanguageunderstandingDomainFeedbackRequest createGetLanguageunderstandingDomainFeedbackRequest(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, String language, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) {
     return GetLanguageunderstandingDomainFeedbackRequest.builder()
             .withDomainId(domainId)
 
@@ -602,6 +610,8 @@ public class LanguageUnderstandingApi {
             .withDateEnd(dateEnd)
 
             .withIncludeDeleted(includeDeleted)
+
+            .withLanguage(language)
 
             .withPageNumber(pageNumber)
 
@@ -1173,12 +1183,14 @@ public class LanguageUnderstandingApi {
    * 
    * @param minerId Miner ID (required)
    * @param draftId Draft ID (required)
+   * @param draftIntentId Parameter to filter a specific intent. (optional)
+   * @param draftTopicId Parameter to filter a specific topic. (optional)
    * @return Draft
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Draft getLanguageunderstandingMinerDraft(String minerId, String draftId) throws IOException, ApiException {
-    return  getLanguageunderstandingMinerDraft(createGetLanguageunderstandingMinerDraftRequest(minerId, draftId));
+  public Draft getLanguageunderstandingMinerDraft(String minerId, String draftId, String draftIntentId, String draftTopicId) throws IOException, ApiException {
+    return  getLanguageunderstandingMinerDraft(createGetLanguageunderstandingMinerDraftRequest(minerId, draftId, draftIntentId, draftTopicId));
   }
 
   /**
@@ -1186,18 +1198,24 @@ public class LanguageUnderstandingApi {
    * 
    * @param minerId Miner ID (required)
    * @param draftId Draft ID (required)
+   * @param draftIntentId Parameter to filter a specific intent. (optional)
+   * @param draftTopicId Parameter to filter a specific topic. (optional)
    * @return Draft
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Draft> getLanguageunderstandingMinerDraftWithHttpInfo(String minerId, String draftId) throws IOException {
-    return getLanguageunderstandingMinerDraft(createGetLanguageunderstandingMinerDraftRequest(minerId, draftId).withHttpInfo());
+  public ApiResponse<Draft> getLanguageunderstandingMinerDraftWithHttpInfo(String minerId, String draftId, String draftIntentId, String draftTopicId) throws IOException {
+    return getLanguageunderstandingMinerDraft(createGetLanguageunderstandingMinerDraftRequest(minerId, draftId, draftIntentId, draftTopicId).withHttpInfo());
   }
 
-  private GetLanguageunderstandingMinerDraftRequest createGetLanguageunderstandingMinerDraftRequest(String minerId, String draftId) {
+  private GetLanguageunderstandingMinerDraftRequest createGetLanguageunderstandingMinerDraftRequest(String minerId, String draftId, String draftIntentId, String draftTopicId) {
     return GetLanguageunderstandingMinerDraftRequest.builder()
             .withMinerId(minerId)
 
             .withDraftId(draftId)
+
+            .withDraftIntentId(draftIntentId)
+
+            .withDraftTopicId(draftTopicId)
 
             .build();
   }
@@ -1497,28 +1515,282 @@ public class LanguageUnderstandingApi {
   }
 
   /**
-   * Retrieve the list of miners created.
+   * Retrieves details of a particular topic.
    * 
-   * @return MinerListing
+   * @param minerId Miner ID (required)
+   * @param topicId The ID of the topic to be retrieved. (required)
+   * @param expand Option to fetch phrases (optional)
+   * @return MinerTopic
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MinerListing getLanguageunderstandingMiners() throws IOException, ApiException {
-    return  getLanguageunderstandingMiners(createGetLanguageunderstandingMinersRequest());
+  public MinerTopic getLanguageunderstandingMinerTopic(String minerId, String topicId, String expand) throws IOException, ApiException {
+    return  getLanguageunderstandingMinerTopic(createGetLanguageunderstandingMinerTopicRequest(minerId, topicId, expand));
+  }
+
+  /**
+   * Retrieves details of a particular topic.
+   * 
+   * @param minerId Miner ID (required)
+   * @param topicId The ID of the topic to be retrieved. (required)
+   * @param expand Option to fetch phrases (optional)
+   * @return MinerTopic
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinerTopic> getLanguageunderstandingMinerTopicWithHttpInfo(String minerId, String topicId, String expand) throws IOException {
+    return getLanguageunderstandingMinerTopic(createGetLanguageunderstandingMinerTopicRequest(minerId, topicId, expand).withHttpInfo());
+  }
+
+  private GetLanguageunderstandingMinerTopicRequest createGetLanguageunderstandingMinerTopicRequest(String minerId, String topicId, String expand) {
+    return GetLanguageunderstandingMinerTopicRequest.builder()
+            .withMinerId(minerId)
+
+            .withTopicId(topicId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Retrieves details of a particular topic.
+   * 
+   * @param request The request object
+   * @return MinerTopic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinerTopic getLanguageunderstandingMinerTopic(GetLanguageunderstandingMinerTopicRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MinerTopic> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MinerTopic>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves details of a particular topic.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinerTopic> getLanguageunderstandingMinerTopic(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MinerTopic>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinerTopic> response = (ApiResponse<MinerTopic>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinerTopic> response = (ApiResponse<MinerTopic>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieves utterances related to a phrase in a topic.
+   * 
+   * @param minerId Miner ID (required)
+   * @param topicId The ID of the topic to be retrieved. (required)
+   * @param phraseId The ID of the phrase to be retrieved. (required)
+   * @return MinerTopicPhrase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinerTopicPhrase getLanguageunderstandingMinerTopicPhrase(String minerId, String topicId, String phraseId) throws IOException, ApiException {
+    return  getLanguageunderstandingMinerTopicPhrase(createGetLanguageunderstandingMinerTopicPhraseRequest(minerId, topicId, phraseId));
+  }
+
+  /**
+   * Retrieves utterances related to a phrase in a topic.
+   * 
+   * @param minerId Miner ID (required)
+   * @param topicId The ID of the topic to be retrieved. (required)
+   * @param phraseId The ID of the phrase to be retrieved. (required)
+   * @return MinerTopicPhrase
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinerTopicPhrase> getLanguageunderstandingMinerTopicPhraseWithHttpInfo(String minerId, String topicId, String phraseId) throws IOException {
+    return getLanguageunderstandingMinerTopicPhrase(createGetLanguageunderstandingMinerTopicPhraseRequest(minerId, topicId, phraseId).withHttpInfo());
+  }
+
+  private GetLanguageunderstandingMinerTopicPhraseRequest createGetLanguageunderstandingMinerTopicPhraseRequest(String minerId, String topicId, String phraseId) {
+    return GetLanguageunderstandingMinerTopicPhraseRequest.builder()
+            .withMinerId(minerId)
+
+            .withTopicId(topicId)
+
+            .withPhraseId(phraseId)
+
+            .build();
+  }
+
+  /**
+   * Retrieves utterances related to a phrase in a topic.
+   * 
+   * @param request The request object
+   * @return MinerTopicPhrase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinerTopicPhrase getLanguageunderstandingMinerTopicPhrase(GetLanguageunderstandingMinerTopicPhraseRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MinerTopicPhrase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MinerTopicPhrase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves utterances related to a phrase in a topic.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinerTopicPhrase> getLanguageunderstandingMinerTopicPhrase(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MinerTopicPhrase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinerTopicPhrase> response = (ApiResponse<MinerTopicPhrase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinerTopicPhrase> response = (ApiResponse<MinerTopicPhrase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve a list of mined topics.
+   * 
+   * @param minerId Miner ID (required)
+   * @return MinerTopicsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinerTopicsListing getLanguageunderstandingMinerTopics(String minerId) throws IOException, ApiException {
+    return  getLanguageunderstandingMinerTopics(createGetLanguageunderstandingMinerTopicsRequest(minerId));
+  }
+
+  /**
+   * Retrieve a list of mined topics.
+   * 
+   * @param minerId Miner ID (required)
+   * @return MinerTopicsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinerTopicsListing> getLanguageunderstandingMinerTopicsWithHttpInfo(String minerId) throws IOException {
+    return getLanguageunderstandingMinerTopics(createGetLanguageunderstandingMinerTopicsRequest(minerId).withHttpInfo());
+  }
+
+  private GetLanguageunderstandingMinerTopicsRequest createGetLanguageunderstandingMinerTopicsRequest(String minerId) {
+    return GetLanguageunderstandingMinerTopicsRequest.builder()
+            .withMinerId(minerId)
+
+            .build();
+  }
+
+  /**
+   * Retrieve a list of mined topics.
+   * 
+   * @param request The request object
+   * @return MinerTopicsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinerTopicsListing getLanguageunderstandingMinerTopics(GetLanguageunderstandingMinerTopicsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MinerTopicsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MinerTopicsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a list of mined topics.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinerTopicsListing> getLanguageunderstandingMinerTopics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MinerTopicsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinerTopicsListing> response = (ApiResponse<MinerTopicsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinerTopicsListing> response = (ApiResponse<MinerTopicsListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Retrieve the list of miners created.
    * 
+   * @param minerType Type of miner, either intent or topic (optional)
+   * @return MinerListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinerListing getLanguageunderstandingMiners(String minerType) throws IOException, ApiException {
+    return  getLanguageunderstandingMiners(createGetLanguageunderstandingMinersRequest(minerType));
+  }
+
+  /**
+   * Retrieve the list of miners created.
+   * 
+   * @param minerType Type of miner, either intent or topic (optional)
    * @return MinerListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MinerListing> getLanguageunderstandingMinersWithHttpInfo() throws IOException {
-    return getLanguageunderstandingMiners(createGetLanguageunderstandingMinersRequest().withHttpInfo());
+  public ApiResponse<MinerListing> getLanguageunderstandingMinersWithHttpInfo(String minerType) throws IOException {
+    return getLanguageunderstandingMiners(createGetLanguageunderstandingMinersRequest(minerType).withHttpInfo());
   }
 
-  private GetLanguageunderstandingMinersRequest createGetLanguageunderstandingMinersRequest() {
+  private GetLanguageunderstandingMinersRequest createGetLanguageunderstandingMinersRequest(String minerType) {
     return GetLanguageunderstandingMinersRequest.builder()
+            .withMinerType(minerType)
+
             .build();
   }
 
@@ -2075,12 +2347,13 @@ public class LanguageUnderstandingApi {
    * 
    * @param domainId ID of the NLU domain. (required)
    * @param body The NLU Domain Version to create. (required)
+   * @param includeUtterances Whether utterances for intent definition should be included when marshalling response. (optional)
    * @return NluDomainVersion
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public NluDomainVersion postLanguageunderstandingDomainVersions(String domainId, NluDomainVersion body) throws IOException, ApiException {
-    return  postLanguageunderstandingDomainVersions(createPostLanguageunderstandingDomainVersionsRequest(domainId, body));
+  public NluDomainVersion postLanguageunderstandingDomainVersions(String domainId, NluDomainVersion body, Boolean includeUtterances) throws IOException, ApiException {
+    return  postLanguageunderstandingDomainVersions(createPostLanguageunderstandingDomainVersionsRequest(domainId, body, includeUtterances));
   }
 
   /**
@@ -2088,18 +2361,21 @@ public class LanguageUnderstandingApi {
    * 
    * @param domainId ID of the NLU domain. (required)
    * @param body The NLU Domain Version to create. (required)
+   * @param includeUtterances Whether utterances for intent definition should be included when marshalling response. (optional)
    * @return NluDomainVersion
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<NluDomainVersion> postLanguageunderstandingDomainVersionsWithHttpInfo(String domainId, NluDomainVersion body) throws IOException {
-    return postLanguageunderstandingDomainVersions(createPostLanguageunderstandingDomainVersionsRequest(domainId, body).withHttpInfo());
+  public ApiResponse<NluDomainVersion> postLanguageunderstandingDomainVersionsWithHttpInfo(String domainId, NluDomainVersion body, Boolean includeUtterances) throws IOException {
+    return postLanguageunderstandingDomainVersions(createPostLanguageunderstandingDomainVersionsRequest(domainId, body, includeUtterances).withHttpInfo());
   }
 
-  private PostLanguageunderstandingDomainVersionsRequest createPostLanguageunderstandingDomainVersionsRequest(String domainId, NluDomainVersion body) {
+  private PostLanguageunderstandingDomainVersionsRequest createPostLanguageunderstandingDomainVersionsRequest(String domainId, NluDomainVersion body, Boolean includeUtterances) {
     return PostLanguageunderstandingDomainVersionsRequest.builder()
             .withDomainId(domainId)
 
             .withBody(body)
+
+            .withIncludeUtterances(includeUtterances)
 
             .build();
   }

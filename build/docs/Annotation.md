@@ -13,7 +13,7 @@ title: Annotation
 | **type** | <!----><!---->**String**<!----> |  |  [optional] |
 | **location** | <!----><!---->**Long**<!----> | Offset of annotation in milliseconds. |  [optional] |
 | **durationMs** | <!----><!---->**Long**<!----> | Duration of annotation in milliseconds. |  [optional] |
-| **absoluteLocation** | <!----><!---->**Long**<!----> | Offset of annotation (milliseconds) from start of recording. |  [optional] |
+| **absoluteLocation** | <!----><!---->**Long**<!----> | Offset of annotation (milliseconds) from start of recording (after removing the cumulative duration of all pauses). |  [optional] |
 | **absoluteDurationMs** | <!----><!---->**Long**<!----> | Duration of annotation (milliseconds). |  [optional] |
 | **recordingLocation** | <!----><!---->**Long**<!----> | Offset of annotation (milliseconds) from start of recording, adjusted for any recording cuts |  [optional] |
 | **recordingDurationMs** | <!----><!---->**Long**<!----> | Duration of annotation (milliseconds), adjusted for any recording cuts. |  [optional] |

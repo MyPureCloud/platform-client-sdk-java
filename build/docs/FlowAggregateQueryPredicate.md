@@ -63,6 +63,7 @@ title: FlowAggregateQueryPredicate
 | ENDINGLANGUAGE | &quot;endingLanguage&quot; | 
 | ENTRYREASON | &quot;entryReason&quot; | 
 | ENTRYTYPE | &quot;entryType&quot; | 
+| ERRORCODE | &quot;errorCode&quot; | 
 | EXITREASON | &quot;exitReason&quot; | 
 | EXTENDEDDELIVERYSTATUS | &quot;extendedDeliveryStatus&quot; | 
 | EXTERNALCONTACTID | &quot;externalContactId&quot; | 

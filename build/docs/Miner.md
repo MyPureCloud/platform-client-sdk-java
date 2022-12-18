@@ -11,18 +11,25 @@ title: Miner
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | Chat Corpus Name. |  |
 | **language** | [**LanguageEnum**](#LanguageEnum)<!----> | Language Localization code. |  [optional] |
+| **minerType** | [**MinerTypeEnum**](#MinerTypeEnum)<!----> | Type of the miner, intent or topic. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Date when the miner was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | Status of the miner. |  [optional] |
 | **conversationsDateRangeStart** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | Date from which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **conversationsDateRangeEnd** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | Date till which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | Date when the mining process was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **message** | <!----><!---->**String**<!----> | Mining message if present. |  [optional] |
+| **errorInfo** | <!----><!---->[**ErrorInfo**](ErrorInfo.html)<!----> | Error Information |  [optional] |
+| **warningInfo** | <!----><!---->[**ErrorInfo**](ErrorInfo.html)<!----> | Warning Information |  [optional] |
 | **conversationDataUploaded** | <!----><!---->**Boolean**<!----> | Flag to indicate whether data file to be mined was uploaded. |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | Media type for filtering conversations. |  [optional] |
+| **participantType** | [**ParticipantTypeEnum**](#ParticipantTypeEnum)<!----> | Type of the participant, either agent, customer or both. |  [optional] |
 | **queueIds** | <!----><!---->**List&lt;String&gt;**<!----> | List of queue IDs for filtering conversations. |  [optional] |
 | **dateTriggered** | <!----><!---->[**Date**](Date.html)<!----> | Date when the miner started execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Date when the miner was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **latestDraftVersion** | <!----><!---->[**Draft**](Draft.html)<!----> | Latest draft details of the miner. |  [optional] |
+| **conversationsFetchedCount** | <!----><!---->**Integer**<!----> | Number of conversations/transcripts fetched. |  [optional] |
+| **conversationsValidCount** | <!----><!---->**Integer**<!----> | Number of conversations/recordings/transcripts that were found valid for mining purposes. |  [optional] |
+| **getminedItemCount** | <!----><!---->**Integer**<!----> | Number of intents or topics based on the miner type. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -44,6 +51,18 @@ title: Miner
 | FR_FR | &quot;fr-fr&quot; | 
 | FR_CA | &quot;fr-ca&quot; | 
 | DE_DE | &quot;de-de&quot; | 
+{: class="table table-striped"}
+
+
+<a name="MinerTypeEnum"></a>
+
+## Enum: MinerTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INTENT | &quot;Intent&quot; | 
+| TOPIC | &quot;Topic&quot; | 
 {: class="table table-striped"}
 
 
@@ -85,6 +104,19 @@ title: Miner
 | CHAT | &quot;Chat&quot; | 
 | CALL | &quot;Call&quot; | 
 | MESSAGE | &quot;Message&quot; | 
+{: class="table table-striped"}
+
+
+<a name="ParticipantTypeEnum"></a>
+
+## Enum: ParticipantTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CUSTOMER | &quot;Customer&quot; | 
+| AGENT | &quot;Agent&quot; | 
+| BOTH | &quot;Both&quot; | 
 {: class="table table-striped"}
 
 

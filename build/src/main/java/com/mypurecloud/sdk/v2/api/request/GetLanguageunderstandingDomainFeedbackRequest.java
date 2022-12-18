@@ -30,6 +30,9 @@ import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
 import com.mypurecloud.sdk.v2.model.MinerIntent;
 import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.MinerTopic;
+import com.mypurecloud.sdk.v2.model.MinerTopicPhrase;
+import com.mypurecloud.sdk.v2.model.MinerTopicsListing;
 import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
 import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
 import com.mypurecloud.sdk.v2.model.NluDomain;
@@ -157,6 +160,20 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 
 	public GetLanguageunderstandingDomainFeedbackRequest withIncludeDeleted(Boolean includeDeleted) {
 	    this.setIncludeDeleted(includeDeleted);
+	    return this;
+	} 
+
+	private String language;
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public GetLanguageunderstandingDomainFeedbackRequest withLanguage(String language) {
+	    this.setLanguage(language);
 	    return this;
 	} 
 
@@ -308,6 +325,9 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
                 .withQueryParameters("includeDeleted", "", includeDeleted)
         
 
+                .withQueryParameters("language", "", language)
+        
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
 
@@ -384,6 +404,11 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 
 		public Builder withIncludeDeleted(Boolean includeDeleted) {
 			request.setIncludeDeleted(includeDeleted);
+			return this;
+		}
+
+		public Builder withLanguage(String language) {
+			request.setLanguage(language);
 			return this;
 		}
 

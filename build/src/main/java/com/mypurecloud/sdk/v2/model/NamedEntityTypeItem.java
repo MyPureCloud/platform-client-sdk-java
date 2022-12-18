@@ -11,10 +11,13 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AdditionalLanguagesSynonyms;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -25,6 +28,7 @@ public class NamedEntityTypeItem  implements Serializable {
   
   private String value = null;
   private List<String> synonyms = new ArrayList<String>();
+  private Map<String, AdditionalLanguagesSynonyms> additionalLanguages = null;
 
   
   /**
@@ -63,6 +67,24 @@ public class NamedEntityTypeItem  implements Serializable {
   }
 
 
+  /**
+   * Additional Language Synonyms for the given named entity value.
+   **/
+  public NamedEntityTypeItem additionalLanguages(Map<String, AdditionalLanguagesSynonyms> additionalLanguages) {
+    this.additionalLanguages = additionalLanguages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Additional Language Synonyms for the given named entity value.")
+  @JsonProperty("additionalLanguages")
+  public Map<String, AdditionalLanguagesSynonyms> getAdditionalLanguages() {
+    return additionalLanguages;
+  }
+  public void setAdditionalLanguages(Map<String, AdditionalLanguagesSynonyms> additionalLanguages) {
+    this.additionalLanguages = additionalLanguages;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -74,12 +96,13 @@ public class NamedEntityTypeItem  implements Serializable {
     NamedEntityTypeItem namedEntityTypeItem = (NamedEntityTypeItem) o;
 
     return Objects.equals(this.value, namedEntityTypeItem.value) &&
-            Objects.equals(this.synonyms, namedEntityTypeItem.synonyms);
+            Objects.equals(this.synonyms, namedEntityTypeItem.synonyms) &&
+            Objects.equals(this.additionalLanguages, namedEntityTypeItem.additionalLanguages);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, synonyms);
+    return Objects.hash(value, synonyms, additionalLanguages);
   }
 
   @Override
@@ -89,6 +112,7 @@ public class NamedEntityTypeItem  implements Serializable {
     
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    synonyms: ").append(toIndentedString(synonyms)).append("\n");
+    sb.append("    additionalLanguages: ").append(toIndentedString(additionalLanguages)).append("\n");
     sb.append("}");
     return sb.toString();
   }

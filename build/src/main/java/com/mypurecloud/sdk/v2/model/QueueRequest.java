@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AcwSettings;
 import com.mypurecloud.sdk.v2.model.AgentOwnedRouting;
 import com.mypurecloud.sdk.v2.model.Bullseye;
+import com.mypurecloud.sdk.v2.model.DirectRouting;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.MediaSetting;
 import com.mypurecloud.sdk.v2.model.MemberGroup;
@@ -22,7 +23,6 @@ import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
 import com.mypurecloud.sdk.v2.model.QueueMessagingAddresses;
 import com.mypurecloud.sdk.v2.model.RoutingRule;
 import com.mypurecloud.sdk.v2.model.Script;
-import com.mypurecloud.sdk.v2.model.VipRouting;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -113,7 +113,7 @@ public class QueueRequest  implements Serializable {
   private Boolean enableTranscription = null;
   private Boolean enableManualAssignment = null;
   private AgentOwnedRouting agentOwnedRouting = null;
-  private VipRouting vipRouting = null;
+  private DirectRouting directRouting = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
   private Map<String, Script> defaultScripts = null;
@@ -548,20 +548,20 @@ public class QueueRequest  implements Serializable {
 
 
   /**
-   * The VIP Routing settings for the queue
+   * The Direct Routing settings for the queue
    **/
-  public QueueRequest vipRouting(VipRouting vipRouting) {
-    this.vipRouting = vipRouting;
+  public QueueRequest directRouting(DirectRouting directRouting) {
+    this.directRouting = directRouting;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The VIP Routing settings for the queue")
-  @JsonProperty("vipRouting")
-  public VipRouting getVipRouting() {
-    return vipRouting;
+  @ApiModelProperty(example = "null", value = "The Direct Routing settings for the queue")
+  @JsonProperty("directRouting")
+  public DirectRouting getDirectRouting() {
+    return directRouting;
   }
-  public void setVipRouting(VipRouting vipRouting) {
-    this.vipRouting = vipRouting;
+  public void setDirectRouting(DirectRouting directRouting) {
+    this.directRouting = directRouting;
   }
 
 
@@ -715,7 +715,7 @@ public class QueueRequest  implements Serializable {
             Objects.equals(this.enableTranscription, queueRequest.enableTranscription) &&
             Objects.equals(this.enableManualAssignment, queueRequest.enableManualAssignment) &&
             Objects.equals(this.agentOwnedRouting, queueRequest.agentOwnedRouting) &&
-            Objects.equals(this.vipRouting, queueRequest.vipRouting) &&
+            Objects.equals(this.directRouting, queueRequest.directRouting) &&
             Objects.equals(this.callingPartyName, queueRequest.callingPartyName) &&
             Objects.equals(this.callingPartyNumber, queueRequest.callingPartyNumber) &&
             Objects.equals(this.defaultScripts, queueRequest.defaultScripts) &&
@@ -727,7 +727,7 @@ public class QueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, agentOwnedRouting, vipRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, selfUri);
   }
 
   @Override
@@ -761,7 +761,7 @@ public class QueueRequest  implements Serializable {
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
     sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");
     sb.append("    agentOwnedRouting: ").append(toIndentedString(agentOwnedRouting)).append("\n");
-    sb.append("    vipRouting: ").append(toIndentedString(vipRouting)).append("\n");
+    sb.append("    directRouting: ").append(toIndentedString(directRouting)).append("\n");
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");
     sb.append("    callingPartyNumber: ").append(toIndentedString(callingPartyNumber)).append("\n");
     sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");

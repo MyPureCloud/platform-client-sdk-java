@@ -48,7 +48,8 @@ public class JourneyPattern  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     WEB("Web"),
     CUSTOM("Custom"),
-    CONVERSATION("Conversation");
+    CONVERSATION("Conversation"),
+    APP("App");
 
     private String value;
 

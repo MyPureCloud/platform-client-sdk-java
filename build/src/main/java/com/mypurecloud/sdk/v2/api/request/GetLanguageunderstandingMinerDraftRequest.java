@@ -30,6 +30,9 @@ import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
 import com.mypurecloud.sdk.v2.model.MinerIntent;
 import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.MinerTopic;
+import com.mypurecloud.sdk.v2.model.MinerTopicPhrase;
+import com.mypurecloud.sdk.v2.model.MinerTopicsListing;
 import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
 import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
 import com.mypurecloud.sdk.v2.model.NluDomain;
@@ -72,6 +75,34 @@ public class GetLanguageunderstandingMinerDraftRequest {
 	    return this;
 	} 
 
+	private String draftIntentId;
+	public String getDraftIntentId() {
+		return this.draftIntentId;
+	}
+
+	public void setDraftIntentId(String draftIntentId) {
+		this.draftIntentId = draftIntentId;
+	}
+
+	public GetLanguageunderstandingMinerDraftRequest withDraftIntentId(String draftIntentId) {
+	    this.setDraftIntentId(draftIntentId);
+	    return this;
+	} 
+
+	private String draftTopicId;
+	public String getDraftTopicId() {
+		return this.draftTopicId;
+	}
+
+	public void setDraftTopicId(String draftTopicId) {
+		this.draftTopicId = draftTopicId;
+	}
+
+	public GetLanguageunderstandingMinerDraftRequest withDraftTopicId(String draftTopicId) {
+	    this.setDraftTopicId(draftTopicId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -109,6 +140,12 @@ public class GetLanguageunderstandingMinerDraftRequest {
         
                 .withPathParameter("draftId", draftId)
         
+
+                .withQueryParameters("draftIntentId", "", draftIntentId)
+        
+
+                .withQueryParameters("draftTopicId", "", draftTopicId)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -142,6 +179,16 @@ public class GetLanguageunderstandingMinerDraftRequest {
 
 		public Builder withDraftId(String draftId) {
 			request.setDraftId(draftId);
+			return this;
+		}
+
+		public Builder withDraftIntentId(String draftIntentId) {
+			request.setDraftIntentId(draftIntentId);
+			return this;
+		}
+
+		public Builder withDraftTopicId(String draftTopicId) {
+			request.setDraftTopicId(draftTopicId);
 			return this;
 		}
 

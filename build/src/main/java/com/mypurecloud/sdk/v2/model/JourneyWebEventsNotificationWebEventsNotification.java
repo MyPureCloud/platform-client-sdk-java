@@ -56,7 +56,8 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     WEBEVENT("WebEvent"),
     WEBACTIONEVENT("WebActionEvent"),
-    OUTCOMEACHIEVEDEVENT("OutcomeAchievedEvent");
+    OUTCOMEACHIEVEDEVENT("OutcomeAchievedEvent"),
+    SEGMENTASSIGNMENTEVENT("SegmentAssignmentEvent");
 
     private String value;
 

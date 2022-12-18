@@ -27,6 +27,7 @@ public class NluFeedbackRequest  implements Serializable {
   private String text = null;
   private List<IntentFeedback> intents = new ArrayList<IntentFeedback>();
   private String versionId = null;
+  private String language = null;
 
   
   /**
@@ -83,6 +84,24 @@ public class NluFeedbackRequest  implements Serializable {
   }
 
 
+  /**
+   * The language of the version to which feedback is linked, e.g. en-us, de-de
+   **/
+  public NluFeedbackRequest language(String language) {
+    this.language = language;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The language of the version to which feedback is linked, e.g. en-us, de-de")
+  @JsonProperty("language")
+  public String getLanguage() {
+    return language;
+  }
+  public void setLanguage(String language) {
+    this.language = language;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -95,12 +114,13 @@ public class NluFeedbackRequest  implements Serializable {
 
     return Objects.equals(this.text, nluFeedbackRequest.text) &&
             Objects.equals(this.intents, nluFeedbackRequest.intents) &&
-            Objects.equals(this.versionId, nluFeedbackRequest.versionId);
+            Objects.equals(this.versionId, nluFeedbackRequest.versionId) &&
+            Objects.equals(this.language, nluFeedbackRequest.language);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, intents, versionId);
+    return Objects.hash(text, intents, versionId, language);
   }
 
   @Override
@@ -111,6 +131,7 @@ public class NluFeedbackRequest  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
     sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("}");
     return sb.toString();
   }

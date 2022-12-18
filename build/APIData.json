@@ -16339,7 +16339,7 @@
   "getlanguageunderstandingdomainfeedback": {
     "operationId": "getlanguageunderstandingdomainfeedback",
     "functionName": "getLanguageunderstandingDomainFeedback",
-    "signature": "getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields)",
+    "signature": "getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields)",
     "parameters": [
       {
         "name": "domainId",
@@ -16372,6 +16372,11 @@
         "required": "false"
       },
       {
+        "name": "language",
+        "type": "String",
+        "required": "false"
+      },
+      {
         "name": "pageNumber",
         "type": "Integer",
         "required": "false"
@@ -16398,7 +16403,7 @@
       }
     ],
     "return": "NluFeedbackListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.NluFeedbackListing;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetLanguageunderstandingDomainFeedback {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String domainId = \"domainId_example\"; // String | ID of the NLU domain.\nString intentName = \"intentName_example\"; // String | The top intent name to retrieve feedback for.\nString assessment = \"assessment_example\"; // String | The top assessment to retrieve feedback for.\nLocalDate dateStart = new LocalDate(); // LocalDate | Begin of time window as ISO-8601 date.\nLocalDate dateEnd = new LocalDate(); // LocalDate | End of time window as ISO-8601 date.\nBoolean includeDeleted = true; // Boolean | Whether to include soft-deleted items in the result.\nInteger pageNumber = 1; // Integer | Page number\nInteger pageSize = 25; // Integer | Page size\nBoolean enableCursorPagination = false; // Boolean | Enable Cursor Pagination\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true\nList<String> fields = Arrays.asList(null); // List<String> | Fields and properties to get, comma-separated\n        try { \n            // Get all feedback in the given NLU Domain Version.\n            NluFeedbackListing result = apiInstance.getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingDomainFeedback\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.NluFeedbackListing;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetLanguageunderstandingDomainFeedback {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String domainId = \"domainId_example\"; // String | ID of the NLU domain.\nString intentName = \"intentName_example\"; // String | The top intent name to retrieve feedback for.\nString assessment = \"assessment_example\"; // String | The top assessment to retrieve feedback for.\nLocalDate dateStart = new LocalDate(); // LocalDate | Begin of time window as ISO-8601 date.\nLocalDate dateEnd = new LocalDate(); // LocalDate | End of time window as ISO-8601 date.\nBoolean includeDeleted = true; // Boolean | Whether to include soft-deleted items in the result.\nString language = \"language_example\"; // String | Whether to filter response based on the language, e.g. en-us, pt-br.\nInteger pageNumber = 1; // Integer | Page number\nInteger pageSize = 25; // Integer | Page size\nBoolean enableCursorPagination = false; // Boolean | Enable Cursor Pagination\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true\nList<String> fields = Arrays.asList(null); // List<String> | Fields and properties to get, comma-separated\n        try { \n            // Get all feedback in the given NLU Domain Version.\n            NluFeedbackListing result = apiInstance.getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingDomainFeedback\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getlanguageunderstandingdomainfeedbackfeedbackid": {
     "operationId": "getlanguageunderstandingdomainfeedbackfeedbackid",
@@ -16532,7 +16537,7 @@
   "getlanguageunderstandingminerdraft": {
     "operationId": "getlanguageunderstandingminerdraft",
     "functionName": "getLanguageunderstandingMinerDraft",
-    "signature": "getLanguageunderstandingMinerDraft(minerId, draftId)",
+    "signature": "getLanguageunderstandingMinerDraft(minerId, draftId, draftIntentId, draftTopicId)",
     "parameters": [
       {
         "name": "minerId",
@@ -16543,10 +16548,20 @@
         "name": "draftId",
         "type": "String",
         "required": "true"
+      },
+      {
+        "name": "draftIntentId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "draftTopicId",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "Draft",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.Draft;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetLanguageunderstandingMinerDraft {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String minerId = \"minerId_example\"; // String | Miner ID\nString draftId = \"draftId_example\"; // String | Draft ID\n        try { \n            // Get information about a draft.\n            Draft result = apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerDraft\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.Draft;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetLanguageunderstandingMinerDraft {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String minerId = \"minerId_example\"; // String | Miner ID\nString draftId = \"draftId_example\"; // String | Draft ID\nString draftIntentId = \"draftIntentId_example\"; // String | Parameter to filter a specific intent.\nString draftTopicId = \"draftTopicId_example\"; // String | Parameter to filter a specific topic.\n        try { \n            // Get information about a draft.\n            Draft result = apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId, draftIntentId, draftTopicId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerDraft\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getlanguageunderstandingminerdrafts": {
     "operationId": "getlanguageunderstandingminerdrafts",
@@ -16605,12 +16620,81 @@
     "return": "MinedIntentsListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.MinedIntentsListing;\n\npublic class ExamplegetLanguageunderstandingMinerIntents {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String minerId = \"minerId_example\"; // String | Miner ID\nString expand = \"expand_example\"; // String | Option to fetch utterances.\n        try { \n            // Retrieve a list of mined intents.\n            MinedIntentsListing result = apiInstance.getLanguageunderstandingMinerIntents(minerId, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerIntents\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getlanguageunderstandingminertopic": {
+    "operationId": "getlanguageunderstandingminertopic",
+    "functionName": "getLanguageunderstandingMinerTopic",
+    "signature": "getLanguageunderstandingMinerTopic(minerId, topicId, expand)",
+    "parameters": [
+      {
+        "name": "minerId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "topicId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "MinerTopic",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.MinerTopic;\n\npublic class ExamplegetLanguageunderstandingMinerTopic {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String minerId = \"minerId_example\"; // String | Miner ID\nString topicId = \"topicId_example\"; // String | The ID of the topic to be retrieved.\nString expand = \"expand_example\"; // String | Option to fetch phrases\n        try { \n            // Retrieves details of a particular topic.\n            MinerTopic result = apiInstance.getLanguageunderstandingMinerTopic(minerId, topicId, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerTopic\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getlanguageunderstandingminertopicphrase": {
+    "operationId": "getlanguageunderstandingminertopicphrase",
+    "functionName": "getLanguageunderstandingMinerTopicPhrase",
+    "signature": "getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)",
+    "parameters": [
+      {
+        "name": "minerId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "topicId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "phraseId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "MinerTopicPhrase",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.MinerTopicPhrase;\n\npublic class ExamplegetLanguageunderstandingMinerTopicPhrase {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String minerId = \"minerId_example\"; // String | Miner ID\nString topicId = \"topicId_example\"; // String | The ID of the topic to be retrieved.\nString phraseId = \"phraseId_example\"; // String | The ID of the phrase to be retrieved.\n        try { \n            // Retrieves utterances related to a phrase in a topic.\n            MinerTopicPhrase result = apiInstance.getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerTopicPhrase\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getlanguageunderstandingminertopics": {
+    "operationId": "getlanguageunderstandingminertopics",
+    "functionName": "getLanguageunderstandingMinerTopics",
+    "signature": "getLanguageunderstandingMinerTopics(minerId)",
+    "parameters": [
+      {
+        "name": "minerId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "MinerTopicsListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.MinerTopicsListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetLanguageunderstandingMinerTopics {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String minerId = \"minerId_example\"; // String | Miner ID\n        try { \n            // Retrieve a list of mined topics.\n            MinerTopicsListing result = apiInstance.getLanguageunderstandingMinerTopics(minerId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerTopics\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "getlanguageunderstandingminers": {
     "operationId": "getlanguageunderstandingminers",
     "functionName": "getLanguageunderstandingMiners",
-    "signature": "getLanguageunderstandingMiners()",
+    "signature": "getLanguageunderstandingMiners(minerType)",
+    "parameters": [
+      {
+        "name": "minerType",
+        "type": "String",
+        "required": "false"
+      }
+    ],
     "return": "MinerListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.MinerListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetLanguageunderstandingMiners {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n                try { \n            // Retrieve the list of miners created.\n            MinerListing result = apiInstance.getLanguageunderstandingMiners();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMiners\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.MinerListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetLanguageunderstandingMiners {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String minerType = \"minerType_example\"; // String | Type of miner, either intent or topic\n        try { \n            // Retrieve the list of miners created.\n            MinerListing result = apiInstance.getLanguageunderstandingMiners(minerType);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMiners\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "patchlanguageunderstandingdomain": {
     "operationId": "patchlanguageunderstandingdomain",
@@ -16739,7 +16823,7 @@
   "postlanguageunderstandingdomainversions": {
     "operationId": "postlanguageunderstandingdomainversions",
     "functionName": "postLanguageunderstandingDomainVersions",
-    "signature": "postLanguageunderstandingDomainVersions(domainId, body)",
+    "signature": "postLanguageunderstandingDomainVersions(domainId, body, includeUtterances)",
     "parameters": [
       {
         "name": "domainId",
@@ -16750,10 +16834,15 @@
         "name": "body",
         "type": "NluDomainVersion",
         "required": "true"
+      },
+      {
+        "name": "includeUtterances",
+        "type": "Boolean",
+        "required": "false"
       }
     ],
     "return": "NluDomainVersion",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.NluDomainVersion;\n\npublic class ExamplepostLanguageunderstandingDomainVersions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String domainId = \"domainId_example\"; // String | ID of the NLU domain.\nNluDomainVersion body = new NluDomainVersion(); // NluDomainVersion | The NLU Domain Version to create.\n        try { \n            // Create an NLU Domain Version.\n            NluDomainVersion result = apiInstance.postLanguageunderstandingDomainVersions(domainId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#postLanguageunderstandingDomainVersions\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.NluDomainVersion;\n\npublic class ExamplepostLanguageunderstandingDomainVersions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String domainId = \"domainId_example\"; // String | ID of the NLU domain.\nNluDomainVersion body = new NluDomainVersion(); // NluDomainVersion | The NLU Domain Version to create.\nBoolean includeUtterances = true; // Boolean | Whether utterances for intent definition should be included when marshalling response.\n        try { \n            // Create an NLU Domain Version.\n            NluDomainVersion result = apiInstance.postLanguageunderstandingDomainVersions(domainId, body, includeUtterances);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#postLanguageunderstandingDomainVersions\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postlanguageunderstandingdomains": {
     "operationId": "postlanguageunderstandingdomains",
@@ -19347,6 +19436,42 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOutboundDnclist {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String dncListId = \"dncListId_example\"; // String | DncList ID\n        try { \n            // Delete dialer DNC list\n            apiInstance.deleteOutboundDnclist(dncListId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#deleteOutboundDnclist\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deleteoutbounddnclistemailaddresses": {
+    "operationId": "deleteoutbounddnclistemailaddresses",
+    "functionName": "deleteOutboundDnclistEmailaddresses",
+    "signature": "deleteOutboundDnclistEmailaddresses(dncListId, expiredOnly)",
+    "parameters": [
+      {
+        "name": "dncListId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expiredOnly",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOutboundDnclistEmailaddresses {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String dncListId = \"dncListId_example\"; // String | DncList ID\nBoolean expiredOnly = false; // Boolean | Set to true to only remove DNC entries that are expired\n        try { \n            // Deletes all or expired email addresses from a DNC list.\n            apiInstance.deleteOutboundDnclistEmailaddresses(dncListId, expiredOnly);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#deleteOutboundDnclistEmailaddresses\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "deleteoutbounddnclistphonenumbers": {
+    "operationId": "deleteoutbounddnclistphonenumbers",
+    "functionName": "deleteOutboundDnclistPhonenumbers",
+    "signature": "deleteOutboundDnclistPhonenumbers(dncListId, expiredOnly)",
+    "parameters": [
+      {
+        "name": "dncListId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expiredOnly",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOutboundDnclistPhonenumbers {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String dncListId = \"dncListId_example\"; // String | DncList ID\nBoolean expiredOnly = false; // Boolean | Set to true to only remove DNC entries that are expired\n        try { \n            // Deletes all or expired phone numbers from a DNC list.\n            apiInstance.deleteOutboundDnclistPhonenumbers(dncListId, expiredOnly);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#deleteOutboundDnclistPhonenumbers\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "deleteoutboundmessagingcampaign": {
     "operationId": "deleteoutboundmessagingcampaign",
     "functionName": "deleteOutboundMessagingcampaign",
@@ -20956,6 +21081,42 @@
     "signature": "getOutboundWrapupcodemappings()",
     "return": "WrapUpCodeMapping",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetOutboundWrapupcodemappings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n                try { \n            // Get the Dialer wrap up code mapping.\n            WrapUpCodeMapping result = apiInstance.getOutboundWrapupcodemappings();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#getOutboundWrapupcodemappings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchoutbounddnclistemailaddresses": {
+    "operationId": "patchoutbounddnclistemailaddresses",
+    "functionName": "patchOutboundDnclistEmailaddresses",
+    "signature": "patchOutboundDnclistEmailaddresses(dncListId, body)",
+    "parameters": [
+      {
+        "name": "dncListId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "DncPatchEmailsRequest",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.DncPatchEmailsRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepatchOutboundDnclistEmailaddresses {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String dncListId = \"dncListId_example\"; // String | DncList ID\nDncPatchEmailsRequest body = new DncPatchEmailsRequest(); // DncPatchEmailsRequest | DNC Emails\n        try { \n            // Add emails to or Delete emails from a DNC list.\n            apiInstance.patchOutboundDnclistEmailaddresses(dncListId, body);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#patchOutboundDnclistEmailaddresses\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "patchoutbounddnclistphonenumbers": {
+    "operationId": "patchoutbounddnclistphonenumbers",
+    "functionName": "patchOutboundDnclistPhonenumbers",
+    "signature": "patchOutboundDnclistPhonenumbers(dncListId, body)",
+    "parameters": [
+      {
+        "name": "dncListId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "DncPatchPhoneNumbersRequest",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OutboundApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DncPatchPhoneNumbersRequest;\n\npublic class ExamplepatchOutboundDnclistPhonenumbers {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OutboundApi apiInstance = new OutboundApi();\n        String dncListId = \"dncListId_example\"; // String | DncList ID\nDncPatchPhoneNumbersRequest body = new DncPatchPhoneNumbersRequest(); // DncPatchPhoneNumbersRequest | DNC Phone Numbers\n        try { \n            // Add numbers to or delete numbers from a DNC list.\n            apiInstance.patchOutboundDnclistPhonenumbers(dncListId, body);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OutboundApi#patchOutboundDnclistPhonenumbers\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "patchoutboundsettings": {
     "operationId": "patchoutboundsettings",
@@ -29456,6 +29617,13 @@
     ],
     "return": "Team",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TeamsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.Team;\n\npublic class ExamplepostTeams {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TeamsApi apiInstance = new TeamsApi();\n        Team body = new Team(); // Team | Team\n        try { \n            // Create a team\n            Team result = apiInstance.postTeams(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TeamsApi#postTeams\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "gettelephonymediaregions": {
+    "operationId": "gettelephonymediaregions",
+    "functionName": "getTelephonyMediaregions",
+    "signature": "getTelephonyMediaregions()",
+    "return": "MediaRegions",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.MediaRegions;\n\npublic class ExamplegetTelephonyMediaregions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyApi apiInstance = new TelephonyApi();\n                try { \n            // Retrieve the list of AWS regions media can stream through.\n            MediaRegions result = apiInstance.getTelephonyMediaregions();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyApi#getTelephonyMediaregions\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "gettelephonysiptraces": {
     "operationId": "gettelephonysiptraces",

@@ -30,6 +30,9 @@ import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
 import com.mypurecloud.sdk.v2.model.MinerIntent;
 import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.MinerTopic;
+import com.mypurecloud.sdk.v2.model.MinerTopicPhrase;
+import com.mypurecloud.sdk.v2.model.MinerTopicsListing;
 import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
 import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
 import com.mypurecloud.sdk.v2.model.NluDomain;
@@ -72,6 +75,20 @@ public class PostLanguageunderstandingDomainVersionsRequest {
 	    return this;
 	} 
 
+	private Boolean includeUtterances;
+	public Boolean getIncludeUtterances() {
+		return this.includeUtterances;
+	}
+
+	public void setIncludeUtterances(Boolean includeUtterances) {
+		this.includeUtterances = includeUtterances;
+	}
+
+	public PostLanguageunderstandingDomainVersionsRequest withIncludeUtterances(Boolean includeUtterances) {
+	    this.setIncludeUtterances(includeUtterances);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -106,6 +123,9 @@ public class PostLanguageunderstandingDomainVersionsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/languageunderstanding/domains/{domainId}/versions")
                 .withPathParameter("domainId", domainId)
+        
+
+                .withQueryParameters("includeUtterances", "", includeUtterances)
         
                 .withBody(body)
 
@@ -142,6 +162,11 @@ public class PostLanguageunderstandingDomainVersionsRequest {
 
 		public Builder withBody(NluDomainVersion body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withIncludeUtterances(Boolean includeUtterances) {
+			request.setIncludeUtterances(includeUtterances);
 			return this;
 		}
 

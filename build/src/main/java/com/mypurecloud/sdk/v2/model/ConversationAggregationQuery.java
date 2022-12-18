@@ -71,6 +71,7 @@ public class ConversationAggregationQuery  implements Serializable {
     DNIS("dnis"),
     EDGEID("edgeId"),
     ELIGIBLEAGENTCOUNT("eligibleAgentCount"),
+    ERRORCODE("errorCode"),
     EXTENDEDDELIVERYSTATUS("extendedDeliveryStatus"),
     EXTERNALCONTACTID("externalContactId"),
     EXTERNALMEDIACOUNT("externalMediaCount"),

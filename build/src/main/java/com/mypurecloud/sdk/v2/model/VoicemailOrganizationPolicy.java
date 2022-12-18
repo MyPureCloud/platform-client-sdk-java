@@ -32,6 +32,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
   private Boolean sendEmailNotifications = null;
   private Boolean includeEmailTranscriptions = null;
   private Boolean disableEmailPii = null;
+  private Integer maximumRecordingTimeSeconds = null;
   private Date modifiedDate = null;
 
   
@@ -186,6 +187,24 @@ public class VoicemailOrganizationPolicy  implements Serializable {
   }
 
 
+  /**
+   * Default value for the maximum length of time in seconds of a recorded voicemail
+   **/
+  public VoicemailOrganizationPolicy maximumRecordingTimeSeconds(Integer maximumRecordingTimeSeconds) {
+    this.maximumRecordingTimeSeconds = maximumRecordingTimeSeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Default value for the maximum length of time in seconds of a recorded voicemail")
+  @JsonProperty("maximumRecordingTimeSeconds")
+  public Integer getMaximumRecordingTimeSeconds() {
+    return maximumRecordingTimeSeconds;
+  }
+  public void setMaximumRecordingTimeSeconds(Integer maximumRecordingTimeSeconds) {
+    this.maximumRecordingTimeSeconds = maximumRecordingTimeSeconds;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
@@ -212,12 +231,13 @@ public class VoicemailOrganizationPolicy  implements Serializable {
             Objects.equals(this.sendEmailNotifications, voicemailOrganizationPolicy.sendEmailNotifications) &&
             Objects.equals(this.includeEmailTranscriptions, voicemailOrganizationPolicy.includeEmailTranscriptions) &&
             Objects.equals(this.disableEmailPii, voicemailOrganizationPolicy.disableEmailPii) &&
+            Objects.equals(this.maximumRecordingTimeSeconds, voicemailOrganizationPolicy.maximumRecordingTimeSeconds) &&
             Objects.equals(this.modifiedDate, voicemailOrganizationPolicy.modifiedDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, alertTimeoutSeconds, pinConfiguration, voicemailExtension, pinRequired, interactiveResponseRequired, sendEmailNotifications, includeEmailTranscriptions, disableEmailPii, modifiedDate);
+    return Objects.hash(enabled, alertTimeoutSeconds, pinConfiguration, voicemailExtension, pinRequired, interactiveResponseRequired, sendEmailNotifications, includeEmailTranscriptions, disableEmailPii, maximumRecordingTimeSeconds, modifiedDate);
   }
 
   @Override
@@ -234,6 +254,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     sb.append("    sendEmailNotifications: ").append(toIndentedString(sendEmailNotifications)).append("\n");
     sb.append("    includeEmailTranscriptions: ").append(toIndentedString(includeEmailTranscriptions)).append("\n");
     sb.append("    disableEmailPii: ").append(toIndentedString(disableEmailPii)).append("\n");
+    sb.append("    maximumRecordingTimeSeconds: ").append(toIndentedString(maximumRecordingTimeSeconds)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("}");
     return sb.toString();

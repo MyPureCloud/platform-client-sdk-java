@@ -114,14 +114,14 @@ public class Annotation  implements Serializable {
 
 
   /**
-   * Offset of annotation (milliseconds) from start of recording.
+   * Offset of annotation (milliseconds) from start of recording (after removing the cumulative duration of all pauses).
    **/
   public Annotation absoluteLocation(Long absoluteLocation) {
     this.absoluteLocation = absoluteLocation;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Offset of annotation (milliseconds) from start of recording.")
+  @ApiModelProperty(example = "null", value = "Offset of annotation (milliseconds) from start of recording (after removing the cumulative duration of all pauses).")
   @JsonProperty("absoluteLocation")
   public Long getAbsoluteLocation() {
     return absoluteLocation;

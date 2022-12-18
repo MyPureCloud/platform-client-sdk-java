@@ -7,10 +7,68 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**getTelephonyMediaregions**](TelephonyApi.html#getTelephonyMediaregions) | Retrieve the list of AWS regions media can stream through. |
 | [**getTelephonySiptraces**](TelephonyApi.html#getTelephonySiptraces) | Fetch SIP metadata |
 | [**getTelephonySiptracesDownloadDownloadId**](TelephonyApi.html#getTelephonySiptracesDownloadDownloadId) | Get signed S3 URL for a pcap download |
 | [**postTelephonySiptracesDownload**](TelephonyApi.html#postTelephonySiptracesDownload) | Request a download of a pcap file to S3 |
 {: class="table-striped"}
+
+<a name="getTelephonyMediaregions"></a>
+
+# **getTelephonyMediaregions**
+
+
+
+> [MediaRegions](MediaRegions.html) getTelephonyMediaregions()
+
+Retrieve the list of AWS regions media can stream through.
+
+Wraps GET /api/v2/telephony/mediaregions  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+try {
+    MediaRegions result = apiInstance.getTelephonyMediaregions();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonyMediaregions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**MediaRegions**](MediaRegions.html)
 
 <a name="getTelephonySiptraces"></a>
 

@@ -24,6 +24,7 @@ title: ContactList
 | **attemptLimits** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | AttemptLimits for this ContactList. |  [optional] |
 | **automaticTimeZoneMapping** | <!----><!---->**Boolean**<!----> | Indicates if automatic time zone mapping is to be used for this ContactList. |  [optional] |
 | **zipCodeColumnName** | <!----><!---->**String**<!----> | The name of contact list column containing the zip code for use with automatic time zone mapping. Only allowed if 'automaticTimeZoneMapping' is set to true. |  [optional] |
+| **columnDataTypeSpecifications** | <!----><!---->[**List&lt;ColumnDataTypeSpecification&gt;**](ColumnDataTypeSpecification.html)<!----> | The settings of the columns selected for dynamic queueing |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

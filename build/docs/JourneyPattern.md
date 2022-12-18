@@ -26,6 +26,7 @@ title: JourneyPattern
 | WEB | &quot;Web&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
 | CONVERSATION | &quot;Conversation&quot; | 
+| APP | &quot;App&quot; | 
 {: class="table table-striped"}
 
 
