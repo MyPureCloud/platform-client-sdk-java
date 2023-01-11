@@ -20,14 +20,12 @@ import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguagesTranslationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguagesTranslationsBuiltinRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguagesTranslationsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguagesTranslationsUserRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguagesRequest;
 
 import java.io.IOException;
@@ -50,7 +48,7 @@ public class LanguagesApiAsync {
 
   /**
    * Delete Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -84,7 +82,7 @@ public class LanguagesApiAsync {
 
   /**
    * Delete Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -124,83 +122,8 @@ public class LanguagesApiAsync {
   }
 
   /**
-   * Delete Language
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<Void> deleteRoutingLanguageAsync(DeleteRoutingLanguageRequest request, final AsyncApiCallback<Void> callback) {
-    try {
-      final SettableFuture<Void> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete Language
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<Void>> deleteRoutingLanguageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * Get Language (Deprecated)
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -233,8 +156,8 @@ public class LanguagesApiAsync {
   }
 
   /**
-   * Get language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * Get Language (Deprecated)
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -275,7 +198,7 @@ public class LanguagesApiAsync {
 
   /**
    * Get the list of supported languages. (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -309,7 +232,7 @@ public class LanguagesApiAsync {
 
   /**
    * Get the list of supported languages. (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -649,83 +572,8 @@ public class LanguagesApiAsync {
   }
 
   /**
-   * Get language
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<Language> getRoutingLanguageAsync(GetRoutingLanguageRequest request, final AsyncApiCallback<Language> callback) {
-    try {
-      final SettableFuture<Language> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Language>() {}, new AsyncApiCallback<ApiResponse<Language>>() {
-        @Override
-        public void onCompleted(ApiResponse<Language> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get language
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<Language>> getRoutingLanguageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Language>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Language>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Language>() {}, new AsyncApiCallback<ApiResponse<Language>>() {
-        @Override
-        public void onCompleted(ApiResponse<Language> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Language> response = (ApiResponse<Language>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Language> response = (ApiResponse<Language>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
    * Create Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -759,7 +607,7 @@ public class LanguagesApiAsync {
 
   /**
    * Create Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

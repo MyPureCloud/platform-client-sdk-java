@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | Delete a domain |
 | [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | Delete a route |
 | [**deleteRoutingEmailOutboundDomain**](RoutingApi.html#deleteRoutingEmailOutboundDomain) | Delete an outbound domain |
+| [**deleteRoutingLanguage**](RoutingApi.html#deleteRoutingLanguage) | Delete a routing language |
 | [**deleteRoutingPredictor**](RoutingApi.html#deleteRoutingPredictor) | Delete single predictor. |
 | [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | Delete a queue |
 | [**deleteRoutingQueueMember**](RoutingApi.html#deleteRoutingQueueMember) | Delete a queue member. |
@@ -40,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingEmailOutboundDomainSearch**](RoutingApi.html#getRoutingEmailOutboundDomainSearch) | Search a domain across organizations |
 | [**getRoutingEmailOutboundDomains**](RoutingApi.html#getRoutingEmailOutboundDomains) | Get outbound domains |
 | [**getRoutingEmailSetup**](RoutingApi.html#getRoutingEmailSetup) | Get email setup |
+| [**getRoutingLanguage**](RoutingApi.html#getRoutingLanguage) | Get a routing language |
 | [**getRoutingLanguages**](RoutingApi.html#getRoutingLanguages) | Get the list of supported languages. |
 | [**getRoutingMessageRecipient**](RoutingApi.html#getRoutingMessageRecipient) | Get a recipient |
 | [**getRoutingMessageRecipients**](RoutingApi.html#getRoutingMessageRecipients) | Get recipients |
@@ -367,6 +369,66 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingLanguage"></a>
+
+# **deleteRoutingLanguage**
+
+
+
+> Void deleteRoutingLanguage(languageId)
+
+Delete a routing language
+
+Wraps DELETE /api/v2/routing/languages/{languageId}  
+
+Requires ANY permissions: 
+
+* routing:skill:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String languageId = "languageId_example"; // String | Language ID
+try {
+    apiInstance.deleteRoutingLanguage(languageId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingLanguage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **languageId** | **String**| Language ID | 
 {: class="table-striped"}
 
 
@@ -2143,6 +2205,66 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**EmailSetup**](EmailSetup.html)
+
+<a name="getRoutingLanguage"></a>
+
+# **getRoutingLanguage**
+
+
+
+> [Language](Language.html) getRoutingLanguage(languageId)
+
+Get a routing language
+
+Wraps GET /api/v2/routing/languages/{languageId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String languageId = "languageId_example"; // String | Language ID
+try {
+    Language result = apiInstance.getRoutingLanguage(languageId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingLanguage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **languageId** | **String**| Language ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Language**](Language.html)
 
 <a name="getRoutingLanguages"></a>
 

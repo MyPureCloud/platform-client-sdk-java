@@ -149,6 +149,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     VIEW("View"),
     CREATE("Create"),
     UPDATE("Update"),
+    DELETE("Delete"),
     MOVE("Move"),
     COPY("Copy"),
     DOWNLOAD("Download"),
@@ -159,7 +160,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     TAGADD("TagAdd"),
     TAGREMOVE("TagRemove"),
     TAGUPDATE("TagUpdate"),
-    DELETE("Delete"),
+    ADD("Add"),
+    REMOVE("Remove"),
     MEMBERADD("MemberAdd"),
     MEMBERUPDATE("MemberUpdate"),
     MEMBERREMOVE("MemberRemove"),
@@ -219,7 +221,6 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CYCLE("Cycle"),
     SCALE("Scale"),
     IPALLOWLISTCLEAR("IpAllowlistClear"),
-    ADD("Add"),
     ADDPAIRINGROLE("AddPairingRole"),
     VERIFY("Verify"),
     CANCEL("Cancel"),
@@ -355,8 +356,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     TRIGGER("Trigger"),
     RESPONSE("Response"),
     RESPONSEASSET("ResponseAsset"),
-    SKILL("Skill"),
-    DIRECTORY("Directory"),
+    SKILLSGROUP("SkillsGroup"),
+    DIRECTORYGROUP("DirectoryGroup"),
     TEAM("Team"),
     EDGE("Edge"),
     EDGEGROUP("EdgeGroup"),
@@ -452,7 +453,9 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     INBOUNDDOMAIN("InboundDomain"),
     OUTBOUNDDOMAIN("OutboundDomain"),
     INBOUNDROUTE("InboundRoute"),
-    ORGANIZATIONLIMITS("OrganizationLimits");
+    ORGANIZATIONLIMITS("OrganizationLimits"),
+    USERSKILL("UserSkill"),
+    USERLANGUAGE("UserLanguage");
 
     private String value;
 

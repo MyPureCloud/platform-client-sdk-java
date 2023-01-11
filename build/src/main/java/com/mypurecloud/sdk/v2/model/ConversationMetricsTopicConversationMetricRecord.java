@@ -365,6 +365,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private String dnis = null;
   private String edgeId = null;
   private List<Integer> eligibleAgentCounts = new ArrayList<Integer>();
+  private String errorCode = null;
   private String extendedDeliveryStatus = null;
   private String externalContactId = null;
   private Integer externalMediaCount = null;
@@ -1200,6 +1201,24 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   }
   public void setEligibleAgentCounts(List<Integer> eligibleAgentCounts) {
     this.eligibleAgentCounts = eligibleAgentCounts;
+  }
+
+
+  /**
+   * A code corresponding to the error that occurred
+   **/
+  public ConversationMetricsTopicConversationMetricRecord errorCode(String errorCode) {
+    this.errorCode = errorCode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A code corresponding to the error that occurred")
+  @JsonProperty("errorCode")
+  public String getErrorCode() {
+    return errorCode;
+  }
+  public void setErrorCode(String errorCode) {
+    this.errorCode = errorCode;
   }
 
 
@@ -2193,6 +2212,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
             Objects.equals(this.dnis, conversationMetricsTopicConversationMetricRecord.dnis) &&
             Objects.equals(this.edgeId, conversationMetricsTopicConversationMetricRecord.edgeId) &&
             Objects.equals(this.eligibleAgentCounts, conversationMetricsTopicConversationMetricRecord.eligibleAgentCounts) &&
+            Objects.equals(this.errorCode, conversationMetricsTopicConversationMetricRecord.errorCode) &&
             Objects.equals(this.extendedDeliveryStatus, conversationMetricsTopicConversationMetricRecord.extendedDeliveryStatus) &&
             Objects.equals(this.externalContactId, conversationMetricsTopicConversationMetricRecord.externalContactId) &&
             Objects.equals(this.externalMediaCount, conversationMetricsTopicConversationMetricRecord.externalMediaCount) &&
@@ -2250,7 +2270,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, reoffered, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, errorCode, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, reoffered, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
   }
 
   @Override
@@ -2284,6 +2304,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
     sb.append("    edgeId: ").append(toIndentedString(edgeId)).append("\n");
     sb.append("    eligibleAgentCounts: ").append(toIndentedString(eligibleAgentCounts)).append("\n");
+    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("    extendedDeliveryStatus: ").append(toIndentedString(extendedDeliveryStatus)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    externalMediaCount: ").append(toIndentedString(externalMediaCount)).append("\n");

@@ -32,6 +32,7 @@ public class HistoricalShrinkageResult  implements Serializable {
   private Integer totalLoggedInDurationSeconds = null;
   private HistoricalShrinkageAggregateResponse aggregatedShrinkage = null;
   private List<HistoricalShrinkageActivityCategoryResponse> shrinkageForActivityCategories = new ArrayList<HistoricalShrinkageActivityCategoryResponse>();
+  private List<String> businessUnitIds = new ArrayList<String>();
 
   
   /**
@@ -142,6 +143,24 @@ public class HistoricalShrinkageResult  implements Serializable {
   }
 
 
+  /**
+   * List of all business units of all the agents in response
+   **/
+  public HistoricalShrinkageResult businessUnitIds(List<String> businessUnitIds) {
+    this.businessUnitIds = businessUnitIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of all business units of all the agents in response")
+  @JsonProperty("businessUnitIds")
+  public List<String> getBusinessUnitIds() {
+    return businessUnitIds;
+  }
+  public void setBusinessUnitIds(List<String> businessUnitIds) {
+    this.businessUnitIds = businessUnitIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -157,12 +176,13 @@ public class HistoricalShrinkageResult  implements Serializable {
             Objects.equals(this.totalScheduledDurationSeconds, historicalShrinkageResult.totalScheduledDurationSeconds) &&
             Objects.equals(this.totalLoggedInDurationSeconds, historicalShrinkageResult.totalLoggedInDurationSeconds) &&
             Objects.equals(this.aggregatedShrinkage, historicalShrinkageResult.aggregatedShrinkage) &&
-            Objects.equals(this.shrinkageForActivityCategories, historicalShrinkageResult.shrinkageForActivityCategories);
+            Objects.equals(this.shrinkageForActivityCategories, historicalShrinkageResult.shrinkageForActivityCategories) &&
+            Objects.equals(this.businessUnitIds, historicalShrinkageResult.businessUnitIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate, totalScheduledDurationSeconds, totalLoggedInDurationSeconds, aggregatedShrinkage, shrinkageForActivityCategories);
+    return Objects.hash(startDate, endDate, totalScheduledDurationSeconds, totalLoggedInDurationSeconds, aggregatedShrinkage, shrinkageForActivityCategories, businessUnitIds);
   }
 
   @Override
@@ -176,6 +196,7 @@ public class HistoricalShrinkageResult  implements Serializable {
     sb.append("    totalLoggedInDurationSeconds: ").append(toIndentedString(totalLoggedInDurationSeconds)).append("\n");
     sb.append("    aggregatedShrinkage: ").append(toIndentedString(aggregatedShrinkage)).append("\n");
     sb.append("    shrinkageForActivityCategories: ").append(toIndentedString(shrinkageForActivityCategories)).append("\n");
+    sb.append("    businessUnitIds: ").append(toIndentedString(businessUnitIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

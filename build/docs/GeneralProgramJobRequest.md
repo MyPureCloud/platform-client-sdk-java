@@ -36,6 +36,7 @@ title: GeneralProgramJobRequest
 | PT_PT | &quot;pt-PT&quot; | 
 | NL_NL | &quot;nl-NL&quot; | 
 | KO_KR | &quot;ko-KR&quot; | 
+| JA_JP | &quot;ja-JP&quot; | 
 {: class="table table-striped"}
 
 

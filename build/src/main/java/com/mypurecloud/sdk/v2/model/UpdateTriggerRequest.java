@@ -32,6 +32,7 @@ public class UpdateTriggerRequest  implements Serializable {
   private String name = null;
   private String topicName = null;
   private Integer eventTTLSeconds = null;
+  private Integer delayBySeconds = null;
   private String description = null;
 
   
@@ -144,20 +145,38 @@ public class UpdateTriggerRequest  implements Serializable {
 
 
   /**
-   * How long each event is meaningful after origination, in seconds. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely.
+   * Optional length of time that events are meaningful after origination. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely, otherwise must be set to at least 10 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
    **/
   public UpdateTriggerRequest eventTTLSeconds(Integer eventTTLSeconds) {
     this.eventTTLSeconds = eventTTLSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "How long each event is meaningful after origination, in seconds. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely.")
+  @ApiModelProperty(example = "null", value = "Optional length of time that events are meaningful after origination. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely, otherwise must be set to at least 10 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.")
   @JsonProperty("eventTTLSeconds")
   public Integer getEventTTLSeconds() {
     return eventTTLSeconds;
   }
   public void setEventTTLSeconds(Integer eventTTLSeconds) {
     this.eventTTLSeconds = eventTTLSeconds;
+  }
+
+
+  /**
+   * Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.
+   **/
+  public UpdateTriggerRequest delayBySeconds(Integer delayBySeconds) {
+    this.delayBySeconds = delayBySeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.")
+  @JsonProperty("delayBySeconds")
+  public Integer getDelayBySeconds() {
+    return delayBySeconds;
+  }
+  public void setDelayBySeconds(Integer delayBySeconds) {
+    this.delayBySeconds = delayBySeconds;
   }
 
 
@@ -196,12 +215,13 @@ public class UpdateTriggerRequest  implements Serializable {
             Objects.equals(this.name, updateTriggerRequest.name) &&
             Objects.equals(this.topicName, updateTriggerRequest.topicName) &&
             Objects.equals(this.eventTTLSeconds, updateTriggerRequest.eventTTLSeconds) &&
+            Objects.equals(this.delayBySeconds, updateTriggerRequest.delayBySeconds) &&
             Objects.equals(this.description, updateTriggerRequest.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, enabled, target, matchCriteria, name, topicName, eventTTLSeconds, description);
+    return Objects.hash(version, enabled, target, matchCriteria, name, topicName, eventTTLSeconds, delayBySeconds, description);
   }
 
   @Override
@@ -216,6 +236,7 @@ public class UpdateTriggerRequest  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    topicName: ").append(toIndentedString(topicName)).append("\n");
     sb.append("    eventTTLSeconds: ").append(toIndentedString(eventTTLSeconds)).append("\n");
+    sb.append("    delayBySeconds: ").append(toIndentedString(delayBySeconds)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -36,7 +36,17 @@ title: ReportingTurnAction
 | UPDATEVARIABLEACTION | &quot;UpdateVariableAction&quot; | 
 | COMMUNICATEACTION | &quot;CommunicateAction&quot; | 
 | DECISIONACTION | &quot;DecisionAction&quot; | 
+| FINDGRAMMARACTION | &quot;FindGrammarAction&quot; | 
 | FINDGROUPACTION | &quot;FindGroupAction&quot; | 
+| FINDLANGUAGESKILLACTION | &quot;FindLanguageSkillAction&quot; | 
+| FINDQUEUEACTION | &quot;FindQueueAction&quot; | 
+| FINDQUEUEBYIDACTION | &quot;FindQueueByIdAction&quot; | 
+| FINDSKILLACTION | &quot;FindSkillAction&quot; | 
+| FINDSYSTEMPROMPTACTION | &quot;FindSystemPromptAction&quot; | 
+| FINDUSERACTION | &quot;FindUserAction&quot; | 
+| FINDUSERBYIDACTION | &quot;FindUserByIdAction&quot; | 
+| FINDUSERSBYIDACTION | &quot;FindUsersByIdAction&quot; | 
+| FINDUSERPROMPTACTION | &quot;FindUserPromptAction&quot; | 
 | SWITCHACTION | &quot;SwitchAction&quot; | 
 | DATAACTION | &quot;DataAction&quot; | 
 | DATATABLELOOKUPACTION | &quot;DataTableLookupAction&quot; | 
@@ -58,12 +68,8 @@ title: ReportingTurnAction
 | DIGITALMENUACTION | &quot;DigitalMenuAction&quot; | 
 | WAITFORINPUTACTION | &quot;WaitForInputAction&quot; | 
 | SHOWKNOWLEDGEARTICLEACTION | &quot;ShowKnowledgeArticleAction&quot; | 
-| FINDSYSTEMPROMPTACTION | &quot;FindSystemPromptAction&quot; | 
-| FINDUSERPROMPTACTION | &quot;FindUserPromptAction&quot; | 
-| TRANSFERPUREMATCHACTION | &quot;TransferPureMatchAction&quot; | 
-| FINDQUEUEACTION | &quot;FindQueueAction&quot; | 
-| FINDQUEUEBYIDACTION | &quot;FindQueueByIdAction&quot; | 
 | SETLOCALEACTION | &quot;SetLocaleAction&quot; | 
+| TRANSFERPUREMATCHACTION | &quot;TransferPureMatchAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

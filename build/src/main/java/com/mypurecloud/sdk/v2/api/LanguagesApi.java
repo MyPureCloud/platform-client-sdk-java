@@ -17,14 +17,12 @@ import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguagesTranslationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguagesTranslationsBuiltinRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguagesTranslationsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguagesTranslationsUserRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguagesRequest;
 
 import java.io.IOException;
@@ -46,7 +44,7 @@ public class LanguagesApi {
 
   /**
    * Delete Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
    * @param languageId Language ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -57,7 +55,7 @@ public class LanguagesApi {
 
   /**
    * Delete Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
    * @param languageId Language ID (required)
    * @throws IOException if the request fails to be processed
    */
@@ -74,7 +72,7 @@ public class LanguagesApi {
 
   /**
    * Delete Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -92,7 +90,7 @@ public class LanguagesApi {
 
   /**
    * Delete Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -120,83 +118,8 @@ public class LanguagesApi {
   }
 
   /**
-   * Delete Language
-   * 
-   * @param languageId Language ID (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteRoutingLanguage(String languageId) throws IOException, ApiException {
-     deleteRoutingLanguage(createDeleteRoutingLanguageRequest(languageId));
-  }
-
-  /**
-   * Delete Language
-   * 
-   * @param languageId Language ID (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteRoutingLanguageWithHttpInfo(String languageId) throws IOException {
-    return deleteRoutingLanguage(createDeleteRoutingLanguageRequest(languageId).withHttpInfo());
-  }
-
-  private DeleteRoutingLanguageRequest createDeleteRoutingLanguageRequest(String languageId) {
-    return DeleteRoutingLanguageRequest.builder()
-            .withLanguageId(languageId)
-
-            .build();
-  }
-
-  /**
-   * Delete Language
-   * 
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteRoutingLanguage(DeleteRoutingLanguageRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Delete Language
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteRoutingLanguage(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * Get Language (Deprecated)
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
    * @param languageId Language ID (required)
    * @return Language
    * @throws ApiException if the request fails on the server
@@ -207,8 +130,8 @@ public class LanguagesApi {
   }
 
   /**
-   * Get language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * Get Language (Deprecated)
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
    * @param languageId Language ID (required)
    * @return Language
    * @throws IOException if the request fails to be processed
@@ -225,8 +148,8 @@ public class LanguagesApi {
   }
 
   /**
-   * Get language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * Get Language (Deprecated)
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
    * @param request The request object
    * @return Language
    * @throws ApiException if the request fails on the server
@@ -244,8 +167,8 @@ public class LanguagesApi {
   }
 
   /**
-   * Get language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+   * Get Language (Deprecated)
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -274,7 +197,7 @@ public class LanguagesApi {
 
   /**
    * Get the list of supported languages. (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
@@ -289,7 +212,7 @@ public class LanguagesApi {
 
   /**
    * Get the list of supported languages. (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
@@ -316,7 +239,7 @@ public class LanguagesApi {
 
   /**
    * Get the list of supported languages. (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
    * @param request The request object
    * @return LanguageEntityListing
    * @throws ApiException if the request fails on the server
@@ -335,7 +258,7 @@ public class LanguagesApi {
 
   /**
    * Get the list of supported languages. (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -671,86 +594,8 @@ public class LanguagesApi {
   }
 
   /**
-   * Get language
-   * 
-   * @param languageId Language ID (required)
-   * @return Language
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Language getRoutingLanguage(String languageId) throws IOException, ApiException {
-    return  getRoutingLanguage(createGetRoutingLanguageRequest(languageId));
-  }
-
-  /**
-   * Get language
-   * 
-   * @param languageId Language ID (required)
-   * @return Language
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Language> getRoutingLanguageWithHttpInfo(String languageId) throws IOException {
-    return getRoutingLanguage(createGetRoutingLanguageRequest(languageId).withHttpInfo());
-  }
-
-  private GetRoutingLanguageRequest createGetRoutingLanguageRequest(String languageId) {
-    return GetRoutingLanguageRequest.builder()
-            .withLanguageId(languageId)
-
-            .build();
-  }
-
-  /**
-   * Get language
-   * 
-   * @param request The request object
-   * @return Language
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Language getRoutingLanguage(GetRoutingLanguageRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Language> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Language>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get language
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Language> getRoutingLanguage(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<Language>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Language> response = (ApiResponse<Language>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Language> response = (ApiResponse<Language>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Create Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
    * @param body Language (required)
    * @return Language
    * @throws ApiException if the request fails on the server
@@ -762,7 +607,7 @@ public class LanguagesApi {
 
   /**
    * Create Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
    * @param body Language (required)
    * @return Language
    * @throws IOException if the request fails to be processed
@@ -780,7 +625,7 @@ public class LanguagesApi {
 
   /**
    * Create Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
    * @param request The request object
    * @return Language
    * @throws ApiException if the request fails on the server
@@ -799,7 +644,7 @@ public class LanguagesApi {
 
   /**
    * Create Language (Deprecated)
-   * This endpoint is deprecated. It has been moved to /routing/languages
+   * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

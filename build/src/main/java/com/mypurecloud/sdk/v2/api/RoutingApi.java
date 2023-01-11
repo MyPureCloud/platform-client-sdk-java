@@ -90,6 +90,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingAssessmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailOutboundDomainRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueMemberRequest;
@@ -119,6 +120,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainActivatio
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailOutboundDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSetupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientsRequest;
@@ -510,6 +512,81 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingEmailOutboundDomain(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a routing language
+   * 
+   * @param languageId Language ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingLanguage(String languageId) throws IOException, ApiException {
+     deleteRoutingLanguage(createDeleteRoutingLanguageRequest(languageId));
+  }
+
+  /**
+   * Delete a routing language
+   * 
+   * @param languageId Language ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingLanguageWithHttpInfo(String languageId) throws IOException {
+    return deleteRoutingLanguage(createDeleteRoutingLanguageRequest(languageId).withHttpInfo());
+  }
+
+  private DeleteRoutingLanguageRequest createDeleteRoutingLanguageRequest(String languageId) {
+    return DeleteRoutingLanguageRequest.builder()
+            .withLanguageId(languageId)
+
+            .build();
+  }
+
+  /**
+   * Delete a routing language
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingLanguage(DeleteRoutingLanguageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a routing language
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingLanguage(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2788,6 +2865,84 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmailSetup> response = (ApiResponse<EmailSetup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a routing language
+   * 
+   * @param languageId Language ID (required)
+   * @return Language
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Language getRoutingLanguage(String languageId) throws IOException, ApiException {
+    return  getRoutingLanguage(createGetRoutingLanguageRequest(languageId));
+  }
+
+  /**
+   * Get a routing language
+   * 
+   * @param languageId Language ID (required)
+   * @return Language
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Language> getRoutingLanguageWithHttpInfo(String languageId) throws IOException {
+    return getRoutingLanguage(createGetRoutingLanguageRequest(languageId).withHttpInfo());
+  }
+
+  private GetRoutingLanguageRequest createGetRoutingLanguageRequest(String languageId) {
+    return GetRoutingLanguageRequest.builder()
+            .withLanguageId(languageId)
+
+            .build();
+  }
+
+  /**
+   * Get a routing language
+   * 
+   * @param request The request object
+   * @return Language
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Language getRoutingLanguage(GetRoutingLanguageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Language> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Language>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a routing language
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Language> getRoutingLanguage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Language>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Language> response = (ApiResponse<Language>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Language> response = (ApiResponse<Language>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -101,6 +101,20 @@ public class GetProcessautomationTriggersRequest {
 	    return this;
 	} 
 
+	private Boolean hasDelayBy;
+	public Boolean getHasDelayBy() {
+		return this.hasDelayBy;
+	}
+
+	public void setHasDelayBy(Boolean hasDelayBy) {
+		this.hasDelayBy = hasDelayBy;
+	}
+
+	public GetProcessautomationTriggersRequest withHasDelayBy(Boolean hasDelayBy) {
+	    this.setHasDelayBy(hasDelayBy);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -138,6 +152,9 @@ public class GetProcessautomationTriggersRequest {
         
 
                 .withQueryParameters("enabled", "", enabled)
+        
+
+                .withQueryParameters("hasDelayBy", "", hasDelayBy)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -182,6 +199,11 @@ public class GetProcessautomationTriggersRequest {
 
 		public Builder withEnabled(Boolean enabled) {
 			request.setEnabled(enabled);
+			return this;
+		}
+
+		public Builder withHasDelayBy(Boolean hasDelayBy) {
+			request.setHasDelayBy(hasDelayBy);
 			return this;
 		}
 

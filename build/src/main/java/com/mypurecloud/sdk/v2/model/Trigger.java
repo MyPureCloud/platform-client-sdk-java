@@ -34,6 +34,7 @@ public class Trigger  implements Serializable {
   private Boolean enabled = null;
   private List<MatchCriteria> matchCriteria = new ArrayList<MatchCriteria>();
   private Integer eventTTLSeconds = null;
+  private Integer delayBySeconds = null;
   private String description = null;
   private String selfUri = null;
 
@@ -154,20 +155,38 @@ public class Trigger  implements Serializable {
 
 
   /**
-   * How long each event is meaningful after origination, in seconds. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely.
+   * Optional length of time that events are meaningful after origination. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely, otherwise must be set to at least 10 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
    **/
   public Trigger eventTTLSeconds(Integer eventTTLSeconds) {
     this.eventTTLSeconds = eventTTLSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "How long each event is meaningful after origination, in seconds. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely.")
+  @ApiModelProperty(example = "null", value = "Optional length of time that events are meaningful after origination. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely, otherwise must be set to at least 10 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.")
   @JsonProperty("eventTTLSeconds")
   public Integer getEventTTLSeconds() {
     return eventTTLSeconds;
   }
   public void setEventTTLSeconds(Integer eventTTLSeconds) {
     this.eventTTLSeconds = eventTTLSeconds;
+  }
+
+
+  /**
+   * Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.
+   **/
+  public Trigger delayBySeconds(Integer delayBySeconds) {
+    this.delayBySeconds = delayBySeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.")
+  @JsonProperty("delayBySeconds")
+  public Integer getDelayBySeconds() {
+    return delayBySeconds;
+  }
+  public void setDelayBySeconds(Integer delayBySeconds) {
+    this.delayBySeconds = delayBySeconds;
   }
 
 
@@ -214,13 +233,14 @@ public class Trigger  implements Serializable {
             Objects.equals(this.enabled, trigger.enabled) &&
             Objects.equals(this.matchCriteria, trigger.matchCriteria) &&
             Objects.equals(this.eventTTLSeconds, trigger.eventTTLSeconds) &&
+            Objects.equals(this.delayBySeconds, trigger.delayBySeconds) &&
             Objects.equals(this.description, trigger.description) &&
             Objects.equals(this.selfUri, trigger.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, topicName, target, version, enabled, matchCriteria, eventTTLSeconds, description, selfUri);
+    return Objects.hash(id, name, topicName, target, version, enabled, matchCriteria, eventTTLSeconds, delayBySeconds, description, selfUri);
   }
 
   @Override
@@ -236,6 +256,7 @@ public class Trigger  implements Serializable {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    matchCriteria: ").append(toIndentedString(matchCriteria)).append("\n");
     sb.append("    eventTTLSeconds: ").append(toIndentedString(eventTTLSeconds)).append("\n");
+    sb.append("    delayBySeconds: ").append(toIndentedString(delayBySeconds)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.MessageContent;
+import com.mypurecloud.sdk.v2.model.ConversationMessageContent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -47,7 +47,9 @@ public class PostTextMessage  implements Serializable {
     TEXT("Text"),
     STRUCTURED("Structured"),
     RECEIPT("Receipt"),
-    MESSAGE("Message");
+    EVENT("Event"),
+    MESSAGE("Message"),
+    UNKNOWN("Unknown");
 
     private String value;
 
@@ -76,7 +78,7 @@ public class PostTextMessage  implements Serializable {
   }
   private TypeEnum type = null;
   private String text = null;
-  private List<MessageContent> content = new ArrayList<MessageContent>();
+  private List<ConversationMessageContent> content = new ArrayList<ConversationMessageContent>();
 
   
   /**
@@ -118,17 +120,17 @@ public class PostTextMessage  implements Serializable {
   /**
    * A list of content elements in message
    **/
-  public PostTextMessage content(List<MessageContent> content) {
+  public PostTextMessage content(List<ConversationMessageContent> content) {
     this.content = content;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "A list of content elements in message")
   @JsonProperty("content")
-  public List<MessageContent> getContent() {
+  public List<ConversationMessageContent> getContent() {
     return content;
   }
-  public void setContent(List<MessageContent> content) {
+  public void setContent(List<ConversationMessageContent> content) {
     this.content = content;
   }
 

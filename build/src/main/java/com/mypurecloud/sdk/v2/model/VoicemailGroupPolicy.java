@@ -83,6 +83,7 @@ public class VoicemailGroupPolicy  implements Serializable {
   }
   private GroupAlertTypeEnum groupAlertType = null;
   private String interactiveResponsePromptId = null;
+  private Boolean interactiveResponseRequired = null;
 
   
   /**
@@ -289,6 +290,24 @@ public class VoicemailGroupPolicy  implements Serializable {
   }
 
 
+  /**
+   * Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call
+   **/
+  public VoicemailGroupPolicy interactiveResponseRequired(Boolean interactiveResponseRequired) {
+    this.interactiveResponseRequired = interactiveResponseRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call")
+  @JsonProperty("interactiveResponseRequired")
+  public Boolean getInteractiveResponseRequired() {
+    return interactiveResponseRequired;
+  }
+  public void setInteractiveResponseRequired(Boolean interactiveResponseRequired) {
+    this.interactiveResponseRequired = interactiveResponseRequired;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -310,12 +329,13 @@ public class VoicemailGroupPolicy  implements Serializable {
             Objects.equals(this.stopRingingAfterRotations, voicemailGroupPolicy.stopRingingAfterRotations) &&
             Objects.equals(this.overflowGroupId, voicemailGroupPolicy.overflowGroupId) &&
             Objects.equals(this.groupAlertType, voicemailGroupPolicy.groupAlertType) &&
-            Objects.equals(this.interactiveResponsePromptId, voicemailGroupPolicy.interactiveResponsePromptId);
+            Objects.equals(this.interactiveResponsePromptId, voicemailGroupPolicy.interactiveResponsePromptId) &&
+            Objects.equals(this.interactiveResponseRequired, voicemailGroupPolicy.interactiveResponseRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, group, enabled, sendEmailNotifications, disableEmailPii, includeEmailTranscriptions, languagePreference, rotateCallsSecs, stopRingingAfterRotations, overflowGroupId, groupAlertType, interactiveResponsePromptId);
+    return Objects.hash(name, group, enabled, sendEmailNotifications, disableEmailPii, includeEmailTranscriptions, languagePreference, rotateCallsSecs, stopRingingAfterRotations, overflowGroupId, groupAlertType, interactiveResponsePromptId, interactiveResponseRequired);
   }
 
   @Override
@@ -335,6 +355,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     sb.append("    overflowGroupId: ").append(toIndentedString(overflowGroupId)).append("\n");
     sb.append("    groupAlertType: ").append(toIndentedString(groupAlertType)).append("\n");
     sb.append("    interactiveResponsePromptId: ").append(toIndentedString(interactiveResponsePromptId)).append("\n");
+    sb.append("    interactiveResponseRequired: ").append(toIndentedString(interactiveResponseRequired)).append("\n");
     sb.append("}");
     return sb.toString();
   }

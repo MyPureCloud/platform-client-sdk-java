@@ -45,6 +45,8 @@ import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.RecordingMetadata;
 import com.mypurecloud.sdk.v2.model.RecordingRetentionCursorEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
+import com.mypurecloud.sdk.v2.model.RecordingUploadReport;
+import com.mypurecloud.sdk.v2.model.RecordingUploadReportRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
@@ -81,6 +83,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpolicyReques
 import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRotationscheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingUploadsReportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsRetentionQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
@@ -96,6 +99,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingRecordingkeysRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingUploadsReportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingsDeletionprotectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingsScreensessionsAcknowledgeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingsScreensessionsMetadataRequest;
@@ -2777,6 +2781,84 @@ public class RecordingApi {
   }
 
   /**
+   * Get the status of a recording upload status report
+   * 
+   * @param reportId reportId (required)
+   * @return RecordingUploadReport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingUploadReport getRecordingUploadsReport(String reportId) throws IOException, ApiException {
+    return  getRecordingUploadsReport(createGetRecordingUploadsReportRequest(reportId));
+  }
+
+  /**
+   * Get the status of a recording upload status report
+   * 
+   * @param reportId reportId (required)
+   * @return RecordingUploadReport
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingUploadReport> getRecordingUploadsReportWithHttpInfo(String reportId) throws IOException {
+    return getRecordingUploadsReport(createGetRecordingUploadsReportRequest(reportId).withHttpInfo());
+  }
+
+  private GetRecordingUploadsReportRequest createGetRecordingUploadsReportRequest(String reportId) {
+    return GetRecordingUploadsReportRequest.builder()
+            .withReportId(reportId)
+
+            .build();
+  }
+
+  /**
+   * Get the status of a recording upload status report
+   * 
+   * @param request The request object
+   * @return RecordingUploadReport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingUploadReport getRecordingUploadsReport(GetRecordingUploadsReportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingUploadReport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingUploadReport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the status of a recording upload status report
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingUploadReport> getRecordingUploadsReport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingUploadReport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingUploadReport> response = (ApiResponse<RecordingUploadReport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingUploadReport> response = (ApiResponse<RecordingUploadReport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query for recording retention data
    * 
    * @param retentionThresholdDays Fetch retention data for recordings retained for more days than the provided value. (required)
@@ -3967,6 +4049,84 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EncryptionKey> response = (ApiResponse<EncryptionKey>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates a recording upload status report
+   * 
+   * @param body Report parameters (required)
+   * @return RecordingUploadReport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingUploadReport postRecordingUploadsReports(RecordingUploadReportRequest body) throws IOException, ApiException {
+    return  postRecordingUploadsReports(createPostRecordingUploadsReportsRequest(body));
+  }
+
+  /**
+   * Creates a recording upload status report
+   * 
+   * @param body Report parameters (required)
+   * @return RecordingUploadReport
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingUploadReport> postRecordingUploadsReportsWithHttpInfo(RecordingUploadReportRequest body) throws IOException {
+    return postRecordingUploadsReports(createPostRecordingUploadsReportsRequest(body).withHttpInfo());
+  }
+
+  private PostRecordingUploadsReportsRequest createPostRecordingUploadsReportsRequest(RecordingUploadReportRequest body) {
+    return PostRecordingUploadsReportsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates a recording upload status report
+   * 
+   * @param request The request object
+   * @return RecordingUploadReport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingUploadReport postRecordingUploadsReports(PostRecordingUploadsReportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingUploadReport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingUploadReport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a recording upload status report
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingUploadReport> postRecordingUploadsReports(ApiRequest<RecordingUploadReportRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingUploadReport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingUploadReport> response = (ApiResponse<RecordingUploadReport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingUploadReport> response = (ApiResponse<RecordingUploadReport>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

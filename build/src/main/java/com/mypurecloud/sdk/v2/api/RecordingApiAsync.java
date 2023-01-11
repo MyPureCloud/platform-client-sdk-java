@@ -48,6 +48,8 @@ import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.RecordingMetadata;
 import com.mypurecloud.sdk.v2.model.RecordingRetentionCursorEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
+import com.mypurecloud.sdk.v2.model.RecordingUploadReport;
+import com.mypurecloud.sdk.v2.model.RecordingUploadReportRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
@@ -84,6 +86,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpolicyReques
 import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRotationscheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingUploadsReportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsRetentionQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
@@ -99,6 +102,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingRecordingkeysRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingUploadsReportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingsDeletionprotectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingsScreensessionsAcknowledgeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingsScreensessionsMetadataRequest;
@@ -2458,6 +2462,81 @@ public class RecordingApiAsync {
   }
 
   /**
+   * Get the status of a recording upload status report
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingUploadReport> getRecordingUploadsReportAsync(GetRecordingUploadsReportRequest request, final AsyncApiCallback<RecordingUploadReport> callback) {
+    try {
+      final SettableFuture<RecordingUploadReport> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingUploadReport>() {}, new AsyncApiCallback<ApiResponse<RecordingUploadReport>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingUploadReport> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the status of a recording upload status report
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingUploadReport>> getRecordingUploadsReportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RecordingUploadReport>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingUploadReport>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingUploadReport>() {}, new AsyncApiCallback<ApiResponse<RecordingUploadReport>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingUploadReport> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingUploadReport> response = (ApiResponse<RecordingUploadReport>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingUploadReport> response = (ApiResponse<RecordingUploadReport>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Query for recording retention data
    * 
    * @param request the request object
@@ -3571,6 +3650,81 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EncryptionKey> response = (ApiResponse<EncryptionKey>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a recording upload status report
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingUploadReport> postRecordingUploadsReportsAsync(PostRecordingUploadsReportsRequest request, final AsyncApiCallback<RecordingUploadReport> callback) {
+    try {
+      final SettableFuture<RecordingUploadReport> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingUploadReport>() {}, new AsyncApiCallback<ApiResponse<RecordingUploadReport>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingUploadReport> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a recording upload status report
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingUploadReport>> postRecordingUploadsReportsAsync(ApiRequest<RecordingUploadReportRequest> request, final AsyncApiCallback<ApiResponse<RecordingUploadReport>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingUploadReport>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingUploadReport>() {}, new AsyncApiCallback<ApiResponse<RecordingUploadReport>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingUploadReport> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingUploadReport> response = (ApiResponse<RecordingUploadReport>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingUploadReport> response = (ApiResponse<RecordingUploadReport>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

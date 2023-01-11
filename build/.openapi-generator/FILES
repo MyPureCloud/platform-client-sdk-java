@@ -1706,6 +1706,8 @@ docs/KnowledgeCategory.md
 docs/KnowledgeCategoryRequest.md
 docs/KnowledgeContextReference.md
 docs/KnowledgeContextValueReference.md
+docs/KnowledgeConversationContext.md
+docs/KnowledgeConversationContextResponse.md
 docs/KnowledgeDocument.md
 docs/KnowledgeDocumentAlternative.md
 docs/KnowledgeDocumentBulkRequest.md
@@ -2548,6 +2550,8 @@ docs/RecordingRetentionCursorEntityListing.md
 docs/RecordingSettings.md
 docs/RecordingTranscodeCompleteTopicMediaResult.md
 docs/RecordingTranscodeCompleteTopicRecording.md
+docs/RecordingUploadReport.md
+docs/RecordingUploadReportRequest.md
 docs/Referrer.md
 docs/RegionTimeZone.md
 docs/RegisterArchitectJobResponse.md
@@ -3294,6 +3298,7 @@ docs/ValidateWorkPlanResponse.md
 docs/ValidationLimits.md
 docs/ValidationServiceRequest.md
 docs/ValueWrapperDate.md
+docs/ValueWrapperHrisTimeOffType.md
 docs/ValueWrapperPlanningPeriodSettings.md
 docs/ValueWrapperString.md
 docs/VerificationResult.md
@@ -4406,6 +4411,7 @@ docs/getRecordingMediaretentionpolicy-example.txt
 docs/getRecordingRecordingkeys-example.txt
 docs/getRecordingRecordingkeysRotationschedule-example.txt
 docs/getRecordingSettings-example.txt
+docs/getRecordingUploadsReport-example.txt
 docs/getRecordingsRetentionQuery-example.txt
 docs/getRecordingsScreensessions-example.txt
 docs/getResponsemanagementLibraries-example.txt
@@ -5199,6 +5205,7 @@ docs/postRecordingLocalkeys-example.txt
 docs/postRecordingLocalkeysSettings-example.txt
 docs/postRecordingMediaretentionpolicies-example.txt
 docs/postRecordingRecordingkeys-example.txt
+docs/postRecordingUploadsReports-example.txt
 docs/postRecordingsDeletionprotection-example.txt
 docs/postRecordingsScreensessionsAcknowledge-example.txt
 docs/postRecordingsScreensessionsMetadata-example.txt
@@ -6529,6 +6536,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingMediaretentionpolic
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingRecordingkeysRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingRecordingkeysRotationscheduleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingUploadsReportRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingsRetentionQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingsScreensessionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetResponsemanagementLibrariesRequest.java
@@ -7322,6 +7330,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostRecordingLocalkeysRequest.j
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRecordingLocalkeysSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRecordingMediaretentionpoliciesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRecordingRecordingkeysRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostRecordingUploadsReportsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRecordingsDeletionprotectionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRecordingsScreensessionsAcknowledgeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRecordingsScreensessionsMetadataRequest.java
@@ -9339,6 +9348,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeCategory.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeCategoryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeContextReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeContextValueReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeConversationContext.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeConversationContextResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocument.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentAlternative.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentBulkRequest.java
@@ -10147,6 +10158,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/RecordingRetentionCursorEntityListing
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingTranscodeCompleteTopicMediaResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/RecordingTranscodeCompleteTopicRecording.java
+src/main/java/com/mypurecloud/sdk/v2/model/RecordingUploadReport.java
+src/main/java/com/mypurecloud/sdk/v2/model/RecordingUploadReportRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/Referrer.java
 src/main/java/com/mypurecloud/sdk/v2/model/RegionTimeZone.java
 src/main/java/com/mypurecloud/sdk/v2/model/RegisterArchitectJobResponse.java
@@ -10857,6 +10870,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ValidateWorkPlanResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidationLimits.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValidationServiceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperDate.java
+src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperHrisTimeOffType.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperPlanningPeriodSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperString.java
 src/main/java/com/mypurecloud/sdk/v2/model/VerificationResult.java

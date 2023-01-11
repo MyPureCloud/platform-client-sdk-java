@@ -11,6 +11,8 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.KnowledgeConversationContextResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSearchResult;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchClientApplication;
 import io.swagger.annotations.ApiModel;
@@ -31,8 +33,58 @@ public class KnowledgeDocumentSearch  implements Serializable {
   private String searchId = null;
   private Integer total = null;
   private Integer pageCount = null;
+
+  private static class QueryTypeEnumDeserializer extends StdDeserializer<QueryTypeEnum> {
+    public QueryTypeEnumDeserializer() {
+      super(QueryTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public QueryTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return QueryTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of the query that initiates the search.
+   */
+ @JsonDeserialize(using = QueryTypeEnumDeserializer.class)
+  public enum QueryTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AUTOSEARCH("AutoSearch"),
+    MANUALSEARCH("ManualSearch"),
+    SUGGESTION("Suggestion");
+
+    private String value;
+
+    QueryTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static QueryTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (QueryTypeEnum value : QueryTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return QueryTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private QueryTypeEnum queryType = null;
   private List<KnowledgeDocumentSearchResult> results = new ArrayList<KnowledgeDocumentSearchResult>();
   private KnowledgeSearchClientApplication application = null;
+  private KnowledgeConversationContextResponse conversationContext = null;
 
   
   /**
@@ -110,6 +162,24 @@ public class KnowledgeDocumentSearch  implements Serializable {
   }
 
 
+  /**
+   * The type of the query that initiates the search.
+   **/
+  public KnowledgeDocumentSearch queryType(QueryTypeEnum queryType) {
+    this.queryType = queryType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of the query that initiates the search.")
+  @JsonProperty("queryType")
+  public QueryTypeEnum getQueryType() {
+    return queryType;
+  }
+  public void setQueryType(QueryTypeEnum queryType) {
+    this.queryType = queryType;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Documents matching the search query.")
   @JsonProperty("results")
   public List<KnowledgeDocumentSearchResult> getResults() {
@@ -135,6 +205,24 @@ public class KnowledgeDocumentSearch  implements Serializable {
   }
 
 
+  /**
+   * Conversation context information if the search is initiated in the context of a conversation.
+   **/
+  public KnowledgeDocumentSearch conversationContext(KnowledgeConversationContextResponse conversationContext) {
+    this.conversationContext = conversationContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Conversation context information if the search is initiated in the context of a conversation.")
+  @JsonProperty("conversationContext")
+  public KnowledgeConversationContextResponse getConversationContext() {
+    return conversationContext;
+  }
+  public void setConversationContext(KnowledgeConversationContextResponse conversationContext) {
+    this.conversationContext = conversationContext;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -151,13 +239,15 @@ public class KnowledgeDocumentSearch  implements Serializable {
             Objects.equals(this.searchId, knowledgeDocumentSearch.searchId) &&
             Objects.equals(this.total, knowledgeDocumentSearch.total) &&
             Objects.equals(this.pageCount, knowledgeDocumentSearch.pageCount) &&
+            Objects.equals(this.queryType, knowledgeDocumentSearch.queryType) &&
             Objects.equals(this.results, knowledgeDocumentSearch.results) &&
-            Objects.equals(this.application, knowledgeDocumentSearch.application);
+            Objects.equals(this.application, knowledgeDocumentSearch.application) &&
+            Objects.equals(this.conversationContext, knowledgeDocumentSearch.conversationContext);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, results, application);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, results, application, conversationContext);
   }
 
   @Override
@@ -171,8 +261,10 @@ public class KnowledgeDocumentSearch  implements Serializable {
     sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
+    sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    application: ").append(toIndentedString(application)).append("\n");
+    sb.append("    conversationContext: ").append(toIndentedString(conversationContext)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRecordingRecordingkeys**](RecordingApi.html#getRecordingRecordingkeys) | Get encryption key list |
 | [**getRecordingRecordingkeysRotationschedule**](RecordingApi.html#getRecordingRecordingkeysRotationschedule) | Get key rotation schedule |
 | [**getRecordingSettings**](RecordingApi.html#getRecordingSettings) | Get the Recording Settings for the Organization |
+| [**getRecordingUploadsReport**](RecordingApi.html#getRecordingUploadsReport) | Get the status of a recording upload status report |
 | [**getRecordingsRetentionQuery**](RecordingApi.html#getRecordingsRetentionQuery) | Query for recording retention data |
 | [**getRecordingsScreensessions**](RecordingApi.html#getRecordingsScreensessions) | Retrieves a paged listing of screen recording sessions |
 | [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#patchRecordingCrossplatformMediaretentionpolicy) | Patch a media retention policy |
@@ -53,6 +54,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | create settings for local key creation. Replaced by API recording/keyconfigurations |
 | [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | Create media retention policy |
 | [**postRecordingRecordingkeys**](RecordingApi.html#postRecordingRecordingkeys) | Create encryption key |
+| [**postRecordingUploadsReports**](RecordingApi.html#postRecordingUploadsReports) | Creates a recording upload status report |
 | [**postRecordingsDeletionprotection**](RecordingApi.html#postRecordingsDeletionprotection) | Get a list of conversations with protected recordings |
 | [**postRecordingsScreensessionsAcknowledge**](RecordingApi.html#postRecordingsScreensessionsAcknowledge) | Acknowledge a screen recording. |
 | [**postRecordingsScreensessionsMetadata**](RecordingApi.html#postRecordingsScreensessionsMetadata) | Provide meta-data a screen recording. |
@@ -2086,6 +2088,67 @@ try {
 
 [**RecordingSettings**](RecordingSettings.html)
 
+<a name="getRecordingUploadsReport"></a>
+
+# **getRecordingUploadsReport**
+
+
+
+> [RecordingUploadReport](RecordingUploadReport.html) getRecordingUploadsReport(reportId)
+
+Get the status of a recording upload status report
+
+Wraps GET /api/v2/recording/uploads/reports/{reportId}  
+
+Requires ALL permissions: 
+
+* recording:uploadReport:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String reportId = "reportId_example"; // String | reportId
+try {
+    RecordingUploadReport result = apiInstance.getRecordingUploadsReport(reportId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getRecordingUploadsReport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **reportId** | **String**| reportId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RecordingUploadReport**](RecordingUploadReport.html)
+
 <a name="getRecordingsRetentionQuery"></a>
 
 # **getRecordingsRetentionQuery**
@@ -3018,6 +3081,67 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**EncryptionKey**](EncryptionKey.html)
+
+<a name="postRecordingUploadsReports"></a>
+
+# **postRecordingUploadsReports**
+
+
+
+> [RecordingUploadReport](RecordingUploadReport.html) postRecordingUploadsReports(body)
+
+Creates a recording upload status report
+
+Wraps POST /api/v2/recording/uploads/reports  
+
+Requires ALL permissions: 
+
+* recording:uploadReport:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+RecordingUploadReportRequest body = new RecordingUploadReportRequest(); // RecordingUploadReportRequest | Report parameters
+try {
+    RecordingUploadReport result = apiInstance.postRecordingUploadsReports(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#postRecordingUploadsReports");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**RecordingUploadReportRequest**](RecordingUploadReportRequest.html)| Report parameters | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RecordingUploadReport**](RecordingUploadReport.html)
 
 <a name="postRecordingsDeletionprotection"></a>
 

@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestSessionApp;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,6 +29,55 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
   private String searchId = null;
   private Integer total = null;
   private Integer pageCount = null;
+
+  private static class QueryTypeEnumDeserializer extends StdDeserializer<QueryTypeEnum> {
+    public QueryTypeEnumDeserializer() {
+      super(QueryTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public QueryTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return QueryTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of the query that initiates the search.
+   */
+ @JsonDeserialize(using = QueryTypeEnumDeserializer.class)
+  public enum QueryTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AUTOSEARCH("AutoSearch"),
+    MANUALSEARCH("ManualSearch"),
+    SUGGESTION("Suggestion");
+
+    private String value;
+
+    QueryTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static QueryTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (QueryTypeEnum value : QueryTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return QueryTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private QueryTypeEnum queryType = null;
   private String sessionId = null;
   private Boolean includeDraftDocuments = null;
   private KnowledgeGuestSessionApp app = null;
@@ -108,6 +158,24 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
   }
 
 
+  /**
+   * The type of the query that initiates the search.
+   **/
+  public KnowledgeDocumentGuestSearchRequest queryType(QueryTypeEnum queryType) {
+    this.queryType = queryType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of the query that initiates the search.")
+  @JsonProperty("queryType")
+  public QueryTypeEnum getQueryType() {
+    return queryType;
+  }
+  public void setQueryType(QueryTypeEnum queryType) {
+    this.queryType = queryType;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Session ID of the search.")
   @JsonProperty("sessionId")
   public String getSessionId() {
@@ -156,6 +224,7 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
             Objects.equals(this.searchId, knowledgeDocumentGuestSearchRequest.searchId) &&
             Objects.equals(this.total, knowledgeDocumentGuestSearchRequest.total) &&
             Objects.equals(this.pageCount, knowledgeDocumentGuestSearchRequest.pageCount) &&
+            Objects.equals(this.queryType, knowledgeDocumentGuestSearchRequest.queryType) &&
             Objects.equals(this.sessionId, knowledgeDocumentGuestSearchRequest.sessionId) &&
             Objects.equals(this.includeDraftDocuments, knowledgeDocumentGuestSearchRequest.includeDraftDocuments) &&
             Objects.equals(this.app, knowledgeDocumentGuestSearchRequest.app);
@@ -163,7 +232,7 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, sessionId, includeDraftDocuments, app);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, sessionId, includeDraftDocuments, app);
   }
 
   @Override
@@ -177,6 +246,7 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
     sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
+    sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    includeDraftDocuments: ").append(toIndentedString(includeDraftDocuments)).append("\n");
     sb.append("    app: ").append(toIndentedString(app)).append("\n");

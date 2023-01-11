@@ -87,6 +87,7 @@ title: AuditTopicAuditLogMessage
 | VIEW | &quot;View&quot; | 
 | CREATE | &quot;Create&quot; | 
 | UPDATE | &quot;Update&quot; | 
+| DELETE | &quot;Delete&quot; | 
 | MOVE | &quot;Move&quot; | 
 | COPY | &quot;Copy&quot; | 
 | DOWNLOAD | &quot;Download&quot; | 
@@ -97,7 +98,8 @@ title: AuditTopicAuditLogMessage
 | TAGADD | &quot;TagAdd&quot; | 
 | TAGREMOVE | &quot;TagRemove&quot; | 
 | TAGUPDATE | &quot;TagUpdate&quot; | 
-| DELETE | &quot;Delete&quot; | 
+| ADD | &quot;Add&quot; | 
+| REMOVE | &quot;Remove&quot; | 
 | MEMBERADD | &quot;MemberAdd&quot; | 
 | MEMBERUPDATE | &quot;MemberUpdate&quot; | 
 | MEMBERREMOVE | &quot;MemberRemove&quot; | 
@@ -157,7 +159,6 @@ title: AuditTopicAuditLogMessage
 | CYCLE | &quot;Cycle&quot; | 
 | SCALE | &quot;Scale&quot; | 
 | IPALLOWLISTCLEAR | &quot;IpAllowlistClear&quot; | 
-| ADD | &quot;Add&quot; | 
 | ADDPAIRINGROLE | &quot;AddPairingRole&quot; | 
 | VERIFY | &quot;Verify&quot; | 
 | CANCEL | &quot;Cancel&quot; | 
@@ -257,8 +258,8 @@ title: AuditTopicAuditLogMessage
 | TRIGGER | &quot;Trigger&quot; | 
 | RESPONSE | &quot;Response&quot; | 
 | RESPONSEASSET | &quot;ResponseAsset&quot; | 
-| SKILL | &quot;Skill&quot; | 
-| DIRECTORY | &quot;Directory&quot; | 
+| SKILLSGROUP | &quot;SkillsGroup&quot; | 
+| DIRECTORYGROUP | &quot;DirectoryGroup&quot; | 
 | TEAM | &quot;Team&quot; | 
 | EDGE | &quot;Edge&quot; | 
 | EDGEGROUP | &quot;EdgeGroup&quot; | 
@@ -355,6 +356,8 @@ title: AuditTopicAuditLogMessage
 | OUTBOUNDDOMAIN | &quot;OutboundDomain&quot; | 
 | INBOUNDROUTE | &quot;InboundRoute&quot; | 
 | ORGANIZATIONLIMITS | &quot;OrganizationLimits&quot; | 
+| USERSKILL | &quot;UserSkill&quot; | 
+| USERLANGUAGE | &quot;UserLanguage&quot; | 
 {: class="table table-striped"}
 
 

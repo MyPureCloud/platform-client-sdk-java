@@ -8,14 +8,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteLanguage**](LanguagesApi.html#deleteLanguage) | Delete Language (Deprecated) |
-| [**deleteRoutingLanguage**](LanguagesApi.html#deleteRoutingLanguage) | Delete Language |
-| [**getLanguage**](LanguagesApi.html#getLanguage) | Get language (Deprecated) |
+| [**getLanguage**](LanguagesApi.html#getLanguage) | Get Language (Deprecated) |
 | [**getLanguages**](LanguagesApi.html#getLanguages) | Get the list of supported languages. (Deprecated) |
 | [**getLanguagesTranslations**](LanguagesApi.html#getLanguagesTranslations) | Get all available languages for translation |
 | [**getLanguagesTranslationsBuiltin**](LanguagesApi.html#getLanguagesTranslationsBuiltin) | Get the builtin translation for a language |
 | [**getLanguagesTranslationsOrganization**](LanguagesApi.html#getLanguagesTranslationsOrganization) | Get effective translation for an organization by language |
 | [**getLanguagesTranslationsUser**](LanguagesApi.html#getLanguagesTranslationsUser) | Get effective language translation for a user |
-| [**getRoutingLanguage**](LanguagesApi.html#getRoutingLanguage) | Get language |
 | [**postLanguages**](LanguagesApi.html#postLanguages) | Create Language (Deprecated) |
 {: class="table-striped"}
 
@@ -29,7 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete Language (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
 
 Wraps DELETE /api/v2/languages/{languageId}  
 
@@ -81,66 +79,6 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingLanguage"></a>
-
-# **deleteRoutingLanguage**
-
-
-
-> Void deleteRoutingLanguage(languageId)
-
-Delete Language
-
-Wraps DELETE /api/v2/routing/languages/{languageId}  
-
-Requires ANY permissions: 
-
-* routing:skill:manage
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.LanguagesApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-LanguagesApi apiInstance = new LanguagesApi();
-String languageId = "languageId_example"; // String | Language ID
-try {
-    apiInstance.deleteRoutingLanguage(languageId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LanguagesApi#deleteRoutingLanguage");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **languageId** | **String**| Language ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
-
 <a name="getLanguage"></a>
 
 # **getLanguage**
@@ -149,9 +87,9 @@ null (empty response body)
 
 > [Language](Language.html) getLanguage(languageId)
 
-Get language (Deprecated)
+Get Language (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
 
 Wraps GET /api/v2/languages/{languageId}  
 
@@ -214,7 +152,7 @@ try {
 
 Get the list of supported languages. (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages
+This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
 
 Wraps GET /api/v2/languages  
 
@@ -509,66 +447,6 @@ try {
 
 **Map&lt;String, Object&gt;**
 
-<a name="getRoutingLanguage"></a>
-
-# **getRoutingLanguage**
-
-
-
-> [Language](Language.html) getRoutingLanguage(languageId)
-
-Get language
-
-Wraps GET /api/v2/routing/languages/{languageId}  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.LanguagesApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-LanguagesApi apiInstance = new LanguagesApi();
-String languageId = "languageId_example"; // String | Language ID
-try {
-    Language result = apiInstance.getRoutingLanguage(languageId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LanguagesApi#getRoutingLanguage");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **languageId** | **String**| Language ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**Language**](Language.html)
-
 <a name="postLanguages"></a>
 
 # **postLanguages**
@@ -579,7 +457,7 @@ try {
 
 Create Language (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages
+This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
 
 Wraps POST /api/v2/languages  
 

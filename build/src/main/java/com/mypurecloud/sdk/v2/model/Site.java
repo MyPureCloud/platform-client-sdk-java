@@ -154,6 +154,10 @@ public class Site  implements Serializable {
   private MediaModelEnum mediaModel = null;
   private Boolean coreSite = null;
   private List<SiteConnection> siteConnections = new ArrayList<SiteConnection>();
+  private List<String> mediaRegions = new ArrayList<String>();
+  private String callerId = null;
+  private String callerName = null;
+  private Boolean cloudProxyForceTurn = null;
   private String selfUri = null;
 
   
@@ -529,6 +533,78 @@ public class Site  implements Serializable {
   }
 
 
+  /**
+   * The ordered list of AWS regions through which media can stream.
+   **/
+  public Site mediaRegions(List<String> mediaRegions) {
+    this.mediaRegions = mediaRegions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ordered list of AWS regions through which media can stream.")
+  @JsonProperty("mediaRegions")
+  public List<String> getMediaRegions() {
+    return mediaRegions;
+  }
+  public void setMediaRegions(List<String> mediaRegions) {
+    this.mediaRegions = mediaRegions;
+  }
+
+
+  /**
+   * The caller ID value for the site.
+   **/
+  public Site callerId(String callerId) {
+    this.callerId = callerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The caller ID value for the site.")
+  @JsonProperty("callerId")
+  public String getCallerId() {
+    return callerId;
+  }
+  public void setCallerId(String callerId) {
+    this.callerId = callerId;
+  }
+
+
+  /**
+   * The caller name for the site.
+   **/
+  public Site callerName(String callerName) {
+    this.callerName = callerName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The caller name for the site.")
+  @JsonProperty("callerName")
+  public String getCallerName() {
+    return callerName;
+  }
+  public void setCallerName(String callerName) {
+    this.callerName = callerName;
+  }
+
+
+  /**
+   * Enables premises Edge Force Turn 
+   **/
+  public Site cloudProxyForceTurn(Boolean cloudProxyForceTurn) {
+    this.cloudProxyForceTurn = cloudProxyForceTurn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Enables premises Edge Force Turn ")
+  @JsonProperty("cloudProxyForceTurn")
+  public Boolean getCloudProxyForceTurn() {
+    return cloudProxyForceTurn;
+  }
+  public void setCloudProxyForceTurn(Boolean cloudProxyForceTurn) {
+    this.cloudProxyForceTurn = cloudProxyForceTurn;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -572,12 +648,16 @@ public class Site  implements Serializable {
             Objects.equals(this.mediaModel, site.mediaModel) &&
             Objects.equals(this.coreSite, site.coreSite) &&
             Objects.equals(this.siteConnections, site.siteConnections) &&
+            Objects.equals(this.mediaRegions, site.mediaRegions) &&
+            Objects.equals(this.callerId, site.callerId) &&
+            Objects.equals(this.callerName, site.callerName) &&
+            Objects.equals(this.cloudProxyForceTurn, site.cloudProxyForceTurn) &&
             Objects.equals(this.selfUri, site.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, mediaRegionsUseLatencyBased, location, managed, ntpSettings, mediaModel, coreSite, siteConnections, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, mediaRegionsUseLatencyBased, location, managed, ntpSettings, mediaModel, coreSite, siteConnections, mediaRegions, callerId, callerName, cloudProxyForceTurn, selfUri);
   }
 
   @Override
@@ -611,6 +691,10 @@ public class Site  implements Serializable {
     sb.append("    mediaModel: ").append(toIndentedString(mediaModel)).append("\n");
     sb.append("    coreSite: ").append(toIndentedString(coreSite)).append("\n");
     sb.append("    siteConnections: ").append(toIndentedString(siteConnections)).append("\n");
+    sb.append("    mediaRegions: ").append(toIndentedString(mediaRegions)).append("\n");
+    sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
+    sb.append("    callerName: ").append(toIndentedString(callerName)).append("\n");
+    sb.append("    cloudProxyForceTurn: ").append(toIndentedString(cloudProxyForceTurn)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

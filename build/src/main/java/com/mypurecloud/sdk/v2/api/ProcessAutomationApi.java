@@ -207,12 +207,13 @@ public class ProcessAutomationApi {
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param topicName Topic name(s). Separated by commas (optional)
    * @param enabled Boolean indicating desired enabled state of triggers (optional)
+   * @param hasDelayBy Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set. (optional)
    * @return TriggerEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TriggerEntityListing getProcessautomationTriggers(String before, String after, String pageSize, String topicName, Boolean enabled) throws IOException, ApiException {
-    return  getProcessautomationTriggers(createGetProcessautomationTriggersRequest(before, after, pageSize, topicName, enabled));
+  public TriggerEntityListing getProcessautomationTriggers(String before, String after, String pageSize, String topicName, Boolean enabled, Boolean hasDelayBy) throws IOException, ApiException {
+    return  getProcessautomationTriggers(createGetProcessautomationTriggersRequest(before, after, pageSize, topicName, enabled, hasDelayBy));
   }
 
   /**
@@ -223,14 +224,15 @@ public class ProcessAutomationApi {
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param topicName Topic name(s). Separated by commas (optional)
    * @param enabled Boolean indicating desired enabled state of triggers (optional)
+   * @param hasDelayBy Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set. (optional)
    * @return TriggerEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TriggerEntityListing> getProcessautomationTriggersWithHttpInfo(String before, String after, String pageSize, String topicName, Boolean enabled) throws IOException {
-    return getProcessautomationTriggers(createGetProcessautomationTriggersRequest(before, after, pageSize, topicName, enabled).withHttpInfo());
+  public ApiResponse<TriggerEntityListing> getProcessautomationTriggersWithHttpInfo(String before, String after, String pageSize, String topicName, Boolean enabled, Boolean hasDelayBy) throws IOException {
+    return getProcessautomationTriggers(createGetProcessautomationTriggersRequest(before, after, pageSize, topicName, enabled, hasDelayBy).withHttpInfo());
   }
 
-  private GetProcessautomationTriggersRequest createGetProcessautomationTriggersRequest(String before, String after, String pageSize, String topicName, Boolean enabled) {
+  private GetProcessautomationTriggersRequest createGetProcessautomationTriggersRequest(String before, String after, String pageSize, String topicName, Boolean enabled, Boolean hasDelayBy) {
     return GetProcessautomationTriggersRequest.builder()
             .withBefore(before)
 
@@ -241,6 +243,8 @@ public class ProcessAutomationApi {
             .withTopicName(topicName)
 
             .withEnabled(enabled)
+
+            .withHasDelayBy(hasDelayBy)
 
             .build();
   }

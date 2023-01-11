@@ -44,7 +44,8 @@ public class IpAddressRange  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DATA_ACTIONS("data-actions"),
     SMTP("smtp"),
-    AUDIOHOOK("audiohook");
+    AUDIOHOOK("audiohook"),
+    API("api");
 
     private String value;
 

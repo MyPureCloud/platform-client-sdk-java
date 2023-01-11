@@ -384,6 +384,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     }
   }
   private EntryTypeEnum entryType = null;
+  private String errorCode = null;
   private String exitReason = null;
   private String extendedDeliveryStatus = null;
   private String externalContactId = null;
@@ -1348,6 +1349,24 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
   }
   public void setEntryType(EntryTypeEnum entryType) {
     this.entryType = entryType;
+  }
+
+
+  /**
+   * A code corresponding to the error that occurred
+   **/
+  public FlowMetricsTopicFlowMetricRecord errorCode(String errorCode) {
+    this.errorCode = errorCode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A code corresponding to the error that occurred")
+  @JsonProperty("errorCode")
+  public String getErrorCode() {
+    return errorCode;
+  }
+  public void setErrorCode(String errorCode) {
+    this.errorCode = errorCode;
   }
 
 
@@ -2560,6 +2579,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
             Objects.equals(this.endingLanguage, flowMetricsTopicFlowMetricRecord.endingLanguage) &&
             Objects.equals(this.entryReason, flowMetricsTopicFlowMetricRecord.entryReason) &&
             Objects.equals(this.entryType, flowMetricsTopicFlowMetricRecord.entryType) &&
+            Objects.equals(this.errorCode, flowMetricsTopicFlowMetricRecord.errorCode) &&
             Objects.equals(this.exitReason, flowMetricsTopicFlowMetricRecord.exitReason) &&
             Objects.equals(this.extendedDeliveryStatus, flowMetricsTopicFlowMetricRecord.extendedDeliveryStatus) &&
             Objects.equals(this.externalContactId, flowMetricsTopicFlowMetricRecord.externalContactId) &&
@@ -2629,7 +2649,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, endingLanguage, entryReason, entryType, exitReason, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowId, flowInType, flowMilestoneIds, flowName, flowOutType, flowType, flowVersion, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseId, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, recognitionFailureReason, remote, removedSkillIds, reoffered, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, startingLanguage, stationId, teamId, transferTargetAddress, transferTargetName, transferType, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, outcomes, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, endingLanguage, entryReason, entryType, errorCode, exitReason, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowId, flowInType, flowMilestoneIds, flowName, flowOutType, flowType, flowVersion, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseId, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, recognitionFailureReason, remote, removedSkillIds, reoffered, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, startingLanguage, stationId, teamId, transferTargetAddress, transferTargetName, transferType, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, outcomes, scoredAgents);
   }
 
   @Override
@@ -2666,6 +2686,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     sb.append("    endingLanguage: ").append(toIndentedString(endingLanguage)).append("\n");
     sb.append("    entryReason: ").append(toIndentedString(entryReason)).append("\n");
     sb.append("    entryType: ").append(toIndentedString(entryType)).append("\n");
+    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("    exitReason: ").append(toIndentedString(exitReason)).append("\n");
     sb.append("    extendedDeliveryStatus: ").append(toIndentedString(extendedDeliveryStatus)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
