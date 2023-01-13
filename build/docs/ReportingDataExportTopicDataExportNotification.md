@@ -23,6 +23,7 @@ title: ReportingDataExportTopicDataExportNotification
 | **emailStatuses** | <!---->[**Map&lt;String, InnerEnum&gt;**](#InnerEnum)<!----> |  |  [optional] |
 | **emailErrorDescription** | <!----><!---->**String**<!----> |  |  [optional] |
 | **scheduleExpression** | <!----><!---->**String**<!----> |  |  [optional] |
+| **scheduleStaticLinkUrl** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -136,6 +137,7 @@ title: ReportingDataExportTopicDataExportNotification
 | AGENT_LOGIN_LOGOUT_DETAIL_VIEW | &quot;AGENT_LOGIN_LOGOUT_DETAIL_VIEW&quot; | 
 | CAMPAIGN_PERFORMANCE_SUMMARY_VIEW | &quot;CAMPAIGN_PERFORMANCE_SUMMARY_VIEW&quot; | 
 | CAMPAIGN_PERFORMANCE_DETAIL_VIEW | &quot;CAMPAIGN_PERFORMANCE_DETAIL_VIEW&quot; | 
+| QUEUE_WRAPUP_DETAIL_VIEW | &quot;QUEUE_WRAPUP_DETAIL_VIEW&quot; | 
 {: class="table table-striped"}
 
 

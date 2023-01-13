@@ -12,14 +12,19 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;
+import com.mypurecloud.sdk.v2.model.SignedData;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
+import com.mypurecloud.sdk.v2.model.WebDeploymentsAuthorizationResponse;
+import com.mypurecloud.sdk.v2.model.WebDeploymentsOAuthExchangeRequest;
+import com.mypurecloud.sdk.v2.model.WebDeploymentsRefreshJWTRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsDeploymentRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsTokenRevokeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionsDraftRequest;
@@ -30,6 +35,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationVersionsDraftPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsDeploymentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsTokenOauthcodegrantjwtexchangeRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsTokenRefreshRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWebdeploymentsConfigurationVersionsDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWebdeploymentsDeploymentRequest;
 
@@ -179,6 +186,85 @@ public class WebDeploymentsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWebdeploymentsDeployment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Invalidate JWT
+   * 
+   * @param xJourneySessionId The Customer's journey sessionId. (optional)
+   * @param xJourneySessionType The Customer's journey session type. (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWebdeploymentsTokenRevoke(String xJourneySessionId, String xJourneySessionType) throws IOException, ApiException {
+     deleteWebdeploymentsTokenRevoke(createDeleteWebdeploymentsTokenRevokeRequest(xJourneySessionId, xJourneySessionType));
+  }
+
+  /**
+   * Invalidate JWT
+   * 
+   * @param xJourneySessionId The Customer's journey sessionId. (optional)
+   * @param xJourneySessionType The Customer's journey session type. (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWebdeploymentsTokenRevokeWithHttpInfo(String xJourneySessionId, String xJourneySessionType) throws IOException {
+    return deleteWebdeploymentsTokenRevoke(createDeleteWebdeploymentsTokenRevokeRequest(xJourneySessionId, xJourneySessionType).withHttpInfo());
+  }
+
+  private DeleteWebdeploymentsTokenRevokeRequest createDeleteWebdeploymentsTokenRevokeRequest(String xJourneySessionId, String xJourneySessionType) {
+    return DeleteWebdeploymentsTokenRevokeRequest.builder()
+            .withXJourneySessionId(xJourneySessionId)
+
+            .withXJourneySessionType(xJourneySessionType)
+
+            .build();
+  }
+
+  /**
+   * Invalidate JWT
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWebdeploymentsTokenRevoke(DeleteWebdeploymentsTokenRevokeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Invalidate JWT
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWebdeploymentsTokenRevoke(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -984,6 +1070,162 @@ public class WebDeploymentsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WebDeployment> response = (ApiResponse<WebDeployment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * 
+   * @param body webDeploymentsOAuthExchangeRequest (required)
+   * @return WebDeploymentsAuthorizationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebDeploymentsAuthorizationResponse postWebdeploymentsTokenOauthcodegrantjwtexchange(WebDeploymentsOAuthExchangeRequest body) throws IOException, ApiException {
+    return  postWebdeploymentsTokenOauthcodegrantjwtexchange(createPostWebdeploymentsTokenOauthcodegrantjwtexchangeRequest(body));
+  }
+
+  /**
+   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * 
+   * @param body webDeploymentsOAuthExchangeRequest (required)
+   * @return WebDeploymentsAuthorizationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebDeploymentsAuthorizationResponse> postWebdeploymentsTokenOauthcodegrantjwtexchangeWithHttpInfo(WebDeploymentsOAuthExchangeRequest body) throws IOException {
+    return postWebdeploymentsTokenOauthcodegrantjwtexchange(createPostWebdeploymentsTokenOauthcodegrantjwtexchangeRequest(body).withHttpInfo());
+  }
+
+  private PostWebdeploymentsTokenOauthcodegrantjwtexchangeRequest createPostWebdeploymentsTokenOauthcodegrantjwtexchangeRequest(WebDeploymentsOAuthExchangeRequest body) {
+    return PostWebdeploymentsTokenOauthcodegrantjwtexchangeRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * 
+   * @param request The request object
+   * @return WebDeploymentsAuthorizationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebDeploymentsAuthorizationResponse postWebdeploymentsTokenOauthcodegrantjwtexchange(PostWebdeploymentsTokenOauthcodegrantjwtexchangeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WebDeploymentsAuthorizationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WebDeploymentsAuthorizationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebDeploymentsAuthorizationResponse> postWebdeploymentsTokenOauthcodegrantjwtexchange(ApiRequest<WebDeploymentsOAuthExchangeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WebDeploymentsAuthorizationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebDeploymentsAuthorizationResponse> response = (ApiResponse<WebDeploymentsAuthorizationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebDeploymentsAuthorizationResponse> response = (ApiResponse<WebDeploymentsAuthorizationResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Refresh a JWT.
+   * 
+   * @param body  (optional)
+   * @return SignedData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SignedData postWebdeploymentsTokenRefresh(WebDeploymentsRefreshJWTRequest body) throws IOException, ApiException {
+    return  postWebdeploymentsTokenRefresh(createPostWebdeploymentsTokenRefreshRequest(body));
+  }
+
+  /**
+   * Refresh a JWT.
+   * 
+   * @param body  (optional)
+   * @return SignedData
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SignedData> postWebdeploymentsTokenRefreshWithHttpInfo(WebDeploymentsRefreshJWTRequest body) throws IOException {
+    return postWebdeploymentsTokenRefresh(createPostWebdeploymentsTokenRefreshRequest(body).withHttpInfo());
+  }
+
+  private PostWebdeploymentsTokenRefreshRequest createPostWebdeploymentsTokenRefreshRequest(WebDeploymentsRefreshJWTRequest body) {
+    return PostWebdeploymentsTokenRefreshRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Refresh a JWT.
+   * 
+   * @param request The request object
+   * @return SignedData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SignedData postWebdeploymentsTokenRefresh(PostWebdeploymentsTokenRefreshRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SignedData> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SignedData>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Refresh a JWT.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SignedData> postWebdeploymentsTokenRefresh(ApiRequest<WebDeploymentsRefreshJWTRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SignedData>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SignedData> response = (ApiResponse<SignedData>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SignedData> response = (ApiResponse<SignedData>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

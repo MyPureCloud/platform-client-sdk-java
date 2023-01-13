@@ -73,6 +73,9 @@ public class RecordingJobsQuery  implements Serializable {
   }
   private ActionEnum action = null;
   private Date actionDate = null;
+  private Integer actionAge = null;
+  private Date screenRecordingActionDate = null;
+  private Integer screenRecordingActionAge = null;
   private String integrationId = null;
   private Boolean includeRecordingsWithSensitiveData = null;
   private Boolean includeScreenRecordings = null;
@@ -99,20 +102,74 @@ public class RecordingJobsQuery  implements Serializable {
 
 
   /**
-   * The date when the action will be performed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * The date when the action will be performed. If screenRecordingActionDate is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public RecordingJobsQuery actionDate(Date actionDate) {
     this.actionDate = actionDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date when the action will be performed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "The date when the action will be performed. If screenRecordingActionDate is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("actionDate")
   public Date getActionDate() {
     return actionDate;
   }
   public void setActionDate(Date actionDate) {
     this.actionDate = actionDate;
+  }
+
+
+  /**
+   * The number of days after each recording's creation date when the action will be performed. If screenRecordingActionAge is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings.
+   **/
+  public RecordingJobsQuery actionAge(Integer actionAge) {
+    this.actionAge = actionAge;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of days after each recording's creation date when the action will be performed. If screenRecordingActionAge is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings.")
+  @JsonProperty("actionAge")
+  public Integer getActionAge() {
+    return actionAge;
+  }
+  public void setActionAge(Integer actionAge) {
+    this.actionAge = actionAge;
+  }
+
+
+  /**
+   * The date when the action will be performed for screen recordings. If this is provided then includeScreenRecordings must be true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public RecordingJobsQuery screenRecordingActionDate(Date screenRecordingActionDate) {
+    this.screenRecordingActionDate = screenRecordingActionDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The date when the action will be performed for screen recordings. If this is provided then includeScreenRecordings must be true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("screenRecordingActionDate")
+  public Date getScreenRecordingActionDate() {
+    return screenRecordingActionDate;
+  }
+  public void setScreenRecordingActionDate(Date screenRecordingActionDate) {
+    this.screenRecordingActionDate = screenRecordingActionDate;
+  }
+
+
+  /**
+   * The number of days after each screen recording's creation date when the action will be performed. If this is provided then includeScreenRecordings must be true.
+   **/
+  public RecordingJobsQuery screenRecordingActionAge(Integer screenRecordingActionAge) {
+    this.screenRecordingActionAge = screenRecordingActionAge;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of days after each screen recording's creation date when the action will be performed. If this is provided then includeScreenRecordings must be true.")
+  @JsonProperty("screenRecordingActionAge")
+  public Integer getScreenRecordingActionAge() {
+    return screenRecordingActionAge;
+  }
+  public void setScreenRecordingActionAge(Integer screenRecordingActionAge) {
+    this.screenRecordingActionAge = screenRecordingActionAge;
   }
 
 
@@ -218,6 +275,9 @@ public class RecordingJobsQuery  implements Serializable {
 
     return Objects.equals(this.action, recordingJobsQuery.action) &&
             Objects.equals(this.actionDate, recordingJobsQuery.actionDate) &&
+            Objects.equals(this.actionAge, recordingJobsQuery.actionAge) &&
+            Objects.equals(this.screenRecordingActionDate, recordingJobsQuery.screenRecordingActionDate) &&
+            Objects.equals(this.screenRecordingActionAge, recordingJobsQuery.screenRecordingActionAge) &&
             Objects.equals(this.integrationId, recordingJobsQuery.integrationId) &&
             Objects.equals(this.includeRecordingsWithSensitiveData, recordingJobsQuery.includeRecordingsWithSensitiveData) &&
             Objects.equals(this.includeScreenRecordings, recordingJobsQuery.includeScreenRecordings) &&
@@ -227,7 +287,7 @@ public class RecordingJobsQuery  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, actionDate, integrationId, includeRecordingsWithSensitiveData, includeScreenRecordings, clearExport, conversationQuery);
+    return Objects.hash(action, actionDate, actionAge, screenRecordingActionDate, screenRecordingActionAge, integrationId, includeRecordingsWithSensitiveData, includeScreenRecordings, clearExport, conversationQuery);
   }
 
   @Override
@@ -237,6 +297,9 @@ public class RecordingJobsQuery  implements Serializable {
     
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    actionDate: ").append(toIndentedString(actionDate)).append("\n");
+    sb.append("    actionAge: ").append(toIndentedString(actionAge)).append("\n");
+    sb.append("    screenRecordingActionDate: ").append(toIndentedString(screenRecordingActionDate)).append("\n");
+    sb.append("    screenRecordingActionAge: ").append(toIndentedString(screenRecordingActionAge)).append("\n");
     sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
     sb.append("    includeRecordingsWithSensitiveData: ").append(toIndentedString(includeRecordingsWithSensitiveData)).append("\n");
     sb.append("    includeScreenRecordings: ").append(toIndentedString(includeScreenRecordings)).append("\n");

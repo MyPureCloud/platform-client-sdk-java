@@ -224,7 +224,8 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     AGENT_LOGIN_LOGOUT_SUMMARY_VIEW("AGENT_LOGIN_LOGOUT_SUMMARY_VIEW"),
     AGENT_LOGIN_LOGOUT_DETAIL_VIEW("AGENT_LOGIN_LOGOUT_DETAIL_VIEW"),
     CAMPAIGN_PERFORMANCE_SUMMARY_VIEW("CAMPAIGN_PERFORMANCE_SUMMARY_VIEW"),
-    CAMPAIGN_PERFORMANCE_DETAIL_VIEW("CAMPAIGN_PERFORMANCE_DETAIL_VIEW");
+    CAMPAIGN_PERFORMANCE_DETAIL_VIEW("CAMPAIGN_PERFORMANCE_DETAIL_VIEW"),
+    QUEUE_WRAPUP_DETAIL_VIEW("QUEUE_WRAPUP_DETAIL_VIEW");
 
     private String value;
 
@@ -364,6 +365,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
   private Map<String, InnerEnum> emailStatuses = null;
   private String emailErrorDescription = null;
   private String scheduleExpression = null;
+  private String scheduleStaticLinkUrl = null;
 
   
   /**
@@ -621,6 +623,23 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
   }
 
 
+  /**
+   **/
+  public ReportingDataExportTopicDataExportNotification scheduleStaticLinkUrl(String scheduleStaticLinkUrl) {
+    this.scheduleStaticLinkUrl = scheduleStaticLinkUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scheduleStaticLinkUrl")
+  public String getScheduleStaticLinkUrl() {
+    return scheduleStaticLinkUrl;
+  }
+  public void setScheduleStaticLinkUrl(String scheduleStaticLinkUrl) {
+    this.scheduleStaticLinkUrl = scheduleStaticLinkUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -645,12 +664,13 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
             Objects.equals(this.percentageComplete, reportingDataExportTopicDataExportNotification.percentageComplete) &&
             Objects.equals(this.emailStatuses, reportingDataExportTopicDataExportNotification.emailStatuses) &&
             Objects.equals(this.emailErrorDescription, reportingDataExportTopicDataExportNotification.emailErrorDescription) &&
-            Objects.equals(this.scheduleExpression, reportingDataExportTopicDataExportNotification.scheduleExpression);
+            Objects.equals(this.scheduleExpression, reportingDataExportTopicDataExportNotification.scheduleExpression) &&
+            Objects.equals(this.scheduleStaticLinkUrl, reportingDataExportTopicDataExportNotification.scheduleStaticLinkUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, runId, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime, percentageComplete, emailStatuses, emailErrorDescription, scheduleExpression);
+    return Objects.hash(id, runId, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime, percentageComplete, emailStatuses, emailErrorDescription, scheduleExpression, scheduleStaticLinkUrl);
   }
 
   @Override
@@ -673,6 +693,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     sb.append("    emailStatuses: ").append(toIndentedString(emailStatuses)).append("\n");
     sb.append("    emailErrorDescription: ").append(toIndentedString(emailErrorDescription)).append("\n");
     sb.append("    scheduleExpression: ").append(toIndentedString(scheduleExpression)).append("\n");
+    sb.append("    scheduleStaticLinkUrl: ").append(toIndentedString(scheduleStaticLinkUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

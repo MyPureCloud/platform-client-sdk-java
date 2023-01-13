@@ -21,7 +21,7 @@ title: Phone
 | **modifiedByApp** | <!----><!---->**String**<!----> | The application that last modified the resource. |  [optional] |
 | **createdByApp** | <!----><!---->**String**<!----> | The application that created the resource. |  [optional] |
 | **site** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The site associated to the phone. |  |
-| **phoneBaseSettings** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | Phone Base Settings |  |
+| **phoneBaseSettings** | <!----><!---->[**PhoneBaseSettings**](PhoneBaseSettings.html)<!----> | Phone Base Settings |  |
 | **lineBaseSettings** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
 | **phoneMetaBase** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
 | **lines** | <!----><!---->[**List&lt;Line&gt;**](Line.html)<!----> | Lines |  |

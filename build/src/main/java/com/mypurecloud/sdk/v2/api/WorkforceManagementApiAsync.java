@@ -149,6 +149,8 @@ import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
 import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.WfmAgent;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkQuery;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
@@ -180,6 +182,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementuni
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplanationsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalBulkJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdhocmodelingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentAdherenceExplanationRequest;
@@ -262,6 +265,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequest
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
@@ -1524,6 +1528,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AdherenceExplanationJob> response = (ApiResponse<AdherenceExplanationJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WfmHistoricalAdherenceBulkResponse> getWorkforcemanagementAdherenceHistoricalBulkJobAsync(GetWorkforcemanagementAdherenceHistoricalBulkJobRequest request, final AsyncApiCallback<WfmHistoricalAdherenceBulkResponse> callback) {
+    try {
+      final SettableFuture<WfmHistoricalAdherenceBulkResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WfmHistoricalAdherenceBulkResponse>() {}, new AsyncApiCallback<ApiResponse<WfmHistoricalAdherenceBulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmHistoricalAdherenceBulkResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WfmHistoricalAdherenceBulkResponse>> getWorkforcemanagementAdherenceHistoricalBulkJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WfmHistoricalAdherenceBulkResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WfmHistoricalAdherenceBulkResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WfmHistoricalAdherenceBulkResponse>() {}, new AsyncApiCallback<ApiResponse<WfmHistoricalAdherenceBulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmHistoricalAdherenceBulkResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmHistoricalAdherenceBulkResponse> response = (ApiResponse<WfmHistoricalAdherenceBulkResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmHistoricalAdherenceBulkResponse> response = (ApiResponse<WfmHistoricalAdherenceBulkResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7674,6 +7753,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request a historical adherence report in bulk
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WfmHistoricalAdherenceBulkResponse> postWorkforcemanagementAdherenceHistoricalBulkAsync(PostWorkforcemanagementAdherenceHistoricalBulkRequest request, final AsyncApiCallback<WfmHistoricalAdherenceBulkResponse> callback) {
+    try {
+      final SettableFuture<WfmHistoricalAdherenceBulkResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WfmHistoricalAdherenceBulkResponse>() {}, new AsyncApiCallback<ApiResponse<WfmHistoricalAdherenceBulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmHistoricalAdherenceBulkResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request a historical adherence report in bulk
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WfmHistoricalAdherenceBulkResponse>> postWorkforcemanagementAdherenceHistoricalBulkAsync(ApiRequest<WfmHistoricalAdherenceBulkQuery> request, final AsyncApiCallback<ApiResponse<WfmHistoricalAdherenceBulkResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WfmHistoricalAdherenceBulkResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WfmHistoricalAdherenceBulkResponse>() {}, new AsyncApiCallback<ApiResponse<WfmHistoricalAdherenceBulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WfmHistoricalAdherenceBulkResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmHistoricalAdherenceBulkResponse> response = (ApiResponse<WfmHistoricalAdherenceBulkResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WfmHistoricalAdherenceBulkResponse> response = (ApiResponse<WfmHistoricalAdherenceBulkResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

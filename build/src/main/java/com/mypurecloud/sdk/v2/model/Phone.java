@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.Edge;
 import com.mypurecloud.sdk.v2.model.Line;
+import com.mypurecloud.sdk.v2.model.PhoneBaseSettings;
 import com.mypurecloud.sdk.v2.model.PhoneCapabilities;
 import com.mypurecloud.sdk.v2.model.PhoneStatus;
 import com.mypurecloud.sdk.v2.model.UserAgentInfo;
@@ -95,7 +96,7 @@ public class Phone  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private DomainEntityRef site = null;
-  private DomainEntityRef phoneBaseSettings = null;
+  private PhoneBaseSettings phoneBaseSettings = null;
   private DomainEntityRef lineBaseSettings = null;
   private DomainEntityRef phoneMetaBase = null;
   private List<Line> lines = new ArrayList<Line>();
@@ -259,17 +260,17 @@ public class Phone  implements Serializable {
   /**
    * Phone Base Settings
    **/
-  public Phone phoneBaseSettings(DomainEntityRef phoneBaseSettings) {
+  public Phone phoneBaseSettings(PhoneBaseSettings phoneBaseSettings) {
     this.phoneBaseSettings = phoneBaseSettings;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Phone Base Settings")
   @JsonProperty("phoneBaseSettings")
-  public DomainEntityRef getPhoneBaseSettings() {
+  public PhoneBaseSettings getPhoneBaseSettings() {
     return phoneBaseSettings;
   }
-  public void setPhoneBaseSettings(DomainEntityRef phoneBaseSettings) {
+  public void setPhoneBaseSettings(PhoneBaseSettings phoneBaseSettings) {
     this.phoneBaseSettings = phoneBaseSettings;
   }
 

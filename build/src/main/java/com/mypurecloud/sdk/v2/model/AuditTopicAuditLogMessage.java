@@ -225,6 +225,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     VERIFY("Verify"),
     CANCEL("Cancel"),
     HARDDELETE("HardDelete"),
+    SOFTDELETE("SoftDelete"),
     ENABLECAPTURE("EnableCapture"),
     DOWNLOADCAPTURE("DownloadCapture");
 

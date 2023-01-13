@@ -181,6 +181,7 @@ public class EntityChange  implements Serializable {
     RESPONSE("Response"),
     RESPONSEASSET("ResponseAsset"),
     ROLE("Role"),
+    ROLESETTINGS("RoleSettings"),
     ROW("Row"),
     ROUTINGTRANSCRIPTIONSETTINGS("RoutingTranscriptionSettings"),
     ROUTINGUTILIZATIONTAG("RoutingUtilizationTag"),

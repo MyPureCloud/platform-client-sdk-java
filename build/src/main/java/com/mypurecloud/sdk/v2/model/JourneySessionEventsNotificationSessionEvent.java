@@ -52,8 +52,6 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   private String customerId = null;
   private String customerIdType = null;
   private String type = null;
-  private String externalId = null;
-  private String externalUrl = null;
   private List<JourneySessionEventsNotificationOutcomeAchievement> outcomeAchievements = new ArrayList<JourneySessionEventsNotificationOutcomeAchievement>();
   private List<JourneySessionEventsNotificationSegmentAssignment> segmentAssignments = new ArrayList<JourneySessionEventsNotificationSegmentAssignment>();
   private Map<String, JourneySessionEventsNotificationCustomEventAttribute> attributes = null;
@@ -379,40 +377,6 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   }
   public void setType(String type) {
     this.type = type;
-  }
-
-
-  /**
-   **/
-  public JourneySessionEventsNotificationSessionEvent externalId(String externalId) {
-    this.externalId = externalId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("externalId")
-  public String getExternalId() {
-    return externalId;
-  }
-  public void setExternalId(String externalId) {
-    this.externalId = externalId;
-  }
-
-
-  /**
-   **/
-  public JourneySessionEventsNotificationSessionEvent externalUrl(String externalUrl) {
-    this.externalUrl = externalUrl;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("externalUrl")
-  public String getExternalUrl() {
-    return externalUrl;
-  }
-  public void setExternalUrl(String externalUrl) {
-    this.externalUrl = externalUrl;
   }
 
 
@@ -961,8 +925,6 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
             Objects.equals(this.customerId, journeySessionEventsNotificationSessionEvent.customerId) &&
             Objects.equals(this.customerIdType, journeySessionEventsNotificationSessionEvent.customerIdType) &&
             Objects.equals(this.type, journeySessionEventsNotificationSessionEvent.type) &&
-            Objects.equals(this.externalId, journeySessionEventsNotificationSessionEvent.externalId) &&
-            Objects.equals(this.externalUrl, journeySessionEventsNotificationSessionEvent.externalUrl) &&
             Objects.equals(this.outcomeAchievements, journeySessionEventsNotificationSessionEvent.outcomeAchievements) &&
             Objects.equals(this.segmentAssignments, journeySessionEventsNotificationSessionEvent.segmentAssignments) &&
             Objects.equals(this.attributes, journeySessionEventsNotificationSessionEvent.attributes) &&
@@ -998,7 +960,7 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, selfUri, createdDate, endedDate, externalContact, customerId, customerIdType, type, externalId, externalUrl, outcomeAchievements, segmentAssignments, attributes, attributeLists, awayDate, browser, device, geolocation, idleDate, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, originatingDirection, conversationSubject, lastUserDisposition, lastConnectedUser, lastConnectedQueue, conversationChannels, lastUserDisconnectType, lastAcdOutcome, authenticated);
+    return Objects.hash(id, selfUri, createdDate, endedDate, externalContact, customerId, customerIdType, type, outcomeAchievements, segmentAssignments, attributes, attributeLists, awayDate, browser, device, geolocation, idleDate, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, originatingDirection, conversationSubject, lastUserDisposition, lastConnectedUser, lastConnectedQueue, conversationChannels, lastUserDisconnectType, lastAcdOutcome, authenticated);
   }
 
   @Override
@@ -1014,8 +976,6 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    customerIdType: ").append(toIndentedString(customerIdType)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
-    sb.append("    externalUrl: ").append(toIndentedString(externalUrl)).append("\n");
     sb.append("    outcomeAchievements: ").append(toIndentedString(outcomeAchievements)).append("\n");
     sb.append("    segmentAssignments: ").append(toIndentedString(segmentAssignments)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");

@@ -156,6 +156,8 @@ import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
 import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.WfmAgent;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkQuery;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;

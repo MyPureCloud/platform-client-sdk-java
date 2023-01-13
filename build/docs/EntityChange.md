@@ -159,6 +159,7 @@ title: EntityChange
 | RESPONSE | &quot;Response&quot; | 
 | RESPONSEASSET | &quot;ResponseAsset&quot; | 
 | ROLE | &quot;Role&quot; | 
+| ROLESETTINGS | &quot;RoleSettings&quot; | 
 | ROW | &quot;Row&quot; | 
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; | 
 | ROUTINGUTILIZATIONTAG | &quot;RoutingUtilizationTag&quot; | 

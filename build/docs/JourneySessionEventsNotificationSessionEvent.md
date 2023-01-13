@@ -16,8 +16,6 @@ title: JourneySessionEventsNotificationSessionEvent
 | **customerId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **customerIdType** | <!----><!---->**String**<!----> |  |  [optional] |
 | **type** | <!----><!---->**String**<!----> |  |  [optional] |
-| **externalId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **externalUrl** | <!----><!---->**String**<!----> |  |  [optional] |
 | **outcomeAchievements** | <!----><!---->[**List&lt;JourneySessionEventsNotificationOutcomeAchievement&gt;**](JourneySessionEventsNotificationOutcomeAchievement.html)<!----> |  |  [optional] |
 | **segmentAssignments** | <!----><!---->[**List&lt;JourneySessionEventsNotificationSegmentAssignment&gt;**](JourneySessionEventsNotificationSegmentAssignment.html)<!----> |  |  [optional] |
 | **attributes** | <!----><!---->[**Map&lt;String, JourneySessionEventsNotificationCustomEventAttribute&gt;**](JourneySessionEventsNotificationCustomEventAttribute.html)<!----> |  |  [optional] |

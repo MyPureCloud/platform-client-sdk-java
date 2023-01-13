@@ -34222,6 +34222,24 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteWebdeploymentsDeployment {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String deploymentId = \"deploymentId_example\"; // String | The deployment ID\n        try { \n            // Delete a deployment\n            apiInstance.deleteWebdeploymentsDeployment(deploymentId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#deleteWebdeploymentsDeployment\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deletewebdeploymentstokenrevoke": {
+    "operationId": "deletewebdeploymentstokenrevoke",
+    "functionName": "deleteWebdeploymentsTokenRevoke",
+    "signature": "deleteWebdeploymentsTokenRevoke(xJourneySessionId, xJourneySessionType)",
+    "parameters": [
+      {
+        "name": "xJourneySessionId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "xJourneySessionType",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteWebdeploymentsTokenRevoke {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String xJourneySessionId = \"xJourneySessionId_example\"; // String | The Customer's journey sessionId.\nString xJourneySessionType = \"xJourneySessionType_example\"; // String | The Customer's journey session type.\n        try { \n            // Invalidate JWT\n            apiInstance.deleteWebdeploymentsTokenRevoke(xJourneySessionId, xJourneySessionType);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#deleteWebdeploymentsTokenRevoke\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "getwebdeploymentsconfigurationversion": {
     "operationId": "getwebdeploymentsconfigurationversion",
     "functionName": "getWebdeploymentsConfigurationVersion",
@@ -34371,6 +34389,34 @@
     ],
     "return": "WebDeployment",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WebDeployment;\n\npublic class ExamplepostWebdeploymentsDeployments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        WebDeployment deployment = new WebDeployment(); // WebDeployment | \n        try { \n            // Create a deployment\n            WebDeployment result = apiInstance.postWebdeploymentsDeployments(deployment);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#postWebdeploymentsDeployments\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postwebdeploymentstokenoauthcodegrantjwtexchange": {
+    "operationId": "postwebdeploymentstokenoauthcodegrantjwtexchange",
+    "functionName": "postWebdeploymentsTokenOauthcodegrantjwtexchange",
+    "signature": "postWebdeploymentsTokenOauthcodegrantjwtexchange(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "WebDeploymentsOAuthExchangeRequest",
+        "required": "true"
+      }
+    ],
+    "return": "WebDeploymentsAuthorizationResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.WebDeploymentsOAuthExchangeRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WebDeploymentsAuthorizationResponse;\n\npublic class ExamplepostWebdeploymentsTokenOauthcodegrantjwtexchange {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        WebDeploymentsOAuthExchangeRequest body = new WebDeploymentsOAuthExchangeRequest(); // WebDeploymentsOAuthExchangeRequest | webDeploymentsOAuthExchangeRequest\n        try { \n            // Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.\n            WebDeploymentsAuthorizationResponse result = apiInstance.postWebdeploymentsTokenOauthcodegrantjwtexchange(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#postWebdeploymentsTokenOauthcodegrantjwtexchange\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postwebdeploymentstokenrefresh": {
+    "operationId": "postwebdeploymentstokenrefresh",
+    "functionName": "postWebdeploymentsTokenRefresh",
+    "signature": "postWebdeploymentsTokenRefresh(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "WebDeploymentsRefreshJWTRequest",
+        "required": "false"
+      }
+    ],
+    "return": "SignedData",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.WebDeploymentsRefreshJWTRequest;import com.mypurecloud.sdk.v2.model.SignedData;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostWebdeploymentsTokenRefresh {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        WebDeploymentsRefreshJWTRequest body = new WebDeploymentsRefreshJWTRequest(); // WebDeploymentsRefreshJWTRequest | \n        try { \n            // Refresh a JWT.\n            SignedData result = apiInstance.postWebdeploymentsTokenRefresh(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#postWebdeploymentsTokenRefresh\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "putwebdeploymentsconfigurationversionsdraft": {
     "operationId": "putwebdeploymentsconfigurationversionsdraft",
@@ -34760,6 +34806,20 @@
     ],
     "return": "AdherenceExplanationJob",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AdherenceExplanationJob;\n\npublic class ExamplegetWorkforcemanagementAdherenceExplanationsJob {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String jobId = \"jobId_example\"; // String | The ID of the job\n        try { \n            // Query the status of an adherence explanation operation. Only the user who started the operation can query the status\n            AdherenceExplanationJob result = apiInstance.getWorkforcemanagementAdherenceExplanationsJob(jobId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementAdherenceExplanationsJob\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getworkforcemanagementadherencehistoricalbulkjob": {
+    "operationId": "getworkforcemanagementadherencehistoricalbulkjob",
+    "functionName": "getWorkforcemanagementAdherenceHistoricalBulkJob",
+    "signature": "getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)",
+    "parameters": [
+      {
+        "name": "jobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "WfmHistoricalAdherenceBulkResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWorkforcemanagementAdherenceHistoricalBulkJob {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        String jobId = \"jobId_example\"; // String | ID of the job to get\n        try { \n            // Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status\n            WfmHistoricalAdherenceBulkResponse result = apiInstance.getWorkforcemanagementAdherenceHistoricalBulkJob(jobId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#getWorkforcemanagementAdherenceHistoricalBulkJob\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getworkforcemanagementadherencehistoricaljob": {
     "operationId": "getworkforcemanagementadherencehistoricaljob",
@@ -36385,6 +36445,20 @@
     ],
     "return": "WfmHistoricalAdherenceResponse",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;\n\npublic class ExamplepostWorkforcemanagementAdherenceHistorical {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        WfmHistoricalAdherenceQueryForUsers body = new WfmHistoricalAdherenceQueryForUsers(); // WfmHistoricalAdherenceQueryForUsers | body\n        try { \n            // Request a historical adherence report for users across management units\n            WfmHistoricalAdherenceResponse result = apiInstance.postWorkforcemanagementAdherenceHistorical(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#postWorkforcemanagementAdherenceHistorical\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postworkforcemanagementadherencehistoricalbulk": {
+    "operationId": "postworkforcemanagementadherencehistoricalbulk",
+    "functionName": "postWorkforcemanagementAdherenceHistoricalBulk",
+    "signature": "postWorkforcemanagementAdherenceHistoricalBulk(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "WfmHistoricalAdherenceBulkQuery",
+        "required": "false"
+      }
+    ],
+    "return": "WfmHistoricalAdherenceBulkResponse",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkQuery;import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkResponse;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostWorkforcemanagementAdherenceHistoricalBulk {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        WfmHistoricalAdherenceBulkQuery body = new WfmHistoricalAdherenceBulkQuery(); // WfmHistoricalAdherenceBulkQuery | body\n        try { \n            // Request a historical adherence report in bulk\n            WfmHistoricalAdherenceBulkResponse result = apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#postWorkforcemanagementAdherenceHistoricalBulk\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postworkforcemanagementagentadherenceexplanations": {
     "operationId": "postworkforcemanagementagentadherenceexplanations",

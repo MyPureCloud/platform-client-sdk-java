@@ -60,13 +60,7 @@ title: KnowledgeDocumentSearchRequest
 | CONFIDENCESCORE | &quot;ConfidenceScore&quot; | 
 | DATECREATED | &quot;DateCreated&quot; | 
 | DATEMODIFIED | &quot;DateModified&quot; | 
-| CATEGORYID | &quot;CategoryId&quot; | 
 | CATEGORYNAME | &quot;CategoryName&quot; | 
-| CONTEXTID | &quot;ContextId&quot; | 
-| CONTEXTNAME | &quot;ContextName&quot; | 
-| CONTEXTVALUEID | &quot;ContextValueId&quot; | 
-| CONTEXTVALUENAME | &quot;ContextValueName&quot; | 
-| LABELID | &quot;LabelId&quot; | 
 | LABELNAME | &quot;LabelName&quot; | 
 {: class="table table-striped"}
 

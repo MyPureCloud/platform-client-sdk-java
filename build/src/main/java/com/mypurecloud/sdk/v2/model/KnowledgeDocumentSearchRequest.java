@@ -154,13 +154,7 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
     CONFIDENCESCORE("ConfidenceScore"),
     DATECREATED("DateCreated"),
     DATEMODIFIED("DateModified"),
-    CATEGORYID("CategoryId"),
     CATEGORYNAME("CategoryName"),
-    CONTEXTID("ContextId"),
-    CONTEXTNAME("ContextName"),
-    CONTEXTVALUEID("ContextValueId"),
-    CONTEXTVALUENAME("ContextValueName"),
-    LABELID("LabelId"),
     LABELNAME("LabelName");
 
     private String value;

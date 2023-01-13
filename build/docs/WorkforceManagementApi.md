@@ -23,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | Get a list of UserScheduleAdherence records for the requested users |
 | [**getWorkforcemanagementAdherenceExplanation**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceExplanation) | Get an adherence explanation for the current user |
 | [**getWorkforcemanagementAdherenceExplanationsJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceExplanationsJob) | Query the status of an adherence explanation operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementAdherenceHistoricalBulkJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceHistoricalBulkJob) | Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAdherenceHistoricalJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceHistoricalJob) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAdhocmodelingjob**](WorkforceManagementApi.html#getWorkforcemanagementAdhocmodelingjob) | Get status of the modeling job |
 | [**getWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi.html#getWorkforcemanagementAgentAdherenceExplanation) | Get an adherence explanation |
@@ -105,6 +106,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanations) | Submit an adherence explanation for the current user |
 | [**postWorkforcemanagementAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanationsQuery) | Query adherence explanations for the current user |
 | [**postWorkforcemanagementAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistorical) | Request a historical adherence report for users across management units |
+| [**postWorkforcemanagementAdherenceHistoricalBulk**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistoricalBulk) | Request a historical adherence report in bulk |
 | [**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanations) | Add an adherence explanation for the requested user |
 | [**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanationsQuery) | Query adherence explanations for the given agent across a specified range |
 | [**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi.html#postWorkforcemanagementAgentschedulesMine) | Get published schedule for the current user |
@@ -1149,6 +1151,68 @@ try {
 ### Return type
 
 [**AdherenceExplanationJob**](AdherenceExplanationJob.html)
+
+<a name="getWorkforcemanagementAdherenceHistoricalBulkJob"></a>
+
+# **getWorkforcemanagementAdherenceHistoricalBulkJob**
+
+
+
+> [WfmHistoricalAdherenceBulkResponse](WfmHistoricalAdherenceBulkResponse.html) getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)
+
+Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | ID of the job to get
+try {
+    WfmHistoricalAdherenceBulkResponse result = apiInstance.getWorkforcemanagementAdherenceHistoricalBulkJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAdherenceHistoricalBulkJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| ID of the job to get | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse.html)
 
 <a name="getWorkforcemanagementAdherenceHistoricalJob"></a>
 
@@ -6665,6 +6729,67 @@ try {
 ### Return type
 
 [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
+
+<a name="postWorkforcemanagementAdherenceHistoricalBulk"></a>
+
+# **postWorkforcemanagementAdherenceHistoricalBulk**
+
+
+
+> [WfmHistoricalAdherenceBulkResponse](WfmHistoricalAdherenceBulkResponse.html) postWorkforcemanagementAdherenceHistoricalBulk(body)
+
+Request a historical adherence report in bulk
+
+Wraps POST /api/v2/workforcemanagement/adherence/historical/bulk  
+
+Requires ANY permissions: 
+
+* wfm:historicalAdherence:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+WfmHistoricalAdherenceBulkQuery body = new WfmHistoricalAdherenceBulkQuery(); // WfmHistoricalAdherenceBulkQuery | body
+try {
+    WfmHistoricalAdherenceBulkResponse result = apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAdherenceHistoricalBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**WfmHistoricalAdherenceBulkQuery**](WfmHistoricalAdherenceBulkQuery.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse.html)
 
 <a name="postWorkforcemanagementAgentAdherenceExplanations"></a>
 

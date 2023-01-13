@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteWebdeploymentsConfiguration**](WebDeploymentsApi.html#deleteWebdeploymentsConfiguration) | Delete all versions of a configuration |
 | [**deleteWebdeploymentsDeployment**](WebDeploymentsApi.html#deleteWebdeploymentsDeployment) | Delete a deployment |
+| [**deleteWebdeploymentsTokenRevoke**](WebDeploymentsApi.html#deleteWebdeploymentsTokenRevoke) | Invalidate JWT |
 | [**getWebdeploymentsConfigurationVersion**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersion) | Get a configuration version |
 | [**getWebdeploymentsConfigurationVersions**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersions) | Get the versions of a configuration |
 | [**getWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersionsDraft) | Get the configuration draft |
@@ -19,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWebdeploymentsConfigurationVersionsDraftPublish**](WebDeploymentsApi.html#postWebdeploymentsConfigurationVersionsDraftPublish) | Publish the configuration draft and create a new version |
 | [**postWebdeploymentsConfigurations**](WebDeploymentsApi.html#postWebdeploymentsConfigurations) | Create a configuration draft |
 | [**postWebdeploymentsDeployments**](WebDeploymentsApi.html#postWebdeploymentsDeployments) | Create a deployment |
+| [**postWebdeploymentsTokenOauthcodegrantjwtexchange**](WebDeploymentsApi.html#postWebdeploymentsTokenOauthcodegrantjwtexchange) | Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments. |
+| [**postWebdeploymentsTokenRefresh**](WebDeploymentsApi.html#postWebdeploymentsTokenRefresh) | Refresh a JWT. |
 | [**putWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi.html#putWebdeploymentsConfigurationVersionsDraft) | Update the configuration draft |
 | [**putWebdeploymentsDeployment**](WebDeploymentsApi.html#putWebdeploymentsDeployment) | Update a deployment |
 {: class="table-striped"}
@@ -136,6 +139,54 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **deploymentId** | **String**| The deployment ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteWebdeploymentsTokenRevoke"></a>
+
+# **deleteWebdeploymentsTokenRevoke**
+
+
+
+> Void deleteWebdeploymentsTokenRevoke(xJourneySessionId, xJourneySessionType)
+
+Invalidate JWT
+
+Wraps DELETE /api/v2/webdeployments/token/revoke  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.WebDeploymentsApi;
+
+
+WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+String xJourneySessionId = "xJourneySessionId_example"; // String | The Customer's journey sessionId.
+String xJourneySessionType = "xJourneySessionType_example"; // String | The Customer's journey session type.
+try {
+    apiInstance.deleteWebdeploymentsTokenRevoke(xJourneySessionId, xJourneySessionType);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebDeploymentsApi#deleteWebdeploymentsTokenRevoke");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **xJourneySessionId** | **String**| The Customer&#39;s journey sessionId. | [optional] 
+| **xJourneySessionType** | **String**| The Customer&#39;s journey session type. | [optional] 
 {: class="table-striped"}
 
 
@@ -758,6 +809,100 @@ try {
 ### Return type
 
 [**WebDeployment**](WebDeployment.html)
+
+<a name="postWebdeploymentsTokenOauthcodegrantjwtexchange"></a>
+
+# **postWebdeploymentsTokenOauthcodegrantjwtexchange**
+
+
+
+> [WebDeploymentsAuthorizationResponse](WebDeploymentsAuthorizationResponse.html) postWebdeploymentsTokenOauthcodegrantjwtexchange(body)
+
+Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+
+Wraps POST /api/v2/webdeployments/token/oauthcodegrantjwtexchange  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.WebDeploymentsApi;
+
+
+WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+WebDeploymentsOAuthExchangeRequest body = new WebDeploymentsOAuthExchangeRequest(); // WebDeploymentsOAuthExchangeRequest | webDeploymentsOAuthExchangeRequest
+try {
+    WebDeploymentsAuthorizationResponse result = apiInstance.postWebdeploymentsTokenOauthcodegrantjwtexchange(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebDeploymentsApi#postWebdeploymentsTokenOauthcodegrantjwtexchange");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**WebDeploymentsOAuthExchangeRequest**](WebDeploymentsOAuthExchangeRequest.html)| webDeploymentsOAuthExchangeRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WebDeploymentsAuthorizationResponse**](WebDeploymentsAuthorizationResponse.html)
+
+<a name="postWebdeploymentsTokenRefresh"></a>
+
+# **postWebdeploymentsTokenRefresh**
+
+
+
+> [SignedData](SignedData.html) postWebdeploymentsTokenRefresh(body)
+
+Refresh a JWT.
+
+Wraps POST /api/v2/webdeployments/token/refresh  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.WebDeploymentsApi;
+
+
+WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+WebDeploymentsRefreshJWTRequest body = new WebDeploymentsRefreshJWTRequest(); // WebDeploymentsRefreshJWTRequest | 
+try {
+    SignedData result = apiInstance.postWebdeploymentsTokenRefresh(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebDeploymentsApi#postWebdeploymentsTokenRefresh");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**WebDeploymentsRefreshJWTRequest**](WebDeploymentsRefreshJWTRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SignedData**](SignedData.html)
 
 <a name="putWebdeploymentsConfigurationVersionsDraft"></a>
 

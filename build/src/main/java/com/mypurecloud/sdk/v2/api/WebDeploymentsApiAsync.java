@@ -15,14 +15,19 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;
+import com.mypurecloud.sdk.v2.model.SignedData;
 import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentActiveConfigurationOnDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
+import com.mypurecloud.sdk.v2.model.WebDeploymentsAuthorizationResponse;
+import com.mypurecloud.sdk.v2.model.WebDeploymentsOAuthExchangeRequest;
+import com.mypurecloud.sdk.v2.model.WebDeploymentsRefreshJWTRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsDeploymentRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsTokenRevokeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionsDraftRequest;
@@ -33,6 +38,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationVersionsDraftPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsDeploymentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsTokenOauthcodegrantjwtexchangeRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsTokenRefreshRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWebdeploymentsConfigurationVersionsDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWebdeploymentsDeploymentRequest;
 
@@ -171,6 +178,81 @@ public class WebDeploymentsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteWebdeploymentsDeploymentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Invalidate JWT
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteWebdeploymentsTokenRevokeAsync(DeleteWebdeploymentsTokenRevokeRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Invalidate JWT
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteWebdeploymentsTokenRevokeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -943,6 +1025,156 @@ public class WebDeploymentsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WebDeployment> response = (ApiResponse<WebDeployment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WebDeploymentsAuthorizationResponse> postWebdeploymentsTokenOauthcodegrantjwtexchangeAsync(PostWebdeploymentsTokenOauthcodegrantjwtexchangeRequest request, final AsyncApiCallback<WebDeploymentsAuthorizationResponse> callback) {
+    try {
+      final SettableFuture<WebDeploymentsAuthorizationResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WebDeploymentsAuthorizationResponse>() {}, new AsyncApiCallback<ApiResponse<WebDeploymentsAuthorizationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebDeploymentsAuthorizationResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WebDeploymentsAuthorizationResponse>> postWebdeploymentsTokenOauthcodegrantjwtexchangeAsync(ApiRequest<WebDeploymentsOAuthExchangeRequest> request, final AsyncApiCallback<ApiResponse<WebDeploymentsAuthorizationResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WebDeploymentsAuthorizationResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WebDeploymentsAuthorizationResponse>() {}, new AsyncApiCallback<ApiResponse<WebDeploymentsAuthorizationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebDeploymentsAuthorizationResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebDeploymentsAuthorizationResponse> response = (ApiResponse<WebDeploymentsAuthorizationResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebDeploymentsAuthorizationResponse> response = (ApiResponse<WebDeploymentsAuthorizationResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Refresh a JWT.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SignedData> postWebdeploymentsTokenRefreshAsync(PostWebdeploymentsTokenRefreshRequest request, final AsyncApiCallback<SignedData> callback) {
+    try {
+      final SettableFuture<SignedData> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SignedData>() {}, new AsyncApiCallback<ApiResponse<SignedData>>() {
+        @Override
+        public void onCompleted(ApiResponse<SignedData> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Refresh a JWT.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SignedData>> postWebdeploymentsTokenRefreshAsync(ApiRequest<WebDeploymentsRefreshJWTRequest> request, final AsyncApiCallback<ApiResponse<SignedData>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SignedData>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SignedData>() {}, new AsyncApiCallback<ApiResponse<SignedData>>() {
+        @Override
+        public void onCompleted(ApiResponse<SignedData> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SignedData> response = (ApiResponse<SignedData>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SignedData> response = (ApiResponse<SignedData>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

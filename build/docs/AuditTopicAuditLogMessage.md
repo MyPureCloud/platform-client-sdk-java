@@ -163,6 +163,7 @@ title: AuditTopicAuditLogMessage
 | VERIFY | &quot;Verify&quot; | 
 | CANCEL | &quot;Cancel&quot; | 
 | HARDDELETE | &quot;HardDelete&quot; | 
+| SOFTDELETE | &quot;SoftDelete&quot; | 
 | ENABLECAPTURE | &quot;EnableCapture&quot; | 
 | DOWNLOADCAPTURE | &quot;DownloadCapture&quot; | 
 {: class="table table-striped"}
