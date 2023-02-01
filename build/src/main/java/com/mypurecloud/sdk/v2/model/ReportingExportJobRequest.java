@@ -188,7 +188,8 @@ public class ReportingExportJobRequest  implements Serializable {
     KNOWLEDGE_PERFORMANCE_VIEW("KNOWLEDGE_PERFORMANCE_VIEW"),
     AGENT_SCORECARD_INSIGHTS_SUMMARY_VIEW("AGENT_SCORECARD_INSIGHTS_SUMMARY_VIEW"),
     AGENT_SCORECARD_INSIGHTS_DETAIL_VIEW("AGENT_SCORECARD_INSIGHTS_DETAIL_VIEW"),
-    QUEUE_WRAPUP_DETAIL_VIEW("QUEUE_WRAPUP_DETAIL_VIEW");
+    QUEUE_WRAPUP_DETAIL_VIEW("QUEUE_WRAPUP_DETAIL_VIEW"),
+    INTERACTION_DETAIL_VIEW("INTERACTION_DETAIL_VIEW");
 
     private String value;
 
@@ -422,14 +423,14 @@ public class ReportingExportJobRequest  implements Serializable {
 
 
   /**
-   * The locale use for localization of the exported data, i.e. en-us, es-mx  
+   * The locale used for localization of the exported data, i.e. en-US, es
    **/
   public ReportingExportJobRequest locale(String locale) {
     this.locale = locale;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The locale use for localization of the exported data, i.e. en-us, es-mx  ")
+  @ApiModelProperty(example = "null", required = true, value = "The locale used for localization of the exported data, i.e. en-US, es")
   @JsonProperty("locale")
   public String getLocale() {
     return locale;

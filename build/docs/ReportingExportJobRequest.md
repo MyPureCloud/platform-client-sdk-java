@@ -16,7 +16,7 @@ title: ReportingExportJobRequest
 | **viewType** | [**ViewTypeEnum**](#ViewTypeEnum)<!----> | The type of view export job to be created |  |
 | **filter** | <!----><!---->[**ViewFilter**](ViewFilter.html)<!----> | Filters to apply to create the view |  |
 | **read** | <!----><!---->**Boolean**<!----> | Indicates if the request has been marked as read |  [optional] |
-| **locale** | <!----><!---->**String**<!----> | The locale use for localization of the exported data, i.e. en-us, es-mx   |  |
+| **locale** | <!----><!---->**String**<!----> | The locale used for localization of the exported data, i.e. en-US, es |  |
 | **hasFormatDurations** | <!----><!---->**Boolean**<!----> | Indicates if durations are formatted in hh:mm:ss format instead of ms |  [optional] |
 | **hasSplitFilters** | <!----><!---->**Boolean**<!----> | Indicates if filters will be split in aggregate detail exports |  [optional] |
 | **excludeEmptyRows** | <!----><!---->**Boolean**<!----> | Excludes empty rows from the exports |  [optional] |
@@ -140,6 +140,7 @@ title: ReportingExportJobRequest
 | AGENT_SCORECARD_INSIGHTS_SUMMARY_VIEW | &quot;AGENT_SCORECARD_INSIGHTS_SUMMARY_VIEW&quot; | 
 | AGENT_SCORECARD_INSIGHTS_DETAIL_VIEW | &quot;AGENT_SCORECARD_INSIGHTS_DETAIL_VIEW&quot; | 
 | QUEUE_WRAPUP_DETAIL_VIEW | &quot;QUEUE_WRAPUP_DETAIL_VIEW&quot; | 
+| INTERACTION_DETAIL_VIEW | &quot;INTERACTION_DETAIL_VIEW&quot; | 
 {: class="table table-striped"}
 
 

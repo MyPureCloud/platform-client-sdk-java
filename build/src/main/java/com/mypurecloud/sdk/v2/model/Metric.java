@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Objective;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
@@ -35,6 +36,57 @@ public class Metric  implements Serializable {
   private AddressableEntityRef linkedMetric = null;
   private Date dateCreated = null;
   private LocalDate dateUnlinked = null;
+  private Integer precision = null;
+
+  private static class TimeDisplayUnitEnumDeserializer extends StdDeserializer<TimeDisplayUnitEnum> {
+    public TimeDisplayUnitEnumDeserializer() {
+      super(TimeDisplayUnitEnumDeserializer.class);
+    }
+
+    @Override
+    public TimeDisplayUnitEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TimeDisplayUnitEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+   */
+ @JsonDeserialize(using = TimeDisplayUnitEnumDeserializer.class)
+  public enum TimeDisplayUnitEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NONE("None"),
+    SECONDS("Seconds"),
+    MINUTES("Minutes"),
+    HOURS("Hours");
+
+    private String value;
+
+    TimeDisplayUnitEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TimeDisplayUnitEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TimeDisplayUnitEnum value : TimeDisplayUnitEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TimeDisplayUnitEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TimeDisplayUnitEnum timeDisplayUnit = null;
   private PerformanceProfile sourcePerformanceProfile = null;
   private String selfUri = null;
 
@@ -157,6 +209,31 @@ public class Metric  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The precision of the metric, must be between 0 and 5")
+  @JsonProperty("precision")
+  public Integer getPrecision() {
+    return precision;
+  }
+
+
+  /**
+   * The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+   **/
+  public Metric timeDisplayUnit(TimeDisplayUnitEnum timeDisplayUnit) {
+    this.timeDisplayUnit = timeDisplayUnit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values")
+  @JsonProperty("timeDisplayUnit")
+  public TimeDisplayUnitEnum getTimeDisplayUnit() {
+    return timeDisplayUnit;
+  }
+  public void setTimeDisplayUnit(TimeDisplayUnitEnum timeDisplayUnit) {
+    this.timeDisplayUnit = timeDisplayUnit;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The source performance profile when this metric is linked")
   @JsonProperty("sourcePerformanceProfile")
   public PerformanceProfile getSourcePerformanceProfile() {
@@ -190,13 +267,15 @@ public class Metric  implements Serializable {
             Objects.equals(this.linkedMetric, metric.linkedMetric) &&
             Objects.equals(this.dateCreated, metric.dateCreated) &&
             Objects.equals(this.dateUnlinked, metric.dateUnlinked) &&
+            Objects.equals(this.precision, metric.precision) &&
+            Objects.equals(this.timeDisplayUnit, metric.timeDisplayUnit) &&
             Objects.equals(this.sourcePerformanceProfile, metric.sourcePerformanceProfile) &&
             Objects.equals(this.selfUri, metric.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, metricDefinitionId, externalMetricDefinitionId, objective, performanceProfileId, linkedMetric, dateCreated, dateUnlinked, sourcePerformanceProfile, selfUri);
+    return Objects.hash(id, name, metricDefinitionId, externalMetricDefinitionId, objective, performanceProfileId, linkedMetric, dateCreated, dateUnlinked, precision, timeDisplayUnit, sourcePerformanceProfile, selfUri);
   }
 
   @Override
@@ -213,6 +292,8 @@ public class Metric  implements Serializable {
     sb.append("    linkedMetric: ").append(toIndentedString(linkedMetric)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateUnlinked: ").append(toIndentedString(dateUnlinked)).append("\n");
+    sb.append("    precision: ").append(toIndentedString(precision)).append("\n");
+    sb.append("    timeDisplayUnit: ").append(toIndentedString(timeDisplayUnit)).append("\n");
     sb.append("    sourcePerformanceProfile: ").append(toIndentedString(sourcePerformanceProfile)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

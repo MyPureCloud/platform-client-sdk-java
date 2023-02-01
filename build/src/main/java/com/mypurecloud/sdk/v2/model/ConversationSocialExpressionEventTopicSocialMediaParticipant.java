@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicUriRef
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -334,6 +335,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
   private ConversationSocialExpressionEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private List<String> mediaRoles = new ArrayList<String>();
   private String socialMediaId = null;
   private String socialMediaHub = null;
   private String socialUserName = null;
@@ -937,6 +939,23 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
 
   /**
    **/
+  public ConversationSocialExpressionEventTopicSocialMediaParticipant mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+  }
+
+
+  /**
+   **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant socialMediaId(String socialMediaId) {
     this.socialMediaId = socialMediaId;
     return this;
@@ -1048,6 +1067,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
             Objects.equals(this.journeyContext, conversationSocialExpressionEventTopicSocialMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, conversationSocialExpressionEventTopicSocialMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationSocialExpressionEventTopicSocialMediaParticipant.endAcwTime) &&
+            Objects.equals(this.mediaRoles, conversationSocialExpressionEventTopicSocialMediaParticipant.mediaRoles) &&
             Objects.equals(this.socialMediaId, conversationSocialExpressionEventTopicSocialMediaParticipant.socialMediaId) &&
             Objects.equals(this.socialMediaHub, conversationSocialExpressionEventTopicSocialMediaParticipant.socialMediaHub) &&
             Objects.equals(this.socialUserName, conversationSocialExpressionEventTopicSocialMediaParticipant.socialUserName) &&
@@ -1056,7 +1076,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, socialMediaId, socialMediaHub, socialUserName, previewText);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, socialMediaId, socialMediaHub, socialUserName, previewText);
   }
 
   @Override
@@ -1099,6 +1119,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    socialMediaId: ").append(toIndentedString(socialMediaId)).append("\n");
     sb.append("    socialMediaHub: ").append(toIndentedString(socialMediaHub)).append("\n");
     sb.append("    socialUserName: ").append(toIndentedString(socialUserName)).append("\n");

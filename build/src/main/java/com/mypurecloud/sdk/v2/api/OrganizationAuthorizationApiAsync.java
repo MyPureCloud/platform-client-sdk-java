@@ -19,6 +19,8 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.TrustEntityListing;
+import com.mypurecloud.sdk.v2.model.TrustGroup;
+import com.mypurecloud.sdk.v2.model.TrustGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
 import com.mypurecloud.sdk.v2.model.TrustRequest;
 import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
@@ -35,14 +37,20 @@ import com.mypurecloud.sdk.v2.model.UserAuthorization;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeCloneduserRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeGroupRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorCloneduserRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationPairingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeClonedusersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeGroupRolesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUsersRequest;
@@ -51,19 +59,25 @@ import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteesDefaultRequ
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorCloneduserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorClonedusersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationPairingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteeGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteeUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrustorAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeGroupRoledivisionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeGroupRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeUserRoledivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrustorCloneduserRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrustorGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrustorUserRequest;
 
 import java.io.IOException;
@@ -201,6 +215,156 @@ public class OrganizationAuthorizationApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteOrgauthorizationTrusteeCloneduserAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Trustee Group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteOrgauthorizationTrusteeGroupAsync(DeleteOrgauthorizationTrusteeGroupRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Trustee Group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteOrgauthorizationTrusteeGroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Trustee Group Roles
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteOrgauthorizationTrusteeGroupRolesAsync(DeleteOrgauthorizationTrusteeGroupRolesRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Trustee Group Roles
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteOrgauthorizationTrusteeGroupRolesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -535,6 +699,81 @@ public class OrganizationAuthorizationApiAsync {
   }
 
   /**
+   * Delete Trustee Group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteOrgauthorizationTrustorGroupAsync(DeleteOrgauthorizationTrustorGroupRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Trustee Group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteOrgauthorizationTrustorGroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Delete Trustee User
    * 
    * @param request the request object
@@ -823,6 +1062,231 @@ public class OrganizationAuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ClonedUserEntityListing> response = (ApiResponse<ClonedUserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Trustee Group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrustGroup> getOrgauthorizationTrusteeGroupAsync(GetOrgauthorizationTrusteeGroupRequest request, final AsyncApiCallback<TrustGroup> callback) {
+    try {
+      final SettableFuture<TrustGroup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrustGroup>() {}, new AsyncApiCallback<ApiResponse<TrustGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroup> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Trustee Group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrustGroup>> getOrgauthorizationTrusteeGroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrustGroup>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrustGroup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrustGroup>() {}, new AsyncApiCallback<ApiResponse<TrustGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroup> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Trustee Group Roles
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserAuthorization> getOrgauthorizationTrusteeGroupRolesAsync(GetOrgauthorizationTrusteeGroupRolesRequest request, final AsyncApiCallback<UserAuthorization> callback) {
+    try {
+      final SettableFuture<UserAuthorization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserAuthorization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Trustee Group Roles
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserAuthorization>> getOrgauthorizationTrusteeGroupRolesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserAuthorization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserAuthorization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * The list of trustee groups for this organization (i.e. groups granted access to this organization).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrustGroupEntityListing> getOrgauthorizationTrusteeGroupsAsync(GetOrgauthorizationTrusteeGroupsRequest request, final AsyncApiCallback<TrustGroupEntityListing> callback) {
+    try {
+      final SettableFuture<TrustGroupEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrustGroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrustGroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroupEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * The list of trustee groups for this organization (i.e. groups granted access to this organization).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrustGroupEntityListing>> getOrgauthorizationTrusteeGroupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrustGroupEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrustGroupEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrustGroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrustGroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroupEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroupEntityListing> response = (ApiResponse<TrustGroupEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroupEntityListing> response = (ApiResponse<TrustGroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1435,6 +1899,156 @@ public class OrganizationAuthorizationApiAsync {
   }
 
   /**
+   * Get Trustee Group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrustGroup> getOrgauthorizationTrustorGroupAsync(GetOrgauthorizationTrustorGroupRequest request, final AsyncApiCallback<TrustGroup> callback) {
+    try {
+      final SettableFuture<TrustGroup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrustGroup>() {}, new AsyncApiCallback<ApiResponse<TrustGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroup> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Trustee Group
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrustGroup>> getOrgauthorizationTrustorGroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrustGroup>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrustGroup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrustGroup>() {}, new AsyncApiCallback<ApiResponse<TrustGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroup> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * The list of groups in the trustor organization (i.e. groups granted access).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrustGroupEntityListing> getOrgauthorizationTrustorGroupsAsync(GetOrgauthorizationTrustorGroupsRequest request, final AsyncApiCallback<TrustGroupEntityListing> callback) {
+    try {
+      final SettableFuture<TrustGroupEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrustGroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrustGroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroupEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * The list of groups in the trustor organization (i.e. groups granted access).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrustGroupEntityListing>> getOrgauthorizationTrustorGroupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrustGroupEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrustGroupEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrustGroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrustGroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroupEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroupEntityListing> response = (ApiResponse<TrustGroupEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroupEntityListing> response = (ApiResponse<TrustGroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get Trustee User
    * 
    * @param request the request object
@@ -1723,6 +2337,81 @@ public class OrganizationAuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TrustRequest> response = (ApiResponse<TrustRequest>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a group to the trust.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrustGroup> postOrgauthorizationTrusteeGroupsAsync(PostOrgauthorizationTrusteeGroupsRequest request, final AsyncApiCallback<TrustGroup> callback) {
+    try {
+      final SettableFuture<TrustGroup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrustGroup>() {}, new AsyncApiCallback<ApiResponse<TrustGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroup> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a group to the trust.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrustGroup>> postOrgauthorizationTrusteeGroupsAsync(ApiRequest<TrustMemberCreate> request, final AsyncApiCallback<ApiResponse<TrustGroup>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrustGroup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrustGroup>() {}, new AsyncApiCallback<ApiResponse<TrustGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroup> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2185,6 +2874,156 @@ public class OrganizationAuthorizationApiAsync {
   }
 
   /**
+   * Update Trustee Group Roles
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserAuthorization> putOrgauthorizationTrusteeGroupRoledivisionsAsync(PutOrgauthorizationTrusteeGroupRoledivisionsRequest request, final AsyncApiCallback<UserAuthorization> callback) {
+    try {
+      final SettableFuture<UserAuthorization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserAuthorization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Trustee Group Roles
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserAuthorization>> putOrgauthorizationTrusteeGroupRoledivisionsAsync(ApiRequest<RoleDivisionGrants> request, final AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserAuthorization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserAuthorization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Trustee Group Roles
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserAuthorization> putOrgauthorizationTrusteeGroupRolesAsync(PutOrgauthorizationTrusteeGroupRolesRequest request, final AsyncApiCallback<UserAuthorization> callback) {
+    try {
+      final SettableFuture<UserAuthorization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserAuthorization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Trustee Group Roles
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserAuthorization>> putOrgauthorizationTrusteeGroupRolesAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserAuthorization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserAuthorization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update Trustee User Roles
    * 
    * @param request the request object
@@ -2398,6 +3237,81 @@ public class OrganizationAuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ClonedUser> response = (ApiResponse<ClonedUser>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a Trustee Group to the trust.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrustGroup> putOrgauthorizationTrustorGroupAsync(PutOrgauthorizationTrustorGroupRequest request, final AsyncApiCallback<TrustGroup> callback) {
+    try {
+      final SettableFuture<TrustGroup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrustGroup>() {}, new AsyncApiCallback<ApiResponse<TrustGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroup> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a Trustee Group to the trust.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrustGroup>> putOrgauthorizationTrustorGroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrustGroup>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrustGroup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrustGroup>() {}, new AsyncApiCallback<ApiResponse<TrustGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustGroup> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -16,6 +16,8 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.TrustEntityListing;
+import com.mypurecloud.sdk.v2.model.TrustGroup;
+import com.mypurecloud.sdk.v2.model.TrustGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
 import com.mypurecloud.sdk.v2.model.TrustRequest;
 import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
@@ -32,14 +34,20 @@ import com.mypurecloud.sdk.v2.model.UserAuthorization;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeCloneduserRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeGroupRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorCloneduserRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationPairingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeClonedusersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeGroupRolesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUsersRequest;
@@ -48,19 +56,25 @@ import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteesDefaultRequ
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorCloneduserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorClonedusersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationPairingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteeGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteeUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrustorAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeGroupRoledivisionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeGroupRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeUserRoledivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrustorCloneduserRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrustorGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrustorUserRequest;
 
 import java.io.IOException;
@@ -213,6 +227,164 @@ public class OrganizationAuthorizationApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOrgauthorizationTrusteeCloneduser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete Trustee Group
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOrgauthorizationTrusteeGroup(String trusteeOrgId, String trusteeGroupId) throws IOException, ApiException {
+     deleteOrgauthorizationTrusteeGroup(createDeleteOrgauthorizationTrusteeGroupRequest(trusteeOrgId, trusteeGroupId));
+  }
+
+  /**
+   * Delete Trustee Group
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrusteeGroupWithHttpInfo(String trusteeOrgId, String trusteeGroupId) throws IOException {
+    return deleteOrgauthorizationTrusteeGroup(createDeleteOrgauthorizationTrusteeGroupRequest(trusteeOrgId, trusteeGroupId).withHttpInfo());
+  }
+
+  private DeleteOrgauthorizationTrusteeGroupRequest createDeleteOrgauthorizationTrusteeGroupRequest(String trusteeOrgId, String trusteeGroupId) {
+    return DeleteOrgauthorizationTrusteeGroupRequest.builder()
+            .withTrusteeOrgId(trusteeOrgId)
+
+            .withTrusteeGroupId(trusteeGroupId)
+
+            .build();
+  }
+
+  /**
+   * Delete Trustee Group
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOrgauthorizationTrusteeGroup(DeleteOrgauthorizationTrusteeGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Trustee Group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrusteeGroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete Trustee Group Roles
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOrgauthorizationTrusteeGroupRoles(String trusteeOrgId, String trusteeGroupId) throws IOException, ApiException {
+     deleteOrgauthorizationTrusteeGroupRoles(createDeleteOrgauthorizationTrusteeGroupRolesRequest(trusteeOrgId, trusteeGroupId));
+  }
+
+  /**
+   * Delete Trustee Group Roles
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrusteeGroupRolesWithHttpInfo(String trusteeOrgId, String trusteeGroupId) throws IOException {
+    return deleteOrgauthorizationTrusteeGroupRoles(createDeleteOrgauthorizationTrusteeGroupRolesRequest(trusteeOrgId, trusteeGroupId).withHttpInfo());
+  }
+
+  private DeleteOrgauthorizationTrusteeGroupRolesRequest createDeleteOrgauthorizationTrusteeGroupRolesRequest(String trusteeOrgId, String trusteeGroupId) {
+    return DeleteOrgauthorizationTrusteeGroupRolesRequest.builder()
+            .withTrusteeOrgId(trusteeOrgId)
+
+            .withTrusteeGroupId(trusteeGroupId)
+
+            .build();
+  }
+
+  /**
+   * Delete Trustee Group Roles
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOrgauthorizationTrusteeGroupRoles(DeleteOrgauthorizationTrusteeGroupRolesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Trustee Group Roles
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrusteeGroupRoles(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -547,6 +719,85 @@ public class OrganizationAuthorizationApi {
   }
 
   /**
+   * Delete Trustee Group
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trustorGroupId Trustor Group Id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOrgauthorizationTrustorGroup(String trustorOrgId, String trustorGroupId) throws IOException, ApiException {
+     deleteOrgauthorizationTrustorGroup(createDeleteOrgauthorizationTrustorGroupRequest(trustorOrgId, trustorGroupId));
+  }
+
+  /**
+   * Delete Trustee Group
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trustorGroupId Trustor Group Id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrustorGroupWithHttpInfo(String trustorOrgId, String trustorGroupId) throws IOException {
+    return deleteOrgauthorizationTrustorGroup(createDeleteOrgauthorizationTrustorGroupRequest(trustorOrgId, trustorGroupId).withHttpInfo());
+  }
+
+  private DeleteOrgauthorizationTrustorGroupRequest createDeleteOrgauthorizationTrustorGroupRequest(String trustorOrgId, String trustorGroupId) {
+    return DeleteOrgauthorizationTrustorGroupRequest.builder()
+            .withTrustorOrgId(trustorOrgId)
+
+            .withTrustorGroupId(trustorGroupId)
+
+            .build();
+  }
+
+  /**
+   * Delete Trustee Group
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOrgauthorizationTrustorGroup(DeleteOrgauthorizationTrustorGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Trustee Group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrustorGroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Delete Trustee User
    * 
    * @param trustorOrgId Trustor Organization Id (required)
@@ -855,6 +1106,256 @@ public class OrganizationAuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ClonedUserEntityListing> response = (ApiResponse<ClonedUserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Trustee Group
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @return TrustGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroup getOrgauthorizationTrusteeGroup(String trusteeOrgId, String trusteeGroupId) throws IOException, ApiException {
+    return  getOrgauthorizationTrusteeGroup(createGetOrgauthorizationTrusteeGroupRequest(trusteeOrgId, trusteeGroupId));
+  }
+
+  /**
+   * Get Trustee Group
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @return TrustGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroup> getOrgauthorizationTrusteeGroupWithHttpInfo(String trusteeOrgId, String trusteeGroupId) throws IOException {
+    return getOrgauthorizationTrusteeGroup(createGetOrgauthorizationTrusteeGroupRequest(trusteeOrgId, trusteeGroupId).withHttpInfo());
+  }
+
+  private GetOrgauthorizationTrusteeGroupRequest createGetOrgauthorizationTrusteeGroupRequest(String trusteeOrgId, String trusteeGroupId) {
+    return GetOrgauthorizationTrusteeGroupRequest.builder()
+            .withTrusteeOrgId(trusteeOrgId)
+
+            .withTrusteeGroupId(trusteeGroupId)
+
+            .build();
+  }
+
+  /**
+   * Get Trustee Group
+   * 
+   * @param request The request object
+   * @return TrustGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroup getOrgauthorizationTrusteeGroup(GetOrgauthorizationTrusteeGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrustGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrustGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Trustee Group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroup> getOrgauthorizationTrusteeGroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrustGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Trustee Group Roles
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserAuthorization getOrgauthorizationTrusteeGroupRoles(String trusteeOrgId, String trusteeGroupId) throws IOException, ApiException {
+    return  getOrgauthorizationTrusteeGroupRoles(createGetOrgauthorizationTrusteeGroupRolesRequest(trusteeOrgId, trusteeGroupId));
+  }
+
+  /**
+   * Get Trustee Group Roles
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @return UserAuthorization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserAuthorization> getOrgauthorizationTrusteeGroupRolesWithHttpInfo(String trusteeOrgId, String trusteeGroupId) throws IOException {
+    return getOrgauthorizationTrusteeGroupRoles(createGetOrgauthorizationTrusteeGroupRolesRequest(trusteeOrgId, trusteeGroupId).withHttpInfo());
+  }
+
+  private GetOrgauthorizationTrusteeGroupRolesRequest createGetOrgauthorizationTrusteeGroupRolesRequest(String trusteeOrgId, String trusteeGroupId) {
+    return GetOrgauthorizationTrusteeGroupRolesRequest.builder()
+            .withTrusteeOrgId(trusteeOrgId)
+
+            .withTrusteeGroupId(trusteeGroupId)
+
+            .build();
+  }
+
+  /**
+   * Get Trustee Group Roles
+   * 
+   * @param request The request object
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserAuthorization getOrgauthorizationTrusteeGroupRoles(GetOrgauthorizationTrusteeGroupRolesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserAuthorization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Trustee Group Roles
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserAuthorization> getOrgauthorizationTrusteeGroupRoles(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserAuthorization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * The list of trustee groups for this organization (i.e. groups granted access to this organization).
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return TrustGroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroupEntityListing getOrgauthorizationTrusteeGroups(String trusteeOrgId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getOrgauthorizationTrusteeGroups(createGetOrgauthorizationTrusteeGroupsRequest(trusteeOrgId, pageSize, pageNumber));
+  }
+
+  /**
+   * The list of trustee groups for this organization (i.e. groups granted access to this organization).
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return TrustGroupEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroupEntityListing> getOrgauthorizationTrusteeGroupsWithHttpInfo(String trusteeOrgId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getOrgauthorizationTrusteeGroups(createGetOrgauthorizationTrusteeGroupsRequest(trusteeOrgId, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetOrgauthorizationTrusteeGroupsRequest createGetOrgauthorizationTrusteeGroupsRequest(String trusteeOrgId, Integer pageSize, Integer pageNumber) {
+    return GetOrgauthorizationTrusteeGroupsRequest.builder()
+            .withTrusteeOrgId(trusteeOrgId)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * The list of trustee groups for this organization (i.e. groups granted access to this organization).
+   * 
+   * @param request The request object
+   * @return TrustGroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroupEntityListing getOrgauthorizationTrusteeGroups(GetOrgauthorizationTrusteeGroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrustGroupEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrustGroupEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * The list of trustee groups for this organization (i.e. groups granted access to this organization).
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroupEntityListing> getOrgauthorizationTrusteeGroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrustGroupEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroupEntityListing> response = (ApiResponse<TrustGroupEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroupEntityListing> response = (ApiResponse<TrustGroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1504,6 +2005,174 @@ public class OrganizationAuthorizationApi {
   }
 
   /**
+   * Get Trustee Group
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trustorGroupId Trustor Group Id (required)
+   * @return TrustGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroup getOrgauthorizationTrustorGroup(String trustorOrgId, String trustorGroupId) throws IOException, ApiException {
+    return  getOrgauthorizationTrustorGroup(createGetOrgauthorizationTrustorGroupRequest(trustorOrgId, trustorGroupId));
+  }
+
+  /**
+   * Get Trustee Group
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trustorGroupId Trustor Group Id (required)
+   * @return TrustGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroup> getOrgauthorizationTrustorGroupWithHttpInfo(String trustorOrgId, String trustorGroupId) throws IOException {
+    return getOrgauthorizationTrustorGroup(createGetOrgauthorizationTrustorGroupRequest(trustorOrgId, trustorGroupId).withHttpInfo());
+  }
+
+  private GetOrgauthorizationTrustorGroupRequest createGetOrgauthorizationTrustorGroupRequest(String trustorOrgId, String trustorGroupId) {
+    return GetOrgauthorizationTrustorGroupRequest.builder()
+            .withTrustorOrgId(trustorOrgId)
+
+            .withTrustorGroupId(trustorGroupId)
+
+            .build();
+  }
+
+  /**
+   * Get Trustee Group
+   * 
+   * @param request The request object
+   * @return TrustGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroup getOrgauthorizationTrustorGroup(GetOrgauthorizationTrustorGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrustGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrustGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Trustee Group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroup> getOrgauthorizationTrustorGroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrustGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * The list of groups in the trustor organization (i.e. groups granted access).
+   * 
+   * @param trustorOrgId Trustee Organization Id (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return TrustGroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroupEntityListing getOrgauthorizationTrustorGroups(String trustorOrgId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getOrgauthorizationTrustorGroups(createGetOrgauthorizationTrustorGroupsRequest(trustorOrgId, pageSize, pageNumber));
+  }
+
+  /**
+   * The list of groups in the trustor organization (i.e. groups granted access).
+   * 
+   * @param trustorOrgId Trustee Organization Id (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return TrustGroupEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroupEntityListing> getOrgauthorizationTrustorGroupsWithHttpInfo(String trustorOrgId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getOrgauthorizationTrustorGroups(createGetOrgauthorizationTrustorGroupsRequest(trustorOrgId, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetOrgauthorizationTrustorGroupsRequest createGetOrgauthorizationTrustorGroupsRequest(String trustorOrgId, Integer pageSize, Integer pageNumber) {
+    return GetOrgauthorizationTrustorGroupsRequest.builder()
+            .withTrustorOrgId(trustorOrgId)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * The list of groups in the trustor organization (i.e. groups granted access).
+   * 
+   * @param request The request object
+   * @return TrustGroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroupEntityListing getOrgauthorizationTrustorGroups(GetOrgauthorizationTrustorGroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrustGroupEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrustGroupEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * The list of groups in the trustor organization (i.e. groups granted access).
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroupEntityListing> getOrgauthorizationTrustorGroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrustGroupEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroupEntityListing> response = (ApiResponse<TrustGroupEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroupEntityListing> response = (ApiResponse<TrustGroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get Trustee User
    * 
    * @param trustorOrgId Trustor Organization Id (required)
@@ -1827,6 +2496,88 @@ public class OrganizationAuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TrustRequest> response = (ApiResponse<TrustRequest>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add a group to the trust.
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param body Trust (required)
+   * @return TrustGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroup postOrgauthorizationTrusteeGroups(String trusteeOrgId, TrustMemberCreate body) throws IOException, ApiException {
+    return  postOrgauthorizationTrusteeGroups(createPostOrgauthorizationTrusteeGroupsRequest(trusteeOrgId, body));
+  }
+
+  /**
+   * Add a group to the trust.
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param body Trust (required)
+   * @return TrustGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroup> postOrgauthorizationTrusteeGroupsWithHttpInfo(String trusteeOrgId, TrustMemberCreate body) throws IOException {
+    return postOrgauthorizationTrusteeGroups(createPostOrgauthorizationTrusteeGroupsRequest(trusteeOrgId, body).withHttpInfo());
+  }
+
+  private PostOrgauthorizationTrusteeGroupsRequest createPostOrgauthorizationTrusteeGroupsRequest(String trusteeOrgId, TrustMemberCreate body) {
+    return PostOrgauthorizationTrusteeGroupsRequest.builder()
+            .withTrusteeOrgId(trusteeOrgId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add a group to the trust.
+   * 
+   * @param request The request object
+   * @return TrustGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroup postOrgauthorizationTrusteeGroups(PostOrgauthorizationTrusteeGroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrustGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrustGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a group to the trust.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroup> postOrgauthorizationTrusteeGroups(ApiRequest<TrustMemberCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrustGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2344,6 +3095,178 @@ public class OrganizationAuthorizationApi {
   }
 
   /**
+   * Update Trustee Group Roles
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @param body Set of roles with corresponding divisions to apply (required)
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserAuthorization putOrgauthorizationTrusteeGroupRoledivisions(String trusteeOrgId, String trusteeGroupId, RoleDivisionGrants body) throws IOException, ApiException {
+    return  putOrgauthorizationTrusteeGroupRoledivisions(createPutOrgauthorizationTrusteeGroupRoledivisionsRequest(trusteeOrgId, trusteeGroupId, body));
+  }
+
+  /**
+   * Update Trustee Group Roles
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @param body Set of roles with corresponding divisions to apply (required)
+   * @return UserAuthorization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserAuthorization> putOrgauthorizationTrusteeGroupRoledivisionsWithHttpInfo(String trusteeOrgId, String trusteeGroupId, RoleDivisionGrants body) throws IOException {
+    return putOrgauthorizationTrusteeGroupRoledivisions(createPutOrgauthorizationTrusteeGroupRoledivisionsRequest(trusteeOrgId, trusteeGroupId, body).withHttpInfo());
+  }
+
+  private PutOrgauthorizationTrusteeGroupRoledivisionsRequest createPutOrgauthorizationTrusteeGroupRoledivisionsRequest(String trusteeOrgId, String trusteeGroupId, RoleDivisionGrants body) {
+    return PutOrgauthorizationTrusteeGroupRoledivisionsRequest.builder()
+            .withTrusteeOrgId(trusteeOrgId)
+
+            .withTrusteeGroupId(trusteeGroupId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Trustee Group Roles
+   * 
+   * @param request The request object
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserAuthorization putOrgauthorizationTrusteeGroupRoledivisions(PutOrgauthorizationTrusteeGroupRoledivisionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserAuthorization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Trustee Group Roles
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserAuthorization> putOrgauthorizationTrusteeGroupRoledivisions(ApiRequest<RoleDivisionGrants> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserAuthorization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update Trustee Group Roles
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @param body List of roles (required)
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserAuthorization putOrgauthorizationTrusteeGroupRoles(String trusteeOrgId, String trusteeGroupId, List<String> body) throws IOException, ApiException {
+    return  putOrgauthorizationTrusteeGroupRoles(createPutOrgauthorizationTrusteeGroupRolesRequest(trusteeOrgId, trusteeGroupId, body));
+  }
+
+  /**
+   * Update Trustee Group Roles
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeGroupId Trustee Group Id (required)
+   * @param body List of roles (required)
+   * @return UserAuthorization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserAuthorization> putOrgauthorizationTrusteeGroupRolesWithHttpInfo(String trusteeOrgId, String trusteeGroupId, List<String> body) throws IOException {
+    return putOrgauthorizationTrusteeGroupRoles(createPutOrgauthorizationTrusteeGroupRolesRequest(trusteeOrgId, trusteeGroupId, body).withHttpInfo());
+  }
+
+  private PutOrgauthorizationTrusteeGroupRolesRequest createPutOrgauthorizationTrusteeGroupRolesRequest(String trusteeOrgId, String trusteeGroupId, List<String> body) {
+    return PutOrgauthorizationTrusteeGroupRolesRequest.builder()
+            .withTrusteeOrgId(trusteeOrgId)
+
+            .withTrusteeGroupId(trusteeGroupId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Trustee Group Roles
+   * 
+   * @param request The request object
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserAuthorization putOrgauthorizationTrusteeGroupRoles(PutOrgauthorizationTrusteeGroupRolesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserAuthorization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Trustee Group Roles
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserAuthorization> putOrgauthorizationTrusteeGroupRoles(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserAuthorization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update Trustee User Roles
    * 
    * @param trusteeOrgId Trustee Organization Id (required)
@@ -2593,6 +3516,88 @@ public class OrganizationAuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ClonedUser> response = (ApiResponse<ClonedUser>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add a Trustee Group to the trust.
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trustorGroupId Trustor Group Id (required)
+   * @return TrustGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroup putOrgauthorizationTrustorGroup(String trustorOrgId, String trustorGroupId) throws IOException, ApiException {
+    return  putOrgauthorizationTrustorGroup(createPutOrgauthorizationTrustorGroupRequest(trustorOrgId, trustorGroupId));
+  }
+
+  /**
+   * Add a Trustee Group to the trust.
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trustorGroupId Trustor Group Id (required)
+   * @return TrustGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroup> putOrgauthorizationTrustorGroupWithHttpInfo(String trustorOrgId, String trustorGroupId) throws IOException {
+    return putOrgauthorizationTrustorGroup(createPutOrgauthorizationTrustorGroupRequest(trustorOrgId, trustorGroupId).withHttpInfo());
+  }
+
+  private PutOrgauthorizationTrustorGroupRequest createPutOrgauthorizationTrustorGroupRequest(String trustorOrgId, String trustorGroupId) {
+    return PutOrgauthorizationTrustorGroupRequest.builder()
+            .withTrustorOrgId(trustorOrgId)
+
+            .withTrustorGroupId(trustorGroupId)
+
+            .build();
+  }
+
+  /**
+   * Add a Trustee Group to the trust.
+   * 
+   * @param request The request object
+   * @return TrustGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustGroup putOrgauthorizationTrustorGroup(PutOrgauthorizationTrustorGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrustGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrustGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a Trustee Group to the trust.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustGroup> putOrgauthorizationTrustorGroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrustGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustGroup> response = (ApiResponse<TrustGroup>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

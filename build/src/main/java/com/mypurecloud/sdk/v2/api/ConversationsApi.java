@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.ChatConversation;
 import com.mypurecloud.sdk.v2.model.ChatConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseConversation;
 import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
@@ -65,6 +66,7 @@ import com.mypurecloud.sdk.v2.model.EmailConversation;
 import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailMessage;
 import com.mypurecloud.sdk.v2.model.EmailMessageListing;
+import com.mypurecloud.sdk.v2.model.EmailMessageReply;
 import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
@@ -236,6 +238,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQu
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationAssignRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCobrowseRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsRequest;
@@ -9801,6 +9804,84 @@ public class ConversationsApi {
   }
 
   /**
+   * Creates a cobrowse session
+   * 
+   * @param conversationId Conversation ID (required)
+   * @return CobrowseWebMessagingSession
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CobrowseWebMessagingSession postConversationCobrowse(String conversationId) throws IOException, ApiException {
+    return  postConversationCobrowse(createPostConversationCobrowseRequest(conversationId));
+  }
+
+  /**
+   * Creates a cobrowse session
+   * 
+   * @param conversationId Conversation ID (required)
+   * @return CobrowseWebMessagingSession
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CobrowseWebMessagingSession> postConversationCobrowseWithHttpInfo(String conversationId) throws IOException {
+    return postConversationCobrowse(createPostConversationCobrowseRequest(conversationId).withHttpInfo());
+  }
+
+  private PostConversationCobrowseRequest createPostConversationCobrowseRequest(String conversationId) {
+    return PostConversationCobrowseRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Creates a cobrowse session
+   * 
+   * @param request The request object
+   * @return CobrowseWebMessagingSession
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CobrowseWebMessagingSession postConversationCobrowse(PostConversationCobrowseRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CobrowseWebMessagingSession> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CobrowseWebMessagingSession>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a cobrowse session
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CobrowseWebMessagingSession> postConversationCobrowse(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CobrowseWebMessagingSession>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CobrowseWebMessagingSession> response = (ApiResponse<CobrowseWebMessagingSession>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CobrowseWebMessagingSession> response = (ApiResponse<CobrowseWebMessagingSession>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
    * 
    * @param conversationId conversation ID (required)
@@ -11595,11 +11676,11 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param body Reply (required)
-   * @return EmailMessage
+   * @return EmailMessageReply
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EmailMessage postConversationsEmailMessages(String conversationId, EmailMessage body) throws IOException, ApiException {
+  public EmailMessageReply postConversationsEmailMessages(String conversationId, EmailMessage body) throws IOException, ApiException {
     return  postConversationsEmailMessages(createPostConversationsEmailMessagesRequest(conversationId, body));
   }
 
@@ -11608,10 +11689,10 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param body Reply (required)
-   * @return EmailMessage
+   * @return EmailMessageReply
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessage> postConversationsEmailMessagesWithHttpInfo(String conversationId, EmailMessage body) throws IOException {
+  public ApiResponse<EmailMessageReply> postConversationsEmailMessagesWithHttpInfo(String conversationId, EmailMessage body) throws IOException {
     return postConversationsEmailMessages(createPostConversationsEmailMessagesRequest(conversationId, body).withHttpInfo());
   }
 
@@ -11628,13 +11709,13 @@ public class ConversationsApi {
    * Send an email reply
    * 
    * @param request The request object
-   * @return EmailMessage
+   * @return EmailMessageReply
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EmailMessage postConversationsEmailMessages(PostConversationsEmailMessagesRequest request) throws IOException, ApiException {
+  public EmailMessageReply postConversationsEmailMessages(PostConversationsEmailMessagesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<EmailMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
+      ApiResponse<EmailMessageReply> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailMessageReply>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -11650,13 +11731,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessage> postConversationsEmailMessages(ApiRequest<EmailMessage> request) throws IOException {
+  public ApiResponse<EmailMessageReply> postConversationsEmailMessages(ApiRequest<EmailMessage> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<EmailMessage>() {});
+      return pcapiClient.invoke(request, new TypeReference<EmailMessageReply>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)exception;
+      ApiResponse<EmailMessageReply> response = (ApiResponse<EmailMessageReply>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -11667,7 +11748,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<EmailMessageReply> response = (ApiResponse<EmailMessageReply>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

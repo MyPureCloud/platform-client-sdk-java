@@ -64,6 +64,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   private String monitoredParticipantId = null;
   private String coachedParticipantId = null;
   private String bargedParticipantId = null;
+  private List<String> mediaRoles = new ArrayList<String>();
 
   private static class ScreenRecordingStateEnumDeserializer extends StdDeserializer<ScreenRecordingStateEnum> {
     public ScreenRecordingStateEnumDeserializer() {
@@ -580,6 +581,24 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
 
 
   /**
+   * List of roles this participant's media has had on the conversation, ie monitor, coach, etc.
+   **/
+  public QueueConversationEventTopicParticipant mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of roles this participant's media has had on the conversation, ie monitor, coach, etc.")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+  }
+
+
+  /**
    * The current screen recording state for this participant.
    **/
   public QueueConversationEventTopicParticipant screenRecordingState(ScreenRecordingStateEnum screenRecordingState) {
@@ -855,6 +874,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
             Objects.equals(this.monitoredParticipantId, queueConversationEventTopicParticipant.monitoredParticipantId) &&
             Objects.equals(this.coachedParticipantId, queueConversationEventTopicParticipant.coachedParticipantId) &&
             Objects.equals(this.bargedParticipantId, queueConversationEventTopicParticipant.bargedParticipantId) &&
+            Objects.equals(this.mediaRoles, queueConversationEventTopicParticipant.mediaRoles) &&
             Objects.equals(this.screenRecordingState, queueConversationEventTopicParticipant.screenRecordingState) &&
             Objects.equals(this.flaggedReason, queueConversationEventTopicParticipant.flaggedReason) &&
             Objects.equals(this.attributes, queueConversationEventTopicParticipant.attributes) &&
@@ -873,7 +893,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, workflow, additionalProperties);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, workflow, additionalProperties);
   }
 
   @Override
@@ -906,6 +926,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
     sb.append("    bargedParticipantId: ").append(toIndentedString(bargedParticipantId)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");

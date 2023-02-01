@@ -110,6 +110,7 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     JOURNEYDEVICECATEGORY("journeyDeviceCategory"),
     JOURNEYDEVICETYPE("journeyDeviceType"),
     JOURNEYFREQUENCYCAPREASON("journeyFrequencyCapReason"),
+    JOURNEYIPGEOLOCATIONCOUNTRY("journeyIpGeolocationCountry"),
     JOURNEYOUTCOMEID("journeyOutcomeId"),
     JOURNEYSEGMENTID("journeySegmentId"),
     JOURNEYSEGMENTSCOPE("journeySegmentScope"),
@@ -120,7 +121,16 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     NOTCONTAINSANYCONDITION("notContainsAnyCondition"),
     NOTEQUALCONDITION("notEqualCondition"),
     STARTSWITHCONDITION("startsWithCondition"),
-    TOUCHPOINTACTIONMAPID("touchpointActionMapId");
+    TOUCHPOINTACTIONMAPID("touchpointActionMapId"),
+    TOUCHPOINTAGENTID("touchpointAgentId"),
+    TOUCHPOINTATTRIBUTIONSCOPE("touchpointAttributionScope"),
+    TOUCHPOINTCHANNELMESSAGETYPE("touchpointChannelMessageType"),
+    TOUCHPOINTCHANNELPLATFORM("touchpointChannelPlatform"),
+    TOUCHPOINTCHANNELTYPE("touchpointChannelType"),
+    TOUCHPOINTCONVERSATIONID("touchpointConversationId"),
+    TOUCHPOINTINTERACTIONTYPE("touchpointInteractionType"),
+    TOUCHPOINTQUEUEID("touchpointQueueId"),
+    TOUCHPOINTWRAPUPCODE("touchpointWrapupCode");
 
     private String value;
 

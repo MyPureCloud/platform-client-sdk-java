@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Attachment;
 import com.mypurecloud.sdk.v2.model.EmailAddress;
 import io.swagger.annotations.ApiModel;
@@ -39,6 +40,54 @@ public class EmailMessage  implements Serializable {
   private String htmlBody = null;
   private Date time = null;
   private Boolean historyIncluded = null;
+
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets state
+   */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
+  public enum StateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CREATED("Created"),
+    READY("Ready");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StateEnum value : StateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StateEnum state = null;
   private Integer emailSizeBytes = null;
   private Integer maxEmailSizeBytes = null;
   private String selfUri = null;
@@ -266,6 +315,23 @@ public class EmailMessage  implements Serializable {
   }
 
 
+  /**
+   **/
+  public EmailMessage state(StateEnum state) {
+    this.state = state;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("state")
+  public StateEnum getState() {
+    return state;
+  }
+  public void setState(StateEnum state) {
+    this.state = state;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form.")
   @JsonProperty("emailSizeBytes")
   public Integer getEmailSizeBytes() {
@@ -310,6 +376,7 @@ public class EmailMessage  implements Serializable {
             Objects.equals(this.htmlBody, emailMessage.htmlBody) &&
             Objects.equals(this.time, emailMessage.time) &&
             Objects.equals(this.historyIncluded, emailMessage.historyIncluded) &&
+            Objects.equals(this.state, emailMessage.state) &&
             Objects.equals(this.emailSizeBytes, emailMessage.emailSizeBytes) &&
             Objects.equals(this.maxEmailSizeBytes, emailMessage.maxEmailSizeBytes) &&
             Objects.equals(this.selfUri, emailMessage.selfUri);
@@ -317,7 +384,7 @@ public class EmailMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, to, cc, bcc, from, replyTo, subject, attachments, textBody, htmlBody, time, historyIncluded, emailSizeBytes, maxEmailSizeBytes, selfUri);
+    return Objects.hash(id, name, to, cc, bcc, from, replyTo, subject, attachments, textBody, htmlBody, time, historyIncluded, state, emailSizeBytes, maxEmailSizeBytes, selfUri);
   }
 
   @Override
@@ -338,6 +405,7 @@ public class EmailMessage  implements Serializable {
     sb.append("    htmlBody: ").append(toIndentedString(htmlBody)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
     sb.append("    historyIncluded: ").append(toIndentedString(historyIncluded)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    emailSizeBytes: ").append(toIndentedString(emailSizeBytes)).append("\n");
     sb.append("    maxEmailSizeBytes: ").append(toIndentedString(maxEmailSizeBytes)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

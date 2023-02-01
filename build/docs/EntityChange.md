@@ -49,6 +49,10 @@ title: EntityChange
 | CAMPAIGNSCHEDULE | &quot;CampaignSchedule&quot; | 
 | CHANGEREQUEST | &quot;ChangeRequest&quot; | 
 | CLICKSTREAMSETTINGS | &quot;ClickstreamSettings&quot; | 
+| COMPOSERPAGE | &quot;ComposerPage&quot; | 
+| COMPOSERSCRIPT | &quot;ComposerScript&quot; | 
+| COMPOSERPUBLISHEDSCRIPT | &quot;ComposerPublishedScript&quot; | 
+| COMPOSERTEMPLATE | &quot;ComposerTemplate&quot; | 
 | CONFIGURATION | &quot;Configuration&quot; | 
 | CONFIGURATIONVERSION | &quot;ConfigurationVersion&quot; | 
 | CONTACTLIST | &quot;ContactList&quot; | 
@@ -104,6 +108,7 @@ title: EntityChange
 | INBOUNDROUTE | &quot;InboundRoute&quot; | 
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; | 
 | INTEGRATION | &quot;Integration&quot; | 
+| INTENTMINER | &quot;IntentMiner&quot; | 
 | IVR | &quot;IVR&quot; | 
 | KNOWLEDGEBASE | &quot;KnowledgeBase&quot; | 
 | KNOWLEDGECATEGORY | &quot;KnowledgeCategory&quot; | 
@@ -191,6 +196,7 @@ title: EntityChange
 | TIMEOFFPLAN | &quot;TimeOffPlan&quot; | 
 | TIMEOFFREQUEST | &quot;TimeOffRequest&quot; | 
 | TOPIC | &quot;Topic&quot; | 
+| TOPICMINER | &quot;TopicMiner&quot; | 
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; | 
 | TRIGGER | &quot;Trigger&quot; | 
 | TRUNK | &quot;Trunk&quot; | 

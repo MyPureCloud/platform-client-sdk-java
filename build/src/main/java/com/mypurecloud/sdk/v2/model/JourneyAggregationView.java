@@ -62,6 +62,7 @@ public class JourneyAggregationView  implements Serializable {
     NWEBACTIONSREJECTED("nWebActionsRejected"),
     NWEBACTIONSSTARTED("nWebActionsStarted"),
     NWEBACTIONSTIMEDOUT("nWebActionsTimedout"),
+    OJOURNEYOUTCOMETOUCHPOINTVALUE("oJourneyOutcomeTouchpointValue"),
     OJOURNEYOUTCOMEVALUE("oJourneyOutcomeValue");
 
     private String value;

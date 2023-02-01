@@ -9,12 +9,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteWebdeploymentsConfiguration**](WebDeploymentsApi.html#deleteWebdeploymentsConfiguration) | Delete all versions of a configuration |
 | [**deleteWebdeploymentsDeployment**](WebDeploymentsApi.html#deleteWebdeploymentsDeployment) | Delete a deployment |
+| [**deleteWebdeploymentsDeploymentCobrowseSessionId**](WebDeploymentsApi.html#deleteWebdeploymentsDeploymentCobrowseSessionId) | Deletes a cobrowse session |
 | [**deleteWebdeploymentsTokenRevoke**](WebDeploymentsApi.html#deleteWebdeploymentsTokenRevoke) | Invalidate JWT |
 | [**getWebdeploymentsConfigurationVersion**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersion) | Get a configuration version |
 | [**getWebdeploymentsConfigurationVersions**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersions) | Get the versions of a configuration |
 | [**getWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersionsDraft) | Get the configuration draft |
 | [**getWebdeploymentsConfigurations**](WebDeploymentsApi.html#getWebdeploymentsConfigurations) | View configuration drafts |
 | [**getWebdeploymentsDeployment**](WebDeploymentsApi.html#getWebdeploymentsDeployment) | Get a deployment |
+| [**getWebdeploymentsDeploymentCobrowseSessionId**](WebDeploymentsApi.html#getWebdeploymentsDeploymentCobrowseSessionId) | Retrieves a cobrowse session |
 | [**getWebdeploymentsDeploymentConfigurations**](WebDeploymentsApi.html#getWebdeploymentsDeploymentConfigurations) | Get active configuration for a given deployment |
 | [**getWebdeploymentsDeployments**](WebDeploymentsApi.html#getWebdeploymentsDeployments) | Get deployments |
 | [**postWebdeploymentsConfigurationVersionsDraftPublish**](WebDeploymentsApi.html#postWebdeploymentsConfigurationVersionsDraftPublish) | Publish the configuration draft and create a new version |
@@ -145,6 +147,55 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="deleteWebdeploymentsDeploymentCobrowseSessionId"></a>
+
+# **deleteWebdeploymentsDeploymentCobrowseSessionId**
+
+
+
+> Empty deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
+
+Deletes a cobrowse session
+
+Wraps DELETE /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.WebDeploymentsApi;
+
+
+WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+String deploymentId = "deploymentId_example"; // String | WebMessaging deployment ID
+String sessionId = "sessionId_example"; // String | Cobrowse session id or join code
+try {
+    Empty result = apiInstance.deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebDeploymentsApi#deleteWebdeploymentsDeploymentCobrowseSessionId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **deploymentId** | **String**| WebMessaging deployment ID | 
+| **sessionId** | **String**| Cobrowse session id or join code | 
+{: class="table-striped"}
+
+
+### Return type
+
+**Empty**
 
 <a name="deleteWebdeploymentsTokenRevoke"></a>
 
@@ -502,6 +553,55 @@ try {
 ### Return type
 
 [**WebDeployment**](WebDeployment.html)
+
+<a name="getWebdeploymentsDeploymentCobrowseSessionId"></a>
+
+# **getWebdeploymentsDeploymentCobrowseSessionId**
+
+
+
+> [CobrowseWebMessagingSession](CobrowseWebMessagingSession.html) getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
+
+Retrieves a cobrowse session
+
+Wraps GET /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.WebDeploymentsApi;
+
+
+WebDeploymentsApi apiInstance = new WebDeploymentsApi();
+String deploymentId = "deploymentId_example"; // String | WebMessaging deployment ID
+String sessionId = "sessionId_example"; // String | Cobrowse session id or join code
+try {
+    CobrowseWebMessagingSession result = apiInstance.getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebDeploymentsApi#getWebdeploymentsDeploymentCobrowseSessionId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **deploymentId** | **String**| WebMessaging deployment ID | 
+| **sessionId** | **String**| Cobrowse session id or join code | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CobrowseWebMessagingSession**](CobrowseWebMessagingSession.html)
 
 <a name="getWebdeploymentsDeploymentConfigurations"></a>
 

@@ -274,7 +274,7 @@ Float maxPercentageScore = 3.4F; // Float | The maximum assessment score for an 
 String sortOrder = "Desc"; // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
 String sortBy = "sortBy_example"; // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
 List<String> userId = Arrays.asList(null); // List<String> | Specifies the list of user IDs to be queried, up to 100 user IDs.
-List<String> types = Arrays.asList(null); // List<String> | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+List<String> types = Arrays.asList(null); // List<String> | Specifies the module types to filter by
 List<String> states = Arrays.asList(null); // List<String> | Specifies the assignment states to filter by
 List<String> expand = Arrays.asList(null); // List<String> | Specifies the expand option for returning additional information
 try {
@@ -303,7 +303,7 @@ try {
 | **sortOrder** | **String**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
 | **userId** | [**List&lt;String&gt;**](String.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional] 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional]<br />**Values**: Informational, AssessedContent, Assessment 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types to filter by | [optional]<br />**Values**: Informational, AssessedContent, Assessment 
 | **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted 
 | **expand** | [**List&lt;String&gt;**](String.html)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
 {: class="table-striped"}
@@ -361,7 +361,7 @@ Float minPercentageScore = 3.4F; // Float | The minimum assessment score for an 
 Float maxPercentageScore = 3.4F; // Float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 String sortOrder = "Desc"; // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
 String sortBy = "sortBy_example"; // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
-List<String> types = Arrays.asList(null); // List<String> | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+List<String> types = Arrays.asList(null); // List<String> | Specifies the module types to filter by
 List<String> states = Arrays.asList(null); // List<String> | Specifies the assignment states to filter by
 List<String> expand = Arrays.asList(null); // List<String> | Specifies the expand option for returning additional information
 try {
@@ -389,7 +389,7 @@ try {
 | **maxPercentageScore** | **Float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional] 
 | **sortOrder** | **String**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional]<br />**Values**: Informational, AssessedContent, Assessment 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types to filter by | [optional]<br />**Values**: Informational, AssessedContent, Assessment 
 | **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted 
 | **expand** | [**List&lt;String&gt;**](String.html)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
 {: class="table-striped"}

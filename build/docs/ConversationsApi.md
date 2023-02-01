@@ -123,6 +123,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsConversationsDetailsJobs**](ConversationsApi.html#postAnalyticsConversationsDetailsJobs) | Query for conversation details asynchronously |
 | [**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | Query for conversation details |
 | [**postConversationAssign**](ConversationsApi.html#postConversationAssign) | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages. |
+| [**postConversationCobrowse**](ConversationsApi.html#postConversationCobrowse) | Creates a cobrowse session |
 | [**postConversationDisconnect**](ConversationsApi.html#postConversationDisconnect) | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation. |
 | [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | Create a new callback for the specified participant on the conversation. |
 | [**postConversationParticipantDigits**](ConversationsApi.html#postConversationParticipantDigits) | Sends DTMF to the participant |
@@ -7455,6 +7456,67 @@ try {
 
 **String**
 
+<a name="postConversationCobrowse"></a>
+
+# **postConversationCobrowse**
+
+
+
+> [CobrowseWebMessagingSession](CobrowseWebMessagingSession.html) postConversationCobrowse(conversationId)
+
+Creates a cobrowse session
+
+Wraps POST /api/v2/conversations/{conversationId}/cobrowse  
+
+Requires ANY permissions: 
+
+* conversation:cobrowse:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+try {
+    CobrowseWebMessagingSession result = apiInstance.postConversationCobrowse(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationCobrowse");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CobrowseWebMessagingSession**](CobrowseWebMessagingSession.html)
+
 <a name="postConversationDisconnect"></a>
 
 # **postConversationDisconnect**
@@ -8832,7 +8894,7 @@ try {
 
 
 
-> [EmailMessage](EmailMessage.html) postConversationsEmailMessages(conversationId, body)
+> [EmailMessageReply](EmailMessageReply.html) postConversationsEmailMessages(conversationId, body)
 
 Send an email reply
 
@@ -8866,7 +8928,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 EmailMessage body = new EmailMessage(); // EmailMessage | Reply
 try {
-    EmailMessage result = apiInstance.postConversationsEmailMessages(conversationId, body);
+    EmailMessageReply result = apiInstance.postConversationsEmailMessages(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsEmailMessages");
@@ -8886,7 +8948,7 @@ try {
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+[**EmailMessageReply**](EmailMessageReply.html)
 
 <a name="postConversationsEmailMessagesDraftAttachmentsCopy"></a>
 

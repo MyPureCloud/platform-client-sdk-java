@@ -43,6 +43,7 @@ title: QueueConversationCallEventTopicCallMediaParticipant
 | **journeyContext** | <!----><!---->[**QueueConversationCallEventTopicJourneyContext**](QueueConversationCallEventTopicJourneyContext.html)<!----> |  |  [optional] |
 | **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **muted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **confined** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **recording** | <!----><!---->**Boolean**<!----> |  |  [optional] |

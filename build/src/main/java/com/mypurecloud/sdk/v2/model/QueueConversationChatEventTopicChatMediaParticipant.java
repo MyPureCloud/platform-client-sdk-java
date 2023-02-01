@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -334,6 +335,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
   private QueueConversationChatEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private List<String> mediaRoles = new ArrayList<String>();
   private String roomId = null;
   private String avatarImageUrl = null;
 
@@ -935,6 +937,23 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
 
   /**
    **/
+  public QueueConversationChatEventTopicChatMediaParticipant mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+  }
+
+
+  /**
+   **/
   public QueueConversationChatEventTopicChatMediaParticipant roomId(String roomId) {
     this.roomId = roomId;
     return this;
@@ -1012,13 +1031,14 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
             Objects.equals(this.journeyContext, queueConversationChatEventTopicChatMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, queueConversationChatEventTopicChatMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, queueConversationChatEventTopicChatMediaParticipant.endAcwTime) &&
+            Objects.equals(this.mediaRoles, queueConversationChatEventTopicChatMediaParticipant.mediaRoles) &&
             Objects.equals(this.roomId, queueConversationChatEventTopicChatMediaParticipant.roomId) &&
             Objects.equals(this.avatarImageUrl, queueConversationChatEventTopicChatMediaParticipant.avatarImageUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, roomId, avatarImageUrl);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, roomId, avatarImageUrl);
   }
 
   @Override
@@ -1061,6 +1081,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("}");

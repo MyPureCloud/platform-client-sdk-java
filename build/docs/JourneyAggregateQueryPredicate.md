@@ -55,6 +55,7 @@ title: JourneyAggregateQueryPredicate
 | JOURNEYDEVICECATEGORY | &quot;journeyDeviceCategory&quot; | 
 | JOURNEYDEVICETYPE | &quot;journeyDeviceType&quot; | 
 | JOURNEYFREQUENCYCAPREASON | &quot;journeyFrequencyCapReason&quot; | 
+| JOURNEYIPGEOLOCATIONCOUNTRY | &quot;journeyIpGeolocationCountry&quot; | 
 | JOURNEYOUTCOMEID | &quot;journeyOutcomeId&quot; | 
 | JOURNEYSEGMENTID | &quot;journeySegmentId&quot; | 
 | JOURNEYSEGMENTSCOPE | &quot;journeySegmentScope&quot; | 
@@ -66,6 +67,15 @@ title: JourneyAggregateQueryPredicate
 | NOTEQUALCONDITION | &quot;notEqualCondition&quot; | 
 | STARTSWITHCONDITION | &quot;startsWithCondition&quot; | 
 | TOUCHPOINTACTIONMAPID | &quot;touchpointActionMapId&quot; | 
+| TOUCHPOINTAGENTID | &quot;touchpointAgentId&quot; | 
+| TOUCHPOINTATTRIBUTIONSCOPE | &quot;touchpointAttributionScope&quot; | 
+| TOUCHPOINTCHANNELMESSAGETYPE | &quot;touchpointChannelMessageType&quot; | 
+| TOUCHPOINTCHANNELPLATFORM | &quot;touchpointChannelPlatform&quot; | 
+| TOUCHPOINTCHANNELTYPE | &quot;touchpointChannelType&quot; | 
+| TOUCHPOINTCONVERSATIONID | &quot;touchpointConversationId&quot; | 
+| TOUCHPOINTINTERACTIONTYPE | &quot;touchpointInteractionType&quot; | 
+| TOUCHPOINTQUEUEID | &quot;touchpointQueueId&quot; | 
+| TOUCHPOINTWRAPUPCODE | &quot;touchpointWrapupCode&quot; | 
 {: class="table table-striped"}
 
 

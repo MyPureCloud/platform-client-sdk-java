@@ -211,11 +211,13 @@ try {
 
 # **getStationsSettings**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [StationSettings](StationSettings.html) getStationsSettings()
 
 Get an organization's StationSettings
+
+This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
 
 Wraps GET /api/v2/stations/settings  
 
@@ -267,11 +269,13 @@ This endpoint does not require any parameters.
 
 # **patchStationsSettings**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [StationSettings](StationSettings.html) patchStationsSettings(body)
 
 Patch an organization's StationSettings
+
+This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
 
 Wraps PATCH /api/v2/stations/settings  
 

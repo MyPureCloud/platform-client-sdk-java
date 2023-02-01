@@ -565,14 +565,15 @@ public class LanguageUnderstandingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param enableCursorPagination Enable Cursor Pagination (optional, default to false)
+   * @param includeTrainingUtterances Include Training Utterances. By default they're included. (optional, default to true)
    * @param after The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true (optional)
    * @param fields Fields and properties to get, comma-separated (optional)
    * @return NluFeedbackListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public NluFeedbackListing getLanguageunderstandingDomainFeedback(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, String language, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) throws IOException, ApiException {
-    return  getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields));
+  public NluFeedbackListing getLanguageunderstandingDomainFeedback(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, String language, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, Boolean includeTrainingUtterances, String after, List<String> fields) throws IOException, ApiException {
+    return  getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, includeTrainingUtterances, after, fields));
   }
 
   /**
@@ -588,16 +589,17 @@ public class LanguageUnderstandingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param enableCursorPagination Enable Cursor Pagination (optional, default to false)
+   * @param includeTrainingUtterances Include Training Utterances. By default they're included. (optional, default to true)
    * @param after The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true (optional)
    * @param fields Fields and properties to get, comma-separated (optional)
    * @return NluFeedbackListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<NluFeedbackListing> getLanguageunderstandingDomainFeedbackWithHttpInfo(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, String language, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) throws IOException {
-    return getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields).withHttpInfo());
+  public ApiResponse<NluFeedbackListing> getLanguageunderstandingDomainFeedbackWithHttpInfo(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, String language, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, Boolean includeTrainingUtterances, String after, List<String> fields) throws IOException {
+    return getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, includeTrainingUtterances, after, fields).withHttpInfo());
   }
 
-  private GetLanguageunderstandingDomainFeedbackRequest createGetLanguageunderstandingDomainFeedbackRequest(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, String language, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) {
+  private GetLanguageunderstandingDomainFeedbackRequest createGetLanguageunderstandingDomainFeedbackRequest(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, String language, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, Boolean includeTrainingUtterances, String after, List<String> fields) {
     return GetLanguageunderstandingDomainFeedbackRequest.builder()
             .withDomainId(domainId)
 
@@ -618,6 +620,8 @@ public class LanguageUnderstandingApi {
             .withPageSize(pageSize)
 
             .withEnableCursorPagination(enableCursorPagination)
+
+            .withIncludeTrainingUtterances(includeTrainingUtterances)
 
             .withAfter(after)
 

@@ -335,6 +335,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
   private ConversationCobrowseEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private List<String> mediaRoles = new ArrayList<String>();
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
   private String viewerUrl = null;
@@ -939,6 +940,23 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
 
   /**
    **/
+  public ConversationCobrowseEventTopicCobrowseMediaParticipant mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+  }
+
+
+  /**
+   **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant cobrowseSessionId(String cobrowseSessionId) {
     this.cobrowseSessionId = cobrowseSessionId;
     return this;
@@ -1067,6 +1085,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
             Objects.equals(this.journeyContext, conversationCobrowseEventTopicCobrowseMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, conversationCobrowseEventTopicCobrowseMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationCobrowseEventTopicCobrowseMediaParticipant.endAcwTime) &&
+            Objects.equals(this.mediaRoles, conversationCobrowseEventTopicCobrowseMediaParticipant.mediaRoles) &&
             Objects.equals(this.cobrowseSessionId, conversationCobrowseEventTopicCobrowseMediaParticipant.cobrowseSessionId) &&
             Objects.equals(this.cobrowseRole, conversationCobrowseEventTopicCobrowseMediaParticipant.cobrowseRole) &&
             Objects.equals(this.viewerUrl, conversationCobrowseEventTopicCobrowseMediaParticipant.viewerUrl) &&
@@ -1076,7 +1095,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
   }
 
   @Override
@@ -1119,6 +1138,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    cobrowseSessionId: ").append(toIndentedString(cobrowseSessionId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    viewerUrl: ").append(toIndentedString(viewerUrl)).append("\n");

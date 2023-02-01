@@ -49,6 +49,7 @@ public class DocumentQueryPredicate  implements Serializable {
     CONTEXTNAME("contextName"),
     CONTEXTVALUEID("contextValueId"),
     CONTEXTVALUENAME("contextValueName"),
+    DOCUMENTID("documentId"),
     LABELID("labelId"),
     LABELNAME("labelName"),
     TITLE("title");

@@ -337,6 +337,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
   private QueueConversationCallbackEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private List<String> mediaRoles = new ArrayList<String>();
   private QueueConversationCallbackEventTopicDialerPreview outboundPreview = null;
   private QueueConversationCallbackEventTopicVoicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -945,6 +946,23 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
 
   /**
    **/
+  public QueueConversationCallbackEventTopicCallbackMediaParticipant mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+  }
+
+
+  /**
+   **/
   public QueueConversationCallbackEventTopicCallbackMediaParticipant outboundPreview(QueueConversationCallbackEventTopicDialerPreview outboundPreview) {
     this.outboundPreview = outboundPreview;
     return this;
@@ -1141,6 +1159,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
             Objects.equals(this.journeyContext, queueConversationCallbackEventTopicCallbackMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, queueConversationCallbackEventTopicCallbackMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, queueConversationCallbackEventTopicCallbackMediaParticipant.endAcwTime) &&
+            Objects.equals(this.mediaRoles, queueConversationCallbackEventTopicCallbackMediaParticipant.mediaRoles) &&
             Objects.equals(this.outboundPreview, queueConversationCallbackEventTopicCallbackMediaParticipant.outboundPreview) &&
             Objects.equals(this.voicemail, queueConversationCallbackEventTopicCallbackMediaParticipant.voicemail) &&
             Objects.equals(this.callbackNumbers, queueConversationCallbackEventTopicCallbackMediaParticipant.callbackNumbers) &&
@@ -1154,7 +1173,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -1197,6 +1216,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");

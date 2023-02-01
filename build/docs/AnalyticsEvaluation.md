@@ -12,6 +12,7 @@ title: AnalyticsEvaluation
 | **contextId** | <!----><!---->**String**<!----> | A unique identifier for an evaluation form, regardless of version |  [optional] |
 | **deleted** | <!----><!---->**Boolean**<!----> | Whether the evaluation has been deleted |  [optional] |
 | **evaluationId** | <!----><!---->**String**<!----> | Unique identifier for the evaluation |  [optional] |
+| **evaluationStatus** | [**EvaluationStatusEnum**](#EvaluationStatusEnum)<!----> | Status of evaluation |  [optional] |
 | **evaluatorId** | <!----><!---->**String**<!----> | A unique identifier of the user who evaluated the interaction |  [optional] |
 | **eventTime** | <!----><!---->[**Date**](Date.html)<!----> | Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **formId** | <!----><!---->**String**<!----> | ID of the evaluation form used |  [optional] |
@@ -22,6 +23,21 @@ title: AnalyticsEvaluation
 | **userId** | <!----><!---->**String**<!----> | ID of the agent the evaluation was performed against |  [optional] |
 | **oTotalCriticalScore** | <!----><!---->**Long**<!----> |  |  [optional] |
 | **oTotalScore** | <!----><!---->**Long**<!----> |  |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="EvaluationStatusEnum"></a>
+
+## Enum: EvaluationStatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| FINISHED | &quot;Finished&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| INREVIEW | &quot;InReview&quot; | 
+| PENDING | &quot;Pending&quot; | 
+| RETRACTED | &quot;Retracted&quot; | 
 {: class="table table-striped"}
 
 

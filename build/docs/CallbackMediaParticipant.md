@@ -22,6 +22,7 @@ title: CallbackMediaParticipant
 | **held** | <!----><!---->**Boolean**<!----> | Value is true when the participant is on hold. |  [optional] |
 | **wrapupRequired** | <!----><!---->**Boolean**<!----> | Value is true when the participant requires wrap-up. |  [optional] |
 | **wrapupPrompt** | <!----><!---->**String**<!----> | The wrap-up prompt indicating the type of wrap-up to be performed. |  [optional] |
+| **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> | List of roles this participant's media has had on the conversation, ie monitor, coach, etc |  [optional] |
 | **user** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The PureCloud user for this participant. |  [optional] |
 | **queue** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The PureCloud queue for this participant. |  [optional] |
 | **team** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The PureCloud team for this participant. |  [optional] |

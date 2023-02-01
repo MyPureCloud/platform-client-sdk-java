@@ -115,6 +115,7 @@ public class ParticipantBasic  implements Serializable {
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
   private Wrapup wrapup = null;
+  private List<String> mediaRoles = new ArrayList<String>();
   private ConversationRoutingData conversationRoutingData = null;
   private Integer alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
@@ -703,6 +704,24 @@ public class ParticipantBasic  implements Serializable {
 
 
   /**
+   * List of roles this participant's media has had on the conversation, ie monitor, coach, etc.
+   **/
+  public ParticipantBasic mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of roles this participant's media has had on the conversation, ie monitor, coach, etc.")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+  }
+
+
+  /**
    * Information on how a communication should be routed to an agent.
    **/
   public ParticipantBasic conversationRoutingData(ConversationRoutingData conversationRoutingData) {
@@ -1088,6 +1107,7 @@ public class ParticipantBasic  implements Serializable {
             Objects.equals(this.wrapupTimeoutMs, participantBasic.wrapupTimeoutMs) &&
             Objects.equals(this.wrapupSkipped, participantBasic.wrapupSkipped) &&
             Objects.equals(this.wrapup, participantBasic.wrapup) &&
+            Objects.equals(this.mediaRoles, participantBasic.mediaRoles) &&
             Objects.equals(this.conversationRoutingData, participantBasic.conversationRoutingData) &&
             Objects.equals(this.alertingTimeoutMs, participantBasic.alertingTimeoutMs) &&
             Objects.equals(this.monitoredParticipantId, participantBasic.monitoredParticipantId) &&
@@ -1112,7 +1132,7 @@ public class ParticipantBasic  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, teamId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime, bargedParticipantId);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, teamId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, mediaRoles, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime, bargedParticipantId);
   }
 
   @Override
@@ -1146,6 +1166,7 @@ public class ParticipantBasic  implements Serializable {
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapupSkipped: ").append(toIndentedString(wrapupSkipped)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");

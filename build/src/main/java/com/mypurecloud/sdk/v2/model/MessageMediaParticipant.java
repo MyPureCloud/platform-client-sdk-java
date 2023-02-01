@@ -210,6 +210,7 @@ public class MessageMediaParticipant  implements Serializable {
   private Boolean held = null;
   private Boolean wrapupRequired = null;
   private String wrapupPrompt = null;
+  private List<String> mediaRoles = new ArrayList<String>();
   private DomainEntityRef user = null;
   private DomainEntityRef queue = null;
   private DomainEntityRef team = null;
@@ -589,6 +590,24 @@ public class MessageMediaParticipant  implements Serializable {
   }
   public void setWrapupPrompt(String wrapupPrompt) {
     this.wrapupPrompt = wrapupPrompt;
+  }
+
+
+  /**
+   * List of roles this participant's media has had on the conversation, ie monitor, coach, etc
+   **/
+  public MessageMediaParticipant mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of roles this participant's media has had on the conversation, ie monitor, coach, etc")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
   }
 
 
@@ -1084,6 +1103,7 @@ public class MessageMediaParticipant  implements Serializable {
             Objects.equals(this.held, messageMediaParticipant.held) &&
             Objects.equals(this.wrapupRequired, messageMediaParticipant.wrapupRequired) &&
             Objects.equals(this.wrapupPrompt, messageMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.mediaRoles, messageMediaParticipant.mediaRoles) &&
             Objects.equals(this.user, messageMediaParticipant.user) &&
             Objects.equals(this.queue, messageMediaParticipant.queue) &&
             Objects.equals(this.team, messageMediaParticipant.team) &&
@@ -1114,7 +1134,7 @@ public class MessageMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, toAddress, fromAddress, messages, type, recipientCountry, recipientType, authenticated);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, toAddress, fromAddress, messages, type, recipientCountry, recipientType, authenticated);
   }
 
   @Override
@@ -1136,6 +1156,7 @@ public class MessageMediaParticipant  implements Serializable {
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
     sb.append("    wrapupRequired: ").append(toIndentedString(wrapupRequired)).append("\n");
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    team: ").append(toIndentedString(team)).append("\n");

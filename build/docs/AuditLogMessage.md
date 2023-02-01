@@ -40,13 +40,15 @@ title: AuditLogMessage
 | AGENTCONFIG | &quot;AgentConfig&quot; | 
 | ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; | 
 | ARCHITECT | &quot;Architect&quot; | 
+| CALLBACK | &quot;Callback&quot; | 
 | COACHING | &quot;Coaching&quot; | 
 | CONTACTCENTER | &quot;ContactCenter&quot; | 
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; | 
 | DATATABLES | &quot;Datatables&quot; | 
 | DIRECTORY | &quot;Directory&quot; | 
-| EMAILS | &quot;Emails&quot; | 
 | DYNAMICSCHEMA | &quot;DynamicSchema&quot; | 
+| EMAILS | &quot;Emails&quot; | 
+| EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; | 
 | GAMIFICATION | &quot;Gamification&quot; | 
 | GROUPS | &quot;Groups&quot; | 
 | INTEGRATIONS | &quot;Integrations&quot; | 
@@ -55,29 +57,28 @@ title: AuditLogMessage
 | LEARNING | &quot;Learning&quot; | 
 | LIMITS | &quot;Limits&quot; | 
 | LOGCAPTURE | &quot;LogCapture&quot; | 
+| MARKETPLACE | &quot;Marketplace&quot; | 
+| MESSAGING | &quot;Messaging&quot; | 
+| NUMBERPURCHASING | &quot;NumberPurchasing&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; | 
-| EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; | 
 | PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; | 
 | PRESENCE | &quot;Presence&quot; | 
+| PROCESSAUTOMATION | &quot;ProcessAutomation&quot; | 
 | QUALITY | &quot;Quality&quot; | 
 | RESPONSEMANAGEMENT | &quot;ResponseManagement&quot; | 
 | ROUTING | &quot;Routing&quot; | 
+| SCIM | &quot;SCIM&quot; | 
+| SCRIPTER | &quot;Scripter&quot; | 
 | SPEECHANDTEXTANALYTICS | &quot;SpeechAndTextAnalytics&quot; | 
+| SUPPORTABILITY | &quot;Supportability&quot; | 
 | TELEPHONY | &quot;Telephony&quot; | 
 | TRIGGERS | &quot;Triggers&quot; | 
-| PROCESSAUTOMATION | &quot;ProcessAutomation&quot; | 
 | VOICEMAIL | &quot;Voicemail&quot; | 
 | WEBDEPLOYMENTS | &quot;WebDeployments&quot; | 
 | WEBHOOKS | &quot;Webhooks&quot; | 
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; | 
-| MESSAGING | &quot;Messaging&quot; | 
-| SUPPORTABILITY | &quot;Supportability&quot; | 
-| CALLBACK | &quot;Callback&quot; | 
 | WORKITEMS | &quot;Workitems&quot; | 
-| SCIM | &quot;SCIM&quot; | 
-| NUMBERPURCHASING | &quot;NumberPurchasing&quot; | 
-| MARKETPLACE | &quot;Marketplace&quot; | 
 {: class="table table-striped"}
 
 
@@ -220,6 +221,10 @@ title: AuditLogMessage
 | CAMPAIGNSCHEDULE | &quot;CampaignSchedule&quot; | 
 | CHANGEREQUEST | &quot;ChangeRequest&quot; | 
 | CLICKSTREAMSETTINGS | &quot;ClickstreamSettings&quot; | 
+| COMPOSERPAGE | &quot;ComposerPage&quot; | 
+| COMPOSERSCRIPT | &quot;ComposerScript&quot; | 
+| COMPOSERPUBLISHEDSCRIPT | &quot;ComposerPublishedScript&quot; | 
+| COMPOSERTEMPLATE | &quot;ComposerTemplate&quot; | 
 | CONFIGURATION | &quot;Configuration&quot; | 
 | CONFIGURATIONVERSION | &quot;ConfigurationVersion&quot; | 
 | CONTACTLIST | &quot;ContactList&quot; | 
@@ -275,6 +280,7 @@ title: AuditLogMessage
 | INBOUNDROUTE | &quot;InboundRoute&quot; | 
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; | 
 | INTEGRATION | &quot;Integration&quot; | 
+| INTENTMINER | &quot;IntentMiner&quot; | 
 | IVR | &quot;IVR&quot; | 
 | KNOWLEDGEBASE | &quot;KnowledgeBase&quot; | 
 | KNOWLEDGECATEGORY | &quot;KnowledgeCategory&quot; | 
@@ -362,6 +368,7 @@ title: AuditLogMessage
 | TIMEOFFPLAN | &quot;TimeOffPlan&quot; | 
 | TIMEOFFREQUEST | &quot;TimeOffRequest&quot; | 
 | TOPIC | &quot;Topic&quot; | 
+| TOPICMINER | &quot;TopicMiner&quot; | 
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; | 
 | TRIGGER | &quot;Trigger&quot; | 
 | TRUNK | &quot;Trunk&quot; | 

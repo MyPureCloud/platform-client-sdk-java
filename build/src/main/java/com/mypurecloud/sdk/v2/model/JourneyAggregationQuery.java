@@ -66,6 +66,7 @@ public class JourneyAggregationQuery  implements Serializable {
     JOURNEYDEVICECATEGORY("journeyDeviceCategory"),
     JOURNEYDEVICETYPE("journeyDeviceType"),
     JOURNEYFREQUENCYCAPREASON("journeyFrequencyCapReason"),
+    JOURNEYIPGEOLOCATIONCOUNTRY("journeyIpGeolocationCountry"),
     JOURNEYOUTCOMEID("journeyOutcomeId"),
     JOURNEYSEGMENTID("journeySegmentId"),
     JOURNEYSEGMENTSCOPE("journeySegmentScope"),
@@ -76,7 +77,16 @@ public class JourneyAggregationQuery  implements Serializable {
     NOTCONTAINSANYCONDITION("notContainsAnyCondition"),
     NOTEQUALCONDITION("notEqualCondition"),
     STARTSWITHCONDITION("startsWithCondition"),
-    TOUCHPOINTACTIONMAPID("touchpointActionMapId");
+    TOUCHPOINTACTIONMAPID("touchpointActionMapId"),
+    TOUCHPOINTAGENTID("touchpointAgentId"),
+    TOUCHPOINTATTRIBUTIONSCOPE("touchpointAttributionScope"),
+    TOUCHPOINTCHANNELMESSAGETYPE("touchpointChannelMessageType"),
+    TOUCHPOINTCHANNELPLATFORM("touchpointChannelPlatform"),
+    TOUCHPOINTCHANNELTYPE("touchpointChannelType"),
+    TOUCHPOINTCONVERSATIONID("touchpointConversationId"),
+    TOUCHPOINTINTERACTIONTYPE("touchpointInteractionType"),
+    TOUCHPOINTQUEUEID("touchpointQueueId"),
+    TOUCHPOINTWRAPUPCODE("touchpointWrapupCode");
 
     private String value;
 
@@ -143,6 +153,7 @@ public class JourneyAggregationQuery  implements Serializable {
     NWEBACTIONSREJECTED("nWebActionsRejected"),
     NWEBACTIONSSTARTED("nWebActionsStarted"),
     NWEBACTIONSTIMEDOUT("nWebActionsTimedout"),
+    OJOURNEYOUTCOMETOUCHPOINTVALUE("oJourneyOutcomeTouchpointValue"),
     OJOURNEYOUTCOMEVALUE("oJourneyOutcomeValue");
 
     private String value;

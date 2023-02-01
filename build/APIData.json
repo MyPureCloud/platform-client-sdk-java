@@ -7816,6 +7816,20 @@
     "return": "String",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ConversationUser;\n\npublic class ExamplepostConversationAssign {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversation ID\nConversationUser body = new ConversationUser(); // ConversationUser | Targeted user\n        try { \n            // Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.\n            String result = apiInstance.postConversationAssign(conversationId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#postConversationAssign\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "postconversationcobrowse": {
+    "operationId": "postconversationcobrowse",
+    "functionName": "postConversationCobrowse",
+    "signature": "postConversationCobrowse(conversationId)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "CobrowseWebMessagingSession",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostConversationCobrowse {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | Conversation ID\n        try { \n            // Creates a cobrowse session\n            CobrowseWebMessagingSession result = apiInstance.postConversationCobrowse(conversationId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#postConversationCobrowse\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "postconversationdisconnect": {
     "operationId": "postconversationdisconnect",
     "functionName": "postConversationDisconnect",
@@ -8260,8 +8274,8 @@
         "required": "true"
       }
     ],
-    "return": "EmailMessage",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.EmailMessage;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostConversationsEmailMessages {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversationId\nEmailMessage body = new EmailMessage(); // EmailMessage | Reply\n        try { \n            // Send an email reply\n            EmailMessage result = apiInstance.postConversationsEmailMessages(conversationId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#postConversationsEmailMessages\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "return": "EmailMessageReply",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ConversationsApi;\nimport com.mypurecloud.sdk.v2.model.EmailMessage;import com.mypurecloud.sdk.v2.model.EmailMessageReply;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostConversationsEmailMessages {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ConversationsApi apiInstance = new ConversationsApi();\n        String conversationId = \"conversationId_example\"; // String | conversationId\nEmailMessage body = new EmailMessage(); // EmailMessage | Reply\n        try { \n            // Send an email reply\n            EmailMessageReply result = apiInstance.postConversationsEmailMessages(conversationId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ConversationsApi#postConversationsEmailMessages\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postconversationsemailmessagesdraftattachmentscopy": {
     "operationId": "postconversationsemailmessagesdraftattachmentscopy",
@@ -16339,7 +16353,7 @@
   "getlanguageunderstandingdomainfeedback": {
     "operationId": "getlanguageunderstandingdomainfeedback",
     "functionName": "getLanguageunderstandingDomainFeedback",
-    "signature": "getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields)",
+    "signature": "getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, includeTrainingUtterances, after, fields)",
     "parameters": [
       {
         "name": "domainId",
@@ -16392,6 +16406,11 @@
         "required": "false"
       },
       {
+        "name": "includeTrainingUtterances",
+        "type": "Boolean",
+        "required": "false"
+      },
+      {
         "name": "after",
         "type": "String",
         "required": "false"
@@ -16403,7 +16422,7 @@
       }
     ],
     "return": "NluFeedbackListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.NluFeedbackListing;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetLanguageunderstandingDomainFeedback {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String domainId = \"domainId_example\"; // String | ID of the NLU domain.\nString intentName = \"intentName_example\"; // String | The top intent name to retrieve feedback for.\nString assessment = \"assessment_example\"; // String | The top assessment to retrieve feedback for.\nLocalDate dateStart = new LocalDate(); // LocalDate | Begin of time window as ISO-8601 date.\nLocalDate dateEnd = new LocalDate(); // LocalDate | End of time window as ISO-8601 date.\nBoolean includeDeleted = true; // Boolean | Whether to include soft-deleted items in the result.\nString language = \"language_example\"; // String | Whether to filter response based on the language, e.g. en-us, pt-br.\nInteger pageNumber = 1; // Integer | Page number\nInteger pageSize = 25; // Integer | Page size\nBoolean enableCursorPagination = false; // Boolean | Enable Cursor Pagination\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true\nList<String> fields = Arrays.asList(null); // List<String> | Fields and properties to get, comma-separated\n        try { \n            // Get all feedback in the given NLU Domain Version.\n            NluFeedbackListing result = apiInstance.getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingDomainFeedback\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.NluFeedbackListing;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetLanguageunderstandingDomainFeedback {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();\n        String domainId = \"domainId_example\"; // String | ID of the NLU domain.\nString intentName = \"intentName_example\"; // String | The top intent name to retrieve feedback for.\nString assessment = \"assessment_example\"; // String | The top assessment to retrieve feedback for.\nLocalDate dateStart = new LocalDate(); // LocalDate | Begin of time window as ISO-8601 date.\nLocalDate dateEnd = new LocalDate(); // LocalDate | End of time window as ISO-8601 date.\nBoolean includeDeleted = true; // Boolean | Whether to include soft-deleted items in the result.\nString language = \"language_example\"; // String | Whether to filter response based on the language, e.g. en-us, pt-br.\nInteger pageNumber = 1; // Integer | Page number\nInteger pageSize = 25; // Integer | Page size\nBoolean enableCursorPagination = false; // Boolean | Enable Cursor Pagination\nBoolean includeTrainingUtterances = true; // Boolean | Include Training Utterances. By default they're included.\nString after = \"after_example\"; // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true\nList<String> fields = Arrays.asList(null); // List<String> | Fields and properties to get, comma-separated\n        try { \n            // Get all feedback in the given NLU Domain Version.\n            NluFeedbackListing result = apiInstance.getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, includeTrainingUtterances, after, fields);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LanguageUnderstandingApi#getLanguageunderstandingDomainFeedback\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getlanguageunderstandingdomainfeedbackfeedbackid": {
     "operationId": "getlanguageunderstandingdomainfeedbackfeedbackid",
@@ -17180,7 +17199,7 @@
       }
     ],
     "return": "LearningAssignmentsDomainEntity",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LearningApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;\n\npublic class ExamplegetLearningAssignments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LearningApi apiInstance = new LearningApi();\n        String moduleId = \"moduleId_example\"; // String | Specifies the ID of the learning module. Fetch assignments for learning module ID\nString interval = \"interval_example\"; // String | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\nString completionInterval = \"completionInterval_example\"; // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\nString overdue = \"Any\"; // String | Specifies if only the non-overdue (overdue is \\\"False\\\") or overdue (overdue is \\\"True\\\") assignments are returned. If overdue is \\\"Any\\\" or if the overdue parameter is not supplied, all assignments are returned\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nString pass = \"Any\"; // String | Specifies if only the failed (pass is \\\"False\\\") or passed (pass is \\\"True\\\") assignments (completed with assessment)are returned. If pass is \\\"Any\\\" or if the pass parameter is not supplied, all assignments are returned\nFloat minPercentageScore = 3.4F; // Float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\nFloat maxPercentageScore = 3.4F; // Float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\nString sortOrder = \"Desc\"; // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)\nString sortBy = \"sortBy_example\"; // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate\nList<String> userId = Arrays.asList(null); // List<String> | Specifies the list of user IDs to be queried, up to 100 user IDs.\nList<String> types = Arrays.asList(null); // List<String> | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned\nList<String> states = Arrays.asList(null); // List<String> | Specifies the assignment states to filter by\nList<String> expand = Arrays.asList(null); // List<String> | Specifies the expand option for returning additional information\n        try { \n            // List of Learning module Assignments\n            LearningAssignmentsDomainEntity result = apiInstance.getLearningAssignments(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LearningApi#getLearningAssignments\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LearningApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;\n\npublic class ExamplegetLearningAssignments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LearningApi apiInstance = new LearningApi();\n        String moduleId = \"moduleId_example\"; // String | Specifies the ID of the learning module. Fetch assignments for learning module ID\nString interval = \"interval_example\"; // String | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\nString completionInterval = \"completionInterval_example\"; // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\nString overdue = \"Any\"; // String | Specifies if only the non-overdue (overdue is \\\"False\\\") or overdue (overdue is \\\"True\\\") assignments are returned. If overdue is \\\"Any\\\" or if the overdue parameter is not supplied, all assignments are returned\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nString pass = \"Any\"; // String | Specifies if only the failed (pass is \\\"False\\\") or passed (pass is \\\"True\\\") assignments (completed with assessment)are returned. If pass is \\\"Any\\\" or if the pass parameter is not supplied, all assignments are returned\nFloat minPercentageScore = 3.4F; // Float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\nFloat maxPercentageScore = 3.4F; // Float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\nString sortOrder = \"Desc\"; // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)\nString sortBy = \"sortBy_example\"; // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate\nList<String> userId = Arrays.asList(null); // List<String> | Specifies the list of user IDs to be queried, up to 100 user IDs.\nList<String> types = Arrays.asList(null); // List<String> | Specifies the module types to filter by\nList<String> states = Arrays.asList(null); // List<String> | Specifies the assignment states to filter by\nList<String> expand = Arrays.asList(null); // List<String> | Specifies the expand option for returning additional information\n        try { \n            // List of Learning module Assignments\n            LearningAssignmentsDomainEntity result = apiInstance.getLearningAssignments(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LearningApi#getLearningAssignments\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getlearningassignmentsme": {
     "operationId": "getlearningassignmentsme",
@@ -17259,7 +17278,7 @@
       }
     ],
     "return": "LearningAssignmentsDomainEntity",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LearningApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;\n\npublic class ExamplegetLearningAssignmentsMe {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LearningApi apiInstance = new LearningApi();\n        String moduleId = \"moduleId_example\"; // String | Specifies the ID of the learning module. Fetch assignments for learning module ID\nString interval = \"interval_example\"; // String | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\nString completionInterval = \"completionInterval_example\"; // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\nString overdue = \"Any\"; // String | Specifies if only the non-overdue (overdue is \\\"False\\\") or overdue (overdue is \\\"True\\\") assignments are returned. If overdue is \\\"Any\\\" or if the overdue parameter is not supplied, all assignments are returned\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nString pass = \"Any\"; // String | Specifies if only the failed (pass is \\\"False\\\") or passed (pass is \\\"True\\\") assignments (completed with assessment)are returned. If pass is \\\"Any\\\" or if the pass parameter is not supplied, all assignments are returned\nFloat minPercentageScore = 3.4F; // Float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\nFloat maxPercentageScore = 3.4F; // Float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\nString sortOrder = \"Desc\"; // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)\nString sortBy = \"sortBy_example\"; // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate\nList<String> types = Arrays.asList(null); // List<String> | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned\nList<String> states = Arrays.asList(null); // List<String> | Specifies the assignment states to filter by\nList<String> expand = Arrays.asList(null); // List<String> | Specifies the expand option for returning additional information\n        try { \n            // List of Learning Assignments assigned to current user\n            LearningAssignmentsDomainEntity result = apiInstance.getLearningAssignmentsMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LearningApi#getLearningAssignmentsMe\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.LearningApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;\n\npublic class ExamplegetLearningAssignmentsMe {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        LearningApi apiInstance = new LearningApi();\n        String moduleId = \"moduleId_example\"; // String | Specifies the ID of the learning module. Fetch assignments for learning module ID\nString interval = \"interval_example\"; // String | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\nString completionInterval = \"completionInterval_example\"; // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\nString overdue = \"Any\"; // String | Specifies if only the non-overdue (overdue is \\\"False\\\") or overdue (overdue is \\\"True\\\") assignments are returned. If overdue is \\\"Any\\\" or if the overdue parameter is not supplied, all assignments are returned\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nString pass = \"Any\"; // String | Specifies if only the failed (pass is \\\"False\\\") or passed (pass is \\\"True\\\") assignments (completed with assessment)are returned. If pass is \\\"Any\\\" or if the pass parameter is not supplied, all assignments are returned\nFloat minPercentageScore = 3.4F; // Float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\nFloat maxPercentageScore = 3.4F; // Float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\nString sortOrder = \"Desc\"; // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)\nString sortBy = \"sortBy_example\"; // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate\nList<String> types = Arrays.asList(null); // List<String> | Specifies the module types to filter by\nList<String> states = Arrays.asList(null); // List<String> | Specifies the assignment states to filter by\nList<String> expand = Arrays.asList(null); // List<String> | Specifies the expand option for returning additional information\n        try { \n            // List of Learning Assignments assigned to current user\n            LearningAssignmentsDomainEntity result = apiInstance.getLearningAssignmentsMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling LearningApi#getLearningAssignmentsMe\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getlearningmodule": {
     "operationId": "getlearningmodule",
@@ -18666,6 +18685,42 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOrgauthorizationTrusteeCloneduser {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nString trusteeUserId = \"trusteeUserId_example\"; // String | Id of the cloned user to delete\n        try { \n            // Deletes cloned user\n            apiInstance.deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#deleteOrgauthorizationTrusteeCloneduser\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deleteorgauthorizationtrusteegroup": {
+    "operationId": "deleteorgauthorizationtrusteegroup",
+    "functionName": "deleteOrgauthorizationTrusteeGroup",
+    "signature": "deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOrgauthorizationTrusteeGroup {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nString trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\n        try { \n            // Delete Trustee Group\n            apiInstance.deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#deleteOrgauthorizationTrusteeGroup\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "deleteorgauthorizationtrusteegrouproles": {
+    "operationId": "deleteorgauthorizationtrusteegrouproles",
+    "functionName": "deleteOrgauthorizationTrusteeGroupRoles",
+    "signature": "deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOrgauthorizationTrusteeGroupRoles {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nString trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\n        try { \n            // Delete Trustee Group Roles\n            apiInstance.deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#deleteOrgauthorizationTrusteeGroupRoles\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "deleteorgauthorizationtrusteeuser": {
     "operationId": "deleteorgauthorizationtrusteeuser",
     "functionName": "deleteOrgauthorizationTrusteeUser",
@@ -18733,6 +18788,24 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOrgauthorizationTrustorCloneduser {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\nString trusteeUserId = \"trusteeUserId_example\"; // String | Trustee User Id\n        try { \n            // Delete Cloned User\n            apiInstance.deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#deleteOrgauthorizationTrustorCloneduser\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deleteorgauthorizationtrustorgroup": {
+    "operationId": "deleteorgauthorizationtrustorgroup",
+    "functionName": "deleteOrgauthorizationTrustorGroup",
+    "signature": "deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)",
+    "parameters": [
+      {
+        "name": "trustorOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trustorGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteOrgauthorizationTrustorGroup {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\nString trustorGroupId = \"trustorGroupId_example\"; // String | Trustor Group Id\n        try { \n            // Delete Trustee Group\n            apiInstance.deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#deleteOrgauthorizationTrustorGroup\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "deleteorgauthorizationtrustoruser": {
     "operationId": "deleteorgauthorizationtrustoruser",
     "functionName": "deleteOrgauthorizationTrustorUser",
@@ -18792,6 +18865,68 @@
     ],
     "return": "ClonedUserEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;\n\npublic class ExamplegetOrgauthorizationTrusteeClonedusers {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\n        try { \n            // The list of cloned users from the trustee organization (i.e. users with a native user record).\n            ClonedUserEntityListing result = apiInstance.getOrgauthorizationTrusteeClonedusers(trusteeOrgId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrusteeClonedusers\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getorgauthorizationtrusteegroup": {
+    "operationId": "getorgauthorizationtrusteegroup",
+    "functionName": "getOrgauthorizationTrusteeGroup",
+    "signature": "getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TrustGroup;\n\npublic class ExamplegetOrgauthorizationTrusteeGroup {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nString trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\n        try { \n            // Get Trustee Group\n            TrustGroup result = apiInstance.getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrusteeGroup\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getorgauthorizationtrusteegrouproles": {
+    "operationId": "getorgauthorizationtrusteegrouproles",
+    "functionName": "getOrgauthorizationTrusteeGroupRoles",
+    "signature": "getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "UserAuthorization",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UserAuthorization;\n\npublic class ExamplegetOrgauthorizationTrusteeGroupRoles {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nString trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\n        try { \n            // Get Trustee Group Roles\n            UserAuthorization result = apiInstance.getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrusteeGroupRoles\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getorgauthorizationtrusteegroups": {
+    "operationId": "getorgauthorizationtrusteegroups",
+    "functionName": "getOrgauthorizationTrusteeGroups",
+    "signature": "getOrgauthorizationTrusteeGroups(trusteeOrgId, pageSize, pageNumber)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Integer",
+        "required": "false"
+      }
+    ],
+    "return": "TrustGroupEntityListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TrustGroupEntityListing;\n\npublic class ExamplegetOrgauthorizationTrusteeGroups {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\n        try { \n            // The list of trustee groups for this organization (i.e. groups granted access to this organization).\n            TrustGroupEntityListing result = apiInstance.getOrgauthorizationTrusteeGroups(trusteeOrgId, pageSize, pageNumber);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrusteeGroups\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getorgauthorizationtrusteeuser": {
     "operationId": "getorgauthorizationtrusteeuser",
@@ -18928,6 +19063,49 @@
     "return": "ClonedUserEntityListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;\n\npublic class ExamplegetOrgauthorizationTrustorClonedusers {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\n        try { \n            // The list of cloned users in the trustor organization (i.e. users with a native user record).\n            ClonedUserEntityListing result = apiInstance.getOrgauthorizationTrustorClonedusers(trustorOrgId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrustorClonedusers\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getorgauthorizationtrustorgroup": {
+    "operationId": "getorgauthorizationtrustorgroup",
+    "functionName": "getOrgauthorizationTrustorGroup",
+    "signature": "getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)",
+    "parameters": [
+      {
+        "name": "trustorOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trustorGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TrustGroup;\n\npublic class ExamplegetOrgauthorizationTrustorGroup {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\nString trustorGroupId = \"trustorGroupId_example\"; // String | Trustor Group Id\n        try { \n            // Get Trustee Group\n            TrustGroup result = apiInstance.getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrustorGroup\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getorgauthorizationtrustorgroups": {
+    "operationId": "getorgauthorizationtrustorgroups",
+    "functionName": "getOrgauthorizationTrustorGroups",
+    "signature": "getOrgauthorizationTrustorGroups(trustorOrgId, pageSize, pageNumber)",
+    "parameters": [
+      {
+        "name": "trustorOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Integer",
+        "required": "false"
+      }
+    ],
+    "return": "TrustGroupEntityListing",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TrustGroupEntityListing;\n\npublic class ExamplegetOrgauthorizationTrustorGroups {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trustorOrgId = \"trustorOrgId_example\"; // String | Trustee Organization Id\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\n        try { \n            // The list of groups in the trustor organization (i.e. groups granted access).\n            TrustGroupEntityListing result = apiInstance.getOrgauthorizationTrustorGroups(trustorOrgId, pageSize, pageNumber);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrustorGroups\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "getorgauthorizationtrustoruser": {
     "operationId": "getorgauthorizationtrustoruser",
     "functionName": "getOrgauthorizationTrustorUser",
@@ -19003,6 +19181,25 @@
     ],
     "return": "TrustRequest",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.TrustRequestCreate;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TrustRequest;\n\npublic class ExamplepostOrgauthorizationPairings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        TrustRequestCreate body = new TrustRequestCreate(); // TrustRequestCreate | Pairing Info\n        try { \n            // A pairing id is created by the trustee and given to the trustor to create a trust.\n            TrustRequest result = apiInstance.postOrgauthorizationPairings(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#postOrgauthorizationPairings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postorgauthorizationtrusteegroups": {
+    "operationId": "postorgauthorizationtrusteegroups",
+    "functionName": "postOrgauthorizationTrusteeGroups",
+    "signature": "postOrgauthorizationTrusteeGroups(trusteeOrgId, body)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "TrustMemberCreate",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TrustMemberCreate;import com.mypurecloud.sdk.v2.model.TrustGroup;\n\npublic class ExamplepostOrgauthorizationTrusteeGroups {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nTrustMemberCreate body = new TrustMemberCreate(); // TrustMemberCreate | Trust\n        try { \n            // Add a group to the trust.\n            TrustGroup result = apiInstance.postOrgauthorizationTrusteeGroups(trusteeOrgId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#postOrgauthorizationTrusteeGroups\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postorgauthorizationtrusteeusers": {
     "operationId": "postorgauthorizationtrusteeusers",
@@ -19143,6 +19340,54 @@
     "return": "Trustee",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.Trustee;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TrustUpdate;\n\npublic class ExampleputOrgauthorizationTrustee {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nTrustUpdate body = new TrustUpdate(); // TrustUpdate | Client\n        try { \n            // Update Org Trust\n            Trustee result = apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#putOrgauthorizationTrustee\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "putorgauthorizationtrusteegrouproledivisions": {
+    "operationId": "putorgauthorizationtrusteegrouproledivisions",
+    "functionName": "putOrgauthorizationTrusteeGroupRoledivisions",
+    "signature": "putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "RoleDivisionGrants",
+        "required": "true"
+      }
+    ],
+    "return": "UserAuthorization",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;import com.mypurecloud.sdk.v2.model.UserAuthorization;\n\npublic class ExampleputOrgauthorizationTrusteeGroupRoledivisions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nString trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\nRoleDivisionGrants body = new RoleDivisionGrants(); // RoleDivisionGrants | Set of roles with corresponding divisions to apply\n        try { \n            // Update Trustee Group Roles\n            UserAuthorization result = apiInstance.putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#putOrgauthorizationTrusteeGroupRoledivisions\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "putorgauthorizationtrusteegrouproles": {
+    "operationId": "putorgauthorizationtrusteegrouproles",
+    "functionName": "putOrgauthorizationTrusteeGroupRoles",
+    "signature": "putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "List<String>",
+        "required": "true"
+      }
+    ],
+    "return": "UserAuthorization",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.UserAuthorization;import com.mypurecloud.sdk.v2.model.List;\n\npublic class ExampleputOrgauthorizationTrusteeGroupRoles {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nString trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\nList<String> body = Arrays.asList(null); // List<String> | List of roles\n        try { \n            // Update Trustee Group Roles\n            UserAuthorization result = apiInstance.putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#putOrgauthorizationTrusteeGroupRoles\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "putorgauthorizationtrusteeuserroledivisions": {
     "operationId": "putorgauthorizationtrusteeuserroledivisions",
     "functionName": "putOrgauthorizationTrusteeUserRoledivisions",
@@ -19209,6 +19454,25 @@
     ],
     "return": "ClonedUser",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ClonedUser;\n\npublic class ExampleputOrgauthorizationTrustorCloneduser {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\nString trusteeUserId = \"trusteeUserId_example\"; // String | Trustee User Id\n        try { \n            // Creates a clone of the trustee user in the trustor org.\n            ClonedUser result = apiInstance.putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#putOrgauthorizationTrustorCloneduser\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "putorgauthorizationtrustorgroup": {
+    "operationId": "putorgauthorizationtrustorgroup",
+    "functionName": "putOrgauthorizationTrustorGroup",
+    "signature": "putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)",
+    "parameters": [
+      {
+        "name": "trustorOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trustorGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.TrustGroup;\n\npublic class ExampleputOrgauthorizationTrustorGroup {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();\n        String trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\nString trustorGroupId = \"trustorGroupId_example\"; // String | Trustor Group Id\n        try { \n            // Add a Trustee Group to the trust.\n            TrustGroup result = apiInstance.putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling OrganizationAuthorizationApi#putOrgauthorizationTrustorGroup\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "putorgauthorizationtrustoruser": {
     "operationId": "putorgauthorizationtrustoruser",
@@ -34222,6 +34486,25 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteWebdeploymentsDeployment {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String deploymentId = \"deploymentId_example\"; // String | The deployment ID\n        try { \n            // Delete a deployment\n            apiInstance.deleteWebdeploymentsDeployment(deploymentId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#deleteWebdeploymentsDeployment\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "deletewebdeploymentsdeploymentcobrowsesessionid": {
+    "operationId": "deletewebdeploymentsdeploymentcobrowsesessionid",
+    "functionName": "deleteWebdeploymentsDeploymentCobrowseSessionId",
+    "signature": "deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)",
+    "parameters": [
+      {
+        "name": "deploymentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Empty",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteWebdeploymentsDeploymentCobrowseSessionId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String deploymentId = \"deploymentId_example\"; // String | WebMessaging deployment ID\nString sessionId = \"sessionId_example\"; // String | Cobrowse session id or join code\n        try { \n            // Deletes a cobrowse session\n            Empty result = apiInstance.deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#deleteWebdeploymentsDeploymentCobrowseSessionId\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "deletewebdeploymentstokenrevoke": {
     "operationId": "deletewebdeploymentstokenrevoke",
     "functionName": "deleteWebdeploymentsTokenRevoke",
@@ -34314,6 +34597,25 @@
     ],
     "return": "WebDeployment",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WebDeployment;\n\npublic class ExamplegetWebdeploymentsDeployment {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String deploymentId = \"deploymentId_example\"; // String | The deployment ID\n        try { \n            // Get a deployment\n            WebDeployment result = apiInstance.getWebdeploymentsDeployment(deploymentId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsDeployment\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getwebdeploymentsdeploymentcobrowsesessionid": {
+    "operationId": "getwebdeploymentsdeploymentcobrowsesessionid",
+    "functionName": "getWebdeploymentsDeploymentCobrowseSessionId",
+    "signature": "getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)",
+    "parameters": [
+      {
+        "name": "deploymentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "CobrowseWebMessagingSession",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WebDeploymentsApi;\nimport com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetWebdeploymentsDeploymentCobrowseSessionId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n\n        WebDeploymentsApi apiInstance = new WebDeploymentsApi();\n        String deploymentId = \"deploymentId_example\"; // String | WebMessaging deployment ID\nString sessionId = \"sessionId_example\"; // String | Cobrowse session id or join code\n        try { \n            // Retrieves a cobrowse session\n            CobrowseWebMessagingSession result = apiInstance.getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WebDeploymentsApi#getWebdeploymentsDeploymentCobrowseSessionId\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getwebdeploymentsdeploymentconfigurations": {
     "operationId": "getwebdeploymentsdeploymentconfigurations",

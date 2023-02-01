@@ -419,7 +419,7 @@ try {
 
 
 
-> [NluFeedbackListing](NluFeedbackListing.html) getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields)
+> [NluFeedbackListing](NluFeedbackListing.html) getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, includeTrainingUtterances, after, fields)
 
 Get all feedback in the given NLU Domain Version.
 
@@ -462,10 +462,11 @@ String language = "language_example"; // String | Whether to filter response bas
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 Boolean enableCursorPagination = false; // Boolean | Enable Cursor Pagination
+Boolean includeTrainingUtterances = true; // Boolean | Include Training Utterances. By default they're included.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
 List<String> fields = Arrays.asList(null); // List<String> | Fields and properties to get, comma-separated
 try {
-    NluFeedbackListing result = apiInstance.getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields);
+    NluFeedbackListing result = apiInstance.getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, includeTrainingUtterances, after, fields);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingDomainFeedback");
@@ -488,6 +489,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **enableCursorPagination** | **Boolean**| Enable Cursor Pagination | [optional] [default to false] 
+| **includeTrainingUtterances** | **Boolean**| Include Training Utterances. By default they&#39;re included. | [optional] [default to true] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination&#x3D;true | [optional] 
 | **fields** | [**List&lt;String&gt;**](String.html)| Fields and properties to get, comma-separated | [optional]<br />**Values**: version, dateCreated, text, intents 
 {: class="table-striped"}

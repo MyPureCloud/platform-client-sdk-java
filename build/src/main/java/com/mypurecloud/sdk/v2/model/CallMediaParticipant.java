@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.JourneyContext;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -208,6 +209,7 @@ public class CallMediaParticipant  implements Serializable {
   private Boolean held = null;
   private Boolean wrapupRequired = null;
   private String wrapupPrompt = null;
+  private List<String> mediaRoles = new ArrayList<String>();
   private DomainEntityRef user = null;
   private DomainEntityRef queue = null;
   private DomainEntityRef team = null;
@@ -587,6 +589,24 @@ public class CallMediaParticipant  implements Serializable {
   }
   public void setWrapupPrompt(String wrapupPrompt) {
     this.wrapupPrompt = wrapupPrompt;
+  }
+
+
+  /**
+   * List of roles this participant's media has had on the conversation, ie monitor, coach, etc
+   **/
+  public CallMediaParticipant mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of roles this participant's media has had on the conversation, ie monitor, coach, etc")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
   }
 
 
@@ -1226,6 +1246,7 @@ public class CallMediaParticipant  implements Serializable {
             Objects.equals(this.held, callMediaParticipant.held) &&
             Objects.equals(this.wrapupRequired, callMediaParticipant.wrapupRequired) &&
             Objects.equals(this.wrapupPrompt, callMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.mediaRoles, callMediaParticipant.mediaRoles) &&
             Objects.equals(this.user, callMediaParticipant.user) &&
             Objects.equals(this.queue, callMediaParticipant.queue) &&
             Objects.equals(this.team, callMediaParticipant.team) &&
@@ -1264,7 +1285,7 @@ public class CallMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime);
   }
 
   @Override
@@ -1286,6 +1307,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
     sb.append("    wrapupRequired: ").append(toIndentedString(wrapupRequired)).append("\n");
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    team: ").append(toIndentedString(team)).append("\n");

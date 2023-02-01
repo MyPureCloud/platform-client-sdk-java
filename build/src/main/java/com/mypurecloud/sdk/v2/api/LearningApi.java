@@ -326,7 +326,7 @@ public class LearningApi {
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
    * @param userId Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)
-   * @param types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)
+   * @param types Specifies the module types to filter by (optional)
    * @param states Specifies the assignment states to filter by (optional)
    * @param expand Specifies the expand option for returning additional information (optional)
    * @return LearningAssignmentsDomainEntity
@@ -352,7 +352,7 @@ public class LearningApi {
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
    * @param userId Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)
-   * @param types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)
+   * @param types Specifies the module types to filter by (optional)
    * @param states Specifies the assignment states to filter by (optional)
    * @param expand Specifies the expand option for returning additional information (optional)
    * @return LearningAssignmentsDomainEntity
@@ -459,7 +459,7 @@ public class LearningApi {
    * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
-   * @param types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)
+   * @param types Specifies the module types to filter by (optional)
    * @param states Specifies the assignment states to filter by (optional)
    * @param expand Specifies the expand option for returning additional information (optional)
    * @return LearningAssignmentsDomainEntity
@@ -484,7 +484,7 @@ public class LearningApi {
    * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
-   * @param types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)
+   * @param types Specifies the module types to filter by (optional)
    * @param states Specifies the assignment states to filter by (optional)
    * @param expand Specifies the expand option for returning additional information (optional)
    * @return LearningAssignmentsDomainEntity

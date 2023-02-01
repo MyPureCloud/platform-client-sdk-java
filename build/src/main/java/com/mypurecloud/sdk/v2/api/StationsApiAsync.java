@@ -270,7 +270,7 @@ public class StationsApiAsync {
 
   /**
    * Get an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -304,7 +304,7 @@ public class StationsApiAsync {
 
   /**
    * Get an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -345,7 +345,7 @@ public class StationsApiAsync {
 
   /**
    * Patch an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -379,7 +379,7 @@ public class StationsApiAsync {
 
   /**
    * Patch an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

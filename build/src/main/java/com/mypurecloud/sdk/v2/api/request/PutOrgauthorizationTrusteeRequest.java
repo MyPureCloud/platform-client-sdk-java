@@ -26,6 +26,8 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.TrustEntityListing;
+import com.mypurecloud.sdk.v2.model.TrustGroup;
+import com.mypurecloud.sdk.v2.model.TrustGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
 import com.mypurecloud.sdk.v2.model.TrustRequest;
 import com.mypurecloud.sdk.v2.model.TrustRequestCreate;

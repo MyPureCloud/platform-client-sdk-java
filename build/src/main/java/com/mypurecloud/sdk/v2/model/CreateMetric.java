@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CreateObjective;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,6 +28,57 @@ public class CreateMetric  implements Serializable {
   private CreateObjective objective = null;
   private String performanceProfileId = null;
   private String name = null;
+  private Integer precision = null;
+
+  private static class TimeDisplayUnitEnumDeserializer extends StdDeserializer<TimeDisplayUnitEnum> {
+    public TimeDisplayUnitEnumDeserializer() {
+      super(TimeDisplayUnitEnumDeserializer.class);
+    }
+
+    @Override
+    public TimeDisplayUnitEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TimeDisplayUnitEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+   */
+ @JsonDeserialize(using = TimeDisplayUnitEnumDeserializer.class)
+  public enum TimeDisplayUnitEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NONE("None"),
+    SECONDS("Seconds"),
+    MINUTES("Minutes"),
+    HOURS("Hours");
+
+    private String value;
+
+    TimeDisplayUnitEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TimeDisplayUnitEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TimeDisplayUnitEnum value : TimeDisplayUnitEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TimeDisplayUnitEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TimeDisplayUnitEnum timeDisplayUnit = null;
 
   
   /**
@@ -119,6 +171,42 @@ public class CreateMetric  implements Serializable {
   }
 
 
+  /**
+   * The precision of the metric, must be between 0 and 5
+   **/
+  public CreateMetric precision(Integer precision) {
+    this.precision = precision;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The precision of the metric, must be between 0 and 5")
+  @JsonProperty("precision")
+  public Integer getPrecision() {
+    return precision;
+  }
+  public void setPrecision(Integer precision) {
+    this.precision = precision;
+  }
+
+
+  /**
+   * The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+   **/
+  public CreateMetric timeDisplayUnit(TimeDisplayUnitEnum timeDisplayUnit) {
+    this.timeDisplayUnit = timeDisplayUnit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values")
+  @JsonProperty("timeDisplayUnit")
+  public TimeDisplayUnitEnum getTimeDisplayUnit() {
+    return timeDisplayUnit;
+  }
+  public void setTimeDisplayUnit(TimeDisplayUnitEnum timeDisplayUnit) {
+    this.timeDisplayUnit = timeDisplayUnit;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -133,12 +221,14 @@ public class CreateMetric  implements Serializable {
             Objects.equals(this.externalMetricDefinitionId, createMetric.externalMetricDefinitionId) &&
             Objects.equals(this.objective, createMetric.objective) &&
             Objects.equals(this.performanceProfileId, createMetric.performanceProfileId) &&
-            Objects.equals(this.name, createMetric.name);
+            Objects.equals(this.name, createMetric.name) &&
+            Objects.equals(this.precision, createMetric.precision) &&
+            Objects.equals(this.timeDisplayUnit, createMetric.timeDisplayUnit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metricDefinitionId, externalMetricDefinitionId, objective, performanceProfileId, name);
+    return Objects.hash(metricDefinitionId, externalMetricDefinitionId, objective, performanceProfileId, name, precision, timeDisplayUnit);
   }
 
   @Override
@@ -151,6 +241,8 @@ public class CreateMetric  implements Serializable {
     sb.append("    objective: ").append(toIndentedString(objective)).append("\n");
     sb.append("    performanceProfileId: ").append(toIndentedString(performanceProfileId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    precision: ").append(toIndentedString(precision)).append("\n");
+    sb.append("    timeDisplayUnit: ").append(toIndentedString(timeDisplayUnit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

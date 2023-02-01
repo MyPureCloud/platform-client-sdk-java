@@ -336,6 +336,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   private QueueConversationMessageEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private List<String> mediaRoles = new ArrayList<String>();
   private List<QueueConversationMessageEventTopicMessageDetails> messages = new ArrayList<QueueConversationMessageEventTopicMessageDetails>();
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -997,6 +998,23 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
 
   /**
    **/
+  public QueueConversationMessageEventTopicMessageMediaParticipant mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+  }
+
+
+  /**
+   **/
   public QueueConversationMessageEventTopicMessageMediaParticipant messages(List<QueueConversationMessageEventTopicMessageDetails> messages) {
     this.messages = messages;
     return this;
@@ -1108,6 +1126,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
             Objects.equals(this.journeyContext, queueConversationMessageEventTopicMessageMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, queueConversationMessageEventTopicMessageMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, queueConversationMessageEventTopicMessageMediaParticipant.endAcwTime) &&
+            Objects.equals(this.mediaRoles, queueConversationMessageEventTopicMessageMediaParticipant.mediaRoles) &&
             Objects.equals(this.messages, queueConversationMessageEventTopicMessageMediaParticipant.messages) &&
             Objects.equals(this.type, queueConversationMessageEventTopicMessageMediaParticipant.type) &&
             Objects.equals(this.recipientCountry, queueConversationMessageEventTopicMessageMediaParticipant.recipientCountry) &&
@@ -1116,7 +1135,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, messages, type, recipientCountry, recipientType);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -1159,6 +1178,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");

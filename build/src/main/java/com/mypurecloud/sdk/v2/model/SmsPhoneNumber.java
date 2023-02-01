@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Compliance;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsProvisioningStatus;
 import com.mypurecloud.sdk.v2.model.User;
@@ -292,6 +294,8 @@ public class SmsPhoneNumber  implements Serializable {
   private Boolean supportsSms = null;
   private Boolean supportsMms = null;
   private Boolean supportsVoice = null;
+  private DomainEntityRef integration = null;
+  private Compliance compliance = null;
   private String selfUri = null;
 
   
@@ -693,6 +697,42 @@ public class SmsPhoneNumber  implements Serializable {
   }
 
 
+  /**
+   * The Genesys Cloud integration this phone number belongs to.
+   **/
+  public SmsPhoneNumber integration(DomainEntityRef integration) {
+    this.integration = integration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Genesys Cloud integration this phone number belongs to.")
+  @JsonProperty("integration")
+  public DomainEntityRef getIntegration() {
+    return integration;
+  }
+  public void setIntegration(DomainEntityRef integration) {
+    this.integration = integration;
+  }
+
+
+  /**
+   * Compliance configuration for short codes, including help, stop and opt in.
+   **/
+  public SmsPhoneNumber compliance(Compliance compliance) {
+    this.compliance = compliance;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Compliance configuration for short codes, including help, stop and opt in.")
+  @JsonProperty("compliance")
+  public Compliance getCompliance() {
+    return compliance;
+  }
+  public void setCompliance(Compliance compliance) {
+    this.compliance = compliance;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -734,12 +774,14 @@ public class SmsPhoneNumber  implements Serializable {
             Objects.equals(this.supportsSms, smsPhoneNumber.supportsSms) &&
             Objects.equals(this.supportsMms, smsPhoneNumber.supportsMms) &&
             Objects.equals(this.supportsVoice, smsPhoneNumber.supportsVoice) &&
+            Objects.equals(this.integration, smsPhoneNumber.integration) &&
+            Objects.equals(this.compliance, smsPhoneNumber.compliance) &&
             Objects.equals(this.selfUri, smsPhoneNumber.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, capabilities, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, shortCodeBillingType, provisioningStatus, country, supportsSms, supportsMms, supportsVoice, selfUri);
+    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, capabilities, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, shortCodeBillingType, provisioningStatus, country, supportsSms, supportsMms, supportsVoice, integration, compliance, selfUri);
   }
 
   @Override
@@ -771,6 +813,8 @@ public class SmsPhoneNumber  implements Serializable {
     sb.append("    supportsSms: ").append(toIndentedString(supportsSms)).append("\n");
     sb.append("    supportsMms: ").append(toIndentedString(supportsMms)).append("\n");
     sb.append("    supportsVoice: ").append(toIndentedString(supportsVoice)).append("\n");
+    sb.append("    integration: ").append(toIndentedString(integration)).append("\n");
+    sb.append("    compliance: ").append(toIndentedString(compliance)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

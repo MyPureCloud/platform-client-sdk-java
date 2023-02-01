@@ -534,6 +534,7 @@ docs/CobrowseConversation.md
 docs/CobrowseConversationEntityListing.md
 docs/CobrowseMediaParticipant.md
 docs/CobrowseSettings.md
+docs/CobrowseWebMessagingSession.md
 docs/Cobrowsesession.md
 docs/ColumnDataTypeSpecification.md
 docs/ColumnStatus.md
@@ -548,6 +549,8 @@ docs/CommunicationDispositionAppliedEvent.md
 docs/CommunicationEndedEvent.md
 docs/ComparisonPeriod.md
 docs/ComparisonPeriodListing.md
+docs/Compliance.md
+docs/ComplianceResponse.md
 docs/Condition.md
 docs/ConditionalGroupRouting.md
 docs/ConditionalGroupRoutingRule.md
@@ -1246,6 +1249,7 @@ docs/EmailMediaPolicy.md
 docs/EmailMediaPolicyConditions.md
 docs/EmailMessage.md
 docs/EmailMessageListing.md
+docs/EmailMessageReply.md
 docs/EmailOutboundDomainResult.md
 docs/EmailSetup.md
 docs/EmailsSettings.md
@@ -1515,6 +1519,7 @@ docs/GuestMemberInfo.md
 docs/HeadcountForecast.md
 docs/HeadcountInterval.md
 docs/HelpLink.md
+docs/HelpSettings.md
 docs/HistoricalAdherenceActuals.md
 docs/HistoricalAdherenceDayMetrics.md
 docs/HistoricalAdherenceExceptionInfo.md
@@ -1677,6 +1682,8 @@ docs/JourneyWebEventsNotificationOutcome.md
 docs/JourneyWebEventsNotificationOutcomeAchievedMessage.md
 docs/JourneyWebEventsNotificationPage.md
 docs/JourneyWebEventsNotificationReferrer.md
+docs/JourneyWebEventsNotificationSegment.md
+docs/JourneyWebEventsNotificationSegmentAssignmentMessage.md
 docs/JourneyWebEventsNotificationSession.md
 docs/JourneyWebEventsNotificationWebActionMessage.md
 docs/JourneyWebEventsNotificationWebEventsNotification.md
@@ -2063,6 +2070,7 @@ docs/OpenMessagingFromRecipient.md
 docs/OpenMessagingToRecipient.md
 docs/OpenNormalizedMessage.md
 docs/Operation.md
+docs/OptInSettings.md
 docs/OrgOAuthClient.md
 docs/OrgUser.md
 docs/OrgWhitelistSettings.md
@@ -2109,6 +2117,7 @@ docs/OutboundRouteEntityListing.md
 docs/OutboundSettings.md
 docs/Outcome.md
 docs/OutcomeAchievement.md
+docs/OutcomeConfig.md
 docs/OutcomeEventScore.md
 docs/OutcomeListing.md
 docs/OutcomeProbabilityCondition.md
@@ -2855,6 +2864,7 @@ docs/StationsApi.md
 docs/StatisticalResponse.md
 docs/StatisticalSummary.md
 docs/StatusChange.md
+docs/StopSettings.md
 docs/StorySetting.md
 docs/StreetAddress.md
 docs/SubjectDivisionGrants.md
@@ -3060,6 +3070,7 @@ docs/TrunkRecordingEnabledCount.md
 docs/TrustCreate.md
 docs/TrustEntityListing.md
 docs/TrustGroup.md
+docs/TrustGroupEntityListing.md
 docs/TrustMemberCreate.md
 docs/TrustRequest.md
 docs/TrustRequestCreate.md
@@ -3701,10 +3712,13 @@ docs/deleteNotificationsChannelSubscriptions-example.txt
 docs/deleteOauthClient-example.txt
 docs/deleteOrgauthorizationTrustee-example.txt
 docs/deleteOrgauthorizationTrusteeCloneduser-example.txt
+docs/deleteOrgauthorizationTrusteeGroup-example.txt
+docs/deleteOrgauthorizationTrusteeGroupRoles-example.txt
 docs/deleteOrgauthorizationTrusteeUser-example.txt
 docs/deleteOrgauthorizationTrusteeUserRoles-example.txt
 docs/deleteOrgauthorizationTrustor-example.txt
 docs/deleteOrgauthorizationTrustorCloneduser-example.txt
+docs/deleteOrgauthorizationTrustorGroup-example.txt
 docs/deleteOrgauthorizationTrustorUser-example.txt
 docs/deleteOrphanrecording-example.txt
 docs/deleteOutboundAttemptlimit-example.txt
@@ -3804,6 +3818,7 @@ docs/deleteWebchatGuestConversationMember-example.txt
 docs/deleteWebchatSettings-example.txt
 docs/deleteWebdeploymentsConfiguration-example.txt
 docs/deleteWebdeploymentsDeployment-example.txt
+docs/deleteWebdeploymentsDeploymentCobrowseSessionId-example.txt
 docs/deleteWebdeploymentsTokenRevoke-example.txt
 docs/deleteWidgetsDeployment-example.txt
 docs/deleteWorkforcemanagementBusinessunit-example.txt
@@ -4301,6 +4316,9 @@ docs/getOrganizationsWhitelist-example.txt
 docs/getOrgauthorizationPairing-example.txt
 docs/getOrgauthorizationTrustee-example.txt
 docs/getOrgauthorizationTrusteeClonedusers-example.txt
+docs/getOrgauthorizationTrusteeGroup-example.txt
+docs/getOrgauthorizationTrusteeGroupRoles-example.txt
+docs/getOrgauthorizationTrusteeGroups-example.txt
 docs/getOrgauthorizationTrusteeUser-example.txt
 docs/getOrgauthorizationTrusteeUserRoles-example.txt
 docs/getOrgauthorizationTrusteeUsers-example.txt
@@ -4309,6 +4327,8 @@ docs/getOrgauthorizationTrusteesDefault-example.txt
 docs/getOrgauthorizationTrustor-example.txt
 docs/getOrgauthorizationTrustorCloneduser-example.txt
 docs/getOrgauthorizationTrustorClonedusers-example.txt
+docs/getOrgauthorizationTrustorGroup-example.txt
+docs/getOrgauthorizationTrustorGroups-example.txt
 docs/getOrgauthorizationTrustorUser-example.txt
 docs/getOrgauthorizationTrustorUsers-example.txt
 docs/getOrgauthorizationTrustors-example.txt
@@ -4691,6 +4711,7 @@ docs/getWebdeploymentsConfigurationVersions-example.txt
 docs/getWebdeploymentsConfigurationVersionsDraft-example.txt
 docs/getWebdeploymentsConfigurations-example.txt
 docs/getWebdeploymentsDeployment-example.txt
+docs/getWebdeploymentsDeploymentCobrowseSessionId-example.txt
 docs/getWebdeploymentsDeploymentConfigurations-example.txt
 docs/getWebdeploymentsDeployments-example.txt
 docs/getWebmessagingMessages-example.txt
@@ -4982,6 +5003,7 @@ docs/postContentmanagementWorkspaceTagvalues-example.txt
 docs/postContentmanagementWorkspaceTagvaluesQuery-example.txt
 docs/postContentmanagementWorkspaces-example.txt
 docs/postConversationAssign-example.txt
+docs/postConversationCobrowse-example.txt
 docs/postConversationDisconnect-example.txt
 docs/postConversationParticipantCallbacks-example.txt
 docs/postConversationParticipantDigits-example.txt
@@ -5165,6 +5187,7 @@ docs/postOauthClientSecret-example.txt
 docs/postOauthClientUsageQuery-example.txt
 docs/postOauthClients-example.txt
 docs/postOrgauthorizationPairings-example.txt
+docs/postOrgauthorizationTrusteeGroups-example.txt
 docs/postOrgauthorizationTrusteeUsers-example.txt
 docs/postOrgauthorizationTrustees-example.txt
 docs/postOrgauthorizationTrusteesAudits-example.txt
@@ -5478,9 +5501,12 @@ docs/putOrganizationsIpaddressauthentication-example.txt
 docs/putOrganizationsMe-example.txt
 docs/putOrganizationsWhitelist-example.txt
 docs/putOrgauthorizationTrustee-example.txt
+docs/putOrgauthorizationTrusteeGroupRoledivisions-example.txt
+docs/putOrgauthorizationTrusteeGroupRoles-example.txt
 docs/putOrgauthorizationTrusteeUserRoledivisions-example.txt
 docs/putOrgauthorizationTrusteeUserRoles-example.txt
 docs/putOrgauthorizationTrustorCloneduser-example.txt
+docs/putOrgauthorizationTrustorGroup-example.txt
 docs/putOrgauthorizationTrustorUser-example.txt
 docs/putOrphanrecording-example.txt
 docs/putOutboundAttemptlimit-example.txt
@@ -5830,10 +5856,13 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteMobiledeviceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteNotificationsChannelSubscriptionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOauthClientRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOrgauthorizationTrusteeCloneduserRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOrgauthorizationTrusteeGroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOrgauthorizationTrusteeGroupRolesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOrgauthorizationTrusteeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOrgauthorizationTrusteeUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOrgauthorizationTrusteeUserRolesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOrgauthorizationTrustorCloneduserRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOrgauthorizationTrustorGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOrgauthorizationTrustorRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOrgauthorizationTrustorUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOrphanrecordingRequest.java
@@ -5933,6 +5962,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWebchatDeploymentRequest.
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWebchatGuestConversationMemberRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWebchatSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWebdeploymentsConfigurationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWebdeploymentsDeploymentCobrowseSessionIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWebdeploymentsDeploymentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWebdeploymentsTokenRevokeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWidgetsDeploymentRequest.java
@@ -6430,6 +6460,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrganizationsMeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrganizationsWhitelistRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationPairingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrusteeClonedusersRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrusteeGroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrusteeGroupRolesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrusteeGroupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrusteeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrusteeUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrusteeUserRolesRequest.java
@@ -6438,6 +6471,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrusteesDefa
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrusteesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrustorCloneduserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrustorClonedusersRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrustorGroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrustorGroupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrustorRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrustorUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOrgauthorizationTrustorUsersRequest.java
@@ -6820,6 +6855,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetWebdeploymentsConfigurationV
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWebdeploymentsConfigurationVersionsDraftRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWebdeploymentsConfigurationVersionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWebdeploymentsConfigurationsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWebdeploymentsDeploymentCobrowseSessionIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWebdeploymentsDeploymentConfigurationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWebdeploymentsDeploymentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWebdeploymentsDeploymentsRequest.java
@@ -7112,6 +7148,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostContentmanagementWorkspaceT
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostContentmanagementWorkspaceTagvaluesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostContentmanagementWorkspacesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationAssignRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationCobrowseRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationDisconnectRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantCallbacksRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantDigitsRequest.java
@@ -7295,6 +7332,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostOauthClientSecretRequest.ja
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOauthClientUsageQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOauthClientsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOrgauthorizationPairingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostOrgauthorizationTrusteeGroupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOrgauthorizationTrusteeUsersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOrgauthorizationTrusteesAuditsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOrgauthorizationTrusteesDefaultRequest.java
@@ -7607,10 +7645,13 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrganizationsEmbeddedintegra
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrganizationsIpaddressauthenticationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrganizationsMeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrganizationsWhitelistRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrgauthorizationTrusteeGroupRoledivisionsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrgauthorizationTrusteeGroupRolesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrgauthorizationTrusteeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrgauthorizationTrusteeUserRoledivisionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrgauthorizationTrusteeUserRolesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrgauthorizationTrustorCloneduserRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrgauthorizationTrustorGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrgauthorizationTrustorUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOrphanrecordingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundAttemptlimitRequest.java
@@ -8235,6 +8276,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/CobrowseConversation.java
 src/main/java/com/mypurecloud/sdk/v2/model/CobrowseConversationEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/CobrowseMediaParticipant.java
 src/main/java/com/mypurecloud/sdk/v2/model/CobrowseSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/CobrowseWebMessagingSession.java
 src/main/java/com/mypurecloud/sdk/v2/model/Cobrowsesession.java
 src/main/java/com/mypurecloud/sdk/v2/model/ColumnDataTypeSpecification.java
 src/main/java/com/mypurecloud/sdk/v2/model/ColumnStatus.java
@@ -8249,6 +8291,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/CommunicationDispositionAppliedEvent.
 src/main/java/com/mypurecloud/sdk/v2/model/CommunicationEndedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ComparisonPeriod.java
 src/main/java/com/mypurecloud/sdk/v2/model/ComparisonPeriodListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/Compliance.java
+src/main/java/com/mypurecloud/sdk/v2/model/ComplianceResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Condition.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConditionalGroupRouting.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConditionalGroupRoutingRule.java
@@ -8939,6 +8983,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/EmailMediaPolicy.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailMediaPolicyConditions.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailMessageListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailMessageReply.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailOutboundDomainResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailSetup.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailsSettings.java
@@ -9190,6 +9235,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/GuestMemberInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/HeadcountForecast.java
 src/main/java/com/mypurecloud/sdk/v2/model/HeadcountInterval.java
 src/main/java/com/mypurecloud/sdk/v2/model/HelpLink.java
+src/main/java/com/mypurecloud/sdk/v2/model/HelpSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoricalAdherenceActuals.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoricalAdherenceDayMetrics.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoricalAdherenceExceptionInfo.java
@@ -9346,6 +9392,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationOutcome.j
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationOutcomeAchievedMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationPage.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationReferrer.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationSegment.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationSegmentAssignmentMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationSession.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationWebActionMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationWebEventsNotification.java
@@ -9710,6 +9758,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/OpenMessagingFromRecipient.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenMessagingToRecipient.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenNormalizedMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/Operation.java
+src/main/java/com/mypurecloud/sdk/v2/model/OptInSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/OrgOAuthClient.java
 src/main/java/com/mypurecloud/sdk/v2/model/OrgUser.java
 src/main/java/com/mypurecloud/sdk/v2/model/OrgWhitelistSettings.java
@@ -9750,6 +9799,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/OutboundRouteEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Outcome.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeAchievement.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutcomeConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeEventScore.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeProbabilityCondition.java
@@ -10474,6 +10524,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/StationSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/StatisticalResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/StatisticalSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/StatusChange.java
+src/main/java/com/mypurecloud/sdk/v2/model/StopSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/StorySetting.java
 src/main/java/com/mypurecloud/sdk/v2/model/StreetAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/SubjectDivisionGrants.java
@@ -10667,6 +10718,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/TrunkRecordingEnabledCount.java
 src/main/java/com/mypurecloud/sdk/v2/model/TrustCreate.java
 src/main/java/com/mypurecloud/sdk/v2/model/TrustEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/TrustGroup.java
+src/main/java/com/mypurecloud/sdk/v2/model/TrustGroupEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/TrustMemberCreate.java
 src/main/java/com/mypurecloud/sdk/v2/model/TrustRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TrustRequestCreate.java

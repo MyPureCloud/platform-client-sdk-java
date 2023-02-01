@@ -23,7 +23,6 @@ import java.io.Serializable;
 public class SmsPhoneNumberProvision  implements Serializable {
   
   private String id = null;
-  private String name = null;
   private String phoneNumber = null;
 
   private static class PhoneNumberTypeEnumDeserializer extends StdDeserializer<PhoneNumberTypeEnum> {
@@ -76,6 +75,7 @@ public class SmsPhoneNumberProvision  implements Serializable {
   }
   private PhoneNumberTypeEnum phoneNumberType = null;
   private String countryCode = null;
+  private String name = null;
   private String addressId = null;
   private String selfUri = null;
 
@@ -84,23 +84,6 @@ public class SmsPhoneNumberProvision  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-
-  /**
-   **/
-  public SmsPhoneNumberProvision name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
   }
 
 
@@ -159,6 +142,23 @@ public class SmsPhoneNumberProvision  implements Serializable {
 
 
   /**
+   **/
+  public SmsPhoneNumberProvision name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
+  /**
    * The id of an address added on your account. Due to regulatory requirements in some countries, an address may be required when provisioning a sms number. In those cases you should provide the provisioned sms address id here
    **/
   public SmsPhoneNumberProvision addressId(String addressId) {
@@ -194,17 +194,17 @@ public class SmsPhoneNumberProvision  implements Serializable {
     SmsPhoneNumberProvision smsPhoneNumberProvision = (SmsPhoneNumberProvision) o;
 
     return Objects.equals(this.id, smsPhoneNumberProvision.id) &&
-            Objects.equals(this.name, smsPhoneNumberProvision.name) &&
             Objects.equals(this.phoneNumber, smsPhoneNumberProvision.phoneNumber) &&
             Objects.equals(this.phoneNumberType, smsPhoneNumberProvision.phoneNumberType) &&
             Objects.equals(this.countryCode, smsPhoneNumberProvision.countryCode) &&
+            Objects.equals(this.name, smsPhoneNumberProvision.name) &&
             Objects.equals(this.addressId, smsPhoneNumberProvision.addressId) &&
             Objects.equals(this.selfUri, smsPhoneNumberProvision.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, phoneNumberType, countryCode, addressId, selfUri);
+    return Objects.hash(id, phoneNumber, phoneNumberType, countryCode, name, addressId, selfUri);
   }
 
   @Override
@@ -213,10 +213,10 @@ public class SmsPhoneNumberProvision  implements Serializable {
     sb.append("class SmsPhoneNumberProvision {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    phoneNumberType: ").append(toIndentedString(phoneNumberType)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    addressId: ").append(toIndentedString(addressId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

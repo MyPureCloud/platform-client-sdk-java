@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;
 import com.mypurecloud.sdk.v2.model.SignedData;
@@ -27,12 +28,14 @@ import com.mypurecloud.sdk.v2.model.WebDeploymentsRefreshJWTRequest;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsDeploymentRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsDeploymentCobrowseSessionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsTokenRevokeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionsDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentCobrowseSessionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentConfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationVersionsDraftPublishRequest;
@@ -200,6 +203,81 @@ public class WebDeploymentsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Deletes a cobrowse session
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Empty> deleteWebdeploymentsDeploymentCobrowseSessionIdAsync(DeleteWebdeploymentsDeploymentCobrowseSessionIdRequest request, final AsyncApiCallback<Empty> callback) {
+    try {
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Deletes a cobrowse session
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Empty>> deleteWebdeploymentsDeploymentCobrowseSessionIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -650,6 +728,81 @@ public class WebDeploymentsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WebDeployment> response = (ApiResponse<WebDeployment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves a cobrowse session
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CobrowseWebMessagingSession> getWebdeploymentsDeploymentCobrowseSessionIdAsync(GetWebdeploymentsDeploymentCobrowseSessionIdRequest request, final AsyncApiCallback<CobrowseWebMessagingSession> callback) {
+    try {
+      final SettableFuture<CobrowseWebMessagingSession> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CobrowseWebMessagingSession>() {}, new AsyncApiCallback<ApiResponse<CobrowseWebMessagingSession>>() {
+        @Override
+        public void onCompleted(ApiResponse<CobrowseWebMessagingSession> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves a cobrowse session
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CobrowseWebMessagingSession>> getWebdeploymentsDeploymentCobrowseSessionIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CobrowseWebMessagingSession>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CobrowseWebMessagingSession>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CobrowseWebMessagingSession>() {}, new AsyncApiCallback<ApiResponse<CobrowseWebMessagingSession>>() {
+        @Override
+        public void onCompleted(ApiResponse<CobrowseWebMessagingSession> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CobrowseWebMessagingSession> response = (ApiResponse<CobrowseWebMessagingSession>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CobrowseWebMessagingSession> response = (ApiResponse<CobrowseWebMessagingSession>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

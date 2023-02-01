@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -26,6 +27,57 @@ public class AnalyticsEvaluation  implements Serializable {
   private String contextId = null;
   private Boolean deleted = null;
   private String evaluationId = null;
+
+  private static class EvaluationStatusEnumDeserializer extends StdDeserializer<EvaluationStatusEnum> {
+    public EvaluationStatusEnumDeserializer() {
+      super(EvaluationStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public EvaluationStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EvaluationStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Status of evaluation
+   */
+ @JsonDeserialize(using = EvaluationStatusEnumDeserializer.class)
+  public enum EvaluationStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    FINISHED("Finished"),
+    INPROGRESS("InProgress"),
+    INREVIEW("InReview"),
+    PENDING("Pending"),
+    RETRACTED("Retracted");
+
+    private String value;
+
+    EvaluationStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static EvaluationStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (EvaluationStatusEnum value : EvaluationStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return EvaluationStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private EvaluationStatusEnum evaluationStatus = null;
   private String evaluatorId = null;
   private Date eventTime = null;
   private String formId = null;
@@ -107,6 +159,24 @@ public class AnalyticsEvaluation  implements Serializable {
   }
   public void setEvaluationId(String evaluationId) {
     this.evaluationId = evaluationId;
+  }
+
+
+  /**
+   * Status of evaluation
+   **/
+  public AnalyticsEvaluation evaluationStatus(EvaluationStatusEnum evaluationStatus) {
+    this.evaluationStatus = evaluationStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Status of evaluation")
+  @JsonProperty("evaluationStatus")
+  public EvaluationStatusEnum getEvaluationStatus() {
+    return evaluationStatus;
+  }
+  public void setEvaluationStatus(EvaluationStatusEnum evaluationStatus) {
+    this.evaluationStatus = evaluationStatus;
   }
 
 
@@ -302,6 +372,7 @@ public class AnalyticsEvaluation  implements Serializable {
             Objects.equals(this.contextId, analyticsEvaluation.contextId) &&
             Objects.equals(this.deleted, analyticsEvaluation.deleted) &&
             Objects.equals(this.evaluationId, analyticsEvaluation.evaluationId) &&
+            Objects.equals(this.evaluationStatus, analyticsEvaluation.evaluationStatus) &&
             Objects.equals(this.evaluatorId, analyticsEvaluation.evaluatorId) &&
             Objects.equals(this.eventTime, analyticsEvaluation.eventTime) &&
             Objects.equals(this.formId, analyticsEvaluation.formId) &&
@@ -316,7 +387,7 @@ public class AnalyticsEvaluation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(calibrationId, contextId, deleted, evaluationId, evaluatorId, eventTime, formId, formName, queueId, released, rescored, userId, oTotalCriticalScore, oTotalScore);
+    return Objects.hash(calibrationId, contextId, deleted, evaluationId, evaluationStatus, evaluatorId, eventTime, formId, formName, queueId, released, rescored, userId, oTotalCriticalScore, oTotalScore);
   }
 
   @Override
@@ -328,6 +399,7 @@ public class AnalyticsEvaluation  implements Serializable {
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    evaluationId: ").append(toIndentedString(evaluationId)).append("\n");
+    sb.append("    evaluationStatus: ").append(toIndentedString(evaluationStatus)).append("\n");
     sb.append("    evaluatorId: ").append(toIndentedString(evaluatorId)).append("\n");
     sb.append("    eventTime: ").append(toIndentedString(eventTime)).append("\n");
     sb.append("    formId: ").append(toIndentedString(formId)).append("\n");

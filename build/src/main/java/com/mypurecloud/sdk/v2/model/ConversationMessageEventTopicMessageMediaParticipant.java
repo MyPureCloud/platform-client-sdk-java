@@ -336,6 +336,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
   private ConversationMessageEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private List<String> mediaRoles = new ArrayList<String>();
   private List<ConversationMessageEventTopicMessageDetails> messages = new ArrayList<ConversationMessageEventTopicMessageDetails>();
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -997,6 +998,23 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
 
   /**
    **/
+  public ConversationMessageEventTopicMessageMediaParticipant mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+  }
+
+
+  /**
+   **/
   public ConversationMessageEventTopicMessageMediaParticipant messages(List<ConversationMessageEventTopicMessageDetails> messages) {
     this.messages = messages;
     return this;
@@ -1108,6 +1126,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
             Objects.equals(this.journeyContext, conversationMessageEventTopicMessageMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, conversationMessageEventTopicMessageMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationMessageEventTopicMessageMediaParticipant.endAcwTime) &&
+            Objects.equals(this.mediaRoles, conversationMessageEventTopicMessageMediaParticipant.mediaRoles) &&
             Objects.equals(this.messages, conversationMessageEventTopicMessageMediaParticipant.messages) &&
             Objects.equals(this.type, conversationMessageEventTopicMessageMediaParticipant.type) &&
             Objects.equals(this.recipientCountry, conversationMessageEventTopicMessageMediaParticipant.recipientCountry) &&
@@ -1116,7 +1135,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, messages, type, recipientCountry, recipientType);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -1159,6 +1178,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");

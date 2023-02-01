@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.OutcomeConfig;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -99,6 +100,7 @@ public class KeyPerformanceIndicator  implements Serializable {
     SALESCONVERSION("SalesConversion"),
     CHURN("Churn"),
     RETENTION("Retention"),
+    SALESVALUE("SalesValue"),
     HANDLETIME("HandleTime"),
     NUMBEROFTRANSFERS("NumberOfTransfers");
 
@@ -147,7 +149,9 @@ public class KeyPerformanceIndicator  implements Serializable {
  @JsonDeserialize(using = SourceEnumDeserializer.class)
   public enum SourceEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    WRAPUPCODE("WrapUpCode");
+    WRAPUPCODE("WrapUpCode"),
+    OUTCOME("Outcome"),
+    NONE("None");
 
     private String value;
 
@@ -176,6 +180,7 @@ public class KeyPerformanceIndicator  implements Serializable {
   }
   private SourceEnum source = null;
   private WrapUpCodeConfig wrapUpCodeConfig = null;
+  private OutcomeConfig outcomeConfig = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -338,6 +343,13 @@ public class KeyPerformanceIndicator  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Defines what outcome ids are mapped to Key Performance Indicator.")
+  @JsonProperty("outcomeConfig")
+  public OutcomeConfig getOutcomeConfig() {
+    return outcomeConfig;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The status of the Key Performance Indicator.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
@@ -378,6 +390,7 @@ public class KeyPerformanceIndicator  implements Serializable {
             Objects.equals(this.kpiType, keyPerformanceIndicator.kpiType) &&
             Objects.equals(this.source, keyPerformanceIndicator.source) &&
             Objects.equals(this.wrapUpCodeConfig, keyPerformanceIndicator.wrapUpCodeConfig) &&
+            Objects.equals(this.outcomeConfig, keyPerformanceIndicator.outcomeConfig) &&
             Objects.equals(this.status, keyPerformanceIndicator.status) &&
             Objects.equals(this.kpiGroup, keyPerformanceIndicator.kpiGroup) &&
             Objects.equals(this.selfUri, keyPerformanceIndicator.selfUri);
@@ -385,7 +398,7 @@ public class KeyPerformanceIndicator  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, optimizationType, dateCreated, dateModified, description, kpiType, source, wrapUpCodeConfig, status, kpiGroup, selfUri);
+    return Objects.hash(id, name, optimizationType, dateCreated, dateModified, description, kpiType, source, wrapUpCodeConfig, outcomeConfig, status, kpiGroup, selfUri);
   }
 
   @Override
@@ -402,6 +415,7 @@ public class KeyPerformanceIndicator  implements Serializable {
     sb.append("    kpiType: ").append(toIndentedString(kpiType)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    wrapUpCodeConfig: ").append(toIndentedString(wrapUpCodeConfig)).append("\n");
+    sb.append("    outcomeConfig: ").append(toIndentedString(outcomeConfig)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    kpiGroup: ").append(toIndentedString(kpiGroup)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

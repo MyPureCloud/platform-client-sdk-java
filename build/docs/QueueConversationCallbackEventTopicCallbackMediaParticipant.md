@@ -43,6 +43,7 @@ title: QueueConversationCallbackEventTopicCallbackMediaParticipant
 | **journeyContext** | <!----><!---->[**QueueConversationCallbackEventTopicJourneyContext**](QueueConversationCallbackEventTopicJourneyContext.html)<!----> |  |  [optional] |
 | **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **outboundPreview** | <!----><!---->[**QueueConversationCallbackEventTopicDialerPreview**](QueueConversationCallbackEventTopicDialerPreview.html)<!----> |  |  [optional] |
 | **voicemail** | <!----><!---->[**QueueConversationCallbackEventTopicVoicemail**](QueueConversationCallbackEventTopicVoicemail.html)<!----> |  |  [optional] |
 | **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |

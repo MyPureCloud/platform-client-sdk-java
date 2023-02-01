@@ -17,6 +17,7 @@ title: KeyPerformanceIndicator
 | **kpiType** | [**KpiTypeEnum**](#KpiTypeEnum)<!----> | The type of Key Performance Indicator. |  [optional] |
 | **source** | [**SourceEnum**](#SourceEnum)<!----> | Source of values for Key Performance Indicator. |  [optional] |
 | **wrapUpCodeConfig** | <!----><!---->[**WrapUpCodeConfig**](WrapUpCodeConfig.html)<!----> | Defines what wrap up codes are mapped to Key Performance Indicator. |  [optional] |
+| **outcomeConfig** | <!----><!---->[**OutcomeConfig**](OutcomeConfig.html)<!----> | Defines what outcome ids are mapped to Key Performance Indicator. |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the Key Performance Indicator. |  [optional] |
 | **kpiGroup** | [**KpiGroupEnum**](#KpiGroupEnum)<!----> | The group the Key Performance Indicator belongs to. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
@@ -45,6 +46,7 @@ title: KeyPerformanceIndicator
 | SALESCONVERSION | &quot;SalesConversion&quot; | 
 | CHURN | &quot;Churn&quot; | 
 | RETENTION | &quot;Retention&quot; | 
+| SALESVALUE | &quot;SalesValue&quot; | 
 | HANDLETIME | &quot;HandleTime&quot; | 
 | NUMBEROFTRANSFERS | &quot;NumberOfTransfers&quot; | 
 {: class="table table-striped"}
@@ -58,6 +60,8 @@ title: KeyPerformanceIndicator
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | WRAPUPCODE | &quot;WrapUpCode&quot; | 
+| OUTCOME | &quot;Outcome&quot; | 
+| NONE | &quot;None&quot; | 
 {: class="table table-striped"}
 
 

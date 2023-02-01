@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -335,6 +336,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
   private ConversationCallEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private List<String> mediaRoles = new ArrayList<String>();
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -996,6 +998,23 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
 
   /**
    **/
+  public ConversationCallEventTopicCallMediaParticipant mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+  }
+
+
+  /**
+   **/
   public ConversationCallEventTopicCallMediaParticipant muted(Boolean muted) {
     this.muted = muted;
     return this;
@@ -1277,6 +1296,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
             Objects.equals(this.journeyContext, conversationCallEventTopicCallMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, conversationCallEventTopicCallMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationCallEventTopicCallMediaParticipant.endAcwTime) &&
+            Objects.equals(this.mediaRoles, conversationCallEventTopicCallMediaParticipant.mediaRoles) &&
             Objects.equals(this.muted, conversationCallEventTopicCallMediaParticipant.muted) &&
             Objects.equals(this.confined, conversationCallEventTopicCallMediaParticipant.confined) &&
             Objects.equals(this.recording, conversationCallEventTopicCallMediaParticipant.recording) &&
@@ -1295,7 +1315,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1338,6 +1358,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

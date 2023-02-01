@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicUriReferenc
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -334,6 +335,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
   private ConversationScreenShareEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private List<String> mediaRoles = new ArrayList<String>();
   private String context = null;
   private Integer peerCount = null;
   private Boolean sharing = null;
@@ -936,6 +938,23 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
 
   /**
    **/
+  public ConversationScreenShareEventTopicScreenShareMediaParticipant mediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaRoles")
+  public List<String> getMediaRoles() {
+    return mediaRoles;
+  }
+  public void setMediaRoles(List<String> mediaRoles) {
+    this.mediaRoles = mediaRoles;
+  }
+
+
+  /**
+   **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant context(String context) {
     this.context = context;
     return this;
@@ -1030,6 +1049,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
             Objects.equals(this.journeyContext, conversationScreenShareEventTopicScreenShareMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.endAcwTime) &&
+            Objects.equals(this.mediaRoles, conversationScreenShareEventTopicScreenShareMediaParticipant.mediaRoles) &&
             Objects.equals(this.context, conversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
             Objects.equals(this.peerCount, conversationScreenShareEventTopicScreenShareMediaParticipant.peerCount) &&
             Objects.equals(this.sharing, conversationScreenShareEventTopicScreenShareMediaParticipant.sharing);
@@ -1037,7 +1057,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, context, peerCount, sharing);
   }
 
   @Override
@@ -1080,6 +1100,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    sharing: ").append(toIndentedString(sharing)).append("\n");

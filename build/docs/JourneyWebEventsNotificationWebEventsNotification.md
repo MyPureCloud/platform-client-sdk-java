@@ -19,6 +19,7 @@ title: JourneyWebEventsNotificationWebEventsNotification
 | **webEvent** | <!----><!---->[**JourneyWebEventsNotificationWebMessage**](JourneyWebEventsNotificationWebMessage.html)<!----> |  |  [optional] |
 | **webActionEvent** | <!----><!---->[**JourneyWebEventsNotificationWebActionMessage**](JourneyWebEventsNotificationWebActionMessage.html)<!----> |  |  [optional] |
 | **outcomeAchievedEvent** | <!----><!---->[**JourneyWebEventsNotificationOutcomeAchievedMessage**](JourneyWebEventsNotificationOutcomeAchievedMessage.html)<!----> |  |  [optional] |
+| **segmentAssignmentEvent** | <!----><!---->[**JourneyWebEventsNotificationSegmentAssignmentMessage**](JourneyWebEventsNotificationSegmentAssignmentMessage.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

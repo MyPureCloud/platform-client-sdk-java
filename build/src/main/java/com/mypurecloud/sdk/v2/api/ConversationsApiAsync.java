@@ -37,6 +37,7 @@ import com.mypurecloud.sdk.v2.model.ChatConversation;
 import com.mypurecloud.sdk.v2.model.ChatConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseConversation;
 import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
@@ -68,6 +69,7 @@ import com.mypurecloud.sdk.v2.model.EmailConversation;
 import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailMessage;
 import com.mypurecloud.sdk.v2.model.EmailMessageListing;
+import com.mypurecloud.sdk.v2.model.EmailMessageReply;
 import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
@@ -239,6 +241,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQu
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationAssignRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationCobrowseRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsRequest;
@@ -9021,6 +9024,81 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Creates a cobrowse session
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CobrowseWebMessagingSession> postConversationCobrowseAsync(PostConversationCobrowseRequest request, final AsyncApiCallback<CobrowseWebMessagingSession> callback) {
+    try {
+      final SettableFuture<CobrowseWebMessagingSession> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CobrowseWebMessagingSession>() {}, new AsyncApiCallback<ApiResponse<CobrowseWebMessagingSession>>() {
+        @Override
+        public void onCompleted(ApiResponse<CobrowseWebMessagingSession> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a cobrowse session
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CobrowseWebMessagingSession>> postConversationCobrowseAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CobrowseWebMessagingSession>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CobrowseWebMessagingSession>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CobrowseWebMessagingSession>() {}, new AsyncApiCallback<ApiResponse<CobrowseWebMessagingSession>>() {
+        @Override
+        public void onCompleted(ApiResponse<CobrowseWebMessagingSession> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CobrowseWebMessagingSession> response = (ApiResponse<CobrowseWebMessagingSession>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CobrowseWebMessagingSession> response = (ApiResponse<CobrowseWebMessagingSession>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
    * 
    * @param request the request object
@@ -10677,13 +10755,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EmailMessage> postConversationsEmailMessagesAsync(PostConversationsEmailMessagesRequest request, final AsyncApiCallback<EmailMessage> callback) {
+  public Future<EmailMessageReply> postConversationsEmailMessagesAsync(PostConversationsEmailMessagesRequest request, final AsyncApiCallback<EmailMessageReply> callback) {
     try {
-      final SettableFuture<EmailMessage> future = SettableFuture.create();
+      final SettableFuture<EmailMessageReply> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailMessage>() {}, new AsyncApiCallback<ApiResponse<EmailMessage>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailMessageReply>() {}, new AsyncApiCallback<ApiResponse<EmailMessageReply>>() {
         @Override
-        public void onCompleted(ApiResponse<EmailMessage> response) {
+        public void onCompleted(ApiResponse<EmailMessageReply> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -10711,13 +10789,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailMessage>> postConversationsEmailMessagesAsync(ApiRequest<EmailMessage> request, final AsyncApiCallback<ApiResponse<EmailMessage>> callback) {
+  public Future<ApiResponse<EmailMessageReply>> postConversationsEmailMessagesAsync(ApiRequest<EmailMessage> request, final AsyncApiCallback<ApiResponse<EmailMessageReply>> callback) {
     try {
-      final SettableFuture<ApiResponse<EmailMessage>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<EmailMessageReply>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<EmailMessage>() {}, new AsyncApiCallback<ApiResponse<EmailMessage>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<EmailMessageReply>() {}, new AsyncApiCallback<ApiResponse<EmailMessageReply>>() {
         @Override
-        public void onCompleted(ApiResponse<EmailMessage> response) {
+        public void onCompleted(ApiResponse<EmailMessageReply> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -10725,7 +10803,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)exception;
+            ApiResponse<EmailMessageReply> response = (ApiResponse<EmailMessageReply>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -10733,7 +10811,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<EmailMessageReply> response = (ApiResponse<EmailMessageReply>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

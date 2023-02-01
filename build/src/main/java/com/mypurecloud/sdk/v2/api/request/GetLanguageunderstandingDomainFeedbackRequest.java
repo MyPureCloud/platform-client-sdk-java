@@ -219,6 +219,20 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	    return this;
 	} 
 
+	private Boolean includeTrainingUtterances;
+	public Boolean getIncludeTrainingUtterances() {
+		return this.includeTrainingUtterances;
+	}
+
+	public void setIncludeTrainingUtterances(Boolean includeTrainingUtterances) {
+		this.includeTrainingUtterances = includeTrainingUtterances;
+	}
+
+	public GetLanguageunderstandingDomainFeedbackRequest withIncludeTrainingUtterances(Boolean includeTrainingUtterances) {
+	    this.setIncludeTrainingUtterances(includeTrainingUtterances);
+	    return this;
+	} 
+
 	private String after;
 	public String getAfter() {
 		return this.after;
@@ -337,6 +351,9 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
                 .withQueryParameters("enableCursorPagination", "", enableCursorPagination)
         
 
+                .withQueryParameters("includeTrainingUtterances", "", includeTrainingUtterances)
+        
+
                 .withQueryParameters("after", "", after)
         
 
@@ -424,6 +441,11 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 
 		public Builder withEnableCursorPagination(Boolean enableCursorPagination) {
 			request.setEnableCursorPagination(enableCursorPagination);
+			return this;
+		}
+
+		public Builder withIncludeTrainingUtterances(Boolean includeTrainingUtterances) {
+			request.setIncludeTrainingUtterances(includeTrainingUtterances);
 			return this;
 		}
 

@@ -300,7 +300,7 @@ public class StationsApi {
 
   /**
    * Get an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @return StationSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -311,7 +311,7 @@ public class StationsApi {
 
   /**
    * Get an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @return StationSettings
    * @throws IOException if the request fails to be processed
    */
@@ -326,7 +326,7 @@ public class StationsApi {
 
   /**
    * Get an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @param request The request object
    * @return StationSettings
    * @throws ApiException if the request fails on the server
@@ -345,7 +345,7 @@ public class StationsApi {
 
   /**
    * Get an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -374,7 +374,7 @@ public class StationsApi {
 
   /**
    * Patch an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @param body Station settings (required)
    * @return StationSettings
    * @throws ApiException if the request fails on the server
@@ -386,7 +386,7 @@ public class StationsApi {
 
   /**
    * Patch an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @param body Station settings (required)
    * @return StationSettings
    * @throws IOException if the request fails to be processed
@@ -404,7 +404,7 @@ public class StationsApi {
 
   /**
    * Patch an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @param request The request object
    * @return StationSettings
    * @throws ApiException if the request fails on the server
@@ -423,7 +423,7 @@ public class StationsApi {
 
   /**
    * Patch an organization's StationSettings
-   * 
+   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -42,6 +42,7 @@ title: JourneyAggregationView
 | NWEBACTIONSREJECTED | &quot;nWebActionsRejected&quot; | 
 | NWEBACTIONSSTARTED | &quot;nWebActionsStarted&quot; | 
 | NWEBACTIONSTIMEDOUT | &quot;nWebActionsTimedout&quot; | 
+| OJOURNEYOUTCOMETOUCHPOINTVALUE | &quot;oJourneyOutcomeTouchpointValue&quot; | 
 | OJOURNEYOUTCOMEVALUE | &quot;oJourneyOutcomeValue&quot; | 
 {: class="table table-striped"}
 

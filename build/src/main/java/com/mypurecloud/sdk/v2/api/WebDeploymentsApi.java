@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExpandableWebDeploymentEntityListing;
 import com.mypurecloud.sdk.v2.model.SignedData;
@@ -24,12 +25,14 @@ import com.mypurecloud.sdk.v2.model.WebDeploymentsRefreshJWTRequest;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsDeploymentRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsDeploymentCobrowseSessionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWebdeploymentsTokenRevokeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationVersionsDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsConfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentCobrowseSessionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentConfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsDeploymentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebdeploymentsConfigurationVersionsDraftPublishRequest;
@@ -203,6 +206,88 @@ public class WebDeploymentsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Deletes a cobrowse session
+   * 
+   * @param deploymentId WebMessaging deployment ID (required)
+   * @param sessionId Cobrowse session id or join code (required)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteWebdeploymentsDeploymentCobrowseSessionId(String deploymentId, String sessionId) throws IOException, ApiException {
+    return  deleteWebdeploymentsDeploymentCobrowseSessionId(createDeleteWebdeploymentsDeploymentCobrowseSessionIdRequest(deploymentId, sessionId));
+  }
+
+  /**
+   * Deletes a cobrowse session
+   * 
+   * @param deploymentId WebMessaging deployment ID (required)
+   * @param sessionId Cobrowse session id or join code (required)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteWebdeploymentsDeploymentCobrowseSessionIdWithHttpInfo(String deploymentId, String sessionId) throws IOException {
+    return deleteWebdeploymentsDeploymentCobrowseSessionId(createDeleteWebdeploymentsDeploymentCobrowseSessionIdRequest(deploymentId, sessionId).withHttpInfo());
+  }
+
+  private DeleteWebdeploymentsDeploymentCobrowseSessionIdRequest createDeleteWebdeploymentsDeploymentCobrowseSessionIdRequest(String deploymentId, String sessionId) {
+    return DeleteWebdeploymentsDeploymentCobrowseSessionIdRequest.builder()
+            .withDeploymentId(deploymentId)
+
+            .withSessionId(sessionId)
+
+            .build();
+  }
+
+  /**
+   * Deletes a cobrowse session
+   * 
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteWebdeploymentsDeploymentCobrowseSessionId(DeleteWebdeploymentsDeploymentCobrowseSessionIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Deletes a cobrowse session
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteWebdeploymentsDeploymentCobrowseSessionId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -676,6 +761,88 @@ public class WebDeploymentsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WebDeployment> response = (ApiResponse<WebDeployment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieves a cobrowse session
+   * 
+   * @param deploymentId WebMessaging deployment ID (required)
+   * @param sessionId Cobrowse session id or join code (required)
+   * @return CobrowseWebMessagingSession
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CobrowseWebMessagingSession getWebdeploymentsDeploymentCobrowseSessionId(String deploymentId, String sessionId) throws IOException, ApiException {
+    return  getWebdeploymentsDeploymentCobrowseSessionId(createGetWebdeploymentsDeploymentCobrowseSessionIdRequest(deploymentId, sessionId));
+  }
+
+  /**
+   * Retrieves a cobrowse session
+   * 
+   * @param deploymentId WebMessaging deployment ID (required)
+   * @param sessionId Cobrowse session id or join code (required)
+   * @return CobrowseWebMessagingSession
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CobrowseWebMessagingSession> getWebdeploymentsDeploymentCobrowseSessionIdWithHttpInfo(String deploymentId, String sessionId) throws IOException {
+    return getWebdeploymentsDeploymentCobrowseSessionId(createGetWebdeploymentsDeploymentCobrowseSessionIdRequest(deploymentId, sessionId).withHttpInfo());
+  }
+
+  private GetWebdeploymentsDeploymentCobrowseSessionIdRequest createGetWebdeploymentsDeploymentCobrowseSessionIdRequest(String deploymentId, String sessionId) {
+    return GetWebdeploymentsDeploymentCobrowseSessionIdRequest.builder()
+            .withDeploymentId(deploymentId)
+
+            .withSessionId(sessionId)
+
+            .build();
+  }
+
+  /**
+   * Retrieves a cobrowse session
+   * 
+   * @param request The request object
+   * @return CobrowseWebMessagingSession
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CobrowseWebMessagingSession getWebdeploymentsDeploymentCobrowseSessionId(GetWebdeploymentsDeploymentCobrowseSessionIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CobrowseWebMessagingSession> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CobrowseWebMessagingSession>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves a cobrowse session
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CobrowseWebMessagingSession> getWebdeploymentsDeploymentCobrowseSessionId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CobrowseWebMessagingSession>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CobrowseWebMessagingSession> response = (ApiResponse<CobrowseWebMessagingSession>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CobrowseWebMessagingSession> response = (ApiResponse<CobrowseWebMessagingSession>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
