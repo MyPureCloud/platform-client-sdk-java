@@ -22,6 +22,7 @@ public class NotificationHandler extends Object {
     private static final Logger LOGGER = LoggerFactory.getLogger(NotificationHandler.class);
 
     private NotificationsApi notificationsApi = new NotificationsApi();
+    private String proxyHost;
     private WebSocket webSocket;
     private Channel channel;
     private Map<String, NotificationListener<?>> typeMap = new HashMap<>();
@@ -76,6 +77,9 @@ public class NotificationHandler extends Object {
 
         // Set web socket listener
         this.setWebSocketListener(builder.webSocketListener);
+
+        if (builder.proxyHost != null)
+            this.proxyHost = builder.proxyHost;
 
         if (builder.connectAsync != null)
             this.connect(builder.connectAsync);
@@ -235,7 +239,7 @@ public class NotificationHandler extends Object {
         typeMap.clear();
     }
 
-    public void connect(boolean async) throws WebSocketException {
+    public void connect(boolean async) throws IOException, WebSocketException {
         if (this.webSocket == null || !this.webSocket.isOpen()) {
             this.webSocket = createWebSocket();
         }
@@ -261,11 +265,11 @@ public class NotificationHandler extends Object {
         super.finalize();
     }
 
-    private WebSocket createWebSocket() throws WebSocketException {
+    private WebSocket createWebSocket() throws IOException {
         WebSocketFactory factory = new WebSocketFactory();
 
-        if (builder.proxyHost != null)
-            factory.getProxySettings().setServer(builder.proxyHost);
+        if (this.proxyHost != null)
+            factory.getProxySettings().setServer(this.proxyHost);
 
         return factory
                 .createSocket(this.channel.getConnectUri())
