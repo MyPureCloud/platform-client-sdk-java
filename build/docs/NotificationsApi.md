@@ -325,7 +325,7 @@ null (empty response body)
 
 
 
-> [ChannelTopicEntityListing](ChannelTopicEntityListing.html) postNotificationsChannelSubscriptions(channelId, body)
+> [ChannelTopicEntityListing](ChannelTopicEntityListing.html) postNotificationsChannelSubscriptions(channelId, body, ignoreErrors)
 
 Add a list of subscriptions to the existing list of subscriptions
 
@@ -358,8 +358,9 @@ Configuration.setDefaultApiClient(apiClient);
 NotificationsApi apiInstance = new NotificationsApi();
 String channelId = "channelId_example"; // String | Channel ID
 List<ChannelTopic> body = Arrays.asList(new ChannelTopic()); // List<ChannelTopic> | Body
+Boolean ignoreErrors = false; // Boolean | Optionally prevent throwing of errors for failed permissions checks.
 try {
-    ChannelTopicEntityListing result = apiInstance.postNotificationsChannelSubscriptions(channelId, body);
+    ChannelTopicEntityListing result = apiInstance.postNotificationsChannelSubscriptions(channelId, body, ignoreErrors);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NotificationsApi#postNotificationsChannelSubscriptions");
@@ -374,6 +375,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **channelId** | **String**| Channel ID | 
 | **body** | [**List&lt;ChannelTopic&gt;**](ChannelTopic.html)| Body | 
+| **ignoreErrors** | **Boolean**| Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -445,7 +447,7 @@ This endpoint does not require any parameters.
 
 
 
-> [ChannelTopicEntityListing](ChannelTopicEntityListing.html) putNotificationsChannelSubscriptions(channelId, body)
+> [ChannelTopicEntityListing](ChannelTopicEntityListing.html) putNotificationsChannelSubscriptions(channelId, body, ignoreErrors)
 
 Replace the current list of subscriptions with a new list.
 
@@ -478,8 +480,9 @@ Configuration.setDefaultApiClient(apiClient);
 NotificationsApi apiInstance = new NotificationsApi();
 String channelId = "channelId_example"; // String | Channel ID
 List<ChannelTopic> body = Arrays.asList(new ChannelTopic()); // List<ChannelTopic> | Body
+Boolean ignoreErrors = false; // Boolean | Optionally prevent throwing of errors for failed permissions checks.
 try {
-    ChannelTopicEntityListing result = apiInstance.putNotificationsChannelSubscriptions(channelId, body);
+    ChannelTopicEntityListing result = apiInstance.putNotificationsChannelSubscriptions(channelId, body, ignoreErrors);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NotificationsApi#putNotificationsChannelSubscriptions");
@@ -494,6 +497,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **channelId** | **String**| Channel ID | 
 | **body** | [**List&lt;ChannelTopic&gt;**](ChannelTopic.html)| Body | 
+| **ignoreErrors** | **Boolean**| Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to false] 
 {: class="table-striped"}
 
 

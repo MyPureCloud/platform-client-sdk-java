@@ -38,6 +38,7 @@ title: Check
 | HANDLETIMEVALUE | &quot;HandleTimeValue&quot; | 
 | TRANSFERRATEVALUE | &quot;TransferRateValue&quot; | 
 | SALESCONVERSIONRATEVALUE | &quot;SalesConversionRateValue&quot; | 
+| SALESAMOUNTVALUE | &quot;SalesAmountValue&quot; | 
 | RETENTIONRATEVALUE | &quot;RetentionRateValue&quot; | 
 | CHURNRATEVALUE | &quot;ChurnRateValue&quot; | 
 | INTERACTIONVOLUME | &quot;InteractionVolume&quot; | 

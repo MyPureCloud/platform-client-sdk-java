@@ -3050,12 +3050,13 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeGroupId Filter by edgeGroup.id (optional)
    * @param sortBy Sort by (optional, default to name)
    * @param managed Filter by managed (optional)
+   * @param showCloudMedia True to show the cloud media devices in the result. (optional, default to true)
    * @return EdgeEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EdgeEntityListing getTelephonyProvidersEdges(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) throws IOException, ApiException {
-    return  getTelephonyProvidersEdges(createGetTelephonyProvidersEdgesRequest(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed));
+  public EdgeEntityListing getTelephonyProvidersEdges(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed, Boolean showCloudMedia) throws IOException, ApiException {
+    return  getTelephonyProvidersEdges(createGetTelephonyProvidersEdgesRequest(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed, showCloudMedia));
   }
 
   /**
@@ -3068,14 +3069,15 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeGroupId Filter by edgeGroup.id (optional)
    * @param sortBy Sort by (optional, default to name)
    * @param managed Filter by managed (optional)
+   * @param showCloudMedia True to show the cloud media devices in the result. (optional, default to true)
    * @return EdgeEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeEntityListing> getTelephonyProvidersEdgesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) throws IOException {
-    return getTelephonyProvidersEdges(createGetTelephonyProvidersEdgesRequest(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed).withHttpInfo());
+  public ApiResponse<EdgeEntityListing> getTelephonyProvidersEdgesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed, Boolean showCloudMedia) throws IOException {
+    return getTelephonyProvidersEdges(createGetTelephonyProvidersEdgesRequest(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed, showCloudMedia).withHttpInfo());
   }
 
-  private GetTelephonyProvidersEdgesRequest createGetTelephonyProvidersEdgesRequest(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) {
+  private GetTelephonyProvidersEdgesRequest createGetTelephonyProvidersEdgesRequest(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed, Boolean showCloudMedia) {
     return GetTelephonyProvidersEdgesRequest.builder()
             .withPageSize(pageSize)
 
@@ -3090,6 +3092,8 @@ public class TelephonyProvidersEdgeApi {
             .withSortBy(sortBy)
 
             .withManaged(managed)
+
+            .withShowCloudMedia(showCloudMedia)
 
             .build();
   }

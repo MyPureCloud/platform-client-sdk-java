@@ -40,6 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserRoutinglanguages**](UsersApi.html#getUserRoutinglanguages) | List routing language for user |
 | [**getUserRoutingskills**](UsersApi.html#getUserRoutingskills) | List routing skills for user |
 | [**getUserRoutingstatus**](UsersApi.html#getUserRoutingstatus) | Fetch the routing status of a user |
+| [**getUserSkillgroups**](UsersApi.html#getUserSkillgroups) | Get skill groups for a user |
 | [**getUserState**](UsersApi.html#getUserState) | Get user state information. |
 | [**getUserStation**](UsersApi.html#getUserStation) | Get station information for user |
 | [**getUserSuperiors**](UsersApi.html#getUserSuperiors) | Get superiors |
@@ -2163,6 +2164,73 @@ try {
 
 [**RoutingStatus**](RoutingStatus.html)
 
+<a name="getUserSkillgroups"></a>
+
+# **getUserSkillgroups**
+
+
+
+> [UserSkillGroupEntityListing](UserSkillGroupEntityListing.html) getUserSkillgroups(userId, pageSize, after, before)
+
+Get skill groups for a user
+
+Wraps GET /api/v2/users/{userId}/skillgroups  
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+Integer pageSize = 25; // Integer | Page size
+String after = "after_example"; // String | The cursor that points to the next page
+String before = "before_example"; // String | The cursor that points to the previous page
+try {
+    UserSkillGroupEntityListing result = apiInstance.getUserSkillgroups(userId, pageSize, after, before);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUserSkillgroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **after** | **String**| The cursor that points to the next page | [optional] 
+| **before** | **String**| The cursor that points to the previous page | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserSkillGroupEntityListing**](UserSkillGroupEntityListing.html)
+
 <a name="getUserState"></a>
 
 # **getUserState**
@@ -2707,7 +2775,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **activityId** | **String**| Specifies the activity ID, maps to either assignment or appointment ID | 
-| **type** | **String**| Specifies the activity type. |<br />**Values**: Informational, Coaching, AssessedContent, Assessment 
+| **type** | **String**| Specifies the activity type. |<br />**Values**: Informational, Coaching, AssessedContent, Assessment, External 
 {: class="table-striped"}
 
 

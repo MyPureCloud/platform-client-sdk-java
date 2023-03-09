@@ -363,6 +363,8 @@ public class AuditQueryEntity  implements Serializable {
     RESET("Reset"),
     ROTATE("Rotate"),
     RESTORE("Restore"),
+    RESTOREALL("RestoreAll"),
+    RESTOREDELETED("RestoreDeleted"),
     UNARCHIVE("Unarchive"),
     ENABLECAPTURE("EnableCapture"),
     DOWNLOADCAPTURE("DownloadCapture");

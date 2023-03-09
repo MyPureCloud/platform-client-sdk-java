@@ -437,12 +437,13 @@ public class NotificationsApi {
    * 
    * @param channelId Channel ID (required)
    * @param body Body (required)
+   * @param ignoreErrors Optionally prevent throwing of errors for failed permissions checks. (optional, default to false)
    * @return ChannelTopicEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChannelTopicEntityListing postNotificationsChannelSubscriptions(String channelId, List<ChannelTopic> body) throws IOException, ApiException {
-    return  postNotificationsChannelSubscriptions(createPostNotificationsChannelSubscriptionsRequest(channelId, body));
+  public ChannelTopicEntityListing postNotificationsChannelSubscriptions(String channelId, List<ChannelTopic> body, Boolean ignoreErrors) throws IOException, ApiException {
+    return  postNotificationsChannelSubscriptions(createPostNotificationsChannelSubscriptionsRequest(channelId, body, ignoreErrors));
   }
 
   /**
@@ -450,18 +451,21 @@ public class NotificationsApi {
    * 
    * @param channelId Channel ID (required)
    * @param body Body (required)
+   * @param ignoreErrors Optionally prevent throwing of errors for failed permissions checks. (optional, default to false)
    * @return ChannelTopicEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChannelTopicEntityListing> postNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body) throws IOException {
-    return postNotificationsChannelSubscriptions(createPostNotificationsChannelSubscriptionsRequest(channelId, body).withHttpInfo());
+  public ApiResponse<ChannelTopicEntityListing> postNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body, Boolean ignoreErrors) throws IOException {
+    return postNotificationsChannelSubscriptions(createPostNotificationsChannelSubscriptionsRequest(channelId, body, ignoreErrors).withHttpInfo());
   }
 
-  private PostNotificationsChannelSubscriptionsRequest createPostNotificationsChannelSubscriptionsRequest(String channelId, List<ChannelTopic> body) {
+  private PostNotificationsChannelSubscriptionsRequest createPostNotificationsChannelSubscriptionsRequest(String channelId, List<ChannelTopic> body, Boolean ignoreErrors) {
     return PostNotificationsChannelSubscriptionsRequest.builder()
             .withChannelId(channelId)
 
             .withBody(body)
+
+            .withIgnoreErrors(ignoreErrors)
 
             .build();
   }
@@ -593,12 +597,13 @@ public class NotificationsApi {
    * 
    * @param channelId Channel ID (required)
    * @param body Body (required)
+   * @param ignoreErrors Optionally prevent throwing of errors for failed permissions checks. (optional, default to false)
    * @return ChannelTopicEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChannelTopicEntityListing putNotificationsChannelSubscriptions(String channelId, List<ChannelTopic> body) throws IOException, ApiException {
-    return  putNotificationsChannelSubscriptions(createPutNotificationsChannelSubscriptionsRequest(channelId, body));
+  public ChannelTopicEntityListing putNotificationsChannelSubscriptions(String channelId, List<ChannelTopic> body, Boolean ignoreErrors) throws IOException, ApiException {
+    return  putNotificationsChannelSubscriptions(createPutNotificationsChannelSubscriptionsRequest(channelId, body, ignoreErrors));
   }
 
   /**
@@ -606,18 +611,21 @@ public class NotificationsApi {
    * 
    * @param channelId Channel ID (required)
    * @param body Body (required)
+   * @param ignoreErrors Optionally prevent throwing of errors for failed permissions checks. (optional, default to false)
    * @return ChannelTopicEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChannelTopicEntityListing> putNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body) throws IOException {
-    return putNotificationsChannelSubscriptions(createPutNotificationsChannelSubscriptionsRequest(channelId, body).withHttpInfo());
+  public ApiResponse<ChannelTopicEntityListing> putNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body, Boolean ignoreErrors) throws IOException {
+    return putNotificationsChannelSubscriptions(createPutNotificationsChannelSubscriptionsRequest(channelId, body, ignoreErrors).withHttpInfo());
   }
 
-  private PutNotificationsChannelSubscriptionsRequest createPutNotificationsChannelSubscriptionsRequest(String channelId, List<ChannelTopic> body) {
+  private PutNotificationsChannelSubscriptionsRequest createPutNotificationsChannelSubscriptionsRequest(String channelId, List<ChannelTopic> body, Boolean ignoreErrors) {
     return PutNotificationsChannelSubscriptionsRequest.builder()
             .withChannelId(channelId)
 
             .withBody(body)
+
+            .withIgnoreErrors(ignoreErrors)
 
             .build();
   }

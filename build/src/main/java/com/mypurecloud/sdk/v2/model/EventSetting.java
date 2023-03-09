@@ -11,7 +11,6 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.PresenceSetting;
 import com.mypurecloud.sdk.v2.model.TypingSetting;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,7 +23,6 @@ import java.io.Serializable;
 public class EventSetting  implements Serializable {
   
   private TypingSetting typing = null;
-  private PresenceSetting presence = null;
 
   
   /**
@@ -45,24 +43,6 @@ public class EventSetting  implements Serializable {
   }
 
 
-  /**
-   * Settings regarding presence events
-   **/
-  public EventSetting presence(PresenceSetting presence) {
-    this.presence = presence;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Settings regarding presence events")
-  @JsonProperty("presence")
-  public PresenceSetting getPresence() {
-    return presence;
-  }
-  public void setPresence(PresenceSetting presence) {
-    this.presence = presence;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -73,13 +53,12 @@ public class EventSetting  implements Serializable {
     }
     EventSetting eventSetting = (EventSetting) o;
 
-    return Objects.equals(this.typing, eventSetting.typing) &&
-            Objects.equals(this.presence, eventSetting.presence);
+    return Objects.equals(this.typing, eventSetting.typing);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(typing, presence);
+    return Objects.hash(typing);
   }
 
   @Override
@@ -88,7 +67,6 @@ public class EventSetting  implements Serializable {
     sb.append("class EventSetting {\n");
     
     sb.append("    typing: ").append(toIndentedString(typing)).append("\n");
-    sb.append("    presence: ").append(toIndentedString(presence)).append("\n");
     sb.append("}");
     return sb.toString();
   }

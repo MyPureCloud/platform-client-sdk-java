@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicParticipant;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicRecentTransfer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
   private String id = null;
   private Integer maxParticipants = null;
   private List<QueueConversationSocialExpressionEventTopicParticipant> participants = new ArrayList<QueueConversationSocialExpressionEventTopicParticipant>();
+  private List<QueueConversationSocialExpressionEventTopicRecentTransfer> recentTransfers = new ArrayList<QueueConversationSocialExpressionEventTopicRecentTransfer>();
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
@@ -80,6 +82,23 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
   }
   public void setParticipants(List<QueueConversationSocialExpressionEventTopicParticipant> participants) {
     this.participants = participants;
+  }
+
+
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicConversation recentTransfers(List<QueueConversationSocialExpressionEventTopicRecentTransfer> recentTransfers) {
+    this.recentTransfers = recentTransfers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recentTransfers")
+  public List<QueueConversationSocialExpressionEventTopicRecentTransfer> getRecentTransfers() {
+    return recentTransfers;
+  }
+  public void setRecentTransfers(List<QueueConversationSocialExpressionEventTopicRecentTransfer> recentTransfers) {
+    this.recentTransfers = recentTransfers;
   }
 
 
@@ -147,6 +166,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     return Objects.equals(this.id, queueConversationSocialExpressionEventTopicConversation.id) &&
             Objects.equals(this.maxParticipants, queueConversationSocialExpressionEventTopicConversation.maxParticipants) &&
             Objects.equals(this.participants, queueConversationSocialExpressionEventTopicConversation.participants) &&
+            Objects.equals(this.recentTransfers, queueConversationSocialExpressionEventTopicConversation.recentTransfers) &&
             Objects.equals(this.recordingState, queueConversationSocialExpressionEventTopicConversation.recordingState) &&
             Objects.equals(this.address, queueConversationSocialExpressionEventTopicConversation.address) &&
             Objects.equals(this.externalTag, queueConversationSocialExpressionEventTopicConversation.externalTag);
@@ -154,7 +174,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recordingState, address, externalTag);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag);
   }
 
   @Override
@@ -165,6 +185,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    maxParticipants: ").append(toIndentedString(maxParticipants)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
+    sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");

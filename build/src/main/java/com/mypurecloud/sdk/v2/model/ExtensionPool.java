@@ -218,14 +218,14 @@ public class ExtensionPool  implements Serializable {
 
 
   /**
-   * The starting phone number for the range of this Extension pool. Must be in E.164 format
+   * The starting phone number for the range of this Extension pool. The number must be between 3 and 9 digits in length and the same length as the endNumber.
    **/
   public ExtensionPool startNumber(String startNumber) {
     this.startNumber = startNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The starting phone number for the range of this Extension pool. Must be in E.164 format")
+  @ApiModelProperty(example = "null", value = "The starting phone number for the range of this Extension pool. The number must be between 3 and 9 digits in length and the same length as the endNumber.")
   @JsonProperty("startNumber")
   public String getStartNumber() {
     return startNumber;
@@ -236,14 +236,14 @@ public class ExtensionPool  implements Serializable {
 
 
   /**
-   * The ending phone number for the range of this Extension pool. Must be in E.164 format
+   * The ending phone number for the range of this Extension pool. The number must be between 3 and 9 digits in length and the same length as the startNumber.
    **/
   public ExtensionPool endNumber(String endNumber) {
     this.endNumber = endNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ending phone number for the range of this Extension pool. Must be in E.164 format")
+  @ApiModelProperty(example = "null", value = "The ending phone number for the range of this Extension pool. The number must be between 3 and 9 digits in length and the same length as the startNumber.")
   @JsonProperty("endNumber")
   public String getEndNumber() {
     return endNumber;

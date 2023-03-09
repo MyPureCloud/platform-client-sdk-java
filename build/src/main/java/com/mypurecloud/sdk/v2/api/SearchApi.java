@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.ConversationParticipantSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -18,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchResponse;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
 import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
 import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
@@ -45,6 +47,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSearchSuggestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsTranscriptsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsParticipantsAttributesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationGknSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsSearchRequest;
@@ -809,6 +812,84 @@ public class SearchApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response = (ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search conversations
+   * 
+   * @param body Search request options (required)
+   * @return JsonCursorSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(ConversationParticipantSearchRequest body) throws IOException, ApiException {
+    return  postConversationsParticipantsAttributesSearch(createPostConversationsParticipantsAttributesSearchRequest(body));
+  }
+
+  /**
+   * Search conversations
+   * 
+   * @param body Search request options (required)
+   * @return JsonCursorSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JsonCursorSearchResponse> postConversationsParticipantsAttributesSearchWithHttpInfo(ConversationParticipantSearchRequest body) throws IOException {
+    return postConversationsParticipantsAttributesSearch(createPostConversationsParticipantsAttributesSearchRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsParticipantsAttributesSearchRequest createPostConversationsParticipantsAttributesSearchRequest(ConversationParticipantSearchRequest body) {
+    return PostConversationsParticipantsAttributesSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search conversations
+   * 
+   * @param request The request object
+   * @return JsonCursorSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(PostConversationsParticipantsAttributesSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JsonCursorSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonCursorSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search conversations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JsonCursorSearchResponse> postConversationsParticipantsAttributesSearch(ApiRequest<ConversationParticipantSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JsonCursorSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonCursorSearchResponse> response = (ApiResponse<JsonCursorSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonCursorSearchResponse> response = (ApiResponse<JsonCursorSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -26,12 +26,14 @@ import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.ProgramMappings;
 import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngines;
 import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
+import com.mypurecloud.sdk.v2.model.SupportedDialectsEntityListing;
 import com.mypurecloud.sdk.v2.model.Topic;
 import com.mypurecloud.sdk.v2.model.TopicJob;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
@@ -39,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.TranscriptionEnginesRequest;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 
@@ -50,10 +53,12 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationR
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramTranscriptionenginesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsGeneralJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPublishjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSentimentDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSentimentfeedbackRequest;
@@ -73,6 +78,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublis
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramTranscriptionenginesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsTopicRequest;
 
@@ -695,6 +701,81 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
+   * Get transcription engine settings of a program
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ProgramTranscriptionEngines> getSpeechandtextanalyticsProgramTranscriptionenginesAsync(GetSpeechandtextanalyticsProgramTranscriptionenginesRequest request, final AsyncApiCallback<ProgramTranscriptionEngines> callback) {
+    try {
+      final SettableFuture<ProgramTranscriptionEngines> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramTranscriptionEngines>() {}, new AsyncApiCallback<ApiResponse<ProgramTranscriptionEngines>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramTranscriptionEngines> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get transcription engine settings of a program
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ProgramTranscriptionEngines>> getSpeechandtextanalyticsProgramTranscriptionenginesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ProgramTranscriptionEngines>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ProgramTranscriptionEngines>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ProgramTranscriptionEngines>() {}, new AsyncApiCallback<ApiResponse<ProgramTranscriptionEngines>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramTranscriptionEngines> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramTranscriptionEngines> response = (ApiResponse<ProgramTranscriptionEngines>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramTranscriptionEngines> response = (ApiResponse<ProgramTranscriptionEngines>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the list of Speech & Text Analytics programs
    * 
    * @param request the request object
@@ -983,6 +1064,81 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ProgramJob> response = (ApiResponse<ProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get supported dialects for each transcription engine
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SupportedDialectsEntityListing> getSpeechandtextanalyticsProgramsTranscriptionenginesDialectsAsync(GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest request, final AsyncApiCallback<SupportedDialectsEntityListing> callback) {
+    try {
+      final SettableFuture<SupportedDialectsEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SupportedDialectsEntityListing>() {}, new AsyncApiCallback<ApiResponse<SupportedDialectsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SupportedDialectsEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get supported dialects for each transcription engine
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SupportedDialectsEntityListing>> getSpeechandtextanalyticsProgramsTranscriptionenginesDialectsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SupportedDialectsEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SupportedDialectsEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SupportedDialectsEntityListing>() {}, new AsyncApiCallback<ApiResponse<SupportedDialectsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SupportedDialectsEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SupportedDialectsEntityListing> response = (ApiResponse<SupportedDialectsEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SupportedDialectsEntityListing> response = (ApiResponse<SupportedDialectsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2408,6 +2564,81 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update transcription engine settings of a program
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ProgramTranscriptionEngines> putSpeechandtextanalyticsProgramTranscriptionenginesAsync(PutSpeechandtextanalyticsProgramTranscriptionenginesRequest request, final AsyncApiCallback<ProgramTranscriptionEngines> callback) {
+    try {
+      final SettableFuture<ProgramTranscriptionEngines> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramTranscriptionEngines>() {}, new AsyncApiCallback<ApiResponse<ProgramTranscriptionEngines>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramTranscriptionEngines> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update transcription engine settings of a program
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ProgramTranscriptionEngines>> putSpeechandtextanalyticsProgramTranscriptionenginesAsync(ApiRequest<TranscriptionEnginesRequest> request, final AsyncApiCallback<ApiResponse<ProgramTranscriptionEngines>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ProgramTranscriptionEngines>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ProgramTranscriptionEngines>() {}, new AsyncApiCallback<ApiResponse<ProgramTranscriptionEngines>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramTranscriptionEngines> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramTranscriptionEngines> response = (ApiResponse<ProgramTranscriptionEngines>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramTranscriptionEngines> response = (ApiResponse<ProgramTranscriptionEngines>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

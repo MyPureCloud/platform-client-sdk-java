@@ -21,7 +21,8 @@ title: EmailMessage
 | **htmlBody** | <!----><!---->**String**<!----> | The html body of the email message. |  [optional] |
 | **time** | <!----><!---->[**Date**](Date.html)<!----> | The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **historyIncluded** | <!----><!---->**Boolean**<!----> | Indicates whether the history of previous emails of the conversation is included within the email bodies of this message. |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> | The state of the current draft. |  [optional] |
+| **draftType** | [**DraftTypeEnum**](#DraftTypeEnum)<!----> | The type of draft that need to be treated. |  [optional] |
 | **emailSizeBytes** | <!----><!---->**Integer**<!----> | Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form. |  [optional] |
 | **maxEmailSizeBytes** | <!----><!---->**Integer**<!----> | Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
@@ -37,6 +38,20 @@ title: EmailMessage
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CREATED | &quot;Created&quot; | 
 | READY | &quot;Ready&quot; | 
+| EDITED | &quot;Edited&quot; | 
+{: class="table table-striped"}
+
+
+<a name="DraftTypeEnum"></a>
+
+## Enum: DraftTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| REPLY | &quot;Reply&quot; | 
+| REPLYALL | &quot;ReplyAll&quot; | 
+| FORWARD | &quot;Forward&quot; | 
 {: class="table table-striped"}
 
 

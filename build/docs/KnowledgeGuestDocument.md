@@ -9,7 +9,7 @@ title: KnowledgeGuestDocument
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **title** | <!----><!---->**String**<!----> | Document title. |  [optional] |
+| **title** | <!----><!---->**String**<!----> | Document title, having a limit of 500 words. |  [optional] |
 | **visible** | <!----><!---->**Boolean**<!----> | Indicates if the knowledge document should be included in search results. |  [optional] |
 | **alternatives** | <!----><!---->[**List&lt;KnowledgeDocumentAlternative&gt;**](KnowledgeDocumentAlternative.html)<!----> | List of alternate phrases related to the title which improves search results. |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> | State of the document. |  [optional] |

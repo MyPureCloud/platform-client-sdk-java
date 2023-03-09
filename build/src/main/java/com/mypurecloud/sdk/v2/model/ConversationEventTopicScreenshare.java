@@ -18,9 +18,6 @@ import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -212,7 +209,6 @@ public class ConversationEventTopicScreenshare  implements Serializable {
   private ConversationEventTopicWrapup wrapup = null;
   private ConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
-  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -501,23 +497,6 @@ public class ConversationEventTopicScreenshare  implements Serializable {
   }
 
 
-  /**
-   **/
-  public ConversationEventTopicScreenshare additionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -543,13 +522,12 @@ public class ConversationEventTopicScreenshare  implements Serializable {
             Objects.equals(this.disconnectedTime, conversationEventTopicScreenshare.disconnectedTime) &&
             Objects.equals(this.wrapup, conversationEventTopicScreenshare.wrapup) &&
             Objects.equals(this.afterCallWork, conversationEventTopicScreenshare.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, conversationEventTopicScreenshare.afterCallWorkRequired) &&
-            Objects.equals(this.additionalProperties, conversationEventTopicScreenshare.additionalProperties);
+            Objects.equals(this.afterCallWorkRequired, conversationEventTopicScreenshare.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, self, id, context, sharing, provider, scriptId, peerId, peerCount, disconnectType, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
+    return Objects.hash(state, initialState, self, id, context, sharing, provider, scriptId, peerId, peerCount, disconnectType, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -573,7 +551,6 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

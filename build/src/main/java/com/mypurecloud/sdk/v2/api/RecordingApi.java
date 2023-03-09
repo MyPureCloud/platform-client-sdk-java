@@ -26,8 +26,6 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
 import com.mypurecloud.sdk.v2.model.OrphanRecording;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
@@ -76,8 +74,6 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingJobFailedrecordingsRequest
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingKeyconfigurationsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRequest;
@@ -96,7 +92,6 @@ import com.mypurecloud.sdk.v2.api.request.PostRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingKeyconfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingKeyconfigurationsValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
-import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingRecordingkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingUploadsReportsRequest;
@@ -109,7 +104,6 @@ import com.mypurecloud.sdk.v2.api.request.PutOrphanrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingKeyconfigurationRequest;
-import com.mypurecloud.sdk.v2.api.request.PutRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingRecordingkeysRotationscheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingSettingsRequest;
@@ -2199,158 +2193,6 @@ public class RecordingApi {
   }
 
   /**
-   * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-   * 
-   * @param settingsId Settings Id (required)
-   * @return LocalEncryptionConfiguration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public LocalEncryptionConfiguration getRecordingLocalkeysSetting(String settingsId) throws IOException, ApiException {
-    return  getRecordingLocalkeysSetting(createGetRecordingLocalkeysSettingRequest(settingsId));
-  }
-
-  /**
-   * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-   * 
-   * @param settingsId Settings Id (required)
-   * @return LocalEncryptionConfiguration
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<LocalEncryptionConfiguration> getRecordingLocalkeysSettingWithHttpInfo(String settingsId) throws IOException {
-    return getRecordingLocalkeysSetting(createGetRecordingLocalkeysSettingRequest(settingsId).withHttpInfo());
-  }
-
-  private GetRecordingLocalkeysSettingRequest createGetRecordingLocalkeysSettingRequest(String settingsId) {
-    return GetRecordingLocalkeysSettingRequest.builder()
-            .withSettingsId(settingsId)
-
-            .build();
-  }
-
-  /**
-   * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-   * 
-   * @param request The request object
-   * @return LocalEncryptionConfiguration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public LocalEncryptionConfiguration getRecordingLocalkeysSetting(GetRecordingLocalkeysSettingRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<LocalEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<LocalEncryptionConfiguration> getRecordingLocalkeysSetting(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<LocalEncryptionConfiguration>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * gets a list local key settings data. Replaced by API recording/keyconfigurations
-   * 
-   * @return LocalEncryptionConfigurationListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public LocalEncryptionConfigurationListing getRecordingLocalkeysSettings() throws IOException, ApiException {
-    return  getRecordingLocalkeysSettings(createGetRecordingLocalkeysSettingsRequest());
-  }
-
-  /**
-   * gets a list local key settings data. Replaced by API recording/keyconfigurations
-   * 
-   * @return LocalEncryptionConfigurationListing
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettingsWithHttpInfo() throws IOException {
-    return getRecordingLocalkeysSettings(createGetRecordingLocalkeysSettingsRequest().withHttpInfo());
-  }
-
-  private GetRecordingLocalkeysSettingsRequest createGetRecordingLocalkeysSettingsRequest() {
-    return GetRecordingLocalkeysSettingsRequest.builder()
-            .build();
-  }
-
-  /**
-   * gets a list local key settings data. Replaced by API recording/keyconfigurations
-   * 
-   * @param request The request object
-   * @return LocalEncryptionConfigurationListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public LocalEncryptionConfigurationListing getRecordingLocalkeysSettings(GetRecordingLocalkeysSettingsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<LocalEncryptionConfigurationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocalEncryptionConfigurationListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * gets a list local key settings data. Replaced by API recording/keyconfigurations
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettings(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<LocalEncryptionConfigurationListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<LocalEncryptionConfigurationListing> response = (ApiResponse<LocalEncryptionConfigurationListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<LocalEncryptionConfigurationListing> response = (ApiResponse<LocalEncryptionConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Gets media retention policy list with query options to filter on name and enabled.
    * for a less verbose response, add summary=true to this endpoint
    * @param pageSize The total page size requested (optional, default to 25)
@@ -3513,7 +3355,7 @@ public class RecordingApi {
 
   /**
    * Create a recording bulk job.
-   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
    * @param body query (required)
    * @return RecordingJob
    * @throws ApiException if the request fails on the server
@@ -3525,7 +3367,7 @@ public class RecordingApi {
 
   /**
    * Create a recording bulk job.
-   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
    * @param body query (required)
    * @return RecordingJob
    * @throws IOException if the request fails to be processed
@@ -3543,7 +3385,7 @@ public class RecordingApi {
 
   /**
    * Create a recording bulk job.
-   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
    * @param request The request object
    * @return RecordingJob
    * @throws ApiException if the request fails on the server
@@ -3562,7 +3404,7 @@ public class RecordingApi {
 
   /**
    * Create a recording bulk job.
-   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3819,84 +3661,6 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EncryptionKey> response = (ApiResponse<EncryptionKey>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * create settings for local key creation. Replaced by API recording/keyconfigurations
-   * 
-   * @param body Local Encryption Configuration (required)
-   * @return LocalEncryptionConfiguration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public LocalEncryptionConfiguration postRecordingLocalkeysSettings(LocalEncryptionConfiguration body) throws IOException, ApiException {
-    return  postRecordingLocalkeysSettings(createPostRecordingLocalkeysSettingsRequest(body));
-  }
-
-  /**
-   * create settings for local key creation. Replaced by API recording/keyconfigurations
-   * 
-   * @param body Local Encryption Configuration (required)
-   * @return LocalEncryptionConfiguration
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<LocalEncryptionConfiguration> postRecordingLocalkeysSettingsWithHttpInfo(LocalEncryptionConfiguration body) throws IOException {
-    return postRecordingLocalkeysSettings(createPostRecordingLocalkeysSettingsRequest(body).withHttpInfo());
-  }
-
-  private PostRecordingLocalkeysSettingsRequest createPostRecordingLocalkeysSettingsRequest(LocalEncryptionConfiguration body) {
-    return PostRecordingLocalkeysSettingsRequest.builder()
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * create settings for local key creation. Replaced by API recording/keyconfigurations
-   * 
-   * @param request The request object
-   * @return LocalEncryptionConfiguration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public LocalEncryptionConfiguration postRecordingLocalkeysSettings(PostRecordingLocalkeysSettingsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<LocalEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * create settings for local key creation. Replaced by API recording/keyconfigurations
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<LocalEncryptionConfiguration> postRecordingLocalkeysSettings(ApiRequest<LocalEncryptionConfiguration> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<LocalEncryptionConfiguration>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4863,88 +4627,6 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-   * 
-   * @param settingsId Settings Id (required)
-   * @param body Local Encryption metadata (required)
-   * @return LocalEncryptionConfiguration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public LocalEncryptionConfiguration putRecordingLocalkeysSetting(String settingsId, LocalEncryptionConfiguration body) throws IOException, ApiException {
-    return  putRecordingLocalkeysSetting(createPutRecordingLocalkeysSettingRequest(settingsId, body));
-  }
-
-  /**
-   * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-   * 
-   * @param settingsId Settings Id (required)
-   * @param body Local Encryption metadata (required)
-   * @return LocalEncryptionConfiguration
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<LocalEncryptionConfiguration> putRecordingLocalkeysSettingWithHttpInfo(String settingsId, LocalEncryptionConfiguration body) throws IOException {
-    return putRecordingLocalkeysSetting(createPutRecordingLocalkeysSettingRequest(settingsId, body).withHttpInfo());
-  }
-
-  private PutRecordingLocalkeysSettingRequest createPutRecordingLocalkeysSettingRequest(String settingsId, LocalEncryptionConfiguration body) {
-    return PutRecordingLocalkeysSettingRequest.builder()
-            .withSettingsId(settingsId)
-
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-   * 
-   * @param request The request object
-   * @return LocalEncryptionConfiguration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public LocalEncryptionConfiguration putRecordingLocalkeysSetting(PutRecordingLocalkeysSettingRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<LocalEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<LocalEncryptionConfiguration> putRecordingLocalkeysSetting(ApiRequest<LocalEncryptionConfiguration> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<LocalEncryptionConfiguration>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

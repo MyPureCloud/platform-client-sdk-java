@@ -20,6 +20,8 @@ import com.mypurecloud.sdk.v2.model.AdherenceExplanationJob;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
+import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsRequest;
+import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
@@ -265,6 +267,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistor
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMePossibleworkshiftsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest;
@@ -8700,6 +8703,84 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentQueryAdherenceExplanationsResponse> response = (ApiResponse<AgentQueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get agent possible work shifts for requested time frame
+   * 
+   * @param body body (required)
+   * @return AgentPossibleWorkShiftsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentPossibleWorkShiftsResponse postWorkforcemanagementAgentsMePossibleworkshifts(AgentPossibleWorkShiftsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentsMePossibleworkshifts(createPostWorkforcemanagementAgentsMePossibleworkshiftsRequest(body));
+  }
+
+  /**
+   * Get agent possible work shifts for requested time frame
+   * 
+   * @param body body (required)
+   * @return AgentPossibleWorkShiftsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentPossibleWorkShiftsResponse> postWorkforcemanagementAgentsMePossibleworkshiftsWithHttpInfo(AgentPossibleWorkShiftsRequest body) throws IOException {
+    return postWorkforcemanagementAgentsMePossibleworkshifts(createPostWorkforcemanagementAgentsMePossibleworkshiftsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentsMePossibleworkshiftsRequest createPostWorkforcemanagementAgentsMePossibleworkshiftsRequest(AgentPossibleWorkShiftsRequest body) {
+    return PostWorkforcemanagementAgentsMePossibleworkshiftsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get agent possible work shifts for requested time frame
+   * 
+   * @param request The request object
+   * @return AgentPossibleWorkShiftsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentPossibleWorkShiftsResponse postWorkforcemanagementAgentsMePossibleworkshifts(PostWorkforcemanagementAgentsMePossibleworkshiftsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentPossibleWorkShiftsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentPossibleWorkShiftsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get agent possible work shifts for requested time frame
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentPossibleWorkShiftsResponse> postWorkforcemanagementAgentsMePossibleworkshifts(ApiRequest<AgentPossibleWorkShiftsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentPossibleWorkShiftsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentPossibleWorkShiftsResponse> response = (ApiResponse<AgentPossibleWorkShiftsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentPossibleWorkShiftsResponse> response = (ApiResponse<AgentPossibleWorkShiftsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

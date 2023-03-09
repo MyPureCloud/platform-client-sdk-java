@@ -104,14 +104,14 @@ public class KnowledgeGuestDocument  implements Serializable {
 
 
   /**
-   * Document title.
+   * Document title, having a limit of 500 words.
    **/
   public KnowledgeGuestDocument title(String title) {
     this.title = title;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Document title.")
+  @ApiModelProperty(example = "null", value = "Document title, having a limit of 500 words.")
   @JsonProperty("title")
   public String getTitle() {
     return title;

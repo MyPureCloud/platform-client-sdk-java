@@ -31,6 +31,7 @@ public class EvaluationScoringSet  implements Serializable {
   private List<EvaluationQuestionGroupScore> questionGroupScores = new ArrayList<EvaluationQuestionGroupScore>();
   private Boolean anyFailedKillQuestions = null;
   private String comments = null;
+  private String privateComments = null;
   private String agentComments = null;
   private List<TranscriptTopic> transcriptTopics = new ArrayList<TranscriptTopic>();
 
@@ -143,6 +144,24 @@ public class EvaluationScoringSet  implements Serializable {
 
 
   /**
+   * Overall private comments from the evaluator
+   **/
+  public EvaluationScoringSet privateComments(String privateComments) {
+    this.privateComments = privateComments;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Overall private comments from the evaluator")
+  @JsonProperty("privateComments")
+  public String getPrivateComments() {
+    return privateComments;
+  }
+  public void setPrivateComments(String privateComments) {
+    this.privateComments = privateComments;
+  }
+
+
+  /**
    * Comments from the agent while reviewing evaluation results
    **/
   public EvaluationScoringSet agentComments(String agentComments) {
@@ -194,13 +213,14 @@ public class EvaluationScoringSet  implements Serializable {
             Objects.equals(this.questionGroupScores, evaluationScoringSet.questionGroupScores) &&
             Objects.equals(this.anyFailedKillQuestions, evaluationScoringSet.anyFailedKillQuestions) &&
             Objects.equals(this.comments, evaluationScoringSet.comments) &&
+            Objects.equals(this.privateComments, evaluationScoringSet.privateComments) &&
             Objects.equals(this.agentComments, evaluationScoringSet.agentComments) &&
             Objects.equals(this.transcriptTopics, evaluationScoringSet.transcriptTopics);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalScore, totalCriticalScore, totalNonCriticalScore, questionGroupScores, anyFailedKillQuestions, comments, agentComments, transcriptTopics);
+    return Objects.hash(totalScore, totalCriticalScore, totalNonCriticalScore, questionGroupScores, anyFailedKillQuestions, comments, privateComments, agentComments, transcriptTopics);
   }
 
   @Override
@@ -214,6 +234,7 @@ public class EvaluationScoringSet  implements Serializable {
     sb.append("    questionGroupScores: ").append(toIndentedString(questionGroupScores)).append("\n");
     sb.append("    anyFailedKillQuestions: ").append(toIndentedString(anyFailedKillQuestions)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    sb.append("    privateComments: ").append(toIndentedString(privateComments)).append("\n");
     sb.append("    agentComments: ").append(toIndentedString(agentComments)).append("\n");
     sb.append("    transcriptTopics: ").append(toIndentedString(transcriptTopics)).append("\n");
     sb.append("}");

@@ -258,14 +258,17 @@ public class OrphanRecording  implements Serializable {
   public enum RegionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AF_SOUTH_1("af-south-1"),
+    AP_EAST_1("ap-east-1"),
     AP_NORTHEAST_1("ap-northeast-1"),
     AP_NORTHEAST_2("ap-northeast-2"),
     AP_SOUTH_1("ap-south-1"),
     AP_SOUTHEAST_2("ap-southeast-2"),
+    AP_SOUTHEAST_3("ap-southeast-3"),
     CA_CENTRAL_1("ca-central-1"),
     EU_CENTRAL_1("eu-central-1"),
     EU_WEST_1("eu-west-1"),
     EU_WEST_2("eu-west-2"),
+    EU_WEST_3("eu-west-3"),
     SA_EAST_1("sa-east-1"),
     US_EAST_1("us-east-1"),
     US_WEST_2("us-west-2");

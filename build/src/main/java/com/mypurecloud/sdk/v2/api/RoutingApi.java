@@ -79,6 +79,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.UserSkillGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
@@ -162,6 +163,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
@@ -5735,28 +5737,32 @@ public class RoutingApi {
    * Get a phone number provisioned for SMS.
    * 
    * @param addressId Address ID (required)
+   * @param expand Expand response with additional information (optional)
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumber getRoutingSmsPhonenumber(String addressId) throws IOException, ApiException {
-    return  getRoutingSmsPhonenumber(createGetRoutingSmsPhonenumberRequest(addressId));
+  public SmsPhoneNumber getRoutingSmsPhonenumber(String addressId, String expand) throws IOException, ApiException {
+    return  getRoutingSmsPhonenumber(createGetRoutingSmsPhonenumberRequest(addressId, expand));
   }
 
   /**
    * Get a phone number provisioned for SMS.
    * 
    * @param addressId Address ID (required)
+   * @param expand Expand response with additional information (optional)
    * @return SmsPhoneNumber
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumber> getRoutingSmsPhonenumberWithHttpInfo(String addressId) throws IOException {
-    return getRoutingSmsPhonenumber(createGetRoutingSmsPhonenumberRequest(addressId).withHttpInfo());
+  public ApiResponse<SmsPhoneNumber> getRoutingSmsPhonenumberWithHttpInfo(String addressId, String expand) throws IOException {
+    return getRoutingSmsPhonenumber(createGetRoutingSmsPhonenumberRequest(addressId, expand).withHttpInfo());
   }
 
-  private GetRoutingSmsPhonenumberRequest createGetRoutingSmsPhonenumberRequest(String addressId) {
+  private GetRoutingSmsPhonenumberRequest createGetRoutingSmsPhonenumberRequest(String addressId, String expand) {
     return GetRoutingSmsPhonenumberRequest.builder()
             .withAddressId(addressId)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -6513,6 +6519,96 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get skill groups for a user
+   * 
+   * @param userId User ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param after The cursor that points to the next page (optional)
+   * @param before The cursor that points to the previous page (optional)
+   * @return UserSkillGroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserSkillGroupEntityListing getUserSkillgroups(String userId, Integer pageSize, String after, String before) throws IOException, ApiException {
+    return  getUserSkillgroups(createGetUserSkillgroupsRequest(userId, pageSize, after, before));
+  }
+
+  /**
+   * Get skill groups for a user
+   * 
+   * @param userId User ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param after The cursor that points to the next page (optional)
+   * @param before The cursor that points to the previous page (optional)
+   * @return UserSkillGroupEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserSkillGroupEntityListing> getUserSkillgroupsWithHttpInfo(String userId, Integer pageSize, String after, String before) throws IOException {
+    return getUserSkillgroups(createGetUserSkillgroupsRequest(userId, pageSize, after, before).withHttpInfo());
+  }
+
+  private GetUserSkillgroupsRequest createGetUserSkillgroupsRequest(String userId, Integer pageSize, String after, String before) {
+    return GetUserSkillgroupsRequest.builder()
+            .withUserId(userId)
+
+            .withPageSize(pageSize)
+
+            .withAfter(after)
+
+            .withBefore(before)
+
+            .build();
+  }
+
+  /**
+   * Get skill groups for a user
+   * 
+   * @param request The request object
+   * @return UserSkillGroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserSkillGroupEntityListing getUserSkillgroups(GetUserSkillgroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserSkillGroupEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserSkillGroupEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get skill groups for a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserSkillGroupEntityListing> getUserSkillgroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserSkillGroupEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserSkillGroupEntityListing> response = (ApiResponse<UserSkillGroupEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserSkillGroupEntityListing> response = (ApiResponse<UserSkillGroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

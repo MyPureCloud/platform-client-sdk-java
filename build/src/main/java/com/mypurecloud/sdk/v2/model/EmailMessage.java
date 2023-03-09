@@ -54,13 +54,14 @@ public class EmailMessage  implements Serializable {
     }
   }
   /**
-   * Gets or Sets state
+   * The state of the current draft.
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CREATED("Created"),
-    READY("Ready");
+    READY("Ready"),
+    EDITED("Edited");
 
     private String value;
 
@@ -88,6 +89,55 @@ public class EmailMessage  implements Serializable {
     }
   }
   private StateEnum state = null;
+
+  private static class DraftTypeEnumDeserializer extends StdDeserializer<DraftTypeEnum> {
+    public DraftTypeEnumDeserializer() {
+      super(DraftTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DraftTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DraftTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of draft that need to be treated.
+   */
+ @JsonDeserialize(using = DraftTypeEnumDeserializer.class)
+  public enum DraftTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    REPLY("Reply"),
+    REPLYALL("ReplyAll"),
+    FORWARD("Forward");
+
+    private String value;
+
+    DraftTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DraftTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DraftTypeEnum value : DraftTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DraftTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DraftTypeEnum draftType = null;
   private Integer emailSizeBytes = null;
   private Integer maxEmailSizeBytes = null;
   private String selfUri = null;
@@ -316,19 +366,38 @@ public class EmailMessage  implements Serializable {
 
 
   /**
+   * The state of the current draft.
    **/
   public EmailMessage state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The state of the current draft.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+
+  /**
+   * The type of draft that need to be treated.
+   **/
+  public EmailMessage draftType(DraftTypeEnum draftType) {
+    this.draftType = draftType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of draft that need to be treated.")
+  @JsonProperty("draftType")
+  public DraftTypeEnum getDraftType() {
+    return draftType;
+  }
+  public void setDraftType(DraftTypeEnum draftType) {
+    this.draftType = draftType;
   }
 
 
@@ -377,6 +446,7 @@ public class EmailMessage  implements Serializable {
             Objects.equals(this.time, emailMessage.time) &&
             Objects.equals(this.historyIncluded, emailMessage.historyIncluded) &&
             Objects.equals(this.state, emailMessage.state) &&
+            Objects.equals(this.draftType, emailMessage.draftType) &&
             Objects.equals(this.emailSizeBytes, emailMessage.emailSizeBytes) &&
             Objects.equals(this.maxEmailSizeBytes, emailMessage.maxEmailSizeBytes) &&
             Objects.equals(this.selfUri, emailMessage.selfUri);
@@ -384,7 +454,7 @@ public class EmailMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, to, cc, bcc, from, replyTo, subject, attachments, textBody, htmlBody, time, historyIncluded, state, emailSizeBytes, maxEmailSizeBytes, selfUri);
+    return Objects.hash(id, name, to, cc, bcc, from, replyTo, subject, attachments, textBody, htmlBody, time, historyIncluded, state, draftType, emailSizeBytes, maxEmailSizeBytes, selfUri);
   }
 
   @Override
@@ -406,6 +476,7 @@ public class EmailMessage  implements Serializable {
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
     sb.append("    historyIncluded: ").append(toIndentedString(historyIncluded)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    draftType: ").append(toIndentedString(draftType)).append("\n");
     sb.append("    emailSizeBytes: ").append(toIndentedString(emailSizeBytes)).append("\n");
     sb.append("    maxEmailSizeBytes: ").append(toIndentedString(maxEmailSizeBytes)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

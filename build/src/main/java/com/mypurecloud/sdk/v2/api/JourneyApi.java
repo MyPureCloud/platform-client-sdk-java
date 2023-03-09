@@ -25,6 +25,9 @@ import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeListing;
+import com.mypurecloud.sdk.v2.model.OutcomePredictor;
+import com.mypurecloud.sdk.v2.model.OutcomePredictorListing;
+import com.mypurecloud.sdk.v2.model.OutcomePredictorRequest;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
@@ -38,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomesPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActionmapsRequest;
@@ -49,6 +53,8 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesPredictorRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionRequest;
@@ -63,6 +69,7 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsEstimatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneySegmentsRequest;
 
 import java.io.IOException;
@@ -290,6 +297,81 @@ public class JourneyApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteJourneyOutcome(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an outcome predictor.
+   * 
+   * @param predictorId ID of predictor (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteJourneyOutcomesPredictor(String predictorId) throws IOException, ApiException {
+     deleteJourneyOutcomesPredictor(createDeleteJourneyOutcomesPredictorRequest(predictorId));
+  }
+
+  /**
+   * Delete an outcome predictor.
+   * 
+   * @param predictorId ID of predictor (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteJourneyOutcomesPredictorWithHttpInfo(String predictorId) throws IOException {
+    return deleteJourneyOutcomesPredictor(createDeleteJourneyOutcomesPredictorRequest(predictorId).withHttpInfo());
+  }
+
+  private DeleteJourneyOutcomesPredictorRequest createDeleteJourneyOutcomesPredictorRequest(String predictorId) {
+    return DeleteJourneyOutcomesPredictorRequest.builder()
+            .withPredictorId(predictorId)
+
+            .build();
+  }
+
+  /**
+   * Delete an outcome predictor.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteJourneyOutcomesPredictor(DeleteJourneyOutcomesPredictorRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an outcome predictor.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteJourneyOutcomesPredictor(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1238,6 +1320,158 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OutcomeListing> response = (ApiResponse<OutcomeListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve a single outcome predictor.
+   * 
+   * @param predictorId ID of predictor (required)
+   * @return OutcomePredictor
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutcomePredictor getJourneyOutcomesPredictor(String predictorId) throws IOException, ApiException {
+    return  getJourneyOutcomesPredictor(createGetJourneyOutcomesPredictorRequest(predictorId));
+  }
+
+  /**
+   * Retrieve a single outcome predictor.
+   * 
+   * @param predictorId ID of predictor (required)
+   * @return OutcomePredictor
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutcomePredictor> getJourneyOutcomesPredictorWithHttpInfo(String predictorId) throws IOException {
+    return getJourneyOutcomesPredictor(createGetJourneyOutcomesPredictorRequest(predictorId).withHttpInfo());
+  }
+
+  private GetJourneyOutcomesPredictorRequest createGetJourneyOutcomesPredictorRequest(String predictorId) {
+    return GetJourneyOutcomesPredictorRequest.builder()
+            .withPredictorId(predictorId)
+
+            .build();
+  }
+
+  /**
+   * Retrieve a single outcome predictor.
+   * 
+   * @param request The request object
+   * @return OutcomePredictor
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutcomePredictor getJourneyOutcomesPredictor(GetJourneyOutcomesPredictorRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutcomePredictor> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutcomePredictor>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a single outcome predictor.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutcomePredictor> getJourneyOutcomesPredictor(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutcomePredictor>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomePredictor> response = (ApiResponse<OutcomePredictor>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomePredictor> response = (ApiResponse<OutcomePredictor>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve all outcome predictors.
+   * 
+   * @return OutcomePredictorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutcomePredictorListing getJourneyOutcomesPredictors() throws IOException, ApiException {
+    return  getJourneyOutcomesPredictors(createGetJourneyOutcomesPredictorsRequest());
+  }
+
+  /**
+   * Retrieve all outcome predictors.
+   * 
+   * @return OutcomePredictorListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutcomePredictorListing> getJourneyOutcomesPredictorsWithHttpInfo() throws IOException {
+    return getJourneyOutcomesPredictors(createGetJourneyOutcomesPredictorsRequest().withHttpInfo());
+  }
+
+  private GetJourneyOutcomesPredictorsRequest createGetJourneyOutcomesPredictorsRequest() {
+    return GetJourneyOutcomesPredictorsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Retrieve all outcome predictors.
+   * 
+   * @param request The request object
+   * @return OutcomePredictorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutcomePredictorListing getJourneyOutcomesPredictors(GetJourneyOutcomesPredictorsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutcomePredictorListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutcomePredictorListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all outcome predictors.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutcomePredictorListing> getJourneyOutcomesPredictors(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutcomePredictorListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomePredictorListing> response = (ApiResponse<OutcomePredictorListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomePredictorListing> response = (ApiResponse<OutcomePredictorListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2374,6 +2608,84 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Outcome> response = (ApiResponse<Outcome>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create an outcome predictor.
+   * 
+   * @param body  (optional)
+   * @return OutcomePredictor
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutcomePredictor postJourneyOutcomesPredictors(OutcomePredictorRequest body) throws IOException, ApiException {
+    return  postJourneyOutcomesPredictors(createPostJourneyOutcomesPredictorsRequest(body));
+  }
+
+  /**
+   * Create an outcome predictor.
+   * 
+   * @param body  (optional)
+   * @return OutcomePredictor
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutcomePredictor> postJourneyOutcomesPredictorsWithHttpInfo(OutcomePredictorRequest body) throws IOException {
+    return postJourneyOutcomesPredictors(createPostJourneyOutcomesPredictorsRequest(body).withHttpInfo());
+  }
+
+  private PostJourneyOutcomesPredictorsRequest createPostJourneyOutcomesPredictorsRequest(OutcomePredictorRequest body) {
+    return PostJourneyOutcomesPredictorsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an outcome predictor.
+   * 
+   * @param request The request object
+   * @return OutcomePredictor
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutcomePredictor postJourneyOutcomesPredictors(PostJourneyOutcomesPredictorsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutcomePredictor> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutcomePredictor>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an outcome predictor.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutcomePredictor> postJourneyOutcomesPredictors(ApiRequest<OutcomePredictorRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutcomePredictor>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomePredictor> response = (ApiResponse<OutcomePredictor>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomePredictor> response = (ApiResponse<OutcomePredictor>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

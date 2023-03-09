@@ -19,9 +19,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -214,7 +212,6 @@ public class ConversationEventTopicCobrowse  implements Serializable {
   private ConversationEventTopicWrapup wrapup = null;
   private ConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
-  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -557,23 +554,6 @@ public class ConversationEventTopicCobrowse  implements Serializable {
   }
 
 
-  /**
-   **/
-  public ConversationEventTopicCobrowse additionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -602,13 +582,12 @@ public class ConversationEventTopicCobrowse  implements Serializable {
             Objects.equals(this.disconnectedTime, conversationEventTopicCobrowse.disconnectedTime) &&
             Objects.equals(this.wrapup, conversationEventTopicCobrowse.wrapup) &&
             Objects.equals(this.afterCallWork, conversationEventTopicCobrowse.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, conversationEventTopicCobrowse.afterCallWorkRequired) &&
-            Objects.equals(this.additionalProperties, conversationEventTopicCobrowse.additionalProperties);
+            Objects.equals(this.afterCallWorkRequired, conversationEventTopicCobrowse.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
+    return Objects.hash(state, initialState, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -635,7 +614,6 @@ public class ConversationEventTopicCobrowse  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

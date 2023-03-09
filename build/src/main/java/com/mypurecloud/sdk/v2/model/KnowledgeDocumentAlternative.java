@@ -26,14 +26,14 @@ public class KnowledgeDocumentAlternative  implements Serializable {
 
   
   /**
-   * Alternate phrasing to the document title.
+   * Alternate phrasing to the document title, having a limit of 500 words.
    **/
   public KnowledgeDocumentAlternative phrase(String phrase) {
     this.phrase = phrase;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Alternate phrasing to the document title.")
+  @ApiModelProperty(example = "null", required = true, value = "Alternate phrasing to the document title, having a limit of 500 words.")
   @JsonProperty("phrase")
   public String getPhrase() {
     return phrase;

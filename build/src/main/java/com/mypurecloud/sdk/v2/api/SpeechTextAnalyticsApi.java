@@ -23,12 +23,14 @@ import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.ProgramMappings;
 import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngines;
 import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
+import com.mypurecloud.sdk.v2.model.SupportedDialectsEntityListing;
 import com.mypurecloud.sdk.v2.model.Topic;
 import com.mypurecloud.sdk.v2.model.TopicJob;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
@@ -36,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.TranscriptionEnginesRequest;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 
@@ -47,10 +50,12 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationR
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramTranscriptionenginesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsGeneralJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPublishjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSentimentDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSentimentfeedbackRequest;
@@ -70,6 +75,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublis
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramTranscriptionenginesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsTopicRequest;
 
@@ -707,6 +713,84 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
+   * Get transcription engine settings of a program
+   * 
+   * @param programId The id of the program (required)
+   * @return ProgramTranscriptionEngines
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramTranscriptionEngines getSpeechandtextanalyticsProgramTranscriptionengines(String programId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsProgramTranscriptionengines(createGetSpeechandtextanalyticsProgramTranscriptionenginesRequest(programId));
+  }
+
+  /**
+   * Get transcription engine settings of a program
+   * 
+   * @param programId The id of the program (required)
+   * @return ProgramTranscriptionEngines
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramTranscriptionEngines> getSpeechandtextanalyticsProgramTranscriptionenginesWithHttpInfo(String programId) throws IOException {
+    return getSpeechandtextanalyticsProgramTranscriptionengines(createGetSpeechandtextanalyticsProgramTranscriptionenginesRequest(programId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramTranscriptionenginesRequest createGetSpeechandtextanalyticsProgramTranscriptionenginesRequest(String programId) {
+    return GetSpeechandtextanalyticsProgramTranscriptionenginesRequest.builder()
+            .withProgramId(programId)
+
+            .build();
+  }
+
+  /**
+   * Get transcription engine settings of a program
+   * 
+   * @param request The request object
+   * @return ProgramTranscriptionEngines
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramTranscriptionEngines getSpeechandtextanalyticsProgramTranscriptionengines(GetSpeechandtextanalyticsProgramTranscriptionenginesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramTranscriptionEngines> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramTranscriptionEngines>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get transcription engine settings of a program
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramTranscriptionEngines> getSpeechandtextanalyticsProgramTranscriptionengines(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramTranscriptionEngines>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramTranscriptionEngines> response = (ApiResponse<ProgramTranscriptionEngines>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramTranscriptionEngines> response = (ApiResponse<ProgramTranscriptionEngines>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get the list of Speech & Text Analytics programs
    * 
    * @param nextPage The key for listing the next page (optional)
@@ -1026,6 +1110,80 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ProgramJob> response = (ApiResponse<ProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get supported dialects for each transcription engine
+   * 
+   * @return SupportedDialectsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedDialectsEntityListing getSpeechandtextanalyticsProgramsTranscriptionenginesDialects() throws IOException, ApiException {
+    return  getSpeechandtextanalyticsProgramsTranscriptionenginesDialects(createGetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest());
+  }
+
+  /**
+   * Get supported dialects for each transcription engine
+   * 
+   * @return SupportedDialectsEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedDialectsEntityListing> getSpeechandtextanalyticsProgramsTranscriptionenginesDialectsWithHttpInfo() throws IOException {
+    return getSpeechandtextanalyticsProgramsTranscriptionenginesDialects(createGetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest().withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest createGetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest() {
+    return GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get supported dialects for each transcription engine
+   * 
+   * @param request The request object
+   * @return SupportedDialectsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedDialectsEntityListing getSpeechandtextanalyticsProgramsTranscriptionenginesDialects(GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SupportedDialectsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SupportedDialectsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get supported dialects for each transcription engine
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedDialectsEntityListing> getSpeechandtextanalyticsProgramsTranscriptionenginesDialects(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SupportedDialectsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedDialectsEntityListing> response = (ApiResponse<SupportedDialectsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedDialectsEntityListing> response = (ApiResponse<SupportedDialectsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2532,6 +2690,88 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update transcription engine settings of a program
+   * 
+   * @param programId The id of the program (required)
+   * @param body Program transcription engine setting (required)
+   * @return ProgramTranscriptionEngines
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramTranscriptionEngines putSpeechandtextanalyticsProgramTranscriptionengines(String programId, TranscriptionEnginesRequest body) throws IOException, ApiException {
+    return  putSpeechandtextanalyticsProgramTranscriptionengines(createPutSpeechandtextanalyticsProgramTranscriptionenginesRequest(programId, body));
+  }
+
+  /**
+   * Update transcription engine settings of a program
+   * 
+   * @param programId The id of the program (required)
+   * @param body Program transcription engine setting (required)
+   * @return ProgramTranscriptionEngines
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramTranscriptionEngines> putSpeechandtextanalyticsProgramTranscriptionenginesWithHttpInfo(String programId, TranscriptionEnginesRequest body) throws IOException {
+    return putSpeechandtextanalyticsProgramTranscriptionengines(createPutSpeechandtextanalyticsProgramTranscriptionenginesRequest(programId, body).withHttpInfo());
+  }
+
+  private PutSpeechandtextanalyticsProgramTranscriptionenginesRequest createPutSpeechandtextanalyticsProgramTranscriptionenginesRequest(String programId, TranscriptionEnginesRequest body) {
+    return PutSpeechandtextanalyticsProgramTranscriptionenginesRequest.builder()
+            .withProgramId(programId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update transcription engine settings of a program
+   * 
+   * @param request The request object
+   * @return ProgramTranscriptionEngines
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramTranscriptionEngines putSpeechandtextanalyticsProgramTranscriptionengines(PutSpeechandtextanalyticsProgramTranscriptionenginesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramTranscriptionEngines> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramTranscriptionEngines>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update transcription engine settings of a program
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramTranscriptionEngines> putSpeechandtextanalyticsProgramTranscriptionengines(ApiRequest<TranscriptionEnginesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramTranscriptionEngines>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramTranscriptionEngines> response = (ApiResponse<ProgramTranscriptionEngines>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramTranscriptionEngines> response = (ApiResponse<ProgramTranscriptionEngines>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

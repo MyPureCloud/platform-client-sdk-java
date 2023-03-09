@@ -15,9 +15,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicP
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -32,7 +30,6 @@ public class QueueConversationSocialExpressionEventTopicDialerPreview  implement
   private String contactListId = null;
   private String campaignId = null;
   private List<QueueConversationSocialExpressionEventTopicPhoneNumberColumn> phoneNumberColumns = new ArrayList<QueueConversationSocialExpressionEventTopicPhoneNumberColumn>();
-  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -124,23 +121,6 @@ public class QueueConversationSocialExpressionEventTopicDialerPreview  implement
   }
 
 
-  /**
-   **/
-  public QueueConversationSocialExpressionEventTopicDialerPreview additionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -155,13 +135,12 @@ public class QueueConversationSocialExpressionEventTopicDialerPreview  implement
             Objects.equals(this.contactId, queueConversationSocialExpressionEventTopicDialerPreview.contactId) &&
             Objects.equals(this.contactListId, queueConversationSocialExpressionEventTopicDialerPreview.contactListId) &&
             Objects.equals(this.campaignId, queueConversationSocialExpressionEventTopicDialerPreview.campaignId) &&
-            Objects.equals(this.phoneNumberColumns, queueConversationSocialExpressionEventTopicDialerPreview.phoneNumberColumns) &&
-            Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicDialerPreview.additionalProperties);
+            Objects.equals(this.phoneNumberColumns, queueConversationSocialExpressionEventTopicDialerPreview.phoneNumberColumns);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns, additionalProperties);
+    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns);
   }
 
   @Override
@@ -174,7 +153,6 @@ public class QueueConversationSocialExpressionEventTopicDialerPreview  implement
     sb.append("    contactListId: ").append(toIndentedString(contactListId)).append("\n");
     sb.append("    campaignId: ").append(toIndentedString(campaignId)).append("\n");
     sb.append("    phoneNumberColumns: ").append(toIndentedString(phoneNumberColumns)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

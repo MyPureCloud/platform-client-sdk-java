@@ -1,0 +1,197 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
+
+import java.io.Serializable;
+/**
+ * LearningSlot
+ */
+
+public class LearningSlot  implements Serializable {
+  
+  private Date dateStart = null;
+  private Integer lengthInMinutes = null;
+  private Double staffingDifference = null;
+
+  private static class DifferenceRatingEnumDeserializer extends StdDeserializer<DifferenceRatingEnum> {
+    public DifferenceRatingEnumDeserializer() {
+      super(DifferenceRatingEnumDeserializer.class);
+    }
+
+    @Override
+    public DifferenceRatingEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DifferenceRatingEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Rating based on the staffing difference for scheduled slot
+   */
+ @JsonDeserialize(using = DifferenceRatingEnumDeserializer.class)
+  public enum DifferenceRatingEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    POOR("Poor"),
+    NEUTRAL("Neutral"),
+    GOOD("Good");
+
+    private String value;
+
+    DifferenceRatingEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DifferenceRatingEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DifferenceRatingEnum value : DifferenceRatingEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DifferenceRatingEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DifferenceRatingEnum differenceRating = null;
+
+  
+  /**
+   * Start date and time of scheduled Learning activity slot. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public LearningSlot dateStart(Date dateStart) {
+    this.dateStart = dateStart;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Start date and time of scheduled Learning activity slot. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateStart")
+  public Date getDateStart() {
+    return dateStart;
+  }
+  public void setDateStart(Date dateStart) {
+    this.dateStart = dateStart;
+  }
+
+
+  /**
+   * Length of Learning activity slot in minutes
+   **/
+  public LearningSlot lengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Length of Learning activity slot in minutes")
+  @JsonProperty("lengthInMinutes")
+  public Integer getLengthInMinutes() {
+    return lengthInMinutes;
+  }
+  public void setLengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+  }
+
+
+  /**
+   * Difference between scheduled and forecast headcount for this slot after scheduling the Learning activity
+   **/
+  public LearningSlot staffingDifference(Double staffingDifference) {
+    this.staffingDifference = staffingDifference;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Difference between scheduled and forecast headcount for this slot after scheduling the Learning activity")
+  @JsonProperty("staffingDifference")
+  public Double getStaffingDifference() {
+    return staffingDifference;
+  }
+  public void setStaffingDifference(Double staffingDifference) {
+    this.staffingDifference = staffingDifference;
+  }
+
+
+  /**
+   * Rating based on the staffing difference for scheduled slot
+   **/
+  public LearningSlot differenceRating(DifferenceRatingEnum differenceRating) {
+    this.differenceRating = differenceRating;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Rating based on the staffing difference for scheduled slot")
+  @JsonProperty("differenceRating")
+  public DifferenceRatingEnum getDifferenceRating() {
+    return differenceRating;
+  }
+  public void setDifferenceRating(DifferenceRatingEnum differenceRating) {
+    this.differenceRating = differenceRating;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    LearningSlot learningSlot = (LearningSlot) o;
+
+    return Objects.equals(this.dateStart, learningSlot.dateStart) &&
+            Objects.equals(this.lengthInMinutes, learningSlot.lengthInMinutes) &&
+            Objects.equals(this.staffingDifference, learningSlot.staffingDifference) &&
+            Objects.equals(this.differenceRating, learningSlot.differenceRating);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(dateStart, lengthInMinutes, staffingDifference, differenceRating);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class LearningSlot {\n");
+    
+    sb.append("    dateStart: ").append(toIndentedString(dateStart)).append("\n");
+    sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
+    sb.append("    staffingDifference: ").append(toIndentedString(staffingDifference)).append("\n");
+    sb.append("    differenceRating: ").append(toIndentedString(differenceRating)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

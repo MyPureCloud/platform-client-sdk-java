@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicParticipant;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicRecentTransfer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
   private String id = null;
   private Integer maxParticipants = null;
   private List<QueueConversationVideoEventTopicParticipant> participants = new ArrayList<QueueConversationVideoEventTopicParticipant>();
+  private List<QueueConversationVideoEventTopicRecentTransfer> recentTransfers = new ArrayList<QueueConversationVideoEventTopicRecentTransfer>();
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
@@ -80,6 +82,23 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
   }
   public void setParticipants(List<QueueConversationVideoEventTopicParticipant> participants) {
     this.participants = participants;
+  }
+
+
+  /**
+   **/
+  public QueueConversationVideoEventTopicConversation recentTransfers(List<QueueConversationVideoEventTopicRecentTransfer> recentTransfers) {
+    this.recentTransfers = recentTransfers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recentTransfers")
+  public List<QueueConversationVideoEventTopicRecentTransfer> getRecentTransfers() {
+    return recentTransfers;
+  }
+  public void setRecentTransfers(List<QueueConversationVideoEventTopicRecentTransfer> recentTransfers) {
+    this.recentTransfers = recentTransfers;
   }
 
 
@@ -147,6 +166,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     return Objects.equals(this.id, queueConversationVideoEventTopicConversation.id) &&
             Objects.equals(this.maxParticipants, queueConversationVideoEventTopicConversation.maxParticipants) &&
             Objects.equals(this.participants, queueConversationVideoEventTopicConversation.participants) &&
+            Objects.equals(this.recentTransfers, queueConversationVideoEventTopicConversation.recentTransfers) &&
             Objects.equals(this.recordingState, queueConversationVideoEventTopicConversation.recordingState) &&
             Objects.equals(this.address, queueConversationVideoEventTopicConversation.address) &&
             Objects.equals(this.externalTag, queueConversationVideoEventTopicConversation.externalTag);
@@ -154,7 +174,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recordingState, address, externalTag);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag);
   }
 
   @Override
@@ -165,6 +185,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    maxParticipants: ").append(toIndentedString(maxParticipants)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
+    sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");

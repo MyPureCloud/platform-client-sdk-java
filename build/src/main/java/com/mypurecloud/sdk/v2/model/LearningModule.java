@@ -115,7 +115,8 @@ public class LearningModule  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INFORMATIONAL("Informational"),
     ASSESSEDCONTENT("AssessedContent"),
-    ASSESSMENT("Assessment");
+    ASSESSMENT("Assessment"),
+    EXTERNAL("External");
 
     private String value;
 

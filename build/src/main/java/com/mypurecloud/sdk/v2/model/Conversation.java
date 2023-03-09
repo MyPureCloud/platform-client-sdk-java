@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.Participant;
+import com.mypurecloud.sdk.v2.model.TransferResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -143,6 +144,7 @@ public class Conversation  implements Serializable {
   }
   private StateEnum state = null;
   private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
+  private List<TransferResponse> recentTransfers = new ArrayList<TransferResponse>();
   private String selfUri = null;
 
   
@@ -350,6 +352,24 @@ public class Conversation  implements Serializable {
   }
 
 
+  /**
+   * The list of the most recent 20 transfer commands applied to this conversation.
+   **/
+  public Conversation recentTransfers(List<TransferResponse> recentTransfers) {
+    this.recentTransfers = recentTransfers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of the most recent 20 transfer commands applied to this conversation.")
+  @JsonProperty("recentTransfers")
+  public List<TransferResponse> getRecentTransfers() {
+    return recentTransfers;
+  }
+  public void setRecentTransfers(List<TransferResponse> recentTransfers) {
+    this.recentTransfers = recentTransfers;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -379,12 +399,13 @@ public class Conversation  implements Serializable {
             Objects.equals(this.recordingState, conversation.recordingState) &&
             Objects.equals(this.state, conversation.state) &&
             Objects.equals(this.divisions, conversation.divisions) &&
+            Objects.equals(this.recentTransfers, conversation.recentTransfers) &&
             Objects.equals(this.selfUri, conversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, externalTag, startTime, endTime, address, participants, conversationIds, maxParticipants, recordingState, state, divisions, selfUri);
+    return Objects.hash(id, name, externalTag, startTime, endTime, address, participants, conversationIds, maxParticipants, recordingState, state, divisions, recentTransfers, selfUri);
   }
 
   @Override
@@ -404,6 +425,7 @@ public class Conversation  implements Serializable {
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
+    sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

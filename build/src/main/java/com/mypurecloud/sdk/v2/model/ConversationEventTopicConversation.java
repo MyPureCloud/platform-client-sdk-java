@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicParticipant;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicRecentTransfer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class ConversationEventTopicConversation  implements Serializable {
   private String id = null;
   private Integer maxParticipants = null;
   private List<ConversationEventTopicParticipant> participants = new ArrayList<ConversationEventTopicParticipant>();
+  private List<ConversationEventTopicRecentTransfer> recentTransfers = new ArrayList<ConversationEventTopicRecentTransfer>();
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
@@ -80,6 +82,23 @@ public class ConversationEventTopicConversation  implements Serializable {
   }
   public void setParticipants(List<ConversationEventTopicParticipant> participants) {
     this.participants = participants;
+  }
+
+
+  /**
+   **/
+  public ConversationEventTopicConversation recentTransfers(List<ConversationEventTopicRecentTransfer> recentTransfers) {
+    this.recentTransfers = recentTransfers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recentTransfers")
+  public List<ConversationEventTopicRecentTransfer> getRecentTransfers() {
+    return recentTransfers;
+  }
+  public void setRecentTransfers(List<ConversationEventTopicRecentTransfer> recentTransfers) {
+    this.recentTransfers = recentTransfers;
   }
 
 
@@ -147,6 +166,7 @@ public class ConversationEventTopicConversation  implements Serializable {
     return Objects.equals(this.id, conversationEventTopicConversation.id) &&
             Objects.equals(this.maxParticipants, conversationEventTopicConversation.maxParticipants) &&
             Objects.equals(this.participants, conversationEventTopicConversation.participants) &&
+            Objects.equals(this.recentTransfers, conversationEventTopicConversation.recentTransfers) &&
             Objects.equals(this.recordingState, conversationEventTopicConversation.recordingState) &&
             Objects.equals(this.address, conversationEventTopicConversation.address) &&
             Objects.equals(this.externalTag, conversationEventTopicConversation.externalTag);
@@ -154,7 +174,7 @@ public class ConversationEventTopicConversation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recordingState, address, externalTag);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag);
   }
 
   @Override
@@ -165,6 +185,7 @@ public class ConversationEventTopicConversation  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    maxParticipants: ").append(toIndentedString(maxParticipants)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
+    sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");

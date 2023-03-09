@@ -197,7 +197,8 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
     PARKED("Parked"),
     HELD("Held"),
     ACDCANCELLED("AcdCancelled"),
-    TERMINATED("Terminated");
+    TERMINATED("Terminated"),
+    ACDEXPIRED("AcdExpired");
 
     private String value;
 

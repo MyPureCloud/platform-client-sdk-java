@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -26,6 +27,54 @@ public class TransferRequest  implements Serializable {
   private String userName = null;
   private String queueId = null;
   private Boolean voicemail = null;
+
+  private static class TransferTypeEnumDeserializer extends StdDeserializer<TransferTypeEnum> {
+    public TransferTypeEnumDeserializer() {
+      super(TransferTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TransferTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TransferTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of transfer to perform.
+   */
+ @JsonDeserialize(using = TransferTypeEnumDeserializer.class)
+  public enum TransferTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ATTENDED("Attended"),
+    UNATTENDED("Unattended");
+
+    private String value;
+
+    TransferTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TransferTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TransferTypeEnum value : TransferTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TransferTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TransferTypeEnum transferType = null;
 
   
   /**
@@ -118,6 +167,24 @@ public class TransferRequest  implements Serializable {
   }
 
 
+  /**
+   * The type of transfer to perform.
+   **/
+  public TransferRequest transferType(TransferTypeEnum transferType) {
+    this.transferType = transferType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of transfer to perform.")
+  @JsonProperty("transferType")
+  public TransferTypeEnum getTransferType() {
+    return transferType;
+  }
+  public void setTransferType(TransferTypeEnum transferType) {
+    this.transferType = transferType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -132,12 +199,13 @@ public class TransferRequest  implements Serializable {
             Objects.equals(this.address, transferRequest.address) &&
             Objects.equals(this.userName, transferRequest.userName) &&
             Objects.equals(this.queueId, transferRequest.queueId) &&
-            Objects.equals(this.voicemail, transferRequest.voicemail);
+            Objects.equals(this.voicemail, transferRequest.voicemail) &&
+            Objects.equals(this.transferType, transferRequest.transferType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, address, userName, queueId, voicemail);
+    return Objects.hash(userId, address, userName, queueId, voicemail, transferType);
   }
 
   @Override
@@ -150,6 +218,7 @@ public class TransferRequest  implements Serializable {
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
+    sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

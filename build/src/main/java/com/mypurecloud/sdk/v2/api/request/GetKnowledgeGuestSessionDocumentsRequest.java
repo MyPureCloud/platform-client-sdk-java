@@ -108,20 +108,6 @@ public class GetKnowledgeGuestSessionDocumentsRequest {
 	    return this;
 	} 
 
-	private Boolean includeSubcategories;
-	public Boolean getIncludeSubcategories() {
-		return this.includeSubcategories;
-	}
-
-	public void setIncludeSubcategories(Boolean includeSubcategories) {
-		this.includeSubcategories = includeSubcategories;
-	}
-
-	public GetKnowledgeGuestSessionDocumentsRequest withIncludeSubcategories(Boolean includeSubcategories) {
-	    this.setIncludeSubcategories(includeSubcategories);
-	    return this;
-	} 
-
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -170,9 +156,6 @@ public class GetKnowledgeGuestSessionDocumentsRequest {
                 .withQueryParameters("categoryId", "multi", categoryId)
         
 
-                .withQueryParameters("includeSubcategories", "", includeSubcategories)
-        
-
                 .withQueryParameters("pageSize", "", pageSize)
         
 		.withCustomHeaders(customHeaders)
@@ -208,11 +191,6 @@ public class GetKnowledgeGuestSessionDocumentsRequest {
 
 		public Builder withCategoryId(List<String> categoryId) {
 			request.setCategoryId(categoryId);
-			return this;
-		}
-
-		public Builder withIncludeSubcategories(Boolean includeSubcategories) {
-			request.setIncludeSubcategories(includeSubcategories);
 			return this;
 		}
 

@@ -59,6 +59,7 @@ public class AuditQueryRequest  implements Serializable {
     EMAILS("Emails"),
     EMPLOYEEPERFORMANCE("EmployeePerformance"),
     GAMIFICATION("Gamification"),
+    GDPR("GDPR"),
     GROUPS("Groups"),
     INTEGRATIONS("Integrations"),
     KNOWLEDGE("Knowledge"),

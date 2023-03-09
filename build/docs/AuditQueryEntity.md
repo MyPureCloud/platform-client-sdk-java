@@ -304,6 +304,8 @@ title: AuditQueryEntity
 | RESET | &quot;Reset&quot; |
 | ROTATE | &quot;Rotate&quot; |
 | RESTORE | &quot;Restore&quot; |
+| RESTOREALL | &quot;RestoreAll&quot; |
+| RESTOREDELETED | &quot;RestoreDeleted&quot; |
 | UNARCHIVE | &quot;Unarchive&quot; |
 | ENABLECAPTURE | &quot;EnableCapture&quot; |
 | DOWNLOADCAPTURE | &quot;DownloadCapture&quot; |

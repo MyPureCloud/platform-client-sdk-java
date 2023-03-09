@@ -129,7 +129,6 @@ public class ConversationEventTopicParticipant  implements Serializable {
   private List<ConversationEventTopicSocialExpression> socialExpressions = new ArrayList<ConversationEventTopicSocialExpression>();
   private List<ConversationEventTopicVideo> videos = new ArrayList<ConversationEventTopicVideo>();
   private ConversationEventTopicWorkflow workflow = null;
-  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -822,23 +821,6 @@ public class ConversationEventTopicParticipant  implements Serializable {
   }
 
 
-  /**
-   **/
-  public ConversationEventTopicParticipant additionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -887,13 +869,12 @@ public class ConversationEventTopicParticipant  implements Serializable {
             Objects.equals(this.screenshares, conversationEventTopicParticipant.screenshares) &&
             Objects.equals(this.socialExpressions, conversationEventTopicParticipant.socialExpressions) &&
             Objects.equals(this.videos, conversationEventTopicParticipant.videos) &&
-            Objects.equals(this.workflow, conversationEventTopicParticipant.workflow) &&
-            Objects.equals(this.additionalProperties, conversationEventTopicParticipant.additionalProperties);
+            Objects.equals(this.workflow, conversationEventTopicParticipant.workflow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, workflow, additionalProperties);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, workflow);
   }
 
   @Override
@@ -940,7 +921,6 @@ public class ConversationEventTopicParticipant  implements Serializable {
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");
     sb.append("    workflow: ").append(toIndentedString(workflow)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

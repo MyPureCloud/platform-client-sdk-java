@@ -31,8 +31,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | Get the status of all jobs within the user's organization |
 | [**getRecordingKeyconfiguration**](RecordingApi.html#getRecordingKeyconfiguration) | Get the encryption key configurations |
 | [**getRecordingKeyconfigurations**](RecordingApi.html#getRecordingKeyconfigurations) | Get a list of key configurations data |
-| [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId} |
-| [**getRecordingLocalkeysSettings**](RecordingApi.html#getRecordingLocalkeysSettings) | gets a list local key settings data. Replaced by API recording/keyconfigurations |
 | [**getRecordingMediaretentionpolicies**](RecordingApi.html#getRecordingMediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled. |
 | [**getRecordingMediaretentionpolicy**](RecordingApi.html#getRecordingMediaretentionpolicy) | Get a media retention policy |
 | [**getRecordingRecordingkeys**](RecordingApi.html#getRecordingRecordingkeys) | Get encryption key list |
@@ -51,7 +49,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRecordingKeyconfigurations**](RecordingApi.html#postRecordingKeyconfigurations) | Setup configurations for encryption key creation |
 | [**postRecordingKeyconfigurationsValidate**](RecordingApi.html#postRecordingKeyconfigurationsValidate) | Validate encryption key configurations without saving it |
 | [**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | create a local key management recording key |
-| [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | create settings for local key creation. Replaced by API recording/keyconfigurations |
 | [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | Create media retention policy |
 | [**postRecordingRecordingkeys**](RecordingApi.html#postRecordingRecordingkeys) | Create encryption key |
 | [**postRecordingUploadsReports**](RecordingApi.html#postRecordingUploadsReports) | Creates a recording upload status report |
@@ -64,7 +61,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#putRecordingCrossplatformMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingJob**](RecordingApi.html#putRecordingJob) | Execute the recording bulk job. |
 | [**putRecordingKeyconfiguration**](RecordingApi.html#putRecordingKeyconfiguration) | Update the encryption key configurations |
-| [**putRecordingLocalkeysSetting**](RecordingApi.html#putRecordingLocalkeysSetting) | Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId} |
 | [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | Update key rotation schedule |
 | [**putRecordingSettings**](RecordingApi.html#putRecordingSettings) | Update the Recording Settings for the Organization |
@@ -1644,124 +1640,6 @@ This endpoint does not require any parameters.
 
 [**RecordingEncryptionConfigurationListing**](RecordingEncryptionConfigurationListing.html)
 
-<a name="getRecordingLocalkeysSetting"></a>
-
-# **getRecordingLocalkeysSetting**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [LocalEncryptionConfiguration](LocalEncryptionConfiguration.html) getRecordingLocalkeysSetting(settingsId)
-
-Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-
-Wraps GET /api/v2/recording/localkeys/settings/{settingsId}  
-
-Requires ANY permissions: 
-
-* recording:encryptionKey:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.RecordingApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-RecordingApi apiInstance = new RecordingApi();
-String settingsId = "settingsId_example"; // String | Settings Id
-try {
-    LocalEncryptionConfiguration result = apiInstance.getRecordingLocalkeysSetting(settingsId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecordingApi#getRecordingLocalkeysSetting");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **settingsId** | **String**| Settings Id | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)
-
-<a name="getRecordingLocalkeysSettings"></a>
-
-# **getRecordingLocalkeysSettings**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [LocalEncryptionConfigurationListing](LocalEncryptionConfigurationListing.html) getRecordingLocalkeysSettings()
-
-gets a list local key settings data. Replaced by API recording/keyconfigurations
-
-Wraps GET /api/v2/recording/localkeys/settings  
-
-Requires ANY permissions: 
-
-* recording:encryptionKey:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.RecordingApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-RecordingApi apiInstance = new RecordingApi();
-try {
-    LocalEncryptionConfigurationListing result = apiInstance.getRecordingLocalkeysSettings();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecordingApi#getRecordingLocalkeysSettings");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-This endpoint does not require any parameters.
-
-
-
-### Return type
-
-[**LocalEncryptionConfigurationListing**](LocalEncryptionConfigurationListing.html)
-
 <a name="getRecordingMediaretentionpolicies"></a>
 
 # **getRecordingMediaretentionpolicies**
@@ -2665,7 +2543,7 @@ try {
 
 Create a recording bulk job.
 
-Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
+Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
 
 Wraps POST /api/v2/recording/jobs  
 
@@ -2900,67 +2778,6 @@ try {
 ### Return type
 
 [**EncryptionKey**](EncryptionKey.html)
-
-<a name="postRecordingLocalkeysSettings"></a>
-
-# **postRecordingLocalkeysSettings**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [LocalEncryptionConfiguration](LocalEncryptionConfiguration.html) postRecordingLocalkeysSettings(body)
-
-create settings for local key creation. Replaced by API recording/keyconfigurations
-
-Wraps POST /api/v2/recording/localkeys/settings  
-
-Requires ANY permissions: 
-
-* recording:encryptionKey:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.RecordingApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-RecordingApi apiInstance = new RecordingApi();
-LocalEncryptionConfiguration body = new LocalEncryptionConfiguration(); // LocalEncryptionConfiguration | Local Encryption Configuration
-try {
-    LocalEncryptionConfiguration result = apiInstance.postRecordingLocalkeysSettings(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecordingApi#postRecordingLocalkeysSettings");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption Configuration | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)
 
 <a name="postRecordingMediaretentionpolicies"></a>
 
@@ -3720,69 +3537,6 @@ try {
 ### Return type
 
 [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
-
-<a name="putRecordingLocalkeysSetting"></a>
-
-# **putRecordingLocalkeysSetting**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [LocalEncryptionConfiguration](LocalEncryptionConfiguration.html) putRecordingLocalkeysSetting(settingsId, body)
-
-Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-
-Wraps PUT /api/v2/recording/localkeys/settings/{settingsId}  
-
-Requires ANY permissions: 
-
-* recording:encryptionKey:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.RecordingApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-RecordingApi apiInstance = new RecordingApi();
-String settingsId = "settingsId_example"; // String | Settings Id
-LocalEncryptionConfiguration body = new LocalEncryptionConfiguration(); // LocalEncryptionConfiguration | Local Encryption metadata
-try {
-    LocalEncryptionConfiguration result = apiInstance.putRecordingLocalkeysSetting(settingsId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecordingApi#putRecordingLocalkeysSetting");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **settingsId** | **String**| Settings Id | 
-| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption metadata | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)
 
 <a name="putRecordingMediaretentionpolicy"></a>
 

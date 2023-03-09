@@ -94,14 +94,17 @@ title: OrphanRecording
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AF_SOUTH_1 | &quot;af-south-1&quot; | 
+| AP_EAST_1 | &quot;ap-east-1&quot; | 
 | AP_NORTHEAST_1 | &quot;ap-northeast-1&quot; | 
 | AP_NORTHEAST_2 | &quot;ap-northeast-2&quot; | 
 | AP_SOUTH_1 | &quot;ap-south-1&quot; | 
 | AP_SOUTHEAST_2 | &quot;ap-southeast-2&quot; | 
+| AP_SOUTHEAST_3 | &quot;ap-southeast-3&quot; | 
 | CA_CENTRAL_1 | &quot;ca-central-1&quot; | 
 | EU_CENTRAL_1 | &quot;eu-central-1&quot; | 
 | EU_WEST_1 | &quot;eu-west-1&quot; | 
 | EU_WEST_2 | &quot;eu-west-2&quot; | 
+| EU_WEST_3 | &quot;eu-west-3&quot; | 
 | SA_EAST_1 | &quot;sa-east-1&quot; | 
 | US_EAST_1 | &quot;us-east-1&quot; | 
 | US_WEST_2 | &quot;us-west-2&quot; | 

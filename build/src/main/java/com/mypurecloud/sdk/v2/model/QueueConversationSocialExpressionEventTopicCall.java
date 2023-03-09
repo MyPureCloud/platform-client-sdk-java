@@ -22,9 +22,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -329,7 +327,6 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
-  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -830,23 +827,6 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   }
 
 
-  /**
-   **/
-  public QueueConversationSocialExpressionEventTopicCall additionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -884,13 +864,12 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
             Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicCall.wrapup) &&
             Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicCall.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCall.afterCallWorkRequired) &&
-            Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicCall.agentAssistantId) &&
-            Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicCall.additionalProperties);
+            Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicCall.agentAssistantId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, additionalProperties);
+    return Objects.hash(id, state, initialState, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
   }
 
   @Override
@@ -926,7 +905,6 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

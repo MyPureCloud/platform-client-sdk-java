@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.DncListDivisionView;
 import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.DncListEntityListing;
+import com.mypurecloud.sdk.v2.model.DncPatchCustomExclusionColumnsRequest;
 import com.mypurecloud.sdk.v2.model.DncPatchEmailsRequest;
 import com.mypurecloud.sdk.v2.model.DncPatchPhoneNumbersRequest;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -88,6 +89,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistfilterRequest
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistCustomexclusioncolumnsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignRequest;
@@ -156,6 +158,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSequencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundWrapupcodemappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistCustomexclusioncolumnsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundSettingsRequest;
@@ -1187,6 +1190,85 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOutboundDnclist(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Deletes all or expired custom exclusion column entries from a DNC list.
+   * This operation is only for Internal DNC lists of custom exclusion column entries
+   * @param dncListId DncList ID (required)
+   * @param expiredOnly Set to true to only remove DNC entries that are expired (optional, default to false)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundDnclistCustomexclusioncolumns(String dncListId, Boolean expiredOnly) throws IOException, ApiException {
+     deleteOutboundDnclistCustomexclusioncolumns(createDeleteOutboundDnclistCustomexclusioncolumnsRequest(dncListId, expiredOnly));
+  }
+
+  /**
+   * Deletes all or expired custom exclusion column entries from a DNC list.
+   * This operation is only for Internal DNC lists of custom exclusion column entries
+   * @param dncListId DncList ID (required)
+   * @param expiredOnly Set to true to only remove DNC entries that are expired (optional, default to false)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundDnclistCustomexclusioncolumnsWithHttpInfo(String dncListId, Boolean expiredOnly) throws IOException {
+    return deleteOutboundDnclistCustomexclusioncolumns(createDeleteOutboundDnclistCustomexclusioncolumnsRequest(dncListId, expiredOnly).withHttpInfo());
+  }
+
+  private DeleteOutboundDnclistCustomexclusioncolumnsRequest createDeleteOutboundDnclistCustomexclusioncolumnsRequest(String dncListId, Boolean expiredOnly) {
+    return DeleteOutboundDnclistCustomexclusioncolumnsRequest.builder()
+            .withDncListId(dncListId)
+
+            .withExpiredOnly(expiredOnly)
+
+            .build();
+  }
+
+  /**
+   * Deletes all or expired custom exclusion column entries from a DNC list.
+   * This operation is only for Internal DNC lists of custom exclusion column entries
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundDnclistCustomexclusioncolumns(DeleteOutboundDnclistCustomexclusioncolumnsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes all or expired custom exclusion column entries from a DNC list.
+   * This operation is only for Internal DNC lists of custom exclusion column entries
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundDnclistCustomexclusioncolumns(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -7053,6 +7135,85 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WrapUpCodeMapping> response = (ApiResponse<WrapUpCodeMapping>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add entries to or delete entries from a DNC list.
+   * Only Internal DNC lists may be deleted from
+   * @param dncListId DncList ID (required)
+   * @param body DNC Custom exclusion column entries (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundDnclistCustomexclusioncolumns(String dncListId, DncPatchCustomExclusionColumnsRequest body) throws IOException, ApiException {
+     patchOutboundDnclistCustomexclusioncolumns(createPatchOutboundDnclistCustomexclusioncolumnsRequest(dncListId, body));
+  }
+
+  /**
+   * Add entries to or delete entries from a DNC list.
+   * Only Internal DNC lists may be deleted from
+   * @param dncListId DncList ID (required)
+   * @param body DNC Custom exclusion column entries (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundDnclistCustomexclusioncolumnsWithHttpInfo(String dncListId, DncPatchCustomExclusionColumnsRequest body) throws IOException {
+    return patchOutboundDnclistCustomexclusioncolumns(createPatchOutboundDnclistCustomexclusioncolumnsRequest(dncListId, body).withHttpInfo());
+  }
+
+  private PatchOutboundDnclistCustomexclusioncolumnsRequest createPatchOutboundDnclistCustomexclusioncolumnsRequest(String dncListId, DncPatchCustomExclusionColumnsRequest body) {
+    return PatchOutboundDnclistCustomexclusioncolumnsRequest.builder()
+            .withDncListId(dncListId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add entries to or delete entries from a DNC list.
+   * Only Internal DNC lists may be deleted from
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundDnclistCustomexclusioncolumns(PatchOutboundDnclistCustomexclusioncolumnsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Add entries to or delete entries from a DNC list.
+   * Only Internal DNC lists may be deleted from
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundDnclistCustomexclusioncolumns(ApiRequest<DncPatchCustomExclusionColumnsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

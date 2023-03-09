@@ -616,6 +616,8 @@ Wraps GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluation
 Requires ANY permissions: 
 
 * quality:evaluation:view
+* quality:evaluation:assign
+* quality:evaluation:release
 
 ### Example
 
@@ -641,7 +643,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String evaluationId = "evaluationId_example"; // String | evaluationId
-String expand = "expand_example"; // String | agent, evaluator, evaluationForm
+String expand = "expand_example"; // String | agent, assignee, evaluator, evaluationForm
 try {
     EvaluationResponse result = apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, expand);
     System.out.println(result);
@@ -658,7 +660,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **evaluationId** | **String**| evaluationId | 
-| **expand** | **String**| agent, evaluator, evaluationForm | [optional] 
+| **expand** | **String**| agent, assignee, evaluator, evaluationForm | [optional] 
 {: class="table-striped"}
 
 
@@ -861,11 +863,11 @@ try {
 
 
 
-> [EvaluationEntityListing](EvaluationEntityListing.html) getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)
+> [EvaluationEntityListing](EvaluationEntityListing.html) getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)
 
 Queries Evaluations and returns a paged list
 
-Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
 
 Wraps GET /api/v2/quality/evaluations/query  
 
@@ -904,6 +906,7 @@ String previousPage = "previousPage_example"; // String | Previous page token
 String conversationId = "conversationId_example"; // String | conversationId specified
 String agentUserId = "agentUserId_example"; // String | user id of the agent
 String evaluatorUserId = "evaluatorUserId_example"; // String | evaluator user id
+String assigneeUserId = "assigneeUserId_example"; // String | assignee user id
 String queueId = "queueId_example"; // String | queue id
 String startTime = "startTime_example"; // String | start time of the evaluation query
 String endTime = "endTime_example"; // String | end time of the evaluation query
@@ -914,7 +917,7 @@ Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for ev
 Integer maximum = 56; // Integer | maximum
 String sortOrder = "sortOrder_example"; // String | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'
 try {
-    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
+    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityEvaluationsQuery");
@@ -936,6 +939,7 @@ try {
 | **conversationId** | **String**| conversationId specified | [optional] 
 | **agentUserId** | **String**| user id of the agent | [optional] 
 | **evaluatorUserId** | **String**| evaluator user id | [optional] 
+| **assigneeUserId** | **String**| assignee user id | [optional] 
 | **queueId** | **String**| queue id | [optional] 
 | **startTime** | **String**| start time of the evaluation query | [optional] 
 | **endTime** | **String**| end time of the evaluation query | [optional] 

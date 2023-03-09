@@ -125,6 +125,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     }
   }
   private ServiceNameEnum serviceName = null;
+  private String level = null;
   private Date eventTime = null;
   private AuditTopicMessageInfo message = null;
 
@@ -627,6 +628,23 @@ public class AuditTopicAuditLogMessage  implements Serializable {
 
   /**
    **/
+  public AuditTopicAuditLogMessage level(String level) {
+    this.level = level;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("level")
+  public String getLevel() {
+    return level;
+  }
+  public void setLevel(String level) {
+    this.level = level;
+  }
+
+
+  /**
+   **/
   public AuditTopicAuditLogMessage eventTime(Date eventTime) {
     this.eventTime = eventTime;
     return this;
@@ -762,6 +780,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
             Objects.equals(this.clientId, auditTopicAuditLogMessage.clientId) &&
             Objects.equals(this.remoteIp, auditTopicAuditLogMessage.remoteIp) &&
             Objects.equals(this.serviceName, auditTopicAuditLogMessage.serviceName) &&
+            Objects.equals(this.level, auditTopicAuditLogMessage.level) &&
             Objects.equals(this.eventTime, auditTopicAuditLogMessage.eventTime) &&
             Objects.equals(this.message, auditTopicAuditLogMessage.message) &&
             Objects.equals(this.action, auditTopicAuditLogMessage.action) &&
@@ -773,7 +792,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userId, userHomeOrgId, username, userDisplay, clientId, remoteIp, serviceName, eventTime, message, action, entityType, entity, propertyChanges, context);
+    return Objects.hash(id, userId, userHomeOrgId, username, userDisplay, clientId, remoteIp, serviceName, level, eventTime, message, action, entityType, entity, propertyChanges, context);
   }
 
   @Override
@@ -789,6 +808,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    remoteIp: ").append(toIndentedString(remoteIp)).append("\n");
     sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
+    sb.append("    level: ").append(toIndentedString(level)).append("\n");
     sb.append("    eventTime: ").append(toIndentedString(eventTime)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");

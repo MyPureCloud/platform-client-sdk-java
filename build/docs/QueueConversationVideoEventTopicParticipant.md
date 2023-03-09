@@ -47,7 +47,6 @@ title: QueueConversationVideoEventTopicParticipant
 | **socialExpressions** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicSocialExpression&gt;**](QueueConversationVideoEventTopicSocialExpression.html)<!----> |  |  [optional] |
 | **videos** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicVideo&gt;**](QueueConversationVideoEventTopicVideo.html)<!----> |  |  [optional] |
 | **workflow** | <!----><!---->[**QueueConversationVideoEventTopicWorkflow**](QueueConversationVideoEventTopicWorkflow.html)<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

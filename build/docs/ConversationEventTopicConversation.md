@@ -11,6 +11,7 @@ title: ConversationEventTopicConversation
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
 | **maxParticipants** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **participants** | <!----><!---->[**List&lt;ConversationEventTopicParticipant&gt;**](ConversationEventTopicParticipant.html)<!----> |  |  [optional] |
+| **recentTransfers** | <!----><!---->[**List&lt;ConversationEventTopicRecentTransfer&gt;**](ConversationEventTopicRecentTransfer.html)<!----> |  |  [optional] |
 | **recordingState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **address** | <!----><!---->**String**<!----> |  |  [optional] |
 | **externalTag** | <!----><!---->**String**<!----> |  |  [optional] |

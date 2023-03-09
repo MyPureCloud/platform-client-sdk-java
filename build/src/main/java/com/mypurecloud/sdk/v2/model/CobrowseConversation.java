@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CobrowseMediaParticipant;
+import com.mypurecloud.sdk.v2.model.TransferResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class CobrowseConversation  implements Serializable {
   private String name = null;
   private List<CobrowseMediaParticipant> participants = new ArrayList<CobrowseMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
+  private List<TransferResponse> recentTransfers = new ArrayList<TransferResponse>();
   private String selfUri = null;
 
   
@@ -91,6 +93,24 @@ public class CobrowseConversation  implements Serializable {
   }
 
 
+  /**
+   * The list of the most recent 20 transfer commands applied to this conversation.
+   **/
+  public CobrowseConversation recentTransfers(List<TransferResponse> recentTransfers) {
+    this.recentTransfers = recentTransfers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of the most recent 20 transfer commands applied to this conversation.")
+  @JsonProperty("recentTransfers")
+  public List<TransferResponse> getRecentTransfers() {
+    return recentTransfers;
+  }
+  public void setRecentTransfers(List<TransferResponse> recentTransfers) {
+    this.recentTransfers = recentTransfers;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -112,12 +132,13 @@ public class CobrowseConversation  implements Serializable {
             Objects.equals(this.name, cobrowseConversation.name) &&
             Objects.equals(this.participants, cobrowseConversation.participants) &&
             Objects.equals(this.otherMediaUris, cobrowseConversation.otherMediaUris) &&
+            Objects.equals(this.recentTransfers, cobrowseConversation.recentTransfers) &&
             Objects.equals(this.selfUri, cobrowseConversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, selfUri);
+    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, selfUri);
   }
 
   @Override
@@ -129,6 +150,7 @@ public class CobrowseConversation  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
+    sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

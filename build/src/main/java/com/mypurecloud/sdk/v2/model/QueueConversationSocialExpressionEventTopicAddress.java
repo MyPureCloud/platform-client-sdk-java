@@ -13,9 +13,6 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -30,7 +27,6 @@ public class QueueConversationSocialExpressionEventTopicAddress  implements Seri
   private String addressNormalized = null;
   private String addressRaw = null;
   private String addressDisplayable = null;
-  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -123,23 +119,6 @@ public class QueueConversationSocialExpressionEventTopicAddress  implements Seri
   }
 
 
-  /**
-   **/
-  public QueueConversationSocialExpressionEventTopicAddress additionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -154,13 +133,12 @@ public class QueueConversationSocialExpressionEventTopicAddress  implements Seri
             Objects.equals(this.nameRaw, queueConversationSocialExpressionEventTopicAddress.nameRaw) &&
             Objects.equals(this.addressNormalized, queueConversationSocialExpressionEventTopicAddress.addressNormalized) &&
             Objects.equals(this.addressRaw, queueConversationSocialExpressionEventTopicAddress.addressRaw) &&
-            Objects.equals(this.addressDisplayable, queueConversationSocialExpressionEventTopicAddress.addressDisplayable) &&
-            Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicAddress.additionalProperties);
+            Objects.equals(this.addressDisplayable, queueConversationSocialExpressionEventTopicAddress.addressDisplayable);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, nameRaw, addressNormalized, addressRaw, addressDisplayable, additionalProperties);
+    return Objects.hash(name, nameRaw, addressNormalized, addressRaw, addressDisplayable);
   }
 
   @Override
@@ -173,7 +151,6 @@ public class QueueConversationSocialExpressionEventTopicAddress  implements Seri
     sb.append("    addressNormalized: ").append(toIndentedString(addressNormalized)).append("\n");
     sb.append("    addressRaw: ").append(toIndentedString(addressRaw)).append("\n");
     sb.append("    addressDisplayable: ").append(toIndentedString(addressDisplayable)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

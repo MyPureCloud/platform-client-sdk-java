@@ -137,6 +137,7 @@ public class DncList  implements Serializable {
   private List<String> dncCodes = new ArrayList<String>();
   private String licenseId = null;
   private DomainEntityRef division = null;
+  private String customExclusionColumn = null;
   private String selfUri = null;
 
   
@@ -326,6 +327,24 @@ public class DncList  implements Serializable {
   }
 
 
+  /**
+   * The column to evaluate exclusion against. Required if the dncSourceType is rds_custom.
+   **/
+  public DncList customExclusionColumn(String customExclusionColumn) {
+    this.customExclusionColumn = customExclusionColumn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The column to evaluate exclusion against. Required if the dncSourceType is rds_custom.")
+  @JsonProperty("customExclusionColumn")
+  public String getCustomExclusionColumn() {
+    return customExclusionColumn;
+  }
+  public void setCustomExclusionColumn(String customExclusionColumn) {
+    this.customExclusionColumn = customExclusionColumn;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -357,12 +376,13 @@ public class DncList  implements Serializable {
             Objects.equals(this.dncCodes, dncList.dncCodes) &&
             Objects.equals(this.licenseId, dncList.licenseId) &&
             Objects.equals(this.division, dncList.division) &&
+            Objects.equals(this.customExclusionColumn, dncList.customExclusionColumn) &&
             Objects.equals(this.selfUri, dncList.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, contactMethod, loginId, campaignId, dncCodes, licenseId, division, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, contactMethod, loginId, campaignId, dncCodes, licenseId, division, customExclusionColumn, selfUri);
   }
 
   @Override
@@ -384,6 +404,7 @@ public class DncList  implements Serializable {
     sb.append("    dncCodes: ").append(toIndentedString(dncCodes)).append("\n");
     sb.append("    licenseId: ").append(toIndentedString(licenseId)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
+    sb.append("    customExclusionColumn: ").append(toIndentedString(customExclusionColumn)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

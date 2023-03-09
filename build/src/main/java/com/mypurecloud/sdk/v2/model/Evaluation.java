@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.Calibration;
 import com.mypurecloud.sdk.v2.model.ConversationReference;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationSource;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
@@ -89,6 +90,7 @@ public class Evaluation  implements Serializable {
   private StatusEnum status = null;
   private EvaluationScoringSet answers = null;
   private Boolean agentHasRead = null;
+  private User assignee = null;
   private Date releaseDate = null;
   private Date assignedDate = null;
   private Date changedDate = null;
@@ -203,6 +205,7 @@ public class Evaluation  implements Serializable {
   private Boolean isScoringIndex = null;
   private List<String> authorizedActions = new ArrayList<String>();
   private Boolean hasAssistanceFailed = null;
+  private EvaluationSource evaluationSource = null;
   private String selfUri = null;
 
   
@@ -364,6 +367,23 @@ public class Evaluation  implements Serializable {
   }
   public void setAgentHasRead(Boolean agentHasRead) {
     this.agentHasRead = agentHasRead;
+  }
+
+
+  /**
+   **/
+  public Evaluation assignee(User assignee) {
+    this.assignee = assignee;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("assignee")
+  public User getAssignee() {
+    return assignee;
+  }
+  public void setAssignee(User assignee) {
+    this.assignee = assignee;
   }
 
 
@@ -600,14 +620,14 @@ public class Evaluation  implements Serializable {
 
 
   /**
-   * List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit
+   * List of user authorized actions on evaluation. Possible values: assign, edit, editScore, editAgentSignoff, delete, release, viewAudit
    **/
   public Evaluation authorizedActions(List<String> authorizedActions) {
     this.authorizedActions = authorizedActions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit")
+  @ApiModelProperty(example = "null", value = "List of user authorized actions on evaluation. Possible values: assign, edit, editScore, editAgentSignoff, delete, release, viewAudit")
   @JsonProperty("authorizedActions")
   public List<String> getAuthorizedActions() {
     return authorizedActions;
@@ -632,6 +652,13 @@ public class Evaluation  implements Serializable {
   }
   public void setHasAssistanceFailed(Boolean hasAssistanceFailed) {
     this.hasAssistanceFailed = hasAssistanceFailed;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The source that created the evaluation.")
+  @JsonProperty("evaluationSource")
+  public EvaluationSource getEvaluationSource() {
+    return evaluationSource;
   }
 
 
@@ -662,6 +689,7 @@ public class Evaluation  implements Serializable {
             Objects.equals(this.status, evaluation.status) &&
             Objects.equals(this.answers, evaluation.answers) &&
             Objects.equals(this.agentHasRead, evaluation.agentHasRead) &&
+            Objects.equals(this.assignee, evaluation.assignee) &&
             Objects.equals(this.releaseDate, evaluation.releaseDate) &&
             Objects.equals(this.assignedDate, evaluation.assignedDate) &&
             Objects.equals(this.changedDate, evaluation.changedDate) &&
@@ -677,12 +705,13 @@ public class Evaluation  implements Serializable {
             Objects.equals(this.isScoringIndex, evaluation.isScoringIndex) &&
             Objects.equals(this.authorizedActions, evaluation.authorizedActions) &&
             Objects.equals(this.hasAssistanceFailed, evaluation.hasAssistanceFailed) &&
+            Objects.equals(this.evaluationSource, evaluation.evaluationSource) &&
             Objects.equals(this.selfUri, evaluation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
   }
 
   @Override
@@ -700,6 +729,7 @@ public class Evaluation  implements Serializable {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    answers: ").append(toIndentedString(answers)).append("\n");
     sb.append("    agentHasRead: ").append(toIndentedString(agentHasRead)).append("\n");
+    sb.append("    assignee: ").append(toIndentedString(assignee)).append("\n");
     sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
     sb.append("    assignedDate: ").append(toIndentedString(assignedDate)).append("\n");
     sb.append("    changedDate: ").append(toIndentedString(changedDate)).append("\n");
@@ -715,6 +745,7 @@ public class Evaluation  implements Serializable {
     sb.append("    isScoringIndex: ").append(toIndentedString(isScoringIndex)).append("\n");
     sb.append("    authorizedActions: ").append(toIndentedString(authorizedActions)).append("\n");
     sb.append("    hasAssistanceFailed: ").append(toIndentedString(hasAssistanceFailed)).append("\n");
+    sb.append("    evaluationSource: ").append(toIndentedString(evaluationSource)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

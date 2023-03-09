@@ -83,6 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserQueues**](RoutingApi.html#getUserQueues) | Get queues for user |
 | [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | List routing language for user |
 | [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | List routing skills for user |
+| [**getUserSkillgroups**](RoutingApi.html#getUserSkillgroups) | Get skill groups for a user |
 | [**patchRoutingConversation**](RoutingApi.html#patchRoutingConversation) | Update attributes of an in-queue conversation |
 | [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | Update domain settings |
 | [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | Validate domain settings |
@@ -4365,7 +4366,7 @@ try {
 
 
 
-> [SmsPhoneNumber](SmsPhoneNumber.html) getRoutingSmsPhonenumber(addressId)
+> [SmsPhoneNumber](SmsPhoneNumber.html) getRoutingSmsPhonenumber(addressId, expand)
 
 Get a phone number provisioned for SMS.
 
@@ -4398,8 +4399,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String addressId = "addressId_example"; // String | Address ID
+String expand = "expand_example"; // String | Expand response with additional information
 try {
-    SmsPhoneNumber result = apiInstance.getRoutingSmsPhonenumber(addressId);
+    SmsPhoneNumber result = apiInstance.getRoutingSmsPhonenumber(addressId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingSmsPhonenumber");
@@ -4413,6 +4415,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **addressId** | **String**| Address ID | 
+| **expand** | **String**| Expand response with additional information | [optional]<br />**Values**: compliance 
 {: class="table-striped"}
 
 
@@ -4949,6 +4952,73 @@ try {
 ### Return type
 
 [**UserSkillEntityListing**](UserSkillEntityListing.html)
+
+<a name="getUserSkillgroups"></a>
+
+# **getUserSkillgroups**
+
+
+
+> [UserSkillGroupEntityListing](UserSkillGroupEntityListing.html) getUserSkillgroups(userId, pageSize, after, before)
+
+Get skill groups for a user
+
+Wraps GET /api/v2/users/{userId}/skillgroups  
+
+Requires ANY permissions: 
+
+* routing:skillGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String userId = "userId_example"; // String | User ID
+Integer pageSize = 25; // Integer | Page size
+String after = "after_example"; // String | The cursor that points to the next page
+String before = "before_example"; // String | The cursor that points to the previous page
+try {
+    UserSkillGroupEntityListing result = apiInstance.getUserSkillgroups(userId, pageSize, after, before);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getUserSkillgroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **after** | **String**| The cursor that points to the next page | [optional] 
+| **before** | **String**| The cursor that points to the previous page | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserSkillGroupEntityListing**](UserSkillGroupEntityListing.html)
 
 <a name="patchRoutingConversation"></a>
 

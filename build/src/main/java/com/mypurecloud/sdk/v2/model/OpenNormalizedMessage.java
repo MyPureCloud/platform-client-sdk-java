@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationReason;
 import com.mypurecloud.sdk.v2.model.OpenMessageContent;
 import com.mypurecloud.sdk.v2.model.OpenMessagingChannel;
-import com.mypurecloud.sdk.v2.model.Reason;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -134,7 +134,7 @@ public class OpenNormalizedMessage  implements Serializable {
     }
   }
   private StatusEnum status = null;
-  private List<Reason> reasons = new ArrayList<Reason>();
+  private List<ConversationReason> reasons = new ArrayList<ConversationReason>();
   private Boolean isFinalReceipt = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
@@ -298,17 +298,17 @@ public class OpenNormalizedMessage  implements Serializable {
   /**
    * List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.
    **/
-  public OpenNormalizedMessage reasons(List<Reason> reasons) {
+  public OpenNormalizedMessage reasons(List<ConversationReason> reasons) {
     this.reasons = reasons;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.")
   @JsonProperty("reasons")
-  public List<Reason> getReasons() {
+  public List<ConversationReason> getReasons() {
     return reasons;
   }
-  public void setReasons(List<Reason> reasons) {
+  public void setReasons(List<ConversationReason> reasons) {
     this.reasons = reasons;
   }
 

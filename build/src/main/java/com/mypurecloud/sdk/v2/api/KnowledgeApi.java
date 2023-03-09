@@ -1177,14 +1177,13 @@ public class KnowledgeApi {
    * 
    * @param sessionId Knowledge guest session ID. (required)
    * @param categoryId If specified, retrieves documents associated with category ids, comma separated values expected. (optional)
-   * @param includeSubcategories Deprecated - Do Not Use. Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 10)
    * @return KnowledgeGuestDocumentResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeGuestDocumentResponseListing getKnowledgeGuestSessionDocuments(String sessionId, List<String> categoryId, Boolean includeSubcategories, Integer pageSize) throws IOException, ApiException {
-    return  getKnowledgeGuestSessionDocuments(createGetKnowledgeGuestSessionDocumentsRequest(sessionId, categoryId, includeSubcategories, pageSize));
+  public KnowledgeGuestDocumentResponseListing getKnowledgeGuestSessionDocuments(String sessionId, List<String> categoryId, Integer pageSize) throws IOException, ApiException {
+    return  getKnowledgeGuestSessionDocuments(createGetKnowledgeGuestSessionDocumentsRequest(sessionId, categoryId, pageSize));
   }
 
   /**
@@ -1192,22 +1191,19 @@ public class KnowledgeApi {
    * 
    * @param sessionId Knowledge guest session ID. (required)
    * @param categoryId If specified, retrieves documents associated with category ids, comma separated values expected. (optional)
-   * @param includeSubcategories Deprecated - Do Not Use. Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 10)
    * @return KnowledgeGuestDocumentResponseListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeGuestDocumentResponseListing> getKnowledgeGuestSessionDocumentsWithHttpInfo(String sessionId, List<String> categoryId, Boolean includeSubcategories, Integer pageSize) throws IOException {
-    return getKnowledgeGuestSessionDocuments(createGetKnowledgeGuestSessionDocumentsRequest(sessionId, categoryId, includeSubcategories, pageSize).withHttpInfo());
+  public ApiResponse<KnowledgeGuestDocumentResponseListing> getKnowledgeGuestSessionDocumentsWithHttpInfo(String sessionId, List<String> categoryId, Integer pageSize) throws IOException {
+    return getKnowledgeGuestSessionDocuments(createGetKnowledgeGuestSessionDocumentsRequest(sessionId, categoryId, pageSize).withHttpInfo());
   }
 
-  private GetKnowledgeGuestSessionDocumentsRequest createGetKnowledgeGuestSessionDocumentsRequest(String sessionId, List<String> categoryId, Boolean includeSubcategories, Integer pageSize) {
+  private GetKnowledgeGuestSessionDocumentsRequest createGetKnowledgeGuestSessionDocumentsRequest(String sessionId, List<String> categoryId, Integer pageSize) {
     return GetKnowledgeGuestSessionDocumentsRequest.builder()
             .withSessionId(sessionId)
 
             .withCategoryId(categoryId)
-
-            .withIncludeSubcategories(includeSubcategories)
 
             .withPageSize(pageSize)
 

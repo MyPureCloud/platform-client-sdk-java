@@ -11,6 +11,7 @@ title: QueueConversationVideoEventTopicConversation
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
 | **maxParticipants** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **participants** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicParticipant&gt;**](QueueConversationVideoEventTopicParticipant.html)<!----> |  |  [optional] |
+| **recentTransfers** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicRecentTransfer&gt;**](QueueConversationVideoEventTopicRecentTransfer.html)<!----> |  |  [optional] |
 | **recordingState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **address** | <!----><!---->**String**<!----> |  |  [optional] |
 | **externalTag** | <!----><!---->**String**<!----> |  |  [optional] |

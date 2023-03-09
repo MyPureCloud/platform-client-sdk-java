@@ -91,6 +91,7 @@ public class InboundRoute  implements Serializable {
     }
   }
   private HistoryInclusionEnum historyInclusion = null;
+  private Boolean allowMultipleActions = null;
   private String selfUri = null;
 
   
@@ -352,6 +353,24 @@ public class InboundRoute  implements Serializable {
   }
 
 
+  /**
+   * Control if multiple actions are allowed on this route. When true the disconnect has to be done manually. When false a conversation will be disconnected by the system after every action
+   **/
+  public InboundRoute allowMultipleActions(Boolean allowMultipleActions) {
+    this.allowMultipleActions = allowMultipleActions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Control if multiple actions are allowed on this route. When true the disconnect has to be done manually. When false a conversation will be disconnected by the system after every action")
+  @JsonProperty("allowMultipleActions")
+  public Boolean getAllowMultipleActions() {
+    return allowMultipleActions;
+  }
+  public void setAllowMultipleActions(Boolean allowMultipleActions) {
+    this.allowMultipleActions = allowMultipleActions;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -384,12 +403,13 @@ public class InboundRoute  implements Serializable {
             Objects.equals(this.spamFlow, inboundRoute.spamFlow) &&
             Objects.equals(this.signature, inboundRoute.signature) &&
             Objects.equals(this.historyInclusion, inboundRoute.historyInclusion) &&
+            Objects.equals(this.allowMultipleActions, inboundRoute.allowMultipleActions) &&
             Objects.equals(this.selfUri, inboundRoute.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, autoBcc, spamFlow, signature, historyInclusion, selfUri);
+    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, autoBcc, spamFlow, signature, historyInclusion, allowMultipleActions, selfUri);
   }
 
   @Override
@@ -412,6 +432,7 @@ public class InboundRoute  implements Serializable {
     sb.append("    spamFlow: ").append(toIndentedString(spamFlow)).append("\n");
     sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
     sb.append("    historyInclusion: ").append(toIndentedString(historyInclusion)).append("\n");
+    sb.append("    allowMultipleActions: ").append(toIndentedString(allowMultipleActions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

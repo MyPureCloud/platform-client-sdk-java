@@ -11,8 +11,11 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -22,23 +25,42 @@ import java.io.Serializable;
 public class KnowledgeExportJobDocumentsFilter  implements Serializable {
   
   private String interval = null;
+  private List<Entity> entities = new ArrayList<Entity>();
 
   
   /**
-   * Retrieves the documents modified in specified date and time range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+   * Retrieves the documents modified in specified date and time range. Cannot be used together with entities filter. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
   public KnowledgeExportJobDocumentsFilter interval(String interval) {
     this.interval = interval;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Retrieves the documents modified in specified date and time range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
+  @ApiModelProperty(example = "null", value = "Retrieves the documents modified in specified date and time range. Cannot be used together with entities filter. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
   @JsonProperty("interval")
   public String getInterval() {
     return interval;
   }
   public void setInterval(String interval) {
     this.interval = interval;
+  }
+
+
+  /**
+   * Retrieves the documents with the given ids. Cannot be used together with internal filter.
+   **/
+  public KnowledgeExportJobDocumentsFilter entities(List<Entity> entities) {
+    this.entities = entities;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Retrieves the documents with the given ids. Cannot be used together with internal filter.")
+  @JsonProperty("entities")
+  public List<Entity> getEntities() {
+    return entities;
+  }
+  public void setEntities(List<Entity> entities) {
+    this.entities = entities;
   }
 
 
@@ -52,12 +74,13 @@ public class KnowledgeExportJobDocumentsFilter  implements Serializable {
     }
     KnowledgeExportJobDocumentsFilter knowledgeExportJobDocumentsFilter = (KnowledgeExportJobDocumentsFilter) o;
 
-    return Objects.equals(this.interval, knowledgeExportJobDocumentsFilter.interval);
+    return Objects.equals(this.interval, knowledgeExportJobDocumentsFilter.interval) &&
+            Objects.equals(this.entities, knowledgeExportJobDocumentsFilter.entities);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval);
+    return Objects.hash(interval, entities);
   }
 
   @Override
@@ -66,6 +89,7 @@ public class KnowledgeExportJobDocumentsFilter  implements Serializable {
     sb.append("class KnowledgeExportJobDocumentsFilter {\n");
     
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
+    sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("}");
     return sb.toString();
   }

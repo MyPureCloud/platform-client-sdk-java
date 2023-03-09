@@ -24,10 +24,29 @@ import java.io.Serializable;
 
 public class ActionConfig  implements Serializable {
   
+  private Integer timeoutSeconds = null;
   private RequestConfig _request = null;
   private ResponseConfig response = null;
 
   
+  /**
+   * Optional 1-60 second timeout enforced on the execution or test of this action. This setting is invalid for Custom Authentication Actions.
+   **/
+  public ActionConfig timeoutSeconds(Integer timeoutSeconds) {
+    this.timeoutSeconds = timeoutSeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional 1-60 second timeout enforced on the execution or test of this action. This setting is invalid for Custom Authentication Actions.")
+  @JsonProperty("timeoutSeconds")
+  public Integer getTimeoutSeconds() {
+    return timeoutSeconds;
+  }
+  public void setTimeoutSeconds(Integer timeoutSeconds) {
+    this.timeoutSeconds = timeoutSeconds;
+  }
+
+
   /**
    * Configuration of outbound request.
    **/
@@ -74,13 +93,14 @@ public class ActionConfig  implements Serializable {
     }
     ActionConfig actionConfig = (ActionConfig) o;
 
-    return Objects.equals(this._request, actionConfig._request) &&
+    return Objects.equals(this.timeoutSeconds, actionConfig.timeoutSeconds) &&
+            Objects.equals(this._request, actionConfig._request) &&
             Objects.equals(this.response, actionConfig.response);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(_request, response);
+    return Objects.hash(timeoutSeconds, _request, response);
   }
 
   @Override
@@ -88,6 +108,7 @@ public class ActionConfig  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ActionConfig {\n");
     
+    sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
     sb.append("    _request: ").append(toIndentedString(_request)).append("\n");
     sb.append("    response: ").append(toIndentedString(response)).append("\n");
     sb.append("}");

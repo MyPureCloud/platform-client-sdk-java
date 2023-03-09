@@ -161,6 +161,9 @@ title: ViewFilter
 | **myDashboard** | <!----><!---->**Boolean**<!----> | Filter to indicate the dashboard owned by the user. |  [optional] |
 | **stationErrors** | <!----><!---->**List&lt;String&gt;**<!----> | The list of agent errors that are related to station |  [optional] |
 | **canonicalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> | The canonical contact ids are used to filter the view |  [optional] |
+| **alertRuleIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Alert Rule IDs |  [optional] |
+| **evaluationFormContextIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Evaluation Form Context IDs |  [optional] |
+| **evaluationStatuses** | <!---->[**List&lt;EvaluationStatusesEnum&gt;**](#EvaluationStatusesEnum)<!----> | The evaluation statuses that are used to filter the view |  [optional] |
 {: class="table table-striped"}
 
 
@@ -539,6 +542,20 @@ title: ViewFilter
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PUBLIC | &quot;Public&quot; | 
 | PRIVATE | &quot;Private&quot; | 
+{: class="table table-striped"}
+
+
+<a name="EvaluationStatusesEnum"></a>
+
+## Enum: EvaluationStatusesEnum
+
+| Name | Value |
+| ---- | ----- |
+| FINISHED | &quot;Finished&quot; |
+| INPROGRESS | &quot;InProgress&quot; |
+| INREVIEW | &quot;InReview&quot; |
+| PENDING | &quot;Pending&quot; |
+| RETRACTED | &quot;Retracted&quot; |
 {: class="table table-striped"}
 
 

@@ -62,6 +62,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.UserSkillGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.UserState;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
@@ -101,6 +102,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserStateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserStationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserSuperiorsRequest;
@@ -2632,6 +2634,81 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<RoutingStatus> response = (ApiResponse<RoutingStatus>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get skill groups for a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserSkillGroupEntityListing> getUserSkillgroupsAsync(GetUserSkillgroupsRequest request, final AsyncApiCallback<UserSkillGroupEntityListing> callback) {
+    try {
+      final SettableFuture<UserSkillGroupEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserSkillGroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserSkillGroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserSkillGroupEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get skill groups for a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserSkillGroupEntityListing>> getUserSkillgroupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserSkillGroupEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserSkillGroupEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserSkillGroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserSkillGroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserSkillGroupEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserSkillGroupEntityListing> response = (ApiResponse<UserSkillGroupEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserSkillGroupEntityListing> response = (ApiResponse<UserSkillGroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

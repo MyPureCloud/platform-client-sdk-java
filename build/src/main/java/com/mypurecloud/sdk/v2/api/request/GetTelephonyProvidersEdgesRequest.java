@@ -190,6 +190,20 @@ public class GetTelephonyProvidersEdgesRequest {
 	    return this;
 	} 
 
+	private Boolean showCloudMedia;
+	public Boolean getShowCloudMedia() {
+		return this.showCloudMedia;
+	}
+
+	public void setShowCloudMedia(Boolean showCloudMedia) {
+		this.showCloudMedia = showCloudMedia;
+	}
+
+	public GetTelephonyProvidersEdgesRequest withShowCloudMedia(Boolean showCloudMedia) {
+	    this.setShowCloudMedia(showCloudMedia);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -233,6 +247,9 @@ public class GetTelephonyProvidersEdgesRequest {
         
 
                 .withQueryParameters("managed", "", managed)
+        
+
+                .withQueryParameters("showCloudMedia", "", showCloudMedia)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -287,6 +304,11 @@ public class GetTelephonyProvidersEdgesRequest {
 
 		public Builder withManaged(Boolean managed) {
 			request.setManaged(managed);
+			return this;
+		}
+
+		public Builder withShowCloudMedia(Boolean showCloudMedia) {
+			request.setShowCloudMedia(showCloudMedia);
 			return this;
 		}
 

@@ -53,6 +53,7 @@ title: AuditQueryExecutionStatusResponse
 | EMAILS | &quot;Emails&quot; | 
 | EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; | 
 | GAMIFICATION | &quot;Gamification&quot; | 
+| GDPR | &quot;GDPR&quot; | 
 | GROUPS | &quot;Groups&quot; | 
 | INTEGRATIONS | &quot;Integrations&quot; | 
 | KNOWLEDGE | &quot;Knowledge&quot; | 

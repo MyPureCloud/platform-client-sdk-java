@@ -178,6 +178,20 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	} 
 
+	private String assigneeUserId;
+	public String getAssigneeUserId() {
+		return this.assigneeUserId;
+	}
+
+	public void setAssigneeUserId(String assigneeUserId) {
+		this.assigneeUserId = assigneeUserId;
+	}
+
+	public GetQualityEvaluationsQueryRequest withAssigneeUserId(String assigneeUserId) {
+	    this.setAssigneeUserId(assigneeUserId);
+	    return this;
+	} 
+
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -355,6 +369,9 @@ public class GetQualityEvaluationsQueryRequest {
                 .withQueryParameters("evaluatorUserId", "", evaluatorUserId)
         
 
+                .withQueryParameters("assigneeUserId", "", assigneeUserId)
+        
+
                 .withQueryParameters("queueId", "", queueId)
         
 
@@ -444,6 +461,11 @@ public class GetQualityEvaluationsQueryRequest {
 
 		public Builder withEvaluatorUserId(String evaluatorUserId) {
 			request.setEvaluatorUserId(evaluatorUserId);
+			return this;
+		}
+
+		public Builder withAssigneeUserId(String assigneeUserId) {
+			request.setAssigneeUserId(assigneeUserId);
 			return this;
 		}
 

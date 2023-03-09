@@ -20,6 +20,7 @@ title: Conversation
 | **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> | On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings; otherwise indicates state of conversation recording. |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> | The conversation's state |  [optional] |
 | **divisions** | <!----><!---->[**List&lt;ConversationDivisionMembership&gt;**](ConversationDivisionMembership.html)<!----> | Identifiers of divisions associated with this conversation |  [optional] |
+| **recentTransfers** | <!----><!---->[**List&lt;TransferResponse&gt;**](TransferResponse.html)<!----> | The list of the most recent 20 transfer commands applied to this conversation. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

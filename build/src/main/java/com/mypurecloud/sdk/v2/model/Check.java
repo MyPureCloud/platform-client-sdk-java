@@ -95,6 +95,7 @@ public class Check  implements Serializable {
     HANDLETIMEVALUE("HandleTimeValue"),
     TRANSFERRATEVALUE("TransferRateValue"),
     SALESCONVERSIONRATEVALUE("SalesConversionRateValue"),
+    SALESAMOUNTVALUE("SalesAmountValue"),
     RETENTIONRATEVALUE("RetentionRateValue"),
     CHURNRATEVALUE("ChurnRateValue"),
     INTERACTIONVOLUME("InteractionVolume"),

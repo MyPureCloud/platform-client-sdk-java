@@ -13,9 +13,6 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -26,7 +23,6 @@ import java.io.Serializable;
 public class QueueConversationVideoEventTopicWorkflow  implements Serializable {
   
   private String workflowId = null;
-  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -47,23 +43,6 @@ public class QueueConversationVideoEventTopicWorkflow  implements Serializable {
   }
 
 
-  /**
-   **/
-  public QueueConversationVideoEventTopicWorkflow additionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -74,13 +53,12 @@ public class QueueConversationVideoEventTopicWorkflow  implements Serializable {
     }
     QueueConversationVideoEventTopicWorkflow queueConversationVideoEventTopicWorkflow = (QueueConversationVideoEventTopicWorkflow) o;
 
-    return Objects.equals(this.workflowId, queueConversationVideoEventTopicWorkflow.workflowId) &&
-            Objects.equals(this.additionalProperties, queueConversationVideoEventTopicWorkflow.additionalProperties);
+    return Objects.equals(this.workflowId, queueConversationVideoEventTopicWorkflow.workflowId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(workflowId, additionalProperties);
+    return Objects.hash(workflowId);
   }
 
   @Override
@@ -89,7 +67,6 @@ public class QueueConversationVideoEventTopicWorkflow  implements Serializable {
     sb.append("class QueueConversationVideoEventTopicWorkflow {\n");
     
     sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

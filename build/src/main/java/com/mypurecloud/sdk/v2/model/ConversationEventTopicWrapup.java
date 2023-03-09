@@ -15,9 +15,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -32,7 +30,6 @@ public class ConversationEventTopicWrapup  implements Serializable {
   private List<String> tags = new ArrayList<String>();
   private Integer durationSeconds = null;
   private Date endTime = null;
-  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -125,23 +122,6 @@ public class ConversationEventTopicWrapup  implements Serializable {
   }
 
 
-  /**
-   **/
-  public ConversationEventTopicWrapup additionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -156,13 +136,12 @@ public class ConversationEventTopicWrapup  implements Serializable {
             Objects.equals(this.notes, conversationEventTopicWrapup.notes) &&
             Objects.equals(this.tags, conversationEventTopicWrapup.tags) &&
             Objects.equals(this.durationSeconds, conversationEventTopicWrapup.durationSeconds) &&
-            Objects.equals(this.endTime, conversationEventTopicWrapup.endTime) &&
-            Objects.equals(this.additionalProperties, conversationEventTopicWrapup.additionalProperties);
+            Objects.equals(this.endTime, conversationEventTopicWrapup.endTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, notes, tags, durationSeconds, endTime, additionalProperties);
+    return Objects.hash(code, notes, tags, durationSeconds, endTime);
   }
 
   @Override
@@ -175,7 +154,6 @@ public class ConversationEventTopicWrapup  implements Serializable {
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    durationSeconds: ").append(toIndentedString(durationSeconds)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

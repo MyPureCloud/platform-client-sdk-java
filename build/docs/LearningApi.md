@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLearningModulesAssignments**](LearningApi.html#getLearningModulesAssignments) | Get all learning modules of an organization including assignments for a specific user |
 | [**getLearningModulesCoverartCoverArtId**](LearningApi.html#getLearningModulesCoverartCoverArtId) | Get a specific Learning Module cover art using ID |
 | [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | Update Learning Assignment |
+| [**patchLearningAssignmentReschedule**](LearningApi.html#patchLearningAssignmentReschedule) | Reschedule Learning Assignment |
 | [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | Score learning assessment for preview |
 | [**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | Reassign Learning Assignment |
 | [**postLearningAssignmentReset**](LearningApi.html#postLearningAssignmentReset) | Reset Learning Assignment |
@@ -31,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postLearningModulePublish**](LearningApi.html#postLearningModulePublish) | Publish a Learning module |
 | [**postLearningModules**](LearningApi.html#postLearningModules) | Create a new learning module |
 | [**postLearningRulesQuery**](LearningApi.html#postLearningRulesQuery) | Get users for learning module rule |
+| [**postLearningScheduleslotsQuery**](LearningApi.html#postLearningScheduleslotsQuery) | Get list of possible slots where a learning activity can be scheduled. |
 | [**putLearningModule**](LearningApi.html#putLearningModule) | Update a learning module |
 | [**putLearningModuleRule**](LearningApi.html#putLearningModuleRule) | Update a learning module rule |
 {: class="table-striped"}
@@ -304,7 +306,7 @@ try {
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
 | **userId** | [**List&lt;String&gt;**](String.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional] 
 | **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types to filter by | [optional]<br />**Values**: Informational, AssessedContent, Assessment 
-| **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted 
+| **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule 
 | **expand** | [**List&lt;String&gt;**](String.html)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
 {: class="table-striped"}
 
@@ -390,7 +392,7 @@ try {
 | **sortOrder** | **String**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
 | **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types to filter by | [optional]<br />**Values**: Informational, AssessedContent, Assessment 
-| **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted 
+| **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule 
 | **expand** | [**List&lt;String&gt;**](String.html)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
 {: class="table-striped"}
 
@@ -795,7 +797,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **searchTerm** | **String**| Search Term (searches by name and description) | [optional] 
 | **overdue** | **String**| Specifies if only modules with overdue/not overdue (overdue is \&quot;True\&quot; or \&quot;False\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or omitted, both are returned and can including modules that are unassigned. | [optional] [default to Any]<br />**Values**: True, False, Any 
-| **assignmentStates** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to return. | [optional]<br />**Values**: NotAssigned, Assigned, InProgress, Completed 
+| **assignmentStates** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to return. | [optional]<br />**Values**: NotAssigned, Assigned, InProgress, Completed, InvalidSchedule 
 | **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: coverArt 
 {: class="table-striped"}
 
@@ -920,6 +922,69 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **assignmentId** | **String**| The ID of Learning Assignment | 
 | **body** | [**LearningAssignmentUpdate**](LearningAssignmentUpdate.html)| The Learning Assignment to be updated | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningAssignment**](LearningAssignment.html)
+
+<a name="patchLearningAssignmentReschedule"></a>
+
+# **patchLearningAssignmentReschedule**
+
+
+
+> [LearningAssignment](LearningAssignment.html) patchLearningAssignmentReschedule(assignmentId, body)
+
+Reschedule Learning Assignment
+
+Wraps PATCH /api/v2/learning/assignments/{assignmentId}/reschedule  
+
+Requires ANY permissions: 
+
+* learning:assignment:reschedule
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+String assignmentId = "assignmentId_example"; // String | The ID of Learning Assignment
+LearningAssignmentReschedule body = new LearningAssignmentReschedule(); // LearningAssignmentReschedule | The Learning assignment reschedule model
+try {
+    LearningAssignment result = apiInstance.patchLearningAssignmentReschedule(assignmentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#patchLearningAssignmentReschedule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assignmentId** | **String**| The ID of Learning Assignment | 
+| **body** | [**LearningAssignmentReschedule**](LearningAssignmentReschedule.html)| The Learning assignment reschedule model | [optional] 
 {: class="table-striped"}
 
 
@@ -1615,6 +1680,67 @@ try {
 ### Return type
 
 [**LearningAssignmentUserListing**](LearningAssignmentUserListing.html)
+
+<a name="postLearningScheduleslotsQuery"></a>
+
+# **postLearningScheduleslotsQuery**
+
+
+
+> [LearningScheduleSlotsQueryResponse](LearningScheduleSlotsQueryResponse.html) postLearningScheduleslotsQuery(body)
+
+Get list of possible slots where a learning activity can be scheduled.
+
+Wraps POST /api/v2/learning/scheduleslots/query  
+
+Requires ANY permissions: 
+
+* learning:scheduleSlot:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+LearningScheduleSlotsQueryRequest body = new LearningScheduleSlotsQueryRequest(); // LearningScheduleSlotsQueryRequest | The slot search request
+try {
+    LearningScheduleSlotsQueryResponse result = apiInstance.postLearningScheduleslotsQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#postLearningScheduleslotsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**LearningScheduleSlotsQueryRequest**](LearningScheduleSlotsQueryRequest.html)| The slot search request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningScheduleSlotsQueryResponse**](LearningScheduleSlotsQueryResponse.html)
 
 <a name="putLearningModule"></a>
 

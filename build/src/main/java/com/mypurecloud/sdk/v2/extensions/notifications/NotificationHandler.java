@@ -281,7 +281,7 @@ public class NotificationHandler extends Object {
             }
         }
 
-        notificationsApi.postNotificationsChannelSubscriptions(this.channel.getId(), topics);
+        notificationsApi.postNotificationsChannelSubscriptions(this.channel.getId(), topics, false);
     }
 
     public <T> void addHandlerNoSubscribe(NotificationListener<T> listener) {
@@ -305,7 +305,7 @@ public class NotificationHandler extends Object {
         }
         if (match == null) return;
         channels.getEntities().remove(match);
-        notificationsApi.putNotificationsChannelSubscriptions(this.channel.getId(), channels.getEntities());
+        notificationsApi.putNotificationsChannelSubscriptions(this.channel.getId(), channels.getEntities(), false);
         typeMap.remove(topic);
     }
 

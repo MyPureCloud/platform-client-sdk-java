@@ -13,9 +13,6 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -29,7 +26,6 @@ public class QueueConversationSocialExpressionEventTopicAttachment  implements S
   private String contentUri = null;
   private String contentType = null;
   private Integer contentLength = null;
-  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -122,23 +118,6 @@ public class QueueConversationSocialExpressionEventTopicAttachment  implements S
   }
 
 
-  /**
-   **/
-  public QueueConversationSocialExpressionEventTopicAttachment additionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -153,13 +132,12 @@ public class QueueConversationSocialExpressionEventTopicAttachment  implements S
             Objects.equals(this.name, queueConversationSocialExpressionEventTopicAttachment.name) &&
             Objects.equals(this.contentUri, queueConversationSocialExpressionEventTopicAttachment.contentUri) &&
             Objects.equals(this.contentType, queueConversationSocialExpressionEventTopicAttachment.contentType) &&
-            Objects.equals(this.contentLength, queueConversationSocialExpressionEventTopicAttachment.contentLength) &&
-            Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicAttachment.additionalProperties);
+            Objects.equals(this.contentLength, queueConversationSocialExpressionEventTopicAttachment.contentLength);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(attachmentId, name, contentUri, contentType, contentLength, additionalProperties);
+    return Objects.hash(attachmentId, name, contentUri, contentType, contentLength);
   }
 
   @Override
@@ -172,7 +150,6 @@ public class QueueConversationSocialExpressionEventTopicAttachment  implements S
     sb.append("    contentUri: ").append(toIndentedString(contentUri)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    contentLength: ").append(toIndentedString(contentLength)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

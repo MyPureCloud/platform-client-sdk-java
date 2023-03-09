@@ -104,6 +104,7 @@ title: WorkitemsUserEventsNotificationWorkitem
 | HELD | &quot;Held&quot; | 
 | ACDCANCELLED | &quot;AcdCancelled&quot; | 
 | TERMINATED | &quot;Terminated&quot; | 
+| ACDEXPIRED | &quot;AcdExpired&quot; | 
 {: class="table table-striped"}
 
 

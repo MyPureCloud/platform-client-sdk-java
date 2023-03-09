@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteJourneyActionmap**](JourneyApi.html#deleteJourneyActionmap) | Delete single action map. |
 | [**deleteJourneyActiontemplate**](JourneyApi.html#deleteJourneyActiontemplate) | Delete a single action template. |
 | [**deleteJourneyOutcome**](JourneyApi.html#deleteJourneyOutcome) | Delete an outcome. |
+| [**deleteJourneyOutcomesPredictor**](JourneyApi.html#deleteJourneyOutcomesPredictor) | Delete an outcome predictor. |
 | [**deleteJourneySegment**](JourneyApi.html#deleteJourneySegment) | Delete a segment. |
 | [**getJourneyActionmap**](JourneyApi.html#getJourneyActionmap) | Retrieve a single action map. |
 | [**getJourneyActionmaps**](JourneyApi.html#getJourneyActionmaps) | Retrieve all action maps. |
@@ -21,6 +22,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneyActiontemplates**](JourneyApi.html#getJourneyActiontemplates) | Retrieve all action templates. |
 | [**getJourneyOutcome**](JourneyApi.html#getJourneyOutcome) | Retrieve a single outcome. |
 | [**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | Retrieve all outcomes. |
+| [**getJourneyOutcomesPredictor**](JourneyApi.html#getJourneyOutcomesPredictor) | Retrieve a single outcome predictor. |
+| [**getJourneyOutcomesPredictors**](JourneyApi.html#getJourneyOutcomesPredictors) | Retrieve all outcome predictors. |
 | [**getJourneySegment**](JourneyApi.html#getJourneySegment) | Retrieve a single segment. |
 | [**getJourneySegments**](JourneyApi.html#getJourneySegments) | Retrieve all segments. |
 | [**getJourneySession**](JourneyApi.html#getJourneySession) | Retrieve a single session. |
@@ -35,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postJourneyActionmapsEstimatesJobs**](JourneyApi.html#postJourneyActionmapsEstimatesJobs) | Query for estimates |
 | [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | Create a single action template. |
 | [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | Create an outcome. |
+| [**postJourneyOutcomesPredictors**](JourneyApi.html#postJourneyOutcomesPredictors) | Create an outcome predictor. |
 | [**postJourneySegments**](JourneyApi.html#postJourneySegments) | Create a segment. |
 {: class="table-striped"}
 
@@ -213,6 +217,66 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **outcomeId** | **String**| ID of the outcome. | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteJourneyOutcomesPredictor"></a>
+
+# **deleteJourneyOutcomesPredictor**
+
+
+
+> Void deleteJourneyOutcomesPredictor(predictorId)
+
+Delete an outcome predictor.
+
+Wraps DELETE /api/v2/journey/outcomes/predictors/{predictorId}  
+
+Requires ANY permissions: 
+
+* journey:outcomepredictor:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String predictorId = "predictorId_example"; // String | ID of predictor
+try {
+    apiInstance.deleteJourneyOutcomesPredictor(predictorId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#deleteJourneyOutcomesPredictor");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **predictorId** | **String**| ID of predictor | 
 {: class="table-striped"}
 
 
@@ -927,6 +991,124 @@ try {
 ### Return type
 
 [**OutcomeListing**](OutcomeListing.html)
+
+<a name="getJourneyOutcomesPredictor"></a>
+
+# **getJourneyOutcomesPredictor**
+
+
+
+> [OutcomePredictor](OutcomePredictor.html) getJourneyOutcomesPredictor(predictorId)
+
+Retrieve a single outcome predictor.
+
+Wraps GET /api/v2/journey/outcomes/predictors/{predictorId}  
+
+Requires ANY permissions: 
+
+* journey:outcomepredictor:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String predictorId = "predictorId_example"; // String | ID of predictor
+try {
+    OutcomePredictor result = apiInstance.getJourneyOutcomesPredictor(predictorId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyOutcomesPredictor");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **predictorId** | **String**| ID of predictor | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutcomePredictor**](OutcomePredictor.html)
+
+<a name="getJourneyOutcomesPredictors"></a>
+
+# **getJourneyOutcomesPredictors**
+
+
+
+> [OutcomePredictorListing](OutcomePredictorListing.html) getJourneyOutcomesPredictors()
+
+Retrieve all outcome predictors.
+
+Wraps GET /api/v2/journey/outcomes/predictors  
+
+Requires ANY permissions: 
+
+* journey:outcomepredictor:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+try {
+    OutcomePredictorListing result = apiInstance.getJourneyOutcomesPredictors();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyOutcomesPredictors");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**OutcomePredictorListing**](OutcomePredictorListing.html)
 
 <a name="getJourneySegment"></a>
 
@@ -1804,6 +1986,67 @@ try {
 ### Return type
 
 [**Outcome**](Outcome.html)
+
+<a name="postJourneyOutcomesPredictors"></a>
+
+# **postJourneyOutcomesPredictors**
+
+
+
+> [OutcomePredictor](OutcomePredictor.html) postJourneyOutcomesPredictors(body)
+
+Create an outcome predictor.
+
+Wraps POST /api/v2/journey/outcomes/predictors  
+
+Requires ANY permissions: 
+
+* journey:outcomepredictor:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+OutcomePredictorRequest body = new OutcomePredictorRequest(); // OutcomePredictorRequest | 
+try {
+    OutcomePredictor result = apiInstance.postJourneyOutcomesPredictors(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyOutcomesPredictors");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OutcomePredictorRequest**](OutcomePredictorRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutcomePredictor**](OutcomePredictor.html)
 
 <a name="postJourneySegments"></a>
 

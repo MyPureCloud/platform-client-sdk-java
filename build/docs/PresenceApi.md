@@ -343,8 +343,9 @@ Get a Presence Definition
 
 Wraps GET /api/v2/presencedefinitions/{presenceId}  
 
-Requires NO permissions: 
+Requires ALL permissions: 
 
+* presence:presenceDefinition:view
 
 ### Example
 

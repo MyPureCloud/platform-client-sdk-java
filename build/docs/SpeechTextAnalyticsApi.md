@@ -15,10 +15,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSpeechandtextanalyticsConversationCommunicationTranscripturl**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCommunicationTranscripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation |
 | [**getSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgram) | Get a Speech & Text Analytics program by id |
 | [**getSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramMappings) | Get Speech & Text Analytics program mappings to queues and flows by id |
+| [**getSpeechandtextanalyticsProgramTranscriptionengines**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramTranscriptionengines) | Get transcription engine settings of a program |
 | [**getSpeechandtextanalyticsPrograms**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsPrograms) | Get the list of Speech & Text Analytics programs |
 | [**getSpeechandtextanalyticsProgramsGeneralJob**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsGeneralJob) | Get a Speech & Text Analytics general program job by id |
 | [**getSpeechandtextanalyticsProgramsMappings**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsMappings) | Get the list of Speech & Text Analytics programs mappings to queues and flows |
 | [**getSpeechandtextanalyticsProgramsPublishjob**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsPublishjob) | Get a Speech & Text Analytics publish programs job by id |
+| [**getSpeechandtextanalyticsProgramsTranscriptionenginesDialects**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsTranscriptionenginesDialects) | Get supported dialects for each transcription engine |
 | [**getSpeechandtextanalyticsProgramsUnpublished**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsUnpublished) | Get the list of Speech & Text Analytics unpublished programs |
 | [**getSpeechandtextanalyticsSentimentDialects**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsSentimentDialects) | Get the list of Speech & Text Analytics sentiment supported dialects |
 | [**getSpeechandtextanalyticsSentimentfeedback**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsSentimentfeedback) | Get the list of Speech & Text Analytics SentimentFeedback |
@@ -38,6 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSpeechandtextanalyticsTranscriptsSearch**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
 | [**putSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgram) | Update existing Speech & Text Analytics program |
 | [**putSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgramMappings) | Set Speech & Text Analytics program mappings to queues and flows |
+| [**putSpeechandtextanalyticsProgramTranscriptionengines**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgramTranscriptionengines) | Update transcription engine settings of a program |
 | [**putSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsSettings) | Update Speech And Text Analytics Settings |
 | [**putSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsTopic) | Update existing Speech & Text Analytics topic |
 {: class="table-striped"}
@@ -526,6 +529,67 @@ try {
 
 [**ProgramMappings**](ProgramMappings.html)
 
+<a name="getSpeechandtextanalyticsProgramTranscriptionengines"></a>
+
+# **getSpeechandtextanalyticsProgramTranscriptionengines**
+
+
+
+> [ProgramTranscriptionEngines](ProgramTranscriptionEngines.html) getSpeechandtextanalyticsProgramTranscriptionengines(programId)
+
+Get transcription engine settings of a program
+
+Wraps GET /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String programId = "programId_example"; // String | The id of the program
+try {
+    ProgramTranscriptionEngines result = apiInstance.getSpeechandtextanalyticsProgramTranscriptionengines(programId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramTranscriptionengines");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **programId** | **String**| The id of the program | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ProgramTranscriptionEngines**](ProgramTranscriptionEngines.html)
+
 <a name="getSpeechandtextanalyticsPrograms"></a>
 
 # **getSpeechandtextanalyticsPrograms**
@@ -778,6 +842,62 @@ try {
 ### Return type
 
 [**ProgramJob**](ProgramJob.html)
+
+<a name="getSpeechandtextanalyticsProgramsTranscriptionenginesDialects"></a>
+
+# **getSpeechandtextanalyticsProgramsTranscriptionenginesDialects**
+
+
+
+> [SupportedDialectsEntityListing](SupportedDialectsEntityListing.html) getSpeechandtextanalyticsProgramsTranscriptionenginesDialects()
+
+Get supported dialects for each transcription engine
+
+Wraps GET /api/v2/speechandtextanalytics/programs/transcriptionengines/dialects  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+try {
+    SupportedDialectsEntityListing result = apiInstance.getSpeechandtextanalyticsProgramsTranscriptionenginesDialects();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTranscriptionenginesDialects");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**SupportedDialectsEntityListing**](SupportedDialectsEntityListing.html)
 
 <a name="getSpeechandtextanalyticsProgramsUnpublished"></a>
 
@@ -1945,6 +2065,69 @@ try {
 ### Return type
 
 [**ProgramMappings**](ProgramMappings.html)
+
+<a name="putSpeechandtextanalyticsProgramTranscriptionengines"></a>
+
+# **putSpeechandtextanalyticsProgramTranscriptionengines**
+
+
+
+> [ProgramTranscriptionEngines](ProgramTranscriptionEngines.html) putSpeechandtextanalyticsProgramTranscriptionengines(programId, body)
+
+Update transcription engine settings of a program
+
+Wraps PUT /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String programId = "programId_example"; // String | The id of the program
+TranscriptionEnginesRequest body = new TranscriptionEnginesRequest(); // TranscriptionEnginesRequest | Program transcription engine setting
+try {
+    ProgramTranscriptionEngines result = apiInstance.putSpeechandtextanalyticsProgramTranscriptionengines(programId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#putSpeechandtextanalyticsProgramTranscriptionengines");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **programId** | **String**| The id of the program | 
+| **body** | [**TranscriptionEnginesRequest**](TranscriptionEnginesRequest.html)| Program transcription engine setting | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ProgramTranscriptionEngines**](ProgramTranscriptionEngines.html)
 
 <a name="putSpeechandtextanalyticsSettings"></a>
 

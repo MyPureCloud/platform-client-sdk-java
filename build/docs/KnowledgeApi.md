@@ -833,7 +833,7 @@ try {
 
 
 
-> [KnowledgeGuestDocumentResponseListing](KnowledgeGuestDocumentResponseListing.html) getKnowledgeGuestSessionDocuments(sessionId, categoryId, includeSubcategories, pageSize)
+> [KnowledgeGuestDocumentResponseListing](KnowledgeGuestDocumentResponseListing.html) getKnowledgeGuestSessionDocuments(sessionId, categoryId, pageSize)
 
 Get documents.
 
@@ -853,10 +853,9 @@ import com.mypurecloud.sdk.v2.api.KnowledgeApi;
 KnowledgeApi apiInstance = new KnowledgeApi();
 String sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 List<String> categoryId = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with category ids, comma separated values expected.
-Boolean includeSubcategories = true; // Boolean | Deprecated - Do Not Use. Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
 Integer pageSize = 10; // Integer | Number of entities to return. Maximum of 200.
 try {
-    KnowledgeGuestDocumentResponseListing result = apiInstance.getKnowledgeGuestSessionDocuments(sessionId, categoryId, includeSubcategories, pageSize);
+    KnowledgeGuestDocumentResponseListing result = apiInstance.getKnowledgeGuestSessionDocuments(sessionId, categoryId, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeGuestSessionDocuments");
@@ -871,7 +870,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
 | **categoryId** | [**List&lt;String&gt;**](String.html)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional] 
-| **includeSubcategories** | **Boolean**| Deprecated - Do Not Use. Works along with &#39;categoryId&#39; query parameter. If specified, retrieves documents associated with category ids and its children categories. | [optional] 
 | **pageSize** | **Integer**| Number of entities to return. Maximum of 200. | [optional] [default to 10] 
 {: class="table-striped"}
 

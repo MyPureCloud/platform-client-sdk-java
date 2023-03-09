@@ -57,6 +57,20 @@ public class PutNotificationsChannelSubscriptionsRequest {
 	    return this;
 	} 
 
+	private Boolean ignoreErrors;
+	public Boolean getIgnoreErrors() {
+		return this.ignoreErrors;
+	}
+
+	public void setIgnoreErrors(Boolean ignoreErrors) {
+		this.ignoreErrors = ignoreErrors;
+	}
+
+	public PutNotificationsChannelSubscriptionsRequest withIgnoreErrors(Boolean ignoreErrors) {
+	    this.setIgnoreErrors(ignoreErrors);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -91,6 +105,9 @@ public class PutNotificationsChannelSubscriptionsRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/notifications/channels/{channelId}/subscriptions")
                 .withPathParameter("channelId", channelId)
+        
+
+                .withQueryParameters("ignoreErrors", "", ignoreErrors)
         
                 .withBody(body)
 
@@ -127,6 +144,11 @@ public class PutNotificationsChannelSubscriptionsRequest {
 
 		public Builder withBody(List<ChannelTopic> body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withIgnoreErrors(Boolean ignoreErrors) {
+			request.setIgnoreErrors(ignoreErrors);
 			return this;
 		}
 

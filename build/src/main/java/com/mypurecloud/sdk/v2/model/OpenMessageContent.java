@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.ContentAttachment;
+import com.mypurecloud.sdk.v2.model.ConversationContentAttachment;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -71,7 +71,7 @@ public class OpenMessageContent  implements Serializable {
     }
   }
   private ContentTypeEnum contentType = null;
-  private ContentAttachment attachment = null;
+  private ConversationContentAttachment attachment = null;
 
   
   /**
@@ -95,17 +95,17 @@ public class OpenMessageContent  implements Serializable {
   /**
    * Attachment content.
    **/
-  public OpenMessageContent attachment(ContentAttachment attachment) {
+  public OpenMessageContent attachment(ConversationContentAttachment attachment) {
     this.attachment = attachment;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Attachment content.")
   @JsonProperty("attachment")
-  public ContentAttachment getAttachment() {
+  public ConversationContentAttachment getAttachment() {
     return attachment;
   }
-  public void setAttachment(ContentAttachment attachment) {
+  public void setAttachment(ConversationContentAttachment attachment) {
     this.attachment = attachment;
   }
 

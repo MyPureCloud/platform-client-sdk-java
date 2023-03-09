@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,6 +23,55 @@ import java.io.Serializable;
 public class ChannelTopic  implements Serializable {
   
   private String id = null;
+
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets state
+   */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
+  public enum StateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PERMITTED("Permitted"),
+    REJECTED("Rejected");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StateEnum value : StateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StateEnum state = null;
+  private String rejectionReason = null;
   private String selfUri = null;
 
   
@@ -39,6 +89,40 @@ public class ChannelTopic  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  /**
+   **/
+  public ChannelTopic state(StateEnum state) {
+    this.state = state;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("state")
+  public StateEnum getState() {
+    return state;
+  }
+  public void setState(StateEnum state) {
+    this.state = state;
+  }
+
+
+  /**
+   **/
+  public ChannelTopic rejectionReason(String rejectionReason) {
+    this.rejectionReason = rejectionReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("rejectionReason")
+  public String getRejectionReason() {
+    return rejectionReason;
+  }
+  public void setRejectionReason(String rejectionReason) {
+    this.rejectionReason = rejectionReason;
   }
 
 
@@ -60,12 +144,14 @@ public class ChannelTopic  implements Serializable {
     ChannelTopic channelTopic = (ChannelTopic) o;
 
     return Objects.equals(this.id, channelTopic.id) &&
+            Objects.equals(this.state, channelTopic.state) &&
+            Objects.equals(this.rejectionReason, channelTopic.rejectionReason) &&
             Objects.equals(this.selfUri, channelTopic.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, selfUri);
+    return Objects.hash(id, state, rejectionReason, selfUri);
   }
 
   @Override
@@ -74,6 +160,8 @@ public class ChannelTopic  implements Serializable {
     sb.append("class ChannelTopic {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    rejectionReason: ").append(toIndentedString(rejectionReason)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

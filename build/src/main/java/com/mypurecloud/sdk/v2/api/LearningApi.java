@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentReschedule;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
@@ -33,6 +34,8 @@ import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryRequest;
+import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLearningAssignmentRequest;
@@ -48,6 +51,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesCoverartCoverArtIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRescheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssessmentsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentReassignRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentResetRequest;
@@ -59,6 +63,7 @@ import com.mypurecloud.sdk.v2.api.request.PostLearningModuleJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningRulesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningScheduleslotsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutLearningModuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutLearningModuleRuleRequest;
 
@@ -1280,6 +1285,88 @@ public class LearningApi {
   }
 
   /**
+   * Reschedule Learning Assignment
+   * 
+   * @param assignmentId The ID of Learning Assignment (required)
+   * @param body The Learning assignment reschedule model (optional)
+   * @return LearningAssignment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignment patchLearningAssignmentReschedule(String assignmentId, LearningAssignmentReschedule body) throws IOException, ApiException {
+    return  patchLearningAssignmentReschedule(createPatchLearningAssignmentRescheduleRequest(assignmentId, body));
+  }
+
+  /**
+   * Reschedule Learning Assignment
+   * 
+   * @param assignmentId The ID of Learning Assignment (required)
+   * @param body The Learning assignment reschedule model (optional)
+   * @return LearningAssignment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignment> patchLearningAssignmentRescheduleWithHttpInfo(String assignmentId, LearningAssignmentReschedule body) throws IOException {
+    return patchLearningAssignmentReschedule(createPatchLearningAssignmentRescheduleRequest(assignmentId, body).withHttpInfo());
+  }
+
+  private PatchLearningAssignmentRescheduleRequest createPatchLearningAssignmentRescheduleRequest(String assignmentId, LearningAssignmentReschedule body) {
+    return PatchLearningAssignmentRescheduleRequest.builder()
+            .withAssignmentId(assignmentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Reschedule Learning Assignment
+   * 
+   * @param request The request object
+   * @return LearningAssignment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignment patchLearningAssignmentReschedule(PatchLearningAssignmentRescheduleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningAssignment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningAssignment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Reschedule Learning Assignment
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignment> patchLearningAssignmentReschedule(ApiRequest<LearningAssignmentReschedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningAssignment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Score learning assessment for preview
    * 
    * @param body Assessment form and answers to score (required)
@@ -2145,6 +2232,84 @@ public class LearningApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LearningAssignmentUserListing> response = (ApiResponse<LearningAssignmentUserListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of possible slots where a learning activity can be scheduled.
+   * 
+   * @param body The slot search request (required)
+   * @return LearningScheduleSlotsQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningScheduleSlotsQueryResponse postLearningScheduleslotsQuery(LearningScheduleSlotsQueryRequest body) throws IOException, ApiException {
+    return  postLearningScheduleslotsQuery(createPostLearningScheduleslotsQueryRequest(body));
+  }
+
+  /**
+   * Get list of possible slots where a learning activity can be scheduled.
+   * 
+   * @param body The slot search request (required)
+   * @return LearningScheduleSlotsQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningScheduleSlotsQueryResponse> postLearningScheduleslotsQueryWithHttpInfo(LearningScheduleSlotsQueryRequest body) throws IOException {
+    return postLearningScheduleslotsQuery(createPostLearningScheduleslotsQueryRequest(body).withHttpInfo());
+  }
+
+  private PostLearningScheduleslotsQueryRequest createPostLearningScheduleslotsQueryRequest(LearningScheduleSlotsQueryRequest body) {
+    return PostLearningScheduleslotsQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get list of possible slots where a learning activity can be scheduled.
+   * 
+   * @param request The request object
+   * @return LearningScheduleSlotsQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningScheduleSlotsQueryResponse postLearningScheduleslotsQuery(PostLearningScheduleslotsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningScheduleSlotsQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningScheduleSlotsQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of possible slots where a learning activity can be scheduled.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningScheduleSlotsQueryResponse> postLearningScheduleslotsQuery(ApiRequest<LearningScheduleSlotsQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningScheduleSlotsQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningScheduleSlotsQueryResponse> response = (ApiResponse<LearningScheduleSlotsQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningScheduleSlotsQueryResponse> response = (ApiResponse<LearningScheduleSlotsQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

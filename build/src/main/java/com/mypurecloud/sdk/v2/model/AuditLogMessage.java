@@ -70,6 +70,7 @@ public class AuditLogMessage  implements Serializable {
     EMAILS("Emails"),
     EMPLOYEEPERFORMANCE("EmployeePerformance"),
     GAMIFICATION("Gamification"),
+    GDPR("GDPR"),
     GROUPS("Groups"),
     INTEGRATIONS("Integrations"),
     KNOWLEDGE("Knowledge"),
@@ -276,6 +277,8 @@ public class AuditLogMessage  implements Serializable {
     RESET("Reset"),
     ROTATE("Rotate"),
     RESTORE("Restore"),
+    RESTOREALL("RestoreAll"),
+    RESTOREDELETED("RestoreDeleted"),
     UNARCHIVE("Unarchive"),
     ENABLECAPTURE("EnableCapture"),
     DOWNLOADCAPTURE("DownloadCapture");

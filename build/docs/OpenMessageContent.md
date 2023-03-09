@@ -9,7 +9,7 @@ title: OpenMessageContent
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **contentType** | [**ContentTypeEnum**](#ContentTypeEnum)<!----> | Type of this content element. If contentType = \"Attachment\" only one item is allowed. |  |
-| **attachment** | <!----><!---->[**ContentAttachment**](ContentAttachment.html)<!----> | Attachment content. |  [optional] |
+| **attachment** | <!----><!---->[**ConversationContentAttachment**](ConversationContentAttachment.html)<!----> | Attachment content. |  [optional] |
 {: class="table table-striped"}
 
 

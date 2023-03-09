@@ -21,7 +21,6 @@ title: ApprovalNamespace
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| CONTACTS | &quot;contacts&quot; | 
 | AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
 | ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
 | ANALYTICS | &quot;analytics&quot; | 
@@ -35,6 +34,7 @@ title: ApprovalNamespace
 | AUTOMATION_TESTING | &quot;automation.testing&quot; | 
 | BOTS | &quot;bots&quot; | 
 | BOTS_VOICE | &quot;bots.voice&quot; | 
+| CALLBACK | &quot;callback&quot; | 
 | COBROWSE | &quot;cobrowse&quot; | 
 | CONTENT_MANAGEMENT | &quot;content.management&quot; | 
 | CONVERSATION | &quot;conversation&quot; | 
@@ -62,6 +62,7 @@ title: ApprovalNamespace
 | OUTBOUND | &quot;outbound&quot; | 
 | PLATFORM_API | &quot;platform.api&quot; | 
 | PREDICTIVE_ROUTING | &quot;predictive.routing&quot; | 
+| PRESENCE | &quot;presence&quot; | 
 | QUALITY | &quot;quality&quot; | 
 | RECORDING | &quot;recording&quot; | 
 | RESPONSE_MANAGEMENT | &quot;response.management&quot; | 

@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.ConversationEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.ConversationParticipantSearchRequest;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationSecureAttributes;
 import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
@@ -77,6 +78,7 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
+import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
 import com.mypurecloud.sdk.v2.model.LineIntegration;
 import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
@@ -283,6 +285,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrations
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSupportedcontentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsParticipantsAttributesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationTagsRequest;
@@ -9804,7 +9807,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Creates a cobrowse session
+   * Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
    * 
    * @param conversationId Conversation ID (required)
    * @return CobrowseWebMessagingSession
@@ -9816,7 +9819,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Creates a cobrowse session
+   * Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
    * 
    * @param conversationId Conversation ID (required)
    * @return CobrowseWebMessagingSession
@@ -9834,7 +9837,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Creates a cobrowse session
+   * Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
    * 
    * @param request The request object
    * @return CobrowseWebMessagingSession
@@ -9853,7 +9856,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Creates a cobrowse session
+   * Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
    * 
    * @param request The request object
    * @return the response
@@ -13430,6 +13433,84 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SupportedContent> response = (ApiResponse<SupportedContent>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search conversations
+   * 
+   * @param body Search request options (required)
+   * @return JsonCursorSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(ConversationParticipantSearchRequest body) throws IOException, ApiException {
+    return  postConversationsParticipantsAttributesSearch(createPostConversationsParticipantsAttributesSearchRequest(body));
+  }
+
+  /**
+   * Search conversations
+   * 
+   * @param body Search request options (required)
+   * @return JsonCursorSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JsonCursorSearchResponse> postConversationsParticipantsAttributesSearchWithHttpInfo(ConversationParticipantSearchRequest body) throws IOException {
+    return postConversationsParticipantsAttributesSearch(createPostConversationsParticipantsAttributesSearchRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsParticipantsAttributesSearchRequest createPostConversationsParticipantsAttributesSearchRequest(ConversationParticipantSearchRequest body) {
+    return PostConversationsParticipantsAttributesSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search conversations
+   * 
+   * @param request The request object
+   * @return JsonCursorSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(PostConversationsParticipantsAttributesSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JsonCursorSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonCursorSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search conversations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JsonCursorSearchResponse> postConversationsParticipantsAttributesSearch(ApiRequest<ConversationParticipantSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JsonCursorSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonCursorSearchResponse> response = (ApiResponse<JsonCursorSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonCursorSearchResponse> response = (ApiResponse<JsonCursorSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

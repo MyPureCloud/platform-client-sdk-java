@@ -15,9 +15,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicPhoneNumb
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -31,7 +29,6 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
   private String contactListId = null;
   private String campaignId = null;
   private List<QueueConversationCallbackEventTopicPhoneNumberColumn> phoneNumberColumns = new ArrayList<QueueConversationCallbackEventTopicPhoneNumberColumn>();
-  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -123,23 +120,6 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
   }
 
 
-  /**
-   **/
-  public QueueConversationCallbackEventTopicDialerPreview additionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -154,13 +134,12 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
             Objects.equals(this.contactId, queueConversationCallbackEventTopicDialerPreview.contactId) &&
             Objects.equals(this.contactListId, queueConversationCallbackEventTopicDialerPreview.contactListId) &&
             Objects.equals(this.campaignId, queueConversationCallbackEventTopicDialerPreview.campaignId) &&
-            Objects.equals(this.phoneNumberColumns, queueConversationCallbackEventTopicDialerPreview.phoneNumberColumns) &&
-            Objects.equals(this.additionalProperties, queueConversationCallbackEventTopicDialerPreview.additionalProperties);
+            Objects.equals(this.phoneNumberColumns, queueConversationCallbackEventTopicDialerPreview.phoneNumberColumns);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns, additionalProperties);
+    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns);
   }
 
   @Override
@@ -173,7 +152,6 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
     sb.append("    contactListId: ").append(toIndentedString(contactListId)).append("\n");
     sb.append("    campaignId: ").append(toIndentedString(campaignId)).append("\n");
     sb.append("    phoneNumberColumns: ").append(toIndentedString(phoneNumberColumns)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

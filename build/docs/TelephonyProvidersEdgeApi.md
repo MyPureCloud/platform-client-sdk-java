@@ -2327,7 +2327,7 @@ try {
 
 
 
-> [EdgeEntityListing](EdgeEntityListing.html) getTelephonyProvidersEdges(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed)
+> [EdgeEntityListing](EdgeEntityListing.html) getTelephonyProvidersEdges(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed, showCloudMedia)
 
 Get the list of edges.
 
@@ -2366,8 +2366,9 @@ String siteId = "siteId_example"; // String | Filter by site.id
 String edgeGroupId = "edgeGroupId_example"; // String | Filter by edgeGroup.id
 String sortBy = "name"; // String | Sort by
 Boolean managed = true; // Boolean | Filter by managed
+Boolean showCloudMedia = true; // Boolean | True to show the cloud media devices in the result.
 try {
-    EdgeEntityListing result = apiInstance.getTelephonyProvidersEdges(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed);
+    EdgeEntityListing result = apiInstance.getTelephonyProvidersEdges(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed, showCloudMedia);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdges");
@@ -2387,6 +2388,7 @@ try {
 | **edgeGroupId** | **String**| Filter by edgeGroup.id | [optional] 
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 | **managed** | **Boolean**| Filter by managed | [optional] 
+| **showCloudMedia** | **Boolean**| True to show the cloud media devices in the result. | [optional] [default to true] 
 {: class="table-striped"}
 
 

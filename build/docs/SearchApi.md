@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUsersSearch**](SearchApi.html#getUsersSearch) | Search users using the q64 value returned from a previous search |
 | [**getVoicemailSearch**](SearchApi.html#getVoicemailSearch) | Search voicemails using the q64 value returned from a previous search |
 | [**postAnalyticsConversationsTranscriptsQuery**](SearchApi.html#postAnalyticsConversationsTranscriptsQuery) | Search resources. |
+| [**postConversationsParticipantsAttributesSearch**](SearchApi.html#postConversationsParticipantsAttributesSearch) | Search conversations |
 | [**postDocumentationGknSearch**](SearchApi.html#postDocumentationGknSearch) | Search gkn documentation |
 | [**postDocumentationSearch**](SearchApi.html#postDocumentationSearch) | Search documentation |
 | [**postGroupsSearch**](SearchApi.html#postGroupsSearch) | Search groups |
@@ -565,6 +566,67 @@ try {
 ### Return type
 
 [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
+
+<a name="postConversationsParticipantsAttributesSearch"></a>
+
+# **postConversationsParticipantsAttributesSearch**
+
+
+
+> [JsonCursorSearchResponse](JsonCursorSearchResponse.html) postConversationsParticipantsAttributesSearch(body)
+
+Search conversations
+
+Wraps POST /api/v2/conversations/participants/attributes/search  
+
+Requires ANY permissions: 
+
+* conversation:participant:attributesview
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SearchApi apiInstance = new SearchApi();
+ConversationParticipantSearchRequest body = new ConversationParticipantSearchRequest(); // ConversationParticipantSearchRequest | Search request options
+try {
+    JsonCursorSearchResponse result = apiInstance.postConversationsParticipantsAttributesSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#postConversationsParticipantsAttributesSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ConversationParticipantSearchRequest**](ConversationParticipantSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JsonCursorSearchResponse**](JsonCursorSearchResponse.html)
 
 <a name="postDocumentationGknSearch"></a>
 

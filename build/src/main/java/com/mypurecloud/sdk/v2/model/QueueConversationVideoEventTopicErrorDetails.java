@@ -32,7 +32,6 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
   private Map<String, String> messageParams = null;
   private String contextId = null;
   private String uri = null;
-  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -160,23 +159,6 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
   }
 
 
-  /**
-   **/
-  public QueueConversationVideoEventTopicErrorDetails additionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -193,13 +175,12 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
             Objects.equals(this.messageWithParams, queueConversationVideoEventTopicErrorDetails.messageWithParams) &&
             Objects.equals(this.messageParams, queueConversationVideoEventTopicErrorDetails.messageParams) &&
             Objects.equals(this.contextId, queueConversationVideoEventTopicErrorDetails.contextId) &&
-            Objects.equals(this.uri, queueConversationVideoEventTopicErrorDetails.uri) &&
-            Objects.equals(this.additionalProperties, queueConversationVideoEventTopicErrorDetails.additionalProperties);
+            Objects.equals(this.uri, queueConversationVideoEventTopicErrorDetails.uri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, code, message, messageWithParams, messageParams, contextId, uri, additionalProperties);
+    return Objects.hash(status, code, message, messageWithParams, messageParams, contextId, uri);
   }
 
   @Override
@@ -214,7 +195,6 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
     sb.append("    messageParams: ").append(toIndentedString(messageParams)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

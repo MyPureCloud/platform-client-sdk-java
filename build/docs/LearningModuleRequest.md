@@ -28,6 +28,7 @@ title: LearningModuleRequest
 | INFORMATIONAL | &quot;Informational&quot; | 
 | ASSESSEDCONTENT | &quot;AssessedContent&quot; | 
 | ASSESSMENT | &quot;Assessment&quot; | 
+| EXTERNAL | &quot;External&quot; | 
 {: class="table table-striped"}
 
 

@@ -10,11 +10,13 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import io.swagger.annotations.ApiModel;
 
 import java.io.Serializable;
 /**
- * QueueConversationVideoEventTopicObject
+ * The number of peer participants from the perspective of the participant in the conference.
  */
+@ApiModel(description = "The number of peer participants from the perspective of the participant in the conference.")
 
 public class QueueConversationVideoEventTopicObject  implements Serializable {
   
