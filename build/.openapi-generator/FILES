@@ -2798,6 +2798,7 @@ docs/SetWrapperRoutePathRequest.md
 docs/SetWrapperString.md
 docs/SetWrapperSyncTimeOffProperty.md
 docs/SettingDirection.md
+docs/Settings.md
 docs/Share.md
 docs/ShareEntityListing.md
 docs/SharedEntity.md
@@ -3617,6 +3618,7 @@ docs/WorkdayPointsTrendItem.md
 docs/WorkdayValuesMetricItem.md
 docs/WorkdayValuesTrend.md
 docs/WorkdayValuesTrendItem.md
+docs/WorkflowTargetSettings.md
 docs/WorkforceManagementApi.json
 docs/WorkforceManagementApi.md
 docs/WorkitemsEventsNotificationCustomAttribute.md
@@ -4014,9 +4016,11 @@ docs/getConversationRecordings-example.txt
 docs/getConversationSecureattributes-example.txt
 docs/getConversations-example.txt
 docs/getConversationsCall-example.txt
+docs/getConversationsCallParticipantCommunicationWrapup-example.txt
 docs/getConversationsCallParticipantWrapup-example.txt
 docs/getConversationsCallParticipantWrapupcodes-example.txt
 docs/getConversationsCallback-example.txt
+docs/getConversationsCallbackParticipantCommunicationWrapup-example.txt
 docs/getConversationsCallbackParticipantWrapup-example.txt
 docs/getConversationsCallbackParticipantWrapupcodes-example.txt
 docs/getConversationsCallbacks-example.txt
@@ -4026,10 +4030,12 @@ docs/getConversationsCallsMaximumconferenceparties-example.txt
 docs/getConversationsChat-example.txt
 docs/getConversationsChatMessage-example.txt
 docs/getConversationsChatMessages-example.txt
+docs/getConversationsChatParticipantCommunicationWrapup-example.txt
 docs/getConversationsChatParticipantWrapup-example.txt
 docs/getConversationsChatParticipantWrapupcodes-example.txt
 docs/getConversationsChats-example.txt
 docs/getConversationsCobrowsesession-example.txt
+docs/getConversationsCobrowsesessionParticipantCommunicationWrapup-example.txt
 docs/getConversationsCobrowsesessionParticipantWrapup-example.txt
 docs/getConversationsCobrowsesessionParticipantWrapupcodes-example.txt
 docs/getConversationsCobrowsesessions-example.txt
@@ -4037,6 +4043,7 @@ docs/getConversationsEmail-example.txt
 docs/getConversationsEmailMessage-example.txt
 docs/getConversationsEmailMessages-example.txt
 docs/getConversationsEmailMessagesDraft-example.txt
+docs/getConversationsEmailParticipantCommunicationWrapup-example.txt
 docs/getConversationsEmailParticipantWrapup-example.txt
 docs/getConversationsEmailParticipantWrapupcodes-example.txt
 docs/getConversationsEmailSettings-example.txt
@@ -4047,6 +4054,7 @@ docs/getConversationsMessage-example.txt
 docs/getConversationsMessageCommunicationMessagesMediaMediaId-example.txt
 docs/getConversationsMessageDetails-example.txt
 docs/getConversationsMessageMessage-example.txt
+docs/getConversationsMessageParticipantCommunicationWrapup-example.txt
 docs/getConversationsMessageParticipantWrapup-example.txt
 docs/getConversationsMessageParticipantWrapupcodes-example.txt
 docs/getConversationsMessages-example.txt
@@ -4067,6 +4075,10 @@ docs/getConversationsMessagingSupportedcontent-example.txt
 docs/getConversationsMessagingSupportedcontentDefault-example.txt
 docs/getConversationsMessagingSupportedcontentSupportedContentId-example.txt
 docs/getConversationsMessagingThreadingtimeline-example.txt
+docs/getConversationsScreenshareParticipantCommunicationWrapup-example.txt
+docs/getConversationsSettings-example.txt
+docs/getConversationsSocialParticipantCommunicationWrapup-example.txt
+docs/getConversationsVideoParticipantCommunicationWrapup-example.txt
 docs/getDataextensionsCoretype-example.txt
 docs/getDataextensionsCoretypes-example.txt
 docs/getDataextensionsLimits-example.txt
@@ -4871,6 +4883,7 @@ docs/patchConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/patchConversationsMessagingSupportedcontentSupportedContentId-example.txt
+docs/patchConversationsSettings-example.txt
 docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/patchExternalcontactsContactIdentifiers-example.txt
 docs/patchGeolocationsSettings-example.txt
@@ -5055,10 +5068,12 @@ docs/postConversationParticipantSecureivrsessions-example.txt
 docs/postConversationRecordingAnnotations-example.txt
 docs/postConversationsCall-example.txt
 docs/postConversationsCallParticipantCoach-example.txt
+docs/postConversationsCallParticipantCommunicationWrapup-example.txt
 docs/postConversationsCallParticipantConsult-example.txt
 docs/postConversationsCallParticipantMonitor-example.txt
 docs/postConversationsCallParticipantReplace-example.txt
 docs/postConversationsCallParticipants-example.txt
+docs/postConversationsCallbackParticipantCommunicationWrapup-example.txt
 docs/postConversationsCallbackParticipantReplace-example.txt
 docs/postConversationsCallbacks-example.txt
 docs/postConversationsCallbacksBulkDisconnect-example.txt
@@ -5066,12 +5081,15 @@ docs/postConversationsCallbacksBulkUpdate-example.txt
 docs/postConversationsCalls-example.txt
 docs/postConversationsChatCommunicationMessages-example.txt
 docs/postConversationsChatCommunicationTyping-example.txt
+docs/postConversationsChatParticipantCommunicationWrapup-example.txt
 docs/postConversationsChatParticipantReplace-example.txt
 docs/postConversationsChats-example.txt
+docs/postConversationsCobrowsesessionParticipantCommunicationWrapup-example.txt
 docs/postConversationsCobrowsesessionParticipantReplace-example.txt
 docs/postConversationsEmailInboundmessages-example.txt
 docs/postConversationsEmailMessages-example.txt
 docs/postConversationsEmailMessagesDraftAttachmentsCopy-example.txt
+docs/postConversationsEmailParticipantCommunicationWrapup-example.txt
 docs/postConversationsEmailParticipantReplace-example.txt
 docs/postConversationsEmails-example.txt
 docs/postConversationsEmailsAgentless-example.txt
@@ -5082,6 +5100,7 @@ docs/postConversationsMessageCommunicationMessages-example.txt
 docs/postConversationsMessageCommunicationMessagesMedia-example.txt
 docs/postConversationsMessageCommunicationTyping-example.txt
 docs/postConversationsMessageMessagesBulk-example.txt
+docs/postConversationsMessageParticipantCommunicationWrapup-example.txt
 docs/postConversationsMessageParticipantReplace-example.txt
 docs/postConversationsMessages-example.txt
 docs/postConversationsMessagesAgentless-example.txt
@@ -5094,6 +5113,9 @@ docs/postConversationsMessagingIntegrationsWhatsapp-example.txt
 docs/postConversationsMessagingSupportedcontent-example.txt
 docs/postConversationsParticipantsAttributesSearch-example.txt
 docs/postConversationsParticipantsAttributesSearch-example.txt
+docs/postConversationsScreenshareParticipantCommunicationWrapup-example.txt
+docs/postConversationsSocialParticipantCommunicationWrapup-example.txt
+docs/postConversationsVideoParticipantCommunicationWrapup-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
 docs/postEmployeeperformanceExternalmetricsData-example.txt
@@ -6174,9 +6196,11 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationRecordingmetadat
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationRecordingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationSecureattributesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallParticipantWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallParticipantWrapupcodesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallbackParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallbackParticipantWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallbackParticipantWrapupcodesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallbackRequest.java
@@ -6186,10 +6210,12 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallsMaximumcon
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsChatMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsChatMessagesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsChatParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsChatParticipantWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsChatParticipantWrapupcodesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsChatRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsChatsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCobrowsesessionParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCobrowsesessionParticipantWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCobrowsesessionParticipantWrapupcodesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCobrowsesessionRequest.java
@@ -6197,6 +6223,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCobrowsesession
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsEmailMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsEmailMessagesDraftRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsEmailMessagesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsEmailParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsEmailParticipantWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsEmailParticipantWrapupcodesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsEmailRequest.java
@@ -6207,6 +6234,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsKeyconfiguratio
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageCommunicationMessagesMediaMediaIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageDetailsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageMessageRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageParticipantWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageParticipantWrapupcodesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessageRequest.java
@@ -6229,6 +6257,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingSuppor
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingSupportedcontentSupportedContentIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingThreadingtimelineRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsScreenshareParticipantCommunicationWrapupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsSocialParticipantCommunicationWrapupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsVideoParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsCoretypeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsCoretypesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsLimitsRequest.java
@@ -7033,6 +7065,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingInte
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingSupportedcontentSupportedContentIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchEmployeeperformanceExternalmetricsDefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchExternalcontactsContactIdentifiersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchGeolocationsSettingsRequest.java
@@ -7216,11 +7249,13 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantRepl
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantSecureivrsessionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationRecordingAnnotationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantCoachRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantConsultRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantMonitorRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantReplaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallbackParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallbackParticipantReplaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallbacksBulkDisconnectRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallbacksBulkUpdateRequest.java
@@ -7228,12 +7263,15 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallbacksReque
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsChatCommunicationMessagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsChatCommunicationTypingRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsChatParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsChatParticipantReplaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsChatsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCobrowsesessionParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCobrowsesessionParticipantReplaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailInboundmessagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailMessagesDraftAttachmentsCopyRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailMessagesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailParticipantReplaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailsAgentlessRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsEmailsRequest.java
@@ -7244,6 +7282,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessageCommuni
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessageCommunicationMessagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessageCommunicationTypingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessageMessagesBulkRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessageParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessageParticipantReplaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagesAgentlessRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagesInboundOpenRequest.java
@@ -7256,6 +7295,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingInteg
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingSupportedcontentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsParticipantsAttributesSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsParticipantsAttributesSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsScreenshareParticipantCommunicationWrapupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsSocialParticipantCommunicationWrapupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsVideoParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationGknSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostEmployeeperformanceExternalmetricsDataRequest.java
@@ -10525,6 +10567,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SetWrapperRoutePathRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetWrapperString.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetWrapperSyncTimeOffProperty.java
 src/main/java/com/mypurecloud/sdk/v2/model/SettingDirection.java
+src/main/java/com/mypurecloud/sdk/v2/model/Settings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Share.java
 src/main/java/com/mypurecloud/sdk/v2/model/ShareEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SharedEntity.java
@@ -11308,6 +11351,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WorkdayPointsTrendItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkdayValuesMetricItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkdayValuesTrend.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkdayValuesTrendItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkflowTargetSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsEventsNotificationCustomAttribute.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsEventsNotificationDelta.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemsEventsNotificationWorkitem.java

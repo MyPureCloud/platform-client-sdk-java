@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.WorkflowTargetSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -71,6 +72,7 @@ public class TriggerTarget  implements Serializable {
   }
   private TypeEnum type = null;
   private String id = null;
+  private WorkflowTargetSettings workflowTargetSettings = null;
 
   
   /**
@@ -109,6 +111,24 @@ public class TriggerTarget  implements Serializable {
   }
 
 
+  /**
+   * Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode.
+   **/
+  public TriggerTarget workflowTargetSettings(WorkflowTargetSettings workflowTargetSettings) {
+    this.workflowTargetSettings = workflowTargetSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode.")
+  @JsonProperty("workflowTargetSettings")
+  public WorkflowTargetSettings getWorkflowTargetSettings() {
+    return workflowTargetSettings;
+  }
+  public void setWorkflowTargetSettings(WorkflowTargetSettings workflowTargetSettings) {
+    this.workflowTargetSettings = workflowTargetSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -120,12 +140,13 @@ public class TriggerTarget  implements Serializable {
     TriggerTarget triggerTarget = (TriggerTarget) o;
 
     return Objects.equals(this.type, triggerTarget.type) &&
-            Objects.equals(this.id, triggerTarget.id);
+            Objects.equals(this.id, triggerTarget.id) &&
+            Objects.equals(this.workflowTargetSettings, triggerTarget.workflowTargetSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, id);
+    return Objects.hash(type, id, workflowTargetSettings);
   }
 
   @Override
@@ -135,6 +156,7 @@ public class TriggerTarget  implements Serializable {
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    workflowTargetSettings: ").append(toIndentedString(workflowTargetSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

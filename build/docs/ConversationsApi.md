@@ -31,9 +31,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationSecureattributes**](ConversationsApi.html#getConversationSecureattributes) | Get the secure attributes on a conversation. |
 | [**getConversations**](ConversationsApi.html#getConversations) | Get active conversations for the logged in user |
 | [**getConversationsCall**](ConversationsApi.html#getConversationsCall) | Get call conversation |
+| [**getConversationsCallParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsCallParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
 | [**getConversationsCallParticipantWrapup**](ConversationsApi.html#getConversationsCallParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsCallParticipantWrapupcodes**](ConversationsApi.html#getConversationsCallParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsCallback**](ConversationsApi.html#getConversationsCallback) | Get callback conversation |
+| [**getConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsCallbackParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
 | [**getConversationsCallbackParticipantWrapup**](ConversationsApi.html#getConversationsCallbackParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsCallbackParticipantWrapupcodes**](ConversationsApi.html#getConversationsCallbackParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsCallbacks**](ConversationsApi.html#getConversationsCallbacks) | Get active callback conversations for the logged in user |
@@ -43,10 +45,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsChat**](ConversationsApi.html#getConversationsChat) | Get chat conversation |
 | [**getConversationsChatMessage**](ConversationsApi.html#getConversationsChatMessage) | Get a web chat conversation message |
 | [**getConversationsChatMessages**](ConversationsApi.html#getConversationsChatMessages) | Get the messages of a chat conversation. |
+| [**getConversationsChatParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsChatParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
 | [**getConversationsChatParticipantWrapup**](ConversationsApi.html#getConversationsChatParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsChatParticipantWrapupcodes**](ConversationsApi.html#getConversationsChatParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsChats**](ConversationsApi.html#getConversationsChats) | Get active chat conversations for the logged in user |
 | [**getConversationsCobrowsesession**](ConversationsApi.html#getConversationsCobrowsesession) | Get cobrowse conversation |
+| [**getConversationsCobrowsesessionParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsCobrowsesessionParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
 | [**getConversationsCobrowsesessionParticipantWrapup**](ConversationsApi.html#getConversationsCobrowsesessionParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsCobrowsesessionParticipantWrapupcodes**](ConversationsApi.html#getConversationsCobrowsesessionParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsCobrowsesessions**](ConversationsApi.html#getConversationsCobrowsesessions) | Get active cobrowse conversations for the logged in user |
@@ -54,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsEmailMessage**](ConversationsApi.html#getConversationsEmailMessage) | Get conversation message |
 | [**getConversationsEmailMessages**](ConversationsApi.html#getConversationsEmailMessages) | Get conversation messages |
 | [**getConversationsEmailMessagesDraft**](ConversationsApi.html#getConversationsEmailMessagesDraft) | Get conversation draft reply |
+| [**getConversationsEmailParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsEmailParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
 | [**getConversationsEmailParticipantWrapup**](ConversationsApi.html#getConversationsEmailParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsEmailParticipantWrapupcodes**](ConversationsApi.html#getConversationsEmailParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsEmailSettings**](ConversationsApi.html#getConversationsEmailSettings) | Get emails settings for a given conversation |
@@ -64,6 +69,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessageCommunicationMessagesMediaMediaId**](ConversationsApi.html#getConversationsMessageCommunicationMessagesMediaMediaId) | Get media |
 | [**getConversationsMessageDetails**](ConversationsApi.html#getConversationsMessageDetails) | Get message |
 | [**getConversationsMessageMessage**](ConversationsApi.html#getConversationsMessageMessage) | Get conversation message |
+| [**getConversationsMessageParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsMessageParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
 | [**getConversationsMessageParticipantWrapup**](ConversationsApi.html#getConversationsMessageParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi.html#getConversationsMessageParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsMessages**](ConversationsApi.html#getConversationsMessages) | Get active message conversations for the logged in user |
@@ -84,6 +90,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#getConversationsMessagingSupportedcontentDefault) | Get the organization's default supported content profile that will be used as the default when creating an integration. |
 | [**getConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#getConversationsMessagingSupportedcontentSupportedContentId) | Get a supported content profile |
 | [**getConversationsMessagingThreadingtimeline**](ConversationsApi.html#getConversationsMessagingThreadingtimeline) | Get conversation threading window timeline for each messaging type |
+| [**getConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsScreenshareParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
+| [**getConversationsSettings**](ConversationsApi.html#getConversationsSettings) | Get Settings |
+| [**getConversationsSocialParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsSocialParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
+| [**getConversationsVideoParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsVideoParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
 | [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | Update a participant. |
 | [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationSecureattributes**](ConversationsApi.html#patchConversationSecureattributes) | Update the secure attributes on a conversation. |
@@ -118,6 +128,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | Update Twitter messaging integration |
 | [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | Update or activate a WhatsApp messaging integration |
 | [**patchConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#patchConversationsMessagingSupportedcontentSupportedContentId) | Update a supported content profile |
+| [**patchConversationsSettings**](ConversationsApi.html#patchConversationsSettings) | Update Settings |
 | [**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | Index conversation properties |
 | [**postAnalyticsConversationsAggregatesQuery**](ConversationsApi.html#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
 | [**postAnalyticsConversationsDetailsJobs**](ConversationsApi.html#postAnalyticsConversationsDetailsJobs) | Query for conversation details asynchronously |
@@ -131,10 +142,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationParticipantSecureivrsessions**](ConversationsApi.html#postConversationParticipantSecureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR. |
 | [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | Place a new call as part of a callback conversation. |
 | [**postConversationsCallParticipantCoach**](ConversationsApi.html#postConversationsCallParticipantCoach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant. |
+| [**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsCallParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | Initiate and update consult transfer |
 | [**postConversationsCallParticipantMonitor**](ConversationsApi.html#postConversationsCallParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
 | [**postConversationsCallParticipantReplace**](ConversationsApi.html#postConversationsCallParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsCallParticipants**](ConversationsApi.html#postConversationsCallParticipants) | Add participants to a conversation |
+| [**postConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsCallbackParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsCallbackParticipantReplace**](ConversationsApi.html#postConversationsCallbackParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsCallbacks**](ConversationsApi.html#postConversationsCallbacks) | Create a Callback |
 | [**postConversationsCallbacksBulkDisconnect**](ConversationsApi.html#postConversationsCallbacksBulkDisconnect) | Disconnect multiple scheduled callbacks |
@@ -142,12 +155,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsCalls**](ConversationsApi.html#postConversationsCalls) | Create a call conversation |
 | [**postConversationsChatCommunicationMessages**](ConversationsApi.html#postConversationsChatCommunicationMessages) | Send a message on behalf of a communication in a chat conversation. |
 | [**postConversationsChatCommunicationTyping**](ConversationsApi.html#postConversationsChatCommunicationTyping) | Send a typing-indicator on behalf of a communication in a chat conversation. |
+| [**postConversationsChatParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsChatParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsChatParticipantReplace**](ConversationsApi.html#postConversationsChatParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsChats**](ConversationsApi.html#postConversationsChats) | Create a web chat conversation |
+| [**postConversationsCobrowsesessionParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsCobrowsesessionParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsCobrowsesessionParticipantReplace**](ConversationsApi.html#postConversationsCobrowsesessionParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsEmailInboundmessages**](ConversationsApi.html#postConversationsEmailInboundmessages) | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it. |
 | [**postConversationsEmailMessages**](ConversationsApi.html#postConversationsEmailMessages) | Send an email reply |
 | [**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi.html#postConversationsEmailMessagesDraftAttachmentsCopy) | Copy attachments from an email message to the current draft. |
+| [**postConversationsEmailParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsEmailParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsEmailParticipantReplace**](ConversationsApi.html#postConversationsEmailParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | Create an email conversation |
 | [**postConversationsEmailsAgentless**](ConversationsApi.html#postConversationsEmailsAgentless) | Create an email conversation, per API |
@@ -158,6 +174,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi.html#postConversationsMessageCommunicationMessagesMedia) | Create media |
 | [**postConversationsMessageCommunicationTyping**](ConversationsApi.html#postConversationsMessageCommunicationTyping) | Send message typing event |
 | [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | Get messages in batch |
+| [**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsMessageParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | Create an outbound messaging conversation. |
 | [**postConversationsMessagesAgentless**](ConversationsApi.html#postConversationsMessagesAgentless) | Send an agentless outbound message |
@@ -169,6 +186,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | Create a WhatsApp Integration |
 | [**postConversationsMessagingSupportedcontent**](ConversationsApi.html#postConversationsMessagingSupportedcontent) | Create a Supported Content profile |
 | [**postConversationsParticipantsAttributesSearch**](ConversationsApi.html#postConversationsParticipantsAttributesSearch) | Search conversations |
+| [**postConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsScreenshareParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
+| [**postConversationsSocialParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsSocialParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
+| [**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsVideoParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality. |
 | [**putConversationSecureattributes**](ConversationsApi.html#putConversationSecureattributes) | Set the secure attributes on a conversation. |
 | [**putConversationTags**](ConversationsApi.html#putConversationTags) | Update the tags on a conversation. |
@@ -1662,6 +1682,72 @@ try {
 
 [**CallConversation**](CallConversation.html)
 
+<a name="getConversationsCallParticipantCommunicationWrapup"></a>
+
+# **getConversationsCallParticipantCommunicationWrapup**
+
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
+
+Get the wrap-up for this conversation communication. 
+
+Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+try {
+    AssignedWrapupCode result = apiInstance.getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsCallParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
+
 <a name="getConversationsCallParticipantWrapup"></a>
 
 # **getConversationsCallParticipantWrapup**
@@ -1847,6 +1933,72 @@ try {
 ### Return type
 
 [**CallbackConversation**](CallbackConversation.html)
+
+<a name="getConversationsCallbackParticipantCommunicationWrapup"></a>
+
+# **getConversationsCallbackParticipantCommunicationWrapup**
+
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
+
+Get the wrap-up for this conversation communication. 
+
+Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+try {
+    AssignedWrapupCode result = apiInstance.getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsCallbackParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="getConversationsCallbackParticipantWrapup"></a>
 
@@ -2402,6 +2554,72 @@ try {
 
 [**WebChatMessageEntityList**](WebChatMessageEntityList.html)
 
+<a name="getConversationsChatParticipantCommunicationWrapup"></a>
+
+# **getConversationsChatParticipantCommunicationWrapup**
+
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
+
+Get the wrap-up for this conversation communication. 
+
+Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+try {
+    AssignedWrapupCode result = apiInstance.getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsChatParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
+
 <a name="getConversationsChatParticipantWrapup"></a>
 
 # **getConversationsChatParticipantWrapup**
@@ -2643,6 +2861,72 @@ try {
 ### Return type
 
 [**CobrowseConversation**](CobrowseConversation.html)
+
+<a name="getConversationsCobrowsesessionParticipantCommunicationWrapup"></a>
+
+# **getConversationsCobrowsesessionParticipantCommunicationWrapup**
+
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
+
+Get the wrap-up for this conversation communication. 
+
+Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+try {
+    AssignedWrapupCode result = apiInstance.getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsCobrowsesessionParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="getConversationsCobrowsesessionParticipantWrapup"></a>
 
@@ -3067,6 +3351,72 @@ try {
 ### Return type
 
 [**EmailMessage**](EmailMessage.html)
+
+<a name="getConversationsEmailParticipantCommunicationWrapup"></a>
+
+# **getConversationsEmailParticipantCommunicationWrapup**
+
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
+
+Get the wrap-up for this conversation communication. 
+
+Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+try {
+    AssignedWrapupCode result = apiInstance.getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsEmailParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="getConversationsEmailParticipantWrapup"></a>
 
@@ -3685,6 +4035,72 @@ try {
 ### Return type
 
 [**MessageData**](MessageData.html)
+
+<a name="getConversationsMessageParticipantCommunicationWrapup"></a>
+
+# **getConversationsMessageParticipantCommunicationWrapup**
+
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
+
+Get the wrap-up for this conversation communication. 
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+try {
+    AssignedWrapupCode result = apiInstance.getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessageParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="getConversationsMessageParticipantWrapup"></a>
 
@@ -4964,6 +5380,261 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**ConversationThreadingWindow**](ConversationThreadingWindow.html)
+
+<a name="getConversationsScreenshareParticipantCommunicationWrapup"></a>
+
+# **getConversationsScreenshareParticipantCommunicationWrapup**
+
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
+
+Get the wrap-up for this conversation communication. 
+
+Wraps GET /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+try {
+    AssignedWrapupCode result = apiInstance.getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsScreenshareParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
+
+<a name="getConversationsSettings"></a>
+
+# **getConversationsSettings**
+
+
+
+> [Settings](Settings.html) getConversationsSettings()
+
+Get Settings
+
+Wraps GET /api/v2/conversations/settings  
+
+Requires ANY permissions: 
+
+* conversation:settings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    Settings result = apiInstance.getConversationsSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**Settings**](Settings.html)
+
+<a name="getConversationsSocialParticipantCommunicationWrapup"></a>
+
+# **getConversationsSocialParticipantCommunicationWrapup**
+
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
+
+Get the wrap-up for this conversation communication. 
+
+Wraps GET /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+try {
+    AssignedWrapupCode result = apiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsSocialParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
+
+<a name="getConversationsVideoParticipantCommunicationWrapup"></a>
+
+# **getConversationsVideoParticipantCommunicationWrapup**
+
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
+
+Get the wrap-up for this conversation communication. 
+
+Wraps GET /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+try {
+    AssignedWrapupCode result = apiInstance.getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsVideoParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="patchConversationParticipant"></a>
 
@@ -7137,6 +7808,66 @@ try {
 
 [**SupportedContent**](SupportedContent.html)
 
+<a name="patchConversationsSettings"></a>
+
+# **patchConversationsSettings**
+
+
+
+> Void patchConversationsSettings(body)
+
+Update Settings
+
+Wraps PATCH /api/v2/conversations/settings  
+
+Requires ANY permissions: 
+
+* conversation:settings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+Settings body = new Settings(); // Settings | Settings
+try {
+    apiInstance.patchConversationsSettings(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**Settings**](Settings.html)| Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="postAnalyticsConversationDetailsProperties"></a>
 
 # **postAnalyticsConversationDetailsProperties**
@@ -7958,6 +8689,72 @@ try {
 
 null (empty response body)
 
+<a name="postConversationsCallParticipantCommunicationWrapup"></a>
+
+# **postConversationsCallParticipantCommunicationWrapup**
+
+
+
+> Void postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
+
+Apply wrap-up for this conversation communication
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+try {
+    apiInstance.postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="postConversationsCallParticipantConsult"></a>
 
 # **postConversationsCallParticipantConsult**
@@ -8208,6 +9005,72 @@ try {
 ### Return type
 
 [**Conversation**](Conversation.html)
+
+<a name="postConversationsCallbackParticipantCommunicationWrapup"></a>
+
+# **postConversationsCallbackParticipantCommunicationWrapup**
+
+
+
+> Void postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
+
+Apply wrap-up for this conversation communication
+
+Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+try {
+    apiInstance.postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallbackParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="postConversationsCallbackParticipantReplace"></a>
 
@@ -8641,6 +9504,72 @@ try {
 
 [**WebChatTyping**](WebChatTyping.html)
 
+<a name="postConversationsChatParticipantCommunicationWrapup"></a>
+
+# **postConversationsChatParticipantCommunicationWrapup**
+
+
+
+> Void postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
+
+Apply wrap-up for this conversation communication
+
+Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+try {
+    apiInstance.postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsChatParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="postConversationsChatParticipantReplace"></a>
 
 # **postConversationsChatParticipantReplace**
@@ -8764,6 +9693,72 @@ try {
 ### Return type
 
 [**ChatConversation**](ChatConversation.html)
+
+<a name="postConversationsCobrowsesessionParticipantCommunicationWrapup"></a>
+
+# **postConversationsCobrowsesessionParticipantCommunicationWrapup**
+
+
+
+> Void postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
+
+Apply wrap-up for this conversation communication
+
+Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+try {
+    apiInstance.postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCobrowsesessionParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="postConversationsCobrowsesessionParticipantReplace"></a>
 
@@ -9013,6 +10008,72 @@ try {
 ### Return type
 
 [**EmailMessage**](EmailMessage.html)
+
+<a name="postConversationsEmailParticipantCommunicationWrapup"></a>
+
+# **postConversationsEmailParticipantCommunicationWrapup**
+
+
+
+> Void postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
+
+Apply wrap-up for this conversation communication
+
+Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+try {
+    apiInstance.postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsEmailParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="postConversationsEmailParticipantReplace"></a>
 
@@ -9654,6 +10715,72 @@ try {
 ### Return type
 
 [**TextMessageListing**](TextMessageListing.html)
+
+<a name="postConversationsMessageParticipantCommunicationWrapup"></a>
+
+# **postConversationsMessageParticipantCommunicationWrapup**
+
+
+
+> Void postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
+
+Apply wrap-up for this conversation communication
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+try {
+    apiInstance.postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="postConversationsMessageParticipantReplace"></a>
 
@@ -10337,6 +11464,204 @@ try {
 ### Return type
 
 [**JsonCursorSearchResponse**](JsonCursorSearchResponse.html)
+
+<a name="postConversationsScreenshareParticipantCommunicationWrapup"></a>
+
+# **postConversationsScreenshareParticipantCommunicationWrapup**
+
+
+
+> Void postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
+
+Apply wrap-up for this conversation communication
+
+Wraps POST /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+try {
+    apiInstance.postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsScreenshareParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="postConversationsSocialParticipantCommunicationWrapup"></a>
+
+# **postConversationsSocialParticipantCommunicationWrapup**
+
+
+
+> Void postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
+
+Apply wrap-up for this conversation communication
+
+Wraps POST /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+try {
+    apiInstance.postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsSocialParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="postConversationsVideoParticipantCommunicationWrapup"></a>
+
+# **postConversationsVideoParticipantCommunicationWrapup**
+
+
+
+> Void postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
+
+Apply wrap-up for this conversation communication
+
+Wraps POST /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup  
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+try {
+    apiInstance.postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsVideoParticipantCommunicationWrapup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="putConversationParticipantFlaggedreason"></a>
 
