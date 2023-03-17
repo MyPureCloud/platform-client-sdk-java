@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceEntityListing;
+import com.mypurecloud.sdk.v2.model.PresenceSettings;
 import com.mypurecloud.sdk.v2.model.Source;
 import com.mypurecloud.sdk.v2.model.SourceEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPresence;
@@ -22,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 
 import com.mypurecloud.sdk.v2.api.request.DeletePresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeletePresencedefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceUserPrimarysourceRequest;
@@ -34,6 +36,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresenceSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutPresenceSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceUserPrimarysourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresencedefinitionRequest;
@@ -202,6 +205,80 @@ public class PresenceApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the presence settings
+   * 
+   * @return PresenceSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PresenceSettings getPresenceSettings() throws IOException, ApiException {
+    return  getPresenceSettings(createGetPresenceSettingsRequest());
+  }
+
+  /**
+   * Get the presence settings
+   * 
+   * @return PresenceSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PresenceSettings> getPresenceSettingsWithHttpInfo() throws IOException {
+    return getPresenceSettings(createGetPresenceSettingsRequest().withHttpInfo());
+  }
+
+  private GetPresenceSettingsRequest createGetPresenceSettingsRequest() {
+    return GetPresenceSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the presence settings
+   * 
+   * @param request The request object
+   * @return PresenceSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PresenceSettings getPresenceSettings(GetPresenceSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PresenceSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PresenceSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the presence settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PresenceSettings> getPresenceSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PresenceSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PresenceSettings> response = (ApiResponse<PresenceSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PresenceSettings> response = (ApiResponse<PresenceSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1166,6 +1243,84 @@ public class PresenceApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the presence settings
+   * 
+   * @param body Presence Settings (required)
+   * @return PresenceSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PresenceSettings putPresenceSettings(PresenceSettings body) throws IOException, ApiException {
+    return  putPresenceSettings(createPutPresenceSettingsRequest(body));
+  }
+
+  /**
+   * Update the presence settings
+   * 
+   * @param body Presence Settings (required)
+   * @return PresenceSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PresenceSettings> putPresenceSettingsWithHttpInfo(PresenceSettings body) throws IOException {
+    return putPresenceSettings(createPutPresenceSettingsRequest(body).withHttpInfo());
+  }
+
+  private PutPresenceSettingsRequest createPutPresenceSettingsRequest(PresenceSettings body) {
+    return PutPresenceSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the presence settings
+   * 
+   * @param request The request object
+   * @return PresenceSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PresenceSettings putPresenceSettings(PutPresenceSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PresenceSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PresenceSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the presence settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PresenceSettings> putPresenceSettings(ApiRequest<PresenceSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PresenceSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PresenceSettings> response = (ApiResponse<PresenceSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PresenceSettings> response = (ApiResponse<PresenceSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

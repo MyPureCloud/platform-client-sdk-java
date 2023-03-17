@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
+import com.mypurecloud.sdk.v2.model.WrapupCodeRequest;
 import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 
@@ -6163,12 +6164,13 @@ public class RoutingApi {
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ascending)
    * @param name Wrapup code's name ('Sort by' param is ignored unless this field is provided) (optional)
+   * @param divisionId Filter by division ID(s) (optional)
    * @return WrapupCodeEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WrapupCodeEntityListing getRoutingWrapupcodes(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws IOException, ApiException {
-    return  getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, sortOrder, name));
+  public WrapupCodeEntityListing getRoutingWrapupcodes(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> divisionId) throws IOException, ApiException {
+    return  getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, sortOrder, name, divisionId));
   }
 
   /**
@@ -6179,14 +6181,15 @@ public class RoutingApi {
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ascending)
    * @param name Wrapup code's name ('Sort by' param is ignored unless this field is provided) (optional)
+   * @param divisionId Filter by division ID(s) (optional)
    * @return WrapupCodeEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws IOException {
-    return getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, sortOrder, name).withHttpInfo());
+  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> divisionId) throws IOException {
+    return getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, sortOrder, name, divisionId).withHttpInfo());
   }
 
-  private GetRoutingWrapupcodesRequest createGetRoutingWrapupcodesRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) {
+  private GetRoutingWrapupcodesRequest createGetRoutingWrapupcodesRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> divisionId) {
     return GetRoutingWrapupcodesRequest.builder()
             .withPageSize(pageSize)
 
@@ -6197,6 +6200,8 @@ public class RoutingApi {
             .withSortOrder(sortOrder)
 
             .withName(name)
+
+            .withDivisionId(divisionId)
 
             .build();
   }
@@ -9363,7 +9368,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WrapupCode postRoutingWrapupcodes(WrapupCode body) throws IOException, ApiException {
+  public WrapupCode postRoutingWrapupcodes(WrapupCodeRequest body) throws IOException, ApiException {
     return  postRoutingWrapupcodes(createPostRoutingWrapupcodesRequest(body));
   }
 
@@ -9374,11 +9379,11 @@ public class RoutingApi {
    * @return WrapupCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCode> postRoutingWrapupcodesWithHttpInfo(WrapupCode body) throws IOException {
+  public ApiResponse<WrapupCode> postRoutingWrapupcodesWithHttpInfo(WrapupCodeRequest body) throws IOException {
     return postRoutingWrapupcodes(createPostRoutingWrapupcodesRequest(body).withHttpInfo());
   }
 
-  private PostRoutingWrapupcodesRequest createPostRoutingWrapupcodesRequest(WrapupCode body) {
+  private PostRoutingWrapupcodesRequest createPostRoutingWrapupcodesRequest(WrapupCodeRequest body) {
     return PostRoutingWrapupcodesRequest.builder()
             .withBody(body)
 
@@ -9411,7 +9416,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCode> postRoutingWrapupcodes(ApiRequest<WrapupCode> request) throws IOException {
+  public ApiResponse<WrapupCode> postRoutingWrapupcodes(ApiRequest<WrapupCodeRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<WrapupCode>() {});
     }
@@ -10332,7 +10337,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WrapupCode putRoutingWrapupcode(String codeId, WrapupCode body) throws IOException, ApiException {
+  public WrapupCode putRoutingWrapupcode(String codeId, WrapupCodeRequest body) throws IOException, ApiException {
     return  putRoutingWrapupcode(createPutRoutingWrapupcodeRequest(codeId, body));
   }
 
@@ -10344,11 +10349,11 @@ public class RoutingApi {
    * @return WrapupCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCode> putRoutingWrapupcodeWithHttpInfo(String codeId, WrapupCode body) throws IOException {
+  public ApiResponse<WrapupCode> putRoutingWrapupcodeWithHttpInfo(String codeId, WrapupCodeRequest body) throws IOException {
     return putRoutingWrapupcode(createPutRoutingWrapupcodeRequest(codeId, body).withHttpInfo());
   }
 
-  private PutRoutingWrapupcodeRequest createPutRoutingWrapupcodeRequest(String codeId, WrapupCode body) {
+  private PutRoutingWrapupcodeRequest createPutRoutingWrapupcodeRequest(String codeId, WrapupCodeRequest body) {
     return PutRoutingWrapupcodeRequest.builder()
             .withCodeId(codeId)
 
@@ -10383,7 +10388,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCode> putRoutingWrapupcode(ApiRequest<WrapupCode> request) throws IOException {
+  public ApiResponse<WrapupCode> putRoutingWrapupcode(ApiRequest<WrapupCodeRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<WrapupCode>() {});
     }

@@ -94,6 +94,7 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
+import com.mypurecloud.sdk.v2.model.WrapupCodeRequest;
 import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class PutRoutingWrapupcodeRequest {
@@ -112,16 +113,16 @@ public class PutRoutingWrapupcodeRequest {
 	    return this;
 	} 
 
-	private WrapupCode body;
-	public WrapupCode getBody() {
+	private WrapupCodeRequest body;
+	public WrapupCodeRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(WrapupCode body) {
+	public void setBody(WrapupCodeRequest body) {
 		this.body = body;
 	}
 
-	public PutRoutingWrapupcodeRequest withBody(WrapupCode body) {
+	public PutRoutingWrapupcodeRequest withBody(WrapupCodeRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -145,7 +146,7 @@ public class PutRoutingWrapupcodeRequest {
         return this;
     }
 
-    public ApiRequest<WrapupCode> withHttpInfo() {
+    public ApiRequest<WrapupCodeRequest> withHttpInfo() {
         
         // verify the required parameter 'codeId' is set
         if (this.codeId == null) {
@@ -175,7 +176,7 @@ public class PutRoutingWrapupcodeRequest {
 	}
 
 
-	public static Builder builder(String codeId, WrapupCode body) {
+	public static Builder builder(String codeId, WrapupCodeRequest body) {
 	    return new Builder()
 	            .withRequiredParams(codeId, body);
 	}
@@ -194,14 +195,14 @@ public class PutRoutingWrapupcodeRequest {
 			return this;
 		}
 
-		public Builder withBody(WrapupCode body) {
+		public Builder withBody(WrapupCodeRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String codeId, WrapupCode body) {
+		public Builder withRequiredParams(String codeId, WrapupCodeRequest body) {
 			request.setCodeId(codeId);
 			request.setBody(body);
 

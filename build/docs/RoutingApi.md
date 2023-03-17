@@ -4687,7 +4687,7 @@ try {
 
 
 
-> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name)
+> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name, divisionId)
 
 Get list of wrapup codes.
 
@@ -4724,8 +4724,9 @@ Integer pageNumber = 1; // Integer | Page number
 String sortBy = "name"; // String | Sort by
 String sortOrder = "ascending"; // String | Sort order
 String name = "name_example"; // String | Wrapup code's name ('Sort by' param is ignored unless this field is provided)
+List<String> divisionId = Arrays.asList(null); // List<String> | Filter by division ID(s)
 try {
-    WrapupCodeEntityListing result = apiInstance.getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name);
+    WrapupCodeEntityListing result = apiInstance.getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingWrapupcodes");
@@ -4743,6 +4744,7 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending 
 | **name** | **String**| Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Filter by division ID(s) | [optional] 
 {: class="table-striped"}
 
 
@@ -7197,7 +7199,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-WrapupCode body = new WrapupCode(); // WrapupCode | WrapupCode
+WrapupCodeRequest body = new WrapupCodeRequest(); // WrapupCodeRequest | WrapupCode
 try {
     WrapupCode result = apiInstance.postRoutingWrapupcodes(body);
     System.out.println(result);
@@ -7212,7 +7214,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode | 
+| **body** | [**WrapupCodeRequest**](WrapupCodeRequest.html)| WrapupCode | 
 {: class="table-striped"}
 
 
@@ -7947,7 +7949,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String codeId = "codeId_example"; // String | Wrapup Code ID
-WrapupCode body = new WrapupCode(); // WrapupCode | WrapupCode
+WrapupCodeRequest body = new WrapupCodeRequest(); // WrapupCodeRequest | WrapupCode
 try {
     WrapupCode result = apiInstance.putRoutingWrapupcode(codeId, body);
     System.out.println(result);
@@ -7963,7 +7965,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **codeId** | **String**| Wrapup Code ID | 
-| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode | 
+| **body** | [**WrapupCodeRequest**](WrapupCodeRequest.html)| WrapupCode | 
 {: class="table-striped"}
 
 

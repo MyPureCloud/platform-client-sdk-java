@@ -13,6 +13,8 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.time.LocalDate;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -24,6 +26,8 @@ public class AuthorizationSettings  implements Serializable {
   private String id = null;
   private Boolean analysisEnabled = null;
   private Integer analysisDays = null;
+  private Date dateLastCalculated = null;
+  private LocalDate dateLastActive = null;
   private String selfUri = null;
 
   
@@ -48,6 +52,20 @@ public class AuthorizationSettings  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The date and time of the most recent unused role calculation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateLastCalculated")
+  public Date getDateLastCalculated() {
+    return dateLastCalculated;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The date of the most recent org activity used for analysis. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @JsonProperty("dateLastActive")
+  public LocalDate getDateLastActive() {
+    return dateLastActive;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -68,12 +86,14 @@ public class AuthorizationSettings  implements Serializable {
     return Objects.equals(this.id, authorizationSettings.id) &&
             Objects.equals(this.analysisEnabled, authorizationSettings.analysisEnabled) &&
             Objects.equals(this.analysisDays, authorizationSettings.analysisDays) &&
+            Objects.equals(this.dateLastCalculated, authorizationSettings.dateLastCalculated) &&
+            Objects.equals(this.dateLastActive, authorizationSettings.dateLastActive) &&
             Objects.equals(this.selfUri, authorizationSettings.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, analysisEnabled, analysisDays, selfUri);
+    return Objects.hash(id, analysisEnabled, analysisDays, dateLastCalculated, dateLastActive, selfUri);
   }
 
   @Override
@@ -84,6 +104,8 @@ public class AuthorizationSettings  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    analysisEnabled: ").append(toIndentedString(analysisEnabled)).append("\n");
     sb.append("    analysisDays: ").append(toIndentedString(analysisDays)).append("\n");
+    sb.append("    dateLastCalculated: ").append(toIndentedString(dateLastCalculated)).append("\n");
+    sb.append("    dateLastActive: ").append(toIndentedString(dateLastActive)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

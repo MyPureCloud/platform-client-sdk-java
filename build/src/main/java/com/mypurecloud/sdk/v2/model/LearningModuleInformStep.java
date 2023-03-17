@@ -44,7 +44,8 @@ public class LearningModuleInformStep  implements Serializable {
     URL("Url"),
     CONTENT("Content"),
     GENESYSBUILTINCOURSE("GenesysBuiltInCourse"),
-    RICHTEXT("RichText");
+    RICHTEXT("RichText"),
+    SCORM("Scorm");
 
     private String value;
 

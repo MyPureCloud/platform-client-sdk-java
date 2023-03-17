@@ -23,6 +23,7 @@ title: RecordingUploadReportRequest
 | PENDING | &quot;Pending&quot; | 
 | SUCCESS | &quot;Success&quot; | 
 | FAILURE | &quot;Failure&quot; | 
+| WAITFORCONVERSATION | &quot;WaitForConversation&quot; | 
 {: class="table table-striped"}
 
 

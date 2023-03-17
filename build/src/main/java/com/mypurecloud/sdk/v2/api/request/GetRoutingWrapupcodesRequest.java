@@ -94,6 +94,7 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
+import com.mypurecloud.sdk.v2.model.WrapupCodeRequest;
 import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class GetRoutingWrapupcodesRequest {
@@ -228,6 +229,20 @@ public class GetRoutingWrapupcodesRequest {
 	    return this;
 	} 
 
+	private List<String> divisionId;
+	public List<String> getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(List<String> divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetRoutingWrapupcodesRequest withDivisionId(List<String> divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -265,6 +280,9 @@ public class GetRoutingWrapupcodesRequest {
         
 
                 .withQueryParameters("name", "", name)
+        
+
+                .withQueryParameters("divisionId", "multi", divisionId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -327,6 +345,11 @@ public class GetRoutingWrapupcodesRequest {
 
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+
+		public Builder withDivisionId(List<String> divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 

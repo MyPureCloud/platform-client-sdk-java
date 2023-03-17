@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.StarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -24,10 +25,11 @@ public class WrapupCode  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private StarrableDivision division = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private String modifiedBy = null;
   private String createdBy = null;
+  private String modifiedBy = null;
   private String selfUri = null;
 
   
@@ -57,14 +59,32 @@ public class WrapupCode  implements Serializable {
 
 
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * The division to which this entity belongs.
+   **/
+  public WrapupCode division(StarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public StarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(StarrableDivision division) {
+    this.division = division;
+  }
+
+
+  /**
+   * Date when the assistant wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public WrapupCode dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Date when the assistant wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -75,20 +95,38 @@ public class WrapupCode  implements Serializable {
 
 
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * Date when the wrapup-code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public WrapupCode dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Date when the wrapup-code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
   public void setDateModified(Date dateModified) {
     this.dateModified = dateModified;
+  }
+
+
+  /**
+   * The wrap-up code name.
+   **/
+  public WrapupCode createdBy(String createdBy) {
+    this.createdBy = createdBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The wrap-up code name.")
+  @JsonProperty("createdBy")
+  public String getCreatedBy() {
+    return createdBy;
+  }
+  public void setCreatedBy(String createdBy) {
+    this.createdBy = createdBy;
   }
 
 
@@ -106,23 +144,6 @@ public class WrapupCode  implements Serializable {
   }
   public void setModifiedBy(String modifiedBy) {
     this.modifiedBy = modifiedBy;
-  }
-
-
-  /**
-   **/
-  public WrapupCode createdBy(String createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("createdBy")
-  public String getCreatedBy() {
-    return createdBy;
-  }
-  public void setCreatedBy(String createdBy) {
-    this.createdBy = createdBy;
   }
 
 
@@ -145,16 +166,17 @@ public class WrapupCode  implements Serializable {
 
     return Objects.equals(this.id, wrapupCode.id) &&
             Objects.equals(this.name, wrapupCode.name) &&
+            Objects.equals(this.division, wrapupCode.division) &&
             Objects.equals(this.dateCreated, wrapupCode.dateCreated) &&
             Objects.equals(this.dateModified, wrapupCode.dateModified) &&
-            Objects.equals(this.modifiedBy, wrapupCode.modifiedBy) &&
             Objects.equals(this.createdBy, wrapupCode.createdBy) &&
+            Objects.equals(this.modifiedBy, wrapupCode.modifiedBy) &&
             Objects.equals(this.selfUri, wrapupCode.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, modifiedBy, createdBy, selfUri);
+    return Objects.hash(id, name, division, dateCreated, dateModified, createdBy, modifiedBy, selfUri);
   }
 
   @Override
@@ -164,10 +186,11 @@ public class WrapupCode  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
-    sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+    sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

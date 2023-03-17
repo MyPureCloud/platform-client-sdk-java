@@ -191,7 +191,6 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonebasese
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRebootRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteOutboundroutesRequest;
-import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteRebalanceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunkbasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeRequest;
@@ -9321,81 +9320,6 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Triggers the rebalance operation.
-   * 
-   * @param siteId Site ID (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void postTelephonyProvidersEdgesSiteRebalance(String siteId) throws IOException, ApiException {
-     postTelephonyProvidersEdgesSiteRebalance(createPostTelephonyProvidersEdgesSiteRebalanceRequest(siteId));
-  }
-
-  /**
-   * Triggers the rebalance operation.
-   * 
-   * @param siteId Site ID (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> postTelephonyProvidersEdgesSiteRebalanceWithHttpInfo(String siteId) throws IOException {
-    return postTelephonyProvidersEdgesSiteRebalance(createPostTelephonyProvidersEdgesSiteRebalanceRequest(siteId).withHttpInfo());
-  }
-
-  private PostTelephonyProvidersEdgesSiteRebalanceRequest createPostTelephonyProvidersEdgesSiteRebalanceRequest(String siteId) {
-    return PostTelephonyProvidersEdgesSiteRebalanceRequest.builder()
-            .withSiteId(siteId)
-
-            .build();
-  }
-
-  /**
-   * Triggers the rebalance operation.
-   * 
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void postTelephonyProvidersEdgesSiteRebalance(PostTelephonyProvidersEdgesSiteRebalanceRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Triggers the rebalance operation.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> postTelephonyProvidersEdgesSiteRebalance(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

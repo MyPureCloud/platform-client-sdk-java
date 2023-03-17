@@ -27,6 +27,7 @@ title: LearningModuleInformStepRequest
 | URL | &quot;Url&quot; | 
 | CONTENT | &quot;Content&quot; | 
 | RICHTEXT | &quot;RichText&quot; | 
+| SCORM | &quot;Scorm&quot; | 
 {: class="table table-striped"}
 
 

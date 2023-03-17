@@ -94,6 +94,7 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
+import com.mypurecloud.sdk.v2.model.WrapupCodeRequest;
 import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class PutRoutingSettingsRequest {

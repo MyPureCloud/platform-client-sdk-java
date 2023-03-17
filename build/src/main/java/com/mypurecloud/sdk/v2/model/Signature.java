@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,6 +25,55 @@ public class Signature  implements Serializable {
   private Boolean enabled = null;
   private String cannedResponseId = null;
   private Boolean alwaysIncluded = null;
+
+  private static class InclusionTypeEnumDeserializer extends StdDeserializer<InclusionTypeEnum> {
+    public InclusionTypeEnumDeserializer() {
+      super(InclusionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public InclusionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InclusionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The configuration to indicate when the signature of a conversation has to be included
+   */
+ @JsonDeserialize(using = InclusionTypeEnumDeserializer.class)
+  public enum InclusionTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DRAFT("Draft"),
+    SEND("Send"),
+    SENDONCE("SendOnce");
+
+    private String value;
+
+    InclusionTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InclusionTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InclusionTypeEnum value : InclusionTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InclusionTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InclusionTypeEnum inclusionType = null;
 
   
   /**
@@ -80,6 +130,24 @@ public class Signature  implements Serializable {
   }
 
 
+  /**
+   * The configuration to indicate when the signature of a conversation has to be included
+   **/
+  public Signature inclusionType(InclusionTypeEnum inclusionType) {
+    this.inclusionType = inclusionType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The configuration to indicate when the signature of a conversation has to be included")
+  @JsonProperty("inclusionType")
+  public InclusionTypeEnum getInclusionType() {
+    return inclusionType;
+  }
+  public void setInclusionType(InclusionTypeEnum inclusionType) {
+    this.inclusionType = inclusionType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -92,12 +160,13 @@ public class Signature  implements Serializable {
 
     return Objects.equals(this.enabled, signature.enabled) &&
             Objects.equals(this.cannedResponseId, signature.cannedResponseId) &&
-            Objects.equals(this.alwaysIncluded, signature.alwaysIncluded);
+            Objects.equals(this.alwaysIncluded, signature.alwaysIncluded) &&
+            Objects.equals(this.inclusionType, signature.inclusionType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, cannedResponseId, alwaysIncluded);
+    return Objects.hash(enabled, cannedResponseId, alwaysIncluded, inclusionType);
   }
 
   @Override
@@ -108,6 +177,7 @@ public class Signature  implements Serializable {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    cannedResponseId: ").append(toIndentedString(cannedResponseId)).append("\n");
     sb.append("    alwaysIncluded: ").append(toIndentedString(alwaysIncluded)).append("\n");
+    sb.append("    inclusionType: ").append(toIndentedString(inclusionType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

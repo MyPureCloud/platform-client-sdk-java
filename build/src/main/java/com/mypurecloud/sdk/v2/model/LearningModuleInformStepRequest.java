@@ -44,7 +44,8 @@ public class LearningModuleInformStepRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     URL("Url"),
     CONTENT("Content"),
-    RICHTEXT("RichText");
+    RICHTEXT("RichText"),
+    SCORM("Scorm");
 
     private String value;
 

@@ -125,6 +125,7 @@ title: StatusChange
 | SUPPORTABILITY | &quot;supportability&quot; | 
 | TASK_MANAGEMENT | &quot;task.management&quot; | 
 | TELEPHONY_CONFIGURATION | &quot;telephony.configuration&quot; | 
+| USERS | &quot;users&quot; | 
 | WEB_DEPLOYMENTS | &quot;web.deployments&quot; | 
 | WEB_MESSAGING | &quot;web.messaging&quot; | 
 | WEBCHAT | &quot;webchat&quot; | 

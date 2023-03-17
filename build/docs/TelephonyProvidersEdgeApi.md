@@ -117,7 +117,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTelephonyProvidersEdgesPhones**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhones) | Create a new Phone |
 | [**postTelephonyProvidersEdgesPhonesReboot**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhonesReboot) | Reboot Multiple Phones |
 | [**postTelephonyProvidersEdgesSiteOutboundroutes**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteOutboundroutes) | Create outbound route |
-| [**postTelephonyProvidersEdgesSiteRebalance**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteRebalance) | Triggers the rebalance operation. |
 | [**postTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSites) | Create a Site. |
 | [**postTelephonyProvidersEdgesTrunkbasesettings**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesTrunkbasesettings) | Create a Trunk Base Settings object |
 | [**putTelephonyProvidersEdge**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdge) | Update a edge. |
@@ -7121,66 +7120,6 @@ try {
 ### Return type
 
 [**OutboundRouteBase**](OutboundRouteBase.html)
-
-<a name="postTelephonyProvidersEdgesSiteRebalance"></a>
-
-# **postTelephonyProvidersEdgesSiteRebalance**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> Void postTelephonyProvidersEdgesSiteRebalance(siteId)
-
-Triggers the rebalance operation.
-
-Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/rebalance  
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String siteId = "siteId_example"; // String | Site ID
-try {
-    apiInstance.postTelephonyProvidersEdgesSiteRebalance(siteId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesSiteRebalance");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
 
 <a name="postTelephonyProvidersEdgesSites"></a>
 

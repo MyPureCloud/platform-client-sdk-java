@@ -45,7 +45,8 @@ public class RecordingUploadReportRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PENDING("Pending"),
     SUCCESS("Success"),
-    FAILURE("Failure");
+    FAILURE("Failure"),
+    WAITFORCONVERSATION("WaitForConversation");
 
     private String value;
 

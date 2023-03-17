@@ -103,6 +103,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     SUPPORTABILITY("supportability"),
     TASK_MANAGEMENT("task.management"),
     TELEPHONY_CONFIGURATION("telephony.configuration"),
+    USERS("users"),
     WEB_DEPLOYMENTS("web.deployments"),
     WEB_MESSAGING("web.messaging"),
     WEBCHAT("webchat"),

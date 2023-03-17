@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceEntityListing;
+import com.mypurecloud.sdk.v2.model.PresenceSettings;
 import com.mypurecloud.sdk.v2.model.Source;
 import com.mypurecloud.sdk.v2.model.SourceEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPresence;
@@ -25,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 
 import com.mypurecloud.sdk.v2.api.request.DeletePresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeletePresencedefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceUserPrimarysourceRequest;
@@ -37,6 +39,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresenceSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutPresenceSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceUserPrimarysourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresencedefinitionRequest;
@@ -199,6 +202,81 @@ public class PresenceApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the presence settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PresenceSettings> getPresenceSettingsAsync(GetPresenceSettingsRequest request, final AsyncApiCallback<PresenceSettings> callback) {
+    try {
+      final SettableFuture<PresenceSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PresenceSettings>() {}, new AsyncApiCallback<ApiResponse<PresenceSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<PresenceSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the presence settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PresenceSettings>> getPresenceSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PresenceSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PresenceSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PresenceSettings>() {}, new AsyncApiCallback<ApiResponse<PresenceSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<PresenceSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PresenceSettings> response = (ApiResponse<PresenceSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PresenceSettings> response = (ApiResponse<PresenceSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1099,6 +1177,81 @@ public class PresenceApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the presence settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PresenceSettings> putPresenceSettingsAsync(PutPresenceSettingsRequest request, final AsyncApiCallback<PresenceSettings> callback) {
+    try {
+      final SettableFuture<PresenceSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PresenceSettings>() {}, new AsyncApiCallback<ApiResponse<PresenceSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<PresenceSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the presence settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PresenceSettings>> putPresenceSettingsAsync(ApiRequest<PresenceSettings> request, final AsyncApiCallback<ApiResponse<PresenceSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PresenceSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PresenceSettings>() {}, new AsyncApiCallback<ApiResponse<PresenceSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<PresenceSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PresenceSettings> response = (ApiResponse<PresenceSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PresenceSettings> response = (ApiResponse<PresenceSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

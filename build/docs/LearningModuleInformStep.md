@@ -28,6 +28,7 @@ title: LearningModuleInformStep
 | CONTENT | &quot;Content&quot; | 
 | GENESYSBUILTINCOURSE | &quot;GenesysBuiltInCourse&quot; | 
 | RICHTEXT | &quot;RichText&quot; | 
+| SCORM | &quot;Scorm&quot; | 
 {: class="table table-striped"}
 
 

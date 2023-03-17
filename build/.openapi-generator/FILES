@@ -1303,7 +1303,10 @@ docs/EvaluationQuestionGroupScore.md
 docs/EvaluationQuestionScore.md
 docs/EvaluationResponse.md
 docs/EvaluationScoringSet.md
+docs/EvaluationSettings.md
+docs/EvaluationSettingsAssignee.md
 docs/EvaluationSource.md
+docs/EvaluationVersion.md
 docs/EvaluatorActivity.md
 docs/EvaluatorActivityEntityListing.md
 docs/EventCoBrowse.md
@@ -2146,6 +2149,7 @@ docs/OverallBestPointsItem.md
 docs/PINConfiguration.md
 docs/Page.md
 docs/PagedNamespaceListing.md
+docs/PagelessDomainEntityListingEvaluationVersion.md
 docs/PagingSpec.md
 docs/Parameter.md
 docs/ParsedCertificate.md
@@ -2252,6 +2256,7 @@ docs/PresenceDetailQueryFilter.md
 docs/PresenceDetailQueryPredicate.md
 docs/PresenceEventOrganizationPresence.md
 docs/PresenceEventUserPresence.md
+docs/PresenceSettings.md
 docs/ProcessAutomationApi.json
 docs/ProcessAutomationApi.md
 docs/ProcessScheduleUpdateUploadRequest.md
@@ -2645,6 +2650,7 @@ docs/ResponseSetEntityListing.md
 docs/ResponseSubstitution.md
 docs/ResponseText.md
 docs/RestErrorDetail.md
+docs/RestorePresenceSettings.md
 docs/ResultCounters.md
 docs/RetentionDuration.md
 docs/ReverseWhitepagesLookupResult.md
@@ -2791,6 +2797,7 @@ docs/SessionListing.md
 docs/SessionSegmentAssignment.md
 docs/SetContentTemplateActionSettings.md
 docs/SetRecordingState.md
+docs/SetSmsPhoneNumberActionSettings.md
 docs/SetTimeOffLimitValuesRequest.md
 docs/SetUuiDataRequest.md
 docs/SetWrapperDayOfWeek.md
@@ -2860,6 +2867,7 @@ docs/SpeechTextAnalyticsApi.json
 docs/SpeechTextAnalyticsApi.md
 docs/SpeechTextAnalyticsSettingsRequest.md
 docs/SpeechTextAnalyticsSettingsResponse.md
+docs/StarrableDivision.md
 docs/StatEventCampaignTopicIntervalMetrics.md
 docs/StatEventCampaignTopicMetricStats.md
 docs/StatEventCampaignTopicStatsNotification.md
@@ -3642,10 +3650,12 @@ docs/WrapUpCodeReference.md
 docs/Wrapup.md
 docs/WrapupCode.md
 docs/WrapupCodeEntityListing.md
+docs/WrapupCodeRequest.md
 docs/WrapupDetailEventTopicWrapupEvent.md
 docs/WritableDialerContact.md
 docs/WritableDivision.md
 docs/WritableEntity.md
+docs/WritableStarrableDivision.md
 docs/deleteAlertingInteractionstatsAlert-example.txt
 docs/deleteAlertingInteractionstatsRule-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
@@ -4444,6 +4454,7 @@ docs/getOutboundSequence-example.txt
 docs/getOutboundSequences-example.txt
 docs/getOutboundSettings-example.txt
 docs/getOutboundWrapupcodemappings-example.txt
+docs/getPresenceSettings-example.txt
 docs/getPresenceSource-example.txt
 docs/getPresenceSources-example.txt
 docs/getPresenceUserPrimarysource-example.txt
@@ -5384,7 +5395,6 @@ docs/postTelephonyProvidersEdgesPhonebasesettings-example.txt
 docs/postTelephonyProvidersEdgesPhones-example.txt
 docs/postTelephonyProvidersEdgesPhonesReboot-example.txt
 docs/postTelephonyProvidersEdgesSiteOutboundroutes-example.txt
-docs/postTelephonyProvidersEdgesSiteRebalance-example.txt
 docs/postTelephonyProvidersEdgesSites-example.txt
 docs/postTelephonyProvidersEdgesTrunkbasesettings-example.txt
 docs/postTelephonySiptracesDownload-example.txt
@@ -5598,6 +5608,7 @@ docs/putOutboundSchedulesMessagingcampaign-example.txt
 docs/putOutboundSchedulesSequence-example.txt
 docs/putOutboundSequence-example.txt
 docs/putOutboundWrapupcodemappings-example.txt
+docs/putPresenceSettings-example.txt
 docs/putPresenceSource-example.txt
 docs/putPresenceUserPrimarysource-example.txt
 docs/putPresencedefinition-example.txt
@@ -6626,6 +6637,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundSequenceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundSequencesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundWrapupcodemappingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetPresenceSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetPresenceSourceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetPresenceSourcesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetPresenceUserPrimarysourceRequest.java
@@ -7566,7 +7578,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesPhon
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesPhonesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesSiteOutboundroutesRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesSiteRebalanceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesSitesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesTrunkbasesettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonySiptracesDownloadRequest.java
@@ -7780,6 +7791,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundSchedulesMessagingca
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundSchedulesSequenceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundSequenceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundWrapupcodemappingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutPresenceSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutPresenceSourceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutPresenceUserPrimarysourceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutPresencedefinitionRequest.java
@@ -9144,7 +9156,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQuestionGroupScore.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQuestionScore.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationScoringSet.java
+src/main/java/com/mypurecloud/sdk/v2/model/EvaluationSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/EvaluationSettingsAssignee.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationSource.java
+src/main/java/com/mypurecloud/sdk/v2/model/EvaluationVersion.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluatorActivity.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluatorActivityEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EventCoBrowse.java
@@ -9933,6 +9948,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/OverallBestPointsItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/PINConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/Page.java
 src/main/java/com/mypurecloud/sdk/v2/model/PagedNamespaceListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/PagelessDomainEntityListingEvaluationVersion.java
 src/main/java/com/mypurecloud/sdk/v2/model/PagingSpec.java
 src/main/java/com/mypurecloud/sdk/v2/model/Parameter.java
 src/main/java/com/mypurecloud/sdk/v2/model/ParsedCertificate.java
@@ -10037,6 +10053,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/PresenceDetailQueryFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/PresenceDetailQueryPredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/PresenceEventOrganizationPresence.java
 src/main/java/com/mypurecloud/sdk/v2/model/PresenceEventUserPresence.java
+src/main/java/com/mypurecloud/sdk/v2/model/PresenceSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProcessScheduleUpdateUploadRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/Program.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramJob.java
@@ -10422,6 +10439,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ResponseSetEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ResponseSubstitution.java
 src/main/java/com/mypurecloud/sdk/v2/model/ResponseText.java
 src/main/java/com/mypurecloud/sdk/v2/model/RestErrorDetail.java
+src/main/java/com/mypurecloud/sdk/v2/model/RestorePresenceSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ResultCounters.java
 src/main/java/com/mypurecloud/sdk/v2/model/RetentionDuration.java
 src/main/java/com/mypurecloud/sdk/v2/model/ReverseWhitepagesLookupResult.java
@@ -10560,6 +10578,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SessionListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SessionSegmentAssignment.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetContentTemplateActionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetRecordingState.java
+src/main/java/com/mypurecloud/sdk/v2/model/SetSmsPhoneNumberActionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetTimeOffLimitValuesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetUuiDataRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SetWrapperDayOfWeek.java
@@ -10627,6 +10646,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SourceEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SourcePlanningGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SpeechTextAnalyticsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SpeechTextAnalyticsSettingsResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/StarrableDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/StatEventCampaignTopicIntervalMetrics.java
 src/main/java/com/mypurecloud/sdk/v2/model/StatEventCampaignTopicMetricStats.java
 src/main/java/com/mypurecloud/sdk/v2/model/StatEventCampaignTopicStatsNotification.java
@@ -11373,9 +11393,11 @@ src/main/java/com/mypurecloud/sdk/v2/model/WrapUpCodeReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/Wrapup.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupCode.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupCodeEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/WrapupCodeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupDetailEventTopicWrapupEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/WritableDialerContact.java
 src/main/java/com/mypurecloud/sdk/v2/model/WritableDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/WritableEntity.java
+src/main/java/com/mypurecloud/sdk/v2/model/WritableStarrableDivision.java
 testng-integration.xml
 testng-unit.xml

@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deletePresenceSource**](PresenceApi.html#deletePresenceSource) | Delete a Presence Source |
 | [**deletePresencedefinition**](PresenceApi.html#deletePresencedefinition) | Delete a Presence Definition |
+| [**getPresenceSettings**](PresenceApi.html#getPresenceSettings) | Get the presence settings |
 | [**getPresenceSource**](PresenceApi.html#getPresenceSource) | Get a Presence Source |
 | [**getPresenceSources**](PresenceApi.html#getPresenceSources) | Get a list of Presence Sources |
 | [**getPresenceUserPrimarysource**](PresenceApi.html#getPresenceUserPrimarysource) | Get a user's Primary Presence Source |
@@ -21,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | Patch a Genesys Cloud user's presence |
 | [**postPresenceSources**](PresenceApi.html#postPresenceSources) | Create a Presence Source |
 | [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | Create a Presence Definition |
+| [**putPresenceSettings**](PresenceApi.html#putPresenceSettings) | Update the presence settings |
 | [**putPresenceSource**](PresenceApi.html#putPresenceSource) | Update a Presence Source |
 | [**putPresenceUserPrimarysource**](PresenceApi.html#putPresenceUserPrimarysource) | Update a user's Primary Presence Source |
 | [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | Update a Presence Definition |
@@ -147,6 +149,63 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="getPresenceSettings"></a>
+
+# **getPresenceSettings**
+
+
+
+> [PresenceSettings](PresenceSettings.html) getPresenceSettings()
+
+Get the presence settings
+
+Wraps GET /api/v2/presence/settings  
+
+Requires ALL permissions: 
+
+* presence:settings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+try {
+    PresenceSettings result = apiInstance.getPresenceSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#getPresenceSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**PresenceSettings**](PresenceSettings.html)
 
 <a name="getPresenceSource"></a>
 
@@ -893,6 +952,67 @@ try {
 ### Return type
 
 [**OrganizationPresence**](OrganizationPresence.html)
+
+<a name="putPresenceSettings"></a>
+
+# **putPresenceSettings**
+
+
+
+> [PresenceSettings](PresenceSettings.html) putPresenceSettings(body)
+
+Update the presence settings
+
+Wraps PUT /api/v2/presence/settings  
+
+Requires ALL permissions: 
+
+* presence:settings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+PresenceSettings body = new PresenceSettings(); // PresenceSettings | Presence Settings
+try {
+    PresenceSettings result = apiInstance.putPresenceSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#putPresenceSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**PresenceSettings**](PresenceSettings.html)| Presence Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PresenceSettings**](PresenceSettings.html)
 
 <a name="putPresenceSource"></a>
 

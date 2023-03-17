@@ -60,7 +60,9 @@ public class EvaluationResponse  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PENDING("PENDING"),
     INPROGRESS("INPROGRESS"),
-    FINISHED("FINISHED");
+    FINISHED("FINISHED"),
+    INREVIEW("INREVIEW"),
+    RETRACTED("RETRACTED");
 
     private String value;
 

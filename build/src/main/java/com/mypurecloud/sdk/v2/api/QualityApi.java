@@ -1182,7 +1182,7 @@ public class QualityApi {
    * @param agentHasRead agent has the evaluation (optional)
    * @param expandAnswerTotalScores get the total scores for evaluations (optional)
    * @param maximum maximum (optional)
-   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending' (optional)
+   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId (optional)
    * @return EvaluationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1212,7 +1212,7 @@ public class QualityApi {
    * @param agentHasRead agent has the evaluation (optional)
    * @param expandAnswerTotalScores get the total scores for evaluations (optional)
    * @param maximum maximum (optional)
-   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending' (optional)
+   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId (optional)
    * @return EvaluationEntityListing
    * @throws IOException if the request fails to be processed
    */

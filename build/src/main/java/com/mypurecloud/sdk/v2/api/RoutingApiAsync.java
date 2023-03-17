@@ -87,6 +87,7 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
+import com.mypurecloud.sdk.v2.model.WrapupCodeRequest;
 import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 
@@ -8601,7 +8602,7 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WrapupCode>> postRoutingWrapupcodesAsync(ApiRequest<WrapupCode> request, final AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
+  public Future<ApiResponse<WrapupCode>> postRoutingWrapupcodesAsync(ApiRequest<WrapupCodeRequest> request, final AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
     try {
       final SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -9501,7 +9502,7 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WrapupCode>> putRoutingWrapupcodeAsync(ApiRequest<WrapupCode> request, final AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
+  public Future<ApiResponse<WrapupCode>> putRoutingWrapupcodeAsync(ApiRequest<WrapupCodeRequest> request, final AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
     try {
       final SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

@@ -49,6 +49,8 @@ title: Evaluation
 | PENDING | &quot;PENDING&quot; | 
 | INPROGRESS | &quot;INPROGRESS&quot; | 
 | FINISHED | &quot;FINISHED&quot; | 
+| INREVIEW | &quot;INREVIEW&quot; | 
+| RETRACTED | &quot;RETRACTED&quot; | 
 {: class="table table-striped"}
 
 
