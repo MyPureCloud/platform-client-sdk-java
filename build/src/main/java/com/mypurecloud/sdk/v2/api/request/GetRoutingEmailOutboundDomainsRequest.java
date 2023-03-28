@@ -99,6 +99,20 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class GetRoutingEmailOutboundDomainsRequest {
 
+	private String filter;
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+	}
+
+	public GetRoutingEmailOutboundDomainsRequest withFilter(String filter) {
+	    this.setFilter(filter);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -122,6 +136,9 @@ public class GetRoutingEmailOutboundDomainsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/email/outbound/domains")
+
+                .withQueryParameters("filter", "", filter)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -142,6 +159,11 @@ public class GetRoutingEmailOutboundDomainsRequest {
 			request = new GetRoutingEmailOutboundDomainsRequest();
 		}
 
+
+		public Builder withFilter(String filter) {
+			request.setFilter(filter);
+			return this;
+		}
 
 
 

@@ -1180,30 +1180,34 @@ public class AuthorizationApi {
    * Get a single organization role.
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
+   * @param userCount Fetch the count of users who have this role granted in at least one division (optional, default to true)
    * @param expand Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role (optional)
    * @return DomainOrganizationRole
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DomainOrganizationRole getAuthorizationRole(String roleId, List<String> expand) throws IOException, ApiException {
-    return  getAuthorizationRole(createGetAuthorizationRoleRequest(roleId, expand));
+  public DomainOrganizationRole getAuthorizationRole(String roleId, Boolean userCount, List<String> expand) throws IOException, ApiException {
+    return  getAuthorizationRole(createGetAuthorizationRoleRequest(roleId, userCount, expand));
   }
 
   /**
    * Get a single organization role.
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
+   * @param userCount Fetch the count of users who have this role granted in at least one division (optional, default to true)
    * @param expand Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role (optional)
    * @return DomainOrganizationRole
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrganizationRole> getAuthorizationRoleWithHttpInfo(String roleId, List<String> expand) throws IOException {
-    return getAuthorizationRole(createGetAuthorizationRoleRequest(roleId, expand).withHttpInfo());
+  public ApiResponse<DomainOrganizationRole> getAuthorizationRoleWithHttpInfo(String roleId, Boolean userCount, List<String> expand) throws IOException {
+    return getAuthorizationRole(createGetAuthorizationRoleRequest(roleId, userCount, expand).withHttpInfo());
   }
 
-  private GetAuthorizationRoleRequest createGetAuthorizationRoleRequest(String roleId, List<String> expand) {
+  private GetAuthorizationRoleRequest createGetAuthorizationRoleRequest(String roleId, Boolean userCount, List<String> expand) {
     return GetAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
+
+            .withUserCount(userCount)
 
             .withExpand(expand)
 

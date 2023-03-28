@@ -361,7 +361,7 @@ public class AnalyticsApi {
 
   /**
    * Get Reporting Turns.
-   * 
+   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
    * @param botFlowId ID of the bot flow. (required)
    * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
    * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
@@ -379,7 +379,7 @@ public class AnalyticsApi {
 
   /**
    * Get Reporting Turns.
-   * 
+   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
    * @param botFlowId ID of the bot flow. (required)
    * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
    * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
@@ -415,7 +415,7 @@ public class AnalyticsApi {
 
   /**
    * Get Reporting Turns.
-   * 
+   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
    * @param request The request object
    * @return ReportingTurnsResponse
    * @throws ApiException if the request fails on the server
@@ -434,7 +434,7 @@ public class AnalyticsApi {
 
   /**
    * Get Reporting Turns.
-   * 
+   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

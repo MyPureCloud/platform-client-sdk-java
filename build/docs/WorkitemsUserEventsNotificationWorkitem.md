@@ -37,6 +37,7 @@ title: WorkitemsUserEventsNotificationWorkitem
 | **alertTimeoutSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **customFields** | <!----><!---->[**Map&lt;String, WorkitemsUserEventsNotificationCustomAttribute&gt;**](WorkitemsUserEventsNotificationCustomAttribute.html)<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**WorkitemsUserEventsNotificationWrapup**](WorkitemsUserEventsNotificationWrapup.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

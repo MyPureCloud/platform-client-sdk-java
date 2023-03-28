@@ -14,6 +14,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -73,6 +76,7 @@ public class FaxSendResponse  implements Serializable {
     }
   }
   private UploadMethodTypeEnum uploadMethodType = null;
+  private Map<String, String> headers = null;
   private String selfUri = null;
 
   
@@ -134,6 +138,23 @@ public class FaxSendResponse  implements Serializable {
   }
 
 
+  /**
+   **/
+  public FaxSendResponse headers(Map<String, String> headers) {
+    this.headers = headers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("headers")
+  public Map<String, String> getHeaders() {
+    return headers;
+  }
+  public void setHeaders(Map<String, String> headers) {
+    this.headers = headers;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -155,12 +176,13 @@ public class FaxSendResponse  implements Serializable {
             Objects.equals(this.name, faxSendResponse.name) &&
             Objects.equals(this.uploadDestinationUri, faxSendResponse.uploadDestinationUri) &&
             Objects.equals(this.uploadMethodType, faxSendResponse.uploadMethodType) &&
+            Objects.equals(this.headers, faxSendResponse.headers) &&
             Objects.equals(this.selfUri, faxSendResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, uploadDestinationUri, uploadMethodType, selfUri);
+    return Objects.hash(id, name, uploadDestinationUri, uploadMethodType, headers, selfUri);
   }
 
   @Override
@@ -172,6 +194,7 @@ public class FaxSendResponse  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    uploadDestinationUri: ").append(toIndentedString(uploadDestinationUri)).append("\n");
     sb.append("    uploadMethodType: ").append(toIndentedString(uploadMethodType)).append("\n");
+    sb.append("    headers: ").append(toIndentedString(headers)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

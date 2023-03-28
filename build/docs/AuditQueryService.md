@@ -32,6 +32,7 @@ title: AuditQueryService
 | DYNAMICSCHEMA | &quot;DynamicSchema&quot; | 
 | EMAILS | &quot;Emails&quot; | 
 | EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; | 
+| EXTERNALCONTACTS | &quot;ExternalContacts&quot; | 
 | GAMIFICATION | &quot;Gamification&quot; | 
 | GDPR | &quot;GDPR&quot; | 
 | GROUPS | &quot;Groups&quot; | 

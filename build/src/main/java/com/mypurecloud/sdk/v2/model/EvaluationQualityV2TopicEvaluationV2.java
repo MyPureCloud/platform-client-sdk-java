@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicCalibration;
 import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicEvaluationScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicEvaluationSource;
 import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -98,6 +99,9 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   private Date conversationDate = null;
   private List<String> mediaType = new ArrayList<String>();
   private EvaluationQualityV2TopicCalibration calibration = null;
+  private EvaluationQualityV2TopicEvaluationSource evaluationSource = null;
+  private String assigneeUserId = null;
+  private String previousAssigneeUserId = null;
 
   
   /**
@@ -474,6 +478,57 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   }
 
 
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 evaluationSource(EvaluationQualityV2TopicEvaluationSource evaluationSource) {
+    this.evaluationSource = evaluationSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("evaluationSource")
+  public EvaluationQualityV2TopicEvaluationSource getEvaluationSource() {
+    return evaluationSource;
+  }
+  public void setEvaluationSource(EvaluationQualityV2TopicEvaluationSource evaluationSource) {
+    this.evaluationSource = evaluationSource;
+  }
+
+
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 assigneeUserId(String assigneeUserId) {
+    this.assigneeUserId = assigneeUserId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("assigneeUserId")
+  public String getAssigneeUserId() {
+    return assigneeUserId;
+  }
+  public void setAssigneeUserId(String assigneeUserId) {
+    this.assigneeUserId = assigneeUserId;
+  }
+
+
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 previousAssigneeUserId(String previousAssigneeUserId) {
+    this.previousAssigneeUserId = previousAssigneeUserId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousAssigneeUserId")
+  public String getPreviousAssigneeUserId() {
+    return previousAssigneeUserId;
+  }
+  public void setPreviousAssigneeUserId(String previousAssigneeUserId) {
+    this.previousAssigneeUserId = previousAssigneeUserId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -505,12 +560,15 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
             Objects.equals(this.rescore, evaluationQualityV2TopicEvaluationV2.rescore) &&
             Objects.equals(this.conversationDate, evaluationQualityV2TopicEvaluationV2.conversationDate) &&
             Objects.equals(this.mediaType, evaluationQualityV2TopicEvaluationV2.mediaType) &&
-            Objects.equals(this.calibration, evaluationQualityV2TopicEvaluationV2.calibration);
+            Objects.equals(this.calibration, evaluationQualityV2TopicEvaluationV2.calibration) &&
+            Objects.equals(this.evaluationSource, evaluationQualityV2TopicEvaluationV2.evaluationSource) &&
+            Objects.equals(this.assigneeUserId, evaluationQualityV2TopicEvaluationV2.assigneeUserId) &&
+            Objects.equals(this.previousAssigneeUserId, evaluationQualityV2TopicEvaluationV2.previousAssigneeUserId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType, calibration);
+    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType, calibration, evaluationSource, assigneeUserId, previousAssigneeUserId);
   }
 
   @Override
@@ -540,6 +598,9 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     sb.append("    conversationDate: ").append(toIndentedString(conversationDate)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    calibration: ").append(toIndentedString(calibration)).append("\n");
+    sb.append("    evaluationSource: ").append(toIndentedString(evaluationSource)).append("\n");
+    sb.append("    assigneeUserId: ").append(toIndentedString(assigneeUserId)).append("\n");
+    sb.append("    previousAssigneeUserId: ").append(toIndentedString(previousAssigneeUserId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

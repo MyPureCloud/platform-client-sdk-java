@@ -15,8 +15,11 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetChatSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutChatSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutChatsSettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,7 +40,7 @@ public class ChatApi {
 
   /**
    * Get Chat Settings.
-   * 
+   * This route is deprecated, please use /chats/settings instead
    * @return ChatSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -48,7 +51,7 @@ public class ChatApi {
 
   /**
    * Get Chat Settings.
-   * 
+   * This route is deprecated, please use /chats/settings instead
    * @return ChatSettings
    * @throws IOException if the request fails to be processed
    */
@@ -63,7 +66,7 @@ public class ChatApi {
 
   /**
    * Get Chat Settings.
-   * 
+   * This route is deprecated, please use /chats/settings instead
    * @param request The request object
    * @return ChatSettings
    * @throws ApiException if the request fails on the server
@@ -82,7 +85,7 @@ public class ChatApi {
 
   /**
    * Get Chat Settings.
-   * 
+   * This route is deprecated, please use /chats/settings instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -110,8 +113,82 @@ public class ChatApi {
   }
 
   /**
-   * Patch Chat Settings.
+   * Get Chat Settings.
    * 
+   * @return ChatSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatSettings getChatsSettings() throws IOException, ApiException {
+    return  getChatsSettings(createGetChatsSettingsRequest());
+  }
+
+  /**
+   * Get Chat Settings.
+   * 
+   * @return ChatSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatSettings> getChatsSettingsWithHttpInfo() throws IOException {
+    return getChatsSettings(createGetChatsSettingsRequest().withHttpInfo());
+  }
+
+  private GetChatsSettingsRequest createGetChatsSettingsRequest() {
+    return GetChatsSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get Chat Settings.
+   * 
+   * @param request The request object
+   * @return ChatSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatSettings getChatsSettings(GetChatsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ChatSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Chat Settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatSettings> getChatsSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChatSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Patch Chat Settings.
+   * This route is deprecated, please use /chats/settings instead
    * @param body Chat (required)
    * @return ChatSettings
    * @throws ApiException if the request fails on the server
@@ -123,7 +200,7 @@ public class ChatApi {
 
   /**
    * Patch Chat Settings.
-   * 
+   * This route is deprecated, please use /chats/settings instead
    * @param body Chat (required)
    * @return ChatSettings
    * @throws IOException if the request fails to be processed
@@ -141,7 +218,7 @@ public class ChatApi {
 
   /**
    * Patch Chat Settings.
-   * 
+   * This route is deprecated, please use /chats/settings instead
    * @param request The request object
    * @return ChatSettings
    * @throws ApiException if the request fails on the server
@@ -160,12 +237,168 @@ public class ChatApi {
 
   /**
    * Patch Chat Settings.
-   * 
+   * This route is deprecated, please use /chats/settings instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<ChatSettings> patchChatSettings(ApiRequest<ChatSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChatSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Patch Chat Settings.
+   * 
+   * @param body Chat (required)
+   * @return ChatSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatSettings patchChatsSettings(ChatSettings body) throws IOException, ApiException {
+    return  patchChatsSettings(createPatchChatsSettingsRequest(body));
+  }
+
+  /**
+   * Patch Chat Settings.
+   * 
+   * @param body Chat (required)
+   * @return ChatSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatSettings> patchChatsSettingsWithHttpInfo(ChatSettings body) throws IOException {
+    return patchChatsSettings(createPatchChatsSettingsRequest(body).withHttpInfo());
+  }
+
+  private PatchChatsSettingsRequest createPatchChatsSettingsRequest(ChatSettings body) {
+    return PatchChatsSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Patch Chat Settings.
+   * 
+   * @param request The request object
+   * @return ChatSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatSettings patchChatsSettings(PatchChatsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ChatSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Patch Chat Settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatSettings> patchChatsSettings(ApiRequest<ChatSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChatSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update Chat Settings.
+   * This route is deprecated, please use /chats/settings instead
+   * @param body Chat (required)
+   * @return ChatSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatSettings putChatSettings(ChatSettings body) throws IOException, ApiException {
+    return  putChatSettings(createPutChatSettingsRequest(body));
+  }
+
+  /**
+   * Update Chat Settings.
+   * This route is deprecated, please use /chats/settings instead
+   * @param body Chat (required)
+   * @return ChatSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatSettings> putChatSettingsWithHttpInfo(ChatSettings body) throws IOException {
+    return putChatSettings(createPutChatSettingsRequest(body).withHttpInfo());
+  }
+
+  private PutChatSettingsRequest createPutChatSettingsRequest(ChatSettings body) {
+    return PutChatSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Chat Settings.
+   * This route is deprecated, please use /chats/settings instead
+   * @param request The request object
+   * @return ChatSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatSettings putChatSettings(PutChatSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ChatSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Chat Settings.
+   * This route is deprecated, please use /chats/settings instead
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatSettings> putChatSettings(ApiRequest<ChatSettings> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<ChatSettings>() {});
     }
@@ -195,8 +428,8 @@ public class ChatApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatSettings putChatSettings(ChatSettings body) throws IOException, ApiException {
-    return  putChatSettings(createPutChatSettingsRequest(body));
+  public ChatSettings putChatsSettings(ChatSettings body) throws IOException, ApiException {
+    return  putChatsSettings(createPutChatsSettingsRequest(body));
   }
 
   /**
@@ -206,12 +439,12 @@ public class ChatApi {
    * @return ChatSettings
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatSettings> putChatSettingsWithHttpInfo(ChatSettings body) throws IOException {
-    return putChatSettings(createPutChatSettingsRequest(body).withHttpInfo());
+  public ApiResponse<ChatSettings> putChatsSettingsWithHttpInfo(ChatSettings body) throws IOException {
+    return putChatsSettings(createPutChatsSettingsRequest(body).withHttpInfo());
   }
 
-  private PutChatSettingsRequest createPutChatSettingsRequest(ChatSettings body) {
-    return PutChatSettingsRequest.builder()
+  private PutChatsSettingsRequest createPutChatsSettingsRequest(ChatSettings body) {
+    return PutChatsSettingsRequest.builder()
             .withBody(body)
 
             .build();
@@ -225,7 +458,7 @@ public class ChatApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatSettings putChatSettings(PutChatSettingsRequest request) throws IOException, ApiException {
+  public ChatSettings putChatsSettings(PutChatsSettingsRequest request) throws IOException, ApiException {
     try {
       ApiResponse<ChatSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatSettings>() {});
       return response.getBody();
@@ -243,7 +476,7 @@ public class ChatApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatSettings> putChatSettings(ApiRequest<ChatSettings> request) throws IOException {
+  public ApiResponse<ChatSettings> putChatsSettings(ApiRequest<ChatSettings> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<ChatSettings>() {});
     }

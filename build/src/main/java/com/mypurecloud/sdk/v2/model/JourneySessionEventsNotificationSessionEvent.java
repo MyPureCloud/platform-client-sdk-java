@@ -17,8 +17,6 @@ import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationConnectedQue
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationConversation;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationConversationChannel;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationConversationUserDisposition;
-import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationCustomEventAttribute;
-import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationCustomEventAttributeList;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationDevice;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationExternalContact;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationGeoLocation;
@@ -33,9 +31,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -54,8 +50,6 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   private String type = null;
   private List<JourneySessionEventsNotificationOutcomeAchievement> outcomeAchievements = new ArrayList<JourneySessionEventsNotificationOutcomeAchievement>();
   private List<JourneySessionEventsNotificationSegmentAssignment> segmentAssignments = new ArrayList<JourneySessionEventsNotificationSegmentAssignment>();
-  private Map<String, JourneySessionEventsNotificationCustomEventAttribute> attributes = null;
-  private Map<String, JourneySessionEventsNotificationCustomEventAttributeList> attributeLists = null;
   private Date awayDate = null;
   private JourneySessionEventsNotificationBrowser browser = null;
   private JourneySessionEventsNotificationDevice device = null;
@@ -411,40 +405,6 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   }
   public void setSegmentAssignments(List<JourneySessionEventsNotificationSegmentAssignment> segmentAssignments) {
     this.segmentAssignments = segmentAssignments;
-  }
-
-
-  /**
-   **/
-  public JourneySessionEventsNotificationSessionEvent attributes(Map<String, JourneySessionEventsNotificationCustomEventAttribute> attributes) {
-    this.attributes = attributes;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("attributes")
-  public Map<String, JourneySessionEventsNotificationCustomEventAttribute> getAttributes() {
-    return attributes;
-  }
-  public void setAttributes(Map<String, JourneySessionEventsNotificationCustomEventAttribute> attributes) {
-    this.attributes = attributes;
-  }
-
-
-  /**
-   **/
-  public JourneySessionEventsNotificationSessionEvent attributeLists(Map<String, JourneySessionEventsNotificationCustomEventAttributeList> attributeLists) {
-    this.attributeLists = attributeLists;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("attributeLists")
-  public Map<String, JourneySessionEventsNotificationCustomEventAttributeList> getAttributeLists() {
-    return attributeLists;
-  }
-  public void setAttributeLists(Map<String, JourneySessionEventsNotificationCustomEventAttributeList> attributeLists) {
-    this.attributeLists = attributeLists;
   }
 
 
@@ -927,8 +887,6 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
             Objects.equals(this.type, journeySessionEventsNotificationSessionEvent.type) &&
             Objects.equals(this.outcomeAchievements, journeySessionEventsNotificationSessionEvent.outcomeAchievements) &&
             Objects.equals(this.segmentAssignments, journeySessionEventsNotificationSessionEvent.segmentAssignments) &&
-            Objects.equals(this.attributes, journeySessionEventsNotificationSessionEvent.attributes) &&
-            Objects.equals(this.attributeLists, journeySessionEventsNotificationSessionEvent.attributeLists) &&
             Objects.equals(this.awayDate, journeySessionEventsNotificationSessionEvent.awayDate) &&
             Objects.equals(this.browser, journeySessionEventsNotificationSessionEvent.browser) &&
             Objects.equals(this.device, journeySessionEventsNotificationSessionEvent.device) &&
@@ -960,7 +918,7 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, selfUri, createdDate, endedDate, externalContact, customerId, customerIdType, type, outcomeAchievements, segmentAssignments, attributes, attributeLists, awayDate, browser, device, geolocation, idleDate, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, originatingDirection, conversationSubject, lastUserDisposition, lastConnectedUser, lastConnectedQueue, conversationChannels, lastUserDisconnectType, lastAcdOutcome, authenticated);
+    return Objects.hash(id, selfUri, createdDate, endedDate, externalContact, customerId, customerIdType, type, outcomeAchievements, segmentAssignments, awayDate, browser, device, geolocation, idleDate, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, originatingDirection, conversationSubject, lastUserDisposition, lastConnectedUser, lastConnectedQueue, conversationChannels, lastUserDisconnectType, lastAcdOutcome, authenticated);
   }
 
   @Override
@@ -978,8 +936,6 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    outcomeAchievements: ").append(toIndentedString(outcomeAchievements)).append("\n");
     sb.append("    segmentAssignments: ").append(toIndentedString(segmentAssignments)).append("\n");
-    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
-    sb.append("    attributeLists: ").append(toIndentedString(attributeLists)).append("\n");
     sb.append("    awayDate: ").append(toIndentedString(awayDate)).append("\n");
     sb.append("    browser: ").append(toIndentedString(browser)).append("\n");
     sb.append("    device: ").append(toIndentedString(device)).append("\n");

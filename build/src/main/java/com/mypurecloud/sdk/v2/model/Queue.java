@@ -18,9 +18,9 @@ import com.mypurecloud.sdk.v2.model.Bullseye;
 import com.mypurecloud.sdk.v2.model.DirectRouting;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
-import com.mypurecloud.sdk.v2.model.MediaSetting;
 import com.mypurecloud.sdk.v2.model.MemberGroup;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
+import com.mypurecloud.sdk.v2.model.QueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.QueueMessagingAddresses;
 import com.mypurecloud.sdk.v2.model.RoutingRule;
 import com.mypurecloud.sdk.v2.model.Script;
@@ -50,7 +50,7 @@ public class Queue  implements Serializable {
   private Integer memberCount = null;
   private Integer userMemberCount = null;
   private Integer joinedMemberCount = null;
-  private Map<String, MediaSetting> mediaSettings = null;
+  private QueueMediaSettings mediaSettings = null;
   private List<RoutingRule> routingRules = new ArrayList<RoutingRule>();
   private Bullseye bullseye = null;
   private AcwSettings acwSettings = null;
@@ -277,19 +277,19 @@ public class Queue  implements Serializable {
 
 
   /**
-   * The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM
+   * The media settings for the queue.
    **/
-  public Queue mediaSettings(Map<String, MediaSetting> mediaSettings) {
+  public Queue mediaSettings(QueueMediaSettings mediaSettings) {
     this.mediaSettings = mediaSettings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM")
+  @ApiModelProperty(example = "null", value = "The media settings for the queue.")
   @JsonProperty("mediaSettings")
-  public Map<String, MediaSetting> getMediaSettings() {
+  public QueueMediaSettings getMediaSettings() {
     return mediaSettings;
   }
-  public void setMediaSettings(Map<String, MediaSetting> mediaSettings) {
+  public void setMediaSettings(QueueMediaSettings mediaSettings) {
     this.mediaSettings = mediaSettings;
   }
 

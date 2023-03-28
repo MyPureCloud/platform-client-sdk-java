@@ -365,7 +365,7 @@ public class AnalyticsApiAsync {
 
   /**
    * Get Reporting Turns.
-   * 
+   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -399,7 +399,7 @@ public class AnalyticsApiAsync {
 
   /**
    * Get Reporting Turns.
-   * 
+   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

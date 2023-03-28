@@ -56,6 +56,20 @@ public class GetAuthorizationRoleRequest {
 	    return this;
 	} 
 
+	private Boolean userCount;
+	public Boolean getUserCount() {
+		return this.userCount;
+	}
+
+	public void setUserCount(Boolean userCount) {
+		this.userCount = userCount;
+	}
+
+	public GetAuthorizationRoleRequest withUserCount(Boolean userCount) {
+	    this.setUserCount(userCount);
+	    return this;
+	} 
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -130,6 +144,9 @@ public class GetAuthorizationRoleRequest {
                 .withPathParameter("roleId", roleId)
         
 
+                .withQueryParameters("userCount", "", userCount)
+        
+
                 .withQueryParameters("expand", "multi", expand)
         
 		.withCustomHeaders(customHeaders)
@@ -160,6 +177,11 @@ public class GetAuthorizationRoleRequest {
 
 		public Builder withRoleId(String roleId) {
 			request.setRoleId(roleId);
+			return this;
+		}
+
+		public Builder withUserCount(Boolean userCount) {
+			request.setUserCount(userCount);
 			return this;
 		}
 

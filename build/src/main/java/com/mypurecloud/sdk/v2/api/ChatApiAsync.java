@@ -18,8 +18,11 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetChatSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutChatSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutChatsSettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,7 +44,7 @@ public class ChatApiAsync {
 
   /**
    * Get Chat Settings.
-   * 
+   * This route is deprecated, please use /chats/settings instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -75,7 +78,7 @@ public class ChatApiAsync {
 
   /**
    * Get Chat Settings.
-   * 
+   * This route is deprecated, please use /chats/settings instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -115,8 +118,83 @@ public class ChatApiAsync {
   }
 
   /**
-   * Patch Chat Settings.
+   * Get Chat Settings.
    * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ChatSettings> getChatsSettingsAsync(GetChatsSettingsRequest request, final AsyncApiCallback<ChatSettings> callback) {
+    try {
+      final SettableFuture<ChatSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChatSettings>() {}, new AsyncApiCallback<ApiResponse<ChatSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Chat Settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ChatSettings>> getChatsSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ChatSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ChatSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChatSettings>() {}, new AsyncApiCallback<ApiResponse<ChatSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch Chat Settings.
+   * This route is deprecated, please use /chats/settings instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -150,12 +228,162 @@ public class ChatApiAsync {
 
   /**
    * Patch Chat Settings.
-   * 
+   * This route is deprecated, please use /chats/settings instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ChatSettings>> patchChatSettingsAsync(ApiRequest<ChatSettings> request, final AsyncApiCallback<ApiResponse<ChatSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ChatSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChatSettings>() {}, new AsyncApiCallback<ApiResponse<ChatSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch Chat Settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ChatSettings> patchChatsSettingsAsync(PatchChatsSettingsRequest request, final AsyncApiCallback<ChatSettings> callback) {
+    try {
+      final SettableFuture<ChatSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChatSettings>() {}, new AsyncApiCallback<ApiResponse<ChatSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch Chat Settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ChatSettings>> patchChatsSettingsAsync(ApiRequest<ChatSettings> request, final AsyncApiCallback<ApiResponse<ChatSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ChatSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChatSettings>() {}, new AsyncApiCallback<ApiResponse<ChatSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatSettings> response = (ApiResponse<ChatSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Chat Settings.
+   * This route is deprecated, please use /chats/settings instead
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ChatSettings> putChatSettingsAsync(PutChatSettingsRequest request, final AsyncApiCallback<ChatSettings> callback) {
+    try {
+      final SettableFuture<ChatSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChatSettings>() {}, new AsyncApiCallback<ApiResponse<ChatSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Chat Settings.
+   * This route is deprecated, please use /chats/settings instead
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ChatSettings>> putChatSettingsAsync(ApiRequest<ChatSettings> request, final AsyncApiCallback<ApiResponse<ChatSettings>> callback) {
     try {
       final SettableFuture<ApiResponse<ChatSettings>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -196,7 +424,7 @@ public class ChatApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ChatSettings> putChatSettingsAsync(PutChatSettingsRequest request, final AsyncApiCallback<ChatSettings> callback) {
+  public Future<ChatSettings> putChatsSettingsAsync(PutChatsSettingsRequest request, final AsyncApiCallback<ChatSettings> callback) {
     try {
       final SettableFuture<ChatSettings> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -230,7 +458,7 @@ public class ChatApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ChatSettings>> putChatSettingsAsync(ApiRequest<ChatSettings> request, final AsyncApiCallback<ApiResponse<ChatSettings>> callback) {
+  public Future<ApiResponse<ChatSettings>> putChatsSettingsAsync(ApiRequest<ChatSettings> request, final AsyncApiCallback<ApiResponse<ChatSettings>> callback) {
     try {
       final SettableFuture<ApiResponse<ChatSettings>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

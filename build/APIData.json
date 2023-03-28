@@ -3789,12 +3789,17 @@
   "getauthorizationrole": {
     "operationId": "getauthorizationrole",
     "functionName": "getAuthorizationRole",
-    "signature": "getAuthorizationRole(roleId, expand)",
+    "signature": "getAuthorizationRole(roleId, userCount, expand)",
     "parameters": [
       {
         "name": "roleId",
         "type": "String",
         "required": "true"
+      },
+      {
+        "name": "userCount",
+        "type": "Boolean",
+        "required": "false"
       },
       {
         "name": "expand",
@@ -3803,7 +3808,7 @@
       }
     ],
     "return": "DomainOrganizationRole",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.AuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;\n\npublic class ExamplegetAuthorizationRole {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        AuthorizationApi apiInstance = new AuthorizationApi();\n        String roleId = \"roleId_example\"; // String | Role ID\nList<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand. \\\"unusedPermissions\\\" returns the permissions not used for the role\n        try { \n            // Get a single organization role.\n            DomainOrganizationRole result = apiInstance.getAuthorizationRole(roleId, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling AuthorizationApi#getAuthorizationRole\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.AuthorizationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;\n\npublic class ExamplegetAuthorizationRole {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        AuthorizationApi apiInstance = new AuthorizationApi();\n        String roleId = \"roleId_example\"; // String | Role ID\nBoolean userCount = true; // Boolean | Fetch the count of users who have this role granted in at least one division\nList<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand. \\\"unusedPermissions\\\" returns the permissions not used for the role\n        try { \n            // Get a single organization role.\n            DomainOrganizationRole result = apiInstance.getAuthorizationRole(roleId, userCount, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling AuthorizationApi#getAuthorizationRole\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getauthorizationrolecomparedefaultrightroleid": {
     "operationId": "getauthorizationrolecomparedefaultrightroleid",
@@ -4422,6 +4427,13 @@
     "return": "ChatSettings",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ChatApi;\nimport com.mypurecloud.sdk.v2.model.ChatSettings;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetChatSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ChatApi apiInstance = new ChatApi();\n                try { \n            // Get Chat Settings.\n            ChatSettings result = apiInstance.getChatSettings();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ChatApi#getChatSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getchatssettings": {
+    "operationId": "getchatssettings",
+    "functionName": "getChatsSettings",
+    "signature": "getChatsSettings()",
+    "return": "ChatSettings",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ChatApi;\nimport com.mypurecloud.sdk.v2.model.ChatSettings;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetChatsSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ChatApi apiInstance = new ChatApi();\n                try { \n            // Get Chat Settings.\n            ChatSettings result = apiInstance.getChatsSettings();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ChatApi#getChatsSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "patchchatsettings": {
     "operationId": "patchchatsettings",
     "functionName": "patchChatSettings",
@@ -4436,6 +4448,20 @@
     "return": "ChatSettings",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ChatApi;\nimport com.mypurecloud.sdk.v2.model.ChatSettings;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepatchChatSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ChatApi apiInstance = new ChatApi();\n        ChatSettings body = new ChatSettings(); // ChatSettings | Chat\n        try { \n            // Patch Chat Settings.\n            ChatSettings result = apiInstance.patchChatSettings(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ChatApi#patchChatSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "patchchatssettings": {
+    "operationId": "patchchatssettings",
+    "functionName": "patchChatsSettings",
+    "signature": "patchChatsSettings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ChatSettings",
+        "required": "true"
+      }
+    ],
+    "return": "ChatSettings",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ChatApi;\nimport com.mypurecloud.sdk.v2.model.ChatSettings;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepatchChatsSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ChatApi apiInstance = new ChatApi();\n        ChatSettings body = new ChatSettings(); // ChatSettings | Chat\n        try { \n            // Patch Chat Settings.\n            ChatSettings result = apiInstance.patchChatsSettings(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ChatApi#patchChatsSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "putchatsettings": {
     "operationId": "putchatsettings",
     "functionName": "putChatSettings",
@@ -4449,6 +4475,20 @@
     ],
     "return": "ChatSettings",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ChatApi;\nimport com.mypurecloud.sdk.v2.model.ChatSettings;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampleputChatSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ChatApi apiInstance = new ChatApi();\n        ChatSettings body = new ChatSettings(); // ChatSettings | Chat\n        try { \n            // Update Chat Settings.\n            ChatSettings result = apiInstance.putChatSettings(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ChatApi#putChatSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "putchatssettings": {
+    "operationId": "putchatssettings",
+    "functionName": "putChatsSettings",
+    "signature": "putChatsSettings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ChatSettings",
+        "required": "true"
+      }
+    ],
+    "return": "ChatSettings",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.ChatApi;\nimport com.mypurecloud.sdk.v2.model.ChatSettings;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampleputChatsSettings {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        ChatApi apiInstance = new ChatApi();\n        ChatSettings body = new ChatSettings(); // ChatSettings | Chat\n        try { \n            // Update Chat Settings.\n            ChatSettings result = apiInstance.putChatsSettings(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling ChatApi#putChatsSettings\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "deletecoachingappointment": {
     "operationId": "deletecoachingappointment",
@@ -26584,7 +26624,7 @@
   "getroutingemaildomains": {
     "operationId": "getroutingemaildomains",
     "functionName": "getRoutingEmailDomains",
-    "signature": "getRoutingEmailDomains(pageSize, pageNumber, excludeStatus)",
+    "signature": "getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter)",
     "parameters": [
       {
         "name": "pageSize",
@@ -26600,10 +26640,15 @@
         "name": "excludeStatus",
         "type": "Boolean",
         "required": "false"
+      },
+      {
+        "name": "filter",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "InboundDomainEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;\n\npublic class ExamplegetRoutingEmailDomains {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        Integer pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nBoolean excludeStatus = false; // Boolean | Exclude MX record data\n        try { \n            // Get domains\n            InboundDomainEntityListing result = apiInstance.getRoutingEmailDomains(pageSize, pageNumber, excludeStatus);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingEmailDomains\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;\n\npublic class ExamplegetRoutingEmailDomains {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        Integer pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nBoolean excludeStatus = false; // Boolean | Exclude MX record data\nString filter = \"filter_example\"; // String | Optional search filter\n        try { \n            // Get domains\n            InboundDomainEntityListing result = apiInstance.getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingEmailDomains\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getroutingemailoutbounddomain": {
     "operationId": "getroutingemailoutbounddomain",
@@ -26650,9 +26695,16 @@
   "getroutingemailoutbounddomains": {
     "operationId": "getroutingemailoutbounddomains",
     "functionName": "getRoutingEmailOutboundDomains",
-    "signature": "getRoutingEmailOutboundDomains()",
+    "signature": "getRoutingEmailOutboundDomains(filter)",
+    "parameters": [
+      {
+        "name": "filter",
+        "type": "String",
+        "required": "false"
+      }
+    ],
     "return": "OutboundDomainEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;\n\npublic class ExamplegetRoutingEmailOutboundDomains {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n                try { \n            // Get outbound domains\n            OutboundDomainEntityListing result = apiInstance.getRoutingEmailOutboundDomains();\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingEmailOutboundDomains\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.OutboundDomainEntityListing;\n\npublic class ExamplegetRoutingEmailOutboundDomains {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        String filter = \"filter_example\"; // String | Optional search filter\n        try { \n            // Get outbound domains\n            OutboundDomainEntityListing result = apiInstance.getRoutingEmailOutboundDomains(filter);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingEmailOutboundDomains\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getroutingemailsetup": {
     "operationId": "getroutingemailsetup",

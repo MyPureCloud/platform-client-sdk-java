@@ -185,7 +185,7 @@ Delete a grant of a role in a division
 
 Wraps DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * authorization:grant:delete
 
@@ -886,7 +886,7 @@ This endpoint does not require any parameters.
 
 
 
-> [DomainOrganizationRole](DomainOrganizationRole.html) getAuthorizationRole(roleId, expand)
+> [DomainOrganizationRole](DomainOrganizationRole.html) getAuthorizationRole(roleId, userCount, expand)
 
 Get a single organization role.
 
@@ -921,9 +921,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
 String roleId = "roleId_example"; // String | Role ID
+Boolean userCount = true; // Boolean | Fetch the count of users who have this role granted in at least one division
 List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role
 try {
-    DomainOrganizationRole result = apiInstance.getAuthorizationRole(roleId, expand);
+    DomainOrganizationRole result = apiInstance.getAuthorizationRole(roleId, userCount, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationRole");
@@ -937,6 +938,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
+| **userCount** | **Boolean**| Fetch the count of users who have this role granted in at least one division | [optional] [default to true]<br />**Values**: true, false 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role | [optional]<br />**Values**: unusedPermissions 
 {: class="table-striped"}
 
@@ -2115,7 +2117,7 @@ Bulk-grant roles and divisions to a subject.
 
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkadd  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * authorization:grant:add
 
@@ -2179,7 +2181,7 @@ Bulk-remove grants from a subject.
 
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkremove  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * authorization:grant:delete
 
@@ -2308,7 +2310,7 @@ Make a grant of a role in a division
 
 Wraps POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * authorization:grant:add
 

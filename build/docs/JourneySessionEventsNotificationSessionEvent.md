@@ -18,8 +18,6 @@ title: JourneySessionEventsNotificationSessionEvent
 | **type** | <!----><!---->**String**<!----> |  |  [optional] |
 | **outcomeAchievements** | <!----><!---->[**List&lt;JourneySessionEventsNotificationOutcomeAchievement&gt;**](JourneySessionEventsNotificationOutcomeAchievement.html)<!----> |  |  [optional] |
 | **segmentAssignments** | <!----><!---->[**List&lt;JourneySessionEventsNotificationSegmentAssignment&gt;**](JourneySessionEventsNotificationSegmentAssignment.html)<!----> |  |  [optional] |
-| **attributes** | <!----><!---->[**Map&lt;String, JourneySessionEventsNotificationCustomEventAttribute&gt;**](JourneySessionEventsNotificationCustomEventAttribute.html)<!----> |  |  [optional] |
-| **attributeLists** | <!----><!---->[**Map&lt;String, JourneySessionEventsNotificationCustomEventAttributeList&gt;**](JourneySessionEventsNotificationCustomEventAttributeList.html)<!----> |  |  [optional] |
 | **awayDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **browser** | <!----><!---->[**JourneySessionEventsNotificationBrowser**](JourneySessionEventsNotificationBrowser.html)<!----> |  |  [optional] |
 | **device** | <!----><!---->[**JourneySessionEventsNotificationDevice**](JourneySessionEventsNotificationDevice.html)<!----> |  |  [optional] |

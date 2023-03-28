@@ -37,6 +37,7 @@ title: WorkitemsQueueEventsNotificationWorkitem
 | **alertTimeoutSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **customFields** | <!----><!---->[**Map&lt;String, WorkitemsQueueEventsNotificationCustomAttribute&gt;**](WorkitemsQueueEventsNotificationCustomAttribute.html)<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**WorkitemsQueueEventsNotificationWrapup**](WorkitemsQueueEventsNotificationWrapup.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -2410,12 +2410,13 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param excludeStatus Exclude MX record data (optional, default to false)
+   * @param filter Optional search filter (optional)
    * @return InboundDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public InboundDomainEntityListing getRoutingEmailDomains(Integer pageSize, Integer pageNumber, Boolean excludeStatus) throws IOException, ApiException {
-    return  getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(pageSize, pageNumber, excludeStatus));
+  public InboundDomainEntityListing getRoutingEmailDomains(Integer pageSize, Integer pageNumber, Boolean excludeStatus, String filter) throws IOException, ApiException {
+    return  getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(pageSize, pageNumber, excludeStatus, filter));
   }
 
   /**
@@ -2424,20 +2425,23 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param excludeStatus Exclude MX record data (optional, default to false)
+   * @param filter Optional search filter (optional)
    * @return InboundDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomainsWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean excludeStatus) throws IOException {
-    return getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(pageSize, pageNumber, excludeStatus).withHttpInfo());
+  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomainsWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean excludeStatus, String filter) throws IOException {
+    return getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(pageSize, pageNumber, excludeStatus, filter).withHttpInfo());
   }
 
-  private GetRoutingEmailDomainsRequest createGetRoutingEmailDomainsRequest(Integer pageSize, Integer pageNumber, Boolean excludeStatus) {
+  private GetRoutingEmailDomainsRequest createGetRoutingEmailDomainsRequest(Integer pageSize, Integer pageNumber, Boolean excludeStatus, String filter) {
     return GetRoutingEmailDomainsRequest.builder()
             .withPageSize(pageSize)
 
             .withPageNumber(pageNumber)
 
             .withExcludeStatus(excludeStatus)
+
+            .withFilter(filter)
 
             .build();
   }
@@ -2727,26 +2731,30 @@ public class RoutingApi {
   /**
    * Get outbound domains
    * 
+   * @param filter Optional search filter (optional)
    * @return OutboundDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OutboundDomainEntityListing getRoutingEmailOutboundDomains() throws IOException, ApiException {
-    return  getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest());
+  public OutboundDomainEntityListing getRoutingEmailOutboundDomains(String filter) throws IOException, ApiException {
+    return  getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest(filter));
   }
 
   /**
    * Get outbound domains
    * 
+   * @param filter Optional search filter (optional)
    * @return OutboundDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundDomainEntityListing> getRoutingEmailOutboundDomainsWithHttpInfo() throws IOException {
-    return getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest().withHttpInfo());
+  public ApiResponse<OutboundDomainEntityListing> getRoutingEmailOutboundDomainsWithHttpInfo(String filter) throws IOException {
+    return getRoutingEmailOutboundDomains(createGetRoutingEmailOutboundDomainsRequest(filter).withHttpInfo());
   }
 
-  private GetRoutingEmailOutboundDomainsRequest createGetRoutingEmailOutboundDomainsRequest() {
+  private GetRoutingEmailOutboundDomainsRequest createGetRoutingEmailOutboundDomainsRequest(String filter) {
     return GetRoutingEmailOutboundDomainsRequest.builder()
+            .withFilter(filter)
+
             .build();
   }
 

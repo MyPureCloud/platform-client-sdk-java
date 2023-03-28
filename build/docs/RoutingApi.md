@@ -1851,7 +1851,7 @@ try {
 
 
 
-> [InboundDomainEntityListing](InboundDomainEntityListing.html) getRoutingEmailDomains(pageSize, pageNumber, excludeStatus)
+> [InboundDomainEntityListing](InboundDomainEntityListing.html) getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter)
 
 Get domains
 
@@ -1886,8 +1886,9 @@ RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 Boolean excludeStatus = false; // Boolean | Exclude MX record data
+String filter = "filter_example"; // String | Optional search filter
 try {
-    InboundDomainEntityListing result = apiInstance.getRoutingEmailDomains(pageSize, pageNumber, excludeStatus);
+    InboundDomainEntityListing result = apiInstance.getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailDomains");
@@ -1903,6 +1904,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **excludeStatus** | **Boolean**| Exclude MX record data | [optional] [default to false] 
+| **filter** | **String**| Optional search filter | [optional] 
 {: class="table-striped"}
 
 
@@ -2099,7 +2101,7 @@ try {
 
 
 
-> [OutboundDomainEntityListing](OutboundDomainEntityListing.html) getRoutingEmailOutboundDomains()
+> [OutboundDomainEntityListing](OutboundDomainEntityListing.html) getRoutingEmailOutboundDomains(filter)
 
 Get outbound domains
 
@@ -2131,8 +2133,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
+String filter = "filter_example"; // String | Optional search filter
 try {
-    OutboundDomainEntityListing result = apiInstance.getRoutingEmailOutboundDomains();
+    OutboundDomainEntityListing result = apiInstance.getRoutingEmailOutboundDomains(filter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailOutboundDomains");
@@ -2142,8 +2145,11 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **String**| Optional search filter | [optional] 
+{: class="table-striped"}
 
 
 ### Return type

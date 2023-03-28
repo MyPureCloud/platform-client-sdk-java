@@ -141,6 +141,20 @@ public class GetRoutingEmailDomainsRequest {
 	    return this;
 	} 
 
+	private String filter;
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+	}
+
+	public GetRoutingEmailDomainsRequest withFilter(String filter) {
+	    this.setFilter(filter);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -172,6 +186,9 @@ public class GetRoutingEmailDomainsRequest {
         
 
                 .withQueryParameters("excludeStatus", "", excludeStatus)
+        
+
+                .withQueryParameters("filter", "", filter)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -206,6 +223,11 @@ public class GetRoutingEmailDomainsRequest {
 
 		public Builder withExcludeStatus(Boolean excludeStatus) {
 			request.setExcludeStatus(excludeStatus);
+			return this;
+		}
+
+		public Builder withFilter(String filter) {
+			request.setFilter(filter);
 			return this;
 		}
 

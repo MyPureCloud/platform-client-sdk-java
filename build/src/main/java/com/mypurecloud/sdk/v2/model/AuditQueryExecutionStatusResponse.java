@@ -112,6 +112,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     DYNAMICSCHEMA("DynamicSchema"),
     EMAILS("Emails"),
     EMPLOYEEPERFORMANCE("EmployeePerformance"),
+    EXTERNALCONTACTS("ExternalContacts"),
     GAMIFICATION("Gamification"),
     GDPR("GDPR"),
     GROUPS("Groups"),
