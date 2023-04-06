@@ -76,6 +76,7 @@ docs/AdhocRecordingTopicWorkspaceData.md
 docs/Adjacents.md
 docs/AdminTimeOffRequestPatch.md
 docs/AfterCallWork.md
+docs/AfterCallWorkUpdate.md
 docs/Agent.md
 docs/AgentActivity.md
 docs/AgentActivityChangedTopicAgentActivity.md
@@ -1303,6 +1304,7 @@ docs/EvaluationQuestion.md
 docs/EvaluationQuestionGroup.md
 docs/EvaluationQuestionGroupScore.md
 docs/EvaluationQuestionScore.md
+docs/EvaluationReference.md
 docs/EvaluationResponse.md
 docs/EvaluationScoringSet.md
 docs/EvaluationSettings.md
@@ -1329,7 +1331,6 @@ docs/ExpiredEdgeListing.md
 docs/ExportScriptRequest.md
 docs/ExportScriptResponse.md
 docs/ExportUri.md
-docs/ExtendedWrapup.md
 docs/Extension.md
 docs/ExtensionEntityListing.md
 docs/ExtensionPool.md
@@ -2098,6 +2099,7 @@ docs/OrganizationAuthorizationApi.json
 docs/OrganizationAuthorizationApi.md
 docs/OrganizationFeatures.md
 docs/OrganizationPresence.md
+docs/OrganizationPresenceDefinition.md
 docs/OrganizationPresenceEntityListing.md
 docs/OrganizationProductEntityListing.md
 docs/OrganizationRoleEntityListing.md
@@ -2918,6 +2920,7 @@ docs/SupportCenterSettings.md
 docs/SupportCenterStyleSetting.md
 docs/SupportedContent.md
 docs/SupportedContentListing.md
+docs/SupportedContentProfile.md
 docs/SupportedContentReference.md
 docs/SupportedDialectsEntityListing.md
 docs/SupportedLanguage.md
@@ -3657,6 +3660,7 @@ docs/WrapupCode.md
 docs/WrapupCodeEntityListing.md
 docs/WrapupCodeRequest.md
 docs/WrapupDetailEventTopicWrapupEvent.md
+docs/WrapupInput.md
 docs/WritableDialerContact.md
 docs/WritableDivision.md
 docs/WritableEntity.md
@@ -4366,6 +4370,8 @@ docs/getOauthAuthorization-example.txt
 docs/getOauthAuthorizations-example.txt
 docs/getOauthClient-example.txt
 docs/getOauthClientUsageQueryResult-example.txt
+docs/getOauthClientUsageQueryResult-example.txt
+docs/getOauthClientUsageSummary-example.txt
 docs/getOauthClientUsageSummary-example.txt
 docs/getOauthClients-example.txt
 docs/getOauthScope-example.txt
@@ -4870,6 +4876,7 @@ docs/patchCoachingNotification-example.txt
 docs/patchConversationParticipant-example.txt
 docs/patchConversationParticipantAttributes-example.txt
 docs/patchConversationSecureattributes-example.txt
+docs/patchConversationsAftercallworkConversationIdParticipantCommunication-example.txt
 docs/patchConversationsCall-example.txt
 docs/patchConversationsCallParticipant-example.txt
 docs/patchConversationsCallParticipantAttributes-example.txt
@@ -5272,6 +5279,7 @@ docs/postMobiledevices-example.txt
 docs/postNotificationsChannelSubscriptions-example.txt
 docs/postNotificationsChannels-example.txt
 docs/postOauthClientSecret-example.txt
+docs/postOauthClientUsageQuery-example.txt
 docs/postOauthClientUsageQuery-example.txt
 docs/postOauthClients-example.txt
 docs/postOrgauthorizationPairings-example.txt
@@ -6552,6 +6560,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetOauthAuthorizationRequest.ja
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOauthAuthorizationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOauthClientRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOauthClientUsageQueryResultRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetOauthClientUsageQueryResultRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetOauthClientUsageSummaryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOauthClientUsageSummaryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOauthClientsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOauthScopeRequest.java
@@ -7056,6 +7066,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingNotificationReques
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationParticipantAttributesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationParticipantRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationSecureattributesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsAftercallworkConversationIdParticipantCommunicationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsCallParticipantAttributesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsCallParticipantCommunicationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsCallParticipantConsultRequest.java
@@ -7458,6 +7469,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostMobiledevicesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostNotificationsChannelSubscriptionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostNotificationsChannelsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOauthClientSecretRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostOauthClientUsageQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOauthClientUsageQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOauthClientsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOrgauthorizationPairingsRequest.java
@@ -7964,6 +7976,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AdhocRecordingTopicWorkspaceData.java
 src/main/java/com/mypurecloud/sdk/v2/model/Adjacents.java
 src/main/java/com/mypurecloud/sdk/v2/model/AdminTimeOffRequestPatch.java
 src/main/java/com/mypurecloud/sdk/v2/model/AfterCallWork.java
+src/main/java/com/mypurecloud/sdk/v2/model/AfterCallWorkUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/Agent.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentActivity.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentActivityChangedTopicAgentActivity.java
@@ -9167,6 +9180,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQuestion.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQuestionGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQuestionGroupScore.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQuestionScore.java
+src/main/java/com/mypurecloud/sdk/v2/model/EvaluationReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationScoringSet.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationSettings.java
@@ -9191,7 +9205,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/ExpiredEdgeListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExportScriptRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExportScriptResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExportUri.java
-src/main/java/com/mypurecloud/sdk/v2/model/ExtendedWrapup.java
 src/main/java/com/mypurecloud/sdk/v2/model/Extension.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExtensionEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExtensionPool.java
@@ -9910,6 +9923,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/OrgWhitelistSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Organization.java
 src/main/java/com/mypurecloud/sdk/v2/model/OrganizationFeatures.java
 src/main/java/com/mypurecloud/sdk/v2/model/OrganizationPresence.java
+src/main/java/com/mypurecloud/sdk/v2/model/OrganizationPresenceDefinition.java
 src/main/java/com/mypurecloud/sdk/v2/model/OrganizationPresenceEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OrganizationProductEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OrganizationRoleEntityListing.java
@@ -10704,6 +10718,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SupportCenterSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportCenterStyleSetting.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportedContent.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportedContentListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/SupportedContentProfile.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportedContentReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportedDialectsEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportedLanguage.java
@@ -11411,6 +11426,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WrapupCode.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupCodeEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupCodeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WrapupDetailEventTopicWrapupEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/WrapupInput.java
 src/main/java/com/mypurecloud/sdk/v2/model/WritableDialerContact.java
 src/main/java/com/mypurecloud/sdk/v2/model/WritableDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/WritableEntity.java

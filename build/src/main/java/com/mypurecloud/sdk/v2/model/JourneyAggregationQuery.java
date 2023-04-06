@@ -61,8 +61,6 @@ public class JourneyAggregationQuery  implements Serializable {
     JOURNEYBLOCKINGEMERGENCYSCHEDULEGROUPID("journeyBlockingEmergencyScheduleGroupId"),
     JOURNEYBLOCKINGREASON("journeyBlockingReason"),
     JOURNEYBLOCKINGSCHEDULEGROUPID("journeyBlockingScheduleGroupId"),
-    JOURNEYCUSTOMERID("journeyCustomerId"),
-    JOURNEYCUSTOMERIDTYPE("journeyCustomerIdType"),
     JOURNEYDEVICECATEGORY("journeyDeviceCategory"),
     JOURNEYDEVICETYPE("journeyDeviceType"),
     JOURNEYFREQUENCYCAPREASON("journeyFrequencyCapReason"),

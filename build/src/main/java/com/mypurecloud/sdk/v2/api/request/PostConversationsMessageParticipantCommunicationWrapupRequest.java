@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
+import com.mypurecloud.sdk.v2.model.AfterCallWorkUpdate;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendRequestDto;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendResponseDto;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
@@ -80,7 +81,6 @@ import com.mypurecloud.sdk.v2.model.EmailMessageListing;
 import com.mypurecloud.sdk.v2.model.EmailMessageReply;
 import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ExtendedWrapup;
 import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
@@ -134,6 +134,7 @@ import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.WrapupInput;
 
 public class PostConversationsMessageParticipantCommunicationWrapupRequest {
 
@@ -179,16 +180,16 @@ public class PostConversationsMessageParticipantCommunicationWrapupRequest {
 	    return this;
 	} 
 
-	private ExtendedWrapup body;
-	public ExtendedWrapup getBody() {
+	private WrapupInput body;
+	public WrapupInput getBody() {
 		return this.body;
 	}
 
-	public void setBody(ExtendedWrapup body) {
+	public void setBody(WrapupInput body) {
 		this.body = body;
 	}
 
-	public PostConversationsMessageParticipantCommunicationWrapupRequest withBody(ExtendedWrapup body) {
+	public PostConversationsMessageParticipantCommunicationWrapupRequest withBody(WrapupInput body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -212,7 +213,7 @@ public class PostConversationsMessageParticipantCommunicationWrapupRequest {
         return this;
     }
 
-    public ApiRequest<ExtendedWrapup> withHttpInfo() {
+    public ApiRequest<WrapupInput> withHttpInfo() {
         
         // verify the required parameter 'conversationId' is set
         if (this.conversationId == null) {
@@ -280,7 +281,7 @@ public class PostConversationsMessageParticipantCommunicationWrapupRequest {
 			return this;
 		}
 
-		public Builder withBody(ExtendedWrapup body) {
+		public Builder withBody(WrapupInput body) {
 			request.setBody(body);
 			return this;
 		}

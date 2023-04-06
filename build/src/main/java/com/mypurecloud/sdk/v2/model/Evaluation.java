@@ -155,6 +155,7 @@ public class Evaluation  implements Serializable {
   private Date conversationDate = null;
   private Date conversationEndDate = null;
   private Boolean neverRelease = null;
+  private Boolean assigned = null;
   private String resourceId = null;
 
   private static class ResourceTypeEnumDeserializer extends StdDeserializer<ResourceTypeEnum> {
@@ -551,6 +552,24 @@ public class Evaluation  implements Serializable {
 
 
   /**
+   * Set to false to unassign the evaluation. This cannot be set to false when assignee is also set.
+   **/
+  public Evaluation assigned(Boolean assigned) {
+    this.assigned = assigned;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Set to false to unassign the evaluation. This cannot be set to false when assignee is also set.")
+  @JsonProperty("assigned")
+  public Boolean getAssigned() {
+    return assigned;
+  }
+  public void setAssigned(Boolean assigned) {
+    this.assigned = assigned;
+  }
+
+
+  /**
    * Only used for email evaluations. Will be null for all other evaluations.
    **/
   public Evaluation resourceId(String resourceId) {
@@ -701,6 +720,7 @@ public class Evaluation  implements Serializable {
             Objects.equals(this.conversationDate, evaluation.conversationDate) &&
             Objects.equals(this.conversationEndDate, evaluation.conversationEndDate) &&
             Objects.equals(this.neverRelease, evaluation.neverRelease) &&
+            Objects.equals(this.assigned, evaluation.assigned) &&
             Objects.equals(this.resourceId, evaluation.resourceId) &&
             Objects.equals(this.resourceType, evaluation.resourceType) &&
             Objects.equals(this.redacted, evaluation.redacted) &&
@@ -713,7 +733,7 @@ public class Evaluation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
   }
 
   @Override
@@ -741,6 +761,7 @@ public class Evaluation  implements Serializable {
     sb.append("    conversationDate: ").append(toIndentedString(conversationDate)).append("\n");
     sb.append("    conversationEndDate: ").append(toIndentedString(conversationEndDate)).append("\n");
     sb.append("    neverRelease: ").append(toIndentedString(neverRelease)).append("\n");
+    sb.append("    assigned: ").append(toIndentedString(assigned)).append("\n");
     sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
     sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
     sb.append("    redacted: ").append(toIndentedString(redacted)).append("\n");

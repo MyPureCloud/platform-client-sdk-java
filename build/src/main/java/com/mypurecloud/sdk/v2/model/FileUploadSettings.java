@@ -25,9 +25,47 @@ import java.io.Serializable;
 
 public class FileUploadSettings  implements Serializable {
   
+  private Boolean enableAttachments = null;
+  private Boolean useSupportedContentProfile = null;
   private List<FileUploadMode> modes = new ArrayList<FileUploadMode>();
 
   
+  /**
+   * whether or not attachments is enabled
+   **/
+  public FileUploadSettings enableAttachments(Boolean enableAttachments) {
+    this.enableAttachments = enableAttachments;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "whether or not attachments is enabled")
+  @JsonProperty("enableAttachments")
+  public Boolean getEnableAttachments() {
+    return enableAttachments;
+  }
+  public void setEnableAttachments(Boolean enableAttachments) {
+    this.enableAttachments = enableAttachments;
+  }
+
+
+  /**
+   * whether or not supported content profile is enabled
+   **/
+  public FileUploadSettings useSupportedContentProfile(Boolean useSupportedContentProfile) {
+    this.useSupportedContentProfile = useSupportedContentProfile;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "whether or not supported content profile is enabled")
+  @JsonProperty("useSupportedContentProfile")
+  public Boolean getUseSupportedContentProfile() {
+    return useSupportedContentProfile;
+  }
+  public void setUseSupportedContentProfile(Boolean useSupportedContentProfile) {
+    this.useSupportedContentProfile = useSupportedContentProfile;
+  }
+
+
   /**
    * The list of supported file upload modes
    **/
@@ -56,12 +94,14 @@ public class FileUploadSettings  implements Serializable {
     }
     FileUploadSettings fileUploadSettings = (FileUploadSettings) o;
 
-    return Objects.equals(this.modes, fileUploadSettings.modes);
+    return Objects.equals(this.enableAttachments, fileUploadSettings.enableAttachments) &&
+            Objects.equals(this.useSupportedContentProfile, fileUploadSettings.useSupportedContentProfile) &&
+            Objects.equals(this.modes, fileUploadSettings.modes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(modes);
+    return Objects.hash(enableAttachments, useSupportedContentProfile, modes);
   }
 
   @Override
@@ -69,6 +109,8 @@ public class FileUploadSettings  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class FileUploadSettings {\n");
     
+    sb.append("    enableAttachments: ").append(toIndentedString(enableAttachments)).append("\n");
+    sb.append("    useSupportedContentProfile: ").append(toIndentedString(useSupportedContentProfile)).append("\n");
     sb.append("    modes: ").append(toIndentedString(modes)).append("\n");
     sb.append("}");
     return sb.toString();

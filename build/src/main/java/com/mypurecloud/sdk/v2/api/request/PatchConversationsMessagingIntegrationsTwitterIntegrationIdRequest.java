@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
+import com.mypurecloud.sdk.v2.model.AfterCallWorkUpdate;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendRequestDto;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendResponseDto;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
@@ -80,7 +81,6 @@ import com.mypurecloud.sdk.v2.model.EmailMessageListing;
 import com.mypurecloud.sdk.v2.model.EmailMessageReply;
 import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ExtendedWrapup;
 import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
@@ -134,6 +134,7 @@ import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.WrapupInput;
 
 public class PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest {
 

@@ -89,7 +89,7 @@ public class Phrase  implements Serializable {
     }
   }
   /**
-   * The phrase sentiment, default value is Unspecified.
+   * The phrase sentiment, default value is Unspecified. Note: Sentiment value for phrases is currently not in use and has no impact to the system.
    */
  @JsonDeserialize(using = SentimentEnumDeserializer.class)
   public enum SentimentEnum {
@@ -164,14 +164,14 @@ public class Phrase  implements Serializable {
 
 
   /**
-   * The phrase sentiment, default value is Unspecified.
+   * The phrase sentiment, default value is Unspecified. Note: Sentiment value for phrases is currently not in use and has no impact to the system.
    **/
   public Phrase sentiment(SentimentEnum sentiment) {
     this.sentiment = sentiment;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The phrase sentiment, default value is Unspecified.")
+  @ApiModelProperty(example = "null", value = "The phrase sentiment, default value is Unspecified. Note: Sentiment value for phrases is currently not in use and has no impact to the system.")
   @JsonProperty("sentiment")
   public SentimentEnum getSentiment() {
     return sentiment;

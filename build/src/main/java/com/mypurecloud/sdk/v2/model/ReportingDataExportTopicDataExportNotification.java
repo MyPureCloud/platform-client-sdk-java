@@ -366,6 +366,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
   private String emailErrorDescription = null;
   private String scheduleExpression = null;
   private String scheduleStaticLinkUrl = null;
+  private Boolean exportAllowedToRerun = null;
 
   
   /**
@@ -640,6 +641,23 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
   }
 
 
+  /**
+   **/
+  public ReportingDataExportTopicDataExportNotification exportAllowedToRerun(Boolean exportAllowedToRerun) {
+    this.exportAllowedToRerun = exportAllowedToRerun;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("exportAllowedToRerun")
+  public Boolean getExportAllowedToRerun() {
+    return exportAllowedToRerun;
+  }
+  public void setExportAllowedToRerun(Boolean exportAllowedToRerun) {
+    this.exportAllowedToRerun = exportAllowedToRerun;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -665,12 +683,13 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
             Objects.equals(this.emailStatuses, reportingDataExportTopicDataExportNotification.emailStatuses) &&
             Objects.equals(this.emailErrorDescription, reportingDataExportTopicDataExportNotification.emailErrorDescription) &&
             Objects.equals(this.scheduleExpression, reportingDataExportTopicDataExportNotification.scheduleExpression) &&
-            Objects.equals(this.scheduleStaticLinkUrl, reportingDataExportTopicDataExportNotification.scheduleStaticLinkUrl);
+            Objects.equals(this.scheduleStaticLinkUrl, reportingDataExportTopicDataExportNotification.scheduleStaticLinkUrl) &&
+            Objects.equals(this.exportAllowedToRerun, reportingDataExportTopicDataExportNotification.exportAllowedToRerun);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, runId, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime, percentageComplete, emailStatuses, emailErrorDescription, scheduleExpression, scheduleStaticLinkUrl);
+    return Objects.hash(id, runId, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime, percentageComplete, emailStatuses, emailErrorDescription, scheduleExpression, scheduleStaticLinkUrl, exportAllowedToRerun);
   }
 
   @Override
@@ -694,6 +713,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     sb.append("    emailErrorDescription: ").append(toIndentedString(emailErrorDescription)).append("\n");
     sb.append("    scheduleExpression: ").append(toIndentedString(scheduleExpression)).append("\n");
     sb.append("    scheduleStaticLinkUrl: ").append(toIndentedString(scheduleStaticLinkUrl)).append("\n");
+    sb.append("    exportAllowedToRerun: ").append(toIndentedString(exportAllowedToRerun)).append("\n");
     sb.append("}");
     return sb.toString();
   }

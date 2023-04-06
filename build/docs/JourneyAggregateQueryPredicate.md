@@ -50,8 +50,6 @@ title: JourneyAggregateQueryPredicate
 | JOURNEYBLOCKINGEMERGENCYSCHEDULEGROUPID | &quot;journeyBlockingEmergencyScheduleGroupId&quot; | 
 | JOURNEYBLOCKINGREASON | &quot;journeyBlockingReason&quot; | 
 | JOURNEYBLOCKINGSCHEDULEGROUPID | &quot;journeyBlockingScheduleGroupId&quot; | 
-| JOURNEYCUSTOMERID | &quot;journeyCustomerId&quot; | 
-| JOURNEYCUSTOMERIDTYPE | &quot;journeyCustomerIdType&quot; | 
 | JOURNEYDEVICECATEGORY | &quot;journeyDeviceCategory&quot; | 
 | JOURNEYDEVICETYPE | &quot;journeyDeviceType&quot; | 
 | JOURNEYFREQUENCYCAPREASON | &quot;journeyFrequencyCapReason&quot; | 

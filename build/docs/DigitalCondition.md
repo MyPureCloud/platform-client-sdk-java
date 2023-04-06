@@ -16,6 +16,7 @@ title: DigitalCondition
 | **lastAttemptOverallConditionSettings** | <!----><!---->[**LastAttemptOverallConditionSettings**](LastAttemptOverallConditionSettings.html)<!----> | The settings for a 'last attempt overall' condition. |  [optional] |
 | **lastResultByColumnConditionSettings** | <!----><!---->[**LastResultByColumnConditionSettings**](LastResultByColumnConditionSettings.html)<!----> | The settings for a 'last result by column' condition. |  [optional] |
 | **lastResultOverallConditionSettings** | <!----><!---->[**LastResultOverallConditionSettings**](LastResultOverallConditionSettings.html)<!----> | The settings for a 'last result overall' condition. |  [optional] |
+| **dataActionConditionSettings** | <!----><!---->[**DataActionConditionSettings**](DataActionConditionSettings.html)<!----> | The settings for a 'data action' condition. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -230,7 +230,7 @@ Configuration.setDefaultApiClient(apiClient);
 AuditApi apiInstance = new AuditApi();
 String transactionId = "transactionId_example"; // String | Transaction ID
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500.
 List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     AuditQueryExecutionResultsResponse result = apiInstance.getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand);
@@ -248,7 +248,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **transactionId** | **String**| Transaction ID | 
 | **cursor** | **String**| Indicates where to resume query results (not required for first page) | [optional] 
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageSize** | **Integer**| Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. | [optional] [default to 25] 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: user 
 {: class="table-striped"}
 

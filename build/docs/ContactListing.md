@@ -13,11 +13,11 @@ title: ContactListing
 | **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **total** | <!----><!---->**Long**<!----> |  |  [optional] |
 | **partialResults** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **lastUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

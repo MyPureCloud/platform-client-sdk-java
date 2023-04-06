@@ -24,6 +24,7 @@ title: ReportingDataExportTopicDataExportNotification
 | **emailErrorDescription** | <!----><!---->**String**<!----> |  |  [optional] |
 | **scheduleExpression** | <!----><!---->**String**<!----> |  |  [optional] |
 | **scheduleStaticLinkUrl** | <!----><!---->**String**<!----> |  |  [optional] |
+| **exportAllowedToRerun** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

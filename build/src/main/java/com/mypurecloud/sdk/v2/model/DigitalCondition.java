@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactAddressConditionSettings;
 import com.mypurecloud.sdk.v2.model.ContactAddressTypeConditionSettings;
 import com.mypurecloud.sdk.v2.model.ContactColumnConditionSettings;
+import com.mypurecloud.sdk.v2.model.DataActionConditionSettings;
 import com.mypurecloud.sdk.v2.model.LastAttemptByColumnConditionSettings;
 import com.mypurecloud.sdk.v2.model.LastAttemptOverallConditionSettings;
 import com.mypurecloud.sdk.v2.model.LastResultByColumnConditionSettings;
@@ -36,6 +37,7 @@ public class DigitalCondition  implements Serializable {
   private LastAttemptOverallConditionSettings lastAttemptOverallConditionSettings = null;
   private LastResultByColumnConditionSettings lastResultByColumnConditionSettings = null;
   private LastResultOverallConditionSettings lastResultOverallConditionSettings = null;
+  private DataActionConditionSettings dataActionConditionSettings = null;
 
   
   /**
@@ -182,6 +184,24 @@ public class DigitalCondition  implements Serializable {
   }
 
 
+  /**
+   * The settings for a 'data action' condition.
+   **/
+  public DigitalCondition dataActionConditionSettings(DataActionConditionSettings dataActionConditionSettings) {
+    this.dataActionConditionSettings = dataActionConditionSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The settings for a 'data action' condition.")
+  @JsonProperty("dataActionConditionSettings")
+  public DataActionConditionSettings getDataActionConditionSettings() {
+    return dataActionConditionSettings;
+  }
+  public void setDataActionConditionSettings(DataActionConditionSettings dataActionConditionSettings) {
+    this.dataActionConditionSettings = dataActionConditionSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -199,12 +219,13 @@ public class DigitalCondition  implements Serializable {
             Objects.equals(this.lastAttemptByColumnConditionSettings, digitalCondition.lastAttemptByColumnConditionSettings) &&
             Objects.equals(this.lastAttemptOverallConditionSettings, digitalCondition.lastAttemptOverallConditionSettings) &&
             Objects.equals(this.lastResultByColumnConditionSettings, digitalCondition.lastResultByColumnConditionSettings) &&
-            Objects.equals(this.lastResultOverallConditionSettings, digitalCondition.lastResultOverallConditionSettings);
+            Objects.equals(this.lastResultOverallConditionSettings, digitalCondition.lastResultOverallConditionSettings) &&
+            Objects.equals(this.dataActionConditionSettings, digitalCondition.dataActionConditionSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inverted, contactColumnConditionSettings, contactAddressConditionSettings, contactAddressTypeConditionSettings, lastAttemptByColumnConditionSettings, lastAttemptOverallConditionSettings, lastResultByColumnConditionSettings, lastResultOverallConditionSettings);
+    return Objects.hash(inverted, contactColumnConditionSettings, contactAddressConditionSettings, contactAddressTypeConditionSettings, lastAttemptByColumnConditionSettings, lastAttemptOverallConditionSettings, lastResultByColumnConditionSettings, lastResultOverallConditionSettings, dataActionConditionSettings);
   }
 
   @Override
@@ -220,6 +241,7 @@ public class DigitalCondition  implements Serializable {
     sb.append("    lastAttemptOverallConditionSettings: ").append(toIndentedString(lastAttemptOverallConditionSettings)).append("\n");
     sb.append("    lastResultByColumnConditionSettings: ").append(toIndentedString(lastResultByColumnConditionSettings)).append("\n");
     sb.append("    lastResultOverallConditionSettings: ").append(toIndentedString(lastResultOverallConditionSettings)).append("\n");
+    sb.append("    dataActionConditionSettings: ").append(toIndentedString(dataActionConditionSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

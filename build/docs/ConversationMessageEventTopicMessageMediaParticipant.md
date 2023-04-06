@@ -48,6 +48,7 @@ title: ConversationMessageEventTopicMessageMediaParticipant
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 | **recipientCountry** | <!----><!---->**String**<!----> |  |  [optional] |
 | **recipientType** | <!----><!---->**String**<!----> |  |  [optional] |
+| **byoSmsIntegrationId** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

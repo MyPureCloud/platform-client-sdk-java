@@ -1451,6 +1451,59 @@ public class ViewFilter  implements Serializable {
     }
   }
   private List<EvaluationStatusesEnum> evaluationStatuses = new ArrayList<EvaluationStatusesEnum>();
+  private Boolean isAnalyzedForSensitiveData = null;
+  private Boolean hasSensitiveData = null;
+  private String subPath = null;
+
+  private static class UserStateEnumDeserializer extends StdDeserializer<UserStateEnum> {
+    public UserStateEnumDeserializer() {
+      super(UserStateEnumDeserializer.class);
+    }
+
+    @Override
+    public UserStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return UserStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The user supplied state value in the view
+   */
+ @JsonDeserialize(using = UserStateEnumDeserializer.class)
+  public enum UserStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVEANDINACTIVE("ActiveAndInactive"),
+    ACTIVE("Active"),
+    INACTIVE("Inactive"),
+    DELETED("Deleted");
+
+    private String value;
+
+    UserStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static UserStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (UserStateEnum value : UserStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return UserStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private UserStateEnum userState = null;
 
   
   /**
@@ -4261,6 +4314,78 @@ public class ViewFilter  implements Serializable {
   }
 
 
+  /**
+   * Filter to indicate the transcript has been analyzed for sensitive data.
+   **/
+  public ViewFilter isAnalyzedForSensitiveData(Boolean isAnalyzedForSensitiveData) {
+    this.isAnalyzedForSensitiveData = isAnalyzedForSensitiveData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter to indicate the transcript has been analyzed for sensitive data.")
+  @JsonProperty("isAnalyzedForSensitiveData")
+  public Boolean getIsAnalyzedForSensitiveData() {
+    return isAnalyzedForSensitiveData;
+  }
+  public void setIsAnalyzedForSensitiveData(Boolean isAnalyzedForSensitiveData) {
+    this.isAnalyzedForSensitiveData = isAnalyzedForSensitiveData;
+  }
+
+
+  /**
+   * Filter to indicate the transcript contains sensitive data.
+   **/
+  public ViewFilter hasSensitiveData(Boolean hasSensitiveData) {
+    this.hasSensitiveData = hasSensitiveData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter to indicate the transcript contains sensitive data.")
+  @JsonProperty("hasSensitiveData")
+  public Boolean getHasSensitiveData() {
+    return hasSensitiveData;
+  }
+  public void setHasSensitiveData(Boolean hasSensitiveData) {
+    this.hasSensitiveData = hasSensitiveData;
+  }
+
+
+  /**
+   * Filter for Sub Path
+   **/
+  public ViewFilter subPath(String subPath) {
+    this.subPath = subPath;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter for Sub Path")
+  @JsonProperty("subPath")
+  public String getSubPath() {
+    return subPath;
+  }
+  public void setSubPath(String subPath) {
+    this.subPath = subPath;
+  }
+
+
+  /**
+   * The user supplied state value in the view
+   **/
+  public ViewFilter userState(UserStateEnum userState) {
+    this.userState = userState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user supplied state value in the view")
+  @JsonProperty("userState")
+  public UserStateEnum getUserState() {
+    return userState;
+  }
+  public void setUserState(UserStateEnum userState) {
+    this.userState = userState;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -4426,12 +4551,16 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.canonicalContactIds, viewFilter.canonicalContactIds) &&
             Objects.equals(this.alertRuleIds, viewFilter.alertRuleIds) &&
             Objects.equals(this.evaluationFormContextIds, viewFilter.evaluationFormContextIds) &&
-            Objects.equals(this.evaluationStatuses, viewFilter.evaluationStatuses);
+            Objects.equals(this.evaluationStatuses, viewFilter.evaluationStatuses) &&
+            Objects.equals(this.isAnalyzedForSensitiveData, viewFilter.isAnalyzedForSensitiveData) &&
+            Objects.equals(this.hasSensitiveData, viewFilter.hasSensitiveData) &&
+            Objects.equals(this.subPath, viewFilter.subPath) &&
+            Objects.equals(this.userState, viewFilter.userState);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, isAnalyzedForSensitiveData, hasSensitiveData, subPath, userState);
   }
 
   @Override
@@ -4595,6 +4724,10 @@ public class ViewFilter  implements Serializable {
     sb.append("    alertRuleIds: ").append(toIndentedString(alertRuleIds)).append("\n");
     sb.append("    evaluationFormContextIds: ").append(toIndentedString(evaluationFormContextIds)).append("\n");
     sb.append("    evaluationStatuses: ").append(toIndentedString(evaluationStatuses)).append("\n");
+    sb.append("    isAnalyzedForSensitiveData: ").append(toIndentedString(isAnalyzedForSensitiveData)).append("\n");
+    sb.append("    hasSensitiveData: ").append(toIndentedString(hasSensitiveData)).append("\n");
+    sb.append("    subPath: ").append(toIndentedString(subPath)).append("\n");
+    sb.append("    userState: ").append(toIndentedString(userState)).append("\n");
     sb.append("}");
     return sb.toString();
   }

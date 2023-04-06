@@ -318,6 +318,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
   private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
+  private String byoSmsIntegrationId = null;
 
   
   /**
@@ -768,6 +769,23 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
   }
 
 
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicMessage byoSmsIntegrationId(String byoSmsIntegrationId) {
+    this.byoSmsIntegrationId = byoSmsIntegrationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("byoSmsIntegrationId")
+  public String getByoSmsIntegrationId() {
+    return byoSmsIntegrationId;
+  }
+  public void setByoSmsIntegrationId(String byoSmsIntegrationId) {
+    this.byoSmsIntegrationId = byoSmsIntegrationId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -802,12 +820,13 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
             Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicMessage.wrapup) &&
             Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicMessage.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicMessage.afterCallWorkRequired) &&
-            Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicMessage.agentAssistantId);
+            Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicMessage.agentAssistantId) &&
+            Objects.equals(this.byoSmsIntegrationId, queueConversationSocialExpressionEventTopicMessage.byoSmsIntegrationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, direction, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
+    return Objects.hash(id, state, initialState, direction, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, byoSmsIntegrationId);
   }
 
   @Override
@@ -840,6 +859,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
+    sb.append("    byoSmsIntegrationId: ").append(toIndentedString(byoSmsIntegrationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

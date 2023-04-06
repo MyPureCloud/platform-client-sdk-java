@@ -215,6 +215,20 @@ public class GetRoutingWrapupcodesRequest {
 		}
 	}
 
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
+	}
+
+	public void setId(List<String> id) {
+		this.id = id;
+	}
+
+	public GetRoutingWrapupcodesRequest withId(List<String> id) {
+	    this.setId(id);
+	    return this;
+	} 
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -279,6 +293,9 @@ public class GetRoutingWrapupcodesRequest {
                 .withQueryParameters("sortOrder", "", sortOrder)
         
 
+                .withQueryParameters("id", "multi", id)
+        
+
                 .withQueryParameters("name", "", name)
         
 
@@ -341,6 +358,11 @@ public class GetRoutingWrapupcodesRequest {
 		    request.setSortOrder(sortOrder.toString());
 
 		    return this;
+		}
+
+		public Builder withId(List<String> id) {
+			request.setId(id);
+			return this;
 		}
 
 		public Builder withName(String name) {

@@ -318,6 +318,7 @@ public class ConversationEventTopicMessage  implements Serializable {
   private ConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
+  private String byoSmsIntegrationId = null;
 
   
   /**
@@ -768,6 +769,23 @@ public class ConversationEventTopicMessage  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ConversationEventTopicMessage byoSmsIntegrationId(String byoSmsIntegrationId) {
+    this.byoSmsIntegrationId = byoSmsIntegrationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("byoSmsIntegrationId")
+  public String getByoSmsIntegrationId() {
+    return byoSmsIntegrationId;
+  }
+  public void setByoSmsIntegrationId(String byoSmsIntegrationId) {
+    this.byoSmsIntegrationId = byoSmsIntegrationId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -802,12 +820,13 @@ public class ConversationEventTopicMessage  implements Serializable {
             Objects.equals(this.wrapup, conversationEventTopicMessage.wrapup) &&
             Objects.equals(this.afterCallWork, conversationEventTopicMessage.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, conversationEventTopicMessage.afterCallWorkRequired) &&
-            Objects.equals(this.agentAssistantId, conversationEventTopicMessage.agentAssistantId);
+            Objects.equals(this.agentAssistantId, conversationEventTopicMessage.agentAssistantId) &&
+            Objects.equals(this.byoSmsIntegrationId, conversationEventTopicMessage.byoSmsIntegrationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, direction, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
+    return Objects.hash(id, state, initialState, direction, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, byoSmsIntegrationId);
   }
 
   @Override
@@ -840,6 +859,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
+    sb.append("    byoSmsIntegrationId: ").append(toIndentedString(byoSmsIntegrationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

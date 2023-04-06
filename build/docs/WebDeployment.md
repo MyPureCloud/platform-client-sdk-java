@@ -13,6 +13,7 @@ title: WebDeployment
 | **description** | <!----><!---->**String**<!----> | The description of the config |  [optional] |
 | **allowAllDomains** | <!----><!---->**Boolean**<!----> | Property indicates whether all domains are allowed or not. allowedDomains must be empty when this is set as true. |  [optional] |
 | **allowedDomains** | <!----><!---->**List&lt;String&gt;**<!----> | The list of domains that are approved to use this deployment; the list will be added to CORS headers for ease of web use. |  [optional] |
+| **supportedContentProfile** | <!----><!---->[**SupportedContentProfile**](SupportedContentProfile.html)<!----> | The supported content profile for a deployment |  [optional] |
 | **snippet** | <!----><!---->**String**<!----> | Javascript snippet used to load the config |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date the deployment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The date the deployment was most recently modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |

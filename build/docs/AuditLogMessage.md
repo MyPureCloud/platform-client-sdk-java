@@ -278,6 +278,8 @@ title: AuditLogMessage
 | FLOWOUTCOME | &quot;FlowOutcome&quot; | 
 | FORECAST | &quot;Forecast&quot; | 
 | GDPRREQUEST | &quot;GdprRequest&quot; | 
+| GRAMMAR | &quot;Grammar&quot; | 
+| GRAMMARLANGUAGE | &quot;GrammarLanguage&quot; | 
 | GROUP | &quot;Group&quot; | 
 | HISTORICALDATA | &quot;HistoricalData&quot; | 
 | INBOUNDDOMAIN | &quot;InboundDomain&quot; | 
@@ -360,7 +362,9 @@ title: AuditLogMessage
 | SHIFTTRADE | &quot;ShiftTrade&quot; | 
 | SITE | &quot;Site&quot; | 
 | SKILLSGROUP | &quot;SkillsGroup&quot; | 
+| SKILLGROUPDEFINITION | &quot;SkillGroupDefinition&quot; | 
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; | 
+| STAFFINGGROUP | &quot;StaffingGroup&quot; | 
 | STATUS | &quot;Status&quot; | 
 | SUPPORTEDCONTENT | &quot;SupportedContent&quot; | 
 | SUPPORTFILE | &quot;SupportFile&quot; | 

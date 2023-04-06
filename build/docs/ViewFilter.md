@@ -164,6 +164,10 @@ title: ViewFilter
 | **alertRuleIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Alert Rule IDs |  [optional] |
 | **evaluationFormContextIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Evaluation Form Context IDs |  [optional] |
 | **evaluationStatuses** | <!---->[**List&lt;EvaluationStatusesEnum&gt;**](#EvaluationStatusesEnum)<!----> | The evaluation statuses that are used to filter the view |  [optional] |
+| **isAnalyzedForSensitiveData** | <!----><!---->**Boolean**<!----> | Filter to indicate the transcript has been analyzed for sensitive data. |  [optional] |
+| **hasSensitiveData** | <!----><!---->**Boolean**<!----> | Filter to indicate the transcript contains sensitive data. |  [optional] |
+| **subPath** | <!----><!---->**String**<!----> | Filter for Sub Path |  [optional] |
+| **userState** | [**UserStateEnum**](#UserStateEnum)<!----> | The user supplied state value in the view |  [optional] |
 {: class="table table-striped"}
 
 
@@ -556,6 +560,20 @@ title: ViewFilter
 | INREVIEW | &quot;InReview&quot; |
 | PENDING | &quot;Pending&quot; |
 | RETRACTED | &quot;Retracted&quot; |
+{: class="table table-striped"}
+
+
+<a name="UserStateEnum"></a>
+
+## Enum: UserStateEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVEANDINACTIVE | &quot;ActiveAndInactive&quot; | 
+| ACTIVE | &quot;Active&quot; | 
+| INACTIVE | &quot;Inactive&quot; | 
+| DELETED | &quot;Deleted&quot; | 
 {: class="table table-striped"}
 
 

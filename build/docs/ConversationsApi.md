@@ -97,6 +97,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | Update a participant. |
 | [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationSecureattributes**](ConversationsApi.html#patchConversationSecureattributes) | Update the secure attributes on a conversation. |
+| [**patchConversationsAftercallworkConversationIdParticipantCommunication**](ConversationsApi.html#patchConversationsAftercallworkConversationIdParticipantCommunication) | Update after-call work for this conversation communication. |
 | [**patchConversationsCall**](ConversationsApi.html#patchConversationsCall) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants |
 | [**patchConversationsCallParticipant**](ConversationsApi.html#patchConversationsCallParticipant) | Update conversation participant |
 | [**patchConversationsCallParticipantAttributes**](ConversationsApi.html#patchConversationsCallParticipantAttributes) | Update the attributes on a conversation participant. |
@@ -5828,6 +5829,73 @@ try {
 
 **String**
 
+<a name="patchConversationsAftercallworkConversationIdParticipantCommunication"></a>
+
+# **patchConversationsAftercallworkConversationIdParticipantCommunication**
+
+
+
+> [AfterCallWorkUpdate](AfterCallWorkUpdate.html) patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body)
+
+Update after-call work for this conversation communication.
+
+Wraps PATCH /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}  
+
+Requires ANY permissions: 
+
+* conversation:participant:wrapup
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+AfterCallWorkUpdate body = new AfterCallWorkUpdate(); // AfterCallWorkUpdate | AfterCallWorkUpdate
+try {
+    AfterCallWorkUpdate result = apiInstance.patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsAftercallworkConversationIdParticipantCommunication");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**AfterCallWorkUpdate**](AfterCallWorkUpdate.html)| AfterCallWorkUpdate | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AfterCallWorkUpdate**](AfterCallWorkUpdate.html)
+
 <a name="patchConversationsCall"></a>
 
 # **patchConversationsCall**
@@ -8730,7 +8798,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+WrapupInput body = new WrapupInput(); // WrapupInput | Wrap-up
 try {
     apiInstance.postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
 } catch (ApiException e) {
@@ -8747,7 +8815,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional] 
 {: class="table-striped"}
 
 
@@ -9047,7 +9115,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+WrapupInput body = new WrapupInput(); // WrapupInput | Wrap-up
 try {
     apiInstance.postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
 } catch (ApiException e) {
@@ -9064,7 +9132,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional] 
 {: class="table-striped"}
 
 
@@ -9545,7 +9613,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+WrapupInput body = new WrapupInput(); // WrapupInput | Wrap-up
 try {
     apiInstance.postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
 } catch (ApiException e) {
@@ -9562,7 +9630,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional] 
 {: class="table-striped"}
 
 
@@ -9735,7 +9803,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+WrapupInput body = new WrapupInput(); // WrapupInput | Wrap-up
 try {
     apiInstance.postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
 } catch (ApiException e) {
@@ -9752,7 +9820,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional] 
 {: class="table-striped"}
 
 
@@ -10050,7 +10118,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+WrapupInput body = new WrapupInput(); // WrapupInput | Wrap-up
 try {
     apiInstance.postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
 } catch (ApiException e) {
@@ -10067,7 +10135,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional] 
 {: class="table-striped"}
 
 
@@ -10757,7 +10825,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+WrapupInput body = new WrapupInput(); // WrapupInput | Wrap-up
 try {
     apiInstance.postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
 } catch (ApiException e) {
@@ -10774,7 +10842,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional] 
 {: class="table-striped"}
 
 
@@ -11506,7 +11574,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+WrapupInput body = new WrapupInput(); // WrapupInput | Wrap-up
 try {
     apiInstance.postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
 } catch (ApiException e) {
@@ -11523,7 +11591,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional] 
 {: class="table-striped"}
 
 
@@ -11572,7 +11640,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+WrapupInput body = new WrapupInput(); // WrapupInput | Wrap-up
 try {
     apiInstance.postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
 } catch (ApiException e) {
@@ -11589,7 +11657,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional] 
 {: class="table-striped"}
 
 
@@ -11638,7 +11706,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
-ExtendedWrapup body = new ExtendedWrapup(); // ExtendedWrapup | Wrap-up
+WrapupInput body = new WrapupInput(); // WrapupInput | Wrap-up
 try {
     apiInstance.postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, body);
 } catch (ApiException e) {
@@ -11655,7 +11723,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
-| **body** | [**ExtendedWrapup**](ExtendedWrapup.html)| Wrap-up | [optional] 
+| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional] 
 {: class="table-striped"}
 
 

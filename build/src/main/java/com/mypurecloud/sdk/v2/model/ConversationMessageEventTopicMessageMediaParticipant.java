@@ -399,6 +399,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
   private TypeEnum type = null;
   private String recipientCountry = null;
   private String recipientType = null;
+  private String byoSmsIntegrationId = null;
 
   
   /**
@@ -1081,6 +1082,23 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
   }
 
 
+  /**
+   **/
+  public ConversationMessageEventTopicMessageMediaParticipant byoSmsIntegrationId(String byoSmsIntegrationId) {
+    this.byoSmsIntegrationId = byoSmsIntegrationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("byoSmsIntegrationId")
+  public String getByoSmsIntegrationId() {
+    return byoSmsIntegrationId;
+  }
+  public void setByoSmsIntegrationId(String byoSmsIntegrationId) {
+    this.byoSmsIntegrationId = byoSmsIntegrationId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1130,12 +1148,13 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
             Objects.equals(this.messages, conversationMessageEventTopicMessageMediaParticipant.messages) &&
             Objects.equals(this.type, conversationMessageEventTopicMessageMediaParticipant.type) &&
             Objects.equals(this.recipientCountry, conversationMessageEventTopicMessageMediaParticipant.recipientCountry) &&
-            Objects.equals(this.recipientType, conversationMessageEventTopicMessageMediaParticipant.recipientType);
+            Objects.equals(this.recipientType, conversationMessageEventTopicMessageMediaParticipant.recipientType) &&
+            Objects.equals(this.byoSmsIntegrationId, conversationMessageEventTopicMessageMediaParticipant.byoSmsIntegrationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, messages, type, recipientCountry, recipientType);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, messages, type, recipientCountry, recipientType, byoSmsIntegrationId);
   }
 
   @Override
@@ -1183,6 +1202,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
+    sb.append("    byoSmsIntegrationId: ").append(toIndentedString(byoSmsIntegrationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

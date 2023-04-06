@@ -239,6 +239,7 @@ public class ConversationNormalizedMessage  implements Serializable {
   }
   private DirectionEnum direction = null;
   private Map<String, String> metadata = null;
+  private String byoSmsIntegrationId = null;
 
   
   @ApiModelProperty(example = "null", value = "Unique ID of the message. Message receipts will have the same ID as the message they reference.")
@@ -391,6 +392,24 @@ public class ConversationNormalizedMessage  implements Serializable {
   }
 
 
+  /**
+   * The internal id representing the customer supplied sms integration message.
+   **/
+  public ConversationNormalizedMessage byoSmsIntegrationId(String byoSmsIntegrationId) {
+    this.byoSmsIntegrationId = byoSmsIntegrationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The internal id representing the customer supplied sms integration message.")
+  @JsonProperty("byoSmsIntegrationId")
+  public String getByoSmsIntegrationId() {
+    return byoSmsIntegrationId;
+  }
+  public void setByoSmsIntegrationId(String byoSmsIntegrationId) {
+    this.byoSmsIntegrationId = byoSmsIntegrationId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -412,12 +431,13 @@ public class ConversationNormalizedMessage  implements Serializable {
             Objects.equals(this.originatingEntity, conversationNormalizedMessage.originatingEntity) &&
             Objects.equals(this.isFinalReceipt, conversationNormalizedMessage.isFinalReceipt) &&
             Objects.equals(this.direction, conversationNormalizedMessage.direction) &&
-            Objects.equals(this.metadata, conversationNormalizedMessage.metadata);
+            Objects.equals(this.metadata, conversationNormalizedMessage.metadata) &&
+            Objects.equals(this.byoSmsIntegrationId, conversationNormalizedMessage.byoSmsIntegrationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, channel, type, text, content, events, status, reasons, originatingEntity, isFinalReceipt, direction, metadata);
+    return Objects.hash(id, channel, type, text, content, events, status, reasons, originatingEntity, isFinalReceipt, direction, metadata, byoSmsIntegrationId);
   }
 
   @Override
@@ -437,6 +457,7 @@ public class ConversationNormalizedMessage  implements Serializable {
     sb.append("    isFinalReceipt: ").append(toIndentedString(isFinalReceipt)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    byoSmsIntegrationId: ").append(toIndentedString(byoSmsIntegrationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

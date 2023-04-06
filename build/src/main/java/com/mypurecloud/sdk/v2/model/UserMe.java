@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.OAuthLastTokenIssued;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
+import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinition;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
@@ -144,6 +145,7 @@ public class UserMe  implements Serializable {
   private GeolocationSettings geolocationSettings = null;
   private Organization organization = null;
   private List<OrganizationPresence> presenceDefinitions = new ArrayList<OrganizationPresence>();
+  private List<OrganizationPresenceDefinition> divisionedPresenceDefinitions = new ArrayList<OrganizationPresenceDefinition>();
   private List<LocationDefinition> locationDefinitions = new ArrayList<LocationDefinition>();
   private List<DomainOrganizationRole> orgAuthorization = new ArrayList<DomainOrganizationRole>();
   private List<User> favorites = new ArrayList<User>();
@@ -588,10 +590,17 @@ public class UserMe  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The first 100 presence definitions for user's organization.")
+  @ApiModelProperty(example = "null", value = "The first 100 non-divisioned presence definitions for user's organization.")
   @JsonProperty("presenceDefinitions")
   public List<OrganizationPresence> getPresenceDefinitions() {
     return presenceDefinitions;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The presence definitions that the user has access to")
+  @JsonProperty("divisionedPresenceDefinitions")
+  public List<OrganizationPresenceDefinition> getDivisionedPresenceDefinitions() {
+    return divisionedPresenceDefinitions;
   }
 
 
@@ -728,6 +737,7 @@ public class UserMe  implements Serializable {
             Objects.equals(this.geolocationSettings, userMe.geolocationSettings) &&
             Objects.equals(this.organization, userMe.organization) &&
             Objects.equals(this.presenceDefinitions, userMe.presenceDefinitions) &&
+            Objects.equals(this.divisionedPresenceDefinitions, userMe.divisionedPresenceDefinitions) &&
             Objects.equals(this.locationDefinitions, userMe.locationDefinitions) &&
             Objects.equals(this.orgAuthorization, userMe.orgAuthorization) &&
             Objects.equals(this.favorites, userMe.favorites) &&
@@ -744,7 +754,7 @@ public class UserMe  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, date, geolocationSettings, organization, presenceDefinitions, divisionedPresenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
   }
 
   @Override
@@ -791,6 +801,7 @@ public class UserMe  implements Serializable {
     sb.append("    geolocationSettings: ").append(toIndentedString(geolocationSettings)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    presenceDefinitions: ").append(toIndentedString(presenceDefinitions)).append("\n");
+    sb.append("    divisionedPresenceDefinitions: ").append(toIndentedString(divisionedPresenceDefinitions)).append("\n");
     sb.append("    locationDefinitions: ").append(toIndentedString(locationDefinitions)).append("\n");
     sb.append("    orgAuthorization: ").append(toIndentedString(orgAuthorization)).append("\n");
     sb.append("    favorites: ").append(toIndentedString(favorites)).append("\n");

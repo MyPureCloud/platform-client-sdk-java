@@ -116,6 +116,7 @@ public class GetUsersMeRequest {
 		GEOLOCATIONSETTINGS("geolocationsettings"),
 		ORGANIZATION("organization"),
 		PRESENCEDEFINITIONS("presencedefinitions"),
+		DIVISIONEDPRESENCEDEFINITIONS("divisionedpresencedefinitions"),
 		LOCATIONDEFINITIONS("locationdefinitions"),
 		ORGAUTHORIZATION("orgauthorization"),
 		ORGPRODUCTS("orgproducts"),

@@ -274,7 +274,7 @@ public class AuditApi {
    * 
    * @param transactionId Transaction ID (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (optional, default to 25)
    * @param expand Which fields, if any, to expand (optional)
    * @return AuditQueryExecutionResultsResponse
    * @throws ApiException if the request fails on the server
@@ -289,7 +289,7 @@ public class AuditApi {
    * 
    * @param transactionId Transaction ID (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (optional, default to 25)
    * @param expand Which fields, if any, to expand (optional)
    * @return AuditQueryExecutionResultsResponse
    * @throws IOException if the request fails to be processed

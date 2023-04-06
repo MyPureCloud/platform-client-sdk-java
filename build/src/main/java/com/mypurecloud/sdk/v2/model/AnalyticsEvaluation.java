@@ -23,6 +23,7 @@ import java.io.Serializable;
 
 public class AnalyticsEvaluation  implements Serializable {
   
+  private String assigneeId = null;
   private String calibrationId = null;
   private String contextId = null;
   private Boolean deleted = null;
@@ -90,6 +91,24 @@ public class AnalyticsEvaluation  implements Serializable {
   private Long oTotalScore = null;
 
   
+  /**
+   * UserId of the assignee
+   **/
+  public AnalyticsEvaluation assigneeId(String assigneeId) {
+    this.assigneeId = assigneeId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "UserId of the assignee")
+  @JsonProperty("assigneeId")
+  public String getAssigneeId() {
+    return assigneeId;
+  }
+  public void setAssigneeId(String assigneeId) {
+    this.assigneeId = assigneeId;
+  }
+
+
   /**
    * The calibration ID used for the purpose of training evaluators
    **/
@@ -368,7 +387,8 @@ public class AnalyticsEvaluation  implements Serializable {
     }
     AnalyticsEvaluation analyticsEvaluation = (AnalyticsEvaluation) o;
 
-    return Objects.equals(this.calibrationId, analyticsEvaluation.calibrationId) &&
+    return Objects.equals(this.assigneeId, analyticsEvaluation.assigneeId) &&
+            Objects.equals(this.calibrationId, analyticsEvaluation.calibrationId) &&
             Objects.equals(this.contextId, analyticsEvaluation.contextId) &&
             Objects.equals(this.deleted, analyticsEvaluation.deleted) &&
             Objects.equals(this.evaluationId, analyticsEvaluation.evaluationId) &&
@@ -387,7 +407,7 @@ public class AnalyticsEvaluation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(calibrationId, contextId, deleted, evaluationId, evaluationStatus, evaluatorId, eventTime, formId, formName, queueId, released, rescored, userId, oTotalCriticalScore, oTotalScore);
+    return Objects.hash(assigneeId, calibrationId, contextId, deleted, evaluationId, evaluationStatus, evaluatorId, eventTime, formId, formName, queueId, released, rescored, userId, oTotalCriticalScore, oTotalScore);
   }
 
   @Override
@@ -395,6 +415,7 @@ public class AnalyticsEvaluation  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsEvaluation {\n");
     
+    sb.append("    assigneeId: ").append(toIndentedString(assigneeId)).append("\n");
     sb.append("    calibrationId: ").append(toIndentedString(calibrationId)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");

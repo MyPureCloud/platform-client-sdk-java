@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
+import com.mypurecloud.sdk.v2.model.AfterCallWorkUpdate;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendRequestDto;
 import com.mypurecloud.sdk.v2.model.AgentlessEmailSendResponseDto;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
@@ -70,7 +71,6 @@ import com.mypurecloud.sdk.v2.model.EmailMessageListing;
 import com.mypurecloud.sdk.v2.model.EmailMessageReply;
 import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ExtendedWrapup;
 import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
@@ -124,6 +124,7 @@ import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.WrapupInput;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
@@ -216,6 +217,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsVideoParticipantCommun
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSecureattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsAftercallworkConversationIdParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantAttributesRequest;
@@ -7713,6 +7715,96 @@ public class ConversationsApi {
   }
 
   /**
+   * Update after-call work for this conversation communication.
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param communicationId communicationId (required)
+   * @param body AfterCallWorkUpdate (required)
+   * @return AfterCallWorkUpdate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AfterCallWorkUpdate patchConversationsAftercallworkConversationIdParticipantCommunication(String conversationId, String participantId, String communicationId, AfterCallWorkUpdate body) throws IOException, ApiException {
+    return  patchConversationsAftercallworkConversationIdParticipantCommunication(createPatchConversationsAftercallworkConversationIdParticipantCommunicationRequest(conversationId, participantId, communicationId, body));
+  }
+
+  /**
+   * Update after-call work for this conversation communication.
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param communicationId communicationId (required)
+   * @param body AfterCallWorkUpdate (required)
+   * @return AfterCallWorkUpdate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AfterCallWorkUpdate> patchConversationsAftercallworkConversationIdParticipantCommunicationWithHttpInfo(String conversationId, String participantId, String communicationId, AfterCallWorkUpdate body) throws IOException {
+    return patchConversationsAftercallworkConversationIdParticipantCommunication(createPatchConversationsAftercallworkConversationIdParticipantCommunicationRequest(conversationId, participantId, communicationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsAftercallworkConversationIdParticipantCommunicationRequest createPatchConversationsAftercallworkConversationIdParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, AfterCallWorkUpdate body) {
+    return PatchConversationsAftercallworkConversationIdParticipantCommunicationRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withCommunicationId(communicationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update after-call work for this conversation communication.
+   * 
+   * @param request The request object
+   * @return AfterCallWorkUpdate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AfterCallWorkUpdate patchConversationsAftercallworkConversationIdParticipantCommunication(PatchConversationsAftercallworkConversationIdParticipantCommunicationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AfterCallWorkUpdate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AfterCallWorkUpdate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update after-call work for this conversation communication.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AfterCallWorkUpdate> patchConversationsAftercallworkConversationIdParticipantCommunication(ApiRequest<AfterCallWorkUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AfterCallWorkUpdate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AfterCallWorkUpdate> response = (ApiResponse<AfterCallWorkUpdate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AfterCallWorkUpdate> response = (ApiResponse<AfterCallWorkUpdate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
    * 
    * @param conversationId conversationId (required)
@@ -11449,7 +11541,7 @@ public class ConversationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postConversationsCallParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException, ApiException {
+  public void postConversationsCallParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsCallParticipantCommunicationWrapup(createPostConversationsCallParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
   }
 
@@ -11462,11 +11554,11 @@ public class ConversationsApi {
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCallParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException {
+  public ApiResponse<Void> postConversationsCallParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsCallParticipantCommunicationWrapup(createPostConversationsCallParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
   }
 
-  private PostConversationsCallParticipantCommunicationWrapupRequest createPostConversationsCallParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, ExtendedWrapup body) {
+  private PostConversationsCallParticipantCommunicationWrapupRequest createPostConversationsCallParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, WrapupInput body) {
     return PostConversationsCallParticipantCommunicationWrapupRequest.builder()
             .withConversationId(conversationId)
 
@@ -11504,7 +11596,7 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCallParticipantCommunicationWrapup(ApiRequest<ExtendedWrapup> request) throws IOException {
+  public ApiResponse<Void> postConversationsCallParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -11866,7 +11958,7 @@ public class ConversationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postConversationsCallbackParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException, ApiException {
+  public void postConversationsCallbackParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsCallbackParticipantCommunicationWrapup(createPostConversationsCallbackParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
   }
 
@@ -11879,11 +11971,11 @@ public class ConversationsApi {
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCallbackParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException {
+  public ApiResponse<Void> postConversationsCallbackParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsCallbackParticipantCommunicationWrapup(createPostConversationsCallbackParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
   }
 
-  private PostConversationsCallbackParticipantCommunicationWrapupRequest createPostConversationsCallbackParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, ExtendedWrapup body) {
+  private PostConversationsCallbackParticipantCommunicationWrapupRequest createPostConversationsCallbackParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, WrapupInput body) {
     return PostConversationsCallbackParticipantCommunicationWrapupRequest.builder()
             .withConversationId(conversationId)
 
@@ -11921,7 +12013,7 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCallbackParticipantCommunicationWrapup(ApiRequest<ExtendedWrapup> request) throws IOException {
+  public ApiResponse<Void> postConversationsCallbackParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -12513,7 +12605,7 @@ public class ConversationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postConversationsChatParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException, ApiException {
+  public void postConversationsChatParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsChatParticipantCommunicationWrapup(createPostConversationsChatParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
   }
 
@@ -12526,11 +12618,11 @@ public class ConversationsApi {
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsChatParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException {
+  public ApiResponse<Void> postConversationsChatParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsChatParticipantCommunicationWrapup(createPostConversationsChatParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
   }
 
-  private PostConversationsChatParticipantCommunicationWrapupRequest createPostConversationsChatParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, ExtendedWrapup body) {
+  private PostConversationsChatParticipantCommunicationWrapupRequest createPostConversationsChatParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, WrapupInput body) {
     return PostConversationsChatParticipantCommunicationWrapupRequest.builder()
             .withConversationId(conversationId)
 
@@ -12568,7 +12660,7 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsChatParticipantCommunicationWrapup(ApiRequest<ExtendedWrapup> request) throws IOException {
+  public ApiResponse<Void> postConversationsChatParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -12761,7 +12853,7 @@ public class ConversationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postConversationsCobrowsesessionParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException, ApiException {
+  public void postConversationsCobrowsesessionParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsCobrowsesessionParticipantCommunicationWrapup(createPostConversationsCobrowsesessionParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
   }
 
@@ -12774,11 +12866,11 @@ public class ConversationsApi {
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCobrowsesessionParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException {
+  public ApiResponse<Void> postConversationsCobrowsesessionParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsCobrowsesessionParticipantCommunicationWrapup(createPostConversationsCobrowsesessionParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
   }
 
-  private PostConversationsCobrowsesessionParticipantCommunicationWrapupRequest createPostConversationsCobrowsesessionParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, ExtendedWrapup body) {
+  private PostConversationsCobrowsesessionParticipantCommunicationWrapupRequest createPostConversationsCobrowsesessionParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, WrapupInput body) {
     return PostConversationsCobrowsesessionParticipantCommunicationWrapupRequest.builder()
             .withConversationId(conversationId)
 
@@ -12816,7 +12908,7 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCobrowsesessionParticipantCommunicationWrapup(ApiRequest<ExtendedWrapup> request) throws IOException {
+  public ApiResponse<Void> postConversationsCobrowsesessionParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -13177,7 +13269,7 @@ public class ConversationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postConversationsEmailParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException, ApiException {
+  public void postConversationsEmailParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsEmailParticipantCommunicationWrapup(createPostConversationsEmailParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
   }
 
@@ -13190,11 +13282,11 @@ public class ConversationsApi {
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsEmailParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException {
+  public ApiResponse<Void> postConversationsEmailParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsEmailParticipantCommunicationWrapup(createPostConversationsEmailParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
   }
 
-  private PostConversationsEmailParticipantCommunicationWrapupRequest createPostConversationsEmailParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, ExtendedWrapup body) {
+  private PostConversationsEmailParticipantCommunicationWrapupRequest createPostConversationsEmailParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, WrapupInput body) {
     return PostConversationsEmailParticipantCommunicationWrapupRequest.builder()
             .withConversationId(conversationId)
 
@@ -13232,7 +13324,7 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsEmailParticipantCommunicationWrapup(ApiRequest<ExtendedWrapup> request) throws IOException {
+  public ApiResponse<Void> postConversationsEmailParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -14078,7 +14170,7 @@ public class ConversationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postConversationsMessageParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException, ApiException {
+  public void postConversationsMessageParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsMessageParticipantCommunicationWrapup(createPostConversationsMessageParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
   }
 
@@ -14091,11 +14183,11 @@ public class ConversationsApi {
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsMessageParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException {
+  public ApiResponse<Void> postConversationsMessageParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsMessageParticipantCommunicationWrapup(createPostConversationsMessageParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
   }
 
-  private PostConversationsMessageParticipantCommunicationWrapupRequest createPostConversationsMessageParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, ExtendedWrapup body) {
+  private PostConversationsMessageParticipantCommunicationWrapupRequest createPostConversationsMessageParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, WrapupInput body) {
     return PostConversationsMessageParticipantCommunicationWrapupRequest.builder()
             .withConversationId(conversationId)
 
@@ -14133,7 +14225,7 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsMessageParticipantCommunicationWrapup(ApiRequest<ExtendedWrapup> request) throws IOException {
+  public ApiResponse<Void> postConversationsMessageParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -15028,7 +15120,7 @@ public class ConversationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postConversationsScreenshareParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException, ApiException {
+  public void postConversationsScreenshareParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsScreenshareParticipantCommunicationWrapup(createPostConversationsScreenshareParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
   }
 
@@ -15041,11 +15133,11 @@ public class ConversationsApi {
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsScreenshareParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException {
+  public ApiResponse<Void> postConversationsScreenshareParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsScreenshareParticipantCommunicationWrapup(createPostConversationsScreenshareParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
   }
 
-  private PostConversationsScreenshareParticipantCommunicationWrapupRequest createPostConversationsScreenshareParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, ExtendedWrapup body) {
+  private PostConversationsScreenshareParticipantCommunicationWrapupRequest createPostConversationsScreenshareParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, WrapupInput body) {
     return PostConversationsScreenshareParticipantCommunicationWrapupRequest.builder()
             .withConversationId(conversationId)
 
@@ -15083,7 +15175,7 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsScreenshareParticipantCommunicationWrapup(ApiRequest<ExtendedWrapup> request) throws IOException {
+  public ApiResponse<Void> postConversationsScreenshareParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -15115,7 +15207,7 @@ public class ConversationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postConversationsSocialParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException, ApiException {
+  public void postConversationsSocialParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsSocialParticipantCommunicationWrapup(createPostConversationsSocialParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
   }
 
@@ -15128,11 +15220,11 @@ public class ConversationsApi {
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsSocialParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException {
+  public ApiResponse<Void> postConversationsSocialParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsSocialParticipantCommunicationWrapup(createPostConversationsSocialParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
   }
 
-  private PostConversationsSocialParticipantCommunicationWrapupRequest createPostConversationsSocialParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, ExtendedWrapup body) {
+  private PostConversationsSocialParticipantCommunicationWrapupRequest createPostConversationsSocialParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, WrapupInput body) {
     return PostConversationsSocialParticipantCommunicationWrapupRequest.builder()
             .withConversationId(conversationId)
 
@@ -15170,7 +15262,7 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsSocialParticipantCommunicationWrapup(ApiRequest<ExtendedWrapup> request) throws IOException {
+  public ApiResponse<Void> postConversationsSocialParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -15202,7 +15294,7 @@ public class ConversationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postConversationsVideoParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException, ApiException {
+  public void postConversationsVideoParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsVideoParticipantCommunicationWrapup(createPostConversationsVideoParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
   }
 
@@ -15215,11 +15307,11 @@ public class ConversationsApi {
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsVideoParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, ExtendedWrapup body) throws IOException {
+  public ApiResponse<Void> postConversationsVideoParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsVideoParticipantCommunicationWrapup(createPostConversationsVideoParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
   }
 
-  private PostConversationsVideoParticipantCommunicationWrapupRequest createPostConversationsVideoParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, ExtendedWrapup body) {
+  private PostConversationsVideoParticipantCommunicationWrapupRequest createPostConversationsVideoParticipantCommunicationWrapupRequest(String conversationId, String participantId, String communicationId, WrapupInput body) {
     return PostConversationsVideoParticipantCommunicationWrapupRequest.builder()
             .withConversationId(conversationId)
 
@@ -15257,7 +15349,7 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsVideoParticipantCommunicationWrapup(ApiRequest<ExtendedWrapup> request) throws IOException {
+  public ApiResponse<Void> postConversationsVideoParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }

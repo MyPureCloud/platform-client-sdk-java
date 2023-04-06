@@ -339,6 +339,7 @@ public class MessageMediaParticipant  implements Serializable {
   private String recipientCountry = null;
   private String recipientType = null;
   private Boolean authenticated = null;
+  private String monitoredParticipantId = null;
 
   
   /**
@@ -1079,6 +1080,24 @@ public class MessageMediaParticipant  implements Serializable {
   }
 
 
+  /**
+   * The ID of the participant being monitored when performing a message monitor.
+   **/
+  public MessageMediaParticipant monitoredParticipantId(String monitoredParticipantId) {
+    this.monitoredParticipantId = monitoredParticipantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the participant being monitored when performing a message monitor.")
+  @JsonProperty("monitoredParticipantId")
+  public String getMonitoredParticipantId() {
+    return monitoredParticipantId;
+  }
+  public void setMonitoredParticipantId(String monitoredParticipantId) {
+    this.monitoredParticipantId = monitoredParticipantId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1129,12 +1148,13 @@ public class MessageMediaParticipant  implements Serializable {
             Objects.equals(this.type, messageMediaParticipant.type) &&
             Objects.equals(this.recipientCountry, messageMediaParticipant.recipientCountry) &&
             Objects.equals(this.recipientType, messageMediaParticipant.recipientType) &&
-            Objects.equals(this.authenticated, messageMediaParticipant.authenticated);
+            Objects.equals(this.authenticated, messageMediaParticipant.authenticated) &&
+            Objects.equals(this.monitoredParticipantId, messageMediaParticipant.monitoredParticipantId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, toAddress, fromAddress, messages, type, recipientCountry, recipientType, authenticated);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, toAddress, fromAddress, messages, type, recipientCountry, recipientType, authenticated, monitoredParticipantId);
   }
 
   @Override
@@ -1183,6 +1203,7 @@ public class MessageMediaParticipant  implements Serializable {
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("    authenticated: ").append(toIndentedString(authenticated)).append("\n");
+    sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

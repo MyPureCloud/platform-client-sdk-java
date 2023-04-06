@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.ExtendedWrapup;
+import com.mypurecloud.sdk.v2.model.WrapupInput;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class MediaParticipantRequest  implements Serializable {
   
-  private ExtendedWrapup wrapup = null;
+  private WrapupInput wrapup = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -91,17 +91,17 @@ public class MediaParticipantRequest  implements Serializable {
   /**
    * Wrap-up to assign to this participant.
    **/
-  public MediaParticipantRequest wrapup(ExtendedWrapup wrapup) {
+  public MediaParticipantRequest wrapup(WrapupInput wrapup) {
     this.wrapup = wrapup;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Wrap-up to assign to this participant.")
   @JsonProperty("wrapup")
-  public ExtendedWrapup getWrapup() {
+  public WrapupInput getWrapup() {
     return wrapup;
   }
-  public void setWrapup(ExtendedWrapup wrapup) {
+  public void setWrapup(WrapupInput wrapup) {
     this.wrapup = wrapup;
   }
 
