@@ -29,8 +29,6 @@ import com.mypurecloud.sdk.v2.model.Edge;
 import com.mypurecloud.sdk.v2.model.EdgeEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeGroup;
 import com.mypurecloud.sdk.v2.model.EdgeGroupEntityListing;
-import com.mypurecloud.sdk.v2.model.EdgeLine;
-import com.mypurecloud.sdk.v2.model.EdgeLineEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJob;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobResponse;
@@ -107,8 +105,6 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticNsl
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticPingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticTracepathRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLineRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLinesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogicalinterfaceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogsJobRequest;
@@ -197,7 +193,6 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteOutboun
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunkbasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeRequest;
-import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeLineRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeLogicalinterfaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesCertificateauthorityRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesDidRequest;
@@ -1946,156 +1941,6 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get line
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<EdgeLine> getTelephonyProvidersEdgeLineAsync(GetTelephonyProvidersEdgeLineRequest request, final AsyncApiCallback<EdgeLine> callback) {
-    try {
-      final SettableFuture<EdgeLine> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeLine>() {}, new AsyncApiCallback<ApiResponse<EdgeLine>>() {
-        @Override
-        public void onCompleted(ApiResponse<EdgeLine> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get line
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<EdgeLine>> getTelephonyProvidersEdgeLineAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EdgeLine>> callback) {
-    try {
-      final SettableFuture<ApiResponse<EdgeLine>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<EdgeLine>() {}, new AsyncApiCallback<ApiResponse<EdgeLine>>() {
-        @Override
-        public void onCompleted(ApiResponse<EdgeLine> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get the list of lines.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<EdgeLineEntityListing> getTelephonyProvidersEdgeLinesAsync(GetTelephonyProvidersEdgeLinesRequest request, final AsyncApiCallback<EdgeLineEntityListing> callback) {
-    try {
-      final SettableFuture<EdgeLineEntityListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeLineEntityListing>() {}, new AsyncApiCallback<ApiResponse<EdgeLineEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<EdgeLineEntityListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get the list of lines.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<EdgeLineEntityListing>> getTelephonyProvidersEdgeLinesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EdgeLineEntityListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<EdgeLineEntityListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<EdgeLineEntityListing>() {}, new AsyncApiCallback<ApiResponse<EdgeLineEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<EdgeLineEntityListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<EdgeLineEntityListing> response = (ApiResponse<EdgeLineEntityListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<EdgeLineEntityListing> response = (ApiResponse<EdgeLineEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -8696,81 +8541,6 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Update a line.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<EdgeLine> putTelephonyProvidersEdgeLineAsync(PutTelephonyProvidersEdgeLineRequest request, final AsyncApiCallback<EdgeLine> callback) {
-    try {
-      final SettableFuture<EdgeLine> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeLine>() {}, new AsyncApiCallback<ApiResponse<EdgeLine>>() {
-        @Override
-        public void onCompleted(ApiResponse<EdgeLine> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Update a line.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<EdgeLine>> putTelephonyProvidersEdgeLineAsync(ApiRequest<EdgeLine> request, final AsyncApiCallback<ApiResponse<EdgeLine>> callback) {
-    try {
-      final SettableFuture<ApiResponse<EdgeLine>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<EdgeLine>() {}, new AsyncApiCallback<ApiResponse<EdgeLine>>() {
-        @Override
-        public void onCompleted(ApiResponse<EdgeLine> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

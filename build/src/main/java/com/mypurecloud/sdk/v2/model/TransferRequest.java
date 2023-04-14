@@ -96,14 +96,14 @@ public class TransferRequest  implements Serializable {
 
 
   /**
-   * The address of the transfer target which can be user ID, queue ID or queue name
+   * The user ID or queue ID of the transfer target. Address like a phone number can not be used for callbacks, but they can be used for other forms of communication.
    **/
   public TransferRequest address(String address) {
     this.address = address;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The address of the transfer target which can be user ID, queue ID or queue name")
+  @ApiModelProperty(example = "null", value = "The user ID or queue ID of the transfer target. Address like a phone number can not be used for callbacks, but they can be used for other forms of communication.")
   @JsonProperty("address")
   public String getAddress() {
     return address;

@@ -36,8 +36,6 @@ import com.mypurecloud.sdk.v2.model.Edge;
 import com.mypurecloud.sdk.v2.model.EdgeEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeGroup;
 import com.mypurecloud.sdk.v2.model.EdgeGroupEntityListing;
-import com.mypurecloud.sdk.v2.model.EdgeLine;
-import com.mypurecloud.sdk.v2.model.EdgeLineEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJob;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobResponse;

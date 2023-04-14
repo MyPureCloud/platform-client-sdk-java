@@ -26,8 +26,6 @@ import com.mypurecloud.sdk.v2.model.Edge;
 import com.mypurecloud.sdk.v2.model.EdgeEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeGroup;
 import com.mypurecloud.sdk.v2.model.EdgeGroupEntityListing;
-import com.mypurecloud.sdk.v2.model.EdgeLine;
-import com.mypurecloud.sdk.v2.model.EdgeLineEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJob;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobResponse;
@@ -104,8 +102,6 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticNsl
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticPingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticTracepathRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLineRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLinesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogicalinterfaceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogsJobRequest;
@@ -194,7 +190,6 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteOutboun
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunkbasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeRequest;
-import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeLineRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeLogicalinterfaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesCertificateauthorityRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesDidRequest;
@@ -2043,174 +2038,6 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get line
-   * 
-   * @param edgeId Edge ID (required)
-   * @param lineId Line ID (required)
-   * @return EdgeLine
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public EdgeLine getTelephonyProvidersEdgeLine(String edgeId, String lineId) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgeLine(createGetTelephonyProvidersEdgeLineRequest(edgeId, lineId));
-  }
-
-  /**
-   * Get line
-   * 
-   * @param edgeId Edge ID (required)
-   * @param lineId Line ID (required)
-   * @return EdgeLine
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<EdgeLine> getTelephonyProvidersEdgeLineWithHttpInfo(String edgeId, String lineId) throws IOException {
-    return getTelephonyProvidersEdgeLine(createGetTelephonyProvidersEdgeLineRequest(edgeId, lineId).withHttpInfo());
-  }
-
-  private GetTelephonyProvidersEdgeLineRequest createGetTelephonyProvidersEdgeLineRequest(String edgeId, String lineId) {
-    return GetTelephonyProvidersEdgeLineRequest.builder()
-            .withEdgeId(edgeId)
-
-            .withLineId(lineId)
-
-            .build();
-  }
-
-  /**
-   * Get line
-   * 
-   * @param request The request object
-   * @return EdgeLine
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public EdgeLine getTelephonyProvidersEdgeLine(GetTelephonyProvidersEdgeLineRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<EdgeLine> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeLine>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get line
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<EdgeLine> getTelephonyProvidersEdgeLine(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<EdgeLine>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get the list of lines.
-   * 
-   * @param edgeId Edge ID (required)
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @return EdgeLineEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public EdgeLineEntityListing getTelephonyProvidersEdgeLines(String edgeId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgeLines(createGetTelephonyProvidersEdgeLinesRequest(edgeId, pageSize, pageNumber));
-  }
-
-  /**
-   * Get the list of lines.
-   * 
-   * @param edgeId Edge ID (required)
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @return EdgeLineEntityListing
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<EdgeLineEntityListing> getTelephonyProvidersEdgeLinesWithHttpInfo(String edgeId, Integer pageSize, Integer pageNumber) throws IOException {
-    return getTelephonyProvidersEdgeLines(createGetTelephonyProvidersEdgeLinesRequest(edgeId, pageSize, pageNumber).withHttpInfo());
-  }
-
-  private GetTelephonyProvidersEdgeLinesRequest createGetTelephonyProvidersEdgeLinesRequest(String edgeId, Integer pageSize, Integer pageNumber) {
-    return GetTelephonyProvidersEdgeLinesRequest.builder()
-            .withEdgeId(edgeId)
-
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .build();
-  }
-
-  /**
-   * Get the list of lines.
-   * 
-   * @param request The request object
-   * @return EdgeLineEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public EdgeLineEntityListing getTelephonyProvidersEdgeLines(GetTelephonyProvidersEdgeLinesRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<EdgeLineEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeLineEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get the list of lines.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<EdgeLineEntityListing> getTelephonyProvidersEdgeLines(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<EdgeLineEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<EdgeLineEntityListing> response = (ApiResponse<EdgeLineEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<EdgeLineEntityListing> response = (ApiResponse<EdgeLineEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4824,7 +4651,7 @@ public class TelephonyProvidersEdgeApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
    * @param sortBy Value by which to sort (optional, default to name)
-   * @param expand Fields to expand in the response, comma-separated (optional)
+   * @param expand Fields to expand in the response, comma-separated. The edgeGroup value is deprecated. (optional)
    * @return LineEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4840,7 +4667,7 @@ public class TelephonyProvidersEdgeApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
    * @param sortBy Value by which to sort (optional, default to name)
-   * @param expand Fields to expand in the response, comma-separated (optional)
+   * @param expand Fields to expand in the response, comma-separated. The edgeGroup value is deprecated. (optional)
    * @return LineEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -9558,92 +9385,6 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Update a line.
-   * 
-   * @param edgeId Edge ID (required)
-   * @param lineId Line ID (required)
-   * @param body Line (required)
-   * @return EdgeLine
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public EdgeLine putTelephonyProvidersEdgeLine(String edgeId, String lineId, EdgeLine body) throws IOException, ApiException {
-    return  putTelephonyProvidersEdgeLine(createPutTelephonyProvidersEdgeLineRequest(edgeId, lineId, body));
-  }
-
-  /**
-   * Update a line.
-   * 
-   * @param edgeId Edge ID (required)
-   * @param lineId Line ID (required)
-   * @param body Line (required)
-   * @return EdgeLine
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<EdgeLine> putTelephonyProvidersEdgeLineWithHttpInfo(String edgeId, String lineId, EdgeLine body) throws IOException {
-    return putTelephonyProvidersEdgeLine(createPutTelephonyProvidersEdgeLineRequest(edgeId, lineId, body).withHttpInfo());
-  }
-
-  private PutTelephonyProvidersEdgeLineRequest createPutTelephonyProvidersEdgeLineRequest(String edgeId, String lineId, EdgeLine body) {
-    return PutTelephonyProvidersEdgeLineRequest.builder()
-            .withEdgeId(edgeId)
-
-            .withLineId(lineId)
-
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Update a line.
-   * 
-   * @param request The request object
-   * @return EdgeLine
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public EdgeLine putTelephonyProvidersEdgeLine(PutTelephonyProvidersEdgeLineRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<EdgeLine> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeLine>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Update a line.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<EdgeLine> putTelephonyProvidersEdgeLine(ApiRequest<EdgeLine> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<EdgeLine>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

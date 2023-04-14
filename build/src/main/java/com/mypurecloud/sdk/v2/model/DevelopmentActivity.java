@@ -34,6 +34,55 @@ public class DevelopmentActivity  implements Serializable {
   private Float percentageScore = null;
   private Boolean isPassed = null;
   private Boolean isLatest = null;
+  private Boolean isModuleArchived = null;
+
+  private static class ArchivalModeEnumDeserializer extends StdDeserializer<ArchivalModeEnum> {
+    public ArchivalModeEnumDeserializer() {
+      super(ArchivalModeEnumDeserializer.class);
+    }
+
+    @Override
+    public ArchivalModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ArchivalModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Module archive type
+   */
+ @JsonDeserialize(using = ArchivalModeEnumDeserializer.class)
+  public enum ArchivalModeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GRACEFUL("Graceful"),
+    IMMEDIATE("Immediate");
+
+    private String value;
+
+    ArchivalModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ArchivalModeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ArchivalModeEnum value : ArchivalModeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ArchivalModeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ArchivalModeEnum archivalMode = null;
   private String selfUri = null;
   private String name = null;
 
@@ -204,6 +253,42 @@ public class DevelopmentActivity  implements Serializable {
   }
 
 
+  /**
+   * True if the associated module is archived
+   **/
+  public DevelopmentActivity isModuleArchived(Boolean isModuleArchived) {
+    this.isModuleArchived = isModuleArchived;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True if the associated module is archived")
+  @JsonProperty("isModuleArchived")
+  public Boolean getIsModuleArchived() {
+    return isModuleArchived;
+  }
+  public void setIsModuleArchived(Boolean isModuleArchived) {
+    this.isModuleArchived = isModuleArchived;
+  }
+
+
+  /**
+   * Module archive type
+   **/
+  public DevelopmentActivity archivalMode(ArchivalModeEnum archivalMode) {
+    this.archivalMode = archivalMode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Module archive type")
+  @JsonProperty("archivalMode")
+  public ArchivalModeEnum getArchivalMode() {
+    return archivalMode;
+  }
+  public void setArchivalMode(ArchivalModeEnum archivalMode) {
+    this.archivalMode = archivalMode;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -354,6 +439,8 @@ public class DevelopmentActivity  implements Serializable {
             Objects.equals(this.percentageScore, developmentActivity.percentageScore) &&
             Objects.equals(this.isPassed, developmentActivity.isPassed) &&
             Objects.equals(this.isLatest, developmentActivity.isLatest) &&
+            Objects.equals(this.isModuleArchived, developmentActivity.isModuleArchived) &&
+            Objects.equals(this.archivalMode, developmentActivity.archivalMode) &&
             Objects.equals(this.selfUri, developmentActivity.selfUri) &&
             Objects.equals(this.name, developmentActivity.name) &&
             Objects.equals(this.type, developmentActivity.type) &&
@@ -366,7 +453,7 @@ public class DevelopmentActivity  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateCompleted, createdBy, dateCreated, percentageScore, isPassed, isLatest, selfUri, name, type, status, dateDue, facilitator, attendees, isOverdue);
+    return Objects.hash(id, dateCompleted, createdBy, dateCreated, percentageScore, isPassed, isLatest, isModuleArchived, archivalMode, selfUri, name, type, status, dateDue, facilitator, attendees, isOverdue);
   }
 
   @Override
@@ -381,6 +468,8 @@ public class DevelopmentActivity  implements Serializable {
     sb.append("    percentageScore: ").append(toIndentedString(percentageScore)).append("\n");
     sb.append("    isPassed: ").append(toIndentedString(isPassed)).append("\n");
     sb.append("    isLatest: ").append(toIndentedString(isLatest)).append("\n");
+    sb.append("    isModuleArchived: ").append(toIndentedString(isModuleArchived)).append("\n");
+    sb.append("    archivalMode: ").append(toIndentedString(archivalMode)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

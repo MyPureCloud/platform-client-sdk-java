@@ -164,6 +164,51 @@ public class GetUsersDevelopmentActivitiesMeRequest {
 		}
 	}
 
+	private String pass;
+	public String getPass() {
+		return this.pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
+	public GetUsersDevelopmentActivitiesMeRequest withPass(String pass) {
+	    this.setPass(pass);
+	    return this;
+	} 
+
+	public enum passValues { 
+		TRUE("True"),
+		FALSE("False"),
+		ANY("Any");
+
+		private String value;
+
+		passValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static passValues fromString(String key) {
+			if (key == null) return null;
+
+			for (passValues value : passValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return passValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -409,6 +454,9 @@ public class GetUsersDevelopmentActivitiesMeRequest {
                 .withQueryParameters("overdue", "", overdue)
         
 
+                .withQueryParameters("pass", "", pass)
+        
+
                 .withQueryParameters("pageSize", "", pageSize)
         
 
@@ -472,6 +520,20 @@ public class GetUsersDevelopmentActivitiesMeRequest {
 		
 		public Builder withOverdue(overdueValues overdue) {
 		    request.setOverdue(overdue.toString());
+
+		    return this;
+		}
+
+		public Builder withPass(String pass) {
+			request.setPass(pass);
+			return this;
+		}
+
+
+
+		
+		public Builder withPass(passValues pass) {
+		    request.setPass(pass.toString());
 
 		    return this;
 		}

@@ -12,9 +12,9 @@ title: TextMessageListing
 | **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **total** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **lastUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |

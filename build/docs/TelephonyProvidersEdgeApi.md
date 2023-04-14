@@ -30,8 +30,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgeDiagnosticPing**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeDiagnosticPing) | Get networking-related information from an Edge for a target IP or host. |
 | [**getTelephonyProvidersEdgeDiagnosticRoute**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeDiagnosticRoute) | Get networking-related information from an Edge for a target IP or host. |
 | [**getTelephonyProvidersEdgeDiagnosticTracepath**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeDiagnosticTracepath) | Get networking-related information from an Edge for a target IP or host. |
-| [**getTelephonyProvidersEdgeLine**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLine) | Get line |
-| [**getTelephonyProvidersEdgeLines**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLines) | Get the list of lines. |
 | [**getTelephonyProvidersEdgeLogicalinterface**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLogicalinterface) | Get an edge logical interface |
 | [**getTelephonyProvidersEdgeLogicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLogicalinterfaces) | Get edge logical interfaces. |
 | [**getTelephonyProvidersEdgeLogsJob**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLogsJob) | Get an Edge logs job. |
@@ -120,7 +118,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSites) | Create a Site. |
 | [**postTelephonyProvidersEdgesTrunkbasesettings**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesTrunkbasesettings) | Create a Trunk Base Settings object |
 | [**putTelephonyProvidersEdge**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdge) | Update a edge. |
-| [**putTelephonyProvidersEdgeLine**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgeLine) | Update a line. |
 | [**putTelephonyProvidersEdgeLogicalinterface**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgeLogicalinterface) | Update an edge logical interface. |
 | [**putTelephonyProvidersEdgesCertificateauthority**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesCertificateauthority) | Update a certificate authority. |
 | [**putTelephonyProvidersEdgesDid**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesDid) | Update a DID by ID. |
@@ -1555,134 +1552,6 @@ try {
 ### Return type
 
 [**EdgeNetworkDiagnosticResponse**](EdgeNetworkDiagnosticResponse.html)
-
-<a name="getTelephonyProvidersEdgeLine"></a>
-
-# **getTelephonyProvidersEdgeLine**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [EdgeLine](EdgeLine.html) getTelephonyProvidersEdgeLine(edgeId, lineId)
-
-Get line
-
-Wraps GET /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}  
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String edgeId = "edgeId_example"; // String | Edge ID
-String lineId = "lineId_example"; // String | Line ID
-try {
-    EdgeLine result = apiInstance.getTelephonyProvidersEdgeLine(edgeId, lineId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgeLine");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | 
-| **lineId** | **String**| Line ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**EdgeLine**](EdgeLine.html)
-
-<a name="getTelephonyProvidersEdgeLines"></a>
-
-# **getTelephonyProvidersEdgeLines**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [EdgeLineEntityListing](EdgeLineEntityListing.html) getTelephonyProvidersEdgeLines(edgeId, pageSize, pageNumber)
-
-Get the list of lines.
-
-Wraps GET /api/v2/telephony/providers/edges/{edgeId}/lines  
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String edgeId = "edgeId_example"; // String | Edge ID
-Integer pageSize = 25; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
-try {
-    EdgeLineEntityListing result = apiInstance.getTelephonyProvidersEdgeLines(edgeId, pageSize, pageNumber);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgeLines");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | 
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**EdgeLineEntityListing**](EdgeLineEntityListing.html)
 
 <a name="getTelephonyProvidersEdgeLogicalinterface"></a>
 
@@ -3706,7 +3575,7 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String name = "name_example"; // String | Name
 String sortBy = "name"; // String | Value by which to sort
-List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response, comma-separated
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response, comma-separated. The edgeGroup value is deprecated.
 try {
     LineEntityListing result = apiInstance.getTelephonyProvidersEdgesLines(pageSize, pageNumber, name, sortBy, expand);
     System.out.println(result);
@@ -3725,7 +3594,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **name** | **String**| Name | [optional] 
 | **sortBy** | **String**| Value by which to sort | [optional] [default to name] 
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated. The edgeGroup value is deprecated. | [optional]<br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser 
 {: class="table-striped"}
 
 
@@ -7305,71 +7174,6 @@ try {
 ### Return type
 
 [**Edge**](Edge.html)
-
-<a name="putTelephonyProvidersEdgeLine"></a>
-
-# **putTelephonyProvidersEdgeLine**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [EdgeLine](EdgeLine.html) putTelephonyProvidersEdgeLine(edgeId, lineId, body)
-
-Update a line.
-
-Wraps PUT /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}  
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String edgeId = "edgeId_example"; // String | Edge ID
-String lineId = "lineId_example"; // String | Line ID
-EdgeLine body = new EdgeLine(); // EdgeLine | Line
-try {
-    EdgeLine result = apiInstance.putTelephonyProvidersEdgeLine(edgeId, lineId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#putTelephonyProvidersEdgeLine");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | 
-| **lineId** | **String**| Line ID | 
-| **body** | [**EdgeLine**](EdgeLine.html)| Line | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**EdgeLine**](EdgeLine.html)
 
 <a name="putTelephonyProvidersEdgeLogicalinterface"></a>
 

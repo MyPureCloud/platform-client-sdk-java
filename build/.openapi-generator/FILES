@@ -1205,8 +1205,6 @@ docs/EdgeEntityListing.md
 docs/EdgeGroup.md
 docs/EdgeGroupEntityListing.md
 docs/EdgeInterface.md
-docs/EdgeLine.md
-docs/EdgeLineEntityListing.md
 docs/EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange.md
 docs/EdgeLogicalInterfacesChangeTopicErrorInfo.md
 docs/EdgeLogsJob.md
@@ -4648,8 +4646,6 @@ docs/getTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticPing-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticRoute-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticTracepath-example.txt
-docs/getTelephonyProvidersEdgeLine-example.txt
-docs/getTelephonyProvidersEdgeLines-example.txt
 docs/getTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/getTelephonyProvidersEdgeLogicalinterfaces-example.txt
 docs/getTelephonyProvidersEdgeLogsJob-example.txt
@@ -5666,7 +5662,6 @@ docs/putSpeechandtextanalyticsProgramTranscriptionengines-example.txt
 docs/putSpeechandtextanalyticsSettings-example.txt
 docs/putSpeechandtextanalyticsTopic-example.txt
 docs/putTelephonyProvidersEdge-example.txt
-docs/putTelephonyProvidersEdgeLine-example.txt
 docs/putTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/putTelephonyProvidersEdgesCertificateauthority-example.txt
 docs/putTelephonyProvidersEdgesDid-example.txt
@@ -6837,8 +6832,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeDiagno
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeDiagnosticPingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeDiagnosticRouteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeDiagnosticTracepathRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeLineRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeLinesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeLogicalinterfaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeLogicalinterfacesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeLogsJobRequest.java
@@ -7855,7 +7848,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutSpeechandtextanalyticsProgra
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutSpeechandtextanalyticsProgramTranscriptionenginesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutSpeechandtextanalyticsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutSpeechandtextanalyticsTopicRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgeLineRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgeLogicalinterfaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesCertificateauthorityRequest.java
@@ -9081,8 +9073,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/EdgeEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EdgeGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/EdgeGroupEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EdgeInterface.java
-src/main/java/com/mypurecloud/sdk/v2/model/EdgeLine.java
-src/main/java/com/mypurecloud/sdk/v2/model/EdgeLineEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange.java
 src/main/java/com/mypurecloud/sdk/v2/model/EdgeLogicalInterfacesChangeTopicErrorInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/EdgeLogsJob.java

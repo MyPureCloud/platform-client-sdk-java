@@ -21,7 +21,7 @@ title: Line
 | **modifiedByApp** | <!----><!---->**String**<!----> | The application that last modified the resource. |  [optional] |
 | **createdByApp** | <!----><!---->**String**<!----> | The application that created the resource. |  [optional] |
 | **properties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-| **edgeGroup** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **edgeGroup** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The edge group associated with the line. (Deprecated) |  [optional] |
 | **template** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
 | **site** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
 | **lineBaseSettings** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |

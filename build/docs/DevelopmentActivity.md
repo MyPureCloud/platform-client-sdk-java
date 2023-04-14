@@ -15,6 +15,8 @@ title: DevelopmentActivity
 | **percentageScore** | <!----><!---->**Float**<!----> | The user's percentage score for this activity |  [optional] |
 | **isPassed** | <!----><!---->**Boolean**<!----> | True if the activity was passed |  [optional] |
 | **isLatest** | <!----><!---->**Boolean**<!----> | True if this is the latest version of assignment assigned to the user |  [optional] |
+| **isModuleArchived** | <!----><!---->**Boolean**<!----> | True if the associated module is archived |  [optional] |
+| **archivalMode** | [**ArchivalModeEnum**](#ArchivalModeEnum)<!----> | Module archive type |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The name of the activity |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of activity |  [optional] |
@@ -23,6 +25,18 @@ title: DevelopmentActivity
 | **facilitator** | <!----><!---->[**UserReference**](UserReference.html)<!----> | Facilitator of the activity |  [optional] |
 | **attendees** | <!----><!---->[**List&lt;UserReference&gt;**](UserReference.html)<!----> | List of users attending the activity |  [optional] |
 | **isOverdue** | <!----><!---->**Boolean**<!----> | Indicates if the activity is overdue |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="ArchivalModeEnum"></a>
+
+## Enum: ArchivalModeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| GRACEFUL | &quot;Graceful&quot; | 
+| IMMEDIATE | &quot;Immediate&quot; | 
 {: class="table table-striped"}
 
 

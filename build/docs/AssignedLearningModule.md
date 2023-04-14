@@ -28,6 +28,7 @@ title: AssignedLearningModule
 | **informSteps** | <!----><!---->[**List&lt;LearningModuleInformStep&gt;**](LearningModuleInformStep.html)<!----> | The list of inform steps in a learning module |  [optional] |
 | **assessmentForm** | <!----><!---->[**AssessmentForm**](AssessmentForm.html)<!----> | The assessment form for learning module |  [optional] |
 | **summaryData** | <!----><!---->[**LearningModuleSummary**](LearningModuleSummary.html)<!----> | The learning module summary data |  [optional] |
+| **reassignSummaryData** | <!----><!---->[**LearningModuleReassignSummary**](LearningModuleReassignSummary.html)<!----> | The learning module reassign summary data |  [optional] |
 | **coverArt** | <!----><!---->[**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse.html)<!----> | The cover art for the learning module |  [optional] |
 | **archivalMode** | [**ArchivalModeEnum**](#ArchivalModeEnum)<!----> | The mode of archival for learning module |  [optional] |
 {: class="table table-striped"}

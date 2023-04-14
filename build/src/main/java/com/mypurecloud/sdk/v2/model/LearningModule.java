@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleInformStep;
+import com.mypurecloud.sdk.v2.model.LearningModuleReassignSummary;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModuleSummary;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -147,6 +148,7 @@ public class LearningModule  implements Serializable {
   private List<LearningModuleInformStep> informSteps = new ArrayList<LearningModuleInformStep>();
   private AssessmentForm assessmentForm = null;
   private LearningModuleSummary summaryData = null;
+  private LearningModuleReassignSummary reassignSummaryData = null;
   private LearningModuleCoverArtResponse coverArt = null;
 
   private static class ArchivalModeEnumDeserializer extends StdDeserializer<ArchivalModeEnum> {
@@ -409,6 +411,24 @@ public class LearningModule  implements Serializable {
 
 
   /**
+   * The learning module reassign summary data
+   **/
+  public LearningModule reassignSummaryData(LearningModuleReassignSummary reassignSummaryData) {
+    this.reassignSummaryData = reassignSummaryData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The learning module reassign summary data")
+  @JsonProperty("reassignSummaryData")
+  public LearningModuleReassignSummary getReassignSummaryData() {
+    return reassignSummaryData;
+  }
+  public void setReassignSummaryData(LearningModuleReassignSummary reassignSummaryData) {
+    this.reassignSummaryData = reassignSummaryData;
+  }
+
+
+  /**
    * The cover art for the learning module
    **/
   public LearningModule coverArt(LearningModuleCoverArtResponse coverArt) {
@@ -473,13 +493,14 @@ public class LearningModule  implements Serializable {
             Objects.equals(this.informSteps, learningModule.informSteps) &&
             Objects.equals(this.assessmentForm, learningModule.assessmentForm) &&
             Objects.equals(this.summaryData, learningModule.summaryData) &&
+            Objects.equals(this.reassignSummaryData, learningModule.reassignSummaryData) &&
             Objects.equals(this.coverArt, learningModule.coverArt) &&
             Objects.equals(this.archivalMode, learningModule.archivalMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, coverArt, archivalMode);
+    return Objects.hash(id, name, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, reassignSummaryData, coverArt, archivalMode);
   }
 
   @Override
@@ -506,6 +527,7 @@ public class LearningModule  implements Serializable {
     sb.append("    informSteps: ").append(toIndentedString(informSteps)).append("\n");
     sb.append("    assessmentForm: ").append(toIndentedString(assessmentForm)).append("\n");
     sb.append("    summaryData: ").append(toIndentedString(summaryData)).append("\n");
+    sb.append("    reassignSummaryData: ").append(toIndentedString(reassignSummaryData)).append("\n");
     sb.append("    coverArt: ").append(toIndentedString(coverArt)).append("\n");
     sb.append("    archivalMode: ").append(toIndentedString(archivalMode)).append("\n");
     sb.append("}");

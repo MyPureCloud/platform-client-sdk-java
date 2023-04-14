@@ -3399,6 +3399,7 @@ public class UsersApi {
    * @param interval Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional, default to Any)
+   * @param pass Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") activities are returned. If pass is \"Any\" or if the pass parameter is not supplied, all activities are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
@@ -3409,8 +3410,8 @@ public class UsersApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DevelopmentActivityListing getUsersDevelopmentActivities(List<String> userId, String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) throws IOException, ApiException {
-    return  getUsersDevelopmentActivities(createGetUsersDevelopmentActivitiesRequest(userId, moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship));
+  public DevelopmentActivityListing getUsersDevelopmentActivities(List<String> userId, String moduleId, String interval, String completionInterval, String overdue, String pass, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) throws IOException, ApiException {
+    return  getUsersDevelopmentActivities(createGetUsersDevelopmentActivitiesRequest(userId, moduleId, interval, completionInterval, overdue, pass, pageSize, pageNumber, sortOrder, types, statuses, relationship));
   }
 
   /**
@@ -3421,6 +3422,7 @@ public class UsersApi {
    * @param interval Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional, default to Any)
+   * @param pass Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") activities are returned. If pass is \"Any\" or if the pass parameter is not supplied, all activities are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
@@ -3430,11 +3432,11 @@ public class UsersApi {
    * @return DevelopmentActivityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DevelopmentActivityListing> getUsersDevelopmentActivitiesWithHttpInfo(List<String> userId, String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) throws IOException {
-    return getUsersDevelopmentActivities(createGetUsersDevelopmentActivitiesRequest(userId, moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship).withHttpInfo());
+  public ApiResponse<DevelopmentActivityListing> getUsersDevelopmentActivitiesWithHttpInfo(List<String> userId, String moduleId, String interval, String completionInterval, String overdue, String pass, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) throws IOException {
+    return getUsersDevelopmentActivities(createGetUsersDevelopmentActivitiesRequest(userId, moduleId, interval, completionInterval, overdue, pass, pageSize, pageNumber, sortOrder, types, statuses, relationship).withHttpInfo());
   }
 
-  private GetUsersDevelopmentActivitiesRequest createGetUsersDevelopmentActivitiesRequest(List<String> userId, String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) {
+  private GetUsersDevelopmentActivitiesRequest createGetUsersDevelopmentActivitiesRequest(List<String> userId, String moduleId, String interval, String completionInterval, String overdue, String pass, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) {
     return GetUsersDevelopmentActivitiesRequest.builder()
             .withUserId(userId)
 
@@ -3445,6 +3447,8 @@ public class UsersApi {
             .withCompletionInterval(completionInterval)
 
             .withOverdue(overdue)
+
+            .withPass(pass)
 
             .withPageSize(pageSize)
 
@@ -3516,6 +3520,7 @@ public class UsersApi {
    * @param interval Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional, default to Any)
+   * @param pass Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") activities are returned. If pass is \"Any\" or if the pass parameter is not supplied, all activities are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
@@ -3526,8 +3531,8 @@ public class UsersApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DevelopmentActivityListing getUsersDevelopmentActivitiesMe(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) throws IOException, ApiException {
-    return  getUsersDevelopmentActivitiesMe(createGetUsersDevelopmentActivitiesMeRequest(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship));
+  public DevelopmentActivityListing getUsersDevelopmentActivitiesMe(String moduleId, String interval, String completionInterval, String overdue, String pass, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) throws IOException, ApiException {
+    return  getUsersDevelopmentActivitiesMe(createGetUsersDevelopmentActivitiesMeRequest(moduleId, interval, completionInterval, overdue, pass, pageSize, pageNumber, sortOrder, types, statuses, relationship));
   }
 
   /**
@@ -3537,6 +3542,7 @@ public class UsersApi {
    * @param interval Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (optional, default to Any)
+   * @param pass Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") activities are returned. If pass is \"Any\" or if the pass parameter is not supplied, all activities are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
@@ -3546,11 +3552,11 @@ public class UsersApi {
    * @return DevelopmentActivityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DevelopmentActivityListing> getUsersDevelopmentActivitiesMeWithHttpInfo(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) throws IOException {
-    return getUsersDevelopmentActivitiesMe(createGetUsersDevelopmentActivitiesMeRequest(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship).withHttpInfo());
+  public ApiResponse<DevelopmentActivityListing> getUsersDevelopmentActivitiesMeWithHttpInfo(String moduleId, String interval, String completionInterval, String overdue, String pass, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) throws IOException {
+    return getUsersDevelopmentActivitiesMe(createGetUsersDevelopmentActivitiesMeRequest(moduleId, interval, completionInterval, overdue, pass, pageSize, pageNumber, sortOrder, types, statuses, relationship).withHttpInfo());
   }
 
-  private GetUsersDevelopmentActivitiesMeRequest createGetUsersDevelopmentActivitiesMeRequest(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) {
+  private GetUsersDevelopmentActivitiesMeRequest createGetUsersDevelopmentActivitiesMeRequest(String moduleId, String interval, String completionInterval, String overdue, String pass, Integer pageSize, Integer pageNumber, String sortOrder, List<String> types, List<String> statuses, List<String> relationship) {
     return GetUsersDevelopmentActivitiesMeRequest.builder()
             .withModuleId(moduleId)
 
@@ -3559,6 +3565,8 @@ public class UsersApi {
             .withCompletionInterval(completionInterval)
 
             .withOverdue(overdue)
+
+            .withPass(pass)
 
             .withPageSize(pageSize)
 

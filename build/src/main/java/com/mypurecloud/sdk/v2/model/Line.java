@@ -247,13 +247,14 @@ public class Line  implements Serializable {
 
 
   /**
+   * The edge group associated with the line. (Deprecated)
    **/
   public Line edgeGroup(DomainEntityRef edgeGroup) {
     this.edgeGroup = edgeGroup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The edge group associated with the line. (Deprecated)")
   @JsonProperty("edgeGroup")
   public DomainEntityRef getEdgeGroup() {
     return edgeGroup;

@@ -39,6 +39,7 @@ public class LearningAssignment  implements Serializable {
   private Boolean isRule = null;
   private Boolean isManual = null;
   private Boolean isPassed = null;
+  private Boolean isLatest = null;
   private String selfUri = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
@@ -187,6 +188,13 @@ public class LearningAssignment  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "True if the assignment is based on latest module")
+  @JsonProperty("isLatest")
+  public Boolean getIsLatest() {
+    return isLatest;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -323,6 +331,7 @@ public class LearningAssignment  implements Serializable {
             Objects.equals(this.isRule, learningAssignment.isRule) &&
             Objects.equals(this.isManual, learningAssignment.isManual) &&
             Objects.equals(this.isPassed, learningAssignment.isPassed) &&
+            Objects.equals(this.isLatest, learningAssignment.isLatest) &&
             Objects.equals(this.selfUri, learningAssignment.selfUri) &&
             Objects.equals(this.state, learningAssignment.state) &&
             Objects.equals(this.dateRecommendedForCompletion, learningAssignment.dateRecommendedForCompletion) &&
@@ -334,7 +343,7 @@ public class LearningAssignment  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assessment, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, percentageScore, isRule, isManual, isPassed, selfUri, state, dateRecommendedForCompletion, version, module, user, assessmentForm);
+    return Objects.hash(id, assessment, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, percentageScore, isRule, isManual, isPassed, isLatest, selfUri, state, dateRecommendedForCompletion, version, module, user, assessmentForm);
   }
 
   @Override
@@ -353,6 +362,7 @@ public class LearningAssignment  implements Serializable {
     sb.append("    isRule: ").append(toIndentedString(isRule)).append("\n");
     sb.append("    isManual: ").append(toIndentedString(isManual)).append("\n");
     sb.append("    isPassed: ").append(toIndentedString(isPassed)).append("\n");
+    sb.append("    isLatest: ").append(toIndentedString(isLatest)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    dateRecommendedForCompletion: ").append(toIndentedString(dateRecommendedForCompletion)).append("\n");

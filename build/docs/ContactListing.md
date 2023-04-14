@@ -13,8 +13,8 @@ title: ContactListing
 | **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **total** | <!----><!---->**Long**<!----> |  |  [optional] |
 | **partialResults** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **lastUri** | <!----><!---->**String**<!----> |  |  [optional] |
