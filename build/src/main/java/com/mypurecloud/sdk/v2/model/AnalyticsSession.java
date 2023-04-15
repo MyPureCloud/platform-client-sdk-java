@@ -49,6 +49,7 @@ public class AnalyticsSession  implements Serializable {
   private Date callbackScheduledTime = null;
   private String callbackUserName = null;
   private List<String> cc = new ArrayList<String>();
+  private Boolean cleared = null;
   private String coachedParticipantId = null;
   private String cobrowseRole = null;
   private String cobrowseRoomId = null;
@@ -259,6 +260,7 @@ public class AnalyticsSession  implements Serializable {
   public enum RequestedRoutingsEnum {
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
+    DIRECT("Direct"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -325,6 +327,7 @@ public class AnalyticsSession  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
+    DIRECT("Direct"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -361,8 +364,8 @@ public class AnalyticsSession  implements Serializable {
   private String videoAddressSelf = null;
   private String videoRoomId = null;
   private List<Integer> waitingInteractionCounts = new ArrayList<Integer>();
-  private List<AnalyticsAgentGroup> agentGroups = new ArrayList<AnalyticsAgentGroup>();
   private List<AnalyticsProposedAgent> proposedAgents = new ArrayList<AnalyticsProposedAgent>();
+  private List<AnalyticsAgentGroup> agentGroups = new ArrayList<AnalyticsAgentGroup>();
   private List<AnalyticsMediaEndpointStat> mediaEndpointStats = new ArrayList<AnalyticsMediaEndpointStat>();
   private AnalyticsFlow flow = null;
   private List<AnalyticsSessionMetric> metrics = new ArrayList<AnalyticsSessionMetric>();
@@ -690,6 +693,24 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setCc(List<String> cc) {
     this.cc = cc;
+  }
+
+
+  /**
+   * Flag that indicates that the conversation has been cleared by the customer
+   **/
+  public AnalyticsSession cleared(Boolean cleared) {
+    this.cleared = cleared;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag that indicates that the conversation has been cleared by the customer")
+  @JsonProperty("cleared")
+  public Boolean getCleared() {
+    return cleared;
+  }
+  public void setCleared(Boolean cleared) {
+    this.cleared = cleared;
   }
 
 
@@ -1666,24 +1687,6 @@ public class AnalyticsSession  implements Serializable {
 
 
   /**
-   * Conditional group routing agent groups
-   **/
-  public AnalyticsSession agentGroups(List<AnalyticsAgentGroup> agentGroups) {
-    this.agentGroups = agentGroups;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Conditional group routing agent groups")
-  @JsonProperty("agentGroups")
-  public List<AnalyticsAgentGroup> getAgentGroups() {
-    return agentGroups;
-  }
-  public void setAgentGroups(List<AnalyticsAgentGroup> agentGroups) {
-    this.agentGroups = agentGroups;
-  }
-
-
-  /**
    * Proposed agents
    **/
   public AnalyticsSession proposedAgents(List<AnalyticsProposedAgent> proposedAgents) {
@@ -1698,6 +1701,24 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setProposedAgents(List<AnalyticsProposedAgent> proposedAgents) {
     this.proposedAgents = proposedAgents;
+  }
+
+
+  /**
+   * Conditional group routing agent groups
+   **/
+  public AnalyticsSession agentGroups(List<AnalyticsAgentGroup> agentGroups) {
+    this.agentGroups = agentGroups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Conditional group routing agent groups")
+  @JsonProperty("agentGroups")
+  public List<AnalyticsAgentGroup> getAgentGroups() {
+    return agentGroups;
+  }
+  public void setAgentGroups(List<AnalyticsAgentGroup> agentGroups) {
+    this.agentGroups = agentGroups;
   }
 
 
@@ -1801,6 +1822,7 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.callbackScheduledTime, analyticsSession.callbackScheduledTime) &&
             Objects.equals(this.callbackUserName, analyticsSession.callbackUserName) &&
             Objects.equals(this.cc, analyticsSession.cc) &&
+            Objects.equals(this.cleared, analyticsSession.cleared) &&
             Objects.equals(this.coachedParticipantId, analyticsSession.coachedParticipantId) &&
             Objects.equals(this.cobrowseRole, analyticsSession.cobrowseRole) &&
             Objects.equals(this.cobrowseRoomId, analyticsSession.cobrowseRoomId) &&
@@ -1855,8 +1877,8 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.videoAddressSelf, analyticsSession.videoAddressSelf) &&
             Objects.equals(this.videoRoomId, analyticsSession.videoRoomId) &&
             Objects.equals(this.waitingInteractionCounts, analyticsSession.waitingInteractionCounts) &&
-            Objects.equals(this.agentGroups, analyticsSession.agentGroups) &&
             Objects.equals(this.proposedAgents, analyticsSession.proposedAgents) &&
+            Objects.equals(this.agentGroups, analyticsSession.agentGroups) &&
             Objects.equals(this.mediaEndpointStats, analyticsSession.mediaEndpointStats) &&
             Objects.equals(this.flow, analyticsSession.flow) &&
             Objects.equals(this.metrics, analyticsSession.metrics) &&
@@ -1865,7 +1887,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, proposedAgents, agentGroups, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -1891,6 +1913,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
     sb.append("    cc: ").append(toIndentedString(cc)).append("\n");
+    sb.append("    cleared: ").append(toIndentedString(cleared)).append("\n");
     sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    cobrowseRoomId: ").append(toIndentedString(cobrowseRoomId)).append("\n");
@@ -1945,8 +1968,8 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    videoAddressSelf: ").append(toIndentedString(videoAddressSelf)).append("\n");
     sb.append("    videoRoomId: ").append(toIndentedString(videoRoomId)).append("\n");
     sb.append("    waitingInteractionCounts: ").append(toIndentedString(waitingInteractionCounts)).append("\n");
-    sb.append("    agentGroups: ").append(toIndentedString(agentGroups)).append("\n");
     sb.append("    proposedAgents: ").append(toIndentedString(proposedAgents)).append("\n");
+    sb.append("    agentGroups: ").append(toIndentedString(agentGroups)).append("\n");
     sb.append("    mediaEndpointStats: ").append(toIndentedString(mediaEndpointStats)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");

@@ -15381,7 +15381,7 @@
       }
     ],
     "return": "KnowledgeGuestDocumentResponseListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;\n\npublic class ExamplegetKnowledgeGuestSessionDocuments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nList<String> categoryId = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with category ids, comma separated values expected.\nInteger pageSize = 10; // Integer | Number of entities to return. Maximum of 200.\n        try { \n            // Get documents.\n            KnowledgeGuestDocumentResponseListing result = apiInstance.getKnowledgeGuestSessionDocuments(sessionId, categoryId, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeGuestSessionDocuments\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.KnowledgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;\n\npublic class ExamplegetKnowledgeGuestSessionDocuments {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n\n        KnowledgeApi apiInstance = new KnowledgeApi();\n        String sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nList<String> categoryId = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with category ids, comma separated values expected.\nInteger pageSize = 56; // Integer | Number of entities to return. Maximum of 200.\n        try { \n            // Get documents.\n            KnowledgeGuestDocumentResponseListing result = apiInstance.getKnowledgeGuestSessionDocuments(sessionId, categoryId, pageSize);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling KnowledgeApi#getKnowledgeGuestSessionDocuments\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getknowledgeknowledgebase": {
     "operationId": "getknowledgeknowledgebase",
@@ -27580,7 +27580,7 @@
   "getroutingsmsphonenumbers": {
     "operationId": "getroutingsmsphonenumbers",
     "functionName": "getRoutingSmsPhonenumbers",
-    "signature": "getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language)",
+    "signature": "getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId)",
     "parameters": [
       {
         "name": "phoneNumber",
@@ -27626,10 +27626,15 @@
         "name": "language",
         "type": "String",
         "required": "false"
+      },
+      {
+        "name": "integrationId",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "SmsPhoneNumberEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetRoutingSmsPhonenumbers {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        String phoneNumber = \"phoneNumber_example\"; // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.\nList<String> phoneNumberType = Arrays.asList(null); // List<String> | Filter on phone number type\nList<String> phoneNumberStatus = Arrays.asList(null); // List<String> | Filter on phone number status\nList<String> countryCode = Arrays.asList(null); // List<String> | Filter on country code\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nString sortBy = \"sortBy_example\"; // String | Optional field to sort results\nString sortOrder = \"sortOrder_example\"; // String | Sort order\nString language = en-US; // String | A language tag (which is sometimes referred to as a \\\"locale identifier\\\") to use to localize country field and sort operations\n        try { \n            // Get a list of provisioned phone numbers.\n            SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingSmsPhonenumbers\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetRoutingSmsPhonenumbers {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        String phoneNumber = \"phoneNumber_example\"; // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.\nList<String> phoneNumberType = Arrays.asList(null); // List<String> | Filter on phone number type\nList<String> phoneNumberStatus = Arrays.asList(null); // List<String> | Filter on phone number status\nList<String> countryCode = Arrays.asList(null); // List<String> | Filter on country code\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nString sortBy = \"sortBy_example\"; // String | Optional field to sort results\nString sortOrder = \"sortOrder_example\"; // String | Sort order\nString language = en-US; // String | A language tag (which is sometimes referred to as a \\\"locale identifier\\\") to use to localize country field and sort operations\nString integrationId = \"integrationId_example\"; // String | Filter on the Genesys Cloud integration id to which the phone number belongs to\n        try { \n            // Get a list of provisioned phone numbers.\n            SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingSmsPhonenumbers\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getroutinguserutilization": {
     "operationId": "getroutinguserutilization",
@@ -31036,141 +31041,6 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteTelephonyProvidersEdgesTrunkbasesetting {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String trunkBaseSettingsId = \"trunkBaseSettingsId_example\"; // String | Trunk Base ID\n        try { \n            // Delete a Trunk Base Settings object by ID\n            apiInstance.deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesTrunkbasesetting\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
-  "getconfigurationschemasedgesvnext": {
-    "operationId": "getconfigurationschemasedgesvnext",
-    "functionName": "getConfigurationSchemasEdgesVnext",
-    "signature": "getConfigurationSchemasEdgesVnext(pageSize, pageNumber)",
-    "parameters": [
-      {
-        "name": "pageSize",
-        "type": "Integer",
-        "required": "false"
-      },
-      {
-        "name": "pageNumber",
-        "type": "Integer",
-        "required": "false"
-      }
-    ],
-    "return": "SchemaCategoryEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.SchemaCategoryEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetConfigurationSchemasEdgesVnext {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        Integer pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\n        try { \n            // Lists available schema categories (Deprecated)\n            SchemaCategoryEntityListing result = apiInstance.getConfigurationSchemasEdgesVnext(pageSize, pageNumber);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#getConfigurationSchemasEdgesVnext\");\n            e.printStackTrace();\n        }\n    }\n}"
-  },
-  "getconfigurationschemasedgesvnextschemacategory": {
-    "operationId": "getconfigurationschemasedgesvnextschemacategory",
-    "functionName": "getConfigurationSchemasEdgesVnextSchemaCategory",
-    "signature": "getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, pageSize, pageNumber)",
-    "parameters": [
-      {
-        "name": "schemaCategory",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "pageSize",
-        "type": "Integer",
-        "required": "false"
-      },
-      {
-        "name": "pageNumber",
-        "type": "Integer",
-        "required": "false"
-      }
-    ],
-    "return": "SchemaReferenceEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.SchemaReferenceEntityListing;\n\npublic class ExamplegetConfigurationSchemasEdgesVnextSchemaCategory {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String schemaCategory = \"schemaCategory_example\"; // String | Schema category\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\n        try { \n            // List schemas of a specific category (Deprecated)\n            SchemaReferenceEntityListing result = apiInstance.getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, pageSize, pageNumber);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#getConfigurationSchemasEdgesVnextSchemaCategory\");\n            e.printStackTrace();\n        }\n    }\n}"
-  },
-  "getconfigurationschemasedgesvnextschemacategoryschematype": {
-    "operationId": "getconfigurationschemasedgesvnextschemacategoryschematype",
-    "functionName": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaType",
-    "signature": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCategory, schemaType, pageSize, pageNumber)",
-    "parameters": [
-      {
-        "name": "schemaCategory",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "schemaType",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "pageSize",
-        "type": "Integer",
-        "required": "false"
-      },
-      {
-        "name": "pageNumber",
-        "type": "Integer",
-        "required": "false"
-      }
-    ],
-    "return": "SchemaReferenceEntityListing",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.SchemaReferenceEntityListing;\n\npublic class ExamplegetConfigurationSchemasEdgesVnextSchemaCategorySchemaType {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String schemaCategory = \"schemaCategory_example\"; // String | Schema category\nString schemaType = \"schemaType_example\"; // String | Schema type\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\n        try { \n            // List schemas of a specific category (Deprecated)\n            SchemaReferenceEntityListing result = apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCategory, schemaType, pageSize, pageNumber);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#getConfigurationSchemasEdgesVnextSchemaCategorySchemaType\");\n            e.printStackTrace();\n        }\n    }\n}"
-  },
-  "getconfigurationschemasedgesvnextschemacategoryschematypeschemaid": {
-    "operationId": "getconfigurationschemasedgesvnextschemacategoryschematypeschemaid",
-    "functionName": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId",
-    "signature": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(schemaCategory, schemaType, schemaId)",
-    "parameters": [
-      {
-        "name": "schemaCategory",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "schemaType",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "schemaId",
-        "type": "String",
-        "required": "true"
-      }
-    ],
-    "return": "Organization",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.Organization;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String schemaCategory = \"schemaCategory_example\"; // String | Schema category\nString schemaType = \"schemaType_example\"; // String | Schema type\nString schemaId = \"schemaId_example\"; // String | Schema ID\n        try { \n            // Get a json schema (Deprecated)\n            Organization result = apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(schemaCategory, schemaType, schemaId);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId\");\n            e.printStackTrace();\n        }\n    }\n}"
-  },
-  "getconfigurationschemasedgesvnextschemacategoryschematypeschemaidextensiontypemetadataid": {
-    "operationId": "getconfigurationschemasedgesvnextschemacategoryschematypeschemaidextensiontypemetadataid",
-    "functionName": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId",
-    "signature": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(schemaCategory, schemaType, schemaId, extensionType, metadataId, type)",
-    "parameters": [
-      {
-        "name": "schemaCategory",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "schemaType",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "schemaId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "extensionType",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "metadataId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "type",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "Organization",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.Organization;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplegetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String schemaCategory = \"schemaCategory_example\"; // String | Schema category\nString schemaType = \"schemaType_example\"; // String | Schema type\nString schemaId = \"schemaId_example\"; // String | Schema ID\nString extensionType = \"extensionType_example\"; // String | extension\nString metadataId = \"metadataId_example\"; // String | Metadata ID\nString type = \"type_example\"; // String | Type\n        try { \n            // Get metadata for a schema (Deprecated)\n            Organization result = apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(schemaCategory, schemaType, schemaId, extensionType, metadataId, type);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId\");\n            e.printStackTrace();\n        }\n    }\n}"
-  },
   "gettelephonyprovidersedge": {
     "operationId": "gettelephonyprovidersedge",
     "functionName": "getTelephonyProvidersEdge",
@@ -33125,25 +32995,6 @@
     "return": "DomainCertificateAuthority",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DomainCertificateAuthority;\n\npublic class ExampleputTelephonyProvidersEdgesCertificateauthority {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String certificateId = \"certificateId_example\"; // String | Certificate ID\nDomainCertificateAuthority body = new DomainCertificateAuthority(); // DomainCertificateAuthority | Certificate authority\n        try { \n            // Update a certificate authority.\n            DomainCertificateAuthority result = apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesCertificateauthority\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
-  "puttelephonyprovidersedgesdid": {
-    "operationId": "puttelephonyprovidersedgesdid",
-    "functionName": "putTelephonyProvidersEdgesDid",
-    "signature": "putTelephonyProvidersEdgesDid(didId, body)",
-    "parameters": [
-      {
-        "name": "didId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "DID",
-        "required": "true"
-      }
-    ],
-    "return": "DID",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DID;\n\npublic class ExampleputTelephonyProvidersEdgesDid {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String didId = \"didId_example\"; // String | DID ID\nDID body = new DID(); // DID | DID\n        try { \n            // Update a DID by ID.\n            DID result = apiInstance.putTelephonyProvidersEdgesDid(didId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesDid\");\n            e.printStackTrace();\n        }\n    }\n}"
-  },
   "puttelephonyprovidersedgesdidpool": {
     "operationId": "puttelephonyprovidersedgesdidpool",
     "functionName": "putTelephonyProvidersEdgesDidpool",
@@ -33205,25 +33056,6 @@
     ],
     "return": "EdgeTrunkBase",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.EdgeTrunkBase;\n\npublic class ExampleputTelephonyProvidersEdgesEdgegroupEdgetrunkbase {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String edgegroupId = \"edgegroupId_example\"; // String | Edge Group ID\nString edgetrunkbaseId = \"edgetrunkbaseId_example\"; // String | Edge Trunk Base ID\nEdgeTrunkBase body = new EdgeTrunkBase(); // EdgeTrunkBase | EdgeTrunkBase\n        try { \n            // Update the edge trunk base associated with the edge group\n            EdgeTrunkBase result = apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesEdgegroupEdgetrunkbase\");\n            e.printStackTrace();\n        }\n    }\n}"
-  },
-  "puttelephonyprovidersedgesextension": {
-    "operationId": "puttelephonyprovidersedgesextension",
-    "functionName": "putTelephonyProvidersEdgesExtension",
-    "signature": "putTelephonyProvidersEdgesExtension(extensionId, body)",
-    "parameters": [
-      {
-        "name": "extensionId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Extension",
-        "required": "true"
-      }
-    ],
-    "return": "Extension",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.Extension;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampleputTelephonyProvidersEdgesExtension {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String extensionId = \"extensionId_example\"; // String | Extension ID\nExtension body = new Extension(); // Extension | Extension\n        try { \n            // Update an extension by ID.\n            Extension result = apiInstance.putTelephonyProvidersEdgesExtension(extensionId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesExtension\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "puttelephonyprovidersedgesextensionpool": {
     "operationId": "puttelephonyprovidersedgesextensionpool",

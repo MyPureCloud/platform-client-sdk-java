@@ -102,6 +102,7 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     ANI("ani"),
     ASSIGNERID("assignerId"),
     AUTHENTICATED("authenticated"),
+    CANONICALEXTERNALCONTACTID("canonicalExternalContactId"),
     CONVERSATIONID("conversationId"),
     CONVERSATIONINITIATOR("conversationInitiator"),
     CONVERTEDFROM("convertedFrom"),

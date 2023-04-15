@@ -48,6 +48,8 @@ title: SegmentDetailQueryPredicate
 | BARGEDPARTICIPANTID | &quot;bargedParticipantId&quot; | 
 | CALLBACKNUMBER | &quot;callbackNumber&quot; | 
 | CALLBACKSCHEDULEDTIME | &quot;callbackScheduledTime&quot; | 
+| CANONICALEXTERNALCONTACTID | &quot;canonicalExternalContactId&quot; | 
+| CLEARED | &quot;cleared&quot; | 
 | COACHEDPARTICIPANTID | &quot;coachedParticipantId&quot; | 
 | CONFERENCE | &quot;conference&quot; | 
 | DELIVERYSTATUS | &quot;deliveryStatus&quot; | 

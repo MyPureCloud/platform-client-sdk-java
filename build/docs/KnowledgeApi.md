@@ -853,7 +853,7 @@ import com.mypurecloud.sdk.v2.api.KnowledgeApi;
 KnowledgeApi apiInstance = new KnowledgeApi();
 String sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 List<String> categoryId = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with category ids, comma separated values expected.
-Integer pageSize = 10; // Integer | Number of entities to return. Maximum of 200.
+Integer pageSize = 56; // Integer | Number of entities to return. Maximum of 200.
 try {
     KnowledgeGuestDocumentResponseListing result = apiInstance.getKnowledgeGuestSessionDocuments(sessionId, categoryId, pageSize);
     System.out.println(result);
@@ -870,7 +870,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
 | **categoryId** | [**List&lt;String&gt;**](String.html)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional] 
-| **pageSize** | **Integer**| Number of entities to return. Maximum of 200. | [optional] [default to 10] 
+| **pageSize** | **Integer**| Number of entities to return. Maximum of 200. | [optional] 
 {: class="table-striped"}
 
 

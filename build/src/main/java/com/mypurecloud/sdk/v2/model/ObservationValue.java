@@ -109,6 +109,7 @@ public class ObservationValue  implements Serializable {
   public enum RequestedRoutingsEnum {
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
+    DIRECT("Direct"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -163,6 +164,7 @@ public class ObservationValue  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
+    DIRECT("Direct"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),

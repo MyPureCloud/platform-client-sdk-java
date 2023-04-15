@@ -1177,7 +1177,7 @@ public class KnowledgeApi {
    * 
    * @param sessionId Knowledge guest session ID. (required)
    * @param categoryId If specified, retrieves documents associated with category ids, comma separated values expected. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 10)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @return KnowledgeGuestDocumentResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1191,7 +1191,7 @@ public class KnowledgeApi {
    * 
    * @param sessionId Knowledge guest session ID. (required)
    * @param categoryId If specified, retrieves documents associated with category ids, comma separated values expected. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 10)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @return KnowledgeGuestDocumentResponseListing
    * @throws IOException if the request fails to be processed
    */

@@ -360,6 +360,20 @@ public class GetRoutingSmsPhonenumbersRequest {
 	    return this;
 	} 
 
+	private String integrationId;
+	public String getIntegrationId() {
+		return this.integrationId;
+	}
+
+	public void setIntegrationId(String integrationId) {
+		this.integrationId = integrationId;
+	}
+
+	public GetRoutingSmsPhonenumbersRequest withIntegrationId(String integrationId) {
+	    this.setIntegrationId(integrationId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -409,6 +423,9 @@ public class GetRoutingSmsPhonenumbersRequest {
         
 
                 .withQueryParameters("language", "", language)
+        
+
+                .withQueryParameters("integration.id", "", integrationId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -513,6 +530,11 @@ public class GetRoutingSmsPhonenumbersRequest {
 
 		public Builder withLanguage(String language) {
 			request.setLanguage(language);
+			return this;
+		}
+
+		public Builder withIntegrationId(String integrationId) {
+			request.setIntegrationId(integrationId);
 			return this;
 		}
 

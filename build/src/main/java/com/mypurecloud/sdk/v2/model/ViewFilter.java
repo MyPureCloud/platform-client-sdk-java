@@ -583,6 +583,7 @@ public class ViewFilter  implements Serializable {
   public enum UsedRoutingTypesEnum {
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
+    DIRECT("Direct"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -636,6 +637,7 @@ public class ViewFilter  implements Serializable {
   public enum RequestedRoutingTypesEnum {
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
+    DIRECT("Direct"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),

@@ -318,6 +318,7 @@ title: ViewFilter
 | ---- | ----- |
 | BULLSEYE | &quot;Bullseye&quot; |
 | CONDITIONAL | &quot;Conditional&quot; |
+| DIRECT | &quot;Direct&quot; |
 | LAST | &quot;Last&quot; |
 | MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |
@@ -335,6 +336,7 @@ title: ViewFilter
 | ---- | ----- |
 | BULLSEYE | &quot;Bullseye&quot; |
 | CONDITIONAL | &quot;Conditional&quot; |
+| DIRECT | &quot;Direct&quot; |
 | LAST | &quot;Last&quot; |
 | MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |

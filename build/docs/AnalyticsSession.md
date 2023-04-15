@@ -26,6 +26,7 @@ title: AnalyticsSession
 | **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> | Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **callbackUserName** | <!----><!---->**String**<!----> | The name of the user requesting a call back |  [optional] |
 | **cc** | <!----><!---->**List&lt;String&gt;**<!----> | Carbon copy email address(es) |  [optional] |
+| **cleared** | <!----><!---->**Boolean**<!----> | Flag that indicates that the conversation has been cleared by the customer |  [optional] |
 | **coachedParticipantId** | <!----><!---->**String**<!----> | The participantId being coached (if someone (e.g. an agent) is being coached, this would correspond to one of the other participantIds present in the conversation) |  [optional] |
 | **cobrowseRole** | <!----><!---->**String**<!----> | Describes side of the cobrowse (sharer or viewer) |  [optional] |
 | **cobrowseRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud cobrowse room |  [optional] |
@@ -80,8 +81,8 @@ title: AnalyticsSession
 | **videoAddressSelf** | <!----><!---->**String**<!----> | Direct Video address |  [optional] |
 | **videoRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud video room |  [optional] |
 | **waitingInteractionCounts** | <!----><!---->**List&lt;Integer&gt;**<!----> | Number of waiting interactions for each predictive routing attempt |  [optional] |
-| **agentGroups** | <!----><!---->[**List&lt;AnalyticsAgentGroup&gt;**](AnalyticsAgentGroup.html)<!----> | Conditional group routing agent groups |  [optional] |
 | **proposedAgents** | <!----><!---->[**List&lt;AnalyticsProposedAgent&gt;**](AnalyticsProposedAgent.html)<!----> | Proposed agents |  [optional] |
+| **agentGroups** | <!----><!---->[**List&lt;AnalyticsAgentGroup&gt;**](AnalyticsAgentGroup.html)<!----> | Conditional group routing agent groups |  [optional] |
 | **mediaEndpointStats** | <!----><!---->[**List&lt;AnalyticsMediaEndpointStat&gt;**](AnalyticsMediaEndpointStat.html)<!----> | MediaEndpointStats associated with this session |  [optional] |
 | **flow** | <!----><!---->[**AnalyticsFlow**](AnalyticsFlow.html)<!----> | IVR flow execution associated with this session |  [optional] |
 | **metrics** | <!----><!---->[**List&lt;AnalyticsSessionMetric&gt;**](AnalyticsSessionMetric.html)<!----> | List of metrics for this session |  [optional] |
@@ -145,6 +146,7 @@ title: AnalyticsSession
 | ---- | ----- |
 | BULLSEYE | &quot;Bullseye&quot; |
 | CONDITIONAL | &quot;Conditional&quot; |
+| DIRECT | &quot;Direct&quot; |
 | LAST | &quot;Last&quot; |
 | MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |
@@ -163,6 +165,7 @@ title: AnalyticsSession
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BULLSEYE | &quot;Bullseye&quot; | 
 | CONDITIONAL | &quot;Conditional&quot; | 
+| DIRECT | &quot;Direct&quot; | 
 | LAST | &quot;Last&quot; | 
 | MANUAL | &quot;Manual&quot; | 
 | PREDICTIVE | &quot;Predictive&quot; | 

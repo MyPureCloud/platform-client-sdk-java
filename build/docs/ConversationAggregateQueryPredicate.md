@@ -47,6 +47,7 @@ title: ConversationAggregateQueryPredicate
 | ANI | &quot;ani&quot; | 
 | ASSIGNERID | &quot;assignerId&quot; | 
 | AUTHENTICATED | &quot;authenticated&quot; | 
+| CANONICALEXTERNALCONTACTID | &quot;canonicalExternalContactId&quot; | 
 | CONVERSATIONID | &quot;conversationId&quot; | 
 | CONVERSATIONINITIATOR | &quot;conversationInitiator&quot; | 
 | CONVERTEDFROM | &quot;convertedFrom&quot; | 

@@ -1184,7 +1184,6 @@ docs/DomainPhysicalInterface.md
 docs/DomainResourceConditionNode.md
 docs/DomainResourceConditionValue.md
 docs/DomainRole.md
-docs/DomainSchemaReference.md
 docs/DownloadResponse.md
 docs/DownloadsApi.json
 docs/DownloadsApi.md
@@ -2655,6 +2654,7 @@ docs/RestorePresenceSettings.md
 docs/ResultCounters.md
 docs/RetentionDuration.md
 docs/ReverseWhitepagesLookupResult.md
+docs/ReviewAssessmentResults.md
 docs/Ring.md
 docs/RoleDivision.md
 docs/RoleDivisionGrants.md
@@ -2707,10 +2707,7 @@ docs/SchedulingSettingsResponse.md
 docs/SchedulingStatusResponse.md
 docs/SchedulingTestingOptionsRequest.md
 docs/Schema.md
-docs/SchemaCategory.md
-docs/SchemaCategoryEntityListing.md
 docs/SchemaQuantityLimits.md
-docs/SchemaReferenceEntityListing.md
 docs/ScimConfigResourceType.md
 docs/ScimConfigResourceTypeSchemaExtension.md
 docs/ScimConfigResourceTypesListResponse.md
@@ -3995,11 +3992,6 @@ docs/getCoachingAppointments-example.txt
 docs/getCoachingAppointmentsMe-example.txt
 docs/getCoachingNotification-example.txt
 docs/getCoachingNotifications-example.txt
-docs/getConfigurationSchemasEdgesVnext-example.txt
-docs/getConfigurationSchemasEdgesVnextSchemaCategory-example.txt
-docs/getConfigurationSchemasEdgesVnextSchemaCategorySchemaType-example.txt
-docs/getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId-example.txt
-docs/getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId-example.txt
 docs/getContentmanagementDocument-example.txt
 docs/getContentmanagementDocumentAudits-example.txt
 docs/getContentmanagementDocumentContent-example.txt
@@ -5664,11 +5656,9 @@ docs/putSpeechandtextanalyticsTopic-example.txt
 docs/putTelephonyProvidersEdge-example.txt
 docs/putTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/putTelephonyProvidersEdgesCertificateauthority-example.txt
-docs/putTelephonyProvidersEdgesDid-example.txt
 docs/putTelephonyProvidersEdgesDidpool-example.txt
 docs/putTelephonyProvidersEdgesEdgegroup-example.txt
 docs/putTelephonyProvidersEdgesEdgegroupEdgetrunkbase-example.txt
-docs/putTelephonyProvidersEdgesExtension-example.txt
 docs/putTelephonyProvidersEdgesExtensionpool-example.txt
 docs/putTelephonyProvidersEdgesOutboundroute-example.txt
 docs/putTelephonyProvidersEdgesPhone-example.txt
@@ -6182,11 +6172,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentsMeReques
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingNotificationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingNotificationsRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetConfigurationSchemasEdgesVnextRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetConfigurationSchemasEdgesVnextSchemaCategoryRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetContentmanagementDocumentAuditsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetContentmanagementDocumentContentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetContentmanagementDocumentRequest.java
@@ -7851,11 +7836,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutSpeechandtextanalyticsTopicR
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgeLogicalinterfaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesCertificateauthorityRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesDidRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesDidpoolRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesEdgegroupRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesExtensionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesExtensionpoolRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesOutboundrouteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesPhoneRequest.java
@@ -9054,7 +9037,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/DomainPhysicalInterface.java
 src/main/java/com/mypurecloud/sdk/v2/model/DomainResourceConditionNode.java
 src/main/java/com/mypurecloud/sdk/v2/model/DomainResourceConditionValue.java
 src/main/java/com/mypurecloud/sdk/v2/model/DomainRole.java
-src/main/java/com/mypurecloud/sdk/v2/model/DomainSchemaReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/DownloadResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Draft.java
 src/main/java/com/mypurecloud/sdk/v2/model/DraftIntents.java
@@ -10459,6 +10441,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/RestorePresenceSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ResultCounters.java
 src/main/java/com/mypurecloud/sdk/v2/model/RetentionDuration.java
 src/main/java/com/mypurecloud/sdk/v2/model/ReverseWhitepagesLookupResult.java
+src/main/java/com/mypurecloud/sdk/v2/model/ReviewAssessmentResults.java
 src/main/java/com/mypurecloud/sdk/v2/model/Ring.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoleDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoleDivisionGrants.java
@@ -10507,10 +10490,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SchedulingSettingsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/SchedulingStatusResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/SchedulingTestingOptionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/Schema.java
-src/main/java/com/mypurecloud/sdk/v2/model/SchemaCategory.java
-src/main/java/com/mypurecloud/sdk/v2/model/SchemaCategoryEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SchemaQuantityLimits.java
-src/main/java/com/mypurecloud/sdk/v2/model/SchemaReferenceEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScimConfigResourceType.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScimConfigResourceTypeSchemaExtension.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScimConfigResourceTypesListResponse.java

@@ -50,6 +50,7 @@ title: ObservationValue
 | ---- | ----- |
 | BULLSEYE | &quot;Bullseye&quot; |
 | CONDITIONAL | &quot;Conditional&quot; |
+| DIRECT | &quot;Direct&quot; |
 | LAST | &quot;Last&quot; |
 | MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |
@@ -68,6 +69,7 @@ title: ObservationValue
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BULLSEYE | &quot;Bullseye&quot; | 
 | CONDITIONAL | &quot;Conditional&quot; | 
+| DIRECT | &quot;Direct&quot; | 
 | LAST | &quot;Last&quot; | 
 | MANUAL | &quot;Manual&quot; | 
 | PREDICTIVE | &quot;Predictive&quot; | 

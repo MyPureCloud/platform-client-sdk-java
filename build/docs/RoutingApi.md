@@ -4435,7 +4435,7 @@ try {
 
 
 
-> [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing.html) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language)
+> [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing.html) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId)
 
 Get a list of provisioned phone numbers.
 
@@ -4476,8 +4476,9 @@ Integer pageNumber = 1; // Integer | Page number
 String sortBy = "sortBy_example"; // String | Optional field to sort results
 String sortOrder = "sortOrder_example"; // String | Sort order
 String language = en-US; // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations
+String integrationId = "integrationId_example"; // String | Filter on the Genesys Cloud integration id to which the phone number belongs to
 try {
-    SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language);
+    SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingSmsPhonenumbers");
@@ -4499,6 +4500,7 @@ try {
 | **sortBy** | **String**| Optional field to sort results | [optional]<br />**Values**: phoneNumber, countryCode, country, dateCreated, dateModified, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice 
 | **sortOrder** | **String**| Sort order | [optional]<br />**Values**: ascending, descending 
 | **language** | **String**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to &quot;en-US&quot;] 
+| **integrationId** | **String**| Filter on the Genesys Cloud integration id to which the phone number belongs to | [optional] 
 {: class="table-striped"}
 
 

@@ -5836,12 +5836,13 @@ public class RoutingApi {
    * @param sortBy Optional field to sort results (optional)
    * @param sortOrder Sort order (optional)
    * @param language A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional, default to "en-US")
+   * @param integrationId Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)
    * @return SmsPhoneNumberEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language) throws IOException, ApiException {
-    return  getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language));
+  public SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId) throws IOException, ApiException {
+    return  getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId));
   }
 
   /**
@@ -5856,14 +5857,15 @@ public class RoutingApi {
    * @param sortBy Optional field to sort results (optional)
    * @param sortOrder Sort order (optional)
    * @param language A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional, default to "en-US")
+   * @param integrationId Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)
    * @return SmsPhoneNumberEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumberEntityListing> getRoutingSmsPhonenumbersWithHttpInfo(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language) throws IOException {
-    return getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language).withHttpInfo());
+  public ApiResponse<SmsPhoneNumberEntityListing> getRoutingSmsPhonenumbersWithHttpInfo(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId) throws IOException {
+    return getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId).withHttpInfo());
   }
 
-  private GetRoutingSmsPhonenumbersRequest createGetRoutingSmsPhonenumbersRequest(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language) {
+  private GetRoutingSmsPhonenumbersRequest createGetRoutingSmsPhonenumbersRequest(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId) {
     return GetRoutingSmsPhonenumbersRequest.builder()
             .withPhoneNumber(phoneNumber)
 
@@ -5882,6 +5884,8 @@ public class RoutingApi {
             .withSortOrder(sortOrder)
 
             .withLanguage(language)
+
+            .withIntegrationId(integrationId)
 
             .build();
   }
