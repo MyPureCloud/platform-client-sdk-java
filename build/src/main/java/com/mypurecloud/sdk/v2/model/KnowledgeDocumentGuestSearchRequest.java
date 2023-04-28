@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.KnowledgeGuestSessionApp;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -80,7 +79,6 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
   private QueryTypeEnum queryType = null;
   private String sessionId = null;
   private Boolean includeDraftDocuments = null;
-  private KnowledgeGuestSessionApp app = null;
 
   
   /**
@@ -201,13 +199,6 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The app where the session is started.")
-  @JsonProperty("app")
-  public KnowledgeGuestSessionApp getApp() {
-    return app;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -226,13 +217,12 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
             Objects.equals(this.pageCount, knowledgeDocumentGuestSearchRequest.pageCount) &&
             Objects.equals(this.queryType, knowledgeDocumentGuestSearchRequest.queryType) &&
             Objects.equals(this.sessionId, knowledgeDocumentGuestSearchRequest.sessionId) &&
-            Objects.equals(this.includeDraftDocuments, knowledgeDocumentGuestSearchRequest.includeDraftDocuments) &&
-            Objects.equals(this.app, knowledgeDocumentGuestSearchRequest.app);
+            Objects.equals(this.includeDraftDocuments, knowledgeDocumentGuestSearchRequest.includeDraftDocuments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, sessionId, includeDraftDocuments, app);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, sessionId, includeDraftDocuments);
   }
 
   @Override
@@ -249,7 +239,6 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
     sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    includeDraftDocuments: ").append(toIndentedString(includeDraftDocuments)).append("\n");
-    sb.append("    app: ").append(toIndentedString(app)).append("\n");
     sb.append("}");
     return sb.toString();
   }

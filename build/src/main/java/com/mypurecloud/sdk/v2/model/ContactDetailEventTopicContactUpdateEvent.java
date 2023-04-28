@@ -198,6 +198,8 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     }
   }
   private MessageTypeEnum messageType = null;
+  private List<String> conversationExternalContactIds = new ArrayList<String>();
+  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
 
   
   /**
@@ -506,6 +508,40 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
   }
 
 
+  /**
+   **/
+  public ContactDetailEventTopicContactUpdateEvent conversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalContactIds")
+  public List<String> getConversationExternalContactIds() {
+    return conversationExternalContactIds;
+  }
+  public void setConversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+  }
+
+
+  /**
+   **/
+  public ContactDetailEventTopicContactUpdateEvent conversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalOrganizationIds")
+  public List<String> getConversationExternalOrganizationIds() {
+    return conversationExternalOrganizationIds;
+  }
+  public void setConversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -533,12 +569,14 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
             Objects.equals(this.callbackNumbers, contactDetailEventTopicContactUpdateEvent.callbackNumbers) &&
             Objects.equals(this.callbackScheduledTime, contactDetailEventTopicContactUpdateEvent.callbackScheduledTime) &&
             Objects.equals(this.subject, contactDetailEventTopicContactUpdateEvent.subject) &&
-            Objects.equals(this.messageType, contactDetailEventTopicContactUpdateEvent.messageType);
+            Objects.equals(this.messageType, contactDetailEventTopicContactUpdateEvent.messageType) &&
+            Objects.equals(this.conversationExternalContactIds, contactDetailEventTopicContactUpdateEvent.conversationExternalContactIds) &&
+            Objects.equals(this.conversationExternalOrganizationIds, contactDetailEventTopicContactUpdateEvent.conversationExternalOrganizationIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, conversationExternalContactIds, conversationExternalOrganizationIds);
   }
 
   @Override
@@ -564,6 +602,8 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
+    sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
+    sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

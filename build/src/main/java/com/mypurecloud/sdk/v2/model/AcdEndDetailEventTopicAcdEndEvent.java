@@ -428,6 +428,8 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
   private List<String> requestedRoutingUserIds = new ArrayList<String>();
   private Integer routingPriority = null;
   private Integer connectedDurationMs = null;
+  private List<String> conversationExternalContactIds = new ArrayList<String>();
+  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
 
   
   /**
@@ -906,6 +908,40 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public AcdEndDetailEventTopicAcdEndEvent conversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalContactIds")
+  public List<String> getConversationExternalContactIds() {
+    return conversationExternalContactIds;
+  }
+  public void setConversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+  }
+
+
+  /**
+   **/
+  public AcdEndDetailEventTopicAcdEndEvent conversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalOrganizationIds")
+  public List<String> getConversationExternalOrganizationIds() {
+    return conversationExternalOrganizationIds;
+  }
+  public void setConversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -943,12 +979,14 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
             Objects.equals(this.requestedLanguageId, acdEndDetailEventTopicAcdEndEvent.requestedLanguageId) &&
             Objects.equals(this.requestedRoutingUserIds, acdEndDetailEventTopicAcdEndEvent.requestedRoutingUserIds) &&
             Objects.equals(this.routingPriority, acdEndDetailEventTopicAcdEndEvent.routingPriority) &&
-            Objects.equals(this.connectedDurationMs, acdEndDetailEventTopicAcdEndEvent.connectedDurationMs);
+            Objects.equals(this.connectedDurationMs, acdEndDetailEventTopicAcdEndEvent.connectedDurationMs) &&
+            Objects.equals(this.conversationExternalContactIds, acdEndDetailEventTopicAcdEndEvent.conversationExternalContactIds) &&
+            Objects.equals(this.conversationExternalOrganizationIds, acdEndDetailEventTopicAcdEndEvent.conversationExternalOrganizationIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, acdOutcome, answeredUserId, requestedRoutings, usedRouting, requestedRoutingSkillIds, requestedLanguageId, requestedRoutingUserIds, routingPriority, connectedDurationMs);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, acdOutcome, answeredUserId, requestedRoutings, usedRouting, requestedRoutingSkillIds, requestedLanguageId, requestedRoutingUserIds, routingPriority, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds);
   }
 
   @Override
@@ -984,6 +1022,8 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     sb.append("    requestedRoutingUserIds: ").append(toIndentedString(requestedRoutingUserIds)).append("\n");
     sb.append("    routingPriority: ").append(toIndentedString(routingPriority)).append("\n");
     sb.append("    connectedDurationMs: ").append(toIndentedString(connectedDurationMs)).append("\n");
+    sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
+    sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

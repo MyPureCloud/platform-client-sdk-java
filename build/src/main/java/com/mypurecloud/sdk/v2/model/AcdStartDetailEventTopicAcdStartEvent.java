@@ -198,6 +198,8 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
   private MessageTypeEnum messageType = null;
   private String queueId = null;
   private String divisionId = null;
+  private List<String> conversationExternalContactIds = new ArrayList<String>();
+  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
 
   
   /**
@@ -506,6 +508,40 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public AcdStartDetailEventTopicAcdStartEvent conversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalContactIds")
+  public List<String> getConversationExternalContactIds() {
+    return conversationExternalContactIds;
+  }
+  public void setConversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+  }
+
+
+  /**
+   **/
+  public AcdStartDetailEventTopicAcdStartEvent conversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalOrganizationIds")
+  public List<String> getConversationExternalOrganizationIds() {
+    return conversationExternalOrganizationIds;
+  }
+  public void setConversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -533,12 +569,14 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
             Objects.equals(this.subject, acdStartDetailEventTopicAcdStartEvent.subject) &&
             Objects.equals(this.messageType, acdStartDetailEventTopicAcdStartEvent.messageType) &&
             Objects.equals(this.queueId, acdStartDetailEventTopicAcdStartEvent.queueId) &&
-            Objects.equals(this.divisionId, acdStartDetailEventTopicAcdStartEvent.divisionId);
+            Objects.equals(this.divisionId, acdStartDetailEventTopicAcdStartEvent.divisionId) &&
+            Objects.equals(this.conversationExternalContactIds, acdStartDetailEventTopicAcdStartEvent.conversationExternalContactIds) &&
+            Objects.equals(this.conversationExternalOrganizationIds, acdStartDetailEventTopicAcdStartEvent.conversationExternalOrganizationIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, conversationExternalContactIds, conversationExternalOrganizationIds);
   }
 
   @Override
@@ -564,6 +602,8 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
+    sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
+    sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

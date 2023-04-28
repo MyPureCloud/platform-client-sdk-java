@@ -49,6 +49,7 @@ title: ConversationMessageEventTopicMessageMediaParticipant
 | **recipientCountry** | <!----><!---->**String**<!----> |  |  [optional] |
 | **recipientType** | <!----><!---->**String**<!----> |  |  [optional] |
 | **byoSmsIntegrationId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **monitoredParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

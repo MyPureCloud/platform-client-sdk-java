@@ -38,96 +38,7 @@ public class AuditLogMessage  implements Serializable {
   private DomainEntityRef user = null;
   private AddressableEntityRef client = null;
   private List<String> remoteIp = new ArrayList<String>();
-
-  private static class ServiceNameEnumDeserializer extends StdDeserializer<ServiceNameEnum> {
-    public ServiceNameEnumDeserializer() {
-      super(ServiceNameEnumDeserializer.class);
-    }
-
-    @Override
-    public ServiceNameEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return ServiceNameEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * Name of the service that logged this audit message.
-   */
- @JsonDeserialize(using = ServiceNameEnumDeserializer.class)
-  public enum ServiceNameEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    AGENTCONFIG("AgentConfig"),
-    ANALYTICSREPORTING("AnalyticsReporting"),
-    ARCHITECT("Architect"),
-    CALLBACK("Callback"),
-    COACHING("Coaching"),
-    CONTACTCENTER("ContactCenter"),
-    CONTENTMANAGEMENT("ContentManagement"),
-    DATATABLES("Datatables"),
-    DIRECTORY("Directory"),
-    DYNAMICSCHEMA("DynamicSchema"),
-    EMAILS("Emails"),
-    EMPLOYEEPERFORMANCE("EmployeePerformance"),
-    EXTERNALCONTACTS("ExternalContacts"),
-    GAMIFICATION("Gamification"),
-    GDPR("GDPR"),
-    GROUPS("Groups"),
-    INTEGRATIONS("Integrations"),
-    KNOWLEDGE("Knowledge"),
-    LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
-    LEARNING("Learning"),
-    LIMITS("Limits"),
-    LOGCAPTURE("LogCapture"),
-    MARKETPLACE("Marketplace"),
-    MESSAGING("Messaging"),
-    NUMBERPURCHASING("NumberPurchasing"),
-    OUTBOUND("Outbound"),
-    PEOPLEPERMISSIONS("PeoplePermissions"),
-    PREDICTIVEENGAGEMENT("PredictiveEngagement"),
-    PRESENCE("Presence"),
-    PROCESSAUTOMATION("ProcessAutomation"),
-    QUALITY("Quality"),
-    RESPONSEMANAGEMENT("ResponseManagement"),
-    ROUTING("Routing"),
-    SCIM("SCIM"),
-    SCRIPTER("Scripter"),
-    SPEECHANDTEXTANALYTICS("SpeechAndTextAnalytics"),
-    SUPPORTABILITY("Supportability"),
-    TELEPHONY("Telephony"),
-    TRIGGERS("Triggers"),
-    VOICEMAIL("Voicemail"),
-    WEBDEPLOYMENTS("WebDeployments"),
-    WEBHOOKS("Webhooks"),
-    WORKFORCEMANAGEMENT("WorkforceManagement"),
-    WORKITEMS("Workitems");
-
-    private String value;
-
-    ServiceNameEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static ServiceNameEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (ServiceNameEnum value : ServiceNameEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return ServiceNameEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private ServiceNameEnum serviceName = null;
+  private String serviceName = null;
 
   private static class LevelEnumDeserializer extends StdDeserializer<LevelEnum> {
     public LevelEnumDeserializer() {
@@ -178,383 +89,9 @@ public class AuditLogMessage  implements Serializable {
   private LevelEnum level = null;
   private Date eventDate = null;
   private MessageInfo message = null;
-
-  private static class ActionEnumDeserializer extends StdDeserializer<ActionEnum> {
-    public ActionEnumDeserializer() {
-      super(ActionEnumDeserializer.class);
-    }
-
-    @Override
-    public ActionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return ActionEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * Action that took place.
-   */
- @JsonDeserialize(using = ActionEnumDeserializer.class)
-  public enum ActionEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    CREATE("Create"),
-    VIEW("View"),
-    UPDATE("Update"),
-    MOVE("Move"),
-    COPY("Copy"),
-    DELETE("Delete"),
-    DELETEALL("DeleteAll"),
-    FAX("Fax"),
-    VERSIONCREATE("VersionCreate"),
-    DOWNLOAD("Download"),
-    UPLOAD("Upload"),
-    MEMBERADD("MemberAdd"),
-    MEMBERUPDATE("MemberUpdate"),
-    MEMBERREMOVE("MemberRemove"),
-    SHAREADD("ShareAdd"),
-    SHAREREMOVE("ShareRemove"),
-    TAGADD("TagAdd"),
-    TAGREMOVE("TagRemove"),
-    TAGUPDATE("TagUpdate"),
-    READ("Read"),
-    READALL("ReadAll"),
-    EXECUTE("Execute"),
-    APPLYPROTECTION("ApplyProtection"),
-    REVOKEPROTECTION("RevokeProtection"),
-    UPDATERETENTION("UpdateRetention"),
-    ABANDON("Abandon"),
-    ARCHIVE("Archive"),
-    RESTOREREQUEST("RestoreRequest"),
-    RESTORECOMPLETE("RestoreComplete"),
-    PROMOTE("Promote"),
-    PUBLISH("Publish"),
-    UNPUBLISH("Unpublish"),
-    ACTIVATE("Activate"),
-    CHECKIN("Checkin"),
-    CHECKOUT("Checkout"),
-    DEACTIVATE("Deactivate"),
-    DEBUG("Debug"),
-    SAVE("Save"),
-    REVERT("Revert"),
-    TRANSCODE("Transcode"),
-    ENABLE("Enable"),
-    DISABLE("Disable"),
-    AUTHORIZE("Authorize"),
-    DEAUTHORIZE("Deauthorize"),
-    AUTHENTICATE("Authenticate"),
-    CHANGEPASSWORD("ChangePassword"),
-    REVOKE("Revoke"),
-    EXPORT("Export"),
-    APPEND("Append"),
-    RECYCLE("Recycle"),
-    OPEN("Open"),
-    APPROVED("Approved"),
-    REJECTED("Rejected"),
-    ROLLBACK("Rollback"),
-    IMPLEMENTINGCHANGE("ImplementingChange"),
-    CHANGEIMPLEMENTED("ChangeImplemented"),
-    IMPLEMENTINGROLLBACK("ImplementingRollback"),
-    ROLLBACKIMPLEMENTED("RollbackImplemented"),
-    WRITE("Write"),
-    PURGE("Purge"),
-    PROCESSED("Processed"),
-    REMOVE("Remove"),
-    REPLACE("Replace"),
-    UPDATEINSERVICE("UpdateInService"),
-    UPDATEOUTOFSERVICE("UpdateOutOfService"),
-    CYCLE("Cycle"),
-    SCALE("Scale"),
-    IPALLOWLISTCLEAR("IpAllowlistClear"),
-    ADDPAIRINGROLE("AddPairingRole"),
-    ADD("Add"),
-    VERIFY("Verify"),
-    ASSIGN("Assign"),
-    UNASSIGN("Unassign"),
-    REASSIGN("Reassign"),
-    RESCHEDULE("Reschedule"),
-    CANCEL("Cancel"),
-    SOFTDELETE("SoftDelete"),
-    HARDDELETE("HardDelete"),
-    RESET("Reset"),
-    ROTATE("Rotate"),
-    RESTORE("Restore"),
-    RESTOREALL("RestoreAll"),
-    RESTOREDELETED("RestoreDeleted"),
-    UNARCHIVE("Unarchive"),
-    ENABLECAPTURE("EnableCapture"),
-    DOWNLOADCAPTURE("DownloadCapture");
-
-    private String value;
-
-    ActionEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static ActionEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (ActionEnum value : ActionEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return ActionEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private ActionEnum action = null;
+  private String action = null;
   private DomainEntityRef entity = null;
-
-  private static class EntityTypeEnumDeserializer extends StdDeserializer<EntityTypeEnum> {
-    public EntityTypeEnumDeserializer() {
-      super(EntityTypeEnumDeserializer.class);
-    }
-
-    @Override
-    public EntityTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return EntityTypeEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * Type of the entity that was impacted.
-   */
- @JsonDeserialize(using = EntityTypeEnumDeserializer.class)
-  public enum EntityTypeEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ACCESSTOKEN("AccessToken"),
-    ACTION("Action"),
-    ACTIONDRAFT("ActionDraft"),
-    ACTIONMAP("ActionMap"),
-    ACTIONTEMPLATE("ActionTemplate"),
-    ACTIVITYCODE("ActivityCode"),
-    ADHERENCEEXPLANATION("AdherenceExplanation"),
-    AGENTROUTINGINFO("AgentRoutingInfo"),
-    ANALYTICSREPORTINGSETTINGS("AnalyticsReportingSettings"),
-    ANNOTATION("Annotation"),
-    APPOINTMENT("Appointment"),
-    ASSIGNMENT("Assignment"),
-    ATTEMPTLIMITS("AttemptLimits"),
-    AUTHORGANIZATION("AuthOrganization"),
-    AUTHUSER("AuthUser"),
-    BULK("Bulk"),
-    BULKACTIONS("BulkActions"),
-    BUSINESSUNIT("BusinessUnit"),
-    CALIBRATION("Calibration"),
-    CALLABLETIMESET("CallableTimeSet"),
-    CALLANALYSISRESPONSESET("CallAnalysisResponseSet"),
-    CAMPAIGN("Campaign"),
-    CAMPAIGNRULE("CampaignRule"),
-    CAMPAIGNSCHEDULE("CampaignSchedule"),
-    CHANGEREQUEST("ChangeRequest"),
-    CLICKSTREAMSETTINGS("ClickstreamSettings"),
-    COMPOSERPAGE("ComposerPage"),
-    COMPOSERSCRIPT("ComposerScript"),
-    COMPOSERPUBLISHEDSCRIPT("ComposerPublishedScript"),
-    COMPOSERTEMPLATE("ComposerTemplate"),
-    CONFIGURATION("Configuration"),
-    CONFIGURATIONVERSION("ConfigurationVersion"),
-    CONTACTLIST("ContactList"),
-    CONTACTLISTFILTER("ContactListFilter"),
-    CONTACTSCHEMA("ContactSchema"),
-    CONVERSATIONATTRIBUTES("ConversationAttributes"),
-    CONVERSATIONACCOUNT("ConversationAccount"),
-    CONVERSATIONDEFAULTSUPPORTEDCONTENT("ConversationDefaultSupportedContent"),
-    CONVERSATIONPHONENUMBER("ConversationPhoneNumber"),
-    CONVERSATIONRECIPIENT("ConversationRecipient"),
-    CONVERSATIONTHREADINGWINDOW("ConversationThreadingWindow"),
-    CREDENTIAL("Credential"),
-    DASHBOARDSETTINGS("DashboardSettings"),
-    DEFAULTPANELSETTINGS("DefaultPanelSettings"),
-    DEPENDENCYTRACKINGBUILD("DependencyTrackingBuild"),
-    DEPLOYMENT("Deployment"),
-    DID("DID"),
-    DIDPOOL("DIDPool"),
-    DIGITALRULESET("DigitalRuleSet"),
-    DIRECTORYGROUP("DirectoryGroup"),
-    DNCLIST("DNCList"),
-    DOCUMENT("Document"),
-    DYNAMICGROUP("DynamicGroup"),
-    DYNAMICSCHEMA("DynamicSchema"),
-    EDGE("Edge"),
-    EDGEGROUP("EdgeGroup"),
-    EDGELOG("EdgeLog"),
-    EDGELOGZIP("EdgeLogZip"),
-    EDGEPCAPS("EdgePcaps"),
-    EDGEPREFERENCES("EdgePreferences"),
-    EDGETRACELEVEL("EdgeTraceLevel"),
-    EMAILCAMPAIGNSCHEDULE("EmailCampaignSchedule"),
-    EMERGENCYGROUP("EmergencyGroup"),
-    ENTERPRISEAGREEMENT("EnterpriseAgreement"),
-    EVALUATION("Evaluation"),
-    EVALUATIONFORM("EvaluationForm"),
-    EVENTTYPE("EventType"),
-    EXPORTS("Exports"),
-    EXTENSION("Extension"),
-    EXTENSIONPOOL("ExtensionPool"),
-    EXTERNALMETRICSDATA("ExternalMetricsData"),
-    EXTERNALMETRICSDEFINITION("ExternalMetricsDefinition"),
-    EXTERNALORGANIZATIONSCHEMA("ExternalOrganizationSchema"),
-    FEEDBACK("Feedback"),
-    FLOW("Flow"),
-    FLOWMILESTONE("FlowMilestone"),
-    FLOWOUTCOME("FlowOutcome"),
-    FORECAST("Forecast"),
-    GDPRREQUEST("GdprRequest"),
-    GRAMMAR("Grammar"),
-    GRAMMARLANGUAGE("GrammarLanguage"),
-    GROUP("Group"),
-    HISTORICALDATA("HistoricalData"),
-    INBOUNDDOMAIN("InboundDomain"),
-    INBOUNDROUTE("InboundRoute"),
-    INSIGHTSETTINGS("InsightSettings"),
-    INTEGRATION("Integration"),
-    INTENTMINER("IntentMiner"),
-    IVR("IVR"),
-    KNOWLEDGEBASE("KnowledgeBase"),
-    KNOWLEDGECATEGORY("KnowledgeCategory"),
-    KNOWLEDGEDOCUMENT("KnowledgeDocument"),
-    KNOWLEDGEDOCUMENTVARIATION("KnowledgeDocumentVariation"),
-    KNOWLEDGELABEL("KnowledgeLabel"),
-    KNOWLEDGESEARCHFEEDBACK("KnowledgeSearchFeedback"),
-    KNOWLEDGETRAINING("KnowledgeTraining"),
-    LINE("Line"),
-    LINEBASE("LineBase"),
-    LOCATION("Location"),
-    MANAGEMENTUNIT("ManagementUnit"),
-    MAXORGROUTINGUTILIZATIONCAPACITY("MaxOrgRoutingUtilizationCapacity"),
-    MEDIADIAGNOSTICSTRACEFILE("MediaDiagnosticsTraceFile"),
-    MESSAGINGCAMPAIGN("MessagingCampaign"),
-    MESSAGINGCAMPAIGNSCHEDULE("MessagingCampaignSchedule"),
-    METRIC("Metric"),
-    MODULE("Module"),
-    NUMBERORDER("NumberOrder"),
-    NUMBERPLAN("NumberPlan"),
-    OAUTHCLIENT("OAuthClient"),
-    OAUTHCLIENTAUTHORIZATION("OAuthClientAuthorization"),
-    ORGANIZATION("Organization"),
-    ORGANIZATIONAUTHORIZATIONTRUST("OrganizationAuthorizationTrust"),
-    ORGANIZATIONAUTHORIZATIONUSERTRUST("OrganizationAuthorizationUserTrust"),
-    ORGANIZATIONFEATURE("OrganizationFeature"),
-    ORGANIZATIONINTEGRATIONSACCESS("OrganizationIntegrationsAccess"),
-    ORGANIZATIONLIMITS("OrganizationLimits"),
-    ORGANIZATIONSETTINGS("OrganizationSettings"),
-    ORPHANEDRECORDING("OrphanedRecording"),
-    OUTBOUNDDOMAIN("OutboundDomain"),
-    OUTBOUNDROUTE("OutboundRoute"),
-    OUTCOME("Outcome"),
-    PCAPS("Pcaps"),
-    PHONE("Phone"),
-    PHONEBASE("PhoneBase"),
-    PLANNINGGROUP("PlanningGroup"),
-    POLICY("Policy"),
-    PREDICTOR("Predictor"),
-    PRODUCT("Product"),
-    PROFILE("Profile"),
-    PROFILEMEMBERS("ProfileMembers"),
-    PROGRAM("Program"),
-    PROMPT("Prompt"),
-    PROMPTRESOURCE("PromptResource"),
-    PUBLIC("Public"),
-    QUEUE("Queue"),
-    RECORDING("Recording"),
-    RECORDINGANNOTATION("RecordingAnnotation"),
-    RECORDINGKEY("RecordingKey"),
-    RECORDINGKEYCONFIG("RecordingKeyConfig"),
-    RECORDINGSETTINGS("RecordingSettings"),
-    RESPONSE("Response"),
-    RESPONSEASSET("ResponseAsset"),
-    ROLE("Role"),
-    ROLESETTINGS("RoleSettings"),
-    ROW("Row"),
-    ROUTINGTRANSCRIPTIONSETTINGS("RoutingTranscriptionSettings"),
-    ROUTINGUTILIZATIONTAG("RoutingUtilizationTag"),
-    RULE("Rule"),
-    RULESET("RuleSet"),
-    SCHEDULE("Schedule"),
-    SCHEDULEDEXPORTS("ScheduledExports"),
-    SCHEDULEGROUP("ScheduleGroup"),
-    SCHEMA("Schema"),
-    SCREENRECORDING("ScreenRecording"),
-    SEGMENT("Segment"),
-    SENTIMENTFEEDBACK("SentimentFeedback"),
-    SEQUENCE("Sequence"),
-    SEQUENCESCHEDULE("SequenceSchedule"),
-    SERVICEGOALTEMPLATE("ServiceGoalTemplate"),
-    SESSIONTYPE("SessionType"),
-    SHIFTTRADE("ShiftTrade"),
-    SITE("Site"),
-    SKILLSGROUP("SkillsGroup"),
-    SKILLGROUPDEFINITION("SkillGroupDefinition"),
-    SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
-    STAFFINGGROUP("StaffingGroup"),
-    STATUS("Status"),
-    SUPPORTEDCONTENT("SupportedContent"),
-    SUPPORTFILE("SupportFile"),
-    SURVEY("Survey"),
-    SURVEYFORM("SurveyForm"),
-    TAG("Tag"),
-    TEAM("Team"),
-    TIMEOFFLIMIT("TimeOffLimit"),
-    TIMEOFFPLAN("TimeOffPlan"),
-    TIMEOFFREQUEST("TimeOffRequest"),
-    TOPIC("Topic"),
-    TOPICMINER("TopicMiner"),
-    TRANSCRIPTIONSETTINGS("TranscriptionSettings"),
-    TRIGGER("Trigger"),
-    TRUNK("Trunk"),
-    TRUNKBASE("TrunkBase"),
-    USER("User"),
-    USERLANGUAGE("UserLanguage"),
-    USERPRESENCE("UserPresence"),
-    USERSKILL("UserSkill"),
-    VOICEMAILPOLICY("VoicemailPolicy"),
-    VOICEMAILUSERPOLICY("VoicemailUserPolicy"),
-    WEBHOOK("Webhook"),
-    WORKBIN("Workbin"),
-    WORKITEM("Workitem"),
-    WORKPLAN("WorkPlan"),
-    WORKPLANROTATION("WorkPlanRotation"),
-    WORKSPACE("Workspace"),
-    WORKTYPE("Worktype"),
-    WRAPUPCODE("WrapupCode"),
-    WRAPUPCODEMAPPING("WrapUpCodeMapping"),
-    PARTICIPANT("Participant");
-
-    private String value;
-
-    EntityTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static EntityTypeEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (EntityTypeEnum value : EntityTypeEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return EntityTypeEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private EntityTypeEnum entityType = null;
+  private String entityType = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -705,17 +242,17 @@ public class AuditLogMessage  implements Serializable {
   /**
    * Name of the service that logged this audit message.
    **/
-  public AuditLogMessage serviceName(ServiceNameEnum serviceName) {
+  public AuditLogMessage serviceName(String serviceName) {
     this.serviceName = serviceName;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Name of the service that logged this audit message.")
   @JsonProperty("serviceName")
-  public ServiceNameEnum getServiceName() {
+  public String getServiceName() {
     return serviceName;
   }
-  public void setServiceName(ServiceNameEnum serviceName) {
+  public void setServiceName(String serviceName) {
     this.serviceName = serviceName;
   }
 
@@ -777,17 +314,17 @@ public class AuditLogMessage  implements Serializable {
   /**
    * Action that took place.
    **/
-  public AuditLogMessage action(ActionEnum action) {
+  public AuditLogMessage action(String action) {
     this.action = action;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Action that took place.")
   @JsonProperty("action")
-  public ActionEnum getAction() {
+  public String getAction() {
     return action;
   }
-  public void setAction(ActionEnum action) {
+  public void setAction(String action) {
     this.action = action;
   }
 
@@ -813,17 +350,17 @@ public class AuditLogMessage  implements Serializable {
   /**
    * Type of the entity that was impacted.
    **/
-  public AuditLogMessage entityType(EntityTypeEnum entityType) {
+  public AuditLogMessage entityType(String entityType) {
     this.entityType = entityType;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Type of the entity that was impacted.")
   @JsonProperty("entityType")
-  public EntityTypeEnum getEntityType() {
+  public String getEntityType() {
     return entityType;
   }
-  public void setEntityType(EntityTypeEnum entityType) {
+  public void setEntityType(String entityType) {
     this.entityType = entityType;
   }
 

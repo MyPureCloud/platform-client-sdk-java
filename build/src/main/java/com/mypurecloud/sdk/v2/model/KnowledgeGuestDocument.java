@@ -85,6 +85,7 @@ public class KnowledgeGuestDocument  implements Serializable {
   private StateEnum state = null;
   private Date dateCreated = null;
   private Date dateModified = null;
+  private Date dateImported = null;
   private Integer lastPublishedVersionNumber = null;
   private Date datePublished = null;
   private UserReference createdBy = null;
@@ -212,6 +213,24 @@ public class KnowledgeGuestDocument  implements Serializable {
 
 
   /**
+   * Document import date-time, or null if was not imported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public KnowledgeGuestDocument dateImported(Date dateImported) {
+    this.dateImported = dateImported;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Document import date-time, or null if was not imported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateImported")
+  public Date getDateImported() {
+    return dateImported;
+  }
+  public void setDateImported(Date dateImported) {
+    this.dateImported = dateImported;
+  }
+
+
+  /**
    * The last published version number of the document.
    **/
   public KnowledgeGuestDocument lastPublishedVersionNumber(Integer lastPublishedVersionNumber) {
@@ -335,6 +354,7 @@ public class KnowledgeGuestDocument  implements Serializable {
             Objects.equals(this.state, knowledgeGuestDocument.state) &&
             Objects.equals(this.dateCreated, knowledgeGuestDocument.dateCreated) &&
             Objects.equals(this.dateModified, knowledgeGuestDocument.dateModified) &&
+            Objects.equals(this.dateImported, knowledgeGuestDocument.dateImported) &&
             Objects.equals(this.lastPublishedVersionNumber, knowledgeGuestDocument.lastPublishedVersionNumber) &&
             Objects.equals(this.datePublished, knowledgeGuestDocument.datePublished) &&
             Objects.equals(this.createdBy, knowledgeGuestDocument.createdBy) &&
@@ -348,7 +368,7 @@ public class KnowledgeGuestDocument  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, visible, alternatives, state, dateCreated, dateModified, lastPublishedVersionNumber, datePublished, createdBy, modifiedBy, documentVersion, variations, sessionId, category, selfUri);
+    return Objects.hash(id, title, visible, alternatives, state, dateCreated, dateModified, dateImported, lastPublishedVersionNumber, datePublished, createdBy, modifiedBy, documentVersion, variations, sessionId, category, selfUri);
   }
 
   @Override
@@ -363,6 +383,7 @@ public class KnowledgeGuestDocument  implements Serializable {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    dateImported: ").append(toIndentedString(dateImported)).append("\n");
     sb.append("    lastPublishedVersionNumber: ").append(toIndentedString(lastPublishedVersionNumber)).append("\n");
     sb.append("    datePublished: ").append(toIndentedString(datePublished)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");

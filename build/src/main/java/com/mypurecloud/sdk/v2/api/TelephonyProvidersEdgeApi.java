@@ -83,7 +83,6 @@ import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesCertifica
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesDidpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesEdgegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesExtensionpoolRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesPhoneRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesPhonebasesettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesSiteRequest;
@@ -173,7 +172,6 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesCertificate
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesDidpoolsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesEdgegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesExtensionpoolsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhoneRebootRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonebasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRequest;
@@ -188,7 +186,6 @@ import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesDidpoolReque
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEdgegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesExtensionpoolRequest;
-import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesPhoneRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesPhonebasesettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteRequest;
@@ -721,81 +718,6 @@ public class TelephonyProvidersEdgeApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteTelephonyProvidersEdgesExtensionpool(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Delete Outbound Route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param outboundRouteId Outbound route ID (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteTelephonyProvidersEdgesOutboundroute(String outboundRouteId) throws IOException, ApiException {
-     deleteTelephonyProvidersEdgesOutboundroute(createDeleteTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId));
-  }
-
-  /**
-   * Delete Outbound Route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param outboundRouteId Outbound route ID (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws IOException {
-    return deleteTelephonyProvidersEdgesOutboundroute(createDeleteTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId).withHttpInfo());
-  }
-
-  private DeleteTelephonyProvidersEdgesOutboundrouteRequest createDeleteTelephonyProvidersEdgesOutboundrouteRequest(String outboundRouteId) {
-    return DeleteTelephonyProvidersEdgesOutboundrouteRequest.builder()
-            .withOutboundRouteId(outboundRouteId)
-
-            .build();
-  }
-
-  /**
-   * Delete Outbound Route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteTelephonyProvidersEdgesOutboundroute(DeleteTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Delete Outbound Route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -8234,84 +8156,6 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Create outbound rule
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
-   * @param body OutboundRoute (required)
-   * @return OutboundRoute
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public OutboundRoute postTelephonyProvidersEdgesOutboundroutes(OutboundRoute body) throws IOException, ApiException {
-    return  postTelephonyProvidersEdgesOutboundroutes(createPostTelephonyProvidersEdgesOutboundroutesRequest(body));
-  }
-
-  /**
-   * Create outbound rule
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
-   * @param body OutboundRoute (required)
-   * @return OutboundRoute
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<OutboundRoute> postTelephonyProvidersEdgesOutboundroutesWithHttpInfo(OutboundRoute body) throws IOException {
-    return postTelephonyProvidersEdgesOutboundroutes(createPostTelephonyProvidersEdgesOutboundroutesRequest(body).withHttpInfo());
-  }
-
-  private PostTelephonyProvidersEdgesOutboundroutesRequest createPostTelephonyProvidersEdgesOutboundroutesRequest(OutboundRoute body) {
-    return PostTelephonyProvidersEdgesOutboundroutesRequest.builder()
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Create outbound rule
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
-   * @param request The request object
-   * @return OutboundRoute
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public OutboundRoute postTelephonyProvidersEdgesOutboundroutes(PostTelephonyProvidersEdgesOutboundroutesRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<OutboundRoute> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Create outbound rule
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<OutboundRoute> postTelephonyProvidersEdgesOutboundroutes(ApiRequest<OutboundRoute> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<OutboundRoute>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Reboot a Phone
    * 
    * @param phoneId Phone Id (required)
@@ -9433,88 +9277,6 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Update outbound route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param outboundRouteId Outbound route ID (required)
-   * @param body OutboundRoute (required)
-   * @return OutboundRoute
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public OutboundRoute putTelephonyProvidersEdgesOutboundroute(String outboundRouteId, OutboundRoute body) throws IOException, ApiException {
-    return  putTelephonyProvidersEdgesOutboundroute(createPutTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId, body));
-  }
-
-  /**
-   * Update outbound route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param outboundRouteId Outbound route ID (required)
-   * @param body OutboundRoute (required)
-   * @return OutboundRoute
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<OutboundRoute> putTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId, OutboundRoute body) throws IOException {
-    return putTelephonyProvidersEdgesOutboundroute(createPutTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId, body).withHttpInfo());
-  }
-
-  private PutTelephonyProvidersEdgesOutboundrouteRequest createPutTelephonyProvidersEdgesOutboundrouteRequest(String outboundRouteId, OutboundRoute body) {
-    return PutTelephonyProvidersEdgesOutboundrouteRequest.builder()
-            .withOutboundRouteId(outboundRouteId)
-
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Update outbound route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param request The request object
-   * @return OutboundRoute
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public OutboundRoute putTelephonyProvidersEdgesOutboundroute(PutTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<OutboundRoute> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Update outbound route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<OutboundRoute> putTelephonyProvidersEdgesOutboundroute(ApiRequest<OutboundRoute> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<OutboundRoute>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

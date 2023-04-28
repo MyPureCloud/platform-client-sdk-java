@@ -11108,6 +11108,353 @@
     "return": "ExternalMetricDefinitionListing",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExternalMetricDefinitionListing;\n\npublic class ExamplegetEmployeeperformanceExternalmetricsDefinitions {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        Integer pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\n        try { \n            // Get a list of External Metric Definitions of an organization, sorted by name in ascending order\n            ExternalMetricDefinitionListing result = apiInstance.getEmployeeperformanceExternalmetricsDefinitions(pageSize, pageNumber);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getEmployeeperformanceExternalmetricsDefinitions\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
+  "getgamificationinsights": {
+    "operationId": "getgamificationinsights",
+    "functionName": "getGamificationInsights",
+    "signature": "getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Integer",
+        "required": "false"
+      },
+      {
+        "name": "sortKey",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "sortMetricId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "sortOrder",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "userIds",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "InsightsSummary",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.InsightsSummary;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetGamificationInsights {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String filterType = \"filterType_example\"; // String | Filter type for the query request.\nString filterId = \"filterId_example\"; // String | ID for the filter type.\nString granularity = \"granularity_example\"; // String | Granularity\nLocalDate comparativePeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate primaryPeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nInteger pageSize = 25; // Integer | Page size\nInteger pageNumber = 1; // Integer | Page number\nString sortKey = \"sortKey_example\"; // String | Sort key\nString sortMetricId = \"sortMetricId_example\"; // String | Sort Metric Id\nString sortOrder = \"asc\"; // String | Sort order\nString userIds = \"userIds_example\"; // String | A list of up to 100 comma-separated user Ids\n        try { \n            // Get insights summary\n            InsightsSummary result = apiInstance.getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationInsights\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getgamificationinsightsdetails": {
+    "operationId": "getgamificationinsightsdetails",
+    "functionName": "getGamificationInsightsDetails",
+    "signature": "getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsDetails",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.InsightsDetails;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetGamificationInsightsDetails {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String filterType = \"filterType_example\"; // String | Filter type for the query request.\nString filterId = \"filterId_example\"; // String | ID for the filter type.\nString granularity = \"granularity_example\"; // String | Granularity\nLocalDate comparativePeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate primaryPeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n        try { \n            // Get insights details for the current user\n            InsightsDetails result = apiInstance.getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationInsightsDetails\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getgamificationinsightsgroupstrends": {
+    "operationId": "getgamificationinsightsgroupstrends",
+    "functionName": "getGamificationInsightsGroupsTrends",
+    "signature": "getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodEndWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodEndWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsTrend",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.InsightsTrend;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetGamificationInsightsGroupsTrends {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String filterType = \"filterType_example\"; // String | Filter type for the query request.\nString filterId = \"filterId_example\"; // String | ID for the filter type.\nString granularity = \"granularity_example\"; // String | Granularity\nLocalDate comparativePeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate comparativePeriodEndWorkday = new LocalDate(); // LocalDate | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate primaryPeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate primaryPeriodEndWorkday = new LocalDate(); // LocalDate | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n        try { \n            // Get insights overall trend for the current user\n            InsightsTrend result = apiInstance.getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationInsightsGroupsTrends\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getgamificationinsightsgroupstrendsall": {
+    "operationId": "getgamificationinsightsgroupstrendsall",
+    "functionName": "getGamificationInsightsGroupsTrendsAll",
+    "signature": "getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodEndWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodEndWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsTrend",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.InsightsTrend;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetGamificationInsightsGroupsTrendsAll {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String filterType = \"filterType_example\"; // String | Filter type for the query request.\nString filterId = \"filterId_example\"; // String | ID for the filter type.\nString granularity = \"granularity_example\"; // String | Granularity\nLocalDate comparativePeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate comparativePeriodEndWorkday = new LocalDate(); // LocalDate | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate primaryPeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate primaryPeriodEndWorkday = new LocalDate(); // LocalDate | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n        try { \n            // Get insights overall trend\n            InsightsTrend result = apiInstance.getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationInsightsGroupsTrendsAll\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getgamificationinsightsmembers": {
+    "operationId": "getgamificationinsightsmembers",
+    "functionName": "getGamificationInsightsMembers",
+    "signature": "getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "startWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsAgents",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.InsightsAgents;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetGamificationInsightsMembers {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String filterType = \"filterType_example\"; // String | Filter type for the query request.\nString filterId = \"filterId_example\"; // String | ID for the filter type.\nString granularity = \"granularity_example\"; // String | Granularity\nLocalDate startWorkday = new LocalDate(); // LocalDate | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n        try { \n            // Query users in a profile during a period of time\n            InsightsAgents result = apiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationInsightsMembers\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getgamificationinsightstrends": {
+    "operationId": "getgamificationinsightstrends",
+    "functionName": "getGamificationInsightsTrends",
+    "signature": "getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodEndWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodEndWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      }
+    ],
+    "return": "UserInsightsTrend",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.UserInsightsTrend;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetGamificationInsightsTrends {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String filterType = \"filterType_example\"; // String | Filter type for the query request.\nString filterId = \"filterId_example\"; // String | ID for the filter type.\nString granularity = \"granularity_example\"; // String | Granularity\nLocalDate comparativePeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate comparativePeriodEndWorkday = new LocalDate(); // LocalDate | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate primaryPeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate primaryPeriodEndWorkday = new LocalDate(); // LocalDate | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n        try { \n            // Get insights user trend for the current user\n            UserInsightsTrend result = apiInstance.getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationInsightsTrends\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getgamificationinsightsuserdetails": {
+    "operationId": "getgamificationinsightsuserdetails",
+    "functionName": "getGamificationInsightsUserDetails",
+    "signature": "getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsDetails",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.InsightsDetails;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetGamificationInsightsUserDetails {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String userId = \"userId_example\"; // String | The ID of a user.\nString filterType = \"filterType_example\"; // String | Filter type for the query request.\nString filterId = \"filterId_example\"; // String | ID for the filter type.\nString granularity = \"granularity_example\"; // String | Granularity\nLocalDate comparativePeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate primaryPeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n        try { \n            // Get insights details for the user\n            InsightsDetails result = apiInstance.getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationInsightsUserDetails\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "getgamificationinsightsusertrends": {
+    "operationId": "getgamificationinsightsusertrends",
+    "functionName": "getGamificationInsightsUserTrends",
+    "signature": "getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodEndWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodEndWorkday",
+        "type": "LocalDate",
+        "required": "true"
+      }
+    ],
+    "return": "UserInsightsTrend",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.UserInsightsTrend;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LocalDate;\n\npublic class ExamplegetGamificationInsightsUserTrends {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String userId = \"userId_example\"; // String | The ID of a user.\nString filterType = \"filterType_example\"; // String | Filter type for the query request.\nString filterId = \"filterId_example\"; // String | ID for the filter type.\nString granularity = \"granularity_example\"; // String | Granularity\nLocalDate comparativePeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate comparativePeriodEndWorkday = new LocalDate(); // LocalDate | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate primaryPeriodStartWorkday = new LocalDate(); // LocalDate | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nLocalDate primaryPeriodEndWorkday = new LocalDate(); // LocalDate | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n        try { \n            // Get insights user trend for the user\n            UserInsightsTrend result = apiInstance.getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#getGamificationInsightsUserTrends\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
   "getgamificationleaderboard": {
     "operationId": "getgamificationleaderboard",
     "functionName": "getGamificationLeaderboard",
@@ -12068,6 +12415,39 @@
     ],
     "return": "PerformanceProfile",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.PerformanceProfile;import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;\n\npublic class ExamplepostGamificationProfiles {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        CreatePerformanceProfile body = new CreatePerformanceProfile(); // CreatePerformanceProfile | performanceProfile\nBoolean copyMetrics = true; // Boolean | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile.\n        try { \n            // Create a new custom performance profile\n            PerformanceProfile result = apiInstance.postGamificationProfiles(body, copyMetrics);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#postGamificationProfiles\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postgamificationprofilesuserquery": {
+    "operationId": "postgamificationprofilesuserquery",
+    "functionName": "postGamificationProfilesUserQuery",
+    "signature": "postGamificationProfilesUserQuery(userId, body)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UserProfilesInDateRangeRequest",
+        "required": "true"
+      }
+    ],
+    "return": "UserProfilesInDateRange",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.UserProfilesInDateRangeRequest;import com.mypurecloud.sdk.v2.model.UserProfilesInDateRange;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostGamificationProfilesUserQuery {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        String userId = \"userId_example\"; // String | The ID of a user.\nUserProfilesInDateRangeRequest body = new UserProfilesInDateRangeRequest(); // UserProfilesInDateRangeRequest | The date range of work day.\n        try { \n            // Query performance profiles in date range for a user\n            UserProfilesInDateRange result = apiInstance.postGamificationProfilesUserQuery(userId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#postGamificationProfilesUserQuery\");\n            e.printStackTrace();\n        }\n    }\n}"
+  },
+  "postgamificationprofilesusersmequery": {
+    "operationId": "postgamificationprofilesusersmequery",
+    "functionName": "postGamificationProfilesUsersMeQuery",
+    "signature": "postGamificationProfilesUsersMeQuery(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "UserProfilesInDateRangeRequest",
+        "required": "true"
+      }
+    ],
+    "return": "UserProfilesInDateRange",
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.GamificationApi;\nimport com.mypurecloud.sdk.v2.model.UserProfilesInDateRangeRequest;import com.mypurecloud.sdk.v2.model.UserProfilesInDateRange;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostGamificationProfilesUsersMeQuery {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        GamificationApi apiInstance = new GamificationApi();\n        UserProfilesInDateRangeRequest body = new UserProfilesInDateRangeRequest(); // UserProfilesInDateRangeRequest | The date range of work day.\n        try { \n            // Query performance profiles in date range for the current user\n            UserProfilesInDateRange result = apiInstance.postGamificationProfilesUsersMeQuery(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling GamificationApi#postGamificationProfilesUsersMeQuery\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "putgamificationprofile": {
     "operationId": "putgamificationprofile",
@@ -26912,16 +27292,21 @@
   "getroutingpredictorskeyperformanceindicators": {
     "operationId": "getroutingpredictorskeyperformanceindicators",
     "functionName": "getRoutingPredictorsKeyperformanceindicators",
-    "signature": "getRoutingPredictorsKeyperformanceindicators(kpiGroup)",
+    "signature": "getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand)",
     "parameters": [
       {
         "name": "kpiGroup",
         "type": "String",
         "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "List<String>",
+        "required": "false"
       }
     ],
     "return": "List<KeyPerformanceIndicator>",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;\n\npublic class ExamplegetRoutingPredictorsKeyperformanceindicators {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        String kpiGroup = \"kpiGroup_example\"; // String | The Group of Key Performance Indicators to return\n        try { \n            // Get a list of Key Performance Indicators\n            List<KeyPerformanceIndicator> result = apiInstance.getRoutingPredictorsKeyperformanceindicators(kpiGroup);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingPredictorsKeyperformanceindicators\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.RoutingApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;\n\npublic class ExamplegetRoutingPredictorsKeyperformanceindicators {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        RoutingApi apiInstance = new RoutingApi();\n        String kpiGroup = \"kpiGroup_example\"; // String | The Group of Key Performance Indicators to return\nList<String> expand = Arrays.asList(null); // List<String> | Parameter to request additional data to return in KPI payload\n        try { \n            // Get a list of Key Performance Indicators\n            List<KeyPerformanceIndicator> result = apiInstance.getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling RoutingApi#getRoutingPredictorsKeyperformanceindicators\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "getroutingqueue": {
     "operationId": "getroutingqueue",
@@ -30958,19 +31343,6 @@
     ],
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteTelephonyProvidersEdgesExtensionpool {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String extensionPoolId = \"extensionPoolId_example\"; // String | Extension pool ID\n        try { \n            // Delete an extension pool by ID\n            apiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesExtensionpool\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
-  "deletetelephonyprovidersedgesoutboundroute": {
-    "operationId": "deletetelephonyprovidersedgesoutboundroute",
-    "functionName": "deleteTelephonyProvidersEdgesOutboundroute",
-    "signature": "deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)",
-    "parameters": [
-      {
-        "name": "outboundRouteId",
-        "type": "String",
-        "required": "true"
-      }
-    ],
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampledeleteTelephonyProvidersEdgesOutboundroute {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String outboundRouteId = \"outboundRouteId_example\"; // String | Outbound route ID\n        try { \n            // Delete Outbound Route\n            apiInstance.deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesOutboundroute\");\n            e.printStackTrace();\n        }\n    }\n}"
-  },
   "deletetelephonyprovidersedgesphone": {
     "operationId": "deletetelephonyprovidersedgesphone",
     "functionName": "deleteTelephonyProvidersEdgesPhone",
@@ -32818,20 +33190,6 @@
     "return": "ExtensionPool",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExtensionPool;\n\npublic class ExamplepostTelephonyProvidersEdgesExtensionpools {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        ExtensionPool body = new ExtensionPool(); // ExtensionPool | ExtensionPool\n        try { \n            // Create a new extension pool\n            ExtensionPool result = apiInstance.postTelephonyProvidersEdgesExtensionpools(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesExtensionpools\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
-  "posttelephonyprovidersedgesoutboundroutes": {
-    "operationId": "posttelephonyprovidersedgesoutboundroutes",
-    "functionName": "postTelephonyProvidersEdgesOutboundroutes",
-    "signature": "postTelephonyProvidersEdgesOutboundroutes(body)",
-    "parameters": [
-      {
-        "name": "body",
-        "type": "OutboundRoute",
-        "required": "true"
-      }
-    ],
-    "return": "OutboundRoute",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.OutboundRoute;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExamplepostTelephonyProvidersEdgesOutboundroutes {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        OutboundRoute body = new OutboundRoute(); // OutboundRoute | OutboundRoute\n        try { \n            // Create outbound rule\n            OutboundRoute result = apiInstance.postTelephonyProvidersEdgesOutboundroutes(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesOutboundroutes\");\n            e.printStackTrace();\n        }\n    }\n}"
-  },
   "posttelephonyprovidersedgesphonereboot": {
     "operationId": "posttelephonyprovidersedgesphonereboot",
     "functionName": "postTelephonyProvidersEdgesPhoneReboot",
@@ -33075,25 +33433,6 @@
     ],
     "return": "ExtensionPool",
     "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExtensionPool;\n\npublic class ExampleputTelephonyProvidersEdgesExtensionpool {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String extensionPoolId = \"extensionPoolId_example\"; // String | Extension pool ID\nExtensionPool body = new ExtensionPool(); // ExtensionPool | ExtensionPool\n        try { \n            // Update an extension pool by ID\n            ExtensionPool result = apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesExtensionpool\");\n            e.printStackTrace();\n        }\n    }\n}"
-  },
-  "puttelephonyprovidersedgesoutboundroute": {
-    "operationId": "puttelephonyprovidersedgesoutboundroute",
-    "functionName": "putTelephonyProvidersEdgesOutboundroute",
-    "signature": "putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)",
-    "parameters": [
-      {
-        "name": "outboundRouteId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "OutboundRoute",
-        "required": "true"
-      }
-    ],
-    "return": "OutboundRoute",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;\nimport com.mypurecloud.sdk.v2.model.OutboundRoute;import com.mypurecloud.sdk.v2.model.ErrorBody;\n\npublic class ExampleputTelephonyProvidersEdgesOutboundroute {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();\n        String outboundRouteId = \"outboundRouteId_example\"; // String | Outbound route ID\nOutboundRoute body = new OutboundRoute(); // OutboundRoute | OutboundRoute\n        try { \n            // Update outbound route\n            OutboundRoute result = apiInstance.putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesOutboundroute\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "puttelephonyprovidersedgesphone": {
     "operationId": "puttelephonyprovidersedgesphone",
@@ -37381,7 +37720,7 @@
       }
     ],
     "return": "WfmHistoricalAdherenceResponse",
-    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;\n\npublic class ExamplepostWorkforcemanagementAdherenceHistorical {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        WfmHistoricalAdherenceQueryForUsers body = new WfmHistoricalAdherenceQueryForUsers(); // WfmHistoricalAdherenceQueryForUsers | body\n        try { \n            // Request a historical adherence report for users across management units\n            WfmHistoricalAdherenceResponse result = apiInstance.postWorkforcemanagementAdherenceHistorical(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#postWorkforcemanagementAdherenceHistorical\");\n            e.printStackTrace();\n        }\n    }\n}"
+    "example": "import com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.api.WorkforceManagementApi;\nimport com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;\n\npublic class ExamplepostWorkforcemanagementAdherenceHistorical {\n    public static void main(String[] args) {\n        // Create ApiClient instance\n        ApiClient apiClient = ApiClient.Builder.standard()\n                .withAccessToken(\"your_access_token\")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...) or authorizeSaml2Bearer(...)\n                .withBasePath(\"https://api.mypurecloud.com\") // expected format: https://api.[base path]\n                .build();\n        \n        // Use the ApiClient instance\n        Configuration.setDefaultApiClient(apiClient);\n\n        WorkforceManagementApi apiInstance = new WorkforceManagementApi();\n        WfmHistoricalAdherenceQueryForUsers body = new WfmHistoricalAdherenceQueryForUsers(); // WfmHistoricalAdherenceQueryForUsers | body\n        try { \n            // Deprecated. Use bulk routes instead (/adherence/historical/bulk)\n            WfmHistoricalAdherenceResponse result = apiInstance.postWorkforcemanagementAdherenceHistorical(body);\n            System.out.println(result);\n        } catch (ApiException e) {\n            System.err.println(\"Exception when calling WorkforceManagementApi#postWorkforcemanagementAdherenceHistorical\");\n            e.printStackTrace();\n        }\n    }\n}"
   },
   "postworkforcemanagementadherencehistoricalbulk": {
     "operationId": "postworkforcemanagementadherencehistoricalbulk",

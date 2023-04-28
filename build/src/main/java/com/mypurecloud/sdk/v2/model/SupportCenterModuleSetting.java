@@ -46,7 +46,8 @@ public class SupportCenterModuleSetting  implements Serializable {
     FAQ("FAQ"),
     CONTACT("Contact"),
     RESULTS("Results"),
-    ARTICLE("Article");
+    ARTICLE("Article"),
+    TOPVIEWEDARTICLES("TopViewedArticles");
 
     private String value;
 

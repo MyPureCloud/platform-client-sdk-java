@@ -2728,7 +2728,7 @@ try {
 
 
 
-> [List&lt;KeyPerformanceIndicator&gt;](KeyPerformanceIndicator.html) getRoutingPredictorsKeyperformanceindicators(kpiGroup)
+> [List&lt;KeyPerformanceIndicator&gt;](KeyPerformanceIndicator.html) getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand)
 
 Get a list of Key Performance Indicators
 
@@ -2761,8 +2761,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String kpiGroup = "kpiGroup_example"; // String | The Group of Key Performance Indicators to return
+List<String> expand = Arrays.asList(null); // List<String> | Parameter to request additional data to return in KPI payload
 try {
-    List<KeyPerformanceIndicator> result = apiInstance.getRoutingPredictorsKeyperformanceindicators(kpiGroup);
+    List<KeyPerformanceIndicator> result = apiInstance.getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingPredictorsKeyperformanceindicators");
@@ -2776,6 +2777,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **kpiGroup** | **String**| The Group of Key Performance Indicators to return | [optional]<br />**Values**: Standard, Custom 
+| **expand** | [**List&lt;String&gt;**](String.html)| Parameter to request additional data to return in KPI payload | [optional]<br />**Values**: queues 
 {: class="table-striped"}
 
 

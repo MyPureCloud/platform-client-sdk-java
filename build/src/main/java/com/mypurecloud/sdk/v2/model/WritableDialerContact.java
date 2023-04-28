@@ -29,7 +29,7 @@ public class WritableDialerContact  implements Serializable {
   
   private String id = null;
   private String contactListId = null;
-  private Map<String, Object> data = null;
+  private Map<String, String> data = null;
   private Map<String, MessageEvaluation> latestSmsEvaluations = null;
   private Map<String, MessageEvaluation> latestEmailEvaluations = null;
   private Boolean callable = null;
@@ -76,17 +76,17 @@ public class WritableDialerContact  implements Serializable {
   /**
    * An ordered map of the contact's columns and corresponding values.
    **/
-  public WritableDialerContact data(Map<String, Object> data) {
+  public WritableDialerContact data(Map<String, String> data) {
     this.data = data;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "An ordered map of the contact's columns and corresponding values.")
+  @ApiModelProperty(example = "&quot;{ &#39;firstname&#39;: &#39;name&#39;, &#39;surname&#39;: &#39;name2&#39;, &#39;phone&#39;: &#39;123456789&#39;}&quot;", required = true, value = "An ordered map of the contact's columns and corresponding values.")
   @JsonProperty("data")
-  public Map<String, Object> getData() {
+  public Map<String, String> getData() {
     return data;
   }
-  public void setData(Map<String, Object> data) {
+  public void setData(Map<String, String> data) {
     this.data = data;
   }
 

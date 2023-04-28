@@ -26,6 +26,7 @@ title: SupportCenterModuleSetting
 | CONTACT | &quot;Contact&quot; | 
 | RESULTS | &quot;Results&quot; | 
 | ARTICLE | &quot;Article&quot; | 
+| TOPVIEWEDARTICLES | &quot;TopViewedArticles&quot; | 
 {: class="table table-striped"}
 
 

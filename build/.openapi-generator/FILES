@@ -1293,6 +1293,7 @@ docs/EvaluationFormAndScoringSet.md
 docs/EvaluationFormEntityListing.md
 docs/EvaluationFormResponse.md
 docs/EvaluationQualityV2TopicCalibration.md
+docs/EvaluationQualityV2TopicEvaluationReference.md
 docs/EvaluationQualityV2TopicEvaluationScoringSet.md
 docs/EvaluationQualityV2TopicEvaluationSource.md
 docs/EvaluationQualityV2TopicEvaluationV2.md
@@ -1339,6 +1340,8 @@ docs/ExternalContactsContactChangedTopicContact.md
 docs/ExternalContactsContactChangedTopicContactAddress.md
 docs/ExternalContactsContactChangedTopicFacebookId.md
 docs/ExternalContactsContactChangedTopicFacebookScopedId.md
+docs/ExternalContactsContactChangedTopicInstagramId.md
+docs/ExternalContactsContactChangedTopicInstagramScopedId.md
 docs/ExternalContactsContactChangedTopicLineId.md
 docs/ExternalContactsContactChangedTopicLineUserId.md
 docs/ExternalContactsContactChangedTopicPhoneNumber.md
@@ -1348,6 +1351,8 @@ docs/ExternalContactsUnresolvedContactChangedTopicContact.md
 docs/ExternalContactsUnresolvedContactChangedTopicContactAddress.md
 docs/ExternalContactsUnresolvedContactChangedTopicFacebookId.md
 docs/ExternalContactsUnresolvedContactChangedTopicFacebookScopedId.md
+docs/ExternalContactsUnresolvedContactChangedTopicInstagramId.md
+docs/ExternalContactsUnresolvedContactChangedTopicInstagramScopedId.md
 docs/ExternalContactsUnresolvedContactChangedTopicLineId.md
 docs/ExternalContactsUnresolvedContactChangedTopicLineUserId.md
 docs/ExternalContactsUnresolvedContactChangedTopicPhoneNumber.md
@@ -1573,6 +1578,23 @@ docs/InfrastructureascodeJob.md
 docs/InitialConfiguration.md
 docs/InitiateScreenRecording.md
 docs/InitiatingAction.md
+docs/InsightsAgentItem.md
+docs/InsightsAgents.md
+docs/InsightsDetails.md
+docs/InsightsDetailsMetricItem.md
+docs/InsightsDetailsMetricPeriodPoints.md
+docs/InsightsDetailsOverallItem.md
+docs/InsightsDetailsOverallPeriodPoints.md
+docs/InsightsSummary.md
+docs/InsightsSummaryMetricItem.md
+docs/InsightsSummaryMetricPeriodPoints.md
+docs/InsightsSummaryOverallItem.md
+docs/InsightsSummaryOverallPeriodPoints.md
+docs/InsightsSummaryUserItem.md
+docs/InsightsTrend.md
+docs/InsightsTrendMetricItem.md
+docs/InsightsTrendTotalItem.md
+docs/InsightsTrends.md
 docs/InstagramId.md
 docs/InstagramScopedId.md
 docs/Integration.md
@@ -2259,6 +2281,7 @@ docs/PresenceSettings.md
 docs/ProcessAutomationApi.json
 docs/ProcessAutomationApi.md
 docs/ProcessScheduleUpdateUploadRequest.md
+docs/ProfileWithDateRange.md
 docs/Program.md
 docs/ProgramJob.md
 docs/ProgramJobRequest.md
@@ -2293,6 +2316,7 @@ docs/QualityAuditLogMessage.md
 docs/QualityAuditQueryExecutionResultsResponse.md
 docs/QualityAuditQueryExecutionStatusResponse.md
 docs/QualityAuditQueryFilter.md
+docs/QualityEvaluationScoreItem.md
 docs/QueryAdherenceExplanationsResponse.md
 docs/QueryDivision.md
 docs/QueryFacetInfo.md
@@ -2838,6 +2862,7 @@ docs/SiteEntityListing.md
 docs/SkillEntityListing.md
 docs/SkillGroup.md
 docs/SkillGroupCondition.md
+docs/SkillGroupDefinition.md
 docs/SkillGroupEntityListing.md
 docs/SkillGroupLanguageCondition.md
 docs/SkillGroupMemberDivisionList.md
@@ -3073,6 +3098,7 @@ docs/TransferDestination.md
 docs/TransferInitiator.md
 docs/TransferRequest.md
 docs/TransferResponse.md
+docs/TrendData.md
 docs/Trigger.md
 docs/TriggerEntityListing.md
 docs/TriggerTarget.md
@@ -3215,6 +3241,7 @@ docs/UserGreetingEventGreeting.md
 docs/UserGreetingEventGreetingAudioFile.md
 docs/UserGreetingEventGreetingOwner.md
 docs/UserImage.md
+docs/UserInsightsTrend.md
 docs/UserLanguageEntityListing.md
 docs/UserLicenses.md
 docs/UserLicensesEntityListing.md
@@ -3232,6 +3259,8 @@ docs/UserPresenceEvent.md
 docs/UserPrimarySource.md
 docs/UserProfile.md
 docs/UserProfileEntityListing.md
+docs/UserProfilesInDateRange.md
+docs/UserProfilesInDateRangeRequest.md
 docs/UserQueue.md
 docs/UserQueueEntityListing.md
 docs/UserRecording.md
@@ -3353,6 +3382,8 @@ docs/ValueWrapperPlanningPeriodSettings.md
 docs/ValueWrapperString.md
 docs/VerificationResult.md
 docs/Video.md
+docs/VideoConferenceUpdateTopicParticipantInfo.md
+docs/VideoConferenceUpdateTopicVideoConference.md
 docs/ViewFilter.md
 docs/VisibilityCondition.md
 docs/VmPairingInfo.md
@@ -3621,6 +3652,7 @@ docs/WorkPlanValidationMessageArgument.md
 docs/WorkPlanValidationRequest.md
 docs/WorkdayMetric.md
 docs/WorkdayMetricListing.md
+docs/WorkdayPeriod.md
 docs/WorkdayPointsTrend.md
 docs/WorkdayPointsTrendItem.md
 docs/WorkdayValuesMetricItem.md
@@ -3846,7 +3878,6 @@ docs/deleteTelephonyProvidersEdgesCertificateauthority-example.txt
 docs/deleteTelephonyProvidersEdgesDidpool-example.txt
 docs/deleteTelephonyProvidersEdgesEdgegroup-example.txt
 docs/deleteTelephonyProvidersEdgesExtensionpool-example.txt
-docs/deleteTelephonyProvidersEdgesOutboundroute-example.txt
 docs/deleteTelephonyProvidersEdgesPhone-example.txt
 docs/deleteTelephonyProvidersEdgesPhonebasesetting-example.txt
 docs/deleteTelephonyProvidersEdgesSite-example.txt
@@ -4157,6 +4188,14 @@ docs/getFlowsMilestonesDivisionviews-example.txt
 docs/getFlowsOutcome-example.txt
 docs/getFlowsOutcomes-example.txt
 docs/getFlowsOutcomesDivisionviews-example.txt
+docs/getGamificationInsights-example.txt
+docs/getGamificationInsightsDetails-example.txt
+docs/getGamificationInsightsGroupsTrends-example.txt
+docs/getGamificationInsightsGroupsTrendsAll-example.txt
+docs/getGamificationInsightsMembers-example.txt
+docs/getGamificationInsightsTrends-example.txt
+docs/getGamificationInsightsUserDetails-example.txt
+docs/getGamificationInsightsUserTrends-example.txt
 docs/getGamificationLeaderboard-example.txt
 docs/getGamificationLeaderboardAll-example.txt
 docs/getGamificationLeaderboardAllBestpoints-example.txt
@@ -5187,6 +5226,8 @@ docs/postGamificationProfileMembersValidate-example.txt
 docs/postGamificationProfileMetricLink-example.txt
 docs/postGamificationProfileMetrics-example.txt
 docs/postGamificationProfiles-example.txt
+docs/postGamificationProfilesUserQuery-example.txt
+docs/postGamificationProfilesUsersMeQuery-example.txt
 docs/postGdprRequests-example.txt
 docs/postGreetings-example.txt
 docs/postGroupGreetings-example.txt
@@ -5392,7 +5433,6 @@ docs/postTelephonyProvidersEdgesCertificateauthorities-example.txt
 docs/postTelephonyProvidersEdgesDidpools-example.txt
 docs/postTelephonyProvidersEdgesEdgegroups-example.txt
 docs/postTelephonyProvidersEdgesExtensionpools-example.txt
-docs/postTelephonyProvidersEdgesOutboundroutes-example.txt
 docs/postTelephonyProvidersEdgesPhoneReboot-example.txt
 docs/postTelephonyProvidersEdgesPhonebasesettings-example.txt
 docs/postTelephonyProvidersEdgesPhones-example.txt
@@ -5660,7 +5700,6 @@ docs/putTelephonyProvidersEdgesDidpool-example.txt
 docs/putTelephonyProvidersEdgesEdgegroup-example.txt
 docs/putTelephonyProvidersEdgesEdgegroupEdgetrunkbase-example.txt
 docs/putTelephonyProvidersEdgesExtensionpool-example.txt
-docs/putTelephonyProvidersEdgesOutboundroute-example.txt
 docs/putTelephonyProvidersEdgesPhone-example.txt
 docs/putTelephonyProvidersEdgesPhonebasesetting-example.txt
 docs/putTelephonyProvidersEdgesSite-example.txt
@@ -6026,7 +6065,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesCe
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesDidpoolRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesEdgegroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesExtensionpoolRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesOutboundrouteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesPhoneRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesPhonebasesettingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest.java
@@ -6337,6 +6375,14 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowsOutcomeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowsOutcomesDivisionviewsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowsOutcomesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsDetailsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsGroupsTrendsAllRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsGroupsTrendsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsMembersRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsTrendsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsUserDetailsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationInsightsUserTrendsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationLeaderboardAllBestpointsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationLeaderboardAllRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGamificationLeaderboardBestpointsRequest.java
@@ -7367,6 +7413,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostGamificationProfileMembersV
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGamificationProfileMetricLinkRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGamificationProfileMetricsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGamificationProfilesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostGamificationProfilesUserQueryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostGamificationProfilesUsersMeQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGdprRequestsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGreetingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGroupGreetingsRequest.java
@@ -7571,7 +7619,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesCert
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesDidpoolsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesEdgegroupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesExtensionpoolsRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesOutboundroutesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesPhoneRebootRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesPhonebasesettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTelephonyProvidersEdgesPhonesRebootRequest.java
@@ -7840,7 +7887,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesDidpo
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesEdgegroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesExtensionpoolRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesOutboundrouteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesPhoneRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesPhonebasesettingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesSiteNumberplansRequest.java
@@ -9144,6 +9190,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/EvaluationFormAndScoringSet.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationFormEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationFormResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQualityV2TopicCalibration.java
+src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQualityV2TopicEvaluationReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQualityV2TopicEvaluationScoringSet.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQualityV2TopicEvaluationSource.java
 src/main/java/com/mypurecloud/sdk/v2/model/EvaluationQualityV2TopicEvaluationV2.java
@@ -9186,6 +9233,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicCo
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicContactAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicFacebookId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicFacebookScopedId.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicInstagramId.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicInstagramScopedId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicLineId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicLineUserId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicPhoneNumber.java
@@ -9195,6 +9244,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChan
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicContactAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicFacebookId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicFacebookScopedId.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicInstagramId.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicInstagramScopedId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicLineId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicLineUserId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicPhoneNumber.java
@@ -9402,6 +9453,23 @@ src/main/java/com/mypurecloud/sdk/v2/model/InfrastructureascodeJob.java
 src/main/java/com/mypurecloud/sdk/v2/model/InitialConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/InitiateScreenRecording.java
 src/main/java/com/mypurecloud/sdk/v2/model/InitiatingAction.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsAgentItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsAgents.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsDetails.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsDetailsMetricItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsDetailsMetricPeriodPoints.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsDetailsOverallItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsDetailsOverallPeriodPoints.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsSummary.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsSummaryMetricItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsSummaryMetricPeriodPoints.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsSummaryOverallItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsSummaryOverallPeriodPoints.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsSummaryUserItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsTrend.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsTrendMetricItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsTrendTotalItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/InsightsTrends.java
 src/main/java/com/mypurecloud/sdk/v2/model/InstagramId.java
 src/main/java/com/mypurecloud/sdk/v2/model/InstagramScopedId.java
 src/main/java/com/mypurecloud/sdk/v2/model/Integration.java
@@ -10052,6 +10120,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/PresenceEventOrganizationPresence.jav
 src/main/java/com/mypurecloud/sdk/v2/model/PresenceEventUserPresence.java
 src/main/java/com/mypurecloud/sdk/v2/model/PresenceSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProcessScheduleUpdateUploadRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/ProfileWithDateRange.java
 src/main/java/com/mypurecloud/sdk/v2/model/Program.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramJob.java
 src/main/java/com/mypurecloud/sdk/v2/model/ProgramJobRequest.java
@@ -10084,6 +10153,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QualityAuditLogMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/QualityAuditQueryExecutionResultsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/QualityAuditQueryExecutionStatusResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/QualityAuditQueryFilter.java
+src/main/java/com/mypurecloud/sdk/v2/model/QualityEvaluationScoreItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryAdherenceExplanationsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryFacetInfo.java
@@ -10617,6 +10687,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SiteEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SkillEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SkillGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupCondition.java
+src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupDefinition.java
 src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupLanguageCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupMemberDivisionList.java
@@ -10836,6 +10907,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/TransferDestination.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferInitiator.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/TrendData.java
 src/main/java/com/mypurecloud/sdk/v2/model/Trigger.java
 src/main/java/com/mypurecloud/sdk/v2/model/TriggerEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/TriggerTarget.java
@@ -10974,6 +11046,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/UserGreetingEventGreeting.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserGreetingEventGreetingAudioFile.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserGreetingEventGreetingOwner.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserImage.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserInsightsTrend.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserLanguageEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserLicenses.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserLicensesEntityListing.java
@@ -10991,6 +11064,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/UserPresenceEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserPrimarySource.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserProfile.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserProfileEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserProfilesInDateRange.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserProfilesInDateRangeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserQueue.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserQueueEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserRecording.java
@@ -11106,6 +11181,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperPlanningPeriodSettings.ja
 src/main/java/com/mypurecloud/sdk/v2/model/ValueWrapperString.java
 src/main/java/com/mypurecloud/sdk/v2/model/VerificationResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/Video.java
+src/main/java/com/mypurecloud/sdk/v2/model/VideoConferenceUpdateTopicParticipantInfo.java
+src/main/java/com/mypurecloud/sdk/v2/model/VideoConferenceUpdateTopicVideoConference.java
 src/main/java/com/mypurecloud/sdk/v2/model/ViewFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/VisibilityCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/VmPairingInfo.java
@@ -11364,6 +11441,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanValidationMessageArgument.jav
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanValidationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkdayMetric.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkdayMetricListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkdayPeriod.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkdayPointsTrend.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkdayPointsTrendItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkdayValuesMetricItem.java

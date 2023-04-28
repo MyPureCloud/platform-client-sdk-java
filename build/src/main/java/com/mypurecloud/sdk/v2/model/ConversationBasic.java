@@ -32,6 +32,7 @@ public class ConversationBasic  implements Serializable {
   private Date startTime = null;
   private Date endTime = null;
   private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
+  private Boolean securePause = null;
   private String selfUri = null;
   private List<ParticipantBasic> participants = new ArrayList<ParticipantBasic>();
 
@@ -132,6 +133,24 @@ public class ConversationBasic  implements Serializable {
   }
 
 
+  /**
+   * True when the recording of this conversation is in secure pause status.
+   **/
+  public ConversationBasic securePause(Boolean securePause) {
+    this.securePause = securePause;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True when the recording of this conversation is in secure pause status.")
+  @JsonProperty("securePause")
+  public Boolean getSecurePause() {
+    return securePause;
+  }
+  public void setSecurePause(Boolean securePause) {
+    this.securePause = securePause;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -162,13 +181,14 @@ public class ConversationBasic  implements Serializable {
             Objects.equals(this.startTime, conversationBasic.startTime) &&
             Objects.equals(this.endTime, conversationBasic.endTime) &&
             Objects.equals(this.divisions, conversationBasic.divisions) &&
+            Objects.equals(this.securePause, conversationBasic.securePause) &&
             Objects.equals(this.selfUri, conversationBasic.selfUri) &&
             Objects.equals(this.participants, conversationBasic.participants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, externalTag, startTime, endTime, divisions, selfUri, participants);
+    return Objects.hash(id, name, externalTag, startTime, endTime, divisions, securePause, selfUri, participants);
   }
 
   @Override
@@ -182,6 +202,7 @@ public class ConversationBasic  implements Serializable {
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
+    sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("}");

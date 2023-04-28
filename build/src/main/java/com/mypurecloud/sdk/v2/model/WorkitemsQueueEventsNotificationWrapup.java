@@ -74,6 +74,55 @@ public class WorkitemsQueueEventsNotificationWrapup  implements Serializable {
   }
   private OpEnum op = null;
 
+  private static class ActionEnumDeserializer extends StdDeserializer<ActionEnum> {
+    public ActionEnumDeserializer() {
+      super(ActionEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets action
+   */
+ @JsonDeserialize(using = ActionEnumDeserializer.class)
+  public enum ActionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    ADD("Add"),
+    REMOVE("Remove");
+
+    private String value;
+
+    ActionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ActionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ActionEnum value : ActionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ActionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ActionEnum action = null;
+
   
   /**
    **/
@@ -126,6 +175,23 @@ public class WorkitemsQueueEventsNotificationWrapup  implements Serializable {
   }
 
 
+  /**
+   **/
+  public WorkitemsQueueEventsNotificationWrapup action(ActionEnum action) {
+    this.action = action;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("action")
+  public ActionEnum getAction() {
+    return action;
+  }
+  public void setAction(ActionEnum action) {
+    this.action = action;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -138,12 +204,13 @@ public class WorkitemsQueueEventsNotificationWrapup  implements Serializable {
 
     return Objects.equals(this.code, workitemsQueueEventsNotificationWrapup.code) &&
             Objects.equals(this.userId, workitemsQueueEventsNotificationWrapup.userId) &&
-            Objects.equals(this.op, workitemsQueueEventsNotificationWrapup.op);
+            Objects.equals(this.op, workitemsQueueEventsNotificationWrapup.op) &&
+            Objects.equals(this.action, workitemsQueueEventsNotificationWrapup.action);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, userId, op);
+    return Objects.hash(code, userId, op, action);
   }
 
   @Override
@@ -154,6 +221,7 @@ public class WorkitemsQueueEventsNotificationWrapup  implements Serializable {
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    op: ").append(toIndentedString(op)).append("\n");
+    sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("}");
     return sb.toString();
   }

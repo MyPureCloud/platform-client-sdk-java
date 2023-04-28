@@ -20,6 +20,7 @@ title: KeyPerformanceIndicator
 | **outcomeConfig** | <!----><!---->[**OutcomeConfig**](OutcomeConfig.html)<!----> | Defines what outcome ids are mapped to Key Performance Indicator. |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the Key Performance Indicator. |  [optional] |
 | **kpiGroup** | [**KpiGroupEnum**](#KpiGroupEnum)<!----> | The group the Key Performance Indicator belongs to. |  [optional] |
+| **queues** | <!----><!---->**List&lt;String&gt;**<!----> | Queue IDs on which KPI specification is used. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

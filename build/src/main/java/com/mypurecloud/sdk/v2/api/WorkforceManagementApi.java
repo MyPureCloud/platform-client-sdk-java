@@ -8380,7 +8380,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Request a historical adherence report for users across management units
+   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
    * 
    * @param body body (optional)
    * @return WfmHistoricalAdherenceResponse
@@ -8392,7 +8392,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Request a historical adherence report for users across management units
+   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
    * 
    * @param body body (optional)
    * @return WfmHistoricalAdherenceResponse
@@ -8410,7 +8410,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Request a historical adherence report for users across management units
+   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
    * 
    * @param request The request object
    * @return WfmHistoricalAdherenceResponse
@@ -8429,7 +8429,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Request a historical adherence report for users across management units
+   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
    * 
    * @param request The request object
    * @return the response

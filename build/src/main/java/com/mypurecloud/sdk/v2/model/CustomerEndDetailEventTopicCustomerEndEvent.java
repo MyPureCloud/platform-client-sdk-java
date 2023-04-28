@@ -262,6 +262,8 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
   }
   private MessageTypeEnum messageType = null;
   private Integer interactingDurationMs = null;
+  private List<String> conversationExternalContactIds = new ArrayList<String>();
+  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
 
   
   /**
@@ -604,6 +606,40 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
   }
 
 
+  /**
+   **/
+  public CustomerEndDetailEventTopicCustomerEndEvent conversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalContactIds")
+  public List<String> getConversationExternalContactIds() {
+    return conversationExternalContactIds;
+  }
+  public void setConversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+  }
+
+
+  /**
+   **/
+  public CustomerEndDetailEventTopicCustomerEndEvent conversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalOrganizationIds")
+  public List<String> getConversationExternalOrganizationIds() {
+    return conversationExternalOrganizationIds;
+  }
+  public void setConversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -633,12 +669,14 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
             Objects.equals(this.callbackScheduledTime, customerEndDetailEventTopicCustomerEndEvent.callbackScheduledTime) &&
             Objects.equals(this.subject, customerEndDetailEventTopicCustomerEndEvent.subject) &&
             Objects.equals(this.messageType, customerEndDetailEventTopicCustomerEndEvent.messageType) &&
-            Objects.equals(this.interactingDurationMs, customerEndDetailEventTopicCustomerEndEvent.interactingDurationMs);
+            Objects.equals(this.interactingDurationMs, customerEndDetailEventTopicCustomerEndEvent.interactingDurationMs) &&
+            Objects.equals(this.conversationExternalContactIds, customerEndDetailEventTopicCustomerEndEvent.conversationExternalContactIds) &&
+            Objects.equals(this.conversationExternalOrganizationIds, customerEndDetailEventTopicCustomerEndEvent.conversationExternalOrganizationIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, interactingDurationMs);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, interactingDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds);
   }
 
   @Override
@@ -666,6 +704,8 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
     sb.append("    interactingDurationMs: ").append(toIndentedString(interactingDurationMs)).append("\n");
+    sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
+    sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

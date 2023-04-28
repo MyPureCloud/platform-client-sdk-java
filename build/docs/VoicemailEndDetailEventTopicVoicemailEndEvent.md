@@ -22,6 +22,8 @@ title: VoicemailEndDetailEventTopicVoicemailEndEvent
 | **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **divisionId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **voicemailDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

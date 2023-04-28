@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicContactAddress;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicFacebookId;
+import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicInstagramId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicLineId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicPhoneNumber;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicTwitterId;
@@ -97,6 +98,7 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
   private ExternalContactsUnresolvedContactChangedTopicLineId lineId = null;
   private ExternalContactsUnresolvedContactChangedTopicWhatsAppId whatsAppId = null;
   private ExternalContactsUnresolvedContactChangedTopicFacebookId facebookId = null;
+  private ExternalContactsUnresolvedContactChangedTopicInstagramId instagramId = null;
 
   
   /**
@@ -456,6 +458,23 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
   }
 
 
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicContact instagramId(ExternalContactsUnresolvedContactChangedTopicInstagramId instagramId) {
+    this.instagramId = instagramId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("instagramId")
+  public ExternalContactsUnresolvedContactChangedTopicInstagramId getInstagramId() {
+    return instagramId;
+  }
+  public void setInstagramId(ExternalContactsUnresolvedContactChangedTopicInstagramId instagramId) {
+    this.instagramId = instagramId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -486,12 +505,13 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
             Objects.equals(this.twitterId, externalContactsUnresolvedContactChangedTopicContact.twitterId) &&
             Objects.equals(this.lineId, externalContactsUnresolvedContactChangedTopicContact.lineId) &&
             Objects.equals(this.whatsAppId, externalContactsUnresolvedContactChangedTopicContact.whatsAppId) &&
-            Objects.equals(this.facebookId, externalContactsUnresolvedContactChangedTopicContact.facebookId);
+            Objects.equals(this.facebookId, externalContactsUnresolvedContactChangedTopicContact.facebookId) &&
+            Objects.equals(this.instagramId, externalContactsUnresolvedContactChangedTopicContact.instagramId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId);
+    return Objects.hash(id, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId);
   }
 
   @Override
@@ -520,6 +540,7 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
     sb.append("    lineId: ").append(toIndentedString(lineId)).append("\n");
     sb.append("    whatsAppId: ").append(toIndentedString(whatsAppId)).append("\n");
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
+    sb.append("    instagramId: ").append(toIndentedString(instagramId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -361,7 +361,7 @@ public class AuditApi {
 
   /**
    * Create audit query execution
-   * 
+   * Use /api/v2/audits/query/servicemapping endpoint for a list of valid values
    * @param body query (required)
    * @return AuditQueryExecutionStatusResponse
    * @throws ApiException if the request fails on the server
@@ -373,7 +373,7 @@ public class AuditApi {
 
   /**
    * Create audit query execution
-   * 
+   * Use /api/v2/audits/query/servicemapping endpoint for a list of valid values
    * @param body query (required)
    * @return AuditQueryExecutionStatusResponse
    * @throws IOException if the request fails to be processed
@@ -391,7 +391,7 @@ public class AuditApi {
 
   /**
    * Create audit query execution
-   * 
+   * Use /api/v2/audits/query/servicemapping endpoint for a list of valid values
    * @param request The request object
    * @return AuditQueryExecutionStatusResponse
    * @throws ApiException if the request fails on the server
@@ -410,7 +410,7 @@ public class AuditApi {
 
   /**
    * Create audit query execution
-   * 
+   * Use /api/v2/audits/query/servicemapping endpoint for a list of valid values
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -439,7 +439,7 @@ public class AuditApi {
 
   /**
    * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
-   * 
+   * Use /api/v2/audits/query/realtime/servicemapping endpoint for a list of valid values
    * @param body query (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return AuditRealtimeQueryResultsResponse
@@ -452,7 +452,7 @@ public class AuditApi {
 
   /**
    * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
-   * 
+   * Use /api/v2/audits/query/realtime/servicemapping endpoint for a list of valid values
    * @param body query (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return AuditRealtimeQueryResultsResponse
@@ -473,7 +473,7 @@ public class AuditApi {
 
   /**
    * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
-   * 
+   * Use /api/v2/audits/query/realtime/servicemapping endpoint for a list of valid values
    * @param request The request object
    * @return AuditRealtimeQueryResultsResponse
    * @throws ApiException if the request fails on the server
@@ -492,7 +492,7 @@ public class AuditApi {
 
   /**
    * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
-   * 
+   * Use /api/v2/audits/query/realtime/servicemapping endpoint for a list of valid values
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

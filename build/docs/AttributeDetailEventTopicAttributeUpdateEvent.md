@@ -12,6 +12,8 @@ title: AttributeDetailEventTopicAttributeUpdateEvent
 | **conversationId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **participantId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

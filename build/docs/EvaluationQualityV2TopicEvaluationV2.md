@@ -33,6 +33,12 @@ title: EvaluationQualityV2TopicEvaluationV2
 | **evaluationSource** | <!----><!---->[**EvaluationQualityV2TopicEvaluationSource**](EvaluationQualityV2TopicEvaluationSource.html)<!----> |  |  [optional] |
 | **assigneeUserId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **previousAssigneeUserId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **evaluationContextId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **disputeCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **previousStatus** | [**PreviousStatusEnum**](#PreviousStatusEnum)<!----> |  |  [optional] |
+| **declinedReview** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **retractedEvaluation** | <!----><!---->[**EvaluationQualityV2TopicEvaluationReference**](EvaluationQualityV2TopicEvaluationReference.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -46,6 +52,23 @@ title: EvaluationQualityV2TopicEvaluationV2
 | PENDING | &quot;Pending&quot; | 
 | INPROGRESS | &quot;InProgress&quot; | 
 | FINISHED | &quot;Finished&quot; | 
+| INREVIEW | &quot;InReview&quot; | 
+| RETRACTED | &quot;Retracted&quot; | 
+{: class="table table-striped"}
+
+
+<a name="PreviousStatusEnum"></a>
+
+## Enum: PreviousStatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;Pending&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| FINISHED | &quot;Finished&quot; | 
+| INREVIEW | &quot;InReview&quot; | 
+| RETRACTED | &quot;Retracted&quot; | 
 {: class="table table-striped"}
 
 

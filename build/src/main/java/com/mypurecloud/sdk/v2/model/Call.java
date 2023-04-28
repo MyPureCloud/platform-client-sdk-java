@@ -248,6 +248,7 @@ public class Call  implements Serializable {
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean held = null;
+  private Boolean securePause = null;
   private String recordingId = null;
   private List<Segment> segments = new ArrayList<Segment>();
   private ErrorInfo errorInfo = null;
@@ -491,6 +492,24 @@ public class Call  implements Serializable {
   }
   public void setHeld(Boolean held) {
     this.held = held;
+  }
+
+
+  /**
+   * True when the recording of this call is in secure pause status.
+   **/
+  public Call securePause(Boolean securePause) {
+    this.securePause = securePause;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True when the recording of this call is in secure pause status.")
+  @JsonProperty("securePause")
+  public Boolean getSecurePause() {
+    return securePause;
+  }
+  public void setSecurePause(Boolean securePause) {
+    this.securePause = securePause;
   }
 
 
@@ -890,6 +909,7 @@ public class Call  implements Serializable {
             Objects.equals(this.muted, call.muted) &&
             Objects.equals(this.confined, call.confined) &&
             Objects.equals(this.held, call.held) &&
+            Objects.equals(this.securePause, call.securePause) &&
             Objects.equals(this.recordingId, call.recordingId) &&
             Objects.equals(this.segments, call.segments) &&
             Objects.equals(this.errorInfo, call.errorInfo) &&
@@ -915,7 +935,7 @@ public class Call  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
+    return Objects.hash(state, initialState, id, direction, recording, recordingState, muted, confined, held, securePause, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
   }
 
   @Override
@@ -932,6 +952,7 @@ public class Call  implements Serializable {
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
+    sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    recordingId: ").append(toIndentedString(recordingId)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");

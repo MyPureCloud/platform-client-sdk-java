@@ -29,6 +29,7 @@ title: Evaluation
 | **conversationEndDate** | <!----><!---->[**Date**](Date.html)<!----> | End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **neverRelease** | <!----><!---->**Boolean**<!----> | Signifies if the evaluation is never to be released. This cannot be set true if release date is also set. |  [optional] |
 | **assigned** | <!----><!---->**Boolean**<!----> | Set to false to unassign the evaluation. This cannot be set to false when assignee is also set. |  [optional] |
+| **dateAssigneeChanged** | <!----><!---->[**Date**](Date.html)<!----> | Date when the assignee was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **resourceId** | <!----><!---->**String**<!----> | Only used for email evaluations. Will be null for all other evaluations. |  [optional] |
 | **resourceType** | [**ResourceTypeEnum**](#ResourceTypeEnum)<!----> | The type of resource. Only used for email evaluations. Will be null for evaluations on all other resources. |  [optional] |
 | **redacted** | <!----><!---->**Boolean**<!----> | Is only true when the user making the request does not have sufficient permissions to see evaluation |  [optional] |

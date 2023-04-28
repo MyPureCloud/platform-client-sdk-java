@@ -201,6 +201,8 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
   private String wrapupCode = null;
   private String wrapupNotes = null;
   private Integer wrapupDurationMs = null;
+  private List<String> conversationExternalContactIds = new ArrayList<String>();
+  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
 
   
   /**
@@ -560,6 +562,40 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public AcwDetailEventTopicAfterCallWorkEvent conversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalContactIds")
+  public List<String> getConversationExternalContactIds() {
+    return conversationExternalContactIds;
+  }
+  public void setConversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+  }
+
+
+  /**
+   **/
+  public AcwDetailEventTopicAfterCallWorkEvent conversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalOrganizationIds")
+  public List<String> getConversationExternalOrganizationIds() {
+    return conversationExternalOrganizationIds;
+  }
+  public void setConversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -590,12 +626,14 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
             Objects.equals(this.queueId, acwDetailEventTopicAfterCallWorkEvent.queueId) &&
             Objects.equals(this.wrapupCode, acwDetailEventTopicAfterCallWorkEvent.wrapupCode) &&
             Objects.equals(this.wrapupNotes, acwDetailEventTopicAfterCallWorkEvent.wrapupNotes) &&
-            Objects.equals(this.wrapupDurationMs, acwDetailEventTopicAfterCallWorkEvent.wrapupDurationMs);
+            Objects.equals(this.wrapupDurationMs, acwDetailEventTopicAfterCallWorkEvent.wrapupDurationMs) &&
+            Objects.equals(this.conversationExternalContactIds, acwDetailEventTopicAfterCallWorkEvent.conversationExternalContactIds) &&
+            Objects.equals(this.conversationExternalOrganizationIds, acwDetailEventTopicAfterCallWorkEvent.conversationExternalOrganizationIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, queueId, wrapupCode, wrapupNotes, wrapupDurationMs);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, queueId, wrapupCode, wrapupNotes, wrapupDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds);
   }
 
   @Override
@@ -624,6 +662,8 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     sb.append("    wrapupCode: ").append(toIndentedString(wrapupCode)).append("\n");
     sb.append("    wrapupNotes: ").append(toIndentedString(wrapupNotes)).append("\n");
     sb.append("    wrapupDurationMs: ").append(toIndentedString(wrapupDurationMs)).append("\n");
+    sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
+    sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -33,6 +33,10 @@ import com.mypurecloud.sdk.v2.model.GetMetricResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
 import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.InsightsAgents;
+import com.mypurecloud.sdk.v2.model.InsightsDetails;
+import com.mypurecloud.sdk.v2.model.InsightsSummary;
+import com.mypurecloud.sdk.v2.model.InsightsTrend;
 import com.mypurecloud.sdk.v2.model.Leaderboard;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.MemberListing;
@@ -46,6 +50,9 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAveragePoints;
 import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
 import com.mypurecloud.sdk.v2.model.UserBestPoints;
+import com.mypurecloud.sdk.v2.model.UserInsightsTrend;
+import com.mypurecloud.sdk.v2.model.UserProfilesInDateRange;
+import com.mypurecloud.sdk.v2.model.UserProfilesInDateRangeRequest;
 import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
 import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
 import com.mypurecloud.sdk.v2.model.WorkdayPointsTrend;
@@ -55,6 +62,14 @@ import com.mypurecloud.sdk.v2.model.WorkdayValuesTrend;
 import com.mypurecloud.sdk.v2.api.request.DeleteEmployeeperformanceExternalmetricsDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsDetailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsAllRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsMembersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsUserDetailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsUserTrendsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardAllBestpointsRequest;
@@ -102,6 +117,8 @@ import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMembersValidate
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricLinkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesUserQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesUsersMeQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationStatusRequest;
@@ -338,6 +355,606 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ExternalMetricDefinitionListing> response = (ApiResponse<ExternalMetricDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights summary
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InsightsSummary> getGamificationInsightsAsync(GetGamificationInsightsRequest request, final AsyncApiCallback<InsightsSummary> callback) {
+    try {
+      final SettableFuture<InsightsSummary> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InsightsSummary>() {}, new AsyncApiCallback<ApiResponse<InsightsSummary>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsSummary> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights summary
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InsightsSummary>> getGamificationInsightsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InsightsSummary>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InsightsSummary>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InsightsSummary>() {}, new AsyncApiCallback<ApiResponse<InsightsSummary>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsSummary> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsSummary> response = (ApiResponse<InsightsSummary>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsSummary> response = (ApiResponse<InsightsSummary>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights details for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InsightsDetails> getGamificationInsightsDetailsAsync(GetGamificationInsightsDetailsRequest request, final AsyncApiCallback<InsightsDetails> callback) {
+    try {
+      final SettableFuture<InsightsDetails> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InsightsDetails>() {}, new AsyncApiCallback<ApiResponse<InsightsDetails>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsDetails> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights details for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InsightsDetails>> getGamificationInsightsDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InsightsDetails>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InsightsDetails>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InsightsDetails>() {}, new AsyncApiCallback<ApiResponse<InsightsDetails>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsDetails> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsDetails> response = (ApiResponse<InsightsDetails>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsDetails> response = (ApiResponse<InsightsDetails>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights overall trend for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InsightsTrend> getGamificationInsightsGroupsTrendsAsync(GetGamificationInsightsGroupsTrendsRequest request, final AsyncApiCallback<InsightsTrend> callback) {
+    try {
+      final SettableFuture<InsightsTrend> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InsightsTrend>() {}, new AsyncApiCallback<ApiResponse<InsightsTrend>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsTrend> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights overall trend for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InsightsTrend>> getGamificationInsightsGroupsTrendsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InsightsTrend>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InsightsTrend>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InsightsTrend>() {}, new AsyncApiCallback<ApiResponse<InsightsTrend>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsTrend> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsTrend> response = (ApiResponse<InsightsTrend>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsTrend> response = (ApiResponse<InsightsTrend>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights overall trend
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InsightsTrend> getGamificationInsightsGroupsTrendsAllAsync(GetGamificationInsightsGroupsTrendsAllRequest request, final AsyncApiCallback<InsightsTrend> callback) {
+    try {
+      final SettableFuture<InsightsTrend> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InsightsTrend>() {}, new AsyncApiCallback<ApiResponse<InsightsTrend>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsTrend> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights overall trend
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InsightsTrend>> getGamificationInsightsGroupsTrendsAllAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InsightsTrend>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InsightsTrend>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InsightsTrend>() {}, new AsyncApiCallback<ApiResponse<InsightsTrend>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsTrend> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsTrend> response = (ApiResponse<InsightsTrend>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsTrend> response = (ApiResponse<InsightsTrend>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query users in a profile during a period of time
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InsightsAgents> getGamificationInsightsMembersAsync(GetGamificationInsightsMembersRequest request, final AsyncApiCallback<InsightsAgents> callback) {
+    try {
+      final SettableFuture<InsightsAgents> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InsightsAgents>() {}, new AsyncApiCallback<ApiResponse<InsightsAgents>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsAgents> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query users in a profile during a period of time
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InsightsAgents>> getGamificationInsightsMembersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InsightsAgents>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InsightsAgents>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InsightsAgents>() {}, new AsyncApiCallback<ApiResponse<InsightsAgents>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsAgents> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsAgents> response = (ApiResponse<InsightsAgents>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsAgents> response = (ApiResponse<InsightsAgents>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights user trend for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserInsightsTrend> getGamificationInsightsTrendsAsync(GetGamificationInsightsTrendsRequest request, final AsyncApiCallback<UserInsightsTrend> callback) {
+    try {
+      final SettableFuture<UserInsightsTrend> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserInsightsTrend>() {}, new AsyncApiCallback<ApiResponse<UserInsightsTrend>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserInsightsTrend> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights user trend for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserInsightsTrend>> getGamificationInsightsTrendsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserInsightsTrend>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserInsightsTrend>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserInsightsTrend>() {}, new AsyncApiCallback<ApiResponse<UserInsightsTrend>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserInsightsTrend> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserInsightsTrend> response = (ApiResponse<UserInsightsTrend>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserInsightsTrend> response = (ApiResponse<UserInsightsTrend>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights details for the user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InsightsDetails> getGamificationInsightsUserDetailsAsync(GetGamificationInsightsUserDetailsRequest request, final AsyncApiCallback<InsightsDetails> callback) {
+    try {
+      final SettableFuture<InsightsDetails> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InsightsDetails>() {}, new AsyncApiCallback<ApiResponse<InsightsDetails>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsDetails> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights details for the user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InsightsDetails>> getGamificationInsightsUserDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InsightsDetails>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InsightsDetails>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InsightsDetails>() {}, new AsyncApiCallback<ApiResponse<InsightsDetails>>() {
+        @Override
+        public void onCompleted(ApiResponse<InsightsDetails> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsDetails> response = (ApiResponse<InsightsDetails>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InsightsDetails> response = (ApiResponse<InsightsDetails>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights user trend for the user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserInsightsTrend> getGamificationInsightsUserTrendsAsync(GetGamificationInsightsUserTrendsRequest request, final AsyncApiCallback<UserInsightsTrend> callback) {
+    try {
+      final SettableFuture<UserInsightsTrend> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserInsightsTrend>() {}, new AsyncApiCallback<ApiResponse<UserInsightsTrend>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserInsightsTrend> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get insights user trend for the user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserInsightsTrend>> getGamificationInsightsUserTrendsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserInsightsTrend>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserInsightsTrend>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserInsightsTrend>() {}, new AsyncApiCallback<ApiResponse<UserInsightsTrend>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserInsightsTrend> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserInsightsTrend> response = (ApiResponse<UserInsightsTrend>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserInsightsTrend> response = (ApiResponse<UserInsightsTrend>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3863,6 +4480,156 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query performance profiles in date range for a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserProfilesInDateRange> postGamificationProfilesUserQueryAsync(PostGamificationProfilesUserQueryRequest request, final AsyncApiCallback<UserProfilesInDateRange> callback) {
+    try {
+      final SettableFuture<UserProfilesInDateRange> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserProfilesInDateRange>() {}, new AsyncApiCallback<ApiResponse<UserProfilesInDateRange>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserProfilesInDateRange> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query performance profiles in date range for a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserProfilesInDateRange>> postGamificationProfilesUserQueryAsync(ApiRequest<UserProfilesInDateRangeRequest> request, final AsyncApiCallback<ApiResponse<UserProfilesInDateRange>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserProfilesInDateRange>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserProfilesInDateRange>() {}, new AsyncApiCallback<ApiResponse<UserProfilesInDateRange>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserProfilesInDateRange> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserProfilesInDateRange> response = (ApiResponse<UserProfilesInDateRange>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserProfilesInDateRange> response = (ApiResponse<UserProfilesInDateRange>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query performance profiles in date range for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserProfilesInDateRange> postGamificationProfilesUsersMeQueryAsync(PostGamificationProfilesUsersMeQueryRequest request, final AsyncApiCallback<UserProfilesInDateRange> callback) {
+    try {
+      final SettableFuture<UserProfilesInDateRange> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserProfilesInDateRange>() {}, new AsyncApiCallback<ApiResponse<UserProfilesInDateRange>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserProfilesInDateRange> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query performance profiles in date range for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserProfilesInDateRange>> postGamificationProfilesUsersMeQueryAsync(ApiRequest<UserProfilesInDateRangeRequest> request, final AsyncApiCallback<ApiResponse<UserProfilesInDateRange>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserProfilesInDateRange>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserProfilesInDateRange>() {}, new AsyncApiCallback<ApiResponse<UserProfilesInDateRange>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserProfilesInDateRange> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserProfilesInDateRange> response = (ApiResponse<UserProfilesInDateRange>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserProfilesInDateRange> response = (ApiResponse<UserProfilesInDateRange>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

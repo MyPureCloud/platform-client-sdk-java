@@ -38,6 +38,7 @@ title: V2MobiusAlertsTopicAlert
 | UPDATE | &quot;UPDATE&quot; | 
 | DELETE | &quot;DELETE&quot; | 
 | CLOSE | &quot;CLOSE&quot; | 
+| RENOTIFY | &quot;RENOTIFY&quot; | 
 {: class="table table-striped"}
 
 

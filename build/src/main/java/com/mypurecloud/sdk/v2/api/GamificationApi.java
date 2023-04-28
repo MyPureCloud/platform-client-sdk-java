@@ -30,6 +30,10 @@ import com.mypurecloud.sdk.v2.model.GetMetricResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
 import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.InsightsAgents;
+import com.mypurecloud.sdk.v2.model.InsightsDetails;
+import com.mypurecloud.sdk.v2.model.InsightsSummary;
+import com.mypurecloud.sdk.v2.model.InsightsTrend;
 import com.mypurecloud.sdk.v2.model.Leaderboard;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.MemberListing;
@@ -43,6 +47,9 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAveragePoints;
 import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
 import com.mypurecloud.sdk.v2.model.UserBestPoints;
+import com.mypurecloud.sdk.v2.model.UserInsightsTrend;
+import com.mypurecloud.sdk.v2.model.UserProfilesInDateRange;
+import com.mypurecloud.sdk.v2.model.UserProfilesInDateRangeRequest;
 import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
 import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
 import com.mypurecloud.sdk.v2.model.WorkdayPointsTrend;
@@ -52,6 +59,14 @@ import com.mypurecloud.sdk.v2.model.WorkdayValuesTrend;
 import com.mypurecloud.sdk.v2.api.request.DeleteEmployeeperformanceExternalmetricsDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmployeeperformanceExternalmetricsDefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsDetailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsGroupsTrendsAllRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsMembersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsTrendsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsUserDetailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationInsightsUserTrendsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardAllBestpointsRequest;
@@ -99,6 +114,8 @@ import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMembersValidate
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricLinkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesUserQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesUsersMeQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationStatusRequest;
@@ -351,6 +368,818 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExternalMetricDefinitionListing> response = (ApiResponse<ExternalMetricDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get insights summary
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortKey Sort key (optional)
+   * @param sortMetricId Sort Metric Id (optional)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param userIds A list of up to 100 comma-separated user Ids (optional)
+   * @return InsightsSummary
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsSummary getGamificationInsights(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, Integer pageSize, Integer pageNumber, String sortKey, String sortMetricId, String sortOrder, String userIds) throws IOException, ApiException {
+    return  getGamificationInsights(createGetGamificationInsightsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds));
+  }
+
+  /**
+   * Get insights summary
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortKey Sort key (optional)
+   * @param sortMetricId Sort Metric Id (optional)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param userIds A list of up to 100 comma-separated user Ids (optional)
+   * @return InsightsSummary
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsSummary> getGamificationInsightsWithHttpInfo(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, Integer pageSize, Integer pageNumber, String sortKey, String sortMetricId, String sortOrder, String userIds) throws IOException {
+    return getGamificationInsights(createGetGamificationInsightsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds).withHttpInfo());
+  }
+
+  private GetGamificationInsightsRequest createGetGamificationInsightsRequest(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday, Integer pageSize, Integer pageNumber, String sortKey, String sortMetricId, String sortOrder, String userIds) {
+    return GetGamificationInsightsRequest.builder()
+            .withFilterType(filterType)
+
+            .withFilterId(filterId)
+
+            .withGranularity(granularity)
+
+            .withComparativePeriodStartWorkday(comparativePeriodStartWorkday)
+
+            .withPrimaryPeriodStartWorkday(primaryPeriodStartWorkday)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withSortKey(sortKey)
+
+            .withSortMetricId(sortMetricId)
+
+            .withSortOrder(sortOrder)
+
+            .withUserIds(userIds)
+
+            .build();
+  }
+
+  /**
+   * Get insights summary
+   * 
+   * @param request The request object
+   * @return InsightsSummary
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsSummary getGamificationInsights(GetGamificationInsightsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InsightsSummary> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InsightsSummary>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get insights summary
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsSummary> getGamificationInsights(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InsightsSummary>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsSummary> response = (ApiResponse<InsightsSummary>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsSummary> response = (ApiResponse<InsightsSummary>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get insights details for the current user
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return InsightsDetails
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsDetails getGamificationInsightsDetails(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday) throws IOException, ApiException {
+    return  getGamificationInsightsDetails(createGetGamificationInsightsDetailsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday));
+  }
+
+  /**
+   * Get insights details for the current user
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return InsightsDetails
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsDetails> getGamificationInsightsDetailsWithHttpInfo(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday) throws IOException {
+    return getGamificationInsightsDetails(createGetGamificationInsightsDetailsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday).withHttpInfo());
+  }
+
+  private GetGamificationInsightsDetailsRequest createGetGamificationInsightsDetailsRequest(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday) {
+    return GetGamificationInsightsDetailsRequest.builder()
+            .withFilterType(filterType)
+
+            .withFilterId(filterId)
+
+            .withGranularity(granularity)
+
+            .withComparativePeriodStartWorkday(comparativePeriodStartWorkday)
+
+            .withPrimaryPeriodStartWorkday(primaryPeriodStartWorkday)
+
+            .build();
+  }
+
+  /**
+   * Get insights details for the current user
+   * 
+   * @param request The request object
+   * @return InsightsDetails
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsDetails getGamificationInsightsDetails(GetGamificationInsightsDetailsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InsightsDetails> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InsightsDetails>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get insights details for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsDetails> getGamificationInsightsDetails(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InsightsDetails>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsDetails> response = (ApiResponse<InsightsDetails>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsDetails> response = (ApiResponse<InsightsDetails>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get insights overall trend for the current user
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return InsightsTrend
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsTrend getGamificationInsightsGroupsTrends(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) throws IOException, ApiException {
+    return  getGamificationInsightsGroupsTrends(createGetGamificationInsightsGroupsTrendsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday));
+  }
+
+  /**
+   * Get insights overall trend for the current user
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return InsightsTrend
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsTrend> getGamificationInsightsGroupsTrendsWithHttpInfo(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) throws IOException {
+    return getGamificationInsightsGroupsTrends(createGetGamificationInsightsGroupsTrendsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday).withHttpInfo());
+  }
+
+  private GetGamificationInsightsGroupsTrendsRequest createGetGamificationInsightsGroupsTrendsRequest(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) {
+    return GetGamificationInsightsGroupsTrendsRequest.builder()
+            .withFilterType(filterType)
+
+            .withFilterId(filterId)
+
+            .withGranularity(granularity)
+
+            .withComparativePeriodStartWorkday(comparativePeriodStartWorkday)
+
+            .withComparativePeriodEndWorkday(comparativePeriodEndWorkday)
+
+            .withPrimaryPeriodStartWorkday(primaryPeriodStartWorkday)
+
+            .withPrimaryPeriodEndWorkday(primaryPeriodEndWorkday)
+
+            .build();
+  }
+
+  /**
+   * Get insights overall trend for the current user
+   * 
+   * @param request The request object
+   * @return InsightsTrend
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsTrend getGamificationInsightsGroupsTrends(GetGamificationInsightsGroupsTrendsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InsightsTrend> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InsightsTrend>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get insights overall trend for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsTrend> getGamificationInsightsGroupsTrends(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InsightsTrend>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsTrend> response = (ApiResponse<InsightsTrend>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsTrend> response = (ApiResponse<InsightsTrend>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get insights overall trend
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return InsightsTrend
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsTrend getGamificationInsightsGroupsTrendsAll(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) throws IOException, ApiException {
+    return  getGamificationInsightsGroupsTrendsAll(createGetGamificationInsightsGroupsTrendsAllRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday));
+  }
+
+  /**
+   * Get insights overall trend
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return InsightsTrend
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsTrend> getGamificationInsightsGroupsTrendsAllWithHttpInfo(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) throws IOException {
+    return getGamificationInsightsGroupsTrendsAll(createGetGamificationInsightsGroupsTrendsAllRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday).withHttpInfo());
+  }
+
+  private GetGamificationInsightsGroupsTrendsAllRequest createGetGamificationInsightsGroupsTrendsAllRequest(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) {
+    return GetGamificationInsightsGroupsTrendsAllRequest.builder()
+            .withFilterType(filterType)
+
+            .withFilterId(filterId)
+
+            .withGranularity(granularity)
+
+            .withComparativePeriodStartWorkday(comparativePeriodStartWorkday)
+
+            .withComparativePeriodEndWorkday(comparativePeriodEndWorkday)
+
+            .withPrimaryPeriodStartWorkday(primaryPeriodStartWorkday)
+
+            .withPrimaryPeriodEndWorkday(primaryPeriodEndWorkday)
+
+            .build();
+  }
+
+  /**
+   * Get insights overall trend
+   * 
+   * @param request The request object
+   * @return InsightsTrend
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsTrend getGamificationInsightsGroupsTrendsAll(GetGamificationInsightsGroupsTrendsAllRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InsightsTrend> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InsightsTrend>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get insights overall trend
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsTrend> getGamificationInsightsGroupsTrendsAll(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InsightsTrend>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsTrend> response = (ApiResponse<InsightsTrend>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsTrend> response = (ApiResponse<InsightsTrend>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query users in a profile during a period of time
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param startWorkday The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return InsightsAgents
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsAgents getGamificationInsightsMembers(String filterType, String filterId, String granularity, LocalDate startWorkday) throws IOException, ApiException {
+    return  getGamificationInsightsMembers(createGetGamificationInsightsMembersRequest(filterType, filterId, granularity, startWorkday));
+  }
+
+  /**
+   * Query users in a profile during a period of time
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param startWorkday The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return InsightsAgents
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsAgents> getGamificationInsightsMembersWithHttpInfo(String filterType, String filterId, String granularity, LocalDate startWorkday) throws IOException {
+    return getGamificationInsightsMembers(createGetGamificationInsightsMembersRequest(filterType, filterId, granularity, startWorkday).withHttpInfo());
+  }
+
+  private GetGamificationInsightsMembersRequest createGetGamificationInsightsMembersRequest(String filterType, String filterId, String granularity, LocalDate startWorkday) {
+    return GetGamificationInsightsMembersRequest.builder()
+            .withFilterType(filterType)
+
+            .withFilterId(filterId)
+
+            .withGranularity(granularity)
+
+            .withStartWorkday(startWorkday)
+
+            .build();
+  }
+
+  /**
+   * Query users in a profile during a period of time
+   * 
+   * @param request The request object
+   * @return InsightsAgents
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsAgents getGamificationInsightsMembers(GetGamificationInsightsMembersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InsightsAgents> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InsightsAgents>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query users in a profile during a period of time
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsAgents> getGamificationInsightsMembers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InsightsAgents>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsAgents> response = (ApiResponse<InsightsAgents>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsAgents> response = (ApiResponse<InsightsAgents>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get insights user trend for the current user
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return UserInsightsTrend
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserInsightsTrend getGamificationInsightsTrends(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) throws IOException, ApiException {
+    return  getGamificationInsightsTrends(createGetGamificationInsightsTrendsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday));
+  }
+
+  /**
+   * Get insights user trend for the current user
+   * 
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return UserInsightsTrend
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserInsightsTrend> getGamificationInsightsTrendsWithHttpInfo(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) throws IOException {
+    return getGamificationInsightsTrends(createGetGamificationInsightsTrendsRequest(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday).withHttpInfo());
+  }
+
+  private GetGamificationInsightsTrendsRequest createGetGamificationInsightsTrendsRequest(String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) {
+    return GetGamificationInsightsTrendsRequest.builder()
+            .withFilterType(filterType)
+
+            .withFilterId(filterId)
+
+            .withGranularity(granularity)
+
+            .withComparativePeriodStartWorkday(comparativePeriodStartWorkday)
+
+            .withComparativePeriodEndWorkday(comparativePeriodEndWorkday)
+
+            .withPrimaryPeriodStartWorkday(primaryPeriodStartWorkday)
+
+            .withPrimaryPeriodEndWorkday(primaryPeriodEndWorkday)
+
+            .build();
+  }
+
+  /**
+   * Get insights user trend for the current user
+   * 
+   * @param request The request object
+   * @return UserInsightsTrend
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserInsightsTrend getGamificationInsightsTrends(GetGamificationInsightsTrendsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserInsightsTrend> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserInsightsTrend>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get insights user trend for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserInsightsTrend> getGamificationInsightsTrends(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserInsightsTrend>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserInsightsTrend> response = (ApiResponse<UserInsightsTrend>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserInsightsTrend> response = (ApiResponse<UserInsightsTrend>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get insights details for the user
+   * 
+   * @param userId The ID of a user. (required)
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return InsightsDetails
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsDetails getGamificationInsightsUserDetails(String userId, String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday) throws IOException, ApiException {
+    return  getGamificationInsightsUserDetails(createGetGamificationInsightsUserDetailsRequest(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday));
+  }
+
+  /**
+   * Get insights details for the user
+   * 
+   * @param userId The ID of a user. (required)
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return InsightsDetails
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsDetails> getGamificationInsightsUserDetailsWithHttpInfo(String userId, String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday) throws IOException {
+    return getGamificationInsightsUserDetails(createGetGamificationInsightsUserDetailsRequest(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday).withHttpInfo());
+  }
+
+  private GetGamificationInsightsUserDetailsRequest createGetGamificationInsightsUserDetailsRequest(String userId, String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate primaryPeriodStartWorkday) {
+    return GetGamificationInsightsUserDetailsRequest.builder()
+            .withUserId(userId)
+
+            .withFilterType(filterType)
+
+            .withFilterId(filterId)
+
+            .withGranularity(granularity)
+
+            .withComparativePeriodStartWorkday(comparativePeriodStartWorkday)
+
+            .withPrimaryPeriodStartWorkday(primaryPeriodStartWorkday)
+
+            .build();
+  }
+
+  /**
+   * Get insights details for the user
+   * 
+   * @param request The request object
+   * @return InsightsDetails
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InsightsDetails getGamificationInsightsUserDetails(GetGamificationInsightsUserDetailsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InsightsDetails> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InsightsDetails>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get insights details for the user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InsightsDetails> getGamificationInsightsUserDetails(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InsightsDetails>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsDetails> response = (ApiResponse<InsightsDetails>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InsightsDetails> response = (ApiResponse<InsightsDetails>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get insights user trend for the user
+   * 
+   * @param userId The ID of a user. (required)
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return UserInsightsTrend
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserInsightsTrend getGamificationInsightsUserTrends(String userId, String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) throws IOException, ApiException {
+    return  getGamificationInsightsUserTrends(createGetGamificationInsightsUserTrendsRequest(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday));
+  }
+
+  /**
+   * Get insights user trend for the user
+   * 
+   * @param userId The ID of a user. (required)
+   * @param filterType Filter type for the query request. (required)
+   * @param filterId ID for the filter type. (required)
+   * @param granularity Granularity (required)
+   * @param comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return UserInsightsTrend
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserInsightsTrend> getGamificationInsightsUserTrendsWithHttpInfo(String userId, String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) throws IOException {
+    return getGamificationInsightsUserTrends(createGetGamificationInsightsUserTrendsRequest(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday).withHttpInfo());
+  }
+
+  private GetGamificationInsightsUserTrendsRequest createGetGamificationInsightsUserTrendsRequest(String userId, String filterType, String filterId, String granularity, LocalDate comparativePeriodStartWorkday, LocalDate comparativePeriodEndWorkday, LocalDate primaryPeriodStartWorkday, LocalDate primaryPeriodEndWorkday) {
+    return GetGamificationInsightsUserTrendsRequest.builder()
+            .withUserId(userId)
+
+            .withFilterType(filterType)
+
+            .withFilterId(filterId)
+
+            .withGranularity(granularity)
+
+            .withComparativePeriodStartWorkday(comparativePeriodStartWorkday)
+
+            .withComparativePeriodEndWorkday(comparativePeriodEndWorkday)
+
+            .withPrimaryPeriodStartWorkday(primaryPeriodStartWorkday)
+
+            .withPrimaryPeriodEndWorkday(primaryPeriodEndWorkday)
+
+            .build();
+  }
+
+  /**
+   * Get insights user trend for the user
+   * 
+   * @param request The request object
+   * @return UserInsightsTrend
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserInsightsTrend getGamificationInsightsUserTrends(GetGamificationInsightsUserTrendsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserInsightsTrend> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserInsightsTrend>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get insights user trend for the user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserInsightsTrend> getGamificationInsightsUserTrends(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserInsightsTrend>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserInsightsTrend> response = (ApiResponse<UserInsightsTrend>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserInsightsTrend> response = (ApiResponse<UserInsightsTrend>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4269,6 +5098,166 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query performance profiles in date range for a user
+   * 
+   * @param userId The ID of a user. (required)
+   * @param body The date range of work day. (required)
+   * @return UserProfilesInDateRange
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserProfilesInDateRange postGamificationProfilesUserQuery(String userId, UserProfilesInDateRangeRequest body) throws IOException, ApiException {
+    return  postGamificationProfilesUserQuery(createPostGamificationProfilesUserQueryRequest(userId, body));
+  }
+
+  /**
+   * Query performance profiles in date range for a user
+   * 
+   * @param userId The ID of a user. (required)
+   * @param body The date range of work day. (required)
+   * @return UserProfilesInDateRange
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserProfilesInDateRange> postGamificationProfilesUserQueryWithHttpInfo(String userId, UserProfilesInDateRangeRequest body) throws IOException {
+    return postGamificationProfilesUserQuery(createPostGamificationProfilesUserQueryRequest(userId, body).withHttpInfo());
+  }
+
+  private PostGamificationProfilesUserQueryRequest createPostGamificationProfilesUserQueryRequest(String userId, UserProfilesInDateRangeRequest body) {
+    return PostGamificationProfilesUserQueryRequest.builder()
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query performance profiles in date range for a user
+   * 
+   * @param request The request object
+   * @return UserProfilesInDateRange
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserProfilesInDateRange postGamificationProfilesUserQuery(PostGamificationProfilesUserQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserProfilesInDateRange> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserProfilesInDateRange>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query performance profiles in date range for a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserProfilesInDateRange> postGamificationProfilesUserQuery(ApiRequest<UserProfilesInDateRangeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserProfilesInDateRange>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserProfilesInDateRange> response = (ApiResponse<UserProfilesInDateRange>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserProfilesInDateRange> response = (ApiResponse<UserProfilesInDateRange>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query performance profiles in date range for the current user
+   * 
+   * @param body The date range of work day. (required)
+   * @return UserProfilesInDateRange
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserProfilesInDateRange postGamificationProfilesUsersMeQuery(UserProfilesInDateRangeRequest body) throws IOException, ApiException {
+    return  postGamificationProfilesUsersMeQuery(createPostGamificationProfilesUsersMeQueryRequest(body));
+  }
+
+  /**
+   * Query performance profiles in date range for the current user
+   * 
+   * @param body The date range of work day. (required)
+   * @return UserProfilesInDateRange
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserProfilesInDateRange> postGamificationProfilesUsersMeQueryWithHttpInfo(UserProfilesInDateRangeRequest body) throws IOException {
+    return postGamificationProfilesUsersMeQuery(createPostGamificationProfilesUsersMeQueryRequest(body).withHttpInfo());
+  }
+
+  private PostGamificationProfilesUsersMeQueryRequest createPostGamificationProfilesUsersMeQueryRequest(UserProfilesInDateRangeRequest body) {
+    return PostGamificationProfilesUsersMeQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query performance profiles in date range for the current user
+   * 
+   * @param request The request object
+   * @return UserProfilesInDateRange
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserProfilesInDateRange postGamificationProfilesUsersMeQuery(PostGamificationProfilesUsersMeQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserProfilesInDateRange> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserProfilesInDateRange>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query performance profiles in date range for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserProfilesInDateRange> postGamificationProfilesUsersMeQuery(ApiRequest<UserProfilesInDateRangeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserProfilesInDateRange>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserProfilesInDateRange> response = (ApiResponse<UserProfilesInDateRange>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserProfilesInDateRange> response = (ApiResponse<UserProfilesInDateRange>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -145,6 +145,7 @@ public class Conversation  implements Serializable {
   private StateEnum state = null;
   private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
   private List<TransferResponse> recentTransfers = new ArrayList<TransferResponse>();
+  private Boolean securePause = null;
   private String selfUri = null;
 
   
@@ -370,6 +371,24 @@ public class Conversation  implements Serializable {
   }
 
 
+  /**
+   * True when the recording of this conversation is in secure pause status.
+   **/
+  public Conversation securePause(Boolean securePause) {
+    this.securePause = securePause;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True when the recording of this conversation is in secure pause status.")
+  @JsonProperty("securePause")
+  public Boolean getSecurePause() {
+    return securePause;
+  }
+  public void setSecurePause(Boolean securePause) {
+    this.securePause = securePause;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -400,12 +419,13 @@ public class Conversation  implements Serializable {
             Objects.equals(this.state, conversation.state) &&
             Objects.equals(this.divisions, conversation.divisions) &&
             Objects.equals(this.recentTransfers, conversation.recentTransfers) &&
+            Objects.equals(this.securePause, conversation.securePause) &&
             Objects.equals(this.selfUri, conversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, externalTag, startTime, endTime, address, participants, conversationIds, maxParticipants, recordingState, state, divisions, recentTransfers, selfUri);
+    return Objects.hash(id, name, externalTag, startTime, endTime, address, participants, conversationIds, maxParticipants, recordingState, state, divisions, recentTransfers, securePause, selfUri);
   }
 
   @Override
@@ -426,6 +446,7 @@ public class Conversation  implements Serializable {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
+    sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

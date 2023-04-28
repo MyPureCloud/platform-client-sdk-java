@@ -26,6 +26,8 @@ title: CustomerStartDetailEventTopicCustomerStartEvent
 | **callbackScheduledTime** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **subject** | <!----><!---->**String**<!----> |  |  [optional] |
 | **messageType** | [**MessageTypeEnum**](#MessageTypeEnum)<!----> |  |  [optional] |
+| **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

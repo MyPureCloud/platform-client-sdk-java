@@ -11,7 +11,7 @@ title: DialerContact
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **contactListId** | <!----><!---->**String**<!----> | The identifier of the contact list containing this contact. |  |
-| **data** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | An ordered map of the contact's columns and corresponding values. |  |
+| **data** | <!----><!---->**Map&lt;String, String&gt;**<!----> | An ordered map of the contact's columns and corresponding values. |  |
 | **callRecords** | <!----><!---->[**Map&lt;String, CallRecord&gt;**](CallRecord.html)<!----> | A map of call records for the contact phone columns. |  [optional] |
 | **latestSmsEvaluations** | <!----><!---->[**Map&lt;String, MessageEvaluation&gt;**](MessageEvaluation.html)<!----> | A map of SMS records for the contact phone columns. |  [optional] |
 | **latestEmailEvaluations** | <!----><!---->[**Map&lt;String, MessageEvaluation&gt;**](MessageEvaluation.html)<!----> | A map of email records for the contact email columns. |  [optional] |

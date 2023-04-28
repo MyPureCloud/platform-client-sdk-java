@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.SkillGroup;
+import com.mypurecloud.sdk.v2.model.SkillGroupDefinition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class SkillGroupEntityListing  implements Serializable {
   
-  private List<SkillGroup> entities = new ArrayList<SkillGroup>();
+  private List<SkillGroupDefinition> entities = new ArrayList<SkillGroupDefinition>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;
@@ -32,17 +32,17 @@ public class SkillGroupEntityListing  implements Serializable {
   
   /**
    **/
-  public SkillGroupEntityListing entities(List<SkillGroup> entities) {
+  public SkillGroupEntityListing entities(List<SkillGroupDefinition> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<SkillGroup> getEntities() {
+  public List<SkillGroupDefinition> getEntities() {
     return entities;
   }
-  public void setEntities(List<SkillGroup> entities) {
+  public void setEntities(List<SkillGroupDefinition> entities) {
     this.entities = entities;
   }
 

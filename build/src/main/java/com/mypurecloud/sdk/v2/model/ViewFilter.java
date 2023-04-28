@@ -1453,6 +1453,11 @@ public class ViewFilter  implements Serializable {
     }
   }
   private List<EvaluationStatusesEnum> evaluationStatuses = new ArrayList<EvaluationStatusesEnum>();
+  private List<String> workbinIds = new ArrayList<String>();
+  private List<String> worktypeIds = new ArrayList<String>();
+  private List<String> workitemIds = new ArrayList<String>();
+  private List<String> workitemAssigneeIds = new ArrayList<String>();
+  private List<String> workitemStatuses = new ArrayList<String>();
   private Boolean isAnalyzedForSensitiveData = null;
   private Boolean hasSensitiveData = null;
   private String subPath = null;
@@ -4317,6 +4322,96 @@ public class ViewFilter  implements Serializable {
 
 
   /**
+   * The list of Workbin IDs
+   **/
+  public ViewFilter workbinIds(List<String> workbinIds) {
+    this.workbinIds = workbinIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Workbin IDs")
+  @JsonProperty("workbinIds")
+  public List<String> getWorkbinIds() {
+    return workbinIds;
+  }
+  public void setWorkbinIds(List<String> workbinIds) {
+    this.workbinIds = workbinIds;
+  }
+
+
+  /**
+   * The list of Worktype IDs
+   **/
+  public ViewFilter worktypeIds(List<String> worktypeIds) {
+    this.worktypeIds = worktypeIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Worktype IDs")
+  @JsonProperty("worktypeIds")
+  public List<String> getWorktypeIds() {
+    return worktypeIds;
+  }
+  public void setWorktypeIds(List<String> worktypeIds) {
+    this.worktypeIds = worktypeIds;
+  }
+
+
+  /**
+   * The list of Workitem IDs
+   **/
+  public ViewFilter workitemIds(List<String> workitemIds) {
+    this.workitemIds = workitemIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Workitem IDs")
+  @JsonProperty("workitemIds")
+  public List<String> getWorkitemIds() {
+    return workitemIds;
+  }
+  public void setWorkitemIds(List<String> workitemIds) {
+    this.workitemIds = workitemIds;
+  }
+
+
+  /**
+   * The list of Workitem Assignee IDs
+   **/
+  public ViewFilter workitemAssigneeIds(List<String> workitemAssigneeIds) {
+    this.workitemAssigneeIds = workitemAssigneeIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Workitem Assignee IDs")
+  @JsonProperty("workitemAssigneeIds")
+  public List<String> getWorkitemAssigneeIds() {
+    return workitemAssigneeIds;
+  }
+  public void setWorkitemAssigneeIds(List<String> workitemAssigneeIds) {
+    this.workitemAssigneeIds = workitemAssigneeIds;
+  }
+
+
+  /**
+   * The list of Workitem Statuses IDs
+   **/
+  public ViewFilter workitemStatuses(List<String> workitemStatuses) {
+    this.workitemStatuses = workitemStatuses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Workitem Statuses IDs")
+  @JsonProperty("workitemStatuses")
+  public List<String> getWorkitemStatuses() {
+    return workitemStatuses;
+  }
+  public void setWorkitemStatuses(List<String> workitemStatuses) {
+    this.workitemStatuses = workitemStatuses;
+  }
+
+
+  /**
    * Filter to indicate the transcript has been analyzed for sensitive data.
    **/
   public ViewFilter isAnalyzedForSensitiveData(Boolean isAnalyzedForSensitiveData) {
@@ -4554,6 +4649,11 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.alertRuleIds, viewFilter.alertRuleIds) &&
             Objects.equals(this.evaluationFormContextIds, viewFilter.evaluationFormContextIds) &&
             Objects.equals(this.evaluationStatuses, viewFilter.evaluationStatuses) &&
+            Objects.equals(this.workbinIds, viewFilter.workbinIds) &&
+            Objects.equals(this.worktypeIds, viewFilter.worktypeIds) &&
+            Objects.equals(this.workitemIds, viewFilter.workitemIds) &&
+            Objects.equals(this.workitemAssigneeIds, viewFilter.workitemAssigneeIds) &&
+            Objects.equals(this.workitemStatuses, viewFilter.workitemStatuses) &&
             Objects.equals(this.isAnalyzedForSensitiveData, viewFilter.isAnalyzedForSensitiveData) &&
             Objects.equals(this.hasSensitiveData, viewFilter.hasSensitiveData) &&
             Objects.equals(this.subPath, viewFilter.subPath) &&
@@ -4562,7 +4662,7 @@ public class ViewFilter  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, isAnalyzedForSensitiveData, hasSensitiveData, subPath, userState);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, subPath, userState);
   }
 
   @Override
@@ -4726,6 +4826,11 @@ public class ViewFilter  implements Serializable {
     sb.append("    alertRuleIds: ").append(toIndentedString(alertRuleIds)).append("\n");
     sb.append("    evaluationFormContextIds: ").append(toIndentedString(evaluationFormContextIds)).append("\n");
     sb.append("    evaluationStatuses: ").append(toIndentedString(evaluationStatuses)).append("\n");
+    sb.append("    workbinIds: ").append(toIndentedString(workbinIds)).append("\n");
+    sb.append("    worktypeIds: ").append(toIndentedString(worktypeIds)).append("\n");
+    sb.append("    workitemIds: ").append(toIndentedString(workitemIds)).append("\n");
+    sb.append("    workitemAssigneeIds: ").append(toIndentedString(workitemAssigneeIds)).append("\n");
+    sb.append("    workitemStatuses: ").append(toIndentedString(workitemStatuses)).append("\n");
     sb.append("    isAnalyzedForSensitiveData: ").append(toIndentedString(isAnalyzedForSensitiveData)).append("\n");
     sb.append("    hasSensitiveData: ").append(toIndentedString(hasSensitiveData)).append("\n");
     sb.append("    subPath: ").append(toIndentedString(subPath)).append("\n");

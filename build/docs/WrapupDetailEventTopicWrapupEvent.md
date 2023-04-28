@@ -28,6 +28,8 @@ title: WrapupDetailEventTopicWrapupEvent
 | **wrapupCode** | <!----><!---->**String**<!----> |  |  [optional] |
 | **wrapupNotes** | <!----><!---->**String**<!----> |  |  [optional] |
 | **wrapupDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

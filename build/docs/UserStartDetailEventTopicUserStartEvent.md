@@ -27,6 +27,8 @@ title: UserStartDetailEventTopicUserStartEvent
 | **userId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **divisionId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

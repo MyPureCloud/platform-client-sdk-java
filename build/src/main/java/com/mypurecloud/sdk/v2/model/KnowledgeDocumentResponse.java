@@ -87,6 +87,7 @@ public class KnowledgeDocumentResponse  implements Serializable {
   private StateEnum state = null;
   private Date dateCreated = null;
   private Date dateModified = null;
+  private Date dateImported = null;
   private Integer lastPublishedVersionNumber = null;
   private Date datePublished = null;
   private UserReference createdBy = null;
@@ -211,6 +212,24 @@ public class KnowledgeDocumentResponse  implements Serializable {
   }
   public void setDateModified(Date dateModified) {
     this.dateModified = dateModified;
+  }
+
+
+  /**
+   * Document import date-time, or null if was not imported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public KnowledgeDocumentResponse dateImported(Date dateImported) {
+    this.dateImported = dateImported;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Document import date-time, or null if was not imported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateImported")
+  public Date getDateImported() {
+    return dateImported;
+  }
+  public void setDateImported(Date dateImported) {
+    this.dateImported = dateImported;
   }
 
 
@@ -378,6 +397,7 @@ public class KnowledgeDocumentResponse  implements Serializable {
             Objects.equals(this.state, knowledgeDocumentResponse.state) &&
             Objects.equals(this.dateCreated, knowledgeDocumentResponse.dateCreated) &&
             Objects.equals(this.dateModified, knowledgeDocumentResponse.dateModified) &&
+            Objects.equals(this.dateImported, knowledgeDocumentResponse.dateImported) &&
             Objects.equals(this.lastPublishedVersionNumber, knowledgeDocumentResponse.lastPublishedVersionNumber) &&
             Objects.equals(this.datePublished, knowledgeDocumentResponse.datePublished) &&
             Objects.equals(this.createdBy, knowledgeDocumentResponse.createdBy) &&
@@ -392,7 +412,7 @@ public class KnowledgeDocumentResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, visible, alternatives, state, dateCreated, dateModified, lastPublishedVersionNumber, datePublished, createdBy, modifiedBy, documentVersion, category, labels, knowledgeBase, variations, selfUri);
+    return Objects.hash(id, title, visible, alternatives, state, dateCreated, dateModified, dateImported, lastPublishedVersionNumber, datePublished, createdBy, modifiedBy, documentVersion, category, labels, knowledgeBase, variations, selfUri);
   }
 
   @Override
@@ -407,6 +427,7 @@ public class KnowledgeDocumentResponse  implements Serializable {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    dateImported: ").append(toIndentedString(dateImported)).append("\n");
     sb.append("    lastPublishedVersionNumber: ").append(toIndentedString(lastPublishedVersionNumber)).append("\n");
     sb.append("    datePublished: ").append(toIndentedString(datePublished)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");

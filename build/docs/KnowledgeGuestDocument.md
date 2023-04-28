@@ -15,6 +15,7 @@ title: KnowledgeGuestDocument
 | **state** | [**StateEnum**](#StateEnum)<!----> | State of the document. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateImported** | <!----><!---->[**Date**](Date.html)<!----> | Document import date-time, or null if was not imported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **lastPublishedVersionNumber** | <!----><!---->**Integer**<!----> | The last published version number of the document. |  [optional] |
 | **datePublished** | <!----><!---->[**Date**](Date.html)<!----> | The date on which the document was last published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **createdBy** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user who created the document. |  [optional] |

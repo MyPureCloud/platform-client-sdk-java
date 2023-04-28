@@ -11,7 +11,6 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AuditQueryEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,113 +24,24 @@ import java.io.Serializable;
 
 public class AuditQueryService  implements Serializable {
   
-
-  private static class NameEnumDeserializer extends StdDeserializer<NameEnum> {
-    public NameEnumDeserializer() {
-      super(NameEnumDeserializer.class);
-    }
-
-    @Override
-    public NameEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return NameEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * Name of the Service
-   */
- @JsonDeserialize(using = NameEnumDeserializer.class)
-  public enum NameEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    AGENTCONFIG("AgentConfig"),
-    ANALYTICSREPORTING("AnalyticsReporting"),
-    ARCHITECT("Architect"),
-    CALLBACK("Callback"),
-    COACHING("Coaching"),
-    CONTACTCENTER("ContactCenter"),
-    CONTENTMANAGEMENT("ContentManagement"),
-    DATATABLES("Datatables"),
-    DIRECTORY("Directory"),
-    DYNAMICSCHEMA("DynamicSchema"),
-    EMAILS("Emails"),
-    EMPLOYEEPERFORMANCE("EmployeePerformance"),
-    EXTERNALCONTACTS("ExternalContacts"),
-    GAMIFICATION("Gamification"),
-    GDPR("GDPR"),
-    GROUPS("Groups"),
-    INTEGRATIONS("Integrations"),
-    KNOWLEDGE("Knowledge"),
-    LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
-    LEARNING("Learning"),
-    LIMITS("Limits"),
-    LOGCAPTURE("LogCapture"),
-    MARKETPLACE("Marketplace"),
-    MESSAGING("Messaging"),
-    NUMBERPURCHASING("NumberPurchasing"),
-    OUTBOUND("Outbound"),
-    PEOPLEPERMISSIONS("PeoplePermissions"),
-    PREDICTIVEENGAGEMENT("PredictiveEngagement"),
-    PRESENCE("Presence"),
-    PROCESSAUTOMATION("ProcessAutomation"),
-    QUALITY("Quality"),
-    RESPONSEMANAGEMENT("ResponseManagement"),
-    ROUTING("Routing"),
-    SCIM("SCIM"),
-    SCRIPTER("Scripter"),
-    SPEECHANDTEXTANALYTICS("SpeechAndTextAnalytics"),
-    SUPPORTABILITY("Supportability"),
-    TELEPHONY("Telephony"),
-    TRIGGERS("Triggers"),
-    VOICEMAIL("Voicemail"),
-    WEBDEPLOYMENTS("WebDeployments"),
-    WEBHOOKS("Webhooks"),
-    WORKFORCEMANAGEMENT("WorkforceManagement"),
-    WORKITEMS("Workitems");
-
-    private String value;
-
-    NameEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static NameEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (NameEnum value : NameEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return NameEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private NameEnum name = null;
+  private String name = null;
   private List<AuditQueryEntity> entities = new ArrayList<AuditQueryEntity>();
 
   
   /**
    * Name of the Service
    **/
-  public AuditQueryService name(NameEnum name) {
+  public AuditQueryService name(String name) {
     this.name = name;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Name of the Service")
   @JsonProperty("name")
-  public NameEnum getName() {
+  public String getName() {
     return name;
   }
-  public void setName(NameEnum name) {
+  public void setName(String name) {
     this.name = name;
   }
 

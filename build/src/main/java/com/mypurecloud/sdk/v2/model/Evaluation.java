@@ -156,6 +156,7 @@ public class Evaluation  implements Serializable {
   private Date conversationEndDate = null;
   private Boolean neverRelease = null;
   private Boolean assigned = null;
+  private Date dateAssigneeChanged = null;
   private String resourceId = null;
 
   private static class ResourceTypeEnumDeserializer extends StdDeserializer<ResourceTypeEnum> {
@@ -570,6 +571,24 @@ public class Evaluation  implements Serializable {
 
 
   /**
+   * Date when the assignee was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public Evaluation dateAssigneeChanged(Date dateAssigneeChanged) {
+    this.dateAssigneeChanged = dateAssigneeChanged;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date when the assignee was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateAssigneeChanged")
+  public Date getDateAssigneeChanged() {
+    return dateAssigneeChanged;
+  }
+  public void setDateAssigneeChanged(Date dateAssigneeChanged) {
+    this.dateAssigneeChanged = dateAssigneeChanged;
+  }
+
+
+  /**
    * Only used for email evaluations. Will be null for all other evaluations.
    **/
   public Evaluation resourceId(String resourceId) {
@@ -721,6 +740,7 @@ public class Evaluation  implements Serializable {
             Objects.equals(this.conversationEndDate, evaluation.conversationEndDate) &&
             Objects.equals(this.neverRelease, evaluation.neverRelease) &&
             Objects.equals(this.assigned, evaluation.assigned) &&
+            Objects.equals(this.dateAssigneeChanged, evaluation.dateAssigneeChanged) &&
             Objects.equals(this.resourceId, evaluation.resourceId) &&
             Objects.equals(this.resourceType, evaluation.resourceType) &&
             Objects.equals(this.redacted, evaluation.redacted) &&
@@ -733,7 +753,7 @@ public class Evaluation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
   }
 
   @Override
@@ -762,6 +782,7 @@ public class Evaluation  implements Serializable {
     sb.append("    conversationEndDate: ").append(toIndentedString(conversationEndDate)).append("\n");
     sb.append("    neverRelease: ").append(toIndentedString(neverRelease)).append("\n");
     sb.append("    assigned: ").append(toIndentedString(assigned)).append("\n");
+    sb.append("    dateAssigneeChanged: ").append(toIndentedString(dateAssigneeChanged)).append("\n");
     sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
     sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
     sb.append("    redacted: ").append(toIndentedString(redacted)).append("\n");

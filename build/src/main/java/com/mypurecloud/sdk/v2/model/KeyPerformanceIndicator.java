@@ -16,7 +16,9 @@ import com.mypurecloud.sdk.v2.model.OutcomeConfig;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -277,6 +279,7 @@ public class KeyPerformanceIndicator  implements Serializable {
     }
   }
   private KpiGroupEnum kpiGroup = null;
+  private List<String> queues = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -364,6 +367,13 @@ public class KeyPerformanceIndicator  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Queue IDs on which KPI specification is used.")
+  @JsonProperty("queues")
+  public List<String> getQueues() {
+    return queues;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -393,12 +403,13 @@ public class KeyPerformanceIndicator  implements Serializable {
             Objects.equals(this.outcomeConfig, keyPerformanceIndicator.outcomeConfig) &&
             Objects.equals(this.status, keyPerformanceIndicator.status) &&
             Objects.equals(this.kpiGroup, keyPerformanceIndicator.kpiGroup) &&
+            Objects.equals(this.queues, keyPerformanceIndicator.queues) &&
             Objects.equals(this.selfUri, keyPerformanceIndicator.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, optimizationType, dateCreated, dateModified, description, kpiType, source, wrapUpCodeConfig, outcomeConfig, status, kpiGroup, selfUri);
+    return Objects.hash(id, name, optimizationType, dateCreated, dateModified, description, kpiType, source, wrapUpCodeConfig, outcomeConfig, status, kpiGroup, queues, selfUri);
   }
 
   @Override
@@ -418,6 +429,7 @@ public class KeyPerformanceIndicator  implements Serializable {
     sb.append("    outcomeConfig: ").append(toIndentedString(outcomeConfig)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    kpiGroup: ").append(toIndentedString(kpiGroup)).append("\n");
+    sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

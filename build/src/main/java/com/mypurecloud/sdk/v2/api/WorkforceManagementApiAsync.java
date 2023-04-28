@@ -7693,7 +7693,7 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Request a historical adherence report for users across management units
+   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7727,7 +7727,7 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Request a historical adherence report for users across management units
+   * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

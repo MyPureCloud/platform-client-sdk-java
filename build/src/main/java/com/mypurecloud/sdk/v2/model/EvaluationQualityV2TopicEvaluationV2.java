@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicCalibration;
+import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicEvaluationReference;
 import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicEvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicEvaluationSource;
 import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicUser;
@@ -59,7 +60,9 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PENDING("Pending"),
     INPROGRESS("InProgress"),
-    FINISHED("Finished");
+    FINISHED("Finished"),
+    INREVIEW("InReview"),
+    RETRACTED("Retracted");
 
     private String value;
 
@@ -102,6 +105,62 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   private EvaluationQualityV2TopicEvaluationSource evaluationSource = null;
   private String assigneeUserId = null;
   private String previousAssigneeUserId = null;
+  private String evaluationContextId = null;
+  private Integer disputeCount = null;
+  private Integer version = null;
+
+  private static class PreviousStatusEnumDeserializer extends StdDeserializer<PreviousStatusEnum> {
+    public PreviousStatusEnumDeserializer() {
+      super(PreviousStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public PreviousStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PreviousStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets previousStatus
+   */
+ @JsonDeserialize(using = PreviousStatusEnumDeserializer.class)
+  public enum PreviousStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PENDING("Pending"),
+    INPROGRESS("InProgress"),
+    FINISHED("Finished"),
+    INREVIEW("InReview"),
+    RETRACTED("Retracted");
+
+    private String value;
+
+    PreviousStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static PreviousStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (PreviousStatusEnum value : PreviousStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return PreviousStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private PreviousStatusEnum previousStatus = null;
+  private Boolean declinedReview = null;
+  private EvaluationQualityV2TopicEvaluationReference retractedEvaluation = null;
 
   
   /**
@@ -529,6 +588,108 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   }
 
 
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 evaluationContextId(String evaluationContextId) {
+    this.evaluationContextId = evaluationContextId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("evaluationContextId")
+  public String getEvaluationContextId() {
+    return evaluationContextId;
+  }
+  public void setEvaluationContextId(String evaluationContextId) {
+    this.evaluationContextId = evaluationContextId;
+  }
+
+
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 disputeCount(Integer disputeCount) {
+    this.disputeCount = disputeCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("disputeCount")
+  public Integer getDisputeCount() {
+    return disputeCount;
+  }
+  public void setDisputeCount(Integer disputeCount) {
+    this.disputeCount = disputeCount;
+  }
+
+
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
+  }
+
+
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 previousStatus(PreviousStatusEnum previousStatus) {
+    this.previousStatus = previousStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousStatus")
+  public PreviousStatusEnum getPreviousStatus() {
+    return previousStatus;
+  }
+  public void setPreviousStatus(PreviousStatusEnum previousStatus) {
+    this.previousStatus = previousStatus;
+  }
+
+
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 declinedReview(Boolean declinedReview) {
+    this.declinedReview = declinedReview;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("declinedReview")
+  public Boolean getDeclinedReview() {
+    return declinedReview;
+  }
+  public void setDeclinedReview(Boolean declinedReview) {
+    this.declinedReview = declinedReview;
+  }
+
+
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 retractedEvaluation(EvaluationQualityV2TopicEvaluationReference retractedEvaluation) {
+    this.retractedEvaluation = retractedEvaluation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("retractedEvaluation")
+  public EvaluationQualityV2TopicEvaluationReference getRetractedEvaluation() {
+    return retractedEvaluation;
+  }
+  public void setRetractedEvaluation(EvaluationQualityV2TopicEvaluationReference retractedEvaluation) {
+    this.retractedEvaluation = retractedEvaluation;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -563,12 +724,18 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
             Objects.equals(this.calibration, evaluationQualityV2TopicEvaluationV2.calibration) &&
             Objects.equals(this.evaluationSource, evaluationQualityV2TopicEvaluationV2.evaluationSource) &&
             Objects.equals(this.assigneeUserId, evaluationQualityV2TopicEvaluationV2.assigneeUserId) &&
-            Objects.equals(this.previousAssigneeUserId, evaluationQualityV2TopicEvaluationV2.previousAssigneeUserId);
+            Objects.equals(this.previousAssigneeUserId, evaluationQualityV2TopicEvaluationV2.previousAssigneeUserId) &&
+            Objects.equals(this.evaluationContextId, evaluationQualityV2TopicEvaluationV2.evaluationContextId) &&
+            Objects.equals(this.disputeCount, evaluationQualityV2TopicEvaluationV2.disputeCount) &&
+            Objects.equals(this.version, evaluationQualityV2TopicEvaluationV2.version) &&
+            Objects.equals(this.previousStatus, evaluationQualityV2TopicEvaluationV2.previousStatus) &&
+            Objects.equals(this.declinedReview, evaluationQualityV2TopicEvaluationV2.declinedReview) &&
+            Objects.equals(this.retractedEvaluation, evaluationQualityV2TopicEvaluationV2.retractedEvaluation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType, calibration, evaluationSource, assigneeUserId, previousAssigneeUserId);
+    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType, calibration, evaluationSource, assigneeUserId, previousAssigneeUserId, evaluationContextId, disputeCount, version, previousStatus, declinedReview, retractedEvaluation);
   }
 
   @Override
@@ -601,6 +768,12 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     sb.append("    evaluationSource: ").append(toIndentedString(evaluationSource)).append("\n");
     sb.append("    assigneeUserId: ").append(toIndentedString(assigneeUserId)).append("\n");
     sb.append("    previousAssigneeUserId: ").append(toIndentedString(previousAssigneeUserId)).append("\n");
+    sb.append("    evaluationContextId: ").append(toIndentedString(evaluationContextId)).append("\n");
+    sb.append("    disputeCount: ").append(toIndentedString(disputeCount)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    previousStatus: ").append(toIndentedString(previousStatus)).append("\n");
+    sb.append("    declinedReview: ").append(toIndentedString(declinedReview)).append("\n");
+    sb.append("    retractedEvaluation: ").append(toIndentedString(retractedEvaluation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

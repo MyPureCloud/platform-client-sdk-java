@@ -81,6 +81,7 @@ public class CallConversation  implements Serializable {
   }
   private RecordingStateEnum recordingState = null;
   private Integer maxParticipants = null;
+  private Boolean securePause = null;
   private String selfUri = null;
 
   
@@ -197,6 +198,24 @@ public class CallConversation  implements Serializable {
   }
 
 
+  /**
+   * True when the recording of this conversation is in secure pause status.
+   **/
+  public CallConversation securePause(Boolean securePause) {
+    this.securePause = securePause;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True when the recording of this conversation is in secure pause status.")
+  @JsonProperty("securePause")
+  public Boolean getSecurePause() {
+    return securePause;
+  }
+  public void setSecurePause(Boolean securePause) {
+    this.securePause = securePause;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -221,12 +240,13 @@ public class CallConversation  implements Serializable {
             Objects.equals(this.recentTransfers, callConversation.recentTransfers) &&
             Objects.equals(this.recordingState, callConversation.recordingState) &&
             Objects.equals(this.maxParticipants, callConversation.maxParticipants) &&
+            Objects.equals(this.securePause, callConversation.securePause) &&
             Objects.equals(this.selfUri, callConversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, recordingState, maxParticipants, selfUri);
+    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, recordingState, maxParticipants, securePause, selfUri);
   }
 
   @Override
@@ -241,6 +261,7 @@ public class CallConversation  implements Serializable {
     sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    maxParticipants: ").append(toIndentedString(maxParticipants)).append("\n");
+    sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

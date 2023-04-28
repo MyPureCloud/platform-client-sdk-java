@@ -338,6 +338,7 @@ public class CallMediaParticipant  implements Serializable {
   private String consultParticipantId = null;
   private String uuiData = null;
   private Date bargedTime = null;
+  private Boolean securePause = null;
 
   
   /**
@@ -1222,6 +1223,24 @@ public class CallMediaParticipant  implements Serializable {
   }
 
 
+  /**
+   * True when the recording of this call is in secure pause status.
+   **/
+  public CallMediaParticipant securePause(Boolean securePause) {
+    this.securePause = securePause;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True when the recording of this call is in secure pause status.")
+  @JsonProperty("securePause")
+  public Boolean getSecurePause() {
+    return securePause;
+  }
+  public void setSecurePause(Boolean securePause) {
+    this.securePause = securePause;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1280,12 +1299,13 @@ public class CallMediaParticipant  implements Serializable {
             Objects.equals(this.bargedParticipantId, callMediaParticipant.bargedParticipantId) &&
             Objects.equals(this.consultParticipantId, callMediaParticipant.consultParticipantId) &&
             Objects.equals(this.uuiData, callMediaParticipant.uuiData) &&
-            Objects.equals(this.bargedTime, callMediaParticipant.bargedTime);
+            Objects.equals(this.bargedTime, callMediaParticipant.bargedTime) &&
+            Objects.equals(this.securePause, callMediaParticipant.securePause);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime, securePause);
   }
 
   @Override
@@ -1342,6 +1362,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    consultParticipantId: ").append(toIndentedString(consultParticipantId)).append("\n");
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
     sb.append("    bargedTime: ").append(toIndentedString(bargedTime)).append("\n");
+    sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("}");
     return sb.toString();
   }

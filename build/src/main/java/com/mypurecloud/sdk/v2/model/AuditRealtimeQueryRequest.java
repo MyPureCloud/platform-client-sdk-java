@@ -11,7 +11,6 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AuditQueryFilter;
 import com.mypurecloud.sdk.v2.model.AuditQuerySort;
 import io.swagger.annotations.ApiModel;
@@ -27,96 +26,7 @@ import java.io.Serializable;
 public class AuditRealtimeQueryRequest  implements Serializable {
   
   private String interval = null;
-
-  private static class ServiceNameEnumDeserializer extends StdDeserializer<ServiceNameEnum> {
-    public ServiceNameEnumDeserializer() {
-      super(ServiceNameEnumDeserializer.class);
-    }
-
-    @Override
-    public ServiceNameEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return ServiceNameEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * Name of the service to query audits for.
-   */
- @JsonDeserialize(using = ServiceNameEnumDeserializer.class)
-  public enum ServiceNameEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    AGENTCONFIG("AgentConfig"),
-    ANALYTICSREPORTING("AnalyticsReporting"),
-    ARCHITECT("Architect"),
-    CALLBACK("Callback"),
-    COACHING("Coaching"),
-    CONTACTCENTER("ContactCenter"),
-    CONTENTMANAGEMENT("ContentManagement"),
-    DATATABLES("Datatables"),
-    DIRECTORY("Directory"),
-    DYNAMICSCHEMA("DynamicSchema"),
-    EMAILS("Emails"),
-    EMPLOYEEPERFORMANCE("EmployeePerformance"),
-    EXTERNALCONTACTS("ExternalContacts"),
-    GAMIFICATION("Gamification"),
-    GDPR("GDPR"),
-    GROUPS("Groups"),
-    INTEGRATIONS("Integrations"),
-    KNOWLEDGE("Knowledge"),
-    LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
-    LEARNING("Learning"),
-    LIMITS("Limits"),
-    LOGCAPTURE("LogCapture"),
-    MARKETPLACE("Marketplace"),
-    MESSAGING("Messaging"),
-    NUMBERPURCHASING("NumberPurchasing"),
-    OUTBOUND("Outbound"),
-    PEOPLEPERMISSIONS("PeoplePermissions"),
-    PREDICTIVEENGAGEMENT("PredictiveEngagement"),
-    PRESENCE("Presence"),
-    PROCESSAUTOMATION("ProcessAutomation"),
-    QUALITY("Quality"),
-    RESPONSEMANAGEMENT("ResponseManagement"),
-    ROUTING("Routing"),
-    SCIM("SCIM"),
-    SCRIPTER("Scripter"),
-    SPEECHANDTEXTANALYTICS("SpeechAndTextAnalytics"),
-    SUPPORTABILITY("Supportability"),
-    TELEPHONY("Telephony"),
-    TRIGGERS("Triggers"),
-    VOICEMAIL("Voicemail"),
-    WEBDEPLOYMENTS("WebDeployments"),
-    WEBHOOKS("Webhooks"),
-    WORKFORCEMANAGEMENT("WorkforceManagement"),
-    WORKITEMS("Workitems");
-
-    private String value;
-
-    ServiceNameEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static ServiceNameEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (ServiceNameEnum value : ServiceNameEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return ServiceNameEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private ServiceNameEnum serviceName = null;
+  private String serviceName = null;
   private List<AuditQueryFilter> filters = new ArrayList<AuditQueryFilter>();
   private List<AuditQuerySort> sort = new ArrayList<AuditQuerySort>();
   private Integer pageNumber = null;
@@ -144,17 +54,17 @@ public class AuditRealtimeQueryRequest  implements Serializable {
   /**
    * Name of the service to query audits for.
    **/
-  public AuditRealtimeQueryRequest serviceName(ServiceNameEnum serviceName) {
+  public AuditRealtimeQueryRequest serviceName(String serviceName) {
     this.serviceName = serviceName;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Name of the service to query audits for.")
   @JsonProperty("serviceName")
-  public ServiceNameEnum getServiceName() {
+  public String getServiceName() {
     return serviceName;
   }
-  public void setServiceName(ServiceNameEnum serviceName) {
+  public void setServiceName(String serviceName) {
     this.serviceName = serviceName;
   }
 

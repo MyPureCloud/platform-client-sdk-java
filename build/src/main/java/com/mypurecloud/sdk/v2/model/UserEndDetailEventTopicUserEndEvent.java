@@ -267,6 +267,8 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
   private Integer alertingDurationMs = null;
   private Integer contactingDurationMs = null;
   private Integer dialingDurationMs = null;
+  private List<String> conversationExternalContactIds = new ArrayList<String>();
+  private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
 
   
   /**
@@ -694,6 +696,40 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public UserEndDetailEventTopicUserEndEvent conversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalContactIds")
+  public List<String> getConversationExternalContactIds() {
+    return conversationExternalContactIds;
+  }
+  public void setConversationExternalContactIds(List<String> conversationExternalContactIds) {
+    this.conversationExternalContactIds = conversationExternalContactIds;
+  }
+
+
+  /**
+   **/
+  public UserEndDetailEventTopicUserEndEvent conversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationExternalOrganizationIds")
+  public List<String> getConversationExternalOrganizationIds() {
+    return conversationExternalOrganizationIds;
+  }
+  public void setConversationExternalOrganizationIds(List<String> conversationExternalOrganizationIds) {
+    this.conversationExternalOrganizationIds = conversationExternalOrganizationIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -728,12 +764,14 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
             Objects.equals(this.heldDurationMs, userEndDetailEventTopicUserEndEvent.heldDurationMs) &&
             Objects.equals(this.alertingDurationMs, userEndDetailEventTopicUserEndEvent.alertingDurationMs) &&
             Objects.equals(this.contactingDurationMs, userEndDetailEventTopicUserEndEvent.contactingDurationMs) &&
-            Objects.equals(this.dialingDurationMs, userEndDetailEventTopicUserEndEvent.dialingDurationMs);
+            Objects.equals(this.dialingDurationMs, userEndDetailEventTopicUserEndEvent.dialingDurationMs) &&
+            Objects.equals(this.conversationExternalContactIds, userEndDetailEventTopicUserEndEvent.conversationExternalContactIds) &&
+            Objects.equals(this.conversationExternalOrganizationIds, userEndDetailEventTopicUserEndEvent.conversationExternalOrganizationIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, divisionId, queueId, interactingDurationMs, heldDurationMs, alertingDurationMs, contactingDurationMs, dialingDurationMs);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, divisionId, queueId, interactingDurationMs, heldDurationMs, alertingDurationMs, contactingDurationMs, dialingDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds);
   }
 
   @Override
@@ -766,6 +804,8 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     sb.append("    alertingDurationMs: ").append(toIndentedString(alertingDurationMs)).append("\n");
     sb.append("    contactingDurationMs: ").append(toIndentedString(contactingDurationMs)).append("\n");
     sb.append("    dialingDurationMs: ").append(toIndentedString(dialingDurationMs)).append("\n");
+    sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
+    sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

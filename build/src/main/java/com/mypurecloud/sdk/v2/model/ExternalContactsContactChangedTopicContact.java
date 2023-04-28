@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicContactAddress;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicFacebookId;
+import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicInstagramId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicLineId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicPhoneNumber;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicTwitterId;
@@ -97,6 +98,7 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
   private ExternalContactsContactChangedTopicLineId lineId = null;
   private ExternalContactsContactChangedTopicWhatsAppId whatsAppId = null;
   private ExternalContactsContactChangedTopicFacebookId facebookId = null;
+  private ExternalContactsContactChangedTopicInstagramId instagramId = null;
 
   
   /**
@@ -456,6 +458,23 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
   }
 
 
+  /**
+   **/
+  public ExternalContactsContactChangedTopicContact instagramId(ExternalContactsContactChangedTopicInstagramId instagramId) {
+    this.instagramId = instagramId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("instagramId")
+  public ExternalContactsContactChangedTopicInstagramId getInstagramId() {
+    return instagramId;
+  }
+  public void setInstagramId(ExternalContactsContactChangedTopicInstagramId instagramId) {
+    this.instagramId = instagramId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -486,12 +505,13 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
             Objects.equals(this.twitterId, externalContactsContactChangedTopicContact.twitterId) &&
             Objects.equals(this.lineId, externalContactsContactChangedTopicContact.lineId) &&
             Objects.equals(this.whatsAppId, externalContactsContactChangedTopicContact.whatsAppId) &&
-            Objects.equals(this.facebookId, externalContactsContactChangedTopicContact.facebookId);
+            Objects.equals(this.facebookId, externalContactsContactChangedTopicContact.facebookId) &&
+            Objects.equals(this.instagramId, externalContactsContactChangedTopicContact.instagramId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId);
+    return Objects.hash(id, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId);
   }
 
   @Override
@@ -520,6 +540,7 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
     sb.append("    lineId: ").append(toIndentedString(lineId)).append("\n");
     sb.append("    whatsAppId: ").append(toIndentedString(whatsAppId)).append("\n");
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
+    sb.append("    instagramId: ").append(toIndentedString(instagramId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

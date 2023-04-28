@@ -77,14 +77,14 @@ public class WrapupCode  implements Serializable {
 
 
   /**
-   * Date when the assistant wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * Date when the wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public WrapupCode dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Date when the assistant wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "Date when the wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -95,14 +95,14 @@ public class WrapupCode  implements Serializable {
 
 
   /**
-   * Date when the wrapup-code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * Date when the wrap-up code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public WrapupCode dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Date when the wrapup-code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "Date when the wrap-up code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -113,14 +113,14 @@ public class WrapupCode  implements Serializable {
 
 
   /**
-   * The wrap-up code name.
+   * The ID of the user that created the wrap-up code.
    **/
   public WrapupCode createdBy(String createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The wrap-up code name.")
+  @ApiModelProperty(example = "null", value = "The ID of the user that created the wrap-up code.")
   @JsonProperty("createdBy")
   public String getCreatedBy() {
     return createdBy;
@@ -131,13 +131,14 @@ public class WrapupCode  implements Serializable {
 
 
   /**
+   * The ID of the user that modified the wrap-up code.
    **/
   public WrapupCode modifiedBy(String modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the user that modified the wrap-up code.")
   @JsonProperty("modifiedBy")
   public String getModifiedBy() {
     return modifiedBy;

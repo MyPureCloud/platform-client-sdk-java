@@ -33,14 +33,14 @@ public class ConversationContentNotificationTemplate  implements Serializable {
 
   
   /**
-   * The messaging provider template ID. For WhatsApp, 'namespace@name'.
+   * The identifier of the message template in 'your-namespace@your-template-id/name' format. For External vendor (e.g WhatsApp), 'your-namespace@your-template-name'. For GenesysCloud canned response message template use 'cannedresponse' as your-namespace and use response ID as your-template-id (e.g. response ID=1234 then 'cannedresponse@1234')
    **/
   public ConversationContentNotificationTemplate id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The messaging provider template ID. For WhatsApp, 'namespace@name'.")
+  @ApiModelProperty(example = "null", value = "The identifier of the message template in 'your-namespace@your-template-id/name' format. For External vendor (e.g WhatsApp), 'your-namespace@your-template-name'. For GenesysCloud canned response message template use 'cannedresponse' as your-namespace and use response ID as your-template-id (e.g. response ID=1234 then 'cannedresponse@1234')")
   @JsonProperty("id")
   public String getId() {
     return id;
