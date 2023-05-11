@@ -36,6 +36,7 @@ title: ReportingExportJobResponse
 | **recipientEmails** | <!----><!---->**List&lt;String&gt;**<!----> | The list of email recipients for the exports |  [optional] |
 | **emailStatuses** | <!---->[**Map&lt;String, InnerEnum&gt;**](#InnerEnum)<!----> | The status of individual email addresses as a map |  [optional] |
 | **emailErrorDescription** | <!----><!---->**String**<!----> | The optional error message in case the export fail to email |  [optional] |
+| **includeDurationFormatInHeader** | <!----><!---->**Boolean**<!----> | Indicates whether to include selected duration format to the column headers |  [optional] |
 | **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
@@ -122,6 +123,7 @@ title: ReportingExportJobResponse
 | LANDING_PAGE | &quot;LANDING_PAGE&quot; | 
 | DASHBOARD_SUMMARY | &quot;DASHBOARD_SUMMARY&quot; | 
 | DASHBOARD_DETAIL | &quot;DASHBOARD_DETAIL&quot; | 
+| DASHBOARD_USERS | &quot;DASHBOARD_USERS&quot; | 
 | JOURNEY_ACTION_MAP_SUMMARY_VIEW | &quot;JOURNEY_ACTION_MAP_SUMMARY_VIEW&quot; | 
 | JOURNEY_OUTCOME_SUMMARY_VIEW | &quot;JOURNEY_OUTCOME_SUMMARY_VIEW&quot; | 
 | JOURNEY_SEGMENT_SUMMARY_VIEW | &quot;JOURNEY_SEGMENT_SUMMARY_VIEW&quot; | 

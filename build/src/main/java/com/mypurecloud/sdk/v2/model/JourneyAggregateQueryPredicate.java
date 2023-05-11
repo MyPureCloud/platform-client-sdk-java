@@ -128,6 +128,8 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     TOUCHPOINTCONVERSATIONID("touchpointConversationId"),
     TOUCHPOINTINTERACTIONTYPE("touchpointInteractionType"),
     TOUCHPOINTQUEUEID("touchpointQueueId"),
+    TOUCHPOINTREQUESTEDROUTING("touchpointRequestedRouting"),
+    TOUCHPOINTUSEDROUTING("touchpointUsedRouting"),
     TOUCHPOINTWRAPUPCODE("touchpointWrapupCode");
 
     private String value;

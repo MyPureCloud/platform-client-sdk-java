@@ -3347,7 +3347,7 @@ QualityApi apiInstance = new QualityApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String evaluationId = "evaluationId_example"; // String | evaluationId
 Evaluation body = new Evaluation(); // Evaluation | evaluation
-String expand = "expand_example"; // String | evaluatorId, evaluationForm
+String expand = "expand_example"; // String | evaluatorId, evaluationForm, assignee
 try {
     EvaluationResponse result = apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body, expand);
     System.out.println(result);
@@ -3365,7 +3365,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **evaluationId** | **String**| evaluationId | 
 | **body** | [**Evaluation**](Evaluation.html)| evaluation | 
-| **expand** | **String**| evaluatorId, evaluationForm | [optional] 
+| **expand** | **String**| evaluatorId, evaluationForm, assignee | [optional] 
 {: class="table-striped"}
 
 

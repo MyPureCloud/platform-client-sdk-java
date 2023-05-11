@@ -36,11 +36,13 @@ title: EvaluationAggregateQueryPredicate
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASSIGNEEID | &quot;assigneeId&quot; | 
 | CALIBRATIONID | &quot;calibrationId&quot; | 
 | CONTEXTID | &quot;contextId&quot; | 
 | CONVERSATIONID | &quot;conversationId&quot; | 
 | CONVERSATIONSTART | &quot;conversationStart&quot; | 
 | DIVISIONID | &quot;divisionId&quot; | 
+| EVALUATIONCONTEXTID | &quot;evaluationContextId&quot; | 
 | EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; | 
 | EVALUATIONID | &quot;evaluationId&quot; | 
 | EVALUATIONRELEASEDATE | &quot;evaluationReleaseDate&quot; | 

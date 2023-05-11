@@ -4419,7 +4419,7 @@ public class ExternalContactsApiAsync {
 
   /**
    * Merge two contacts into a new contact record
-   * 
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4453,7 +4453,7 @@ public class ExternalContactsApiAsync {
 
   /**
    * Merge two contacts into a new contact record
-   * 
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

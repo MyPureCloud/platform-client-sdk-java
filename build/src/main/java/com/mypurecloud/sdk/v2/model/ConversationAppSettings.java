@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AutoStart;
+import com.mypurecloud.sdk.v2.model.ConversationClearSettings;
 import com.mypurecloud.sdk.v2.model.ConversationDisconnectSettings;
 import com.mypurecloud.sdk.v2.model.Humanize;
 import com.mypurecloud.sdk.v2.model.Markdown;
@@ -80,6 +81,7 @@ public class ConversationAppSettings  implements Serializable {
   private AutoStart autoStart = null;
   private Markdown markdown = null;
   private ConversationDisconnectSettings conversationDisconnect = null;
+  private ConversationClearSettings conversationClear = null;
   private Humanize humanize = null;
 
   
@@ -192,6 +194,24 @@ public class ConversationAppSettings  implements Serializable {
 
 
   /**
+   * The conversation clear settings for the messenger app
+   **/
+  public ConversationAppSettings conversationClear(ConversationClearSettings conversationClear) {
+    this.conversationClear = conversationClear;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The conversation clear settings for the messenger app")
+  @JsonProperty("conversationClear")
+  public ConversationClearSettings getConversationClear() {
+    return conversationClear;
+  }
+  public void setConversationClear(ConversationClearSettings conversationClear) {
+    this.conversationClear = conversationClear;
+  }
+
+
+  /**
    * The humanize conversations settings for the messenger app
    **/
   public ConversationAppSettings humanize(Humanize humanize) {
@@ -225,12 +245,13 @@ public class ConversationAppSettings  implements Serializable {
             Objects.equals(this.autoStart, conversationAppSettings.autoStart) &&
             Objects.equals(this.markdown, conversationAppSettings.markdown) &&
             Objects.equals(this.conversationDisconnect, conversationAppSettings.conversationDisconnect) &&
+            Objects.equals(this.conversationClear, conversationAppSettings.conversationClear) &&
             Objects.equals(this.humanize, conversationAppSettings.humanize);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(showAgentTypingIndicator, showUserTypingIndicator, autoStartType, autoStart, markdown, conversationDisconnect, humanize);
+    return Objects.hash(showAgentTypingIndicator, showUserTypingIndicator, autoStartType, autoStart, markdown, conversationDisconnect, conversationClear, humanize);
   }
 
   @Override
@@ -244,6 +265,7 @@ public class ConversationAppSettings  implements Serializable {
     sb.append("    autoStart: ").append(toIndentedString(autoStart)).append("\n");
     sb.append("    markdown: ").append(toIndentedString(markdown)).append("\n");
     sb.append("    conversationDisconnect: ").append(toIndentedString(conversationDisconnect)).append("\n");
+    sb.append("    conversationClear: ").append(toIndentedString(conversationClear)).append("\n");
     sb.append("    humanize: ").append(toIndentedString(humanize)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -142,6 +142,7 @@ public class ReportingExportJobRequest  implements Serializable {
     LANDING_PAGE("LANDING_PAGE"),
     DASHBOARD_SUMMARY("DASHBOARD_SUMMARY"),
     DASHBOARD_DETAIL("DASHBOARD_DETAIL"),
+    DASHBOARD_USERS("DASHBOARD_USERS"),
     JOURNEY_ACTION_MAP_SUMMARY_VIEW("JOURNEY_ACTION_MAP_SUMMARY_VIEW"),
     JOURNEY_OUTCOME_SUMMARY_VIEW("JOURNEY_OUTCOME_SUMMARY_VIEW"),
     JOURNEY_SEGMENT_SUMMARY_VIEW("JOURNEY_SEGMENT_SUMMARY_VIEW"),
@@ -279,6 +280,7 @@ public class ReportingExportJobRequest  implements Serializable {
   private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
   private Boolean hasCustomParticipantAttributes = null;
   private List<String> recipientEmails = new ArrayList<String>();
+  private Boolean includeDurationFormatInHeader = null;
 
   
   /**
@@ -605,6 +607,24 @@ public class ReportingExportJobRequest  implements Serializable {
   }
 
 
+  /**
+   * Indicates whether to include selected duration format to the column headers
+   **/
+  public ReportingExportJobRequest includeDurationFormatInHeader(Boolean includeDurationFormatInHeader) {
+    this.includeDurationFormatInHeader = includeDurationFormatInHeader;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether to include selected duration format to the column headers")
+  @JsonProperty("includeDurationFormatInHeader")
+  public Boolean getIncludeDurationFormatInHeader() {
+    return includeDurationFormatInHeader;
+  }
+  public void setIncludeDurationFormatInHeader(Boolean includeDurationFormatInHeader) {
+    this.includeDurationFormatInHeader = includeDurationFormatInHeader;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -632,12 +652,13 @@ public class ReportingExportJobRequest  implements Serializable {
             Objects.equals(this.csvDelimiter, reportingExportJobRequest.csvDelimiter) &&
             Objects.equals(this.selectedColumns, reportingExportJobRequest.selectedColumns) &&
             Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobRequest.hasCustomParticipantAttributes) &&
-            Objects.equals(this.recipientEmails, reportingExportJobRequest.recipientEmails);
+            Objects.equals(this.recipientEmails, reportingExportJobRequest.recipientEmails) &&
+            Objects.equals(this.includeDurationFormatInHeader, reportingExportJobRequest.includeDurationFormatInHeader);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails);
+    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, includeDurationFormatInHeader);
   }
 
   @Override
@@ -663,6 +684,7 @@ public class ReportingExportJobRequest  implements Serializable {
     sb.append("    selectedColumns: ").append(toIndentedString(selectedColumns)).append("\n");
     sb.append("    hasCustomParticipantAttributes: ").append(toIndentedString(hasCustomParticipantAttributes)).append("\n");
     sb.append("    recipientEmails: ").append(toIndentedString(recipientEmails)).append("\n");
+    sb.append("    includeDurationFormatInHeader: ").append(toIndentedString(includeDurationFormatInHeader)).append("\n");
     sb.append("}");
     return sb.toString();
   }

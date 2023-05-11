@@ -117,6 +117,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsCobrowsesessionParticipantAttributes**](ConversationsApi.html#patchConversationsCobrowsesessionParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsCobrowsesessionParticipantCommunication**](ConversationsApi.html#patchConversationsCobrowsesessionParticipantCommunication) | Update conversation participant's communication by disconnecting it. |
 | [**patchConversationsEmail**](ConversationsApi.html#patchConversationsEmail) | Update a conversation by disconnecting all of the participants |
+| [**patchConversationsEmailMessagesDraft**](ConversationsApi.html#patchConversationsEmailMessagesDraft) | Reset conversation draft to its initial state and/or auto-fill draft content |
 | [**patchConversationsEmailParticipant**](ConversationsApi.html#patchConversationsEmailParticipant) | Update conversation participant |
 | [**patchConversationsEmailParticipantAttributes**](ConversationsApi.html#patchConversationsEmailParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsEmailParticipantCommunication**](ConversationsApi.html#patchConversationsEmailParticipantCommunication) | Update conversation participant's communication by disconnecting it. |
@@ -7107,6 +7108,72 @@ try {
 ### Return type
 
 [**Conversation**](Conversation.html)
+
+<a name="patchConversationsEmailMessagesDraft"></a>
+
+# **patchConversationsEmailMessagesDraft**
+
+
+
+> [EmailMessage](EmailMessage.html) patchConversationsEmailMessagesDraft(conversationId, autoFill, discard, body)
+
+Reset conversation draft to its initial state and/or auto-fill draft content
+
+Wraps PATCH /api/v2/conversations/emails/{conversationId}/messages/draft  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+Boolean autoFill = true; // Boolean | autoFill
+Boolean discard = true; // Boolean | discard
+DraftManipulationRequest body = new DraftManipulationRequest(); // DraftManipulationRequest | Draft Manipulation Request
+try {
+    EmailMessage result = apiInstance.patchConversationsEmailMessagesDraft(conversationId, autoFill, discard, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsEmailMessagesDraft");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **autoFill** | **Boolean**| autoFill | [optional] 
+| **discard** | **Boolean**| discard | [optional] 
+| **body** | [**DraftManipulationRequest**](DraftManipulationRequest.html)| Draft Manipulation Request | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailMessage**](EmailMessage.html)
 
 <a name="patchConversationsEmailParticipant"></a>
 

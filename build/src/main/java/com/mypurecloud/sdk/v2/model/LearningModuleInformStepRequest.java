@@ -78,6 +78,8 @@ public class LearningModuleInformStepRequest  implements Serializable {
   private String sharingUri = null;
   private String contentType = null;
   private Integer order = null;
+  private String displayName = null;
+  private String description = null;
 
   
   /**
@@ -188,6 +190,42 @@ public class LearningModuleInformStepRequest  implements Serializable {
   }
 
 
+  /**
+   * The display name for the inform step
+   **/
+  public LearningModuleInformStepRequest displayName(String displayName) {
+    this.displayName = displayName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The display name for the inform step")
+  @JsonProperty("displayName")
+  public String getDisplayName() {
+    return displayName;
+  }
+  public void setDisplayName(String displayName) {
+    this.displayName = displayName;
+  }
+
+
+  /**
+   * The description for the inform step
+   **/
+  public LearningModuleInformStepRequest description(String description) {
+    this.description = description;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The description for the inform step")
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -203,12 +241,14 @@ public class LearningModuleInformStepRequest  implements Serializable {
             Objects.equals(this.value, learningModuleInformStepRequest.value) &&
             Objects.equals(this.sharingUri, learningModuleInformStepRequest.sharingUri) &&
             Objects.equals(this.contentType, learningModuleInformStepRequest.contentType) &&
-            Objects.equals(this.order, learningModuleInformStepRequest.order);
+            Objects.equals(this.order, learningModuleInformStepRequest.order) &&
+            Objects.equals(this.displayName, learningModuleInformStepRequest.displayName) &&
+            Objects.equals(this.description, learningModuleInformStepRequest.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, value, sharingUri, contentType, order);
+    return Objects.hash(type, name, value, sharingUri, contentType, order, displayName, description);
   }
 
   @Override
@@ -222,6 +262,8 @@ public class LearningModuleInformStepRequest  implements Serializable {
     sb.append("    sharingUri: ").append(toIndentedString(sharingUri)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
+    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();
   }

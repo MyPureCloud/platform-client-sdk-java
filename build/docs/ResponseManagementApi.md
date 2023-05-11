@@ -216,7 +216,7 @@ null (empty response body)
 
 
 
-> [LibraryEntityListing](LibraryEntityListing.html) getResponsemanagementLibraries(pageNumber, pageSize, messagingTemplateFilter)
+> [LibraryEntityListing](LibraryEntityListing.html) getResponsemanagementLibraries(pageNumber, pageSize, messagingTemplateFilter, libraryPrefix)
 
 Gets a list of existing response libraries.
 
@@ -251,8 +251,9 @@ ResponseManagementApi apiInstance = new ResponseManagementApi();
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String messagingTemplateFilter = "messagingTemplateFilter_example"; // String | Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel
+String libraryPrefix = "libraryPrefix_example"; // String | Returns a list of libraries that contain the prefix provided
 try {
-    LibraryEntityListing result = apiInstance.getResponsemanagementLibraries(pageNumber, pageSize, messagingTemplateFilter);
+    LibraryEntityListing result = apiInstance.getResponsemanagementLibraries(pageNumber, pageSize, messagingTemplateFilter, libraryPrefix);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResponseManagementApi#getResponsemanagementLibraries");
@@ -268,6 +269,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **messagingTemplateFilter** | **String**| Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel | [optional]<br />**Values**: whatsapp 
+| **libraryPrefix** | **String**| Returns a list of libraries that contain the prefix provided | [optional] 
 {: class="table-striped"}
 
 

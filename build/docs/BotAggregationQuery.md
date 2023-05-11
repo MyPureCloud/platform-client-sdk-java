@@ -41,6 +41,7 @@ title: BotAggregationQuery
 | CONVERSATIONID | &quot;conversationId&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | KNOWLEDGEBASEID | &quot;knowledgeBaseId&quot; |
+| LANGUAGECODE | &quot;languageCode&quot; |
 | LASTACTIONID | &quot;lastActionId&quot; |
 | LASTINPUTACTIONID | &quot;lastInputActionId&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |

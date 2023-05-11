@@ -29,6 +29,7 @@ import java.io.Serializable;
 
 public class AnalyticsConversation  implements Serializable {
   
+  private Date conferenceStart = null;
   private Date conversationEnd = null;
   private String conversationId = null;
 
@@ -157,6 +158,24 @@ public class AnalyticsConversation  implements Serializable {
   private List<AnalyticsParticipant> participants = new ArrayList<AnalyticsParticipant>();
 
   
+  /**
+   * The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public AnalyticsConversation conferenceStart(Date conferenceStart) {
+    this.conferenceStart = conferenceStart;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("conferenceStart")
+  public Date getConferenceStart() {
+    return conferenceStart;
+  }
+  public void setConferenceStart(Date conferenceStart) {
+    this.conferenceStart = conferenceStart;
+  }
+
+
   /**
    * The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -455,7 +474,8 @@ public class AnalyticsConversation  implements Serializable {
     }
     AnalyticsConversation analyticsConversation = (AnalyticsConversation) o;
 
-    return Objects.equals(this.conversationEnd, analyticsConversation.conversationEnd) &&
+    return Objects.equals(this.conferenceStart, analyticsConversation.conferenceStart) &&
+            Objects.equals(this.conversationEnd, analyticsConversation.conversationEnd) &&
             Objects.equals(this.conversationId, analyticsConversation.conversationId) &&
             Objects.equals(this.conversationInitiator, analyticsConversation.conversationInitiator) &&
             Objects.equals(this.conversationStart, analyticsConversation.conversationStart) &&
@@ -475,7 +495,7 @@ public class AnalyticsConversation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationEnd, conversationId, conversationInitiator, conversationStart, customerParticipation, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, selfServed, evaluations, surveys, resolutions, participants);
+    return Objects.hash(conferenceStart, conversationEnd, conversationId, conversationInitiator, conversationStart, customerParticipation, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, selfServed, evaluations, surveys, resolutions, participants);
   }
 
   @Override
@@ -483,6 +503,7 @@ public class AnalyticsConversation  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsConversation {\n");
     
+    sb.append("    conferenceStart: ").append(toIndentedString(conferenceStart)).append("\n");
     sb.append("    conversationEnd: ").append(toIndentedString(conversationEnd)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    conversationInitiator: ").append(toIndentedString(conversationInitiator)).append("\n");

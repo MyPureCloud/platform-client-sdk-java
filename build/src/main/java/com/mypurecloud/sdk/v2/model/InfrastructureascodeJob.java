@@ -28,6 +28,7 @@ public class InfrastructureascodeJob  implements Serializable {
   
   private String id = null;
   private Boolean dryRun = null;
+  private String acceleratorId = null;
   private Date dateSubmitted = null;
   private UserReference submittedBy = null;
 
@@ -112,6 +113,13 @@ public class InfrastructureascodeJob  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "acceleratorId")
+  @JsonProperty("acceleratorId")
+  public String getAcceleratorId() {
+    return acceleratorId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "dateSubmitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateSubmitted")
   public Date getDateSubmitted() {
@@ -166,6 +174,7 @@ public class InfrastructureascodeJob  implements Serializable {
 
     return Objects.equals(this.id, infrastructureascodeJob.id) &&
             Objects.equals(this.dryRun, infrastructureascodeJob.dryRun) &&
+            Objects.equals(this.acceleratorId, infrastructureascodeJob.acceleratorId) &&
             Objects.equals(this.dateSubmitted, infrastructureascodeJob.dateSubmitted) &&
             Objects.equals(this.submittedBy, infrastructureascodeJob.submittedBy) &&
             Objects.equals(this.status, infrastructureascodeJob.status) &&
@@ -176,7 +185,7 @@ public class InfrastructureascodeJob  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dryRun, dateSubmitted, submittedBy, status, errorInfo, results, selfUri);
+    return Objects.hash(id, dryRun, acceleratorId, dateSubmitted, submittedBy, status, errorInfo, results, selfUri);
   }
 
   @Override
@@ -186,6 +195,7 @@ public class InfrastructureascodeJob  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
+    sb.append("    acceleratorId: ").append(toIndentedString(acceleratorId)).append("\n");
     sb.append("    dateSubmitted: ").append(toIndentedString(dateSubmitted)).append("\n");
     sb.append("    submittedBy: ").append(toIndentedString(submittedBy)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

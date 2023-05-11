@@ -173,6 +173,7 @@ title: ViewFilter
 | **hasSensitiveData** | <!----><!---->**Boolean**<!----> | Filter to indicate the transcript contains sensitive data. |  [optional] |
 | **subPath** | <!----><!---->**String**<!----> | Filter for Sub Path |  [optional] |
 | **userState** | [**UserStateEnum**](#UserStateEnum)<!----> | The user supplied state value in the view |  [optional] |
+| **isClearedByCustomer** | <!----><!---->**Boolean**<!----> | Filter to indicate if the customer cleared the conversation. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -508,6 +509,7 @@ title: ViewFilter
 | DISCONNECTSESSIONEXPIRED | &quot;DisconnectSessionExpired&quot; |
 | DISCONNECTERROR | &quot;DisconnectError&quot; |
 | DISCONNECTRECOGNITIONFAILURE | &quot;DisconnectRecognitionFailure&quot; |
+| TRANSFERTOACD | &quot;TransferToACD&quot; |
 {: class="table table-striped"}
 
 

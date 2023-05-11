@@ -19,6 +19,7 @@ title: OutboundSettings
 | **abandonSeconds** | <!----><!---->**Double**<!----> | The number of seconds used to determine if a call is abandoned |  [optional] |
 | **complianceAbandonRateDenominator** | [**ComplianceAbandonRateDenominatorEnum**](#ComplianceAbandonRateDenominatorEnum)<!----> | The denominator to be used in determining the compliance abandon rate |  [optional] |
 | **automaticTimeZoneMapping** | <!----><!---->[**AutomaticTimeZoneMappingSettings**](AutomaticTimeZoneMappingSettings.html)<!----> | The settings for automatic time zone mapping. Note that changing these settings will change them for both voice and messaging campaigns. |  [optional] |
+| **rescheduleTimeZoneSkippedContacts** | <!----><!---->**Boolean**<!----> | Whether or not to reschedule time-zone blocked contacts |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

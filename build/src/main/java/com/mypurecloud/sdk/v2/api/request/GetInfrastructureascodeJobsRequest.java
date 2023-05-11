@@ -21,6 +21,8 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AcceleratorInput;
+import com.mypurecloud.sdk.v2.model.AcceleratorList;
+import com.mypurecloud.sdk.v2.model.AcceleratorSpecification;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.InfrastructureascodeJob;
 
@@ -72,6 +74,7 @@ public class GetInfrastructureascodeJobsRequest {
 		ID("id"),
 		DATESUBMITTED("dateSubmitted"),
 		SUBMITTEDBY("submittedBy"),
+		ACCELERATORID("acceleratorId"),
 		STATUS("status");
 
 		private String value;
@@ -144,6 +147,82 @@ public class GetInfrastructureascodeJobsRequest {
 		}
 	}
 
+	private String acceleratorId;
+	public String getAcceleratorId() {
+		return this.acceleratorId;
+	}
+
+	public void setAcceleratorId(String acceleratorId) {
+		this.acceleratorId = acceleratorId;
+	}
+
+	public GetInfrastructureascodeJobsRequest withAcceleratorId(String acceleratorId) {
+	    this.setAcceleratorId(acceleratorId);
+	    return this;
+	} 
+
+	private String submittedBy;
+	public String getSubmittedBy() {
+		return this.submittedBy;
+	}
+
+	public void setSubmittedBy(String submittedBy) {
+		this.submittedBy = submittedBy;
+	}
+
+	public GetInfrastructureascodeJobsRequest withSubmittedBy(String submittedBy) {
+	    this.setSubmittedBy(submittedBy);
+	    return this;
+	} 
+
+	private String status;
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public GetInfrastructureascodeJobsRequest withStatus(String status) {
+	    this.setStatus(status);
+	    return this;
+	} 
+
+	public enum statusValues { 
+		CREATED("Created"),
+		QUEUED("Queued"),
+		RUNNING("Running"),
+		COMPLETE("Complete"),
+		FAILED("Failed"),
+		INCOMPLETE("Incomplete");
+
+		private String value;
+
+		statusValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static statusValues fromString(String key) {
+			if (key == null) return null;
+
+			for (statusValues value : statusValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return statusValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -178,6 +257,15 @@ public class GetInfrastructureascodeJobsRequest {
         
 
                 .withQueryParameters("sortOrder", "", sortOrder)
+        
+
+                .withQueryParameters("acceleratorId", "", acceleratorId)
+        
+
+                .withQueryParameters("submittedBy", "", submittedBy)
+        
+
+                .withQueryParameters("status", "", status)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -234,6 +322,30 @@ public class GetInfrastructureascodeJobsRequest {
 		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
+		    return this;
+		}
+
+		public Builder withAcceleratorId(String acceleratorId) {
+			request.setAcceleratorId(acceleratorId);
+			return this;
+		}
+
+		public Builder withSubmittedBy(String submittedBy) {
+			request.setSubmittedBy(submittedBy);
+			return this;
+		}
+
+		public Builder withStatus(String status) {
+			request.setStatus(status);
+			return this;
+		}
+
+
+
+		
+		public Builder withStatus(statusValues status) {
+		    request.setStatus(status.toString());
 
 		    return this;
 		}

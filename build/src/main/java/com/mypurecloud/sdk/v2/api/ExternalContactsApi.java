@@ -4772,7 +4772,7 @@ public class ExternalContactsApi {
 
   /**
    * Merge two contacts into a new contact record
-   * 
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
    * @param body MergeRequest (required)
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
@@ -4784,7 +4784,7 @@ public class ExternalContactsApi {
 
   /**
    * Merge two contacts into a new contact record
-   * 
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
    * @param body MergeRequest (required)
    * @return ExternalContact
    * @throws IOException if the request fails to be processed
@@ -4802,7 +4802,7 @@ public class ExternalContactsApi {
 
   /**
    * Merge two contacts into a new contact record
-   * 
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
    * @param request The request object
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
@@ -4821,7 +4821,7 @@ public class ExternalContactsApi {
 
   /**
    * Merge two contacts into a new contact record
-   * 
+   * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -71,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | Get Dialer Event |
 | [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | Query Event Logs |
 | [**getOutboundMessagingcampaign**](OutboundApi.html#getOutboundMessagingcampaign) | Get an Outbound Messaging Campaign |
+| [**getOutboundMessagingcampaignDiagnostics**](OutboundApi.html#getOutboundMessagingcampaignDiagnostics) | Get messaging campaign diagnostics |
 | [**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | Get messaging campaign's progress |
 | [**getOutboundMessagingcampaigns**](OutboundApi.html#getOutboundMessagingcampaigns) | Query a list of Messaging Campaigns |
 | [**getOutboundMessagingcampaignsDivisionview**](OutboundApi.html#getOutboundMessagingcampaignsDivisionview) | Get a basic Messaging Campaign information object |
@@ -4300,6 +4301,68 @@ try {
 ### Return type
 
 [**MessagingCampaign**](MessagingCampaign.html)
+
+<a name="getOutboundMessagingcampaignDiagnostics"></a>
+
+# **getOutboundMessagingcampaignDiagnostics**
+
+
+
+> [MessagingCampaignDiagnostics](MessagingCampaignDiagnostics.html) getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
+
+Get messaging campaign diagnostics
+
+Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+* outbound:emailCampaign:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+try {
+    MessagingCampaignDiagnostics result = apiInstance.getOutboundMessagingcampaignDiagnostics(messagingCampaignId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundMessagingcampaignDiagnostics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| The Messaging Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingCampaignDiagnostics**](MessagingCampaignDiagnostics.html)
 
 <a name="getOutboundMessagingcampaignProgress"></a>
 

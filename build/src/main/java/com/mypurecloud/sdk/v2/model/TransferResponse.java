@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TransferDestination;
 import com.mypurecloud.sdk.v2.model.TransferInitiator;
+import com.mypurecloud.sdk.v2.model.TransferResponseModifiedBy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -81,6 +82,7 @@ public class TransferResponse  implements Serializable {
   private StateEnum state = null;
   private Date dateIssued = null;
   private TransferInitiator initiator = null;
+  private TransferResponseModifiedBy modifiedBy = null;
   private TransferDestination destination = null;
 
   private static class TransferTypeEnumDeserializer extends StdDeserializer<TransferTypeEnum> {
@@ -205,6 +207,24 @@ public class TransferResponse  implements Serializable {
 
 
   /**
+   * The user or entity that modified the command.
+   **/
+  public TransferResponse modifiedBy(TransferResponseModifiedBy modifiedBy) {
+    this.modifiedBy = modifiedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user or entity that modified the command.")
+  @JsonProperty("modifiedBy")
+  public TransferResponseModifiedBy getModifiedBy() {
+    return modifiedBy;
+  }
+  public void setModifiedBy(TransferResponseModifiedBy modifiedBy) {
+    this.modifiedBy = modifiedBy;
+  }
+
+
+  /**
    * The destination of the command.
    **/
   public TransferResponse destination(TransferDestination destination) {
@@ -254,13 +274,14 @@ public class TransferResponse  implements Serializable {
             Objects.equals(this.state, transferResponse.state) &&
             Objects.equals(this.dateIssued, transferResponse.dateIssued) &&
             Objects.equals(this.initiator, transferResponse.initiator) &&
+            Objects.equals(this.modifiedBy, transferResponse.modifiedBy) &&
             Objects.equals(this.destination, transferResponse.destination) &&
             Objects.equals(this.transferType, transferResponse.transferType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, dateIssued, initiator, destination, transferType);
+    return Objects.hash(id, state, dateIssued, initiator, modifiedBy, destination, transferType);
   }
 
   @Override
@@ -272,6 +293,7 @@ public class TransferResponse  implements Serializable {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    dateIssued: ").append(toIndentedString(dateIssued)).append("\n");
     sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
+    sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("}");

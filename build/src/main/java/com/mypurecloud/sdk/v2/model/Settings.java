@@ -23,6 +23,7 @@ public class Settings  implements Serializable {
   
   private Boolean communicationBasedACW = null;
   private Boolean includeNonAgentConversationSummary = null;
+  private Boolean allowCallbackQueueSelection = null;
 
   
   /**
@@ -61,6 +62,24 @@ public class Settings  implements Serializable {
   }
 
 
+  /**
+   * Allow Callback Queue Selection
+   **/
+  public Settings allowCallbackQueueSelection(Boolean allowCallbackQueueSelection) {
+    this.allowCallbackQueueSelection = allowCallbackQueueSelection;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Allow Callback Queue Selection")
+  @JsonProperty("allowCallbackQueueSelection")
+  public Boolean getAllowCallbackQueueSelection() {
+    return allowCallbackQueueSelection;
+  }
+  public void setAllowCallbackQueueSelection(Boolean allowCallbackQueueSelection) {
+    this.allowCallbackQueueSelection = allowCallbackQueueSelection;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +91,13 @@ public class Settings  implements Serializable {
     Settings settings = (Settings) o;
 
     return Objects.equals(this.communicationBasedACW, settings.communicationBasedACW) &&
-            Objects.equals(this.includeNonAgentConversationSummary, settings.includeNonAgentConversationSummary);
+            Objects.equals(this.includeNonAgentConversationSummary, settings.includeNonAgentConversationSummary) &&
+            Objects.equals(this.allowCallbackQueueSelection, settings.allowCallbackQueueSelection);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(communicationBasedACW, includeNonAgentConversationSummary);
+    return Objects.hash(communicationBasedACW, includeNonAgentConversationSummary, allowCallbackQueueSelection);
   }
 
   @Override
@@ -87,6 +107,7 @@ public class Settings  implements Serializable {
     
     sb.append("    communicationBasedACW: ").append(toIndentedString(communicationBasedACW)).append("\n");
     sb.append("    includeNonAgentConversationSummary: ").append(toIndentedString(includeNonAgentConversationSummary)).append("\n");
+    sb.append("    allowCallbackQueueSelection: ").append(toIndentedString(allowCallbackQueueSelection)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -290,14 +290,14 @@ public class Session  implements Serializable {
 
 
   /**
-   * Session types indicate the type or category of sessions (e.g. web, ticket, delivery, atm).
+   * Session types indicate the type or category of sessions (e.g. web, app).
    **/
   public Session type(String type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Session types indicate the type or category of sessions (e.g. web, ticket, delivery, atm).")
+  @ApiModelProperty(example = "null", value = "Session types indicate the type or category of sessions (e.g. web, app).")
   @JsonProperty("type")
   public String getType() {
     return type;

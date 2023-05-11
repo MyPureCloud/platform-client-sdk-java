@@ -23,10 +23,12 @@ title: EvaluationAggregationQueryMe
 
 | Name | Value |
 | ---- | ----- |
+| ASSIGNEEID | &quot;assigneeId&quot; |
 | CALIBRATIONID | &quot;calibrationId&quot; |
 | CONTEXTID | &quot;contextId&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
+| EVALUATIONCONTEXTID | &quot;evaluationContextId&quot; |
 | EVALUATIONID | &quot;evaluationId&quot; |
 | EVALUATORID | &quot;evaluatorId&quot; |
 | FORMID | &quot;formId&quot; |

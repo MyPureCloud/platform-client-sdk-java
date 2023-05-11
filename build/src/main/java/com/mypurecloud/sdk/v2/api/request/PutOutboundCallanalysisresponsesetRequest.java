@@ -70,6 +70,7 @@ import com.mypurecloud.sdk.v2.model.ExportUri;
 import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
 import com.mypurecloud.sdk.v2.model.MessagingCampaign;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDiagnostics;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;

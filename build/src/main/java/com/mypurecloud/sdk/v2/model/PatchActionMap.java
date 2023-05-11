@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Activation;
 import com.mypurecloud.sdk.v2.model.EventCondition;
+import com.mypurecloud.sdk.v2.model.OutcomePercentileCondition;
 import com.mypurecloud.sdk.v2.model.OutcomeProbabilityCondition;
 import com.mypurecloud.sdk.v2.model.PatchAction;
 import com.mypurecloud.sdk.v2.model.PatchActionMapScheduleGroups;
@@ -37,6 +38,7 @@ public class PatchActionMap  implements Serializable {
   private List<String> triggerWithSegments = new ArrayList<String>();
   private List<EventCondition> triggerWithEventConditions = new ArrayList<EventCondition>();
   private List<OutcomeProbabilityCondition> triggerWithOutcomeProbabilityConditions = new ArrayList<OutcomeProbabilityCondition>();
+  private List<OutcomePercentileCondition> triggerWithOutcomePercentileConditions = new ArrayList<OutcomePercentileCondition>();
   private List<UrlCondition> pageUrlConditions = new ArrayList<UrlCondition>();
   private Activation activation = null;
   private Integer weight = null;
@@ -162,6 +164,24 @@ public class PatchActionMap  implements Serializable {
   }
   public void setTriggerWithOutcomeProbabilityConditions(List<OutcomeProbabilityCondition> triggerWithOutcomeProbabilityConditions) {
     this.triggerWithOutcomeProbabilityConditions = triggerWithOutcomeProbabilityConditions;
+  }
+
+
+  /**
+   * Percentile conditions for outcomes that must be satisfied to trigger the action map.
+   **/
+  public PatchActionMap triggerWithOutcomePercentileConditions(List<OutcomePercentileCondition> triggerWithOutcomePercentileConditions) {
+    this.triggerWithOutcomePercentileConditions = triggerWithOutcomePercentileConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Percentile conditions for outcomes that must be satisfied to trigger the action map.")
+  @JsonProperty("triggerWithOutcomePercentileConditions")
+  public List<OutcomePercentileCondition> getTriggerWithOutcomePercentileConditions() {
+    return triggerWithOutcomePercentileConditions;
+  }
+  public void setTriggerWithOutcomePercentileConditions(List<OutcomePercentileCondition> triggerWithOutcomePercentileConditions) {
+    this.triggerWithOutcomePercentileConditions = triggerWithOutcomePercentileConditions;
   }
 
 
@@ -369,6 +389,7 @@ public class PatchActionMap  implements Serializable {
             Objects.equals(this.triggerWithSegments, patchActionMap.triggerWithSegments) &&
             Objects.equals(this.triggerWithEventConditions, patchActionMap.triggerWithEventConditions) &&
             Objects.equals(this.triggerWithOutcomeProbabilityConditions, patchActionMap.triggerWithOutcomeProbabilityConditions) &&
+            Objects.equals(this.triggerWithOutcomePercentileConditions, patchActionMap.triggerWithOutcomePercentileConditions) &&
             Objects.equals(this.pageUrlConditions, patchActionMap.pageUrlConditions) &&
             Objects.equals(this.activation, patchActionMap.activation) &&
             Objects.equals(this.weight, patchActionMap.weight) &&
@@ -384,7 +405,7 @@ public class PatchActionMap  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, version, isActive, displayName, triggerWithSegments, triggerWithEventConditions, triggerWithOutcomeProbabilityConditions, pageUrlConditions, activation, weight, action, actionMapScheduleGroups, ignoreFrequencyCap, selfUri, createdDate, modifiedDate, startDate, endDate);
+    return Objects.hash(id, version, isActive, displayName, triggerWithSegments, triggerWithEventConditions, triggerWithOutcomeProbabilityConditions, triggerWithOutcomePercentileConditions, pageUrlConditions, activation, weight, action, actionMapScheduleGroups, ignoreFrequencyCap, selfUri, createdDate, modifiedDate, startDate, endDate);
   }
 
   @Override
@@ -399,6 +420,7 @@ public class PatchActionMap  implements Serializable {
     sb.append("    triggerWithSegments: ").append(toIndentedString(triggerWithSegments)).append("\n");
     sb.append("    triggerWithEventConditions: ").append(toIndentedString(triggerWithEventConditions)).append("\n");
     sb.append("    triggerWithOutcomeProbabilityConditions: ").append(toIndentedString(triggerWithOutcomeProbabilityConditions)).append("\n");
+    sb.append("    triggerWithOutcomePercentileConditions: ").append(toIndentedString(triggerWithOutcomePercentileConditions)).append("\n");
     sb.append("    pageUrlConditions: ").append(toIndentedString(pageUrlConditions)).append("\n");
     sb.append("    activation: ").append(toIndentedString(activation)).append("\n");
     sb.append("    weight: ").append(toIndentedString(weight)).append("\n");

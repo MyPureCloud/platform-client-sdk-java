@@ -64,6 +64,7 @@ import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.Digits;
+import com.mypurecloud.sdk.v2.model.DraftManipulationRequest;
 import com.mypurecloud.sdk.v2.model.EmailConversation;
 import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailMessage;
@@ -237,6 +238,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsCobrowsesessionParti
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCobrowsesessionParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCobrowsesessionParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailMessagesDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantCommunicationRequest;
@@ -9398,6 +9400,96 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Reset conversation draft to its initial state and/or auto-fill draft content
+   * 
+   * @param conversationId conversationId (required)
+   * @param autoFill autoFill (optional)
+   * @param discard discard (optional)
+   * @param body Draft Manipulation Request (optional)
+   * @return EmailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailMessage patchConversationsEmailMessagesDraft(String conversationId, Boolean autoFill, Boolean discard, DraftManipulationRequest body) throws IOException, ApiException {
+    return  patchConversationsEmailMessagesDraft(createPatchConversationsEmailMessagesDraftRequest(conversationId, autoFill, discard, body));
+  }
+
+  /**
+   * Reset conversation draft to its initial state and/or auto-fill draft content
+   * 
+   * @param conversationId conversationId (required)
+   * @param autoFill autoFill (optional)
+   * @param discard discard (optional)
+   * @param body Draft Manipulation Request (optional)
+   * @return EmailMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailMessage> patchConversationsEmailMessagesDraftWithHttpInfo(String conversationId, Boolean autoFill, Boolean discard, DraftManipulationRequest body) throws IOException {
+    return patchConversationsEmailMessagesDraft(createPatchConversationsEmailMessagesDraftRequest(conversationId, autoFill, discard, body).withHttpInfo());
+  }
+
+  private PatchConversationsEmailMessagesDraftRequest createPatchConversationsEmailMessagesDraftRequest(String conversationId, Boolean autoFill, Boolean discard, DraftManipulationRequest body) {
+    return PatchConversationsEmailMessagesDraftRequest.builder()
+            .withConversationId(conversationId)
+
+            .withAutoFill(autoFill)
+
+            .withDiscard(discard)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Reset conversation draft to its initial state and/or auto-fill draft content
+   * 
+   * @param request The request object
+   * @return EmailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailMessage patchConversationsEmailMessagesDraft(PatchConversationsEmailMessagesDraftRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmailMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Reset conversation draft to its initial state and/or auto-fill draft content
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailMessage> patchConversationsEmailMessagesDraft(ApiRequest<DraftManipulationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

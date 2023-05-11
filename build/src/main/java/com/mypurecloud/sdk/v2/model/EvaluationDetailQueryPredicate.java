@@ -96,6 +96,7 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
     CONTEXTID("contextId"),
     DELETED("deleted"),
     EVALUATIONID("evaluationId"),
+    EVALUATIONSTATUS("evaluationStatus"),
     EVALUATORID("evaluatorId"),
     EVENTTIME("eventTime"),
     FORMID("formId"),

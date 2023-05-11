@@ -42,6 +42,7 @@ title: EvaluationDetailQueryPredicate
 | CONTEXTID | &quot;contextId&quot; | 
 | DELETED | &quot;deleted&quot; | 
 | EVALUATIONID | &quot;evaluationId&quot; | 
+| EVALUATIONSTATUS | &quot;evaluationStatus&quot; | 
 | EVALUATORID | &quot;evaluatorId&quot; | 
 | EVENTTIME | &quot;eventTime&quot; | 
 | FORMID | &quot;formId&quot; | 

@@ -91,11 +91,13 @@ public class EvaluationAggregateQueryPredicate  implements Serializable {
  @JsonDeserialize(using = DimensionEnumDeserializer.class)
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ASSIGNEEID("assigneeId"),
     CALIBRATIONID("calibrationId"),
     CONTEXTID("contextId"),
     CONVERSATIONID("conversationId"),
     CONVERSATIONSTART("conversationStart"),
     DIVISIONID("divisionId"),
+    EVALUATIONCONTEXTID("evaluationContextId"),
     EVALUATIONCREATEDDATE("evaluationCreatedDate"),
     EVALUATIONID("evaluationId"),
     EVALUATIONRELEASEDATE("evaluationReleaseDate"),

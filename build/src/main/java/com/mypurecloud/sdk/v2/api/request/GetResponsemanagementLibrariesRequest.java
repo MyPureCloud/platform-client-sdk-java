@@ -108,6 +108,20 @@ public class GetResponsemanagementLibrariesRequest {
 		}
 	}
 
+	private String libraryPrefix;
+	public String getLibraryPrefix() {
+		return this.libraryPrefix;
+	}
+
+	public void setLibraryPrefix(String libraryPrefix) {
+		this.libraryPrefix = libraryPrefix;
+	}
+
+	public GetResponsemanagementLibrariesRequest withLibraryPrefix(String libraryPrefix) {
+	    this.setLibraryPrefix(libraryPrefix);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -139,6 +153,9 @@ public class GetResponsemanagementLibrariesRequest {
         
 
                 .withQueryParameters("messagingTemplateFilter", "", messagingTemplateFilter)
+        
+
+                .withQueryParameters("libraryPrefix", "", libraryPrefix)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -183,6 +200,11 @@ public class GetResponsemanagementLibrariesRequest {
 		    request.setMessagingTemplateFilter(messagingTemplateFilter.toString());
 
 		    return this;
+		}
+
+		public Builder withLibraryPrefix(String libraryPrefix) {
+			request.setLibraryPrefix(libraryPrefix);
+			return this;
 		}
 
 

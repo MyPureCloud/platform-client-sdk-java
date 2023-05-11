@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.ExportUri;
 import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
 import com.mypurecloud.sdk.v2.model.MessagingCampaign;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDiagnostics;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
@@ -140,6 +141,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewsReques
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignDiagnosticsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignsDivisionviewRequest;
@@ -5647,6 +5649,84 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get messaging campaign diagnostics
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @return MessagingCampaignDiagnostics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignDiagnostics getOutboundMessagingcampaignDiagnostics(String messagingCampaignId) throws IOException, ApiException {
+    return  getOutboundMessagingcampaignDiagnostics(createGetOutboundMessagingcampaignDiagnosticsRequest(messagingCampaignId));
+  }
+
+  /**
+   * Get messaging campaign diagnostics
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @return MessagingCampaignDiagnostics
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignDiagnostics> getOutboundMessagingcampaignDiagnosticsWithHttpInfo(String messagingCampaignId) throws IOException {
+    return getOutboundMessagingcampaignDiagnostics(createGetOutboundMessagingcampaignDiagnosticsRequest(messagingCampaignId).withHttpInfo());
+  }
+
+  private GetOutboundMessagingcampaignDiagnosticsRequest createGetOutboundMessagingcampaignDiagnosticsRequest(String messagingCampaignId) {
+    return GetOutboundMessagingcampaignDiagnosticsRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+
+            .build();
+  }
+
+  /**
+   * Get messaging campaign diagnostics
+   * 
+   * @param request The request object
+   * @return MessagingCampaignDiagnostics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignDiagnostics getOutboundMessagingcampaignDiagnostics(GetOutboundMessagingcampaignDiagnosticsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaignDiagnostics> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaignDiagnostics>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get messaging campaign diagnostics
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignDiagnostics> getOutboundMessagingcampaignDiagnostics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaignDiagnostics>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignDiagnostics> response = (ApiResponse<MessagingCampaignDiagnostics>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignDiagnostics> response = (ApiResponse<MessagingCampaignDiagnostics>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

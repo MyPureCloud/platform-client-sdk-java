@@ -26,6 +26,7 @@ title: ReportingExportJobRequest
 | **selectedColumns** | <!----><!---->[**List&lt;SelectedColumns&gt;**](SelectedColumns.html)<!----> | The list of ordered selected columns from the export view by the user |  [optional] |
 | **hasCustomParticipantAttributes** | <!----><!---->**Boolean**<!----> | Indicates if custom participant attributes will be exported |  [optional] |
 | **recipientEmails** | <!----><!---->**List&lt;String&gt;**<!----> | The list of email recipients for the exports |  [optional] |
+| **includeDurationFormatInHeader** | <!----><!---->**Boolean**<!----> | Indicates whether to include selected duration format to the column headers |  [optional] |
 {: class="table table-striped"}
 
 
@@ -93,6 +94,7 @@ title: ReportingExportJobRequest
 | LANDING_PAGE | &quot;LANDING_PAGE&quot; | 
 | DASHBOARD_SUMMARY | &quot;DASHBOARD_SUMMARY&quot; | 
 | DASHBOARD_DETAIL | &quot;DASHBOARD_DETAIL&quot; | 
+| DASHBOARD_USERS | &quot;DASHBOARD_USERS&quot; | 
 | JOURNEY_ACTION_MAP_SUMMARY_VIEW | &quot;JOURNEY_ACTION_MAP_SUMMARY_VIEW&quot; | 
 | JOURNEY_OUTCOME_SUMMARY_VIEW | &quot;JOURNEY_OUTCOME_SUMMARY_VIEW&quot; | 
 | JOURNEY_SEGMENT_SUMMARY_VIEW | &quot;JOURNEY_SEGMENT_SUMMARY_VIEW&quot; | 

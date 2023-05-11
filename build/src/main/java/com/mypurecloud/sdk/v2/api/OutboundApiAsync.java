@@ -63,6 +63,7 @@ import com.mypurecloud.sdk.v2.model.ExportUri;
 import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
 import com.mypurecloud.sdk.v2.model.MessagingCampaign;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDiagnostics;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
@@ -143,6 +144,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewsReques
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignDiagnosticsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignsDivisionviewRequest;
@@ -5018,6 +5020,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get messaging campaign diagnostics
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessagingCampaignDiagnostics> getOutboundMessagingcampaignDiagnosticsAsync(GetOutboundMessagingcampaignDiagnosticsRequest request, final AsyncApiCallback<MessagingCampaignDiagnostics> callback) {
+    try {
+      final SettableFuture<MessagingCampaignDiagnostics> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessagingCampaignDiagnostics>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaignDiagnostics>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaignDiagnostics> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get messaging campaign diagnostics
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessagingCampaignDiagnostics>> getOutboundMessagingcampaignDiagnosticsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessagingCampaignDiagnostics>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessagingCampaignDiagnostics>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessagingCampaignDiagnostics>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaignDiagnostics>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaignDiagnostics> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaignDiagnostics> response = (ApiResponse<MessagingCampaignDiagnostics>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaignDiagnostics> response = (ApiResponse<MessagingCampaignDiagnostics>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

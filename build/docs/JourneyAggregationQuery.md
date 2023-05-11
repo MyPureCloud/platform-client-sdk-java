@@ -63,6 +63,8 @@ title: JourneyAggregationQuery
 | TOUCHPOINTCONVERSATIONID | &quot;touchpointConversationId&quot; |
 | TOUCHPOINTINTERACTIONTYPE | &quot;touchpointInteractionType&quot; |
 | TOUCHPOINTQUEUEID | &quot;touchpointQueueId&quot; |
+| TOUCHPOINTREQUESTEDROUTING | &quot;touchpointRequestedRouting&quot; |
+| TOUCHPOINTUSEDROUTING | &quot;touchpointUsedRouting&quot; |
 | TOUCHPOINTWRAPUPCODE | &quot;touchpointWrapupCode&quot; |
 {: class="table table-striped"}
 

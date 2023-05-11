@@ -4415,7 +4415,7 @@ public class QualityApi {
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param body evaluation (required)
-   * @param expand evaluatorId, evaluationForm (optional)
+   * @param expand evaluatorId, evaluationForm, assignee (optional)
    * @return EvaluationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4430,7 +4430,7 @@ public class QualityApi {
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param body evaluation (required)
-   * @param expand evaluatorId, evaluationForm (optional)
+   * @param expand evaluatorId, evaluationForm, assignee (optional)
    * @return EvaluationResponse
    * @throws IOException if the request fails to be processed
    */

@@ -16,14 +16,11 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Station;
 import com.mypurecloud.sdk.v2.model.StationEntityListing;
-import com.mypurecloud.sdk.v2.model.StationSettings;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteStationAssociateduserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetStationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetStationsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetStationsSettingsRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchStationsSettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -257,156 +254,6 @@ public class StationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<StationEntityListing> response = (ApiResponse<StationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get an organization's StationSettings
-   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<StationSettings> getStationsSettingsAsync(GetStationsSettingsRequest request, final AsyncApiCallback<StationSettings> callback) {
-    try {
-      final SettableFuture<StationSettings> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<StationSettings>() {}, new AsyncApiCallback<ApiResponse<StationSettings>>() {
-        @Override
-        public void onCompleted(ApiResponse<StationSettings> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get an organization's StationSettings
-   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<StationSettings>> getStationsSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<StationSettings>> callback) {
-    try {
-      final SettableFuture<ApiResponse<StationSettings>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<StationSettings>() {}, new AsyncApiCallback<ApiResponse<StationSettings>>() {
-        @Override
-        public void onCompleted(ApiResponse<StationSettings> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<StationSettings> response = (ApiResponse<StationSettings>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<StationSettings> response = (ApiResponse<StationSettings>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Patch an organization's StationSettings
-   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<StationSettings> patchStationsSettingsAsync(PatchStationsSettingsRequest request, final AsyncApiCallback<StationSettings> callback) {
-    try {
-      final SettableFuture<StationSettings> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<StationSettings>() {}, new AsyncApiCallback<ApiResponse<StationSettings>>() {
-        @Override
-        public void onCompleted(ApiResponse<StationSettings> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Patch an organization's StationSettings
-   * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<StationSettings>> patchStationsSettingsAsync(ApiRequest<StationSettings> request, final AsyncApiCallback<ApiResponse<StationSettings>> callback) {
-    try {
-      final SettableFuture<ApiResponse<StationSettings>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<StationSettings>() {}, new AsyncApiCallback<ApiResponse<StationSettings>>() {
-        @Override
-        public void onCompleted(ApiResponse<StationSettings> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<StationSettings> response = (ApiResponse<StationSettings>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<StationSettings> response = (ApiResponse<StationSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

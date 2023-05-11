@@ -28,6 +28,7 @@ public class CampaignStats  implements Serializable {
   private Double adjustedCallsPerAgent = null;
   private Integer outstandingCalls = null;
   private Integer scheduledCalls = null;
+  private Integer timeZoneRescheduledCalls = null;
 
   
   @ApiModelProperty(example = "null", value = "Information regarding the campaign's connect rate")
@@ -72,6 +73,13 @@ public class CampaignStats  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Number of campaign calls currently timezone rescheduled")
+  @JsonProperty("timeZoneRescheduledCalls")
+  public Integer getTimeZoneRescheduledCalls() {
+    return timeZoneRescheduledCalls;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -87,12 +95,13 @@ public class CampaignStats  implements Serializable {
             Objects.equals(this.effectiveIdleAgents, campaignStats.effectiveIdleAgents) &&
             Objects.equals(this.adjustedCallsPerAgent, campaignStats.adjustedCallsPerAgent) &&
             Objects.equals(this.outstandingCalls, campaignStats.outstandingCalls) &&
-            Objects.equals(this.scheduledCalls, campaignStats.scheduledCalls);
+            Objects.equals(this.scheduledCalls, campaignStats.scheduledCalls) &&
+            Objects.equals(this.timeZoneRescheduledCalls, campaignStats.timeZoneRescheduledCalls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactRate, idleAgents, effectiveIdleAgents, adjustedCallsPerAgent, outstandingCalls, scheduledCalls);
+    return Objects.hash(contactRate, idleAgents, effectiveIdleAgents, adjustedCallsPerAgent, outstandingCalls, scheduledCalls, timeZoneRescheduledCalls);
   }
 
   @Override
@@ -106,6 +115,7 @@ public class CampaignStats  implements Serializable {
     sb.append("    adjustedCallsPerAgent: ").append(toIndentedString(adjustedCallsPerAgent)).append("\n");
     sb.append("    outstandingCalls: ").append(toIndentedString(outstandingCalls)).append("\n");
     sb.append("    scheduledCalls: ").append(toIndentedString(scheduledCalls)).append("\n");
+    sb.append("    timeZoneRescheduledCalls: ").append(toIndentedString(timeZoneRescheduledCalls)).append("\n");
     sb.append("}");
     return sb.toString();
   }

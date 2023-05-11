@@ -10,6 +10,7 @@ title: InfrastructureascodeJob
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **dryRun** | <!----><!---->**Boolean**<!----> | dryRun |  |
+| **acceleratorId** | <!----><!---->**String**<!----> | acceleratorId |  [optional] |
 | **dateSubmitted** | <!----><!---->[**Date**](Date.html)<!----> | dateSubmitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **submittedBy** | <!----><!---->[**UserReference**](UserReference.html)<!----> | submittedBy |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | status |  [optional] |

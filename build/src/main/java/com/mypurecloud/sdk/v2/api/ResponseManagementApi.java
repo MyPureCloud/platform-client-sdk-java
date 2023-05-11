@@ -292,12 +292,13 @@ public class ResponseManagementApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param messagingTemplateFilter Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel (optional)
+   * @param libraryPrefix Returns a list of libraries that contain the prefix provided (optional)
    * @return LibraryEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LibraryEntityListing getResponsemanagementLibraries(Integer pageNumber, Integer pageSize, String messagingTemplateFilter) throws IOException, ApiException {
-    return  getResponsemanagementLibraries(createGetResponsemanagementLibrariesRequest(pageNumber, pageSize, messagingTemplateFilter));
+  public LibraryEntityListing getResponsemanagementLibraries(Integer pageNumber, Integer pageSize, String messagingTemplateFilter, String libraryPrefix) throws IOException, ApiException {
+    return  getResponsemanagementLibraries(createGetResponsemanagementLibrariesRequest(pageNumber, pageSize, messagingTemplateFilter, libraryPrefix));
   }
 
   /**
@@ -306,20 +307,23 @@ public class ResponseManagementApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param messagingTemplateFilter Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel (optional)
+   * @param libraryPrefix Returns a list of libraries that contain the prefix provided (optional)
    * @return LibraryEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LibraryEntityListing> getResponsemanagementLibrariesWithHttpInfo(Integer pageNumber, Integer pageSize, String messagingTemplateFilter) throws IOException {
-    return getResponsemanagementLibraries(createGetResponsemanagementLibrariesRequest(pageNumber, pageSize, messagingTemplateFilter).withHttpInfo());
+  public ApiResponse<LibraryEntityListing> getResponsemanagementLibrariesWithHttpInfo(Integer pageNumber, Integer pageSize, String messagingTemplateFilter, String libraryPrefix) throws IOException {
+    return getResponsemanagementLibraries(createGetResponsemanagementLibrariesRequest(pageNumber, pageSize, messagingTemplateFilter, libraryPrefix).withHttpInfo());
   }
 
-  private GetResponsemanagementLibrariesRequest createGetResponsemanagementLibrariesRequest(Integer pageNumber, Integer pageSize, String messagingTemplateFilter) {
+  private GetResponsemanagementLibrariesRequest createGetResponsemanagementLibrariesRequest(Integer pageNumber, Integer pageSize, String messagingTemplateFilter, String libraryPrefix) {
     return GetResponsemanagementLibrariesRequest.builder()
             .withPageNumber(pageNumber)
 
             .withPageSize(pageSize)
 
             .withMessagingTemplateFilter(messagingTemplateFilter)
+
+            .withLibraryPrefix(libraryPrefix)
 
             .build();
   }

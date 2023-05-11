@@ -226,6 +226,7 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		SHIFTTRADING("ShiftTrading"),
 		SHORTTERMFORECASTS("ShortTermForecasts"),
 		BUSHORTTERMFORECASTS("BuShortTermForecasts"),
+		STAFFINGGROUPS("StaffingGroups"),
 		TIMEOFFPLANS("TimeOffPlans"),
 		TIMEOFFREQUESTS("TimeOffRequests"),
 		TIMEOFFLIMITS("TimeOffLimits"),

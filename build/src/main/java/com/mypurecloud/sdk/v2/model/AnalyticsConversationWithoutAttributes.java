@@ -29,6 +29,7 @@ import java.io.Serializable;
 
 public class AnalyticsConversationWithoutAttributes  implements Serializable {
   
+  private Date conferenceStart = null;
   private Date conversationEnd = null;
   private String conversationId = null;
 
@@ -157,6 +158,24 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
   private List<AnalyticsParticipantWithoutAttributes> participants = new ArrayList<AnalyticsParticipantWithoutAttributes>();
 
   
+  /**
+   * The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public AnalyticsConversationWithoutAttributes conferenceStart(Date conferenceStart) {
+    this.conferenceStart = conferenceStart;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("conferenceStart")
+  public Date getConferenceStart() {
+    return conferenceStart;
+  }
+  public void setConferenceStart(Date conferenceStart) {
+    this.conferenceStart = conferenceStart;
+  }
+
+
   /**
    * The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -455,7 +474,8 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
     }
     AnalyticsConversationWithoutAttributes analyticsConversationWithoutAttributes = (AnalyticsConversationWithoutAttributes) o;
 
-    return Objects.equals(this.conversationEnd, analyticsConversationWithoutAttributes.conversationEnd) &&
+    return Objects.equals(this.conferenceStart, analyticsConversationWithoutAttributes.conferenceStart) &&
+            Objects.equals(this.conversationEnd, analyticsConversationWithoutAttributes.conversationEnd) &&
             Objects.equals(this.conversationId, analyticsConversationWithoutAttributes.conversationId) &&
             Objects.equals(this.conversationInitiator, analyticsConversationWithoutAttributes.conversationInitiator) &&
             Objects.equals(this.conversationStart, analyticsConversationWithoutAttributes.conversationStart) &&
@@ -475,7 +495,7 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationEnd, conversationId, conversationInitiator, conversationStart, customerParticipation, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, selfServed, evaluations, surveys, resolutions, participants);
+    return Objects.hash(conferenceStart, conversationEnd, conversationId, conversationInitiator, conversationStart, customerParticipation, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, selfServed, evaluations, surveys, resolutions, participants);
   }
 
   @Override
@@ -483,6 +503,7 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsConversationWithoutAttributes {\n");
     
+    sb.append("    conferenceStart: ").append(toIndentedString(conferenceStart)).append("\n");
     sb.append("    conversationEnd: ").append(toIndentedString(conversationEnd)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    conversationInitiator: ").append(toIndentedString(conversationInitiator)).append("\n");

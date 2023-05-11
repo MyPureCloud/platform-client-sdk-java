@@ -82,6 +82,7 @@ public class OutboundSettings  implements Serializable {
   }
   private ComplianceAbandonRateDenominatorEnum complianceAbandonRateDenominator = null;
   private AutomaticTimeZoneMappingSettings automaticTimeZoneMapping = null;
+  private Boolean rescheduleTimeZoneSkippedContacts = null;
   private String selfUri = null;
 
   
@@ -238,6 +239,24 @@ public class OutboundSettings  implements Serializable {
   }
 
 
+  /**
+   * Whether or not to reschedule time-zone blocked contacts
+   **/
+  public OutboundSettings rescheduleTimeZoneSkippedContacts(Boolean rescheduleTimeZoneSkippedContacts) {
+    this.rescheduleTimeZoneSkippedContacts = rescheduleTimeZoneSkippedContacts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether or not to reschedule time-zone blocked contacts")
+  @JsonProperty("rescheduleTimeZoneSkippedContacts")
+  public Boolean getRescheduleTimeZoneSkippedContacts() {
+    return rescheduleTimeZoneSkippedContacts;
+  }
+  public void setRescheduleTimeZoneSkippedContacts(Boolean rescheduleTimeZoneSkippedContacts) {
+    this.rescheduleTimeZoneSkippedContacts = rescheduleTimeZoneSkippedContacts;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -266,12 +285,13 @@ public class OutboundSettings  implements Serializable {
             Objects.equals(this.abandonSeconds, outboundSettings.abandonSeconds) &&
             Objects.equals(this.complianceAbandonRateDenominator, outboundSettings.complianceAbandonRateDenominator) &&
             Objects.equals(this.automaticTimeZoneMapping, outboundSettings.automaticTimeZoneMapping) &&
+            Objects.equals(this.rescheduleTimeZoneSkippedContacts, outboundSettings.rescheduleTimeZoneSkippedContacts) &&
             Objects.equals(this.selfUri, outboundSettings.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxConfigurableCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, automaticTimeZoneMapping, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxConfigurableCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, automaticTimeZoneMapping, rescheduleTimeZoneSkippedContacts, selfUri);
   }
 
   @Override
@@ -290,6 +310,7 @@ public class OutboundSettings  implements Serializable {
     sb.append("    abandonSeconds: ").append(toIndentedString(abandonSeconds)).append("\n");
     sb.append("    complianceAbandonRateDenominator: ").append(toIndentedString(complianceAbandonRateDenominator)).append("\n");
     sb.append("    automaticTimeZoneMapping: ").append(toIndentedString(automaticTimeZoneMapping)).append("\n");
+    sb.append("    rescheduleTimeZoneSkippedContacts: ").append(toIndentedString(rescheduleTimeZoneSkippedContacts)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

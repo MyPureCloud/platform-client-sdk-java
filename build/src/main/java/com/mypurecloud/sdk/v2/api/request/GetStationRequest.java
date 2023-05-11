@@ -23,7 +23,6 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Station;
 import com.mypurecloud.sdk.v2.model.StationEntityListing;
-import com.mypurecloud.sdk.v2.model.StationSettings;
 
 public class GetStationRequest {
 

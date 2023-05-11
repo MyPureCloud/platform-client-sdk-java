@@ -47,10 +47,12 @@ public class EvaluationAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    ASSIGNEEID("assigneeId"),
     CALIBRATIONID("calibrationId"),
     CONTEXTID("contextId"),
     CONVERSATIONID("conversationId"),
     DIVISIONID("divisionId"),
+    EVALUATIONCONTEXTID("evaluationContextId"),
     EVALUATIONID("evaluationId"),
     EVALUATORID("evaluatorId"),
     FORMID("formId"),

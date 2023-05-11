@@ -31,6 +31,7 @@ public class CampaignDiagnostics  implements Serializable {
   private List<RuleSetDiagnostic> ruleSetDiagnostics = new ArrayList<RuleSetDiagnostic>();
   private Integer outstandingInteractionsCount = null;
   private Integer scheduledInteractionsCount = null;
+  private Integer timeZoneRescheduledCallsCount = null;
 
   
   @ApiModelProperty(example = "null", value = "Campaign properties that can impact which contacts are callable")
@@ -68,6 +69,13 @@ public class CampaignDiagnostics  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Current number of time zone rescheduled calls on the campaign")
+  @JsonProperty("timeZoneRescheduledCallsCount")
+  public Integer getTimeZoneRescheduledCallsCount() {
+    return timeZoneRescheduledCallsCount;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -82,12 +90,13 @@ public class CampaignDiagnostics  implements Serializable {
             Objects.equals(this.queueUtilizationDiagnostic, campaignDiagnostics.queueUtilizationDiagnostic) &&
             Objects.equals(this.ruleSetDiagnostics, campaignDiagnostics.ruleSetDiagnostics) &&
             Objects.equals(this.outstandingInteractionsCount, campaignDiagnostics.outstandingInteractionsCount) &&
-            Objects.equals(this.scheduledInteractionsCount, campaignDiagnostics.scheduledInteractionsCount);
+            Objects.equals(this.scheduledInteractionsCount, campaignDiagnostics.scheduledInteractionsCount) &&
+            Objects.equals(this.timeZoneRescheduledCallsCount, campaignDiagnostics.timeZoneRescheduledCallsCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callableContacts, queueUtilizationDiagnostic, ruleSetDiagnostics, outstandingInteractionsCount, scheduledInteractionsCount);
+    return Objects.hash(callableContacts, queueUtilizationDiagnostic, ruleSetDiagnostics, outstandingInteractionsCount, scheduledInteractionsCount, timeZoneRescheduledCallsCount);
   }
 
   @Override
@@ -100,6 +109,7 @@ public class CampaignDiagnostics  implements Serializable {
     sb.append("    ruleSetDiagnostics: ").append(toIndentedString(ruleSetDiagnostics)).append("\n");
     sb.append("    outstandingInteractionsCount: ").append(toIndentedString(outstandingInteractionsCount)).append("\n");
     sb.append("    scheduledInteractionsCount: ").append(toIndentedString(scheduledInteractionsCount)).append("\n");
+    sb.append("    timeZoneRescheduledCallsCount: ").append(toIndentedString(timeZoneRescheduledCallsCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

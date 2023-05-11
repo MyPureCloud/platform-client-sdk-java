@@ -200,6 +200,7 @@ public class ReportingExportJobResponse  implements Serializable {
     LANDING_PAGE("LANDING_PAGE"),
     DASHBOARD_SUMMARY("DASHBOARD_SUMMARY"),
     DASHBOARD_DETAIL("DASHBOARD_DETAIL"),
+    DASHBOARD_USERS("DASHBOARD_USERS"),
     JOURNEY_ACTION_MAP_SUMMARY_VIEW("JOURNEY_ACTION_MAP_SUMMARY_VIEW"),
     JOURNEY_OUTCOME_SUMMARY_VIEW("JOURNEY_OUTCOME_SUMMARY_VIEW"),
     JOURNEY_SEGMENT_SUMMARY_VIEW("JOURNEY_SEGMENT_SUMMARY_VIEW"),
@@ -450,6 +451,7 @@ public class ReportingExportJobResponse  implements Serializable {
   }
   private Map<String, InnerEnum> emailStatuses = null;
   private String emailErrorDescription = null;
+  private Boolean includeDurationFormatInHeader = null;
   private Boolean enabled = null;
   private String selfUri = null;
 
@@ -947,6 +949,24 @@ public class ReportingExportJobResponse  implements Serializable {
 
 
   /**
+   * Indicates whether to include selected duration format to the column headers
+   **/
+  public ReportingExportJobResponse includeDurationFormatInHeader(Boolean includeDurationFormatInHeader) {
+    this.includeDurationFormatInHeader = includeDurationFormatInHeader;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether to include selected duration format to the column headers")
+  @JsonProperty("includeDurationFormatInHeader")
+  public Boolean getIncludeDurationFormatInHeader() {
+    return includeDurationFormatInHeader;
+  }
+  public void setIncludeDurationFormatInHeader(Boolean includeDurationFormatInHeader) {
+    this.includeDurationFormatInHeader = includeDurationFormatInHeader;
+  }
+
+
+  /**
    **/
   public ReportingExportJobResponse enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -1008,13 +1028,14 @@ public class ReportingExportJobResponse  implements Serializable {
             Objects.equals(this.recipientEmails, reportingExportJobResponse.recipientEmails) &&
             Objects.equals(this.emailStatuses, reportingExportJobResponse.emailStatuses) &&
             Objects.equals(this.emailErrorDescription, reportingExportJobResponse.emailErrorDescription) &&
+            Objects.equals(this.includeDurationFormatInHeader, reportingExportJobResponse.includeDurationFormatInHeader) &&
             Objects.equals(this.enabled, reportingExportJobResponse.enabled) &&
             Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, runId, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, emailErrorDescription, enabled, selfUri);
+    return Objects.hash(id, name, runId, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, emailErrorDescription, includeDurationFormatInHeader, enabled, selfUri);
   }
 
   @Override
@@ -1050,6 +1071,7 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    recipientEmails: ").append(toIndentedString(recipientEmails)).append("\n");
     sb.append("    emailStatuses: ").append(toIndentedString(emailStatuses)).append("\n");
     sb.append("    emailErrorDescription: ").append(toIndentedString(emailErrorDescription)).append("\n");
+    sb.append("    includeDurationFormatInHeader: ").append(toIndentedString(includeDurationFormatInHeader)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
