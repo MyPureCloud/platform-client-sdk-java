@@ -73,6 +73,7 @@ public class WebChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteWebchatDeploymentAsync(DeleteWebchatDeploymentRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -107,6 +108,7 @@ public class WebChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteWebchatDeploymentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -298,6 +300,7 @@ public class WebChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatDeployment> getWebchatDeploymentAsync(GetWebchatDeploymentRequest request, final AsyncApiCallback<WebChatDeployment> callback) {
     try {
@@ -332,6 +335,7 @@ public class WebChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatDeployment>> getWebchatDeploymentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebChatDeployment>> callback) {
     try {
@@ -373,6 +377,7 @@ public class WebChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatDeploymentEntityListing> getWebchatDeploymentsAsync(GetWebchatDeploymentsRequest request, final AsyncApiCallback<WebChatDeploymentEntityListing> callback) {
     try {
@@ -407,6 +412,7 @@ public class WebChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatDeploymentEntityListing>> getWebchatDeploymentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebChatDeploymentEntityListing>> callback) {
     try {
@@ -1048,6 +1054,7 @@ public class WebChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatDeployment> postWebchatDeploymentsAsync(PostWebchatDeploymentsRequest request, final AsyncApiCallback<WebChatDeployment> callback) {
     try {
@@ -1082,6 +1089,7 @@ public class WebChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatDeployment>> postWebchatDeploymentsAsync(ApiRequest<WebChatDeployment> request, final AsyncApiCallback<ApiResponse<WebChatDeployment>> callback) {
     try {
@@ -1348,6 +1356,7 @@ public class WebChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatDeployment> putWebchatDeploymentAsync(PutWebchatDeploymentRequest request, final AsyncApiCallback<WebChatDeployment> callback) {
     try {
@@ -1382,6 +1391,7 @@ public class WebChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatDeployment>> putWebchatDeploymentAsync(ApiRequest<WebChatDeployment> request, final AsyncApiCallback<ApiResponse<WebChatDeployment>> callback) {
     try {

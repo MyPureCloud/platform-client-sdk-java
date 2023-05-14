@@ -65,6 +65,7 @@ public class OrganizationApi {
    * @return FieldConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public FieldConfig getFieldconfig(String type) throws IOException, ApiException {
     return  getFieldconfig(createGetFieldconfigRequest(type));
@@ -76,6 +77,7 @@ public class OrganizationApi {
    * @param type Field type (required)
    * @return FieldConfig
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException {
     return getFieldconfig(createGetFieldconfigRequest(type).withHttpInfo());
@@ -95,6 +97,7 @@ public class OrganizationApi {
    * @return FieldConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws IOException, ApiException {
     try {
@@ -113,6 +116,7 @@ public class OrganizationApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException {
     try {
@@ -848,6 +852,7 @@ public class OrganizationApi {
    * @return OrgWhitelistSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrgWhitelistSettings getOrganizationsWhitelist() throws IOException, ApiException {
     return  getOrganizationsWhitelist(createGetOrganizationsWhitelistRequest());
@@ -858,6 +863,7 @@ public class OrganizationApi {
    * 
    * @return OrgWhitelistSettings
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrgWhitelistSettings> getOrganizationsWhitelistWithHttpInfo() throws IOException {
     return getOrganizationsWhitelist(createGetOrganizationsWhitelistRequest().withHttpInfo());
@@ -875,6 +881,7 @@ public class OrganizationApi {
    * @return OrgWhitelistSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrgWhitelistSettings getOrganizationsWhitelist(GetOrganizationsWhitelistRequest request) throws IOException, ApiException {
     try {
@@ -893,6 +900,7 @@ public class OrganizationApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrgWhitelistSettings> getOrganizationsWhitelist(ApiRequest<Void> request) throws IOException {
     try {
@@ -1239,6 +1247,7 @@ public class OrganizationApi {
    * @return OrgWhitelistSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrgWhitelistSettings putOrganizationsWhitelist(OrgWhitelistSettings body) throws IOException, ApiException {
     return  putOrganizationsWhitelist(createPutOrganizationsWhitelistRequest(body));
@@ -1250,6 +1259,7 @@ public class OrganizationApi {
    * @param body Whitelist settings (required)
    * @return OrgWhitelistSettings
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrgWhitelistSettings> putOrganizationsWhitelistWithHttpInfo(OrgWhitelistSettings body) throws IOException {
     return putOrganizationsWhitelist(createPutOrganizationsWhitelistRequest(body).withHttpInfo());
@@ -1269,6 +1279,7 @@ public class OrganizationApi {
    * @return OrgWhitelistSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrgWhitelistSettings putOrganizationsWhitelist(PutOrganizationsWhitelistRequest request) throws IOException, ApiException {
     try {
@@ -1287,6 +1298,7 @@ public class OrganizationApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrgWhitelistSettings> putOrganizationsWhitelist(ApiRequest<OrgWhitelistSettings> request) throws IOException {
     try {

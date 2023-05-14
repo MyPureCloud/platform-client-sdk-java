@@ -288,6 +288,7 @@ public class QualityApi {
    * @param formId Form ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteQualityForm(String formId) throws IOException, ApiException {
      deleteQualityForm(createDeleteQualityFormRequest(formId));
@@ -298,6 +299,7 @@ public class QualityApi {
    * 
    * @param formId Form ID (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteQualityFormWithHttpInfo(String formId) throws IOException {
     return deleteQualityForm(createDeleteQualityFormRequest(formId).withHttpInfo());
@@ -316,6 +318,7 @@ public class QualityApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteQualityForm(DeleteQualityFormRequest request) throws IOException, ApiException {
     try {
@@ -334,6 +337,7 @@ public class QualityApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteQualityForm(ApiRequest<Void> request) throws IOException {
     try {
@@ -1436,6 +1440,7 @@ public class QualityApi {
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationForm getQualityForm(String formId) throws IOException, ApiException {
     return  getQualityForm(createGetQualityFormRequest(formId));
@@ -1447,6 +1452,7 @@ public class QualityApi {
    * @param formId Form ID (required)
    * @return EvaluationForm
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationForm> getQualityFormWithHttpInfo(String formId) throws IOException {
     return getQualityForm(createGetQualityFormRequest(formId).withHttpInfo());
@@ -1466,6 +1472,7 @@ public class QualityApi {
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationForm getQualityForm(GetQualityFormRequest request) throws IOException, ApiException {
     try {
@@ -1484,6 +1491,7 @@ public class QualityApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationForm> getQualityForm(ApiRequest<Void> request) throws IOException {
     try {
@@ -1516,6 +1524,7 @@ public class QualityApi {
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationFormEntityListing getQualityFormVersions(String formId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return  getQualityFormVersions(createGetQualityFormVersionsRequest(formId, pageSize, pageNumber));
@@ -1529,6 +1538,7 @@ public class QualityApi {
    * @param pageNumber Page number (optional, default to 1)
    * @return EvaluationFormEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationFormEntityListing> getQualityFormVersionsWithHttpInfo(String formId, Integer pageSize, Integer pageNumber) throws IOException {
     return getQualityFormVersions(createGetQualityFormVersionsRequest(formId, pageSize, pageNumber).withHttpInfo());
@@ -1552,6 +1562,7 @@ public class QualityApi {
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationFormEntityListing getQualityFormVersions(GetQualityFormVersionsRequest request) throws IOException, ApiException {
     try {
@@ -1570,6 +1581,7 @@ public class QualityApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationFormEntityListing> getQualityFormVersions(ApiRequest<Void> request) throws IOException {
     try {
@@ -1607,6 +1619,7 @@ public class QualityApi {
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationFormEntityListing getQualityForms(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) throws IOException, ApiException {
     return  getQualityForms(createGetQualityFormsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder));
@@ -1625,6 +1638,7 @@ public class QualityApi {
    * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return EvaluationFormEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationFormEntityListing> getQualityFormsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) throws IOException {
     return getQualityForms(createGetQualityFormsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder).withHttpInfo());
@@ -1658,6 +1672,7 @@ public class QualityApi {
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationFormEntityListing getQualityForms(GetQualityFormsRequest request) throws IOException, ApiException {
     try {
@@ -1676,6 +1691,7 @@ public class QualityApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationFormEntityListing> getQualityForms(ApiRequest<Void> request) throws IOException {
     try {
@@ -2488,6 +2504,7 @@ public class QualityApi {
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationForm getQualityPublishedform(String formId) throws IOException, ApiException {
     return  getQualityPublishedform(createGetQualityPublishedformRequest(formId));
@@ -2499,6 +2516,7 @@ public class QualityApi {
    * @param formId Form ID (required)
    * @return EvaluationForm
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationForm> getQualityPublishedformWithHttpInfo(String formId) throws IOException {
     return getQualityPublishedform(createGetQualityPublishedformRequest(formId).withHttpInfo());
@@ -2518,6 +2536,7 @@ public class QualityApi {
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationForm getQualityPublishedform(GetQualityPublishedformRequest request) throws IOException, ApiException {
     try {
@@ -2536,6 +2555,7 @@ public class QualityApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationForm> getQualityPublishedform(ApiRequest<Void> request) throws IOException {
     try {
@@ -2569,6 +2589,7 @@ public class QualityApi {
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationFormEntityListing getQualityPublishedforms(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestPerContext) throws IOException, ApiException {
     return  getQualityPublishedforms(createGetQualityPublishedformsRequest(pageSize, pageNumber, name, onlyLatestPerContext));
@@ -2583,6 +2604,7 @@ public class QualityApi {
    * @param onlyLatestPerContext onlyLatestPerContext (optional, default to false)
    * @return EvaluationFormEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationFormEntityListing> getQualityPublishedformsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestPerContext) throws IOException {
     return getQualityPublishedforms(createGetQualityPublishedformsRequest(pageSize, pageNumber, name, onlyLatestPerContext).withHttpInfo());
@@ -2608,6 +2630,7 @@ public class QualityApi {
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationFormEntityListing getQualityPublishedforms(GetQualityPublishedformsRequest request) throws IOException, ApiException {
     try {
@@ -2626,6 +2649,7 @@ public class QualityApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationFormEntityListing> getQualityPublishedforms(ApiRequest<Void> request) throws IOException {
     try {
@@ -3788,6 +3812,7 @@ public class QualityApi {
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationForm postQualityForms(EvaluationForm body) throws IOException, ApiException {
     return  postQualityForms(createPostQualityFormsRequest(body));
@@ -3799,6 +3824,7 @@ public class QualityApi {
    * @param body Evaluation form (required)
    * @return EvaluationForm
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationForm> postQualityFormsWithHttpInfo(EvaluationForm body) throws IOException {
     return postQualityForms(createPostQualityFormsRequest(body).withHttpInfo());
@@ -3818,6 +3844,7 @@ public class QualityApi {
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationForm postQualityForms(PostQualityFormsRequest request) throws IOException, ApiException {
     try {
@@ -3836,6 +3863,7 @@ public class QualityApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationForm> postQualityForms(ApiRequest<EvaluationForm> request) throws IOException {
     try {
@@ -4022,6 +4050,7 @@ public class QualityApi {
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationForm postQualityPublishedforms(PublishForm body) throws IOException, ApiException {
     return  postQualityPublishedforms(createPostQualityPublishedformsRequest(body));
@@ -4033,6 +4062,7 @@ public class QualityApi {
    * @param body Publish request containing id of form to publish (required)
    * @return EvaluationForm
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationForm> postQualityPublishedformsWithHttpInfo(PublishForm body) throws IOException {
     return postQualityPublishedforms(createPostQualityPublishedformsRequest(body).withHttpInfo());
@@ -4052,6 +4082,7 @@ public class QualityApi {
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationForm postQualityPublishedforms(PostQualityPublishedformsRequest request) throws IOException, ApiException {
     try {
@@ -4070,6 +4101,7 @@ public class QualityApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationForm> postQualityPublishedforms(ApiRequest<PublishForm> request) throws IOException {
     try {
@@ -4507,6 +4539,7 @@ public class QualityApi {
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationForm putQualityForm(String formId, EvaluationForm body) throws IOException, ApiException {
     return  putQualityForm(createPutQualityFormRequest(formId, body));
@@ -4519,6 +4552,7 @@ public class QualityApi {
    * @param body Evaluation form (required)
    * @return EvaluationForm
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationForm> putQualityFormWithHttpInfo(String formId, EvaluationForm body) throws IOException {
     return putQualityForm(createPutQualityFormRequest(formId, body).withHttpInfo());
@@ -4540,6 +4574,7 @@ public class QualityApi {
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EvaluationForm putQualityForm(PutQualityFormRequest request) throws IOException, ApiException {
     try {
@@ -4558,6 +4593,7 @@ public class QualityApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EvaluationForm> putQualityForm(ApiRequest<EvaluationForm> request) throws IOException {
     try {

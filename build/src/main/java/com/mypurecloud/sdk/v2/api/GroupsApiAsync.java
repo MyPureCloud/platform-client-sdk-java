@@ -216,6 +216,7 @@ public class GroupsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, final AsyncApiCallback<FieldConfig> callback) {
     try {
@@ -250,6 +251,7 @@ public class GroupsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FieldConfig>> callback) {
     try {
@@ -516,6 +518,7 @@ public class GroupsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<GroupProfile> getGroupProfileAsync(GetGroupProfileRequest request, final AsyncApiCallback<GroupProfile> callback) {
     try {
@@ -550,6 +553,7 @@ public class GroupsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<GroupProfile>> getGroupProfileAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GroupProfile>> callback) {
     try {
@@ -741,6 +745,7 @@ public class GroupsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<GroupProfileEntityListing> getProfilesGroupsAsync(GetProfilesGroupsRequest request, final AsyncApiCallback<GroupProfileEntityListing> callback) {
     try {
@@ -775,6 +780,7 @@ public class GroupsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<GroupProfileEntityListing>> getProfilesGroupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GroupProfileEntityListing>> callback) {
     try {

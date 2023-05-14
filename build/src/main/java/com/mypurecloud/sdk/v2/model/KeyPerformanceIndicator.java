@@ -77,6 +77,54 @@ public class KeyPerformanceIndicator  implements Serializable {
     }
   }
   private OptimizationTypeEnum optimizationType = null;
+
+  private static class ProblemTypeEnumDeserializer extends StdDeserializer<ProblemTypeEnum> {
+    public ProblemTypeEnumDeserializer() {
+      super(ProblemTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ProblemTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ProblemTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The problem type of the Key Performance Indicator.
+   */
+ @JsonDeserialize(using = ProblemTypeEnumDeserializer.class)
+  public enum ProblemTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CLASSIFICATION("Classification"),
+    REGRESSION("Regression");
+
+    private String value;
+
+    ProblemTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ProblemTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ProblemTypeEnum value : ProblemTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ProblemTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ProblemTypeEnum problemType = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String description = null;
@@ -304,6 +352,13 @@ public class KeyPerformanceIndicator  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The problem type of the Key Performance Indicator.")
+  @JsonProperty("problemType")
+  public ProblemTypeEnum getProblemType() {
+    return problemType;
+  }
+
+
   @ApiModelProperty(example = "null", value = "DateTime indicating when the Key Performance Indicator was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
@@ -394,6 +449,7 @@ public class KeyPerformanceIndicator  implements Serializable {
     return Objects.equals(this.id, keyPerformanceIndicator.id) &&
             Objects.equals(this.name, keyPerformanceIndicator.name) &&
             Objects.equals(this.optimizationType, keyPerformanceIndicator.optimizationType) &&
+            Objects.equals(this.problemType, keyPerformanceIndicator.problemType) &&
             Objects.equals(this.dateCreated, keyPerformanceIndicator.dateCreated) &&
             Objects.equals(this.dateModified, keyPerformanceIndicator.dateModified) &&
             Objects.equals(this.description, keyPerformanceIndicator.description) &&
@@ -409,7 +465,7 @@ public class KeyPerformanceIndicator  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, optimizationType, dateCreated, dateModified, description, kpiType, source, wrapUpCodeConfig, outcomeConfig, status, kpiGroup, queues, selfUri);
+    return Objects.hash(id, name, optimizationType, problemType, dateCreated, dateModified, description, kpiType, source, wrapUpCodeConfig, outcomeConfig, status, kpiGroup, queues, selfUri);
   }
 
   @Override
@@ -420,6 +476,7 @@ public class KeyPerformanceIndicator  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    optimizationType: ").append(toIndentedString(optimizationType)).append("\n");
+    sb.append("    problemType: ").append(toIndentedString(problemType)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");

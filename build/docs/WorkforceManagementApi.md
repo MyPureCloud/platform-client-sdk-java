@@ -159,6 +159,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementManagementunits**](WorkforceManagementApi.html#postWorkforcemanagementManagementunits) | Add a management unit |
 | [**postWorkforcemanagementNotificationsUpdate**](WorkforceManagementApi.html#postWorkforcemanagementNotificationsUpdate) | Mark a list of notifications as read or unread |
 | [**postWorkforcemanagementSchedules**](WorkforceManagementApi.html#postWorkforcemanagementSchedules) | Get published schedule for the current user |
+| [**postWorkforcemanagementTeamAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementTeamAdherenceHistorical) | Request a teams historical adherence report |
+| [**postWorkforcemanagementTeamShrinkageJobs**](WorkforceManagementApi.html#postWorkforcemanagementTeamShrinkageJobs) | Request a historical shrinkage report |
 | [**postWorkforcemanagementTimeofflimitsAvailableQuery**](WorkforceManagementApi.html#postWorkforcemanagementTimeofflimitsAvailableQuery) | Queries available time off for the current user |
 | [**postWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequests) | Create a time off request for the current user |
 | [**putWorkforcemanagementManagementunitTimeofflimitValues**](WorkforceManagementApi.html#putWorkforcemanagementManagementunitTimeofflimitValues) | Sets daily values for a date range of time off limit object |
@@ -1686,7 +1688,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-List<String> expand = Arrays.asList(null); // List<String> | 
+List<String> expand = Arrays.asList(null); // List<String> | Include to access additional data on the business unit
 try {
     BusinessUnitResponse result = apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, expand);
     System.out.println(result);
@@ -1702,7 +1704,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
-| **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling 
+| **expand** | [**List&lt;String&gt;**](String.html)| Include to access additional data on the business unit | [optional]<br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling 
 {: class="table-striped"}
 
 
@@ -2849,7 +2851,7 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String forecastId = "forecastId_example"; // String | The ID of the forecast
-List<String> expand = Arrays.asList(null); // List<String> | 
+List<String> expand = Arrays.asList(null); // List<String> | Include to access additional data on the forecast
 try {
     BuShortTermForecast result = apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, expand);
     System.out.println(result);
@@ -2867,7 +2869,7 @@ try {
 | **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| The ID of the forecast | 
-| **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: planningGroups, generationResults 
+| **expand** | [**List&lt;String&gt;**](String.html)| Include to access additional data on the forecast | [optional]<br />**Values**: planningGroups, generationResults 
 {: class="table-striped"}
 
 
@@ -5057,7 +5059,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-List<String> expand = Arrays.asList(null); // List<String> | 
+List<String> expand = Arrays.asList(null); // List<String> | Include to access additional data on the work plans
 try {
     WorkPlanListResponse result = apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand);
     System.out.println(result);
@@ -5073,7 +5075,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details 
+| **expand** | [**List&lt;String&gt;**](String.html)| Include to access additional data on the work plans | [optional]<br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details 
 {: class="table-striped"}
 
 
@@ -8150,7 +8152,7 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-GenerateBuForecastRequest body = new GenerateBuForecastRequest(); // GenerateBuForecastRequest | 
+GenerateBuForecastRequest body = new GenerateBuForecastRequest(); // GenerateBuForecastRequest | body
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 try {
     AsyncForecastOperationResult result = apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, forceAsync);
@@ -8168,7 +8170,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **body** | [**GenerateBuForecastRequest**](GenerateBuForecastRequest.html)|  | 
+| **body** | [**GenerateBuForecastRequest**](GenerateBuForecastRequest.html)| body | 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
 {: class="table-striped"}
 
@@ -8219,7 +8221,7 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-WfmProcessUploadRequest body = new WfmProcessUploadRequest(); // WfmProcessUploadRequest | 
+WfmProcessUploadRequest body = new WfmProcessUploadRequest(); // WfmProcessUploadRequest | body
 try {
     ImportForecastResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body);
     System.out.println(result);
@@ -8236,7 +8238,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)|  | 
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)| body | 
 {: class="table-striped"}
 
 
@@ -10168,6 +10170,136 @@ try {
 ### Return type
 
 [**UserScheduleContainer**](UserScheduleContainer.html)
+
+<a name="postWorkforcemanagementTeamAdherenceHistorical"></a>
+
+# **postWorkforcemanagementTeamAdherenceHistorical**
+
+
+
+> [WfmHistoricalAdherenceResponse](WfmHistoricalAdherenceResponse.html) postWorkforcemanagementTeamAdherenceHistorical(teamId, body)
+
+Request a teams historical adherence report
+
+The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+
+Wraps POST /api/v2/workforcemanagement/teams/{teamId}/adherence/historical  
+
+Requires ANY permissions: 
+
+* wfm:historicalAdherence:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String teamId = "teamId_example"; // String | The ID of the team
+WfmHistoricalAdherenceQueryForTeams body = new WfmHistoricalAdherenceQueryForTeams(); // WfmHistoricalAdherenceQueryForTeams | body
+try {
+    WfmHistoricalAdherenceResponse result = apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementTeamAdherenceHistorical");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **teamId** | **String**| The ID of the team | 
+| **body** | [**WfmHistoricalAdherenceQueryForTeams**](WfmHistoricalAdherenceQueryForTeams.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
+
+<a name="postWorkforcemanagementTeamShrinkageJobs"></a>
+
+# **postWorkforcemanagementTeamShrinkageJobs**
+
+
+
+> [WfmHistoricalShrinkageResponse](WfmHistoricalShrinkageResponse.html) postWorkforcemanagementTeamShrinkageJobs(teamId, body)
+
+Request a historical shrinkage report
+
+The maximum supported range for historical shrinkage queries is up to 32 days
+
+Wraps POST /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs  
+
+Requires ANY permissions: 
+
+* wfm:shrinkage:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String teamId = "teamId_example"; // String | The ID of the team
+WfmHistoricalShrinkageTeamsRequest body = new WfmHistoricalShrinkageTeamsRequest(); // WfmHistoricalShrinkageTeamsRequest | body
+try {
+    WfmHistoricalShrinkageResponse result = apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementTeamShrinkageJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **teamId** | **String**| The ID of the team | 
+| **body** | [**WfmHistoricalShrinkageTeamsRequest**](WfmHistoricalShrinkageTeamsRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
 
 <a name="postWorkforcemanagementTimeofflimitsAvailableQuery"></a>
 

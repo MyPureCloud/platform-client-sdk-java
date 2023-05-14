@@ -69,6 +69,7 @@ public class WebChatApi {
    * @param deploymentId Deployment Id (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteWebchatDeployment(String deploymentId) throws IOException, ApiException {
      deleteWebchatDeployment(createDeleteWebchatDeploymentRequest(deploymentId));
@@ -79,6 +80,7 @@ public class WebChatApi {
    * 
    * @param deploymentId Deployment Id (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteWebchatDeploymentWithHttpInfo(String deploymentId) throws IOException {
     return deleteWebchatDeployment(createDeleteWebchatDeploymentRequest(deploymentId).withHttpInfo());
@@ -97,6 +99,7 @@ public class WebChatApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteWebchatDeployment(DeleteWebchatDeploymentRequest request) throws IOException, ApiException {
     try {
@@ -115,6 +118,7 @@ public class WebChatApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteWebchatDeployment(ApiRequest<Void> request) throws IOException {
     try {
@@ -295,6 +299,7 @@ public class WebChatApi {
    * @return WebChatDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatDeployment getWebchatDeployment(String deploymentId) throws IOException, ApiException {
     return  getWebchatDeployment(createGetWebchatDeploymentRequest(deploymentId));
@@ -306,6 +311,7 @@ public class WebChatApi {
    * @param deploymentId Deployment Id (required)
    * @return WebChatDeployment
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatDeployment> getWebchatDeploymentWithHttpInfo(String deploymentId) throws IOException {
     return getWebchatDeployment(createGetWebchatDeploymentRequest(deploymentId).withHttpInfo());
@@ -325,6 +331,7 @@ public class WebChatApi {
    * @return WebChatDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatDeployment getWebchatDeployment(GetWebchatDeploymentRequest request) throws IOException, ApiException {
     try {
@@ -343,6 +350,7 @@ public class WebChatApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatDeployment> getWebchatDeployment(ApiRequest<Void> request) throws IOException {
     try {
@@ -372,6 +380,7 @@ public class WebChatApi {
    * @return WebChatDeploymentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatDeploymentEntityListing getWebchatDeployments() throws IOException, ApiException {
     return  getWebchatDeployments(createGetWebchatDeploymentsRequest());
@@ -382,6 +391,7 @@ public class WebChatApi {
    * 
    * @return WebChatDeploymentEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatDeploymentEntityListing> getWebchatDeploymentsWithHttpInfo() throws IOException {
     return getWebchatDeployments(createGetWebchatDeploymentsRequest().withHttpInfo());
@@ -399,6 +409,7 @@ public class WebChatApi {
    * @return WebChatDeploymentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatDeploymentEntityListing getWebchatDeployments(GetWebchatDeploymentsRequest request) throws IOException, ApiException {
     try {
@@ -417,6 +428,7 @@ public class WebChatApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatDeploymentEntityListing> getWebchatDeployments(ApiRequest<Void> request) throws IOException {
     try {
@@ -1115,6 +1127,7 @@ public class WebChatApi {
    * @return WebChatDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatDeployment postWebchatDeployments(WebChatDeployment body) throws IOException, ApiException {
     return  postWebchatDeployments(createPostWebchatDeploymentsRequest(body));
@@ -1126,6 +1139,7 @@ public class WebChatApi {
    * @param body Deployment (required)
    * @return WebChatDeployment
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatDeployment> postWebchatDeploymentsWithHttpInfo(WebChatDeployment body) throws IOException {
     return postWebchatDeployments(createPostWebchatDeploymentsRequest(body).withHttpInfo());
@@ -1145,6 +1159,7 @@ public class WebChatApi {
    * @return WebChatDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatDeployment postWebchatDeployments(PostWebchatDeploymentsRequest request) throws IOException, ApiException {
     try {
@@ -1163,6 +1178,7 @@ public class WebChatApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatDeployment> postWebchatDeployments(ApiRequest<WebChatDeployment> request) throws IOException {
     try {
@@ -1440,6 +1456,7 @@ public class WebChatApi {
    * @return WebChatDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatDeployment putWebchatDeployment(String deploymentId, WebChatDeployment body) throws IOException, ApiException {
     return  putWebchatDeployment(createPutWebchatDeploymentRequest(deploymentId, body));
@@ -1452,6 +1469,7 @@ public class WebChatApi {
    * @param body Deployment (required)
    * @return WebChatDeployment
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatDeployment> putWebchatDeploymentWithHttpInfo(String deploymentId, WebChatDeployment body) throws IOException {
     return putWebchatDeployment(createPutWebchatDeploymentRequest(deploymentId, body).withHttpInfo());
@@ -1473,6 +1491,7 @@ public class WebChatApi {
    * @return WebChatDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WebChatDeployment putWebchatDeployment(PutWebchatDeploymentRequest request) throws IOException, ApiException {
     try {
@@ -1491,6 +1510,7 @@ public class WebChatApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WebChatDeployment> putWebchatDeployment(ApiRequest<WebChatDeployment> request) throws IOException {
     try {

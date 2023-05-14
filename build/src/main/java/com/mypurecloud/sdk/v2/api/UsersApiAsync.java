@@ -1001,6 +1001,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<List<AuthzDivision>> getAuthorizationDivisionspermittedMeAsync(GetAuthorizationDivisionspermittedMeRequest request, final AsyncApiCallback<List<AuthzDivision>> callback) {
     try {
@@ -1035,6 +1036,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<List<AuthzDivision>>> getAuthorizationDivisionspermittedMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<AuthzDivision>>> callback) {
     try {
@@ -1151,6 +1153,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedSubjectIdAsync(GetAuthorizationDivisionspermittedPagedSubjectIdRequest request, final AsyncApiCallback<DivsPermittedEntityListing> callback) {
     try {
@@ -1185,6 +1188,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<DivsPermittedEntityListing>> getAuthorizationDivisionspermittedPagedSubjectIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DivsPermittedEntityListing>> callback) {
     try {
@@ -1376,6 +1380,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, final AsyncApiCallback<FieldConfig> callback) {
     try {
@@ -1410,6 +1415,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FieldConfig>> callback) {
     try {
@@ -1451,6 +1457,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<UserProfileEntityListing> getProfilesUsersAsync(GetProfilesUsersRequest request, final AsyncApiCallback<UserProfileEntityListing> callback) {
     try {
@@ -1485,6 +1492,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<UserProfileEntityListing>> getProfilesUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserProfileEntityListing>> callback) {
     try {
@@ -1901,6 +1909,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<UserEntityListing> getUserFavoritesAsync(GetUserFavoritesRequest request, final AsyncApiCallback<UserEntityListing> callback) {
     try {
@@ -1935,6 +1944,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<UserEntityListing>> getUserFavoritesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserEntityListing>> callback) {
     try {
@@ -2126,6 +2136,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<UserProfile> getUserProfileAsync(GetUserProfileRequest request, final AsyncApiCallback<UserProfile> callback) {
     try {
@@ -2160,6 +2171,7 @@ public class UsersApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<UserProfile>> getUserProfileAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserProfile>> callback) {
     try {

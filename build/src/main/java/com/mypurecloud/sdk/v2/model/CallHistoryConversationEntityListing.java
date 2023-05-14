@@ -31,8 +31,8 @@ public class CallHistoryConversationEntityListing  implements Serializable, Page
   private Long total = null;
   private String firstUri = null;
   private String nextUri = null;
-  private String lastUri = null;
   private String previousUri = null;
+  private String lastUri = null;
   private String selfUri = null;
   private Integer pageCount = null;
 
@@ -141,23 +141,6 @@ public class CallHistoryConversationEntityListing  implements Serializable, Page
 
   /**
    **/
-  public CallHistoryConversationEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public CallHistoryConversationEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -170,6 +153,23 @@ public class CallHistoryConversationEntityListing  implements Serializable, Page
   }
   public void setPreviousUri(String previousUri) {
     this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
+  public CallHistoryConversationEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -223,15 +223,15 @@ public class CallHistoryConversationEntityListing  implements Serializable, Page
             Objects.equals(this.total, callHistoryConversationEntityListing.total) &&
             Objects.equals(this.firstUri, callHistoryConversationEntityListing.firstUri) &&
             Objects.equals(this.nextUri, callHistoryConversationEntityListing.nextUri) &&
-            Objects.equals(this.lastUri, callHistoryConversationEntityListing.lastUri) &&
             Objects.equals(this.previousUri, callHistoryConversationEntityListing.previousUri) &&
+            Objects.equals(this.lastUri, callHistoryConversationEntityListing.lastUri) &&
             Objects.equals(this.selfUri, callHistoryConversationEntityListing.selfUri) &&
             Objects.equals(this.pageCount, callHistoryConversationEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, lastUri, previousUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -245,8 +245,8 @@ public class CallHistoryConversationEntityListing  implements Serializable, Page
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

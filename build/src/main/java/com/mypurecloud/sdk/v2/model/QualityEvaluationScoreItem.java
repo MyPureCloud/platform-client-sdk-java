@@ -137,7 +137,7 @@ public class QualityEvaluationScoreItem  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "Gamification max points for this metric")
+  @ApiModelProperty(example = "null", value = "The maximum Gamification points a user may earn for this metric")
   @JsonProperty("maxPoints")
   public Integer getMaxPoints() {
     return maxPoints;

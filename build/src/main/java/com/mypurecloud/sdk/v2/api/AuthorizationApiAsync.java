@@ -701,6 +701,7 @@ public class AuthorizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<List<AuthzDivision>> getAuthorizationDivisionspermittedMeAsync(GetAuthorizationDivisionspermittedMeRequest request, final AsyncApiCallback<List<AuthzDivision>> callback) {
     try {
@@ -735,6 +736,7 @@ public class AuthorizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<List<AuthzDivision>>> getAuthorizationDivisionspermittedMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<AuthzDivision>>> callback) {
     try {
@@ -851,6 +853,7 @@ public class AuthorizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedSubjectIdAsync(GetAuthorizationDivisionspermittedPagedSubjectIdRequest request, final AsyncApiCallback<DivsPermittedEntityListing> callback) {
     try {
@@ -885,6 +888,7 @@ public class AuthorizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<DivsPermittedEntityListing>> getAuthorizationDivisionspermittedPagedSubjectIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DivsPermittedEntityListing>> callback) {
     try {

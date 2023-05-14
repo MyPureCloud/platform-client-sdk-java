@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AppendToDncActionSettings;
 import com.mypurecloud.sdk.v2.model.MarkContactUncontactableActionSettings;
 import com.mypurecloud.sdk.v2.model.SetContentTemplateActionSettings;
+import com.mypurecloud.sdk.v2.model.SetSmsPhoneNumberActionSettings;
 import com.mypurecloud.sdk.v2.model.UpdateContactColumnActionSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,6 +32,7 @@ public class DigitalAction  implements Serializable {
   private MarkContactUncontactableActionSettings markContactUncontactableActionSettings = null;
   private Object markContactAddressUncontactableActionSettings = null;
   private SetContentTemplateActionSettings setContentTemplateActionSettings = null;
+  private SetSmsPhoneNumberActionSettings setSmsPhoneNumberActionSettings = null;
 
   
   /**
@@ -141,6 +143,24 @@ public class DigitalAction  implements Serializable {
   }
 
 
+  /**
+   * The settings for a 'set sms phone number' action.
+   **/
+  public DigitalAction setSmsPhoneNumberActionSettings(SetSmsPhoneNumberActionSettings setSmsPhoneNumberActionSettings) {
+    this.setSmsPhoneNumberActionSettings = setSmsPhoneNumberActionSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The settings for a 'set sms phone number' action.")
+  @JsonProperty("setSmsPhoneNumberActionSettings")
+  public SetSmsPhoneNumberActionSettings getSetSmsPhoneNumberActionSettings() {
+    return setSmsPhoneNumberActionSettings;
+  }
+  public void setSetSmsPhoneNumberActionSettings(SetSmsPhoneNumberActionSettings setSmsPhoneNumberActionSettings) {
+    this.setSmsPhoneNumberActionSettings = setSmsPhoneNumberActionSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -156,12 +176,13 @@ public class DigitalAction  implements Serializable {
             Objects.equals(this.appendToDncActionSettings, digitalAction.appendToDncActionSettings) &&
             Objects.equals(this.markContactUncontactableActionSettings, digitalAction.markContactUncontactableActionSettings) &&
             Objects.equals(this.markContactAddressUncontactableActionSettings, digitalAction.markContactAddressUncontactableActionSettings) &&
-            Objects.equals(this.setContentTemplateActionSettings, digitalAction.setContentTemplateActionSettings);
+            Objects.equals(this.setContentTemplateActionSettings, digitalAction.setContentTemplateActionSettings) &&
+            Objects.equals(this.setSmsPhoneNumberActionSettings, digitalAction.setSmsPhoneNumberActionSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(updateContactColumnActionSettings, doNotSendActionSettings, appendToDncActionSettings, markContactUncontactableActionSettings, markContactAddressUncontactableActionSettings, setContentTemplateActionSettings);
+    return Objects.hash(updateContactColumnActionSettings, doNotSendActionSettings, appendToDncActionSettings, markContactUncontactableActionSettings, markContactAddressUncontactableActionSettings, setContentTemplateActionSettings, setSmsPhoneNumberActionSettings);
   }
 
   @Override
@@ -175,6 +196,7 @@ public class DigitalAction  implements Serializable {
     sb.append("    markContactUncontactableActionSettings: ").append(toIndentedString(markContactUncontactableActionSettings)).append("\n");
     sb.append("    markContactAddressUncontactableActionSettings: ").append(toIndentedString(markContactAddressUncontactableActionSettings)).append("\n");
     sb.append("    setContentTemplateActionSettings: ").append(toIndentedString(setContentTemplateActionSettings)).append("\n");
+    sb.append("    setSmsPhoneNumberActionSettings: ").append(toIndentedString(setSmsPhoneNumberActionSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

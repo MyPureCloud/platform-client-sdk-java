@@ -48,6 +48,7 @@ public class LanguagesApi {
    * @param languageId Language ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteLanguage(String languageId) throws IOException, ApiException {
      deleteLanguage(createDeleteLanguageRequest(languageId));
@@ -58,6 +59,7 @@ public class LanguagesApi {
    * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
    * @param languageId Language ID (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteLanguageWithHttpInfo(String languageId) throws IOException {
     return deleteLanguage(createDeleteLanguageRequest(languageId).withHttpInfo());
@@ -76,6 +78,7 @@ public class LanguagesApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteLanguage(DeleteLanguageRequest request) throws IOException, ApiException {
     try {
@@ -94,6 +97,7 @@ public class LanguagesApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteLanguage(ApiRequest<Void> request) throws IOException {
     try {
@@ -124,6 +128,7 @@ public class LanguagesApi {
    * @return Language
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Language getLanguage(String languageId) throws IOException, ApiException {
     return  getLanguage(createGetLanguageRequest(languageId));
@@ -135,6 +140,7 @@ public class LanguagesApi {
    * @param languageId Language ID (required)
    * @return Language
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Language> getLanguageWithHttpInfo(String languageId) throws IOException {
     return getLanguage(createGetLanguageRequest(languageId).withHttpInfo());
@@ -154,6 +160,7 @@ public class LanguagesApi {
    * @return Language
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Language getLanguage(GetLanguageRequest request) throws IOException, ApiException {
     try {
@@ -172,6 +179,7 @@ public class LanguagesApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Language> getLanguage(ApiRequest<Void> request) throws IOException {
     try {
@@ -205,6 +213,7 @@ public class LanguagesApi {
    * @return LanguageEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LanguageEntityListing getLanguages(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException, ApiException {
     return  getLanguages(createGetLanguagesRequest(pageSize, pageNumber, sortOrder, name));
@@ -219,6 +228,7 @@ public class LanguagesApi {
    * @param name Name (optional)
    * @return LanguageEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LanguageEntityListing> getLanguagesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException {
     return getLanguages(createGetLanguagesRequest(pageSize, pageNumber, sortOrder, name).withHttpInfo());
@@ -244,6 +254,7 @@ public class LanguagesApi {
    * @return LanguageEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LanguageEntityListing getLanguages(GetLanguagesRequest request) throws IOException, ApiException {
     try {
@@ -262,6 +273,7 @@ public class LanguagesApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LanguageEntityListing> getLanguages(ApiRequest<Void> request) throws IOException {
     try {
@@ -600,6 +612,7 @@ public class LanguagesApi {
    * @return Language
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Language postLanguages(Language body) throws IOException, ApiException {
     return  postLanguages(createPostLanguagesRequest(body));
@@ -611,6 +624,7 @@ public class LanguagesApi {
    * @param body Language (required)
    * @return Language
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Language> postLanguagesWithHttpInfo(Language body) throws IOException {
     return postLanguages(createPostLanguagesRequest(body).withHttpInfo());
@@ -630,6 +644,7 @@ public class LanguagesApi {
    * @return Language
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Language postLanguages(PostLanguagesRequest request) throws IOException, ApiException {
     try {
@@ -648,6 +663,7 @@ public class LanguagesApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Language> postLanguages(ApiRequest<Language> request) throws IOException {
     try {

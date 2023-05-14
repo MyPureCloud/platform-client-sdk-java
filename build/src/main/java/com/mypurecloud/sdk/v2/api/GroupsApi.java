@@ -220,6 +220,7 @@ public class GroupsApi {
    * @return FieldConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public FieldConfig getFieldconfig(String type) throws IOException, ApiException {
     return  getFieldconfig(createGetFieldconfigRequest(type));
@@ -231,6 +232,7 @@ public class GroupsApi {
    * @param type Field type (required)
    * @return FieldConfig
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException {
     return getFieldconfig(createGetFieldconfigRequest(type).withHttpInfo());
@@ -250,6 +252,7 @@ public class GroupsApi {
    * @return FieldConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws IOException, ApiException {
     try {
@@ -268,6 +271,7 @@ public class GroupsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException {
     try {
@@ -549,6 +553,7 @@ public class GroupsApi {
    * @return GroupProfile
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public GroupProfile getGroupProfile(String groupId, String fields) throws IOException, ApiException {
     return  getGroupProfile(createGetGroupProfileRequest(groupId, fields));
@@ -561,6 +566,7 @@ public class GroupsApi {
    * @param fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList (optional)
    * @return GroupProfile
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<GroupProfile> getGroupProfileWithHttpInfo(String groupId, String fields) throws IOException {
     return getGroupProfile(createGetGroupProfileRequest(groupId, fields).withHttpInfo());
@@ -582,6 +588,7 @@ public class GroupsApi {
    * @return GroupProfile
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public GroupProfile getGroupProfile(GetGroupProfileRequest request) throws IOException, ApiException {
     try {
@@ -600,6 +607,7 @@ public class GroupsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<GroupProfile> getGroupProfile(ApiRequest<Void> request) throws IOException {
     try {
@@ -810,6 +818,7 @@ public class GroupsApi {
    * @return GroupProfileEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public GroupProfileEntityListing getProfilesGroups(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder) throws IOException, ApiException {
     return  getProfilesGroups(createGetProfilesGroupsRequest(pageSize, pageNumber, id, jabberId, sortOrder));
@@ -825,6 +834,7 @@ public class GroupsApi {
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return GroupProfileEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<GroupProfileEntityListing> getProfilesGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder) throws IOException {
     return getProfilesGroups(createGetProfilesGroupsRequest(pageSize, pageNumber, id, jabberId, sortOrder).withHttpInfo());
@@ -852,6 +862,7 @@ public class GroupsApi {
    * @return GroupProfileEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public GroupProfileEntityListing getProfilesGroups(GetProfilesGroupsRequest request) throws IOException, ApiException {
     try {
@@ -870,6 +881,7 @@ public class GroupsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<GroupProfileEntityListing> getProfilesGroups(ApiRequest<Void> request) throws IOException {
     try {

@@ -783,6 +783,7 @@ public class ContentManagementApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<DocumentEntityListing> getContentmanagementDocumentsAsync(GetContentmanagementDocumentsRequest request, final AsyncApiCallback<DocumentEntityListing> callback) {
     try {
@@ -817,6 +818,7 @@ public class ContentManagementApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<DocumentEntityListing>> getContentmanagementDocumentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DocumentEntityListing>> callback) {
     try {

@@ -7949,6 +7949,7 @@ public class OutboundApi {
    * @return ContactCallbackRequest
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ContactCallbackRequest postOutboundCampaignCallbackSchedule(String campaignId, ContactCallbackRequest body) throws IOException, ApiException {
     return  postOutboundCampaignCallbackSchedule(createPostOutboundCampaignCallbackScheduleRequest(campaignId, body));
@@ -7961,6 +7962,7 @@ public class OutboundApi {
    * @param body ContactCallbackRequest (required)
    * @return ContactCallbackRequest
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ContactCallbackRequest> postOutboundCampaignCallbackScheduleWithHttpInfo(String campaignId, ContactCallbackRequest body) throws IOException {
     return postOutboundCampaignCallbackSchedule(createPostOutboundCampaignCallbackScheduleRequest(campaignId, body).withHttpInfo());
@@ -7982,6 +7984,7 @@ public class OutboundApi {
    * @return ContactCallbackRequest
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ContactCallbackRequest postOutboundCampaignCallbackSchedule(PostOutboundCampaignCallbackScheduleRequest request) throws IOException, ApiException {
     try {
@@ -8000,6 +8003,7 @@ public class OutboundApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ContactCallbackRequest> postOutboundCampaignCallbackSchedule(ApiRequest<ContactCallbackRequest> request) throws IOException {
     try {

@@ -1031,6 +1031,7 @@ public class UsersApi {
    * @return List<AuthzDivision>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public List<AuthzDivision> getAuthorizationDivisionspermittedMe(String permission, String name) throws IOException, ApiException {
     return  getAuthorizationDivisionspermittedMe(createGetAuthorizationDivisionspermittedMeRequest(permission, name));
@@ -1043,6 +1044,7 @@ public class UsersApi {
    * @param name Search term to filter by division name (optional)
    * @return List<AuthzDivision>
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<List<AuthzDivision>> getAuthorizationDivisionspermittedMeWithHttpInfo(String permission, String name) throws IOException {
     return getAuthorizationDivisionspermittedMe(createGetAuthorizationDivisionspermittedMeRequest(permission, name).withHttpInfo());
@@ -1064,6 +1066,7 @@ public class UsersApi {
    * @return List<AuthzDivision>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public List<AuthzDivision> getAuthorizationDivisionspermittedMe(GetAuthorizationDivisionspermittedMeRequest request) throws IOException, ApiException {
     try {
@@ -1082,6 +1085,7 @@ public class UsersApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<List<AuthzDivision>> getAuthorizationDivisionspermittedMe(ApiRequest<Void> request) throws IOException {
     try {
@@ -1201,6 +1205,7 @@ public class UsersApi {
    * @return DivsPermittedEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(String subjectId, String permission, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     return  getAuthorizationDivisionspermittedPagedSubjectId(createGetAuthorizationDivisionspermittedPagedSubjectIdRequest(subjectId, permission, pageNumber, pageSize));
@@ -1215,6 +1220,7 @@ public class UsersApi {
    * @param pageSize Page size (optional, default to 25)
    * @return DivsPermittedEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedSubjectIdWithHttpInfo(String subjectId, String permission, Integer pageNumber, Integer pageSize) throws IOException {
     return getAuthorizationDivisionspermittedPagedSubjectId(createGetAuthorizationDivisionspermittedPagedSubjectIdRequest(subjectId, permission, pageNumber, pageSize).withHttpInfo());
@@ -1240,6 +1246,7 @@ public class UsersApi {
    * @return DivsPermittedEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(GetAuthorizationDivisionspermittedPagedSubjectIdRequest request) throws IOException, ApiException {
     try {
@@ -1258,6 +1265,7 @@ public class UsersApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedSubjectId(ApiRequest<Void> request) throws IOException {
     try {
@@ -1440,6 +1448,7 @@ public class UsersApi {
    * @return FieldConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public FieldConfig getFieldconfig(String type) throws IOException, ApiException {
     return  getFieldconfig(createGetFieldconfigRequest(type));
@@ -1451,6 +1460,7 @@ public class UsersApi {
    * @param type Field type (required)
    * @return FieldConfig
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException {
     return getFieldconfig(createGetFieldconfigRequest(type).withHttpInfo());
@@ -1470,6 +1480,7 @@ public class UsersApi {
    * @return FieldConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws IOException, ApiException {
     try {
@@ -1488,6 +1499,7 @@ public class UsersApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException {
     try {
@@ -1524,6 +1536,7 @@ public class UsersApi {
    * @return UserProfileEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserProfileEntityListing getProfilesUsers(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand, String integrationPresenceSource) throws IOException, ApiException {
     return  getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand, integrationPresenceSource));
@@ -1541,6 +1554,7 @@ public class UsersApi {
    * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". (optional)
    * @return UserProfileEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserProfileEntityListing> getProfilesUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand, String integrationPresenceSource) throws IOException {
     return getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand, integrationPresenceSource).withHttpInfo());
@@ -1572,6 +1586,7 @@ public class UsersApi {
    * @return UserProfileEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserProfileEntityListing getProfilesUsers(GetProfilesUsersRequest request) throws IOException, ApiException {
     try {
@@ -1590,6 +1605,7 @@ public class UsersApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserProfileEntityListing> getProfilesUsers(ApiRequest<Void> request) throws IOException {
     try {
@@ -2034,6 +2050,7 @@ public class UsersApi {
    * @return UserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserEntityListing getUserFavorites(String userId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
     return  getUserFavorites(createGetUserFavoritesRequest(userId, pageSize, pageNumber, sortOrder, expand));
@@ -2049,6 +2066,7 @@ public class UsersApi {
    * @param expand Which fields, if any, to expand (optional)
    * @return UserEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserEntityListing> getUserFavoritesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException {
     return getUserFavorites(createGetUserFavoritesRequest(userId, pageSize, pageNumber, sortOrder, expand).withHttpInfo());
@@ -2076,6 +2094,7 @@ public class UsersApi {
    * @return UserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserEntityListing getUserFavorites(GetUserFavoritesRequest request) throws IOException, ApiException {
     try {
@@ -2094,6 +2113,7 @@ public class UsersApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserEntityListing> getUserFavorites(ApiRequest<Void> request) throws IOException {
     try {
@@ -2286,6 +2306,7 @@ public class UsersApi {
    * @return UserProfile
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserProfile getUserProfile(String userId, List<String> expand, String integrationPresenceSource) throws IOException, ApiException {
     return  getUserProfile(createGetUserProfileRequest(userId, expand, integrationPresenceSource));
@@ -2299,6 +2320,7 @@ public class UsersApi {
    * @param integrationPresenceSource Gets an integration presence for a user instead of their default. (optional)
    * @return UserProfile
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserProfile> getUserProfileWithHttpInfo(String userId, List<String> expand, String integrationPresenceSource) throws IOException {
     return getUserProfile(createGetUserProfileRequest(userId, expand, integrationPresenceSource).withHttpInfo());
@@ -2322,6 +2344,7 @@ public class UsersApi {
    * @return UserProfile
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserProfile getUserProfile(GetUserProfileRequest request) throws IOException, ApiException {
     try {
@@ -2340,6 +2363,7 @@ public class UsersApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserProfile> getUserProfile(ApiRequest<Void> request) throws IOException {
     try {

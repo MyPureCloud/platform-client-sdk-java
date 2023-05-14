@@ -7137,6 +7137,7 @@ public class OutboundApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ContactCallbackRequest> postOutboundCampaignCallbackScheduleAsync(PostOutboundCampaignCallbackScheduleRequest request, final AsyncApiCallback<ContactCallbackRequest> callback) {
     try {
@@ -7171,6 +7172,7 @@ public class OutboundApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ContactCallbackRequest>> postOutboundCampaignCallbackScheduleAsync(ApiRequest<ContactCallbackRequest> request, final AsyncApiCallback<ApiResponse<ContactCallbackRequest>> callback) {
     try {

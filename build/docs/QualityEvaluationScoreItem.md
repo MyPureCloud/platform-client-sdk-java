@@ -15,7 +15,7 @@ title: QualityEvaluationScoreItem
 | **formName** | <!----><!---->**String**<!----> | The name of form |  [optional] |
 | **points** | <!----><!---->**Integer**<!----> | Gamification points earned for this metric |  [optional] |
 | **evaluationScore** | <!----><!---->**Double**<!----> | The quality score of evaluation as a percentage |  [optional] |
-| **maxPoints** | <!----><!---->**Integer**<!----> | Gamification max points for this metric |  [optional] |
+| **maxPoints** | <!----><!---->**Integer**<!----> | The maximum Gamification points a user may earn for this metric |  [optional] |
 | **mediaTypes** | <!---->[**List&lt;MediaTypesEnum&gt;**](#MediaTypesEnum)<!----> | A list of media types for the metric |  [optional] |
 {: class="table table-striped"}
 

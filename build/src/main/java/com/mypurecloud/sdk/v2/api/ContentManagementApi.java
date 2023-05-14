@@ -847,6 +847,7 @@ public class ContentManagementApi {
    * @return DocumentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DocumentEntityListing getContentmanagementDocuments(String workspaceId, String name, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
     return  getContentmanagementDocuments(createGetContentmanagementDocumentsRequest(workspaceId, name, expand, pageSize, pageNumber, sortBy, sortOrder));
@@ -864,6 +865,7 @@ public class ContentManagementApi {
    * @param sortOrder ascending or descending (optional, default to ascending)
    * @return DocumentEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DocumentEntityListing> getContentmanagementDocumentsWithHttpInfo(String workspaceId, String name, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
     return getContentmanagementDocuments(createGetContentmanagementDocumentsRequest(workspaceId, name, expand, pageSize, pageNumber, sortBy, sortOrder).withHttpInfo());
@@ -895,6 +897,7 @@ public class ContentManagementApi {
    * @return DocumentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DocumentEntityListing getContentmanagementDocuments(GetContentmanagementDocumentsRequest request) throws IOException, ApiException {
     try {
@@ -913,6 +916,7 @@ public class ContentManagementApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DocumentEntityListing> getContentmanagementDocuments(ApiRequest<Void> request) throws IOException {
     try {

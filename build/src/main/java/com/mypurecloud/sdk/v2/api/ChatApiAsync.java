@@ -48,6 +48,7 @@ public class ChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ChatSettings> getChatSettingsAsync(GetChatSettingsRequest request, final AsyncApiCallback<ChatSettings> callback) {
     try {
@@ -82,6 +83,7 @@ public class ChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ChatSettings>> getChatSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ChatSettings>> callback) {
     try {
@@ -198,6 +200,7 @@ public class ChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ChatSettings> patchChatSettingsAsync(PatchChatSettingsRequest request, final AsyncApiCallback<ChatSettings> callback) {
     try {
@@ -232,6 +235,7 @@ public class ChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ChatSettings>> patchChatSettingsAsync(ApiRequest<ChatSettings> request, final AsyncApiCallback<ApiResponse<ChatSettings>> callback) {
     try {
@@ -348,6 +352,7 @@ public class ChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ChatSettings> putChatSettingsAsync(PutChatSettingsRequest request, final AsyncApiCallback<ChatSettings> callback) {
     try {
@@ -382,6 +387,7 @@ public class ChatApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ChatSettings>> putChatSettingsAsync(ApiRequest<ChatSettings> request, final AsyncApiCallback<ApiResponse<ChatSettings>> callback) {
     try {

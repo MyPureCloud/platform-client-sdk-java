@@ -4120,6 +4120,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OutboundRoute> getTelephonyProvidersEdgesOutboundrouteAsync(GetTelephonyProvidersEdgesOutboundrouteRequest request, final AsyncApiCallback<OutboundRoute> callback) {
     try {
@@ -4154,6 +4155,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OutboundRoute>> getTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OutboundRoute>> callback) {
     try {

@@ -68,6 +68,7 @@ public class OrganizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, final AsyncApiCallback<FieldConfig> callback) {
     try {
@@ -102,6 +103,7 @@ public class OrganizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FieldConfig>> callback) {
     try {
@@ -818,6 +820,7 @@ public class OrganizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OrgWhitelistSettings> getOrganizationsWhitelistAsync(GetOrganizationsWhitelistRequest request, final AsyncApiCallback<OrgWhitelistSettings> callback) {
     try {
@@ -852,6 +855,7 @@ public class OrganizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OrgWhitelistSettings>> getOrganizationsWhitelistAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrgWhitelistSettings>> callback) {
     try {
@@ -1193,6 +1197,7 @@ public class OrganizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OrgWhitelistSettings> putOrganizationsWhitelistAsync(PutOrganizationsWhitelistRequest request, final AsyncApiCallback<OrgWhitelistSettings> callback) {
     try {
@@ -1227,6 +1232,7 @@ public class OrganizationApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OrgWhitelistSettings>> putOrganizationsWhitelistAsync(ApiRequest<OrgWhitelistSettings> request, final AsyncApiCallback<ApiResponse<OrgWhitelistSettings>> callback) {
     try {

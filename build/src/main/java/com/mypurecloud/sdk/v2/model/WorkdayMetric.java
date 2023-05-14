@@ -29,6 +29,7 @@ public class WorkdayMetric  implements Serializable {
   private Metric metric = null;
   private Objective objective = null;
   private Integer points = null;
+  private Integer maxPoints = null;
   private Double value = null;
   private List<PunctualityEvent> punctualityEvents = new ArrayList<PunctualityEvent>();
 
@@ -51,6 +52,13 @@ public class WorkdayMetric  implements Serializable {
   @JsonProperty("points")
   public Integer getPoints() {
     return points;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The maximum Gamification points a user may earn for this metric")
+  @JsonProperty("maxPoints")
+  public Integer getMaxPoints() {
+    return maxPoints;
   }
 
 
@@ -81,13 +89,14 @@ public class WorkdayMetric  implements Serializable {
     return Objects.equals(this.metric, workdayMetric.metric) &&
             Objects.equals(this.objective, workdayMetric.objective) &&
             Objects.equals(this.points, workdayMetric.points) &&
+            Objects.equals(this.maxPoints, workdayMetric.maxPoints) &&
             Objects.equals(this.value, workdayMetric.value) &&
             Objects.equals(this.punctualityEvents, workdayMetric.punctualityEvents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, objective, points, value, punctualityEvents);
+    return Objects.hash(metric, objective, points, maxPoints, value, punctualityEvents);
   }
 
   @Override
@@ -98,6 +107,7 @@ public class WorkdayMetric  implements Serializable {
     sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
     sb.append("    objective: ").append(toIndentedString(objective)).append("\n");
     sb.append("    points: ").append(toIndentedString(points)).append("\n");
+    sb.append("    maxPoints: ").append(toIndentedString(maxPoints)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    punctualityEvents: ").append(toIndentedString(punctualityEvents)).append("\n");
     sb.append("}");

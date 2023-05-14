@@ -290,6 +290,7 @@ Wraps DELETE /api/v2/users/{userId}
 Requires ANY permissions: 
 
 * directory:user:delete
+* directory:organization:admin
 
 ### Example
 

@@ -11,6 +11,7 @@ title: KeyPerformanceIndicator
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The name of the Key Performance Indicator. |  [optional] |
 | **optimizationType** | [**OptimizationTypeEnum**](#OptimizationTypeEnum)<!----> | The optimization type of the Key Performance Indicator. |  [optional] |
+| **problemType** | [**ProblemTypeEnum**](#ProblemTypeEnum)<!----> | The problem type of the Key Performance Indicator. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | DateTime indicating when the Key Performance Indicator was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | DateTime indicating when the Key Performance Indicator was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **description** | <!----><!---->**String**<!----> | The description of the Key Performance Indicator. |  [optional] |
@@ -34,6 +35,18 @@ title: KeyPerformanceIndicator
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MAXIMIZATION | &quot;Maximization&quot; | 
 | MINIMIZATION | &quot;Minimization&quot; | 
+{: class="table table-striped"}
+
+
+<a name="ProblemTypeEnum"></a>
+
+## Enum: ProblemTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CLASSIFICATION | &quot;Classification&quot; | 
+| REGRESSION | &quot;Regression&quot; | 
 {: class="table table-striped"}
 
 

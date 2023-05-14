@@ -151,10 +151,12 @@ import com.mypurecloud.sdk.v2.model.WfmAgent;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkQuery;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForTeams;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageResponse;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageTeamsRequest;
 import com.mypurecloud.sdk.v2.model.WfmIntradayPlanningGroupListing;
 import com.mypurecloud.sdk.v2.model.WfmProcessUploadRequest;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
@@ -317,6 +319,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTeamAdherenceHistoricalRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTeamShrinkageJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeofflimitsAvailableQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementManagementunitTimeofflimitValuesRequest;
@@ -2066,7 +2070,7 @@ public class WorkforceManagementApi {
    * Get business unit
    * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-   * @param expand  (optional)
+   * @param expand Include to access additional data on the business unit (optional)
    * @return BusinessUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2079,7 +2083,7 @@ public class WorkforceManagementApi {
    * Get business unit
    * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-   * @param expand  (optional)
+   * @param expand Include to access additional data on the business unit (optional)
    * @return BusinessUnitResponse
    * @throws IOException if the request fails to be processed
    */
@@ -3494,7 +3498,7 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
    * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param forecastId The ID of the forecast (required)
-   * @param expand  (optional)
+   * @param expand Include to access additional data on the forecast (optional)
    * @return BuShortTermForecast
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3509,7 +3513,7 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
    * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param forecastId The ID of the forecast (required)
-   * @param expand  (optional)
+   * @param expand Include to access additional data on the forecast (optional)
    * @return BuShortTermForecast
    * @throws IOException if the request fails to be processed
    */
@@ -4565,6 +4569,7 @@ public class WorkforceManagementApi {
    * @return ActivityCodeContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(String managementUnitId) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitActivitycodes(createGetWorkforcemanagementManagementunitActivitycodesRequest(managementUnitId));
@@ -4576,6 +4581,7 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodesWithHttpInfo(String managementUnitId) throws IOException {
     return getWorkforcemanagementManagementunitActivitycodes(createGetWorkforcemanagementManagementunitActivitycodesRequest(managementUnitId).withHttpInfo());
@@ -4595,6 +4601,7 @@ public class WorkforceManagementApi {
    * @return ActivityCodeContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(GetWorkforcemanagementManagementunitActivitycodesRequest request) throws IOException, ApiException {
     try {
@@ -4613,6 +4620,7 @@ public class WorkforceManagementApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodes(ApiRequest<Void> request) throws IOException {
     try {
@@ -5709,6 +5717,7 @@ public class WorkforceManagementApi {
    * @return WeekScheduleResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WeekScheduleResponse getWorkforcemanagementManagementunitWeekSchedule(String managementUnitId, String weekId, String scheduleId, String expand, Boolean forceDownloadService) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitWeekSchedule(createGetWorkforcemanagementManagementunitWeekScheduleRequest(managementUnitId, weekId, scheduleId, expand, forceDownloadService));
@@ -5724,6 +5733,7 @@ public class WorkforceManagementApi {
    * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
    * @return WeekScheduleResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WeekScheduleResponse> getWorkforcemanagementManagementunitWeekScheduleWithHttpInfo(String managementUnitId, String weekId, String scheduleId, String expand, Boolean forceDownloadService) throws IOException {
     return getWorkforcemanagementManagementunitWeekSchedule(createGetWorkforcemanagementManagementunitWeekScheduleRequest(managementUnitId, weekId, scheduleId, expand, forceDownloadService).withHttpInfo());
@@ -5751,6 +5761,7 @@ public class WorkforceManagementApi {
    * @return WeekScheduleResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WeekScheduleResponse getWorkforcemanagementManagementunitWeekSchedule(GetWorkforcemanagementManagementunitWeekScheduleRequest request) throws IOException, ApiException {
     try {
@@ -5769,6 +5780,7 @@ public class WorkforceManagementApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WeekScheduleResponse> getWorkforcemanagementManagementunitWeekSchedule(ApiRequest<Void> request) throws IOException {
     try {
@@ -5803,6 +5815,7 @@ public class WorkforceManagementApi {
    * @return WeekScheduleListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WeekScheduleListResponse getWorkforcemanagementManagementunitWeekSchedules(String managementUnitId, String weekId, Boolean includeOnlyPublished, String earliestWeekDate, String latestWeekDate) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitWeekSchedules(createGetWorkforcemanagementManagementunitWeekSchedulesRequest(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate));
@@ -5818,6 +5831,7 @@ public class WorkforceManagementApi {
    * @param latestWeekDate The start date of the latest week to query in yyyy-MM-dd format (optional)
    * @return WeekScheduleListResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WeekScheduleListResponse> getWorkforcemanagementManagementunitWeekSchedulesWithHttpInfo(String managementUnitId, String weekId, Boolean includeOnlyPublished, String earliestWeekDate, String latestWeekDate) throws IOException {
     return getWorkforcemanagementManagementunitWeekSchedules(createGetWorkforcemanagementManagementunitWeekSchedulesRequest(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate).withHttpInfo());
@@ -5845,6 +5859,7 @@ public class WorkforceManagementApi {
    * @return WeekScheduleListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WeekScheduleListResponse getWorkforcemanagementManagementunitWeekSchedules(GetWorkforcemanagementManagementunitWeekSchedulesRequest request) throws IOException, ApiException {
     try {
@@ -5863,6 +5878,7 @@ public class WorkforceManagementApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WeekScheduleListResponse> getWorkforcemanagementManagementunitWeekSchedules(ApiRequest<Void> request) throws IOException {
     try {
@@ -6226,7 +6242,7 @@ public class WorkforceManagementApi {
    * Get work plans
    * \"expand=details\" is deprecated
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param expand  (optional)
+   * @param expand Include to access additional data on the work plans (optional)
    * @return WorkPlanListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6239,7 +6255,7 @@ public class WorkforceManagementApi {
    * Get work plans
    * \"expand=details\" is deprecated
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param expand  (optional)
+   * @param expand Include to access additional data on the work plans (optional)
    * @return WorkPlanListResponse
    * @throws IOException if the request fails to be processed
    */
@@ -10276,7 +10292,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
    * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param body  (required)
+   * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @return AsyncForecastOperationResult
    * @throws ApiException if the request fails on the server
@@ -10291,7 +10307,7 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
    * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param body  (required)
+   * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @return AsyncForecastOperationResult
    * @throws IOException if the request fails to be processed
@@ -10366,7 +10382,7 @@ public class WorkforceManagementApi {
    * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
    * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
    * @param weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param body  (required)
+   * @param body body (required)
    * @return ImportForecastResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -10380,7 +10396,7 @@ public class WorkforceManagementApi {
    * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
    * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
    * @param weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param body  (required)
+   * @param body body (required)
    * @return ImportForecastResponse
    * @throws IOException if the request fails to be processed
    */
@@ -11100,6 +11116,7 @@ public class WorkforceManagementApi {
    * @return UserScheduleContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(String managementUnitId, UserListScheduleRequestBody body) throws IOException, ApiException {
     return  postWorkforcemanagementManagementunitSchedulesSearch(createPostWorkforcemanagementManagementunitSchedulesSearchRequest(managementUnitId, body));
@@ -11112,6 +11129,7 @@ public class WorkforceManagementApi {
    * @param body body (optional)
    * @return UserScheduleContainer
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearchWithHttpInfo(String managementUnitId, UserListScheduleRequestBody body) throws IOException {
     return postWorkforcemanagementManagementunitSchedulesSearch(createPostWorkforcemanagementManagementunitSchedulesSearchRequest(managementUnitId, body).withHttpInfo());
@@ -11133,6 +11151,7 @@ public class WorkforceManagementApi {
    * @return UserScheduleContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(PostWorkforcemanagementManagementunitSchedulesSearchRequest request) throws IOException, ApiException {
     try {
@@ -11151,6 +11170,7 @@ public class WorkforceManagementApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearch(ApiRequest<UserListScheduleRequestBody> request) throws IOException {
     try {
@@ -12865,6 +12885,7 @@ public class WorkforceManagementApi {
    * @return UserScheduleContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserScheduleContainer postWorkforcemanagementSchedules(CurrentUserScheduleRequestBody body) throws IOException, ApiException {
     return  postWorkforcemanagementSchedules(createPostWorkforcemanagementSchedulesRequest(body));
@@ -12876,6 +12897,7 @@ public class WorkforceManagementApi {
    * @param body body (optional)
    * @return UserScheduleContainer
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserScheduleContainer> postWorkforcemanagementSchedulesWithHttpInfo(CurrentUserScheduleRequestBody body) throws IOException {
     return postWorkforcemanagementSchedules(createPostWorkforcemanagementSchedulesRequest(body).withHttpInfo());
@@ -12895,6 +12917,7 @@ public class WorkforceManagementApi {
    * @return UserScheduleContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UserScheduleContainer postWorkforcemanagementSchedules(PostWorkforcemanagementSchedulesRequest request) throws IOException, ApiException {
     try {
@@ -12913,6 +12936,7 @@ public class WorkforceManagementApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UserScheduleContainer> postWorkforcemanagementSchedules(ApiRequest<CurrentUserScheduleRequestBody> request) throws IOException {
     try {
@@ -12932,6 +12956,170 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Request a teams historical adherence report
+   * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+   * @param teamId The ID of the team (required)
+   * @param body body (optional)
+   * @return WfmHistoricalAdherenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalAdherenceResponse postWorkforcemanagementTeamAdherenceHistorical(String teamId, WfmHistoricalAdherenceQueryForTeams body) throws IOException, ApiException {
+    return  postWorkforcemanagementTeamAdherenceHistorical(createPostWorkforcemanagementTeamAdherenceHistoricalRequest(teamId, body));
+  }
+
+  /**
+   * Request a teams historical adherence report
+   * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+   * @param teamId The ID of the team (required)
+   * @param body body (optional)
+   * @return WfmHistoricalAdherenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalAdherenceResponse> postWorkforcemanagementTeamAdherenceHistoricalWithHttpInfo(String teamId, WfmHistoricalAdherenceQueryForTeams body) throws IOException {
+    return postWorkforcemanagementTeamAdherenceHistorical(createPostWorkforcemanagementTeamAdherenceHistoricalRequest(teamId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementTeamAdherenceHistoricalRequest createPostWorkforcemanagementTeamAdherenceHistoricalRequest(String teamId, WfmHistoricalAdherenceQueryForTeams body) {
+    return PostWorkforcemanagementTeamAdherenceHistoricalRequest.builder()
+            .withTeamId(teamId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Request a teams historical adherence report
+   * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+   * @param request The request object
+   * @return WfmHistoricalAdherenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalAdherenceResponse postWorkforcemanagementTeamAdherenceHistorical(PostWorkforcemanagementTeamAdherenceHistoricalRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmHistoricalAdherenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmHistoricalAdherenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request a teams historical adherence report
+   * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalAdherenceResponse> postWorkforcemanagementTeamAdherenceHistorical(ApiRequest<WfmHistoricalAdherenceQueryForTeams> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmHistoricalAdherenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Request a historical shrinkage report
+   * The maximum supported range for historical shrinkage queries is up to 32 days
+   * @param teamId The ID of the team (required)
+   * @param body body (optional)
+   * @return WfmHistoricalShrinkageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalShrinkageResponse postWorkforcemanagementTeamShrinkageJobs(String teamId, WfmHistoricalShrinkageTeamsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementTeamShrinkageJobs(createPostWorkforcemanagementTeamShrinkageJobsRequest(teamId, body));
+  }
+
+  /**
+   * Request a historical shrinkage report
+   * The maximum supported range for historical shrinkage queries is up to 32 days
+   * @param teamId The ID of the team (required)
+   * @param body body (optional)
+   * @return WfmHistoricalShrinkageResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalShrinkageResponse> postWorkforcemanagementTeamShrinkageJobsWithHttpInfo(String teamId, WfmHistoricalShrinkageTeamsRequest body) throws IOException {
+    return postWorkforcemanagementTeamShrinkageJobs(createPostWorkforcemanagementTeamShrinkageJobsRequest(teamId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementTeamShrinkageJobsRequest createPostWorkforcemanagementTeamShrinkageJobsRequest(String teamId, WfmHistoricalShrinkageTeamsRequest body) {
+    return PostWorkforcemanagementTeamShrinkageJobsRequest.builder()
+            .withTeamId(teamId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Request a historical shrinkage report
+   * The maximum supported range for historical shrinkage queries is up to 32 days
+   * @param request The request object
+   * @return WfmHistoricalShrinkageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalShrinkageResponse postWorkforcemanagementTeamShrinkageJobs(PostWorkforcemanagementTeamShrinkageJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmHistoricalShrinkageResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmHistoricalShrinkageResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request a historical shrinkage report
+   * The maximum supported range for historical shrinkage queries is up to 32 days
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalShrinkageResponse> postWorkforcemanagementTeamShrinkageJobs(ApiRequest<WfmHistoricalShrinkageTeamsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmHistoricalShrinkageResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalShrinkageResponse> response = (ApiResponse<WfmHistoricalShrinkageResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalShrinkageResponse> response = (ApiResponse<WfmHistoricalShrinkageResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

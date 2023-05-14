@@ -4453,6 +4453,7 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRoute
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutboundRoute getTelephonyProvidersEdgesOutboundroute(String outboundRouteId) throws IOException, ApiException {
     return  getTelephonyProvidersEdgesOutboundroute(createGetTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId));
@@ -4464,6 +4465,7 @@ public class TelephonyProvidersEdgeApi {
    * @param outboundRouteId Outbound route ID (required)
    * @return OutboundRoute
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws IOException {
     return getTelephonyProvidersEdgesOutboundroute(createGetTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId).withHttpInfo());
@@ -4483,6 +4485,7 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRoute
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OutboundRoute getTelephonyProvidersEdgesOutboundroute(GetTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
     try {
@@ -4501,6 +4504,7 @@ public class TelephonyProvidersEdgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws IOException {
     try {

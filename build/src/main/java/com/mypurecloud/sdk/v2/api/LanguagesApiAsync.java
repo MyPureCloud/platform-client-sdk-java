@@ -52,6 +52,7 @@ public class LanguagesApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteLanguageAsync(DeleteLanguageRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -86,6 +87,7 @@ public class LanguagesApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteLanguageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -127,6 +129,7 @@ public class LanguagesApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Language> getLanguageAsync(GetLanguageRequest request, final AsyncApiCallback<Language> callback) {
     try {
@@ -161,6 +164,7 @@ public class LanguagesApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Language>> getLanguageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Language>> callback) {
     try {
@@ -202,6 +206,7 @@ public class LanguagesApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<LanguageEntityListing> getLanguagesAsync(GetLanguagesRequest request, final AsyncApiCallback<LanguageEntityListing> callback) {
     try {
@@ -236,6 +241,7 @@ public class LanguagesApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<LanguageEntityListing>> getLanguagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LanguageEntityListing>> callback) {
     try {
@@ -577,6 +583,7 @@ public class LanguagesApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Language> postLanguagesAsync(PostLanguagesRequest request, final AsyncApiCallback<Language> callback) {
     try {
@@ -611,6 +618,7 @@ public class LanguagesApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Language>> postLanguagesAsync(ApiRequest<Language> request, final AsyncApiCallback<ApiResponse<Language>> callback) {
     try {

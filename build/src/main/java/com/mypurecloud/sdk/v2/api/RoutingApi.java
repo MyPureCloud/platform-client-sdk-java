@@ -851,6 +851,7 @@ public class RoutingApi {
    * @param memberId Member ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteRoutingQueueUser(String queueId, String memberId) throws IOException, ApiException {
      deleteRoutingQueueUser(createDeleteRoutingQueueUserRequest(queueId, memberId));
@@ -862,6 +863,7 @@ public class RoutingApi {
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteRoutingQueueUserWithHttpInfo(String queueId, String memberId) throws IOException {
     return deleteRoutingQueueUser(createDeleteRoutingQueueUserRequest(queueId, memberId).withHttpInfo());
@@ -882,6 +884,7 @@ public class RoutingApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteRoutingQueueUser(DeleteRoutingQueueUserRequest request) throws IOException, ApiException {
     try {
@@ -900,6 +903,7 @@ public class RoutingApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteRoutingQueueUser(ApiRequest<Void> request) throws IOException {
     try {
@@ -4176,6 +4180,7 @@ public class RoutingApi {
    * @return QueueMemberEntityListingV1
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public QueueMemberEntityListingV1 getRoutingQueueUsers(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException, ApiException {
     return  getRoutingQueueUsers(createGetRoutingQueueUsersRequest(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence));
@@ -4198,6 +4203,7 @@ public class RoutingApi {
    * @param presence Filter by presence (optional)
    * @return QueueMemberEntityListingV1
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<QueueMemberEntityListingV1> getRoutingQueueUsersWithHttpInfo(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException {
     return getRoutingQueueUsers(createGetRoutingQueueUsersRequest(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence).withHttpInfo());
@@ -4239,6 +4245,7 @@ public class RoutingApi {
    * @return QueueMemberEntityListingV1
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public QueueMemberEntityListingV1 getRoutingQueueUsers(GetRoutingQueueUsersRequest request) throws IOException, ApiException {
     try {
@@ -4257,6 +4264,7 @@ public class RoutingApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<QueueMemberEntityListingV1> getRoutingQueueUsers(ApiRequest<Void> request) throws IOException {
     try {
@@ -7139,6 +7147,7 @@ public class RoutingApi {
    * @param body Queue Member (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void patchRoutingQueueUser(String queueId, String memberId, QueueMember body) throws IOException, ApiException {
      patchRoutingQueueUser(createPatchRoutingQueueUserRequest(queueId, memberId, body));
@@ -7151,6 +7160,7 @@ public class RoutingApi {
    * @param memberId Member ID (required)
    * @param body Queue Member (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> patchRoutingQueueUserWithHttpInfo(String queueId, String memberId, QueueMember body) throws IOException {
     return patchRoutingQueueUser(createPatchRoutingQueueUserRequest(queueId, memberId, body).withHttpInfo());
@@ -7173,6 +7183,7 @@ public class RoutingApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void patchRoutingQueueUser(PatchRoutingQueueUserRequest request) throws IOException, ApiException {
     try {
@@ -7191,6 +7202,7 @@ public class RoutingApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> patchRoutingQueueUser(ApiRequest<QueueMember> request) throws IOException {
     try {
@@ -7222,6 +7234,7 @@ public class RoutingApi {
    * @return QueueMemberEntityListingV1
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public QueueMemberEntityListingV1 patchRoutingQueueUsers(String queueId, List<QueueMember> body) throws IOException, ApiException {
     return  patchRoutingQueueUsers(createPatchRoutingQueueUsersRequest(queueId, body));
@@ -7234,6 +7247,7 @@ public class RoutingApi {
    * @param body Queue Members (required)
    * @return QueueMemberEntityListingV1
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<QueueMemberEntityListingV1> patchRoutingQueueUsersWithHttpInfo(String queueId, List<QueueMember> body) throws IOException {
     return patchRoutingQueueUsers(createPatchRoutingQueueUsersRequest(queueId, body).withHttpInfo());
@@ -7255,6 +7269,7 @@ public class RoutingApi {
    * @return QueueMemberEntityListingV1
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public QueueMemberEntityListingV1 patchRoutingQueueUsers(PatchRoutingQueueUsersRequest request) throws IOException, ApiException {
     try {
@@ -7273,6 +7288,7 @@ public class RoutingApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<QueueMemberEntityListingV1> patchRoutingQueueUsers(ApiRequest<List<QueueMember>> request) throws IOException {
     try {
@@ -8754,6 +8770,7 @@ public class RoutingApi {
    * @param delete True to delete queue members (optional, default to false)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postRoutingQueueUsers(String queueId, List<WritableEntity> body, Boolean delete) throws IOException, ApiException {
      postRoutingQueueUsers(createPostRoutingQueueUsersRequest(queueId, body, delete));
@@ -8766,6 +8783,7 @@ public class RoutingApi {
    * @param body Queue Members (required)
    * @param delete True to delete queue members (optional, default to false)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postRoutingQueueUsersWithHttpInfo(String queueId, List<WritableEntity> body, Boolean delete) throws IOException {
     return postRoutingQueueUsers(createPostRoutingQueueUsersRequest(queueId, body, delete).withHttpInfo());
@@ -8788,6 +8806,7 @@ public class RoutingApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postRoutingQueueUsers(PostRoutingQueueUsersRequest request) throws IOException, ApiException {
     try {
@@ -8806,6 +8825,7 @@ public class RoutingApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postRoutingQueueUsers(ApiRequest<List<WritableEntity>> request) throws IOException {
     try {

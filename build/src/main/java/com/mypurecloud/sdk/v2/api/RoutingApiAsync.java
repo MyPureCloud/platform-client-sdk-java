@@ -842,6 +842,7 @@ public class RoutingApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteRoutingQueueUserAsync(DeleteRoutingQueueUserRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -876,6 +877,7 @@ public class RoutingApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteRoutingQueueUserAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -3917,6 +3919,7 @@ public class RoutingApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<QueueMemberEntityListingV1> getRoutingQueueUsersAsync(GetRoutingQueueUsersRequest request, final AsyncApiCallback<QueueMemberEntityListingV1> callback) {
     try {
@@ -3951,6 +3954,7 @@ public class RoutingApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<QueueMemberEntityListingV1>> getRoutingQueueUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QueueMemberEntityListingV1>> callback) {
     try {
@@ -6467,6 +6471,7 @@ public class RoutingApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> patchRoutingQueueUserAsync(PatchRoutingQueueUserRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -6501,6 +6506,7 @@ public class RoutingApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> patchRoutingQueueUserAsync(ApiRequest<QueueMember> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -6542,6 +6548,7 @@ public class RoutingApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<QueueMemberEntityListingV1> patchRoutingQueueUsersAsync(PatchRoutingQueueUsersRequest request, final AsyncApiCallback<QueueMemberEntityListingV1> callback) {
     try {
@@ -6576,6 +6583,7 @@ public class RoutingApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<QueueMemberEntityListingV1>> patchRoutingQueueUsersAsync(ApiRequest<List<QueueMember>> request, final AsyncApiCallback<ApiResponse<QueueMemberEntityListingV1>> callback) {
     try {
@@ -7967,6 +7975,7 @@ public class RoutingApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postRoutingQueueUsersAsync(PostRoutingQueueUsersRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -8001,6 +8010,7 @@ public class RoutingApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postRoutingQueueUsersAsync(ApiRequest<List<WritableEntity>> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {

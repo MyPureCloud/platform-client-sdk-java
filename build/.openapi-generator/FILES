@@ -1461,6 +1461,7 @@ docs/ForecastAverageSpeedOfAnswerResponse.md
 docs/ForecastPlanningGroupData.md
 docs/ForecastPlanningGroupResponse.md
 docs/ForecastPlanningGroupsResponse.md
+docs/ForecastServiceGoalTemplateImpactOverrideResponse.md
 docs/ForecastServiceGoalTemplateResponse.md
 docs/ForecastServiceLevelResponse.md
 docs/ForecastSourceDayPointer.md
@@ -3562,6 +3563,7 @@ docs/WfmHistoricalAdherenceBulkUserDayMetrics.md
 docs/WfmHistoricalAdherenceBulkUserResult.md
 docs/WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.md
 docs/WfmHistoricalAdherenceQuery.md
+docs/WfmHistoricalAdherenceQueryForTeams.md
 docs/WfmHistoricalAdherenceQueryForUsers.md
 docs/WfmHistoricalAdherenceResponse.md
 docs/WfmHistoricalAdherenceResultWrapper.md
@@ -3570,6 +3572,7 @@ docs/WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
 docs/WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification.md
 docs/WfmHistoricalShrinkageRequest.md
 docs/WfmHistoricalShrinkageResponse.md
+docs/WfmHistoricalShrinkageTeamsRequest.md
 docs/WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody.md
 docs/WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType.md
 docs/WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification.md
@@ -5553,6 +5556,8 @@ docs/postWorkforcemanagementManagementunitWorkplans-example.txt
 docs/postWorkforcemanagementManagementunits-example.txt
 docs/postWorkforcemanagementNotificationsUpdate-example.txt
 docs/postWorkforcemanagementSchedules-example.txt
+docs/postWorkforcemanagementTeamAdherenceHistorical-example.txt
+docs/postWorkforcemanagementTeamShrinkageJobs-example.txt
 docs/postWorkforcemanagementTimeofflimitsAvailableQuery-example.txt
 docs/postWorkforcemanagementTimeoffrequests-example.txt
 docs/putAlertingInteractionstatsAlert-example.txt
@@ -7746,6 +7751,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManageme
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementNotificationsUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementSchedulesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementTeamAdherenceHistoricalRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementTeamShrinkageJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementTimeofflimitsAvailableQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementTimeoffrequestsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutAlertingInteractionstatsAlertRequest.java
@@ -9374,6 +9381,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ForecastAverageSpeedOfAnswerResponse.
 src/main/java/com/mypurecloud/sdk/v2/model/ForecastPlanningGroupData.java
 src/main/java/com/mypurecloud/sdk/v2/model/ForecastPlanningGroupResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ForecastPlanningGroupsResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/ForecastServiceGoalTemplateImpactOverrideResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ForecastServiceGoalTemplateResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ForecastServiceLevelResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ForecastSourceDayPointer.java
@@ -11377,6 +11385,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalAdherenceBulkUserDayMetr
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalAdherenceBulkUserResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalAdherenceQuery.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalAdherenceQueryForTeams.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalAdherenceQueryForUsers.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalAdherenceResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalAdherenceResultWrapper.java
@@ -11385,6 +11394,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalDataUploadRequestStatusT
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalShrinkageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalShrinkageResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmHistoricalShrinkageTeamsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification.java
