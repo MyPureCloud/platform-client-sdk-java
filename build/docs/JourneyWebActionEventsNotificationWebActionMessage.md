@@ -21,6 +21,7 @@ title: JourneyWebActionEventsNotificationWebActionMessage
 | **geolocation** | <!----><!---->[**JourneyWebActionEventsNotificationGeoLocation**](JourneyWebActionEventsNotificationGeoLocation.html)<!----> |  |  [optional] |
 | **mktCampaign** | <!----><!---->[**JourneyWebActionEventsNotificationMktCampaign**](JourneyWebActionEventsNotificationMktCampaign.html)<!----> |  |  [optional] |
 | **visitReferrer** | <!----><!---->[**JourneyWebActionEventsNotificationReferrer**](JourneyWebActionEventsNotificationReferrer.html)<!----> |  |  [optional] |
+| **timeToDisposition** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -199,6 +199,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean held = null;
+  private Boolean securePause = null;
   private QueueConversationSocialExpressionEventTopicErrorDetails errorInfo = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
@@ -468,6 +469,24 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   }
   public void setHeld(Boolean held) {
     this.held = held;
+  }
+
+
+  /**
+   * True when the recording of this call is in secure pause status.
+   **/
+  public QueueConversationSocialExpressionEventTopicCall securePause(Boolean securePause) {
+    this.securePause = securePause;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True when the recording of this call is in secure pause status.")
+  @JsonProperty("securePause")
+  public Boolean getSecurePause() {
+    return securePause;
+  }
+  public void setSecurePause(Boolean securePause) {
+    this.securePause = securePause;
   }
 
 
@@ -845,6 +864,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
             Objects.equals(this.muted, queueConversationSocialExpressionEventTopicCall.muted) &&
             Objects.equals(this.confined, queueConversationSocialExpressionEventTopicCall.confined) &&
             Objects.equals(this.held, queueConversationSocialExpressionEventTopicCall.held) &&
+            Objects.equals(this.securePause, queueConversationSocialExpressionEventTopicCall.securePause) &&
             Objects.equals(this.errorInfo, queueConversationSocialExpressionEventTopicCall.errorInfo) &&
             Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicCall.disconnectType) &&
             Objects.equals(this.startHoldTime, queueConversationSocialExpressionEventTopicCall.startHoldTime) &&
@@ -869,7 +889,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
+    return Objects.hash(id, state, initialState, recording, recordingState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
   }
 
   @Override
@@ -885,6 +905,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
+    sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");

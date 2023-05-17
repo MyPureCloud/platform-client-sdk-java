@@ -44,7 +44,8 @@ public class ConsultTransfer  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DESTINATION("DESTINATION"),
     OBJECT("OBJECT"),
-    BOTH("BOTH");
+    BOTH("BOTH"),
+    CONFERENCE("CONFERENCE");
 
     private String value;
 

@@ -42,6 +42,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
   private JourneyWebEventsNotificationGeoLocation geolocation = null;
   private JourneyWebEventsNotificationMktCampaign mktCampaign = null;
   private JourneyWebEventsNotificationReferrer visitReferrer = null;
+  private Integer timeToDisposition = null;
 
   
   /**
@@ -265,6 +266,23 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
   }
 
 
+  /**
+   **/
+  public JourneyWebEventsNotificationWebActionMessage timeToDisposition(Integer timeToDisposition) {
+    this.timeToDisposition = timeToDisposition;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("timeToDisposition")
+  public Integer getTimeToDisposition() {
+    return timeToDisposition;
+  }
+  public void setTimeToDisposition(Integer timeToDisposition) {
+    this.timeToDisposition = timeToDisposition;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -287,12 +305,13 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
             Objects.equals(this.device, journeyWebEventsNotificationWebActionMessage.device) &&
             Objects.equals(this.geolocation, journeyWebEventsNotificationWebActionMessage.geolocation) &&
             Objects.equals(this.mktCampaign, journeyWebEventsNotificationWebActionMessage.mktCampaign) &&
-            Objects.equals(this.visitReferrer, journeyWebEventsNotificationWebActionMessage.visitReferrer);
+            Objects.equals(this.visitReferrer, journeyWebEventsNotificationWebActionMessage.visitReferrer) &&
+            Objects.equals(this.timeToDisposition, journeyWebEventsNotificationWebActionMessage.timeToDisposition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, actionTarget, actionMap, errorCode, errorMessage, userAgentString, ipAddress, ipOrganization, browser, device, geolocation, mktCampaign, visitReferrer);
+    return Objects.hash(action, actionTarget, actionMap, errorCode, errorMessage, userAgentString, ipAddress, ipOrganization, browser, device, geolocation, mktCampaign, visitReferrer, timeToDisposition);
   }
 
   @Override
@@ -313,6 +332,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
     sb.append("    mktCampaign: ").append(toIndentedString(mktCampaign)).append("\n");
     sb.append("    visitReferrer: ").append(toIndentedString(visitReferrer)).append("\n");
+    sb.append("    timeToDisposition: ").append(toIndentedString(timeToDisposition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

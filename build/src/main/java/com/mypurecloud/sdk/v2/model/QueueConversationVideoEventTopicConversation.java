@@ -32,6 +32,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
+  private Boolean securePause = null;
 
   
   /**
@@ -153,6 +154,23 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
   }
 
 
+  /**
+   **/
+  public QueueConversationVideoEventTopicConversation securePause(Boolean securePause) {
+    this.securePause = securePause;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("securePause")
+  public Boolean getSecurePause() {
+    return securePause;
+  }
+  public void setSecurePause(Boolean securePause) {
+    this.securePause = securePause;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -169,12 +187,13 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
             Objects.equals(this.recentTransfers, queueConversationVideoEventTopicConversation.recentTransfers) &&
             Objects.equals(this.recordingState, queueConversationVideoEventTopicConversation.recordingState) &&
             Objects.equals(this.address, queueConversationVideoEventTopicConversation.address) &&
-            Objects.equals(this.externalTag, queueConversationVideoEventTopicConversation.externalTag);
+            Objects.equals(this.externalTag, queueConversationVideoEventTopicConversation.externalTag) &&
+            Objects.equals(this.securePause, queueConversationVideoEventTopicConversation.securePause);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, securePause);
   }
 
   @Override
@@ -189,6 +208,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
+    sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("}");
     return sb.toString();
   }

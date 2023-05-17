@@ -15,6 +15,7 @@ title: ConversationEventTopicConversation
 | **recordingState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **address** | <!----><!---->**String**<!----> |  |  [optional] |
 | **externalTag** | <!----><!---->**String**<!----> |  |  [optional] |
+| **securePause** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -28,6 +28,7 @@ import java.io.Serializable;
 
 public class ConversationAppSettings  implements Serializable {
   
+  private Boolean enabled = null;
   private Boolean showAgentTypingIndicator = null;
   private Boolean showUserTypingIndicator = null;
 
@@ -85,6 +86,24 @@ public class ConversationAppSettings  implements Serializable {
   private Humanize humanize = null;
 
   
+  /**
+   * The toggle to enable or disable conversations
+   **/
+  public ConversationAppSettings enabled(Boolean enabled) {
+    this.enabled = enabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The toggle to enable or disable conversations")
+  @JsonProperty("enabled")
+  public Boolean getEnabled() {
+    return enabled;
+  }
+  public void setEnabled(Boolean enabled) {
+    this.enabled = enabled;
+  }
+
+
   /**
    * The toggle to enable or disable typing indicator for messenger
    **/
@@ -239,7 +258,8 @@ public class ConversationAppSettings  implements Serializable {
     }
     ConversationAppSettings conversationAppSettings = (ConversationAppSettings) o;
 
-    return Objects.equals(this.showAgentTypingIndicator, conversationAppSettings.showAgentTypingIndicator) &&
+    return Objects.equals(this.enabled, conversationAppSettings.enabled) &&
+            Objects.equals(this.showAgentTypingIndicator, conversationAppSettings.showAgentTypingIndicator) &&
             Objects.equals(this.showUserTypingIndicator, conversationAppSettings.showUserTypingIndicator) &&
             Objects.equals(this.autoStartType, conversationAppSettings.autoStartType) &&
             Objects.equals(this.autoStart, conversationAppSettings.autoStart) &&
@@ -251,7 +271,7 @@ public class ConversationAppSettings  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(showAgentTypingIndicator, showUserTypingIndicator, autoStartType, autoStart, markdown, conversationDisconnect, conversationClear, humanize);
+    return Objects.hash(enabled, showAgentTypingIndicator, showUserTypingIndicator, autoStartType, autoStart, markdown, conversationDisconnect, conversationClear, humanize);
   }
 
   @Override
@@ -259,6 +279,7 @@ public class ConversationAppSettings  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationAppSettings {\n");
     
+    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    showAgentTypingIndicator: ").append(toIndentedString(showAgentTypingIndicator)).append("\n");
     sb.append("    showUserTypingIndicator: ").append(toIndentedString(showUserTypingIndicator)).append("\n");
     sb.append("    autoStartType: ").append(toIndentedString(autoStartType)).append("\n");

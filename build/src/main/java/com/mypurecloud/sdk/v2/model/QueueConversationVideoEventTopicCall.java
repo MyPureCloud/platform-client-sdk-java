@@ -199,6 +199,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean held = null;
+  private Boolean securePause = null;
   private QueueConversationVideoEventTopicErrorDetails errorInfo = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
@@ -468,6 +469,24 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
   }
   public void setHeld(Boolean held) {
     this.held = held;
+  }
+
+
+  /**
+   * True when the recording of this call is in secure pause status.
+   **/
+  public QueueConversationVideoEventTopicCall securePause(Boolean securePause) {
+    this.securePause = securePause;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True when the recording of this call is in secure pause status.")
+  @JsonProperty("securePause")
+  public Boolean getSecurePause() {
+    return securePause;
+  }
+  public void setSecurePause(Boolean securePause) {
+    this.securePause = securePause;
   }
 
 
@@ -845,6 +864,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
             Objects.equals(this.muted, queueConversationVideoEventTopicCall.muted) &&
             Objects.equals(this.confined, queueConversationVideoEventTopicCall.confined) &&
             Objects.equals(this.held, queueConversationVideoEventTopicCall.held) &&
+            Objects.equals(this.securePause, queueConversationVideoEventTopicCall.securePause) &&
             Objects.equals(this.errorInfo, queueConversationVideoEventTopicCall.errorInfo) &&
             Objects.equals(this.disconnectType, queueConversationVideoEventTopicCall.disconnectType) &&
             Objects.equals(this.startHoldTime, queueConversationVideoEventTopicCall.startHoldTime) &&
@@ -869,7 +889,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, initialState, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
+    return Objects.hash(id, state, initialState, recording, recordingState, muted, confined, held, securePause, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
   }
 
   @Override
@@ -885,6 +905,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
+    sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");

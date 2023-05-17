@@ -48,6 +48,7 @@ title: QueueConversationCallEventTopicCallMediaParticipant
 | **confined** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **recording** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> |  |  [optional] |
+| **securePause** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **group** | <!----><!---->[**QueueConversationCallEventTopicUriReference**](QueueConversationCallEventTopicUriReference.html)<!----> |  |  [optional] |
 | **ani** | <!----><!---->**String**<!----> |  |  [optional] |
 | **dnis** | <!----><!---->**String**<!----> |  |  [optional] |

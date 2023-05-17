@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicDestination;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicInitiator;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicModifiedBy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -81,6 +82,7 @@ public class QueueConversationVideoEventTopicRecentTransfer  implements Serializ
   private StateEnum state = null;
   private Date dateIssued = null;
   private QueueConversationVideoEventTopicInitiator initiator = null;
+  private QueueConversationVideoEventTopicModifiedBy modifiedBy = null;
   private QueueConversationVideoEventTopicDestination destination = null;
 
   private static class TransferTypeEnumDeserializer extends StdDeserializer<TransferTypeEnum> {
@@ -204,6 +206,23 @@ public class QueueConversationVideoEventTopicRecentTransfer  implements Serializ
 
   /**
    **/
+  public QueueConversationVideoEventTopicRecentTransfer modifiedBy(QueueConversationVideoEventTopicModifiedBy modifiedBy) {
+    this.modifiedBy = modifiedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("modifiedBy")
+  public QueueConversationVideoEventTopicModifiedBy getModifiedBy() {
+    return modifiedBy;
+  }
+  public void setModifiedBy(QueueConversationVideoEventTopicModifiedBy modifiedBy) {
+    this.modifiedBy = modifiedBy;
+  }
+
+
+  /**
+   **/
   public QueueConversationVideoEventTopicRecentTransfer destination(QueueConversationVideoEventTopicDestination destination) {
     this.destination = destination;
     return this;
@@ -251,13 +270,14 @@ public class QueueConversationVideoEventTopicRecentTransfer  implements Serializ
             Objects.equals(this.state, queueConversationVideoEventTopicRecentTransfer.state) &&
             Objects.equals(this.dateIssued, queueConversationVideoEventTopicRecentTransfer.dateIssued) &&
             Objects.equals(this.initiator, queueConversationVideoEventTopicRecentTransfer.initiator) &&
+            Objects.equals(this.modifiedBy, queueConversationVideoEventTopicRecentTransfer.modifiedBy) &&
             Objects.equals(this.destination, queueConversationVideoEventTopicRecentTransfer.destination) &&
             Objects.equals(this.transferType, queueConversationVideoEventTopicRecentTransfer.transferType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, dateIssued, initiator, destination, transferType);
+    return Objects.hash(id, state, dateIssued, initiator, modifiedBy, destination, transferType);
   }
 
   @Override
@@ -269,6 +289,7 @@ public class QueueConversationVideoEventTopicRecentTransfer  implements Serializ
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    dateIssued: ").append(toIndentedString(dateIssued)).append("\n");
     sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
+    sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("}");

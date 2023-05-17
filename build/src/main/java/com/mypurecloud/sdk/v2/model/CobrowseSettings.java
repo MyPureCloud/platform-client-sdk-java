@@ -28,6 +28,54 @@ public class CobrowseSettings  implements Serializable {
   private Boolean allowAgentControl = null;
   private List<String> maskSelectors = new ArrayList<String>();
 
+  private static class ChannelsEnumDeserializer extends StdDeserializer<ChannelsEnum> {
+    public ChannelsEnumDeserializer() {
+      super(ChannelsEnumDeserializer.class);
+    }
+
+    @Override
+    public ChannelsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ChannelsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets channels
+   */
+ @JsonDeserialize(using = ChannelsEnumDeserializer.class)
+  public enum ChannelsEnum {
+    WEBMESSAGING("Webmessaging"),
+    VOICE("Voice");
+
+    private String value;
+
+    ChannelsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ChannelsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ChannelsEnum value : ChannelsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ChannelsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<ChannelsEnum> channels = new ArrayList<ChannelsEnum>();
+  private List<String> readonlySelectors = new ArrayList<String>();
+
   
   /**
    * Whether or not cobrowse is enabled
@@ -83,6 +131,42 @@ public class CobrowseSettings  implements Serializable {
   }
 
 
+  /**
+   * Cobrowse channels for web messenger
+   **/
+  public CobrowseSettings channels(List<ChannelsEnum> channels) {
+    this.channels = channels;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Cobrowse channels for web messenger")
+  @JsonProperty("channels")
+  public List<ChannelsEnum> getChannels() {
+    return channels;
+  }
+  public void setChannels(List<ChannelsEnum> channels) {
+    this.channels = channels;
+  }
+
+
+  /**
+   * Readonly patterns that will apply to pages being shared
+   **/
+  public CobrowseSettings readonlySelectors(List<String> readonlySelectors) {
+    this.readonlySelectors = readonlySelectors;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Readonly patterns that will apply to pages being shared")
+  @JsonProperty("readonlySelectors")
+  public List<String> getReadonlySelectors() {
+    return readonlySelectors;
+  }
+  public void setReadonlySelectors(List<String> readonlySelectors) {
+    this.readonlySelectors = readonlySelectors;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -95,12 +179,14 @@ public class CobrowseSettings  implements Serializable {
 
     return Objects.equals(this.enabled, cobrowseSettings.enabled) &&
             Objects.equals(this.allowAgentControl, cobrowseSettings.allowAgentControl) &&
-            Objects.equals(this.maskSelectors, cobrowseSettings.maskSelectors);
+            Objects.equals(this.maskSelectors, cobrowseSettings.maskSelectors) &&
+            Objects.equals(this.channels, cobrowseSettings.channels) &&
+            Objects.equals(this.readonlySelectors, cobrowseSettings.readonlySelectors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, allowAgentControl, maskSelectors);
+    return Objects.hash(enabled, allowAgentControl, maskSelectors, channels, readonlySelectors);
   }
 
   @Override
@@ -111,6 +197,8 @@ public class CobrowseSettings  implements Serializable {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    allowAgentControl: ").append(toIndentedString(allowAgentControl)).append("\n");
     sb.append("    maskSelectors: ").append(toIndentedString(maskSelectors)).append("\n");
+    sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
+    sb.append("    readonlySelectors: ").append(toIndentedString(readonlySelectors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

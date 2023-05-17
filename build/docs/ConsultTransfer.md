@@ -23,6 +23,7 @@ title: ConsultTransfer
 | DESTINATION | &quot;DESTINATION&quot; | 
 | OBJECT | &quot;OBJECT&quot; | 
 | BOTH | &quot;BOTH&quot; | 
+| CONFERENCE | &quot;CONFERENCE&quot; | 
 {: class="table table-striped"}
 
 

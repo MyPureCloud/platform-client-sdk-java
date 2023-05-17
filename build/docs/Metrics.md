@@ -25,6 +25,7 @@ title: Metrics
 | **sourcePerformanceProfile** | <!----><!---->[**PerformanceProfile**](PerformanceProfile.html)<!----> | The source performance profile when this metric is linked |  [optional] |
 | **unitDefinition** | <!----><!---->**String**<!----> | Unit definition of linked external metric |  [optional] |
 | **precision** | <!----><!---->**Integer**<!----> | Precision of linked external metric |  [optional] |
+| **timeDisplayUnit** | [**TimeDisplayUnitEnum**](#TimeDisplayUnitEnum)<!----> | The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -43,6 +44,20 @@ title: Metrics
 | NUMBER | &quot;Number&quot; | 
 | ATTENDANCESTATUS | &quot;AttendanceStatus&quot; | 
 | UNIT | &quot;Unit&quot; | 
+{: class="table table-striped"}
+
+
+<a name="TimeDisplayUnitEnum"></a>
+
+## Enum: TimeDisplayUnitEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NONE | &quot;None&quot; | 
+| SECONDS | &quot;Seconds&quot; | 
+| MINUTES | &quot;Minutes&quot; | 
+| HOURS | &quot;Hours&quot; | 
 {: class="table table-striped"}
 
 

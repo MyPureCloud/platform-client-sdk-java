@@ -12,6 +12,7 @@ title: ConversationEventTopicRecentTransfer
 | **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
 | **dateIssued** | <!----><!---->[**Date**](Date.html)<!----> | The date/time that this command was issued. |  [optional] |
 | **initiator** | <!----><!---->[**ConversationEventTopicInitiator**](ConversationEventTopicInitiator.html)<!----> |  |  [optional] |
+| **modifiedBy** | <!----><!---->[**ConversationEventTopicModifiedBy**](ConversationEventTopicModifiedBy.html)<!----> |  |  [optional] |
 | **destination** | <!----><!---->[**ConversationEventTopicDestination**](ConversationEventTopicDestination.html)<!----> |  |  [optional] |
 | **transferType** | [**TransferTypeEnum**](#TransferTypeEnum)<!----> | The type of transfer to perform. |  [optional] |
 {: class="table table-striped"}

@@ -13,6 +13,8 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicContactAddress;
+import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicDataSchema;
+import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicExternalOrganization;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicFacebookId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicInstagramId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicLineId;
@@ -21,6 +23,9 @@ import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopi
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicWhatsAppId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -30,6 +35,7 @@ import java.io.Serializable;
 public class ExternalContactsUnresolvedContactChangedTopicContact  implements Serializable {
   
   private String id = null;
+  private ExternalContactsUnresolvedContactChangedTopicExternalOrganization externalOrganization = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -99,6 +105,8 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
   private ExternalContactsUnresolvedContactChangedTopicWhatsAppId whatsAppId = null;
   private ExternalContactsUnresolvedContactChangedTopicFacebookId facebookId = null;
   private ExternalContactsUnresolvedContactChangedTopicInstagramId instagramId = null;
+  private ExternalContactsUnresolvedContactChangedTopicDataSchema schema = null;
+  private Map<String, Object> customFields = null;
 
   
   /**
@@ -115,6 +123,23 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicContact externalOrganization(ExternalContactsUnresolvedContactChangedTopicExternalOrganization externalOrganization) {
+    this.externalOrganization = externalOrganization;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalOrganization")
+  public ExternalContactsUnresolvedContactChangedTopicExternalOrganization getExternalOrganization() {
+    return externalOrganization;
+  }
+  public void setExternalOrganization(ExternalContactsUnresolvedContactChangedTopicExternalOrganization externalOrganization) {
+    this.externalOrganization = externalOrganization;
   }
 
 
@@ -475,6 +500,40 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
   }
 
 
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicContact schema(ExternalContactsUnresolvedContactChangedTopicDataSchema schema) {
+    this.schema = schema;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("schema")
+  public ExternalContactsUnresolvedContactChangedTopicDataSchema getSchema() {
+    return schema;
+  }
+  public void setSchema(ExternalContactsUnresolvedContactChangedTopicDataSchema schema) {
+    this.schema = schema;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicContact customFields(Map<String, Object> customFields) {
+    this.customFields = customFields;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("customFields")
+  public Map<String, Object> getCustomFields() {
+    return customFields;
+  }
+  public void setCustomFields(Map<String, Object> customFields) {
+    this.customFields = customFields;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -486,6 +545,7 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
     ExternalContactsUnresolvedContactChangedTopicContact externalContactsUnresolvedContactChangedTopicContact = (ExternalContactsUnresolvedContactChangedTopicContact) o;
 
     return Objects.equals(this.id, externalContactsUnresolvedContactChangedTopicContact.id) &&
+            Objects.equals(this.externalOrganization, externalContactsUnresolvedContactChangedTopicContact.externalOrganization) &&
             Objects.equals(this.type, externalContactsUnresolvedContactChangedTopicContact.type) &&
             Objects.equals(this.firstName, externalContactsUnresolvedContactChangedTopicContact.firstName) &&
             Objects.equals(this.middleName, externalContactsUnresolvedContactChangedTopicContact.middleName) &&
@@ -506,12 +566,14 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
             Objects.equals(this.lineId, externalContactsUnresolvedContactChangedTopicContact.lineId) &&
             Objects.equals(this.whatsAppId, externalContactsUnresolvedContactChangedTopicContact.whatsAppId) &&
             Objects.equals(this.facebookId, externalContactsUnresolvedContactChangedTopicContact.facebookId) &&
-            Objects.equals(this.instagramId, externalContactsUnresolvedContactChangedTopicContact.instagramId);
+            Objects.equals(this.instagramId, externalContactsUnresolvedContactChangedTopicContact.instagramId) &&
+            Objects.equals(this.schema, externalContactsUnresolvedContactChangedTopicContact.schema) &&
+            Objects.equals(this.customFields, externalContactsUnresolvedContactChangedTopicContact.customFields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId);
+    return Objects.hash(id, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, schema, customFields);
   }
 
   @Override
@@ -520,6 +582,7 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
     sb.append("class ExternalContactsUnresolvedContactChangedTopicContact {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
@@ -541,6 +604,8 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
     sb.append("    whatsAppId: ").append(toIndentedString(whatsAppId)).append("\n");
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
     sb.append("    instagramId: ").append(toIndentedString(instagramId)).append("\n");
+    sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+    sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("}");
     return sb.toString();
   }

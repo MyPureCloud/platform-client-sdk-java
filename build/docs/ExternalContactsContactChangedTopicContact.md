@@ -9,6 +9,7 @@ title: ExternalContactsContactChangedTopicContact
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **externalOrganization** | <!----><!---->[**ExternalContactsContactChangedTopicExternalOrganization**](ExternalContactsContactChangedTopicExternalOrganization.html)<!----> |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 | **firstName** | <!----><!---->**String**<!----> |  |  [optional] |
 | **middleName** | <!----><!---->**String**<!----> |  |  [optional] |
@@ -30,6 +31,8 @@ title: ExternalContactsContactChangedTopicContact
 | **whatsAppId** | <!----><!---->[**ExternalContactsContactChangedTopicWhatsAppId**](ExternalContactsContactChangedTopicWhatsAppId.html)<!----> |  |  [optional] |
 | **facebookId** | <!----><!---->[**ExternalContactsContactChangedTopicFacebookId**](ExternalContactsContactChangedTopicFacebookId.html)<!----> |  |  [optional] |
 | **instagramId** | <!----><!---->[**ExternalContactsContactChangedTopicInstagramId**](ExternalContactsContactChangedTopicInstagramId.html)<!----> |  |  [optional] |
+| **schema** | <!----><!---->[**ExternalContactsContactChangedTopicDataSchema**](ExternalContactsContactChangedTopicDataSchema.html)<!----> |  |  [optional] |
+| **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

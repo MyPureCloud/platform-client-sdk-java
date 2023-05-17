@@ -29,6 +29,7 @@ public class HistoryHeadersTranslation  implements Serializable {
   private String forwardPrefix = null;
   private String sent = null;
   private String language = null;
+  private String timeZone = null;
 
   
   /**
@@ -175,6 +176,24 @@ public class HistoryHeadersTranslation  implements Serializable {
   }
 
 
+  /**
+   * Timezone used by the agent, used to format the sent email date and time. If not defined, will default to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+   **/
+  public HistoryHeadersTranslation timeZone(String timeZone) {
+    this.timeZone = timeZone;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Timezone used by the agent, used to format the sent email date and time. If not defined, will default to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London")
+  @JsonProperty("timeZone")
+  public String getTimeZone() {
+    return timeZone;
+  }
+  public void setTimeZone(String timeZone) {
+    this.timeZone = timeZone;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -192,12 +211,13 @@ public class HistoryHeadersTranslation  implements Serializable {
             Objects.equals(this.replyPrefix, historyHeadersTranslation.replyPrefix) &&
             Objects.equals(this.forwardPrefix, historyHeadersTranslation.forwardPrefix) &&
             Objects.equals(this.sent, historyHeadersTranslation.sent) &&
-            Objects.equals(this.language, historyHeadersTranslation.language);
+            Objects.equals(this.language, historyHeadersTranslation.language) &&
+            Objects.equals(this.timeZone, historyHeadersTranslation.timeZone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, to, cc, subject, replyPrefix, forwardPrefix, sent, language);
+    return Objects.hash(from, to, cc, subject, replyPrefix, forwardPrefix, sent, language, timeZone);
   }
 
   @Override
@@ -213,6 +233,7 @@ public class HistoryHeadersTranslation  implements Serializable {
     sb.append("    forwardPrefix: ").append(toIndentedString(forwardPrefix)).append("\n");
     sb.append("    sent: ").append(toIndentedString(sent)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("}");
     return sb.toString();
   }

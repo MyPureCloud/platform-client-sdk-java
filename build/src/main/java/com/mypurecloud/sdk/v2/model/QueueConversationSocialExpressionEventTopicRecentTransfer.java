@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicDestination;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicInitiator;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicModifiedBy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -81,6 +82,7 @@ public class QueueConversationSocialExpressionEventTopicRecentTransfer  implemen
   private StateEnum state = null;
   private Date dateIssued = null;
   private QueueConversationSocialExpressionEventTopicInitiator initiator = null;
+  private QueueConversationSocialExpressionEventTopicModifiedBy modifiedBy = null;
   private QueueConversationSocialExpressionEventTopicDestination destination = null;
 
   private static class TransferTypeEnumDeserializer extends StdDeserializer<TransferTypeEnum> {
@@ -204,6 +206,23 @@ public class QueueConversationSocialExpressionEventTopicRecentTransfer  implemen
 
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicRecentTransfer modifiedBy(QueueConversationSocialExpressionEventTopicModifiedBy modifiedBy) {
+    this.modifiedBy = modifiedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("modifiedBy")
+  public QueueConversationSocialExpressionEventTopicModifiedBy getModifiedBy() {
+    return modifiedBy;
+  }
+  public void setModifiedBy(QueueConversationSocialExpressionEventTopicModifiedBy modifiedBy) {
+    this.modifiedBy = modifiedBy;
+  }
+
+
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicRecentTransfer destination(QueueConversationSocialExpressionEventTopicDestination destination) {
     this.destination = destination;
     return this;
@@ -251,13 +270,14 @@ public class QueueConversationSocialExpressionEventTopicRecentTransfer  implemen
             Objects.equals(this.state, queueConversationSocialExpressionEventTopicRecentTransfer.state) &&
             Objects.equals(this.dateIssued, queueConversationSocialExpressionEventTopicRecentTransfer.dateIssued) &&
             Objects.equals(this.initiator, queueConversationSocialExpressionEventTopicRecentTransfer.initiator) &&
+            Objects.equals(this.modifiedBy, queueConversationSocialExpressionEventTopicRecentTransfer.modifiedBy) &&
             Objects.equals(this.destination, queueConversationSocialExpressionEventTopicRecentTransfer.destination) &&
             Objects.equals(this.transferType, queueConversationSocialExpressionEventTopicRecentTransfer.transferType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, dateIssued, initiator, destination, transferType);
+    return Objects.hash(id, state, dateIssued, initiator, modifiedBy, destination, transferType);
   }
 
   @Override
@@ -269,6 +289,7 @@ public class QueueConversationSocialExpressionEventTopicRecentTransfer  implemen
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    dateIssued: ").append(toIndentedString(dateIssued)).append("\n");
     sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
+    sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("}");

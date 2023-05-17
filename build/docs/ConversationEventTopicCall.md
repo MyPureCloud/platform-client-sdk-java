@@ -16,6 +16,7 @@ title: ConversationEventTopicCall
 | **muted** | <!----><!---->**Boolean**<!----> | True if this call is muted so that remote participants can't hear any audio from this end. |  [optional] |
 | **confined** | <!----><!---->**Boolean**<!----> | True if this call is held and the person on this side hears hold music. |  [optional] |
 | **held** | <!----><!---->**Boolean**<!----> | True if this call is held and the person on this side hears silence. |  [optional] |
+| **securePause** | <!----><!---->**Boolean**<!----> | True when the recording of this call is in secure pause status. |  [optional] |
 | **errorInfo** | <!----><!---->[**ConversationEventTopicErrorDetails**](ConversationEventTopicErrorDetails.html)<!----> |  |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. |  [optional] |
 | **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp the call was placed on hold in the cloud clock if the call is currently on hold. |  [optional] |

@@ -12,6 +12,7 @@ title: QueueConversationSocialExpressionEventTopicRecentTransfer
 | **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
 | **dateIssued** | <!----><!---->[**Date**](Date.html)<!----> | The date/time that this command was issued. |  [optional] |
 | **initiator** | <!----><!---->[**QueueConversationSocialExpressionEventTopicInitiator**](QueueConversationSocialExpressionEventTopicInitiator.html)<!----> |  |  [optional] |
+| **modifiedBy** | <!----><!---->[**QueueConversationSocialExpressionEventTopicModifiedBy**](QueueConversationSocialExpressionEventTopicModifiedBy.html)<!----> |  |  [optional] |
 | **destination** | <!----><!---->[**QueueConversationSocialExpressionEventTopicDestination**](QueueConversationSocialExpressionEventTopicDestination.html)<!----> |  |  [optional] |
 | **transferType** | [**TransferTypeEnum**](#TransferTypeEnum)<!----> | The type of transfer to perform. |  [optional] |
 {: class="table table-striped"}

@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicDestination;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicInitiator;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicModifiedBy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -81,6 +82,7 @@ public class QueueConversationEventTopicRecentTransfer  implements Serializable 
   private StateEnum state = null;
   private Date dateIssued = null;
   private QueueConversationEventTopicInitiator initiator = null;
+  private QueueConversationEventTopicModifiedBy modifiedBy = null;
   private QueueConversationEventTopicDestination destination = null;
 
   private static class TransferTypeEnumDeserializer extends StdDeserializer<TransferTypeEnum> {
@@ -204,6 +206,23 @@ public class QueueConversationEventTopicRecentTransfer  implements Serializable 
 
   /**
    **/
+  public QueueConversationEventTopicRecentTransfer modifiedBy(QueueConversationEventTopicModifiedBy modifiedBy) {
+    this.modifiedBy = modifiedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("modifiedBy")
+  public QueueConversationEventTopicModifiedBy getModifiedBy() {
+    return modifiedBy;
+  }
+  public void setModifiedBy(QueueConversationEventTopicModifiedBy modifiedBy) {
+    this.modifiedBy = modifiedBy;
+  }
+
+
+  /**
+   **/
   public QueueConversationEventTopicRecentTransfer destination(QueueConversationEventTopicDestination destination) {
     this.destination = destination;
     return this;
@@ -251,13 +270,14 @@ public class QueueConversationEventTopicRecentTransfer  implements Serializable 
             Objects.equals(this.state, queueConversationEventTopicRecentTransfer.state) &&
             Objects.equals(this.dateIssued, queueConversationEventTopicRecentTransfer.dateIssued) &&
             Objects.equals(this.initiator, queueConversationEventTopicRecentTransfer.initiator) &&
+            Objects.equals(this.modifiedBy, queueConversationEventTopicRecentTransfer.modifiedBy) &&
             Objects.equals(this.destination, queueConversationEventTopicRecentTransfer.destination) &&
             Objects.equals(this.transferType, queueConversationEventTopicRecentTransfer.transferType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, dateIssued, initiator, destination, transferType);
+    return Objects.hash(id, state, dateIssued, initiator, modifiedBy, destination, transferType);
   }
 
   @Override
@@ -269,6 +289,7 @@ public class QueueConversationEventTopicRecentTransfer  implements Serializable 
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    dateIssued: ").append(toIndentedString(dateIssued)).append("\n");
     sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
+    sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("}");

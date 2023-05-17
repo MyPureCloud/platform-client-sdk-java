@@ -18,6 +18,7 @@ title: WorkitemsEventsNotificationWorkitem
 | **dateModified** | <!----><!---->**String**<!----> |  |  [optional] |
 | **dateDue** | <!----><!---->**String**<!----> |  |  [optional] |
 | **dateExpires** | <!----><!---->**String**<!----> |  |  [optional] |
+| **dateAssignmentStateChanged** | <!----><!---->**String**<!----> |  |  [optional] |
 | **durationSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **ttl** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **statusId** | <!----><!---->**String**<!----> |  |  [optional] |

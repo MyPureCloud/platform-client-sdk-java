@@ -39,6 +39,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   private String dateModified = null;
   private String dateDue = null;
   private String dateExpires = null;
+  private String dateAssignmentStateChanged = null;
   private Integer durationSeconds = null;
   private Integer ttl = null;
   private String statusId = null;
@@ -406,6 +407,23 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
 
   /**
    **/
+  public WorkitemsUserEventsNotificationWorkitem dateAssignmentStateChanged(String dateAssignmentStateChanged) {
+    this.dateAssignmentStateChanged = dateAssignmentStateChanged;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dateAssignmentStateChanged")
+  public String getDateAssignmentStateChanged() {
+    return dateAssignmentStateChanged;
+  }
+  public void setDateAssignmentStateChanged(String dateAssignmentStateChanged) {
+    this.dateAssignmentStateChanged = dateAssignmentStateChanged;
+  }
+
+
+  /**
+   **/
   public WorkitemsUserEventsNotificationWorkitem durationSeconds(Integer durationSeconds) {
     this.durationSeconds = durationSeconds;
     return this;
@@ -764,6 +782,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
             Objects.equals(this.dateModified, workitemsUserEventsNotificationWorkitem.dateModified) &&
             Objects.equals(this.dateDue, workitemsUserEventsNotificationWorkitem.dateDue) &&
             Objects.equals(this.dateExpires, workitemsUserEventsNotificationWorkitem.dateExpires) &&
+            Objects.equals(this.dateAssignmentStateChanged, workitemsUserEventsNotificationWorkitem.dateAssignmentStateChanged) &&
             Objects.equals(this.durationSeconds, workitemsUserEventsNotificationWorkitem.durationSeconds) &&
             Objects.equals(this.ttl, workitemsUserEventsNotificationWorkitem.ttl) &&
             Objects.equals(this.statusId, workitemsUserEventsNotificationWorkitem.statusId) &&
@@ -788,7 +807,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup);
+    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup);
   }
 
   @Override
@@ -806,6 +825,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    dateDue: ").append(toIndentedString(dateDue)).append("\n");
     sb.append("    dateExpires: ").append(toIndentedString(dateExpires)).append("\n");
+    sb.append("    dateAssignmentStateChanged: ").append(toIndentedString(dateAssignmentStateChanged)).append("\n");
     sb.append("    durationSeconds: ").append(toIndentedString(durationSeconds)).append("\n");
     sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
     sb.append("    statusId: ").append(toIndentedString(statusId)).append("\n");

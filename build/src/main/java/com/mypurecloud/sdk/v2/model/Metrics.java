@@ -95,6 +95,56 @@ public class Metrics  implements Serializable {
   private PerformanceProfile sourcePerformanceProfile = null;
   private String unitDefinition = null;
   private Integer precision = null;
+
+  private static class TimeDisplayUnitEnumDeserializer extends StdDeserializer<TimeDisplayUnitEnum> {
+    public TimeDisplayUnitEnumDeserializer() {
+      super(TimeDisplayUnitEnumDeserializer.class);
+    }
+
+    @Override
+    public TimeDisplayUnitEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TimeDisplayUnitEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+   */
+ @JsonDeserialize(using = TimeDisplayUnitEnumDeserializer.class)
+  public enum TimeDisplayUnitEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NONE("None"),
+    SECONDS("Seconds"),
+    MINUTES("Minutes"),
+    HOURS("Hours");
+
+    private String value;
+
+    TimeDisplayUnitEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TimeDisplayUnitEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TimeDisplayUnitEnum value : TimeDisplayUnitEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TimeDisplayUnitEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TimeDisplayUnitEnum timeDisplayUnit = null;
   private String selfUri = null;
 
   
@@ -326,6 +376,24 @@ public class Metrics  implements Serializable {
   }
 
 
+  /**
+   * The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+   **/
+  public Metrics timeDisplayUnit(TimeDisplayUnitEnum timeDisplayUnit) {
+    this.timeDisplayUnit = timeDisplayUnit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values")
+  @JsonProperty("timeDisplayUnit")
+  public TimeDisplayUnitEnum getTimeDisplayUnit() {
+    return timeDisplayUnit;
+  }
+  public void setTimeDisplayUnit(TimeDisplayUnitEnum timeDisplayUnit) {
+    this.timeDisplayUnit = timeDisplayUnit;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -360,12 +428,13 @@ public class Metrics  implements Serializable {
             Objects.equals(this.sourcePerformanceProfile, metrics.sourcePerformanceProfile) &&
             Objects.equals(this.unitDefinition, metrics.unitDefinition) &&
             Objects.equals(this.precision, metrics.precision) &&
+            Objects.equals(this.timeDisplayUnit, metrics.timeDisplayUnit) &&
             Objects.equals(this.selfUri, metrics.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, order, metricDefinitionName, metricDefinitionId, externalMetricDefinitionId, unitType, enabled, templateName, maxPoints, performanceProfileId, linkedMetric, dateCreated, dateUnlinked, sourcePerformanceProfile, unitDefinition, precision, selfUri);
+    return Objects.hash(id, name, order, metricDefinitionName, metricDefinitionId, externalMetricDefinitionId, unitType, enabled, templateName, maxPoints, performanceProfileId, linkedMetric, dateCreated, dateUnlinked, sourcePerformanceProfile, unitDefinition, precision, timeDisplayUnit, selfUri);
   }
 
   @Override
@@ -390,6 +459,7 @@ public class Metrics  implements Serializable {
     sb.append("    sourcePerformanceProfile: ").append(toIndentedString(sourcePerformanceProfile)).append("\n");
     sb.append("    unitDefinition: ").append(toIndentedString(unitDefinition)).append("\n");
     sb.append("    precision: ").append(toIndentedString(precision)).append("\n");
+    sb.append("    timeDisplayUnit: ").append(toIndentedString(timeDisplayUnit)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
