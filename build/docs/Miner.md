@@ -51,6 +51,8 @@ title: Miner
 | FR_FR | &quot;fr-fr&quot; | 
 | FR_CA | &quot;fr-ca&quot; | 
 | DE_DE | &quot;de-de&quot; | 
+| PT_PT | &quot;pt-pt&quot; | 
+| PT_BR | &quot;pt-br&quot; | 
 {: class="table table-striped"}
 
 

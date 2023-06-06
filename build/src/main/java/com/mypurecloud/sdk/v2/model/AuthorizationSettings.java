@@ -38,17 +38,39 @@ public class AuthorizationSettings  implements Serializable {
   }
 
 
+  /**
+   * Boolean showing if organization is opted in or not to unused role/perm analysis
+   **/
+  public AuthorizationSettings analysisEnabled(Boolean analysisEnabled) {
+    this.analysisEnabled = analysisEnabled;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "Boolean showing if organization is opted in or not to unused role/perm analysis")
   @JsonProperty("analysisEnabled")
   public Boolean getAnalysisEnabled() {
     return analysisEnabled;
   }
+  public void setAnalysisEnabled(Boolean analysisEnabled) {
+    this.analysisEnabled = analysisEnabled;
+  }
 
 
+  /**
+   * Integer number of days to analyze user usage
+   **/
+  public AuthorizationSettings analysisDays(Integer analysisDays) {
+    this.analysisDays = analysisDays;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "Integer number of days to analyze user usage")
   @JsonProperty("analysisDays")
   public Integer getAnalysisDays() {
     return analysisDays;
+  }
+  public void setAnalysisDays(Integer analysisDays) {
+    this.analysisDays = analysisDays;
   }
 
 

@@ -10,8 +10,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOauthClientUsageQueryResult**](UsageApi.html#getOauthClientUsageQueryResult) | Get the results of a usage query |
 | [**getOauthClientUsageSummary**](UsageApi.html#getOauthClientUsageSummary) | Get a summary of OAuth client API usage |
 | [**getUsageQueryExecutionIdResults**](UsageApi.html#getUsageQueryExecutionIdResults) | Get the results of a usage query |
+| [**getUsageSimplesearchExecutionIdResults**](UsageApi.html#getUsageSimplesearchExecutionIdResults) | Get the results of a usage search |
 | [**postOauthClientUsageQuery**](UsageApi.html#postOauthClientUsageQuery) | Query for OAuth client API usage |
 | [**postUsageQuery**](UsageApi.html#postUsageQuery) | Query organization API Usage -  |
+| [**postUsageSimplesearch**](UsageApi.html#postUsageSimplesearch) | Search organization API Usage -  |
 {: class="table-striped"}
 
 <a name="getOauthClientUsageQueryResult"></a>
@@ -206,6 +208,68 @@ try {
 
 [**ApiUsageQueryResult**](ApiUsageQueryResult.html)
 
+<a name="getUsageSimplesearchExecutionIdResults"></a>
+
+# **getUsageSimplesearchExecutionIdResults**
+
+
+
+> [ApiUsageQueryResult](ApiUsageQueryResult.html) getUsageSimplesearchExecutionIdResults(executionId)
+
+Get the results of a usage search
+
+Wraps GET /api/v2/usage/simplesearch/{executionId}/results  
+
+Requires ANY permissions: 
+
+* oauth:client:view
+* usage:simpleSearch:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsageApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsageApi apiInstance = new UsageApi();
+String executionId = "executionId_example"; // String | ID of the search execution
+try {
+    ApiUsageQueryResult result = apiInstance.getUsageSimplesearchExecutionIdResults(executionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsageApi#getUsageSimplesearchExecutionIdResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **executionId** | **String**| ID of the search execution | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ApiUsageQueryResult**](ApiUsageQueryResult.html)
+
 <a name="postOauthClientUsageQuery"></a>
 
 # **postOauthClientUsageQuery**
@@ -248,7 +312,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsageApi apiInstance = new UsageApi();
 String clientId = "clientId_example"; // String | Client ID
-ApiUsageQuery body = new ApiUsageQuery(); // ApiUsageQuery | Query
+ApiUsageClientQuery body = new ApiUsageClientQuery(); // ApiUsageClientQuery | Query
 try {
     UsageExecutionResult result = apiInstance.postOauthClientUsageQuery(clientId, body);
     System.out.println(result);
@@ -264,7 +328,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **clientId** | **String**| Client ID | 
-| **body** | [**ApiUsageQuery**](ApiUsageQuery.html)| Query | 
+| **body** | [**ApiUsageClientQuery**](ApiUsageClientQuery.html)| Query | 
 {: class="table-striped"}
 
 
@@ -313,7 +377,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 UsageApi apiInstance = new UsageApi();
-ApiUsageQuery body = new ApiUsageQuery(); // ApiUsageQuery | Query
+ApiUsageOrganizationQuery body = new ApiUsageOrganizationQuery(); // ApiUsageOrganizationQuery | Query
 try {
     UsageExecutionResult result = apiInstance.postUsageQuery(body);
     System.out.println(result);
@@ -328,7 +392,71 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ApiUsageQuery**](ApiUsageQuery.html)| Query | 
+| **body** | [**ApiUsageOrganizationQuery**](ApiUsageOrganizationQuery.html)| Query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UsageExecutionResult**](UsageExecutionResult.html)
+
+<a name="postUsageSimplesearch"></a>
+
+# **postUsageSimplesearch**
+
+
+
+> [UsageExecutionResult](UsageExecutionResult.html) postUsageSimplesearch(body)
+
+Search organization API Usage - 
+
+After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+Wraps POST /api/v2/usage/simplesearch  
+
+Requires ANY permissions: 
+
+* oauth:client:view
+* usage:simpleSearch:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsageApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsageApi apiInstance = new UsageApi();
+ApiUsageSimpleSearch body = new ApiUsageSimpleSearch(); // ApiUsageSimpleSearch | SimpleSearch
+try {
+    UsageExecutionResult result = apiInstance.postUsageSimplesearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsageApi#postUsageSimplesearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ApiUsageSimpleSearch**](ApiUsageSimpleSearch.html)| SimpleSearch | 
 {: class="table-striped"}
 
 

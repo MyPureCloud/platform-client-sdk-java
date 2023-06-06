@@ -1862,7 +1862,7 @@ Bulk-grant subjects and divisions with an organization role.
 
 Wraps POST /api/v2/authorization/roles/{roleId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * authorization:grant:add
 

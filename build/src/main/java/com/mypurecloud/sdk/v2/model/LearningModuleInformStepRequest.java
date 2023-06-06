@@ -44,6 +44,7 @@ public class LearningModuleInformStepRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     URL("Url"),
     CONTENT("Content"),
+    GENESYSBUILTINCOURSE("GenesysBuiltInCourse"),
     RICHTEXT("RichText"),
     SCORM("Scorm");
 

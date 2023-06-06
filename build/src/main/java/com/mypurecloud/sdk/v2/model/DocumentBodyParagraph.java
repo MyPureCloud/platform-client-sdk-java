@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DocumentBodyParagraphProperties;
 import com.mypurecloud.sdk.v2.model.DocumentContentBlock;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,6 +26,7 @@ import java.io.Serializable;
 public class DocumentBodyParagraph  implements Serializable {
   
   private List<DocumentContentBlock> blocks = new ArrayList<DocumentContentBlock>();
+  private DocumentBodyParagraphProperties properties = null;
 
   
   /**
@@ -45,6 +47,24 @@ public class DocumentBodyParagraph  implements Serializable {
   }
 
 
+  /**
+   * The properties for the paragraph.
+   **/
+  public DocumentBodyParagraph properties(DocumentBodyParagraphProperties properties) {
+    this.properties = properties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The properties for the paragraph.")
+  @JsonProperty("properties")
+  public DocumentBodyParagraphProperties getProperties() {
+    return properties;
+  }
+  public void setProperties(DocumentBodyParagraphProperties properties) {
+    this.properties = properties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -55,12 +75,13 @@ public class DocumentBodyParagraph  implements Serializable {
     }
     DocumentBodyParagraph documentBodyParagraph = (DocumentBodyParagraph) o;
 
-    return Objects.equals(this.blocks, documentBodyParagraph.blocks);
+    return Objects.equals(this.blocks, documentBodyParagraph.blocks) &&
+            Objects.equals(this.properties, documentBodyParagraph.properties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(blocks);
+    return Objects.hash(blocks, properties);
   }
 
   @Override
@@ -69,6 +90,7 @@ public class DocumentBodyParagraph  implements Serializable {
     sb.append("class DocumentBodyParagraph {\n");
     
     sb.append("    blocks: ").append(toIndentedString(blocks)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -194,6 +194,7 @@ public class GetUsersRequest {
 	public enum expandValues { 
 		ROUTINGSTATUS("routingStatus"),
 		PRESENCE("presence"),
+		INTEGRATIONPRESENCE("integrationPresence"),
 		CONVERSATIONSUMMARY("conversationSummary"),
 		OUTOFOFFICE("outOfOffice"),
 		GEOLOCATION("geolocation"),

@@ -20,23 +20,30 @@ title: GeneralProgramJobRequest
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| EN_US | &quot;en-US&quot; | 
-| ES_US | &quot;es-US&quot; | 
+| AR_001 | &quot;ar-001&quot; | 
+| AR_AE | &quot;ar-AE&quot; | 
+| AR_BH | &quot;ar-BH&quot; | 
+| AR_EG | &quot;ar-EG&quot; | 
+| AR_IL | &quot;ar-IL&quot; | 
+| AR_SA | &quot;ar-SA&quot; | 
+| AR_TN | &quot;ar-TN&quot; | 
+| DE_DE | &quot;de-DE&quot; | 
 | EN_AU | &quot;en-AU&quot; | 
 | EN_GB | &quot;en-GB&quot; | 
+| EN_IN | &quot;en-IN&quot; | 
+| EN_US | &quot;en-US&quot; | 
 | EN_ZA | &quot;en-ZA&quot; | 
 | ES_ES | &quot;es-ES&quot; | 
-| EN_IN | &quot;en-IN&quot; | 
-| FR_FR | &quot;fr-FR&quot; | 
+| ES_US | &quot;es-US&quot; | 
 | FR_CA | &quot;fr-CA&quot; | 
+| FR_FR | &quot;fr-FR&quot; | 
 | IT_IT | &quot;it-IT&quot; | 
-| DE_DE | &quot;de-DE&quot; | 
-| PT_BR | &quot;pt-BR&quot; | 
-| PL_PL | &quot;pl-PL&quot; | 
-| PT_PT | &quot;pt-PT&quot; | 
-| NL_NL | &quot;nl-NL&quot; | 
-| KO_KR | &quot;ko-KR&quot; | 
 | JA_JP | &quot;ja-JP&quot; | 
+| KO_KR | &quot;ko-KR&quot; | 
+| NL_NL | &quot;nl-NL&quot; | 
+| PL_PL | &quot;pl-PL&quot; | 
+| PT_BR | &quot;pt-BR&quot; | 
+| PT_PT | &quot;pt-PT&quot; | 
 {: class="table table-striped"}
 
 

@@ -20,8 +20,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageClientQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageOrganizationQuery;
 import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
+import com.mypurecloud.sdk.v2.model.ApiUsageSimpleSearch;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
@@ -41,16 +43,16 @@ public class PostOauthClientUsageQueryRequest {
 	    return this;
 	} 
 
-	private ApiUsageQuery body;
-	public ApiUsageQuery getBody() {
+	private ApiUsageClientQuery body;
+	public ApiUsageClientQuery getBody() {
 		return this.body;
 	}
 
-	public void setBody(ApiUsageQuery body) {
+	public void setBody(ApiUsageClientQuery body) {
 		this.body = body;
 	}
 
-	public PostOauthClientUsageQueryRequest withBody(ApiUsageQuery body) {
+	public PostOauthClientUsageQueryRequest withBody(ApiUsageClientQuery body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -74,7 +76,7 @@ public class PostOauthClientUsageQueryRequest {
         return this;
     }
 
-    public ApiRequest<ApiUsageQuery> withHttpInfo() {
+    public ApiRequest<ApiUsageClientQuery> withHttpInfo() {
         
         // verify the required parameter 'clientId' is set
         if (this.clientId == null) {
@@ -104,7 +106,7 @@ public class PostOauthClientUsageQueryRequest {
 	}
 
 
-	public static Builder builder(String clientId, ApiUsageQuery body) {
+	public static Builder builder(String clientId, ApiUsageClientQuery body) {
 	    return new Builder()
 	            .withRequiredParams(clientId, body);
 	}
@@ -123,14 +125,14 @@ public class PostOauthClientUsageQueryRequest {
 			return this;
 		}
 
-		public Builder withBody(ApiUsageQuery body) {
+		public Builder withBody(ApiUsageClientQuery body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String clientId, ApiUsageQuery body) {
+		public Builder withRequiredParams(String clientId, ApiUsageClientQuery body) {
 			request.setClientId(clientId);
 			request.setBody(body);
 

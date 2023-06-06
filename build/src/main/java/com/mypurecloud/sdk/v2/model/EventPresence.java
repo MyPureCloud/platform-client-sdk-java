@@ -43,7 +43,8 @@ public class EventPresence  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     JOIN("Join"),
-    DISCONNECT("Disconnect");
+    DISCONNECT("Disconnect"),
+    CLEAR("Clear");
 
     private String value;
 

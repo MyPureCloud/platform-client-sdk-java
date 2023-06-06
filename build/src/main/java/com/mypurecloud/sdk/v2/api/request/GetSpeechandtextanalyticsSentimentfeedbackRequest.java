@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
 import com.mypurecloud.sdk.v2.model.TranscriptionEnginesRequest;
+import com.mypurecloud.sdk.v2.model.UnifiedGeneralTopicEntityListing;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 public class GetSpeechandtextanalyticsSentimentfeedbackRequest {

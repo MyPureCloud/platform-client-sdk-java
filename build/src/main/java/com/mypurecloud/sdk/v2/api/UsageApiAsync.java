@@ -13,8 +13,10 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageClientQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageOrganizationQuery;
 import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
+import com.mypurecloud.sdk.v2.model.ApiUsageSimpleSearch;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
@@ -22,8 +24,10 @@ import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.api.request.GetOauthClientUsageQueryResultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthClientUsageSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsageQueryExecutionIdResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsageSimplesearchExecutionIdResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOauthClientUsageQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsageQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsageSimplesearchRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -269,6 +273,81 @@ public class UsageApiAsync {
   }
 
   /**
+   * Get the results of a usage search
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiUsageQueryResult> getUsageSimplesearchExecutionIdResultsAsync(GetUsageSimplesearchExecutionIdResultsRequest request, final AsyncApiCallback<ApiUsageQueryResult> callback) {
+    try {
+      final SettableFuture<ApiUsageQueryResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ApiUsageQueryResult>() {}, new AsyncApiCallback<ApiResponse<ApiUsageQueryResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<ApiUsageQueryResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the results of a usage search
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ApiUsageQueryResult>> getUsageSimplesearchExecutionIdResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ApiUsageQueryResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ApiUsageQueryResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ApiUsageQueryResult>() {}, new AsyncApiCallback<ApiResponse<ApiUsageQueryResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<ApiUsageQueryResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ApiUsageQueryResult> response = (ApiResponse<ApiUsageQueryResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ApiUsageQueryResult> response = (ApiResponse<ApiUsageQueryResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Query for OAuth client API usage
    * After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param request the request object
@@ -309,7 +388,7 @@ public class UsageApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UsageExecutionResult>> postOauthClientUsageQueryAsync(ApiRequest<ApiUsageQuery> request, final AsyncApiCallback<ApiResponse<UsageExecutionResult>> callback) {
+  public Future<ApiResponse<UsageExecutionResult>> postOauthClientUsageQueryAsync(ApiRequest<ApiUsageClientQuery> request, final AsyncApiCallback<ApiResponse<UsageExecutionResult>> callback) {
     try {
       final SettableFuture<ApiResponse<UsageExecutionResult>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -384,7 +463,82 @@ public class UsageApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UsageExecutionResult>> postUsageQueryAsync(ApiRequest<ApiUsageQuery> request, final AsyncApiCallback<ApiResponse<UsageExecutionResult>> callback) {
+  public Future<ApiResponse<UsageExecutionResult>> postUsageQueryAsync(ApiRequest<ApiUsageOrganizationQuery> request, final AsyncApiCallback<ApiResponse<UsageExecutionResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UsageExecutionResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UsageExecutionResult>() {}, new AsyncApiCallback<ApiResponse<UsageExecutionResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<UsageExecutionResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UsageExecutionResult> response = (ApiResponse<UsageExecutionResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UsageExecutionResult> response = (ApiResponse<UsageExecutionResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search organization API Usage - 
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UsageExecutionResult> postUsageSimplesearchAsync(PostUsageSimplesearchRequest request, final AsyncApiCallback<UsageExecutionResult> callback) {
+    try {
+      final SettableFuture<UsageExecutionResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UsageExecutionResult>() {}, new AsyncApiCallback<ApiResponse<UsageExecutionResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<UsageExecutionResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search organization API Usage - 
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UsageExecutionResult>> postUsageSimplesearchAsync(ApiRequest<ApiUsageSimpleSearch> request, final AsyncApiCallback<ApiResponse<UsageExecutionResult>> callback) {
     try {
       final SettableFuture<ApiResponse<UsageExecutionResult>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

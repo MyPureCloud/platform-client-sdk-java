@@ -694,6 +694,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeCategory> deleteKnowledgeKnowledgebaseLanguageCategoryAsync(DeleteKnowledgeKnowledgebaseLanguageCategoryRequest request, final AsyncApiCallback<KnowledgeCategory> callback) {
     try {
@@ -728,6 +729,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeCategory>> deleteKnowledgeKnowledgebaseLanguageCategoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeCategory>> callback) {
     try {
@@ -769,6 +771,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeDocument> deleteKnowledgeKnowledgebaseLanguageDocumentAsync(DeleteKnowledgeKnowledgebaseLanguageDocumentRequest request, final AsyncApiCallback<KnowledgeDocument> callback) {
     try {
@@ -803,6 +806,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeDocument>> deleteKnowledgeKnowledgebaseLanguageDocumentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeDocument>> callback) {
     try {
@@ -844,6 +848,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteKnowledgeKnowledgebaseLanguageDocumentsImportAsync(DeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -878,6 +883,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteKnowledgeKnowledgebaseLanguageDocumentsImportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -2269,6 +2275,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<CategoryListing> getKnowledgeKnowledgebaseLanguageCategoriesAsync(GetKnowledgeKnowledgebaseLanguageCategoriesRequest request, final AsyncApiCallback<CategoryListing> callback) {
     try {
@@ -2303,6 +2310,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<CategoryListing>> getKnowledgeKnowledgebaseLanguageCategoriesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CategoryListing>> callback) {
     try {
@@ -2344,6 +2352,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeExtendedCategory> getKnowledgeKnowledgebaseLanguageCategoryAsync(GetKnowledgeKnowledgebaseLanguageCategoryRequest request, final AsyncApiCallback<KnowledgeExtendedCategory> callback) {
     try {
@@ -2378,6 +2387,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeExtendedCategory>> getKnowledgeKnowledgebaseLanguageCategoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeExtendedCategory>> callback) {
     try {
@@ -2419,6 +2429,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeDocument> getKnowledgeKnowledgebaseLanguageDocumentAsync(GetKnowledgeKnowledgebaseLanguageDocumentRequest request, final AsyncApiCallback<KnowledgeDocument> callback) {
     try {
@@ -2453,6 +2464,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeDocument>> getKnowledgeKnowledgebaseLanguageDocumentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeDocument>> callback) {
     try {
@@ -2494,6 +2506,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<DocumentListing> getKnowledgeKnowledgebaseLanguageDocumentsAsync(GetKnowledgeKnowledgebaseLanguageDocumentsRequest request, final AsyncApiCallback<DocumentListing> callback) {
     try {
@@ -2528,6 +2541,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<DocumentListing>> getKnowledgeKnowledgebaseLanguageDocumentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DocumentListing>> callback) {
     try {
@@ -2569,6 +2583,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeImport> getKnowledgeKnowledgebaseLanguageDocumentsImportAsync(GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest request, final AsyncApiCallback<KnowledgeImport> callback) {
     try {
@@ -2603,6 +2618,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeImport>> getKnowledgeKnowledgebaseLanguageDocumentsImportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeImport>> callback) {
     try {
@@ -2644,6 +2660,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeTraining> getKnowledgeKnowledgebaseLanguageTrainingAsync(GetKnowledgeKnowledgebaseLanguageTrainingRequest request, final AsyncApiCallback<KnowledgeTraining> callback) {
     try {
@@ -2678,6 +2695,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeTraining>> getKnowledgeKnowledgebaseLanguageTrainingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeTraining>> callback) {
     try {
@@ -2719,6 +2737,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TrainingListing> getKnowledgeKnowledgebaseLanguageTrainingsAsync(GetKnowledgeKnowledgebaseLanguageTrainingsRequest request, final AsyncApiCallback<TrainingListing> callback) {
     try {
@@ -2753,6 +2772,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TrainingListing>> getKnowledgeKnowledgebaseLanguageTrainingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrainingListing>> callback) {
     try {
@@ -3694,6 +3714,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeExtendedCategory> patchKnowledgeKnowledgebaseLanguageCategoryAsync(PatchKnowledgeKnowledgebaseLanguageCategoryRequest request, final AsyncApiCallback<KnowledgeExtendedCategory> callback) {
     try {
@@ -3728,6 +3749,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeExtendedCategory>> patchKnowledgeKnowledgebaseLanguageCategoryAsync(ApiRequest<KnowledgeCategoryRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeExtendedCategory>> callback) {
     try {
@@ -3769,6 +3791,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeDocument> patchKnowledgeKnowledgebaseLanguageDocumentAsync(PatchKnowledgeKnowledgebaseLanguageDocumentRequest request, final AsyncApiCallback<KnowledgeDocument> callback) {
     try {
@@ -3803,6 +3826,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeDocument>> patchKnowledgeKnowledgebaseLanguageDocumentAsync(ApiRequest<KnowledgeDocumentRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeDocument>> callback) {
     try {
@@ -3844,6 +3868,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<DocumentListing> patchKnowledgeKnowledgebaseLanguageDocumentsAsync(PatchKnowledgeKnowledgebaseLanguageDocumentsRequest request, final AsyncApiCallback<DocumentListing> callback) {
     try {
@@ -3878,6 +3903,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<DocumentListing>> patchKnowledgeKnowledgebaseLanguageDocumentsAsync(ApiRequest<List<KnowledgeDocumentBulkRequest>> request, final AsyncApiCallback<ApiResponse<DocumentListing>> callback) {
     try {
@@ -3919,6 +3945,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeImport> patchKnowledgeKnowledgebaseLanguageDocumentsImportAsync(PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest request, final AsyncApiCallback<KnowledgeImport> callback) {
     try {
@@ -3953,6 +3980,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeImport>> patchKnowledgeKnowledgebaseLanguageDocumentsImportAsync(ApiRequest<ImportStatusRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeImport>> callback) {
     try {
@@ -5044,6 +5072,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeExtendedCategory> postKnowledgeKnowledgebaseLanguageCategoriesAsync(PostKnowledgeKnowledgebaseLanguageCategoriesRequest request, final AsyncApiCallback<KnowledgeExtendedCategory> callback) {
     try {
@@ -5078,6 +5107,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeExtendedCategory>> postKnowledgeKnowledgebaseLanguageCategoriesAsync(ApiRequest<KnowledgeCategoryRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeExtendedCategory>> callback) {
     try {
@@ -5119,6 +5149,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeDocument> postKnowledgeKnowledgebaseLanguageDocumentsAsync(PostKnowledgeKnowledgebaseLanguageDocumentsRequest request, final AsyncApiCallback<KnowledgeDocument> callback) {
     try {
@@ -5153,6 +5184,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeDocument>> postKnowledgeKnowledgebaseLanguageDocumentsAsync(ApiRequest<KnowledgeDocumentRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeDocument>> callback) {
     try {
@@ -5194,6 +5226,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeImport> postKnowledgeKnowledgebaseLanguageDocumentsImportsAsync(PostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest request, final AsyncApiCallback<KnowledgeImport> callback) {
     try {
@@ -5228,6 +5261,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeImport>> postKnowledgeKnowledgebaseLanguageDocumentsImportsAsync(ApiRequest<KnowledgeImport> request, final AsyncApiCallback<ApiResponse<KnowledgeImport>> callback) {
     try {
@@ -5269,6 +5303,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeTraining> postKnowledgeKnowledgebaseLanguageTrainingPromoteAsync(PostKnowledgeKnowledgebaseLanguageTrainingPromoteRequest request, final AsyncApiCallback<KnowledgeTraining> callback) {
     try {
@@ -5303,6 +5338,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeTraining>> postKnowledgeKnowledgebaseLanguageTrainingPromoteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeTraining>> callback) {
     try {
@@ -5344,6 +5380,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeTraining> postKnowledgeKnowledgebaseLanguageTrainingsAsync(PostKnowledgeKnowledgebaseLanguageTrainingsRequest request, final AsyncApiCallback<KnowledgeTraining> callback) {
     try {
@@ -5378,6 +5415,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeTraining>> postKnowledgeKnowledgebaseLanguageTrainingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeTraining>> callback) {
     try {
@@ -5419,6 +5457,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<KnowledgeSearchResponse> postKnowledgeKnowledgebaseSearchAsync(PostKnowledgeKnowledgebaseSearchRequest request, final AsyncApiCallback<KnowledgeSearchResponse> callback) {
     try {
@@ -5453,6 +5492,7 @@ public class KnowledgeApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<KnowledgeSearchResponse>> postKnowledgeKnowledgebaseSearchAsync(ApiRequest<KnowledgeSearchRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeSearchResponse>> callback) {
     try {

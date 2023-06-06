@@ -23,6 +23,7 @@ import java.io.Serializable;
 public class QueueMessagingAddresses  implements Serializable {
   
   private DomainEntityRef smsAddress = null;
+  private DomainEntityRef openMessagingRecipient = null;
 
   
   /**
@@ -42,6 +43,23 @@ public class QueueMessagingAddresses  implements Serializable {
   }
 
 
+  /**
+   **/
+  public QueueMessagingAddresses openMessagingRecipient(DomainEntityRef openMessagingRecipient) {
+    this.openMessagingRecipient = openMessagingRecipient;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("openMessagingRecipient")
+  public DomainEntityRef getOpenMessagingRecipient() {
+    return openMessagingRecipient;
+  }
+  public void setOpenMessagingRecipient(DomainEntityRef openMessagingRecipient) {
+    this.openMessagingRecipient = openMessagingRecipient;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -52,12 +70,13 @@ public class QueueMessagingAddresses  implements Serializable {
     }
     QueueMessagingAddresses queueMessagingAddresses = (QueueMessagingAddresses) o;
 
-    return Objects.equals(this.smsAddress, queueMessagingAddresses.smsAddress);
+    return Objects.equals(this.smsAddress, queueMessagingAddresses.smsAddress) &&
+            Objects.equals(this.openMessagingRecipient, queueMessagingAddresses.openMessagingRecipient);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(smsAddress);
+    return Objects.hash(smsAddress, openMessagingRecipient);
   }
 
   @Override
@@ -66,6 +85,7 @@ public class QueueMessagingAddresses  implements Serializable {
     sb.append("class QueueMessagingAddresses {\n");
     
     sb.append("    smsAddress: ").append(toIndentedString(smsAddress)).append("\n");
+    sb.append("    openMessagingRecipient: ").append(toIndentedString(openMessagingRecipient)).append("\n");
     sb.append("}");
     return sb.toString();
   }

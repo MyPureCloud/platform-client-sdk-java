@@ -24,6 +24,8 @@ public class Settings  implements Serializable {
   private Boolean communicationBasedACW = null;
   private Boolean includeNonAgentConversationSummary = null;
   private Boolean allowCallbackQueueSelection = null;
+  private Boolean completeAcwWhenAgentTransitionsOffline = null;
+  private Boolean totalActiveCallback = null;
 
   
   /**
@@ -80,6 +82,42 @@ public class Settings  implements Serializable {
   }
 
 
+  /**
+   * Complete ACW When Agent Transitions Offline
+   **/
+  public Settings completeAcwWhenAgentTransitionsOffline(Boolean completeAcwWhenAgentTransitionsOffline) {
+    this.completeAcwWhenAgentTransitionsOffline = completeAcwWhenAgentTransitionsOffline;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Complete ACW When Agent Transitions Offline")
+  @JsonProperty("completeAcwWhenAgentTransitionsOffline")
+  public Boolean getCompleteAcwWhenAgentTransitionsOffline() {
+    return completeAcwWhenAgentTransitionsOffline;
+  }
+  public void setCompleteAcwWhenAgentTransitionsOffline(Boolean completeAcwWhenAgentTransitionsOffline) {
+    this.completeAcwWhenAgentTransitionsOffline = completeAcwWhenAgentTransitionsOffline;
+  }
+
+
+  /**
+   * Exclude the 'interacting' duration from the handle calculations of callbacks
+   **/
+  public Settings totalActiveCallback(Boolean totalActiveCallback) {
+    this.totalActiveCallback = totalActiveCallback;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Exclude the 'interacting' duration from the handle calculations of callbacks")
+  @JsonProperty("totalActiveCallback")
+  public Boolean getTotalActiveCallback() {
+    return totalActiveCallback;
+  }
+  public void setTotalActiveCallback(Boolean totalActiveCallback) {
+    this.totalActiveCallback = totalActiveCallback;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -92,12 +130,14 @@ public class Settings  implements Serializable {
 
     return Objects.equals(this.communicationBasedACW, settings.communicationBasedACW) &&
             Objects.equals(this.includeNonAgentConversationSummary, settings.includeNonAgentConversationSummary) &&
-            Objects.equals(this.allowCallbackQueueSelection, settings.allowCallbackQueueSelection);
+            Objects.equals(this.allowCallbackQueueSelection, settings.allowCallbackQueueSelection) &&
+            Objects.equals(this.completeAcwWhenAgentTransitionsOffline, settings.completeAcwWhenAgentTransitionsOffline) &&
+            Objects.equals(this.totalActiveCallback, settings.totalActiveCallback);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(communicationBasedACW, includeNonAgentConversationSummary, allowCallbackQueueSelection);
+    return Objects.hash(communicationBasedACW, includeNonAgentConversationSummary, allowCallbackQueueSelection, completeAcwWhenAgentTransitionsOffline, totalActiveCallback);
   }
 
   @Override
@@ -108,6 +148,8 @@ public class Settings  implements Serializable {
     sb.append("    communicationBasedACW: ").append(toIndentedString(communicationBasedACW)).append("\n");
     sb.append("    includeNonAgentConversationSummary: ").append(toIndentedString(includeNonAgentConversationSummary)).append("\n");
     sb.append("    allowCallbackQueueSelection: ").append(toIndentedString(allowCallbackQueueSelection)).append("\n");
+    sb.append("    completeAcwWhenAgentTransitionsOffline: ").append(toIndentedString(completeAcwWhenAgentTransitionsOffline)).append("\n");
+    sb.append("    totalActiveCallback: ").append(toIndentedString(totalActiveCallback)).append("\n");
     sb.append("}");
     return sb.toString();
   }

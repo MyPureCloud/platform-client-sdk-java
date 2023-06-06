@@ -170,6 +170,8 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     OMESSAGETURN("oMessageTurn"),
     TABANDON("tAbandon"),
     TACD("tAcd"),
+    TACTIVECALLBACK("tActiveCallback"),
+    TACTIVECALLBACKCOMPLETE("tActiveCallbackComplete"),
     TACW("tAcw"),
     TAGENTRESPONSETIME("tAgentResponseTime"),
     TALERT("tAlert"),

@@ -161,6 +161,9 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   private PreviousStatusEnum previousStatus = null;
   private Boolean declinedReview = null;
   private EvaluationQualityV2TopicEvaluationReference retractedEvaluation = null;
+  private Integer rescoreCount = null;
+  private Boolean evaluatorCommentHasUpdated = null;
+  private Boolean agentCommentHasUpdated = null;
 
   
   /**
@@ -690,6 +693,57 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   }
 
 
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 rescoreCount(Integer rescoreCount) {
+    this.rescoreCount = rescoreCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("rescoreCount")
+  public Integer getRescoreCount() {
+    return rescoreCount;
+  }
+  public void setRescoreCount(Integer rescoreCount) {
+    this.rescoreCount = rescoreCount;
+  }
+
+
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 evaluatorCommentHasUpdated(Boolean evaluatorCommentHasUpdated) {
+    this.evaluatorCommentHasUpdated = evaluatorCommentHasUpdated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("evaluatorCommentHasUpdated")
+  public Boolean getEvaluatorCommentHasUpdated() {
+    return evaluatorCommentHasUpdated;
+  }
+  public void setEvaluatorCommentHasUpdated(Boolean evaluatorCommentHasUpdated) {
+    this.evaluatorCommentHasUpdated = evaluatorCommentHasUpdated;
+  }
+
+
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 agentCommentHasUpdated(Boolean agentCommentHasUpdated) {
+    this.agentCommentHasUpdated = agentCommentHasUpdated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("agentCommentHasUpdated")
+  public Boolean getAgentCommentHasUpdated() {
+    return agentCommentHasUpdated;
+  }
+  public void setAgentCommentHasUpdated(Boolean agentCommentHasUpdated) {
+    this.agentCommentHasUpdated = agentCommentHasUpdated;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -730,12 +784,15 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
             Objects.equals(this.version, evaluationQualityV2TopicEvaluationV2.version) &&
             Objects.equals(this.previousStatus, evaluationQualityV2TopicEvaluationV2.previousStatus) &&
             Objects.equals(this.declinedReview, evaluationQualityV2TopicEvaluationV2.declinedReview) &&
-            Objects.equals(this.retractedEvaluation, evaluationQualityV2TopicEvaluationV2.retractedEvaluation);
+            Objects.equals(this.retractedEvaluation, evaluationQualityV2TopicEvaluationV2.retractedEvaluation) &&
+            Objects.equals(this.rescoreCount, evaluationQualityV2TopicEvaluationV2.rescoreCount) &&
+            Objects.equals(this.evaluatorCommentHasUpdated, evaluationQualityV2TopicEvaluationV2.evaluatorCommentHasUpdated) &&
+            Objects.equals(this.agentCommentHasUpdated, evaluationQualityV2TopicEvaluationV2.agentCommentHasUpdated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType, calibration, evaluationSource, assigneeUserId, previousAssigneeUserId, evaluationContextId, disputeCount, version, previousStatus, declinedReview, retractedEvaluation);
+    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType, calibration, evaluationSource, assigneeUserId, previousAssigneeUserId, evaluationContextId, disputeCount, version, previousStatus, declinedReview, retractedEvaluation, rescoreCount, evaluatorCommentHasUpdated, agentCommentHasUpdated);
   }
 
   @Override
@@ -774,6 +831,9 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     sb.append("    previousStatus: ").append(toIndentedString(previousStatus)).append("\n");
     sb.append("    declinedReview: ").append(toIndentedString(declinedReview)).append("\n");
     sb.append("    retractedEvaluation: ").append(toIndentedString(retractedEvaluation)).append("\n");
+    sb.append("    rescoreCount: ").append(toIndentedString(rescoreCount)).append("\n");
+    sb.append("    evaluatorCommentHasUpdated: ").append(toIndentedString(evaluatorCommentHasUpdated)).append("\n");
+    sb.append("    agentCommentHasUpdated: ").append(toIndentedString(agentCommentHasUpdated)).append("\n");
     sb.append("}");
     return sb.toString();
   }

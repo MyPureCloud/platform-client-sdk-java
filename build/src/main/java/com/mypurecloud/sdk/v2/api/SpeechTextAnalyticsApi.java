@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
 import com.mypurecloud.sdk.v2.model.TranscriptionEnginesRequest;
+import com.mypurecloud.sdk.v2.model.UnifiedGeneralTopicEntityListing;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 
@@ -64,6 +65,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsRequest;
@@ -1824,6 +1826,84 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GeneralTopicsEntityListing> response = (ApiResponse<GeneralTopicsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of general topics from the org and the system with their current status
+   * 
+   * @param dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
+   * @return UnifiedGeneralTopicEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnifiedGeneralTopicEntityListing getSpeechandtextanalyticsTopicsGeneralStatus(String dialect) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsTopicsGeneralStatus(createGetSpeechandtextanalyticsTopicsGeneralStatusRequest(dialect));
+  }
+
+  /**
+   * Get the list of general topics from the org and the system with their current status
+   * 
+   * @param dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
+   * @return UnifiedGeneralTopicEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnifiedGeneralTopicEntityListing> getSpeechandtextanalyticsTopicsGeneralStatusWithHttpInfo(String dialect) throws IOException {
+    return getSpeechandtextanalyticsTopicsGeneralStatus(createGetSpeechandtextanalyticsTopicsGeneralStatusRequest(dialect).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsTopicsGeneralStatusRequest createGetSpeechandtextanalyticsTopicsGeneralStatusRequest(String dialect) {
+    return GetSpeechandtextanalyticsTopicsGeneralStatusRequest.builder()
+            .withDialect(dialect)
+
+            .build();
+  }
+
+  /**
+   * Get the list of general topics from the org and the system with their current status
+   * 
+   * @param request The request object
+   * @return UnifiedGeneralTopicEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnifiedGeneralTopicEntityListing getSpeechandtextanalyticsTopicsGeneralStatus(GetSpeechandtextanalyticsTopicsGeneralStatusRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UnifiedGeneralTopicEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UnifiedGeneralTopicEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of general topics from the org and the system with their current status
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnifiedGeneralTopicEntityListing> getSpeechandtextanalyticsTopicsGeneralStatus(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UnifiedGeneralTopicEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnifiedGeneralTopicEntityListing> response = (ApiResponse<UnifiedGeneralTopicEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnifiedGeneralTopicEntityListing> response = (ApiResponse<UnifiedGeneralTopicEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

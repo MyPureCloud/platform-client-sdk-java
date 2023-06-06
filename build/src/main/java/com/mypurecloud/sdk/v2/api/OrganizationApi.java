@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
+import com.mypurecloud.sdk.v2.model.OrgAuthSettings;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
@@ -25,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsAuthenticationSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsEmbeddedintegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsIpaddressauthenticationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestRequest;
@@ -35,6 +37,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceDefault
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsAuthenticationSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsFeatureRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsEmbeddedintegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsIpaddressauthenticationRequest;
@@ -141,11 +144,86 @@ public class OrganizationApi {
   }
 
   /**
-   * Get the list of domains that will be allowed to embed PureCloud applications
+   * Gets the organization's settings
    * 
+   * @return OrgAuthSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgAuthSettings getOrganizationsAuthenticationSettings() throws IOException, ApiException {
+    return  getOrganizationsAuthenticationSettings(createGetOrganizationsAuthenticationSettingsRequest());
+  }
+
+  /**
+   * Gets the organization's settings
+   * 
+   * @return OrgAuthSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgAuthSettings> getOrganizationsAuthenticationSettingsWithHttpInfo() throws IOException {
+    return getOrganizationsAuthenticationSettings(createGetOrganizationsAuthenticationSettingsRequest().withHttpInfo());
+  }
+
+  private GetOrganizationsAuthenticationSettingsRequest createGetOrganizationsAuthenticationSettingsRequest() {
+    return GetOrganizationsAuthenticationSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Gets the organization's settings
+   * 
+   * @param request The request object
+   * @return OrgAuthSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgAuthSettings getOrganizationsAuthenticationSettings(GetOrganizationsAuthenticationSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrgAuthSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrgAuthSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the organization's settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgAuthSettings> getOrganizationsAuthenticationSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrgAuthSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgAuthSettings> response = (ApiResponse<OrgAuthSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgAuthSettings> response = (ApiResponse<OrgAuthSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of domains that will be allowed to embed PureCloud applications
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @return EmbeddedIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EmbeddedIntegration getOrganizationsEmbeddedintegration() throws IOException, ApiException {
     return  getOrganizationsEmbeddedintegration(createGetOrganizationsEmbeddedintegrationRequest());
@@ -153,9 +231,10 @@ public class OrganizationApi {
 
   /**
    * Get the list of domains that will be allowed to embed PureCloud applications
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @return EmbeddedIntegration
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EmbeddedIntegration> getOrganizationsEmbeddedintegrationWithHttpInfo() throws IOException {
     return getOrganizationsEmbeddedintegration(createGetOrganizationsEmbeddedintegrationRequest().withHttpInfo());
@@ -168,11 +247,12 @@ public class OrganizationApi {
 
   /**
    * Get the list of domains that will be allowed to embed PureCloud applications
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request The request object
    * @return EmbeddedIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EmbeddedIntegration getOrganizationsEmbeddedintegration(GetOrganizationsEmbeddedintegrationRequest request) throws IOException, ApiException {
     try {
@@ -187,10 +267,11 @@ public class OrganizationApi {
 
   /**
    * Get the list of domains that will be allowed to embed PureCloud applications
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EmbeddedIntegration> getOrganizationsEmbeddedintegration(ApiRequest<Void> request) throws IOException {
     try {
@@ -216,10 +297,11 @@ public class OrganizationApi {
 
   /**
    * Get organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @return IpAddressAuthentication
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public IpAddressAuthentication getOrganizationsIpaddressauthentication() throws IOException, ApiException {
     return  getOrganizationsIpaddressauthentication(createGetOrganizationsIpaddressauthenticationRequest());
@@ -227,9 +309,10 @@ public class OrganizationApi {
 
   /**
    * Get organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @return IpAddressAuthentication
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<IpAddressAuthentication> getOrganizationsIpaddressauthenticationWithHttpInfo() throws IOException {
     return getOrganizationsIpaddressauthentication(createGetOrganizationsIpaddressauthenticationRequest().withHttpInfo());
@@ -242,11 +325,12 @@ public class OrganizationApi {
 
   /**
    * Get organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request The request object
    * @return IpAddressAuthentication
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public IpAddressAuthentication getOrganizationsIpaddressauthentication(GetOrganizationsIpaddressauthenticationRequest request) throws IOException, ApiException {
     try {
@@ -261,10 +345,11 @@ public class OrganizationApi {
 
   /**
    * Get organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<IpAddressAuthentication> getOrganizationsIpaddressauthentication(ApiRequest<Void> request) throws IOException {
     try {
@@ -847,7 +932,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @return OrgWhitelistSettings
    * @throws ApiException if the request fails on the server
@@ -859,7 +944,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @return OrgWhitelistSettings
    * @throws IOException if the request fails to be processed
@@ -875,7 +960,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @param request The request object
    * @return OrgWhitelistSettings
@@ -895,7 +980,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @param request The request object
    * @return the response
@@ -920,6 +1005,84 @@ public class OrganizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OrgWhitelistSettings> response = (ApiResponse<OrgWhitelistSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the organization's settings
+   * 
+   * @param body Org settings (required)
+   * @return OrgAuthSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgAuthSettings patchOrganizationsAuthenticationSettings(OrgAuthSettings body) throws IOException, ApiException {
+    return  patchOrganizationsAuthenticationSettings(createPatchOrganizationsAuthenticationSettingsRequest(body));
+  }
+
+  /**
+   * Update the organization's settings
+   * 
+   * @param body Org settings (required)
+   * @return OrgAuthSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgAuthSettings> patchOrganizationsAuthenticationSettingsWithHttpInfo(OrgAuthSettings body) throws IOException {
+    return patchOrganizationsAuthenticationSettings(createPatchOrganizationsAuthenticationSettingsRequest(body).withHttpInfo());
+  }
+
+  private PatchOrganizationsAuthenticationSettingsRequest createPatchOrganizationsAuthenticationSettingsRequest(OrgAuthSettings body) {
+    return PatchOrganizationsAuthenticationSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the organization's settings
+   * 
+   * @param request The request object
+   * @return OrgAuthSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgAuthSettings patchOrganizationsAuthenticationSettings(PatchOrganizationsAuthenticationSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrgAuthSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrgAuthSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the organization's settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgAuthSettings> patchOrganizationsAuthenticationSettings(ApiRequest<OrgAuthSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrgAuthSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgAuthSettings> response = (ApiResponse<OrgAuthSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgAuthSettings> response = (ApiResponse<OrgAuthSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1008,11 +1171,12 @@ public class OrganizationApi {
 
   /**
    * Update the list of domains that will be allowed to embed PureCloud applications
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param body Whitelist settings (required)
    * @return EmbeddedIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EmbeddedIntegration putOrganizationsEmbeddedintegration(EmbeddedIntegration body) throws IOException, ApiException {
     return  putOrganizationsEmbeddedintegration(createPutOrganizationsEmbeddedintegrationRequest(body));
@@ -1020,10 +1184,11 @@ public class OrganizationApi {
 
   /**
    * Update the list of domains that will be allowed to embed PureCloud applications
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param body Whitelist settings (required)
    * @return EmbeddedIntegration
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EmbeddedIntegration> putOrganizationsEmbeddedintegrationWithHttpInfo(EmbeddedIntegration body) throws IOException {
     return putOrganizationsEmbeddedintegration(createPutOrganizationsEmbeddedintegrationRequest(body).withHttpInfo());
@@ -1038,11 +1203,12 @@ public class OrganizationApi {
 
   /**
    * Update the list of domains that will be allowed to embed PureCloud applications
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request The request object
    * @return EmbeddedIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public EmbeddedIntegration putOrganizationsEmbeddedintegration(PutOrganizationsEmbeddedintegrationRequest request) throws IOException, ApiException {
     try {
@@ -1057,10 +1223,11 @@ public class OrganizationApi {
 
   /**
    * Update the list of domains that will be allowed to embed PureCloud applications
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<EmbeddedIntegration> putOrganizationsEmbeddedintegration(ApiRequest<EmbeddedIntegration> request) throws IOException {
     try {
@@ -1086,11 +1253,12 @@ public class OrganizationApi {
 
   /**
    * Update organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param body IP address Whitelist settings (required)
    * @return IpAddressAuthentication
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public IpAddressAuthentication putOrganizationsIpaddressauthentication(IpAddressAuthentication body) throws IOException, ApiException {
     return  putOrganizationsIpaddressauthentication(createPutOrganizationsIpaddressauthenticationRequest(body));
@@ -1098,10 +1266,11 @@ public class OrganizationApi {
 
   /**
    * Update organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param body IP address Whitelist settings (required)
    * @return IpAddressAuthentication
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<IpAddressAuthentication> putOrganizationsIpaddressauthenticationWithHttpInfo(IpAddressAuthentication body) throws IOException {
     return putOrganizationsIpaddressauthentication(createPutOrganizationsIpaddressauthenticationRequest(body).withHttpInfo());
@@ -1116,11 +1285,12 @@ public class OrganizationApi {
 
   /**
    * Update organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request The request object
    * @return IpAddressAuthentication
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public IpAddressAuthentication putOrganizationsIpaddressauthentication(PutOrganizationsIpaddressauthenticationRequest request) throws IOException, ApiException {
     try {
@@ -1135,10 +1305,11 @@ public class OrganizationApi {
 
   /**
    * Update organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<IpAddressAuthentication> putOrganizationsIpaddressauthentication(ApiRequest<IpAddressAuthentication> request) throws IOException {
     try {
@@ -1241,7 +1412,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @param body Whitelist settings (required)
    * @return OrgWhitelistSettings
@@ -1254,7 +1425,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @param body Whitelist settings (required)
    * @return OrgWhitelistSettings
@@ -1273,7 +1444,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @param request The request object
    * @return OrgWhitelistSettings
@@ -1293,7 +1464,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @param request The request object
    * @return the response

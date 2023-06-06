@@ -12,7 +12,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.DocumentContentBlock;
+import com.mypurecloud.sdk.v2.model.DocumentBodyListItemProperties;
+import com.mypurecloud.sdk.v2.model.DocumentListContentBlock;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -72,7 +73,8 @@ public class DocumentBodyListBlock  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<DocumentContentBlock> blocks = new ArrayList<DocumentContentBlock>();
+  private List<DocumentListContentBlock> blocks = new ArrayList<DocumentListContentBlock>();
+  private DocumentBodyListItemProperties properties = null;
 
   
   /**
@@ -96,18 +98,36 @@ public class DocumentBodyListBlock  implements Serializable {
   /**
    * The list of items for an OrderedList or an UnorderedList.
    **/
-  public DocumentBodyListBlock blocks(List<DocumentContentBlock> blocks) {
+  public DocumentBodyListBlock blocks(List<DocumentListContentBlock> blocks) {
     this.blocks = blocks;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The list of items for an OrderedList or an UnorderedList.")
   @JsonProperty("blocks")
-  public List<DocumentContentBlock> getBlocks() {
+  public List<DocumentListContentBlock> getBlocks() {
     return blocks;
   }
-  public void setBlocks(List<DocumentContentBlock> blocks) {
+  public void setBlocks(List<DocumentListContentBlock> blocks) {
     this.blocks = blocks;
+  }
+
+
+  /**
+   * The properties for the list block.
+   **/
+  public DocumentBodyListBlock properties(DocumentBodyListItemProperties properties) {
+    this.properties = properties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The properties for the list block.")
+  @JsonProperty("properties")
+  public DocumentBodyListItemProperties getProperties() {
+    return properties;
+  }
+  public void setProperties(DocumentBodyListItemProperties properties) {
+    this.properties = properties;
   }
 
 
@@ -122,12 +142,13 @@ public class DocumentBodyListBlock  implements Serializable {
     DocumentBodyListBlock documentBodyListBlock = (DocumentBodyListBlock) o;
 
     return Objects.equals(this.type, documentBodyListBlock.type) &&
-            Objects.equals(this.blocks, documentBodyListBlock.blocks);
+            Objects.equals(this.blocks, documentBodyListBlock.blocks) &&
+            Objects.equals(this.properties, documentBodyListBlock.properties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, blocks);
+    return Objects.hash(type, blocks, properties);
   }
 
   @Override
@@ -137,6 +158,7 @@ public class DocumentBodyListBlock  implements Serializable {
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    blocks: ").append(toIndentedString(blocks)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

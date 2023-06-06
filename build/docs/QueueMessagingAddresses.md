@@ -9,6 +9,7 @@ title: QueueMessagingAddresses
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **smsAddress** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **openMessagingRecipient** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

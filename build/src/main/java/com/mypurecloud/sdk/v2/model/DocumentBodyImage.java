@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DocumentBodyImageProperties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,6 +24,7 @@ public class DocumentBodyImage  implements Serializable {
   
   private String url = null;
   private String hyperlink = null;
+  private DocumentBodyImageProperties properties = null;
 
   
   /**
@@ -61,6 +63,24 @@ public class DocumentBodyImage  implements Serializable {
   }
 
 
+  /**
+   * The properties for the image.
+   **/
+  public DocumentBodyImage properties(DocumentBodyImageProperties properties) {
+    this.properties = properties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The properties for the image.")
+  @JsonProperty("properties")
+  public DocumentBodyImageProperties getProperties() {
+    return properties;
+  }
+  public void setProperties(DocumentBodyImageProperties properties) {
+    this.properties = properties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +92,13 @@ public class DocumentBodyImage  implements Serializable {
     DocumentBodyImage documentBodyImage = (DocumentBodyImage) o;
 
     return Objects.equals(this.url, documentBodyImage.url) &&
-            Objects.equals(this.hyperlink, documentBodyImage.hyperlink);
+            Objects.equals(this.hyperlink, documentBodyImage.hyperlink) &&
+            Objects.equals(this.properties, documentBodyImage.properties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, hyperlink);
+    return Objects.hash(url, hyperlink, properties);
   }
 
   @Override
@@ -87,6 +108,7 @@ public class DocumentBodyImage  implements Serializable {
     
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    hyperlink: ").append(toIndentedString(hyperlink)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

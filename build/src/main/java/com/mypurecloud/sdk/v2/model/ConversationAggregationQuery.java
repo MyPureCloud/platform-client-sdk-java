@@ -192,6 +192,8 @@ public class ConversationAggregationQuery  implements Serializable {
     OSERVICETARGET("oServiceTarget"),
     TABANDON("tAbandon"),
     TACD("tAcd"),
+    TACTIVECALLBACK("tActiveCallback"),
+    TACTIVECALLBACKCOMPLETE("tActiveCallbackComplete"),
     TACW("tAcw"),
     TAGENTRESPONSETIME("tAgentResponseTime"),
     TALERT("tAlert"),

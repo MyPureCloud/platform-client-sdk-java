@@ -40,10 +40,11 @@ public class MessagingApi {
 
   /**
    * Delete a supported content profile
-   * 
+   * Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param supportedContentId Supported Content ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteMessagingSupportedcontentSupportedContentId(String supportedContentId) throws IOException, ApiException {
      deleteMessagingSupportedcontentSupportedContentId(createDeleteMessagingSupportedcontentSupportedContentIdRequest(supportedContentId));
@@ -51,9 +52,10 @@ public class MessagingApi {
 
   /**
    * Delete a supported content profile
-   * 
+   * Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param supportedContentId Supported Content ID (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteMessagingSupportedcontentSupportedContentIdWithHttpInfo(String supportedContentId) throws IOException {
     return deleteMessagingSupportedcontentSupportedContentId(createDeleteMessagingSupportedcontentSupportedContentIdRequest(supportedContentId).withHttpInfo());
@@ -68,10 +70,11 @@ public class MessagingApi {
 
   /**
    * Delete a supported content profile
-   * 
+   * Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteMessagingSupportedcontentSupportedContentId(DeleteMessagingSupportedcontentSupportedContentIdRequest request) throws IOException, ApiException {
     try {
@@ -86,10 +89,11 @@ public class MessagingApi {
 
   /**
    * Delete a supported content profile
-   * 
+   * Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteMessagingSupportedcontentSupportedContentId(ApiRequest<Void> request) throws IOException {
     try {
@@ -115,12 +119,13 @@ public class MessagingApi {
 
   /**
    * Get a list of Supported Content profiles
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent as replacement
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return SupportedContentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public SupportedContentListing getMessagingSupportedcontent(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return  getMessagingSupportedcontent(createGetMessagingSupportedcontentRequest(pageSize, pageNumber));
@@ -128,11 +133,12 @@ public class MessagingApi {
 
   /**
    * Get a list of Supported Content profiles
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent as replacement
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return SupportedContentListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<SupportedContentListing> getMessagingSupportedcontentWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
     return getMessagingSupportedcontent(createGetMessagingSupportedcontentRequest(pageSize, pageNumber).withHttpInfo());
@@ -149,11 +155,12 @@ public class MessagingApi {
 
   /**
    * Get a list of Supported Content profiles
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent as replacement
    * @param request The request object
    * @return SupportedContentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public SupportedContentListing getMessagingSupportedcontent(GetMessagingSupportedcontentRequest request) throws IOException, ApiException {
     try {
@@ -168,10 +175,11 @@ public class MessagingApi {
 
   /**
    * Get a list of Supported Content profiles
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent as replacement
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<SupportedContentListing> getMessagingSupportedcontent(ApiRequest<Void> request) throws IOException {
     try {
@@ -197,11 +205,12 @@ public class MessagingApi {
 
   /**
    * Get a supported content profile
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param supportedContentId Supported Content ID (required)
    * @return SupportedContent
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public SupportedContent getMessagingSupportedcontentSupportedContentId(String supportedContentId) throws IOException, ApiException {
     return  getMessagingSupportedcontentSupportedContentId(createGetMessagingSupportedcontentSupportedContentIdRequest(supportedContentId));
@@ -209,10 +218,11 @@ public class MessagingApi {
 
   /**
    * Get a supported content profile
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param supportedContentId Supported Content ID (required)
    * @return SupportedContent
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<SupportedContent> getMessagingSupportedcontentSupportedContentIdWithHttpInfo(String supportedContentId) throws IOException {
     return getMessagingSupportedcontentSupportedContentId(createGetMessagingSupportedcontentSupportedContentIdRequest(supportedContentId).withHttpInfo());
@@ -227,11 +237,12 @@ public class MessagingApi {
 
   /**
    * Get a supported content profile
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request The request object
    * @return SupportedContent
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public SupportedContent getMessagingSupportedcontentSupportedContentId(GetMessagingSupportedcontentSupportedContentIdRequest request) throws IOException, ApiException {
     try {
@@ -246,10 +257,11 @@ public class MessagingApi {
 
   /**
    * Get a supported content profile
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<SupportedContent> getMessagingSupportedcontentSupportedContentId(ApiRequest<Void> request) throws IOException {
     try {
@@ -275,12 +287,13 @@ public class MessagingApi {
 
   /**
    * Update a supported content profile
-   * 
+   * Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param supportedContentId Supported Content ID (required)
    * @param body SupportedContent (required)
    * @return SupportedContent
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public SupportedContent patchMessagingSupportedcontentSupportedContentId(String supportedContentId, SupportedContent body) throws IOException, ApiException {
     return  patchMessagingSupportedcontentSupportedContentId(createPatchMessagingSupportedcontentSupportedContentIdRequest(supportedContentId, body));
@@ -288,11 +301,12 @@ public class MessagingApi {
 
   /**
    * Update a supported content profile
-   * 
+   * Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param supportedContentId Supported Content ID (required)
    * @param body SupportedContent (required)
    * @return SupportedContent
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<SupportedContent> patchMessagingSupportedcontentSupportedContentIdWithHttpInfo(String supportedContentId, SupportedContent body) throws IOException {
     return patchMessagingSupportedcontentSupportedContentId(createPatchMessagingSupportedcontentSupportedContentIdRequest(supportedContentId, body).withHttpInfo());
@@ -309,11 +323,12 @@ public class MessagingApi {
 
   /**
    * Update a supported content profile
-   * 
+   * Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request The request object
    * @return SupportedContent
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public SupportedContent patchMessagingSupportedcontentSupportedContentId(PatchMessagingSupportedcontentSupportedContentIdRequest request) throws IOException, ApiException {
     try {
@@ -328,10 +343,11 @@ public class MessagingApi {
 
   /**
    * Update a supported content profile
-   * 
+   * Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<SupportedContent> patchMessagingSupportedcontentSupportedContentId(ApiRequest<SupportedContent> request) throws IOException {
     try {
@@ -357,11 +373,12 @@ public class MessagingApi {
 
   /**
    * Create a Supported Content profile
-   * 
+   * Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
    * @param body SupportedContent (required)
    * @return SupportedContent
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public SupportedContent postMessagingSupportedcontent(SupportedContent body) throws IOException, ApiException {
     return  postMessagingSupportedcontent(createPostMessagingSupportedcontentRequest(body));
@@ -369,10 +386,11 @@ public class MessagingApi {
 
   /**
    * Create a Supported Content profile
-   * 
+   * Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
    * @param body SupportedContent (required)
    * @return SupportedContent
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<SupportedContent> postMessagingSupportedcontentWithHttpInfo(SupportedContent body) throws IOException {
     return postMessagingSupportedcontent(createPostMessagingSupportedcontentRequest(body).withHttpInfo());
@@ -387,11 +405,12 @@ public class MessagingApi {
 
   /**
    * Create a Supported Content profile
-   * 
+   * Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
    * @param request The request object
    * @return SupportedContent
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public SupportedContent postMessagingSupportedcontent(PostMessagingSupportedcontentRequest request) throws IOException, ApiException {
     try {
@@ -406,10 +425,11 @@ public class MessagingApi {
 
   /**
    * Create a Supported Content profile
-   * 
+   * Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<SupportedContent> postMessagingSupportedcontent(ApiRequest<SupportedContent> request) throws IOException {
     try {

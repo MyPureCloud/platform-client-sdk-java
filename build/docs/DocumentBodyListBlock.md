@@ -9,7 +9,8 @@ title: DocumentBodyListBlock
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the list block. |  |
-| **blocks** | <!----><!---->[**List&lt;DocumentContentBlock&gt;**](DocumentContentBlock.html)<!----> | The list of items for an OrderedList or an UnorderedList. |  |
+| **blocks** | <!----><!---->[**List&lt;DocumentListContentBlock&gt;**](DocumentListContentBlock.html)<!----> | The list of items for an OrderedList or an UnorderedList. |  |
+| **properties** | <!----><!---->[**DocumentBodyListItemProperties**](DocumentBodyListItemProperties.html)<!----> | The properties for the list block. |  [optional] |
 {: class="table table-striped"}
 
 

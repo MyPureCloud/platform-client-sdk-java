@@ -32,13 +32,6 @@ title: LimitChangeRequestDetails
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
-| ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
-| ANALYTICS | &quot;analytics&quot; | 
-| ANALYTICS_REALTIME | &quot;analytics.realtime&quot; | 
-| ANALYTICS_REPORTING_SETTINGS | &quot;analytics.reporting.settings&quot; | 
-| ARCHITECT | &quot;architect&quot; | 
-| AUDIOHOOK | &quot;audiohook&quot; | 
 | AUDIT | &quot;audit&quot; | 
 | AUTH_API | &quot;auth.api&quot; | 
 | AUTHORIZATION | &quot;authorization&quot; | 
@@ -87,12 +80,20 @@ title: LimitChangeRequestDetails
 | SUPPORTABILITY | &quot;supportability&quot; | 
 | TASK_MANAGEMENT | &quot;task.management&quot; | 
 | TELEPHONY_CONFIGURATION | &quot;telephony.configuration&quot; | 
+| USAGE | &quot;usage&quot; | 
 | USERS | &quot;users&quot; | 
-| WEB_DEPLOYMENTS | &quot;web.deployments&quot; | 
 | WEB_MESSAGING | &quot;web.messaging&quot; | 
 | WEBCHAT | &quot;webchat&quot; | 
-| WEBHOOKS | &quot;webhooks&quot; | 
 | WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
+| AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
+| ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
+| ANALYTICS | &quot;analytics&quot; | 
+| ANALYTICS_REALTIME | &quot;analytics.realtime&quot; | 
+| ANALYTICS_REPORTING_SETTINGS | &quot;analytics.reporting.settings&quot; | 
+| ARCHITECT | &quot;architect&quot; | 
+| AUDIOHOOK | &quot;audiohook&quot; | 
+| WEB_DEPLOYMENTS | &quot;web.deployments&quot; | 
+| WEBHOOKS | &quot;webhooks&quot; | 
 {: class="table table-striped"}
 
 

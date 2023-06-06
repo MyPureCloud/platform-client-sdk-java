@@ -29,6 +29,7 @@ public class ComparisonPeriod  implements Serializable {
   private String kpi = null;
   private Date dateStarted = null;
   private Date dateEnded = null;
+  private Double percentageBenefit = null;
   private List<KpiResult> kpiResults = new ArrayList<KpiResult>();
   private String selfUri = null;
 
@@ -61,6 +62,13 @@ public class ComparisonPeriod  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The percentage benefit on this queue for the duration of the comparison period")
+  @JsonProperty("percentageBenefit")
+  public Double getPercentageBenefit() {
+    return percentageBenefit;
+  }
+
+
   @ApiModelProperty(example = "null", value = "KPI results for each metric")
   @JsonProperty("kpiResults")
   public List<KpiResult> getKpiResults() {
@@ -89,13 +97,14 @@ public class ComparisonPeriod  implements Serializable {
             Objects.equals(this.kpi, comparisonPeriod.kpi) &&
             Objects.equals(this.dateStarted, comparisonPeriod.dateStarted) &&
             Objects.equals(this.dateEnded, comparisonPeriod.dateEnded) &&
+            Objects.equals(this.percentageBenefit, comparisonPeriod.percentageBenefit) &&
             Objects.equals(this.kpiResults, comparisonPeriod.kpiResults) &&
             Objects.equals(this.selfUri, comparisonPeriod.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, kpi, dateStarted, dateEnded, kpiResults, selfUri);
+    return Objects.hash(id, kpi, dateStarted, dateEnded, percentageBenefit, kpiResults, selfUri);
   }
 
   @Override
@@ -107,6 +116,7 @@ public class ComparisonPeriod  implements Serializable {
     sb.append("    kpi: ").append(toIndentedString(kpi)).append("\n");
     sb.append("    dateStarted: ").append(toIndentedString(dateStarted)).append("\n");
     sb.append("    dateEnded: ").append(toIndentedString(dateEnded)).append("\n");
+    sb.append("    percentageBenefit: ").append(toIndentedString(percentageBenefit)).append("\n");
     sb.append("    kpiResults: ").append(toIndentedString(kpiResults)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
+import com.mypurecloud.sdk.v2.model.OrgAuthSettings;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
@@ -28,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsAuthenticationSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsEmbeddedintegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsIpaddressauthenticationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestRequest;
@@ -38,6 +40,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceDefault
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsAuthenticationSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsFeatureRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsEmbeddedintegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsIpaddressauthenticationRequest;
@@ -140,11 +143,87 @@ public class OrganizationApiAsync {
   }
 
   /**
-   * Get the list of domains that will be allowed to embed PureCloud applications
+   * Gets the organization's settings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   */
+  public Future<OrgAuthSettings> getOrganizationsAuthenticationSettingsAsync(GetOrganizationsAuthenticationSettingsRequest request, final AsyncApiCallback<OrgAuthSettings> callback) {
+    try {
+      final SettableFuture<OrgAuthSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrgAuthSettings>() {}, new AsyncApiCallback<ApiResponse<OrgAuthSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgAuthSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the organization's settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OrgAuthSettings>> getOrganizationsAuthenticationSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrgAuthSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OrgAuthSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OrgAuthSettings>() {}, new AsyncApiCallback<ApiResponse<OrgAuthSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgAuthSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgAuthSettings> response = (ApiResponse<OrgAuthSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgAuthSettings> response = (ApiResponse<OrgAuthSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of domains that will be allowed to embed PureCloud applications
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<EmbeddedIntegration> getOrganizationsEmbeddedintegrationAsync(GetOrganizationsEmbeddedintegrationRequest request, final AsyncApiCallback<EmbeddedIntegration> callback) {
     try {
@@ -175,10 +254,11 @@ public class OrganizationApiAsync {
 
   /**
    * Get the list of domains that will be allowed to embed PureCloud applications
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<EmbeddedIntegration>> getOrganizationsEmbeddedintegrationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmbeddedIntegration>> callback) {
     try {
@@ -216,10 +296,11 @@ public class OrganizationApiAsync {
 
   /**
    * Get organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<IpAddressAuthentication> getOrganizationsIpaddressauthenticationAsync(GetOrganizationsIpaddressauthenticationRequest request, final AsyncApiCallback<IpAddressAuthentication> callback) {
     try {
@@ -250,10 +331,11 @@ public class OrganizationApiAsync {
 
   /**
    * Get organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<IpAddressAuthentication>> getOrganizationsIpaddressauthenticationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IpAddressAuthentication>> callback) {
     try {
@@ -815,7 +897,7 @@ public class OrganizationApiAsync {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -850,7 +932,7 @@ public class OrganizationApiAsync {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -880,6 +962,81 @@ public class OrganizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OrgWhitelistSettings> response = (ApiResponse<OrgWhitelistSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the organization's settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OrgAuthSettings> patchOrganizationsAuthenticationSettingsAsync(PatchOrganizationsAuthenticationSettingsRequest request, final AsyncApiCallback<OrgAuthSettings> callback) {
+    try {
+      final SettableFuture<OrgAuthSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrgAuthSettings>() {}, new AsyncApiCallback<ApiResponse<OrgAuthSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgAuthSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the organization's settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OrgAuthSettings>> patchOrganizationsAuthenticationSettingsAsync(ApiRequest<OrgAuthSettings> request, final AsyncApiCallback<ApiResponse<OrgAuthSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OrgAuthSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OrgAuthSettings>() {}, new AsyncApiCallback<ApiResponse<OrgAuthSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgAuthSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgAuthSettings> response = (ApiResponse<OrgAuthSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgAuthSettings> response = (ApiResponse<OrgAuthSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -968,10 +1125,11 @@ public class OrganizationApiAsync {
 
   /**
    * Update the list of domains that will be allowed to embed PureCloud applications
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<EmbeddedIntegration> putOrganizationsEmbeddedintegrationAsync(PutOrganizationsEmbeddedintegrationRequest request, final AsyncApiCallback<EmbeddedIntegration> callback) {
     try {
@@ -1002,10 +1160,11 @@ public class OrganizationApiAsync {
 
   /**
    * Update the list of domains that will be allowed to embed PureCloud applications
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<EmbeddedIntegration>> putOrganizationsEmbeddedintegrationAsync(ApiRequest<EmbeddedIntegration> request, final AsyncApiCallback<ApiResponse<EmbeddedIntegration>> callback) {
     try {
@@ -1043,10 +1202,11 @@ public class OrganizationApiAsync {
 
   /**
    * Update organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<IpAddressAuthentication> putOrganizationsIpaddressauthenticationAsync(PutOrganizationsIpaddressauthenticationRequest request, final AsyncApiCallback<IpAddressAuthentication> callback) {
     try {
@@ -1077,10 +1237,11 @@ public class OrganizationApiAsync {
 
   /**
    * Update organization IP address whitelist settings
-   * 
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<IpAddressAuthentication>> putOrganizationsIpaddressauthenticationAsync(ApiRequest<IpAddressAuthentication> request, final AsyncApiCallback<ApiResponse<IpAddressAuthentication>> callback) {
     try {
@@ -1192,7 +1353,7 @@ public class OrganizationApiAsync {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1227,7 +1388,7 @@ public class OrganizationApiAsync {
   }
 
   /**
-   * Use PUT /api/v2/organizations/embeddedintegration instead
+   * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

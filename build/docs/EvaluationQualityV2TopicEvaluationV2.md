@@ -39,6 +39,9 @@ title: EvaluationQualityV2TopicEvaluationV2
 | **previousStatus** | [**PreviousStatusEnum**](#PreviousStatusEnum)<!----> |  |  [optional] |
 | **declinedReview** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **retractedEvaluation** | <!----><!---->[**EvaluationQualityV2TopicEvaluationReference**](EvaluationQualityV2TopicEvaluationReference.html)<!----> |  |  [optional] |
+| **rescoreCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **evaluatorCommentHasUpdated** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **agentCommentHasUpdated** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

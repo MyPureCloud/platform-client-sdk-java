@@ -39,6 +39,7 @@ title: CallBasic
 | **afterCallWork** | <!----><!---->[**AfterCallWork**](AfterCallWork.html)<!----> | After-call work for the communication. |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
 | **agentAssistantId** | <!----><!---->**String**<!----> | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. |  [optional] |
+| **disposition** | <!----><!---->[**Disposition**](Disposition.html)<!----> | Call resolution data for Dialer bulk make calls commands. |  [optional] |
 {: class="table table-striped"}
 
 

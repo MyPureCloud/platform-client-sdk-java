@@ -251,7 +251,9 @@ public class ReportingExportJobResponse  implements Serializable {
     INTERACTION_DETAIL_VIEW("INTERACTION_DETAIL_VIEW"),
     CAMPAIGN_INTERACTION_DETAIL_VIEW("CAMPAIGN_INTERACTION_DETAIL_VIEW"),
     CAMPAIGN_ATTEMPT_DETAIL_VIEW("CAMPAIGN_ATTEMPT_DETAIL_VIEW"),
-    WORKITEM_PERFORMANCE_SUMMARY_VIEW("WORKITEM_PERFORMANCE_SUMMARY_VIEW");
+    WORKITEM_PERFORMANCE_SUMMARY_VIEW("WORKITEM_PERFORMANCE_SUMMARY_VIEW"),
+    AGENT_ASSIST_PERFORMANCE_VIEW("AGENT_ASSIST_PERFORMANCE_VIEW"),
+    CONTACT_CENTER_PERFORMANCE_VIEW("CONTACT_CENTER_PERFORMANCE_VIEW");
 
     private String value;
 
@@ -452,6 +454,56 @@ public class ReportingExportJobResponse  implements Serializable {
   private Map<String, InnerEnum> emailStatuses = null;
   private String emailErrorDescription = null;
   private Boolean includeDurationFormatInHeader = null;
+
+  private static class DurationFormatEnumDeserializer extends StdDeserializer<DurationFormatEnum> {
+    public DurationFormatEnumDeserializer() {
+      super(DurationFormatEnumDeserializer.class);
+    }
+
+    @Override
+    public DurationFormatEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DurationFormatEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Indicates the duration format for the exports
+   */
+ @JsonDeserialize(using = DurationFormatEnumDeserializer.class)
+  public enum DurationFormatEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SECONDS("Seconds"),
+    MILLISECONDS("Milliseconds"),
+    HHMMSS("Hhmmss"),
+    HMS("Hms");
+
+    private String value;
+
+    DurationFormatEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DurationFormatEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DurationFormatEnum value : DurationFormatEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DurationFormatEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DurationFormatEnum durationFormat = null;
   private Boolean enabled = null;
   private String selfUri = null;
 
@@ -967,6 +1019,24 @@ public class ReportingExportJobResponse  implements Serializable {
 
 
   /**
+   * Indicates the duration format for the exports
+   **/
+  public ReportingExportJobResponse durationFormat(DurationFormatEnum durationFormat) {
+    this.durationFormat = durationFormat;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the duration format for the exports")
+  @JsonProperty("durationFormat")
+  public DurationFormatEnum getDurationFormat() {
+    return durationFormat;
+  }
+  public void setDurationFormat(DurationFormatEnum durationFormat) {
+    this.durationFormat = durationFormat;
+  }
+
+
+  /**
    **/
   public ReportingExportJobResponse enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -1029,13 +1099,14 @@ public class ReportingExportJobResponse  implements Serializable {
             Objects.equals(this.emailStatuses, reportingExportJobResponse.emailStatuses) &&
             Objects.equals(this.emailErrorDescription, reportingExportJobResponse.emailErrorDescription) &&
             Objects.equals(this.includeDurationFormatInHeader, reportingExportJobResponse.includeDurationFormatInHeader) &&
+            Objects.equals(this.durationFormat, reportingExportJobResponse.durationFormat) &&
             Objects.equals(this.enabled, reportingExportJobResponse.enabled) &&
             Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, runId, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, emailErrorDescription, includeDurationFormatInHeader, enabled, selfUri);
+    return Objects.hash(id, name, runId, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, emailErrorDescription, includeDurationFormatInHeader, durationFormat, enabled, selfUri);
   }
 
   @Override
@@ -1072,6 +1143,7 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    emailStatuses: ").append(toIndentedString(emailStatuses)).append("\n");
     sb.append("    emailErrorDescription: ").append(toIndentedString(emailErrorDescription)).append("\n");
     sb.append("    includeDurationFormatInHeader: ").append(toIndentedString(includeDurationFormatInHeader)).append("\n");
+    sb.append("    durationFormat: ").append(toIndentedString(durationFormat)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

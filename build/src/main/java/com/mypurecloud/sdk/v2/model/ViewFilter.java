@@ -1127,8 +1127,10 @@ public class ViewFilter  implements Serializable {
     UNKNOWN("Unknown"),
     NOINPUTCOLLECTION("NoInputCollection"),
     NOINPUTCONFIRMATION("NoInputConfirmation"),
+    NOINPUTDISAMBIGUATION("NoInputDisambiguation"),
     NOMATCHCOLLECTION("NoMatchCollection"),
     NOMATCHCONFIRMATION("NoMatchConfirmation"),
+    NOMATCHDISAMBIGUATION("NoMatchDisambiguation"),
     MAXWRONGMATCH("MaxWrongMatch");
 
     private String value;

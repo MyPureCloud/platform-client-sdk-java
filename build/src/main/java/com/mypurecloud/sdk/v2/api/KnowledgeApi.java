@@ -730,6 +730,7 @@ public class KnowledgeApi {
    * @return KnowledgeCategory
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeCategory deleteKnowledgeKnowledgebaseLanguageCategory(String categoryId, String knowledgeBaseId, String languageCode) throws IOException, ApiException {
     return  deleteKnowledgeKnowledgebaseLanguageCategory(createDeleteKnowledgeKnowledgebaseLanguageCategoryRequest(categoryId, knowledgeBaseId, languageCode));
@@ -743,6 +744,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @return KnowledgeCategory
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeCategory> deleteKnowledgeKnowledgebaseLanguageCategoryWithHttpInfo(String categoryId, String knowledgeBaseId, String languageCode) throws IOException {
     return deleteKnowledgeKnowledgebaseLanguageCategory(createDeleteKnowledgeKnowledgebaseLanguageCategoryRequest(categoryId, knowledgeBaseId, languageCode).withHttpInfo());
@@ -766,6 +768,7 @@ public class KnowledgeApi {
    * @return KnowledgeCategory
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeCategory deleteKnowledgeKnowledgebaseLanguageCategory(DeleteKnowledgeKnowledgebaseLanguageCategoryRequest request) throws IOException, ApiException {
     try {
@@ -784,6 +787,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeCategory> deleteKnowledgeKnowledgebaseLanguageCategory(ApiRequest<Void> request) throws IOException {
     try {
@@ -816,6 +820,7 @@ public class KnowledgeApi {
    * @return KnowledgeDocument
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeDocument deleteKnowledgeKnowledgebaseLanguageDocument(String documentId, String knowledgeBaseId, String languageCode) throws IOException, ApiException {
     return  deleteKnowledgeKnowledgebaseLanguageDocument(createDeleteKnowledgeKnowledgebaseLanguageDocumentRequest(documentId, knowledgeBaseId, languageCode));
@@ -829,6 +834,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @return KnowledgeDocument
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeDocument> deleteKnowledgeKnowledgebaseLanguageDocumentWithHttpInfo(String documentId, String knowledgeBaseId, String languageCode) throws IOException {
     return deleteKnowledgeKnowledgebaseLanguageDocument(createDeleteKnowledgeKnowledgebaseLanguageDocumentRequest(documentId, knowledgeBaseId, languageCode).withHttpInfo());
@@ -852,6 +858,7 @@ public class KnowledgeApi {
    * @return KnowledgeDocument
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeDocument deleteKnowledgeKnowledgebaseLanguageDocument(DeleteKnowledgeKnowledgebaseLanguageDocumentRequest request) throws IOException, ApiException {
     try {
@@ -870,6 +877,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeDocument> deleteKnowledgeKnowledgebaseLanguageDocument(ApiRequest<Void> request) throws IOException {
     try {
@@ -901,6 +909,7 @@ public class KnowledgeApi {
    * @param importId Import ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteKnowledgeKnowledgebaseLanguageDocumentsImport(String knowledgeBaseId, String languageCode, String importId) throws IOException, ApiException {
      deleteKnowledgeKnowledgebaseLanguageDocumentsImport(createDeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId));
@@ -913,6 +922,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @param importId Import ID (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteKnowledgeKnowledgebaseLanguageDocumentsImportWithHttpInfo(String knowledgeBaseId, String languageCode, String importId) throws IOException {
     return deleteKnowledgeKnowledgebaseLanguageDocumentsImport(createDeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId).withHttpInfo());
@@ -935,6 +945,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteKnowledgeKnowledgebaseLanguageDocumentsImport(DeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest request) throws IOException, ApiException {
     try {
@@ -953,6 +964,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteKnowledgeKnowledgebaseLanguageDocumentsImport(ApiRequest<Void> request) throws IOException {
     try {
@@ -2661,6 +2673,7 @@ public class KnowledgeApi {
    * @return CategoryListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public CategoryListing getKnowledgeKnowledgebaseLanguageCategories(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String name) throws IOException, ApiException {
     return  getKnowledgeKnowledgebaseLanguageCategories(createGetKnowledgeKnowledgebaseLanguageCategoriesRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, name));
@@ -2678,6 +2691,7 @@ public class KnowledgeApi {
    * @param name Filter to return the categories that starts with the given category name. (optional)
    * @return CategoryListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<CategoryListing> getKnowledgeKnowledgebaseLanguageCategoriesWithHttpInfo(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String name) throws IOException {
     return getKnowledgeKnowledgebaseLanguageCategories(createGetKnowledgeKnowledgebaseLanguageCategoriesRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, name).withHttpInfo());
@@ -2709,6 +2723,7 @@ public class KnowledgeApi {
    * @return CategoryListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public CategoryListing getKnowledgeKnowledgebaseLanguageCategories(GetKnowledgeKnowledgebaseLanguageCategoriesRequest request) throws IOException, ApiException {
     try {
@@ -2727,6 +2742,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<CategoryListing> getKnowledgeKnowledgebaseLanguageCategories(ApiRequest<Void> request) throws IOException {
     try {
@@ -2759,6 +2775,7 @@ public class KnowledgeApi {
    * @return KnowledgeExtendedCategory
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeExtendedCategory getKnowledgeKnowledgebaseLanguageCategory(String categoryId, String knowledgeBaseId, String languageCode) throws IOException, ApiException {
     return  getKnowledgeKnowledgebaseLanguageCategory(createGetKnowledgeKnowledgebaseLanguageCategoryRequest(categoryId, knowledgeBaseId, languageCode));
@@ -2772,6 +2789,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @return KnowledgeExtendedCategory
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeExtendedCategory> getKnowledgeKnowledgebaseLanguageCategoryWithHttpInfo(String categoryId, String knowledgeBaseId, String languageCode) throws IOException {
     return getKnowledgeKnowledgebaseLanguageCategory(createGetKnowledgeKnowledgebaseLanguageCategoryRequest(categoryId, knowledgeBaseId, languageCode).withHttpInfo());
@@ -2795,6 +2813,7 @@ public class KnowledgeApi {
    * @return KnowledgeExtendedCategory
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeExtendedCategory getKnowledgeKnowledgebaseLanguageCategory(GetKnowledgeKnowledgebaseLanguageCategoryRequest request) throws IOException, ApiException {
     try {
@@ -2813,6 +2832,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeExtendedCategory> getKnowledgeKnowledgebaseLanguageCategory(ApiRequest<Void> request) throws IOException {
     try {
@@ -2845,6 +2865,7 @@ public class KnowledgeApi {
    * @return KnowledgeDocument
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeDocument getKnowledgeKnowledgebaseLanguageDocument(String documentId, String knowledgeBaseId, String languageCode) throws IOException, ApiException {
     return  getKnowledgeKnowledgebaseLanguageDocument(createGetKnowledgeKnowledgebaseLanguageDocumentRequest(documentId, knowledgeBaseId, languageCode));
@@ -2858,6 +2879,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @return KnowledgeDocument
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeDocument> getKnowledgeKnowledgebaseLanguageDocumentWithHttpInfo(String documentId, String knowledgeBaseId, String languageCode) throws IOException {
     return getKnowledgeKnowledgebaseLanguageDocument(createGetKnowledgeKnowledgebaseLanguageDocumentRequest(documentId, knowledgeBaseId, languageCode).withHttpInfo());
@@ -2881,6 +2903,7 @@ public class KnowledgeApi {
    * @return KnowledgeDocument
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeDocument getKnowledgeKnowledgebaseLanguageDocument(GetKnowledgeKnowledgebaseLanguageDocumentRequest request) throws IOException, ApiException {
     try {
@@ -2899,6 +2922,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeDocument> getKnowledgeKnowledgebaseLanguageDocument(ApiRequest<Void> request) throws IOException {
     try {
@@ -2939,6 +2963,7 @@ public class KnowledgeApi {
    * @return DocumentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DocumentListing getKnowledgeKnowledgebaseLanguageDocuments(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String categories, String title, String sortBy, String sortOrder, List<String> documentIds) throws IOException, ApiException {
     return  getKnowledgeKnowledgebaseLanguageDocuments(createGetKnowledgeKnowledgebaseLanguageDocumentsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds));
@@ -2960,6 +2985,7 @@ public class KnowledgeApi {
    * @param documentIds Comma-separated list of document identifiers to fetch by. (optional)
    * @return DocumentListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DocumentListing> getKnowledgeKnowledgebaseLanguageDocumentsWithHttpInfo(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String categories, String title, String sortBy, String sortOrder, List<String> documentIds) throws IOException {
     return getKnowledgeKnowledgebaseLanguageDocuments(createGetKnowledgeKnowledgebaseLanguageDocumentsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds).withHttpInfo());
@@ -2999,6 +3025,7 @@ public class KnowledgeApi {
    * @return DocumentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DocumentListing getKnowledgeKnowledgebaseLanguageDocuments(GetKnowledgeKnowledgebaseLanguageDocumentsRequest request) throws IOException, ApiException {
     try {
@@ -3017,6 +3044,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DocumentListing> getKnowledgeKnowledgebaseLanguageDocuments(ApiRequest<Void> request) throws IOException {
     try {
@@ -3049,6 +3077,7 @@ public class KnowledgeApi {
    * @return KnowledgeImport
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeImport getKnowledgeKnowledgebaseLanguageDocumentsImport(String knowledgeBaseId, String languageCode, String importId) throws IOException, ApiException {
     return  getKnowledgeKnowledgebaseLanguageDocumentsImport(createGetKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId));
@@ -3062,6 +3091,7 @@ public class KnowledgeApi {
    * @param importId Import ID (required)
    * @return KnowledgeImport
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeImport> getKnowledgeKnowledgebaseLanguageDocumentsImportWithHttpInfo(String knowledgeBaseId, String languageCode, String importId) throws IOException {
     return getKnowledgeKnowledgebaseLanguageDocumentsImport(createGetKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId).withHttpInfo());
@@ -3085,6 +3115,7 @@ public class KnowledgeApi {
    * @return KnowledgeImport
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeImport getKnowledgeKnowledgebaseLanguageDocumentsImport(GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest request) throws IOException, ApiException {
     try {
@@ -3103,6 +3134,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeImport> getKnowledgeKnowledgebaseLanguageDocumentsImport(ApiRequest<Void> request) throws IOException {
     try {
@@ -3135,6 +3167,7 @@ public class KnowledgeApi {
    * @return KnowledgeTraining
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeTraining getKnowledgeKnowledgebaseLanguageTraining(String knowledgeBaseId, String languageCode, String trainingId) throws IOException, ApiException {
     return  getKnowledgeKnowledgebaseLanguageTraining(createGetKnowledgeKnowledgebaseLanguageTrainingRequest(knowledgeBaseId, languageCode, trainingId));
@@ -3148,6 +3181,7 @@ public class KnowledgeApi {
    * @param trainingId Training ID (required)
    * @return KnowledgeTraining
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeTraining> getKnowledgeKnowledgebaseLanguageTrainingWithHttpInfo(String knowledgeBaseId, String languageCode, String trainingId) throws IOException {
     return getKnowledgeKnowledgebaseLanguageTraining(createGetKnowledgeKnowledgebaseLanguageTrainingRequest(knowledgeBaseId, languageCode, trainingId).withHttpInfo());
@@ -3171,6 +3205,7 @@ public class KnowledgeApi {
    * @return KnowledgeTraining
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeTraining getKnowledgeKnowledgebaseLanguageTraining(GetKnowledgeKnowledgebaseLanguageTrainingRequest request) throws IOException, ApiException {
     try {
@@ -3189,6 +3224,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeTraining> getKnowledgeKnowledgebaseLanguageTraining(ApiRequest<Void> request) throws IOException {
     try {
@@ -3225,6 +3261,7 @@ public class KnowledgeApi {
    * @return TrainingListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TrainingListing getKnowledgeKnowledgebaseLanguageTrainings(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String knowledgeDocumentsState) throws IOException, ApiException {
     return  getKnowledgeKnowledgebaseLanguageTrainings(createGetKnowledgeKnowledgebaseLanguageTrainingsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState));
@@ -3242,6 +3279,7 @@ public class KnowledgeApi {
    * @param knowledgeDocumentsState Return the training with the specified state of the trained documents. (optional)
    * @return TrainingListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TrainingListing> getKnowledgeKnowledgebaseLanguageTrainingsWithHttpInfo(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String knowledgeDocumentsState) throws IOException {
     return getKnowledgeKnowledgebaseLanguageTrainings(createGetKnowledgeKnowledgebaseLanguageTrainingsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState).withHttpInfo());
@@ -3273,6 +3311,7 @@ public class KnowledgeApi {
    * @return TrainingListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TrainingListing getKnowledgeKnowledgebaseLanguageTrainings(GetKnowledgeKnowledgebaseLanguageTrainingsRequest request) throws IOException, ApiException {
     try {
@@ -3291,6 +3330,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TrainingListing> getKnowledgeKnowledgebaseLanguageTrainings(ApiRequest<Void> request) throws IOException {
     try {
@@ -3577,8 +3617,8 @@ public class KnowledgeApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param limit Number of entities to return. Maximum of 100. Deprecated in favour of pageSize (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param name Filter by Name. (optional)
    * @param coreLanguage Filter by core language. (optional)
    * @param published Filter by published status. (optional)
@@ -3597,8 +3637,8 @@ public class KnowledgeApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param limit Number of entities to return. Maximum of 100. Deprecated in favour of pageSize (optional)
+   * @param pageSize Number of entities to return. Maximum of 100. (optional)
    * @param name Filter by Name. (optional)
    * @param coreLanguage Filter by core language. (optional)
    * @param published Filter by published status. (optional)
@@ -4374,6 +4414,7 @@ public class KnowledgeApi {
    * @return KnowledgeExtendedCategory
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeExtendedCategory patchKnowledgeKnowledgebaseLanguageCategory(String categoryId, String knowledgeBaseId, String languageCode, KnowledgeCategoryRequest body) throws IOException, ApiException {
     return  patchKnowledgeKnowledgebaseLanguageCategory(createPatchKnowledgeKnowledgebaseLanguageCategoryRequest(categoryId, knowledgeBaseId, languageCode, body));
@@ -4388,6 +4429,7 @@ public class KnowledgeApi {
    * @param body  (required)
    * @return KnowledgeExtendedCategory
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeExtendedCategory> patchKnowledgeKnowledgebaseLanguageCategoryWithHttpInfo(String categoryId, String knowledgeBaseId, String languageCode, KnowledgeCategoryRequest body) throws IOException {
     return patchKnowledgeKnowledgebaseLanguageCategory(createPatchKnowledgeKnowledgebaseLanguageCategoryRequest(categoryId, knowledgeBaseId, languageCode, body).withHttpInfo());
@@ -4413,6 +4455,7 @@ public class KnowledgeApi {
    * @return KnowledgeExtendedCategory
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeExtendedCategory patchKnowledgeKnowledgebaseLanguageCategory(PatchKnowledgeKnowledgebaseLanguageCategoryRequest request) throws IOException, ApiException {
     try {
@@ -4431,6 +4474,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeExtendedCategory> patchKnowledgeKnowledgebaseLanguageCategory(ApiRequest<KnowledgeCategoryRequest> request) throws IOException {
     try {
@@ -4464,6 +4508,7 @@ public class KnowledgeApi {
    * @return KnowledgeDocument
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeDocument patchKnowledgeKnowledgebaseLanguageDocument(String documentId, String knowledgeBaseId, String languageCode, KnowledgeDocumentRequest body) throws IOException, ApiException {
     return  patchKnowledgeKnowledgebaseLanguageDocument(createPatchKnowledgeKnowledgebaseLanguageDocumentRequest(documentId, knowledgeBaseId, languageCode, body));
@@ -4478,6 +4523,7 @@ public class KnowledgeApi {
    * @param body  (required)
    * @return KnowledgeDocument
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeDocument> patchKnowledgeKnowledgebaseLanguageDocumentWithHttpInfo(String documentId, String knowledgeBaseId, String languageCode, KnowledgeDocumentRequest body) throws IOException {
     return patchKnowledgeKnowledgebaseLanguageDocument(createPatchKnowledgeKnowledgebaseLanguageDocumentRequest(documentId, knowledgeBaseId, languageCode, body).withHttpInfo());
@@ -4503,6 +4549,7 @@ public class KnowledgeApi {
    * @return KnowledgeDocument
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeDocument patchKnowledgeKnowledgebaseLanguageDocument(PatchKnowledgeKnowledgebaseLanguageDocumentRequest request) throws IOException, ApiException {
     try {
@@ -4521,6 +4568,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeDocument> patchKnowledgeKnowledgebaseLanguageDocument(ApiRequest<KnowledgeDocumentRequest> request) throws IOException {
     try {
@@ -4553,6 +4601,7 @@ public class KnowledgeApi {
    * @return DocumentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DocumentListing patchKnowledgeKnowledgebaseLanguageDocuments(String knowledgeBaseId, String languageCode, List<KnowledgeDocumentBulkRequest> body) throws IOException, ApiException {
     return  patchKnowledgeKnowledgebaseLanguageDocuments(createPatchKnowledgeKnowledgebaseLanguageDocumentsRequest(knowledgeBaseId, languageCode, body));
@@ -4566,6 +4615,7 @@ public class KnowledgeApi {
    * @param body  (required)
    * @return DocumentListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DocumentListing> patchKnowledgeKnowledgebaseLanguageDocumentsWithHttpInfo(String knowledgeBaseId, String languageCode, List<KnowledgeDocumentBulkRequest> body) throws IOException {
     return patchKnowledgeKnowledgebaseLanguageDocuments(createPatchKnowledgeKnowledgebaseLanguageDocumentsRequest(knowledgeBaseId, languageCode, body).withHttpInfo());
@@ -4589,6 +4639,7 @@ public class KnowledgeApi {
    * @return DocumentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DocumentListing patchKnowledgeKnowledgebaseLanguageDocuments(PatchKnowledgeKnowledgebaseLanguageDocumentsRequest request) throws IOException, ApiException {
     try {
@@ -4607,6 +4658,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DocumentListing> patchKnowledgeKnowledgebaseLanguageDocuments(ApiRequest<List<KnowledgeDocumentBulkRequest>> request) throws IOException {
     try {
@@ -4640,6 +4692,7 @@ public class KnowledgeApi {
    * @return KnowledgeImport
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeImport patchKnowledgeKnowledgebaseLanguageDocumentsImport(String knowledgeBaseId, String languageCode, String importId, ImportStatusRequest body) throws IOException, ApiException {
     return  patchKnowledgeKnowledgebaseLanguageDocumentsImport(createPatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId, body));
@@ -4654,6 +4707,7 @@ public class KnowledgeApi {
    * @param body  (required)
    * @return KnowledgeImport
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeImport> patchKnowledgeKnowledgebaseLanguageDocumentsImportWithHttpInfo(String knowledgeBaseId, String languageCode, String importId, ImportStatusRequest body) throws IOException {
     return patchKnowledgeKnowledgebaseLanguageDocumentsImport(createPatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId, body).withHttpInfo());
@@ -4679,6 +4733,7 @@ public class KnowledgeApi {
    * @return KnowledgeImport
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeImport patchKnowledgeKnowledgebaseLanguageDocumentsImport(PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest request) throws IOException, ApiException {
     try {
@@ -4697,6 +4752,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeImport> patchKnowledgeKnowledgebaseLanguageDocumentsImport(ApiRequest<ImportStatusRequest> request) throws IOException {
     try {
@@ -5893,6 +5949,7 @@ public class KnowledgeApi {
    * @return KnowledgeExtendedCategory
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeExtendedCategory postKnowledgeKnowledgebaseLanguageCategories(String knowledgeBaseId, String languageCode, KnowledgeCategoryRequest body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseLanguageCategories(createPostKnowledgeKnowledgebaseLanguageCategoriesRequest(knowledgeBaseId, languageCode, body));
@@ -5906,6 +5963,7 @@ public class KnowledgeApi {
    * @param body  (required)
    * @return KnowledgeExtendedCategory
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeExtendedCategory> postKnowledgeKnowledgebaseLanguageCategoriesWithHttpInfo(String knowledgeBaseId, String languageCode, KnowledgeCategoryRequest body) throws IOException {
     return postKnowledgeKnowledgebaseLanguageCategories(createPostKnowledgeKnowledgebaseLanguageCategoriesRequest(knowledgeBaseId, languageCode, body).withHttpInfo());
@@ -5929,6 +5987,7 @@ public class KnowledgeApi {
    * @return KnowledgeExtendedCategory
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeExtendedCategory postKnowledgeKnowledgebaseLanguageCategories(PostKnowledgeKnowledgebaseLanguageCategoriesRequest request) throws IOException, ApiException {
     try {
@@ -5947,6 +6006,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeExtendedCategory> postKnowledgeKnowledgebaseLanguageCategories(ApiRequest<KnowledgeCategoryRequest> request) throws IOException {
     try {
@@ -5979,6 +6039,7 @@ public class KnowledgeApi {
    * @return KnowledgeDocument
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeDocument postKnowledgeKnowledgebaseLanguageDocuments(String knowledgeBaseId, String languageCode, KnowledgeDocumentRequest body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseLanguageDocuments(createPostKnowledgeKnowledgebaseLanguageDocumentsRequest(knowledgeBaseId, languageCode, body));
@@ -5992,6 +6053,7 @@ public class KnowledgeApi {
    * @param body  (required)
    * @return KnowledgeDocument
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeDocument> postKnowledgeKnowledgebaseLanguageDocumentsWithHttpInfo(String knowledgeBaseId, String languageCode, KnowledgeDocumentRequest body) throws IOException {
     return postKnowledgeKnowledgebaseLanguageDocuments(createPostKnowledgeKnowledgebaseLanguageDocumentsRequest(knowledgeBaseId, languageCode, body).withHttpInfo());
@@ -6015,6 +6077,7 @@ public class KnowledgeApi {
    * @return KnowledgeDocument
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeDocument postKnowledgeKnowledgebaseLanguageDocuments(PostKnowledgeKnowledgebaseLanguageDocumentsRequest request) throws IOException, ApiException {
     try {
@@ -6033,6 +6096,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeDocument> postKnowledgeKnowledgebaseLanguageDocuments(ApiRequest<KnowledgeDocumentRequest> request) throws IOException {
     try {
@@ -6065,6 +6129,7 @@ public class KnowledgeApi {
    * @return KnowledgeImport
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeImport postKnowledgeKnowledgebaseLanguageDocumentsImports(String knowledgeBaseId, String languageCode, KnowledgeImport body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseLanguageDocumentsImports(createPostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest(knowledgeBaseId, languageCode, body));
@@ -6078,6 +6143,7 @@ public class KnowledgeApi {
    * @param body  (required)
    * @return KnowledgeImport
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeImport> postKnowledgeKnowledgebaseLanguageDocumentsImportsWithHttpInfo(String knowledgeBaseId, String languageCode, KnowledgeImport body) throws IOException {
     return postKnowledgeKnowledgebaseLanguageDocumentsImports(createPostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest(knowledgeBaseId, languageCode, body).withHttpInfo());
@@ -6101,6 +6167,7 @@ public class KnowledgeApi {
    * @return KnowledgeImport
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeImport postKnowledgeKnowledgebaseLanguageDocumentsImports(PostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest request) throws IOException, ApiException {
     try {
@@ -6119,6 +6186,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeImport> postKnowledgeKnowledgebaseLanguageDocumentsImports(ApiRequest<KnowledgeImport> request) throws IOException {
     try {
@@ -6151,6 +6219,7 @@ public class KnowledgeApi {
    * @return KnowledgeTraining
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeTraining postKnowledgeKnowledgebaseLanguageTrainingPromote(String knowledgeBaseId, String languageCode, String trainingId) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseLanguageTrainingPromote(createPostKnowledgeKnowledgebaseLanguageTrainingPromoteRequest(knowledgeBaseId, languageCode, trainingId));
@@ -6164,6 +6233,7 @@ public class KnowledgeApi {
    * @param trainingId Training ID (required)
    * @return KnowledgeTraining
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeTraining> postKnowledgeKnowledgebaseLanguageTrainingPromoteWithHttpInfo(String knowledgeBaseId, String languageCode, String trainingId) throws IOException {
     return postKnowledgeKnowledgebaseLanguageTrainingPromote(createPostKnowledgeKnowledgebaseLanguageTrainingPromoteRequest(knowledgeBaseId, languageCode, trainingId).withHttpInfo());
@@ -6187,6 +6257,7 @@ public class KnowledgeApi {
    * @return KnowledgeTraining
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeTraining postKnowledgeKnowledgebaseLanguageTrainingPromote(PostKnowledgeKnowledgebaseLanguageTrainingPromoteRequest request) throws IOException, ApiException {
     try {
@@ -6205,6 +6276,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeTraining> postKnowledgeKnowledgebaseLanguageTrainingPromote(ApiRequest<Void> request) throws IOException {
     try {
@@ -6236,6 +6308,7 @@ public class KnowledgeApi {
    * @return KnowledgeTraining
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeTraining postKnowledgeKnowledgebaseLanguageTrainings(String knowledgeBaseId, String languageCode) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseLanguageTrainings(createPostKnowledgeKnowledgebaseLanguageTrainingsRequest(knowledgeBaseId, languageCode));
@@ -6248,6 +6321,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @return KnowledgeTraining
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeTraining> postKnowledgeKnowledgebaseLanguageTrainingsWithHttpInfo(String knowledgeBaseId, String languageCode) throws IOException {
     return postKnowledgeKnowledgebaseLanguageTrainings(createPostKnowledgeKnowledgebaseLanguageTrainingsRequest(knowledgeBaseId, languageCode).withHttpInfo());
@@ -6269,6 +6343,7 @@ public class KnowledgeApi {
    * @return KnowledgeTraining
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeTraining postKnowledgeKnowledgebaseLanguageTrainings(PostKnowledgeKnowledgebaseLanguageTrainingsRequest request) throws IOException, ApiException {
     try {
@@ -6287,6 +6362,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeTraining> postKnowledgeKnowledgebaseLanguageTrainings(ApiRequest<Void> request) throws IOException {
     try {
@@ -6318,6 +6394,7 @@ public class KnowledgeApi {
    * @return KnowledgeSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(String knowledgeBaseId, KnowledgeSearchRequest body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseSearch(createPostKnowledgeKnowledgebaseSearchRequest(knowledgeBaseId, body));
@@ -6330,6 +6407,7 @@ public class KnowledgeApi {
    * @param body  (optional)
    * @return KnowledgeSearchResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeSearchResponse> postKnowledgeKnowledgebaseSearchWithHttpInfo(String knowledgeBaseId, KnowledgeSearchRequest body) throws IOException {
     return postKnowledgeKnowledgebaseSearch(createPostKnowledgeKnowledgebaseSearchRequest(knowledgeBaseId, body).withHttpInfo());
@@ -6351,6 +6429,7 @@ public class KnowledgeApi {
    * @return KnowledgeSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(PostKnowledgeKnowledgebaseSearchRequest request) throws IOException, ApiException {
     try {
@@ -6369,6 +6448,7 @@ public class KnowledgeApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<KnowledgeSearchResponse> postKnowledgeKnowledgebaseSearch(ApiRequest<KnowledgeSearchRequest> request) throws IOException {
     try {

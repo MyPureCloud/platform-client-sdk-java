@@ -75,6 +75,7 @@ public class KpiResult  implements Serializable {
     }
   }
   private MediaTypeEnum mediaType = null;
+  private Double percentageBenefit = null;
 
   
   @ApiModelProperty(example = "null", value = "Absolute metric (in which the KPI is based) total for the interactions handled by predictive routing (GPR was on)")
@@ -112,6 +113,13 @@ public class KpiResult  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The percentage benefit for this media type for the duration of the comparison period")
+  @JsonProperty("percentageBenefit")
+  public Double getPercentageBenefit() {
+    return percentageBenefit;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -126,12 +134,13 @@ public class KpiResult  implements Serializable {
             Objects.equals(this.kpiTotalOff, kpiResult.kpiTotalOff) &&
             Objects.equals(this.interactionCountOn, kpiResult.interactionCountOn) &&
             Objects.equals(this.interactionCountOff, kpiResult.interactionCountOff) &&
-            Objects.equals(this.mediaType, kpiResult.mediaType);
+            Objects.equals(this.mediaType, kpiResult.mediaType) &&
+            Objects.equals(this.percentageBenefit, kpiResult.percentageBenefit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(kpiTotalOn, kpiTotalOff, interactionCountOn, interactionCountOff, mediaType);
+    return Objects.hash(kpiTotalOn, kpiTotalOff, interactionCountOn, interactionCountOff, mediaType, percentageBenefit);
   }
 
   @Override
@@ -144,6 +153,7 @@ public class KpiResult  implements Serializable {
     sb.append("    interactionCountOn: ").append(toIndentedString(interactionCountOn)).append("\n");
     sb.append("    interactionCountOff: ").append(toIndentedString(interactionCountOff)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    percentageBenefit: ").append(toIndentedString(percentageBenefit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

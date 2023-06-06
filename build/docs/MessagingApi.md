@@ -18,11 +18,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteMessagingSupportedcontentSupportedContentId**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deleteMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 Delete a supported content profile
+
+Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 
 Wraps DELETE /api/v2/messaging/supportedcontent/{supportedContentId}  
 
@@ -78,11 +80,13 @@ null (empty response body)
 
 # **getMessagingSupportedcontent**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [SupportedContentListing](SupportedContentListing.html) getMessagingSupportedcontent(pageSize, pageNumber)
 
 Get a list of Supported Content profiles
+
+Deprecated - use GET /api/v2/conversations/messaging/supportedcontent as replacement
 
 Wraps GET /api/v2/messaging/supportedcontent  
 
@@ -141,11 +145,13 @@ try {
 
 # **getMessagingSupportedcontentSupportedContentId**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [SupportedContent](SupportedContent.html) getMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 Get a supported content profile
+
+Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 
 Wraps GET /api/v2/messaging/supportedcontent/{supportedContentId}  
 
@@ -202,11 +208,13 @@ try {
 
 # **patchMessagingSupportedcontentSupportedContentId**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [SupportedContent](SupportedContent.html) patchMessagingSupportedcontentSupportedContentId(supportedContentId, body)
 
 Update a supported content profile
+
+Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 
 Wraps PATCH /api/v2/messaging/supportedcontent/{supportedContentId}  
 
@@ -265,11 +273,13 @@ try {
 
 # **postMessagingSupportedcontent**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [SupportedContent](SupportedContent.html) postMessagingSupportedcontent(body)
 
 Create a Supported Content profile
+
+Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
 
 Wraps POST /api/v2/messaging/supportedcontent  
 

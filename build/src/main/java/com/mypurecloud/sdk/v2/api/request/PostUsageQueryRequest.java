@@ -20,23 +20,25 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageClientQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageOrganizationQuery;
 import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
+import com.mypurecloud.sdk.v2.model.ApiUsageSimpleSearch;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 public class PostUsageQueryRequest {
 
-	private ApiUsageQuery body;
-	public ApiUsageQuery getBody() {
+	private ApiUsageOrganizationQuery body;
+	public ApiUsageOrganizationQuery getBody() {
 		return this.body;
 	}
 
-	public void setBody(ApiUsageQuery body) {
+	public void setBody(ApiUsageOrganizationQuery body) {
 		this.body = body;
 	}
 
-	public PostUsageQueryRequest withBody(ApiUsageQuery body) {
+	public PostUsageQueryRequest withBody(ApiUsageOrganizationQuery body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -60,7 +62,7 @@ public class PostUsageQueryRequest {
         return this;
     }
 
-    public ApiRequest<ApiUsageQuery> withHttpInfo() {
+    public ApiRequest<ApiUsageOrganizationQuery> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -83,7 +85,7 @@ public class PostUsageQueryRequest {
 	}
 
 
-	public static Builder builder(ApiUsageQuery body) {
+	public static Builder builder(ApiUsageOrganizationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -97,14 +99,14 @@ public class PostUsageQueryRequest {
 		}
 
 
-		public Builder withBody(ApiUsageQuery body) {
+		public Builder withBody(ApiUsageOrganizationQuery body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(ApiUsageQuery body) {
+		public Builder withRequiredParams(ApiUsageOrganizationQuery body) {
 			request.setBody(body);
 
 			return this;

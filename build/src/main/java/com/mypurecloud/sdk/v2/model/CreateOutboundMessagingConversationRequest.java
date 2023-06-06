@@ -43,7 +43,8 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
  @JsonDeserialize(using = ToAddressMessengerTypeEnumDeserializer.class)
   public enum ToAddressMessengerTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SMS("sms");
+    SMS("sms"),
+    OPEN("open");
 
     private String value;
 
@@ -94,14 +95,14 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
 
 
   /**
-   * The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234
+   * The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.  For open messenger type, any string within the outbound.open.messaging.to.address.characters.max limit can be used.
    **/
   public CreateOutboundMessagingConversationRequest toAddress(String toAddress) {
     this.toAddress = toAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234")
+  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.  For open messenger type, any string within the outbound.open.messaging.to.address.characters.max limit can be used.")
   @JsonProperty("toAddress")
   public String getToAddress() {
     return toAddress;

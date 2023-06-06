@@ -41,23 +41,30 @@ public class GeneralProgramJobRequest  implements Serializable {
  @JsonDeserialize(using = DialectEnumDeserializer.class)
   public enum DialectEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    EN_US("en-US"),
-    ES_US("es-US"),
+    AR_001("ar-001"),
+    AR_AE("ar-AE"),
+    AR_BH("ar-BH"),
+    AR_EG("ar-EG"),
+    AR_IL("ar-IL"),
+    AR_SA("ar-SA"),
+    AR_TN("ar-TN"),
+    DE_DE("de-DE"),
     EN_AU("en-AU"),
     EN_GB("en-GB"),
+    EN_IN("en-IN"),
+    EN_US("en-US"),
     EN_ZA("en-ZA"),
     ES_ES("es-ES"),
-    EN_IN("en-IN"),
-    FR_FR("fr-FR"),
+    ES_US("es-US"),
     FR_CA("fr-CA"),
+    FR_FR("fr-FR"),
     IT_IT("it-IT"),
-    DE_DE("de-DE"),
-    PT_BR("pt-BR"),
-    PL_PL("pl-PL"),
-    PT_PT("pt-PT"),
-    NL_NL("nl-NL"),
+    JA_JP("ja-JP"),
     KO_KR("ko-KR"),
-    JA_JP("ja-JP");
+    NL_NL("nl-NL"),
+    PL_PL("pl-PL"),
+    PT_BR("pt-BR"),
+    PT_PT("pt-PT");
 
     private String value;
 

@@ -37,6 +37,7 @@ title: ReportingExportJobResponse
 | **emailStatuses** | <!---->[**Map&lt;String, InnerEnum&gt;**](#InnerEnum)<!----> | The status of individual email addresses as a map |  [optional] |
 | **emailErrorDescription** | <!----><!---->**String**<!----> | The optional error message in case the export fail to email |  [optional] |
 | **includeDurationFormatInHeader** | <!----><!---->**Boolean**<!----> | Indicates whether to include selected duration format to the column headers |  [optional] |
+| **durationFormat** | [**DurationFormatEnum**](#DurationFormatEnum)<!----> | Indicates the duration format for the exports |  [optional] |
 | **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
@@ -175,6 +176,8 @@ title: ReportingExportJobResponse
 | CAMPAIGN_INTERACTION_DETAIL_VIEW | &quot;CAMPAIGN_INTERACTION_DETAIL_VIEW&quot; | 
 | CAMPAIGN_ATTEMPT_DETAIL_VIEW | &quot;CAMPAIGN_ATTEMPT_DETAIL_VIEW&quot; | 
 | WORKITEM_PERFORMANCE_SUMMARY_VIEW | &quot;WORKITEM_PERFORMANCE_SUMMARY_VIEW&quot; | 
+| AGENT_ASSIST_PERFORMANCE_VIEW | &quot;AGENT_ASSIST_PERFORMANCE_VIEW&quot; | 
+| CONTACT_CENTER_PERFORMANCE_VIEW | &quot;CONTACT_CENTER_PERFORMANCE_VIEW&quot; | 
 {: class="table table-striped"}
 
 
@@ -223,6 +226,20 @@ title: ReportingExportJobResponse
 | SENT | &quot;Sent&quot; |
 | PENDING | &quot;Pending&quot; |
 | FAILED | &quot;Failed&quot; |
+{: class="table table-striped"}
+
+
+<a name="DurationFormatEnum"></a>
+
+## Enum: DurationFormatEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SECONDS | &quot;Seconds&quot; | 
+| MILLISECONDS | &quot;Milliseconds&quot; | 
+| HHMMSS | &quot;Hhmmss&quot; | 
+| HMS | &quot;Hms&quot; | 
 {: class="table table-striped"}
 
 

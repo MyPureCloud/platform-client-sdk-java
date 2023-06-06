@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DocumentBodyVideoProperties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,6 +23,7 @@ import java.io.Serializable;
 public class DocumentBodyVideo  implements Serializable {
   
   private String url = null;
+  private DocumentBodyVideoProperties properties = null;
 
   
   /**
@@ -42,6 +44,24 @@ public class DocumentBodyVideo  implements Serializable {
   }
 
 
+  /**
+   * The properties for the video.
+   **/
+  public DocumentBodyVideo properties(DocumentBodyVideoProperties properties) {
+    this.properties = properties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The properties for the video.")
+  @JsonProperty("properties")
+  public DocumentBodyVideoProperties getProperties() {
+    return properties;
+  }
+  public void setProperties(DocumentBodyVideoProperties properties) {
+    this.properties = properties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -52,12 +72,13 @@ public class DocumentBodyVideo  implements Serializable {
     }
     DocumentBodyVideo documentBodyVideo = (DocumentBodyVideo) o;
 
-    return Objects.equals(this.url, documentBodyVideo.url);
+    return Objects.equals(this.url, documentBodyVideo.url) &&
+            Objects.equals(this.properties, documentBodyVideo.properties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url);
+    return Objects.hash(url, properties);
   }
 
   @Override
@@ -66,6 +87,7 @@ public class DocumentBodyVideo  implements Serializable {
     sb.append("class DocumentBodyVideo {\n");
     
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

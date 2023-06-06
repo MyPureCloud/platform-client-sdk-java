@@ -10,7 +10,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageClientQuery;
 import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
@@ -852,7 +852,7 @@ public class OAuthApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UsageExecutionResult postOauthClientUsageQuery(String clientId, ApiUsageQuery body) throws IOException, ApiException {
+  public UsageExecutionResult postOauthClientUsageQuery(String clientId, ApiUsageClientQuery body) throws IOException, ApiException {
     return  postOauthClientUsageQuery(createPostOauthClientUsageQueryRequest(clientId, body));
   }
 
@@ -864,11 +864,11 @@ public class OAuthApi {
    * @return UsageExecutionResult
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UsageExecutionResult> postOauthClientUsageQueryWithHttpInfo(String clientId, ApiUsageQuery body) throws IOException {
+  public ApiResponse<UsageExecutionResult> postOauthClientUsageQueryWithHttpInfo(String clientId, ApiUsageClientQuery body) throws IOException {
     return postOauthClientUsageQuery(createPostOauthClientUsageQueryRequest(clientId, body).withHttpInfo());
   }
 
-  private PostOauthClientUsageQueryRequest createPostOauthClientUsageQueryRequest(String clientId, ApiUsageQuery body) {
+  private PostOauthClientUsageQueryRequest createPostOauthClientUsageQueryRequest(String clientId, ApiUsageClientQuery body) {
     return PostOauthClientUsageQueryRequest.builder()
             .withClientId(clientId)
 
@@ -903,7 +903,7 @@ public class OAuthApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UsageExecutionResult> postOauthClientUsageQuery(ApiRequest<ApiUsageQuery> request) throws IOException {
+  public ApiResponse<UsageExecutionResult> postOauthClientUsageQuery(ApiRequest<ApiUsageClientQuery> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<UsageExecutionResult>() {});
     }

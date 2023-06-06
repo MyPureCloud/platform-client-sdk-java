@@ -489,8 +489,10 @@ title: ViewFilter
 | UNKNOWN | &quot;Unknown&quot; |
 | NOINPUTCOLLECTION | &quot;NoInputCollection&quot; |
 | NOINPUTCONFIRMATION | &quot;NoInputConfirmation&quot; |
+| NOINPUTDISAMBIGUATION | &quot;NoInputDisambiguation&quot; |
 | NOMATCHCOLLECTION | &quot;NoMatchCollection&quot; |
 | NOMATCHCONFIRMATION | &quot;NoMatchConfirmation&quot; |
+| NOMATCHDISAMBIGUATION | &quot;NoMatchDisambiguation&quot; |
 | MAXWRONGMATCH | &quot;MaxWrongMatch&quot; |
 {: class="table table-striped"}
 

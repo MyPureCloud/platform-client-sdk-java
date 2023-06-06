@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DocumentTextProperties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.List;
@@ -43,7 +44,10 @@ public class DocumentText  implements Serializable {
   public enum MarksEnum {
     BOLD("Bold"),
     ITALIC("Italic"),
-    UNDERLINE("Underline");
+    UNDERLINE("Underline"),
+    STRIKETHROUGH("Strikethrough"),
+    SUBSCRIPT("Subscript"),
+    SUPERSCRIPT("Superscript");
 
     private String value;
 
@@ -72,6 +76,7 @@ public class DocumentText  implements Serializable {
   }
   private List<MarksEnum> marks = new ArrayList<MarksEnum>();
   private String hyperlink = null;
+  private DocumentTextProperties properties = null;
 
   
   /**
@@ -128,6 +133,24 @@ public class DocumentText  implements Serializable {
   }
 
 
+  /**
+   * The properties for the text.
+   **/
+  public DocumentText properties(DocumentTextProperties properties) {
+    this.properties = properties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The properties for the text.")
+  @JsonProperty("properties")
+  public DocumentTextProperties getProperties() {
+    return properties;
+  }
+  public void setProperties(DocumentTextProperties properties) {
+    this.properties = properties;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -140,12 +163,13 @@ public class DocumentText  implements Serializable {
 
     return Objects.equals(this.text, documentText.text) &&
             Objects.equals(this.marks, documentText.marks) &&
-            Objects.equals(this.hyperlink, documentText.hyperlink);
+            Objects.equals(this.hyperlink, documentText.hyperlink) &&
+            Objects.equals(this.properties, documentText.properties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, marks, hyperlink);
+    return Objects.hash(text, marks, hyperlink, properties);
   }
 
   @Override
@@ -156,6 +180,7 @@ public class DocumentText  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    marks: ").append(toIndentedString(marks)).append("\n");
     sb.append("    hyperlink: ").append(toIndentedString(hyperlink)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

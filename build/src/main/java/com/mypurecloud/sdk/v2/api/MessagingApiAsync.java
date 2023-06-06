@@ -44,10 +44,11 @@ public class MessagingApiAsync {
 
   /**
    * Delete a supported content profile
-   * 
+   * Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteMessagingSupportedcontentSupportedContentIdAsync(DeleteMessagingSupportedcontentSupportedContentIdRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -78,10 +79,11 @@ public class MessagingApiAsync {
 
   /**
    * Delete a supported content profile
-   * 
+   * Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteMessagingSupportedcontentSupportedContentIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -119,10 +121,11 @@ public class MessagingApiAsync {
 
   /**
    * Get a list of Supported Content profiles
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent as replacement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<SupportedContentListing> getMessagingSupportedcontentAsync(GetMessagingSupportedcontentRequest request, final AsyncApiCallback<SupportedContentListing> callback) {
     try {
@@ -153,10 +156,11 @@ public class MessagingApiAsync {
 
   /**
    * Get a list of Supported Content profiles
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent as replacement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<SupportedContentListing>> getMessagingSupportedcontentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SupportedContentListing>> callback) {
     try {
@@ -194,10 +198,11 @@ public class MessagingApiAsync {
 
   /**
    * Get a supported content profile
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<SupportedContent> getMessagingSupportedcontentSupportedContentIdAsync(GetMessagingSupportedcontentSupportedContentIdRequest request, final AsyncApiCallback<SupportedContent> callback) {
     try {
@@ -228,10 +233,11 @@ public class MessagingApiAsync {
 
   /**
    * Get a supported content profile
-   * 
+   * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<SupportedContent>> getMessagingSupportedcontentSupportedContentIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SupportedContent>> callback) {
     try {
@@ -269,10 +275,11 @@ public class MessagingApiAsync {
 
   /**
    * Update a supported content profile
-   * 
+   * Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<SupportedContent> patchMessagingSupportedcontentSupportedContentIdAsync(PatchMessagingSupportedcontentSupportedContentIdRequest request, final AsyncApiCallback<SupportedContent> callback) {
     try {
@@ -303,10 +310,11 @@ public class MessagingApiAsync {
 
   /**
    * Update a supported content profile
-   * 
+   * Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<SupportedContent>> patchMessagingSupportedcontentSupportedContentIdAsync(ApiRequest<SupportedContent> request, final AsyncApiCallback<ApiResponse<SupportedContent>> callback) {
     try {
@@ -344,10 +352,11 @@ public class MessagingApiAsync {
 
   /**
    * Create a Supported Content profile
-   * 
+   * Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<SupportedContent> postMessagingSupportedcontentAsync(PostMessagingSupportedcontentRequest request, final AsyncApiCallback<SupportedContent> callback) {
     try {
@@ -378,10 +387,11 @@ public class MessagingApiAsync {
 
   /**
    * Create a Supported Content profile
-   * 
+   * Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<SupportedContent>> postMessagingSupportedcontentAsync(ApiRequest<SupportedContent> request, final AsyncApiCallback<ApiResponse<SupportedContent>> callback) {
     try {

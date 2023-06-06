@@ -27,6 +27,7 @@ title: ReportingExportJobRequest
 | **hasCustomParticipantAttributes** | <!----><!---->**Boolean**<!----> | Indicates if custom participant attributes will be exported |  [optional] |
 | **recipientEmails** | <!----><!---->**List&lt;String&gt;**<!----> | The list of email recipients for the exports |  [optional] |
 | **includeDurationFormatInHeader** | <!----><!---->**Boolean**<!----> | Indicates whether to include selected duration format to the column headers |  [optional] |
+| **durationFormat** | [**DurationFormatEnum**](#DurationFormatEnum)<!----> | Indicates the duration format for the exports |  [optional] |
 {: class="table table-striped"}
 
 
@@ -146,6 +147,8 @@ title: ReportingExportJobRequest
 | CAMPAIGN_INTERACTION_DETAIL_VIEW | &quot;CAMPAIGN_INTERACTION_DETAIL_VIEW&quot; | 
 | CAMPAIGN_ATTEMPT_DETAIL_VIEW | &quot;CAMPAIGN_ATTEMPT_DETAIL_VIEW&quot; | 
 | WORKITEM_PERFORMANCE_SUMMARY_VIEW | &quot;WORKITEM_PERFORMANCE_SUMMARY_VIEW&quot; | 
+| AGENT_ASSIST_PERFORMANCE_VIEW | &quot;AGENT_ASSIST_PERFORMANCE_VIEW&quot; | 
+| CONTACT_CENTER_PERFORMANCE_VIEW | &quot;CONTACT_CENTER_PERFORMANCE_VIEW&quot; | 
 {: class="table table-striped"}
 
 
@@ -158,6 +161,20 @@ title: ReportingExportJobRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SEMICOLON | &quot;SEMICOLON&quot; | 
 | COMMA | &quot;COMMA&quot; | 
+{: class="table table-striped"}
+
+
+<a name="DurationFormatEnum"></a>
+
+## Enum: DurationFormatEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SECONDS | &quot;Seconds&quot; | 
+| MILLISECONDS | &quot;Milliseconds&quot; | 
+| HHMMSS | &quot;Hhmmss&quot; | 
+| HMS | &quot;Hms&quot; | 
 {: class="table table-striped"}
 
 

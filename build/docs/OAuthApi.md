@@ -681,7 +681,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 OAuthApi apiInstance = new OAuthApi();
 String clientId = "clientId_example"; // String | Client ID
-ApiUsageQuery body = new ApiUsageQuery(); // ApiUsageQuery | Query
+ApiUsageClientQuery body = new ApiUsageClientQuery(); // ApiUsageClientQuery | Query
 try {
     UsageExecutionResult result = apiInstance.postOauthClientUsageQuery(clientId, body);
     System.out.println(result);
@@ -697,7 +697,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **clientId** | **String**| Client ID | 
-| **body** | [**ApiUsageQuery**](ApiUsageQuery.html)| Query | 
+| **body** | [**ApiUsageClientQuery**](ApiUsageClientQuery.html)| Query | 
 {: class="table-striped"}
 
 

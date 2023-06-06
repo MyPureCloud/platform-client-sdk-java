@@ -134,6 +134,8 @@ title: ConversationAggregationQuery
 | OSERVICETARGET | &quot;oServiceTarget&quot; |
 | TABANDON | &quot;tAbandon&quot; |
 | TACD | &quot;tAcd&quot; |
+| TACTIVECALLBACK | &quot;tActiveCallback&quot; |
+| TACTIVECALLBACKCOMPLETE | &quot;tActiveCallbackComplete&quot; |
 | TACW | &quot;tAcw&quot; |
 | TAGENTRESPONSETIME | &quot;tAgentResponseTime&quot; |
 | TALERT | &quot;tAlert&quot; |

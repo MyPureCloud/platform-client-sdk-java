@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -94,6 +95,8 @@ public class FlowVersion  implements Serializable {
   private String publishResultUri = null;
   private JsonSchemaDocument inputSchema = null;
   private JsonSchemaDocument outputSchema = null;
+  private Date datePublished = null;
+  private Date datePublishedEnd = null;
   private NluInfo nluInfo = null;
   private List<SupportedLanguage> supportedLanguages = new ArrayList<SupportedLanguage>();
 
@@ -452,6 +455,20 @@ public class FlowVersion  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The date this version became the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("datePublished")
+  public Date getDatePublished() {
+    return datePublished;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The date this version was no longer the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("datePublishedEnd")
+  public Date getDatePublishedEnd() {
+    return datePublishedEnd;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Information about the natural language understanding configuration for the flow version")
   @JsonProperty("nluInfo")
   public NluInfo getNluInfo() {
@@ -507,6 +524,8 @@ public class FlowVersion  implements Serializable {
             Objects.equals(this.publishResultUri, flowVersion.publishResultUri) &&
             Objects.equals(this.inputSchema, flowVersion.inputSchema) &&
             Objects.equals(this.outputSchema, flowVersion.outputSchema) &&
+            Objects.equals(this.datePublished, flowVersion.datePublished) &&
+            Objects.equals(this.datePublishedEnd, flowVersion.datePublishedEnd) &&
             Objects.equals(this.nluInfo, flowVersion.nluInfo) &&
             Objects.equals(this.supportedLanguages, flowVersion.supportedLanguages) &&
             Objects.equals(this.compatibleFlowTypes, flowVersion.compatibleFlowTypes) &&
@@ -515,7 +534,7 @@ public class FlowVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, debug, createdBy, createdByClient, configurationUri, dateCreated, dateCheckedIn, dateSaved, generationId, publishResultUri, inputSchema, outputSchema, nluInfo, supportedLanguages, compatibleFlowTypes, selfUri);
+    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, debug, createdBy, createdByClient, configurationUri, dateCreated, dateCheckedIn, dateSaved, generationId, publishResultUri, inputSchema, outputSchema, datePublished, datePublishedEnd, nluInfo, supportedLanguages, compatibleFlowTypes, selfUri);
   }
 
   @Override
@@ -540,6 +559,8 @@ public class FlowVersion  implements Serializable {
     sb.append("    publishResultUri: ").append(toIndentedString(publishResultUri)).append("\n");
     sb.append("    inputSchema: ").append(toIndentedString(inputSchema)).append("\n");
     sb.append("    outputSchema: ").append(toIndentedString(outputSchema)).append("\n");
+    sb.append("    datePublished: ").append(toIndentedString(datePublished)).append("\n");
+    sb.append("    datePublishedEnd: ").append(toIndentedString(datePublishedEnd)).append("\n");
     sb.append("    nluInfo: ").append(toIndentedString(nluInfo)).append("\n");
     sb.append("    supportedLanguages: ").append(toIndentedString(supportedLanguages)).append("\n");
     sb.append("    compatibleFlowTypes: ").append(toIndentedString(compatibleFlowTypes)).append("\n");

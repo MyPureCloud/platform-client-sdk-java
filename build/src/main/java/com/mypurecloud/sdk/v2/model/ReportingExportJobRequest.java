@@ -193,7 +193,9 @@ public class ReportingExportJobRequest  implements Serializable {
     INTERACTION_DETAIL_VIEW("INTERACTION_DETAIL_VIEW"),
     CAMPAIGN_INTERACTION_DETAIL_VIEW("CAMPAIGN_INTERACTION_DETAIL_VIEW"),
     CAMPAIGN_ATTEMPT_DETAIL_VIEW("CAMPAIGN_ATTEMPT_DETAIL_VIEW"),
-    WORKITEM_PERFORMANCE_SUMMARY_VIEW("WORKITEM_PERFORMANCE_SUMMARY_VIEW");
+    WORKITEM_PERFORMANCE_SUMMARY_VIEW("WORKITEM_PERFORMANCE_SUMMARY_VIEW"),
+    AGENT_ASSIST_PERFORMANCE_VIEW("AGENT_ASSIST_PERFORMANCE_VIEW"),
+    CONTACT_CENTER_PERFORMANCE_VIEW("CONTACT_CENTER_PERFORMANCE_VIEW");
 
     private String value;
 
@@ -281,6 +283,56 @@ public class ReportingExportJobRequest  implements Serializable {
   private Boolean hasCustomParticipantAttributes = null;
   private List<String> recipientEmails = new ArrayList<String>();
   private Boolean includeDurationFormatInHeader = null;
+
+  private static class DurationFormatEnumDeserializer extends StdDeserializer<DurationFormatEnum> {
+    public DurationFormatEnumDeserializer() {
+      super(DurationFormatEnumDeserializer.class);
+    }
+
+    @Override
+    public DurationFormatEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DurationFormatEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Indicates the duration format for the exports
+   */
+ @JsonDeserialize(using = DurationFormatEnumDeserializer.class)
+  public enum DurationFormatEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SECONDS("Seconds"),
+    MILLISECONDS("Milliseconds"),
+    HHMMSS("Hhmmss"),
+    HMS("Hms");
+
+    private String value;
+
+    DurationFormatEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DurationFormatEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DurationFormatEnum value : DurationFormatEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DurationFormatEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DurationFormatEnum durationFormat = null;
 
   
   /**
@@ -625,6 +677,24 @@ public class ReportingExportJobRequest  implements Serializable {
   }
 
 
+  /**
+   * Indicates the duration format for the exports
+   **/
+  public ReportingExportJobRequest durationFormat(DurationFormatEnum durationFormat) {
+    this.durationFormat = durationFormat;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the duration format for the exports")
+  @JsonProperty("durationFormat")
+  public DurationFormatEnum getDurationFormat() {
+    return durationFormat;
+  }
+  public void setDurationFormat(DurationFormatEnum durationFormat) {
+    this.durationFormat = durationFormat;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -653,12 +723,13 @@ public class ReportingExportJobRequest  implements Serializable {
             Objects.equals(this.selectedColumns, reportingExportJobRequest.selectedColumns) &&
             Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobRequest.hasCustomParticipantAttributes) &&
             Objects.equals(this.recipientEmails, reportingExportJobRequest.recipientEmails) &&
-            Objects.equals(this.includeDurationFormatInHeader, reportingExportJobRequest.includeDurationFormatInHeader);
+            Objects.equals(this.includeDurationFormatInHeader, reportingExportJobRequest.includeDurationFormatInHeader) &&
+            Objects.equals(this.durationFormat, reportingExportJobRequest.durationFormat);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, includeDurationFormatInHeader);
+    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, includeDurationFormatInHeader, durationFormat);
   }
 
   @Override
@@ -685,6 +756,7 @@ public class ReportingExportJobRequest  implements Serializable {
     sb.append("    hasCustomParticipantAttributes: ").append(toIndentedString(hasCustomParticipantAttributes)).append("\n");
     sb.append("    recipientEmails: ").append(toIndentedString(recipientEmails)).append("\n");
     sb.append("    includeDurationFormatInHeader: ").append(toIndentedString(includeDurationFormatInHeader)).append("\n");
+    sb.append("    durationFormat: ").append(toIndentedString(durationFormat)).append("\n");
     sb.append("}");
     return sb.toString();
   }
