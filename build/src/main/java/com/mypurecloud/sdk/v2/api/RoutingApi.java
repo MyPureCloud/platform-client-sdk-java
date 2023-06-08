@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
 import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.CreateUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -52,6 +53,8 @@ import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.QueueRequest;
 import com.mypurecloud.sdk.v2.model.Recipient;
 import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
+import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
 import com.mypurecloud.sdk.v2.model.RoutingSettings;
@@ -68,6 +71,7 @@ import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumberImport;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.TestMessage;
 import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
@@ -81,6 +85,8 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.Utilization;
+import com.mypurecloud.sdk.v2.model.UtilizationTag;
+import com.mypurecloud.sdk.v2.model.UtilizationTagEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
@@ -105,6 +111,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
@@ -159,6 +166,9 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagAgentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserQueuesRequest;
@@ -181,6 +191,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutingskillsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRoutingActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingAssessmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingAssessmentsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainRoutesRequest;
@@ -199,6 +210,8 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
@@ -1502,6 +1515,89 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingUtilization(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an utilization tag
+   * 
+   * @param tagId Utilization Tag ID (required)
+   * @param forceDelete Remove all tag usages (if found) without warning (optional, default to false)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void deleteRoutingUtilizationTag(String tagId, Boolean forceDelete) throws IOException, ApiException {
+     deleteRoutingUtilizationTag(createDeleteRoutingUtilizationTagRequest(tagId, forceDelete));
+  }
+
+  /**
+   * Delete an utilization tag
+   * 
+   * @param tagId Utilization Tag ID (required)
+   * @param forceDelete Remove all tag usages (if found) without warning (optional, default to false)
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> deleteRoutingUtilizationTagWithHttpInfo(String tagId, Boolean forceDelete) throws IOException {
+    return deleteRoutingUtilizationTag(createDeleteRoutingUtilizationTagRequest(tagId, forceDelete).withHttpInfo());
+  }
+
+  private DeleteRoutingUtilizationTagRequest createDeleteRoutingUtilizationTagRequest(String tagId, Boolean forceDelete) {
+    return DeleteRoutingUtilizationTagRequest.builder()
+            .withTagId(tagId)
+
+            .withForceDelete(forceDelete)
+
+            .build();
+  }
+
+  /**
+   * Delete an utilization tag
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void deleteRoutingUtilizationTag(DeleteRoutingUtilizationTagRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an utilization tag
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> deleteRoutingUtilizationTag(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -6103,6 +6199,264 @@ public class RoutingApi {
   }
 
   /**
+   * Get details about this utilization tag
+   * 
+   * @param tagId Utilization Tag ID (required)
+   * @return UtilizationTag
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UtilizationTag getRoutingUtilizationTag(String tagId) throws IOException, ApiException {
+    return  getRoutingUtilizationTag(createGetRoutingUtilizationTagRequest(tagId));
+  }
+
+  /**
+   * Get details about this utilization tag
+   * 
+   * @param tagId Utilization Tag ID (required)
+   * @return UtilizationTag
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UtilizationTag> getRoutingUtilizationTagWithHttpInfo(String tagId) throws IOException {
+    return getRoutingUtilizationTag(createGetRoutingUtilizationTagRequest(tagId).withHttpInfo());
+  }
+
+  private GetRoutingUtilizationTagRequest createGetRoutingUtilizationTagRequest(String tagId) {
+    return GetRoutingUtilizationTagRequest.builder()
+            .withTagId(tagId)
+
+            .build();
+  }
+
+  /**
+   * Get details about this utilization tag
+   * 
+   * @param request The request object
+   * @return UtilizationTag
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UtilizationTag getRoutingUtilizationTag(GetRoutingUtilizationTagRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UtilizationTag> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UtilizationTag>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about this utilization tag
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UtilizationTag> getRoutingUtilizationTag(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UtilizationTag>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of agent ids associated with a utilization tag
+   * 
+   * @param tagId Utilization Tag ID (required)
+   * @return List<Object>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public List<Object> getRoutingUtilizationTagAgents(String tagId) throws IOException, ApiException {
+    return  getRoutingUtilizationTagAgents(createGetRoutingUtilizationTagAgentsRequest(tagId));
+  }
+
+  /**
+   * Get list of agent ids associated with a utilization tag
+   * 
+   * @param tagId Utilization Tag ID (required)
+   * @return List<Object>
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<List<Object>> getRoutingUtilizationTagAgentsWithHttpInfo(String tagId) throws IOException {
+    return getRoutingUtilizationTagAgents(createGetRoutingUtilizationTagAgentsRequest(tagId).withHttpInfo());
+  }
+
+  private GetRoutingUtilizationTagAgentsRequest createGetRoutingUtilizationTagAgentsRequest(String tagId) {
+    return GetRoutingUtilizationTagAgentsRequest.builder()
+            .withTagId(tagId)
+
+            .build();
+  }
+
+  /**
+   * Get list of agent ids associated with a utilization tag
+   * 
+   * @param request The request object
+   * @return List<Object>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public List<Object> getRoutingUtilizationTagAgents(GetRoutingUtilizationTagAgentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<Object>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Object>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of agent ids associated with a utilization tag
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<List<Object>> getRoutingUtilizationTagAgents(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<Object>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of utilization tags
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Sort order by name (optional, default to ascending)
+   * @param name Utilization tag's name (Wildcard is supported, e.g., 'tag1*') (optional)
+   * @return UtilizationTagEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UtilizationTagEntityListing getRoutingUtilizationTags(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException, ApiException {
+    return  getRoutingUtilizationTags(createGetRoutingUtilizationTagsRequest(pageSize, pageNumber, sortOrder, name));
+  }
+
+  /**
+   * Get list of utilization tags
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Sort order by name (optional, default to ascending)
+   * @param name Utilization tag's name (Wildcard is supported, e.g., 'tag1*') (optional)
+   * @return UtilizationTagEntityListing
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UtilizationTagEntityListing> getRoutingUtilizationTagsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException {
+    return getRoutingUtilizationTags(createGetRoutingUtilizationTagsRequest(pageSize, pageNumber, sortOrder, name).withHttpInfo());
+  }
+
+  private GetRoutingUtilizationTagsRequest createGetRoutingUtilizationTagsRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name) {
+    return GetRoutingUtilizationTagsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withSortOrder(sortOrder)
+
+            .withName(name)
+
+            .build();
+  }
+
+  /**
+   * Get list of utilization tags
+   * 
+   * @param request The request object
+   * @return UtilizationTagEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UtilizationTagEntityListing getRoutingUtilizationTags(GetRoutingUtilizationTagsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UtilizationTagEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UtilizationTagEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of utilization tags
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UtilizationTagEntityListing> getRoutingUtilizationTags(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UtilizationTagEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationTagEntityListing> response = (ApiResponse<UtilizationTagEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationTagEntityListing> response = (ApiResponse<UtilizationTagEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get details about this wrap-up code.
    * 
    * @param codeId Wrapup Code ID (required)
@@ -7970,6 +8324,96 @@ public class RoutingApi {
   }
 
   /**
+   * Query for user activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return RoutingActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public RoutingActivityResponse postAnalyticsRoutingActivityQuery(RoutingActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  postAnalyticsRoutingActivityQuery(createPostAnalyticsRoutingActivityQueryRequest(body, pageSize, pageNumber));
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return RoutingActivityResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<RoutingActivityResponse> postAnalyticsRoutingActivityQueryWithHttpInfo(RoutingActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
+    return postAnalyticsRoutingActivityQuery(createPostAnalyticsRoutingActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private PostAnalyticsRoutingActivityQueryRequest createPostAnalyticsRoutingActivityQueryRequest(RoutingActivityQuery body, Integer pageSize, Integer pageNumber) {
+    return PostAnalyticsRoutingActivityQueryRequest.builder()
+            .withBody(body)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param request The request object
+   * @return RoutingActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public RoutingActivityResponse postAnalyticsRoutingActivityQuery(PostAnalyticsRoutingActivityQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RoutingActivityResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingActivityResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<RoutingActivityResponse> postAnalyticsRoutingActivityQuery(ApiRequest<RoutingActivityQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingActivityResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingActivityResponse> response = (ApiResponse<RoutingActivityResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingActivityResponse> response = (ApiResponse<RoutingActivityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a benefit assessment.
    * 
    * @param body  (optional)
@@ -9396,6 +9840,170 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Imports a phone number for SMS
+   * 
+   * @param body SmsPhoneNumber (required)
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public SmsPhoneNumber postRoutingSmsPhonenumbersImport(SmsPhoneNumberImport body) throws IOException, ApiException {
+    return  postRoutingSmsPhonenumbersImport(createPostRoutingSmsPhonenumbersImportRequest(body));
+  }
+
+  /**
+   * Imports a phone number for SMS
+   * 
+   * @param body SmsPhoneNumber (required)
+   * @return SmsPhoneNumber
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<SmsPhoneNumber> postRoutingSmsPhonenumbersImportWithHttpInfo(SmsPhoneNumberImport body) throws IOException {
+    return postRoutingSmsPhonenumbersImport(createPostRoutingSmsPhonenumbersImportRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingSmsPhonenumbersImportRequest createPostRoutingSmsPhonenumbersImportRequest(SmsPhoneNumberImport body) {
+    return PostRoutingSmsPhonenumbersImportRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Imports a phone number for SMS
+   * 
+   * @param request The request object
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public SmsPhoneNumber postRoutingSmsPhonenumbersImport(PostRoutingSmsPhonenumbersImportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SmsPhoneNumber> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Imports a phone number for SMS
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<SmsPhoneNumber> postRoutingSmsPhonenumbersImport(ApiRequest<SmsPhoneNumberImport> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SmsPhoneNumber>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create an utilization tag
+   * 
+   * @param body UtilizationTag (required)
+   * @return UtilizationTag
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UtilizationTag postRoutingUtilizationTags(CreateUtilizationTagRequest body) throws IOException, ApiException {
+    return  postRoutingUtilizationTags(createPostRoutingUtilizationTagsRequest(body));
+  }
+
+  /**
+   * Create an utilization tag
+   * 
+   * @param body UtilizationTag (required)
+   * @return UtilizationTag
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UtilizationTag> postRoutingUtilizationTagsWithHttpInfo(CreateUtilizationTagRequest body) throws IOException {
+    return postRoutingUtilizationTags(createPostRoutingUtilizationTagsRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingUtilizationTagsRequest createPostRoutingUtilizationTagsRequest(CreateUtilizationTagRequest body) {
+    return PostRoutingUtilizationTagsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an utilization tag
+   * 
+   * @param request The request object
+   * @return UtilizationTag
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UtilizationTag postRoutingUtilizationTags(PostRoutingUtilizationTagsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UtilizationTag> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UtilizationTag>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an utilization tag
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UtilizationTag> postRoutingUtilizationTags(ApiRequest<CreateUtilizationTagRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UtilizationTag>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationTag> response = (ApiResponse<UtilizationTag>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

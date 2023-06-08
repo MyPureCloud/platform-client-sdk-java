@@ -53,6 +53,7 @@ import com.mypurecloud.sdk.v2.model.ExpiredEdgeListing;
 import com.mypurecloud.sdk.v2.model.Extension;
 import com.mypurecloud.sdk.v2.model.ExtensionEntityListing;
 import com.mypurecloud.sdk.v2.model.ExtensionPool;
+import com.mypurecloud.sdk.v2.model.ExtensionPoolDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.ExtensionPoolEntityListing;
 import com.mypurecloud.sdk.v2.model.Line;
 import com.mypurecloud.sdk.v2.model.LineBase;

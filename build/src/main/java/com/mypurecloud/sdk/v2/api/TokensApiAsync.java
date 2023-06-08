@@ -14,13 +14,16 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.IdleTokenTimeout;
 import com.mypurecloud.sdk.v2.model.TokenInfo;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTokenRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTokensMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTokensMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTokensTimeoutRequest;
 import com.mypurecloud.sdk.v2.api.request.HeadTokensMeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTokensTimeoutRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -266,6 +269,83 @@ public class TokensApiAsync {
   }
 
   /**
+   * Get the current Idle Token Timeout Value
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<IdleTokenTimeout> getTokensTimeoutAsync(GetTokensTimeoutRequest request, final AsyncApiCallback<IdleTokenTimeout> callback) {
+    try {
+      final SettableFuture<IdleTokenTimeout> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdleTokenTimeout>() {}, new AsyncApiCallback<ApiResponse<IdleTokenTimeout>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdleTokenTimeout> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the current Idle Token Timeout Value
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<IdleTokenTimeout>> getTokensTimeoutAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdleTokenTimeout>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdleTokenTimeout>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdleTokenTimeout>() {}, new AsyncApiCallback<ApiResponse<IdleTokenTimeout>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdleTokenTimeout> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdleTokenTimeout> response = (ApiResponse<IdleTokenTimeout>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdleTokenTimeout> response = (ApiResponse<IdleTokenTimeout>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Verify user token
    * 
    * @param request the request object
@@ -329,6 +409,83 @@ public class TokensApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update or Enable/Disable the Idle Token Timeout
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<IdleTokenTimeout> putTokensTimeoutAsync(PutTokensTimeoutRequest request, final AsyncApiCallback<IdleTokenTimeout> callback) {
+    try {
+      final SettableFuture<IdleTokenTimeout> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdleTokenTimeout>() {}, new AsyncApiCallback<ApiResponse<IdleTokenTimeout>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdleTokenTimeout> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update or Enable/Disable the Idle Token Timeout
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<IdleTokenTimeout>> putTokensTimeoutAsync(ApiRequest<IdleTokenTimeout> request, final AsyncApiCallback<ApiResponse<IdleTokenTimeout>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IdleTokenTimeout>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IdleTokenTimeout>() {}, new AsyncApiCallback<ApiResponse<IdleTokenTimeout>>() {
+        @Override
+        public void onCompleted(ApiResponse<IdleTokenTimeout> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdleTokenTimeout> response = (ApiResponse<IdleTokenTimeout>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IdleTokenTimeout> response = (ApiResponse<IdleTokenTimeout>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

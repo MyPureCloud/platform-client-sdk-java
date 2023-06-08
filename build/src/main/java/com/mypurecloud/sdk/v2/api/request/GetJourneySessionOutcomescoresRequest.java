@@ -28,12 +28,21 @@ import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateJobAsyncResponse;
+import com.mypurecloud.sdk.v2.model.EventListing;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.Outcome;
+import com.mypurecloud.sdk.v2.model.OutcomeAttributionAsyncResponse;
+import com.mypurecloud.sdk.v2.model.OutcomeAttributionJobStateResponse;
+import com.mypurecloud.sdk.v2.model.OutcomeAttributionListing;
+import com.mypurecloud.sdk.v2.model.OutcomeAttributionResponseListing;
 import com.mypurecloud.sdk.v2.model.OutcomeListing;
 import com.mypurecloud.sdk.v2.model.OutcomePredictor;
 import com.mypurecloud.sdk.v2.model.OutcomePredictorListing;
@@ -44,8 +53,10 @@ import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
+import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
+import com.mypurecloud.sdk.v2.model.SessionListing;
 
 public class GetJourneySessionOutcomescoresRequest {
 

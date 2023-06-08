@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getKnowledgeKnowledgebaseLanguageCategories**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageCategories) | Get categories |
 | [**getKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageCategory) | Get category |
 | [**getKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocument) | Get document |
+| [**getKnowledgeKnowledgebaseLanguageDocumentUpload**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocumentUpload) | Get document content upload status |
 | [**getKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocuments) | Get documents |
 | [**getKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocumentsImport) | Get import operation report |
 | [**getKnowledgeKnowledgebaseLanguageTraining**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTraining) | Get training detail |
@@ -67,12 +68,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeKnowledgebaseDocumentVariations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVariations) | Create a variation for a document. |
 | [**postKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVersions) | Creates or restores a document version. |
 | [**postKnowledgeKnowledgebaseDocuments**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocuments) | Create document. |
+| [**postKnowledgeKnowledgebaseDocumentsBulkRemove**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkRemove) | Bulk remove documents. |
+| [**postKnowledgeKnowledgebaseDocumentsBulkUpdate**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkUpdate) | Bulk update documents. |
 | [**postKnowledgeKnowledgebaseDocumentsSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearch) | Search the documents in a knowledge base. |
 | [**postKnowledgeKnowledgebaseDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearchSuggestions) | Query the knowledge documents to provide suggestions for auto completion. |
+| [**postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd) | Bulk add document versions. |
 | [**postKnowledgeKnowledgebaseExportJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseExportJobs) | Create export job |
 | [**postKnowledgeKnowledgebaseImportJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseImportJobs) | Create import job |
 | [**postKnowledgeKnowledgebaseLabels**](KnowledgeApi.html#postKnowledgeKnowledgebaseLabels) | Create new label |
 | [**postKnowledgeKnowledgebaseLanguageCategories**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageCategories) | Create new category |
+| [**postKnowledgeKnowledgebaseLanguageDocumentUploads**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocumentUploads) | Upload Article Content |
 | [**postKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocuments) | Create document |
 | [**postKnowledgeKnowledgebaseLanguageDocumentsImports**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocumentsImports) | Create import operation |
 | [**postKnowledgeKnowledgebaseLanguageTrainingPromote**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageTrainingPromote) | Promote trained documents from draft state to active. |
@@ -2106,6 +2111,73 @@ try {
 
 [**KnowledgeDocument**](KnowledgeDocument.html)
 
+<a name="getKnowledgeKnowledgebaseLanguageDocumentUpload"></a>
+
+# **getKnowledgeKnowledgebaseLanguageDocumentUpload**
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+> [KnowledgeDocumentContentUpload](KnowledgeDocumentContentUpload.html) getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId)
+
+Get document content upload status
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}  
+
+Requires ALL permissions: 
+
+* knowledge:document:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String documentId = "documentId_example"; // String | Document ID
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
+String uploadId = "uploadId_example"; // String | UploadId
+try {
+    KnowledgeDocumentContentUpload result = apiInstance.getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseLanguageDocumentUpload");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **documentId** | **String**| Document ID | 
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT 
+| **uploadId** | **String**| UploadId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)
+
 <a name="getKnowledgeKnowledgebaseLanguageDocuments"></a>
 
 # **getKnowledgeKnowledgebaseLanguageDocuments**
@@ -3966,6 +4038,132 @@ try {
 
 [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html)
 
+<a name="postKnowledgeKnowledgebaseDocumentsBulkRemove"></a>
+
+# **postKnowledgeKnowledgebaseDocumentsBulkRemove**
+
+
+
+> [BulkResponse](BulkResponse.html) postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
+
+Bulk remove documents.
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove  
+
+Requires ALL permissions: 
+
+* knowledge:document:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+KnowledgeDocumentBulkRemoveRequest body = new KnowledgeDocumentBulkRemoveRequest(); // KnowledgeDocumentBulkRemoveRequest | 
+try {
+    BulkResponse result = apiInstance.postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseDocumentsBulkRemove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **body** | [**KnowledgeDocumentBulkRemoveRequest**](KnowledgeDocumentBulkRemoveRequest.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkResponse**](BulkResponse.html)
+
+<a name="postKnowledgeKnowledgebaseDocumentsBulkUpdate"></a>
+
+# **postKnowledgeKnowledgebaseDocumentsBulkUpdate**
+
+
+
+> [BulkResponse](BulkResponse.html) postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
+
+Bulk update documents.
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update  
+
+Requires ALL permissions: 
+
+* knowledge:document:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+KnowledgeDocumentBulkUpdateRequest body = new KnowledgeDocumentBulkUpdateRequest(); // KnowledgeDocumentBulkUpdateRequest | 
+try {
+    BulkResponse result = apiInstance.postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseDocumentsBulkUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **body** | [**KnowledgeDocumentBulkUpdateRequest**](KnowledgeDocumentBulkUpdateRequest.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkResponse**](BulkResponse.html)
+
 <a name="postKnowledgeKnowledgebaseDocumentsSearch"></a>
 
 # **postKnowledgeKnowledgebaseDocumentsSearch**
@@ -4093,6 +4291,69 @@ try {
 ### Return type
 
 [**KnowledgeDocumentSuggestion**](KnowledgeDocumentSuggestion.html)
+
+<a name="postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd"></a>
+
+# **postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**
+
+
+
+> [BulkResponse](BulkResponse.html) postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body)
+
+Bulk add document versions.
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add  
+
+Requires ALL permissions: 
+
+* knowledge:documentVersion:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+KnowledgeDocumentBulkVersionAddRequest body = new KnowledgeDocumentBulkVersionAddRequest(); // KnowledgeDocumentBulkVersionAddRequest | 
+try {
+    BulkResponse result = apiInstance.postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **body** | [**KnowledgeDocumentBulkVersionAddRequest**](KnowledgeDocumentBulkVersionAddRequest.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkResponse**](BulkResponse.html)
 
 <a name="postKnowledgeKnowledgebaseExportJobs"></a>
 
@@ -4347,6 +4608,73 @@ try {
 ### Return type
 
 [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html)
+
+<a name="postKnowledgeKnowledgebaseLanguageDocumentUploads"></a>
+
+# **postKnowledgeKnowledgebaseLanguageDocumentUploads**
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+> [KnowledgeDocumentContentUpload](KnowledgeDocumentContentUpload.html) postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body)
+
+Upload Article Content
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads  
+
+Requires ALL permissions: 
+
+* knowledge:document:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String documentId = "documentId_example"; // String | Document ID
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
+KnowledgeDocumentContentUpload body = new KnowledgeDocumentContentUpload(); // KnowledgeDocumentContentUpload | 
+try {
+    KnowledgeDocumentContentUpload result = apiInstance.postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseLanguageDocumentUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **documentId** | **String**| Document ID | 
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT 
+| **body** | [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)
 
 <a name="postKnowledgeKnowledgebaseLanguageDocuments"></a>
 

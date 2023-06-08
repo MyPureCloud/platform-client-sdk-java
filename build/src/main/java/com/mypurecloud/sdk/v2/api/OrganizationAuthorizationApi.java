@@ -38,10 +38,12 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeGroupRequ
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeGroupRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeUserRolesRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorCloneduserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorUserRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationPairingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeClonedusersRequest;
@@ -565,6 +567,85 @@ public class OrganizationAuthorizationApi {
   }
 
   /**
+   * Delete Bulk Org Trustees
+   * 
+   * @param id Comma separated list of trustee ids to remove (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void deleteOrgauthorizationTrustees(List<String> id) throws IOException, ApiException {
+     deleteOrgauthorizationTrustees(createDeleteOrgauthorizationTrusteesRequest(id));
+  }
+
+  /**
+   * Delete Bulk Org Trustees
+   * 
+   * @param id Comma separated list of trustee ids to remove (required)
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrusteesWithHttpInfo(List<String> id) throws IOException {
+    return deleteOrgauthorizationTrustees(createDeleteOrgauthorizationTrusteesRequest(id).withHttpInfo());
+  }
+
+  private DeleteOrgauthorizationTrusteesRequest createDeleteOrgauthorizationTrusteesRequest(List<String> id) {
+    return DeleteOrgauthorizationTrusteesRequest.builder()
+            .withId(id)
+
+            .build();
+  }
+
+  /**
+   * Delete Bulk Org Trustees
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void deleteOrgauthorizationTrustees(DeleteOrgauthorizationTrusteesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Bulk Org Trustees
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrustees(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Delete Org Trust
    * 
    * @param trustorOrgId Trustor Organization Id (required)
@@ -855,6 +936,85 @@ public class OrganizationAuthorizationApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOrgauthorizationTrustorUser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete Bulk Org Trustors
+   * 
+   * @param id Comma separated list of trustor ids to remove (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void deleteOrgauthorizationTrustors(List<String> id) throws IOException, ApiException {
+     deleteOrgauthorizationTrustors(createDeleteOrgauthorizationTrustorsRequest(id));
+  }
+
+  /**
+   * Delete Bulk Org Trustors
+   * 
+   * @param id Comma separated list of trustor ids to remove (required)
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrustorsWithHttpInfo(List<String> id) throws IOException {
+    return deleteOrgauthorizationTrustors(createDeleteOrgauthorizationTrustorsRequest(id).withHttpInfo());
+  }
+
+  private DeleteOrgauthorizationTrustorsRequest createDeleteOrgauthorizationTrustorsRequest(List<String> id) {
+    return DeleteOrgauthorizationTrustorsRequest.builder()
+            .withId(id)
+
+            .build();
+  }
+
+  /**
+   * Delete Bulk Org Trustors
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void deleteOrgauthorizationTrustors(DeleteOrgauthorizationTrustorsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Bulk Org Trustors
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrustors(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }

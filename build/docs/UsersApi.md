@@ -15,6 +15,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | Remove routing skill from user |
 | [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | Clear associated station |
 | [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | Clear default station |
+| [**getAnalyticsUsersAggregatesJob**](UsersApi.html#getAnalyticsUsersAggregatesJob) | Get status for async query for user aggregates |
+| [**getAnalyticsUsersAggregatesJobResults**](UsersApi.html#getAnalyticsUsersAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsUsersDetailsJob**](UsersApi.html#getAnalyticsUsersDetailsJob) | Get status for async query for user details |
 | [**getAnalyticsUsersDetailsJobResults**](UsersApi.html#getAnalyticsUsersDetailsJobResults) | Fetch a page of results for an async query |
 | [**getAnalyticsUsersDetailsJobsAvailability**](UsersApi.html#getAnalyticsUsersDetailsJobsAvailability) | Lookup the datalake availability date and time |
@@ -60,6 +62,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserRoutinglanguagesBulk**](UsersApi.html#patchUserRoutinglanguagesBulk) | Add bulk routing language to user. Max limit 50 languages |
 | [**patchUserRoutingskillsBulk**](UsersApi.html#patchUserRoutingskillsBulk) | Bulk add routing skills to user |
 | [**patchUsersBulk**](UsersApi.html#patchUsersBulk) | Update bulk acd autoanswer on users |
+| [**postAnalyticsUsersActivityQuery**](UsersApi.html#postAnalyticsUsersActivityQuery) | Query for user activity observations |
+| [**postAnalyticsUsersAggregatesJobs**](UsersApi.html#postAnalyticsUsersAggregatesJobs) | Query for user aggregates asynchronously |
 | [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | Query for user aggregates |
 | [**postAnalyticsUsersDetailsJobs**](UsersApi.html#postAnalyticsUsersDetailsJobs) | Query for user details asynchronously |
 | [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | Query for user details |
@@ -77,6 +81,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi.html#postUsersDevelopmentActivitiesAggregatesQuery) | Retrieve aggregated development activity data |
 | [**postUsersMePassword**](UsersApi.html#postUsersMePassword) | Change your password |
 | [**postUsersSearch**](UsersApi.html#postUsersSearch) | Search users |
+| [**postUsersSearchConversationTarget**](UsersApi.html#postUsersSearchConversationTarget) | Search users as conversation targets |
+| [**postUsersSearchQueuemembersManage**](UsersApi.html#postUsersSearchQueuemembersManage) | Search manage queue member |
 | [**postUsersSearchTeamsAssign**](UsersApi.html#postUsersSearchTeamsAssign) | Search users assigned to teams |
 | [**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | Update a user's CallForwarding |
@@ -581,6 +587,130 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="getAnalyticsUsersAggregatesJob"></a>
+
+# **getAnalyticsUsersAggregatesJob**
+
+
+
+> [AsyncQueryStatus](AsyncQueryStatus.html) getAnalyticsUsersAggregatesJob(jobId)
+
+Get status for async query for user aggregates
+
+Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    AsyncQueryStatus result = apiInstance.getAnalyticsUsersAggregatesJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getAnalyticsUsersAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="getAnalyticsUsersAggregatesJobResults"></a>
+
+# **getAnalyticsUsersAggregatesJobResults**
+
+
+
+> [UserAsyncAggregateQueryResponse](UserAsyncAggregateQueryResponse.html) getAnalyticsUsersAggregatesJobResults(jobId, cursor)
+
+Fetch a page of results for an async aggregates query
+
+Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results  
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String jobId = "jobId_example"; // String | jobId
+String cursor = "cursor_example"; // String | Cursor token to retrieve next page
+try {
+    UserAsyncAggregateQueryResponse result = apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getAnalyticsUsersAggregatesJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+| **cursor** | **String**| Cursor token to retrieve next page | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse.html)
 
 <a name="getAnalyticsUsersDetailsJob"></a>
 
@@ -3496,6 +3626,132 @@ try {
 
 [**UserEntityListing**](UserEntityListing.html)
 
+<a name="postAnalyticsUsersActivityQuery"></a>
+
+# **postAnalyticsUsersActivityQuery**
+
+
+
+> [UserActivityResponse](UserActivityResponse.html) postAnalyticsUsersActivityQuery(body, pageSize, pageNumber)
+
+Query for user activity observations
+
+Wraps POST /api/v2/analytics/users/activity/query  
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+UserActivityQuery body = new UserActivityQuery(); // UserActivityQuery | query
+Integer pageSize = 56; // Integer | The desired page size
+Integer pageNumber = 56; // Integer | The desired page number
+try {
+    UserActivityResponse result = apiInstance.postAnalyticsUsersActivityQuery(body, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postAnalyticsUsersActivityQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UserActivityQuery**](UserActivityQuery.html)| query | 
+| **pageSize** | **Integer**| The desired page size | [optional] 
+| **pageNumber** | **Integer**| The desired page number | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserActivityResponse**](UserActivityResponse.html)
+
+<a name="postAnalyticsUsersAggregatesJobs"></a>
+
+# **postAnalyticsUsersAggregatesJobs**
+
+
+
+> [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsUsersAggregatesJobs(body)
+
+Query for user aggregates asynchronously
+
+Wraps POST /api/v2/analytics/users/aggregates/jobs  
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+UserAsyncAggregationQuery body = new UserAsyncAggregationQuery(); // UserAsyncAggregationQuery | query
+try {
+    AsyncQueryResponse result = apiInstance.postAnalyticsUsersAggregatesJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postAnalyticsUsersAggregatesJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UserAsyncAggregationQuery**](UserAsyncAggregationQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
 # **postAnalyticsUsersAggregatesQuery**
@@ -4545,6 +4801,129 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#postUsersSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="postUsersSearchConversationTarget"></a>
+
+# **postUsersSearchConversationTarget**
+
+
+
+> [UsersSearchResponse](UsersSearchResponse.html) postUsersSearchConversationTarget(body)
+
+Search users as conversation targets
+
+Wraps POST /api/v2/users/search/conversation/target  
+
+Requires ANY permissions: 
+
+* conversation:communication:target
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+UserSearchRequest body = new UserSearchRequest(); // UserSearchRequest | Search request options
+try {
+    UsersSearchResponse result = apiInstance.postUsersSearchConversationTarget(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUsersSearchConversationTarget");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="postUsersSearchQueuemembersManage"></a>
+
+# **postUsersSearchQueuemembersManage**
+
+
+
+> [UsersSearchResponse](UsersSearchResponse.html) postUsersSearchQueuemembersManage(body)
+
+Search manage queue member
+
+Wraps POST /api/v2/users/search/queuemembers/manage  
+
+Requires ANY permissions: 
+
+* routing:queueMember:manage
+* routing:queue:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+UserSearchRequest body = new UserSearchRequest(); // UserSearchRequest | Search request options
+try {
+    UsersSearchResponse result = apiInstance.postUsersSearchQueuemembersManage(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUsersSearchQueuemembersManage");
     e.printStackTrace();
 }
 ```

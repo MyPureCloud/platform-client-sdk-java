@@ -18,12 +18,21 @@ import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateJobAsyncResponse;
+import com.mypurecloud.sdk.v2.model.EventListing;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.Outcome;
+import com.mypurecloud.sdk.v2.model.OutcomeAttributionAsyncResponse;
+import com.mypurecloud.sdk.v2.model.OutcomeAttributionJobStateResponse;
+import com.mypurecloud.sdk.v2.model.OutcomeAttributionListing;
+import com.mypurecloud.sdk.v2.model.OutcomeAttributionResponseListing;
 import com.mypurecloud.sdk.v2.model.OutcomeListing;
 import com.mypurecloud.sdk.v2.model.OutcomePredictor;
 import com.mypurecloud.sdk.v2.model.OutcomePredictorListing;
@@ -34,8 +43,10 @@ import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
+import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
+import com.mypurecloud.sdk.v2.model.SessionListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActionmapRequest;
@@ -43,6 +54,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomesPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneySegmentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActionmapsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActionmapsEstimatesJobRequest;
@@ -51,24 +64,31 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyCustomerCustomerIdSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesAttributionsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesAttributionsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneySessionEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionOutcomescoresRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneySessionSegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneySegmentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsEstimatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesAttributionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneySegmentsRequest;
 
@@ -464,6 +484,174 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for journey aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsJourneysAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsJourneysAggregatesJob(createGetAnalyticsJourneysAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for journey aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsJourneysAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsJourneysAggregatesJob(createGetAnalyticsJourneysAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsJourneysAggregatesJobRequest createGetAnalyticsJourneysAggregatesJobRequest(String jobId) {
+    return GetAnalyticsJourneysAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for journey aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsJourneysAggregatesJob(GetAnalyticsJourneysAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for journey aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsJourneysAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return JourneyAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsJourneysAggregatesJobResults(createGetAnalyticsJourneysAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return JourneyAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<JourneyAsyncAggregateQueryResponse> getAnalyticsJourneysAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsJourneysAggregatesJobResults(createGetAnalyticsJourneysAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsJourneysAggregatesJobResultsRequest createGetAnalyticsJourneysAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsJourneysAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return JourneyAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(GetAnalyticsJourneysAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<JourneyAsyncAggregateQueryResponse> getAnalyticsJourneysAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyAsyncAggregateQueryResponse> response = (ApiResponse<JourneyAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyAsyncAggregateQueryResponse> response = (ApiResponse<JourneyAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1149,6 +1337,100 @@ public class JourneyApi {
   }
 
   /**
+   * Retrieve all sessions for a given customer.
+   * 
+   * @param customerIdType Type of ID used to identify customer (e.g. email, cookie, and phone). (required)
+   * @param customerId Primary identifier of the customer in the source of the session. (required)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @return SessionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public SessionListing getJourneyCustomerCustomerIdSessions(String customerIdType, String customerId, String pageSize, String after) throws IOException, ApiException {
+    return  getJourneyCustomerCustomerIdSessions(createGetJourneyCustomerCustomerIdSessionsRequest(customerIdType, customerId, pageSize, after));
+  }
+
+  /**
+   * Retrieve all sessions for a given customer.
+   * 
+   * @param customerIdType Type of ID used to identify customer (e.g. email, cookie, and phone). (required)
+   * @param customerId Primary identifier of the customer in the source of the session. (required)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @return SessionListing
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<SessionListing> getJourneyCustomerCustomerIdSessionsWithHttpInfo(String customerIdType, String customerId, String pageSize, String after) throws IOException {
+    return getJourneyCustomerCustomerIdSessions(createGetJourneyCustomerCustomerIdSessionsRequest(customerIdType, customerId, pageSize, after).withHttpInfo());
+  }
+
+  private GetJourneyCustomerCustomerIdSessionsRequest createGetJourneyCustomerCustomerIdSessionsRequest(String customerIdType, String customerId, String pageSize, String after) {
+    return GetJourneyCustomerCustomerIdSessionsRequest.builder()
+            .withCustomerIdType(customerIdType)
+
+            .withCustomerId(customerId)
+
+            .withPageSize(pageSize)
+
+            .withAfter(after)
+
+            .build();
+  }
+
+  /**
+   * Retrieve all sessions for a given customer.
+   * 
+   * @param request The request object
+   * @return SessionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public SessionListing getJourneyCustomerCustomerIdSessions(GetJourneyCustomerCustomerIdSessionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SessionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SessionListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all sessions for a given customer.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<SessionListing> getJourneyCustomerCustomerIdSessions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SessionListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SessionListing> response = (ApiResponse<SessionListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SessionListing> response = (ApiResponse<SessionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Retrieve a single outcome.
    * 
    * @param outcomeId ID of the outcome. (required)
@@ -1320,6 +1602,170 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OutcomeListing> response = (ApiResponse<OutcomeListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get job status.
+   * 
+   * @param jobId ID of the job. (required)
+   * @return OutcomeAttributionJobStateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OutcomeAttributionJobStateResponse getJourneyOutcomesAttributionsJob(String jobId) throws IOException, ApiException {
+    return  getJourneyOutcomesAttributionsJob(createGetJourneyOutcomesAttributionsJobRequest(jobId));
+  }
+
+  /**
+   * Get job status.
+   * 
+   * @param jobId ID of the job. (required)
+   * @return OutcomeAttributionJobStateResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OutcomeAttributionJobStateResponse> getJourneyOutcomesAttributionsJobWithHttpInfo(String jobId) throws IOException {
+    return getJourneyOutcomesAttributionsJob(createGetJourneyOutcomesAttributionsJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetJourneyOutcomesAttributionsJobRequest createGetJourneyOutcomesAttributionsJobRequest(String jobId) {
+    return GetJourneyOutcomesAttributionsJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get job status.
+   * 
+   * @param request The request object
+   * @return OutcomeAttributionJobStateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OutcomeAttributionJobStateResponse getJourneyOutcomesAttributionsJob(GetJourneyOutcomesAttributionsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutcomeAttributionJobStateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutcomeAttributionJobStateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get job status.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OutcomeAttributionJobStateResponse> getJourneyOutcomesAttributionsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutcomeAttributionJobStateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomeAttributionJobStateResponse> response = (ApiResponse<OutcomeAttributionJobStateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomeAttributionJobStateResponse> response = (ApiResponse<OutcomeAttributionJobStateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get outcome attribution entities from completed job.
+   * 
+   * @param jobId ID of the job. (required)
+   * @return OutcomeAttributionResponseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OutcomeAttributionResponseListing getJourneyOutcomesAttributionsJobResults(String jobId) throws IOException, ApiException {
+    return  getJourneyOutcomesAttributionsJobResults(createGetJourneyOutcomesAttributionsJobResultsRequest(jobId));
+  }
+
+  /**
+   * Get outcome attribution entities from completed job.
+   * 
+   * @param jobId ID of the job. (required)
+   * @return OutcomeAttributionResponseListing
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OutcomeAttributionResponseListing> getJourneyOutcomesAttributionsJobResultsWithHttpInfo(String jobId) throws IOException {
+    return getJourneyOutcomesAttributionsJobResults(createGetJourneyOutcomesAttributionsJobResultsRequest(jobId).withHttpInfo());
+  }
+
+  private GetJourneyOutcomesAttributionsJobResultsRequest createGetJourneyOutcomesAttributionsJobResultsRequest(String jobId) {
+    return GetJourneyOutcomesAttributionsJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get outcome attribution entities from completed job.
+   * 
+   * @param request The request object
+   * @return OutcomeAttributionResponseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OutcomeAttributionResponseListing getJourneyOutcomesAttributionsJobResults(GetJourneyOutcomesAttributionsJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutcomeAttributionResponseListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutcomeAttributionResponseListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get outcome attribution entities from completed job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OutcomeAttributionResponseListing> getJourneyOutcomesAttributionsJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutcomeAttributionResponseListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomeAttributionResponseListing> response = (ApiResponse<OutcomeAttributionResponseListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomeAttributionResponseListing> response = (ApiResponse<OutcomeAttributionResponseListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1735,6 +2181,96 @@ public class JourneyApi {
   }
 
   /**
+   * Retrieve all events for a given session.
+   * 
+   * @param sessionId System-generated UUID that represents the session the event is a part of. (required)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @return EventListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public EventListing getJourneySessionEvents(String sessionId, String pageSize, String after) throws IOException, ApiException {
+    return  getJourneySessionEvents(createGetJourneySessionEventsRequest(sessionId, pageSize, after));
+  }
+
+  /**
+   * Retrieve all events for a given session.
+   * 
+   * @param sessionId System-generated UUID that represents the session the event is a part of. (required)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @return EventListing
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<EventListing> getJourneySessionEventsWithHttpInfo(String sessionId, String pageSize, String after) throws IOException {
+    return getJourneySessionEvents(createGetJourneySessionEventsRequest(sessionId, pageSize, after).withHttpInfo());
+  }
+
+  private GetJourneySessionEventsRequest createGetJourneySessionEventsRequest(String sessionId, String pageSize, String after) {
+    return GetJourneySessionEventsRequest.builder()
+            .withSessionId(sessionId)
+
+            .withPageSize(pageSize)
+
+            .withAfter(after)
+
+            .build();
+  }
+
+  /**
+   * Retrieve all events for a given session.
+   * 
+   * @param request The request object
+   * @return EventListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public EventListing getJourneySessionEvents(GetJourneySessionEventsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EventListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EventListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all events for a given session.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<EventListing> getJourneySessionEvents(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EventListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EventListing> response = (ApiResponse<EventListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EventListing> response = (ApiResponse<EventListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Retrieve latest outcome score associated with a session for all outcomes.
    * 
    * @param sessionId ID of the session. (required)
@@ -1808,6 +2344,104 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OutcomeScoresResult> response = (ApiResponse<OutcomeScoresResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve segment assignments by session ID.
+   * 
+   * @param sessionId ID of the session to query for segment assignments. (required)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. (optional)
+   * @param assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. (optional)
+   * @return SegmentAssignmentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public SegmentAssignmentListing getJourneySessionSegments(String sessionId, String pageSize, String after, String segmentScope, String assignmentState) throws IOException, ApiException {
+    return  getJourneySessionSegments(createGetJourneySessionSegmentsRequest(sessionId, pageSize, after, segmentScope, assignmentState));
+  }
+
+  /**
+   * Retrieve segment assignments by session ID.
+   * 
+   * @param sessionId ID of the session to query for segment assignments. (required)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. (optional)
+   * @param assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. (optional)
+   * @return SegmentAssignmentListing
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<SegmentAssignmentListing> getJourneySessionSegmentsWithHttpInfo(String sessionId, String pageSize, String after, String segmentScope, String assignmentState) throws IOException {
+    return getJourneySessionSegments(createGetJourneySessionSegmentsRequest(sessionId, pageSize, after, segmentScope, assignmentState).withHttpInfo());
+  }
+
+  private GetJourneySessionSegmentsRequest createGetJourneySessionSegmentsRequest(String sessionId, String pageSize, String after, String segmentScope, String assignmentState) {
+    return GetJourneySessionSegmentsRequest.builder()
+            .withSessionId(sessionId)
+
+            .withPageSize(pageSize)
+
+            .withAfter(after)
+
+            .withSegmentScope(segmentScope)
+
+            .withAssignmentState(assignmentState)
+
+            .build();
+  }
+
+  /**
+   * Retrieve segment assignments by session ID.
+   * 
+   * @param request The request object
+   * @return SegmentAssignmentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public SegmentAssignmentListing getJourneySessionSegments(GetJourneySessionSegmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SegmentAssignmentListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SegmentAssignmentListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve segment assignments by session ID.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<SegmentAssignmentListing> getJourneySessionSegments(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SegmentAssignmentListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2223,6 +2857,88 @@ public class JourneyApi {
   }
 
   /**
+   * Query for journey aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(JourneyAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsJourneysAggregatesJobs(createPostAnalyticsJourneysAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for journey aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsJourneysAggregatesJobsWithHttpInfo(JourneyAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsJourneysAggregatesJobs(createPostAnalyticsJourneysAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsJourneysAggregatesJobsRequest createPostAnalyticsJourneysAggregatesJobsRequest(JourneyAsyncAggregationQuery body) {
+    return PostAnalyticsJourneysAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for journey aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(PostAnalyticsJourneysAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for journey aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsJourneysAggregatesJobs(ApiRequest<JourneyAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query for journey aggregates
    * 
    * @param body query (required)
@@ -2608,6 +3324,88 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Outcome> response = (ApiResponse<Outcome>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create Outcome Attributions
+   * 
+   * @param body outcome attribution request (optional)
+   * @return OutcomeAttributionAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OutcomeAttributionAsyncResponse postJourneyOutcomesAttributionsJobs(OutcomeAttributionListing body) throws IOException, ApiException {
+    return  postJourneyOutcomesAttributionsJobs(createPostJourneyOutcomesAttributionsJobsRequest(body));
+  }
+
+  /**
+   * Create Outcome Attributions
+   * 
+   * @param body outcome attribution request (optional)
+   * @return OutcomeAttributionAsyncResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OutcomeAttributionAsyncResponse> postJourneyOutcomesAttributionsJobsWithHttpInfo(OutcomeAttributionListing body) throws IOException {
+    return postJourneyOutcomesAttributionsJobs(createPostJourneyOutcomesAttributionsJobsRequest(body).withHttpInfo());
+  }
+
+  private PostJourneyOutcomesAttributionsJobsRequest createPostJourneyOutcomesAttributionsJobsRequest(OutcomeAttributionListing body) {
+    return PostJourneyOutcomesAttributionsJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create Outcome Attributions
+   * 
+   * @param request The request object
+   * @return OutcomeAttributionAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OutcomeAttributionAsyncResponse postJourneyOutcomesAttributionsJobs(PostJourneyOutcomesAttributionsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutcomeAttributionAsyncResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutcomeAttributionAsyncResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create Outcome Attributions
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OutcomeAttributionAsyncResponse> postJourneyOutcomesAttributionsJobs(ApiRequest<OutcomeAttributionListing> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutcomeAttributionAsyncResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomeAttributionAsyncResponse> response = (ApiResponse<OutcomeAttributionAsyncResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomeAttributionAsyncResponse> response = (ApiResponse<OutcomeAttributionAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

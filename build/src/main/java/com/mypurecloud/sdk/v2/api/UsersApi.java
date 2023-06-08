@@ -39,8 +39,12 @@ import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.UpdateUser;
 import com.mypurecloud.sdk.v2.model.User;
+import com.mypurecloud.sdk.v2.model.UserActivityQuery;
+import com.mypurecloud.sdk.v2.model.UserActivityResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
+import com.mypurecloud.sdk.v2.model.UserAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
@@ -74,6 +78,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobsAvailabilityRequest;
@@ -119,6 +125,8 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutingskillsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUsersBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersActivityQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
@@ -136,6 +144,8 @@ import com.mypurecloud.sdk.v2.api.request.PostUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersDevelopmentActivitiesAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersMePasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersSearchConversationTargetRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersSearchQueuemembersManageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchTeamsAssignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserCallforwardingRequest;
@@ -781,6 +791,174 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for user aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsUsersAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsUsersAggregatesJob(createGetAnalyticsUsersAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for user aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsUsersAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsUsersAggregatesJob(createGetAnalyticsUsersAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsUsersAggregatesJobRequest createGetAnalyticsUsersAggregatesJobRequest(String jobId) {
+    return GetAnalyticsUsersAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for user aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsUsersAggregatesJob(GetAnalyticsUsersAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for user aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsUsersAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return UserAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsUsersAggregatesJobResults(createGetAnalyticsUsersAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return UserAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UserAsyncAggregateQueryResponse> getAnalyticsUsersAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsUsersAggregatesJobResults(createGetAnalyticsUsersAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsUsersAggregatesJobResultsRequest createGetAnalyticsUsersAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsUsersAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return UserAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(GetAnalyticsUsersAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UserAsyncAggregateQueryResponse> getAnalyticsUsersAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAsyncAggregateQueryResponse> response = (ApiResponse<UserAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAsyncAggregateQueryResponse> response = (ApiResponse<UserAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4656,6 +4834,178 @@ public class UsersApi {
   }
 
   /**
+   * Query for user activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return UserActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UserActivityResponse postAnalyticsUsersActivityQuery(UserActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  postAnalyticsUsersActivityQuery(createPostAnalyticsUsersActivityQueryRequest(body, pageSize, pageNumber));
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return UserActivityResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UserActivityResponse> postAnalyticsUsersActivityQueryWithHttpInfo(UserActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
+    return postAnalyticsUsersActivityQuery(createPostAnalyticsUsersActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private PostAnalyticsUsersActivityQueryRequest createPostAnalyticsUsersActivityQueryRequest(UserActivityQuery body, Integer pageSize, Integer pageNumber) {
+    return PostAnalyticsUsersActivityQueryRequest.builder()
+            .withBody(body)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param request The request object
+   * @return UserActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UserActivityResponse postAnalyticsUsersActivityQuery(PostAnalyticsUsersActivityQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserActivityResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserActivityResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UserActivityResponse> postAnalyticsUsersActivityQuery(ApiRequest<UserActivityQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserActivityResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserActivityResponse> response = (ApiResponse<UserActivityResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserActivityResponse> response = (ApiResponse<UserActivityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for user aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsUsersAggregatesJobs(UserAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsUsersAggregatesJobs(createPostAnalyticsUsersAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for user aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsUsersAggregatesJobsWithHttpInfo(UserAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsUsersAggregatesJobs(createPostAnalyticsUsersAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsUsersAggregatesJobsRequest createPostAnalyticsUsersAggregatesJobsRequest(UserAsyncAggregationQuery body) {
+    return PostAnalyticsUsersAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for user aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsUsersAggregatesJobs(PostAnalyticsUsersAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for user aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsUsersAggregatesJobs(ApiRequest<UserAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query for user aggregates
    * 
    * @param body query (required)
@@ -5991,6 +6341,170 @@ public class UsersApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<UsersSearchResponse> postUsersSearch(ApiRequest<UserSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UsersSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search users as conversation targets
+   * 
+   * @param body Search request options (required)
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UsersSearchResponse postUsersSearchConversationTarget(UserSearchRequest body) throws IOException, ApiException {
+    return  postUsersSearchConversationTarget(createPostUsersSearchConversationTargetRequest(body));
+  }
+
+  /**
+   * Search users as conversation targets
+   * 
+   * @param body Search request options (required)
+   * @return UsersSearchResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UsersSearchResponse> postUsersSearchConversationTargetWithHttpInfo(UserSearchRequest body) throws IOException {
+    return postUsersSearchConversationTarget(createPostUsersSearchConversationTargetRequest(body).withHttpInfo());
+  }
+
+  private PostUsersSearchConversationTargetRequest createPostUsersSearchConversationTargetRequest(UserSearchRequest body) {
+    return PostUsersSearchConversationTargetRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search users as conversation targets
+   * 
+   * @param request The request object
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UsersSearchResponse postUsersSearchConversationTarget(PostUsersSearchConversationTargetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UsersSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search users as conversation targets
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UsersSearchResponse> postUsersSearchConversationTarget(ApiRequest<UserSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UsersSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search manage queue member
+   * 
+   * @param body Search request options (required)
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UsersSearchResponse postUsersSearchQueuemembersManage(UserSearchRequest body) throws IOException, ApiException {
+    return  postUsersSearchQueuemembersManage(createPostUsersSearchQueuemembersManageRequest(body));
+  }
+
+  /**
+   * Search manage queue member
+   * 
+   * @param body Search request options (required)
+   * @return UsersSearchResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UsersSearchResponse> postUsersSearchQueuemembersManageWithHttpInfo(UserSearchRequest body) throws IOException {
+    return postUsersSearchQueuemembersManage(createPostUsersSearchQueuemembersManageRequest(body).withHttpInfo());
+  }
+
+  private PostUsersSearchQueuemembersManageRequest createPostUsersSearchQueuemembersManageRequest(UserSearchRequest body) {
+    return PostUsersSearchQueuemembersManageRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search manage queue member
+   * 
+   * @param request The request object
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UsersSearchResponse postUsersSearchQueuemembersManage(PostUsersSearchQueuemembersManageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UsersSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search manage queue member
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UsersSearchResponse> postUsersSearchQueuemembersManage(ApiRequest<UserSearchRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<UsersSearchResponse>() {});
     }

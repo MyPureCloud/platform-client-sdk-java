@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getVoicemailSearch**](SearchApi.html#getVoicemailSearch) | Search voicemails using the q64 value returned from a previous search |
 | [**postAnalyticsConversationsTranscriptsQuery**](SearchApi.html#postAnalyticsConversationsTranscriptsQuery) | Search resources. |
 | [**postConversationsParticipantsAttributesSearch**](SearchApi.html#postConversationsParticipantsAttributesSearch) | Search conversations |
+| [**postDocumentationAllSearch**](SearchApi.html#postDocumentationAllSearch) | Search all documents |
 | [**postDocumentationGknSearch**](SearchApi.html#postDocumentationGknSearch) | Search gkn documentation |
 | [**postDocumentationSearch**](SearchApi.html#postDocumentationSearch) | Search documentation |
 | [**postGroupsSearch**](SearchApi.html#postGroupsSearch) | Search groups |
@@ -27,6 +28,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi.html#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
 | [**postTeamsSearch**](SearchApi.html#postTeamsSearch) | Search resources. |
 | [**postUsersSearch**](SearchApi.html#postUsersSearch) | Search users |
+| [**postUsersSearchConversationTarget**](SearchApi.html#postUsersSearchConversationTarget) | Search users as conversation targets |
+| [**postUsersSearchQueuemembersManage**](SearchApi.html#postUsersSearchQueuemembersManage) | Search manage queue member |
 | [**postUsersSearchTeamsAssign**](SearchApi.html#postUsersSearchTeamsAssign) | Search users assigned to teams |
 | [**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | Search voicemails |
 {: class="table-striped"}
@@ -628,6 +631,53 @@ try {
 
 [**JsonCursorSearchResponse**](JsonCursorSearchResponse.html)
 
+<a name="postDocumentationAllSearch"></a>
+
+# **postDocumentationAllSearch**
+
+
+
+> [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postDocumentationAllSearch(body)
+
+Search all documents
+
+Wraps POST /api/v2/documentation/all/search  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+
+SearchApi apiInstance = new SearchApi();
+DocumentationV2SearchRequest body = new DocumentationV2SearchRequest(); // DocumentationV2SearchRequest | Search request options
+try {
+    JsonNodeSearchResponse result = apiInstance.postDocumentationAllSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#postDocumentationAllSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DocumentationV2SearchRequest**](DocumentationV2SearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+
 <a name="postDocumentationGknSearch"></a>
 
 # **postDocumentationGknSearch**
@@ -1198,6 +1248,129 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SearchApi#postUsersSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="postUsersSearchConversationTarget"></a>
+
+# **postUsersSearchConversationTarget**
+
+
+
+> [UsersSearchResponse](UsersSearchResponse.html) postUsersSearchConversationTarget(body)
+
+Search users as conversation targets
+
+Wraps POST /api/v2/users/search/conversation/target  
+
+Requires ANY permissions: 
+
+* conversation:communication:target
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SearchApi apiInstance = new SearchApi();
+UserSearchRequest body = new UserSearchRequest(); // UserSearchRequest | Search request options
+try {
+    UsersSearchResponse result = apiInstance.postUsersSearchConversationTarget(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#postUsersSearchConversationTarget");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="postUsersSearchQueuemembersManage"></a>
+
+# **postUsersSearchQueuemembersManage**
+
+
+
+> [UsersSearchResponse](UsersSearchResponse.html) postUsersSearchQueuemembersManage(body)
+
+Search manage queue member
+
+Wraps POST /api/v2/users/search/queuemembers/manage  
+
+Requires ANY permissions: 
+
+* routing:queueMember:manage
+* routing:queue:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SearchApi apiInstance = new SearchApi();
+UserSearchRequest body = new UserSearchRequest(); // UserSearchRequest | Search request options
+try {
+    UsersSearchResponse result = apiInstance.postUsersSearchQueuemembersManage(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#postUsersSearchQueuemembersManage");
     e.printStackTrace();
 }
 ```

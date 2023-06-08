@@ -15,6 +15,8 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Team;
+import com.mypurecloud.sdk.v2.model.TeamActivityQuery;
+import com.mypurecloud.sdk.v2.model.TeamActivityResponse;
 import com.mypurecloud.sdk.v2.model.TeamEntityListing;
 import com.mypurecloud.sdk.v2.model.TeamMemberAddListingResponse;
 import com.mypurecloud.sdk.v2.model.TeamMemberEntityListing;
@@ -29,6 +31,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTeamRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTeamMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTeamsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTeamRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTeamsActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTeamMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTeamsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTeamsSearchRequest;
@@ -490,6 +493,83 @@ public class TeamsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Team> response = (ApiResponse<Team>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for team activity observations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<TeamActivityResponse> postAnalyticsTeamsActivityQueryAsync(PostAnalyticsTeamsActivityQueryRequest request, final AsyncApiCallback<TeamActivityResponse> callback) {
+    try {
+      final SettableFuture<TeamActivityResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TeamActivityResponse>() {}, new AsyncApiCallback<ApiResponse<TeamActivityResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TeamActivityResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for team activity observations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<TeamActivityResponse>> postAnalyticsTeamsActivityQueryAsync(ApiRequest<TeamActivityQuery> request, final AsyncApiCallback<ApiResponse<TeamActivityResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TeamActivityResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TeamActivityResponse>() {}, new AsyncApiCallback<ApiResponse<TeamActivityResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TeamActivityResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TeamActivityResponse> response = (ApiResponse<TeamActivityResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TeamActivityResponse> response = (ApiResponse<TeamActivityResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

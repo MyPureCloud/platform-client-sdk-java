@@ -24,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | Delete a phone number provisioned for SMS. |
 | [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | Delete the user's max utilization settings and revert to the organization-wide default. |
 | [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | Delete the organization-wide max utilization settings and revert to the system default. |
+| [**deleteRoutingUtilizationTag**](RoutingApi.html#deleteRoutingUtilizationTag) | Delete an utilization tag |
 | [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | Delete wrap-up code |
 | [**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | Remove routing language from user |
 | [**deleteUserRoutingskill**](RoutingApi.html#deleteUserRoutingskill) | Remove routing skill from user |
@@ -78,6 +79,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | Get a list of provisioned phone numbers. |
 | [**getRoutingUserUtilization**](RoutingApi.html#getRoutingUserUtilization) | Get the user's max utilization settings.  If not configured, the organization-wide default is returned. |
 | [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | Get the organization-wide max utilization settings. |
+| [**getRoutingUtilizationTag**](RoutingApi.html#getRoutingUtilizationTag) | Get details about this utilization tag |
+| [**getRoutingUtilizationTagAgents**](RoutingApi.html#getRoutingUtilizationTagAgents) | Get list of agent ids associated with a utilization tag |
+| [**getRoutingUtilizationTags**](RoutingApi.html#getRoutingUtilizationTags) | Get list of utilization tags |
 | [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | Get details about this wrap-up code. |
 | [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | Get list of wrapup codes. |
 | [**getUserQueues**](RoutingApi.html#getUserQueues) | Get queues for user |
@@ -100,6 +104,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | Add bulk routing language to user. Max limit 50 languages |
 | [**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | Bulk add routing skills to user |
 | [**postAnalyticsQueuesObservationsQuery**](RoutingApi.html#postAnalyticsQueuesObservationsQuery) | Query for queue observations |
+| [**postAnalyticsRoutingActivityQuery**](RoutingApi.html#postAnalyticsRoutingActivityQuery) | Query for user activity observations |
 | [**postRoutingAssessments**](RoutingApi.html#postRoutingAssessments) | Create a benefit assessment. |
 | [**postRoutingAssessmentsJobs**](RoutingApi.html#postRoutingAssessmentsJobs) | Create a benefit assessment job. |
 | [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | Create a route |
@@ -118,6 +123,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingSkills**](RoutingApi.html#postRoutingSkills) | Create Skill |
 | [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | Provision an Address for SMS |
 | [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | Provision a phone number for SMS |
+| [**postRoutingSmsPhonenumbersImport**](RoutingApi.html#postRoutingSmsPhonenumbersImport) | Imports a phone number for SMS |
+| [**postRoutingUtilizationTags**](RoutingApi.html#postRoutingUtilizationTags) | Create an utilization tag |
 | [**postRoutingWrapupcodes**](RoutingApi.html#postRoutingWrapupcodes) | Create a wrap-up code |
 | [**postUserRoutinglanguages**](RoutingApi.html#postUserRoutinglanguages) | Add routing language to user |
 | [**postUserRoutingskills**](RoutingApi.html#postUserRoutingskills) | Add routing skill to user |
@@ -1154,6 +1161,68 @@ try {
 
 This endpoint does not require any parameters.
 
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingUtilizationTag"></a>
+
+# **deleteRoutingUtilizationTag**
+
+
+
+> Void deleteRoutingUtilizationTag(tagId, forceDelete)
+
+Delete an utilization tag
+
+Wraps DELETE /api/v2/routing/utilization/tags/{tagId}  
+
+Requires ALL permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String tagId = "tagId_example"; // String | Utilization Tag ID
+Boolean forceDelete = false; // Boolean | Remove all tag usages (if found) without warning
+try {
+    apiInstance.deleteRoutingUtilizationTag(tagId, forceDelete);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingUtilizationTag");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tagId** | **String**| Utilization Tag ID | 
+| **forceDelete** | **Boolean**| Remove all tag usages (if found) without warning | [optional] [default to false] 
+{: class="table-striped"}
 
 
 ### Return type
@@ -4630,6 +4699,195 @@ This endpoint does not require any parameters.
 
 [**Utilization**](Utilization.html)
 
+<a name="getRoutingUtilizationTag"></a>
+
+# **getRoutingUtilizationTag**
+
+
+
+> [UtilizationTag](UtilizationTag.html) getRoutingUtilizationTag(tagId)
+
+Get details about this utilization tag
+
+Wraps GET /api/v2/routing/utilization/tags/{tagId}  
+
+Requires ALL permissions: 
+
+* routing:utilization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String tagId = "tagId_example"; // String | Utilization Tag ID
+try {
+    UtilizationTag result = apiInstance.getRoutingUtilizationTag(tagId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingUtilizationTag");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tagId** | **String**| Utilization Tag ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UtilizationTag**](UtilizationTag.html)
+
+<a name="getRoutingUtilizationTagAgents"></a>
+
+# **getRoutingUtilizationTagAgents**
+
+
+
+> List&lt;Object&gt; getRoutingUtilizationTagAgents(tagId)
+
+Get list of agent ids associated with a utilization tag
+
+Wraps GET /api/v2/routing/utilization/tags/{tagId}/agents  
+
+Requires ALL permissions: 
+
+* routing:utilization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String tagId = "tagId_example"; // String | Utilization Tag ID
+try {
+    List<Object> result = apiInstance.getRoutingUtilizationTagAgents(tagId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingUtilizationTagAgents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tagId** | **String**| Utilization Tag ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+**List&lt;Object&gt;**
+
+<a name="getRoutingUtilizationTags"></a>
+
+# **getRoutingUtilizationTags**
+
+
+
+> [UtilizationTagEntityListing](UtilizationTagEntityListing.html) getRoutingUtilizationTags(pageSize, pageNumber, sortOrder, name)
+
+Get list of utilization tags
+
+Wraps GET /api/v2/routing/utilization/tags  
+
+Requires ALL permissions: 
+
+* routing:utilization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortOrder = "ascending"; // String | Sort order by name
+String name = "name_example"; // String | Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
+try {
+    UtilizationTagEntityListing result = apiInstance.getRoutingUtilizationTags(pageSize, pageNumber, sortOrder, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingUtilizationTags");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Sort order by name | [optional] [default to ascending]<br />**Values**: ascending, descending 
+| **name** | **String**| Utilization tag&#39;s name (Wildcard is supported, e.g., &#39;tag1*&#39;) | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UtilizationTagEntityListing**](UtilizationTagEntityListing.html)
+
 <a name="getRoutingWrapupcode"></a>
 
 # **getRoutingWrapupcode**
@@ -6056,6 +6314,71 @@ try {
 
 [**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
 
+<a name="postAnalyticsRoutingActivityQuery"></a>
+
+# **postAnalyticsRoutingActivityQuery**
+
+
+
+> [RoutingActivityResponse](RoutingActivityResponse.html) postAnalyticsRoutingActivityQuery(body, pageSize, pageNumber)
+
+Query for user activity observations
+
+Wraps POST /api/v2/analytics/routing/activity/query  
+
+Requires ANY permissions: 
+
+* analytics:queueObservation:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+RoutingActivityQuery body = new RoutingActivityQuery(); // RoutingActivityQuery | query
+Integer pageSize = 56; // Integer | The desired page size
+Integer pageNumber = 56; // Integer | The desired page number
+try {
+    RoutingActivityResponse result = apiInstance.postAnalyticsRoutingActivityQuery(body, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postAnalyticsRoutingActivityQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**RoutingActivityQuery**](RoutingActivityQuery.html)| query | 
+| **pageSize** | **Integer**| The desired page size | [optional] 
+| **pageNumber** | **Integer**| The desired page number | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RoutingActivityResponse**](RoutingActivityResponse.html)
+
 <a name="postRoutingAssessments"></a>
 
 # **postRoutingAssessments**
@@ -7172,6 +7495,128 @@ try {
 ### Return type
 
 [**SmsPhoneNumber**](SmsPhoneNumber.html)
+
+<a name="postRoutingSmsPhonenumbersImport"></a>
+
+# **postRoutingSmsPhonenumbersImport**
+
+
+
+> [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsPhonenumbersImport(body)
+
+Imports a phone number for SMS
+
+Wraps POST /api/v2/routing/sms/phonenumbers/import  
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:byoImport
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+SmsPhoneNumberImport body = new SmsPhoneNumberImport(); // SmsPhoneNumberImport | SmsPhoneNumber
+try {
+    SmsPhoneNumber result = apiInstance.postRoutingSmsPhonenumbersImport(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingSmsPhonenumbersImport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SmsPhoneNumberImport**](SmsPhoneNumberImport.html)| SmsPhoneNumber | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SmsPhoneNumber**](SmsPhoneNumber.html)
+
+<a name="postRoutingUtilizationTags"></a>
+
+# **postRoutingUtilizationTags**
+
+
+
+> [UtilizationTag](UtilizationTag.html) postRoutingUtilizationTags(body)
+
+Create an utilization tag
+
+Wraps POST /api/v2/routing/utilization/tags  
+
+Requires ALL permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+CreateUtilizationTagRequest body = new CreateUtilizationTagRequest(); // CreateUtilizationTagRequest | UtilizationTag
+try {
+    UtilizationTag result = apiInstance.postRoutingUtilizationTags(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingUtilizationTags");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateUtilizationTagRequest**](CreateUtilizationTagRequest.html)| UtilizationTag | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UtilizationTag**](UtilizationTag.html)
 
 <a name="postRoutingWrapupcodes"></a>
 

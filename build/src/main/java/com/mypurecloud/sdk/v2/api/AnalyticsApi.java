@@ -12,6 +12,8 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ActionAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ActionAggregationQuery;
+import com.mypurecloud.sdk.v2.model.ActionAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ActionAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
@@ -26,19 +28,37 @@ import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.BotAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.BotAggregationQuery;
+import com.mypurecloud.sdk.v2.model.BotAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.BotAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationActivityQuery;
+import com.mypurecloud.sdk.v2.model.ConversationActivityResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.EvaluationAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.FlowActivityQuery;
+import com.mypurecloud.sdk.v2.model.FlowActivityResponse;
 import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.FlowAggregationQuery;
+import com.mypurecloud.sdk.v2.model.FlowAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.FlowAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.KnowledgeAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeAggregationQuery;
+import com.mypurecloud.sdk.v2.model.KnowledgeAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
 import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
 import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
@@ -53,15 +73,33 @@ import com.mypurecloud.sdk.v2.model.ReportingExportJobRequest;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
 import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
 import com.mypurecloud.sdk.v2.model.ReportingTurnsResponse;
+import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
+import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.RunNowResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.SurveyAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SurveyAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TaskManagementAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.TaskManagementAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TaskManagementAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.TaskManagementAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TeamActivityQuery;
+import com.mypurecloud.sdk.v2.model.TeamActivityResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TranscriptAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.TranscriptAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAnalyticsDataRetentionRequest;
+import com.mypurecloud.sdk.v2.model.UserActivityQuery;
+import com.mypurecloud.sdk.v2.model.UserActivityResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
+import com.mypurecloud.sdk.v2.model.UserAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.UserObservationQuery;
 import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
@@ -70,13 +108,27 @@ import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsReportingScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowReportingturnsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsDataretentionSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsEvaluationsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsEvaluationsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsFlowsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsFlowsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsKnowledgeAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsKnowledgeAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingMetadataRequest;
@@ -89,27 +141,56 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryRu
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingTimeperiodsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSurveysAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSurveysAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsTaskmanagementAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsTaskmanagementAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsTranscriptsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsTranscriptsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAnalyticsReportingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsActionsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsActionsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsActivityQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsTranscriptsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowsActivityQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowsObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsKnowledgeAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsKnowledgeAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingScheduleRunreportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsResolutionsAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRoutingActivityQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTaskmanagementAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTaskmanagementAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTeamsActivityQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTranscriptsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTranscriptsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersActivityQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
@@ -360,6 +441,174 @@ public class AnalyticsApi {
   }
 
   /**
+   * Get status for async query for action aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsActionsAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsActionsAggregatesJob(createGetAnalyticsActionsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for action aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsActionsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsActionsAggregatesJob(createGetAnalyticsActionsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsActionsAggregatesJobRequest createGetAnalyticsActionsAggregatesJobRequest(String jobId) {
+    return GetAnalyticsActionsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for action aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsActionsAggregatesJob(GetAnalyticsActionsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for action aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsActionsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return ActionAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ActionAsyncAggregateQueryResponse getAnalyticsActionsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsActionsAggregatesJobResults(createGetAnalyticsActionsAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return ActionAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<ActionAsyncAggregateQueryResponse> getAnalyticsActionsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsActionsAggregatesJobResults(createGetAnalyticsActionsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsActionsAggregatesJobResultsRequest createGetAnalyticsActionsAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsActionsAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return ActionAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ActionAsyncAggregateQueryResponse getAnalyticsActionsAggregatesJobResults(GetAnalyticsActionsAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActionAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActionAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<ActionAsyncAggregateQueryResponse> getAnalyticsActionsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActionAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActionAsyncAggregateQueryResponse> response = (ApiResponse<ActionAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActionAsyncAggregateQueryResponse> response = (ApiResponse<ActionAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get Reporting Turns.
    * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
    * @param botFlowId ID of the bot flow. (required)
@@ -462,6 +711,174 @@ public class AnalyticsApi {
   }
 
   /**
+   * Get status for async query for bot aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsBotsAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsBotsAggregatesJob(createGetAnalyticsBotsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for bot aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsBotsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsBotsAggregatesJob(createGetAnalyticsBotsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsBotsAggregatesJobRequest createGetAnalyticsBotsAggregatesJobRequest(String jobId) {
+    return GetAnalyticsBotsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for bot aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsBotsAggregatesJob(GetAnalyticsBotsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for bot aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsBotsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return BotAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public BotAsyncAggregateQueryResponse getAnalyticsBotsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsBotsAggregatesJobResults(createGetAnalyticsBotsAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return BotAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<BotAsyncAggregateQueryResponse> getAnalyticsBotsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsBotsAggregatesJobResults(createGetAnalyticsBotsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsBotsAggregatesJobResultsRequest createGetAnalyticsBotsAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsBotsAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return BotAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public BotAsyncAggregateQueryResponse getAnalyticsBotsAggregatesJobResults(GetAnalyticsBotsAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BotAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BotAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<BotAsyncAggregateQueryResponse> getAnalyticsBotsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BotAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotAsyncAggregateQueryResponse> response = (ApiResponse<BotAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotAsyncAggregateQueryResponse> response = (ApiResponse<BotAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a conversation by id
    * 
    * @param conversationId conversationId (required)
@@ -535,6 +952,174 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsConversationWithoutAttributes> response = (ApiResponse<AnalyticsConversationWithoutAttributes>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for conversation aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsConversationsAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsConversationsAggregatesJob(createGetAnalyticsConversationsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for conversation aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsConversationsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsConversationsAggregatesJob(createGetAnalyticsConversationsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsConversationsAggregatesJobRequest createGetAnalyticsConversationsAggregatesJobRequest(String jobId) {
+    return GetAnalyticsConversationsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for conversation aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsConversationsAggregatesJob(GetAnalyticsConversationsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for conversation aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsConversationsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return ConversationAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsConversationsAggregatesJobResults(createGetAnalyticsConversationsAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return ConversationAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<ConversationAsyncAggregateQueryResponse> getAnalyticsConversationsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsConversationsAggregatesJobResults(createGetAnalyticsConversationsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsConversationsAggregatesJobResultsRequest createGetAnalyticsConversationsAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsConversationsAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return ConversationAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(GetAnalyticsConversationsAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<ConversationAsyncAggregateQueryResponse> getAnalyticsConversationsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationAsyncAggregateQueryResponse> response = (ApiResponse<ConversationAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationAsyncAggregateQueryResponse> response = (ApiResponse<ConversationAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -925,6 +1510,678 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsDataRetentionResponse> response = (ApiResponse<AnalyticsDataRetentionResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for evaluation aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsEvaluationsAggregatesJob(createGetAnalyticsEvaluationsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for evaluation aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsEvaluationsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsEvaluationsAggregatesJob(createGetAnalyticsEvaluationsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsEvaluationsAggregatesJobRequest createGetAnalyticsEvaluationsAggregatesJobRequest(String jobId) {
+    return GetAnalyticsEvaluationsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for evaluation aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(GetAnalyticsEvaluationsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for evaluation aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsEvaluationsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return EvaluationAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public EvaluationAsyncAggregateQueryResponse getAnalyticsEvaluationsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsEvaluationsAggregatesJobResults(createGetAnalyticsEvaluationsAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return EvaluationAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<EvaluationAsyncAggregateQueryResponse> getAnalyticsEvaluationsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsEvaluationsAggregatesJobResults(createGetAnalyticsEvaluationsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsEvaluationsAggregatesJobResultsRequest createGetAnalyticsEvaluationsAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsEvaluationsAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return EvaluationAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public EvaluationAsyncAggregateQueryResponse getAnalyticsEvaluationsAggregatesJobResults(GetAnalyticsEvaluationsAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<EvaluationAsyncAggregateQueryResponse> getAnalyticsEvaluationsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationAsyncAggregateQueryResponse> response = (ApiResponse<EvaluationAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationAsyncAggregateQueryResponse> response = (ApiResponse<EvaluationAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for Flow aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsFlowsAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsFlowsAggregatesJob(createGetAnalyticsFlowsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for Flow aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsFlowsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsFlowsAggregatesJob(createGetAnalyticsFlowsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsFlowsAggregatesJobRequest createGetAnalyticsFlowsAggregatesJobRequest(String jobId) {
+    return GetAnalyticsFlowsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for Flow aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsFlowsAggregatesJob(GetAnalyticsFlowsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for Flow aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsFlowsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return FlowAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public FlowAsyncAggregateQueryResponse getAnalyticsFlowsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsFlowsAggregatesJobResults(createGetAnalyticsFlowsAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return FlowAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<FlowAsyncAggregateQueryResponse> getAnalyticsFlowsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsFlowsAggregatesJobResults(createGetAnalyticsFlowsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsFlowsAggregatesJobResultsRequest createGetAnalyticsFlowsAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsFlowsAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return FlowAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public FlowAsyncAggregateQueryResponse getAnalyticsFlowsAggregatesJobResults(GetAnalyticsFlowsAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<FlowAsyncAggregateQueryResponse> getAnalyticsFlowsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowAsyncAggregateQueryResponse> response = (ApiResponse<FlowAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowAsyncAggregateQueryResponse> response = (ApiResponse<FlowAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for journey aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsJourneysAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsJourneysAggregatesJob(createGetAnalyticsJourneysAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for journey aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsJourneysAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsJourneysAggregatesJob(createGetAnalyticsJourneysAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsJourneysAggregatesJobRequest createGetAnalyticsJourneysAggregatesJobRequest(String jobId) {
+    return GetAnalyticsJourneysAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for journey aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsJourneysAggregatesJob(GetAnalyticsJourneysAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for journey aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsJourneysAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return JourneyAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsJourneysAggregatesJobResults(createGetAnalyticsJourneysAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return JourneyAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<JourneyAsyncAggregateQueryResponse> getAnalyticsJourneysAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsJourneysAggregatesJobResults(createGetAnalyticsJourneysAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsJourneysAggregatesJobResultsRequest createGetAnalyticsJourneysAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsJourneysAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return JourneyAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(GetAnalyticsJourneysAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<JourneyAsyncAggregateQueryResponse> getAnalyticsJourneysAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyAsyncAggregateQueryResponse> response = (ApiResponse<JourneyAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyAsyncAggregateQueryResponse> response = (ApiResponse<JourneyAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for knowledge aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsKnowledgeAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsKnowledgeAggregatesJob(createGetAnalyticsKnowledgeAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for knowledge aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsKnowledgeAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsKnowledgeAggregatesJob(createGetAnalyticsKnowledgeAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsKnowledgeAggregatesJobRequest createGetAnalyticsKnowledgeAggregatesJobRequest(String jobId) {
+    return GetAnalyticsKnowledgeAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for knowledge aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsKnowledgeAggregatesJob(GetAnalyticsKnowledgeAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for knowledge aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsKnowledgeAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return KnowledgeAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public KnowledgeAsyncAggregateQueryResponse getAnalyticsKnowledgeAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsKnowledgeAggregatesJobResults(createGetAnalyticsKnowledgeAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return KnowledgeAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<KnowledgeAsyncAggregateQueryResponse> getAnalyticsKnowledgeAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsKnowledgeAggregatesJobResults(createGetAnalyticsKnowledgeAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsKnowledgeAggregatesJobResultsRequest createGetAnalyticsKnowledgeAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsKnowledgeAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return KnowledgeAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public KnowledgeAsyncAggregateQueryResponse getAnalyticsKnowledgeAggregatesJobResults(GetAnalyticsKnowledgeAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<KnowledgeAsyncAggregateQueryResponse> getAnalyticsKnowledgeAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeAsyncAggregateQueryResponse> response = (ApiResponse<KnowledgeAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeAsyncAggregateQueryResponse> response = (ApiResponse<KnowledgeAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1882,6 +3139,846 @@ public class AnalyticsApi {
   }
 
   /**
+   * Get status for async query for resolution aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsResolutionsAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsResolutionsAggregatesJob(createGetAnalyticsResolutionsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for resolution aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsResolutionsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsResolutionsAggregatesJob(createGetAnalyticsResolutionsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsResolutionsAggregatesJobRequest createGetAnalyticsResolutionsAggregatesJobRequest(String jobId) {
+    return GetAnalyticsResolutionsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for resolution aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsResolutionsAggregatesJob(GetAnalyticsResolutionsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for resolution aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsResolutionsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return ResolutionAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ResolutionAsyncAggregateQueryResponse getAnalyticsResolutionsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsResolutionsAggregatesJobResults(createGetAnalyticsResolutionsAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return ResolutionAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<ResolutionAsyncAggregateQueryResponse> getAnalyticsResolutionsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsResolutionsAggregatesJobResults(createGetAnalyticsResolutionsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsResolutionsAggregatesJobResultsRequest createGetAnalyticsResolutionsAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsResolutionsAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return ResolutionAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ResolutionAsyncAggregateQueryResponse getAnalyticsResolutionsAggregatesJobResults(GetAnalyticsResolutionsAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ResolutionAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResolutionAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<ResolutionAsyncAggregateQueryResponse> getAnalyticsResolutionsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResolutionAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResolutionAsyncAggregateQueryResponse> response = (ApiResponse<ResolutionAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResolutionAsyncAggregateQueryResponse> response = (ApiResponse<ResolutionAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for survey aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsSurveysAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsSurveysAggregatesJob(createGetAnalyticsSurveysAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for survey aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsSurveysAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsSurveysAggregatesJob(createGetAnalyticsSurveysAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsSurveysAggregatesJobRequest createGetAnalyticsSurveysAggregatesJobRequest(String jobId) {
+    return GetAnalyticsSurveysAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for survey aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsSurveysAggregatesJob(GetAnalyticsSurveysAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for survey aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsSurveysAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return SurveyAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public SurveyAsyncAggregateQueryResponse getAnalyticsSurveysAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsSurveysAggregatesJobResults(createGetAnalyticsSurveysAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return SurveyAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<SurveyAsyncAggregateQueryResponse> getAnalyticsSurveysAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsSurveysAggregatesJobResults(createGetAnalyticsSurveysAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsSurveysAggregatesJobResultsRequest createGetAnalyticsSurveysAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsSurveysAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return SurveyAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public SurveyAsyncAggregateQueryResponse getAnalyticsSurveysAggregatesJobResults(GetAnalyticsSurveysAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<SurveyAsyncAggregateQueryResponse> getAnalyticsSurveysAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyAsyncAggregateQueryResponse> response = (ApiResponse<SurveyAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyAsyncAggregateQueryResponse> response = (ApiResponse<SurveyAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for task management aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsTaskmanagementAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsTaskmanagementAggregatesJob(createGetAnalyticsTaskmanagementAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for task management aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsTaskmanagementAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsTaskmanagementAggregatesJob(createGetAnalyticsTaskmanagementAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsTaskmanagementAggregatesJobRequest createGetAnalyticsTaskmanagementAggregatesJobRequest(String jobId) {
+    return GetAnalyticsTaskmanagementAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for task management aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsTaskmanagementAggregatesJob(GetAnalyticsTaskmanagementAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for task management aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsTaskmanagementAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async task management query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return TaskManagementAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public TaskManagementAsyncAggregateQueryResponse getAnalyticsTaskmanagementAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsTaskmanagementAggregatesJobResults(createGetAnalyticsTaskmanagementAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async task management query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return TaskManagementAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<TaskManagementAsyncAggregateQueryResponse> getAnalyticsTaskmanagementAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsTaskmanagementAggregatesJobResults(createGetAnalyticsTaskmanagementAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsTaskmanagementAggregatesJobResultsRequest createGetAnalyticsTaskmanagementAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsTaskmanagementAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async task management query
+   * 
+   * @param request The request object
+   * @return TaskManagementAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public TaskManagementAsyncAggregateQueryResponse getAnalyticsTaskmanagementAggregatesJobResults(GetAnalyticsTaskmanagementAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TaskManagementAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TaskManagementAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async task management query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<TaskManagementAsyncAggregateQueryResponse> getAnalyticsTaskmanagementAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TaskManagementAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TaskManagementAsyncAggregateQueryResponse> response = (ApiResponse<TaskManagementAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TaskManagementAsyncAggregateQueryResponse> response = (ApiResponse<TaskManagementAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for transcript aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsTranscriptsAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsTranscriptsAggregatesJob(createGetAnalyticsTranscriptsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for transcript aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsTranscriptsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsTranscriptsAggregatesJob(createGetAnalyticsTranscriptsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsTranscriptsAggregatesJobRequest createGetAnalyticsTranscriptsAggregatesJobRequest(String jobId) {
+    return GetAnalyticsTranscriptsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for transcript aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsTranscriptsAggregatesJob(GetAnalyticsTranscriptsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for transcript aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsTranscriptsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return TranscriptAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public TranscriptAsyncAggregateQueryResponse getAnalyticsTranscriptsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsTranscriptsAggregatesJobResults(createGetAnalyticsTranscriptsAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return TranscriptAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<TranscriptAsyncAggregateQueryResponse> getAnalyticsTranscriptsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsTranscriptsAggregatesJobResults(createGetAnalyticsTranscriptsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsTranscriptsAggregatesJobResultsRequest createGetAnalyticsTranscriptsAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsTranscriptsAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return TranscriptAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public TranscriptAsyncAggregateQueryResponse getAnalyticsTranscriptsAggregatesJobResults(GetAnalyticsTranscriptsAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TranscriptAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TranscriptAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<TranscriptAsyncAggregateQueryResponse> getAnalyticsTranscriptsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TranscriptAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptAsyncAggregateQueryResponse> response = (ApiResponse<TranscriptAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptAsyncAggregateQueryResponse> response = (ApiResponse<TranscriptAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for user aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsUsersAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsUsersAggregatesJob(createGetAnalyticsUsersAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for user aggregates
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsUsersAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsUsersAggregatesJob(createGetAnalyticsUsersAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsUsersAggregatesJobRequest createGetAnalyticsUsersAggregatesJobRequest(String jobId) {
+    return GetAnalyticsUsersAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for user aggregates
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryStatus getAnalyticsUsersAggregatesJob(GetAnalyticsUsersAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for user aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsUsersAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return UserAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsUsersAggregatesJobResults(createGetAnalyticsUsersAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return UserAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UserAsyncAggregateQueryResponse> getAnalyticsUsersAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsUsersAggregatesJobResults(createGetAnalyticsUsersAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsUsersAggregatesJobResultsRequest createGetAnalyticsUsersAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsUsersAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return UserAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(GetAnalyticsUsersAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UserAsyncAggregateQueryResponse> getAnalyticsUsersAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAsyncAggregateQueryResponse> response = (ApiResponse<UserAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAsyncAggregateQueryResponse> response = (ApiResponse<UserAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get status for async query for user details
    * 
    * @param jobId jobId (required)
@@ -2198,6 +4295,88 @@ public class AnalyticsApi {
   }
 
   /**
+   * Query for action aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsActionsAggregatesJobs(ActionAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsActionsAggregatesJobs(createPostAnalyticsActionsAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for action aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsActionsAggregatesJobsWithHttpInfo(ActionAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsActionsAggregatesJobs(createPostAnalyticsActionsAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsActionsAggregatesJobsRequest createPostAnalyticsActionsAggregatesJobsRequest(ActionAsyncAggregationQuery body) {
+    return PostAnalyticsActionsAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for action aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsActionsAggregatesJobs(PostAnalyticsActionsAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for action aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsActionsAggregatesJobs(ApiRequest<ActionAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query for action aggregates
    * 
    * @param body query (required)
@@ -2271,6 +4450,88 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActionAggregateQueryResponse> response = (ApiResponse<ActionAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for bot aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsBotsAggregatesJobs(BotAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsBotsAggregatesJobs(createPostAnalyticsBotsAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for bot aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsBotsAggregatesJobsWithHttpInfo(BotAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsBotsAggregatesJobs(createPostAnalyticsBotsAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsBotsAggregatesJobsRequest createPostAnalyticsBotsAggregatesJobsRequest(BotAsyncAggregationQuery body) {
+    return PostAnalyticsBotsAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for bot aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsBotsAggregatesJobs(PostAnalyticsBotsAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for bot aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsBotsAggregatesJobs(ApiRequest<BotAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2431,6 +4692,178 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PropertyIndexRequest> response = (ApiResponse<PropertyIndexRequest>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for conversation activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return ConversationActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ConversationActivityResponse postAnalyticsConversationsActivityQuery(ConversationActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  postAnalyticsConversationsActivityQuery(createPostAnalyticsConversationsActivityQueryRequest(body, pageSize, pageNumber));
+  }
+
+  /**
+   * Query for conversation activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return ConversationActivityResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<ConversationActivityResponse> postAnalyticsConversationsActivityQueryWithHttpInfo(ConversationActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
+    return postAnalyticsConversationsActivityQuery(createPostAnalyticsConversationsActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private PostAnalyticsConversationsActivityQueryRequest createPostAnalyticsConversationsActivityQueryRequest(ConversationActivityQuery body, Integer pageSize, Integer pageNumber) {
+    return PostAnalyticsConversationsActivityQueryRequest.builder()
+            .withBody(body)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Query for conversation activity observations
+   * 
+   * @param request The request object
+   * @return ConversationActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ConversationActivityResponse postAnalyticsConversationsActivityQuery(PostAnalyticsConversationsActivityQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationActivityResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationActivityResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for conversation activity observations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<ConversationActivityResponse> postAnalyticsConversationsActivityQuery(ApiRequest<ConversationActivityQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationActivityResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationActivityResponse> response = (ApiResponse<ConversationActivityResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationActivityResponse> response = (ApiResponse<ConversationActivityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for conversation aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(ConversationAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsConversationsAggregatesJobs(createPostAnalyticsConversationsAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for conversation aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsConversationsAggregatesJobsWithHttpInfo(ConversationAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsConversationsAggregatesJobs(createPostAnalyticsConversationsAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsConversationsAggregatesJobsRequest createPostAnalyticsConversationsAggregatesJobsRequest(ConversationAsyncAggregationQuery body) {
+    return PostAnalyticsConversationsAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for conversation aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(PostAnalyticsConversationsAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for conversation aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsConversationsAggregatesJobs(ApiRequest<ConversationAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2748,6 +5181,88 @@ public class AnalyticsApi {
   }
 
   /**
+   * Query for evaluation aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(EvaluationAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsEvaluationsAggregatesJobs(createPostAnalyticsEvaluationsAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for evaluation aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsEvaluationsAggregatesJobsWithHttpInfo(EvaluationAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsEvaluationsAggregatesJobs(createPostAnalyticsEvaluationsAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsEvaluationsAggregatesJobsRequest createPostAnalyticsEvaluationsAggregatesJobsRequest(EvaluationAsyncAggregationQuery body) {
+    return PostAnalyticsEvaluationsAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for evaluation aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(PostAnalyticsEvaluationsAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for evaluation aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsEvaluationsAggregatesJobs(ApiRequest<EvaluationAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query for evaluation aggregates
    * 
    * @param body query (required)
@@ -2821,6 +5336,178 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EvaluationAggregateQueryResponse> response = (ApiResponse<EvaluationAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for flow activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return FlowActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public FlowActivityResponse postAnalyticsFlowsActivityQuery(FlowActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  postAnalyticsFlowsActivityQuery(createPostAnalyticsFlowsActivityQueryRequest(body, pageSize, pageNumber));
+  }
+
+  /**
+   * Query for flow activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return FlowActivityResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<FlowActivityResponse> postAnalyticsFlowsActivityQueryWithHttpInfo(FlowActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
+    return postAnalyticsFlowsActivityQuery(createPostAnalyticsFlowsActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private PostAnalyticsFlowsActivityQueryRequest createPostAnalyticsFlowsActivityQueryRequest(FlowActivityQuery body, Integer pageSize, Integer pageNumber) {
+    return PostAnalyticsFlowsActivityQueryRequest.builder()
+            .withBody(body)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Query for flow activity observations
+   * 
+   * @param request The request object
+   * @return FlowActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public FlowActivityResponse postAnalyticsFlowsActivityQuery(PostAnalyticsFlowsActivityQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowActivityResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowActivityResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for flow activity observations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<FlowActivityResponse> postAnalyticsFlowsActivityQuery(ApiRequest<FlowActivityQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowActivityResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowActivityResponse> response = (ApiResponse<FlowActivityResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowActivityResponse> response = (ApiResponse<FlowActivityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for flow aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(FlowAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsFlowsAggregatesJobs(createPostAnalyticsFlowsAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for flow aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsFlowsAggregatesJobsWithHttpInfo(FlowAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsFlowsAggregatesJobs(createPostAnalyticsFlowsAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsFlowsAggregatesJobsRequest createPostAnalyticsFlowsAggregatesJobsRequest(FlowAsyncAggregationQuery body) {
+    return PostAnalyticsFlowsAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for flow aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(PostAnalyticsFlowsAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for flow aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsFlowsAggregatesJobs(ApiRequest<FlowAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2982,6 +5669,88 @@ public class AnalyticsApi {
   }
 
   /**
+   * Query for journey aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(JourneyAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsJourneysAggregatesJobs(createPostAnalyticsJourneysAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for journey aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsJourneysAggregatesJobsWithHttpInfo(JourneyAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsJourneysAggregatesJobs(createPostAnalyticsJourneysAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsJourneysAggregatesJobsRequest createPostAnalyticsJourneysAggregatesJobsRequest(JourneyAsyncAggregationQuery body) {
+    return PostAnalyticsJourneysAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for journey aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(PostAnalyticsJourneysAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for journey aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsJourneysAggregatesJobs(ApiRequest<JourneyAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query for journey aggregates
    * 
    * @param body query (required)
@@ -3055,6 +5824,170 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JourneyAggregateQueryResponse> response = (ApiResponse<JourneyAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for knowledge aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsKnowledgeAggregatesJobs(KnowledgeAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsKnowledgeAggregatesJobs(createPostAnalyticsKnowledgeAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for knowledge aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsKnowledgeAggregatesJobsWithHttpInfo(KnowledgeAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsKnowledgeAggregatesJobs(createPostAnalyticsKnowledgeAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsKnowledgeAggregatesJobsRequest createPostAnalyticsKnowledgeAggregatesJobsRequest(KnowledgeAsyncAggregationQuery body) {
+    return PostAnalyticsKnowledgeAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for knowledge aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsKnowledgeAggregatesJobs(PostAnalyticsKnowledgeAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for knowledge aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsKnowledgeAggregatesJobs(ApiRequest<KnowledgeAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for knowledge aggregates
+   * 
+   * @param body query (required)
+   * @return KnowledgeAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public KnowledgeAggregateQueryResponse postAnalyticsKnowledgeAggregatesQuery(KnowledgeAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsKnowledgeAggregatesQuery(createPostAnalyticsKnowledgeAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for knowledge aggregates
+   * 
+   * @param body query (required)
+   * @return KnowledgeAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<KnowledgeAggregateQueryResponse> postAnalyticsKnowledgeAggregatesQueryWithHttpInfo(KnowledgeAggregationQuery body) throws IOException {
+    return postAnalyticsKnowledgeAggregatesQuery(createPostAnalyticsKnowledgeAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsKnowledgeAggregatesQueryRequest createPostAnalyticsKnowledgeAggregatesQueryRequest(KnowledgeAggregationQuery body) {
+    return PostAnalyticsKnowledgeAggregatesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for knowledge aggregates
+   * 
+   * @param request The request object
+   * @return KnowledgeAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public KnowledgeAggregateQueryResponse postAnalyticsKnowledgeAggregatesQuery(PostAnalyticsKnowledgeAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for knowledge aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<KnowledgeAggregateQueryResponse> postAnalyticsKnowledgeAggregatesQuery(ApiRequest<KnowledgeAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeAggregateQueryResponse> response = (ApiResponse<KnowledgeAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeAggregateQueryResponse> response = (ApiResponse<KnowledgeAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3372,6 +6305,260 @@ public class AnalyticsApi {
   }
 
   /**
+   * Query for resolution aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsResolutionsAggregatesJobs(ResolutionAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsResolutionsAggregatesJobs(createPostAnalyticsResolutionsAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for resolution aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsResolutionsAggregatesJobsWithHttpInfo(ResolutionAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsResolutionsAggregatesJobs(createPostAnalyticsResolutionsAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsResolutionsAggregatesJobsRequest createPostAnalyticsResolutionsAggregatesJobsRequest(ResolutionAsyncAggregationQuery body) {
+    return PostAnalyticsResolutionsAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for resolution aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsResolutionsAggregatesJobs(PostAnalyticsResolutionsAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for resolution aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsResolutionsAggregatesJobs(ApiRequest<ResolutionAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return RoutingActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public RoutingActivityResponse postAnalyticsRoutingActivityQuery(RoutingActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  postAnalyticsRoutingActivityQuery(createPostAnalyticsRoutingActivityQueryRequest(body, pageSize, pageNumber));
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return RoutingActivityResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<RoutingActivityResponse> postAnalyticsRoutingActivityQueryWithHttpInfo(RoutingActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
+    return postAnalyticsRoutingActivityQuery(createPostAnalyticsRoutingActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private PostAnalyticsRoutingActivityQueryRequest createPostAnalyticsRoutingActivityQueryRequest(RoutingActivityQuery body, Integer pageSize, Integer pageNumber) {
+    return PostAnalyticsRoutingActivityQueryRequest.builder()
+            .withBody(body)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param request The request object
+   * @return RoutingActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public RoutingActivityResponse postAnalyticsRoutingActivityQuery(PostAnalyticsRoutingActivityQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RoutingActivityResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingActivityResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<RoutingActivityResponse> postAnalyticsRoutingActivityQuery(ApiRequest<RoutingActivityQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingActivityResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingActivityResponse> response = (ApiResponse<RoutingActivityResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingActivityResponse> response = (ApiResponse<RoutingActivityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for survey aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(SurveyAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsSurveysAggregatesJobs(createPostAnalyticsSurveysAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for survey aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsSurveysAggregatesJobsWithHttpInfo(SurveyAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsSurveysAggregatesJobs(createPostAnalyticsSurveysAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsSurveysAggregatesJobsRequest createPostAnalyticsSurveysAggregatesJobsRequest(SurveyAsyncAggregationQuery body) {
+    return PostAnalyticsSurveysAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for survey aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(PostAnalyticsSurveysAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for survey aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsSurveysAggregatesJobs(ApiRequest<SurveyAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query for survey aggregates
    * 
    * @param body query (required)
@@ -3450,6 +6637,342 @@ public class AnalyticsApi {
   }
 
   /**
+   * Query for task management aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsTaskmanagementAggregatesJobs(TaskManagementAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsTaskmanagementAggregatesJobs(createPostAnalyticsTaskmanagementAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for task management aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsTaskmanagementAggregatesJobsWithHttpInfo(TaskManagementAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsTaskmanagementAggregatesJobs(createPostAnalyticsTaskmanagementAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsTaskmanagementAggregatesJobsRequest createPostAnalyticsTaskmanagementAggregatesJobsRequest(TaskManagementAsyncAggregationQuery body) {
+    return PostAnalyticsTaskmanagementAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for task management aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsTaskmanagementAggregatesJobs(PostAnalyticsTaskmanagementAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for task management aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsTaskmanagementAggregatesJobs(ApiRequest<TaskManagementAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for task management aggregates
+   * 
+   * @param body query (required)
+   * @return TaskManagementAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public TaskManagementAggregateQueryResponse postAnalyticsTaskmanagementAggregatesQuery(TaskManagementAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsTaskmanagementAggregatesQuery(createPostAnalyticsTaskmanagementAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for task management aggregates
+   * 
+   * @param body query (required)
+   * @return TaskManagementAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<TaskManagementAggregateQueryResponse> postAnalyticsTaskmanagementAggregatesQueryWithHttpInfo(TaskManagementAggregationQuery body) throws IOException {
+    return postAnalyticsTaskmanagementAggregatesQuery(createPostAnalyticsTaskmanagementAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsTaskmanagementAggregatesQueryRequest createPostAnalyticsTaskmanagementAggregatesQueryRequest(TaskManagementAggregationQuery body) {
+    return PostAnalyticsTaskmanagementAggregatesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for task management aggregates
+   * 
+   * @param request The request object
+   * @return TaskManagementAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public TaskManagementAggregateQueryResponse postAnalyticsTaskmanagementAggregatesQuery(PostAnalyticsTaskmanagementAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TaskManagementAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TaskManagementAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for task management aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<TaskManagementAggregateQueryResponse> postAnalyticsTaskmanagementAggregatesQuery(ApiRequest<TaskManagementAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TaskManagementAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TaskManagementAggregateQueryResponse> response = (ApiResponse<TaskManagementAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TaskManagementAggregateQueryResponse> response = (ApiResponse<TaskManagementAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for team activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return TeamActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public TeamActivityResponse postAnalyticsTeamsActivityQuery(TeamActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  postAnalyticsTeamsActivityQuery(createPostAnalyticsTeamsActivityQueryRequest(body, pageSize, pageNumber));
+  }
+
+  /**
+   * Query for team activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return TeamActivityResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<TeamActivityResponse> postAnalyticsTeamsActivityQueryWithHttpInfo(TeamActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
+    return postAnalyticsTeamsActivityQuery(createPostAnalyticsTeamsActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private PostAnalyticsTeamsActivityQueryRequest createPostAnalyticsTeamsActivityQueryRequest(TeamActivityQuery body, Integer pageSize, Integer pageNumber) {
+    return PostAnalyticsTeamsActivityQueryRequest.builder()
+            .withBody(body)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Query for team activity observations
+   * 
+   * @param request The request object
+   * @return TeamActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public TeamActivityResponse postAnalyticsTeamsActivityQuery(PostAnalyticsTeamsActivityQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TeamActivityResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TeamActivityResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for team activity observations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<TeamActivityResponse> postAnalyticsTeamsActivityQuery(ApiRequest<TeamActivityQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TeamActivityResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TeamActivityResponse> response = (ApiResponse<TeamActivityResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TeamActivityResponse> response = (ApiResponse<TeamActivityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for transcript aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsTranscriptsAggregatesJobs(TranscriptAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsTranscriptsAggregatesJobs(createPostAnalyticsTranscriptsAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for transcript aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsTranscriptsAggregatesJobsWithHttpInfo(TranscriptAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsTranscriptsAggregatesJobs(createPostAnalyticsTranscriptsAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsTranscriptsAggregatesJobsRequest createPostAnalyticsTranscriptsAggregatesJobsRequest(TranscriptAsyncAggregationQuery body) {
+    return PostAnalyticsTranscriptsAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for transcript aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsTranscriptsAggregatesJobs(PostAnalyticsTranscriptsAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for transcript aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsTranscriptsAggregatesJobs(ApiRequest<TranscriptAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query for transcript aggregates
    * 
    * @param body query (required)
@@ -3523,6 +7046,178 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TranscriptAggregateQueryResponse> response = (ApiResponse<TranscriptAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return UserActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UserActivityResponse postAnalyticsUsersActivityQuery(UserActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  postAnalyticsUsersActivityQuery(createPostAnalyticsUsersActivityQueryRequest(body, pageSize, pageNumber));
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return UserActivityResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UserActivityResponse> postAnalyticsUsersActivityQueryWithHttpInfo(UserActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
+    return postAnalyticsUsersActivityQuery(createPostAnalyticsUsersActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private PostAnalyticsUsersActivityQueryRequest createPostAnalyticsUsersActivityQueryRequest(UserActivityQuery body, Integer pageSize, Integer pageNumber) {
+    return PostAnalyticsUsersActivityQueryRequest.builder()
+            .withBody(body)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param request The request object
+   * @return UserActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UserActivityResponse postAnalyticsUsersActivityQuery(PostAnalyticsUsersActivityQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserActivityResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserActivityResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for user activity observations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UserActivityResponse> postAnalyticsUsersActivityQuery(ApiRequest<UserActivityQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserActivityResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserActivityResponse> response = (ApiResponse<UserActivityResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserActivityResponse> response = (ApiResponse<UserActivityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for user aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsUsersAggregatesJobs(UserAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsUsersAggregatesJobs(createPostAnalyticsUsersAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for user aggregates asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsUsersAggregatesJobsWithHttpInfo(UserAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsUsersAggregatesJobs(createPostAnalyticsUsersAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsUsersAggregatesJobsRequest createPostAnalyticsUsersAggregatesJobsRequest(UserAsyncAggregationQuery body) {
+    return PostAnalyticsUsersAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for user aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncQueryResponse postAnalyticsUsersAggregatesJobs(PostAnalyticsUsersAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for user aggregates asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsUsersAggregatesJobs(ApiRequest<UserAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

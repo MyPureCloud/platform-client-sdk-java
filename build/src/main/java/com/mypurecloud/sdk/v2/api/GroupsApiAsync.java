@@ -13,6 +13,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.DynamicGroupDefinition;
+import com.mypurecloud.sdk.v2.model.DynamicGroupQuery;
+import com.mypurecloud.sdk.v2.model.DynamicGroupQueryPreview;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
@@ -28,9 +31,11 @@ import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteGroupDynamicsettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteGroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGroupDynamicsettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupIndividualsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupProfileRequest;
@@ -39,8 +44,10 @@ import com.mypurecloud.sdk.v2.api.request.GetGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetProfilesGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGroupsDynamicsettingsPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PutGroupDynamicsettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -102,6 +109,83 @@ public class GroupsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteGroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove dynamic group definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<Void> deleteGroupDynamicsettingsAsync(DeleteGroupDynamicsettingsRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove dynamic group definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<Void>> deleteGroupDynamicsettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -351,6 +435,83 @@ public class GroupsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get dynamic group definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<DynamicGroupDefinition> getGroupDynamicsettingsAsync(GetGroupDynamicsettingsRequest request, final AsyncApiCallback<DynamicGroupDefinition> callback) {
+    try {
+      final SettableFuture<DynamicGroupDefinition> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DynamicGroupDefinition>() {}, new AsyncApiCallback<ApiResponse<DynamicGroupDefinition>>() {
+        @Override
+        public void onCompleted(ApiResponse<DynamicGroupDefinition> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get dynamic group definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<DynamicGroupDefinition>> getGroupDynamicsettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DynamicGroupDefinition>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DynamicGroupDefinition>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DynamicGroupDefinition>() {}, new AsyncApiCallback<ApiResponse<DynamicGroupDefinition>>() {
+        @Override
+        public void onCompleted(ApiResponse<DynamicGroupDefinition> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DynamicGroupDefinition> response = (ApiResponse<DynamicGroupDefinition>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DynamicGroupDefinition> response = (ApiResponse<DynamicGroupDefinition>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -967,6 +1128,85 @@ public class GroupsApiAsync {
   }
 
   /**
+   * Preview the number of users selected for a dynamic group definition query
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public Future<DynamicGroupQueryPreview> postGroupsDynamicsettingsPreviewAsync(PostGroupsDynamicsettingsPreviewRequest request, final AsyncApiCallback<DynamicGroupQueryPreview> callback) {
+    try {
+      final SettableFuture<DynamicGroupQueryPreview> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DynamicGroupQueryPreview>() {}, new AsyncApiCallback<ApiResponse<DynamicGroupQueryPreview>>() {
+        @Override
+        public void onCompleted(ApiResponse<DynamicGroupQueryPreview> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Preview the number of users selected for a dynamic group definition query
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<DynamicGroupQueryPreview>> postGroupsDynamicsettingsPreviewAsync(ApiRequest<DynamicGroupQuery> request, final AsyncApiCallback<ApiResponse<DynamicGroupQueryPreview>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DynamicGroupQueryPreview>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DynamicGroupQueryPreview>() {}, new AsyncApiCallback<ApiResponse<DynamicGroupQueryPreview>>() {
+        @Override
+        public void onCompleted(ApiResponse<DynamicGroupQueryPreview> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DynamicGroupQueryPreview> response = (ApiResponse<DynamicGroupQueryPreview>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DynamicGroupQueryPreview> response = (ApiResponse<DynamicGroupQueryPreview>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Search groups
    * 
    * @param request the request object
@@ -1105,6 +1345,83 @@ public class GroupsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create / Update dynamic group definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<Void> putGroupDynamicsettingsAsync(PutGroupDynamicsettingsRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create / Update dynamic group definition
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<Void>> putGroupDynamicsettingsAsync(ApiRequest<DynamicGroupQuery> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

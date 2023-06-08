@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.ExpiredEdgeListing;
 import com.mypurecloud.sdk.v2.model.Extension;
 import com.mypurecloud.sdk.v2.model.ExtensionEntityListing;
 import com.mypurecloud.sdk.v2.model.ExtensionPool;
+import com.mypurecloud.sdk.v2.model.ExtensionPoolDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.ExtensionPoolEntityListing;
 import com.mypurecloud.sdk.v2.model.Line;
 import com.mypurecloud.sdk.v2.model.LineBase;
@@ -123,6 +124,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExpiredReque
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinebasesettingRequest;
@@ -3503,6 +3505,83 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ExtensionPoolEntityListing> response = (ApiResponse<ExtensionPoolEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of basic extension pool objects filterable by query parameters.
+   * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ExtensionPoolDivisionViewEntityListing> getTelephonyProvidersEdgesExtensionpoolsDivisionviewsAsync(GetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest request, final AsyncApiCallback<ExtensionPoolDivisionViewEntityListing> callback) {
+    try {
+      final SettableFuture<ExtensionPoolDivisionViewEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExtensionPoolDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<ExtensionPoolDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionPoolDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of basic extension pool objects filterable by query parameters.
+   * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<ExtensionPoolDivisionViewEntityListing>> getTelephonyProvidersEdgesExtensionpoolsDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExtensionPoolDivisionViewEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExtensionPoolDivisionViewEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExtensionPoolDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<ExtensionPoolDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionPoolDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionPoolDivisionViewEntityListing> response = (ApiResponse<ExtensionPoolDivisionViewEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionPoolDivisionViewEntityListing> response = (ApiResponse<ExtensionPoolDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

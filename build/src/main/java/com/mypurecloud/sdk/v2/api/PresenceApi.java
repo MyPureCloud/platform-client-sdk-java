@@ -12,6 +12,8 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
+import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinition;
+import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinitionEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceEntityListing;
 import com.mypurecloud.sdk.v2.model.PresenceSettings;
 import com.mypurecloud.sdk.v2.model.Source;
@@ -21,8 +23,11 @@ import com.mypurecloud.sdk.v2.model.UserPresence;
 import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeletePresenceDefinition0Request;
 import com.mypurecloud.sdk.v2.api.request.DeletePresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeletePresencedefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceDefinition0Request;
+import com.mypurecloud.sdk.v2.api.request.GetPresenceDefinitions0Request;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresenceSourcesRequest;
@@ -34,8 +39,10 @@ import com.mypurecloud.sdk.v2.api.request.GetUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresencesPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.PostPresenceDefinitions0Request;
 import com.mypurecloud.sdk.v2.api.request.PostPresenceSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutPresenceDefinition0Request;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceSourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresenceUserPrimarysourceRequest;
@@ -57,6 +64,85 @@ public class PresenceApi {
 
   public PresenceApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete a Presence Definition
+   * 
+   * @param definitionId Presence Definition ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void deletePresenceDefinition0(String definitionId) throws IOException, ApiException {
+     deletePresenceDefinition0(createDeletePresenceDefinition0Request(definitionId));
+  }
+
+  /**
+   * Delete a Presence Definition
+   * 
+   * @param definitionId Presence Definition ID (required)
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> deletePresenceDefinition0WithHttpInfo(String definitionId) throws IOException {
+    return deletePresenceDefinition0(createDeletePresenceDefinition0Request(definitionId).withHttpInfo());
+  }
+
+  private DeletePresenceDefinition0Request createDeletePresenceDefinition0Request(String definitionId) {
+    return DeletePresenceDefinition0Request.builder()
+            .withDefinitionId(definitionId)
+
+            .build();
+  }
+
+  /**
+   * Delete a Presence Definition
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void deletePresenceDefinition0(DeletePresenceDefinition0Request request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Presence Definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> deletePresenceDefinition0(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -205,6 +291,174 @@ public class PresenceApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Presence Definition
+   * 
+   * @param definitionId Presence Definition ID (required)
+   * @return OrganizationPresenceDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OrganizationPresenceDefinition getPresenceDefinition0(String definitionId) throws IOException, ApiException {
+    return  getPresenceDefinition0(createGetPresenceDefinition0Request(definitionId));
+  }
+
+  /**
+   * Get a Presence Definition
+   * 
+   * @param definitionId Presence Definition ID (required)
+   * @return OrganizationPresenceDefinition
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OrganizationPresenceDefinition> getPresenceDefinition0WithHttpInfo(String definitionId) throws IOException {
+    return getPresenceDefinition0(createGetPresenceDefinition0Request(definitionId).withHttpInfo());
+  }
+
+  private GetPresenceDefinition0Request createGetPresenceDefinition0Request(String definitionId) {
+    return GetPresenceDefinition0Request.builder()
+            .withDefinitionId(definitionId)
+
+            .build();
+  }
+
+  /**
+   * Get a Presence Definition
+   * 
+   * @param request The request object
+   * @return OrganizationPresenceDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OrganizationPresenceDefinition getPresenceDefinition0(GetPresenceDefinition0Request request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrganizationPresenceDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresenceDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Presence Definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OrganizationPresenceDefinition> getPresenceDefinition0(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationPresenceDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresenceDefinition> response = (ApiResponse<OrganizationPresenceDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresenceDefinition> response = (ApiResponse<OrganizationPresenceDefinition>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Presence Definitions
+   * 
+   * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
+   * @param divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
+   * @return OrganizationPresenceDefinitionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(String deactivated, List<String> divisionId) throws IOException, ApiException {
+    return  getPresenceDefinitions0(createGetPresenceDefinitions0Request(deactivated, divisionId));
+  }
+
+  /**
+   * Get a list of Presence Definitions
+   * 
+   * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
+   * @param divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
+   * @return OrganizationPresenceDefinitionEntityListing
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OrganizationPresenceDefinitionEntityListing> getPresenceDefinitions0WithHttpInfo(String deactivated, List<String> divisionId) throws IOException {
+    return getPresenceDefinitions0(createGetPresenceDefinitions0Request(deactivated, divisionId).withHttpInfo());
+  }
+
+  private GetPresenceDefinitions0Request createGetPresenceDefinitions0Request(String deactivated, List<String> divisionId) {
+    return GetPresenceDefinitions0Request.builder()
+            .withDeactivated(deactivated)
+
+            .withDivisionId(divisionId)
+
+            .build();
+  }
+
+  /**
+   * Get a list of Presence Definitions
+   * 
+   * @param request The request object
+   * @return OrganizationPresenceDefinitionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(GetPresenceDefinitions0Request request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrganizationPresenceDefinitionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresenceDefinitionEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Presence Definitions
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OrganizationPresenceDefinitionEntityListing> getPresenceDefinitions0(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationPresenceDefinitionEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresenceDefinitionEntityListing> response = (ApiResponse<OrganizationPresenceDefinitionEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresenceDefinitionEntityListing> response = (ApiResponse<OrganizationPresenceDefinitionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1092,6 +1346,88 @@ public class PresenceApi {
   }
 
   /**
+   * Create a Presence Definition
+   * 
+   * @param body The Presence Definition to create (required)
+   * @return OrganizationPresenceDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OrganizationPresenceDefinition postPresenceDefinitions0(OrganizationPresenceDefinition body) throws IOException, ApiException {
+    return  postPresenceDefinitions0(createPostPresenceDefinitions0Request(body));
+  }
+
+  /**
+   * Create a Presence Definition
+   * 
+   * @param body The Presence Definition to create (required)
+   * @return OrganizationPresenceDefinition
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OrganizationPresenceDefinition> postPresenceDefinitions0WithHttpInfo(OrganizationPresenceDefinition body) throws IOException {
+    return postPresenceDefinitions0(createPostPresenceDefinitions0Request(body).withHttpInfo());
+  }
+
+  private PostPresenceDefinitions0Request createPostPresenceDefinitions0Request(OrganizationPresenceDefinition body) {
+    return PostPresenceDefinitions0Request.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a Presence Definition
+   * 
+   * @param request The request object
+   * @return OrganizationPresenceDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OrganizationPresenceDefinition postPresenceDefinitions0(PostPresenceDefinitions0Request request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrganizationPresenceDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresenceDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Presence Definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OrganizationPresenceDefinition> postPresenceDefinitions0(ApiRequest<OrganizationPresenceDefinition> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationPresenceDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresenceDefinition> response = (ApiResponse<OrganizationPresenceDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresenceDefinition> response = (ApiResponse<OrganizationPresenceDefinition>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a Presence Source
    * 
    * @param body The Presence Source to create (required)
@@ -1243,6 +1579,92 @@ public class PresenceApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a Presence Definition
+   * 
+   * @param definitionId Presence Definition ID (required)
+   * @param body The updated Presence Definition (required)
+   * @return OrganizationPresenceDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OrganizationPresenceDefinition putPresenceDefinition0(String definitionId, OrganizationPresenceDefinition body) throws IOException, ApiException {
+    return  putPresenceDefinition0(createPutPresenceDefinition0Request(definitionId, body));
+  }
+
+  /**
+   * Update a Presence Definition
+   * 
+   * @param definitionId Presence Definition ID (required)
+   * @param body The updated Presence Definition (required)
+   * @return OrganizationPresenceDefinition
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OrganizationPresenceDefinition> putPresenceDefinition0WithHttpInfo(String definitionId, OrganizationPresenceDefinition body) throws IOException {
+    return putPresenceDefinition0(createPutPresenceDefinition0Request(definitionId, body).withHttpInfo());
+  }
+
+  private PutPresenceDefinition0Request createPutPresenceDefinition0Request(String definitionId, OrganizationPresenceDefinition body) {
+    return PutPresenceDefinition0Request.builder()
+            .withDefinitionId(definitionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a Presence Definition
+   * 
+   * @param request The request object
+   * @return OrganizationPresenceDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public OrganizationPresenceDefinition putPresenceDefinition0(PutPresenceDefinition0Request request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrganizationPresenceDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresenceDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a Presence Definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<OrganizationPresenceDefinition> putPresenceDefinition0(ApiRequest<OrganizationPresenceDefinition> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationPresenceDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresenceDefinition> response = (ApiResponse<OrganizationPresenceDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresenceDefinition> response = (ApiResponse<OrganizationPresenceDefinition>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

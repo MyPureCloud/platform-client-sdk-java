@@ -12,9 +12,11 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.Action;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
+import com.mypurecloud.sdk.v2.model.AsyncJob;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.BotExecutionConfiguration;
 import com.mypurecloud.sdk.v2.model.BotList;
 import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
@@ -36,6 +38,9 @@ import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.LexBotAlias;
 import com.mypurecloud.sdk.v2.model.LexBotAliasEntityListing;
 import com.mypurecloud.sdk.v2.model.LexBotEntityListing;
+import com.mypurecloud.sdk.v2.model.NuanceBot;
+import com.mypurecloud.sdk.v2.model.NuanceBotEntityListing;
+import com.mypurecloud.sdk.v2.model.NuanceBotLaunchSettings;
 import com.mypurecloud.sdk.v2.model.PostActionInput;
 import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
@@ -81,6 +86,12 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentsR
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotAliasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotBotIdAliasesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineVoiceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineVoicesRequest;
@@ -102,9 +113,13 @@ import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionTestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionsDraftsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsCredentialsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationConfigCurrentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsBotconnectorIntegrationIdBotsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsCredentialRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsSpeechTtsSettingsRequest;
 
 import java.io.IOException;
@@ -2814,6 +2829,546 @@ public class IntegrationsApi {
   }
 
   /**
+   * Get a Nuance bot in the specified Integration
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param botId The Nuance bot ID to get (required)
+   * @param expand expand (optional)
+   * @param targetChannel targetChannel (optional)
+   * @return NuanceBot
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBot(String nuanceIntegrationId, String botId, List<String> expand, String targetChannel) throws IOException, ApiException {
+    return  getIntegrationsSpeechNuanceNuanceIntegrationIdBot(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest(nuanceIntegrationId, botId, expand, targetChannel));
+  }
+
+  /**
+   * Get a Nuance bot in the specified Integration
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param botId The Nuance bot ID to get (required)
+   * @param expand expand (optional)
+   * @param targetChannel targetChannel (optional)
+   * @return NuanceBot
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<NuanceBot> getIntegrationsSpeechNuanceNuanceIntegrationIdBotWithHttpInfo(String nuanceIntegrationId, String botId, List<String> expand, String targetChannel) throws IOException {
+    return getIntegrationsSpeechNuanceNuanceIntegrationIdBot(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest(nuanceIntegrationId, botId, expand, targetChannel).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest(String nuanceIntegrationId, String botId, List<String> expand, String targetChannel) {
+    return GetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest.builder()
+            .withNuanceIntegrationId(nuanceIntegrationId)
+
+            .withBotId(botId)
+
+            .withExpand(expand)
+
+            .withTargetChannel(targetChannel)
+
+            .build();
+  }
+
+  /**
+   * Get a Nuance bot in the specified Integration
+   * 
+   * @param request The request object
+   * @return NuanceBot
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBot(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<NuanceBot> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NuanceBot>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Nuance bot in the specified Integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<NuanceBot> getIntegrationsSpeechNuanceNuanceIntegrationIdBot(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NuanceBot>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NuanceBot> response = (ApiResponse<NuanceBot>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NuanceBot> response = (ApiResponse<NuanceBot>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the status of an asynchronous Nuance bot GET job
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param botId The Nuance bot ID (required)
+   * @param jobId The asynchronous job ID (required)
+   * @return AsyncJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(String nuanceIntegrationId, String botId, String jobId) throws IOException, ApiException {
+    return  getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest(nuanceIntegrationId, botId, jobId));
+  }
+
+  /**
+   * Get the status of an asynchronous Nuance bot GET job
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param botId The Nuance bot ID (required)
+   * @param jobId The asynchronous job ID (required)
+   * @return AsyncJob
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncJob> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobWithHttpInfo(String nuanceIntegrationId, String botId, String jobId) throws IOException {
+    return getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest(nuanceIntegrationId, botId, jobId).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest(String nuanceIntegrationId, String botId, String jobId) {
+    return GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest.builder()
+            .withNuanceIntegrationId(nuanceIntegrationId)
+
+            .withBotId(botId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get the status of an asynchronous Nuance bot GET job
+   * 
+   * @param request The request object
+   * @return AsyncJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the status of an asynchronous Nuance bot GET job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncJob> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncJob> response = (ApiResponse<AsyncJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncJob> response = (ApiResponse<AsyncJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the result of an asynchronous Nuance bot GET job
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param botId The Nuance bot ID (required)
+   * @param jobId The asynchronous job ID (required)
+   * @return NuanceBot
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(String nuanceIntegrationId, String botId, String jobId) throws IOException, ApiException {
+    return  getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest(nuanceIntegrationId, botId, jobId));
+  }
+
+  /**
+   * Get the result of an asynchronous Nuance bot GET job
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param botId The Nuance bot ID (required)
+   * @param jobId The asynchronous job ID (required)
+   * @return NuanceBot
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<NuanceBot> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsWithHttpInfo(String nuanceIntegrationId, String botId, String jobId) throws IOException {
+    return getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest(nuanceIntegrationId, botId, jobId).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest(String nuanceIntegrationId, String botId, String jobId) {
+    return GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest.builder()
+            .withNuanceIntegrationId(nuanceIntegrationId)
+
+            .withBotId(botId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get the result of an asynchronous Nuance bot GET job
+   * 
+   * @param request The request object
+   * @return NuanceBot
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<NuanceBot> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NuanceBot>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the result of an asynchronous Nuance bot GET job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<NuanceBot> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NuanceBot>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NuanceBot> response = (ApiResponse<NuanceBot>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NuanceBot> response = (ApiResponse<NuanceBot>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Nuance bots available in the specified Integration
+   * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (optional, default to true)
+   * @return NuanceBotEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBots(String nuanceIntegrationId, Integer pageNumber, Integer pageSize, Boolean onlyRegisteredBots) throws IOException, ApiException {
+    return  getIntegrationsSpeechNuanceNuanceIntegrationIdBots(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots));
+  }
+
+  /**
+   * Get a list of Nuance bots available in the specified Integration
+   * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (optional, default to true)
+   * @return NuanceBotEntityListing
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<NuanceBotEntityListing> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsWithHttpInfo(String nuanceIntegrationId, Integer pageNumber, Integer pageSize, Boolean onlyRegisteredBots) throws IOException {
+    return getIntegrationsSpeechNuanceNuanceIntegrationIdBots(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest(String nuanceIntegrationId, Integer pageNumber, Integer pageSize, Boolean onlyRegisteredBots) {
+    return GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest.builder()
+            .withNuanceIntegrationId(nuanceIntegrationId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withOnlyRegisteredBots(onlyRegisteredBots)
+
+            .build();
+  }
+
+  /**
+   * Get a list of Nuance bots available in the specified Integration
+   * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+   * @param request The request object
+   * @return NuanceBotEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBots(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<NuanceBotEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NuanceBotEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Nuance bots available in the specified Integration
+   * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<NuanceBotEntityListing> getIntegrationsSpeechNuanceNuanceIntegrationIdBots(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NuanceBotEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NuanceBotEntityListing> response = (ApiResponse<NuanceBotEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NuanceBotEntityListing> response = (ApiResponse<NuanceBotEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the status of an asynchronous Nuance bots GET job
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param jobId The asynchronous job ID (required)
+   * @return AsyncJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(String nuanceIntegrationId, String jobId) throws IOException, ApiException {
+    return  getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest(nuanceIntegrationId, jobId));
+  }
+
+  /**
+   * Get the status of an asynchronous Nuance bots GET job
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param jobId The asynchronous job ID (required)
+   * @return AsyncJob
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncJob> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobWithHttpInfo(String nuanceIntegrationId, String jobId) throws IOException {
+    return getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest(nuanceIntegrationId, jobId).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest(String nuanceIntegrationId, String jobId) {
+    return GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest.builder()
+            .withNuanceIntegrationId(nuanceIntegrationId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get the status of an asynchronous Nuance bots GET job
+   * 
+   * @param request The request object
+   * @return AsyncJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the status of an asynchronous Nuance bots GET job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncJob> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncJob> response = (ApiResponse<AsyncJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncJob> response = (ApiResponse<AsyncJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the result of an asynchronous Nuance bots GET job
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param jobId The asynchronous job ID (required)
+   * @return NuanceBotEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(String nuanceIntegrationId, String jobId) throws IOException, ApiException {
+    return  getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest(nuanceIntegrationId, jobId));
+  }
+
+  /**
+   * Get the result of an asynchronous Nuance bots GET job
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param jobId The asynchronous job ID (required)
+   * @return NuanceBotEntityListing
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<NuanceBotEntityListing> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsWithHttpInfo(String nuanceIntegrationId, String jobId) throws IOException {
+    return getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest(nuanceIntegrationId, jobId).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest(String nuanceIntegrationId, String jobId) {
+    return GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest.builder()
+            .withNuanceIntegrationId(nuanceIntegrationId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get the result of an asynchronous Nuance bots GET job
+   * 
+   * @param request The request object
+   * @return NuanceBotEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<NuanceBotEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NuanceBotEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the result of an asynchronous Nuance bots GET job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<NuanceBotEntityListing> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NuanceBotEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NuanceBotEntityListing> response = (ApiResponse<NuanceBotEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NuanceBotEntityListing> response = (ApiResponse<NuanceBotEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get details about a TTS engine
    * 
    * @param engineId The engine ID (required)
@@ -4580,6 +5135,277 @@ public class IntegrationsApi {
   }
 
   /**
+   * Get a Nuance bot in the specified Integration asynchronously
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param botId The Nuance bot ID (required)
+   * @param expand expand (optional)
+   * @param body targetChannel (optional)
+   * @return AsyncJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(String nuanceIntegrationId, String botId, List<String> expand, String body) throws IOException, ApiException {
+    return  postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest(nuanceIntegrationId, botId, expand, body));
+  }
+
+  /**
+   * Get a Nuance bot in the specified Integration asynchronously
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param botId The Nuance bot ID (required)
+   * @param expand expand (optional)
+   * @param body targetChannel (optional)
+   * @return AsyncJob
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncJob> postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsWithHttpInfo(String nuanceIntegrationId, String botId, List<String> expand, String body) throws IOException {
+    return postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest(nuanceIntegrationId, botId, expand, body).withHttpInfo());
+  }
+
+  private PostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest(String nuanceIntegrationId, String botId, List<String> expand, String body) {
+    return PostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest.builder()
+            .withNuanceIntegrationId(nuanceIntegrationId)
+
+            .withBotId(botId)
+
+            .withExpand(expand)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get a Nuance bot in the specified Integration asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(PostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Nuance bot in the specified Integration asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncJob> postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(ApiRequest<String> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncJob> response = (ApiResponse<AsyncJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncJob> response = (ApiResponse<AsyncJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Nuance bots in the specified Integration asynchronously
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (optional, default to true)
+   * @return AsyncJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(String nuanceIntegrationId, Integer pageNumber, Integer pageSize, Boolean onlyRegisteredBots) throws IOException, ApiException {
+    return  postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots));
+  }
+
+  /**
+   * Get a list of Nuance bots in the specified Integration asynchronously
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (optional, default to true)
+   * @return AsyncJob
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncJob> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsWithHttpInfo(String nuanceIntegrationId, Integer pageNumber, Integer pageSize, Boolean onlyRegisteredBots) throws IOException {
+    return postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots).withHttpInfo());
+  }
+
+  private PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest(String nuanceIntegrationId, Integer pageNumber, Integer pageSize, Boolean onlyRegisteredBots) {
+    return PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest.builder()
+            .withNuanceIntegrationId(nuanceIntegrationId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withOnlyRegisteredBots(onlyRegisteredBots)
+
+            .build();
+  }
+
+  /**
+   * Get a list of Nuance bots in the specified Integration asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Nuance bots in the specified Integration asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<AsyncJob> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncJob> response = (ApiResponse<AsyncJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncJob> response = (ApiResponse<AsyncJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Try out a single credential for a Nuance bot to know if the secret is correct
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param settings  (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(String nuanceIntegrationId, BotExecutionConfiguration settings) throws IOException, ApiException {
+     postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest(nuanceIntegrationId, settings));
+  }
+
+  /**
+   * Try out a single credential for a Nuance bot to know if the secret is correct
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param settings  (required)
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateWithHttpInfo(String nuanceIntegrationId, BotExecutionConfiguration settings) throws IOException {
+    return postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest(nuanceIntegrationId, settings).withHttpInfo());
+  }
+
+  private PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest(String nuanceIntegrationId, BotExecutionConfiguration settings) {
+    return PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest.builder()
+            .withNuanceIntegrationId(nuanceIntegrationId)
+
+            .withSettings(settings)
+
+            .build();
+  }
+
+  /**
+   * Try out a single credential for a Nuance bot to know if the secret is correct
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Try out a single credential for a Nuance bot to know if the secret is correct
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(ApiRequest<BotExecutionConfiguration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update integration configuration.
    * 
    * @param integrationId Integration Id (required)
@@ -4818,6 +5644,89 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CredentialInfo> response = (ApiResponse<CredentialInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param settings  (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(String nuanceIntegrationId, NuanceBotLaunchSettings settings) throws IOException, ApiException {
+     putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(createPutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest(nuanceIntegrationId, settings));
+  }
+
+  /**
+   * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+   * 
+   * @param nuanceIntegrationId The integration ID for this group of bots (required)
+   * @param settings  (required)
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsWithHttpInfo(String nuanceIntegrationId, NuanceBotLaunchSettings settings) throws IOException {
+    return putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(createPutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest(nuanceIntegrationId, settings).withHttpInfo());
+  }
+
+  private PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest createPutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest(String nuanceIntegrationId, NuanceBotLaunchSettings settings) {
+    return PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest.builder()
+            .withNuanceIntegrationId(nuanceIntegrationId)
+
+            .withSettings(settings)
+
+            .build();
+  }
+
+  /**
+   * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(ApiRequest<NuanceBotLaunchSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

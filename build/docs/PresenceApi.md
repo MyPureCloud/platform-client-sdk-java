@@ -7,8 +7,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deletePresenceDefinition0**](PresenceApi.html#deletePresenceDefinition0) | Delete a Presence Definition |
 | [**deletePresenceSource**](PresenceApi.html#deletePresenceSource) | Delete a Presence Source |
 | [**deletePresencedefinition**](PresenceApi.html#deletePresencedefinition) | Delete a Presence Definition |
+| [**getPresenceDefinition0**](PresenceApi.html#getPresenceDefinition0) | Get a Presence Definition |
+| [**getPresenceDefinitions0**](PresenceApi.html#getPresenceDefinitions0) | Get a list of Presence Definitions |
 | [**getPresenceSettings**](PresenceApi.html#getPresenceSettings) | Get the presence settings |
 | [**getPresenceSource**](PresenceApi.html#getPresenceSource) | Get a Presence Source |
 | [**getPresenceSources**](PresenceApi.html#getPresenceSources) | Get a list of Presence Sources |
@@ -20,14 +23,77 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | Get a user's Genesys Cloud presence. |
 | [**patchUserPresence**](PresenceApi.html#patchUserPresence) | Patch a user's Presence |
 | [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | Patch a Genesys Cloud user's presence |
+| [**postPresenceDefinitions0**](PresenceApi.html#postPresenceDefinitions0) | Create a Presence Definition |
 | [**postPresenceSources**](PresenceApi.html#postPresenceSources) | Create a Presence Source |
 | [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | Create a Presence Definition |
+| [**putPresenceDefinition0**](PresenceApi.html#putPresenceDefinition0) | Update a Presence Definition |
 | [**putPresenceSettings**](PresenceApi.html#putPresenceSettings) | Update the presence settings |
 | [**putPresenceSource**](PresenceApi.html#putPresenceSource) | Update a Presence Source |
 | [**putPresenceUserPrimarysource**](PresenceApi.html#putPresenceUserPrimarysource) | Update a user's Primary Presence Source |
 | [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | Update a Presence Definition |
 | [**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | Update bulk user Presences |
 {: class="table-striped"}
+
+<a name="deletePresenceDefinition0"></a>
+
+# **deletePresenceDefinition0**
+
+
+
+> Void deletePresenceDefinition0(definitionId)
+
+Delete a Presence Definition
+
+Wraps DELETE /api/v2/presence/definitions/{definitionId}  
+
+Requires ANY permissions: 
+
+* presence:presenceDefinition:delete
+* presence:presenceDefinition:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String definitionId = "definitionId_example"; // String | Presence Definition ID
+try {
+    apiInstance.deletePresenceDefinition0(definitionId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#deletePresenceDefinition0");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **definitionId** | **String**| Presence Definition ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deletePresenceSource"></a>
 
@@ -149,6 +215,130 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="getPresenceDefinition0"></a>
+
+# **getPresenceDefinition0**
+
+
+
+> [OrganizationPresenceDefinition](OrganizationPresenceDefinition.html) getPresenceDefinition0(definitionId)
+
+Get a Presence Definition
+
+Wraps GET /api/v2/presence/definitions/{definitionId}  
+
+Requires ALL permissions: 
+
+* presence:presenceDefinition:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String definitionId = "definitionId_example"; // String | Presence Definition ID
+try {
+    OrganizationPresenceDefinition result = apiInstance.getPresenceDefinition0(definitionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#getPresenceDefinition0");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **definitionId** | **String**| Presence Definition ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
+
+<a name="getPresenceDefinitions0"></a>
+
+# **getPresenceDefinitions0**
+
+
+
+> [OrganizationPresenceDefinitionEntityListing](OrganizationPresenceDefinitionEntityListing.html) getPresenceDefinitions0(deactivated, divisionId)
+
+Get a list of Presence Definitions
+
+Wraps GET /api/v2/presence/definitions  
+
+Requires ALL permissions: 
+
+* presence:presenceDefinition:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String deactivated = "false"; // String | Deactivated query can be TRUE or FALSE
+List<String> divisionId = Arrays.asList(null); // List<String> | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+try {
+    OrganizationPresenceDefinitionEntityListing result = apiInstance.getPresenceDefinitions0(deactivated, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#getPresenceDefinitions0");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **deactivated** | **String**| Deactivated query can be TRUE or FALSE | [optional] [default to false] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing.html)
 
 <a name="getPresenceSettings"></a>
 
@@ -831,6 +1021,67 @@ try {
 
 [**UserPresence**](UserPresence.html)
 
+<a name="postPresenceDefinitions0"></a>
+
+# **postPresenceDefinitions0**
+
+
+
+> [OrganizationPresenceDefinition](OrganizationPresenceDefinition.html) postPresenceDefinitions0(body)
+
+Create a Presence Definition
+
+Wraps POST /api/v2/presence/definitions  
+
+Requires ALL permissions: 
+
+* presence:presenceDefinition:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+OrganizationPresenceDefinition body = new OrganizationPresenceDefinition(); // OrganizationPresenceDefinition | The Presence Definition to create
+try {
+    OrganizationPresenceDefinition result = apiInstance.postPresenceDefinitions0(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#postPresenceDefinitions0");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)| The Presence Definition to create | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
+
 <a name="postPresenceSources"></a>
 
 # **postPresenceSources**
@@ -952,6 +1203,69 @@ try {
 ### Return type
 
 [**OrganizationPresence**](OrganizationPresence.html)
+
+<a name="putPresenceDefinition0"></a>
+
+# **putPresenceDefinition0**
+
+
+
+> [OrganizationPresenceDefinition](OrganizationPresenceDefinition.html) putPresenceDefinition0(definitionId, body)
+
+Update a Presence Definition
+
+Wraps PUT /api/v2/presence/definitions/{definitionId}  
+
+Requires ALL permissions: 
+
+* presence:presenceDefinition:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String definitionId = "definitionId_example"; // String | Presence Definition ID
+OrganizationPresenceDefinition body = new OrganizationPresenceDefinition(); // OrganizationPresenceDefinition | The updated Presence Definition
+try {
+    OrganizationPresenceDefinition result = apiInstance.putPresenceDefinition0(definitionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#putPresenceDefinition0");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **definitionId** | **String**| Presence Definition ID | 
+| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)| The updated Presence Definition | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
 
 <a name="putPresenceSettings"></a>
 

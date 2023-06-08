@@ -38,6 +38,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsSpeechLexBotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexBotAlias) | Get details about a Lex bot alias |
 | [**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | Get a list of aliases for a bot in the customer's AWS accounts |
 | [**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | Get a list of Lex bots in the customers' AWS accounts |
+| [**getIntegrationsSpeechNuanceNuanceIntegrationIdBot**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBot) | Get a Nuance bot in the specified Integration |
+| [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob) | Get the status of an asynchronous Nuance bot GET job |
+| [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults) | Get the result of an asynchronous Nuance bot GET job |
+| [**getIntegrationsSpeechNuanceNuanceIntegrationIdBots**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBots) | Get a list of Nuance bots available in the specified Integration |
+| [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob) | Get the status of an asynchronous Nuance bots GET job |
+| [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults) | Get the result of an asynchronous Nuance bots GET job |
 | [**getIntegrationsSpeechTtsEngine**](IntegrationsApi.html#getIntegrationsSpeechTtsEngine) | Get details about a TTS engine |
 | [**getIntegrationsSpeechTtsEngineVoice**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoice) | Get details about a specific voice for a TTS engine |
 | [**getIntegrationsSpeechTtsEngineVoices**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoices) | Get a list of voices for a TTS engine |
@@ -59,9 +65,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postIntegrationsActions**](IntegrationsApi.html#postIntegrationsActions) | Create a new Action |
 | [**postIntegrationsActionsDrafts**](IntegrationsApi.html#postIntegrationsActionsDrafts) | Create a new Draft |
 | [**postIntegrationsCredentials**](IntegrationsApi.html#postIntegrationsCredentials) | Create a set of credentials |
+| [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs) | Get a Nuance bot in the specified Integration asynchronously |
+| [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs) | Get a list of Nuance bots in the specified Integration asynchronously |
+| [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate) | Try out a single credential for a Nuance bot to know if the secret is correct |
 | [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | Update integration configuration. |
 | [**putIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#putIntegrationsBotconnectorIntegrationIdBots) | Set a list of botConnector bots plus versions for this integration |
 | [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | Update a set of credentials |
+| [**putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings**](IntegrationsApi.html#putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings) | Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration |
 | [**putIntegrationsSpeechTtsSettings**](IntegrationsApi.html#putIntegrationsSpeechTtsSettings) | Update TTS settings for an org |
 {: class="table-striped"}
 
@@ -2097,6 +2107,398 @@ try {
 
 [**LexBotEntityListing**](LexBotEntityListing.html)
 
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBot"></a>
+
+# **getIntegrationsSpeechNuanceNuanceIntegrationIdBot**
+
+
+
+> [NuanceBot](NuanceBot.html) getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, expand, targetChannel)
+
+Get a Nuance bot in the specified Integration
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+String botId = "botId_example"; // String | The Nuance bot ID to get
+List<String> expand = Arrays.asList(null); // List<String> | expand
+String targetChannel = "targetChannel_example"; // String | targetChannel
+try {
+    NuanceBot result = apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, expand, targetChannel);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechNuanceNuanceIntegrationIdBot");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nuanceIntegrationId** | **String**| The integration ID for this group of bots | 
+| **botId** | **String**| The Nuance bot ID to get | 
+| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional]<br />**Values**: variables, transferNodes, channels, locales 
+| **targetChannel** | **String**| targetChannel | [optional]<br />**Values**: digital, voice 
+{: class="table-striped"}
+
+
+### Return type
+
+[**NuanceBot**](NuanceBot.html)
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob"></a>
+
+# **getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob**
+
+
+
+> [AsyncJob](AsyncJob.html) getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId)
+
+Get the status of an asynchronous Nuance bot GET job
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+String botId = "botId_example"; // String | The Nuance bot ID
+String jobId = "jobId_example"; // String | The asynchronous job ID
+try {
+    AsyncJob result = apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nuanceIntegrationId** | **String**| The integration ID for this group of bots | 
+| **botId** | **String**| The Nuance bot ID | 
+| **jobId** | **String**| The asynchronous job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncJob**](AsyncJob.html)
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults"></a>
+
+# **getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults**
+
+
+
+> [NuanceBot](NuanceBot.html) getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId)
+
+Get the result of an asynchronous Nuance bot GET job
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+String botId = "botId_example"; // String | The Nuance bot ID
+String jobId = "jobId_example"; // String | The asynchronous job ID
+try {
+    NuanceBot result = apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nuanceIntegrationId** | **String**| The integration ID for this group of bots | 
+| **botId** | **String**| The Nuance bot ID | 
+| **jobId** | **String**| The asynchronous job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**NuanceBot**](NuanceBot.html)
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBots"></a>
+
+# **getIntegrationsSpeechNuanceNuanceIntegrationIdBots**
+
+
+
+> [NuanceBotEntityListing](NuanceBotEntityListing.html) getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots)
+
+Get a list of Nuance bots available in the specified Integration
+
+If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+Boolean onlyRegisteredBots = true; // Boolean | Limit bots to the ones configured for Genesys Cloud usage
+try {
+    NuanceBotEntityListing result = apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechNuanceNuanceIntegrationIdBots");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nuanceIntegrationId** | **String**| The integration ID for this group of bots | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **onlyRegisteredBots** | **Boolean**| Limit bots to the ones configured for Genesys Cloud usage | [optional] [default to true] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**NuanceBotEntityListing**](NuanceBotEntityListing.html)
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob"></a>
+
+# **getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob**
+
+
+
+> [AsyncJob](AsyncJob.html) getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId)
+
+Get the status of an asynchronous Nuance bots GET job
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+String jobId = "jobId_example"; // String | The asynchronous job ID
+try {
+    AsyncJob result = apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nuanceIntegrationId** | **String**| The integration ID for this group of bots | 
+| **jobId** | **String**| The asynchronous job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncJob**](AsyncJob.html)
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults"></a>
+
+# **getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults**
+
+
+
+> [NuanceBotEntityListing](NuanceBotEntityListing.html) getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId)
+
+Get the result of an asynchronous Nuance bots GET job
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+String jobId = "jobId_example"; // String | The asynchronous job ID
+try {
+    NuanceBotEntityListing result = apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nuanceIntegrationId** | **String**| The integration ID for this group of bots | 
+| **jobId** | **String**| The asynchronous job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**NuanceBotEntityListing**](NuanceBotEntityListing.html)
+
 <a name="getIntegrationsSpeechTtsEngine"></a>
 
 # **getIntegrationsSpeechTtsEngine**
@@ -3440,6 +3842,202 @@ try {
 
 [**CredentialInfo**](CredentialInfo.html)
 
+<a name="postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs"></a>
+
+# **postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs**
+
+
+
+> [AsyncJob](AsyncJob.html) postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, expand, body)
+
+Get a Nuance bot in the specified Integration asynchronously
+
+Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+String botId = "botId_example"; // String | The Nuance bot ID
+List<String> expand = Arrays.asList(null); // List<String> | expand
+String body = "body_example"; // String | targetChannel
+try {
+    AsyncJob result = apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, expand, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nuanceIntegrationId** | **String**| The integration ID for this group of bots | 
+| **botId** | **String**| The Nuance bot ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional]<br />**Values**: variables, transferNodes, channels, locales 
+| **body** | **String**| targetChannel | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncJob**](AsyncJob.html)
+
+<a name="postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs"></a>
+
+# **postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs**
+
+
+
+> [AsyncJob](AsyncJob.html) postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots)
+
+Get a list of Nuance bots in the specified Integration asynchronously
+
+Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+Boolean onlyRegisteredBots = true; // Boolean | Limit bots to the ones configured for Genesys Cloud usage
+try {
+    AsyncJob result = apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nuanceIntegrationId** | **String**| The integration ID for this group of bots | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **onlyRegisteredBots** | **Boolean**| Limit bots to the ones configured for Genesys Cloud usage | [optional] [default to true] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncJob**](AsyncJob.html)
+
+<a name="postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate"></a>
+
+# **postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate**
+
+
+
+> Void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings)
+
+Try out a single credential for a Nuance bot to know if the secret is correct
+
+Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate  
+
+Requires ANY permissions: 
+
+* integrations:integration:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+BotExecutionConfiguration settings = new BotExecutionConfiguration(); // BotExecutionConfiguration | 
+try {
+    apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nuanceIntegrationId** | **String**| The integration ID for this group of bots | 
+| **settings** | [**BotExecutionConfiguration**](BotExecutionConfiguration.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="putIntegrationConfigCurrent"></a>
 
 # **putIntegrationConfigCurrent**
@@ -3626,6 +4224,68 @@ try {
 ### Return type
 
 [**CredentialInfo**](CredentialInfo.html)
+
+<a name="putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings"></a>
+
+# **putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings**
+
+
+
+> Void putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings)
+
+Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+
+Wraps PUT /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings  
+
+Requires ANY permissions: 
+
+* integrations:integration:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+NuanceBotLaunchSettings settings = new NuanceBotLaunchSettings(); // NuanceBotLaunchSettings | 
+try {
+    apiInstance.putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nuanceIntegrationId** | **String**| The integration ID for this group of bots | 
+| **settings** | [**NuanceBotLaunchSettings**](NuanceBotLaunchSettings.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="putIntegrationsSpeechTtsSettings"></a>
 

@@ -8,9 +8,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteGroup**](GroupsApi.html#deleteGroup) | Delete group |
+| [**deleteGroupDynamicsettings**](GroupsApi.html#deleteGroupDynamicsettings) | Remove dynamic group definition |
 | [**deleteGroupMembers**](GroupsApi.html#deleteGroupMembers) | Remove members |
 | [**getFieldconfig**](GroupsApi.html#getFieldconfig) | Fetch field config for an entity type |
 | [**getGroup**](GroupsApi.html#getGroup) | Get group |
+| [**getGroupDynamicsettings**](GroupsApi.html#getGroupDynamicsettings) | Get dynamic group definition |
 | [**getGroupIndividuals**](GroupsApi.html#getGroupIndividuals) | Get all individuals associated with the group |
 | [**getGroupMembers**](GroupsApi.html#getGroupMembers) | Get group members, includes individuals, owners, and dynamically included people |
 | [**getGroupProfile**](GroupsApi.html#getGroupProfile) | Get group profile |
@@ -19,8 +21,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getProfilesGroups**](GroupsApi.html#getProfilesGroups) | Get group profile listing |
 | [**postGroupMembers**](GroupsApi.html#postGroupMembers) | Add members |
 | [**postGroups**](GroupsApi.html#postGroups) | Create a group |
+| [**postGroupsDynamicsettingsPreview**](GroupsApi.html#postGroupsDynamicsettingsPreview) | Preview the number of users selected for a dynamic group definition query |
 | [**postGroupsSearch**](GroupsApi.html#postGroupsSearch) | Search groups |
 | [**putGroup**](GroupsApi.html#putGroup) | Update group |
+| [**putGroupDynamicsettings**](GroupsApi.html#putGroupDynamicsettings) | Create / Update dynamic group definition |
 {: class="table-striped"}
 
 <a name="deleteGroup"></a>
@@ -66,6 +70,66 @@ try {
     apiInstance.deleteGroup(groupId);
 } catch (ApiException e) {
     System.err.println("Exception when calling GroupsApi#deleteGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **groupId** | **String**| Group ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteGroupDynamicsettings"></a>
+
+# **deleteGroupDynamicsettings**
+
+
+
+> Void deleteGroupDynamicsettings(groupId)
+
+Remove dynamic group definition
+
+Wraps DELETE /api/v2/groups/{groupId}/dynamicsettings  
+
+Requires ANY permissions: 
+
+* directory:group:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GroupsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GroupsApi apiInstance = new GroupsApi();
+String groupId = "groupId_example"; // String | Group ID
+try {
+    apiInstance.deleteGroupDynamicsettings(groupId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GroupsApi#deleteGroupDynamicsettings");
     e.printStackTrace();
 }
 ```
@@ -264,6 +328,67 @@ try {
 ### Return type
 
 [**Group**](Group.html)
+
+<a name="getGroupDynamicsettings"></a>
+
+# **getGroupDynamicsettings**
+
+
+
+> [DynamicGroupDefinition](DynamicGroupDefinition.html) getGroupDynamicsettings(groupId)
+
+Get dynamic group definition
+
+Wraps GET /api/v2/groups/{groupId}/dynamicsettings  
+
+Requires ANY permissions: 
+
+* directory:group:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GroupsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GroupsApi apiInstance = new GroupsApi();
+String groupId = "groupId_example"; // String | Group ID
+try {
+    DynamicGroupDefinition result = apiInstance.getGroupDynamicsettings(groupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GroupsApi#getGroupDynamicsettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **groupId** | **String**| Group ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DynamicGroupDefinition**](DynamicGroupDefinition.html)
 
 <a name="getGroupIndividuals"></a>
 
@@ -780,6 +905,67 @@ try {
 
 [**Group**](Group.html)
 
+<a name="postGroupsDynamicsettingsPreview"></a>
+
+# **postGroupsDynamicsettingsPreview**
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+> [DynamicGroupQueryPreview](DynamicGroupQueryPreview.html) postGroupsDynamicsettingsPreview(body)
+
+Preview the number of users selected for a dynamic group definition query
+
+Wraps POST /api/v2/groups/dynamicsettings/preview  
+
+Requires ANY permissions: 
+
+* directory:group:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GroupsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GroupsApi apiInstance = new GroupsApi();
+DynamicGroupQuery body = new DynamicGroupQuery(); // DynamicGroupQuery | Group query to preview
+try {
+    DynamicGroupQueryPreview result = apiInstance.postGroupsDynamicsettingsPreview(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GroupsApi#postGroupsDynamicsettingsPreview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DynamicGroupQuery**](DynamicGroupQuery.html)| Group query to preview | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DynamicGroupQueryPreview**](DynamicGroupQueryPreview.html)
+
 <a name="postGroupsSearch"></a>
 
 # **postGroupsSearch**
@@ -902,4 +1088,66 @@ try {
 ### Return type
 
 [**Group**](Group.html)
+
+<a name="putGroupDynamicsettings"></a>
+
+# **putGroupDynamicsettings**
+
+
+
+> Void putGroupDynamicsettings(groupId, body)
+
+Create / Update dynamic group definition
+
+Wraps PUT /api/v2/groups/{groupId}/dynamicsettings  
+
+Requires ANY permissions: 
+
+* directory:group:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GroupsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GroupsApi apiInstance = new GroupsApi();
+String groupId = "groupId_example"; // String | Group ID
+DynamicGroupQuery body = new DynamicGroupQuery(); // DynamicGroupQuery | Create/Update dynamic groups
+try {
+    apiInstance.putGroupDynamicsettings(groupId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GroupsApi#putGroupDynamicsettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **groupId** | **String**| Group ID | 
+| **body** | [**DynamicGroupQuery**](DynamicGroupQuery.html)| Create/Update dynamic groups | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 

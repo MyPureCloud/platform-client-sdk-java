@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
+import com.mypurecloud.sdk.v2.model.CriteriaQuery;
 import com.mypurecloud.sdk.v2.model.DataTable;
 import com.mypurecloud.sdk.v2.model.DataTableExportJob;
 import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
@@ -27,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroup;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExecutionDataRequest;
 import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
@@ -38,9 +40,12 @@ import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcome;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
+import com.mypurecloud.sdk.v2.model.FlowResultEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowsQueryCriteriaResponse;
+import com.mypurecloud.sdk.v2.model.GetFlowExecutionDataJobResult;
 import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
@@ -120,6 +125,9 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstanceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesQuerycapabilitiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesRequest;
@@ -151,6 +159,8 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsExecutionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsInstancesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsInstancesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
@@ -5406,6 +5416,256 @@ public class ArchitectApi {
   }
 
   /**
+   * Start a process (job) to prepare a download of a singular flow execution data instance by Id
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param instanceId Instance ID (required)
+   * @param expand Expand various details. (optional)
+   * @return GetFlowExecutionDataJobResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public GetFlowExecutionDataJobResult getFlowsInstance(String instanceId, String expand) throws IOException, ApiException {
+    return  getFlowsInstance(createGetFlowsInstanceRequest(instanceId, expand));
+  }
+
+  /**
+   * Start a process (job) to prepare a download of a singular flow execution data instance by Id
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param instanceId Instance ID (required)
+   * @param expand Expand various details. (optional)
+   * @return GetFlowExecutionDataJobResult
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<GetFlowExecutionDataJobResult> getFlowsInstanceWithHttpInfo(String instanceId, String expand) throws IOException {
+    return getFlowsInstance(createGetFlowsInstanceRequest(instanceId, expand).withHttpInfo());
+  }
+
+  private GetFlowsInstanceRequest createGetFlowsInstanceRequest(String instanceId, String expand) {
+    return GetFlowsInstanceRequest.builder()
+            .withInstanceId(instanceId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Start a process (job) to prepare a download of a singular flow execution data instance by Id
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param request The request object
+   * @return GetFlowExecutionDataJobResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public GetFlowExecutionDataJobResult getFlowsInstance(GetFlowsInstanceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GetFlowExecutionDataJobResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetFlowExecutionDataJobResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start a process (job) to prepare a download of a singular flow execution data instance by Id
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<GetFlowExecutionDataJobResult> getFlowsInstance(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GetFlowExecutionDataJobResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the status and/or results of an asynchronous flow execution data retrieval job
+   * 
+   * @param jobId The asynchronous job ID (required)
+   * @return GetFlowExecutionDataJobResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public GetFlowExecutionDataJobResult getFlowsInstancesJob(String jobId) throws IOException, ApiException {
+    return  getFlowsInstancesJob(createGetFlowsInstancesJobRequest(jobId));
+  }
+
+  /**
+   * Get the status and/or results of an asynchronous flow execution data retrieval job
+   * 
+   * @param jobId The asynchronous job ID (required)
+   * @return GetFlowExecutionDataJobResult
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<GetFlowExecutionDataJobResult> getFlowsInstancesJobWithHttpInfo(String jobId) throws IOException {
+    return getFlowsInstancesJob(createGetFlowsInstancesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetFlowsInstancesJobRequest createGetFlowsInstancesJobRequest(String jobId) {
+    return GetFlowsInstancesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get the status and/or results of an asynchronous flow execution data retrieval job
+   * 
+   * @param request The request object
+   * @return GetFlowExecutionDataJobResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public GetFlowExecutionDataJobResult getFlowsInstancesJob(GetFlowsInstancesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GetFlowExecutionDataJobResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetFlowExecutionDataJobResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the status and/or results of an asynchronous flow execution data retrieval job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<GetFlowExecutionDataJobResult> getFlowsInstancesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GetFlowExecutionDataJobResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve a list of capabilities that the org can use to query for execution data
+   * Returns the queryable parameters that can be used to build a query for execution data.
+   * @param expand Expand various query types. (optional)
+   * @return FlowsQueryCriteriaResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public FlowsQueryCriteriaResponse getFlowsInstancesQuerycapabilities(String expand) throws IOException, ApiException {
+    return  getFlowsInstancesQuerycapabilities(createGetFlowsInstancesQuerycapabilitiesRequest(expand));
+  }
+
+  /**
+   * Retrieve a list of capabilities that the org can use to query for execution data
+   * Returns the queryable parameters that can be used to build a query for execution data.
+   * @param expand Expand various query types. (optional)
+   * @return FlowsQueryCriteriaResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<FlowsQueryCriteriaResponse> getFlowsInstancesQuerycapabilitiesWithHttpInfo(String expand) throws IOException {
+    return getFlowsInstancesQuerycapabilities(createGetFlowsInstancesQuerycapabilitiesRequest(expand).withHttpInfo());
+  }
+
+  private GetFlowsInstancesQuerycapabilitiesRequest createGetFlowsInstancesQuerycapabilitiesRequest(String expand) {
+    return GetFlowsInstancesQuerycapabilitiesRequest.builder()
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Retrieve a list of capabilities that the org can use to query for execution data
+   * Returns the queryable parameters that can be used to build a query for execution data.
+   * @param request The request object
+   * @return FlowsQueryCriteriaResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public FlowsQueryCriteriaResponse getFlowsInstancesQuerycapabilities(GetFlowsInstancesQuerycapabilitiesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowsQueryCriteriaResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowsQueryCriteriaResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a list of capabilities that the org can use to query for execution data
+   * Returns the queryable parameters that can be used to build a query for execution data.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<FlowsQueryCriteriaResponse> getFlowsInstancesQuerycapabilities(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowsQueryCriteriaResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowsQueryCriteriaResponse> response = (ApiResponse<FlowsQueryCriteriaResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowsQueryCriteriaResponse> response = (ApiResponse<FlowsQueryCriteriaResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Fetch Architect Job Status
    * 
    * @param jobId Job ID (required)
@@ -7956,6 +8216,178 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FlowExecutionLaunchResponse> response = (ApiResponse<FlowExecutionLaunchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start a process (job) that will prepare a list of execution data IDs for download.
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param body Requested Flow Ids (required)
+   * @param expand Expand various query types. (optional)
+   * @return GetFlowExecutionDataJobResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public GetFlowExecutionDataJobResult postFlowsInstancesJobs(ExecutionDataRequest body, String expand) throws IOException, ApiException {
+    return  postFlowsInstancesJobs(createPostFlowsInstancesJobsRequest(body, expand));
+  }
+
+  /**
+   * Start a process (job) that will prepare a list of execution data IDs for download.
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param body Requested Flow Ids (required)
+   * @param expand Expand various query types. (optional)
+   * @return GetFlowExecutionDataJobResult
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<GetFlowExecutionDataJobResult> postFlowsInstancesJobsWithHttpInfo(ExecutionDataRequest body, String expand) throws IOException {
+    return postFlowsInstancesJobs(createPostFlowsInstancesJobsRequest(body, expand).withHttpInfo());
+  }
+
+  private PostFlowsInstancesJobsRequest createPostFlowsInstancesJobsRequest(ExecutionDataRequest body, String expand) {
+    return PostFlowsInstancesJobsRequest.builder()
+            .withBody(body)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Start a process (job) that will prepare a list of execution data IDs for download.
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param request The request object
+   * @return GetFlowExecutionDataJobResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public GetFlowExecutionDataJobResult postFlowsInstancesJobs(PostFlowsInstancesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GetFlowExecutionDataJobResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetFlowExecutionDataJobResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start a process (job) that will prepare a list of execution data IDs for download.
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<GetFlowExecutionDataJobResult> postFlowsInstancesJobs(ApiRequest<ExecutionDataRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GetFlowExecutionDataJobResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the database of existing flow histories to look for particular flow criteria
+   * Returns a list of matching flow histories up to 200 max.
+   * @param body query (required)
+   * @param indexOnly indexes only (optional)
+   * @return FlowResultEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public FlowResultEntityListing postFlowsInstancesQuery(CriteriaQuery body, Boolean indexOnly) throws IOException, ApiException {
+    return  postFlowsInstancesQuery(createPostFlowsInstancesQueryRequest(body, indexOnly));
+  }
+
+  /**
+   * Query the database of existing flow histories to look for particular flow criteria
+   * Returns a list of matching flow histories up to 200 max.
+   * @param body query (required)
+   * @param indexOnly indexes only (optional)
+   * @return FlowResultEntityListing
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<FlowResultEntityListing> postFlowsInstancesQueryWithHttpInfo(CriteriaQuery body, Boolean indexOnly) throws IOException {
+    return postFlowsInstancesQuery(createPostFlowsInstancesQueryRequest(body, indexOnly).withHttpInfo());
+  }
+
+  private PostFlowsInstancesQueryRequest createPostFlowsInstancesQueryRequest(CriteriaQuery body, Boolean indexOnly) {
+    return PostFlowsInstancesQueryRequest.builder()
+            .withBody(body)
+
+            .withIndexOnly(indexOnly)
+
+            .build();
+  }
+
+  /**
+   * Query the database of existing flow histories to look for particular flow criteria
+   * Returns a list of matching flow histories up to 200 max.
+   * @param request The request object
+   * @return FlowResultEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public FlowResultEntityListing postFlowsInstancesQuery(PostFlowsInstancesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowResultEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowResultEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the database of existing flow histories to look for particular flow criteria
+   * Returns a list of matching flow histories up to 200 max.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<FlowResultEntityListing> postFlowsInstancesQuery(ApiRequest<CriteriaQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowResultEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowResultEntityListing> response = (ApiResponse<FlowResultEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowResultEntityListing> response = (ApiResponse<FlowResultEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

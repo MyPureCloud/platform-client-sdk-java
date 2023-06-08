@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.BulkResponse;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
 import com.mypurecloud.sdk.v2.model.CategoryRequest;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
@@ -28,7 +29,11 @@ import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentContentUpload;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearch;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentReq;
@@ -103,6 +108,7 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLabelsRequest
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrainingRequest;
@@ -132,12 +138,16 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseCategoriesRe
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVariationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsSearchSuggestionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseExportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLabelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageTrainingPromoteRequest;
@@ -2501,6 +2511,85 @@ public class KnowledgeApiAsync {
   }
 
   /**
+   * Get document content upload status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public Future<KnowledgeDocumentContentUpload> getKnowledgeKnowledgebaseLanguageDocumentUploadAsync(GetKnowledgeKnowledgebaseLanguageDocumentUploadRequest request, final AsyncApiCallback<KnowledgeDocumentContentUpload> callback) {
+    try {
+      final SettableFuture<KnowledgeDocumentContentUpload> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeDocumentContentUpload>() {}, new AsyncApiCallback<ApiResponse<KnowledgeDocumentContentUpload>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeDocumentContentUpload> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get document content upload status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<KnowledgeDocumentContentUpload>> getKnowledgeKnowledgebaseLanguageDocumentUploadAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeDocumentContentUpload>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeDocumentContentUpload>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeDocumentContentUpload>() {}, new AsyncApiCallback<ApiResponse<KnowledgeDocumentContentUpload>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeDocumentContentUpload> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeDocumentContentUpload> response = (ApiResponse<KnowledgeDocumentContentUpload>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeDocumentContentUpload> response = (ApiResponse<KnowledgeDocumentContentUpload>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get documents
    * 
    * @param request the request object
@@ -4692,6 +4781,160 @@ public class KnowledgeApiAsync {
   }
 
   /**
+   * Bulk remove documents.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkRemoveAsync(PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest request, final AsyncApiCallback<BulkResponse> callback) {
+    try {
+      final SettableFuture<BulkResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkResponse>() {}, new AsyncApiCallback<ApiResponse<BulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk remove documents.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<BulkResponse>> postKnowledgeKnowledgebaseDocumentsBulkRemoveAsync(ApiRequest<KnowledgeDocumentBulkRemoveRequest> request, final AsyncApiCallback<ApiResponse<BulkResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkResponse>() {}, new AsyncApiCallback<ApiResponse<BulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update documents.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkUpdateAsync(PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest request, final AsyncApiCallback<BulkResponse> callback) {
+    try {
+      final SettableFuture<BulkResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkResponse>() {}, new AsyncApiCallback<ApiResponse<BulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update documents.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<BulkResponse>> postKnowledgeKnowledgebaseDocumentsBulkUpdateAsync(ApiRequest<KnowledgeDocumentBulkUpdateRequest> request, final AsyncApiCallback<ApiResponse<BulkResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkResponse>() {}, new AsyncApiCallback<ApiResponse<BulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Search the documents in a knowledge base.
    * 
    * @param request the request object
@@ -4830,6 +5073,83 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<KnowledgeDocumentSuggestion> response = (ApiResponse<KnowledgeDocumentSuggestion>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk add document versions.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<BulkResponse> postKnowledgeKnowledgebaseDocumentsVersionsBulkAddAsync(PostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest request, final AsyncApiCallback<BulkResponse> callback) {
+    try {
+      final SettableFuture<BulkResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkResponse>() {}, new AsyncApiCallback<ApiResponse<BulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk add document versions.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<BulkResponse>> postKnowledgeKnowledgebaseDocumentsVersionsBulkAddAsync(ApiRequest<KnowledgeDocumentBulkVersionAddRequest> request, final AsyncApiCallback<ApiResponse<BulkResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkResponse>() {}, new AsyncApiCallback<ApiResponse<BulkResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5132,6 +5452,85 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<KnowledgeExtendedCategory> response = (ApiResponse<KnowledgeExtendedCategory>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Upload Article Content
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public Future<KnowledgeDocumentContentUpload> postKnowledgeKnowledgebaseLanguageDocumentUploadsAsync(PostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest request, final AsyncApiCallback<KnowledgeDocumentContentUpload> callback) {
+    try {
+      final SettableFuture<KnowledgeDocumentContentUpload> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeDocumentContentUpload>() {}, new AsyncApiCallback<ApiResponse<KnowledgeDocumentContentUpload>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeDocumentContentUpload> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Upload Article Content
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<KnowledgeDocumentContentUpload>> postKnowledgeKnowledgebaseLanguageDocumentUploadsAsync(ApiRequest<KnowledgeDocumentContentUpload> request, final AsyncApiCallback<ApiResponse<KnowledgeDocumentContentUpload>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeDocumentContentUpload>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeDocumentContentUpload>() {}, new AsyncApiCallback<ApiResponse<KnowledgeDocumentContentUpload>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeDocumentContentUpload> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeDocumentContentUpload> response = (ApiResponse<KnowledgeDocumentContentUpload>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeDocumentContentUpload> response = (ApiResponse<KnowledgeDocumentContentUpload>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

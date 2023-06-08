@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTeamMembers**](TeamsApi.html#getTeamMembers) | Get team membership |
 | [**getTeams**](TeamsApi.html#getTeams) | Get Team listing |
 | [**patchTeam**](TeamsApi.html#patchTeam) | Update team |
+| [**postAnalyticsTeamsActivityQuery**](TeamsApi.html#postAnalyticsTeamsActivityQuery) | Query for team activity observations |
 | [**postTeamMembers**](TeamsApi.html#postTeamMembers) | Add team members |
 | [**postTeams**](TeamsApi.html#postTeams) | Create a team |
 | [**postTeamsSearch**](TeamsApi.html#postTeamsSearch) | Search resources. |
@@ -401,6 +402,71 @@ try {
 ### Return type
 
 [**Team**](Team.html)
+
+<a name="postAnalyticsTeamsActivityQuery"></a>
+
+# **postAnalyticsTeamsActivityQuery**
+
+
+
+> [TeamActivityResponse](TeamActivityResponse.html) postAnalyticsTeamsActivityQuery(body, pageSize, pageNumber)
+
+Query for team activity observations
+
+Wraps POST /api/v2/analytics/teams/activity/query  
+
+Requires ANY permissions: 
+
+* analytics:teamObservation:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TeamsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TeamsApi apiInstance = new TeamsApi();
+TeamActivityQuery body = new TeamActivityQuery(); // TeamActivityQuery | query
+Integer pageSize = 56; // Integer | The desired page size
+Integer pageNumber = 56; // Integer | The desired page number
+try {
+    TeamActivityResponse result = apiInstance.postAnalyticsTeamsActivityQuery(body, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TeamsApi#postAnalyticsTeamsActivityQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TeamActivityQuery**](TeamActivityQuery.html)| query | 
+| **pageSize** | **Integer**| The desired page size | [optional] 
+| **pageNumber** | **Integer**| The desired page number | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TeamActivityResponse**](TeamActivityResponse.html)
 
 <a name="postTeamMembers"></a>
 

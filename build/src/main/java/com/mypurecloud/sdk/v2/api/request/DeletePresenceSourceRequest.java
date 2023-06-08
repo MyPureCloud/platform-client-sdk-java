@@ -22,6 +22,8 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
+import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinition;
+import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinitionEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceEntityListing;
 import com.mypurecloud.sdk.v2.model.PresenceSettings;
 import com.mypurecloud.sdk.v2.model.Source;

@@ -12,6 +12,8 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Team;
+import com.mypurecloud.sdk.v2.model.TeamActivityQuery;
+import com.mypurecloud.sdk.v2.model.TeamActivityResponse;
 import com.mypurecloud.sdk.v2.model.TeamEntityListing;
 import com.mypurecloud.sdk.v2.model.TeamMemberAddListingResponse;
 import com.mypurecloud.sdk.v2.model.TeamMemberEntityListing;
@@ -26,6 +28,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTeamRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTeamMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTeamsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTeamRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTeamsActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTeamMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTeamsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTeamsSearchRequest;
@@ -545,6 +548,96 @@ public class TeamsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Team> response = (ApiResponse<Team>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for team activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return TeamActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public TeamActivityResponse postAnalyticsTeamsActivityQuery(TeamActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  postAnalyticsTeamsActivityQuery(createPostAnalyticsTeamsActivityQueryRequest(body, pageSize, pageNumber));
+  }
+
+  /**
+   * Query for team activity observations
+   * 
+   * @param body query (required)
+   * @param pageSize The desired page size (optional)
+   * @param pageNumber The desired page number (optional)
+   * @return TeamActivityResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<TeamActivityResponse> postAnalyticsTeamsActivityQueryWithHttpInfo(TeamActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
+    return postAnalyticsTeamsActivityQuery(createPostAnalyticsTeamsActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private PostAnalyticsTeamsActivityQueryRequest createPostAnalyticsTeamsActivityQueryRequest(TeamActivityQuery body, Integer pageSize, Integer pageNumber) {
+    return PostAnalyticsTeamsActivityQueryRequest.builder()
+            .withBody(body)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Query for team activity observations
+   * 
+   * @param request The request object
+   * @return TeamActivityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public TeamActivityResponse postAnalyticsTeamsActivityQuery(PostAnalyticsTeamsActivityQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TeamActivityResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TeamActivityResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for team activity observations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<TeamActivityResponse> postAnalyticsTeamsActivityQuery(ApiRequest<TeamActivityQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TeamActivityResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TeamActivityResponse> response = (ApiResponse<TeamActivityResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TeamActivityResponse> response = (ApiResponse<TeamActivityResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

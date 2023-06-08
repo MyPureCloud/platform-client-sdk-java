@@ -13,10 +13,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteOrgauthorizationTrusteeGroupRoles**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeGroupRoles) | Delete Trustee Group Roles |
 | [**deleteOrgauthorizationTrusteeUser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeUser) | Delete Trustee User |
 | [**deleteOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeUserRoles) | Delete Trustee User Roles |
+| [**deleteOrgauthorizationTrustees**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustees) | Delete Bulk Org Trustees |
 | [**deleteOrgauthorizationTrustor**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustor) | Delete Org Trust |
 | [**deleteOrgauthorizationTrustorCloneduser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustorCloneduser) | Delete Cloned User |
 | [**deleteOrgauthorizationTrustorGroup**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustorGroup) | Delete Trustee Group |
 | [**deleteOrgauthorizationTrustorUser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustorUser) | Delete Trustee User |
+| [**deleteOrgauthorizationTrustors**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustors) | Delete Bulk Org Trustors |
 | [**getOrgauthorizationPairing**](OrganizationAuthorizationApi.html#getOrgauthorizationPairing) | Get Pairing Info |
 | [**getOrgauthorizationTrustee**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustee) | Get Org Trust |
 | [**getOrgauthorizationTrusteeClonedusers**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteeClonedusers) | The list of cloned users from the trustee organization (i.e. users with a native user record). |
@@ -423,6 +425,66 @@ try {
 
 null (empty response body)
 
+<a name="deleteOrgauthorizationTrustees"></a>
+
+# **deleteOrgauthorizationTrustees**
+
+
+
+> Void deleteOrgauthorizationTrustees(id)
+
+Delete Bulk Org Trustees
+
+Wraps DELETE /api/v2/orgauthorization/trustees  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+List<String> id = Arrays.asList(null); // List<String> | Comma separated list of trustee ids to remove
+try {
+    apiInstance.deleteOrgauthorizationTrustees(id);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#deleteOrgauthorizationTrustees");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String.html)| Comma separated list of trustee ids to remove | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="deleteOrgauthorizationTrustor"></a>
 
 # **deleteOrgauthorizationTrustor**
@@ -662,6 +724,66 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **trustorOrgId** | **String**| Trustor Organization Id | 
 | **trusteeUserId** | **String**| Trustee User Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOrgauthorizationTrustors"></a>
+
+# **deleteOrgauthorizationTrustors**
+
+
+
+> Void deleteOrgauthorizationTrustors(id)
+
+Delete Bulk Org Trustors
+
+Wraps DELETE /api/v2/orgauthorization/trustors  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustor:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+List<String> id = Arrays.asList(null); // List<String> | Comma separated list of trustor ids to remove
+try {
+    apiInstance.deleteOrgauthorizationTrustors(id);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#deleteOrgauthorizationTrustors");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String.html)| Comma separated list of trustor ids to remove | 
 {: class="table-striped"}
 
 

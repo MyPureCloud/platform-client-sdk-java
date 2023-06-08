@@ -12,6 +12,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteJourneyOutcome**](JourneyApi.html#deleteJourneyOutcome) | Delete an outcome. |
 | [**deleteJourneyOutcomesPredictor**](JourneyApi.html#deleteJourneyOutcomesPredictor) | Delete an outcome predictor. |
 | [**deleteJourneySegment**](JourneyApi.html#deleteJourneySegment) | Delete a segment. |
+| [**getAnalyticsJourneysAggregatesJob**](JourneyApi.html#getAnalyticsJourneysAggregatesJob) | Get status for async query for journey aggregates |
+| [**getAnalyticsJourneysAggregatesJobResults**](JourneyApi.html#getAnalyticsJourneysAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getJourneyActionmap**](JourneyApi.html#getJourneyActionmap) | Retrieve a single action map. |
 | [**getJourneyActionmaps**](JourneyApi.html#getJourneyActionmaps) | Retrieve all action maps. |
 | [**getJourneyActionmapsEstimatesJob**](JourneyApi.html#getJourneyActionmapsEstimatesJob) | Get status of job. |
@@ -20,24 +22,31 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneyActiontargets**](JourneyApi.html#getJourneyActiontargets) | Retrieve all action targets. |
 | [**getJourneyActiontemplate**](JourneyApi.html#getJourneyActiontemplate) | Retrieve a single action template. |
 | [**getJourneyActiontemplates**](JourneyApi.html#getJourneyActiontemplates) | Retrieve all action templates. |
+| [**getJourneyCustomerCustomerIdSessions**](JourneyApi.html#getJourneyCustomerCustomerIdSessions) | Retrieve all sessions for a given customer. |
 | [**getJourneyOutcome**](JourneyApi.html#getJourneyOutcome) | Retrieve a single outcome. |
 | [**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | Retrieve all outcomes. |
+| [**getJourneyOutcomesAttributionsJob**](JourneyApi.html#getJourneyOutcomesAttributionsJob) | Get job status. |
+| [**getJourneyOutcomesAttributionsJobResults**](JourneyApi.html#getJourneyOutcomesAttributionsJobResults) | Get outcome attribution entities from completed job. |
 | [**getJourneyOutcomesPredictor**](JourneyApi.html#getJourneyOutcomesPredictor) | Retrieve a single outcome predictor. |
 | [**getJourneyOutcomesPredictors**](JourneyApi.html#getJourneyOutcomesPredictors) | Retrieve all outcome predictors. |
 | [**getJourneySegment**](JourneyApi.html#getJourneySegment) | Retrieve a single segment. |
 | [**getJourneySegments**](JourneyApi.html#getJourneySegments) | Retrieve all segments. |
 | [**getJourneySession**](JourneyApi.html#getJourneySession) | Retrieve a single session. |
+| [**getJourneySessionEvents**](JourneyApi.html#getJourneySessionEvents) | Retrieve all events for a given session. |
 | [**getJourneySessionOutcomescores**](JourneyApi.html#getJourneySessionOutcomescores) | Retrieve latest outcome score associated with a session for all outcomes. |
+| [**getJourneySessionSegments**](JourneyApi.html#getJourneySessionSegments) | Retrieve segment assignments by session ID. |
 | [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | Update single action map. |
 | [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | Update a single action target. |
 | [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | Update a single action template. |
 | [**patchJourneyOutcome**](JourneyApi.html#patchJourneyOutcome) | Update an outcome. |
 | [**patchJourneySegment**](JourneyApi.html#patchJourneySegment) | Update a segment. |
+| [**postAnalyticsJourneysAggregatesJobs**](JourneyApi.html#postAnalyticsJourneysAggregatesJobs) | Query for journey aggregates asynchronously |
 | [**postAnalyticsJourneysAggregatesQuery**](JourneyApi.html#postAnalyticsJourneysAggregatesQuery) | Query for journey aggregates |
 | [**postJourneyActionmaps**](JourneyApi.html#postJourneyActionmaps) | Create an action map. |
 | [**postJourneyActionmapsEstimatesJobs**](JourneyApi.html#postJourneyActionmapsEstimatesJobs) | Query for estimates |
 | [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | Create a single action template. |
 | [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | Create an outcome. |
+| [**postJourneyOutcomesAttributionsJobs**](JourneyApi.html#postJourneyOutcomesAttributionsJobs) | Create Outcome Attributions |
 | [**postJourneyOutcomesPredictors**](JourneyApi.html#postJourneyOutcomesPredictors) | Create an outcome predictor. |
 | [**postJourneySegments**](JourneyApi.html#postJourneySegments) | Create a segment. |
 {: class="table-striped"}
@@ -343,6 +352,130 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="getAnalyticsJourneysAggregatesJob"></a>
+
+# **getAnalyticsJourneysAggregatesJob**
+
+
+
+> [AsyncQueryStatus](AsyncQueryStatus.html) getAnalyticsJourneysAggregatesJob(jobId)
+
+Get status for async query for journey aggregates
+
+Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    AsyncQueryStatus result = apiInstance.getAnalyticsJourneysAggregatesJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getAnalyticsJourneysAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="getAnalyticsJourneysAggregatesJobResults"></a>
+
+# **getAnalyticsJourneysAggregatesJobResults**
+
+
+
+> [JourneyAsyncAggregateQueryResponse](JourneyAsyncAggregateQueryResponse.html) getAnalyticsJourneysAggregatesJobResults(jobId, cursor)
+
+Fetch a page of results for an async aggregates query
+
+Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results  
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String jobId = "jobId_example"; // String | jobId
+String cursor = "cursor_example"; // String | Cursor token to retrieve next page
+try {
+    JourneyAsyncAggregateQueryResponse result = apiInstance.getAnalyticsJourneysAggregatesJobResults(jobId, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getAnalyticsJourneysAggregatesJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+| **cursor** | **String**| Cursor token to retrieve next page | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html)
 
 <a name="getJourneyActionmap"></a>
 
@@ -860,6 +993,73 @@ try {
 
 [**ActionTemplateListing**](ActionTemplateListing.html)
 
+<a name="getJourneyCustomerCustomerIdSessions"></a>
+
+# **getJourneyCustomerCustomerIdSessions**
+
+
+
+> [SessionListing](SessionListing.html) getJourneyCustomerCustomerIdSessions(customerIdType, customerId, pageSize, after)
+
+Retrieve all sessions for a given customer.
+
+Wraps GET /api/v2/journey/customers/{customerIdType}/{customerId}/sessions  
+
+Requires ANY permissions: 
+
+* journey:session:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String customerIdType = "customerIdType_example"; // String | Type of ID used to identify customer (e.g. email, cookie, and phone).
+String customerId = "customerId_example"; // String | Primary identifier of the customer in the source of the session.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+try {
+    SessionListing result = apiInstance.getJourneyCustomerCustomerIdSessions(customerIdType, customerId, pageSize, after);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyCustomerCustomerIdSessions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **customerIdType** | **String**| Type of ID used to identify customer (e.g. email, cookie, and phone). | 
+| **customerId** | **String**| Primary identifier of the customer in the source of the session. | 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SessionListing**](SessionListing.html)
+
 <a name="getJourneyOutcome"></a>
 
 # **getJourneyOutcome**
@@ -991,6 +1191,128 @@ try {
 ### Return type
 
 [**OutcomeListing**](OutcomeListing.html)
+
+<a name="getJourneyOutcomesAttributionsJob"></a>
+
+# **getJourneyOutcomesAttributionsJob**
+
+
+
+> [OutcomeAttributionJobStateResponse](OutcomeAttributionJobStateResponse.html) getJourneyOutcomesAttributionsJob(jobId)
+
+Get job status.
+
+Wraps GET /api/v2/journey/outcomes/attributions/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* journey:outcomeAttributionJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String jobId = "jobId_example"; // String | ID of the job.
+try {
+    OutcomeAttributionJobStateResponse result = apiInstance.getJourneyOutcomesAttributionsJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyOutcomesAttributionsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| ID of the job. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutcomeAttributionJobStateResponse**](OutcomeAttributionJobStateResponse.html)
+
+<a name="getJourneyOutcomesAttributionsJobResults"></a>
+
+# **getJourneyOutcomesAttributionsJobResults**
+
+
+
+> [OutcomeAttributionResponseListing](OutcomeAttributionResponseListing.html) getJourneyOutcomesAttributionsJobResults(jobId)
+
+Get outcome attribution entities from completed job.
+
+Wraps GET /api/v2/journey/outcomes/attributions/jobs/{jobId}/results  
+
+Requires ALL permissions: 
+
+* journey:outcomeAttribution:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String jobId = "jobId_example"; // String | ID of the job.
+try {
+    OutcomeAttributionResponseListing result = apiInstance.getJourneyOutcomesAttributionsJobResults(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyOutcomesAttributionsJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| ID of the job. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutcomeAttributionResponseListing**](OutcomeAttributionResponseListing.html)
 
 <a name="getJourneyOutcomesPredictor"></a>
 
@@ -1306,6 +1628,71 @@ try {
 
 [**Session**](Session.html)
 
+<a name="getJourneySessionEvents"></a>
+
+# **getJourneySessionEvents**
+
+
+
+> [EventListing](EventListing.html) getJourneySessionEvents(sessionId, pageSize, after)
+
+Retrieve all events for a given session.
+
+Wraps GET /api/v2/journey/sessions/{sessionId}/events  
+
+Requires ANY permissions: 
+
+* journey:event:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String sessionId = "sessionId_example"; // String | System-generated UUID that represents the session the event is a part of.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+try {
+    EventListing result = apiInstance.getJourneySessionEvents(sessionId, pageSize, after);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneySessionEvents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sessionId** | **String**| System-generated UUID that represents the session the event is a part of. | 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EventListing**](EventListing.html)
+
 <a name="getJourneySessionOutcomescores"></a>
 
 # **getJourneySessionOutcomescores**
@@ -1366,6 +1753,75 @@ try {
 ### Return type
 
 [**OutcomeScoresResult**](OutcomeScoresResult.html)
+
+<a name="getJourneySessionSegments"></a>
+
+# **getJourneySessionSegments**
+
+
+
+> [SegmentAssignmentListing](SegmentAssignmentListing.html) getJourneySessionSegments(sessionId, pageSize, after, segmentScope, assignmentState)
+
+Retrieve segment assignments by session ID.
+
+Wraps GET /api/v2/journey/sessions/{sessionId}/segments  
+
+Requires ANY permissions: 
+
+* journey:segmentassignment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String sessionId = "sessionId_example"; // String | ID of the session to query for segment assignments.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String segmentScope = "segmentScope_example"; // String | Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
+String assignmentState = "assignmentState_example"; // String | Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
+try {
+    SegmentAssignmentListing result = apiInstance.getJourneySessionSegments(sessionId, pageSize, after, segmentScope, assignmentState);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneySessionSegments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sessionId** | **String**| ID of the session to query for segment assignments. | 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **segmentScope** | **String**| Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. | [optional]<br />**Values**: Session, Customer 
+| **assignmentState** | **String**| Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. | [optional]<br />**Values**: Assigned, Unassigned 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SegmentAssignmentListing**](SegmentAssignmentListing.html)
 
 <a name="patchJourneyActionmap"></a>
 
@@ -1682,6 +2138,67 @@ try {
 
 [**JourneySegment**](JourneySegment.html)
 
+<a name="postAnalyticsJourneysAggregatesJobs"></a>
+
+# **postAnalyticsJourneysAggregatesJobs**
+
+
+
+> [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsJourneysAggregatesJobs(body)
+
+Query for journey aggregates asynchronously
+
+Wraps POST /api/v2/analytics/journeys/aggregates/jobs  
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+JourneyAsyncAggregationQuery body = new JourneyAsyncAggregationQuery(); // JourneyAsyncAggregationQuery | query
+try {
+    AsyncQueryResponse result = apiInstance.postAnalyticsJourneysAggregatesJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postAnalyticsJourneysAggregatesJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**JourneyAsyncAggregationQuery**](JourneyAsyncAggregationQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
 <a name="postAnalyticsJourneysAggregatesQuery"></a>
 
 # **postAnalyticsJourneysAggregatesQuery**
@@ -1986,6 +2503,67 @@ try {
 ### Return type
 
 [**Outcome**](Outcome.html)
+
+<a name="postJourneyOutcomesAttributionsJobs"></a>
+
+# **postJourneyOutcomesAttributionsJobs**
+
+
+
+> [OutcomeAttributionAsyncResponse](OutcomeAttributionAsyncResponse.html) postJourneyOutcomesAttributionsJobs(body)
+
+Create Outcome Attributions
+
+Wraps POST /api/v2/journey/outcomes/attributions/jobs  
+
+Requires ANY permissions: 
+
+* journey:outcomeAttributionJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+OutcomeAttributionListing body = new OutcomeAttributionListing(); // OutcomeAttributionListing | outcome attribution request
+try {
+    OutcomeAttributionAsyncResponse result = apiInstance.postJourneyOutcomesAttributionsJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyOutcomesAttributionsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OutcomeAttributionListing**](OutcomeAttributionListing.html)| outcome attribution request | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutcomeAttributionAsyncResponse**](OutcomeAttributionAsyncResponse.html)
 
 <a name="postJourneyOutcomesPredictors"></a>
 

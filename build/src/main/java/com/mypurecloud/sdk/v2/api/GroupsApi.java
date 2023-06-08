@@ -10,6 +10,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.DynamicGroupDefinition;
+import com.mypurecloud.sdk.v2.model.DynamicGroupQuery;
+import com.mypurecloud.sdk.v2.model.DynamicGroupQueryPreview;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
@@ -25,9 +28,11 @@ import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteGroupDynamicsettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteGroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGroupDynamicsettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupIndividualsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupProfileRequest;
@@ -36,8 +41,10 @@ import com.mypurecloud.sdk.v2.api.request.GetGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetProfilesGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGroupsDynamicsettingsPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PutGroupDynamicsettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -110,6 +117,85 @@ public class GroupsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteGroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Remove dynamic group definition
+   * 
+   * @param groupId Group ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void deleteGroupDynamicsettings(String groupId) throws IOException, ApiException {
+     deleteGroupDynamicsettings(createDeleteGroupDynamicsettingsRequest(groupId));
+  }
+
+  /**
+   * Remove dynamic group definition
+   * 
+   * @param groupId Group ID (required)
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> deleteGroupDynamicsettingsWithHttpInfo(String groupId) throws IOException {
+    return deleteGroupDynamicsettings(createDeleteGroupDynamicsettingsRequest(groupId).withHttpInfo());
+  }
+
+  private DeleteGroupDynamicsettingsRequest createDeleteGroupDynamicsettingsRequest(String groupId) {
+    return DeleteGroupDynamicsettingsRequest.builder()
+            .withGroupId(groupId)
+
+            .build();
+  }
+
+  /**
+   * Remove dynamic group definition
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void deleteGroupDynamicsettings(DeleteGroupDynamicsettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Remove dynamic group definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> deleteGroupDynamicsettings(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -369,6 +455,88 @@ public class GroupsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get dynamic group definition
+   * 
+   * @param groupId Group ID (required)
+   * @return DynamicGroupDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public DynamicGroupDefinition getGroupDynamicsettings(String groupId) throws IOException, ApiException {
+    return  getGroupDynamicsettings(createGetGroupDynamicsettingsRequest(groupId));
+  }
+
+  /**
+   * Get dynamic group definition
+   * 
+   * @param groupId Group ID (required)
+   * @return DynamicGroupDefinition
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<DynamicGroupDefinition> getGroupDynamicsettingsWithHttpInfo(String groupId) throws IOException {
+    return getGroupDynamicsettings(createGetGroupDynamicsettingsRequest(groupId).withHttpInfo());
+  }
+
+  private GetGroupDynamicsettingsRequest createGetGroupDynamicsettingsRequest(String groupId) {
+    return GetGroupDynamicsettingsRequest.builder()
+            .withGroupId(groupId)
+
+            .build();
+  }
+
+  /**
+   * Get dynamic group definition
+   * 
+   * @param request The request object
+   * @return DynamicGroupDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public DynamicGroupDefinition getGroupDynamicsettings(GetGroupDynamicsettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DynamicGroupDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DynamicGroupDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get dynamic group definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<DynamicGroupDefinition> getGroupDynamicsettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DynamicGroupDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DynamicGroupDefinition> response = (ApiResponse<DynamicGroupDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DynamicGroupDefinition> response = (ApiResponse<DynamicGroupDefinition>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1066,6 +1234,92 @@ public class GroupsApi {
   }
 
   /**
+   * Preview the number of users selected for a dynamic group definition query
+   * 
+   * @param body Group query to preview (required)
+   * @return DynamicGroupQueryPreview
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public DynamicGroupQueryPreview postGroupsDynamicsettingsPreview(DynamicGroupQuery body) throws IOException, ApiException {
+    return  postGroupsDynamicsettingsPreview(createPostGroupsDynamicsettingsPreviewRequest(body));
+  }
+
+  /**
+   * Preview the number of users selected for a dynamic group definition query
+   * 
+   * @param body Group query to preview (required)
+   * @return DynamicGroupQueryPreview
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public ApiResponse<DynamicGroupQueryPreview> postGroupsDynamicsettingsPreviewWithHttpInfo(DynamicGroupQuery body) throws IOException {
+    return postGroupsDynamicsettingsPreview(createPostGroupsDynamicsettingsPreviewRequest(body).withHttpInfo());
+  }
+
+  private PostGroupsDynamicsettingsPreviewRequest createPostGroupsDynamicsettingsPreviewRequest(DynamicGroupQuery body) {
+    return PostGroupsDynamicsettingsPreviewRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Preview the number of users selected for a dynamic group definition query
+   * 
+   * @param request The request object
+   * @return DynamicGroupQueryPreview
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public DynamicGroupQueryPreview postGroupsDynamicsettingsPreview(PostGroupsDynamicsettingsPreviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DynamicGroupQueryPreview> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DynamicGroupQueryPreview>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Preview the number of users selected for a dynamic group definition query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public ApiResponse<DynamicGroupQueryPreview> postGroupsDynamicsettingsPreview(ApiRequest<DynamicGroupQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DynamicGroupQueryPreview>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DynamicGroupQueryPreview> response = (ApiResponse<DynamicGroupQueryPreview>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DynamicGroupQueryPreview> response = (ApiResponse<DynamicGroupQueryPreview>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Search groups
    * 
    * @param body Search request options (required)
@@ -1221,6 +1475,89 @@ public class GroupsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create / Update dynamic group definition
+   * 
+   * @param groupId Group ID (required)
+   * @param body Create/Update dynamic groups (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void putGroupDynamicsettings(String groupId, DynamicGroupQuery body) throws IOException, ApiException {
+     putGroupDynamicsettings(createPutGroupDynamicsettingsRequest(groupId, body));
+  }
+
+  /**
+   * Create / Update dynamic group definition
+   * 
+   * @param groupId Group ID (required)
+   * @param body Create/Update dynamic groups (required)
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> putGroupDynamicsettingsWithHttpInfo(String groupId, DynamicGroupQuery body) throws IOException {
+    return putGroupDynamicsettings(createPutGroupDynamicsettingsRequest(groupId, body).withHttpInfo());
+  }
+
+  private PutGroupDynamicsettingsRequest createPutGroupDynamicsettingsRequest(String groupId, DynamicGroupQuery body) {
+    return PutGroupDynamicsettingsRequest.builder()
+            .withGroupId(groupId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create / Update dynamic group definition
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public void putGroupDynamicsettings(PutGroupDynamicsettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Create / Update dynamic group definition
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<Void> putGroupDynamicsettings(ApiRequest<DynamicGroupQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

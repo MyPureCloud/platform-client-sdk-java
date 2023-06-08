@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.BulkResponse;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
 import com.mypurecloud.sdk.v2.model.CategoryRequest;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
@@ -25,7 +26,11 @@ import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentContentUpload;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearch;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentReq;
@@ -100,6 +105,7 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLabelsRequest
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrainingRequest;
@@ -129,12 +135,16 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseCategoriesRe
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVariationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsSearchSuggestionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseExportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLabelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageTrainingPromoteRequest;
@@ -2947,6 +2957,104 @@ public class KnowledgeApi {
   }
 
   /**
+   * Get document content upload status
+   * 
+   * @param documentId Document ID (required)
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param uploadId UploadId (required)
+   * @return KnowledgeDocumentContentUpload
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public KnowledgeDocumentContentUpload getKnowledgeKnowledgebaseLanguageDocumentUpload(String documentId, String knowledgeBaseId, String languageCode, String uploadId) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseLanguageDocumentUpload(createGetKnowledgeKnowledgebaseLanguageDocumentUploadRequest(documentId, knowledgeBaseId, languageCode, uploadId));
+  }
+
+  /**
+   * Get document content upload status
+   * 
+   * @param documentId Document ID (required)
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param uploadId UploadId (required)
+   * @return KnowledgeDocumentContentUpload
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public ApiResponse<KnowledgeDocumentContentUpload> getKnowledgeKnowledgebaseLanguageDocumentUploadWithHttpInfo(String documentId, String knowledgeBaseId, String languageCode, String uploadId) throws IOException {
+    return getKnowledgeKnowledgebaseLanguageDocumentUpload(createGetKnowledgeKnowledgebaseLanguageDocumentUploadRequest(documentId, knowledgeBaseId, languageCode, uploadId).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseLanguageDocumentUploadRequest createGetKnowledgeKnowledgebaseLanguageDocumentUploadRequest(String documentId, String knowledgeBaseId, String languageCode, String uploadId) {
+    return GetKnowledgeKnowledgebaseLanguageDocumentUploadRequest.builder()
+            .withDocumentId(documentId)
+
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withLanguageCode(languageCode)
+
+            .withUploadId(uploadId)
+
+            .build();
+  }
+
+  /**
+   * Get document content upload status
+   * 
+   * @param request The request object
+   * @return KnowledgeDocumentContentUpload
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public KnowledgeDocumentContentUpload getKnowledgeKnowledgebaseLanguageDocumentUpload(GetKnowledgeKnowledgebaseLanguageDocumentUploadRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeDocumentContentUpload> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeDocumentContentUpload>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get document content upload status
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public ApiResponse<KnowledgeDocumentContentUpload> getKnowledgeKnowledgebaseLanguageDocumentUpload(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeDocumentContentUpload>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentContentUpload> response = (ApiResponse<KnowledgeDocumentContentUpload>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentContentUpload> response = (ApiResponse<KnowledgeDocumentContentUpload>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get documents
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
@@ -5527,6 +5635,178 @@ public class KnowledgeApi {
   }
 
   /**
+   * Bulk remove documents.
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return BulkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public BulkResponse postKnowledgeKnowledgebaseDocumentsBulkRemove(String knowledgeBaseId, KnowledgeDocumentBulkRemoveRequest body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseDocumentsBulkRemove(createPostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Bulk remove documents.
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return BulkResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkRemoveWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentBulkRemoveRequest body) throws IOException {
+    return postKnowledgeKnowledgebaseDocumentsBulkRemove(createPostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest createPostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest(String knowledgeBaseId, KnowledgeDocumentBulkRemoveRequest body) {
+    return PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk remove documents.
+   * 
+   * @param request The request object
+   * @return BulkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public BulkResponse postKnowledgeKnowledgebaseDocumentsBulkRemove(PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk remove documents.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkRemove(ApiRequest<KnowledgeDocumentBulkRemoveRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk update documents.
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return BulkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public BulkResponse postKnowledgeKnowledgebaseDocumentsBulkUpdate(String knowledgeBaseId, KnowledgeDocumentBulkUpdateRequest body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseDocumentsBulkUpdate(createPostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Bulk update documents.
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return BulkResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkUpdateWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentBulkUpdateRequest body) throws IOException {
+    return postKnowledgeKnowledgebaseDocumentsBulkUpdate(createPostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest createPostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest(String knowledgeBaseId, KnowledgeDocumentBulkUpdateRequest body) {
+    return PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk update documents.
+   * 
+   * @param request The request object
+   * @return BulkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public BulkResponse postKnowledgeKnowledgebaseDocumentsBulkUpdate(PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk update documents.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkUpdate(ApiRequest<KnowledgeDocumentBulkUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Search the documents in a knowledge base.
    * 
    * @param knowledgeBaseId The ID of knowledge base containing the documents to query. (required)
@@ -5690,6 +5970,92 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeDocumentSuggestion> response = (ApiResponse<KnowledgeDocumentSuggestion>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk add document versions.
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return BulkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public BulkResponse postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(String knowledgeBaseId, KnowledgeDocumentBulkVersionAddRequest body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(createPostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Bulk add document versions.
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return BulkResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsVersionsBulkAddWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentBulkVersionAddRequest body) throws IOException {
+    return postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(createPostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest createPostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest(String knowledgeBaseId, KnowledgeDocumentBulkVersionAddRequest body) {
+    return PostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk add document versions.
+   * 
+   * @param request The request object
+   * @return BulkResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public BulkResponse postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(PostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk add document versions.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(ApiRequest<KnowledgeDocumentBulkVersionAddRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6026,6 +6392,104 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeExtendedCategory> response = (ApiResponse<KnowledgeExtendedCategory>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Upload Article Content
+   * 
+   * @param documentId Document ID (required)
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param body  (required)
+   * @return KnowledgeDocumentContentUpload
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public KnowledgeDocumentContentUpload postKnowledgeKnowledgebaseLanguageDocumentUploads(String documentId, String knowledgeBaseId, String languageCode, KnowledgeDocumentContentUpload body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseLanguageDocumentUploads(createPostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest(documentId, knowledgeBaseId, languageCode, body));
+  }
+
+  /**
+   * Upload Article Content
+   * 
+   * @param documentId Document ID (required)
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param body  (required)
+   * @return KnowledgeDocumentContentUpload
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public ApiResponse<KnowledgeDocumentContentUpload> postKnowledgeKnowledgebaseLanguageDocumentUploadsWithHttpInfo(String documentId, String knowledgeBaseId, String languageCode, KnowledgeDocumentContentUpload body) throws IOException {
+    return postKnowledgeKnowledgebaseLanguageDocumentUploads(createPostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest(documentId, knowledgeBaseId, languageCode, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest createPostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest(String documentId, String knowledgeBaseId, String languageCode, KnowledgeDocumentContentUpload body) {
+    return PostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest.builder()
+            .withDocumentId(documentId)
+
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withLanguageCode(languageCode)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Upload Article Content
+   * 
+   * @param request The request object
+   * @return KnowledgeDocumentContentUpload
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public KnowledgeDocumentContentUpload postKnowledgeKnowledgebaseLanguageDocumentUploads(PostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeDocumentContentUpload> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeDocumentContentUpload>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Upload Article Content
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+	 * Preview Endpoint
+   */
+  public ApiResponse<KnowledgeDocumentContentUpload> postKnowledgeKnowledgebaseLanguageDocumentUploads(ApiRequest<KnowledgeDocumentContentUpload> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeDocumentContentUpload>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentContentUpload> response = (ApiResponse<KnowledgeDocumentContentUpload>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentContentUpload> response = (ApiResponse<KnowledgeDocumentContentUpload>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

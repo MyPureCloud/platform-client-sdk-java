@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiG
 import com.mypurecloud.sdk.v2.model.ConversationParticipantSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
+import com.mypurecloud.sdk.v2.model.DocumentationV2SearchRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchResponse;
@@ -48,6 +49,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsTranscriptsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsParticipantsAttributesSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostDocumentationAllSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationGknSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsSearchRequest;
@@ -58,6 +60,8 @@ import com.mypurecloud.sdk.v2.api.request.PostSearchSuggestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTeamsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersSearchConversationTargetRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersSearchQueuemembersManageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchTeamsAssignRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
 
@@ -895,6 +899,88 @@ public class SearchApi {
   }
 
   /**
+   * Search all documents
+   * 
+   * @param body Search request options (required)
+   * @return JsonNodeSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public JsonNodeSearchResponse postDocumentationAllSearch(DocumentationV2SearchRequest body) throws IOException, ApiException {
+    return  postDocumentationAllSearch(createPostDocumentationAllSearchRequest(body));
+  }
+
+  /**
+   * Search all documents
+   * 
+   * @param body Search request options (required)
+   * @return JsonNodeSearchResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<JsonNodeSearchResponse> postDocumentationAllSearchWithHttpInfo(DocumentationV2SearchRequest body) throws IOException {
+    return postDocumentationAllSearch(createPostDocumentationAllSearchRequest(body).withHttpInfo());
+  }
+
+  private PostDocumentationAllSearchRequest createPostDocumentationAllSearchRequest(DocumentationV2SearchRequest body) {
+    return PostDocumentationAllSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search all documents
+   * 
+   * @param request The request object
+   * @return JsonNodeSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public JsonNodeSearchResponse postDocumentationAllSearch(PostDocumentationAllSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JsonNodeSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search all documents
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<JsonNodeSearchResponse> postDocumentationAllSearch(ApiRequest<DocumentationV2SearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JsonNodeSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Search gkn documentation
    * 
    * @param body Search request options (required)
@@ -1669,6 +1755,170 @@ public class SearchApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<UsersSearchResponse> postUsersSearch(ApiRequest<UserSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UsersSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search users as conversation targets
+   * 
+   * @param body Search request options (required)
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UsersSearchResponse postUsersSearchConversationTarget(UserSearchRequest body) throws IOException, ApiException {
+    return  postUsersSearchConversationTarget(createPostUsersSearchConversationTargetRequest(body));
+  }
+
+  /**
+   * Search users as conversation targets
+   * 
+   * @param body Search request options (required)
+   * @return UsersSearchResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UsersSearchResponse> postUsersSearchConversationTargetWithHttpInfo(UserSearchRequest body) throws IOException {
+    return postUsersSearchConversationTarget(createPostUsersSearchConversationTargetRequest(body).withHttpInfo());
+  }
+
+  private PostUsersSearchConversationTargetRequest createPostUsersSearchConversationTargetRequest(UserSearchRequest body) {
+    return PostUsersSearchConversationTargetRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search users as conversation targets
+   * 
+   * @param request The request object
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UsersSearchResponse postUsersSearchConversationTarget(PostUsersSearchConversationTargetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UsersSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search users as conversation targets
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UsersSearchResponse> postUsersSearchConversationTarget(ApiRequest<UserSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UsersSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search manage queue member
+   * 
+   * @param body Search request options (required)
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UsersSearchResponse postUsersSearchQueuemembersManage(UserSearchRequest body) throws IOException, ApiException {
+    return  postUsersSearchQueuemembersManage(createPostUsersSearchQueuemembersManageRequest(body));
+  }
+
+  /**
+   * Search manage queue member
+   * 
+   * @param body Search request options (required)
+   * @return UsersSearchResponse
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UsersSearchResponse> postUsersSearchQueuemembersManageWithHttpInfo(UserSearchRequest body) throws IOException {
+    return postUsersSearchQueuemembersManage(createPostUsersSearchQueuemembersManageRequest(body).withHttpInfo());
+  }
+
+  private PostUsersSearchQueuemembersManageRequest createPostUsersSearchQueuemembersManageRequest(UserSearchRequest body) {
+    return PostUsersSearchQueuemembersManageRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search manage queue member
+   * 
+   * @param request The request object
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public UsersSearchResponse postUsersSearchQueuemembersManage(PostUsersSearchQueuemembersManageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UsersSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search manage queue member
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<UsersSearchResponse> postUsersSearchQueuemembersManage(ApiRequest<UserSearchRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<UsersSearchResponse>() {});
     }

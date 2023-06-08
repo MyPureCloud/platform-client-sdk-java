@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.ExpiredEdgeListing;
 import com.mypurecloud.sdk.v2.model.Extension;
 import com.mypurecloud.sdk.v2.model.ExtensionEntityListing;
 import com.mypurecloud.sdk.v2.model.ExtensionPool;
+import com.mypurecloud.sdk.v2.model.ExtensionPoolDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.ExtensionPoolEntityListing;
 import com.mypurecloud.sdk.v2.model.Line;
 import com.mypurecloud.sdk.v2.model.LineBase;
@@ -120,6 +121,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExpiredReque
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinebasesettingRequest;
@@ -3766,6 +3768,112 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExtensionPoolEntityListing> response = (ApiResponse<ExtensionPoolEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a pageable list of basic extension pool objects filterable by query parameters.
+   * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param id ID of the Extension Pools to filter by. (optional)
+   * @param name Name of the Extension Pools to filter by. (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
+   * @return ExtensionPoolDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ExtensionPoolDivisionViewEntityListing getTelephonyProvidersEdgesExtensionpoolsDivisionviews(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesExtensionpoolsDivisionviews(createGetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId));
+  }
+
+  /**
+   * Get a pageable list of basic extension pool objects filterable by query parameters.
+   * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param id ID of the Extension Pools to filter by. (optional)
+   * @param name Name of the Extension Pools to filter by. (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
+   * @return ExtensionPoolDivisionViewEntityListing
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<ExtensionPoolDivisionViewEntityListing> getTelephonyProvidersEdgesExtensionpoolsDivisionviewsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException {
+    return getTelephonyProvidersEdgesExtensionpoolsDivisionviews(createGetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest createGetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) {
+    return GetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withId(id)
+
+            .withName(name)
+
+            .withDivisionId(divisionId)
+
+            .build();
+  }
+
+  /**
+   * Get a pageable list of basic extension pool objects filterable by query parameters.
+   * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request The request object
+   * @return ExtensionPoolDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ExtensionPoolDivisionViewEntityListing getTelephonyProvidersEdgesExtensionpoolsDivisionviews(GetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExtensionPoolDivisionViewEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExtensionPoolDivisionViewEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a pageable list of basic extension pool objects filterable by query parameters.
+   * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<ExtensionPoolDivisionViewEntityListing> getTelephonyProvidersEdgesExtensionpoolsDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExtensionPoolDivisionViewEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionPoolDivisionViewEntityListing> response = (ApiResponse<ExtensionPoolDivisionViewEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionPoolDivisionViewEntityListing> response = (ApiResponse<ExtensionPoolDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

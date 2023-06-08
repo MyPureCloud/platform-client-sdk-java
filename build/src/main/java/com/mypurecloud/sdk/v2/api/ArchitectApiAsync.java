@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
+import com.mypurecloud.sdk.v2.model.CriteriaQuery;
 import com.mypurecloud.sdk.v2.model.DataTable;
 import com.mypurecloud.sdk.v2.model.DataTableExportJob;
 import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
@@ -30,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroup;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExecutionDataRequest;
 import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
@@ -41,9 +43,12 @@ import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcome;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
+import com.mypurecloud.sdk.v2.model.FlowResultEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowsQueryCriteriaResponse;
+import com.mypurecloud.sdk.v2.model.GetFlowExecutionDataJobResult;
 import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
@@ -123,6 +128,9 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstanceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesQuerycapabilitiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesRequest;
@@ -154,6 +162,8 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsExecutionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsInstancesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsInstancesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
@@ -4614,6 +4624,237 @@ public class ArchitectApiAsync {
   }
 
   /**
+   * Start a process (job) to prepare a download of a singular flow execution data instance by Id
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<GetFlowExecutionDataJobResult> getFlowsInstanceAsync(GetFlowsInstanceRequest request, final AsyncApiCallback<GetFlowExecutionDataJobResult> callback) {
+    try {
+      final SettableFuture<GetFlowExecutionDataJobResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GetFlowExecutionDataJobResult>() {}, new AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetFlowExecutionDataJobResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start a process (job) to prepare a download of a singular flow execution data instance by Id
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<GetFlowExecutionDataJobResult>> getFlowsInstanceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GetFlowExecutionDataJobResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GetFlowExecutionDataJobResult>() {}, new AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetFlowExecutionDataJobResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the status and/or results of an asynchronous flow execution data retrieval job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<GetFlowExecutionDataJobResult> getFlowsInstancesJobAsync(GetFlowsInstancesJobRequest request, final AsyncApiCallback<GetFlowExecutionDataJobResult> callback) {
+    try {
+      final SettableFuture<GetFlowExecutionDataJobResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GetFlowExecutionDataJobResult>() {}, new AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetFlowExecutionDataJobResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the status and/or results of an asynchronous flow execution data retrieval job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<GetFlowExecutionDataJobResult>> getFlowsInstancesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GetFlowExecutionDataJobResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GetFlowExecutionDataJobResult>() {}, new AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetFlowExecutionDataJobResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of capabilities that the org can use to query for execution data
+   * Returns the queryable parameters that can be used to build a query for execution data.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<FlowsQueryCriteriaResponse> getFlowsInstancesQuerycapabilitiesAsync(GetFlowsInstancesQuerycapabilitiesRequest request, final AsyncApiCallback<FlowsQueryCriteriaResponse> callback) {
+    try {
+      final SettableFuture<FlowsQueryCriteriaResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowsQueryCriteriaResponse>() {}, new AsyncApiCallback<ApiResponse<FlowsQueryCriteriaResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowsQueryCriteriaResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of capabilities that the org can use to query for execution data
+   * Returns the queryable parameters that can be used to build a query for execution data.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<FlowsQueryCriteriaResponse>> getFlowsInstancesQuerycapabilitiesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowsQueryCriteriaResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowsQueryCriteriaResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowsQueryCriteriaResponse>() {}, new AsyncApiCallback<ApiResponse<FlowsQueryCriteriaResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowsQueryCriteriaResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowsQueryCriteriaResponse> response = (ApiResponse<FlowsQueryCriteriaResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowsQueryCriteriaResponse> response = (ApiResponse<FlowsQueryCriteriaResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Fetch Architect Job Status
    * 
    * @param request the request object
@@ -6927,6 +7168,160 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FlowExecutionLaunchResponse> response = (ApiResponse<FlowExecutionLaunchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start a process (job) that will prepare a list of execution data IDs for download.
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<GetFlowExecutionDataJobResult> postFlowsInstancesJobsAsync(PostFlowsInstancesJobsRequest request, final AsyncApiCallback<GetFlowExecutionDataJobResult> callback) {
+    try {
+      final SettableFuture<GetFlowExecutionDataJobResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GetFlowExecutionDataJobResult>() {}, new AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetFlowExecutionDataJobResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start a process (job) that will prepare a list of execution data IDs for download.
+   * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<GetFlowExecutionDataJobResult>> postFlowsInstancesJobsAsync(ApiRequest<ExecutionDataRequest> request, final AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GetFlowExecutionDataJobResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GetFlowExecutionDataJobResult>() {}, new AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetFlowExecutionDataJobResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetFlowExecutionDataJobResult> response = (ApiResponse<GetFlowExecutionDataJobResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query the database of existing flow histories to look for particular flow criteria
+   * Returns a list of matching flow histories up to 200 max.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<FlowResultEntityListing> postFlowsInstancesQueryAsync(PostFlowsInstancesQueryRequest request, final AsyncApiCallback<FlowResultEntityListing> callback) {
+    try {
+      final SettableFuture<FlowResultEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowResultEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowResultEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowResultEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query the database of existing flow histories to look for particular flow criteria
+   * Returns a list of matching flow histories up to 200 max.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+	 * Preview Endpoint
+   */
+  public Future<ApiResponse<FlowResultEntityListing>> postFlowsInstancesQueryAsync(ApiRequest<CriteriaQuery> request, final AsyncApiCallback<ApiResponse<FlowResultEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowResultEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowResultEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowResultEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowResultEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowResultEntityListing> response = (ApiResponse<FlowResultEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowResultEntityListing> response = (ApiResponse<FlowResultEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -66,6 +66,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsDatatablesDivisionviews**](ArchitectApi.html#getFlowsDatatablesDivisionviews) | Retrieve a list of datatables for the org |
 | [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | Get a pageable list of basic flow information objects filterable by query parameters. |
 | [**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | Get a flow execution's details. Flow execution details are available for several days after the flow is started. |
+| [**getFlowsInstance**](ArchitectApi.html#getFlowsInstance) | Start a process (job) to prepare a download of a singular flow execution data instance by Id |
+| [**getFlowsInstancesJob**](ArchitectApi.html#getFlowsInstancesJob) | Get the status and/or results of an asynchronous flow execution data retrieval job |
+| [**getFlowsInstancesQuerycapabilities**](ArchitectApi.html#getFlowsInstancesQuerycapabilities) | Retrieve a list of capabilities that the org can use to query for execution data |
 | [**getFlowsJob**](ArchitectApi.html#getFlowsJob) | Fetch Architect Job Status |
 | [**getFlowsMilestone**](ArchitectApi.html#getFlowsMilestone) | Get a flow milestone |
 | [**getFlowsMilestones**](ArchitectApi.html#getFlowsMilestones) | Get a pageable list of flow milestones, filtered by query parameters |
@@ -97,6 +100,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | Create a new row entry for the datatable. |
 | [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | Create a new datatable with the specified json-schema definition |
 | [**postFlowsExecutions**](ArchitectApi.html#postFlowsExecutions) | Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type. |
+| [**postFlowsInstancesJobs**](ArchitectApi.html#postFlowsInstancesJobs) | Start a process (job) that will prepare a list of execution data IDs for download. |
+| [**postFlowsInstancesQuery**](ArchitectApi.html#postFlowsInstancesQuery) | Query the database of existing flow histories to look for particular flow criteria |
 | [**postFlowsJobs**](ArchitectApi.html#postFlowsJobs) | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job. |
 | [**postFlowsMilestones**](ArchitectApi.html#postFlowsMilestones) | Create a flow milestone |
 | [**postFlowsOutcomes**](ArchitectApi.html#postFlowsOutcomes) | Create a flow outcome |
@@ -4066,6 +4071,195 @@ try {
 
 [**FlowRuntimeExecution**](FlowRuntimeExecution.html)
 
+<a name="getFlowsInstance"></a>
+
+# **getFlowsInstance**
+
+
+
+> [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult.html) getFlowsInstance(instanceId, expand)
+
+Start a process (job) to prepare a download of a singular flow execution data instance by Id
+
+Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+
+Wraps GET /api/v2/flows/instances/{instanceId}  
+
+Requires ANY permissions: 
+
+* architect:flowInstance:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String instanceId = "instanceId_example"; // String | Instance ID
+String expand = "expand_example"; // String | Expand various details.
+try {
+    GetFlowExecutionDataJobResult result = apiInstance.getFlowsInstance(instanceId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsInstance");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **instanceId** | **String**| Instance ID | 
+| **expand** | **String**| Expand various details. | [optional]<br />**Values**: bots, data 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html)
+
+<a name="getFlowsInstancesJob"></a>
+
+# **getFlowsInstancesJob**
+
+
+
+> [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult.html) getFlowsInstancesJob(jobId)
+
+Get the status and/or results of an asynchronous flow execution data retrieval job
+
+Wraps GET /api/v2/flows/instances/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* architect:flowInstance:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String jobId = "jobId_example"; // String | The asynchronous job ID
+try {
+    GetFlowExecutionDataJobResult result = apiInstance.getFlowsInstancesJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsInstancesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The asynchronous job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html)
+
+<a name="getFlowsInstancesQuerycapabilities"></a>
+
+# **getFlowsInstancesQuerycapabilities**
+
+
+
+> [FlowsQueryCriteriaResponse](FlowsQueryCriteriaResponse.html) getFlowsInstancesQuerycapabilities(expand)
+
+Retrieve a list of capabilities that the org can use to query for execution data
+
+Returns the queryable parameters that can be used to build a query for execution data.
+
+Wraps GET /api/v2/flows/instances/querycapabilities  
+
+Requires ANY permissions: 
+
+* architect:flowInstance:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String expand = "expand_example"; // String | Expand various query types.
+try {
+    FlowsQueryCriteriaResponse result = apiInstance.getFlowsInstancesQuerycapabilities(expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsInstancesQuerycapabilities");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **expand** | **String**| Expand various query types. | [optional]<br />**Values**: flow, action 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowsQueryCriteriaResponse**](FlowsQueryCriteriaResponse.html)
+
 <a name="getFlowsJob"></a>
 
 # **getFlowsJob**
@@ -6064,6 +6258,136 @@ try {
 ### Return type
 
 [**FlowExecutionLaunchResponse**](FlowExecutionLaunchResponse.html)
+
+<a name="postFlowsInstancesJobs"></a>
+
+# **postFlowsInstancesJobs**
+
+
+
+> [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult.html) postFlowsInstancesJobs(body, expand)
+
+Start a process (job) that will prepare a list of execution data IDs for download.
+
+Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+
+Wraps POST /api/v2/flows/instances/jobs  
+
+Requires ANY permissions: 
+
+* architect:flowInstance:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+ExecutionDataRequest body = new ExecutionDataRequest(); // ExecutionDataRequest | Requested Flow Ids
+String expand = "expand_example"; // String | Expand various query types.
+try {
+    GetFlowExecutionDataJobResult result = apiInstance.postFlowsInstancesJobs(body, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsInstancesJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ExecutionDataRequest**](ExecutionDataRequest.html)| Requested Flow Ids | 
+| **expand** | **String**| Expand various query types. | [optional]<br />**Values**: bots, data 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html)
+
+<a name="postFlowsInstancesQuery"></a>
+
+# **postFlowsInstancesQuery**
+
+
+
+> [FlowResultEntityListing](FlowResultEntityListing.html) postFlowsInstancesQuery(body, indexOnly)
+
+Query the database of existing flow histories to look for particular flow criteria
+
+Returns a list of matching flow histories up to 200 max.
+
+Wraps POST /api/v2/flows/instances/query  
+
+Requires ANY permissions: 
+
+* architect:flowInstance:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+CriteriaQuery body = new CriteriaQuery(); // CriteriaQuery | query
+Boolean indexOnly = true; // Boolean | indexes only
+try {
+    FlowResultEntityListing result = apiInstance.postFlowsInstancesQuery(body, indexOnly);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsInstancesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CriteriaQuery**](CriteriaQuery.html)| query | 
+| **indexOnly** | **Boolean**| indexes only | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowResultEntityListing**](FlowResultEntityListing.html)
 
 <a name="postFlowsJobs"></a>
 

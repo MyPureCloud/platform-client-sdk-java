@@ -20,6 +20,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DynamicGroupDefinition;
+import com.mypurecloud.sdk.v2.model.DynamicGroupQuery;
+import com.mypurecloud.sdk.v2.model.DynamicGroupQueryPreview;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;

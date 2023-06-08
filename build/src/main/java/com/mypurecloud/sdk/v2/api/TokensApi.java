@@ -11,13 +11,16 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.IdleTokenTimeout;
 import com.mypurecloud.sdk.v2.model.TokenInfo;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTokenRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTokensMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTokensMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTokensTimeoutRequest;
 import com.mypurecloud.sdk.v2.api.request.HeadTokensMeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTokensTimeoutRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -257,6 +260,84 @@ public class TokensApi {
   }
 
   /**
+   * Get the current Idle Token Timeout Value
+   * 
+   * @return IdleTokenTimeout
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public IdleTokenTimeout getTokensTimeout() throws IOException, ApiException {
+    return  getTokensTimeout(createGetTokensTimeoutRequest());
+  }
+
+  /**
+   * Get the current Idle Token Timeout Value
+   * 
+   * @return IdleTokenTimeout
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<IdleTokenTimeout> getTokensTimeoutWithHttpInfo() throws IOException {
+    return getTokensTimeout(createGetTokensTimeoutRequest().withHttpInfo());
+  }
+
+  private GetTokensTimeoutRequest createGetTokensTimeoutRequest() {
+    return GetTokensTimeoutRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the current Idle Token Timeout Value
+   * 
+   * @param request The request object
+   * @return IdleTokenTimeout
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public IdleTokenTimeout getTokensTimeout(GetTokensTimeoutRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdleTokenTimeout> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdleTokenTimeout>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the current Idle Token Timeout Value
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<IdleTokenTimeout> getTokensTimeout(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdleTokenTimeout>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdleTokenTimeout> response = (ApiResponse<IdleTokenTimeout>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdleTokenTimeout> response = (ApiResponse<IdleTokenTimeout>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Verify user token
    * 
    * @throws ApiException if the request fails on the server
@@ -323,6 +404,88 @@ public class TokensApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update or Enable/Disable the Idle Token Timeout
+   * 
+   * @param body  (optional)
+   * @return IdleTokenTimeout
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public IdleTokenTimeout putTokensTimeout(IdleTokenTimeout body) throws IOException, ApiException {
+    return  putTokensTimeout(createPutTokensTimeoutRequest(body));
+  }
+
+  /**
+   * Update or Enable/Disable the Idle Token Timeout
+   * 
+   * @param body  (optional)
+   * @return IdleTokenTimeout
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<IdleTokenTimeout> putTokensTimeoutWithHttpInfo(IdleTokenTimeout body) throws IOException {
+    return putTokensTimeout(createPutTokensTimeoutRequest(body).withHttpInfo());
+  }
+
+  private PutTokensTimeoutRequest createPutTokensTimeoutRequest(IdleTokenTimeout body) {
+    return PutTokensTimeoutRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update or Enable/Disable the Idle Token Timeout
+   * 
+   * @param request The request object
+   * @return IdleTokenTimeout
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public IdleTokenTimeout putTokensTimeout(PutTokensTimeoutRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IdleTokenTimeout> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdleTokenTimeout>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update or Enable/Disable the Idle Token Timeout
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+	 * Preview Endpoint
+   */
+  public ApiResponse<IdleTokenTimeout> putTokensTimeout(ApiRequest<IdleTokenTimeout> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdleTokenTimeout>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdleTokenTimeout> response = (ApiResponse<IdleTokenTimeout>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdleTokenTimeout> response = (ApiResponse<IdleTokenTimeout>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
