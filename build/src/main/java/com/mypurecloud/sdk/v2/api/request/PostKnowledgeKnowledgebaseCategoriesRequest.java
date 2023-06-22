@@ -21,10 +21,11 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.BulkResponse;
+import com.mypurecloud.sdk.v2.model.CategoryCreateRequest;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
-import com.mypurecloud.sdk.v2.model.CategoryRequest;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
+import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
 import com.mypurecloud.sdk.v2.model.DocumentVariation;
 import com.mypurecloud.sdk.v2.model.DocumentVariationListing;
@@ -99,16 +100,16 @@ public class PostKnowledgeKnowledgebaseCategoriesRequest {
 	    return this;
 	} 
 
-	private CategoryRequest body;
-	public CategoryRequest getBody() {
+	private CategoryCreateRequest body;
+	public CategoryCreateRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(CategoryRequest body) {
+	public void setBody(CategoryCreateRequest body) {
 		this.body = body;
 	}
 
-	public PostKnowledgeKnowledgebaseCategoriesRequest withBody(CategoryRequest body) {
+	public PostKnowledgeKnowledgebaseCategoriesRequest withBody(CategoryCreateRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -132,7 +133,7 @@ public class PostKnowledgeKnowledgebaseCategoriesRequest {
         return this;
     }
 
-    public ApiRequest<CategoryRequest> withHttpInfo() {
+    public ApiRequest<CategoryCreateRequest> withHttpInfo() {
         
         // verify the required parameter 'knowledgeBaseId' is set
         if (this.knowledgeBaseId == null) {
@@ -162,7 +163,7 @@ public class PostKnowledgeKnowledgebaseCategoriesRequest {
 	}
 
 
-	public static Builder builder(String knowledgeBaseId, CategoryRequest body) {
+	public static Builder builder(String knowledgeBaseId, CategoryCreateRequest body) {
 	    return new Builder()
 	            .withRequiredParams(knowledgeBaseId, body);
 	}
@@ -181,14 +182,14 @@ public class PostKnowledgeKnowledgebaseCategoriesRequest {
 			return this;
 		}
 
-		public Builder withBody(CategoryRequest body) {
+		public Builder withBody(CategoryCreateRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String knowledgeBaseId, CategoryRequest body) {
+		public Builder withRequiredParams(String knowledgeBaseId, CategoryCreateRequest body) {
 			request.setKnowledgeBaseId(knowledgeBaseId);
 			request.setBody(body);
 

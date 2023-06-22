@@ -447,10 +447,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for action aggregates
    * 
+   * getAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsActionsAggregatesJobAsync(GetAnalyticsActionsAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -482,10 +482,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for action aggregates
    * 
+   * getAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsActionsAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -524,10 +524,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsActionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ActionAsyncAggregateQueryResponse> getAnalyticsActionsAggregatesJobResultsAsync(GetAnalyticsActionsAggregatesJobResultsRequest request, final AsyncApiCallback<ActionAsyncAggregateQueryResponse> callback) {
     try {
@@ -559,10 +559,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsActionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<ActionAsyncAggregateQueryResponse>> getAnalyticsActionsAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActionAsyncAggregateQueryResponse>> callback) {
     try {
@@ -676,10 +676,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for bot aggregates
    * 
+   * getAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsBotsAggregatesJobAsync(GetAnalyticsBotsAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -711,10 +711,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for bot aggregates
    * 
+   * getAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsBotsAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -753,10 +753,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsBotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<BotAsyncAggregateQueryResponse> getAnalyticsBotsAggregatesJobResultsAsync(GetAnalyticsBotsAggregatesJobResultsRequest request, final AsyncApiCallback<BotAsyncAggregateQueryResponse> callback) {
     try {
@@ -788,10 +788,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsBotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<BotAsyncAggregateQueryResponse>> getAnalyticsBotsAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BotAsyncAggregateQueryResponse>> callback) {
     try {
@@ -905,10 +905,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for conversation aggregates
    * 
+   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsConversationsAggregatesJobAsync(GetAnalyticsConversationsAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -940,10 +940,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for conversation aggregates
    * 
+   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsConversationsAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -982,10 +982,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ConversationAsyncAggregateQueryResponse> getAnalyticsConversationsAggregatesJobResultsAsync(GetAnalyticsConversationsAggregatesJobResultsRequest request, final AsyncApiCallback<ConversationAsyncAggregateQueryResponse> callback) {
     try {
@@ -1017,10 +1017,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<ConversationAsyncAggregateQueryResponse>> getAnalyticsConversationsAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationAsyncAggregateQueryResponse>> callback) {
     try {
@@ -1434,10 +1434,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for evaluation aggregates
    * 
+   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsEvaluationsAggregatesJobAsync(GetAnalyticsEvaluationsAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -1469,10 +1469,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for evaluation aggregates
    * 
+   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsEvaluationsAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -1511,10 +1511,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<EvaluationAsyncAggregateQueryResponse> getAnalyticsEvaluationsAggregatesJobResultsAsync(GetAnalyticsEvaluationsAggregatesJobResultsRequest request, final AsyncApiCallback<EvaluationAsyncAggregateQueryResponse> callback) {
     try {
@@ -1546,10 +1546,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<EvaluationAsyncAggregateQueryResponse>> getAnalyticsEvaluationsAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationAsyncAggregateQueryResponse>> callback) {
     try {
@@ -1588,10 +1588,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for Flow aggregates
    * 
+   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsFlowsAggregatesJobAsync(GetAnalyticsFlowsAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -1623,10 +1623,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for Flow aggregates
    * 
+   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsFlowsAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -1665,10 +1665,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<FlowAsyncAggregateQueryResponse> getAnalyticsFlowsAggregatesJobResultsAsync(GetAnalyticsFlowsAggregatesJobResultsRequest request, final AsyncApiCallback<FlowAsyncAggregateQueryResponse> callback) {
     try {
@@ -1700,10 +1700,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<FlowAsyncAggregateQueryResponse>> getAnalyticsFlowsAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowAsyncAggregateQueryResponse>> callback) {
     try {
@@ -1742,10 +1742,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for journey aggregates
    * 
+   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsJourneysAggregatesJobAsync(GetAnalyticsJourneysAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -1777,10 +1777,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for journey aggregates
    * 
+   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsJourneysAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -1819,10 +1819,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<JourneyAsyncAggregateQueryResponse> getAnalyticsJourneysAggregatesJobResultsAsync(GetAnalyticsJourneysAggregatesJobResultsRequest request, final AsyncApiCallback<JourneyAsyncAggregateQueryResponse> callback) {
     try {
@@ -1854,10 +1854,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<JourneyAsyncAggregateQueryResponse>> getAnalyticsJourneysAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyAsyncAggregateQueryResponse>> callback) {
     try {
@@ -1896,10 +1896,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for knowledge aggregates
    * 
+   * getAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsKnowledgeAggregatesJobAsync(GetAnalyticsKnowledgeAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -1931,10 +1931,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for knowledge aggregates
    * 
+   * getAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsKnowledgeAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -1973,10 +1973,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsKnowledgeAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<KnowledgeAsyncAggregateQueryResponse> getAnalyticsKnowledgeAggregatesJobResultsAsync(GetAnalyticsKnowledgeAggregatesJobResultsRequest request, final AsyncApiCallback<KnowledgeAsyncAggregateQueryResponse> callback) {
     try {
@@ -2008,10 +2008,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsKnowledgeAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<KnowledgeAsyncAggregateQueryResponse>> getAnalyticsKnowledgeAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeAsyncAggregateQueryResponse>> callback) {
     try {
@@ -2950,10 +2950,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for resolution aggregates
    * 
+   * getAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsResolutionsAggregatesJobAsync(GetAnalyticsResolutionsAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -2985,10 +2985,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for resolution aggregates
    * 
+   * getAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsResolutionsAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -3027,10 +3027,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsResolutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ResolutionAsyncAggregateQueryResponse> getAnalyticsResolutionsAggregatesJobResultsAsync(GetAnalyticsResolutionsAggregatesJobResultsRequest request, final AsyncApiCallback<ResolutionAsyncAggregateQueryResponse> callback) {
     try {
@@ -3062,10 +3062,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsResolutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<ResolutionAsyncAggregateQueryResponse>> getAnalyticsResolutionsAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ResolutionAsyncAggregateQueryResponse>> callback) {
     try {
@@ -3104,10 +3104,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for survey aggregates
    * 
+   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsSurveysAggregatesJobAsync(GetAnalyticsSurveysAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -3139,10 +3139,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for survey aggregates
    * 
+   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsSurveysAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -3181,10 +3181,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<SurveyAsyncAggregateQueryResponse> getAnalyticsSurveysAggregatesJobResultsAsync(GetAnalyticsSurveysAggregatesJobResultsRequest request, final AsyncApiCallback<SurveyAsyncAggregateQueryResponse> callback) {
     try {
@@ -3216,10 +3216,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<SurveyAsyncAggregateQueryResponse>> getAnalyticsSurveysAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SurveyAsyncAggregateQueryResponse>> callback) {
     try {
@@ -3258,10 +3258,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for task management aggregates
    * 
+   * getAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsTaskmanagementAggregatesJobAsync(GetAnalyticsTaskmanagementAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -3293,10 +3293,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for task management aggregates
    * 
+   * getAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsTaskmanagementAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -3335,10 +3335,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async task management query
    * 
+   * getAnalyticsTaskmanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<TaskManagementAsyncAggregateQueryResponse> getAnalyticsTaskmanagementAggregatesJobResultsAsync(GetAnalyticsTaskmanagementAggregatesJobResultsRequest request, final AsyncApiCallback<TaskManagementAsyncAggregateQueryResponse> callback) {
     try {
@@ -3370,10 +3370,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async task management query
    * 
+   * getAnalyticsTaskmanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<TaskManagementAsyncAggregateQueryResponse>> getAnalyticsTaskmanagementAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TaskManagementAsyncAggregateQueryResponse>> callback) {
     try {
@@ -3412,10 +3412,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for transcript aggregates
    * 
+   * getAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsTranscriptsAggregatesJobAsync(GetAnalyticsTranscriptsAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -3447,10 +3447,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for transcript aggregates
    * 
+   * getAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsTranscriptsAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -3489,10 +3489,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsTranscriptsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<TranscriptAsyncAggregateQueryResponse> getAnalyticsTranscriptsAggregatesJobResultsAsync(GetAnalyticsTranscriptsAggregatesJobResultsRequest request, final AsyncApiCallback<TranscriptAsyncAggregateQueryResponse> callback) {
     try {
@@ -3524,10 +3524,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsTranscriptsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<TranscriptAsyncAggregateQueryResponse>> getAnalyticsTranscriptsAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TranscriptAsyncAggregateQueryResponse>> callback) {
     try {
@@ -3566,10 +3566,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for user aggregates
    * 
+   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsUsersAggregatesJobAsync(GetAnalyticsUsersAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -3601,10 +3601,10 @@ public class AnalyticsApiAsync {
   /**
    * Get status for async query for user aggregates
    * 
+   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsUsersAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -3643,10 +3643,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<UserAsyncAggregateQueryResponse> getAnalyticsUsersAggregatesJobResultsAsync(GetAnalyticsUsersAggregatesJobResultsRequest request, final AsyncApiCallback<UserAsyncAggregateQueryResponse> callback) {
     try {
@@ -3678,10 +3678,10 @@ public class AnalyticsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<UserAsyncAggregateQueryResponse>> getAnalyticsUsersAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserAsyncAggregateQueryResponse>> callback) {
     try {
@@ -4020,10 +4020,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for action aggregates asynchronously
    * 
+   * postAnalyticsActionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsActionsAggregatesJobsAsync(PostAnalyticsActionsAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -4055,10 +4055,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for action aggregates asynchronously
    * 
+   * postAnalyticsActionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsActionsAggregatesJobsAsync(ApiRequest<ActionAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -4172,10 +4172,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for bot aggregates asynchronously
    * 
+   * postAnalyticsBotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsBotsAggregatesJobsAsync(PostAnalyticsBotsAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -4207,10 +4207,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for bot aggregates asynchronously
    * 
+   * postAnalyticsBotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsBotsAggregatesJobsAsync(ApiRequest<BotAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -4399,10 +4399,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for conversation activity observations
    * 
+   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ConversationActivityResponse> postAnalyticsConversationsActivityQueryAsync(PostAnalyticsConversationsActivityQueryRequest request, final AsyncApiCallback<ConversationActivityResponse> callback) {
     try {
@@ -4434,10 +4434,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for conversation activity observations
    * 
+   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<ConversationActivityResponse>> postAnalyticsConversationsActivityQueryAsync(ApiRequest<ConversationActivityQuery> request, final AsyncApiCallback<ApiResponse<ConversationActivityResponse>> callback) {
     try {
@@ -4476,10 +4476,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for conversation aggregates asynchronously
    * 
+   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsConversationsAggregatesJobsAsync(PostAnalyticsConversationsAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -4511,10 +4511,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for conversation aggregates asynchronously
    * 
+   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsConversationsAggregatesJobsAsync(ApiRequest<ConversationAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -4853,10 +4853,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for evaluation aggregates asynchronously
    * 
+   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsEvaluationsAggregatesJobsAsync(PostAnalyticsEvaluationsAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -4888,10 +4888,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for evaluation aggregates asynchronously
    * 
+   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsEvaluationsAggregatesJobsAsync(ApiRequest<EvaluationAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -5005,10 +5005,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for flow activity observations
    * 
+   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<FlowActivityResponse> postAnalyticsFlowsActivityQueryAsync(PostAnalyticsFlowsActivityQueryRequest request, final AsyncApiCallback<FlowActivityResponse> callback) {
     try {
@@ -5040,10 +5040,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for flow activity observations
    * 
+   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<FlowActivityResponse>> postAnalyticsFlowsActivityQueryAsync(ApiRequest<FlowActivityQuery> request, final AsyncApiCallback<ApiResponse<FlowActivityResponse>> callback) {
     try {
@@ -5082,10 +5082,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for flow aggregates asynchronously
    * 
+   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsFlowsAggregatesJobsAsync(PostAnalyticsFlowsAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -5117,10 +5117,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for flow aggregates asynchronously
    * 
+   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsFlowsAggregatesJobsAsync(ApiRequest<FlowAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -5309,10 +5309,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for journey aggregates asynchronously
    * 
+   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsJourneysAggregatesJobsAsync(PostAnalyticsJourneysAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -5344,10 +5344,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for journey aggregates asynchronously
    * 
+   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsJourneysAggregatesJobsAsync(ApiRequest<JourneyAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -5461,10 +5461,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for knowledge aggregates asynchronously
    * 
+   * postAnalyticsKnowledgeAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsKnowledgeAggregatesJobsAsync(PostAnalyticsKnowledgeAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -5496,10 +5496,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for knowledge aggregates asynchronously
    * 
+   * postAnalyticsKnowledgeAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsKnowledgeAggregatesJobsAsync(ApiRequest<KnowledgeAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -5538,10 +5538,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for knowledge aggregates
    * 
+   * postAnalyticsKnowledgeAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<KnowledgeAggregateQueryResponse> postAnalyticsKnowledgeAggregatesQueryAsync(PostAnalyticsKnowledgeAggregatesQueryRequest request, final AsyncApiCallback<KnowledgeAggregateQueryResponse> callback) {
     try {
@@ -5573,10 +5573,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for knowledge aggregates
    * 
+   * postAnalyticsKnowledgeAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<KnowledgeAggregateQueryResponse>> postAnalyticsKnowledgeAggregatesQueryAsync(ApiRequest<KnowledgeAggregationQuery> request, final AsyncApiCallback<ApiResponse<KnowledgeAggregateQueryResponse>> callback) {
     try {
@@ -5915,10 +5915,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for resolution aggregates asynchronously
    * 
+   * postAnalyticsResolutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsResolutionsAggregatesJobsAsync(PostAnalyticsResolutionsAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -5950,10 +5950,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for resolution aggregates asynchronously
    * 
+   * postAnalyticsResolutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsResolutionsAggregatesJobsAsync(ApiRequest<ResolutionAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -5992,10 +5992,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for user activity observations
    * 
+   * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<RoutingActivityResponse> postAnalyticsRoutingActivityQueryAsync(PostAnalyticsRoutingActivityQueryRequest request, final AsyncApiCallback<RoutingActivityResponse> callback) {
     try {
@@ -6027,10 +6027,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for user activity observations
    * 
+   * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<RoutingActivityResponse>> postAnalyticsRoutingActivityQueryAsync(ApiRequest<RoutingActivityQuery> request, final AsyncApiCallback<ApiResponse<RoutingActivityResponse>> callback) {
     try {
@@ -6069,10 +6069,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for survey aggregates asynchronously
    * 
+   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsSurveysAggregatesJobsAsync(PostAnalyticsSurveysAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -6104,10 +6104,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for survey aggregates asynchronously
    * 
+   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsSurveysAggregatesJobsAsync(ApiRequest<SurveyAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -6221,10 +6221,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for task management aggregates asynchronously
    * 
+   * postAnalyticsTaskmanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsTaskmanagementAggregatesJobsAsync(PostAnalyticsTaskmanagementAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -6256,10 +6256,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for task management aggregates asynchronously
    * 
+   * postAnalyticsTaskmanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsTaskmanagementAggregatesJobsAsync(ApiRequest<TaskManagementAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -6298,10 +6298,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for task management aggregates
    * 
+   * postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<TaskManagementAggregateQueryResponse> postAnalyticsTaskmanagementAggregatesQueryAsync(PostAnalyticsTaskmanagementAggregatesQueryRequest request, final AsyncApiCallback<TaskManagementAggregateQueryResponse> callback) {
     try {
@@ -6333,10 +6333,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for task management aggregates
    * 
+   * postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<TaskManagementAggregateQueryResponse>> postAnalyticsTaskmanagementAggregatesQueryAsync(ApiRequest<TaskManagementAggregationQuery> request, final AsyncApiCallback<ApiResponse<TaskManagementAggregateQueryResponse>> callback) {
     try {
@@ -6375,10 +6375,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for team activity observations
    * 
+   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<TeamActivityResponse> postAnalyticsTeamsActivityQueryAsync(PostAnalyticsTeamsActivityQueryRequest request, final AsyncApiCallback<TeamActivityResponse> callback) {
     try {
@@ -6410,10 +6410,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for team activity observations
    * 
+   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<TeamActivityResponse>> postAnalyticsTeamsActivityQueryAsync(ApiRequest<TeamActivityQuery> request, final AsyncApiCallback<ApiResponse<TeamActivityResponse>> callback) {
     try {
@@ -6452,10 +6452,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for transcript aggregates asynchronously
    * 
+   * postAnalyticsTranscriptsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsTranscriptsAggregatesJobsAsync(PostAnalyticsTranscriptsAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -6487,10 +6487,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for transcript aggregates asynchronously
    * 
+   * postAnalyticsTranscriptsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsTranscriptsAggregatesJobsAsync(ApiRequest<TranscriptAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -6604,10 +6604,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for user activity observations
    * 
+   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<UserActivityResponse> postAnalyticsUsersActivityQueryAsync(PostAnalyticsUsersActivityQueryRequest request, final AsyncApiCallback<UserActivityResponse> callback) {
     try {
@@ -6639,10 +6639,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for user activity observations
    * 
+   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<UserActivityResponse>> postAnalyticsUsersActivityQueryAsync(ApiRequest<UserActivityQuery> request, final AsyncApiCallback<ApiResponse<UserActivityResponse>> callback) {
     try {
@@ -6681,10 +6681,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for user aggregates asynchronously
    * 
+   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsUsersAggregatesJobsAsync(PostAnalyticsUsersAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -6716,10 +6716,10 @@ public class AnalyticsApiAsync {
   /**
    * Query for user aggregates asynchronously
    * 
+   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsUsersAggregatesJobsAsync(ApiRequest<UserAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {

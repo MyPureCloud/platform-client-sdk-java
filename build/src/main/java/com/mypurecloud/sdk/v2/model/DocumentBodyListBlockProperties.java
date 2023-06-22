@@ -43,7 +43,8 @@ public class DocumentBodyListBlockProperties  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NORMAL("Normal"),
     SQUARE("Square"),
-    CIRCLE("Circle");
+    CIRCLE("Circle"),
+    NONE("None");
 
     private String value;
 
@@ -95,7 +96,8 @@ public class DocumentBodyListBlockProperties  implements Serializable {
     LOWERGREEK("LowerGreek"),
     LOWERROMAN("LowerRoman"),
     UPPERALPHA("UpperAlpha"),
-    UPPERROMAN("UpperRoman");
+    UPPERROMAN("UpperRoman"),
+    NONE("None");
 
     private String value;
 

@@ -346,7 +346,7 @@ docs/BuCreateBlankScheduleRequest.md
 docs/BuCurrentAgentScheduleSearchResponse.md
 docs/BuForecastGenerationPlanningGroupResult.md
 docs/BuForecastGenerationResult.md
-docs/BuForecastModification.md
+docs/BuForecastModificationResponse.md
 docs/BuForecastResult.md
 docs/BuForecastResultResponse.md
 docs/BuForecastTimeSeriesResult.md
@@ -499,12 +499,13 @@ docs/CardAction.md
 docs/CarrierServicesApi.json
 docs/CarrierServicesApi.md
 docs/Category.md
+docs/CategoryCreateRequest.md
 docs/CategoryEntityListing.md
 docs/CategoryListing.md
 docs/CategoryReference.md
-docs/CategoryRequest.md
 docs/CategoryResponse.md
 docs/CategoryResponseListing.md
+docs/CategoryUpdateRequest.md
 docs/Certificate.md
 docs/CertificateAuthorityEntityListing.md
 docs/CertificateDetails.md
@@ -587,6 +588,9 @@ docs/ConstraintConflictMessage.md
 docs/ConsultTransfer.md
 docs/ConsultTransferEvent.md
 docs/ConsultTransferResponse.md
+docs/ConsultTransferToAgent.md
+docs/ConsultTransferToExternal.md
+docs/ConsultTransferToQueue.md
 docs/ConsultTransferUpdate.md
 docs/ConsumedResourcesEntityListing.md
 docs/ConsumingResourcesEntityListing.md
@@ -1616,9 +1620,9 @@ docs/GroupsApi.json
 docs/GroupsApi.md
 docs/GroupsSearchResponse.md
 docs/GuestCategoryReference.md
-docs/GuestCategoryResponse.md
 docs/GuestCategoryResponseListing.md
 docs/GuestMemberInfo.md
+docs/GuestResponseCategory.md
 docs/HeadcountForecast.md
 docs/HeadcountInterval.md
 docs/HelpLink.md
@@ -1691,6 +1695,10 @@ docs/InsightsTrendMetricItem.md
 docs/InsightsTrendTotalItem.md
 docs/InsightsTrends.md
 docs/InstagramId.md
+docs/InstagramIntegration.md
+docs/InstagramIntegrationEntityListing.md
+docs/InstagramIntegrationRequest.md
+docs/InstagramIntegrationUpdateRequest.md
 docs/InstagramScopedId.md
 docs/Integration.md
 docs/IntegrationAction.md
@@ -3297,6 +3305,9 @@ docs/TransferInitiator.md
 docs/TransferRequest.md
 docs/TransferResponse.md
 docs/TransferResponseModifiedBy.md
+docs/TransferToAgentRequest.md
+docs/TransferToExternalRequest.md
+docs/TransferToQueueRequest.md
 docs/TrendData.md
 docs/Trigger.md
 docs/TriggerEntityListing.md
@@ -3360,6 +3371,8 @@ docs/UCI10n.md
 docs/UCIcon.md
 docs/UCIntegration.md
 docs/UCIntegrationListing.md
+docs/UCThirdPartyPresence.md
+docs/UcUserPresence.md
 docs/UnansweredGroup.md
 docs/UnansweredGroupSuggestedDocument.md
 docs/UnansweredGroups.md
@@ -3997,6 +4010,7 @@ docs/deleteConversationRecordingAnnotation-example.txt
 docs/deleteConversationsCallParticipantConsult-example.txt
 docs/deleteConversationsEmailMessagesDraftAttachment-example.txt
 docs/deleteConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
+docs/deleteConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsLineIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
@@ -4420,6 +4434,8 @@ docs/getConversationsMessagingFacebookApp-example.txt
 docs/getConversationsMessagingIntegrations-example.txt
 docs/getConversationsMessagingIntegrationsFacebook-example.txt
 docs/getConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
+docs/getConversationsMessagingIntegrationsInstagram-example.txt
+docs/getConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationsLine-example.txt
 docs/getConversationsMessagingIntegrationsLineIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationsOpen-example.txt
@@ -4639,7 +4655,6 @@ docs/getJourneyActiontarget-example.txt
 docs/getJourneyActiontargets-example.txt
 docs/getJourneyActiontemplate-example.txt
 docs/getJourneyActiontemplates-example.txt
-docs/getJourneyCustomerCustomerIdSessions-example.txt
 docs/getJourneyOutcome-example.txt
 docs/getJourneyOutcomes-example.txt
 docs/getJourneyOutcomesAttributionsJob-example.txt
@@ -5148,6 +5163,8 @@ docs/getUsersDevelopmentActivities-example.txt
 docs/getUsersDevelopmentActivitiesMe-example.txt
 docs/getUsersDevelopmentActivity-example.txt
 docs/getUsersMe-example.txt
+docs/getUsersPresenceBulk-example.txt
+docs/getUsersPresencesPurecloudBulk-example.txt
 docs/getUsersSearch-example.txt
 docs/getUsersSearch-example.txt
 docs/getVoicemailGroupMailbox-example.txt
@@ -5297,6 +5314,7 @@ docs/patchConversationsMessageParticipant-example.txt
 docs/patchConversationsMessageParticipantAttributes-example.txt
 docs/patchConversationsMessageParticipantCommunication-example.txt
 docs/patchConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
+docs/patchConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
@@ -5520,12 +5538,18 @@ docs/postConversationDisconnect-example.txt
 docs/postConversationParticipantCallbacks-example.txt
 docs/postConversationParticipantDigits-example.txt
 docs/postConversationParticipantReplace-example.txt
+docs/postConversationParticipantReplaceAgent-example.txt
+docs/postConversationParticipantReplaceExternal-example.txt
+docs/postConversationParticipantReplaceQueue-example.txt
 docs/postConversationParticipantSecureivrsessions-example.txt
 docs/postConversationRecordingAnnotations-example.txt
 docs/postConversationsCall-example.txt
 docs/postConversationsCallParticipantCoach-example.txt
 docs/postConversationsCallParticipantCommunicationWrapup-example.txt
 docs/postConversationsCallParticipantConsult-example.txt
+docs/postConversationsCallParticipantConsultAgent-example.txt
+docs/postConversationsCallParticipantConsultExternal-example.txt
+docs/postConversationsCallParticipantConsultQueue-example.txt
 docs/postConversationsCallParticipantMonitor-example.txt
 docs/postConversationsCallParticipantReplace-example.txt
 docs/postConversationsCallParticipants-example.txt
@@ -5563,6 +5587,7 @@ docs/postConversationsMessages-example.txt
 docs/postConversationsMessagesAgentless-example.txt
 docs/postConversationsMessagesInboundOpen-example.txt
 docs/postConversationsMessagingIntegrationsFacebook-example.txt
+docs/postConversationsMessagingIntegrationsInstagram-example.txt
 docs/postConversationsMessagingIntegrationsLine-example.txt
 docs/postConversationsMessagingIntegrationsOpen-example.txt
 docs/postConversationsMessagingIntegrationsTwitter-example.txt
@@ -6054,6 +6079,7 @@ docs/putIntegrationsBotconnectorIntegrationIdBots-example.txt
 docs/putIntegrationsCredential-example.txt
 docs/putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings-example.txt
 docs/putIntegrationsSpeechTtsSettings-example.txt
+docs/putIntegrationsUnifiedcommunicationThirdpartypresences-example.txt
 docs/putLanguageunderstandingDomainVersion-example.txt
 docs/putLearningModule-example.txt
 docs/putLearningModuleRule-example.txt
@@ -6361,6 +6387,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationRecordingAnno
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsCallParticipantConsultRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsEmailMessagesDraftAttachmentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest.java
@@ -6782,6 +6809,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagesRequest
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingFacebookAppRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsFacebookRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsInstagramRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsLineIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsLineRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsMessagingIntegrationsOpenIntegrationIdRequest.java
@@ -7003,7 +7032,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyActiontargetRequest.j
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyActiontargetsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyActiontemplateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyActiontemplatesRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyCustomerCustomerIdSessionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyOutcomeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyOutcomesAttributionsJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyOutcomesAttributionsJobResultsRequest.java
@@ -7511,6 +7539,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetUsersDevelopmentActivitiesMe
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetUsersDevelopmentActivitiesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetUsersDevelopmentActivityRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetUsersMeRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetUsersPresenceBulkRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetUsersPresencesPurecloudBulkRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetUsersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetUsersSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetUsersSearchRequest.java
@@ -7661,6 +7691,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagePartic
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessageParticipantRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.java
@@ -7883,11 +7914,17 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationCobrowseRequest
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationDisconnectRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantCallbacksRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantDigitsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantReplaceAgentRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantReplaceExternalRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantReplaceQueueRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantReplaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantSecureivrsessionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationRecordingAnnotationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantCoachRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantCommunicationWrapupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantConsultAgentRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantConsultExternalRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantConsultQueueRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantConsultRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantMonitorRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantReplaceRequest.java
@@ -7927,6 +7964,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagesAgentl
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagesInboundOpenRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsFacebookRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsInstagramRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsLineRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsOpenRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsMessagingIntegrationsTwitterRequest.java
@@ -8418,6 +8456,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsBotconnectorInte
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsCredentialRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsSpeechTtsSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsUnifiedcommunicationThirdpartypresencesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutLanguageunderstandingDomainVersionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutLearningModuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutLearningModuleRuleRequest.java
@@ -8875,7 +8914,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/BuCreateBlankScheduleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuCurrentAgentScheduleSearchResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuForecastGenerationPlanningGroupResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuForecastGenerationResult.java
-src/main/java/com/mypurecloud/sdk/v2/model/BuForecastModification.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuForecastModificationResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuForecastResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuForecastResultResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuForecastTimeSeriesResult.java
@@ -9026,12 +9065,13 @@ src/main/java/com/mypurecloud/sdk/v2/model/CampaignTimeSlot.java
 src/main/java/com/mypurecloud/sdk/v2/model/Card.java
 src/main/java/com/mypurecloud/sdk/v2/model/CardAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/Category.java
+src/main/java/com/mypurecloud/sdk/v2/model/CategoryCreateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CategoryEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/CategoryListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/CategoryReference.java
-src/main/java/com/mypurecloud/sdk/v2/model/CategoryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CategoryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/CategoryResponseListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/CategoryUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/Certificate.java
 src/main/java/com/mypurecloud/sdk/v2/model/CertificateAuthorityEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/CertificateDetails.java
@@ -9110,6 +9150,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConstraintConflictMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConsultTransfer.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConsultTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConsultTransferResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConsultTransferToAgent.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConsultTransferToExternal.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConsultTransferToQueue.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConsultTransferUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConsumedResourcesEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConsumingResourcesEntityListing.java
@@ -10113,9 +10156,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/GroupSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/GroupUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/GroupsSearchResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuestCategoryReference.java
-src/main/java/com/mypurecloud/sdk/v2/model/GuestCategoryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuestCategoryResponseListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuestMemberInfo.java
+src/main/java/com/mypurecloud/sdk/v2/model/GuestResponseCategory.java
 src/main/java/com/mypurecloud/sdk/v2/model/HeadcountForecast.java
 src/main/java/com/mypurecloud/sdk/v2/model/HeadcountInterval.java
 src/main/java/com/mypurecloud/sdk/v2/model/HelpLink.java
@@ -10184,6 +10227,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/InsightsTrendMetricItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/InsightsTrendTotalItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/InsightsTrends.java
 src/main/java/com/mypurecloud/sdk/v2/model/InstagramId.java
+src/main/java/com/mypurecloud/sdk/v2/model/InstagramIntegration.java
+src/main/java/com/mypurecloud/sdk/v2/model/InstagramIntegrationEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/InstagramIntegrationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/InstagramIntegrationUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/InstagramScopedId.java
 src/main/java/com/mypurecloud/sdk/v2/model/Integration.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntegrationAction.java
@@ -11722,6 +11769,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/TransferInitiator.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferResponseModifiedBy.java
+src/main/java/com/mypurecloud/sdk/v2/model/TransferToAgentRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/TransferToExternalRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/TransferToQueueRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TrendData.java
 src/main/java/com/mypurecloud/sdk/v2/model/Trigger.java
 src/main/java/com/mypurecloud/sdk/v2/model/TriggerEntityListing.java
@@ -11785,6 +11835,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/UCI10n.java
 src/main/java/com/mypurecloud/sdk/v2/model/UCIcon.java
 src/main/java/com/mypurecloud/sdk/v2/model/UCIntegration.java
 src/main/java/com/mypurecloud/sdk/v2/model/UCIntegrationListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/UCThirdPartyPresence.java
+src/main/java/com/mypurecloud/sdk/v2/model/UcUserPresence.java
 src/main/java/com/mypurecloud/sdk/v2/model/UnansweredGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/UnansweredGroupSuggestedDocument.java
 src/main/java/com/mypurecloud/sdk/v2/model/UnansweredGroups.java

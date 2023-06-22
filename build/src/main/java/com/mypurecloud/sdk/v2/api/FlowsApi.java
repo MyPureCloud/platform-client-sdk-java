@@ -50,11 +50,11 @@ public class FlowsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
+   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsFlowsAggregatesJob(String jobId) throws IOException, ApiException {
     return  getAnalyticsFlowsAggregatesJob(createGetAnalyticsFlowsAggregatesJobRequest(jobId));
@@ -63,10 +63,10 @@ public class FlowsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
+   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsFlowsAggregatesJobWithHttpInfo(String jobId) throws IOException {
     return getAnalyticsFlowsAggregatesJob(createGetAnalyticsFlowsAggregatesJobRequest(jobId).withHttpInfo());
@@ -82,11 +82,11 @@ public class FlowsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
+   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsFlowsAggregatesJob(GetAnalyticsFlowsAggregatesJobRequest request) throws IOException, ApiException {
     try {
@@ -102,10 +102,10 @@ public class FlowsApi {
   /**
    * Get status for async query for Flow aggregates
    * 
+   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsFlowsAggregatesJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -132,12 +132,12 @@ public class FlowsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return FlowAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public FlowAsyncAggregateQueryResponse getAnalyticsFlowsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
     return  getAnalyticsFlowsAggregatesJobResults(createGetAnalyticsFlowsAggregatesJobResultsRequest(jobId, cursor));
@@ -146,11 +146,11 @@ public class FlowsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return FlowAsyncAggregateQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<FlowAsyncAggregateQueryResponse> getAnalyticsFlowsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
     return getAnalyticsFlowsAggregatesJobResults(createGetAnalyticsFlowsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
@@ -168,11 +168,11 @@ public class FlowsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public FlowAsyncAggregateQueryResponse getAnalyticsFlowsAggregatesJobResults(GetAnalyticsFlowsAggregatesJobResultsRequest request) throws IOException, ApiException {
     try {
@@ -188,10 +188,10 @@ public class FlowsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<FlowAsyncAggregateQueryResponse> getAnalyticsFlowsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
     try {
@@ -218,13 +218,13 @@ public class FlowsApi {
   /**
    * Query for flow activity observations
    * 
+   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
    * @return FlowActivityResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public FlowActivityResponse postAnalyticsFlowsActivityQuery(FlowActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return  postAnalyticsFlowsActivityQuery(createPostAnalyticsFlowsActivityQueryRequest(body, pageSize, pageNumber));
@@ -233,12 +233,12 @@ public class FlowsApi {
   /**
    * Query for flow activity observations
    * 
+   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
    * @return FlowActivityResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<FlowActivityResponse> postAnalyticsFlowsActivityQueryWithHttpInfo(FlowActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
     return postAnalyticsFlowsActivityQuery(createPostAnalyticsFlowsActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
@@ -258,11 +258,11 @@ public class FlowsApi {
   /**
    * Query for flow activity observations
    * 
+   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowActivityResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public FlowActivityResponse postAnalyticsFlowsActivityQuery(PostAnalyticsFlowsActivityQueryRequest request) throws IOException, ApiException {
     try {
@@ -278,10 +278,10 @@ public class FlowsApi {
   /**
    * Query for flow activity observations
    * 
+   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<FlowActivityResponse> postAnalyticsFlowsActivityQuery(ApiRequest<FlowActivityQuery> request) throws IOException {
     try {
@@ -308,11 +308,11 @@ public class FlowsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
+   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(FlowAsyncAggregationQuery body) throws IOException, ApiException {
     return  postAnalyticsFlowsAggregatesJobs(createPostAnalyticsFlowsAggregatesJobsRequest(body));
@@ -321,10 +321,10 @@ public class FlowsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
+   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsFlowsAggregatesJobsWithHttpInfo(FlowAsyncAggregationQuery body) throws IOException {
     return postAnalyticsFlowsAggregatesJobs(createPostAnalyticsFlowsAggregatesJobsRequest(body).withHttpInfo());
@@ -340,11 +340,11 @@ public class FlowsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
+   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(PostAnalyticsFlowsAggregatesJobsRequest request) throws IOException, ApiException {
     try {
@@ -360,10 +360,10 @@ public class FlowsApi {
   /**
    * Query for flow aggregates asynchronously
    * 
+   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsFlowsAggregatesJobs(ApiRequest<FlowAsyncAggregationQuery> request) throws IOException {
     try {

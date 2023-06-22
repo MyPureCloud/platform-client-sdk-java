@@ -11,10 +11,11 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.BulkResponse;
+import com.mypurecloud.sdk.v2.model.CategoryCreateRequest;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
-import com.mypurecloud.sdk.v2.model.CategoryRequest;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
+import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
 import com.mypurecloud.sdk.v2.model.DocumentVariation;
 import com.mypurecloud.sdk.v2.model.DocumentVariationListing;
@@ -2222,12 +2223,13 @@ public class KnowledgeApi {
    * @param includeDrafts If includeDrafts is true, Documents in the draft state are also returned in the response. (optional)
    * @param labelIds If specified, retrieves documents associated with label ids, comma separated values expected. (optional)
    * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @param externalIds If specified, retrieves documents associated with external ids, comma separated values expected. (optional)
    * @return KnowledgeDocumentResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeDocumentResponseListing getKnowledgeKnowledgebaseDocuments(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> documentId, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebaseDocuments(createGetKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand));
+  public KnowledgeDocumentResponseListing getKnowledgeKnowledgebaseDocuments(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> documentId, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand, List<String> externalIds) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseDocuments(createGetKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand, externalIds));
   }
 
   /**
@@ -2244,14 +2246,15 @@ public class KnowledgeApi {
    * @param includeDrafts If includeDrafts is true, Documents in the draft state are also returned in the response. (optional)
    * @param labelIds If specified, retrieves documents associated with label ids, comma separated values expected. (optional)
    * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @param externalIds If specified, retrieves documents associated with external ids, comma separated values expected. (optional)
    * @return KnowledgeDocumentResponseListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeDocumentResponseListing> getKnowledgeKnowledgebaseDocumentsWithHttpInfo(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> documentId, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand) throws IOException {
-    return getKnowledgeKnowledgebaseDocuments(createGetKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand).withHttpInfo());
+  public ApiResponse<KnowledgeDocumentResponseListing> getKnowledgeKnowledgebaseDocumentsWithHttpInfo(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> documentId, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand, List<String> externalIds) throws IOException {
+    return getKnowledgeKnowledgebaseDocuments(createGetKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand, externalIds).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebaseDocumentsRequest createGetKnowledgeKnowledgebaseDocumentsRequest(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> documentId, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand) {
+  private GetKnowledgeKnowledgebaseDocumentsRequest createGetKnowledgeKnowledgebaseDocumentsRequest(String knowledgeBaseId, String before, String after, String pageSize, String interval, List<String> documentId, List<String> categoryId, Boolean includeSubcategories, Boolean includeDrafts, List<String> labelIds, List<String> expand, List<String> externalIds) {
     return GetKnowledgeKnowledgebaseDocumentsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
@@ -2274,6 +2277,8 @@ public class KnowledgeApi {
             .withLabelIds(labelIds)
 
             .withExpand(expand)
+
+            .withExternalIds(externalIds)
 
             .build();
   }
@@ -2959,6 +2964,7 @@ public class KnowledgeApi {
   /**
    * Get document content upload status
    * 
+   * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param documentId Document ID (required)
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param languageCode Language code, format: iso2-LOCALE (required)
@@ -2967,7 +2973,6 @@ public class KnowledgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public KnowledgeDocumentContentUpload getKnowledgeKnowledgebaseLanguageDocumentUpload(String documentId, String knowledgeBaseId, String languageCode, String uploadId) throws IOException, ApiException {
     return  getKnowledgeKnowledgebaseLanguageDocumentUpload(createGetKnowledgeKnowledgebaseLanguageDocumentUploadRequest(documentId, knowledgeBaseId, languageCode, uploadId));
@@ -2976,6 +2981,7 @@ public class KnowledgeApi {
   /**
    * Get document content upload status
    * 
+   * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param documentId Document ID (required)
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param languageCode Language code, format: iso2-LOCALE (required)
@@ -2983,7 +2989,6 @@ public class KnowledgeApi {
    * @return KnowledgeDocumentContentUpload
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public ApiResponse<KnowledgeDocumentContentUpload> getKnowledgeKnowledgebaseLanguageDocumentUploadWithHttpInfo(String documentId, String knowledgeBaseId, String languageCode, String uploadId) throws IOException {
     return getKnowledgeKnowledgebaseLanguageDocumentUpload(createGetKnowledgeKnowledgebaseLanguageDocumentUploadRequest(documentId, knowledgeBaseId, languageCode, uploadId).withHttpInfo());
@@ -3005,12 +3010,12 @@ public class KnowledgeApi {
   /**
    * Get document content upload status
    * 
+   * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeDocumentContentUpload
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public KnowledgeDocumentContentUpload getKnowledgeKnowledgebaseLanguageDocumentUpload(GetKnowledgeKnowledgebaseLanguageDocumentUploadRequest request) throws IOException, ApiException {
     try {
@@ -3026,11 +3031,11 @@ public class KnowledgeApi {
   /**
    * Get document content upload status
    * 
+   * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public ApiResponse<KnowledgeDocumentContentUpload> getKnowledgeKnowledgebaseLanguageDocumentUpload(ApiRequest<Void> request) throws IOException {
     try {
@@ -4005,7 +4010,7 @@ public class KnowledgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CategoryResponse patchKnowledgeKnowledgebaseCategory(String knowledgeBaseId, String categoryId, CategoryRequest body) throws IOException, ApiException {
+  public CategoryResponse patchKnowledgeKnowledgebaseCategory(String knowledgeBaseId, String categoryId, CategoryUpdateRequest body) throws IOException, ApiException {
     return  patchKnowledgeKnowledgebaseCategory(createPatchKnowledgeKnowledgebaseCategoryRequest(knowledgeBaseId, categoryId, body));
   }
 
@@ -4018,11 +4023,11 @@ public class KnowledgeApi {
    * @return CategoryResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CategoryResponse> patchKnowledgeKnowledgebaseCategoryWithHttpInfo(String knowledgeBaseId, String categoryId, CategoryRequest body) throws IOException {
+  public ApiResponse<CategoryResponse> patchKnowledgeKnowledgebaseCategoryWithHttpInfo(String knowledgeBaseId, String categoryId, CategoryUpdateRequest body) throws IOException {
     return patchKnowledgeKnowledgebaseCategory(createPatchKnowledgeKnowledgebaseCategoryRequest(knowledgeBaseId, categoryId, body).withHttpInfo());
   }
 
-  private PatchKnowledgeKnowledgebaseCategoryRequest createPatchKnowledgeKnowledgebaseCategoryRequest(String knowledgeBaseId, String categoryId, CategoryRequest body) {
+  private PatchKnowledgeKnowledgebaseCategoryRequest createPatchKnowledgeKnowledgebaseCategoryRequest(String knowledgeBaseId, String categoryId, CategoryUpdateRequest body) {
     return PatchKnowledgeKnowledgebaseCategoryRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
@@ -4059,7 +4064,7 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CategoryResponse> patchKnowledgeKnowledgebaseCategory(ApiRequest<CategoryRequest> request) throws IOException {
+  public ApiResponse<CategoryResponse> patchKnowledgeKnowledgebaseCategory(ApiRequest<CategoryUpdateRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<CategoryResponse>() {});
     }
@@ -5307,7 +5312,7 @@ public class KnowledgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CategoryResponse postKnowledgeKnowledgebaseCategories(String knowledgeBaseId, CategoryRequest body) throws IOException, ApiException {
+  public CategoryResponse postKnowledgeKnowledgebaseCategories(String knowledgeBaseId, CategoryCreateRequest body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseCategories(createPostKnowledgeKnowledgebaseCategoriesRequest(knowledgeBaseId, body));
   }
 
@@ -5319,11 +5324,11 @@ public class KnowledgeApi {
    * @return CategoryResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CategoryResponse> postKnowledgeKnowledgebaseCategoriesWithHttpInfo(String knowledgeBaseId, CategoryRequest body) throws IOException {
+  public ApiResponse<CategoryResponse> postKnowledgeKnowledgebaseCategoriesWithHttpInfo(String knowledgeBaseId, CategoryCreateRequest body) throws IOException {
     return postKnowledgeKnowledgebaseCategories(createPostKnowledgeKnowledgebaseCategoriesRequest(knowledgeBaseId, body).withHttpInfo());
   }
 
-  private PostKnowledgeKnowledgebaseCategoriesRequest createPostKnowledgeKnowledgebaseCategoriesRequest(String knowledgeBaseId, CategoryRequest body) {
+  private PostKnowledgeKnowledgebaseCategoriesRequest createPostKnowledgeKnowledgebaseCategoriesRequest(String knowledgeBaseId, CategoryCreateRequest body) {
     return PostKnowledgeKnowledgebaseCategoriesRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
@@ -5358,7 +5363,7 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CategoryResponse> postKnowledgeKnowledgebaseCategories(ApiRequest<CategoryRequest> request) throws IOException {
+  public ApiResponse<CategoryResponse> postKnowledgeKnowledgebaseCategories(ApiRequest<CategoryCreateRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<CategoryResponse>() {});
     }
@@ -5637,12 +5642,12 @@ public class KnowledgeApi {
   /**
    * Bulk remove documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public BulkResponse postKnowledgeKnowledgebaseDocumentsBulkRemove(String knowledgeBaseId, KnowledgeDocumentBulkRemoveRequest body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseDocumentsBulkRemove(createPostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest(knowledgeBaseId, body));
@@ -5651,11 +5656,11 @@ public class KnowledgeApi {
   /**
    * Bulk remove documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkRemoveWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentBulkRemoveRequest body) throws IOException {
     return postKnowledgeKnowledgebaseDocumentsBulkRemove(createPostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest(knowledgeBaseId, body).withHttpInfo());
@@ -5673,11 +5678,11 @@ public class KnowledgeApi {
   /**
    * Bulk remove documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BulkResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public BulkResponse postKnowledgeKnowledgebaseDocumentsBulkRemove(PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest request) throws IOException, ApiException {
     try {
@@ -5693,10 +5698,10 @@ public class KnowledgeApi {
   /**
    * Bulk remove documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkRemove(ApiRequest<KnowledgeDocumentBulkRemoveRequest> request) throws IOException {
     try {
@@ -5723,12 +5728,12 @@ public class KnowledgeApi {
   /**
    * Bulk update documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public BulkResponse postKnowledgeKnowledgebaseDocumentsBulkUpdate(String knowledgeBaseId, KnowledgeDocumentBulkUpdateRequest body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseDocumentsBulkUpdate(createPostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest(knowledgeBaseId, body));
@@ -5737,11 +5742,11 @@ public class KnowledgeApi {
   /**
    * Bulk update documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkUpdateWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentBulkUpdateRequest body) throws IOException {
     return postKnowledgeKnowledgebaseDocumentsBulkUpdate(createPostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest(knowledgeBaseId, body).withHttpInfo());
@@ -5759,11 +5764,11 @@ public class KnowledgeApi {
   /**
    * Bulk update documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BulkResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public BulkResponse postKnowledgeKnowledgebaseDocumentsBulkUpdate(PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest request) throws IOException, ApiException {
     try {
@@ -5779,10 +5784,10 @@ public class KnowledgeApi {
   /**
    * Bulk update documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkUpdate(ApiRequest<KnowledgeDocumentBulkUpdateRequest> request) throws IOException {
     try {
@@ -5977,12 +5982,12 @@ public class KnowledgeApi {
   /**
    * Bulk add document versions.
    * 
+   * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public BulkResponse postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(String knowledgeBaseId, KnowledgeDocumentBulkVersionAddRequest body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(createPostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest(knowledgeBaseId, body));
@@ -5991,11 +5996,11 @@ public class KnowledgeApi {
   /**
    * Bulk add document versions.
    * 
+   * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return BulkResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsVersionsBulkAddWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentBulkVersionAddRequest body) throws IOException {
     return postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(createPostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest(knowledgeBaseId, body).withHttpInfo());
@@ -6013,11 +6018,11 @@ public class KnowledgeApi {
   /**
    * Bulk add document versions.
    * 
+   * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return BulkResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public BulkResponse postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(PostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest request) throws IOException, ApiException {
     try {
@@ -6033,10 +6038,10 @@ public class KnowledgeApi {
   /**
    * Bulk add document versions.
    * 
+   * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<BulkResponse> postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(ApiRequest<KnowledgeDocumentBulkVersionAddRequest> request) throws IOException {
     try {
@@ -6399,6 +6404,7 @@ public class KnowledgeApi {
   /**
    * Upload Article Content
    * 
+   * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param documentId Document ID (required)
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param languageCode Language code, format: iso2-LOCALE (required)
@@ -6407,7 +6413,6 @@ public class KnowledgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public KnowledgeDocumentContentUpload postKnowledgeKnowledgebaseLanguageDocumentUploads(String documentId, String knowledgeBaseId, String languageCode, KnowledgeDocumentContentUpload body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseLanguageDocumentUploads(createPostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest(documentId, knowledgeBaseId, languageCode, body));
@@ -6416,6 +6421,7 @@ public class KnowledgeApi {
   /**
    * Upload Article Content
    * 
+   * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param documentId Document ID (required)
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param languageCode Language code, format: iso2-LOCALE (required)
@@ -6423,7 +6429,6 @@ public class KnowledgeApi {
    * @return KnowledgeDocumentContentUpload
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public ApiResponse<KnowledgeDocumentContentUpload> postKnowledgeKnowledgebaseLanguageDocumentUploadsWithHttpInfo(String documentId, String knowledgeBaseId, String languageCode, KnowledgeDocumentContentUpload body) throws IOException {
     return postKnowledgeKnowledgebaseLanguageDocumentUploads(createPostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest(documentId, knowledgeBaseId, languageCode, body).withHttpInfo());
@@ -6445,12 +6450,12 @@ public class KnowledgeApi {
   /**
    * Upload Article Content
    * 
+   * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeDocumentContentUpload
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public KnowledgeDocumentContentUpload postKnowledgeKnowledgebaseLanguageDocumentUploads(PostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest request) throws IOException, ApiException {
     try {
@@ -6466,11 +6471,11 @@ public class KnowledgeApi {
   /**
    * Upload Article Content
    * 
+   * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public ApiResponse<KnowledgeDocumentContentUpload> postKnowledgeKnowledgebaseLanguageDocumentUploads(ApiRequest<KnowledgeDocumentContentUpload> request) throws IOException {
     try {

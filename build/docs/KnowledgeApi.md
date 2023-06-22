@@ -1573,7 +1573,7 @@ try {
 
 
 
-> [KnowledgeDocumentResponseListing](KnowledgeDocumentResponseListing.html) getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand)
+> [KnowledgeDocumentResponseListing](KnowledgeDocumentResponseListing.html) getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand, externalIds)
 
 Get documents.
 
@@ -1616,8 +1616,9 @@ Boolean includeSubcategories = true; // Boolean | Works along with 'categoryId' 
 Boolean includeDrafts = true; // Boolean | If includeDrafts is true, Documents in the draft state are also returned in the response.
 List<String> labelIds = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with label ids, comma separated values expected.
 List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.
+List<String> externalIds = Arrays.asList(null); // List<String> | If specified, retrieves documents associated with external ids, comma separated values expected.
 try {
-    KnowledgeDocumentResponseListing result = apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand);
+    KnowledgeDocumentResponseListing result = apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand, externalIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseDocuments");
@@ -1641,6 +1642,7 @@ try {
 | **includeDrafts** | **Boolean**| If includeDrafts is true, Documents in the draft state are also returned in the response. | [optional] 
 | **labelIds** | [**List&lt;String&gt;**](String.html)| If specified, retrieves documents associated with label ids, comma separated values expected. | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: category, labels, variations 
+| **externalIds** | [**List&lt;String&gt;**](String.html)| If specified, retrieves documents associated with external ids, comma separated values expected. | [optional] 
 {: class="table-striped"}
 
 
@@ -2120,6 +2122,8 @@ try {
 > [KnowledgeDocumentContentUpload](KnowledgeDocumentContentUpload.html) getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId)
 
 Get document content upload status
+
+getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}  
 
@@ -2887,7 +2891,7 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 String categoryId = "categoryId_example"; // String | Category ID
-CategoryRequest body = new CategoryRequest(); // CategoryRequest | 
+CategoryUpdateRequest body = new CategoryUpdateRequest(); // CategoryUpdateRequest | 
 try {
     CategoryResponse result = apiInstance.patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body);
     System.out.println(result);
@@ -2904,7 +2908,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **categoryId** | **String**| Category ID | 
-| **body** | [**CategoryRequest**](CategoryRequest.html)|  | 
+| **body** | [**CategoryUpdateRequest**](CategoryUpdateRequest.html)|  | 
 {: class="table-striped"}
 
 
@@ -3820,7 +3824,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-CategoryRequest body = new CategoryRequest(); // CategoryRequest | 
+CategoryCreateRequest body = new CategoryCreateRequest(); // CategoryCreateRequest | 
 try {
     CategoryResponse result = apiInstance.postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body);
     System.out.println(result);
@@ -3836,7 +3840,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**CategoryRequest**](CategoryRequest.html)|  | 
+| **body** | [**CategoryCreateRequest**](CategoryCreateRequest.html)|  | 
 {: class="table-striped"}
 
 
@@ -4048,6 +4052,8 @@ try {
 
 Bulk remove documents.
 
+postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove  
 
 Requires ALL permissions: 
@@ -4110,6 +4116,8 @@ try {
 > [BulkResponse](BulkResponse.html) postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
 
 Bulk update documents.
+
+postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update  
 
@@ -4301,6 +4309,8 @@ try {
 > [BulkResponse](BulkResponse.html) postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body)
 
 Bulk add document versions.
+
+postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add  
 
@@ -4618,6 +4628,8 @@ try {
 > [KnowledgeDocumentContentUpload](KnowledgeDocumentContentUpload.html) postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body)
 
 Upload Article Content
+
+postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads  
 

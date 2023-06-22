@@ -555,13 +555,13 @@ public class TeamsApi {
   /**
    * Query for team activity observations
    * 
+   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
    * @return TeamActivityResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public TeamActivityResponse postAnalyticsTeamsActivityQuery(TeamActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return  postAnalyticsTeamsActivityQuery(createPostAnalyticsTeamsActivityQueryRequest(body, pageSize, pageNumber));
@@ -570,12 +570,12 @@ public class TeamsApi {
   /**
    * Query for team activity observations
    * 
+   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
    * @return TeamActivityResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<TeamActivityResponse> postAnalyticsTeamsActivityQueryWithHttpInfo(TeamActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
     return postAnalyticsTeamsActivityQuery(createPostAnalyticsTeamsActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
@@ -595,11 +595,11 @@ public class TeamsApi {
   /**
    * Query for team activity observations
    * 
+   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TeamActivityResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public TeamActivityResponse postAnalyticsTeamsActivityQuery(PostAnalyticsTeamsActivityQueryRequest request) throws IOException, ApiException {
     try {
@@ -615,10 +615,10 @@ public class TeamsApi {
   /**
    * Query for team activity observations
    * 
+   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<TeamActivityResponse> postAnalyticsTeamsActivityQuery(ApiRequest<TeamActivityQuery> request) throws IOException {
     try {

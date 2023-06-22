@@ -1529,10 +1529,10 @@ public class RoutingApiAsync {
   /**
    * Delete an utilization tag
    * 
+   * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> deleteRoutingUtilizationTagAsync(DeleteRoutingUtilizationTagRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -1564,10 +1564,10 @@ public class RoutingApiAsync {
   /**
    * Delete an utilization tag
    * 
+   * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> deleteRoutingUtilizationTagAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -5658,10 +5658,10 @@ public class RoutingApiAsync {
   /**
    * Get details about this utilization tag
    * 
+   * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<UtilizationTag> getRoutingUtilizationTagAsync(GetRoutingUtilizationTagRequest request, final AsyncApiCallback<UtilizationTag> callback) {
     try {
@@ -5693,10 +5693,10 @@ public class RoutingApiAsync {
   /**
    * Get details about this utilization tag
    * 
+   * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<UtilizationTag>> getRoutingUtilizationTagAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UtilizationTag>> callback) {
     try {
@@ -5735,10 +5735,10 @@ public class RoutingApiAsync {
   /**
    * Get list of agent ids associated with a utilization tag
    * 
+   * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<List<Object>> getRoutingUtilizationTagAgentsAsync(GetRoutingUtilizationTagAgentsRequest request, final AsyncApiCallback<List<Object>> callback) {
     try {
@@ -5770,10 +5770,10 @@ public class RoutingApiAsync {
   /**
    * Get list of agent ids associated with a utilization tag
    * 
+   * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<List<Object>>> getRoutingUtilizationTagAgentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Object>>> callback) {
     try {
@@ -5812,10 +5812,10 @@ public class RoutingApiAsync {
   /**
    * Get list of utilization tags
    * 
+   * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<UtilizationTagEntityListing> getRoutingUtilizationTagsAsync(GetRoutingUtilizationTagsRequest request, final AsyncApiCallback<UtilizationTagEntityListing> callback) {
     try {
@@ -5847,10 +5847,10 @@ public class RoutingApiAsync {
   /**
    * Get list of utilization tags
    * 
+   * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<UtilizationTagEntityListing>> getRoutingUtilizationTagsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UtilizationTagEntityListing>> callback) {
     try {
@@ -7543,10 +7543,10 @@ public class RoutingApiAsync {
   /**
    * Query for user activity observations
    * 
+   * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<RoutingActivityResponse> postAnalyticsRoutingActivityQueryAsync(PostAnalyticsRoutingActivityQueryRequest request, final AsyncApiCallback<RoutingActivityResponse> callback) {
     try {
@@ -7578,10 +7578,10 @@ public class RoutingApiAsync {
   /**
    * Query for user activity observations
    * 
+   * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<RoutingActivityResponse>> postAnalyticsRoutingActivityQueryAsync(ApiRequest<RoutingActivityQuery> request, final AsyncApiCallback<ApiResponse<RoutingActivityResponse>> callback) {
     try {
@@ -8972,10 +8972,10 @@ public class RoutingApiAsync {
   /**
    * Imports a phone number for SMS
    * 
+   * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<SmsPhoneNumber> postRoutingSmsPhonenumbersImportAsync(PostRoutingSmsPhonenumbersImportRequest request, final AsyncApiCallback<SmsPhoneNumber> callback) {
     try {
@@ -9007,10 +9007,10 @@ public class RoutingApiAsync {
   /**
    * Imports a phone number for SMS
    * 
+   * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<SmsPhoneNumber>> postRoutingSmsPhonenumbersImportAsync(ApiRequest<SmsPhoneNumberImport> request, final AsyncApiCallback<ApiResponse<SmsPhoneNumber>> callback) {
     try {
@@ -9049,10 +9049,10 @@ public class RoutingApiAsync {
   /**
    * Create an utilization tag
    * 
+   * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<UtilizationTag> postRoutingUtilizationTagsAsync(PostRoutingUtilizationTagsRequest request, final AsyncApiCallback<UtilizationTag> callback) {
     try {
@@ -9084,10 +9084,10 @@ public class RoutingApiAsync {
   /**
    * Create an utilization tag
    * 
+   * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<UtilizationTag>> postRoutingUtilizationTagsAsync(ApiRequest<CreateUtilizationTagRequest> request, final AsyncApiCallback<ApiResponse<UtilizationTag>> callback) {
     try {

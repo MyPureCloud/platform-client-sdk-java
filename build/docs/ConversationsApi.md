@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteConversationsCallParticipantConsult**](ConversationsApi.html#deleteConversationsCallParticipantConsult) | Cancel the transfer |
 | [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | Delete attachment from draft |
 | [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | Delete a Facebook messaging integration |
+| [**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | Delete Instagram messaging integration |
 | [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | Delete a LINE messenger integration |
 | [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsOpenIntegrationId) | Delete an Open messaging integration |
 | [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | Delete a Twitter messaging integration |
@@ -79,6 +80,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagingIntegrations**](ConversationsApi.html#getConversationsMessagingIntegrations) | Get a list of Integrations |
 | [**getConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebook) | Get a list of Facebook Integrations |
 | [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebookIntegrationId) | Get a Facebook messaging integration |
+| [**getConversationsMessagingIntegrationsInstagram**](ConversationsApi.html#getConversationsMessagingIntegrationsInstagram) | Get a list of Instagram Integrations |
+| [**getConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsInstagramIntegrationId) | Get Instagram messaging integration |
 | [**getConversationsMessagingIntegrationsLine**](ConversationsApi.html#getConversationsMessagingIntegrationsLine) | Get a list of LINE messenger Integrations |
 | [**getConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsLineIntegrationId) | Get a LINE messenger integration |
 | [**getConversationsMessagingIntegrationsOpen**](ConversationsApi.html#getConversationsMessagingIntegrationsOpen) | Get a list of Open messaging integrations |
@@ -129,6 +132,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | Update conversation participant's communication by disconnecting it. |
 | [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsFacebookIntegrationId) | Update Facebook messaging integration |
+| [**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsInstagramIntegrationId) | Update Instagram messaging integration |
 | [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsOpenIntegrationId) | Update an Open messaging integration |
 | [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | Update Twitter messaging integration |
 | [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | Update or activate a WhatsApp messaging integration |
@@ -146,11 +150,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | Create a new callback for the specified participant on the conversation. |
 | [**postConversationParticipantDigits**](ConversationsApi.html#postConversationParticipantDigits) | Sends DTMF to the participant |
 | [**postConversationParticipantReplace**](ConversationsApi.html#postConversationParticipantReplace) | Replace this participant with the specified user and/or address |
+| [**postConversationParticipantReplaceAgent**](ConversationsApi.html#postConversationParticipantReplaceAgent) | Replace this participant with the specified agent |
+| [**postConversationParticipantReplaceExternal**](ConversationsApi.html#postConversationParticipantReplaceExternal) | Replace this participant with the an external contact |
+| [**postConversationParticipantReplaceQueue**](ConversationsApi.html#postConversationParticipantReplaceQueue) | Replace this participant with the specified queue |
 | [**postConversationParticipantSecureivrsessions**](ConversationsApi.html#postConversationParticipantSecureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR. |
 | [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | Place a new call as part of a callback conversation. |
 | [**postConversationsCallParticipantCoach**](ConversationsApi.html#postConversationsCallParticipantCoach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant. |
 | [**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsCallParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | Initiate and update consult transfer |
+| [**postConversationsCallParticipantConsultAgent**](ConversationsApi.html#postConversationsCallParticipantConsultAgent) | Initiate a consult transfer to an agent |
+| [**postConversationsCallParticipantConsultExternal**](ConversationsApi.html#postConversationsCallParticipantConsultExternal) | Initiate a consult transfer to an external contact |
+| [**postConversationsCallParticipantConsultQueue**](ConversationsApi.html#postConversationsCallParticipantConsultQueue) | Initiate a consult transfer to a queue |
 | [**postConversationsCallParticipantMonitor**](ConversationsApi.html#postConversationsCallParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
 | [**postConversationsCallParticipantReplace**](ConversationsApi.html#postConversationsCallParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsCallParticipants**](ConversationsApi.html#postConversationsCallParticipants) | Add participants to a conversation |
@@ -188,6 +198,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessagesAgentless**](ConversationsApi.html#postConversationsMessagesAgentless) | Send an agentless outbound message |
 | [**postConversationsMessagesInboundOpen**](ConversationsApi.html#postConversationsMessagesInboundOpen) | Send an inbound Open Message |
 | [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#postConversationsMessagingIntegrationsFacebook) | Create a Facebook Integration |
+| [**postConversationsMessagingIntegrationsInstagram**](ConversationsApi.html#postConversationsMessagingIntegrationsInstagram) | Create Instagram Integration |
 | [**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | Create a LINE messenger Integration |
 | [**postConversationsMessagingIntegrationsOpen**](ConversationsApi.html#postConversationsMessagingIntegrationsOpen) | Create an Open messaging integration |
 | [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | Create a Twitter Integration |
@@ -584,6 +595,66 @@ try {
 
 null (empty response body)
 
+<a name="deleteConversationsMessagingIntegrationsInstagramIntegrationId"></a>
+
+# **deleteConversationsMessagingIntegrationsInstagramIntegrationId**
+
+
+
+> Void deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId)
+
+Delete Instagram messaging integration
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/instagram/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    apiInstance.deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsInstagramIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="deleteConversationsMessagingIntegrationsLineIntegrationId"></a>
 
 # **deleteConversationsMessagingIntegrationsLineIntegrationId**
@@ -959,6 +1030,8 @@ try {
 
 Get status for async query for conversation aggregates
 
+getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -1019,6 +1092,8 @@ try {
 > [ConversationAsyncAggregateQueryResponse](ConversationAsyncAggregateQueryResponse.html) getAnalyticsConversationsAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
+
+getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results  
 
@@ -4674,6 +4749,138 @@ try {
 
 [**FacebookIntegration**](FacebookIntegration.html)
 
+<a name="getConversationsMessagingIntegrationsInstagram"></a>
+
+# **getConversationsMessagingIntegrationsInstagram**
+
+
+
+> [InstagramIntegrationEntityListing](InstagramIntegrationEntityListing.html) getConversationsMessagingIntegrationsInstagram(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
+
+Get a list of Instagram Integrations
+
+Wraps GET /api/v2/conversations/messaging/integrations/instagram  
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String expand = "expand_example"; // String | Expand instructions for the return value.
+String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
+String messagingSettingId = "messagingSettingId_example"; // String | Filter integrations returned based on the setting ID
+try {
+    InstagramIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsInstagram(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsInstagram");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+| **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
+| **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InstagramIntegrationEntityListing**](InstagramIntegrationEntityListing.html)
+
+<a name="getConversationsMessagingIntegrationsInstagramIntegrationId"></a>
+
+# **getConversationsMessagingIntegrationsInstagramIntegrationId**
+
+
+
+> [InstagramIntegration](InstagramIntegration.html) getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, expand)
+
+Get Instagram messaging integration
+
+Wraps GET /api/v2/conversations/messaging/integrations/instagram/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+String expand = "expand_example"; // String | Expand instructions for the return value.
+try {
+    InstagramIntegration result = apiInstance.getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsInstagramIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InstagramIntegration**](InstagramIntegration.html)
+
 <a name="getConversationsMessagingIntegrationsLine"></a>
 
 # **getConversationsMessagingIntegrationsLine**
@@ -5711,6 +5918,8 @@ try {
 > [VideoConferenceDetails](VideoConferenceDetails.html) getConversationsVideoDetails(conferenceId)
 
 Get video conference details (e.g. the current number of active participants).
+
+getConversationsVideoDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/conversations/videos/{conferenceId}/details  
 
@@ -7878,6 +8087,69 @@ try {
 
 [**FacebookIntegration**](FacebookIntegration.html)
 
+<a name="patchConversationsMessagingIntegrationsInstagramIntegrationId"></a>
+
+# **patchConversationsMessagingIntegrationsInstagramIntegrationId**
+
+
+
+> [InstagramIntegration](InstagramIntegration.html) patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body)
+
+Update Instagram messaging integration
+
+Wraps PATCH /api/v2/conversations/messaging/integrations/instagram/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+InstagramIntegrationUpdateRequest body = new InstagramIntegrationUpdateRequest(); // InstagramIntegrationUpdateRequest | InstagramIntegrationUpdateRequest
+try {
+    InstagramIntegration result = apiInstance.patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsMessagingIntegrationsInstagramIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+| **body** | [**InstagramIntegrationUpdateRequest**](InstagramIntegrationUpdateRequest.html)| InstagramIntegrationUpdateRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InstagramIntegration**](InstagramIntegration.html)
+
 <a name="patchConversationsMessagingIntegrationsOpenIntegrationId"></a>
 
 # **patchConversationsMessagingIntegrationsOpenIntegrationId**
@@ -8267,6 +8539,8 @@ try {
 
 Query for conversation activity observations
 
+postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/analytics/conversations/activity/query  
 
 Requires ANY permissions: 
@@ -8331,6 +8605,8 @@ try {
 > [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsConversationsAggregatesJobs(body)
 
 Query for conversation aggregates asynchronously
+
+postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/conversations/aggregates/jobs  
 
@@ -8894,7 +9170,7 @@ null (empty response body)
 
 # **postConversationParticipantReplace**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void postConversationParticipantReplace(conversationId, participantId, body)
 
@@ -8902,8 +9178,9 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -8946,6 +9223,201 @@ try {
 | **conversationId** | **String**| conversation ID | 
 | **participantId** | **String**| participant ID | 
 | **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="postConversationParticipantReplaceAgent"></a>
+
+# **postConversationParticipantReplaceAgent**
+
+
+
+> Void postConversationParticipantReplaceAgent(conversationId, participantId, body)
+
+Replace this participant with the specified agent
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent  
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferAgent
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+TransferToAgentRequest body = new TransferToAgentRequest(); // TransferToAgentRequest | Transfer request
+try {
+    apiInstance.postConversationParticipantReplaceAgent(conversationId, participantId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationParticipantReplaceAgent");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**TransferToAgentRequest**](TransferToAgentRequest.html)| Transfer request | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="postConversationParticipantReplaceExternal"></a>
+
+# **postConversationParticipantReplaceExternal**
+
+
+
+> Void postConversationParticipantReplaceExternal(conversationId, participantId, body)
+
+Replace this participant with the an external contact
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external  
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferExternal
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+TransferToExternalRequest body = new TransferToExternalRequest(); // TransferToExternalRequest | Transfer request
+try {
+    apiInstance.postConversationParticipantReplaceExternal(conversationId, participantId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationParticipantReplaceExternal");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**TransferToExternalRequest**](TransferToExternalRequest.html)| Transfer request | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="postConversationParticipantReplaceQueue"></a>
+
+# **postConversationParticipantReplaceQueue**
+
+
+
+> Void postConversationParticipantReplaceQueue(conversationId, participantId, body)
+
+Replace this participant with the specified queue
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue  
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferQueue
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+TransferToQueueRequest body = new TransferToQueueRequest(); // TransferToQueueRequest | Transfer request
+try {
+    apiInstance.postConversationParticipantReplaceQueue(conversationId, participantId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationParticipantReplaceQueue");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**TransferToQueueRequest**](TransferToQueueRequest.html)| Transfer request | 
 {: class="table-striped"}
 
 
@@ -9211,7 +9683,7 @@ null (empty response body)
 
 # **postConversationsCallParticipantConsult**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ConsultTransferResponse](ConsultTransferResponse.html) postConversationsCallParticipantConsult(conversationId, participantId, body)
 
@@ -9219,8 +9691,9 @@ Initiate and update consult transfer
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:communication:consultTransfer
 
 ### Example
 
@@ -9264,6 +9737,204 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **body** | [**ConsultTransfer**](ConsultTransfer.html)| Destination address &amp; initial speak to | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse.html)
+
+<a name="postConversationsCallParticipantConsultAgent"></a>
+
+# **postConversationsCallParticipantConsultAgent**
+
+
+
+> [ConsultTransferResponse](ConsultTransferResponse.html) postConversationsCallParticipantConsultAgent(conversationId, participantId, body)
+
+Initiate a consult transfer to an agent
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent  
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferAgent
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+ConsultTransferToAgent body = new ConsultTransferToAgent(); // ConsultTransferToAgent | Destination agent & initial speak to
+try {
+    ConsultTransferResponse result = apiInstance.postConversationsCallParticipantConsultAgent(conversationId, participantId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantConsultAgent");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ConsultTransferToAgent**](ConsultTransferToAgent.html)| Destination agent &amp; initial speak to | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse.html)
+
+<a name="postConversationsCallParticipantConsultExternal"></a>
+
+# **postConversationsCallParticipantConsultExternal**
+
+
+
+> [ConsultTransferResponse](ConsultTransferResponse.html) postConversationsCallParticipantConsultExternal(conversationId, participantId, body)
+
+Initiate a consult transfer to an external contact
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external  
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferExternal
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+ConsultTransferToExternal body = new ConsultTransferToExternal(); // ConsultTransferToExternal | Destination address & initial speak to
+try {
+    ConsultTransferResponse result = apiInstance.postConversationsCallParticipantConsultExternal(conversationId, participantId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantConsultExternal");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ConsultTransferToExternal**](ConsultTransferToExternal.html)| Destination address &amp; initial speak to | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse.html)
+
+<a name="postConversationsCallParticipantConsultQueue"></a>
+
+# **postConversationsCallParticipantConsultQueue**
+
+
+
+> [ConsultTransferResponse](ConsultTransferResponse.html) postConversationsCallParticipantConsultQueue(conversationId, participantId, body)
+
+Initiate a consult transfer to a queue
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue  
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferQueue
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+ConsultTransferToQueue body = new ConsultTransferToQueue(); // ConsultTransferToQueue | Destination queue & initial speak to
+try {
+    ConsultTransferResponse result = apiInstance.postConversationsCallParticipantConsultQueue(conversationId, participantId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantConsultQueue");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ConsultTransferToQueue**](ConsultTransferToQueue.html)| Destination queue &amp; initial speak to | 
 {: class="table-striped"}
 
 
@@ -9337,7 +10008,7 @@ null (empty response body)
 
 # **postConversationsCallParticipantReplace**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void postConversationsCallParticipantReplace(conversationId, participantId, body)
 
@@ -9345,8 +10016,9 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -9528,7 +10200,7 @@ null (empty response body)
 
 # **postConversationsCallbackParticipantReplace**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void postConversationsCallbackParticipantReplace(conversationId, participantId, body)
 
@@ -9536,8 +10208,9 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -10026,7 +10699,7 @@ null (empty response body)
 
 # **postConversationsChatParticipantReplace**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void postConversationsChatParticipantReplace(conversationId, participantId, body)
 
@@ -10034,8 +10707,9 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -10216,7 +10890,7 @@ null (empty response body)
 
 # **postConversationsCobrowsesessionParticipantReplace**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, body)
 
@@ -10224,8 +10898,9 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -10531,7 +11206,7 @@ null (empty response body)
 
 # **postConversationsEmailParticipantReplace**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void postConversationsEmailParticipantReplace(conversationId, participantId, body)
 
@@ -10539,8 +11214,9 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -11244,6 +11920,8 @@ null (empty response body)
 
 Listen in on the conversation from the point of view of a given participant.
 
+postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor  
 
 Requires ANY permissions: 
@@ -11300,7 +11978,7 @@ null (empty response body)
 
 # **postConversationsMessageParticipantReplace**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void postConversationsMessageParticipantReplace(conversationId, participantId, body)
 
@@ -11308,8 +11986,9 @@ Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -11608,6 +12287,67 @@ try {
 ### Return type
 
 [**FacebookIntegration**](FacebookIntegration.html)
+
+<a name="postConversationsMessagingIntegrationsInstagram"></a>
+
+# **postConversationsMessagingIntegrationsInstagram**
+
+
+
+> [InstagramIntegration](InstagramIntegration.html) postConversationsMessagingIntegrationsInstagram(body)
+
+Create Instagram Integration
+
+Wraps POST /api/v2/conversations/messaging/integrations/instagram  
+
+Requires ALL permissions: 
+
+* messaging:conversationInstagramIntegration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+InstagramIntegrationRequest body = new InstagramIntegrationRequest(); // InstagramIntegrationRequest | InstagramIntegrationRequest
+try {
+    InstagramIntegration result = apiInstance.postConversationsMessagingIntegrationsInstagram(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsInstagram");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**InstagramIntegrationRequest**](InstagramIntegrationRequest.html)| InstagramIntegrationRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InstagramIntegration**](InstagramIntegration.html)
 
 <a name="postConversationsMessagingIntegrationsLine"></a>
 

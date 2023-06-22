@@ -4083,6 +4083,8 @@ Start a process (job) to prepare a download of a singular flow execution data in
 
 Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
 
+getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/flows/instances/{instanceId}  
 
 Requires ANY permissions: 
@@ -4146,6 +4148,8 @@ try {
 
 Get the status and/or results of an asynchronous flow execution data retrieval job
 
+getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/flows/instances/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -4208,6 +4212,8 @@ try {
 Retrieve a list of capabilities that the org can use to query for execution data
 
 Returns the queryable parameters that can be used to build a query for execution data.
+
+getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/flows/instances/querycapabilities  
 
@@ -6271,6 +6277,8 @@ Start a process (job) that will prepare a list of execution data IDs for downloa
 
 Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
 
+postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/flows/instances/jobs  
 
 Requires ANY permissions: 
@@ -6335,6 +6343,8 @@ try {
 Query the database of existing flow histories to look for particular flow criteria
 
 Returns a list of matching flow histories up to 200 max.
+
+postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/flows/instances/query  
 

@@ -54,10 +54,10 @@ public class FlowsApiAsync {
   /**
    * Get status for async query for Flow aggregates
    * 
+   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsFlowsAggregatesJobAsync(GetAnalyticsFlowsAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -89,10 +89,10 @@ public class FlowsApiAsync {
   /**
    * Get status for async query for Flow aggregates
    * 
+   * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsFlowsAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -131,10 +131,10 @@ public class FlowsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<FlowAsyncAggregateQueryResponse> getAnalyticsFlowsAggregatesJobResultsAsync(GetAnalyticsFlowsAggregatesJobResultsRequest request, final AsyncApiCallback<FlowAsyncAggregateQueryResponse> callback) {
     try {
@@ -166,10 +166,10 @@ public class FlowsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<FlowAsyncAggregateQueryResponse>> getAnalyticsFlowsAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowAsyncAggregateQueryResponse>> callback) {
     try {
@@ -208,10 +208,10 @@ public class FlowsApiAsync {
   /**
    * Query for flow activity observations
    * 
+   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<FlowActivityResponse> postAnalyticsFlowsActivityQueryAsync(PostAnalyticsFlowsActivityQueryRequest request, final AsyncApiCallback<FlowActivityResponse> callback) {
     try {
@@ -243,10 +243,10 @@ public class FlowsApiAsync {
   /**
    * Query for flow activity observations
    * 
+   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<FlowActivityResponse>> postAnalyticsFlowsActivityQueryAsync(ApiRequest<FlowActivityQuery> request, final AsyncApiCallback<ApiResponse<FlowActivityResponse>> callback) {
     try {
@@ -285,10 +285,10 @@ public class FlowsApiAsync {
   /**
    * Query for flow aggregates asynchronously
    * 
+   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsFlowsAggregatesJobsAsync(PostAnalyticsFlowsAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -320,10 +320,10 @@ public class FlowsApiAsync {
   /**
    * Query for flow aggregates asynchronously
    * 
+   * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsFlowsAggregatesJobsAsync(ApiRequest<FlowAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {

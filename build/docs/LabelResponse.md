@@ -14,6 +14,7 @@ title: LabelResponse
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The creation date and time of the label. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The last modification date and time of the label. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **documentCount** | <!----><!---->**Integer**<!----> | Number of documents assigned to this label. |  [optional] |
+| **externalId** | <!----><!---->**String**<!----> | The external id associated with the label. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

@@ -115,10 +115,10 @@ public class TaskManagementApiAsync {
   /**
    * Delete a workbin
    * 
+   * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> deleteTaskmanagementWorkbinAsync(DeleteTaskmanagementWorkbinRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -150,10 +150,10 @@ public class TaskManagementApiAsync {
   /**
    * Delete a workbin
    * 
+   * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> deleteTaskmanagementWorkbinAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -192,10 +192,10 @@ public class TaskManagementApiAsync {
   /**
    * Delete a workitem
    * 
+   * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> deleteTaskmanagementWorkitemAsync(DeleteTaskmanagementWorkitemRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -227,10 +227,10 @@ public class TaskManagementApiAsync {
   /**
    * Delete a workitem
    * 
+   * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> deleteTaskmanagementWorkitemAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -269,10 +269,10 @@ public class TaskManagementApiAsync {
   /**
    * Delete a schema
    * 
+   * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> deleteTaskmanagementWorkitemsSchemaAsync(DeleteTaskmanagementWorkitemsSchemaRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -304,10 +304,10 @@ public class TaskManagementApiAsync {
   /**
    * Delete a schema
    * 
+   * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> deleteTaskmanagementWorkitemsSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -346,10 +346,10 @@ public class TaskManagementApiAsync {
   /**
    * Delete a worktype
    * 
+   * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> deleteTaskmanagementWorktypeAsync(DeleteTaskmanagementWorktypeRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -381,10 +381,10 @@ public class TaskManagementApiAsync {
   /**
    * Delete a worktype
    * 
+   * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> deleteTaskmanagementWorktypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -423,10 +423,10 @@ public class TaskManagementApiAsync {
   /**
    * Delete a status
    * 
+   * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> deleteTaskmanagementWorktypeStatusAsync(DeleteTaskmanagementWorktypeStatusRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -458,10 +458,10 @@ public class TaskManagementApiAsync {
   /**
    * Delete a status
    * 
+   * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> deleteTaskmanagementWorktypeStatusAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -500,10 +500,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a workbin
    * 
+   * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Workbin> getTaskmanagementWorkbinAsync(GetTaskmanagementWorkbinRequest request, final AsyncApiCallback<Workbin> callback) {
     try {
@@ -535,10 +535,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a workbin
    * 
+   * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Workbin>> getTaskmanagementWorkbinAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Workbin>> callback) {
     try {
@@ -577,10 +577,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a workbin's attribute change history
    * 
+   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkbinChangeListing> getTaskmanagementWorkbinHistoryAsync(GetTaskmanagementWorkbinHistoryRequest request, final AsyncApiCallback<WorkbinChangeListing> callback) {
     try {
@@ -612,10 +612,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a workbin's attribute change history
    * 
+   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkbinChangeListing>> getTaskmanagementWorkbinHistoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkbinChangeListing>> callback) {
     try {
@@ -654,10 +654,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a workbin
    * 
+   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkbinVersion> getTaskmanagementWorkbinVersionAsync(GetTaskmanagementWorkbinVersionRequest request, final AsyncApiCallback<WorkbinVersion> callback) {
     try {
@@ -689,10 +689,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a workbin
    * 
+   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkbinVersion>> getTaskmanagementWorkbinVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkbinVersion>> callback) {
     try {
@@ -731,10 +731,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a workbin
    * 
+   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkbinVersionListing> getTaskmanagementWorkbinVersionsAsync(GetTaskmanagementWorkbinVersionsRequest request, final AsyncApiCallback<WorkbinVersionListing> callback) {
     try {
@@ -766,10 +766,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a workbin
    * 
+   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkbinVersionListing>> getTaskmanagementWorkbinVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkbinVersionListing>> callback) {
     try {
@@ -808,10 +808,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a workitem
    * 
+   * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Workitem> getTaskmanagementWorkitemAsync(GetTaskmanagementWorkitemRequest request, final AsyncApiCallback<Workitem> callback) {
     try {
@@ -843,10 +843,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a workitem
    * 
+   * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Workitem>> getTaskmanagementWorkitemAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Workitem>> callback) {
     try {
@@ -885,10 +885,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a workitem's attribute change history
    * 
+   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkitemChangeListing> getTaskmanagementWorkitemHistoryAsync(GetTaskmanagementWorkitemHistoryRequest request, final AsyncApiCallback<WorkitemChangeListing> callback) {
     try {
@@ -920,10 +920,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a workitem's attribute change history
    * 
+   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkitemChangeListing>> getTaskmanagementWorkitemHistoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemChangeListing>> callback) {
     try {
@@ -962,10 +962,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all wrapup codes added for the given user for a workitem.
    * 
+   * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkitemWrapup> getTaskmanagementWorkitemUserWrapupsAsync(GetTaskmanagementWorkitemUserWrapupsRequest request, final AsyncApiCallback<WorkitemWrapup> callback) {
     try {
@@ -997,10 +997,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all wrapup codes added for the given user for a workitem.
    * 
+   * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkitemWrapup>> getTaskmanagementWorkitemUserWrapupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemWrapup>> callback) {
     try {
@@ -1039,10 +1039,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a workitem
    * 
+   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkitemVersion> getTaskmanagementWorkitemVersionAsync(GetTaskmanagementWorkitemVersionRequest request, final AsyncApiCallback<WorkitemVersion> callback) {
     try {
@@ -1074,10 +1074,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a workitem
    * 
+   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkitemVersion>> getTaskmanagementWorkitemVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemVersion>> callback) {
     try {
@@ -1116,10 +1116,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a workitem
    * 
+   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkitemVersionListing> getTaskmanagementWorkitemVersionsAsync(GetTaskmanagementWorkitemVersionsRequest request, final AsyncApiCallback<WorkitemVersionListing> callback) {
     try {
@@ -1151,10 +1151,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a workitem
    * 
+   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkitemVersionListing>> getTaskmanagementWorkitemVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemVersionListing>> callback) {
     try {
@@ -1193,10 +1193,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all wrapup codes added for all users for a workitem.
    * 
+   * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkitemWrapupEntityListing> getTaskmanagementWorkitemWrapupsAsync(GetTaskmanagementWorkitemWrapupsRequest request, final AsyncApiCallback<WorkitemWrapupEntityListing> callback) {
     try {
@@ -1228,10 +1228,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all wrapup codes added for all users for a workitem.
    * 
+   * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkitemWrapupEntityListing>> getTaskmanagementWorkitemWrapupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemWrapupEntityListing>> callback) {
     try {
@@ -1270,10 +1270,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a schema
    * 
+   * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<DataSchema> getTaskmanagementWorkitemsSchemaAsync(GetTaskmanagementWorkitemsSchemaRequest request, final AsyncApiCallback<DataSchema> callback) {
     try {
@@ -1305,10 +1305,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a schema
    * 
+   * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<DataSchema>> getTaskmanagementWorkitemsSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
     try {
@@ -1347,10 +1347,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a specific version of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<DataSchema> getTaskmanagementWorkitemsSchemaVersionAsync(GetTaskmanagementWorkitemsSchemaVersionRequest request, final AsyncApiCallback<DataSchema> callback) {
     try {
@@ -1382,10 +1382,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a specific version of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<DataSchema>> getTaskmanagementWorkitemsSchemaVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
     try {
@@ -1424,10 +1424,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<DataSchema> getTaskmanagementWorkitemsSchemaVersionsAsync(GetTaskmanagementWorkitemsSchemaVersionsRequest request, final AsyncApiCallback<DataSchema> callback) {
     try {
@@ -1459,10 +1459,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<DataSchema>> getTaskmanagementWorkitemsSchemaVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
     try {
@@ -1501,10 +1501,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a list of schemas.
    * 
+   * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<DataSchemaListing> getTaskmanagementWorkitemsSchemasAsync(GetTaskmanagementWorkitemsSchemasRequest request, final AsyncApiCallback<DataSchemaListing> callback) {
     try {
@@ -1536,10 +1536,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a list of schemas.
    * 
+   * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<DataSchemaListing>> getTaskmanagementWorkitemsSchemasAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataSchemaListing>> callback) {
     try {
@@ -1578,10 +1578,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a worktype
    * 
+   * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Worktype> getTaskmanagementWorktypeAsync(GetTaskmanagementWorktypeRequest request, final AsyncApiCallback<Worktype> callback) {
     try {
@@ -1613,10 +1613,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a worktype
    * 
+   * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Worktype>> getTaskmanagementWorktypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Worktype>> callback) {
     try {
@@ -1655,10 +1655,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a worktype's attribute change history
    * 
+   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorktypeChangeListing> getTaskmanagementWorktypeHistoryAsync(GetTaskmanagementWorktypeHistoryRequest request, final AsyncApiCallback<WorktypeChangeListing> callback) {
     try {
@@ -1690,10 +1690,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a listing of a worktype's attribute change history
    * 
+   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorktypeChangeListing>> getTaskmanagementWorktypeHistoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorktypeChangeListing>> callback) {
     try {
@@ -1732,10 +1732,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a status
    * 
+   * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkitemStatus> getTaskmanagementWorktypeStatusAsync(GetTaskmanagementWorktypeStatusRequest request, final AsyncApiCallback<WorkitemStatus> callback) {
     try {
@@ -1767,10 +1767,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a status
    * 
+   * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkitemStatus>> getTaskmanagementWorktypeStatusAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemStatus>> callback) {
     try {
@@ -1809,10 +1809,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a worktype
    * 
+   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorktypeVersion> getTaskmanagementWorktypeVersionAsync(GetTaskmanagementWorktypeVersionRequest request, final AsyncApiCallback<WorktypeVersion> callback) {
     try {
@@ -1844,10 +1844,10 @@ public class TaskManagementApiAsync {
   /**
    * Get a version of a worktype
    * 
+   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorktypeVersion>> getTaskmanagementWorktypeVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorktypeVersion>> callback) {
     try {
@@ -1886,10 +1886,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a worktype
    * 
+   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorktypeVersionListing> getTaskmanagementWorktypeVersionsAsync(GetTaskmanagementWorktypeVersionsRequest request, final AsyncApiCallback<WorktypeVersionListing> callback) {
     try {
@@ -1921,10 +1921,10 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a worktype
    * 
+   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorktypeVersionListing>> getTaskmanagementWorktypeVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorktypeVersionListing>> callback) {
     try {
@@ -1963,10 +1963,10 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a workbin
    * 
+   * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Workbin> patchTaskmanagementWorkbinAsync(PatchTaskmanagementWorkbinRequest request, final AsyncApiCallback<Workbin> callback) {
     try {
@@ -1998,10 +1998,10 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a workbin
    * 
+   * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Workbin>> patchTaskmanagementWorkbinAsync(ApiRequest<WorkbinUpdate> request, final AsyncApiCallback<ApiResponse<Workbin>> callback) {
     try {
@@ -2040,10 +2040,10 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a workitem
    * 
+   * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Workitem> patchTaskmanagementWorkitemAsync(PatchTaskmanagementWorkitemRequest request, final AsyncApiCallback<Workitem> callback) {
     try {
@@ -2075,10 +2075,10 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a workitem
    * 
+   * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Workitem>> patchTaskmanagementWorkitemAsync(ApiRequest<WorkitemUpdate> request, final AsyncApiCallback<ApiResponse<Workitem>> callback) {
     try {
@@ -2117,10 +2117,10 @@ public class TaskManagementApiAsync {
   /**
    * Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
+   * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> patchTaskmanagementWorkitemAssignmentAsync(PatchTaskmanagementWorkitemAssignmentRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -2152,10 +2152,10 @@ public class TaskManagementApiAsync {
   /**
    * Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
+   * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> patchTaskmanagementWorkitemAssignmentAsync(ApiRequest<WorkitemManualAssign> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -2194,10 +2194,10 @@ public class TaskManagementApiAsync {
   /**
    * Add/Remove a wrapup code for a given user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkitemWrapup> patchTaskmanagementWorkitemUserWrapupsAsync(PatchTaskmanagementWorkitemUserWrapupsRequest request, final AsyncApiCallback<WorkitemWrapup> callback) {
     try {
@@ -2229,10 +2229,10 @@ public class TaskManagementApiAsync {
   /**
    * Add/Remove a wrapup code for a given user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkitemWrapup>> patchTaskmanagementWorkitemUserWrapupsAsync(ApiRequest<WorkitemWrapupUpdate> request, final AsyncApiCallback<ApiResponse<WorkitemWrapup>> callback) {
     try {
@@ -2271,10 +2271,10 @@ public class TaskManagementApiAsync {
   /**
    * Add/Remove a wrapup code for the current user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkitemWrapup> patchTaskmanagementWorkitemUsersMeWrapupsAsync(PatchTaskmanagementWorkitemUsersMeWrapupsRequest request, final AsyncApiCallback<WorkitemWrapup> callback) {
     try {
@@ -2306,10 +2306,10 @@ public class TaskManagementApiAsync {
   /**
    * Add/Remove a wrapup code for the current user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkitemWrapup>> patchTaskmanagementWorkitemUsersMeWrapupsAsync(ApiRequest<WorkitemWrapupUpdate> request, final AsyncApiCallback<ApiResponse<WorkitemWrapup>> callback) {
     try {
@@ -2348,10 +2348,10 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a worktype
    * 
+   * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Worktype> patchTaskmanagementWorktypeAsync(PatchTaskmanagementWorktypeRequest request, final AsyncApiCallback<Worktype> callback) {
     try {
@@ -2383,10 +2383,10 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a worktype
    * 
+   * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Worktype>> patchTaskmanagementWorktypeAsync(ApiRequest<WorktypeUpdate> request, final AsyncApiCallback<ApiResponse<Worktype>> callback) {
     try {
@@ -2425,10 +2425,10 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a status
    * 
+   * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkitemStatus> patchTaskmanagementWorktypeStatusAsync(PatchTaskmanagementWorktypeStatusRequest request, final AsyncApiCallback<WorkitemStatus> callback) {
     try {
@@ -2460,10 +2460,10 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a status
    * 
+   * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkitemStatus>> patchTaskmanagementWorktypeStatusAsync(ApiRequest<WorkitemStatusUpdate> request, final AsyncApiCallback<ApiResponse<WorkitemStatus>> callback) {
     try {
@@ -2502,10 +2502,10 @@ public class TaskManagementApiAsync {
   /**
    * Create a workbin
    * 
+   * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Workbin> postTaskmanagementWorkbinsAsync(PostTaskmanagementWorkbinsRequest request, final AsyncApiCallback<Workbin> callback) {
     try {
@@ -2537,10 +2537,10 @@ public class TaskManagementApiAsync {
   /**
    * Create a workbin
    * 
+   * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Workbin>> postTaskmanagementWorkbinsAsync(ApiRequest<WorkbinCreate> request, final AsyncApiCallback<ApiResponse<Workbin>> callback) {
     try {
@@ -2579,10 +2579,10 @@ public class TaskManagementApiAsync {
   /**
    * Query for workbins
    * 
+   * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkbinQueryEntityListing> postTaskmanagementWorkbinsQueryAsync(PostTaskmanagementWorkbinsQueryRequest request, final AsyncApiCallback<WorkbinQueryEntityListing> callback) {
     try {
@@ -2614,10 +2614,10 @@ public class TaskManagementApiAsync {
   /**
    * Query for workbins
    * 
+   * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkbinQueryEntityListing>> postTaskmanagementWorkbinsQueryAsync(ApiRequest<WorkbinQueryRequest> request, final AsyncApiCallback<ApiResponse<WorkbinQueryEntityListing>> callback) {
     try {
@@ -2656,10 +2656,10 @@ public class TaskManagementApiAsync {
   /**
    * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
    * 
+   * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Workitem> postTaskmanagementWorkitemAcdCancelAsync(PostTaskmanagementWorkitemAcdCancelRequest request, final AsyncApiCallback<Workitem> callback) {
     try {
@@ -2691,10 +2691,10 @@ public class TaskManagementApiAsync {
   /**
    * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
    * 
+   * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Workitem>> postTaskmanagementWorkitemAcdCancelAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Workitem>> callback) {
     try {
@@ -2733,10 +2733,10 @@ public class TaskManagementApiAsync {
   /**
    * Disconnect the assignee of the workitem
    * 
+   * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Workitem> postTaskmanagementWorkitemDisconnectAsync(PostTaskmanagementWorkitemDisconnectRequest request, final AsyncApiCallback<Workitem> callback) {
     try {
@@ -2768,10 +2768,10 @@ public class TaskManagementApiAsync {
   /**
    * Disconnect the assignee of the workitem
    * 
+   * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Workitem>> postTaskmanagementWorkitemDisconnectAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Workitem>> callback) {
     try {
@@ -2810,10 +2810,10 @@ public class TaskManagementApiAsync {
   /**
    * Terminate a workitem
    * 
+   * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Workitem> postTaskmanagementWorkitemTerminateAsync(PostTaskmanagementWorkitemTerminateRequest request, final AsyncApiCallback<Workitem> callback) {
     try {
@@ -2845,10 +2845,10 @@ public class TaskManagementApiAsync {
   /**
    * Terminate a workitem
    * 
+   * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Workitem>> postTaskmanagementWorkitemTerminateAsync(ApiRequest<WorkitemTerminate> request, final AsyncApiCallback<ApiResponse<Workitem>> callback) {
     try {
@@ -2887,10 +2887,10 @@ public class TaskManagementApiAsync {
   /**
    * Create a workitem
    * 
+   * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Workitem> postTaskmanagementWorkitemsAsync(PostTaskmanagementWorkitemsRequest request, final AsyncApiCallback<Workitem> callback) {
     try {
@@ -2922,10 +2922,10 @@ public class TaskManagementApiAsync {
   /**
    * Create a workitem
    * 
+   * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Workitem>> postTaskmanagementWorkitemsAsync(ApiRequest<WorkitemCreate> request, final AsyncApiCallback<ApiResponse<Workitem>> callback) {
     try {
@@ -2964,10 +2964,10 @@ public class TaskManagementApiAsync {
   /**
    * Query for workitems
    * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
+   * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkitemPostQueryEntityListing> postTaskmanagementWorkitemsQueryAsync(PostTaskmanagementWorkitemsQueryRequest request, final AsyncApiCallback<WorkitemPostQueryEntityListing> callback) {
     try {
@@ -2999,10 +2999,10 @@ public class TaskManagementApiAsync {
   /**
    * Query for workitems
    * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
+   * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkitemPostQueryEntityListing>> postTaskmanagementWorkitemsQueryAsync(ApiRequest<WorkitemQueryPostRequest> request, final AsyncApiCallback<ApiResponse<WorkitemPostQueryEntityListing>> callback) {
     try {
@@ -3041,10 +3041,10 @@ public class TaskManagementApiAsync {
   /**
    * Create a schema
    * 
+   * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<DataSchema> postTaskmanagementWorkitemsSchemasAsync(PostTaskmanagementWorkitemsSchemasRequest request, final AsyncApiCallback<DataSchema> callback) {
     try {
@@ -3076,10 +3076,10 @@ public class TaskManagementApiAsync {
   /**
    * Create a schema
    * 
+   * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<DataSchema>> postTaskmanagementWorkitemsSchemasAsync(ApiRequest<DataSchema> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
     try {
@@ -3118,10 +3118,10 @@ public class TaskManagementApiAsync {
   /**
    * Add a status to a worktype
    * 
+   * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorkitemStatus> postTaskmanagementWorktypeStatusesAsync(PostTaskmanagementWorktypeStatusesRequest request, final AsyncApiCallback<WorkitemStatus> callback) {
     try {
@@ -3153,10 +3153,10 @@ public class TaskManagementApiAsync {
   /**
    * Add a status to a worktype
    * 
+   * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorkitemStatus>> postTaskmanagementWorktypeStatusesAsync(ApiRequest<WorkitemStatusCreate> request, final AsyncApiCallback<ApiResponse<WorkitemStatus>> callback) {
     try {
@@ -3195,10 +3195,10 @@ public class TaskManagementApiAsync {
   /**
    * Create a worktype
    * 
+   * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Worktype> postTaskmanagementWorktypesAsync(PostTaskmanagementWorktypesRequest request, final AsyncApiCallback<Worktype> callback) {
     try {
@@ -3230,10 +3230,10 @@ public class TaskManagementApiAsync {
   /**
    * Create a worktype
    * 
+   * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Worktype>> postTaskmanagementWorktypesAsync(ApiRequest<WorktypeCreate> request, final AsyncApiCallback<ApiResponse<Worktype>> callback) {
     try {
@@ -3272,10 +3272,10 @@ public class TaskManagementApiAsync {
   /**
    * Query for worktypes
    * 
+   * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<WorktypeQueryEntityListing> postTaskmanagementWorktypesQueryAsync(PostTaskmanagementWorktypesQueryRequest request, final AsyncApiCallback<WorktypeQueryEntityListing> callback) {
     try {
@@ -3307,10 +3307,10 @@ public class TaskManagementApiAsync {
   /**
    * Query for worktypes
    * 
+   * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<WorktypeQueryEntityListing>> postTaskmanagementWorktypesQueryAsync(ApiRequest<WorktypeQueryRequest> request, final AsyncApiCallback<ApiResponse<WorktypeQueryEntityListing>> callback) {
     try {
@@ -3349,10 +3349,10 @@ public class TaskManagementApiAsync {
   /**
    * Update a schema
    * 
+   * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<DataSchema> putTaskmanagementWorkitemsSchemaAsync(PutTaskmanagementWorkitemsSchemaRequest request, final AsyncApiCallback<DataSchema> callback) {
     try {
@@ -3384,10 +3384,10 @@ public class TaskManagementApiAsync {
   /**
    * Update a schema
    * 
+   * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<DataSchema>> putTaskmanagementWorkitemsSchemaAsync(ApiRequest<DataSchema> request, final AsyncApiCallback<ApiResponse<DataSchema>> callback) {
     try {

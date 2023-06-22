@@ -13,7 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
-import com.mypurecloud.sdk.v2.model.BuForecastModification;
+import com.mypurecloud.sdk.v2.model.BuForecastModificationResponse;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.ForecastSourceDayPointer;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -90,7 +90,7 @@ public class BuShortTermForecast  implements Serializable {
   private Boolean canUseForScheduling = null;
   private Date referenceStartDate = null;
   private List<ForecastSourceDayPointer> sourceDays = new ArrayList<ForecastSourceDayPointer>();
-  private List<BuForecastModification> modifications = new ArrayList<BuForecastModification>();
+  private List<BuForecastModificationResponse> modifications = new ArrayList<BuForecastModificationResponse>();
   private BuForecastGenerationResult generationResults = null;
   private String timeZone = null;
   private Integer planningGroupsVersion = null;
@@ -259,17 +259,17 @@ public class BuShortTermForecast  implements Serializable {
   /**
    * Any manual modifications applied to this forecast
    **/
-  public BuShortTermForecast modifications(List<BuForecastModification> modifications) {
+  public BuShortTermForecast modifications(List<BuForecastModificationResponse> modifications) {
     this.modifications = modifications;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Any manual modifications applied to this forecast")
   @JsonProperty("modifications")
-  public List<BuForecastModification> getModifications() {
+  public List<BuForecastModificationResponse> getModifications() {
     return modifications;
   }
-  public void setModifications(List<BuForecastModification> modifications) {
+  public void setModifications(List<BuForecastModificationResponse> modifications) {
     this.modifications = modifications;
   }
 

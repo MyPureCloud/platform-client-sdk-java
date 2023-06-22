@@ -38,6 +38,9 @@ import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
+import com.mypurecloud.sdk.v2.model.ConsultTransferToAgent;
+import com.mypurecloud.sdk.v2.model.ConsultTransferToExternal;
+import com.mypurecloud.sdk.v2.model.ConsultTransferToQueue;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.ConversationActivityQuery;
@@ -84,6 +87,10 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
+import com.mypurecloud.sdk.v2.model.InstagramIntegration;
+import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.InstagramIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.InstagramIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
 import com.mypurecloud.sdk.v2.model.LineIntegration;
 import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
@@ -118,6 +125,9 @@ import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import com.mypurecloud.sdk.v2.model.TextMessageListing;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
+import com.mypurecloud.sdk.v2.model.TransferToAgentRequest;
+import com.mypurecloud.sdk.v2.model.TransferToExternalRequest;
+import com.mypurecloud.sdk.v2.model.TransferToQueueRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
@@ -139,6 +149,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedre
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
@@ -205,6 +216,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookAppRe
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenRequest;
@@ -255,6 +268,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRe
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
@@ -272,11 +286,17 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceExternalRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCoachRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultExternalRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantMonitorRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsRequest;
@@ -314,6 +334,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesAgentlessRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesInboundOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsLineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
@@ -830,6 +851,81 @@ public class ConversationsApi {
   }
 
   /**
+   * Delete Instagram messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsInstagramIntegrationId(String integrationId) throws IOException, ApiException {
+     deleteConversationsMessagingIntegrationsInstagramIntegrationId(createDeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Delete Instagram messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsInstagramIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return deleteConversationsMessagingIntegrationsInstagramIntegrationId(createDeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest createDeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest(String integrationId) {
+    return DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .build();
+  }
+
+  /**
+   * Delete Instagram messaging integration
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsInstagramIntegrationId(DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Instagram messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsInstagramIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Delete a LINE messenger integration
    * 
    * @param integrationId Integration ID (required)
@@ -1288,11 +1384,11 @@ public class ConversationsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
+   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsConversationsAggregatesJob(String jobId) throws IOException, ApiException {
     return  getAnalyticsConversationsAggregatesJob(createGetAnalyticsConversationsAggregatesJobRequest(jobId));
@@ -1301,10 +1397,10 @@ public class ConversationsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
+   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsConversationsAggregatesJobWithHttpInfo(String jobId) throws IOException {
     return getAnalyticsConversationsAggregatesJob(createGetAnalyticsConversationsAggregatesJobRequest(jobId).withHttpInfo());
@@ -1320,11 +1416,11 @@ public class ConversationsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
+   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsConversationsAggregatesJob(GetAnalyticsConversationsAggregatesJobRequest request) throws IOException, ApiException {
     try {
@@ -1340,10 +1436,10 @@ public class ConversationsApi {
   /**
    * Get status for async query for conversation aggregates
    * 
+   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsConversationsAggregatesJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -1370,12 +1466,12 @@ public class ConversationsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return ConversationAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
     return  getAnalyticsConversationsAggregatesJobResults(createGetAnalyticsConversationsAggregatesJobResultsRequest(jobId, cursor));
@@ -1384,11 +1480,11 @@ public class ConversationsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return ConversationAsyncAggregateQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<ConversationAsyncAggregateQueryResponse> getAnalyticsConversationsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
     return getAnalyticsConversationsAggregatesJobResults(createGetAnalyticsConversationsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
@@ -1406,11 +1502,11 @@ public class ConversationsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ConversationAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(GetAnalyticsConversationsAggregatesJobResultsRequest request) throws IOException, ApiException {
     try {
@@ -1426,10 +1522,10 @@ public class ConversationsApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<ConversationAsyncAggregateQueryResponse> getAnalyticsConversationsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
     try {
@@ -6206,6 +6302,182 @@ public class ConversationsApi {
   }
 
   /**
+   * Get a list of Instagram Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
+   * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
+   * @return InstagramIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramIntegrationEntityListing getConversationsMessagingIntegrationsInstagram(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsInstagram(createGetConversationsMessagingIntegrationsInstagramRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId));
+  }
+
+  /**
+   * Get a list of Instagram Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
+   * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
+   * @return InstagramIntegrationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramIntegrationEntityListing> getConversationsMessagingIntegrationsInstagramWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException {
+    return getConversationsMessagingIntegrationsInstagram(createGetConversationsMessagingIntegrationsInstagramRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsInstagramRequest createGetConversationsMessagingIntegrationsInstagramRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) {
+    return GetConversationsMessagingIntegrationsInstagramRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withExpand(expand)
+
+            .withSupportedContentId(supportedContentId)
+
+            .withMessagingSettingId(messagingSettingId)
+
+            .build();
+  }
+
+  /**
+   * Get a list of Instagram Integrations
+   * 
+   * @param request The request object
+   * @return InstagramIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramIntegrationEntityListing getConversationsMessagingIntegrationsInstagram(GetConversationsMessagingIntegrationsInstagramRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InstagramIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramIntegrationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Instagram Integrations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramIntegrationEntityListing> getConversationsMessagingIntegrationsInstagram(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InstagramIntegrationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramIntegrationEntityListing> response = (ApiResponse<InstagramIntegrationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramIntegrationEntityListing> response = (ApiResponse<InstagramIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Instagram messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
+   * @return InstagramIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramIntegration getConversationsMessagingIntegrationsInstagramIntegrationId(String integrationId, String expand) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsInstagramIntegrationId(createGetConversationsMessagingIntegrationsInstagramIntegrationIdRequest(integrationId, expand));
+  }
+
+  /**
+   * Get Instagram messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
+   * @return InstagramIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramIntegration> getConversationsMessagingIntegrationsInstagramIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
+    return getConversationsMessagingIntegrationsInstagramIntegrationId(createGetConversationsMessagingIntegrationsInstagramIntegrationIdRequest(integrationId, expand).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest createGetConversationsMessagingIntegrationsInstagramIntegrationIdRequest(String integrationId, String expand) {
+    return GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get Instagram messaging integration
+   * 
+   * @param request The request object
+   * @return InstagramIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramIntegration getConversationsMessagingIntegrationsInstagramIntegrationId(GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InstagramIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Instagram messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramIntegration> getConversationsMessagingIntegrationsInstagramIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InstagramIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a list of LINE messenger Integrations
    * 
    * @param pageSize Page size (optional, default to 25)
@@ -7560,11 +7832,11 @@ public class ConversationsApi {
   /**
    * Get video conference details (e.g. the current number of active participants).
    * 
+   * getConversationsVideoDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conferenceId conferenceId (required)
    * @return VideoConferenceDetails
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public VideoConferenceDetails getConversationsVideoDetails(String conferenceId) throws IOException, ApiException {
     return  getConversationsVideoDetails(createGetConversationsVideoDetailsRequest(conferenceId));
@@ -7573,10 +7845,10 @@ public class ConversationsApi {
   /**
    * Get video conference details (e.g. the current number of active participants).
    * 
+   * getConversationsVideoDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conferenceId conferenceId (required)
    * @return VideoConferenceDetails
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<VideoConferenceDetails> getConversationsVideoDetailsWithHttpInfo(String conferenceId) throws IOException {
     return getConversationsVideoDetails(createGetConversationsVideoDetailsRequest(conferenceId).withHttpInfo());
@@ -7592,11 +7864,11 @@ public class ConversationsApi {
   /**
    * Get video conference details (e.g. the current number of active participants).
    * 
+   * getConversationsVideoDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return VideoConferenceDetails
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public VideoConferenceDetails getConversationsVideoDetails(GetConversationsVideoDetailsRequest request) throws IOException, ApiException {
     try {
@@ -7612,10 +7884,10 @@ public class ConversationsApi {
   /**
    * Get video conference details (e.g. the current number of active participants).
    * 
+   * getConversationsVideoDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<VideoConferenceDetails> getConversationsVideoDetails(ApiRequest<Void> request) throws IOException {
     try {
@@ -10432,6 +10704,88 @@ public class ConversationsApi {
   }
 
   /**
+   * Update Instagram messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param body InstagramIntegrationUpdateRequest (required)
+   * @return InstagramIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramIntegration patchConversationsMessagingIntegrationsInstagramIntegrationId(String integrationId, InstagramIntegrationUpdateRequest body) throws IOException, ApiException {
+    return  patchConversationsMessagingIntegrationsInstagramIntegrationId(createPatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Update Instagram messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param body InstagramIntegrationUpdateRequest (required)
+   * @return InstagramIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramIntegration> patchConversationsMessagingIntegrationsInstagramIntegrationIdWithHttpInfo(String integrationId, InstagramIntegrationUpdateRequest body) throws IOException {
+    return patchConversationsMessagingIntegrationsInstagramIntegrationId(createPatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest createPatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest(String integrationId, InstagramIntegrationUpdateRequest body) {
+    return PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Instagram messaging integration
+   * 
+   * @param request The request object
+   * @return InstagramIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramIntegration patchConversationsMessagingIntegrationsInstagramIntegrationId(PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InstagramIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Instagram messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramIntegration> patchConversationsMessagingIntegrationsInstagramIntegrationId(ApiRequest<InstagramIntegrationUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InstagramIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
    * @param integrationId Integration ID (required)
@@ -10919,13 +11273,13 @@ public class ConversationsApi {
   /**
    * Query for conversation activity observations
    * 
+   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
    * @return ConversationActivityResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ConversationActivityResponse postAnalyticsConversationsActivityQuery(ConversationActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return  postAnalyticsConversationsActivityQuery(createPostAnalyticsConversationsActivityQueryRequest(body, pageSize, pageNumber));
@@ -10934,12 +11288,12 @@ public class ConversationsApi {
   /**
    * Query for conversation activity observations
    * 
+   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
    * @return ConversationActivityResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<ConversationActivityResponse> postAnalyticsConversationsActivityQueryWithHttpInfo(ConversationActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
     return postAnalyticsConversationsActivityQuery(createPostAnalyticsConversationsActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
@@ -10959,11 +11313,11 @@ public class ConversationsApi {
   /**
    * Query for conversation activity observations
    * 
+   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ConversationActivityResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ConversationActivityResponse postAnalyticsConversationsActivityQuery(PostAnalyticsConversationsActivityQueryRequest request) throws IOException, ApiException {
     try {
@@ -10979,10 +11333,10 @@ public class ConversationsApi {
   /**
    * Query for conversation activity observations
    * 
+   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<ConversationActivityResponse> postAnalyticsConversationsActivityQuery(ApiRequest<ConversationActivityQuery> request) throws IOException {
     try {
@@ -11009,11 +11363,11 @@ public class ConversationsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
+   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(ConversationAsyncAggregationQuery body) throws IOException, ApiException {
     return  postAnalyticsConversationsAggregatesJobs(createPostAnalyticsConversationsAggregatesJobsRequest(body));
@@ -11022,10 +11376,10 @@ public class ConversationsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
+   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsConversationsAggregatesJobsWithHttpInfo(ConversationAsyncAggregationQuery body) throws IOException {
     return postAnalyticsConversationsAggregatesJobs(createPostAnalyticsConversationsAggregatesJobsRequest(body).withHttpInfo());
@@ -11041,11 +11395,11 @@ public class ConversationsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
+   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(PostAnalyticsConversationsAggregatesJobsRequest request) throws IOException, ApiException {
     try {
@@ -11061,10 +11415,10 @@ public class ConversationsApi {
   /**
    * Query for conversation aggregates asynchronously
    * 
+   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsConversationsAggregatesJobs(ApiRequest<ConversationAsyncAggregationQuery> request) throws IOException {
     try {
@@ -11734,6 +12088,7 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationParticipantReplace(createPostConversationParticipantReplaceRequest(conversationId, participantId, body));
@@ -11746,6 +12101,7 @@ public class ConversationsApi {
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationParticipantReplace(createPostConversationParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -11768,6 +12124,7 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationParticipantReplace(PostConversationParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -11786,8 +12143,258 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Replace this participant with the specified agent
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Transfer request (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantReplaceAgent(String conversationId, String participantId, TransferToAgentRequest body) throws IOException, ApiException {
+     postConversationParticipantReplaceAgent(createPostConversationParticipantReplaceAgentRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Replace this participant with the specified agent
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Transfer request (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantReplaceAgentWithHttpInfo(String conversationId, String participantId, TransferToAgentRequest body) throws IOException {
+    return postConversationParticipantReplaceAgent(createPostConversationParticipantReplaceAgentRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationParticipantReplaceAgentRequest createPostConversationParticipantReplaceAgentRequest(String conversationId, String participantId, TransferToAgentRequest body) {
+    return PostConversationParticipantReplaceAgentRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Replace this participant with the specified agent
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantReplaceAgent(PostConversationParticipantReplaceAgentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Replace this participant with the specified agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantReplaceAgent(ApiRequest<TransferToAgentRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Transfer request (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantReplaceExternal(String conversationId, String participantId, TransferToExternalRequest body) throws IOException, ApiException {
+     postConversationParticipantReplaceExternal(createPostConversationParticipantReplaceExternalRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Transfer request (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantReplaceExternalWithHttpInfo(String conversationId, String participantId, TransferToExternalRequest body) throws IOException {
+    return postConversationParticipantReplaceExternal(createPostConversationParticipantReplaceExternalRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationParticipantReplaceExternalRequest createPostConversationParticipantReplaceExternalRequest(String conversationId, String participantId, TransferToExternalRequest body) {
+    return PostConversationParticipantReplaceExternalRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantReplaceExternal(PostConversationParticipantReplaceExternalRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantReplaceExternal(ApiRequest<TransferToExternalRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Replace this participant with the specified queue
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Transfer request (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantReplaceQueue(String conversationId, String participantId, TransferToQueueRequest body) throws IOException, ApiException {
+     postConversationParticipantReplaceQueue(createPostConversationParticipantReplaceQueueRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Replace this participant with the specified queue
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Transfer request (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantReplaceQueueWithHttpInfo(String conversationId, String participantId, TransferToQueueRequest body) throws IOException {
+    return postConversationParticipantReplaceQueue(createPostConversationParticipantReplaceQueueRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationParticipantReplaceQueueRequest createPostConversationParticipantReplaceQueueRequest(String conversationId, String participantId, TransferToQueueRequest body) {
+    return PostConversationParticipantReplaceQueueRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Replace this participant with the specified queue
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantReplaceQueue(PostConversationParticipantReplaceQueueRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Replace this participant with the specified queue
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantReplaceQueue(ApiRequest<TransferToQueueRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -12152,6 +12759,7 @@ public class ConversationsApi {
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ConsultTransferResponse postConversationsCallParticipantConsult(String conversationId, String participantId, ConsultTransfer body) throws IOException, ApiException {
     return  postConversationsCallParticipantConsult(createPostConversationsCallParticipantConsultRequest(conversationId, participantId, body));
@@ -12165,6 +12773,7 @@ public class ConversationsApi {
    * @param body Destination address & initial speak to (required)
    * @return ConsultTransferResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultWithHttpInfo(String conversationId, String participantId, ConsultTransfer body) throws IOException {
     return postConversationsCallParticipantConsult(createPostConversationsCallParticipantConsultRequest(conversationId, participantId, body).withHttpInfo());
@@ -12188,6 +12797,7 @@ public class ConversationsApi {
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ConsultTransferResponse postConversationsCallParticipantConsult(PostConversationsCallParticipantConsultRequest request) throws IOException, ApiException {
     try {
@@ -12206,8 +12816,267 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsult(ApiRequest<ConsultTransfer> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConsultTransferResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an agent
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Destination agent & initial speak to (required)
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConsultTransferResponse postConversationsCallParticipantConsultAgent(String conversationId, String participantId, ConsultTransferToAgent body) throws IOException, ApiException {
+    return  postConversationsCallParticipantConsultAgent(createPostConversationsCallParticipantConsultAgentRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Initiate a consult transfer to an agent
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Destination agent & initial speak to (required)
+   * @return ConsultTransferResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultAgentWithHttpInfo(String conversationId, String participantId, ConsultTransferToAgent body) throws IOException {
+    return postConversationsCallParticipantConsultAgent(createPostConversationsCallParticipantConsultAgentRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationsCallParticipantConsultAgentRequest createPostConversationsCallParticipantConsultAgentRequest(String conversationId, String participantId, ConsultTransferToAgent body) {
+    return PostConversationsCallParticipantConsultAgentRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Initiate a consult transfer to an agent
+   * 
+   * @param request The request object
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConsultTransferResponse postConversationsCallParticipantConsultAgent(PostConversationsCallParticipantConsultAgentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConsultTransferResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultAgent(ApiRequest<ConsultTransferToAgent> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConsultTransferResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Destination address & initial speak to (required)
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConsultTransferResponse postConversationsCallParticipantConsultExternal(String conversationId, String participantId, ConsultTransferToExternal body) throws IOException, ApiException {
+    return  postConversationsCallParticipantConsultExternal(createPostConversationsCallParticipantConsultExternalRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Destination address & initial speak to (required)
+   * @return ConsultTransferResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultExternalWithHttpInfo(String conversationId, String participantId, ConsultTransferToExternal body) throws IOException {
+    return postConversationsCallParticipantConsultExternal(createPostConversationsCallParticipantConsultExternalRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationsCallParticipantConsultExternalRequest createPostConversationsCallParticipantConsultExternalRequest(String conversationId, String participantId, ConsultTransferToExternal body) {
+    return PostConversationsCallParticipantConsultExternalRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
+   * @param request The request object
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConsultTransferResponse postConversationsCallParticipantConsultExternal(PostConversationsCallParticipantConsultExternalRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConsultTransferResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultExternal(ApiRequest<ConsultTransferToExternal> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConsultTransferResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to a queue
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Destination queue & initial speak to (required)
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConsultTransferResponse postConversationsCallParticipantConsultQueue(String conversationId, String participantId, ConsultTransferToQueue body) throws IOException, ApiException {
+    return  postConversationsCallParticipantConsultQueue(createPostConversationsCallParticipantConsultQueueRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Initiate a consult transfer to a queue
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Destination queue & initial speak to (required)
+   * @return ConsultTransferResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultQueueWithHttpInfo(String conversationId, String participantId, ConsultTransferToQueue body) throws IOException {
+    return postConversationsCallParticipantConsultQueue(createPostConversationsCallParticipantConsultQueueRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationsCallParticipantConsultQueueRequest createPostConversationsCallParticipantConsultQueueRequest(String conversationId, String participantId, ConsultTransferToQueue body) {
+    return PostConversationsCallParticipantConsultQueueRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Initiate a consult transfer to a queue
+   * 
+   * @param request The request object
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConsultTransferResponse postConversationsCallParticipantConsultQueue(PostConversationsCallParticipantConsultQueueRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConsultTransferResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to a queue
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultQueue(ApiRequest<ConsultTransferToQueue> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<ConsultTransferResponse>() {});
     }
@@ -12316,6 +13185,7 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsCallParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsCallParticipantReplace(createPostConversationsCallParticipantReplaceRequest(conversationId, participantId, body));
@@ -12328,6 +13198,7 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsCallParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsCallParticipantReplace(createPostConversationsCallParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -12350,6 +13221,7 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsCallParticipantReplace(PostConversationsCallParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -12368,6 +13240,7 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsCallParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -12568,6 +13441,7 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsCallbackParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsCallbackParticipantReplace(createPostConversationsCallbackParticipantReplaceRequest(conversationId, participantId, body));
@@ -12580,6 +13454,7 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsCallbackParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsCallbackParticipantReplace(createPostConversationsCallbackParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -12602,6 +13477,7 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsCallbackParticipantReplace(PostConversationsCallbackParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -12620,6 +13496,7 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsCallbackParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -13215,6 +14092,7 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsChatParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsChatParticipantReplace(createPostConversationsChatParticipantReplaceRequest(conversationId, participantId, body));
@@ -13227,6 +14105,7 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsChatParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsChatParticipantReplace(createPostConversationsChatParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -13249,6 +14128,7 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsChatParticipantReplace(PostConversationsChatParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -13267,6 +14147,7 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsChatParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -13463,6 +14344,7 @@ public class ConversationsApi {
    * @param body  (optional)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsCobrowsesessionParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsCobrowsesessionParticipantReplace(createPostConversationsCobrowsesessionParticipantReplaceRequest(conversationId, participantId, body));
@@ -13475,6 +14357,7 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body  (optional)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsCobrowsesessionParticipantReplace(createPostConversationsCobrowsesessionParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -13497,6 +14380,7 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsCobrowsesessionParticipantReplace(PostConversationsCobrowsesessionParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -13515,6 +14399,7 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -13879,6 +14764,7 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsEmailParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsEmailParticipantReplace(createPostConversationsEmailParticipantReplaceRequest(conversationId, participantId, body));
@@ -13891,6 +14777,7 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsEmailParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsEmailParticipantReplace(createPostConversationsEmailParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -13913,6 +14800,7 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsEmailParticipantReplace(PostConversationsEmailParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -13931,6 +14819,7 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsEmailParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -14775,11 +15664,11 @@ public class ConversationsApi {
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
+   * postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void postConversationsMessageParticipantMonitor(String conversationId, String participantId) throws IOException, ApiException {
      postConversationsMessageParticipantMonitor(createPostConversationsMessageParticipantMonitorRequest(conversationId, participantId));
@@ -14788,10 +15677,10 @@ public class ConversationsApi {
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
+   * postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> postConversationsMessageParticipantMonitorWithHttpInfo(String conversationId, String participantId) throws IOException {
     return postConversationsMessageParticipantMonitor(createPostConversationsMessageParticipantMonitorRequest(conversationId, participantId).withHttpInfo());
@@ -14809,10 +15698,10 @@ public class ConversationsApi {
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
+   * postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void postConversationsMessageParticipantMonitor(PostConversationsMessageParticipantMonitorRequest request) throws IOException, ApiException {
     try {
@@ -14828,10 +15717,10 @@ public class ConversationsApi {
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
+   * postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> postConversationsMessageParticipantMonitor(ApiRequest<Void> request) throws IOException {
     try {
@@ -14863,6 +15752,7 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsMessageParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsMessageParticipantReplace(createPostConversationsMessageParticipantReplaceRequest(conversationId, participantId, body));
@@ -14875,6 +15765,7 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsMessageParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsMessageParticipantReplace(createPostConversationsMessageParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -14897,6 +15788,7 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsMessageParticipantReplace(PostConversationsMessageParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -14915,6 +15807,7 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsMessageParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -15246,6 +16139,84 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FacebookIntegration> response = (ApiResponse<FacebookIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create Instagram Integration
+   * 
+   * @param body InstagramIntegrationRequest (required)
+   * @return InstagramIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramIntegration postConversationsMessagingIntegrationsInstagram(InstagramIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsInstagram(createPostConversationsMessagingIntegrationsInstagramRequest(body));
+  }
+
+  /**
+   * Create Instagram Integration
+   * 
+   * @param body InstagramIntegrationRequest (required)
+   * @return InstagramIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramIntegration> postConversationsMessagingIntegrationsInstagramWithHttpInfo(InstagramIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsInstagram(createPostConversationsMessagingIntegrationsInstagramRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingIntegrationsInstagramRequest createPostConversationsMessagingIntegrationsInstagramRequest(InstagramIntegrationRequest body) {
+    return PostConversationsMessagingIntegrationsInstagramRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create Instagram Integration
+   * 
+   * @param request The request object
+   * @return InstagramIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InstagramIntegration postConversationsMessagingIntegrationsInstagram(PostConversationsMessagingIntegrationsInstagramRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InstagramIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InstagramIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create Instagram Integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InstagramIntegration> postConversationsMessagingIntegrationsInstagram(ApiRequest<InstagramIntegrationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InstagramIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

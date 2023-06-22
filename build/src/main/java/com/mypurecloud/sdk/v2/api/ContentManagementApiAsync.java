@@ -629,10 +629,11 @@ public class ContentManagementApiAsync {
 
   /**
    * Get a list of audits for a document.
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<DocumentAuditEntityListing> getContentmanagementDocumentAuditsAsync(GetContentmanagementDocumentAuditsRequest request, final AsyncApiCallback<DocumentAuditEntityListing> callback) {
     try {
@@ -663,10 +664,11 @@ public class ContentManagementApiAsync {
 
   /**
    * Get a list of audits for a document.
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<DocumentAuditEntityListing>> getContentmanagementDocumentAuditsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DocumentAuditEntityListing>> callback) {
     try {
@@ -2056,10 +2058,11 @@ public class ContentManagementApiAsync {
 
   /**
    * Query audits
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<QueryResults> postContentmanagementAuditqueryAsync(PostContentmanagementAuditqueryRequest request, final AsyncApiCallback<QueryResults> callback) {
     try {
@@ -2090,10 +2093,11 @@ public class ContentManagementApiAsync {
 
   /**
    * Query audits
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<QueryResults>> postContentmanagementAuditqueryAsync(ApiRequest<ContentQueryRequest> request, final AsyncApiCallback<ApiResponse<QueryResults>> callback) {
     try {

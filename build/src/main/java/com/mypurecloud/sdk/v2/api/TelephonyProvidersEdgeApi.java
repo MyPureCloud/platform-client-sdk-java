@@ -3775,6 +3775,7 @@ public class TelephonyProvidersEdgeApi {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
@@ -3785,7 +3786,6 @@ public class TelephonyProvidersEdgeApi {
    * @return ExtensionPoolDivisionViewEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ExtensionPoolDivisionViewEntityListing getTelephonyProvidersEdgesExtensionpoolsDivisionviews(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException, ApiException {
     return  getTelephonyProvidersEdgesExtensionpoolsDivisionviews(createGetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId));
@@ -3794,6 +3794,7 @@ public class TelephonyProvidersEdgeApi {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
@@ -3803,7 +3804,6 @@ public class TelephonyProvidersEdgeApi {
    * @param divisionId List of divisionIds on which to filter. (optional)
    * @return ExtensionPoolDivisionViewEntityListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<ExtensionPoolDivisionViewEntityListing> getTelephonyProvidersEdgesExtensionpoolsDivisionviewsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException {
     return getTelephonyProvidersEdgesExtensionpoolsDivisionviews(createGetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId).withHttpInfo());
@@ -3831,11 +3831,11 @@ public class TelephonyProvidersEdgeApi {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExtensionPoolDivisionViewEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ExtensionPoolDivisionViewEntityListing getTelephonyProvidersEdgesExtensionpoolsDivisionviews(GetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest request) throws IOException, ApiException {
     try {
@@ -3851,10 +3851,10 @@ public class TelephonyProvidersEdgeApi {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<ExtensionPoolDivisionViewEntityListing> getTelephonyProvidersEdgesExtensionpoolsDivisionviews(ApiRequest<Void> request) throws IOException {
     try {
@@ -5163,7 +5163,7 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneHardwareId Filter by phone_hardwareId (optional)
    * @param linesId Filter by lines.id (optional)
    * @param linesName Filter by lines.name (optional)
-   * @param name Name of the Phone to filter by (optional)
+   * @param name Name of the Phone to filter by, comma-separated (optional)
    * @param statusOperationalStatus The primary status to filter by (optional)
    * @param secondaryStatusOperationalStatus The secondary status to filter by (optional)
    * @param expand Fields to expand in the response, comma-separated (optional)
@@ -5191,7 +5191,7 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneHardwareId Filter by phone_hardwareId (optional)
    * @param linesId Filter by lines.id (optional)
    * @param linesName Filter by lines.name (optional)
-   * @param name Name of the Phone to filter by (optional)
+   * @param name Name of the Phone to filter by, comma-separated (optional)
    * @param statusOperationalStatus The primary status to filter by (optional)
    * @param secondaryStatusOperationalStatus The secondary status to filter by (optional)
    * @param expand Fields to expand in the response, comma-separated (optional)

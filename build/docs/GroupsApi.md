@@ -97,6 +97,8 @@ null (empty response body)
 
 Remove dynamic group definition
 
+deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps DELETE /api/v2/groups/{groupId}/dynamicsettings  
 
 Requires ANY permissions: 
@@ -338,6 +340,8 @@ try {
 > [DynamicGroupDefinition](DynamicGroupDefinition.html) getGroupDynamicsettings(groupId)
 
 Get dynamic group definition
+
+getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/groups/{groupId}/dynamicsettings  
 
@@ -915,6 +919,8 @@ try {
 
 Preview the number of users selected for a dynamic group definition query
 
+postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/groups/dynamicsettings/preview  
 
 Requires ANY permissions: 
@@ -1098,6 +1104,8 @@ try {
 > Void putGroupDynamicsettings(groupId, body)
 
 Create / Update dynamic group definition
+
+putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/groups/{groupId}/dynamicsettings  
 

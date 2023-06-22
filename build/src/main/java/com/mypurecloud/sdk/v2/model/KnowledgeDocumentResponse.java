@@ -97,6 +97,7 @@ public class KnowledgeDocumentResponse  implements Serializable {
   private List<LabelResponse> labels = new ArrayList<LabelResponse>();
   private KnowledgeBaseReference knowledgeBase = null;
   private List<DocumentVariation> variations = new ArrayList<DocumentVariation>();
+  private String externalId = null;
   private String selfUri = null;
 
   
@@ -373,6 +374,24 @@ public class KnowledgeDocumentResponse  implements Serializable {
   }
 
 
+  /**
+   * The reference to external id associated with the document.
+   **/
+  public KnowledgeDocumentResponse externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reference to external id associated with the document.")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -407,12 +426,13 @@ public class KnowledgeDocumentResponse  implements Serializable {
             Objects.equals(this.labels, knowledgeDocumentResponse.labels) &&
             Objects.equals(this.knowledgeBase, knowledgeDocumentResponse.knowledgeBase) &&
             Objects.equals(this.variations, knowledgeDocumentResponse.variations) &&
+            Objects.equals(this.externalId, knowledgeDocumentResponse.externalId) &&
             Objects.equals(this.selfUri, knowledgeDocumentResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, visible, alternatives, state, dateCreated, dateModified, dateImported, lastPublishedVersionNumber, datePublished, createdBy, modifiedBy, documentVersion, category, labels, knowledgeBase, variations, selfUri);
+    return Objects.hash(id, title, visible, alternatives, state, dateCreated, dateModified, dateImported, lastPublishedVersionNumber, datePublished, createdBy, modifiedBy, documentVersion, category, labels, knowledgeBase, variations, externalId, selfUri);
   }
 
   @Override
@@ -437,6 +457,7 @@ public class KnowledgeDocumentResponse  implements Serializable {
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    knowledgeBase: ").append(toIndentedString(knowledgeBase)).append("\n");
     sb.append("    variations: ").append(toIndentedString(variations)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

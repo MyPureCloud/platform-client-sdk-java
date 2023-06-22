@@ -24,6 +24,7 @@ public class QueueMessagingAddresses  implements Serializable {
   
   private DomainEntityRef smsAddress = null;
   private DomainEntityRef openMessagingRecipient = null;
+  private DomainEntityRef whatsAppRecipient = null;
 
   
   /**
@@ -60,6 +61,23 @@ public class QueueMessagingAddresses  implements Serializable {
   }
 
 
+  /**
+   **/
+  public QueueMessagingAddresses whatsAppRecipient(DomainEntityRef whatsAppRecipient) {
+    this.whatsAppRecipient = whatsAppRecipient;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("whatsAppRecipient")
+  public DomainEntityRef getWhatsAppRecipient() {
+    return whatsAppRecipient;
+  }
+  public void setWhatsAppRecipient(DomainEntityRef whatsAppRecipient) {
+    this.whatsAppRecipient = whatsAppRecipient;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -71,12 +89,13 @@ public class QueueMessagingAddresses  implements Serializable {
     QueueMessagingAddresses queueMessagingAddresses = (QueueMessagingAddresses) o;
 
     return Objects.equals(this.smsAddress, queueMessagingAddresses.smsAddress) &&
-            Objects.equals(this.openMessagingRecipient, queueMessagingAddresses.openMessagingRecipient);
+            Objects.equals(this.openMessagingRecipient, queueMessagingAddresses.openMessagingRecipient) &&
+            Objects.equals(this.whatsAppRecipient, queueMessagingAddresses.whatsAppRecipient);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(smsAddress, openMessagingRecipient);
+    return Objects.hash(smsAddress, openMessagingRecipient, whatsAppRecipient);
   }
 
   @Override
@@ -86,6 +105,7 @@ public class QueueMessagingAddresses  implements Serializable {
     
     sb.append("    smsAddress: ").append(toIndentedString(smsAddress)).append("\n");
     sb.append("    openMessagingRecipient: ").append(toIndentedString(openMessagingRecipient)).append("\n");
+    sb.append("    whatsAppRecipient: ").append(toIndentedString(whatsAppRecipient)).append("\n");
     sb.append("}");
     return sb.toString();
   }

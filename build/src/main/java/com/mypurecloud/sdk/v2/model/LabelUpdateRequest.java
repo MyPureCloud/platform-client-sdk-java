@@ -24,6 +24,7 @@ public class LabelUpdateRequest  implements Serializable {
   private String id = null;
   private String name = null;
   private String color = null;
+  private String externalId = null;
   private String selfUri = null;
 
   
@@ -70,6 +71,24 @@ public class LabelUpdateRequest  implements Serializable {
   }
 
 
+  /**
+   * The external id associated with the label.
+   **/
+  public LabelUpdateRequest externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external id associated with the label.")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -90,12 +109,13 @@ public class LabelUpdateRequest  implements Serializable {
     return Objects.equals(this.id, labelUpdateRequest.id) &&
             Objects.equals(this.name, labelUpdateRequest.name) &&
             Objects.equals(this.color, labelUpdateRequest.color) &&
+            Objects.equals(this.externalId, labelUpdateRequest.externalId) &&
             Objects.equals(this.selfUri, labelUpdateRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, color, selfUri);
+    return Objects.hash(id, name, color, externalId, selfUri);
   }
 
   @Override
@@ -106,6 +126,7 @@ public class LabelUpdateRequest  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

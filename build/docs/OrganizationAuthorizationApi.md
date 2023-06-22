@@ -435,6 +435,8 @@ null (empty response body)
 
 Delete Bulk Org Trustees
 
+deleteOrgauthorizationTrustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps DELETE /api/v2/orgauthorization/trustees  
 
 Requires ANY permissions: 
@@ -740,6 +742,8 @@ null (empty response body)
 > Void deleteOrgauthorizationTrustors(id)
 
 Delete Bulk Org Trustors
+
+deleteOrgauthorizationTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/orgauthorization/trustors  
 

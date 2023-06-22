@@ -553,10 +553,10 @@ public class OrganizationAuthorizationApiAsync {
   /**
    * Delete Bulk Org Trustees
    * 
+   * deleteOrgauthorizationTrustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> deleteOrgauthorizationTrusteesAsync(DeleteOrgauthorizationTrusteesRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -588,10 +588,10 @@ public class OrganizationAuthorizationApiAsync {
   /**
    * Delete Bulk Org Trustees
    * 
+   * deleteOrgauthorizationTrustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> deleteOrgauthorizationTrusteesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -930,10 +930,10 @@ public class OrganizationAuthorizationApiAsync {
   /**
    * Delete Bulk Org Trustors
    * 
+   * deleteOrgauthorizationTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> deleteOrgauthorizationTrustorsAsync(DeleteOrgauthorizationTrustorsRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -965,10 +965,10 @@ public class OrganizationAuthorizationApiAsync {
   /**
    * Delete Bulk Org Trustors
    * 
+   * deleteOrgauthorizationTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> deleteOrgauthorizationTrustorsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {

@@ -62,6 +62,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a workbin
 
+deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps DELETE /api/v2/taskmanagement/workbins/{workbinId}  
 
 Requires ANY permissions: 
@@ -121,6 +123,8 @@ null (empty response body)
 > Void deleteTaskmanagementWorkitem(workitemId)
 
 Delete a workitem
+
+deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/taskmanagement/workitems/{workitemId}  
 
@@ -182,6 +186,8 @@ null (empty response body)
 
 Delete a schema
 
+deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps DELETE /api/v2/taskmanagement/workitems/schemas/{schemaId}  
 
 Requires ANY permissions: 
@@ -242,6 +248,8 @@ null (empty response body)
 
 Delete a worktype
 
+deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps DELETE /api/v2/taskmanagement/worktypes/{worktypeId}  
 
 Requires ANY permissions: 
@@ -301,6 +309,8 @@ null (empty response body)
 > Void deleteTaskmanagementWorktypeStatus(worktypeId, statusId)
 
 Delete a status
+
+deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}  
 
@@ -364,6 +374,8 @@ null (empty response body)
 
 Get a workbin
 
+getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId}  
 
 Requires ANY permissions: 
@@ -424,6 +436,8 @@ try {
 > [WorkbinChangeListing](WorkbinChangeListing.html) getTaskmanagementWorkbinHistory(workbinId, after, pageSize, sortOrder)
 
 Get a listing of a workbin's attribute change history
+
+getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId}/history  
 
@@ -492,6 +506,8 @@ try {
 
 Get a version of a workbin
 
+getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}  
 
 Requires ANY permissions: 
@@ -554,6 +570,8 @@ try {
 > [WorkbinVersionListing](WorkbinVersionListing.html) getTaskmanagementWorkbinVersions(workbinId, after, pageSize, sortOrder)
 
 Get all versions of a workbin
+
+getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId}/versions  
 
@@ -618,9 +636,11 @@ try {
 
 
 
-> [Workitem](Workitem.html) getTaskmanagementWorkitem(workitemId)
+> [Workitem](Workitem.html) getTaskmanagementWorkitem(workitemId, expands)
 
 Get a workitem
+
+getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}  
 
@@ -651,8 +671,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 TaskManagementApi apiInstance = new TaskManagementApi();
 String workitemId = "workitemId_example"; // String | Workitem ID
+String expands = "expands_example"; // String | Which fields to expand. Comma separated if more than one.
 try {
-    Workitem result = apiInstance.getTaskmanagementWorkitem(workitemId);
+    Workitem result = apiInstance.getTaskmanagementWorkitem(workitemId, expands);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitem");
@@ -666,6 +687,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **workitemId** | **String**| Workitem ID | 
+| **expands** | **String**| Which fields to expand. Comma separated if more than one. | [optional]<br />**Values**: type, workbin, status 
 {: class="table-striped"}
 
 
@@ -682,6 +704,8 @@ try {
 > [WorkitemChangeListing](WorkitemChangeListing.html) getTaskmanagementWorkitemHistory(workitemId, after, pageSize, sortOrder)
 
 Get a listing of a workitem's attribute change history
+
+getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/history  
 
@@ -749,6 +773,8 @@ try {
 > [WorkitemWrapup](WorkitemWrapup.html) getTaskmanagementWorkitemUserWrapups(workitemId, userId, expands, after, pageSize, sortOrder)
 
 Get all wrapup codes added for the given user for a workitem.
+
+getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups  
 
@@ -821,6 +847,8 @@ try {
 
 Get a version of a workitem
 
+getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}  
 
 Requires ANY permissions: 
@@ -883,6 +911,8 @@ try {
 > [WorkitemVersionListing](WorkitemVersionListing.html) getTaskmanagementWorkitemVersions(workitemId, after, pageSize, sortOrder)
 
 Get all versions of a workitem
+
+getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/versions  
 
@@ -950,6 +980,8 @@ try {
 > [WorkitemWrapupEntityListing](WorkitemWrapupEntityListing.html) getTaskmanagementWorkitemWrapups(workitemId, expands, after, pageSize, sortOrder)
 
 Get all wrapup codes added for all users for a workitem.
+
+getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/wrapups  
 
@@ -1020,6 +1052,8 @@ try {
 
 Get a schema
 
+getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/taskmanagement/workitems/schemas/{schemaId}  
 
 Requires ANY permissions: 
@@ -1080,6 +1114,8 @@ try {
 > [DataSchema](DataSchema.html) getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId)
 
 Get a specific version of a schema
+
+getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId}  
 
@@ -1144,6 +1180,8 @@ try {
 
 Get all versions of a schema
 
+getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions  
 
 Requires ANY permissions: 
@@ -1205,6 +1243,8 @@ try {
 
 Get a list of schemas.
 
+getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/taskmanagement/workitems/schemas  
 
 Requires ANY permissions: 
@@ -1261,6 +1301,8 @@ This endpoint does not require any parameters.
 > [Worktype](Worktype.html) getTaskmanagementWorktype(worktypeId, expands)
 
 Get a worktype
+
+getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}  
 
@@ -1324,6 +1366,8 @@ try {
 > [WorktypeChangeListing](WorktypeChangeListing.html) getTaskmanagementWorktypeHistory(worktypeId, after, pageSize, sortOrder)
 
 Get a listing of a worktype's attribute change history
+
+getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/history  
 
@@ -1392,6 +1436,8 @@ try {
 
 Get a status
 
+getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}  
 
 Requires ANY permissions: 
@@ -1455,6 +1501,8 @@ try {
 
 Get a version of a worktype
 
+getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}  
 
 Requires ANY permissions: 
@@ -1517,6 +1565,8 @@ try {
 > [WorktypeVersionListing](WorktypeVersionListing.html) getTaskmanagementWorktypeVersions(worktypeId, after, pageSize, sortOrder)
 
 Get all versions of a worktype
+
+getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions  
 
@@ -1585,6 +1635,8 @@ try {
 
 Update the attributes of a workbin
 
+patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps PATCH /api/v2/taskmanagement/workbins/{workbinId}  
 
 Requires ANY permissions: 
@@ -1647,6 +1699,8 @@ try {
 > [Workitem](Workitem.html) patchTaskmanagementWorkitem(workitemId, body)
 
 Update the attributes of a workitem
+
+patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/taskmanagement/workitems/{workitemId}  
 
@@ -1712,6 +1766,8 @@ try {
 
 Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
 
+patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps PATCH /api/v2/taskmanagement/workitems/{workitemId}/assignment  
 
 Requires ANY permissions: 
@@ -1774,6 +1830,8 @@ null (empty response body)
 > [WorkitemWrapup](WorkitemWrapup.html) patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
 
 Add/Remove a wrapup code for a given user in a workitem.
+
+patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups  
 
@@ -1840,6 +1898,8 @@ try {
 
 Add/Remove a wrapup code for the current user in a workitem.
 
+patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups  
 
 Requires ANY permissions: 
@@ -1903,6 +1963,8 @@ try {
 
 Update the attributes of a worktype
 
+patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps PATCH /api/v2/taskmanagement/worktypes/{worktypeId}  
 
 Requires ALL permissions: 
@@ -1965,6 +2027,8 @@ try {
 > [WorkitemStatus](WorkitemStatus.html) patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
 
 Update the attributes of a status
+
+patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}  
 
@@ -2031,6 +2095,8 @@ try {
 
 Create a workbin
 
+postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/taskmanagement/workbins  
 
 Requires ANY permissions: 
@@ -2091,6 +2157,8 @@ try {
 > [WorkbinQueryEntityListing](WorkbinQueryEntityListing.html) postTaskmanagementWorkbinsQuery(body)
 
 Query for workbins
+
+postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/taskmanagement/workbins/query  
 
@@ -2153,6 +2221,8 @@ try {
 
 Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
 
+postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/taskmanagement/workitems/{workitemId}/acd/cancel  
 
 Requires ANY permissions: 
@@ -2214,6 +2284,8 @@ try {
 
 Disconnect the assignee of the workitem
 
+postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/taskmanagement/workitems/{workitemId}/disconnect  
 
 Requires ANY permissions: 
@@ -2274,6 +2346,8 @@ try {
 > [Workitem](Workitem.html) postTaskmanagementWorkitemTerminate(workitemId, body)
 
 Terminate a workitem
+
+postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/taskmanagement/workitems/{workitemId}/terminate  
 
@@ -2338,6 +2412,8 @@ try {
 
 Create a workitem
 
+postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/taskmanagement/workitems  
 
 Requires ANY permissions: 
@@ -2401,6 +2477,8 @@ Query for workitems
 
 This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
 
+postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/taskmanagement/workitems/query  
 
 Requires ANY permissions: 
@@ -2462,6 +2540,8 @@ try {
 
 Create a schema
 
+postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/taskmanagement/workitems/schemas  
 
 Requires ANY permissions: 
@@ -2522,6 +2602,8 @@ try {
 > [WorkitemStatus](WorkitemStatus.html) postTaskmanagementWorktypeStatuses(worktypeId, body)
 
 Add a status to a worktype
+
+postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/taskmanagement/worktypes/{worktypeId}/statuses  
 
@@ -2586,6 +2668,8 @@ try {
 
 Create a worktype
 
+postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/taskmanagement/worktypes  
 
 Requires ANY permissions: 
@@ -2647,6 +2731,8 @@ try {
 
 Query for worktypes
 
+postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/taskmanagement/worktypes/query  
 
 Requires ALL permissions: 
@@ -2707,6 +2793,8 @@ try {
 > [DataSchema](DataSchema.html) putTaskmanagementWorkitemsSchema(schemaId, body)
 
 Update a schema
+
+putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/taskmanagement/workitems/schemas/{schemaId}  
 

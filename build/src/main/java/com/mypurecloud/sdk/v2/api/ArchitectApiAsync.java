@@ -4626,10 +4626,10 @@ public class ArchitectApiAsync {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<GetFlowExecutionDataJobResult> getFlowsInstanceAsync(GetFlowsInstanceRequest request, final AsyncApiCallback<GetFlowExecutionDataJobResult> callback) {
     try {
@@ -4661,10 +4661,10 @@ public class ArchitectApiAsync {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<GetFlowExecutionDataJobResult>> getFlowsInstanceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>> callback) {
     try {
@@ -4703,10 +4703,10 @@ public class ArchitectApiAsync {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
+   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<GetFlowExecutionDataJobResult> getFlowsInstancesJobAsync(GetFlowsInstancesJobRequest request, final AsyncApiCallback<GetFlowExecutionDataJobResult> callback) {
     try {
@@ -4738,10 +4738,10 @@ public class ArchitectApiAsync {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
+   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<GetFlowExecutionDataJobResult>> getFlowsInstancesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>> callback) {
     try {
@@ -4780,10 +4780,10 @@ public class ArchitectApiAsync {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
+   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<FlowsQueryCriteriaResponse> getFlowsInstancesQuerycapabilitiesAsync(GetFlowsInstancesQuerycapabilitiesRequest request, final AsyncApiCallback<FlowsQueryCriteriaResponse> callback) {
     try {
@@ -4815,10 +4815,10 @@ public class ArchitectApiAsync {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
+   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<FlowsQueryCriteriaResponse>> getFlowsInstancesQuerycapabilitiesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowsQueryCriteriaResponse>> callback) {
     try {
@@ -7182,10 +7182,10 @@ public class ArchitectApiAsync {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<GetFlowExecutionDataJobResult> postFlowsInstancesJobsAsync(PostFlowsInstancesJobsRequest request, final AsyncApiCallback<GetFlowExecutionDataJobResult> callback) {
     try {
@@ -7217,10 +7217,10 @@ public class ArchitectApiAsync {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<GetFlowExecutionDataJobResult>> postFlowsInstancesJobsAsync(ApiRequest<ExecutionDataRequest> request, final AsyncApiCallback<ApiResponse<GetFlowExecutionDataJobResult>> callback) {
     try {
@@ -7259,10 +7259,10 @@ public class ArchitectApiAsync {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
+   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<FlowResultEntityListing> postFlowsInstancesQueryAsync(PostFlowsInstancesQueryRequest request, final AsyncApiCallback<FlowResultEntityListing> callback) {
     try {
@@ -7294,10 +7294,10 @@ public class ArchitectApiAsync {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
+   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<FlowResultEntityListing>> postFlowsInstancesQueryAsync(ApiRequest<CriteriaQuery> request, final AsyncApiCallback<ApiResponse<FlowResultEntityListing>> callback) {
     try {

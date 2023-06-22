@@ -25,6 +25,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get status for async query for Flow aggregates
 
+getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/analytics/flows/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -85,6 +87,8 @@ try {
 > [FlowAsyncAggregateQueryResponse](FlowAsyncAggregateQueryResponse.html) getAnalyticsFlowsAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
+
+getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results  
 
@@ -148,6 +152,8 @@ try {
 > [FlowActivityResponse](FlowActivityResponse.html) postAnalyticsFlowsActivityQuery(body, pageSize, pageNumber)
 
 Query for flow activity observations
+
+postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/flows/activity/query  
 
@@ -213,6 +219,8 @@ try {
 > [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsFlowsAggregatesJobs(body)
 
 Query for flow aggregates asynchronously
+
+postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/flows/aggregates/jobs  
 

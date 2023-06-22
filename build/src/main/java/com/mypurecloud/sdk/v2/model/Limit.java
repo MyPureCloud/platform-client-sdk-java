@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,20 +23,165 @@ import java.io.Serializable;
 public class Limit  implements Serializable {
   
   private String key = null;
-  private Double value = null;
+
+  private static class NamespaceEnumDeserializer extends StdDeserializer<NamespaceEnum> {
+    public NamespaceEnumDeserializer() {
+      super(NamespaceEnumDeserializer.class);
+    }
+
+    @Override
+    public NamespaceEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return NamespaceEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets namespace
+   */
+ @JsonDeserialize(using = NamespaceEnumDeserializer.class)
+  public enum NamespaceEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AGENT_ASSISTANT("agent.assistant"),
+    ANALYTICS_ALERTING("analytics.alerting"),
+    ANALYTICS("analytics"),
+    ANALYTICS_REALTIME("analytics.realtime"),
+    ANALYTICS_REPORTING_SETTINGS("analytics.reporting.settings"),
+    ARCHITECT("architect"),
+    AUDIOHOOK("audiohook"),
+    AUDIT("audit"),
+    AUTH_API("auth.api"),
+    AUTHORIZATION("authorization"),
+    AUTOMATION_TESTING("automation.testing"),
+    BOTS("bots"),
+    BOTS_VOICE("bots.voice"),
+    CALLBACK("callback"),
+    COBROWSE("cobrowse"),
+    CONTENT_MANAGEMENT("content.management"),
+    CONVERSATION("conversation"),
+    DATAACTIONS("dataactions"),
+    DATATABLES("datatables"),
+    DIRECTORY("directory"),
+    EMAIL("email"),
+    EVENT_ORCHESTRATION("event.orchestration"),
+    EXTERNAL_CONTACTS("external.contacts"),
+    GCV("gcv"),
+    GDPR("gdpr"),
+    GROUPS("groups"),
+    HISTORICAL_ADHERENCE("historical.adherence"),
+    INFRASTRUCTUREASCODE("infrastructureascode"),
+    INTEGRATIONS("integrations"),
+    INTENT_MINER("intent.miner"),
+    JOURNEY("journey"),
+    KNOWLEDGE("knowledge"),
+    LANGUAGE_UNDERSTANDING("language.understanding"),
+    LIMIT_REGISTRY("limit.registry"),
+    MARKETPLACE("marketplace"),
+    MESSAGING("messaging"),
+    NOTIFICATIONS("notifications"),
+    ONBOARDING("onboarding"),
+    OUTBOUND("outbound"),
+    PLATFORM_API("platform.api"),
+    PREDICTIVE_ROUTING("predictive.routing"),
+    PRESENCE("presence"),
+    QUALITY("quality"),
+    RECORDING("recording"),
+    RESPONSE_MANAGEMENT("response.management"),
+    ROUTING("routing"),
+    SCIM("scim"),
+    SEARCH("search"),
+    SECONDARY_AUTOMATION_TESTING("secondary.automation.testing"),
+    SKILLS("skills"),
+    SPEECH_AND_TEXT_ANALYTICS("speech.and.text.analytics"),
+    SPEECH_INTEGRATION("speech.integration"),
+    SUPPORTABILITY("supportability"),
+    TASK_MANAGEMENT("task.management"),
+    TELEPHONY_CONFIGURATION("telephony.configuration"),
+    USAGE("usage"),
+    USERS("users"),
+    WEB_DEPLOYMENTS("web.deployments"),
+    WEB_MESSAGING("web.messaging"),
+    WEBCHAT("webchat"),
+    WEBHOOKS("webhooks"),
+    WORKFORCE_MANAGEMENT("workforce.management");
+
+    private String value;
+
+    NamespaceEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static NamespaceEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (NamespaceEnum value : NamespaceEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return NamespaceEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private NamespaceEnum namespace = null;
+  private Long value = null;
 
   
-  @ApiModelProperty(example = "null", value = "The limit key")
+  /**
+   **/
+  public Limit key(String key) {
+    this.key = key;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("key")
   public String getKey() {
     return key;
   }
+  public void setKey(String key) {
+    this.key = key;
+  }
 
 
-  @ApiModelProperty(example = "null", value = "The limit value")
+  /**
+   **/
+  public Limit namespace(NamespaceEnum namespace) {
+    this.namespace = namespace;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("namespace")
+  public NamespaceEnum getNamespace() {
+    return namespace;
+  }
+  public void setNamespace(NamespaceEnum namespace) {
+    this.namespace = namespace;
+  }
+
+
+  /**
+   **/
+  public Limit value(Long value) {
+    this.value = value;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("value")
-  public Double getValue() {
+  public Long getValue() {
     return value;
+  }
+  public void setValue(Long value) {
+    this.value = value;
   }
 
 
@@ -50,12 +196,13 @@ public class Limit  implements Serializable {
     Limit limit = (Limit) o;
 
     return Objects.equals(this.key, limit.key) &&
+            Objects.equals(this.namespace, limit.namespace) &&
             Objects.equals(this.value, limit.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, value);
+    return Objects.hash(key, namespace, value);
   }
 
   @Override
@@ -64,6 +211,7 @@ public class Limit  implements Serializable {
     sb.append("class Limit {\n");
     
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();

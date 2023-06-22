@@ -23,6 +23,7 @@ title: DocumentBodyListBlockProperties
 | NORMAL | &quot;Normal&quot; | 
 | SQUARE | &quot;Square&quot; | 
 | CIRCLE | &quot;Circle&quot; | 
+| NONE | &quot;None&quot; | 
 {: class="table table-striped"}
 
 
@@ -39,6 +40,7 @@ title: DocumentBodyListBlockProperties
 | LOWERROMAN | &quot;LowerRoman&quot; | 
 | UPPERALPHA | &quot;UpperAlpha&quot; | 
 | UPPERROMAN | &quot;UpperRoman&quot; | 
+| NONE | &quot;None&quot; | 
 {: class="table table-striped"}
 
 

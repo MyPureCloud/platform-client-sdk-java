@@ -413,6 +413,8 @@ try {
 
 Query for team activity observations
 
+postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/analytics/teams/activity/query  
 
 Requires ANY permissions: 

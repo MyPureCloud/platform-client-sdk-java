@@ -21,10 +21,11 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.BulkResponse;
+import com.mypurecloud.sdk.v2.model.CategoryCreateRequest;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
-import com.mypurecloud.sdk.v2.model.CategoryRequest;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
+import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
 import com.mypurecloud.sdk.v2.model.DocumentVariation;
 import com.mypurecloud.sdk.v2.model.DocumentVariationListing;

@@ -73,6 +73,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | Update a set of credentials |
 | [**putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings**](IntegrationsApi.html#putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings) | Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration |
 | [**putIntegrationsSpeechTtsSettings**](IntegrationsApi.html#putIntegrationsSpeechTtsSettings) | Update TTS settings for an org |
+| [**putIntegrationsUnifiedcommunicationThirdpartypresences**](IntegrationsApi.html#putIntegrationsUnifiedcommunicationThirdpartypresences) | Bulk integration presence ingestion |
 {: class="table-striped"}
 
 <a name="deleteIntegration"></a>
@@ -2117,6 +2118,8 @@ try {
 
 Get a Nuance bot in the specified Integration
 
+getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}  
 
 Requires ANY permissions: 
@@ -2184,6 +2187,8 @@ try {
 
 Get the status of an asynchronous Nuance bot GET job
 
+getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -2248,6 +2253,8 @@ try {
 > [NuanceBot](NuanceBot.html) getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId)
 
 Get the result of an asynchronous Nuance bot GET job
+
+getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results  
 
@@ -2316,6 +2323,8 @@ Get a list of Nuance bots available in the specified Integration
 
 If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
 
+getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots  
 
 Requires ANY permissions: 
@@ -2383,6 +2392,8 @@ try {
 
 Get the status of an asynchronous Nuance bots GET job
 
+getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -2445,6 +2456,8 @@ try {
 > [NuanceBotEntityListing](NuanceBotEntityListing.html) getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId)
 
 Get the result of an asynchronous Nuance bots GET job
+
+getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results  
 
@@ -3852,6 +3865,8 @@ try {
 
 Get a Nuance bot in the specified Integration asynchronously
 
+postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs  
 
 Requires ANY permissions: 
@@ -3919,6 +3934,8 @@ try {
 
 Get a list of Nuance bots in the specified Integration asynchronously
 
+postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs  
 
 Requires ANY permissions: 
@@ -3985,6 +4002,8 @@ try {
 > Void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings)
 
 Try out a single credential for a Nuance bot to know if the secret is correct
+
+postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate  
 
@@ -4235,6 +4254,8 @@ try {
 
 Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
 
+putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps PUT /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings  
 
 Requires ANY permissions: 
@@ -4347,4 +4368,69 @@ try {
 ### Return type
 
 [**TtsSettings**](TtsSettings.html)
+
+<a name="putIntegrationsUnifiedcommunicationThirdpartypresences"></a>
+
+# **putIntegrationsUnifiedcommunicationThirdpartypresences**
+
+
+
+> String putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body)
+
+Bulk integration presence ingestion
+
+This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+
+Wraps PUT /api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences  
+
+Requires ANY permissions: 
+
+* integration:presence:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String ucIntegrationId = "ucIntegrationId_example"; // String | UC Integration ID
+List<UCThirdPartyPresence> body = Arrays.asList(new UCThirdPartyPresence()); // List<UCThirdPartyPresence> | List of User presences
+try {
+    String result = apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#putIntegrationsUnifiedcommunicationThirdpartypresences");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ucIntegrationId** | **String**| UC Integration ID | 
+| **body** | [**List&lt;UCThirdPartyPresence&gt;**](UCThirdPartyPresence.html)| List of User presences | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
 

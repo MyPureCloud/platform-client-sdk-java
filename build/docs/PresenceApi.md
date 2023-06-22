@@ -21,6 +21,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSystempresences**](PresenceApi.html#getSystempresences) | Get the list of SystemPresences |
 | [**getUserPresence**](PresenceApi.html#getUserPresence) | Get a user's Presence |
 | [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | Get a user's Genesys Cloud presence. |
+| [**getUsersPresenceBulk**](PresenceApi.html#getUsersPresenceBulk) | Get bulk user presences for a single presence source |
+| [**getUsersPresencesPurecloudBulk**](PresenceApi.html#getUsersPresencesPurecloudBulk) | Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source |
 | [**patchUserPresence**](PresenceApi.html#patchUserPresence) | Patch a user's Presence |
 | [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | Patch a Genesys Cloud user's presence |
 | [**postPresenceDefinitions0**](PresenceApi.html#postPresenceDefinitions0) | Create a Presence Definition |
@@ -43,6 +45,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 > Void deletePresenceDefinition0(definitionId)
 
 Delete a Presence Definition
+
+deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/presence/definitions/{definitionId}  
 
@@ -226,6 +230,8 @@ null (empty response body)
 
 Get a Presence Definition
 
+getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/presence/definitions/{definitionId}  
 
 Requires ALL permissions: 
@@ -286,6 +292,8 @@ try {
 > [OrganizationPresenceDefinitionEntityListing](OrganizationPresenceDefinitionEntityListing.html) getPresenceDefinitions0(deactivated, divisionId)
 
 Get a list of Presence Definitions
+
+getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/presence/definitions  
 
@@ -891,6 +899,128 @@ try {
 
 [**UserPresence**](UserPresence.html)
 
+<a name="getUsersPresenceBulk"></a>
+
+# **getUsersPresenceBulk**
+
+
+
+> [List&lt;UcUserPresence&gt;](UcUserPresence.html) getUsersPresenceBulk(sourceId, id)
+
+Get bulk user presences for a single presence source
+
+Wraps GET /api/v2/users/presences/{sourceId}/bulk  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String sourceId = "sourceId_example"; // String | The requested presence source ID.
+List<String> id = Arrays.asList(null); // List<String> | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+try {
+    List<UcUserPresence> result = apiInstance.getUsersPresenceBulk(sourceId, id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#getUsersPresenceBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceId** | **String**| The requested presence source ID. | 
+| **id** | [**List&lt;String&gt;**](String.html)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**List&lt;UcUserPresence&gt;**](UcUserPresence.html)
+
+<a name="getUsersPresencesPurecloudBulk"></a>
+
+# **getUsersPresencesPurecloudBulk**
+
+
+
+> [List&lt;UcUserPresence&gt;](UcUserPresence.html) getUsersPresencesPurecloudBulk(id)
+
+Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+
+Wraps GET /api/v2/users/presences/purecloud/bulk  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+List<String> id = Arrays.asList(null); // List<String> | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+try {
+    List<UcUserPresence> result = apiInstance.getUsersPresencesPurecloudBulk(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#getUsersPresencesPurecloudBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String.html)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**List&lt;UcUserPresence&gt;**](UcUserPresence.html)
+
 <a name="patchUserPresence"></a>
 
 # **patchUserPresence**
@@ -1030,6 +1160,8 @@ try {
 > [OrganizationPresenceDefinition](OrganizationPresenceDefinition.html) postPresenceDefinitions0(body)
 
 Create a Presence Definition
+
+postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/presence/definitions  
 
@@ -1213,6 +1345,8 @@ try {
 > [OrganizationPresenceDefinition](OrganizationPresenceDefinition.html) putPresenceDefinition0(definitionId, body)
 
 Update a Presence Definition
+
+putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/presence/definitions/{definitionId}  
 

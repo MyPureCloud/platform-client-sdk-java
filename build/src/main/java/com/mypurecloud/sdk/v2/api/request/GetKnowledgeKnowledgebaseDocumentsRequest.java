@@ -21,10 +21,11 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.BulkResponse;
+import com.mypurecloud.sdk.v2.model.CategoryCreateRequest;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
-import com.mypurecloud.sdk.v2.model.CategoryRequest;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
+import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
 import com.mypurecloud.sdk.v2.model.DocumentVariation;
 import com.mypurecloud.sdk.v2.model.DocumentVariationListing;
@@ -270,6 +271,20 @@ public class GetKnowledgeKnowledgebaseDocumentsRequest {
 		}
 	}
 
+	private List<String> externalIds;
+	public List<String> getExternalIds() {
+		return this.externalIds;
+	}
+
+	public void setExternalIds(List<String> externalIds) {
+		this.externalIds = externalIds;
+	}
+
+	public GetKnowledgeKnowledgebaseDocumentsRequest withExternalIds(List<String> externalIds) {
+	    this.setExternalIds(externalIds);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -329,6 +344,9 @@ public class GetKnowledgeKnowledgebaseDocumentsRequest {
         
 
                 .withQueryParameters("expand", "multi", expand)
+        
+
+                .withQueryParameters("externalIds", "multi", externalIds)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -420,6 +438,11 @@ public class GetKnowledgeKnowledgebaseDocumentsRequest {
 	      }
 	      request.setExpand(stringList);
 		    return this;
+		}
+
+		public Builder withExternalIds(List<String> externalIds) {
+			request.setExternalIds(externalIds);
+			return this;
 		}
 
 

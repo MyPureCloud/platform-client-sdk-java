@@ -21,10 +21,11 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.BulkResponse;
+import com.mypurecloud.sdk.v2.model.CategoryCreateRequest;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
-import com.mypurecloud.sdk.v2.model.CategoryRequest;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
+import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
 import com.mypurecloud.sdk.v2.model.DocumentVariation;
 import com.mypurecloud.sdk.v2.model.DocumentVariationListing;
@@ -113,16 +114,16 @@ public class PatchKnowledgeKnowledgebaseCategoryRequest {
 	    return this;
 	} 
 
-	private CategoryRequest body;
-	public CategoryRequest getBody() {
+	private CategoryUpdateRequest body;
+	public CategoryUpdateRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(CategoryRequest body) {
+	public void setBody(CategoryUpdateRequest body) {
 		this.body = body;
 	}
 
-	public PatchKnowledgeKnowledgebaseCategoryRequest withBody(CategoryRequest body) {
+	public PatchKnowledgeKnowledgebaseCategoryRequest withBody(CategoryUpdateRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -146,7 +147,7 @@ public class PatchKnowledgeKnowledgebaseCategoryRequest {
         return this;
     }
 
-    public ApiRequest<CategoryRequest> withHttpInfo() {
+    public ApiRequest<CategoryUpdateRequest> withHttpInfo() {
         
         // verify the required parameter 'knowledgeBaseId' is set
         if (this.knowledgeBaseId == null) {
@@ -183,7 +184,7 @@ public class PatchKnowledgeKnowledgebaseCategoryRequest {
 	}
 
 
-	public static Builder builder(String knowledgeBaseId, String categoryId, CategoryRequest body) {
+	public static Builder builder(String knowledgeBaseId, String categoryId, CategoryUpdateRequest body) {
 	    return new Builder()
 	            .withRequiredParams(knowledgeBaseId, categoryId, body);
 	}
@@ -207,14 +208,14 @@ public class PatchKnowledgeKnowledgebaseCategoryRequest {
 			return this;
 		}
 
-		public Builder withBody(CategoryRequest body) {
+		public Builder withBody(CategoryUpdateRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String knowledgeBaseId, String categoryId, CategoryRequest body) {
+		public Builder withRequiredParams(String knowledgeBaseId, String categoryId, CategoryUpdateRequest body) {
 			request.setKnowledgeBaseId(knowledgeBaseId);
 			request.setCategoryId(categoryId);
 			request.setBody(body);

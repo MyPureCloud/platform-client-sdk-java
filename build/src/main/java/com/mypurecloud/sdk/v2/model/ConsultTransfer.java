@@ -73,6 +73,7 @@ public class ConsultTransfer  implements Serializable {
     }
   }
   private SpeakToEnum speakTo = null;
+  private String consultingUserId = null;
   private Destination destination = null;
 
   
@@ -84,13 +85,31 @@ public class ConsultTransfer  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Determines to whom the initiating participant is speaking. Defaults to DESTINATION")
+  @ApiModelProperty(example = "null", required = true, value = "Determines to whom the initiating participant is speaking. Defaults to DESTINATION")
   @JsonProperty("speakTo")
   public SpeakToEnum getSpeakTo() {
     return speakTo;
   }
   public void setSpeakTo(SpeakToEnum speakTo) {
     this.speakTo = speakTo;
+  }
+
+
+  /**
+   * The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
+   **/
+  public ConsultTransfer consultingUserId(String consultingUserId) {
+    this.consultingUserId = consultingUserId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID")
+  @JsonProperty("consultingUserId")
+  public String getConsultingUserId() {
+    return consultingUserId;
+  }
+  public void setConsultingUserId(String consultingUserId) {
+    this.consultingUserId = consultingUserId;
   }
 
 
@@ -123,12 +142,13 @@ public class ConsultTransfer  implements Serializable {
     ConsultTransfer consultTransfer = (ConsultTransfer) o;
 
     return Objects.equals(this.speakTo, consultTransfer.speakTo) &&
+            Objects.equals(this.consultingUserId, consultTransfer.consultingUserId) &&
             Objects.equals(this.destination, consultTransfer.destination);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(speakTo, destination);
+    return Objects.hash(speakTo, consultingUserId, destination);
   }
 
   @Override
@@ -137,6 +157,7 @@ public class ConsultTransfer  implements Serializable {
     sb.append("class ConsultTransfer {\n");
     
     sb.append("    speakTo: ").append(toIndentedString(speakTo)).append("\n");
+    sb.append("    consultingUserId: ").append(toIndentedString(consultingUserId)).append("\n");
     sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
     sb.append("}");
     return sb.toString();

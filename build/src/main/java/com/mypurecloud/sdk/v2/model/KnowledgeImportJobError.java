@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Detail;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Limit;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class KnowledgeImportJobError  implements Serializable {
   private String contextId = null;
   private List<Detail> details = new ArrayList<Detail>();
   private List<ErrorBody> errors = new ArrayList<ErrorBody>();
+  private Limit limit = null;
   private Integer documentIndex = null;
 
   
@@ -211,6 +213,23 @@ public class KnowledgeImportJobError  implements Serializable {
 
 
   /**
+   **/
+  public KnowledgeImportJobError limit(Limit limit) {
+    this.limit = limit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("limit")
+  public Limit getLimit() {
+    return limit;
+  }
+  public void setLimit(Limit limit) {
+    this.limit = limit;
+  }
+
+
+  /**
    * Index of the faulty document.
    **/
   public KnowledgeImportJobError documentIndex(Integer documentIndex) {
@@ -248,12 +267,13 @@ public class KnowledgeImportJobError  implements Serializable {
             Objects.equals(this.contextId, knowledgeImportJobError.contextId) &&
             Objects.equals(this.details, knowledgeImportJobError.details) &&
             Objects.equals(this.errors, knowledgeImportJobError.errors) &&
+            Objects.equals(this.limit, knowledgeImportJobError.limit) &&
             Objects.equals(this.documentIndex, knowledgeImportJobError.documentIndex);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors, documentIndex);
+    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors, limit, documentIndex);
   }
 
   @Override
@@ -271,6 +291,7 @@ public class KnowledgeImportJobError  implements Serializable {
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    documentIndex: ").append(toIndentedString(documentIndex)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -22,11 +22,6 @@ import java.io.Serializable;
 
 public class TransferRequest  implements Serializable {
   
-  private String userId = null;
-  private String address = null;
-  private String userName = null;
-  private String queueId = null;
-  private Boolean voicemail = null;
 
   private static class TransferTypeEnumDeserializer extends StdDeserializer<TransferTypeEnum> {
     public TransferTypeEnumDeserializer() {
@@ -41,7 +36,7 @@ public class TransferRequest  implements Serializable {
     }
   }
   /**
-   * The type of transfer to perform.
+   * Gets or Sets transferType
    */
  @JsonDeserialize(using = TransferTypeEnumDeserializer.class)
   public enum TransferTypeEnum {
@@ -75,8 +70,30 @@ public class TransferRequest  implements Serializable {
     }
   }
   private TransferTypeEnum transferType = null;
+  private String userId = null;
+  private String address = null;
+  private String userName = null;
+  private String queueId = null;
+  private Boolean voicemail = null;
 
   
+  /**
+   **/
+  public TransferRequest transferType(TransferTypeEnum transferType) {
+    this.transferType = transferType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("transferType")
+  public TransferTypeEnum getTransferType() {
+    return transferType;
+  }
+  public void setTransferType(TransferTypeEnum transferType) {
+    this.transferType = transferType;
+  }
+
+
   /**
    * The user ID of the transfer target.
    **/
@@ -167,24 +184,6 @@ public class TransferRequest  implements Serializable {
   }
 
 
-  /**
-   * The type of transfer to perform.
-   **/
-  public TransferRequest transferType(TransferTypeEnum transferType) {
-    this.transferType = transferType;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The type of transfer to perform.")
-  @JsonProperty("transferType")
-  public TransferTypeEnum getTransferType() {
-    return transferType;
-  }
-  public void setTransferType(TransferTypeEnum transferType) {
-    this.transferType = transferType;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -195,17 +194,17 @@ public class TransferRequest  implements Serializable {
     }
     TransferRequest transferRequest = (TransferRequest) o;
 
-    return Objects.equals(this.userId, transferRequest.userId) &&
+    return Objects.equals(this.transferType, transferRequest.transferType) &&
+            Objects.equals(this.userId, transferRequest.userId) &&
             Objects.equals(this.address, transferRequest.address) &&
             Objects.equals(this.userName, transferRequest.userName) &&
             Objects.equals(this.queueId, transferRequest.queueId) &&
-            Objects.equals(this.voicemail, transferRequest.voicemail) &&
-            Objects.equals(this.transferType, transferRequest.transferType);
+            Objects.equals(this.voicemail, transferRequest.voicemail);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, address, userName, queueId, voicemail, transferType);
+    return Objects.hash(transferType, userId, address, userName, queueId, voicemail);
   }
 
   @Override
@@ -213,12 +212,12 @@ public class TransferRequest  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class TransferRequest {\n");
     
+    sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
-    sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

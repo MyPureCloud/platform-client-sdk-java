@@ -648,7 +648,7 @@ public class ContentManagementApi {
 
   /**
    * Get a list of audits for a document.
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param documentId Document ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -659,6 +659,7 @@ public class ContentManagementApi {
    * @return DocumentAuditEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DocumentAuditEntityListing getContentmanagementDocumentAudits(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) throws IOException, ApiException {
     return  getContentmanagementDocumentAudits(createGetContentmanagementDocumentAuditsRequest(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder));
@@ -666,7 +667,7 @@ public class ContentManagementApi {
 
   /**
    * Get a list of audits for a document.
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param documentId Document ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -676,6 +677,7 @@ public class ContentManagementApi {
    * @param sortOrder Sort order (optional, default to ascending)
    * @return DocumentAuditEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAuditsWithHttpInfo(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) throws IOException {
     return getContentmanagementDocumentAudits(createGetContentmanagementDocumentAuditsRequest(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder).withHttpInfo());
@@ -702,11 +704,12 @@ public class ContentManagementApi {
 
   /**
    * Get a list of audits for a document.
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param request The request object
    * @return DocumentAuditEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DocumentAuditEntityListing getContentmanagementDocumentAudits(GetContentmanagementDocumentAuditsRequest request) throws IOException, ApiException {
     try {
@@ -721,10 +724,11 @@ public class ContentManagementApi {
 
   /**
    * Get a list of audits for a document.
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAudits(ApiRequest<Void> request) throws IOException {
     try {
@@ -2318,11 +2322,12 @@ public class ContentManagementApi {
 
   /**
    * Query audits
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param body Allows for a filtered query returning facet information (required)
    * @return QueryResults
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public QueryResults postContentmanagementAuditquery(ContentQueryRequest body) throws IOException, ApiException {
     return  postContentmanagementAuditquery(createPostContentmanagementAuditqueryRequest(body));
@@ -2330,10 +2335,11 @@ public class ContentManagementApi {
 
   /**
    * Query audits
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param body Allows for a filtered query returning facet information (required)
    * @return QueryResults
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<QueryResults> postContentmanagementAuditqueryWithHttpInfo(ContentQueryRequest body) throws IOException {
     return postContentmanagementAuditquery(createPostContentmanagementAuditqueryRequest(body).withHttpInfo());
@@ -2348,11 +2354,12 @@ public class ContentManagementApi {
 
   /**
    * Query audits
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param request The request object
    * @return QueryResults
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public QueryResults postContentmanagementAuditquery(PostContentmanagementAuditqueryRequest request) throws IOException, ApiException {
     try {
@@ -2367,10 +2374,11 @@ public class ContentManagementApi {
 
   /**
    * Query audits
-   * 
+   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<QueryResults> postContentmanagementAuditquery(ApiRequest<ContentQueryRequest> request) throws IOException {
     try {

@@ -839,10 +839,10 @@ public class SearchApiAsync {
   /**
    * Search all documents
    * 
+   * postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<JsonNodeSearchResponse> postDocumentationAllSearchAsync(PostDocumentationAllSearchRequest request, final AsyncApiCallback<JsonNodeSearchResponse> callback) {
     try {
@@ -874,10 +874,10 @@ public class SearchApiAsync {
   /**
    * Search all documents
    * 
+   * postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<JsonNodeSearchResponse>> postDocumentationAllSearchAsync(ApiRequest<DocumentationV2SearchRequest> request, final AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
     try {
@@ -1668,10 +1668,10 @@ public class SearchApiAsync {
   /**
    * Search users as conversation targets
    * 
+   * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<UsersSearchResponse> postUsersSearchConversationTargetAsync(PostUsersSearchConversationTargetRequest request, final AsyncApiCallback<UsersSearchResponse> callback) {
     try {
@@ -1703,10 +1703,10 @@ public class SearchApiAsync {
   /**
    * Search users as conversation targets
    * 
+   * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<UsersSearchResponse>> postUsersSearchConversationTargetAsync(ApiRequest<UserSearchRequest> request, final AsyncApiCallback<ApiResponse<UsersSearchResponse>> callback) {
     try {
@@ -1745,10 +1745,10 @@ public class SearchApiAsync {
   /**
    * Search manage queue member
    * 
+   * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<UsersSearchResponse> postUsersSearchQueuemembersManageAsync(PostUsersSearchQueuemembersManageRequest request, final AsyncApiCallback<UsersSearchResponse> callback) {
     try {
@@ -1780,10 +1780,10 @@ public class SearchApiAsync {
   /**
    * Search manage queue member
    * 
+   * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<UsersSearchResponse>> postUsersSearchQueuemembersManageAsync(ApiRequest<UserSearchRequest> request, final AsyncApiCallback<ApiResponse<UsersSearchResponse>> callback) {
     try {

@@ -8,7 +8,7 @@ title: GuestCategoryResponseListing
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;GuestCategoryResponse&gt;**](GuestCategoryResponse.html)<!----> |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;GuestResponseCategory&gt;**](GuestResponseCategory.html)<!----> |  |  [optional] |
 | **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |

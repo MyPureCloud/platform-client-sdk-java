@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.TtsSettings;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
 import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
+import com.mypurecloud.sdk.v2.model.UCThirdPartyPresence;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.UserAppEntityListing;

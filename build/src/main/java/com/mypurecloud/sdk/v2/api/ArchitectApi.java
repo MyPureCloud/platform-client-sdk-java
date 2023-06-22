@@ -5418,12 +5418,12 @@ public class ArchitectApi {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param instanceId Instance ID (required)
    * @param expand Expand various details. (optional)
    * @return GetFlowExecutionDataJobResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public GetFlowExecutionDataJobResult getFlowsInstance(String instanceId, String expand) throws IOException, ApiException {
     return  getFlowsInstance(createGetFlowsInstanceRequest(instanceId, expand));
@@ -5432,11 +5432,11 @@ public class ArchitectApi {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param instanceId Instance ID (required)
    * @param expand Expand various details. (optional)
    * @return GetFlowExecutionDataJobResult
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<GetFlowExecutionDataJobResult> getFlowsInstanceWithHttpInfo(String instanceId, String expand) throws IOException {
     return getFlowsInstance(createGetFlowsInstanceRequest(instanceId, expand).withHttpInfo());
@@ -5454,11 +5454,11 @@ public class ArchitectApi {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GetFlowExecutionDataJobResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public GetFlowExecutionDataJobResult getFlowsInstance(GetFlowsInstanceRequest request) throws IOException, ApiException {
     try {
@@ -5474,10 +5474,10 @@ public class ArchitectApi {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<GetFlowExecutionDataJobResult> getFlowsInstance(ApiRequest<Void> request) throws IOException {
     try {
@@ -5504,11 +5504,11 @@ public class ArchitectApi {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
+   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId The asynchronous job ID (required)
    * @return GetFlowExecutionDataJobResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public GetFlowExecutionDataJobResult getFlowsInstancesJob(String jobId) throws IOException, ApiException {
     return  getFlowsInstancesJob(createGetFlowsInstancesJobRequest(jobId));
@@ -5517,10 +5517,10 @@ public class ArchitectApi {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
+   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId The asynchronous job ID (required)
    * @return GetFlowExecutionDataJobResult
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<GetFlowExecutionDataJobResult> getFlowsInstancesJobWithHttpInfo(String jobId) throws IOException {
     return getFlowsInstancesJob(createGetFlowsInstancesJobRequest(jobId).withHttpInfo());
@@ -5536,11 +5536,11 @@ public class ArchitectApi {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
+   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GetFlowExecutionDataJobResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public GetFlowExecutionDataJobResult getFlowsInstancesJob(GetFlowsInstancesJobRequest request) throws IOException, ApiException {
     try {
@@ -5556,10 +5556,10 @@ public class ArchitectApi {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
+   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<GetFlowExecutionDataJobResult> getFlowsInstancesJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -5586,11 +5586,11 @@ public class ArchitectApi {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
+   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param expand Expand various query types. (optional)
    * @return FlowsQueryCriteriaResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public FlowsQueryCriteriaResponse getFlowsInstancesQuerycapabilities(String expand) throws IOException, ApiException {
     return  getFlowsInstancesQuerycapabilities(createGetFlowsInstancesQuerycapabilitiesRequest(expand));
@@ -5599,10 +5599,10 @@ public class ArchitectApi {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
+   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param expand Expand various query types. (optional)
    * @return FlowsQueryCriteriaResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<FlowsQueryCriteriaResponse> getFlowsInstancesQuerycapabilitiesWithHttpInfo(String expand) throws IOException {
     return getFlowsInstancesQuerycapabilities(createGetFlowsInstancesQuerycapabilitiesRequest(expand).withHttpInfo());
@@ -5618,11 +5618,11 @@ public class ArchitectApi {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
+   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowsQueryCriteriaResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public FlowsQueryCriteriaResponse getFlowsInstancesQuerycapabilities(GetFlowsInstancesQuerycapabilitiesRequest request) throws IOException, ApiException {
     try {
@@ -5638,10 +5638,10 @@ public class ArchitectApi {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
+   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<FlowsQueryCriteriaResponse> getFlowsInstancesQuerycapabilities(ApiRequest<Void> request) throws IOException {
     try {
@@ -8223,12 +8223,12 @@ public class ArchitectApi {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Requested Flow Ids (required)
    * @param expand Expand various query types. (optional)
    * @return GetFlowExecutionDataJobResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public GetFlowExecutionDataJobResult postFlowsInstancesJobs(ExecutionDataRequest body, String expand) throws IOException, ApiException {
     return  postFlowsInstancesJobs(createPostFlowsInstancesJobsRequest(body, expand));
@@ -8237,11 +8237,11 @@ public class ArchitectApi {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Requested Flow Ids (required)
    * @param expand Expand various query types. (optional)
    * @return GetFlowExecutionDataJobResult
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<GetFlowExecutionDataJobResult> postFlowsInstancesJobsWithHttpInfo(ExecutionDataRequest body, String expand) throws IOException {
     return postFlowsInstancesJobs(createPostFlowsInstancesJobsRequest(body, expand).withHttpInfo());
@@ -8259,11 +8259,11 @@ public class ArchitectApi {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GetFlowExecutionDataJobResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public GetFlowExecutionDataJobResult postFlowsInstancesJobs(PostFlowsInstancesJobsRequest request) throws IOException, ApiException {
     try {
@@ -8279,10 +8279,10 @@ public class ArchitectApi {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<GetFlowExecutionDataJobResult> postFlowsInstancesJobs(ApiRequest<ExecutionDataRequest> request) throws IOException {
     try {
@@ -8309,12 +8309,12 @@ public class ArchitectApi {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
+   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param indexOnly indexes only (optional)
    * @return FlowResultEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public FlowResultEntityListing postFlowsInstancesQuery(CriteriaQuery body, Boolean indexOnly) throws IOException, ApiException {
     return  postFlowsInstancesQuery(createPostFlowsInstancesQueryRequest(body, indexOnly));
@@ -8323,11 +8323,11 @@ public class ArchitectApi {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
+   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param indexOnly indexes only (optional)
    * @return FlowResultEntityListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<FlowResultEntityListing> postFlowsInstancesQueryWithHttpInfo(CriteriaQuery body, Boolean indexOnly) throws IOException {
     return postFlowsInstancesQuery(createPostFlowsInstancesQueryRequest(body, indexOnly).withHttpInfo());
@@ -8345,11 +8345,11 @@ public class ArchitectApi {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
+   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowResultEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public FlowResultEntityListing postFlowsInstancesQuery(PostFlowsInstancesQueryRequest request) throws IOException, ApiException {
     try {
@@ -8365,10 +8365,10 @@ public class ArchitectApi {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
+   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<FlowResultEntityListing> postFlowsInstancesQuery(ApiRequest<CriteriaQuery> request) throws IOException {
     try {

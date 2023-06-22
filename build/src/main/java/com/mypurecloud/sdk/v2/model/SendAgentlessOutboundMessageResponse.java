@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessagingTemplateRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -81,6 +82,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
   private String textBody = null;
   private MessagingTemplateRequest messagingTemplate = null;
   private Boolean useExistingActiveConversation = null;
+  private MessageData message = null;
   private Date timestamp = null;
   private String selfUri = null;
   private AddressableEntityRef user = null;
@@ -220,6 +222,24 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
 
   /**
+   * Sent agentless outbound message in normalized format
+   **/
+  public SendAgentlessOutboundMessageResponse message(MessageData message) {
+    this.message = message;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Sent agentless outbound message in normalized format")
+  @JsonProperty("message")
+  public MessageData getMessage() {
+    return message;
+  }
+  public void setMessage(MessageData message) {
+    this.message = message;
+  }
+
+
+  /**
    * The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public SendAgentlessOutboundMessageResponse timestamp(Date timestamp) {
@@ -269,6 +289,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
             Objects.equals(this.textBody, sendAgentlessOutboundMessageResponse.textBody) &&
             Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageResponse.messagingTemplate) &&
             Objects.equals(this.useExistingActiveConversation, sendAgentlessOutboundMessageResponse.useExistingActiveConversation) &&
+            Objects.equals(this.message, sendAgentlessOutboundMessageResponse.message) &&
             Objects.equals(this.timestamp, sendAgentlessOutboundMessageResponse.timestamp) &&
             Objects.equals(this.selfUri, sendAgentlessOutboundMessageResponse.selfUri) &&
             Objects.equals(this.user, sendAgentlessOutboundMessageResponse.user);
@@ -276,7 +297,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversationId, fromAddress, toAddress, messengerType, textBody, messagingTemplate, useExistingActiveConversation, timestamp, selfUri, user);
+    return Objects.hash(id, conversationId, fromAddress, toAddress, messengerType, textBody, messagingTemplate, useExistingActiveConversation, message, timestamp, selfUri, user);
   }
 
   @Override
@@ -292,6 +313,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
     sb.append("    useExistingActiveConversation: ").append(toIndentedString(useExistingActiveConversation)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");

@@ -526,11 +526,11 @@ public class QualityApi {
   /**
    * Get status for async query for evaluation aggregates
    * 
+   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(String jobId) throws IOException, ApiException {
     return  getAnalyticsEvaluationsAggregatesJob(createGetAnalyticsEvaluationsAggregatesJobRequest(jobId));
@@ -539,10 +539,10 @@ public class QualityApi {
   /**
    * Get status for async query for evaluation aggregates
    * 
+   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsEvaluationsAggregatesJobWithHttpInfo(String jobId) throws IOException {
     return getAnalyticsEvaluationsAggregatesJob(createGetAnalyticsEvaluationsAggregatesJobRequest(jobId).withHttpInfo());
@@ -558,11 +558,11 @@ public class QualityApi {
   /**
    * Get status for async query for evaluation aggregates
    * 
+   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(GetAnalyticsEvaluationsAggregatesJobRequest request) throws IOException, ApiException {
     try {
@@ -578,10 +578,10 @@ public class QualityApi {
   /**
    * Get status for async query for evaluation aggregates
    * 
+   * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsEvaluationsAggregatesJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -608,12 +608,12 @@ public class QualityApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return EvaluationAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public EvaluationAsyncAggregateQueryResponse getAnalyticsEvaluationsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
     return  getAnalyticsEvaluationsAggregatesJobResults(createGetAnalyticsEvaluationsAggregatesJobResultsRequest(jobId, cursor));
@@ -622,11 +622,11 @@ public class QualityApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return EvaluationAsyncAggregateQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<EvaluationAsyncAggregateQueryResponse> getAnalyticsEvaluationsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
     return getAnalyticsEvaluationsAggregatesJobResults(createGetAnalyticsEvaluationsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
@@ -644,11 +644,11 @@ public class QualityApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return EvaluationAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public EvaluationAsyncAggregateQueryResponse getAnalyticsEvaluationsAggregatesJobResults(GetAnalyticsEvaluationsAggregatesJobResultsRequest request) throws IOException, ApiException {
     try {
@@ -664,10 +664,10 @@ public class QualityApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<EvaluationAsyncAggregateQueryResponse> getAnalyticsEvaluationsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
     try {
@@ -694,11 +694,11 @@ public class QualityApi {
   /**
    * Get status for async query for survey aggregates
    * 
+   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsSurveysAggregatesJob(String jobId) throws IOException, ApiException {
     return  getAnalyticsSurveysAggregatesJob(createGetAnalyticsSurveysAggregatesJobRequest(jobId));
@@ -707,10 +707,10 @@ public class QualityApi {
   /**
    * Get status for async query for survey aggregates
    * 
+   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsSurveysAggregatesJobWithHttpInfo(String jobId) throws IOException {
     return getAnalyticsSurveysAggregatesJob(createGetAnalyticsSurveysAggregatesJobRequest(jobId).withHttpInfo());
@@ -726,11 +726,11 @@ public class QualityApi {
   /**
    * Get status for async query for survey aggregates
    * 
+   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsSurveysAggregatesJob(GetAnalyticsSurveysAggregatesJobRequest request) throws IOException, ApiException {
     try {
@@ -746,10 +746,10 @@ public class QualityApi {
   /**
    * Get status for async query for survey aggregates
    * 
+   * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsSurveysAggregatesJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -776,12 +776,12 @@ public class QualityApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return SurveyAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public SurveyAsyncAggregateQueryResponse getAnalyticsSurveysAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
     return  getAnalyticsSurveysAggregatesJobResults(createGetAnalyticsSurveysAggregatesJobResultsRequest(jobId, cursor));
@@ -790,11 +790,11 @@ public class QualityApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return SurveyAsyncAggregateQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<SurveyAsyncAggregateQueryResponse> getAnalyticsSurveysAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
     return getAnalyticsSurveysAggregatesJobResults(createGetAnalyticsSurveysAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
@@ -812,11 +812,11 @@ public class QualityApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SurveyAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public SurveyAsyncAggregateQueryResponse getAnalyticsSurveysAggregatesJobResults(GetAnalyticsSurveysAggregatesJobResultsRequest request) throws IOException, ApiException {
     try {
@@ -832,10 +832,10 @@ public class QualityApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<SurveyAsyncAggregateQueryResponse> getAnalyticsSurveysAggregatesJobResults(ApiRequest<Void> request) throws IOException {
     try {
@@ -3598,11 +3598,11 @@ public class QualityApi {
   /**
    * Query for evaluation aggregates asynchronously
    * 
+   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(EvaluationAsyncAggregationQuery body) throws IOException, ApiException {
     return  postAnalyticsEvaluationsAggregatesJobs(createPostAnalyticsEvaluationsAggregatesJobsRequest(body));
@@ -3611,10 +3611,10 @@ public class QualityApi {
   /**
    * Query for evaluation aggregates asynchronously
    * 
+   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsEvaluationsAggregatesJobsWithHttpInfo(EvaluationAsyncAggregationQuery body) throws IOException {
     return postAnalyticsEvaluationsAggregatesJobs(createPostAnalyticsEvaluationsAggregatesJobsRequest(body).withHttpInfo());
@@ -3630,11 +3630,11 @@ public class QualityApi {
   /**
    * Query for evaluation aggregates asynchronously
    * 
+   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(PostAnalyticsEvaluationsAggregatesJobsRequest request) throws IOException, ApiException {
     try {
@@ -3650,10 +3650,10 @@ public class QualityApi {
   /**
    * Query for evaluation aggregates asynchronously
    * 
+   * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsEvaluationsAggregatesJobs(ApiRequest<EvaluationAsyncAggregationQuery> request) throws IOException {
     try {
@@ -3758,11 +3758,11 @@ public class QualityApi {
   /**
    * Query for survey aggregates asynchronously
    * 
+   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(SurveyAsyncAggregationQuery body) throws IOException, ApiException {
     return  postAnalyticsSurveysAggregatesJobs(createPostAnalyticsSurveysAggregatesJobsRequest(body));
@@ -3771,10 +3771,10 @@ public class QualityApi {
   /**
    * Query for survey aggregates asynchronously
    * 
+   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsSurveysAggregatesJobsWithHttpInfo(SurveyAsyncAggregationQuery body) throws IOException {
     return postAnalyticsSurveysAggregatesJobs(createPostAnalyticsSurveysAggregatesJobsRequest(body).withHttpInfo());
@@ -3790,11 +3790,11 @@ public class QualityApi {
   /**
    * Query for survey aggregates asynchronously
    * 
+   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(PostAnalyticsSurveysAggregatesJobsRequest request) throws IOException, ApiException {
     try {
@@ -3810,10 +3810,10 @@ public class QualityApi {
   /**
    * Query for survey aggregates asynchronously
    * 
+   * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsSurveysAggregatesJobs(ApiRequest<SurveyAsyncAggregationQuery> request) throws IOException {
     try {

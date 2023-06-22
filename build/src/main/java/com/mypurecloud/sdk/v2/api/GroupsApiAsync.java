@@ -145,10 +145,10 @@ public class GroupsApiAsync {
   /**
    * Remove dynamic group definition
    * 
+   * deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> deleteGroupDynamicsettingsAsync(DeleteGroupDynamicsettingsRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -180,10 +180,10 @@ public class GroupsApiAsync {
   /**
    * Remove dynamic group definition
    * 
+   * deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> deleteGroupDynamicsettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -449,10 +449,10 @@ public class GroupsApiAsync {
   /**
    * Get dynamic group definition
    * 
+   * getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<DynamicGroupDefinition> getGroupDynamicsettingsAsync(GetGroupDynamicsettingsRequest request, final AsyncApiCallback<DynamicGroupDefinition> callback) {
     try {
@@ -484,10 +484,10 @@ public class GroupsApiAsync {
   /**
    * Get dynamic group definition
    * 
+   * getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<DynamicGroupDefinition>> getGroupDynamicsettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DynamicGroupDefinition>> callback) {
     try {
@@ -1130,11 +1130,11 @@ public class GroupsApiAsync {
   /**
    * Preview the number of users selected for a dynamic group definition query
    * 
+   * postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    * @deprecated
-	 * Preview Endpoint
    */
   public Future<DynamicGroupQueryPreview> postGroupsDynamicsettingsPreviewAsync(PostGroupsDynamicsettingsPreviewRequest request, final AsyncApiCallback<DynamicGroupQueryPreview> callback) {
     try {
@@ -1166,11 +1166,11 @@ public class GroupsApiAsync {
   /**
    * Preview the number of users selected for a dynamic group definition query
    * 
+   * postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    * @deprecated
-	 * Preview Endpoint
    */
   public Future<ApiResponse<DynamicGroupQueryPreview>> postGroupsDynamicsettingsPreviewAsync(ApiRequest<DynamicGroupQuery> request, final AsyncApiCallback<ApiResponse<DynamicGroupQueryPreview>> callback) {
     try {
@@ -1359,10 +1359,10 @@ public class GroupsApiAsync {
   /**
    * Create / Update dynamic group definition
    * 
+   * putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> putGroupDynamicsettingsAsync(PutGroupDynamicsettingsRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -1394,10 +1394,10 @@ public class GroupsApiAsync {
   /**
    * Create / Update dynamic group definition
    * 
+   * putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> putGroupDynamicsettingsAsync(ApiRequest<DynamicGroupQuery> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {

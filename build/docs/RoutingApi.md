@@ -1177,6 +1177,8 @@ null (empty response body)
 
 Delete an utilization tag
 
+deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps DELETE /api/v2/routing/utilization/tags/{tagId}  
 
 Requires ALL permissions: 
@@ -4709,6 +4711,8 @@ This endpoint does not require any parameters.
 
 Get details about this utilization tag
 
+getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/routing/utilization/tags/{tagId}  
 
 Requires ALL permissions: 
@@ -4770,6 +4774,8 @@ try {
 
 Get list of agent ids associated with a utilization tag
 
+getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/routing/utilization/tags/{tagId}/agents  
 
 Requires ALL permissions: 
@@ -4830,6 +4836,8 @@ try {
 > [UtilizationTagEntityListing](UtilizationTagEntityListing.html) getRoutingUtilizationTags(pageSize, pageNumber, sortOrder, name)
 
 Get list of utilization tags
+
+getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/utilization/tags  
 
@@ -6324,6 +6332,8 @@ try {
 
 Query for user activity observations
 
+postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/analytics/routing/activity/query  
 
 Requires ANY permissions: 
@@ -7506,6 +7516,8 @@ try {
 
 Imports a phone number for SMS
 
+postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/routing/sms/phonenumbers/import  
 
 Requires ALL permissions: 
@@ -7566,6 +7578,8 @@ try {
 > [UtilizationTag](UtilizationTag.html) postRoutingUtilizationTags(body)
 
 Create an utilization tag
+
+postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/routing/utilization/tags  
 

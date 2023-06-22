@@ -3519,10 +3519,10 @@ public class TelephonyProvidersEdgeApiAsync {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ExtensionPoolDivisionViewEntityListing> getTelephonyProvidersEdgesExtensionpoolsDivisionviewsAsync(GetTelephonyProvidersEdgesExtensionpoolsDivisionviewsRequest request, final AsyncApiCallback<ExtensionPoolDivisionViewEntityListing> callback) {
     try {
@@ -3554,10 +3554,10 @@ public class TelephonyProvidersEdgeApiAsync {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<ExtensionPoolDivisionViewEntityListing>> getTelephonyProvidersEdgesExtensionpoolsDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExtensionPoolDivisionViewEntityListing>> callback) {
     try {

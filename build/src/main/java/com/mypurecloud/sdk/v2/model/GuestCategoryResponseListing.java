@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.GuestCategoryResponse;
+import com.mypurecloud.sdk.v2.model.GuestResponseCategory;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class GuestCategoryResponseListing  implements Serializable {
   
-  private List<GuestCategoryResponse> entities = new ArrayList<GuestCategoryResponse>();
+  private List<GuestResponseCategory> entities = new ArrayList<GuestResponseCategory>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;
@@ -33,17 +33,17 @@ public class GuestCategoryResponseListing  implements Serializable {
   
   /**
    **/
-  public GuestCategoryResponseListing entities(List<GuestCategoryResponse> entities) {
+  public GuestCategoryResponseListing entities(List<GuestResponseCategory> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<GuestCategoryResponse> getEntities() {
+  public List<GuestResponseCategory> getEntities() {
     return entities;
   }
-  public void setEntities(List<GuestCategoryResponse> entities) {
+  public void setEntities(List<GuestResponseCategory> entities) {
     this.entities = entities;
   }
 

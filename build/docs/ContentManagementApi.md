@@ -479,11 +479,13 @@ try {
 
 # **getContentmanagementDocumentAudits**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [DocumentAuditEntityListing](DocumentAuditEntityListing.html) getContentmanagementDocumentAudits(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder)
 
 Get a list of audits for a document.
+
+This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/audits  
 
@@ -1713,11 +1715,13 @@ try {
 
 # **postContentmanagementAuditquery**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [QueryResults](QueryResults.html) postContentmanagementAuditquery(body)
 
 Query audits
+
+This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 
 Wraps POST /api/v2/contentmanagement/auditquery  
 

@@ -53,6 +53,7 @@ import com.mypurecloud.sdk.v2.model.TtsSettings;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
 import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
+import com.mypurecloud.sdk.v2.model.UCThirdPartyPresence;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
@@ -124,6 +125,7 @@ import com.mypurecloud.sdk.v2.api.request.PutIntegrationsBotconnectorIntegration
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsSpeechTtsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIntegrationsUnifiedcommunicationThirdpartypresencesRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -2471,10 +2473,10 @@ public class IntegrationsApiAsync {
   /**
    * Get a Nuance bot in the specified Integration
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<NuanceBot> getIntegrationsSpeechNuanceNuanceIntegrationIdBotAsync(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest request, final AsyncApiCallback<NuanceBot> callback) {
     try {
@@ -2506,10 +2508,10 @@ public class IntegrationsApiAsync {
   /**
    * Get a Nuance bot in the specified Integration
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<NuanceBot>> getIntegrationsSpeechNuanceNuanceIntegrationIdBotAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<NuanceBot>> callback) {
     try {
@@ -2548,10 +2550,10 @@ public class IntegrationsApiAsync {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncJob> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobAsync(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest request, final AsyncApiCallback<AsyncJob> callback) {
     try {
@@ -2583,10 +2585,10 @@ public class IntegrationsApiAsync {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncJob>> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncJob>> callback) {
     try {
@@ -2625,10 +2627,10 @@ public class IntegrationsApiAsync {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<NuanceBot> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsAsync(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest request, final AsyncApiCallback<NuanceBot> callback) {
     try {
@@ -2660,10 +2662,10 @@ public class IntegrationsApiAsync {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<NuanceBot>> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<NuanceBot>> callback) {
     try {
@@ -2702,10 +2704,10 @@ public class IntegrationsApiAsync {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<NuanceBotEntityListing> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsAsync(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest request, final AsyncApiCallback<NuanceBotEntityListing> callback) {
     try {
@@ -2737,10 +2739,10 @@ public class IntegrationsApiAsync {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<NuanceBotEntityListing>> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<NuanceBotEntityListing>> callback) {
     try {
@@ -2779,10 +2781,10 @@ public class IntegrationsApiAsync {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncJob> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobAsync(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest request, final AsyncApiCallback<AsyncJob> callback) {
     try {
@@ -2814,10 +2816,10 @@ public class IntegrationsApiAsync {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncJob>> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncJob>> callback) {
     try {
@@ -2856,10 +2858,10 @@ public class IntegrationsApiAsync {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<NuanceBotEntityListing> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsAsync(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest request, final AsyncApiCallback<NuanceBotEntityListing> callback) {
     try {
@@ -2891,10 +2893,10 @@ public class IntegrationsApiAsync {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<NuanceBotEntityListing>> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<NuanceBotEntityListing>> callback) {
     try {
@@ -4508,10 +4510,10 @@ public class IntegrationsApiAsync {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncJob> postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsAsync(PostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest request, final AsyncApiCallback<AsyncJob> callback) {
     try {
@@ -4543,10 +4545,10 @@ public class IntegrationsApiAsync {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncJob>> postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsAsync(ApiRequest<String> request, final AsyncApiCallback<ApiResponse<AsyncJob>> callback) {
     try {
@@ -4585,10 +4587,10 @@ public class IntegrationsApiAsync {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncJob> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsAsync(PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest request, final AsyncApiCallback<AsyncJob> callback) {
     try {
@@ -4620,10 +4622,10 @@ public class IntegrationsApiAsync {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncJob>> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncJob>> callback) {
     try {
@@ -4662,10 +4664,10 @@ public class IntegrationsApiAsync {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateAsync(PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -4697,10 +4699,10 @@ public class IntegrationsApiAsync {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateAsync(ApiRequest<BotExecutionConfiguration> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -4964,10 +4966,10 @@ public class IntegrationsApiAsync {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
+   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsAsync(PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -4999,10 +5001,10 @@ public class IntegrationsApiAsync {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
+   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsAsync(ApiRequest<NuanceBotLaunchSettings> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -5102,6 +5104,81 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TtsSettings> response = (ApiResponse<TtsSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk integration presence ingestion
+   * This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<String> putIntegrationsUnifiedcommunicationThirdpartypresencesAsync(PutIntegrationsUnifiedcommunicationThirdpartypresencesRequest request, final AsyncApiCallback<String> callback) {
+    try {
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk integration presence ingestion
+   * This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<String>> putIntegrationsUnifiedcommunicationThirdpartypresencesAsync(ApiRequest<List<UCThirdPartyPresence>> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+    try {
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

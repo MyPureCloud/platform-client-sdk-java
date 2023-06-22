@@ -52,7 +52,9 @@ public class DocumentQueryPredicate  implements Serializable {
     DOCUMENTID("documentId"),
     LABELID("labelId"),
     LABELNAME("labelName"),
-    TITLE("title");
+    TITLE("title"),
+    VISIBLE("visible"),
+    STATE("state");
 
     private String value;
 

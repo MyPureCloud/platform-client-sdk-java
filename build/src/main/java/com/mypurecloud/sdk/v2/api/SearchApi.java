@@ -901,11 +901,11 @@ public class SearchApi {
   /**
    * Search all documents
    * 
+   * postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Search request options (required)
    * @return JsonNodeSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public JsonNodeSearchResponse postDocumentationAllSearch(DocumentationV2SearchRequest body) throws IOException, ApiException {
     return  postDocumentationAllSearch(createPostDocumentationAllSearchRequest(body));
@@ -914,10 +914,10 @@ public class SearchApi {
   /**
    * Search all documents
    * 
+   * postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Search request options (required)
    * @return JsonNodeSearchResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<JsonNodeSearchResponse> postDocumentationAllSearchWithHttpInfo(DocumentationV2SearchRequest body) throws IOException {
     return postDocumentationAllSearch(createPostDocumentationAllSearchRequest(body).withHttpInfo());
@@ -933,11 +933,11 @@ public class SearchApi {
   /**
    * Search all documents
    * 
+   * postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JsonNodeSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public JsonNodeSearchResponse postDocumentationAllSearch(PostDocumentationAllSearchRequest request) throws IOException, ApiException {
     try {
@@ -953,10 +953,10 @@ public class SearchApi {
   /**
    * Search all documents
    * 
+   * postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<JsonNodeSearchResponse> postDocumentationAllSearch(ApiRequest<DocumentationV2SearchRequest> request) throws IOException {
     try {
@@ -1779,11 +1779,11 @@ public class SearchApi {
   /**
    * Search users as conversation targets
    * 
+   * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Search request options (required)
    * @return UsersSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UsersSearchResponse postUsersSearchConversationTarget(UserSearchRequest body) throws IOException, ApiException {
     return  postUsersSearchConversationTarget(createPostUsersSearchConversationTargetRequest(body));
@@ -1792,10 +1792,10 @@ public class SearchApi {
   /**
    * Search users as conversation targets
    * 
+   * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Search request options (required)
    * @return UsersSearchResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UsersSearchResponse> postUsersSearchConversationTargetWithHttpInfo(UserSearchRequest body) throws IOException {
     return postUsersSearchConversationTarget(createPostUsersSearchConversationTargetRequest(body).withHttpInfo());
@@ -1811,11 +1811,11 @@ public class SearchApi {
   /**
    * Search users as conversation targets
    * 
+   * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UsersSearchResponse postUsersSearchConversationTarget(PostUsersSearchConversationTargetRequest request) throws IOException, ApiException {
     try {
@@ -1831,10 +1831,10 @@ public class SearchApi {
   /**
    * Search users as conversation targets
    * 
+   * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UsersSearchResponse> postUsersSearchConversationTarget(ApiRequest<UserSearchRequest> request) throws IOException {
     try {
@@ -1861,11 +1861,11 @@ public class SearchApi {
   /**
    * Search manage queue member
    * 
+   * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Search request options (required)
    * @return UsersSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UsersSearchResponse postUsersSearchQueuemembersManage(UserSearchRequest body) throws IOException, ApiException {
     return  postUsersSearchQueuemembersManage(createPostUsersSearchQueuemembersManageRequest(body));
@@ -1874,10 +1874,10 @@ public class SearchApi {
   /**
    * Search manage queue member
    * 
+   * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Search request options (required)
    * @return UsersSearchResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UsersSearchResponse> postUsersSearchQueuemembersManageWithHttpInfo(UserSearchRequest body) throws IOException {
     return postUsersSearchQueuemembersManage(createPostUsersSearchQueuemembersManageRequest(body).withHttpInfo());
@@ -1893,11 +1893,11 @@ public class SearchApi {
   /**
    * Search manage queue member
    * 
+   * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UsersSearchResponse postUsersSearchQueuemembersManage(PostUsersSearchQueuemembersManageRequest request) throws IOException, ApiException {
     try {
@@ -1913,10 +1913,10 @@ public class SearchApi {
   /**
    * Search manage queue member
    * 
+   * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UsersSearchResponse> postUsersSearchQueuemembersManage(ApiRequest<UserSearchRequest> request) throws IOException {
     try {

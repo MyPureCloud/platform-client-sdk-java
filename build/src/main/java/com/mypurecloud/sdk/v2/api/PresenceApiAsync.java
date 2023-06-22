@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.PresenceSettings;
 import com.mypurecloud.sdk.v2.model.Source;
 import com.mypurecloud.sdk.v2.model.SourceEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPresence;
+import com.mypurecloud.sdk.v2.model.UcUserPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 
@@ -40,6 +41,8 @@ import com.mypurecloud.sdk.v2.api.request.GetPresencedefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSystempresencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresencesPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersPresenceBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersPresencesPurecloudBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresenceDefinitions0Request;
@@ -73,10 +76,10 @@ public class PresenceApiAsync {
   /**
    * Delete a Presence Definition
    * 
+   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> deletePresenceDefinition0Async(DeletePresenceDefinition0Request request, final AsyncApiCallback<Void> callback) {
     try {
@@ -108,10 +111,10 @@ public class PresenceApiAsync {
   /**
    * Delete a Presence Definition
    * 
+   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> deletePresenceDefinition0Async(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -300,10 +303,10 @@ public class PresenceApiAsync {
   /**
    * Get a Presence Definition
    * 
+   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<OrganizationPresenceDefinition> getPresenceDefinition0Async(GetPresenceDefinition0Request request, final AsyncApiCallback<OrganizationPresenceDefinition> callback) {
     try {
@@ -335,10 +338,10 @@ public class PresenceApiAsync {
   /**
    * Get a Presence Definition
    * 
+   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<OrganizationPresenceDefinition>> getPresenceDefinition0Async(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinition>> callback) {
     try {
@@ -377,10 +380,10 @@ public class PresenceApiAsync {
   /**
    * Get a list of Presence Definitions
    * 
+   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<OrganizationPresenceDefinitionEntityListing> getPresenceDefinitions0Async(GetPresenceDefinitions0Request request, final AsyncApiCallback<OrganizationPresenceDefinitionEntityListing> callback) {
     try {
@@ -412,10 +415,10 @@ public class PresenceApiAsync {
   /**
    * Get a list of Presence Definitions
    * 
+   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<OrganizationPresenceDefinitionEntityListing>> getPresenceDefinitions0Async(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinitionEntityListing>> callback) {
     try {
@@ -1127,6 +1130,156 @@ public class PresenceApiAsync {
   }
 
   /**
+   * Get bulk user presences for a single presence source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<UcUserPresence>> getUsersPresenceBulkAsync(GetUsersPresenceBulkRequest request, final AsyncApiCallback<List<UcUserPresence>> callback) {
+    try {
+      final SettableFuture<List<UcUserPresence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<UcUserPresence>>() {}, new AsyncApiCallback<ApiResponse<List<UcUserPresence>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UcUserPresence>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get bulk user presences for a single presence source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<UcUserPresence>>> getUsersPresenceBulkAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<UcUserPresence>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<UcUserPresence>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<UcUserPresence>>() {}, new AsyncApiCallback<ApiResponse<List<UcUserPresence>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UcUserPresence>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UcUserPresence>> response = (ApiResponse<List<UcUserPresence>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UcUserPresence>> response = (ApiResponse<List<UcUserPresence>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<UcUserPresence>> getUsersPresencesPurecloudBulkAsync(GetUsersPresencesPurecloudBulkRequest request, final AsyncApiCallback<List<UcUserPresence>> callback) {
+    try {
+      final SettableFuture<List<UcUserPresence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<UcUserPresence>>() {}, new AsyncApiCallback<ApiResponse<List<UcUserPresence>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UcUserPresence>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<UcUserPresence>>> getUsersPresencesPurecloudBulkAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<UcUserPresence>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<UcUserPresence>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<UcUserPresence>>() {}, new AsyncApiCallback<ApiResponse<List<UcUserPresence>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UcUserPresence>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UcUserPresence>> response = (ApiResponse<List<UcUserPresence>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UcUserPresence>> response = (ApiResponse<List<UcUserPresence>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Patch a user's Presence
    * Patch a user's presence for the specified source that is not specifically listed. This endpoint does not support registered presence sources. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request the request object
@@ -1279,10 +1432,10 @@ public class PresenceApiAsync {
   /**
    * Create a Presence Definition
    * 
+   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<OrganizationPresenceDefinition> postPresenceDefinitions0Async(PostPresenceDefinitions0Request request, final AsyncApiCallback<OrganizationPresenceDefinition> callback) {
     try {
@@ -1314,10 +1467,10 @@ public class PresenceApiAsync {
   /**
    * Create a Presence Definition
    * 
+   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<OrganizationPresenceDefinition>> postPresenceDefinitions0Async(ApiRequest<OrganizationPresenceDefinition> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinition>> callback) {
     try {
@@ -1506,10 +1659,10 @@ public class PresenceApiAsync {
   /**
    * Update a Presence Definition
    * 
+   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<OrganizationPresenceDefinition> putPresenceDefinition0Async(PutPresenceDefinition0Request request, final AsyncApiCallback<OrganizationPresenceDefinition> callback) {
     try {
@@ -1541,10 +1694,10 @@ public class PresenceApiAsync {
   /**
    * Update a Presence Definition
    * 
+   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<OrganizationPresenceDefinition>> putPresenceDefinition0Async(ApiRequest<OrganizationPresenceDefinition> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceDefinition>> callback) {
     try {

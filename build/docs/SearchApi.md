@@ -641,6 +641,8 @@ try {
 
 Search all documents
 
+postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/documentation/all/search  
 
 Requires NO permissions: 
@@ -1275,6 +1277,8 @@ try {
 
 Search users as conversation targets
 
+postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/users/search/conversation/target  
 
 Requires ANY permissions: 
@@ -1335,6 +1339,8 @@ try {
 > [UsersSearchResponse](UsersSearchResponse.html) postUsersSearchQueuemembersManage(body)
 
 Search manage queue member
+
+postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/users/search/queuemembers/manage  
 

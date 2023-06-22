@@ -507,10 +507,10 @@ public class TeamsApiAsync {
   /**
    * Query for team activity observations
    * 
+   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<TeamActivityResponse> postAnalyticsTeamsActivityQueryAsync(PostAnalyticsTeamsActivityQueryRequest request, final AsyncApiCallback<TeamActivityResponse> callback) {
     try {
@@ -542,10 +542,10 @@ public class TeamsApiAsync {
   /**
    * Query for team activity observations
    * 
+   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<TeamActivityResponse>> postAnalyticsTeamsActivityQueryAsync(ApiRequest<TeamActivityQuery> request, final AsyncApiCallback<ApiResponse<TeamActivityResponse>> callback) {
     try {

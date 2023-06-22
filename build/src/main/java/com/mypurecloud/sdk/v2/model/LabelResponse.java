@@ -28,6 +28,7 @@ public class LabelResponse  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer documentCount = null;
+  private String externalId = null;
   private String selfUri = null;
 
   
@@ -128,6 +129,24 @@ public class LabelResponse  implements Serializable {
   }
 
 
+  /**
+   * The external id associated with the label.
+   **/
+  public LabelResponse externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external id associated with the label.")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -151,12 +170,13 @@ public class LabelResponse  implements Serializable {
             Objects.equals(this.dateCreated, labelResponse.dateCreated) &&
             Objects.equals(this.dateModified, labelResponse.dateModified) &&
             Objects.equals(this.documentCount, labelResponse.documentCount) &&
+            Objects.equals(this.externalId, labelResponse.externalId) &&
             Objects.equals(this.selfUri, labelResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, color, dateCreated, dateModified, documentCount, selfUri);
+    return Objects.hash(id, name, color, dateCreated, dateModified, documentCount, externalId, selfUri);
   }
 
   @Override
@@ -170,6 +190,7 @@ public class LabelResponse  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    documentCount: ").append(toIndentedString(documentCount)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

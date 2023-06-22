@@ -49,7 +49,6 @@ import com.mypurecloud.sdk.v2.model.PatchSegment;
 import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
-import com.mypurecloud.sdk.v2.model.SessionListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActionmapRequest;
@@ -67,7 +66,6 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplatesRequest;
-import com.mypurecloud.sdk.v2.api.request.GetJourneyCustomerCustomerIdSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesAttributionsJobRequest;
@@ -491,10 +489,10 @@ public class JourneyApiAsync {
   /**
    * Get status for async query for journey aggregates
    * 
+   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsJourneysAggregatesJobAsync(GetAnalyticsJourneysAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -526,10 +524,10 @@ public class JourneyApiAsync {
   /**
    * Get status for async query for journey aggregates
    * 
+   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsJourneysAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -568,10 +566,10 @@ public class JourneyApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<JourneyAsyncAggregateQueryResponse> getAnalyticsJourneysAggregatesJobResultsAsync(GetAnalyticsJourneysAggregatesJobResultsRequest request, final AsyncApiCallback<JourneyAsyncAggregateQueryResponse> callback) {
     try {
@@ -603,10 +601,10 @@ public class JourneyApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<JourneyAsyncAggregateQueryResponse>> getAnalyticsJourneysAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyAsyncAggregateQueryResponse>> callback) {
     try {
@@ -1243,83 +1241,6 @@ public class JourneyApiAsync {
   }
 
   /**
-   * Retrieve all sessions for a given customer.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-	 * Preview Endpoint
-   */
-  public Future<SessionListing> getJourneyCustomerCustomerIdSessionsAsync(GetJourneyCustomerCustomerIdSessionsRequest request, final AsyncApiCallback<SessionListing> callback) {
-    try {
-      final SettableFuture<SessionListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SessionListing>() {}, new AsyncApiCallback<ApiResponse<SessionListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<SessionListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Retrieve all sessions for a given customer.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-	 * Preview Endpoint
-   */
-  public Future<ApiResponse<SessionListing>> getJourneyCustomerCustomerIdSessionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SessionListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<SessionListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<SessionListing>() {}, new AsyncApiCallback<ApiResponse<SessionListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<SessionListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<SessionListing> response = (ApiResponse<SessionListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<SessionListing> response = (ApiResponse<SessionListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
    * Retrieve a single outcome.
    * 
    * @param request the request object
@@ -1472,10 +1393,10 @@ public class JourneyApiAsync {
   /**
    * Get job status.
    * 
+   * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<OutcomeAttributionJobStateResponse> getJourneyOutcomesAttributionsJobAsync(GetJourneyOutcomesAttributionsJobRequest request, final AsyncApiCallback<OutcomeAttributionJobStateResponse> callback) {
     try {
@@ -1507,10 +1428,10 @@ public class JourneyApiAsync {
   /**
    * Get job status.
    * 
+   * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<OutcomeAttributionJobStateResponse>> getJourneyOutcomesAttributionsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OutcomeAttributionJobStateResponse>> callback) {
     try {
@@ -1549,10 +1470,10 @@ public class JourneyApiAsync {
   /**
    * Get outcome attribution entities from completed job.
    * 
+   * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<OutcomeAttributionResponseListing> getJourneyOutcomesAttributionsJobResultsAsync(GetJourneyOutcomesAttributionsJobResultsRequest request, final AsyncApiCallback<OutcomeAttributionResponseListing> callback) {
     try {
@@ -1584,10 +1505,10 @@ public class JourneyApiAsync {
   /**
    * Get outcome attribution entities from completed job.
    * 
+   * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<OutcomeAttributionResponseListing>> getJourneyOutcomesAttributionsJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OutcomeAttributionResponseListing>> callback) {
     try {
@@ -2001,10 +1922,10 @@ public class JourneyApiAsync {
   /**
    * Retrieve all events for a given session.
    * 
+   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<EventListing> getJourneySessionEventsAsync(GetJourneySessionEventsRequest request, final AsyncApiCallback<EventListing> callback) {
     try {
@@ -2036,10 +1957,10 @@ public class JourneyApiAsync {
   /**
    * Retrieve all events for a given session.
    * 
+   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<EventListing>> getJourneySessionEventsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EventListing>> callback) {
     try {
@@ -2153,10 +2074,10 @@ public class JourneyApiAsync {
   /**
    * Retrieve segment assignments by session ID.
    * 
+   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<SegmentAssignmentListing> getJourneySessionSegmentsAsync(GetJourneySessionSegmentsRequest request, final AsyncApiCallback<SegmentAssignmentListing> callback) {
     try {
@@ -2188,10 +2109,10 @@ public class JourneyApiAsync {
   /**
    * Retrieve segment assignments by session ID.
    * 
+   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<SegmentAssignmentListing>> getJourneySessionSegmentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SegmentAssignmentListing>> callback) {
     try {
@@ -2605,10 +2526,10 @@ public class JourneyApiAsync {
   /**
    * Query for journey aggregates asynchronously
    * 
+   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsJourneysAggregatesJobsAsync(PostAnalyticsJourneysAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -2640,10 +2561,10 @@ public class JourneyApiAsync {
   /**
    * Query for journey aggregates asynchronously
    * 
+   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsJourneysAggregatesJobsAsync(ApiRequest<JourneyAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -3057,10 +2978,10 @@ public class JourneyApiAsync {
   /**
    * Create Outcome Attributions
    * 
+   * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<OutcomeAttributionAsyncResponse> postJourneyOutcomesAttributionsJobsAsync(PostJourneyOutcomesAttributionsJobsRequest request, final AsyncApiCallback<OutcomeAttributionAsyncResponse> callback) {
     try {
@@ -3092,10 +3013,10 @@ public class JourneyApiAsync {
   /**
    * Create Outcome Attributions
    * 
+   * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<OutcomeAttributionAsyncResponse>> postJourneyOutcomesAttributionsJobsAsync(ApiRequest<OutcomeAttributionListing> request, final AsyncApiCallback<ApiResponse<OutcomeAttributionAsyncResponse>> callback) {
     try {

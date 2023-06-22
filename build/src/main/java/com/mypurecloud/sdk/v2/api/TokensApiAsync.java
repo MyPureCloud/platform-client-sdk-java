@@ -271,10 +271,10 @@ public class TokensApiAsync {
   /**
    * Get the current Idle Token Timeout Value
    * 
+   * getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<IdleTokenTimeout> getTokensTimeoutAsync(GetTokensTimeoutRequest request, final AsyncApiCallback<IdleTokenTimeout> callback) {
     try {
@@ -306,10 +306,10 @@ public class TokensApiAsync {
   /**
    * Get the current Idle Token Timeout Value
    * 
+   * getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<IdleTokenTimeout>> getTokensTimeoutAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdleTokenTimeout>> callback) {
     try {
@@ -423,10 +423,10 @@ public class TokensApiAsync {
   /**
    * Update or Enable/Disable the Idle Token Timeout
    * 
+   * putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<IdleTokenTimeout> putTokensTimeoutAsync(PutTokensTimeoutRequest request, final AsyncApiCallback<IdleTokenTimeout> callback) {
     try {
@@ -458,10 +458,10 @@ public class TokensApiAsync {
   /**
    * Update or Enable/Disable the Idle Token Timeout
    * 
+   * putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<IdleTokenTimeout>> putTokensTimeoutAsync(ApiRequest<IdleTokenTimeout> request, final AsyncApiCallback<ApiResponse<IdleTokenTimeout>> callback) {
     try {

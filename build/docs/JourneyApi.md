@@ -22,7 +22,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneyActiontargets**](JourneyApi.html#getJourneyActiontargets) | Retrieve all action targets. |
 | [**getJourneyActiontemplate**](JourneyApi.html#getJourneyActiontemplate) | Retrieve a single action template. |
 | [**getJourneyActiontemplates**](JourneyApi.html#getJourneyActiontemplates) | Retrieve all action templates. |
-| [**getJourneyCustomerCustomerIdSessions**](JourneyApi.html#getJourneyCustomerCustomerIdSessions) | Retrieve all sessions for a given customer. |
 | [**getJourneyOutcome**](JourneyApi.html#getJourneyOutcome) | Retrieve a single outcome. |
 | [**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | Retrieve all outcomes. |
 | [**getJourneyOutcomesAttributionsJob**](JourneyApi.html#getJourneyOutcomesAttributionsJob) | Get job status. |
@@ -363,6 +362,8 @@ null (empty response body)
 
 Get status for async query for journey aggregates
 
+getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -423,6 +424,8 @@ try {
 > [JourneyAsyncAggregateQueryResponse](JourneyAsyncAggregateQueryResponse.html) getAnalyticsJourneysAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
+
+getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results  
 
@@ -993,73 +996,6 @@ try {
 
 [**ActionTemplateListing**](ActionTemplateListing.html)
 
-<a name="getJourneyCustomerCustomerIdSessions"></a>
-
-# **getJourneyCustomerCustomerIdSessions**
-
-
-
-> [SessionListing](SessionListing.html) getJourneyCustomerCustomerIdSessions(customerIdType, customerId, pageSize, after)
-
-Retrieve all sessions for a given customer.
-
-Wraps GET /api/v2/journey/customers/{customerIdType}/{customerId}/sessions  
-
-Requires ANY permissions: 
-
-* journey:session:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.JourneyApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-JourneyApi apiInstance = new JourneyApi();
-String customerIdType = "customerIdType_example"; // String | Type of ID used to identify customer (e.g. email, cookie, and phone).
-String customerId = "customerId_example"; // String | Primary identifier of the customer in the source of the session.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
-String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-try {
-    SessionListing result = apiInstance.getJourneyCustomerCustomerIdSessions(customerIdType, customerId, pageSize, after);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling JourneyApi#getJourneyCustomerCustomerIdSessions");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **customerIdType** | **String**| Type of ID used to identify customer (e.g. email, cookie, and phone). | 
-| **customerId** | **String**| Primary identifier of the customer in the source of the session. | 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**SessionListing**](SessionListing.html)
-
 <a name="getJourneyOutcome"></a>
 
 # **getJourneyOutcome**
@@ -1202,6 +1138,8 @@ try {
 
 Get job status.
 
+getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/journey/outcomes/attributions/jobs/{jobId}  
 
 Requires ALL permissions: 
@@ -1262,6 +1200,8 @@ try {
 > [OutcomeAttributionResponseListing](OutcomeAttributionResponseListing.html) getJourneyOutcomesAttributionsJobResults(jobId)
 
 Get outcome attribution entities from completed job.
+
+getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/outcomes/attributions/jobs/{jobId}/results  
 
@@ -1638,6 +1578,8 @@ try {
 
 Retrieve all events for a given session.
 
+getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/journey/sessions/{sessionId}/events  
 
 Requires ANY permissions: 
@@ -1763,6 +1705,8 @@ try {
 > [SegmentAssignmentListing](SegmentAssignmentListing.html) getJourneySessionSegments(sessionId, pageSize, after, segmentScope, assignmentState)
 
 Retrieve segment assignments by session ID.
+
+getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/sessions/{sessionId}/segments  
 
@@ -2148,6 +2092,8 @@ try {
 
 Query for journey aggregates asynchronously
 
+postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/analytics/journeys/aggregates/jobs  
 
 Requires ANY permissions: 
@@ -2513,6 +2459,8 @@ try {
 > [OutcomeAttributionAsyncResponse](OutcomeAttributionAsyncResponse.html) postJourneyOutcomesAttributionsJobs(body)
 
 Create Outcome Attributions
+
+postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/journey/outcomes/attributions/jobs  
 

@@ -46,7 +46,6 @@ import com.mypurecloud.sdk.v2.model.PatchSegment;
 import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
-import com.mypurecloud.sdk.v2.model.SessionListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActionmapRequest;
@@ -64,7 +63,6 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplatesRequest;
-import com.mypurecloud.sdk.v2.api.request.GetJourneyCustomerCustomerIdSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesAttributionsJobRequest;
@@ -491,11 +489,11 @@ public class JourneyApi {
   /**
    * Get status for async query for journey aggregates
    * 
+   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsJourneysAggregatesJob(String jobId) throws IOException, ApiException {
     return  getAnalyticsJourneysAggregatesJob(createGetAnalyticsJourneysAggregatesJobRequest(jobId));
@@ -504,10 +502,10 @@ public class JourneyApi {
   /**
    * Get status for async query for journey aggregates
    * 
+   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsJourneysAggregatesJobWithHttpInfo(String jobId) throws IOException {
     return getAnalyticsJourneysAggregatesJob(createGetAnalyticsJourneysAggregatesJobRequest(jobId).withHttpInfo());
@@ -523,11 +521,11 @@ public class JourneyApi {
   /**
    * Get status for async query for journey aggregates
    * 
+   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsJourneysAggregatesJob(GetAnalyticsJourneysAggregatesJobRequest request) throws IOException, ApiException {
     try {
@@ -543,10 +541,10 @@ public class JourneyApi {
   /**
    * Get status for async query for journey aggregates
    * 
+   * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsJourneysAggregatesJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -573,12 +571,12 @@ public class JourneyApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return JourneyAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
     return  getAnalyticsJourneysAggregatesJobResults(createGetAnalyticsJourneysAggregatesJobResultsRequest(jobId, cursor));
@@ -587,11 +585,11 @@ public class JourneyApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return JourneyAsyncAggregateQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<JourneyAsyncAggregateQueryResponse> getAnalyticsJourneysAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
     return getAnalyticsJourneysAggregatesJobResults(createGetAnalyticsJourneysAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
@@ -609,11 +607,11 @@ public class JourneyApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(GetAnalyticsJourneysAggregatesJobResultsRequest request) throws IOException, ApiException {
     try {
@@ -629,10 +627,10 @@ public class JourneyApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<JourneyAsyncAggregateQueryResponse> getAnalyticsJourneysAggregatesJobResults(ApiRequest<Void> request) throws IOException {
     try {
@@ -1337,100 +1335,6 @@ public class JourneyApi {
   }
 
   /**
-   * Retrieve all sessions for a given customer.
-   * 
-   * @param customerIdType Type of ID used to identify customer (e.g. email, cookie, and phone). (required)
-   * @param customerId Primary identifier of the customer in the source of the session. (required)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @return SessionListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
-   */
-  public SessionListing getJourneyCustomerCustomerIdSessions(String customerIdType, String customerId, String pageSize, String after) throws IOException, ApiException {
-    return  getJourneyCustomerCustomerIdSessions(createGetJourneyCustomerCustomerIdSessionsRequest(customerIdType, customerId, pageSize, after));
-  }
-
-  /**
-   * Retrieve all sessions for a given customer.
-   * 
-   * @param customerIdType Type of ID used to identify customer (e.g. email, cookie, and phone). (required)
-   * @param customerId Primary identifier of the customer in the source of the session. (required)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @return SessionListing
-   * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
-   */
-  public ApiResponse<SessionListing> getJourneyCustomerCustomerIdSessionsWithHttpInfo(String customerIdType, String customerId, String pageSize, String after) throws IOException {
-    return getJourneyCustomerCustomerIdSessions(createGetJourneyCustomerCustomerIdSessionsRequest(customerIdType, customerId, pageSize, after).withHttpInfo());
-  }
-
-  private GetJourneyCustomerCustomerIdSessionsRequest createGetJourneyCustomerCustomerIdSessionsRequest(String customerIdType, String customerId, String pageSize, String after) {
-    return GetJourneyCustomerCustomerIdSessionsRequest.builder()
-            .withCustomerIdType(customerIdType)
-
-            .withCustomerId(customerId)
-
-            .withPageSize(pageSize)
-
-            .withAfter(after)
-
-            .build();
-  }
-
-  /**
-   * Retrieve all sessions for a given customer.
-   * 
-   * @param request The request object
-   * @return SessionListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
-   */
-  public SessionListing getJourneyCustomerCustomerIdSessions(GetJourneyCustomerCustomerIdSessionsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<SessionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SessionListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Retrieve all sessions for a given customer.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
-   */
-  public ApiResponse<SessionListing> getJourneyCustomerCustomerIdSessions(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<SessionListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<SessionListing> response = (ApiResponse<SessionListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<SessionListing> response = (ApiResponse<SessionListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Retrieve a single outcome.
    * 
    * @param outcomeId ID of the outcome. (required)
@@ -1609,11 +1513,11 @@ public class JourneyApi {
   /**
    * Get job status.
    * 
+   * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId ID of the job. (required)
    * @return OutcomeAttributionJobStateResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OutcomeAttributionJobStateResponse getJourneyOutcomesAttributionsJob(String jobId) throws IOException, ApiException {
     return  getJourneyOutcomesAttributionsJob(createGetJourneyOutcomesAttributionsJobRequest(jobId));
@@ -1622,10 +1526,10 @@ public class JourneyApi {
   /**
    * Get job status.
    * 
+   * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId ID of the job. (required)
    * @return OutcomeAttributionJobStateResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OutcomeAttributionJobStateResponse> getJourneyOutcomesAttributionsJobWithHttpInfo(String jobId) throws IOException {
     return getJourneyOutcomesAttributionsJob(createGetJourneyOutcomesAttributionsJobRequest(jobId).withHttpInfo());
@@ -1641,11 +1545,11 @@ public class JourneyApi {
   /**
    * Get job status.
    * 
+   * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OutcomeAttributionJobStateResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OutcomeAttributionJobStateResponse getJourneyOutcomesAttributionsJob(GetJourneyOutcomesAttributionsJobRequest request) throws IOException, ApiException {
     try {
@@ -1661,10 +1565,10 @@ public class JourneyApi {
   /**
    * Get job status.
    * 
+   * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OutcomeAttributionJobStateResponse> getJourneyOutcomesAttributionsJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -1691,11 +1595,11 @@ public class JourneyApi {
   /**
    * Get outcome attribution entities from completed job.
    * 
+   * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId ID of the job. (required)
    * @return OutcomeAttributionResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OutcomeAttributionResponseListing getJourneyOutcomesAttributionsJobResults(String jobId) throws IOException, ApiException {
     return  getJourneyOutcomesAttributionsJobResults(createGetJourneyOutcomesAttributionsJobResultsRequest(jobId));
@@ -1704,10 +1608,10 @@ public class JourneyApi {
   /**
    * Get outcome attribution entities from completed job.
    * 
+   * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId ID of the job. (required)
    * @return OutcomeAttributionResponseListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OutcomeAttributionResponseListing> getJourneyOutcomesAttributionsJobResultsWithHttpInfo(String jobId) throws IOException {
     return getJourneyOutcomesAttributionsJobResults(createGetJourneyOutcomesAttributionsJobResultsRequest(jobId).withHttpInfo());
@@ -1723,11 +1627,11 @@ public class JourneyApi {
   /**
    * Get outcome attribution entities from completed job.
    * 
+   * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OutcomeAttributionResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OutcomeAttributionResponseListing getJourneyOutcomesAttributionsJobResults(GetJourneyOutcomesAttributionsJobResultsRequest request) throws IOException, ApiException {
     try {
@@ -1743,10 +1647,10 @@ public class JourneyApi {
   /**
    * Get outcome attribution entities from completed job.
    * 
+   * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OutcomeAttributionResponseListing> getJourneyOutcomesAttributionsJobResults(ApiRequest<Void> request) throws IOException {
     try {
@@ -2183,13 +2087,13 @@ public class JourneyApi {
   /**
    * Retrieve all events for a given session.
    * 
+   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param sessionId System-generated UUID that represents the session the event is a part of. (required)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @return EventListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public EventListing getJourneySessionEvents(String sessionId, String pageSize, String after) throws IOException, ApiException {
     return  getJourneySessionEvents(createGetJourneySessionEventsRequest(sessionId, pageSize, after));
@@ -2198,12 +2102,12 @@ public class JourneyApi {
   /**
    * Retrieve all events for a given session.
    * 
+   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param sessionId System-generated UUID that represents the session the event is a part of. (required)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @return EventListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<EventListing> getJourneySessionEventsWithHttpInfo(String sessionId, String pageSize, String after) throws IOException {
     return getJourneySessionEvents(createGetJourneySessionEventsRequest(sessionId, pageSize, after).withHttpInfo());
@@ -2223,11 +2127,11 @@ public class JourneyApi {
   /**
    * Retrieve all events for a given session.
    * 
+   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return EventListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public EventListing getJourneySessionEvents(GetJourneySessionEventsRequest request) throws IOException, ApiException {
     try {
@@ -2243,10 +2147,10 @@ public class JourneyApi {
   /**
    * Retrieve all events for a given session.
    * 
+   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<EventListing> getJourneySessionEvents(ApiRequest<Void> request) throws IOException {
     try {
@@ -2351,6 +2255,7 @@ public class JourneyApi {
   /**
    * Retrieve segment assignments by session ID.
    * 
+   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param sessionId ID of the session to query for segment assignments. (required)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
@@ -2359,7 +2264,6 @@ public class JourneyApi {
    * @return SegmentAssignmentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public SegmentAssignmentListing getJourneySessionSegments(String sessionId, String pageSize, String after, String segmentScope, String assignmentState) throws IOException, ApiException {
     return  getJourneySessionSegments(createGetJourneySessionSegmentsRequest(sessionId, pageSize, after, segmentScope, assignmentState));
@@ -2368,6 +2272,7 @@ public class JourneyApi {
   /**
    * Retrieve segment assignments by session ID.
    * 
+   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param sessionId ID of the session to query for segment assignments. (required)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
@@ -2375,7 +2280,6 @@ public class JourneyApi {
    * @param assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. (optional)
    * @return SegmentAssignmentListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<SegmentAssignmentListing> getJourneySessionSegmentsWithHttpInfo(String sessionId, String pageSize, String after, String segmentScope, String assignmentState) throws IOException {
     return getJourneySessionSegments(createGetJourneySessionSegmentsRequest(sessionId, pageSize, after, segmentScope, assignmentState).withHttpInfo());
@@ -2399,11 +2303,11 @@ public class JourneyApi {
   /**
    * Retrieve segment assignments by session ID.
    * 
+   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SegmentAssignmentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public SegmentAssignmentListing getJourneySessionSegments(GetJourneySessionSegmentsRequest request) throws IOException, ApiException {
     try {
@@ -2419,10 +2323,10 @@ public class JourneyApi {
   /**
    * Retrieve segment assignments by session ID.
    * 
+   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<SegmentAssignmentListing> getJourneySessionSegments(ApiRequest<Void> request) throws IOException {
     try {
@@ -2859,11 +2763,11 @@ public class JourneyApi {
   /**
    * Query for journey aggregates asynchronously
    * 
+   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(JourneyAsyncAggregationQuery body) throws IOException, ApiException {
     return  postAnalyticsJourneysAggregatesJobs(createPostAnalyticsJourneysAggregatesJobsRequest(body));
@@ -2872,10 +2776,10 @@ public class JourneyApi {
   /**
    * Query for journey aggregates asynchronously
    * 
+   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsJourneysAggregatesJobsWithHttpInfo(JourneyAsyncAggregationQuery body) throws IOException {
     return postAnalyticsJourneysAggregatesJobs(createPostAnalyticsJourneysAggregatesJobsRequest(body).withHttpInfo());
@@ -2891,11 +2795,11 @@ public class JourneyApi {
   /**
    * Query for journey aggregates asynchronously
    * 
+   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(PostAnalyticsJourneysAggregatesJobsRequest request) throws IOException, ApiException {
     try {
@@ -2911,10 +2815,10 @@ public class JourneyApi {
   /**
    * Query for journey aggregates asynchronously
    * 
+   * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsJourneysAggregatesJobs(ApiRequest<JourneyAsyncAggregationQuery> request) throws IOException {
     try {
@@ -3331,11 +3235,11 @@ public class JourneyApi {
   /**
    * Create Outcome Attributions
    * 
+   * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body outcome attribution request (optional)
    * @return OutcomeAttributionAsyncResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OutcomeAttributionAsyncResponse postJourneyOutcomesAttributionsJobs(OutcomeAttributionListing body) throws IOException, ApiException {
     return  postJourneyOutcomesAttributionsJobs(createPostJourneyOutcomesAttributionsJobsRequest(body));
@@ -3344,10 +3248,10 @@ public class JourneyApi {
   /**
    * Create Outcome Attributions
    * 
+   * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body outcome attribution request (optional)
    * @return OutcomeAttributionAsyncResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OutcomeAttributionAsyncResponse> postJourneyOutcomesAttributionsJobsWithHttpInfo(OutcomeAttributionListing body) throws IOException {
     return postJourneyOutcomesAttributionsJobs(createPostJourneyOutcomesAttributionsJobsRequest(body).withHttpInfo());
@@ -3363,11 +3267,11 @@ public class JourneyApi {
   /**
    * Create Outcome Attributions
    * 
+   * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OutcomeAttributionAsyncResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OutcomeAttributionAsyncResponse postJourneyOutcomesAttributionsJobs(PostJourneyOutcomesAttributionsJobsRequest request) throws IOException, ApiException {
     try {
@@ -3383,10 +3287,10 @@ public class JourneyApi {
   /**
    * Create Outcome Attributions
    * 
+   * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OutcomeAttributionAsyncResponse> postJourneyOutcomesAttributionsJobs(ApiRequest<OutcomeAttributionListing> request) throws IOException {
     try {

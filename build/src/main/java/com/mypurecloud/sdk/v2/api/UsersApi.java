@@ -798,11 +798,11 @@ public class UsersApi {
   /**
    * Get status for async query for user aggregates
    * 
+   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsUsersAggregatesJob(String jobId) throws IOException, ApiException {
     return  getAnalyticsUsersAggregatesJob(createGetAnalyticsUsersAggregatesJobRequest(jobId));
@@ -811,10 +811,10 @@ public class UsersApi {
   /**
    * Get status for async query for user aggregates
    * 
+   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @return AsyncQueryStatus
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsUsersAggregatesJobWithHttpInfo(String jobId) throws IOException {
     return getAnalyticsUsersAggregatesJob(createGetAnalyticsUsersAggregatesJobRequest(jobId).withHttpInfo());
@@ -830,11 +830,11 @@ public class UsersApi {
   /**
    * Get status for async query for user aggregates
    * 
+   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryStatus getAnalyticsUsersAggregatesJob(GetAnalyticsUsersAggregatesJobRequest request) throws IOException, ApiException {
     try {
@@ -850,10 +850,10 @@ public class UsersApi {
   /**
    * Get status for async query for user aggregates
    * 
+   * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryStatus> getAnalyticsUsersAggregatesJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -880,12 +880,12 @@ public class UsersApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return UserAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
     return  getAnalyticsUsersAggregatesJobResults(createGetAnalyticsUsersAggregatesJobResultsRequest(jobId, cursor));
@@ -894,11 +894,11 @@ public class UsersApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId jobId (required)
    * @param cursor Cursor token to retrieve next page (optional)
    * @return UserAsyncAggregateQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UserAsyncAggregateQueryResponse> getAnalyticsUsersAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
     return getAnalyticsUsersAggregatesJobResults(createGetAnalyticsUsersAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
@@ -916,11 +916,11 @@ public class UsersApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UserAsyncAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(GetAnalyticsUsersAggregatesJobResultsRequest request) throws IOException, ApiException {
     try {
@@ -936,10 +936,10 @@ public class UsersApi {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UserAsyncAggregateQueryResponse> getAnalyticsUsersAggregatesJobResults(ApiRequest<Void> request) throws IOException {
     try {
@@ -4836,13 +4836,13 @@ public class UsersApi {
   /**
    * Query for user activity observations
    * 
+   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
    * @return UserActivityResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UserActivityResponse postAnalyticsUsersActivityQuery(UserActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return  postAnalyticsUsersActivityQuery(createPostAnalyticsUsersActivityQueryRequest(body, pageSize, pageNumber));
@@ -4851,12 +4851,12 @@ public class UsersApi {
   /**
    * Query for user activity observations
    * 
+   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
    * @return UserActivityResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UserActivityResponse> postAnalyticsUsersActivityQueryWithHttpInfo(UserActivityQuery body, Integer pageSize, Integer pageNumber) throws IOException {
     return postAnalyticsUsersActivityQuery(createPostAnalyticsUsersActivityQueryRequest(body, pageSize, pageNumber).withHttpInfo());
@@ -4876,11 +4876,11 @@ public class UsersApi {
   /**
    * Query for user activity observations
    * 
+   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UserActivityResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UserActivityResponse postAnalyticsUsersActivityQuery(PostAnalyticsUsersActivityQueryRequest request) throws IOException, ApiException {
     try {
@@ -4896,10 +4896,10 @@ public class UsersApi {
   /**
    * Query for user activity observations
    * 
+   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UserActivityResponse> postAnalyticsUsersActivityQuery(ApiRequest<UserActivityQuery> request) throws IOException {
     try {
@@ -4926,11 +4926,11 @@ public class UsersApi {
   /**
    * Query for user aggregates asynchronously
    * 
+   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsUsersAggregatesJobs(UserAsyncAggregationQuery body) throws IOException, ApiException {
     return  postAnalyticsUsersAggregatesJobs(createPostAnalyticsUsersAggregatesJobsRequest(body));
@@ -4939,10 +4939,10 @@ public class UsersApi {
   /**
    * Query for user aggregates asynchronously
    * 
+   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AsyncQueryResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsUsersAggregatesJobsWithHttpInfo(UserAsyncAggregationQuery body) throws IOException {
     return postAnalyticsUsersAggregatesJobs(createPostAnalyticsUsersAggregatesJobsRequest(body).withHttpInfo());
@@ -4958,11 +4958,11 @@ public class UsersApi {
   /**
    * Query for user aggregates asynchronously
    * 
+   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncQueryResponse postAnalyticsUsersAggregatesJobs(PostAnalyticsUsersAggregatesJobsRequest request) throws IOException, ApiException {
     try {
@@ -4978,10 +4978,10 @@ public class UsersApi {
   /**
    * Query for user aggregates asynchronously
    * 
+   * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncQueryResponse> postAnalyticsUsersAggregatesJobs(ApiRequest<UserAsyncAggregationQuery> request) throws IOException {
     try {
@@ -6365,11 +6365,11 @@ public class UsersApi {
   /**
    * Search users as conversation targets
    * 
+   * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Search request options (required)
    * @return UsersSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UsersSearchResponse postUsersSearchConversationTarget(UserSearchRequest body) throws IOException, ApiException {
     return  postUsersSearchConversationTarget(createPostUsersSearchConversationTargetRequest(body));
@@ -6378,10 +6378,10 @@ public class UsersApi {
   /**
    * Search users as conversation targets
    * 
+   * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Search request options (required)
    * @return UsersSearchResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UsersSearchResponse> postUsersSearchConversationTargetWithHttpInfo(UserSearchRequest body) throws IOException {
     return postUsersSearchConversationTarget(createPostUsersSearchConversationTargetRequest(body).withHttpInfo());
@@ -6397,11 +6397,11 @@ public class UsersApi {
   /**
    * Search users as conversation targets
    * 
+   * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UsersSearchResponse postUsersSearchConversationTarget(PostUsersSearchConversationTargetRequest request) throws IOException, ApiException {
     try {
@@ -6417,10 +6417,10 @@ public class UsersApi {
   /**
    * Search users as conversation targets
    * 
+   * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UsersSearchResponse> postUsersSearchConversationTarget(ApiRequest<UserSearchRequest> request) throws IOException {
     try {
@@ -6447,11 +6447,11 @@ public class UsersApi {
   /**
    * Search manage queue member
    * 
+   * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Search request options (required)
    * @return UsersSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UsersSearchResponse postUsersSearchQueuemembersManage(UserSearchRequest body) throws IOException, ApiException {
     return  postUsersSearchQueuemembersManage(createPostUsersSearchQueuemembersManageRequest(body));
@@ -6460,10 +6460,10 @@ public class UsersApi {
   /**
    * Search manage queue member
    * 
+   * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Search request options (required)
    * @return UsersSearchResponse
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UsersSearchResponse> postUsersSearchQueuemembersManageWithHttpInfo(UserSearchRequest body) throws IOException {
     return postUsersSearchQueuemembersManage(createPostUsersSearchQueuemembersManageRequest(body).withHttpInfo());
@@ -6479,11 +6479,11 @@ public class UsersApi {
   /**
    * Search manage queue member
    * 
+   * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UsersSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public UsersSearchResponse postUsersSearchQueuemembersManage(PostUsersSearchQueuemembersManageRequest request) throws IOException, ApiException {
     try {
@@ -6499,10 +6499,10 @@ public class UsersApi {
   /**
    * Search manage queue member
    * 
+   * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<UsersSearchResponse> postUsersSearchQueuemembersManage(ApiRequest<UserSearchRequest> request) throws IOException {
     try {

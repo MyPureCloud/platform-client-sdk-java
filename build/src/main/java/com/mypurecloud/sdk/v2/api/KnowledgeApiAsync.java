@@ -14,10 +14,11 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.BulkResponse;
+import com.mypurecloud.sdk.v2.model.CategoryCreateRequest;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
-import com.mypurecloud.sdk.v2.model.CategoryRequest;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
+import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
 import com.mypurecloud.sdk.v2.model.DocumentVariation;
 import com.mypurecloud.sdk.v2.model.DocumentVariationListing;
@@ -2513,11 +2514,11 @@ public class KnowledgeApiAsync {
   /**
    * Get document content upload status
    * 
+   * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    * @deprecated
-	 * Preview Endpoint
    */
   public Future<KnowledgeDocumentContentUpload> getKnowledgeKnowledgebaseLanguageDocumentUploadAsync(GetKnowledgeKnowledgebaseLanguageDocumentUploadRequest request, final AsyncApiCallback<KnowledgeDocumentContentUpload> callback) {
     try {
@@ -2549,11 +2550,11 @@ public class KnowledgeApiAsync {
   /**
    * Get document content upload status
    * 
+   * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    * @deprecated
-	 * Preview Endpoint
    */
   public Future<ApiResponse<KnowledgeDocumentContentUpload>> getKnowledgeKnowledgebaseLanguageDocumentUploadAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeDocumentContentUpload>> callback) {
     try {
@@ -3388,7 +3389,7 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CategoryResponse>> patchKnowledgeKnowledgebaseCategoryAsync(ApiRequest<CategoryRequest> request, final AsyncApiCallback<ApiResponse<CategoryResponse>> callback) {
+  public Future<ApiResponse<CategoryResponse>> patchKnowledgeKnowledgebaseCategoryAsync(ApiRequest<CategoryUpdateRequest> request, final AsyncApiCallback<ApiResponse<CategoryResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<CategoryResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -4521,7 +4522,7 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CategoryResponse>> postKnowledgeKnowledgebaseCategoriesAsync(ApiRequest<CategoryRequest> request, final AsyncApiCallback<ApiResponse<CategoryResponse>> callback) {
+  public Future<ApiResponse<CategoryResponse>> postKnowledgeKnowledgebaseCategoriesAsync(ApiRequest<CategoryCreateRequest> request, final AsyncApiCallback<ApiResponse<CategoryResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<CategoryResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -4783,10 +4784,10 @@ public class KnowledgeApiAsync {
   /**
    * Bulk remove documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkRemoveAsync(PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest request, final AsyncApiCallback<BulkResponse> callback) {
     try {
@@ -4818,10 +4819,10 @@ public class KnowledgeApiAsync {
   /**
    * Bulk remove documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<BulkResponse>> postKnowledgeKnowledgebaseDocumentsBulkRemoveAsync(ApiRequest<KnowledgeDocumentBulkRemoveRequest> request, final AsyncApiCallback<ApiResponse<BulkResponse>> callback) {
     try {
@@ -4860,10 +4861,10 @@ public class KnowledgeApiAsync {
   /**
    * Bulk update documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<BulkResponse> postKnowledgeKnowledgebaseDocumentsBulkUpdateAsync(PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest request, final AsyncApiCallback<BulkResponse> callback) {
     try {
@@ -4895,10 +4896,10 @@ public class KnowledgeApiAsync {
   /**
    * Bulk update documents.
    * 
+   * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<BulkResponse>> postKnowledgeKnowledgebaseDocumentsBulkUpdateAsync(ApiRequest<KnowledgeDocumentBulkUpdateRequest> request, final AsyncApiCallback<ApiResponse<BulkResponse>> callback) {
     try {
@@ -5087,10 +5088,10 @@ public class KnowledgeApiAsync {
   /**
    * Bulk add document versions.
    * 
+   * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<BulkResponse> postKnowledgeKnowledgebaseDocumentsVersionsBulkAddAsync(PostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest request, final AsyncApiCallback<BulkResponse> callback) {
     try {
@@ -5122,10 +5123,10 @@ public class KnowledgeApiAsync {
   /**
    * Bulk add document versions.
    * 
+   * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<BulkResponse>> postKnowledgeKnowledgebaseDocumentsVersionsBulkAddAsync(ApiRequest<KnowledgeDocumentBulkVersionAddRequest> request, final AsyncApiCallback<ApiResponse<BulkResponse>> callback) {
     try {
@@ -5466,11 +5467,11 @@ public class KnowledgeApiAsync {
   /**
    * Upload Article Content
    * 
+   * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    * @deprecated
-	 * Preview Endpoint
    */
   public Future<KnowledgeDocumentContentUpload> postKnowledgeKnowledgebaseLanguageDocumentUploadsAsync(PostKnowledgeKnowledgebaseLanguageDocumentUploadsRequest request, final AsyncApiCallback<KnowledgeDocumentContentUpload> callback) {
     try {
@@ -5502,11 +5503,11 @@ public class KnowledgeApiAsync {
   /**
    * Upload Article Content
    * 
+   * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    * @deprecated
-	 * Preview Endpoint
    */
   public Future<ApiResponse<KnowledgeDocumentContentUpload>> postKnowledgeKnowledgebaseLanguageDocumentUploadsAsync(ApiRequest<KnowledgeDocumentContentUpload> request, final AsyncApiCallback<ApiResponse<KnowledgeDocumentContentUpload>> callback) {
     try {

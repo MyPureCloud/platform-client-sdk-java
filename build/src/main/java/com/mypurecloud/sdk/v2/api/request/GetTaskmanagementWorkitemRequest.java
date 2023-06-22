@@ -72,6 +72,51 @@ public class GetTaskmanagementWorkitemRequest {
 	    return this;
 	} 
 
+	private String expands;
+	public String getExpands() {
+		return this.expands;
+	}
+
+	public void setExpands(String expands) {
+		this.expands = expands;
+	}
+
+	public GetTaskmanagementWorkitemRequest withExpands(String expands) {
+	    this.setExpands(expands);
+	    return this;
+	} 
+
+	public enum expandsValues { 
+		TYPE("type"),
+		WORKBIN("workbin"),
+		STATUS("status");
+
+		private String value;
+
+		expandsValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandsValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandsValues value : expandsValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandsValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -102,6 +147,9 @@ public class GetTaskmanagementWorkitemRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/taskmanagement/workitems/{workitemId}")
                 .withPathParameter("workitemId", workitemId)
         
+
+                .withQueryParameters("expands", "", expands)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -131,6 +179,20 @@ public class GetTaskmanagementWorkitemRequest {
 		public Builder withWorkitemId(String workitemId) {
 			request.setWorkitemId(workitemId);
 			return this;
+		}
+
+		public Builder withExpands(String expands) {
+			request.setExpands(expands);
+			return this;
+		}
+
+
+
+		
+		public Builder withExpands(expandsValues expands) {
+		    request.setExpands(expands.toString());
+
+		    return this;
 		}
 
 

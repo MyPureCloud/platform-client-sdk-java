@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AcwSettings;
 import com.mypurecloud.sdk.v2.model.AgentOwnedRouting;
 import com.mypurecloud.sdk.v2.model.Bullseye;
+import com.mypurecloud.sdk.v2.model.ConditionalGroupRouting;
 import com.mypurecloud.sdk.v2.model.DirectRouting;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.MemberGroup;
@@ -52,6 +53,7 @@ public class CreateQueueRequest  implements Serializable {
   private Integer joinedMemberCount = null;
   private QueueMediaSettings mediaSettings = null;
   private List<RoutingRule> routingRules = new ArrayList<RoutingRule>();
+  private ConditionalGroupRouting conditionalGroupRouting = null;
   private Bullseye bullseye = null;
   private AcwSettings acwSettings = null;
 
@@ -311,6 +313,24 @@ public class CreateQueueRequest  implements Serializable {
   }
   public void setRoutingRules(List<RoutingRule> routingRules) {
     this.routingRules = routingRules;
+  }
+
+
+  /**
+   * The Conditional Group Routing settings for the queue.
+   **/
+  public CreateQueueRequest conditionalGroupRouting(ConditionalGroupRouting conditionalGroupRouting) {
+    this.conditionalGroupRouting = conditionalGroupRouting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Conditional Group Routing settings for the queue.")
+  @JsonProperty("conditionalGroupRouting")
+  public ConditionalGroupRouting getConditionalGroupRouting() {
+    return conditionalGroupRouting;
+  }
+  public void setConditionalGroupRouting(ConditionalGroupRouting conditionalGroupRouting) {
+    this.conditionalGroupRouting = conditionalGroupRouting;
   }
 
 
@@ -721,6 +741,7 @@ public class CreateQueueRequest  implements Serializable {
             Objects.equals(this.joinedMemberCount, createQueueRequest.joinedMemberCount) &&
             Objects.equals(this.mediaSettings, createQueueRequest.mediaSettings) &&
             Objects.equals(this.routingRules, createQueueRequest.routingRules) &&
+            Objects.equals(this.conditionalGroupRouting, createQueueRequest.conditionalGroupRouting) &&
             Objects.equals(this.bullseye, createQueueRequest.bullseye) &&
             Objects.equals(this.acwSettings, createQueueRequest.acwSettings) &&
             Objects.equals(this.skillEvaluationMethod, createQueueRequest.skillEvaluationMethod) &&
@@ -747,7 +768,7 @@ public class CreateQueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, sourceQueueId, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, sourceQueueId, selfUri);
   }
 
   @Override
@@ -768,6 +789,7 @@ public class CreateQueueRequest  implements Serializable {
     sb.append("    joinedMemberCount: ").append(toIndentedString(joinedMemberCount)).append("\n");
     sb.append("    mediaSettings: ").append(toIndentedString(mediaSettings)).append("\n");
     sb.append("    routingRules: ").append(toIndentedString(routingRules)).append("\n");
+    sb.append("    conditionalGroupRouting: ").append(toIndentedString(conditionalGroupRouting)).append("\n");
     sb.append("    bullseye: ").append(toIndentedString(bullseye)).append("\n");
     sb.append("    acwSettings: ").append(toIndentedString(acwSettings)).append("\n");
     sb.append("    skillEvaluationMethod: ").append(toIndentedString(skillEvaluationMethod)).append("\n");

@@ -56,6 +56,7 @@ title: GeneralProgramJobRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SKIP | &quot;Skip&quot; | 
 | MERGE | &quot;Merge&quot; | 
+| REPLACEMERGE | &quot;ReplaceMerge&quot; | 
 {: class="table table-striped"}
 
 

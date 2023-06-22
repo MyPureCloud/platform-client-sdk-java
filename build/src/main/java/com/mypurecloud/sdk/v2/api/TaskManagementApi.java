@@ -111,10 +111,10 @@ public class TaskManagementApi {
   /**
    * Delete a workbin
    * 
+   * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteTaskmanagementWorkbin(String workbinId) throws IOException, ApiException {
      deleteTaskmanagementWorkbin(createDeleteTaskmanagementWorkbinRequest(workbinId));
@@ -123,9 +123,9 @@ public class TaskManagementApi {
   /**
    * Delete a workbin
    * 
+   * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteTaskmanagementWorkbinWithHttpInfo(String workbinId) throws IOException {
     return deleteTaskmanagementWorkbin(createDeleteTaskmanagementWorkbinRequest(workbinId).withHttpInfo());
@@ -141,10 +141,10 @@ public class TaskManagementApi {
   /**
    * Delete a workbin
    * 
+   * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteTaskmanagementWorkbin(DeleteTaskmanagementWorkbinRequest request) throws IOException, ApiException {
     try {
@@ -160,10 +160,10 @@ public class TaskManagementApi {
   /**
    * Delete a workbin
    * 
+   * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteTaskmanagementWorkbin(ApiRequest<Void> request) throws IOException {
     try {
@@ -190,10 +190,10 @@ public class TaskManagementApi {
   /**
    * Delete a workitem
    * 
+   * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteTaskmanagementWorkitem(String workitemId) throws IOException, ApiException {
      deleteTaskmanagementWorkitem(createDeleteTaskmanagementWorkitemRequest(workitemId));
@@ -202,9 +202,9 @@ public class TaskManagementApi {
   /**
    * Delete a workitem
    * 
+   * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteTaskmanagementWorkitemWithHttpInfo(String workitemId) throws IOException {
     return deleteTaskmanagementWorkitem(createDeleteTaskmanagementWorkitemRequest(workitemId).withHttpInfo());
@@ -220,10 +220,10 @@ public class TaskManagementApi {
   /**
    * Delete a workitem
    * 
+   * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteTaskmanagementWorkitem(DeleteTaskmanagementWorkitemRequest request) throws IOException, ApiException {
     try {
@@ -239,10 +239,10 @@ public class TaskManagementApi {
   /**
    * Delete a workitem
    * 
+   * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteTaskmanagementWorkitem(ApiRequest<Void> request) throws IOException {
     try {
@@ -269,10 +269,10 @@ public class TaskManagementApi {
   /**
    * Delete a schema
    * 
+   * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteTaskmanagementWorkitemsSchema(String schemaId) throws IOException, ApiException {
      deleteTaskmanagementWorkitemsSchema(createDeleteTaskmanagementWorkitemsSchemaRequest(schemaId));
@@ -281,9 +281,9 @@ public class TaskManagementApi {
   /**
    * Delete a schema
    * 
+   * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteTaskmanagementWorkitemsSchemaWithHttpInfo(String schemaId) throws IOException {
     return deleteTaskmanagementWorkitemsSchema(createDeleteTaskmanagementWorkitemsSchemaRequest(schemaId).withHttpInfo());
@@ -299,10 +299,10 @@ public class TaskManagementApi {
   /**
    * Delete a schema
    * 
+   * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteTaskmanagementWorkitemsSchema(DeleteTaskmanagementWorkitemsSchemaRequest request) throws IOException, ApiException {
     try {
@@ -318,10 +318,10 @@ public class TaskManagementApi {
   /**
    * Delete a schema
    * 
+   * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteTaskmanagementWorkitemsSchema(ApiRequest<Void> request) throws IOException {
     try {
@@ -348,10 +348,10 @@ public class TaskManagementApi {
   /**
    * Delete a worktype
    * 
+   * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteTaskmanagementWorktype(String worktypeId) throws IOException, ApiException {
      deleteTaskmanagementWorktype(createDeleteTaskmanagementWorktypeRequest(worktypeId));
@@ -360,9 +360,9 @@ public class TaskManagementApi {
   /**
    * Delete a worktype
    * 
+   * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteTaskmanagementWorktypeWithHttpInfo(String worktypeId) throws IOException {
     return deleteTaskmanagementWorktype(createDeleteTaskmanagementWorktypeRequest(worktypeId).withHttpInfo());
@@ -378,10 +378,10 @@ public class TaskManagementApi {
   /**
    * Delete a worktype
    * 
+   * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteTaskmanagementWorktype(DeleteTaskmanagementWorktypeRequest request) throws IOException, ApiException {
     try {
@@ -397,10 +397,10 @@ public class TaskManagementApi {
   /**
    * Delete a worktype
    * 
+   * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteTaskmanagementWorktype(ApiRequest<Void> request) throws IOException {
     try {
@@ -427,11 +427,11 @@ public class TaskManagementApi {
   /**
    * Delete a status
    * 
+   * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param statusId Status id (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteTaskmanagementWorktypeStatus(String worktypeId, String statusId) throws IOException, ApiException {
      deleteTaskmanagementWorktypeStatus(createDeleteTaskmanagementWorktypeStatusRequest(worktypeId, statusId));
@@ -440,10 +440,10 @@ public class TaskManagementApi {
   /**
    * Delete a status
    * 
+   * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param statusId Status id (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteTaskmanagementWorktypeStatusWithHttpInfo(String worktypeId, String statusId) throws IOException {
     return deleteTaskmanagementWorktypeStatus(createDeleteTaskmanagementWorktypeStatusRequest(worktypeId, statusId).withHttpInfo());
@@ -461,10 +461,10 @@ public class TaskManagementApi {
   /**
    * Delete a status
    * 
+   * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteTaskmanagementWorktypeStatus(DeleteTaskmanagementWorktypeStatusRequest request) throws IOException, ApiException {
     try {
@@ -480,10 +480,10 @@ public class TaskManagementApi {
   /**
    * Delete a status
    * 
+   * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteTaskmanagementWorktypeStatus(ApiRequest<Void> request) throws IOException {
     try {
@@ -510,11 +510,11 @@ public class TaskManagementApi {
   /**
    * Get a workbin
    * 
+   * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @return Workbin
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workbin getTaskmanagementWorkbin(String workbinId) throws IOException, ApiException {
     return  getTaskmanagementWorkbin(createGetTaskmanagementWorkbinRequest(workbinId));
@@ -523,10 +523,10 @@ public class TaskManagementApi {
   /**
    * Get a workbin
    * 
+   * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @return Workbin
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workbin> getTaskmanagementWorkbinWithHttpInfo(String workbinId) throws IOException {
     return getTaskmanagementWorkbin(createGetTaskmanagementWorkbinRequest(workbinId).withHttpInfo());
@@ -542,11 +542,11 @@ public class TaskManagementApi {
   /**
    * Get a workbin
    * 
+   * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Workbin
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workbin getTaskmanagementWorkbin(GetTaskmanagementWorkbinRequest request) throws IOException, ApiException {
     try {
@@ -562,10 +562,10 @@ public class TaskManagementApi {
   /**
    * Get a workbin
    * 
+   * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workbin> getTaskmanagementWorkbin(ApiRequest<Void> request) throws IOException {
     try {
@@ -592,6 +592,7 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workbin's attribute change history
    * 
+   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -599,7 +600,6 @@ public class TaskManagementApi {
    * @return WorkbinChangeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkbinChangeListing getTaskmanagementWorkbinHistory(String workbinId, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
     return  getTaskmanagementWorkbinHistory(createGetTaskmanagementWorkbinHistoryRequest(workbinId, after, pageSize, sortOrder));
@@ -608,13 +608,13 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workbin's attribute change history
    * 
+   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
    * @return WorkbinChangeListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkbinChangeListing> getTaskmanagementWorkbinHistoryWithHttpInfo(String workbinId, String after, Integer pageSize, String sortOrder) throws IOException {
     return getTaskmanagementWorkbinHistory(createGetTaskmanagementWorkbinHistoryRequest(workbinId, after, pageSize, sortOrder).withHttpInfo());
@@ -636,11 +636,11 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workbin's attribute change history
    * 
+   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkbinChangeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkbinChangeListing getTaskmanagementWorkbinHistory(GetTaskmanagementWorkbinHistoryRequest request) throws IOException, ApiException {
     try {
@@ -656,10 +656,10 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workbin's attribute change history
    * 
+   * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkbinChangeListing> getTaskmanagementWorkbinHistory(ApiRequest<Void> request) throws IOException {
     try {
@@ -686,12 +686,12 @@ public class TaskManagementApi {
   /**
    * Get a version of a workbin
    * 
+   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param entityVersion Workbin version (required)
    * @return WorkbinVersion
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkbinVersion getTaskmanagementWorkbinVersion(String workbinId, Integer entityVersion) throws IOException, ApiException {
     return  getTaskmanagementWorkbinVersion(createGetTaskmanagementWorkbinVersionRequest(workbinId, entityVersion));
@@ -700,11 +700,11 @@ public class TaskManagementApi {
   /**
    * Get a version of a workbin
    * 
+   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param entityVersion Workbin version (required)
    * @return WorkbinVersion
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkbinVersion> getTaskmanagementWorkbinVersionWithHttpInfo(String workbinId, Integer entityVersion) throws IOException {
     return getTaskmanagementWorkbinVersion(createGetTaskmanagementWorkbinVersionRequest(workbinId, entityVersion).withHttpInfo());
@@ -722,11 +722,11 @@ public class TaskManagementApi {
   /**
    * Get a version of a workbin
    * 
+   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkbinVersion
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkbinVersion getTaskmanagementWorkbinVersion(GetTaskmanagementWorkbinVersionRequest request) throws IOException, ApiException {
     try {
@@ -742,10 +742,10 @@ public class TaskManagementApi {
   /**
    * Get a version of a workbin
    * 
+   * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkbinVersion> getTaskmanagementWorkbinVersion(ApiRequest<Void> request) throws IOException {
     try {
@@ -772,6 +772,7 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workbin
    * 
+   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -779,7 +780,6 @@ public class TaskManagementApi {
    * @return WorkbinVersionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkbinVersionListing getTaskmanagementWorkbinVersions(String workbinId, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
     return  getTaskmanagementWorkbinVersions(createGetTaskmanagementWorkbinVersionsRequest(workbinId, after, pageSize, sortOrder));
@@ -788,13 +788,13 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workbin
    * 
+   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
    * @return WorkbinVersionListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkbinVersionListing> getTaskmanagementWorkbinVersionsWithHttpInfo(String workbinId, String after, Integer pageSize, String sortOrder) throws IOException {
     return getTaskmanagementWorkbinVersions(createGetTaskmanagementWorkbinVersionsRequest(workbinId, after, pageSize, sortOrder).withHttpInfo());
@@ -816,11 +816,11 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workbin
    * 
+   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkbinVersionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkbinVersionListing getTaskmanagementWorkbinVersions(GetTaskmanagementWorkbinVersionsRequest request) throws IOException, ApiException {
     try {
@@ -836,10 +836,10 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workbin
    * 
+   * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkbinVersionListing> getTaskmanagementWorkbinVersions(ApiRequest<Void> request) throws IOException {
     try {
@@ -866,31 +866,35 @@ public class TaskManagementApi {
   /**
    * Get a workitem
    * 
+   * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
+   * @param expands Which fields to expand. Comma separated if more than one. (optional)
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
-  public Workitem getTaskmanagementWorkitem(String workitemId) throws IOException, ApiException {
-    return  getTaskmanagementWorkitem(createGetTaskmanagementWorkitemRequest(workitemId));
+  public Workitem getTaskmanagementWorkitem(String workitemId, String expands) throws IOException, ApiException {
+    return  getTaskmanagementWorkitem(createGetTaskmanagementWorkitemRequest(workitemId, expands));
   }
 
   /**
    * Get a workitem
    * 
+   * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
+   * @param expands Which fields to expand. Comma separated if more than one. (optional)
    * @return Workitem
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
-  public ApiResponse<Workitem> getTaskmanagementWorkitemWithHttpInfo(String workitemId) throws IOException {
-    return getTaskmanagementWorkitem(createGetTaskmanagementWorkitemRequest(workitemId).withHttpInfo());
+  public ApiResponse<Workitem> getTaskmanagementWorkitemWithHttpInfo(String workitemId, String expands) throws IOException {
+    return getTaskmanagementWorkitem(createGetTaskmanagementWorkitemRequest(workitemId, expands).withHttpInfo());
   }
 
-  private GetTaskmanagementWorkitemRequest createGetTaskmanagementWorkitemRequest(String workitemId) {
+  private GetTaskmanagementWorkitemRequest createGetTaskmanagementWorkitemRequest(String workitemId, String expands) {
     return GetTaskmanagementWorkitemRequest.builder()
             .withWorkitemId(workitemId)
+
+            .withExpands(expands)
 
             .build();
   }
@@ -898,11 +902,11 @@ public class TaskManagementApi {
   /**
    * Get a workitem
    * 
+   * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workitem getTaskmanagementWorkitem(GetTaskmanagementWorkitemRequest request) throws IOException, ApiException {
     try {
@@ -918,10 +922,10 @@ public class TaskManagementApi {
   /**
    * Get a workitem
    * 
+   * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workitem> getTaskmanagementWorkitem(ApiRequest<Void> request) throws IOException {
     try {
@@ -948,6 +952,7 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workitem's attribute change history
    * 
+   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -955,7 +960,6 @@ public class TaskManagementApi {
    * @return WorkitemChangeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemChangeListing getTaskmanagementWorkitemHistory(String workitemId, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
     return  getTaskmanagementWorkitemHistory(createGetTaskmanagementWorkitemHistoryRequest(workitemId, after, pageSize, sortOrder));
@@ -964,13 +968,13 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workitem's attribute change history
    * 
+   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
    * @return WorkitemChangeListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemChangeListing> getTaskmanagementWorkitemHistoryWithHttpInfo(String workitemId, String after, Integer pageSize, String sortOrder) throws IOException {
     return getTaskmanagementWorkitemHistory(createGetTaskmanagementWorkitemHistoryRequest(workitemId, after, pageSize, sortOrder).withHttpInfo());
@@ -992,11 +996,11 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workitem's attribute change history
    * 
+   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemChangeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemChangeListing getTaskmanagementWorkitemHistory(GetTaskmanagementWorkitemHistoryRequest request) throws IOException, ApiException {
     try {
@@ -1012,10 +1016,10 @@ public class TaskManagementApi {
   /**
    * Get a listing of a workitem's attribute change history
    * 
+   * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemChangeListing> getTaskmanagementWorkitemHistory(ApiRequest<Void> request) throws IOException {
     try {
@@ -1042,6 +1046,7 @@ public class TaskManagementApi {
   /**
    * Get all wrapup codes added for the given user for a workitem.
    * 
+   * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId The ID of the Workitem. (required)
    * @param userId The ID of the user (required)
    * @param expands Which fields, if any, to expand. (optional)
@@ -1051,7 +1056,6 @@ public class TaskManagementApi {
    * @return WorkitemWrapup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemWrapup getTaskmanagementWorkitemUserWrapups(String workitemId, String userId, String expands, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
     return  getTaskmanagementWorkitemUserWrapups(createGetTaskmanagementWorkitemUserWrapupsRequest(workitemId, userId, expands, after, pageSize, sortOrder));
@@ -1060,6 +1064,7 @@ public class TaskManagementApi {
   /**
    * Get all wrapup codes added for the given user for a workitem.
    * 
+   * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId The ID of the Workitem. (required)
    * @param userId The ID of the user (required)
    * @param expands Which fields, if any, to expand. (optional)
@@ -1068,7 +1073,6 @@ public class TaskManagementApi {
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
    * @return WorkitemWrapup
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemWrapup> getTaskmanagementWorkitemUserWrapupsWithHttpInfo(String workitemId, String userId, String expands, String after, Integer pageSize, String sortOrder) throws IOException {
     return getTaskmanagementWorkitemUserWrapups(createGetTaskmanagementWorkitemUserWrapupsRequest(workitemId, userId, expands, after, pageSize, sortOrder).withHttpInfo());
@@ -1094,11 +1098,11 @@ public class TaskManagementApi {
   /**
    * Get all wrapup codes added for the given user for a workitem.
    * 
+   * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemWrapup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemWrapup getTaskmanagementWorkitemUserWrapups(GetTaskmanagementWorkitemUserWrapupsRequest request) throws IOException, ApiException {
     try {
@@ -1114,10 +1118,10 @@ public class TaskManagementApi {
   /**
    * Get all wrapup codes added for the given user for a workitem.
    * 
+   * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemWrapup> getTaskmanagementWorkitemUserWrapups(ApiRequest<Void> request) throws IOException {
     try {
@@ -1144,12 +1148,12 @@ public class TaskManagementApi {
   /**
    * Get a version of a workitem
    * 
+   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param entityVersion Workitem version (required)
    * @return WorkitemVersion
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemVersion getTaskmanagementWorkitemVersion(String workitemId, Integer entityVersion) throws IOException, ApiException {
     return  getTaskmanagementWorkitemVersion(createGetTaskmanagementWorkitemVersionRequest(workitemId, entityVersion));
@@ -1158,11 +1162,11 @@ public class TaskManagementApi {
   /**
    * Get a version of a workitem
    * 
+   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param entityVersion Workitem version (required)
    * @return WorkitemVersion
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemVersion> getTaskmanagementWorkitemVersionWithHttpInfo(String workitemId, Integer entityVersion) throws IOException {
     return getTaskmanagementWorkitemVersion(createGetTaskmanagementWorkitemVersionRequest(workitemId, entityVersion).withHttpInfo());
@@ -1180,11 +1184,11 @@ public class TaskManagementApi {
   /**
    * Get a version of a workitem
    * 
+   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemVersion
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemVersion getTaskmanagementWorkitemVersion(GetTaskmanagementWorkitemVersionRequest request) throws IOException, ApiException {
     try {
@@ -1200,10 +1204,10 @@ public class TaskManagementApi {
   /**
    * Get a version of a workitem
    * 
+   * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemVersion> getTaskmanagementWorkitemVersion(ApiRequest<Void> request) throws IOException {
     try {
@@ -1230,6 +1234,7 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workitem
    * 
+   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -1237,7 +1242,6 @@ public class TaskManagementApi {
    * @return WorkitemVersionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemVersionListing getTaskmanagementWorkitemVersions(String workitemId, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
     return  getTaskmanagementWorkitemVersions(createGetTaskmanagementWorkitemVersionsRequest(workitemId, after, pageSize, sortOrder));
@@ -1246,13 +1250,13 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workitem
    * 
+   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
    * @return WorkitemVersionListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemVersionListing> getTaskmanagementWorkitemVersionsWithHttpInfo(String workitemId, String after, Integer pageSize, String sortOrder) throws IOException {
     return getTaskmanagementWorkitemVersions(createGetTaskmanagementWorkitemVersionsRequest(workitemId, after, pageSize, sortOrder).withHttpInfo());
@@ -1274,11 +1278,11 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workitem
    * 
+   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemVersionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemVersionListing getTaskmanagementWorkitemVersions(GetTaskmanagementWorkitemVersionsRequest request) throws IOException, ApiException {
     try {
@@ -1294,10 +1298,10 @@ public class TaskManagementApi {
   /**
    * Get all versions of a workitem
    * 
+   * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemVersionListing> getTaskmanagementWorkitemVersions(ApiRequest<Void> request) throws IOException {
     try {
@@ -1324,6 +1328,7 @@ public class TaskManagementApi {
   /**
    * Get all wrapup codes added for all users for a workitem.
    * 
+   * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId The ID of the Workitem. (required)
    * @param expands Which fields, if any, to expand. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
@@ -1332,7 +1337,6 @@ public class TaskManagementApi {
    * @return WorkitemWrapupEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemWrapupEntityListing getTaskmanagementWorkitemWrapups(String workitemId, String expands, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
     return  getTaskmanagementWorkitemWrapups(createGetTaskmanagementWorkitemWrapupsRequest(workitemId, expands, after, pageSize, sortOrder));
@@ -1341,6 +1345,7 @@ public class TaskManagementApi {
   /**
    * Get all wrapup codes added for all users for a workitem.
    * 
+   * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId The ID of the Workitem. (required)
    * @param expands Which fields, if any, to expand. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
@@ -1348,7 +1353,6 @@ public class TaskManagementApi {
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
    * @return WorkitemWrapupEntityListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemWrapupEntityListing> getTaskmanagementWorkitemWrapupsWithHttpInfo(String workitemId, String expands, String after, Integer pageSize, String sortOrder) throws IOException {
     return getTaskmanagementWorkitemWrapups(createGetTaskmanagementWorkitemWrapupsRequest(workitemId, expands, after, pageSize, sortOrder).withHttpInfo());
@@ -1372,11 +1376,11 @@ public class TaskManagementApi {
   /**
    * Get all wrapup codes added for all users for a workitem.
    * 
+   * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemWrapupEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemWrapupEntityListing getTaskmanagementWorkitemWrapups(GetTaskmanagementWorkitemWrapupsRequest request) throws IOException, ApiException {
     try {
@@ -1392,10 +1396,10 @@ public class TaskManagementApi {
   /**
    * Get all wrapup codes added for all users for a workitem.
    * 
+   * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemWrapupEntityListing> getTaskmanagementWorkitemWrapups(ApiRequest<Void> request) throws IOException {
     try {
@@ -1422,11 +1426,11 @@ public class TaskManagementApi {
   /**
    * Get a schema
    * 
+   * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @return DataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchema getTaskmanagementWorkitemsSchema(String schemaId) throws IOException, ApiException {
     return  getTaskmanagementWorkitemsSchema(createGetTaskmanagementWorkitemsSchemaRequest(schemaId));
@@ -1435,10 +1439,10 @@ public class TaskManagementApi {
   /**
    * Get a schema
    * 
+   * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @return DataSchema
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchema> getTaskmanagementWorkitemsSchemaWithHttpInfo(String schemaId) throws IOException {
     return getTaskmanagementWorkitemsSchema(createGetTaskmanagementWorkitemsSchemaRequest(schemaId).withHttpInfo());
@@ -1454,11 +1458,11 @@ public class TaskManagementApi {
   /**
    * Get a schema
    * 
+   * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchema getTaskmanagementWorkitemsSchema(GetTaskmanagementWorkitemsSchemaRequest request) throws IOException, ApiException {
     try {
@@ -1474,10 +1478,10 @@ public class TaskManagementApi {
   /**
    * Get a schema
    * 
+   * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchema> getTaskmanagementWorkitemsSchema(ApiRequest<Void> request) throws IOException {
     try {
@@ -1504,12 +1508,12 @@ public class TaskManagementApi {
   /**
    * Get a specific version of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @param versionId Schema version (required)
    * @return DataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchema getTaskmanagementWorkitemsSchemaVersion(String schemaId, String versionId) throws IOException, ApiException {
     return  getTaskmanagementWorkitemsSchemaVersion(createGetTaskmanagementWorkitemsSchemaVersionRequest(schemaId, versionId));
@@ -1518,11 +1522,11 @@ public class TaskManagementApi {
   /**
    * Get a specific version of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @param versionId Schema version (required)
    * @return DataSchema
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchema> getTaskmanagementWorkitemsSchemaVersionWithHttpInfo(String schemaId, String versionId) throws IOException {
     return getTaskmanagementWorkitemsSchemaVersion(createGetTaskmanagementWorkitemsSchemaVersionRequest(schemaId, versionId).withHttpInfo());
@@ -1540,11 +1544,11 @@ public class TaskManagementApi {
   /**
    * Get a specific version of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchema getTaskmanagementWorkitemsSchemaVersion(GetTaskmanagementWorkitemsSchemaVersionRequest request) throws IOException, ApiException {
     try {
@@ -1560,10 +1564,10 @@ public class TaskManagementApi {
   /**
    * Get a specific version of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchema> getTaskmanagementWorkitemsSchemaVersion(ApiRequest<Void> request) throws IOException {
     try {
@@ -1590,11 +1594,11 @@ public class TaskManagementApi {
   /**
    * Get all versions of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @return DataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchema getTaskmanagementWorkitemsSchemaVersions(String schemaId) throws IOException, ApiException {
     return  getTaskmanagementWorkitemsSchemaVersions(createGetTaskmanagementWorkitemsSchemaVersionsRequest(schemaId));
@@ -1603,10 +1607,10 @@ public class TaskManagementApi {
   /**
    * Get all versions of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @return DataSchema
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchema> getTaskmanagementWorkitemsSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
     return getTaskmanagementWorkitemsSchemaVersions(createGetTaskmanagementWorkitemsSchemaVersionsRequest(schemaId).withHttpInfo());
@@ -1622,11 +1626,11 @@ public class TaskManagementApi {
   /**
    * Get all versions of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchema getTaskmanagementWorkitemsSchemaVersions(GetTaskmanagementWorkitemsSchemaVersionsRequest request) throws IOException, ApiException {
     try {
@@ -1642,10 +1646,10 @@ public class TaskManagementApi {
   /**
    * Get all versions of a schema
    * 
+   * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchema> getTaskmanagementWorkitemsSchemaVersions(ApiRequest<Void> request) throws IOException {
     try {
@@ -1672,10 +1676,10 @@ public class TaskManagementApi {
   /**
    * Get a list of schemas.
    * 
+   * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchemaListing getTaskmanagementWorkitemsSchemas() throws IOException, ApiException {
     return  getTaskmanagementWorkitemsSchemas(createGetTaskmanagementWorkitemsSchemasRequest());
@@ -1684,9 +1688,9 @@ public class TaskManagementApi {
   /**
    * Get a list of schemas.
    * 
+   * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return DataSchemaListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchemaListing> getTaskmanagementWorkitemsSchemasWithHttpInfo() throws IOException {
     return getTaskmanagementWorkitemsSchemas(createGetTaskmanagementWorkitemsSchemasRequest().withHttpInfo());
@@ -1700,11 +1704,11 @@ public class TaskManagementApi {
   /**
    * Get a list of schemas.
    * 
+   * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchemaListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchemaListing getTaskmanagementWorkitemsSchemas(GetTaskmanagementWorkitemsSchemasRequest request) throws IOException, ApiException {
     try {
@@ -1720,10 +1724,10 @@ public class TaskManagementApi {
   /**
    * Get a list of schemas.
    * 
+   * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchemaListing> getTaskmanagementWorkitemsSchemas(ApiRequest<Void> request) throws IOException {
     try {
@@ -1750,12 +1754,12 @@ public class TaskManagementApi {
   /**
    * Get a worktype
    * 
+   * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param expands Which fields, if any, to expand. (optional)
    * @return Worktype
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Worktype getTaskmanagementWorktype(String worktypeId, List<String> expands) throws IOException, ApiException {
     return  getTaskmanagementWorktype(createGetTaskmanagementWorktypeRequest(worktypeId, expands));
@@ -1764,11 +1768,11 @@ public class TaskManagementApi {
   /**
    * Get a worktype
    * 
+   * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param expands Which fields, if any, to expand. (optional)
    * @return Worktype
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Worktype> getTaskmanagementWorktypeWithHttpInfo(String worktypeId, List<String> expands) throws IOException {
     return getTaskmanagementWorktype(createGetTaskmanagementWorktypeRequest(worktypeId, expands).withHttpInfo());
@@ -1786,11 +1790,11 @@ public class TaskManagementApi {
   /**
    * Get a worktype
    * 
+   * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Worktype
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Worktype getTaskmanagementWorktype(GetTaskmanagementWorktypeRequest request) throws IOException, ApiException {
     try {
@@ -1806,10 +1810,10 @@ public class TaskManagementApi {
   /**
    * Get a worktype
    * 
+   * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Worktype> getTaskmanagementWorktype(ApiRequest<Void> request) throws IOException {
     try {
@@ -1836,6 +1840,7 @@ public class TaskManagementApi {
   /**
    * Get a listing of a worktype's attribute change history
    * 
+   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -1843,7 +1848,6 @@ public class TaskManagementApi {
    * @return WorktypeChangeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorktypeChangeListing getTaskmanagementWorktypeHistory(String worktypeId, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
     return  getTaskmanagementWorktypeHistory(createGetTaskmanagementWorktypeHistoryRequest(worktypeId, after, pageSize, sortOrder));
@@ -1852,13 +1856,13 @@ public class TaskManagementApi {
   /**
    * Get a listing of a worktype's attribute change history
    * 
+   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
    * @return WorktypeChangeListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorktypeChangeListing> getTaskmanagementWorktypeHistoryWithHttpInfo(String worktypeId, String after, Integer pageSize, String sortOrder) throws IOException {
     return getTaskmanagementWorktypeHistory(createGetTaskmanagementWorktypeHistoryRequest(worktypeId, after, pageSize, sortOrder).withHttpInfo());
@@ -1880,11 +1884,11 @@ public class TaskManagementApi {
   /**
    * Get a listing of a worktype's attribute change history
    * 
+   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorktypeChangeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorktypeChangeListing getTaskmanagementWorktypeHistory(GetTaskmanagementWorktypeHistoryRequest request) throws IOException, ApiException {
     try {
@@ -1900,10 +1904,10 @@ public class TaskManagementApi {
   /**
    * Get a listing of a worktype's attribute change history
    * 
+   * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorktypeChangeListing> getTaskmanagementWorktypeHistory(ApiRequest<Void> request) throws IOException {
     try {
@@ -1930,12 +1934,12 @@ public class TaskManagementApi {
   /**
    * Get a status
    * 
+   * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param statusId Status id (required)
    * @return WorkitemStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemStatus getTaskmanagementWorktypeStatus(String worktypeId, String statusId) throws IOException, ApiException {
     return  getTaskmanagementWorktypeStatus(createGetTaskmanagementWorktypeStatusRequest(worktypeId, statusId));
@@ -1944,11 +1948,11 @@ public class TaskManagementApi {
   /**
    * Get a status
    * 
+   * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param statusId Status id (required)
    * @return WorkitemStatus
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemStatus> getTaskmanagementWorktypeStatusWithHttpInfo(String worktypeId, String statusId) throws IOException {
     return getTaskmanagementWorktypeStatus(createGetTaskmanagementWorktypeStatusRequest(worktypeId, statusId).withHttpInfo());
@@ -1966,11 +1970,11 @@ public class TaskManagementApi {
   /**
    * Get a status
    * 
+   * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemStatus getTaskmanagementWorktypeStatus(GetTaskmanagementWorktypeStatusRequest request) throws IOException, ApiException {
     try {
@@ -1986,10 +1990,10 @@ public class TaskManagementApi {
   /**
    * Get a status
    * 
+   * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemStatus> getTaskmanagementWorktypeStatus(ApiRequest<Void> request) throws IOException {
     try {
@@ -2016,12 +2020,12 @@ public class TaskManagementApi {
   /**
    * Get a version of a worktype
    * 
+   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param entityVersion Worktype version (required)
    * @return WorktypeVersion
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorktypeVersion getTaskmanagementWorktypeVersion(String worktypeId, Integer entityVersion) throws IOException, ApiException {
     return  getTaskmanagementWorktypeVersion(createGetTaskmanagementWorktypeVersionRequest(worktypeId, entityVersion));
@@ -2030,11 +2034,11 @@ public class TaskManagementApi {
   /**
    * Get a version of a worktype
    * 
+   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param entityVersion Worktype version (required)
    * @return WorktypeVersion
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorktypeVersion> getTaskmanagementWorktypeVersionWithHttpInfo(String worktypeId, Integer entityVersion) throws IOException {
     return getTaskmanagementWorktypeVersion(createGetTaskmanagementWorktypeVersionRequest(worktypeId, entityVersion).withHttpInfo());
@@ -2052,11 +2056,11 @@ public class TaskManagementApi {
   /**
    * Get a version of a worktype
    * 
+   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorktypeVersion
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorktypeVersion getTaskmanagementWorktypeVersion(GetTaskmanagementWorktypeVersionRequest request) throws IOException, ApiException {
     try {
@@ -2072,10 +2076,10 @@ public class TaskManagementApi {
   /**
    * Get a version of a worktype
    * 
+   * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorktypeVersion> getTaskmanagementWorktypeVersion(ApiRequest<Void> request) throws IOException {
     try {
@@ -2102,6 +2106,7 @@ public class TaskManagementApi {
   /**
    * Get all versions of a worktype
    * 
+   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
@@ -2109,7 +2114,6 @@ public class TaskManagementApi {
    * @return WorktypeVersionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorktypeVersionListing getTaskmanagementWorktypeVersions(String worktypeId, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
     return  getTaskmanagementWorktypeVersions(createGetTaskmanagementWorktypeVersionsRequest(worktypeId, after, pageSize, sortOrder));
@@ -2118,13 +2122,13 @@ public class TaskManagementApi {
   /**
    * Get all versions of a worktype
    * 
+   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
    * @return WorktypeVersionListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorktypeVersionListing> getTaskmanagementWorktypeVersionsWithHttpInfo(String worktypeId, String after, Integer pageSize, String sortOrder) throws IOException {
     return getTaskmanagementWorktypeVersions(createGetTaskmanagementWorktypeVersionsRequest(worktypeId, after, pageSize, sortOrder).withHttpInfo());
@@ -2146,11 +2150,11 @@ public class TaskManagementApi {
   /**
    * Get all versions of a worktype
    * 
+   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorktypeVersionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorktypeVersionListing getTaskmanagementWorktypeVersions(GetTaskmanagementWorktypeVersionsRequest request) throws IOException, ApiException {
     try {
@@ -2166,10 +2170,10 @@ public class TaskManagementApi {
   /**
    * Get all versions of a worktype
    * 
+   * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorktypeVersionListing> getTaskmanagementWorktypeVersions(ApiRequest<Void> request) throws IOException {
     try {
@@ -2196,12 +2200,12 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a workbin
    * 
+   * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param body Json with attributes and their new values: {\"description\":\"new description\", \"name\":\"new name\"}. (required)
    * @return Workbin
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workbin patchTaskmanagementWorkbin(String workbinId, WorkbinUpdate body) throws IOException, ApiException {
     return  patchTaskmanagementWorkbin(createPatchTaskmanagementWorkbinRequest(workbinId, body));
@@ -2210,11 +2214,11 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a workbin
    * 
+   * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workbinId Workbin ID (required)
    * @param body Json with attributes and their new values: {\"description\":\"new description\", \"name\":\"new name\"}. (required)
    * @return Workbin
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workbin> patchTaskmanagementWorkbinWithHttpInfo(String workbinId, WorkbinUpdate body) throws IOException {
     return patchTaskmanagementWorkbin(createPatchTaskmanagementWorkbinRequest(workbinId, body).withHttpInfo());
@@ -2232,11 +2236,11 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a workbin
    * 
+   * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Workbin
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workbin patchTaskmanagementWorkbin(PatchTaskmanagementWorkbinRequest request) throws IOException, ApiException {
     try {
@@ -2252,10 +2256,10 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a workbin
    * 
+   * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workbin> patchTaskmanagementWorkbin(ApiRequest<WorkbinUpdate> request) throws IOException {
     try {
@@ -2282,12 +2286,12 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a workitem
    * 
+   * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param body Workitem (required)
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workitem patchTaskmanagementWorkitem(String workitemId, WorkitemUpdate body) throws IOException, ApiException {
     return  patchTaskmanagementWorkitem(createPatchTaskmanagementWorkitemRequest(workitemId, body));
@@ -2296,11 +2300,11 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a workitem
    * 
+   * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param body Workitem (required)
    * @return Workitem
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workitem> patchTaskmanagementWorkitemWithHttpInfo(String workitemId, WorkitemUpdate body) throws IOException {
     return patchTaskmanagementWorkitem(createPatchTaskmanagementWorkitemRequest(workitemId, body).withHttpInfo());
@@ -2318,11 +2322,11 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a workitem
    * 
+   * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workitem patchTaskmanagementWorkitem(PatchTaskmanagementWorkitemRequest request) throws IOException, ApiException {
     try {
@@ -2338,10 +2342,10 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a workitem
    * 
+   * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workitem> patchTaskmanagementWorkitem(ApiRequest<WorkitemUpdate> request) throws IOException {
     try {
@@ -2368,11 +2372,11 @@ public class TaskManagementApi {
   /**
    * Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
+   * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param body Targeted user (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void patchTaskmanagementWorkitemAssignment(String workitemId, WorkitemManualAssign body) throws IOException, ApiException {
      patchTaskmanagementWorkitemAssignment(createPatchTaskmanagementWorkitemAssignmentRequest(workitemId, body));
@@ -2381,10 +2385,10 @@ public class TaskManagementApi {
   /**
    * Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
+   * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param body Targeted user (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> patchTaskmanagementWorkitemAssignmentWithHttpInfo(String workitemId, WorkitemManualAssign body) throws IOException {
     return patchTaskmanagementWorkitemAssignment(createPatchTaskmanagementWorkitemAssignmentRequest(workitemId, body).withHttpInfo());
@@ -2402,10 +2406,10 @@ public class TaskManagementApi {
   /**
    * Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
+   * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void patchTaskmanagementWorkitemAssignment(PatchTaskmanagementWorkitemAssignmentRequest request) throws IOException, ApiException {
     try {
@@ -2421,10 +2425,10 @@ public class TaskManagementApi {
   /**
    * Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
+   * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> patchTaskmanagementWorkitemAssignment(ApiRequest<WorkitemManualAssign> request) throws IOException {
     try {
@@ -2451,13 +2455,13 @@ public class TaskManagementApi {
   /**
    * Add/Remove a wrapup code for a given user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId The ID of the Workitem. (required)
    * @param userId The ID of the user (required)
    * @param body Request body to add/remove a wrapup code for a workitem (required)
    * @return WorkitemWrapup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemWrapup patchTaskmanagementWorkitemUserWrapups(String workitemId, String userId, WorkitemWrapupUpdate body) throws IOException, ApiException {
     return  patchTaskmanagementWorkitemUserWrapups(createPatchTaskmanagementWorkitemUserWrapupsRequest(workitemId, userId, body));
@@ -2466,12 +2470,12 @@ public class TaskManagementApi {
   /**
    * Add/Remove a wrapup code for a given user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId The ID of the Workitem. (required)
    * @param userId The ID of the user (required)
    * @param body Request body to add/remove a wrapup code for a workitem (required)
    * @return WorkitemWrapup
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemWrapup> patchTaskmanagementWorkitemUserWrapupsWithHttpInfo(String workitemId, String userId, WorkitemWrapupUpdate body) throws IOException {
     return patchTaskmanagementWorkitemUserWrapups(createPatchTaskmanagementWorkitemUserWrapupsRequest(workitemId, userId, body).withHttpInfo());
@@ -2491,11 +2495,11 @@ public class TaskManagementApi {
   /**
    * Add/Remove a wrapup code for a given user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemWrapup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemWrapup patchTaskmanagementWorkitemUserWrapups(PatchTaskmanagementWorkitemUserWrapupsRequest request) throws IOException, ApiException {
     try {
@@ -2511,10 +2515,10 @@ public class TaskManagementApi {
   /**
    * Add/Remove a wrapup code for a given user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemWrapup> patchTaskmanagementWorkitemUserWrapups(ApiRequest<WorkitemWrapupUpdate> request) throws IOException {
     try {
@@ -2541,12 +2545,12 @@ public class TaskManagementApi {
   /**
    * Add/Remove a wrapup code for the current user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId The ID of the Workitem. (required)
    * @param body Request body to add/remove the wrapup code for workitem (required)
    * @return WorkitemWrapup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemWrapup patchTaskmanagementWorkitemUsersMeWrapups(String workitemId, WorkitemWrapupUpdate body) throws IOException, ApiException {
     return  patchTaskmanagementWorkitemUsersMeWrapups(createPatchTaskmanagementWorkitemUsersMeWrapupsRequest(workitemId, body));
@@ -2555,11 +2559,11 @@ public class TaskManagementApi {
   /**
    * Add/Remove a wrapup code for the current user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId The ID of the Workitem. (required)
    * @param body Request body to add/remove the wrapup code for workitem (required)
    * @return WorkitemWrapup
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemWrapup> patchTaskmanagementWorkitemUsersMeWrapupsWithHttpInfo(String workitemId, WorkitemWrapupUpdate body) throws IOException {
     return patchTaskmanagementWorkitemUsersMeWrapups(createPatchTaskmanagementWorkitemUsersMeWrapupsRequest(workitemId, body).withHttpInfo());
@@ -2577,11 +2581,11 @@ public class TaskManagementApi {
   /**
    * Add/Remove a wrapup code for the current user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemWrapup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemWrapup patchTaskmanagementWorkitemUsersMeWrapups(PatchTaskmanagementWorkitemUsersMeWrapupsRequest request) throws IOException, ApiException {
     try {
@@ -2597,10 +2601,10 @@ public class TaskManagementApi {
   /**
    * Add/Remove a wrapup code for the current user in a workitem.
    * 
+   * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemWrapup> patchTaskmanagementWorkitemUsersMeWrapups(ApiRequest<WorkitemWrapupUpdate> request) throws IOException {
     try {
@@ -2627,12 +2631,12 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a worktype
    * 
+   * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param body body (optional)
    * @return Worktype
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Worktype patchTaskmanagementWorktype(String worktypeId, WorktypeUpdate body) throws IOException, ApiException {
     return  patchTaskmanagementWorktype(createPatchTaskmanagementWorktypeRequest(worktypeId, body));
@@ -2641,11 +2645,11 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a worktype
    * 
+   * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param body body (optional)
    * @return Worktype
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Worktype> patchTaskmanagementWorktypeWithHttpInfo(String worktypeId, WorktypeUpdate body) throws IOException {
     return patchTaskmanagementWorktype(createPatchTaskmanagementWorktypeRequest(worktypeId, body).withHttpInfo());
@@ -2663,11 +2667,11 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a worktype
    * 
+   * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Worktype
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Worktype patchTaskmanagementWorktype(PatchTaskmanagementWorktypeRequest request) throws IOException, ApiException {
     try {
@@ -2683,10 +2687,10 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a worktype
    * 
+   * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Worktype> patchTaskmanagementWorktype(ApiRequest<WorktypeUpdate> request) throws IOException {
     try {
@@ -2713,13 +2717,13 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a status
    * 
+   * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param statusId Status id (required)
    * @param body body (optional)
    * @return WorkitemStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemStatus patchTaskmanagementWorktypeStatus(String worktypeId, String statusId, WorkitemStatusUpdate body) throws IOException, ApiException {
     return  patchTaskmanagementWorktypeStatus(createPatchTaskmanagementWorktypeStatusRequest(worktypeId, statusId, body));
@@ -2728,12 +2732,12 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a status
    * 
+   * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param statusId Status id (required)
    * @param body body (optional)
    * @return WorkitemStatus
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemStatus> patchTaskmanagementWorktypeStatusWithHttpInfo(String worktypeId, String statusId, WorkitemStatusUpdate body) throws IOException {
     return patchTaskmanagementWorktypeStatus(createPatchTaskmanagementWorktypeStatusRequest(worktypeId, statusId, body).withHttpInfo());
@@ -2753,11 +2757,11 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a status
    * 
+   * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemStatus patchTaskmanagementWorktypeStatus(PatchTaskmanagementWorktypeStatusRequest request) throws IOException, ApiException {
     try {
@@ -2773,10 +2777,10 @@ public class TaskManagementApi {
   /**
    * Update the attributes of a status
    * 
+   * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemStatus> patchTaskmanagementWorktypeStatus(ApiRequest<WorkitemStatusUpdate> request) throws IOException {
     try {
@@ -2803,11 +2807,11 @@ public class TaskManagementApi {
   /**
    * Create a workbin
    * 
+   * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body body (optional)
    * @return Workbin
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workbin postTaskmanagementWorkbins(WorkbinCreate body) throws IOException, ApiException {
     return  postTaskmanagementWorkbins(createPostTaskmanagementWorkbinsRequest(body));
@@ -2816,10 +2820,10 @@ public class TaskManagementApi {
   /**
    * Create a workbin
    * 
+   * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body body (optional)
    * @return Workbin
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workbin> postTaskmanagementWorkbinsWithHttpInfo(WorkbinCreate body) throws IOException {
     return postTaskmanagementWorkbins(createPostTaskmanagementWorkbinsRequest(body).withHttpInfo());
@@ -2835,11 +2839,11 @@ public class TaskManagementApi {
   /**
    * Create a workbin
    * 
+   * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Workbin
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workbin postTaskmanagementWorkbins(PostTaskmanagementWorkbinsRequest request) throws IOException, ApiException {
     try {
@@ -2855,10 +2859,10 @@ public class TaskManagementApi {
   /**
    * Create a workbin
    * 
+   * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workbin> postTaskmanagementWorkbins(ApiRequest<WorkbinCreate> request) throws IOException {
     try {
@@ -2885,11 +2889,11 @@ public class TaskManagementApi {
   /**
    * Query for workbins
    * 
+   * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body QueryPostRequest (required)
    * @return WorkbinQueryEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkbinQueryEntityListing postTaskmanagementWorkbinsQuery(WorkbinQueryRequest body) throws IOException, ApiException {
     return  postTaskmanagementWorkbinsQuery(createPostTaskmanagementWorkbinsQueryRequest(body));
@@ -2898,10 +2902,10 @@ public class TaskManagementApi {
   /**
    * Query for workbins
    * 
+   * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body QueryPostRequest (required)
    * @return WorkbinQueryEntityListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkbinQueryEntityListing> postTaskmanagementWorkbinsQueryWithHttpInfo(WorkbinQueryRequest body) throws IOException {
     return postTaskmanagementWorkbinsQuery(createPostTaskmanagementWorkbinsQueryRequest(body).withHttpInfo());
@@ -2917,11 +2921,11 @@ public class TaskManagementApi {
   /**
    * Query for workbins
    * 
+   * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkbinQueryEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkbinQueryEntityListing postTaskmanagementWorkbinsQuery(PostTaskmanagementWorkbinsQueryRequest request) throws IOException, ApiException {
     try {
@@ -2937,10 +2941,10 @@ public class TaskManagementApi {
   /**
    * Query for workbins
    * 
+   * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkbinQueryEntityListing> postTaskmanagementWorkbinsQuery(ApiRequest<WorkbinQueryRequest> request) throws IOException {
     try {
@@ -2967,11 +2971,11 @@ public class TaskManagementApi {
   /**
    * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
    * 
+   * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workitem postTaskmanagementWorkitemAcdCancel(String workitemId) throws IOException, ApiException {
     return  postTaskmanagementWorkitemAcdCancel(createPostTaskmanagementWorkitemAcdCancelRequest(workitemId));
@@ -2980,10 +2984,10 @@ public class TaskManagementApi {
   /**
    * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
    * 
+   * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @return Workitem
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workitem> postTaskmanagementWorkitemAcdCancelWithHttpInfo(String workitemId) throws IOException {
     return postTaskmanagementWorkitemAcdCancel(createPostTaskmanagementWorkitemAcdCancelRequest(workitemId).withHttpInfo());
@@ -2999,11 +3003,11 @@ public class TaskManagementApi {
   /**
    * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
    * 
+   * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workitem postTaskmanagementWorkitemAcdCancel(PostTaskmanagementWorkitemAcdCancelRequest request) throws IOException, ApiException {
     try {
@@ -3019,10 +3023,10 @@ public class TaskManagementApi {
   /**
    * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
    * 
+   * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workitem> postTaskmanagementWorkitemAcdCancel(ApiRequest<Void> request) throws IOException {
     try {
@@ -3049,11 +3053,11 @@ public class TaskManagementApi {
   /**
    * Disconnect the assignee of the workitem
    * 
+   * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workitem postTaskmanagementWorkitemDisconnect(String workitemId) throws IOException, ApiException {
     return  postTaskmanagementWorkitemDisconnect(createPostTaskmanagementWorkitemDisconnectRequest(workitemId));
@@ -3062,10 +3066,10 @@ public class TaskManagementApi {
   /**
    * Disconnect the assignee of the workitem
    * 
+   * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @return Workitem
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workitem> postTaskmanagementWorkitemDisconnectWithHttpInfo(String workitemId) throws IOException {
     return postTaskmanagementWorkitemDisconnect(createPostTaskmanagementWorkitemDisconnectRequest(workitemId).withHttpInfo());
@@ -3081,11 +3085,11 @@ public class TaskManagementApi {
   /**
    * Disconnect the assignee of the workitem
    * 
+   * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workitem postTaskmanagementWorkitemDisconnect(PostTaskmanagementWorkitemDisconnectRequest request) throws IOException, ApiException {
     try {
@@ -3101,10 +3105,10 @@ public class TaskManagementApi {
   /**
    * Disconnect the assignee of the workitem
    * 
+   * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workitem> postTaskmanagementWorkitemDisconnect(ApiRequest<Void> request) throws IOException {
     try {
@@ -3131,12 +3135,12 @@ public class TaskManagementApi {
   /**
    * Terminate a workitem
    * 
+   * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param body Terminated request (optional)
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workitem postTaskmanagementWorkitemTerminate(String workitemId, WorkitemTerminate body) throws IOException, ApiException {
     return  postTaskmanagementWorkitemTerminate(createPostTaskmanagementWorkitemTerminateRequest(workitemId, body));
@@ -3145,11 +3149,11 @@ public class TaskManagementApi {
   /**
    * Terminate a workitem
    * 
+   * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param workitemId Workitem ID (required)
    * @param body Terminated request (optional)
    * @return Workitem
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workitem> postTaskmanagementWorkitemTerminateWithHttpInfo(String workitemId, WorkitemTerminate body) throws IOException {
     return postTaskmanagementWorkitemTerminate(createPostTaskmanagementWorkitemTerminateRequest(workitemId, body).withHttpInfo());
@@ -3167,11 +3171,11 @@ public class TaskManagementApi {
   /**
    * Terminate a workitem
    * 
+   * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workitem postTaskmanagementWorkitemTerminate(PostTaskmanagementWorkitemTerminateRequest request) throws IOException, ApiException {
     try {
@@ -3187,10 +3191,10 @@ public class TaskManagementApi {
   /**
    * Terminate a workitem
    * 
+   * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workitem> postTaskmanagementWorkitemTerminate(ApiRequest<WorkitemTerminate> request) throws IOException {
     try {
@@ -3217,11 +3221,11 @@ public class TaskManagementApi {
   /**
    * Create a workitem
    * 
+   * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Workitem (required)
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workitem postTaskmanagementWorkitems(WorkitemCreate body) throws IOException, ApiException {
     return  postTaskmanagementWorkitems(createPostTaskmanagementWorkitemsRequest(body));
@@ -3230,10 +3234,10 @@ public class TaskManagementApi {
   /**
    * Create a workitem
    * 
+   * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Workitem (required)
    * @return Workitem
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workitem> postTaskmanagementWorkitemsWithHttpInfo(WorkitemCreate body) throws IOException {
     return postTaskmanagementWorkitems(createPostTaskmanagementWorkitemsRequest(body).withHttpInfo());
@@ -3249,11 +3253,11 @@ public class TaskManagementApi {
   /**
    * Create a workitem
    * 
+   * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Workitem
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Workitem postTaskmanagementWorkitems(PostTaskmanagementWorkitemsRequest request) throws IOException, ApiException {
     try {
@@ -3269,10 +3273,10 @@ public class TaskManagementApi {
   /**
    * Create a workitem
    * 
+   * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Workitem> postTaskmanagementWorkitems(ApiRequest<WorkitemCreate> request) throws IOException {
     try {
@@ -3299,11 +3303,11 @@ public class TaskManagementApi {
   /**
    * Query for workitems
    * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
+   * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body WorkitemQueryPostRequest (required)
    * @return WorkitemPostQueryEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemPostQueryEntityListing postTaskmanagementWorkitemsQuery(WorkitemQueryPostRequest body) throws IOException, ApiException {
     return  postTaskmanagementWorkitemsQuery(createPostTaskmanagementWorkitemsQueryRequest(body));
@@ -3312,10 +3316,10 @@ public class TaskManagementApi {
   /**
    * Query for workitems
    * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
+   * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body WorkitemQueryPostRequest (required)
    * @return WorkitemPostQueryEntityListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemPostQueryEntityListing> postTaskmanagementWorkitemsQueryWithHttpInfo(WorkitemQueryPostRequest body) throws IOException {
     return postTaskmanagementWorkitemsQuery(createPostTaskmanagementWorkitemsQueryRequest(body).withHttpInfo());
@@ -3331,11 +3335,11 @@ public class TaskManagementApi {
   /**
    * Query for workitems
    * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
+   * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemPostQueryEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemPostQueryEntityListing postTaskmanagementWorkitemsQuery(PostTaskmanagementWorkitemsQueryRequest request) throws IOException, ApiException {
     try {
@@ -3351,10 +3355,10 @@ public class TaskManagementApi {
   /**
    * Query for workitems
    * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
+   * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemPostQueryEntityListing> postTaskmanagementWorkitemsQuery(ApiRequest<WorkitemQueryPostRequest> request) throws IOException {
     try {
@@ -3381,11 +3385,11 @@ public class TaskManagementApi {
   /**
    * Create a schema
    * 
+   * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Schema (required)
    * @return DataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchema postTaskmanagementWorkitemsSchemas(DataSchema body) throws IOException, ApiException {
     return  postTaskmanagementWorkitemsSchemas(createPostTaskmanagementWorkitemsSchemasRequest(body));
@@ -3394,10 +3398,10 @@ public class TaskManagementApi {
   /**
    * Create a schema
    * 
+   * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Schema (required)
    * @return DataSchema
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchema> postTaskmanagementWorkitemsSchemasWithHttpInfo(DataSchema body) throws IOException {
     return postTaskmanagementWorkitemsSchemas(createPostTaskmanagementWorkitemsSchemasRequest(body).withHttpInfo());
@@ -3413,11 +3417,11 @@ public class TaskManagementApi {
   /**
    * Create a schema
    * 
+   * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchema postTaskmanagementWorkitemsSchemas(PostTaskmanagementWorkitemsSchemasRequest request) throws IOException, ApiException {
     try {
@@ -3433,10 +3437,10 @@ public class TaskManagementApi {
   /**
    * Create a schema
    * 
+   * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchema> postTaskmanagementWorkitemsSchemas(ApiRequest<DataSchema> request) throws IOException {
     try {
@@ -3463,12 +3467,12 @@ public class TaskManagementApi {
   /**
    * Add a status to a worktype
    * 
+   * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param body body (optional)
    * @return WorkitemStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemStatus postTaskmanagementWorktypeStatuses(String worktypeId, WorkitemStatusCreate body) throws IOException, ApiException {
     return  postTaskmanagementWorktypeStatuses(createPostTaskmanagementWorktypeStatusesRequest(worktypeId, body));
@@ -3477,11 +3481,11 @@ public class TaskManagementApi {
   /**
    * Add a status to a worktype
    * 
+   * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param worktypeId Worktype id (required)
    * @param body body (optional)
    * @return WorkitemStatus
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemStatus> postTaskmanagementWorktypeStatusesWithHttpInfo(String worktypeId, WorkitemStatusCreate body) throws IOException {
     return postTaskmanagementWorktypeStatuses(createPostTaskmanagementWorktypeStatusesRequest(worktypeId, body).withHttpInfo());
@@ -3499,11 +3503,11 @@ public class TaskManagementApi {
   /**
    * Add a status to a worktype
    * 
+   * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorkitemStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorkitemStatus postTaskmanagementWorktypeStatuses(PostTaskmanagementWorktypeStatusesRequest request) throws IOException, ApiException {
     try {
@@ -3519,10 +3523,10 @@ public class TaskManagementApi {
   /**
    * Add a status to a worktype
    * 
+   * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorkitemStatus> postTaskmanagementWorktypeStatuses(ApiRequest<WorkitemStatusCreate> request) throws IOException {
     try {
@@ -3549,11 +3553,11 @@ public class TaskManagementApi {
   /**
    * Create a worktype
    * 
+   * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body body (optional)
    * @return Worktype
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Worktype postTaskmanagementWorktypes(WorktypeCreate body) throws IOException, ApiException {
     return  postTaskmanagementWorktypes(createPostTaskmanagementWorktypesRequest(body));
@@ -3562,10 +3566,10 @@ public class TaskManagementApi {
   /**
    * Create a worktype
    * 
+   * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body body (optional)
    * @return Worktype
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Worktype> postTaskmanagementWorktypesWithHttpInfo(WorktypeCreate body) throws IOException {
     return postTaskmanagementWorktypes(createPostTaskmanagementWorktypesRequest(body).withHttpInfo());
@@ -3581,11 +3585,11 @@ public class TaskManagementApi {
   /**
    * Create a worktype
    * 
+   * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Worktype
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public Worktype postTaskmanagementWorktypes(PostTaskmanagementWorktypesRequest request) throws IOException, ApiException {
     try {
@@ -3601,10 +3605,10 @@ public class TaskManagementApi {
   /**
    * Create a worktype
    * 
+   * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Worktype> postTaskmanagementWorktypes(ApiRequest<WorktypeCreate> request) throws IOException {
     try {
@@ -3631,11 +3635,11 @@ public class TaskManagementApi {
   /**
    * Query for worktypes
    * 
+   * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body QueryPostRequest (required)
    * @return WorktypeQueryEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorktypeQueryEntityListing postTaskmanagementWorktypesQuery(WorktypeQueryRequest body) throws IOException, ApiException {
     return  postTaskmanagementWorktypesQuery(createPostTaskmanagementWorktypesQueryRequest(body));
@@ -3644,10 +3648,10 @@ public class TaskManagementApi {
   /**
    * Query for worktypes
    * 
+   * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body QueryPostRequest (required)
    * @return WorktypeQueryEntityListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorktypeQueryEntityListing> postTaskmanagementWorktypesQueryWithHttpInfo(WorktypeQueryRequest body) throws IOException {
     return postTaskmanagementWorktypesQuery(createPostTaskmanagementWorktypesQueryRequest(body).withHttpInfo());
@@ -3663,11 +3667,11 @@ public class TaskManagementApi {
   /**
    * Query for worktypes
    * 
+   * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return WorktypeQueryEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public WorktypeQueryEntityListing postTaskmanagementWorktypesQuery(PostTaskmanagementWorktypesQueryRequest request) throws IOException, ApiException {
     try {
@@ -3683,10 +3687,10 @@ public class TaskManagementApi {
   /**
    * Query for worktypes
    * 
+   * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<WorktypeQueryEntityListing> postTaskmanagementWorktypesQuery(ApiRequest<WorktypeQueryRequest> request) throws IOException {
     try {
@@ -3713,12 +3717,12 @@ public class TaskManagementApi {
   /**
    * Update a schema
    * 
+   * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @param body Data Schema (required)
    * @return DataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchema putTaskmanagementWorkitemsSchema(String schemaId, DataSchema body) throws IOException, ApiException {
     return  putTaskmanagementWorkitemsSchema(createPutTaskmanagementWorkitemsSchemaRequest(schemaId, body));
@@ -3727,11 +3731,11 @@ public class TaskManagementApi {
   /**
    * Update a schema
    * 
+   * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param schemaId Schema ID (required)
    * @param body Data Schema (required)
    * @return DataSchema
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchema> putTaskmanagementWorkitemsSchemaWithHttpInfo(String schemaId, DataSchema body) throws IOException {
     return putTaskmanagementWorkitemsSchema(createPutTaskmanagementWorkitemsSchemaRequest(schemaId, body).withHttpInfo());
@@ -3749,11 +3753,11 @@ public class TaskManagementApi {
   /**
    * Update a schema
    * 
+   * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataSchema
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DataSchema putTaskmanagementWorkitemsSchema(PutTaskmanagementWorkitemsSchemaRequest request) throws IOException, ApiException {
     try {
@@ -3769,10 +3773,10 @@ public class TaskManagementApi {
   /**
    * Update a schema
    * 
+   * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DataSchema> putTaskmanagementWorkitemsSchema(ApiRequest<DataSchema> request) throws IOException {
     try {

@@ -388,6 +388,8 @@ null (empty response body)
 
 Get status for async query for evaluation aggregates
 
+getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -448,6 +450,8 @@ try {
 > [EvaluationAsyncAggregateQueryResponse](EvaluationAsyncAggregateQueryResponse.html) getAnalyticsEvaluationsAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
+
+getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results  
 
@@ -512,6 +516,8 @@ try {
 
 Get status for async query for survey aggregates
 
+getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -572,6 +578,8 @@ try {
 > [SurveyAsyncAggregateQueryResponse](SurveyAsyncAggregateQueryResponse.html) getAnalyticsSurveysAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
+
+getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results  
 
@@ -2646,6 +2654,8 @@ try {
 
 Query for evaluation aggregates asynchronously
 
+postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/analytics/evaluations/aggregates/jobs  
 
 Requires ANY permissions: 
@@ -2767,6 +2777,8 @@ try {
 > [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsSurveysAggregatesJobs(body)
 
 Query for survey aggregates asynchronously
+
+postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/surveys/aggregates/jobs  
 

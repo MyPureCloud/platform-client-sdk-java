@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TtsSettings;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
 import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
+import com.mypurecloud.sdk.v2.model.UCThirdPartyPresence;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
@@ -121,6 +122,7 @@ import com.mypurecloud.sdk.v2.api.request.PutIntegrationsBotconnectorIntegration
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsSpeechTtsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIntegrationsUnifiedcommunicationThirdpartypresencesRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -2831,6 +2833,7 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID to get (required)
    * @param expand expand (optional)
@@ -2838,7 +2841,6 @@ public class IntegrationsApi {
    * @return NuanceBot
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBot(String nuanceIntegrationId, String botId, List<String> expand, String targetChannel) throws IOException, ApiException {
     return  getIntegrationsSpeechNuanceNuanceIntegrationIdBot(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest(nuanceIntegrationId, botId, expand, targetChannel));
@@ -2847,13 +2849,13 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID to get (required)
    * @param expand expand (optional)
    * @param targetChannel targetChannel (optional)
    * @return NuanceBot
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<NuanceBot> getIntegrationsSpeechNuanceNuanceIntegrationIdBotWithHttpInfo(String nuanceIntegrationId, String botId, List<String> expand, String targetChannel) throws IOException {
     return getIntegrationsSpeechNuanceNuanceIntegrationIdBot(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest(nuanceIntegrationId, botId, expand, targetChannel).withHttpInfo());
@@ -2875,11 +2877,11 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return NuanceBot
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBot(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest request) throws IOException, ApiException {
     try {
@@ -2895,10 +2897,10 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<NuanceBot> getIntegrationsSpeechNuanceNuanceIntegrationIdBot(ApiRequest<Void> request) throws IOException {
     try {
@@ -2925,13 +2927,13 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param jobId The asynchronous job ID (required)
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(String nuanceIntegrationId, String botId, String jobId) throws IOException, ApiException {
     return  getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest(nuanceIntegrationId, botId, jobId));
@@ -2940,12 +2942,12 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param jobId The asynchronous job ID (required)
    * @return AsyncJob
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncJob> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobWithHttpInfo(String nuanceIntegrationId, String botId, String jobId) throws IOException {
     return getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest(nuanceIntegrationId, botId, jobId).withHttpInfo());
@@ -2965,11 +2967,11 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest request) throws IOException, ApiException {
     try {
@@ -2985,10 +2987,10 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncJob> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -3015,13 +3017,13 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param jobId The asynchronous job ID (required)
    * @return NuanceBot
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(String nuanceIntegrationId, String botId, String jobId) throws IOException, ApiException {
     return  getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest(nuanceIntegrationId, botId, jobId));
@@ -3030,12 +3032,12 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param jobId The asynchronous job ID (required)
    * @return NuanceBot
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<NuanceBot> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsWithHttpInfo(String nuanceIntegrationId, String botId, String jobId) throws IOException {
     return getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest(nuanceIntegrationId, botId, jobId).withHttpInfo());
@@ -3055,11 +3057,11 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return NuanceBot
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest request) throws IOException, ApiException {
     try {
@@ -3075,10 +3077,10 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<NuanceBot> getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(ApiRequest<Void> request) throws IOException {
     try {
@@ -3105,6 +3107,7 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -3112,7 +3115,6 @@ public class IntegrationsApi {
    * @return NuanceBotEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBots(String nuanceIntegrationId, Integer pageNumber, Integer pageSize, Boolean onlyRegisteredBots) throws IOException, ApiException {
     return  getIntegrationsSpeechNuanceNuanceIntegrationIdBots(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots));
@@ -3121,13 +3123,13 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (optional, default to true)
    * @return NuanceBotEntityListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<NuanceBotEntityListing> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsWithHttpInfo(String nuanceIntegrationId, Integer pageNumber, Integer pageSize, Boolean onlyRegisteredBots) throws IOException {
     return getIntegrationsSpeechNuanceNuanceIntegrationIdBots(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots).withHttpInfo());
@@ -3149,11 +3151,11 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return NuanceBotEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBots(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest request) throws IOException, ApiException {
     try {
@@ -3169,10 +3171,10 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<NuanceBotEntityListing> getIntegrationsSpeechNuanceNuanceIntegrationIdBots(ApiRequest<Void> request) throws IOException {
     try {
@@ -3199,12 +3201,12 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param jobId The asynchronous job ID (required)
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(String nuanceIntegrationId, String jobId) throws IOException, ApiException {
     return  getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest(nuanceIntegrationId, jobId));
@@ -3213,11 +3215,11 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param jobId The asynchronous job ID (required)
    * @return AsyncJob
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncJob> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobWithHttpInfo(String nuanceIntegrationId, String jobId) throws IOException {
     return getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest(nuanceIntegrationId, jobId).withHttpInfo());
@@ -3235,11 +3237,11 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest request) throws IOException, ApiException {
     try {
@@ -3255,10 +3257,10 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncJob> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(ApiRequest<Void> request) throws IOException {
     try {
@@ -3285,12 +3287,12 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param jobId The asynchronous job ID (required)
    * @return NuanceBotEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(String nuanceIntegrationId, String jobId) throws IOException, ApiException {
     return  getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest(nuanceIntegrationId, jobId));
@@ -3299,11 +3301,11 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param jobId The asynchronous job ID (required)
    * @return NuanceBotEntityListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<NuanceBotEntityListing> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsWithHttpInfo(String nuanceIntegrationId, String jobId) throws IOException {
     return getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(createGetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest(nuanceIntegrationId, jobId).withHttpInfo());
@@ -3321,11 +3323,11 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return NuanceBotEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest request) throws IOException, ApiException {
     try {
@@ -3341,10 +3343,10 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
+   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<NuanceBotEntityListing> getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(ApiRequest<Void> request) throws IOException {
     try {
@@ -5137,6 +5139,7 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param expand expand (optional)
@@ -5144,7 +5147,6 @@ public class IntegrationsApi {
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(String nuanceIntegrationId, String botId, List<String> expand, String body) throws IOException, ApiException {
     return  postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest(nuanceIntegrationId, botId, expand, body));
@@ -5153,13 +5155,13 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param expand expand (optional)
    * @param body targetChannel (optional)
    * @return AsyncJob
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncJob> postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsWithHttpInfo(String nuanceIntegrationId, String botId, List<String> expand, String body) throws IOException {
     return postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest(nuanceIntegrationId, botId, expand, body).withHttpInfo());
@@ -5181,11 +5183,11 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(PostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsRequest request) throws IOException, ApiException {
     try {
@@ -5201,10 +5203,10 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncJob> postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(ApiRequest<String> request) throws IOException {
     try {
@@ -5231,6 +5233,7 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -5238,7 +5241,6 @@ public class IntegrationsApi {
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(String nuanceIntegrationId, Integer pageNumber, Integer pageSize, Boolean onlyRegisteredBots) throws IOException, ApiException {
     return  postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots));
@@ -5247,13 +5249,13 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (optional, default to true)
    * @return AsyncJob
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncJob> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsWithHttpInfo(String nuanceIntegrationId, Integer pageNumber, Integer pageSize, Boolean onlyRegisteredBots) throws IOException {
     return postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots).withHttpInfo());
@@ -5275,11 +5277,11 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest request) throws IOException, ApiException {
     try {
@@ -5295,10 +5297,10 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<AsyncJob> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(ApiRequest<Void> request) throws IOException {
     try {
@@ -5325,11 +5327,11 @@ public class IntegrationsApi {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param settings  (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(String nuanceIntegrationId, BotExecutionConfiguration settings) throws IOException, ApiException {
      postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest(nuanceIntegrationId, settings));
@@ -5338,10 +5340,10 @@ public class IntegrationsApi {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param settings  (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateWithHttpInfo(String nuanceIntegrationId, BotExecutionConfiguration settings) throws IOException {
     return postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(createPostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest(nuanceIntegrationId, settings).withHttpInfo());
@@ -5359,10 +5361,10 @@ public class IntegrationsApi {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest request) throws IOException, ApiException {
     try {
@@ -5378,10 +5380,10 @@ public class IntegrationsApi {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
+   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(ApiRequest<BotExecutionConfiguration> request) throws IOException {
     try {
@@ -5651,11 +5653,11 @@ public class IntegrationsApi {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
+   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param settings  (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(String nuanceIntegrationId, NuanceBotLaunchSettings settings) throws IOException, ApiException {
      putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(createPutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest(nuanceIntegrationId, settings));
@@ -5664,10 +5666,10 @@ public class IntegrationsApi {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
+   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param settings  (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsWithHttpInfo(String nuanceIntegrationId, NuanceBotLaunchSettings settings) throws IOException {
     return putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(createPutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest(nuanceIntegrationId, settings).withHttpInfo());
@@ -5685,10 +5687,10 @@ public class IntegrationsApi {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
+   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest request) throws IOException, ApiException {
     try {
@@ -5704,10 +5706,10 @@ public class IntegrationsApi {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
+   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(ApiRequest<NuanceBotLaunchSettings> request) throws IOException {
     try {
@@ -5805,6 +5807,88 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TtsSettings> response = (ApiResponse<TtsSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk integration presence ingestion
+   * This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+   * @param ucIntegrationId UC Integration ID (required)
+   * @param body List of User presences (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putIntegrationsUnifiedcommunicationThirdpartypresences(String ucIntegrationId, List<UCThirdPartyPresence> body) throws IOException, ApiException {
+    return  putIntegrationsUnifiedcommunicationThirdpartypresences(createPutIntegrationsUnifiedcommunicationThirdpartypresencesRequest(ucIntegrationId, body));
+  }
+
+  /**
+   * Bulk integration presence ingestion
+   * This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+   * @param ucIntegrationId UC Integration ID (required)
+   * @param body List of User presences (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putIntegrationsUnifiedcommunicationThirdpartypresencesWithHttpInfo(String ucIntegrationId, List<UCThirdPartyPresence> body) throws IOException {
+    return putIntegrationsUnifiedcommunicationThirdpartypresences(createPutIntegrationsUnifiedcommunicationThirdpartypresencesRequest(ucIntegrationId, body).withHttpInfo());
+  }
+
+  private PutIntegrationsUnifiedcommunicationThirdpartypresencesRequest createPutIntegrationsUnifiedcommunicationThirdpartypresencesRequest(String ucIntegrationId, List<UCThirdPartyPresence> body) {
+    return PutIntegrationsUnifiedcommunicationThirdpartypresencesRequest.builder()
+            .withUcIntegrationId(ucIntegrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk integration presence ingestion
+   * This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putIntegrationsUnifiedcommunicationThirdpartypresences(PutIntegrationsUnifiedcommunicationThirdpartypresencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk integration presence ingestion
+   * This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putIntegrationsUnifiedcommunicationThirdpartypresences(ApiRequest<List<UCThirdPartyPresence>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

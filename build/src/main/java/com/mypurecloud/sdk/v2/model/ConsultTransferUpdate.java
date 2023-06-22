@@ -72,6 +72,7 @@ public class ConsultTransferUpdate  implements Serializable {
     }
   }
   private SpeakToEnum speakTo = null;
+  private String consultingUserId = null;
 
   
   /**
@@ -92,6 +93,24 @@ public class ConsultTransferUpdate  implements Serializable {
   }
 
 
+  /**
+   * The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
+   **/
+  public ConsultTransferUpdate consultingUserId(String consultingUserId) {
+    this.consultingUserId = consultingUserId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID")
+  @JsonProperty("consultingUserId")
+  public String getConsultingUserId() {
+    return consultingUserId;
+  }
+  public void setConsultingUserId(String consultingUserId) {
+    this.consultingUserId = consultingUserId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -102,12 +121,13 @@ public class ConsultTransferUpdate  implements Serializable {
     }
     ConsultTransferUpdate consultTransferUpdate = (ConsultTransferUpdate) o;
 
-    return Objects.equals(this.speakTo, consultTransferUpdate.speakTo);
+    return Objects.equals(this.speakTo, consultTransferUpdate.speakTo) &&
+            Objects.equals(this.consultingUserId, consultTransferUpdate.consultingUserId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(speakTo);
+    return Objects.hash(speakTo, consultingUserId);
   }
 
   @Override
@@ -116,6 +136,7 @@ public class ConsultTransferUpdate  implements Serializable {
     sb.append("class ConsultTransferUpdate {\n");
     
     sb.append("    speakTo: ").append(toIndentedString(speakTo)).append("\n");
+    sb.append("    consultingUserId: ").append(toIndentedString(consultingUserId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

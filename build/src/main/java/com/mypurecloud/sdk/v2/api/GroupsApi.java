@@ -141,10 +141,10 @@ public class GroupsApi {
   /**
    * Remove dynamic group definition
    * 
+   * deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param groupId Group ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteGroupDynamicsettings(String groupId) throws IOException, ApiException {
      deleteGroupDynamicsettings(createDeleteGroupDynamicsettingsRequest(groupId));
@@ -153,9 +153,9 @@ public class GroupsApi {
   /**
    * Remove dynamic group definition
    * 
+   * deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param groupId Group ID (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteGroupDynamicsettingsWithHttpInfo(String groupId) throws IOException {
     return deleteGroupDynamicsettings(createDeleteGroupDynamicsettingsRequest(groupId).withHttpInfo());
@@ -171,10 +171,10 @@ public class GroupsApi {
   /**
    * Remove dynamic group definition
    * 
+   * deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteGroupDynamicsettings(DeleteGroupDynamicsettingsRequest request) throws IOException, ApiException {
     try {
@@ -190,10 +190,10 @@ public class GroupsApi {
   /**
    * Remove dynamic group definition
    * 
+   * deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteGroupDynamicsettings(ApiRequest<Void> request) throws IOException {
     try {
@@ -462,11 +462,11 @@ public class GroupsApi {
   /**
    * Get dynamic group definition
    * 
+   * getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param groupId Group ID (required)
    * @return DynamicGroupDefinition
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DynamicGroupDefinition getGroupDynamicsettings(String groupId) throws IOException, ApiException {
     return  getGroupDynamicsettings(createGetGroupDynamicsettingsRequest(groupId));
@@ -475,10 +475,10 @@ public class GroupsApi {
   /**
    * Get dynamic group definition
    * 
+   * getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param groupId Group ID (required)
    * @return DynamicGroupDefinition
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DynamicGroupDefinition> getGroupDynamicsettingsWithHttpInfo(String groupId) throws IOException {
     return getGroupDynamicsettings(createGetGroupDynamicsettingsRequest(groupId).withHttpInfo());
@@ -494,11 +494,11 @@ public class GroupsApi {
   /**
    * Get dynamic group definition
    * 
+   * getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DynamicGroupDefinition
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public DynamicGroupDefinition getGroupDynamicsettings(GetGroupDynamicsettingsRequest request) throws IOException, ApiException {
     try {
@@ -514,10 +514,10 @@ public class GroupsApi {
   /**
    * Get dynamic group definition
    * 
+   * getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<DynamicGroupDefinition> getGroupDynamicsettings(ApiRequest<Void> request) throws IOException {
     try {
@@ -1236,12 +1236,12 @@ public class GroupsApi {
   /**
    * Preview the number of users selected for a dynamic group definition query
    * 
+   * postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Group query to preview (required)
    * @return DynamicGroupQueryPreview
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public DynamicGroupQueryPreview postGroupsDynamicsettingsPreview(DynamicGroupQuery body) throws IOException, ApiException {
     return  postGroupsDynamicsettingsPreview(createPostGroupsDynamicsettingsPreviewRequest(body));
@@ -1250,11 +1250,11 @@ public class GroupsApi {
   /**
    * Preview the number of users selected for a dynamic group definition query
    * 
+   * postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Group query to preview (required)
    * @return DynamicGroupQueryPreview
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public ApiResponse<DynamicGroupQueryPreview> postGroupsDynamicsettingsPreviewWithHttpInfo(DynamicGroupQuery body) throws IOException {
     return postGroupsDynamicsettingsPreview(createPostGroupsDynamicsettingsPreviewRequest(body).withHttpInfo());
@@ -1270,12 +1270,12 @@ public class GroupsApi {
   /**
    * Preview the number of users selected for a dynamic group definition query
    * 
+   * postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DynamicGroupQueryPreview
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public DynamicGroupQueryPreview postGroupsDynamicsettingsPreview(PostGroupsDynamicsettingsPreviewRequest request) throws IOException, ApiException {
     try {
@@ -1291,11 +1291,11 @@ public class GroupsApi {
   /**
    * Preview the number of users selected for a dynamic group definition query
    * 
+   * postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    * @deprecated
-	 * Preview Endpoint
    */
   public ApiResponse<DynamicGroupQueryPreview> postGroupsDynamicsettingsPreview(ApiRequest<DynamicGroupQuery> request) throws IOException {
     try {
@@ -1482,11 +1482,11 @@ public class GroupsApi {
   /**
    * Create / Update dynamic group definition
    * 
+   * putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param groupId Group ID (required)
    * @param body Create/Update dynamic groups (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void putGroupDynamicsettings(String groupId, DynamicGroupQuery body) throws IOException, ApiException {
      putGroupDynamicsettings(createPutGroupDynamicsettingsRequest(groupId, body));
@@ -1495,10 +1495,10 @@ public class GroupsApi {
   /**
    * Create / Update dynamic group definition
    * 
+   * putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param groupId Group ID (required)
    * @param body Create/Update dynamic groups (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> putGroupDynamicsettingsWithHttpInfo(String groupId, DynamicGroupQuery body) throws IOException {
     return putGroupDynamicsettings(createPutGroupDynamicsettingsRequest(groupId, body).withHttpInfo());
@@ -1516,10 +1516,10 @@ public class GroupsApi {
   /**
    * Create / Update dynamic group definition
    * 
+   * putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void putGroupDynamicsettings(PutGroupDynamicsettingsRequest request) throws IOException, ApiException {
     try {
@@ -1535,10 +1535,10 @@ public class GroupsApi {
   /**
    * Create / Update dynamic group definition
    * 
+   * putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> putGroupDynamicsettings(ApiRequest<DynamicGroupQuery> request) throws IOException {
     try {

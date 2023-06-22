@@ -27,6 +27,7 @@ public class CategoryResponse  implements Serializable {
   private String id = null;
   private String name = null;
   private String description = null;
+  private String externalId = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private CategoryReference parentCategory = null;
@@ -61,14 +62,13 @@ public class CategoryResponse  implements Serializable {
 
 
   /**
-   * The description for the category.
    **/
   public CategoryResponse description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The description for the category.")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -78,38 +78,110 @@ public class CategoryResponse  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The creation date-time for the category. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  /**
+   **/
+  public CategoryResponse externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+
+  /**
+   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public CategoryResponse dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
 
 
-  @ApiModelProperty(example = "null", value = "The last modification date-time for the category. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  /**
+   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public CategoryResponse dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
 
 
+  /**
+   * The reference to category to which this category belongs to.
+   **/
+  public CategoryResponse parentCategory(CategoryReference parentCategory) {
+    this.parentCategory = parentCategory;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "The reference to category to which this category belongs to.")
   @JsonProperty("parentCategory")
   public CategoryReference getParentCategory() {
     return parentCategory;
   }
+  public void setParentCategory(CategoryReference parentCategory) {
+    this.parentCategory = parentCategory;
+  }
 
 
+  /**
+   * Number of documents assigned to this category.
+   **/
+  public CategoryResponse documentCount(Integer documentCount) {
+    this.documentCount = documentCount;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "Number of documents assigned to this category.")
   @JsonProperty("documentCount")
   public Integer getDocumentCount() {
     return documentCount;
   }
+  public void setDocumentCount(Integer documentCount) {
+    this.documentCount = documentCount;
+  }
 
 
+  /**
+   * The reference to knowledge base to which the category belongs to.
+   **/
+  public CategoryResponse knowledgeBase(KnowledgeBaseReference knowledgeBase) {
+    this.knowledgeBase = knowledgeBase;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "The reference to knowledge base to which the category belongs to.")
   @JsonProperty("knowledgeBase")
   public KnowledgeBaseReference getKnowledgeBase() {
     return knowledgeBase;
+  }
+  public void setKnowledgeBase(KnowledgeBaseReference knowledgeBase) {
+    this.knowledgeBase = knowledgeBase;
   }
 
 
@@ -133,6 +205,7 @@ public class CategoryResponse  implements Serializable {
     return Objects.equals(this.id, categoryResponse.id) &&
             Objects.equals(this.name, categoryResponse.name) &&
             Objects.equals(this.description, categoryResponse.description) &&
+            Objects.equals(this.externalId, categoryResponse.externalId) &&
             Objects.equals(this.dateCreated, categoryResponse.dateCreated) &&
             Objects.equals(this.dateModified, categoryResponse.dateModified) &&
             Objects.equals(this.parentCategory, categoryResponse.parentCategory) &&
@@ -143,7 +216,7 @@ public class CategoryResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateCreated, dateModified, parentCategory, documentCount, knowledgeBase, selfUri);
+    return Objects.hash(id, name, description, externalId, dateCreated, dateModified, parentCategory, documentCount, knowledgeBase, selfUri);
   }
 
   @Override
@@ -154,6 +227,7 @@ public class CategoryResponse  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    parentCategory: ").append(toIndentedString(parentCategory)).append("\n");

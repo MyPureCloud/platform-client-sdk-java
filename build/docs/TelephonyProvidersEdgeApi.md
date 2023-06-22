@@ -2888,6 +2888,8 @@ Get a pageable list of basic extension pool objects filterable by query paramete
 
 This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
 
+getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps GET /api/v2/telephony/providers/edges/extensionpools/divisionviews  
 
 Requires ALL permissions: 
@@ -3968,7 +3970,7 @@ String linesDefaultForUserId = "linesDefaultForUserId_example"; // String | Filt
 String phoneHardwareId = "phoneHardwareId_example"; // String | Filter by phone_hardwareId
 String linesId = "linesId_example"; // String | Filter by lines.id
 String linesName = "linesName_example"; // String | Filter by lines.name
-String name = "name_example"; // String | Name of the Phone to filter by
+String name = "name_example"; // String | Name of the Phone to filter by, comma-separated
 String statusOperationalStatus = "statusOperationalStatus_example"; // String | The primary status to filter by
 String secondaryStatusOperationalStatus = "secondaryStatusOperationalStatus_example"; // String | The secondary status to filter by
 List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response, comma-separated
@@ -3999,7 +4001,7 @@ try {
 | **phoneHardwareId** | **String**| Filter by phone_hardwareId | [optional] 
 | **linesId** | **String**| Filter by lines.id | [optional] 
 | **linesName** | **String**| Filter by lines.name | [optional] 
-| **name** | **String**| Name of the Phone to filter by | [optional] 
+| **name** | **String**| Name of the Phone to filter by, comma-separated | [optional] 
 | **statusOperationalStatus** | **String**| The primary status to filter by | [optional] 
 | **secondaryStatusOperationalStatus** | **String**| The secondary status to filter by | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines 

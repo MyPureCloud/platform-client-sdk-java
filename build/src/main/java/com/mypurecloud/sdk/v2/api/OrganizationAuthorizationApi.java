@@ -569,10 +569,10 @@ public class OrganizationAuthorizationApi {
   /**
    * Delete Bulk Org Trustees
    * 
+   * deleteOrgauthorizationTrustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param id Comma separated list of trustee ids to remove (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteOrgauthorizationTrustees(List<String> id) throws IOException, ApiException {
      deleteOrgauthorizationTrustees(createDeleteOrgauthorizationTrusteesRequest(id));
@@ -581,9 +581,9 @@ public class OrganizationAuthorizationApi {
   /**
    * Delete Bulk Org Trustees
    * 
+   * deleteOrgauthorizationTrustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param id Comma separated list of trustee ids to remove (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteOrgauthorizationTrusteesWithHttpInfo(List<String> id) throws IOException {
     return deleteOrgauthorizationTrustees(createDeleteOrgauthorizationTrusteesRequest(id).withHttpInfo());
@@ -599,10 +599,10 @@ public class OrganizationAuthorizationApi {
   /**
    * Delete Bulk Org Trustees
    * 
+   * deleteOrgauthorizationTrustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteOrgauthorizationTrustees(DeleteOrgauthorizationTrusteesRequest request) throws IOException, ApiException {
     try {
@@ -618,10 +618,10 @@ public class OrganizationAuthorizationApi {
   /**
    * Delete Bulk Org Trustees
    * 
+   * deleteOrgauthorizationTrustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteOrgauthorizationTrustees(ApiRequest<Void> request) throws IOException {
     try {
@@ -960,10 +960,10 @@ public class OrganizationAuthorizationApi {
   /**
    * Delete Bulk Org Trustors
    * 
+   * deleteOrgauthorizationTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param id Comma separated list of trustor ids to remove (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteOrgauthorizationTrustors(List<String> id) throws IOException, ApiException {
      deleteOrgauthorizationTrustors(createDeleteOrgauthorizationTrustorsRequest(id));
@@ -972,9 +972,9 @@ public class OrganizationAuthorizationApi {
   /**
    * Delete Bulk Org Trustors
    * 
+   * deleteOrgauthorizationTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param id Comma separated list of trustor ids to remove (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteOrgauthorizationTrustorsWithHttpInfo(List<String> id) throws IOException {
     return deleteOrgauthorizationTrustors(createDeleteOrgauthorizationTrustorsRequest(id).withHttpInfo());
@@ -990,10 +990,10 @@ public class OrganizationAuthorizationApi {
   /**
    * Delete Bulk Org Trustors
    * 
+   * deleteOrgauthorizationTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deleteOrgauthorizationTrustors(DeleteOrgauthorizationTrustorsRequest request) throws IOException, ApiException {
     try {
@@ -1009,10 +1009,10 @@ public class OrganizationAuthorizationApi {
   /**
    * Delete Bulk Org Trustors
    * 
+   * deleteOrgauthorizationTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deleteOrgauthorizationTrustors(ApiRequest<Void> request) throws IOException {
     try {

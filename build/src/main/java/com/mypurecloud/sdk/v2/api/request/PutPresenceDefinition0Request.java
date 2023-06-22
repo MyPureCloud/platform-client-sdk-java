@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.PresenceSettings;
 import com.mypurecloud.sdk.v2.model.Source;
 import com.mypurecloud.sdk.v2.model.SourceEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPresence;
+import com.mypurecloud.sdk.v2.model.UcUserPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 

@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.PresenceSettings;
 import com.mypurecloud.sdk.v2.model.Source;
 import com.mypurecloud.sdk.v2.model.SourceEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPresence;
+import com.mypurecloud.sdk.v2.model.UcUserPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 
@@ -37,6 +38,8 @@ import com.mypurecloud.sdk.v2.api.request.GetPresencedefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSystempresencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresencesPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersPresenceBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersPresencesPurecloudBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresenceDefinitions0Request;
@@ -69,10 +72,10 @@ public class PresenceApi {
   /**
    * Delete a Presence Definition
    * 
+   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deletePresenceDefinition0(String definitionId) throws IOException, ApiException {
      deletePresenceDefinition0(createDeletePresenceDefinition0Request(definitionId));
@@ -81,9 +84,9 @@ public class PresenceApi {
   /**
    * Delete a Presence Definition
    * 
+   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deletePresenceDefinition0WithHttpInfo(String definitionId) throws IOException {
     return deletePresenceDefinition0(createDeletePresenceDefinition0Request(definitionId).withHttpInfo());
@@ -99,10 +102,10 @@ public class PresenceApi {
   /**
    * Delete a Presence Definition
    * 
+   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public void deletePresenceDefinition0(DeletePresenceDefinition0Request request) throws IOException, ApiException {
     try {
@@ -118,10 +121,10 @@ public class PresenceApi {
   /**
    * Delete a Presence Definition
    * 
+   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<Void> deletePresenceDefinition0(ApiRequest<Void> request) throws IOException {
     try {
@@ -298,11 +301,11 @@ public class PresenceApi {
   /**
    * Get a Presence Definition
    * 
+   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @return OrganizationPresenceDefinition
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OrganizationPresenceDefinition getPresenceDefinition0(String definitionId) throws IOException, ApiException {
     return  getPresenceDefinition0(createGetPresenceDefinition0Request(definitionId));
@@ -311,10 +314,10 @@ public class PresenceApi {
   /**
    * Get a Presence Definition
    * 
+   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @return OrganizationPresenceDefinition
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OrganizationPresenceDefinition> getPresenceDefinition0WithHttpInfo(String definitionId) throws IOException {
     return getPresenceDefinition0(createGetPresenceDefinition0Request(definitionId).withHttpInfo());
@@ -330,11 +333,11 @@ public class PresenceApi {
   /**
    * Get a Presence Definition
    * 
+   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OrganizationPresenceDefinition
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OrganizationPresenceDefinition getPresenceDefinition0(GetPresenceDefinition0Request request) throws IOException, ApiException {
     try {
@@ -350,10 +353,10 @@ public class PresenceApi {
   /**
    * Get a Presence Definition
    * 
+   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OrganizationPresenceDefinition> getPresenceDefinition0(ApiRequest<Void> request) throws IOException {
     try {
@@ -380,12 +383,12 @@ public class PresenceApi {
   /**
    * Get a list of Presence Definitions
    * 
+   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
    * @param divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
    * @return OrganizationPresenceDefinitionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(String deactivated, List<String> divisionId) throws IOException, ApiException {
     return  getPresenceDefinitions0(createGetPresenceDefinitions0Request(deactivated, divisionId));
@@ -394,11 +397,11 @@ public class PresenceApi {
   /**
    * Get a list of Presence Definitions
    * 
+   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
    * @param divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
    * @return OrganizationPresenceDefinitionEntityListing
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OrganizationPresenceDefinitionEntityListing> getPresenceDefinitions0WithHttpInfo(String deactivated, List<String> divisionId) throws IOException {
     return getPresenceDefinitions0(createGetPresenceDefinitions0Request(deactivated, divisionId).withHttpInfo());
@@ -416,11 +419,11 @@ public class PresenceApi {
   /**
    * Get a list of Presence Definitions
    * 
+   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OrganizationPresenceDefinitionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(GetPresenceDefinitions0Request request) throws IOException, ApiException {
     try {
@@ -436,10 +439,10 @@ public class PresenceApi {
   /**
    * Get a list of Presence Definitions
    * 
+   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OrganizationPresenceDefinitionEntityListing> getPresenceDefinitions0(ApiRequest<Void> request) throws IOException {
     try {
@@ -1178,6 +1181,166 @@ public class PresenceApi {
   }
 
   /**
+   * Get bulk user presences for a single presence source
+   * 
+   * @param sourceId The requested presence source ID. (required)
+   * @param id A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. (optional)
+   * @return List<UcUserPresence>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UcUserPresence> getUsersPresenceBulk(String sourceId, List<String> id) throws IOException, ApiException {
+    return  getUsersPresenceBulk(createGetUsersPresenceBulkRequest(sourceId, id));
+  }
+
+  /**
+   * Get bulk user presences for a single presence source
+   * 
+   * @param sourceId The requested presence source ID. (required)
+   * @param id A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. (optional)
+   * @return List<UcUserPresence>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UcUserPresence>> getUsersPresenceBulkWithHttpInfo(String sourceId, List<String> id) throws IOException {
+    return getUsersPresenceBulk(createGetUsersPresenceBulkRequest(sourceId, id).withHttpInfo());
+  }
+
+  private GetUsersPresenceBulkRequest createGetUsersPresenceBulkRequest(String sourceId, List<String> id) {
+    return GetUsersPresenceBulkRequest.builder()
+            .withSourceId(sourceId)
+
+            .withId(id)
+
+            .build();
+  }
+
+  /**
+   * Get bulk user presences for a single presence source
+   * 
+   * @param request The request object
+   * @return List<UcUserPresence>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UcUserPresence> getUsersPresenceBulk(GetUsersPresenceBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<UcUserPresence>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<UcUserPresence>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get bulk user presences for a single presence source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UcUserPresence>> getUsersPresenceBulk(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<UcUserPresence>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UcUserPresence>> response = (ApiResponse<List<UcUserPresence>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UcUserPresence>> response = (ApiResponse<List<UcUserPresence>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+   * 
+   * @param id A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. (optional)
+   * @return List<UcUserPresence>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UcUserPresence> getUsersPresencesPurecloudBulk(List<String> id) throws IOException, ApiException {
+    return  getUsersPresencesPurecloudBulk(createGetUsersPresencesPurecloudBulkRequest(id));
+  }
+
+  /**
+   * Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+   * 
+   * @param id A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. (optional)
+   * @return List<UcUserPresence>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UcUserPresence>> getUsersPresencesPurecloudBulkWithHttpInfo(List<String> id) throws IOException {
+    return getUsersPresencesPurecloudBulk(createGetUsersPresencesPurecloudBulkRequest(id).withHttpInfo());
+  }
+
+  private GetUsersPresencesPurecloudBulkRequest createGetUsersPresencesPurecloudBulkRequest(List<String> id) {
+    return GetUsersPresencesPurecloudBulkRequest.builder()
+            .withId(id)
+
+            .build();
+  }
+
+  /**
+   * Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+   * 
+   * @param request The request object
+   * @return List<UcUserPresence>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UcUserPresence> getUsersPresencesPurecloudBulk(GetUsersPresencesPurecloudBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<UcUserPresence>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<UcUserPresence>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UcUserPresence>> getUsersPresencesPurecloudBulk(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<UcUserPresence>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UcUserPresence>> response = (ApiResponse<List<UcUserPresence>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UcUserPresence>> response = (ApiResponse<List<UcUserPresence>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Patch a user's Presence
    * Patch a user's presence for the specified source that is not specifically listed. This endpoint does not support registered presence sources. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param userId user Id (required)
@@ -1348,11 +1511,11 @@ public class PresenceApi {
   /**
    * Create a Presence Definition
    * 
+   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body The Presence Definition to create (required)
    * @return OrganizationPresenceDefinition
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OrganizationPresenceDefinition postPresenceDefinitions0(OrganizationPresenceDefinition body) throws IOException, ApiException {
     return  postPresenceDefinitions0(createPostPresenceDefinitions0Request(body));
@@ -1361,10 +1524,10 @@ public class PresenceApi {
   /**
    * Create a Presence Definition
    * 
+   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body The Presence Definition to create (required)
    * @return OrganizationPresenceDefinition
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OrganizationPresenceDefinition> postPresenceDefinitions0WithHttpInfo(OrganizationPresenceDefinition body) throws IOException {
     return postPresenceDefinitions0(createPostPresenceDefinitions0Request(body).withHttpInfo());
@@ -1380,11 +1543,11 @@ public class PresenceApi {
   /**
    * Create a Presence Definition
    * 
+   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OrganizationPresenceDefinition
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OrganizationPresenceDefinition postPresenceDefinitions0(PostPresenceDefinitions0Request request) throws IOException, ApiException {
     try {
@@ -1400,10 +1563,10 @@ public class PresenceApi {
   /**
    * Create a Presence Definition
    * 
+   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OrganizationPresenceDefinition> postPresenceDefinitions0(ApiRequest<OrganizationPresenceDefinition> request) throws IOException {
     try {
@@ -1586,12 +1749,12 @@ public class PresenceApi {
   /**
    * Update a Presence Definition
    * 
+   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @param body The updated Presence Definition (required)
    * @return OrganizationPresenceDefinition
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OrganizationPresenceDefinition putPresenceDefinition0(String definitionId, OrganizationPresenceDefinition body) throws IOException, ApiException {
     return  putPresenceDefinition0(createPutPresenceDefinition0Request(definitionId, body));
@@ -1600,11 +1763,11 @@ public class PresenceApi {
   /**
    * Update a Presence Definition
    * 
+   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @param body The updated Presence Definition (required)
    * @return OrganizationPresenceDefinition
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OrganizationPresenceDefinition> putPresenceDefinition0WithHttpInfo(String definitionId, OrganizationPresenceDefinition body) throws IOException {
     return putPresenceDefinition0(createPutPresenceDefinition0Request(definitionId, body).withHttpInfo());
@@ -1622,11 +1785,11 @@ public class PresenceApi {
   /**
    * Update a Presence Definition
    * 
+   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OrganizationPresenceDefinition
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public OrganizationPresenceDefinition putPresenceDefinition0(PutPresenceDefinition0Request request) throws IOException, ApiException {
     try {
@@ -1642,10 +1805,10 @@ public class PresenceApi {
   /**
    * Update a Presence Definition
    * 
+   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-	 * Preview Endpoint
    */
   public ApiResponse<OrganizationPresenceDefinition> putPresenceDefinition0(ApiRequest<OrganizationPresenceDefinition> request) throws IOException {
     try {

@@ -41,6 +41,9 @@ import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseWebMessagingSession;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
+import com.mypurecloud.sdk.v2.model.ConsultTransferToAgent;
+import com.mypurecloud.sdk.v2.model.ConsultTransferToExternal;
+import com.mypurecloud.sdk.v2.model.ConsultTransferToQueue;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.ConversationActivityQuery;
@@ -87,6 +90,10 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
+import com.mypurecloud.sdk.v2.model.InstagramIntegration;
+import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.InstagramIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.InstagramIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
 import com.mypurecloud.sdk.v2.model.LineIntegration;
 import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
@@ -121,6 +128,9 @@ import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import com.mypurecloud.sdk.v2.model.TextMessageListing;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
+import com.mypurecloud.sdk.v2.model.TransferToAgentRequest;
+import com.mypurecloud.sdk.v2.model.TransferToExternalRequest;
+import com.mypurecloud.sdk.v2.model.TransferToQueueRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
@@ -142,6 +152,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedre
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
@@ -208,6 +219,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookAppRe
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenRequest;
@@ -258,6 +271,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRe
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
@@ -275,11 +289,17 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceExternalRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCoachRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultExternalRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantMonitorRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsRequest;
@@ -317,6 +337,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesAgentlessRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesInboundOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsLineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
@@ -814,6 +835,81 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Delete Instagram messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteConversationsMessagingIntegrationsInstagramIntegrationIdAsync(DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Instagram messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteConversationsMessagingIntegrationsInstagramIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Delete a LINE messenger integration
    * 
    * @param request the request object
@@ -1266,10 +1362,10 @@ public class ConversationsApiAsync {
   /**
    * Get status for async query for conversation aggregates
    * 
+   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryStatus> getAnalyticsConversationsAggregatesJobAsync(GetAnalyticsConversationsAggregatesJobRequest request, final AsyncApiCallback<AsyncQueryStatus> callback) {
     try {
@@ -1301,10 +1397,10 @@ public class ConversationsApiAsync {
   /**
    * Get status for async query for conversation aggregates
    * 
+   * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryStatus>> getAnalyticsConversationsAggregatesJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsyncQueryStatus>> callback) {
     try {
@@ -1343,10 +1439,10 @@ public class ConversationsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ConversationAsyncAggregateQueryResponse> getAnalyticsConversationsAggregatesJobResultsAsync(GetAnalyticsConversationsAggregatesJobResultsRequest request, final AsyncApiCallback<ConversationAsyncAggregateQueryResponse> callback) {
     try {
@@ -1378,10 +1474,10 @@ public class ConversationsApiAsync {
   /**
    * Fetch a page of results for an async aggregates query
    * 
+   * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<ConversationAsyncAggregateQueryResponse>> getAnalyticsConversationsAggregatesJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationAsyncAggregateQueryResponse>> callback) {
     try {
@@ -5768,6 +5864,156 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Get a list of Instagram Integrations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InstagramIntegrationEntityListing> getConversationsMessagingIntegrationsInstagramAsync(GetConversationsMessagingIntegrationsInstagramRequest request, final AsyncApiCallback<InstagramIntegrationEntityListing> callback) {
+    try {
+      final SettableFuture<InstagramIntegrationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramIntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<InstagramIntegrationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramIntegrationEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Instagram Integrations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InstagramIntegrationEntityListing>> getConversationsMessagingIntegrationsInstagramAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InstagramIntegrationEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InstagramIntegrationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramIntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<InstagramIntegrationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramIntegrationEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramIntegrationEntityListing> response = (ApiResponse<InstagramIntegrationEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramIntegrationEntityListing> response = (ApiResponse<InstagramIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Instagram messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InstagramIntegration> getConversationsMessagingIntegrationsInstagramIntegrationIdAsync(GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest request, final AsyncApiCallback<InstagramIntegration> callback) {
+    try {
+      final SettableFuture<InstagramIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramIntegration>() {}, new AsyncApiCallback<ApiResponse<InstagramIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Instagram messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InstagramIntegration>> getConversationsMessagingIntegrationsInstagramIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InstagramIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InstagramIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramIntegration>() {}, new AsyncApiCallback<ApiResponse<InstagramIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a list of LINE messenger Integrations
    * 
    * @param request the request object
@@ -6970,10 +7216,10 @@ public class ConversationsApiAsync {
   /**
    * Get video conference details (e.g. the current number of active participants).
    * 
+   * getConversationsVideoDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<VideoConferenceDetails> getConversationsVideoDetailsAsync(GetConversationsVideoDetailsRequest request, final AsyncApiCallback<VideoConferenceDetails> callback) {
     try {
@@ -7005,10 +7251,10 @@ public class ConversationsApiAsync {
   /**
    * Get video conference details (e.g. the current number of active participants).
    * 
+   * getConversationsVideoDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<VideoConferenceDetails>> getConversationsVideoDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<VideoConferenceDetails>> callback) {
     try {
@@ -9520,6 +9766,81 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Update Instagram messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InstagramIntegration> patchConversationsMessagingIntegrationsInstagramIntegrationIdAsync(PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest request, final AsyncApiCallback<InstagramIntegration> callback) {
+    try {
+      final SettableFuture<InstagramIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramIntegration>() {}, new AsyncApiCallback<ApiResponse<InstagramIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Instagram messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InstagramIntegration>> patchConversationsMessagingIntegrationsInstagramIntegrationIdAsync(ApiRequest<InstagramIntegrationUpdateRequest> request, final AsyncApiCallback<ApiResponse<InstagramIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InstagramIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramIntegration>() {}, new AsyncApiCallback<ApiResponse<InstagramIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
    * @param request the request object
@@ -9972,10 +10293,10 @@ public class ConversationsApiAsync {
   /**
    * Query for conversation activity observations
    * 
+   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ConversationActivityResponse> postAnalyticsConversationsActivityQueryAsync(PostAnalyticsConversationsActivityQueryRequest request, final AsyncApiCallback<ConversationActivityResponse> callback) {
     try {
@@ -10007,10 +10328,10 @@ public class ConversationsApiAsync {
   /**
    * Query for conversation activity observations
    * 
+   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<ConversationActivityResponse>> postAnalyticsConversationsActivityQueryAsync(ApiRequest<ConversationActivityQuery> request, final AsyncApiCallback<ApiResponse<ConversationActivityResponse>> callback) {
     try {
@@ -10049,10 +10370,10 @@ public class ConversationsApiAsync {
   /**
    * Query for conversation aggregates asynchronously
    * 
+   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<AsyncQueryResponse> postAnalyticsConversationsAggregatesJobsAsync(PostAnalyticsConversationsAggregatesJobsRequest request, final AsyncApiCallback<AsyncQueryResponse> callback) {
     try {
@@ -10084,10 +10405,10 @@ public class ConversationsApiAsync {
   /**
    * Query for conversation aggregates asynchronously
    * 
+   * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<AsyncQueryResponse>> postAnalyticsConversationsAggregatesJobsAsync(ApiRequest<ConversationAsyncAggregationQuery> request, final AsyncApiCallback<ApiResponse<AsyncQueryResponse>> callback) {
     try {
@@ -10729,6 +11050,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationParticipantReplaceAsync(PostConversationParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -10763,8 +11085,234 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Replace this participant with the specified agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postConversationParticipantReplaceAgentAsync(PostConversationParticipantReplaceAgentRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Replace this participant with the specified agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postConversationParticipantReplaceAgentAsync(ApiRequest<TransferToAgentRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postConversationParticipantReplaceExternalAsync(PostConversationParticipantReplaceExternalRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Replace this participant with the an external contact
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postConversationParticipantReplaceExternalAsync(ApiRequest<TransferToExternalRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Replace this participant with the specified queue
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postConversationParticipantReplaceQueueAsync(PostConversationParticipantReplaceQueueRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Replace this participant with the specified queue
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postConversationParticipantReplaceQueueAsync(ApiRequest<TransferToQueueRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -11104,6 +11652,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ConsultTransferResponse> postConversationsCallParticipantConsultAsync(PostConversationsCallParticipantConsultRequest request, final AsyncApiCallback<ConsultTransferResponse> callback) {
     try {
@@ -11138,8 +11687,234 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ConsultTransferResponse>> postConversationsCallParticipantConsultAsync(ApiRequest<ConsultTransfer> request, final AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConsultTransferResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConsultTransferResponse> postConversationsCallParticipantConsultAgentAsync(PostConversationsCallParticipantConsultAgentRequest request, final AsyncApiCallback<ConsultTransferResponse> callback) {
+    try {
+      final SettableFuture<ConsultTransferResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConsultTransferResponse>> postConversationsCallParticipantConsultAgentAsync(ApiRequest<ConsultTransferToAgent> request, final AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConsultTransferResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConsultTransferResponse> postConversationsCallParticipantConsultExternalAsync(PostConversationsCallParticipantConsultExternalRequest request, final AsyncApiCallback<ConsultTransferResponse> callback) {
+    try {
+      final SettableFuture<ConsultTransferResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to an external contact
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConsultTransferResponse>> postConversationsCallParticipantConsultExternalAsync(ApiRequest<ConsultTransferToExternal> request, final AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConsultTransferResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to a queue
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConsultTransferResponse> postConversationsCallParticipantConsultQueueAsync(PostConversationsCallParticipantConsultQueueRequest request, final AsyncApiCallback<ConsultTransferResponse> callback) {
+    try {
+      final SettableFuture<ConsultTransferResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiate a consult transfer to a queue
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConsultTransferResponse>> postConversationsCallParticipantConsultQueueAsync(ApiRequest<ConsultTransferToQueue> request, final AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<ConsultTransferResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -11254,6 +12029,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationsCallParticipantReplaceAsync(PostConversationsCallParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -11288,6 +12064,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationsCallParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -11479,6 +12256,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationsCallbackParticipantReplaceAsync(PostConversationsCallbackParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -11513,6 +12291,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationsCallbackParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -12079,6 +12858,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationsChatParticipantReplaceAsync(PostConversationsChatParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -12113,6 +12893,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationsChatParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -12304,6 +13085,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationsCobrowsesessionParticipantReplaceAsync(PostConversationsCobrowsesessionParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -12338,6 +13120,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationsCobrowsesessionParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -12679,6 +13462,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationsEmailParticipantReplaceAsync(PostConversationsEmailParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -12713,6 +13497,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationsEmailParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -13501,10 +14286,10 @@ public class ConversationsApiAsync {
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
+   * postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<Void> postConversationsMessageParticipantMonitorAsync(PostConversationsMessageParticipantMonitorRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -13536,10 +14321,10 @@ public class ConversationsApiAsync {
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
+   * postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
-	 * Preview Endpoint
    */
   public Future<ApiResponse<Void>> postConversationsMessageParticipantMonitorAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -13581,6 +14366,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationsMessageParticipantReplaceAsync(PostConversationsMessageParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -13615,6 +14401,7 @@ public class ConversationsApiAsync {
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationsMessageParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -13939,6 +14726,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FacebookIntegration> response = (ApiResponse<FacebookIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create Instagram Integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<InstagramIntegration> postConversationsMessagingIntegrationsInstagramAsync(PostConversationsMessagingIntegrationsInstagramRequest request, final AsyncApiCallback<InstagramIntegration> callback) {
+    try {
+      final SettableFuture<InstagramIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InstagramIntegration>() {}, new AsyncApiCallback<ApiResponse<InstagramIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create Instagram Integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<InstagramIntegration>> postConversationsMessagingIntegrationsInstagramAsync(ApiRequest<InstagramIntegrationRequest> request, final AsyncApiCallback<ApiResponse<InstagramIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<InstagramIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<InstagramIntegration>() {}, new AsyncApiCallback<ApiResponse<InstagramIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<InstagramIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<InstagramIntegration> response = (ApiResponse<InstagramIntegration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

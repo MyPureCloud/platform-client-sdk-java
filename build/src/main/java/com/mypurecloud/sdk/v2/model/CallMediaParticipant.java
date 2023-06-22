@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationRoutingData;
+import com.mypurecloud.sdk.v2.model.Disposition;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import com.mypurecloud.sdk.v2.model.FaxStatus;
@@ -339,6 +340,7 @@ public class CallMediaParticipant  implements Serializable {
   private String uuiData = null;
   private Date bargedTime = null;
   private Boolean securePause = null;
+  private Disposition disposition = null;
 
   
   /**
@@ -1241,6 +1243,24 @@ public class CallMediaParticipant  implements Serializable {
   }
 
 
+  /**
+   * Call resolution data for Dialer bulk make calls commands.
+   **/
+  public CallMediaParticipant disposition(Disposition disposition) {
+    this.disposition = disposition;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Call resolution data for Dialer bulk make calls commands.")
+  @JsonProperty("disposition")
+  public Disposition getDisposition() {
+    return disposition;
+  }
+  public void setDisposition(Disposition disposition) {
+    this.disposition = disposition;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1300,12 +1320,13 @@ public class CallMediaParticipant  implements Serializable {
             Objects.equals(this.consultParticipantId, callMediaParticipant.consultParticipantId) &&
             Objects.equals(this.uuiData, callMediaParticipant.uuiData) &&
             Objects.equals(this.bargedTime, callMediaParticipant.bargedTime) &&
-            Objects.equals(this.securePause, callMediaParticipant.securePause);
+            Objects.equals(this.securePause, callMediaParticipant.securePause) &&
+            Objects.equals(this.disposition, callMediaParticipant.disposition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime, securePause);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime, securePause, disposition);
   }
 
   @Override
@@ -1363,6 +1384,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
     sb.append("    bargedTime: ").append(toIndentedString(bargedTime)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
+    sb.append("    disposition: ").append(toIndentedString(disposition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

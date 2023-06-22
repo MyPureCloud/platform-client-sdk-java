@@ -112,7 +112,8 @@ public class GeneralProgramJobRequest  implements Serializable {
   public enum ModeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SKIP("Skip"),
-    MERGE("Merge");
+    MERGE("Merge"),
+    REPLACEMERGE("ReplaceMerge");
 
     private String value;
 
