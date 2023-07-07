@@ -164,6 +164,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   private Integer rescoreCount = null;
   private Boolean evaluatorCommentHasUpdated = null;
   private Boolean agentCommentHasUpdated = null;
+  private Integer previousRescoreCount = null;
 
   
   /**
@@ -744,6 +745,23 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   }
 
 
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 previousRescoreCount(Integer previousRescoreCount) {
+    this.previousRescoreCount = previousRescoreCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousRescoreCount")
+  public Integer getPreviousRescoreCount() {
+    return previousRescoreCount;
+  }
+  public void setPreviousRescoreCount(Integer previousRescoreCount) {
+    this.previousRescoreCount = previousRescoreCount;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -787,12 +805,13 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
             Objects.equals(this.retractedEvaluation, evaluationQualityV2TopicEvaluationV2.retractedEvaluation) &&
             Objects.equals(this.rescoreCount, evaluationQualityV2TopicEvaluationV2.rescoreCount) &&
             Objects.equals(this.evaluatorCommentHasUpdated, evaluationQualityV2TopicEvaluationV2.evaluatorCommentHasUpdated) &&
-            Objects.equals(this.agentCommentHasUpdated, evaluationQualityV2TopicEvaluationV2.agentCommentHasUpdated);
+            Objects.equals(this.agentCommentHasUpdated, evaluationQualityV2TopicEvaluationV2.agentCommentHasUpdated) &&
+            Objects.equals(this.previousRescoreCount, evaluationQualityV2TopicEvaluationV2.previousRescoreCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType, calibration, evaluationSource, assigneeUserId, previousAssigneeUserId, evaluationContextId, disputeCount, version, previousStatus, declinedReview, retractedEvaluation, rescoreCount, evaluatorCommentHasUpdated, agentCommentHasUpdated);
+    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType, calibration, evaluationSource, assigneeUserId, previousAssigneeUserId, evaluationContextId, disputeCount, version, previousStatus, declinedReview, retractedEvaluation, rescoreCount, evaluatorCommentHasUpdated, agentCommentHasUpdated, previousRescoreCount);
   }
 
   @Override
@@ -834,6 +853,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     sb.append("    rescoreCount: ").append(toIndentedString(rescoreCount)).append("\n");
     sb.append("    evaluatorCommentHasUpdated: ").append(toIndentedString(evaluatorCommentHasUpdated)).append("\n");
     sb.append("    agentCommentHasUpdated: ").append(toIndentedString(agentCommentHasUpdated)).append("\n");
+    sb.append("    previousRescoreCount: ").append(toIndentedString(previousRescoreCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

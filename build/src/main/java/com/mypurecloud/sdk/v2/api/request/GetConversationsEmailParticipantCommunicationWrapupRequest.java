@@ -85,7 +85,7 @@ import com.mypurecloud.sdk.v2.model.DraftManipulationRequest;
 import com.mypurecloud.sdk.v2.model.EmailConversation;
 import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailMessage;
-import com.mypurecloud.sdk.v2.model.EmailMessageListing;
+import com.mypurecloud.sdk.v2.model.EmailMessagePreviewListing;
 import com.mypurecloud.sdk.v2.model.EmailMessageReply;
 import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;

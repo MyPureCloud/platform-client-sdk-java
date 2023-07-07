@@ -44,7 +44,8 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
   public enum ToAddressMessengerTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("sms"),
-    OPEN("open");
+    OPEN("open"),
+    WHATSAPP("whatsapp");
 
     private String value;
 
@@ -95,14 +96,14 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
 
 
   /**
-   * The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.  For open messenger type, any string within the outbound.open.messaging.to.address.characters.max limit can be used.
+   * The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.  For open messenger type, any string within the outbound.open.messaging.to.address.characters.max limit can be used. For whatsapp messenger type, use a Whatsapp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a Whatsapp ID would be 13175555555
    **/
   public CreateOutboundMessagingConversationRequest toAddress(String toAddress) {
     this.toAddress = toAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.  For open messenger type, any string within the outbound.open.messaging.to.address.characters.max limit can be used.")
+  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.  For open messenger type, any string within the outbound.open.messaging.to.address.characters.max limit can be used. For whatsapp messenger type, use a Whatsapp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a Whatsapp ID would be 13175555555")
   @JsonProperty("toAddress")
   public String getToAddress() {
     return toAddress;

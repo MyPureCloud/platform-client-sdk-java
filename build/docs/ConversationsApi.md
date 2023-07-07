@@ -3445,7 +3445,7 @@ try {
 
 
 
-> [EmailMessageListing](EmailMessageListing.html) getConversationsEmailMessages(conversationId)
+> [EmailMessagePreviewListing](EmailMessagePreviewListing.html) getConversationsEmailMessages(conversationId)
 
 Get conversation messages
 
@@ -3478,7 +3478,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 try {
-    EmailMessageListing result = apiInstance.getConversationsEmailMessages(conversationId);
+    EmailMessagePreviewListing result = apiInstance.getConversationsEmailMessages(conversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsEmailMessages");
@@ -3497,7 +3497,7 @@ try {
 
 ### Return type
 
-[**EmailMessageListing**](EmailMessageListing.html)
+[**EmailMessagePreviewListing**](EmailMessagePreviewListing.html)
 
 <a name="getConversationsEmailMessagesDraft"></a>
 

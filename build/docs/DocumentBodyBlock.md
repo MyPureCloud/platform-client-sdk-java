@@ -8,11 +8,12 @@ title: DocumentBodyBlock
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the block for the body. This determines which body block object (paragraph, list, video or image) would have a value. |  |
-| **paragraph** | <!----><!---->[**DocumentBodyParagraph**](DocumentBodyParagraph.html)<!----> | Paragraph. It must contain a value if the type of the block is Paragraph. |  |
-| **image** | <!----><!---->[**DocumentBodyImage**](DocumentBodyImage.html)<!----> | Image. It must contain a value if the type of the block is Image. |  |
-| **video** | <!----><!---->[**DocumentBodyVideo**](DocumentBodyVideo.html)<!----> | Video. It must contain a value if the type of the block is Video. |  |
-| **list** | <!----><!---->[**DocumentBodyList**](DocumentBodyList.html)<!----> | List. It must contain a value if the type of the block is UnorderedList or OrderedList. |  |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the block for the body. This determines which body block object (paragraph, list, video, image or table) would have a value. |  |
+| **paragraph** | <!----><!---->[**DocumentBodyParagraph**](DocumentBodyParagraph.html)<!----> | Paragraph. It must contain a value if the type of the block is Paragraph. |  [optional] |
+| **image** | <!----><!---->[**DocumentBodyImage**](DocumentBodyImage.html)<!----> | Image. It must contain a value if the type of the block is Image. |  [optional] |
+| **video** | <!----><!---->[**DocumentBodyVideo**](DocumentBodyVideo.html)<!----> | Video. It must contain a value if the type of the block is Video. |  [optional] |
+| **list** | <!----><!---->[**DocumentBodyList**](DocumentBodyList.html)<!----> | List. It must contain a value if the type of the block is UnorderedList or OrderedList. |  [optional] |
+| **table** | <!----><!---->[**DocumentBodyTable**](DocumentBodyTable.html)<!----> | Table. It must contain a value if type of the block is Table. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -28,6 +29,7 @@ title: DocumentBodyBlock
 | VIDEO | &quot;Video&quot; | 
 | ORDEREDLIST | &quot;OrderedList&quot; | 
 | UNORDEREDLIST | &quot;UnorderedList&quot; | 
+| TABLE | &quot;Table&quot; | 
 {: class="table table-striped"}
 
 

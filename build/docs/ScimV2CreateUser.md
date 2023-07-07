@@ -17,7 +17,7 @@ title: ScimV2CreateUser
 | **phoneNumbers** | <!----><!---->[**List&lt;ScimPhoneNumber&gt;**](ScimPhoneNumber.html)<!----> | The list of the user's phone numbers. |  [optional] |
 | **emails** | <!----><!---->[**List&lt;ScimEmail&gt;**](ScimEmail.html)<!----> | The list of the user's email addresses. |  [optional] |
 | **externalId** | <!----><!---->**String**<!----> | The external ID of the user. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\". |  [optional] |
-| **groups** | <!----><!---->[**List&lt;ScimV2GroupReference&gt;**](ScimV2GroupReference.html)<!----> | The list of groups that the user is a member of. |  [optional] |
+| **groups** | <!----><!---->[**List&lt;ScimV2GroupReference&gt;**](ScimV2GroupReference.html)<!----> | The list of groups that the user is a member of. This list is immutable per SCIM RFC and may only be updated using the GROUPS resource endpoint. |  [optional] |
 | **roles** | <!----><!---->[**List&lt;ScimUserRole&gt;**](ScimUserRole.html)<!----> | The list of roles assigned to the user. |  [optional] |
 | **urnietfparamsscimschemasextensionenterprise20User** | <!----><!---->[**ScimV2EnterpriseUser**](ScimV2EnterpriseUser.html)<!----> | The URI of the schema for the enterprise user. |  [optional] |
 | **urnietfparamsscimschemasextensiongenesyspurecloud20User** | <!----><!---->[**ScimUserExtensions**](ScimUserExtensions.html)<!----> | The URI of the schema for the Genesys Cloud user. |  [optional] |

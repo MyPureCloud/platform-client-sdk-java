@@ -847,7 +847,8 @@ public class ViewFilter  implements Serializable {
     INFORMATIONAL("Informational"),
     COACHING("Coaching"),
     ASSESSMENT("Assessment"),
-    ASSESSEDCONTENT("AssessedContent");
+    ASSESSEDCONTENT("AssessedContent"),
+    EXTERNAL("External");
 
     private String value;
 

@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.SupportCenterImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,6 +24,7 @@ public class SupportCenterHeroStyle  implements Serializable {
   
   private String backgroundColor = null;
   private String textColor = null;
+  private SupportCenterImage image = null;
 
   
   /**
@@ -61,6 +63,24 @@ public class SupportCenterHeroStyle  implements Serializable {
   }
 
 
+  /**
+   * Background image for hero section
+   **/
+  public SupportCenterHeroStyle image(SupportCenterImage image) {
+    this.image = image;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Background image for hero section")
+  @JsonProperty("image")
+  public SupportCenterImage getImage() {
+    return image;
+  }
+  public void setImage(SupportCenterImage image) {
+    this.image = image;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +92,13 @@ public class SupportCenterHeroStyle  implements Serializable {
     SupportCenterHeroStyle supportCenterHeroStyle = (SupportCenterHeroStyle) o;
 
     return Objects.equals(this.backgroundColor, supportCenterHeroStyle.backgroundColor) &&
-            Objects.equals(this.textColor, supportCenterHeroStyle.textColor);
+            Objects.equals(this.textColor, supportCenterHeroStyle.textColor) &&
+            Objects.equals(this.image, supportCenterHeroStyle.image);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backgroundColor, textColor);
+    return Objects.hash(backgroundColor, textColor, image);
   }
 
   @Override
@@ -87,6 +108,7 @@ public class SupportCenterHeroStyle  implements Serializable {
     
     sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
     sb.append("    textColor: ").append(toIndentedString(textColor)).append("\n");
+    sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("}");
     return sb.toString();
   }

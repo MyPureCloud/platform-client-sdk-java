@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
 import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
 import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
 import com.mypurecloud.sdk.v2.model.Page;
+import com.mypurecloud.sdk.v2.model.PublishScriptRequestData;
 import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
@@ -35,6 +36,7 @@ import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPagesReques
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdVariablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsUploadStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PostScriptExportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostScriptsPublishedRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1018,6 +1020,81 @@ public class ScriptsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ExportScriptResponse> response = (ApiResponse<ExportScriptResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Publish a script.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Script> postScriptsPublishedAsync(PostScriptsPublishedRequest request, final AsyncApiCallback<Script> callback) {
+    try {
+      final SettableFuture<Script> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Script>() {}, new AsyncApiCallback<ApiResponse<Script>>() {
+        @Override
+        public void onCompleted(ApiResponse<Script> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Publish a script.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Script>> postScriptsPublishedAsync(ApiRequest<PublishScriptRequestData> request, final AsyncApiCallback<ApiResponse<Script>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Script>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Script>() {}, new AsyncApiCallback<ApiResponse<Script>>() {
+        @Override
+        public void onCompleted(ApiResponse<Script> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

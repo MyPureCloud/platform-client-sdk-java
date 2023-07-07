@@ -313,7 +313,10 @@ public class ReportingExportJobResponse  implements Serializable {
     FAILED_LONG_RUNNING_EXPORT("FAILED_LONG_RUNNING_EXPORT"),
     TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION("TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION"),
     FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB("FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB"),
-    NOT_AUTHORIZED_TO_VIEW_EXPORT("NOT_AUTHORIZED_TO_VIEW_EXPORT");
+    NOT_AUTHORIZED_TO_VIEW_EXPORT("NOT_AUTHORIZED_TO_VIEW_EXPORT"),
+    STATIC_LINK_EXPORT_FAILED("STATIC_LINK_EXPORT_FAILED"),
+    TOO_MANY_SEARCH_CRITERIA("TOO_MANY_SEARCH_CRITERIA"),
+    SEARCH_CRITERIA_VALUES_EXCEED_LIMIT("SEARCH_CRITERIA_VALUES_EXCEED_LIMIT");
 
     private String value;
 
@@ -504,6 +507,7 @@ public class ReportingExportJobResponse  implements Serializable {
     }
   }
   private DurationFormatEnum durationFormat = null;
+  private Boolean exportAllowedToRerun = null;
   private Boolean enabled = null;
   private String selfUri = null;
 
@@ -1037,6 +1041,24 @@ public class ReportingExportJobResponse  implements Serializable {
 
 
   /**
+   * Indicates whether the export run is allowed to rerun
+   **/
+  public ReportingExportJobResponse exportAllowedToRerun(Boolean exportAllowedToRerun) {
+    this.exportAllowedToRerun = exportAllowedToRerun;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether the export run is allowed to rerun")
+  @JsonProperty("exportAllowedToRerun")
+  public Boolean getExportAllowedToRerun() {
+    return exportAllowedToRerun;
+  }
+  public void setExportAllowedToRerun(Boolean exportAllowedToRerun) {
+    this.exportAllowedToRerun = exportAllowedToRerun;
+  }
+
+
+  /**
    **/
   public ReportingExportJobResponse enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -1100,13 +1122,14 @@ public class ReportingExportJobResponse  implements Serializable {
             Objects.equals(this.emailErrorDescription, reportingExportJobResponse.emailErrorDescription) &&
             Objects.equals(this.includeDurationFormatInHeader, reportingExportJobResponse.includeDurationFormatInHeader) &&
             Objects.equals(this.durationFormat, reportingExportJobResponse.durationFormat) &&
+            Objects.equals(this.exportAllowedToRerun, reportingExportJobResponse.exportAllowedToRerun) &&
             Objects.equals(this.enabled, reportingExportJobResponse.enabled) &&
             Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, runId, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, emailErrorDescription, includeDurationFormatInHeader, durationFormat, enabled, selfUri);
+    return Objects.hash(id, name, runId, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, emailErrorDescription, includeDurationFormatInHeader, durationFormat, exportAllowedToRerun, enabled, selfUri);
   }
 
   @Override
@@ -1144,6 +1167,7 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    emailErrorDescription: ").append(toIndentedString(emailErrorDescription)).append("\n");
     sb.append("    includeDurationFormatInHeader: ").append(toIndentedString(includeDurationFormatInHeader)).append("\n");
     sb.append("    durationFormat: ").append(toIndentedString(durationFormat)).append("\n");
+    sb.append("    exportAllowedToRerun: ").append(toIndentedString(exportAllowedToRerun)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

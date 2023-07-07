@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentBodyImage;
 import com.mypurecloud.sdk.v2.model.DocumentBodyList;
 import com.mypurecloud.sdk.v2.model.DocumentBodyParagraph;
+import com.mypurecloud.sdk.v2.model.DocumentBodyTable;
 import com.mypurecloud.sdk.v2.model.DocumentBodyVideo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -40,7 +41,7 @@ public class DocumentBodyBlock  implements Serializable {
     }
   }
   /**
-   * The type of the block for the body. This determines which body block object (paragraph, list, video or image) would have a value.
+   * The type of the block for the body. This determines which body block object (paragraph, list, video, image or table) would have a value.
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
@@ -49,7 +50,8 @@ public class DocumentBodyBlock  implements Serializable {
     IMAGE("Image"),
     VIDEO("Video"),
     ORDEREDLIST("OrderedList"),
-    UNORDEREDLIST("UnorderedList");
+    UNORDEREDLIST("UnorderedList"),
+    TABLE("Table");
 
     private String value;
 
@@ -81,17 +83,18 @@ public class DocumentBodyBlock  implements Serializable {
   private DocumentBodyImage image = null;
   private DocumentBodyVideo video = null;
   private DocumentBodyList list = null;
+  private DocumentBodyTable table = null;
 
   
   /**
-   * The type of the block for the body. This determines which body block object (paragraph, list, video or image) would have a value.
+   * The type of the block for the body. This determines which body block object (paragraph, list, video, image or table) would have a value.
    **/
   public DocumentBodyBlock type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The type of the block for the body. This determines which body block object (paragraph, list, video or image) would have a value.")
+  @ApiModelProperty(example = "null", required = true, value = "The type of the block for the body. This determines which body block object (paragraph, list, video, image or table) would have a value.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -109,7 +112,7 @@ public class DocumentBodyBlock  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Paragraph. It must contain a value if the type of the block is Paragraph.")
+  @ApiModelProperty(example = "null", value = "Paragraph. It must contain a value if the type of the block is Paragraph.")
   @JsonProperty("paragraph")
   public DocumentBodyParagraph getParagraph() {
     return paragraph;
@@ -127,7 +130,7 @@ public class DocumentBodyBlock  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Image. It must contain a value if the type of the block is Image.")
+  @ApiModelProperty(example = "null", value = "Image. It must contain a value if the type of the block is Image.")
   @JsonProperty("image")
   public DocumentBodyImage getImage() {
     return image;
@@ -145,7 +148,7 @@ public class DocumentBodyBlock  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Video. It must contain a value if the type of the block is Video.")
+  @ApiModelProperty(example = "null", value = "Video. It must contain a value if the type of the block is Video.")
   @JsonProperty("video")
   public DocumentBodyVideo getVideo() {
     return video;
@@ -163,13 +166,31 @@ public class DocumentBodyBlock  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "List. It must contain a value if the type of the block is UnorderedList or OrderedList.")
+  @ApiModelProperty(example = "null", value = "List. It must contain a value if the type of the block is UnorderedList or OrderedList.")
   @JsonProperty("list")
   public DocumentBodyList getList() {
     return list;
   }
   public void setList(DocumentBodyList list) {
     this.list = list;
+  }
+
+
+  /**
+   * Table. It must contain a value if type of the block is Table.
+   **/
+  public DocumentBodyBlock table(DocumentBodyTable table) {
+    this.table = table;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Table. It must contain a value if type of the block is Table.")
+  @JsonProperty("table")
+  public DocumentBodyTable getTable() {
+    return table;
+  }
+  public void setTable(DocumentBodyTable table) {
+    this.table = table;
   }
 
 
@@ -187,12 +208,13 @@ public class DocumentBodyBlock  implements Serializable {
             Objects.equals(this.paragraph, documentBodyBlock.paragraph) &&
             Objects.equals(this.image, documentBodyBlock.image) &&
             Objects.equals(this.video, documentBodyBlock.video) &&
-            Objects.equals(this.list, documentBodyBlock.list);
+            Objects.equals(this.list, documentBodyBlock.list) &&
+            Objects.equals(this.table, documentBodyBlock.table);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, paragraph, image, video, list);
+    return Objects.hash(type, paragraph, image, video, list, table);
   }
 
   @Override
@@ -205,6 +227,7 @@ public class DocumentBodyBlock  implements Serializable {
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
+    sb.append("    table: ").append(toIndentedString(table)).append("\n");
     sb.append("}");
     return sb.toString();
   }

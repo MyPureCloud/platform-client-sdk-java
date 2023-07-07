@@ -11,9 +11,12 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -33,6 +36,57 @@ public class Annotation  implements Serializable {
   private Long recordingDurationMs = null;
   private User user = null;
   private String description = null;
+
+  private static class ReasonEnumDeserializer extends StdDeserializer<ReasonEnum> {
+    public ReasonEnumDeserializer() {
+      super(ReasonEnumDeserializer.class);
+    }
+
+    @Override
+    public ReasonEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ReasonEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue
+   */
+ @JsonDeserialize(using = ReasonEnumDeserializer.class)
+  public enum ReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    HOLD("Hold"),
+    SECUREPAUSE("SecurePause"),
+    FLOWORQUEUE("FlowOrQueue");
+
+    private String value;
+
+    ReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ReasonEnum value : ReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ReasonEnum reason = null;
+  private List<Annotation> annotations = new ArrayList<Annotation>();
+  private Long realtimeLocation = null;
   private String selfUri = null;
 
   
@@ -221,6 +275,27 @@ public class Annotation  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue")
+  @JsonProperty("reason")
+  public ReasonEnum getReason() {
+    return reason;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "List of annotations")
+  @JsonProperty("annotations")
+  public List<Annotation> getAnnotations() {
+    return annotations;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Offset of annotation (milliseconds) from start of the recording before removing the cumulative duration of all pauses before this annotation")
+  @JsonProperty("realtimeLocation")
+  public Long getRealtimeLocation() {
+    return realtimeLocation;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -249,12 +324,15 @@ public class Annotation  implements Serializable {
             Objects.equals(this.recordingDurationMs, annotation.recordingDurationMs) &&
             Objects.equals(this.user, annotation.user) &&
             Objects.equals(this.description, annotation.description) &&
+            Objects.equals(this.reason, annotation.reason) &&
+            Objects.equals(this.annotations, annotation.annotations) &&
+            Objects.equals(this.realtimeLocation, annotation.realtimeLocation) &&
             Objects.equals(this.selfUri, annotation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type, location, durationMs, absoluteLocation, absoluteDurationMs, recordingLocation, recordingDurationMs, user, description, selfUri);
+    return Objects.hash(id, name, type, location, durationMs, absoluteLocation, absoluteDurationMs, recordingLocation, recordingDurationMs, user, description, reason, annotations, realtimeLocation, selfUri);
   }
 
   @Override
@@ -273,6 +351,9 @@ public class Annotation  implements Serializable {
     sb.append("    recordingDurationMs: ").append(toIndentedString(recordingDurationMs)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
+    sb.append("    realtimeLocation: ").append(toIndentedString(realtimeLocation)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

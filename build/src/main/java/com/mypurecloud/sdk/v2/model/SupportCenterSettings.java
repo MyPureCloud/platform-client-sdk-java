@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.SupportCenterCategory;
 import com.mypurecloud.sdk.v2.model.SupportCenterCustomMessage;
 import com.mypurecloud.sdk.v2.model.SupportCenterFeedbackSettings;
 import com.mypurecloud.sdk.v2.model.SupportCenterScreen;
@@ -82,7 +83,7 @@ public class SupportCenterSettings  implements Serializable {
   }
   private RouterTypeEnum routerType = null;
   private List<SupportCenterScreen> screens = new ArrayList<SupportCenterScreen>();
-  private List<AddressableEntityRef> enabledCategories = new ArrayList<AddressableEntityRef>();
+  private List<SupportCenterCategory> enabledCategories = new ArrayList<SupportCenterCategory>();
   private SupportCenterStyleSetting styleSetting = null;
   private SupportCenterFeedbackSettings feedback = null;
 
@@ -180,17 +181,17 @@ public class SupportCenterSettings  implements Serializable {
   /**
    * Enabled article categories for support center
    **/
-  public SupportCenterSettings enabledCategories(List<AddressableEntityRef> enabledCategories) {
+  public SupportCenterSettings enabledCategories(List<SupportCenterCategory> enabledCategories) {
     this.enabledCategories = enabledCategories;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Enabled article categories for support center")
   @JsonProperty("enabledCategories")
-  public List<AddressableEntityRef> getEnabledCategories() {
+  public List<SupportCenterCategory> getEnabledCategories() {
     return enabledCategories;
   }
-  public void setEnabledCategories(List<AddressableEntityRef> enabledCategories) {
+  public void setEnabledCategories(List<SupportCenterCategory> enabledCategories) {
     this.enabledCategories = enabledCategories;
   }
 

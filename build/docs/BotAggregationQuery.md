@@ -28,6 +28,7 @@ title: BotAggregationQuery
 | ---- | ----- |
 | ASKACTIONID | &quot;askActionId&quot; |
 | ASKACTIONRESULT | &quot;askActionResult&quot; |
+| ASKACTIONTYPE | &quot;askActionType&quot; |
 | BOTFINALINTENT | &quot;botFinalIntent&quot; |
 | BOTID | &quot;botId&quot; |
 | BOTINTENT | &quot;botIntent&quot; |

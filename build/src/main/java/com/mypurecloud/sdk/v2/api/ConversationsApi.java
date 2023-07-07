@@ -75,7 +75,7 @@ import com.mypurecloud.sdk.v2.model.DraftManipulationRequest;
 import com.mypurecloud.sdk.v2.model.EmailConversation;
 import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailMessage;
-import com.mypurecloud.sdk.v2.model.EmailMessageListing;
+import com.mypurecloud.sdk.v2.model.EmailMessagePreviewListing;
 import com.mypurecloud.sdk.v2.model.EmailMessageReply;
 import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -4579,11 +4579,11 @@ public class ConversationsApi {
    * Get conversation messages
    * 
    * @param conversationId conversationId (required)
-   * @return EmailMessageListing
+   * @return EmailMessagePreviewListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EmailMessageListing getConversationsEmailMessages(String conversationId) throws IOException, ApiException {
+  public EmailMessagePreviewListing getConversationsEmailMessages(String conversationId) throws IOException, ApiException {
     return  getConversationsEmailMessages(createGetConversationsEmailMessagesRequest(conversationId));
   }
 
@@ -4591,10 +4591,10 @@ public class ConversationsApi {
    * Get conversation messages
    * 
    * @param conversationId conversationId (required)
-   * @return EmailMessageListing
+   * @return EmailMessagePreviewListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessageListing> getConversationsEmailMessagesWithHttpInfo(String conversationId) throws IOException {
+  public ApiResponse<EmailMessagePreviewListing> getConversationsEmailMessagesWithHttpInfo(String conversationId) throws IOException {
     return getConversationsEmailMessages(createGetConversationsEmailMessagesRequest(conversationId).withHttpInfo());
   }
 
@@ -4609,13 +4609,13 @@ public class ConversationsApi {
    * Get conversation messages
    * 
    * @param request The request object
-   * @return EmailMessageListing
+   * @return EmailMessagePreviewListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EmailMessageListing getConversationsEmailMessages(GetConversationsEmailMessagesRequest request) throws IOException, ApiException {
+  public EmailMessagePreviewListing getConversationsEmailMessages(GetConversationsEmailMessagesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<EmailMessageListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailMessageListing>() {});
+      ApiResponse<EmailMessagePreviewListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailMessagePreviewListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -4631,13 +4631,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessageListing> getConversationsEmailMessages(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<EmailMessagePreviewListing> getConversationsEmailMessages(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<EmailMessageListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<EmailMessagePreviewListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<EmailMessageListing> response = (ApiResponse<EmailMessageListing>)(ApiResponse<?>)exception;
+      ApiResponse<EmailMessagePreviewListing> response = (ApiResponse<EmailMessagePreviewListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4648,7 +4648,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<EmailMessageListing> response = (ApiResponse<EmailMessageListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<EmailMessagePreviewListing> response = (ApiResponse<EmailMessagePreviewListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

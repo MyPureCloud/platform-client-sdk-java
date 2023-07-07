@@ -53,6 +53,8 @@ import com.mypurecloud.sdk.v2.model.LineBase;
 import com.mypurecloud.sdk.v2.model.LineBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.LineEntityListing;
 import com.mypurecloud.sdk.v2.model.LogicalInterfaceEntityListing;
+import com.mypurecloud.sdk.v2.model.MediaStatistics;
+import com.mypurecloud.sdk.v2.model.MediaStatisticsListing;
 import com.mypurecloud.sdk.v2.model.NumberPlan;
 import com.mypurecloud.sdk.v2.model.OutboundRoute;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBase;
@@ -132,6 +134,8 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinebasesett
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinesTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLogicalinterfacesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMediastatisticsConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundroutesRequest;
@@ -4107,6 +4111,160 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LogicalInterfaceEntityListing> response = (ApiResponse<LogicalInterfaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get media endpoint statistics events.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MediaStatisticsListing> getTelephonyProvidersEdgesMediastatisticsConversationAsync(GetTelephonyProvidersEdgesMediastatisticsConversationRequest request, final AsyncApiCallback<MediaStatisticsListing> callback) {
+    try {
+      final SettableFuture<MediaStatisticsListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MediaStatisticsListing>() {}, new AsyncApiCallback<ApiResponse<MediaStatisticsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MediaStatisticsListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get media endpoint statistics events.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MediaStatisticsListing>> getTelephonyProvidersEdgesMediastatisticsConversationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MediaStatisticsListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MediaStatisticsListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MediaStatisticsListing>() {}, new AsyncApiCallback<ApiResponse<MediaStatisticsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MediaStatisticsListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MediaStatisticsListing> response = (ApiResponse<MediaStatisticsListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MediaStatisticsListing> response = (ApiResponse<MediaStatisticsListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get media endpoint statistics event.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversationCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MediaStatistics> getTelephonyProvidersEdgesMediastatisticsConversationCommunicationAsync(GetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest request, final AsyncApiCallback<MediaStatistics> callback) {
+    try {
+      final SettableFuture<MediaStatistics> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MediaStatistics>() {}, new AsyncApiCallback<ApiResponse<MediaStatistics>>() {
+        @Override
+        public void onCompleted(ApiResponse<MediaStatistics> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get media endpoint statistics event.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversationCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MediaStatistics>> getTelephonyProvidersEdgesMediastatisticsConversationCommunicationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MediaStatistics>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MediaStatistics>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MediaStatistics>() {}, new AsyncApiCallback<ApiResponse<MediaStatistics>>() {
+        @Override
+        public void onCompleted(ApiResponse<MediaStatistics> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MediaStatistics> response = (ApiResponse<MediaStatistics>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MediaStatistics> response = (ApiResponse<MediaStatistics>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

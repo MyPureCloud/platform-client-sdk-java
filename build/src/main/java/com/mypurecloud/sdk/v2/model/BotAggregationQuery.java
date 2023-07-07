@@ -49,6 +49,7 @@ public class BotAggregationQuery  implements Serializable {
   public enum GroupByEnum {
     ASKACTIONID("askActionId"),
     ASKACTIONRESULT("askActionResult"),
+    ASKACTIONTYPE("askActionType"),
     BOTFINALINTENT("botFinalIntent"),
     BOTID("botId"),
     BOTINTENT("botIntent"),

@@ -50,6 +50,8 @@ import com.mypurecloud.sdk.v2.model.LineBase;
 import com.mypurecloud.sdk.v2.model.LineBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.LineEntityListing;
 import com.mypurecloud.sdk.v2.model.LogicalInterfaceEntityListing;
+import com.mypurecloud.sdk.v2.model.MediaStatistics;
+import com.mypurecloud.sdk.v2.model.MediaStatisticsListing;
 import com.mypurecloud.sdk.v2.model.NumberPlan;
 import com.mypurecloud.sdk.v2.model.OutboundRoute;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBase;
@@ -129,6 +131,8 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinebasesett
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinesTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLogicalinterfacesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMediastatisticsConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundroutesRequest;
@@ -4472,6 +4476,174 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LogicalInterfaceEntityListing> response = (ApiResponse<LogicalInterfaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get media endpoint statistics events.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Identifier of the conversation (required)
+   * @return MediaStatisticsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MediaStatisticsListing getTelephonyProvidersEdgesMediastatisticsConversation(String conversationId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesMediastatisticsConversation(createGetTelephonyProvidersEdgesMediastatisticsConversationRequest(conversationId));
+  }
+
+  /**
+   * Get media endpoint statistics events.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Identifier of the conversation (required)
+   * @return MediaStatisticsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MediaStatisticsListing> getTelephonyProvidersEdgesMediastatisticsConversationWithHttpInfo(String conversationId) throws IOException {
+    return getTelephonyProvidersEdgesMediastatisticsConversation(createGetTelephonyProvidersEdgesMediastatisticsConversationRequest(conversationId).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesMediastatisticsConversationRequest createGetTelephonyProvidersEdgesMediastatisticsConversationRequest(String conversationId) {
+    return GetTelephonyProvidersEdgesMediastatisticsConversationRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Get media endpoint statistics events.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return MediaStatisticsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MediaStatisticsListing getTelephonyProvidersEdgesMediastatisticsConversation(GetTelephonyProvidersEdgesMediastatisticsConversationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MediaStatisticsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MediaStatisticsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get media endpoint statistics events.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MediaStatisticsListing> getTelephonyProvidersEdgesMediastatisticsConversation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MediaStatisticsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MediaStatisticsListing> response = (ApiResponse<MediaStatisticsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MediaStatisticsListing> response = (ApiResponse<MediaStatisticsListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get media endpoint statistics event.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversationCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Identifier of the conversation (required)
+   * @param communicationId Identifier of the media session (required)
+   * @return MediaStatistics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MediaStatistics getTelephonyProvidersEdgesMediastatisticsConversationCommunication(String conversationId, String communicationId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesMediastatisticsConversationCommunication(createGetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest(conversationId, communicationId));
+  }
+
+  /**
+   * Get media endpoint statistics event.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversationCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Identifier of the conversation (required)
+   * @param communicationId Identifier of the media session (required)
+   * @return MediaStatistics
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MediaStatistics> getTelephonyProvidersEdgesMediastatisticsConversationCommunicationWithHttpInfo(String conversationId, String communicationId) throws IOException {
+    return getTelephonyProvidersEdgesMediastatisticsConversationCommunication(createGetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest(conversationId, communicationId).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest createGetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest(String conversationId, String communicationId) {
+    return GetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .build();
+  }
+
+  /**
+   * Get media endpoint statistics event.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversationCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return MediaStatistics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MediaStatistics getTelephonyProvidersEdgesMediastatisticsConversationCommunication(GetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MediaStatistics> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MediaStatistics>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get media endpoint statistics event.
+   * 
+   * getTelephonyProvidersEdgesMediastatisticsConversationCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MediaStatistics> getTelephonyProvidersEdgesMediastatisticsConversationCommunication(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MediaStatistics>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MediaStatistics> response = (ApiResponse<MediaStatistics>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MediaStatistics> response = (ApiResponse<MediaStatistics>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

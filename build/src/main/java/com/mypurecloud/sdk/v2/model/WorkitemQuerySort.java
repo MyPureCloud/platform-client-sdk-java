@@ -36,7 +36,7 @@ public class WorkitemQuerySort  implements Serializable {
     }
   }
   /**
-   * Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter. Sorting by priority is only supported in workbinId based queries.
+   * Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter.
    */
  @JsonDeserialize(using = NameEnumDeserializer.class)
   public enum NameEnum {
@@ -74,14 +74,14 @@ public class WorkitemQuerySort  implements Serializable {
 
   
   /**
-   * Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter. Sorting by priority is only supported in workbinId based queries.
+   * Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter.
    **/
   public WorkitemQuerySort name(NameEnum name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter. Sorting by priority is only supported in workbinId based queries.")
+  @ApiModelProperty(example = "null", value = "Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter.")
   @JsonProperty("name")
   public NameEnum getName() {
     return name;

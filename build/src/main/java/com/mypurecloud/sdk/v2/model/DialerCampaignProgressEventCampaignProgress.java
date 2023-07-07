@@ -31,6 +31,7 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
   private BigDecimal numberOfContactsMessaged = null;
   private BigDecimal totalNumberOfContacts = null;
   private Integer percentage = null;
+  private Map<String, Integer> numberOfContactsSkipped = null;
   private Map<String, Object> additionalProperties = null;
 
   
@@ -124,6 +125,24 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
 
 
   /**
+   * A map of skipped reasons and the number of contacts associated with each.
+   **/
+  public DialerCampaignProgressEventCampaignProgress numberOfContactsSkipped(Map<String, Integer> numberOfContactsSkipped) {
+    this.numberOfContactsSkipped = numberOfContactsSkipped;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A map of skipped reasons and the number of contacts associated with each.")
+  @JsonProperty("numberOfContactsSkipped")
+  public Map<String, Integer> getNumberOfContactsSkipped() {
+    return numberOfContactsSkipped;
+  }
+  public void setNumberOfContactsSkipped(Map<String, Integer> numberOfContactsSkipped) {
+    this.numberOfContactsSkipped = numberOfContactsSkipped;
+  }
+
+
+  /**
    **/
   public DialerCampaignProgressEventCampaignProgress additionalProperties(Map<String, Object> additionalProperties) {
     this.additionalProperties = additionalProperties;
@@ -155,12 +174,13 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
             Objects.equals(this.numberOfContactsMessaged, dialerCampaignProgressEventCampaignProgress.numberOfContactsMessaged) &&
             Objects.equals(this.totalNumberOfContacts, dialerCampaignProgressEventCampaignProgress.totalNumberOfContacts) &&
             Objects.equals(this.percentage, dialerCampaignProgressEventCampaignProgress.percentage) &&
+            Objects.equals(this.numberOfContactsSkipped, dialerCampaignProgressEventCampaignProgress.numberOfContactsSkipped) &&
             Objects.equals(this.additionalProperties, dialerCampaignProgressEventCampaignProgress.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaign, numberOfContactsCalled, numberOfContactsMessaged, totalNumberOfContacts, percentage, additionalProperties);
+    return Objects.hash(campaign, numberOfContactsCalled, numberOfContactsMessaged, totalNumberOfContacts, percentage, numberOfContactsSkipped, additionalProperties);
   }
 
   @Override
@@ -173,6 +193,7 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
     sb.append("    numberOfContactsMessaged: ").append(toIndentedString(numberOfContactsMessaged)).append("\n");
     sb.append("    totalNumberOfContacts: ").append(toIndentedString(totalNumberOfContacts)).append("\n");
     sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
+    sb.append("    numberOfContactsSkipped: ").append(toIndentedString(numberOfContactsSkipped)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -38,6 +38,7 @@ title: ReportingExportJobResponse
 | **emailErrorDescription** | <!----><!---->**String**<!----> | The optional error message in case the export fail to email |  [optional] |
 | **includeDurationFormatInHeader** | <!----><!---->**Boolean**<!----> | Indicates whether to include selected duration format to the column headers |  [optional] |
 | **durationFormat** | [**DurationFormatEnum**](#DurationFormatEnum)<!----> | Indicates the duration format for the exports |  [optional] |
+| **exportAllowedToRerun** | <!----><!---->**Boolean**<!----> | Indicates whether the export run is allowed to rerun |  [optional] |
 | **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
@@ -202,6 +203,9 @@ title: ReportingExportJobResponse
 | TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION | &quot;TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION&quot; | 
 | FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB | &quot;FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB&quot; | 
 | NOT_AUTHORIZED_TO_VIEW_EXPORT | &quot;NOT_AUTHORIZED_TO_VIEW_EXPORT&quot; | 
+| STATIC_LINK_EXPORT_FAILED | &quot;STATIC_LINK_EXPORT_FAILED&quot; | 
+| TOO_MANY_SEARCH_CRITERIA | &quot;TOO_MANY_SEARCH_CRITERIA&quot; | 
+| SEARCH_CRITERIA_VALUES_EXCEED_LIMIT | &quot;SEARCH_CRITERIA_VALUES_EXCEED_LIMIT&quot; | 
 {: class="table table-striped"}
 
 

@@ -52,7 +52,8 @@ public class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification  impl
     CHANGEPERCENTPERINTERVAL("ChangePercentPerInterval"),
     SETVALUEOVERRANGE("SetValueOverRange"),
     CHANGEVALUEOVERRANGE("ChangeValueOverRange"),
-    SETVALUESFORINTERVALSET("SetValuesForIntervalSet");
+    SETVALUESFORINTERVALSET("SetValuesForIntervalSet"),
+    SETMULTIGRANULARITYVALUESFORINTERVALSET("SetMultiGranularityValuesForIntervalSet");
 
     private String value;
 
@@ -182,8 +183,10 @@ public class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification  impl
   private LegacyMetricEnum legacyMetric = null;
   private BigDecimal value = null;
   private List<WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue> values = new ArrayList<WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue>();
+  private List<WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue> secondaryValues = new ArrayList<WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue>();
   private Boolean enabled = null;
   private String granularity = null;
+  private String secondaryGranularity = null;
   private String displayGranularity = null;
   private List<String> planningGroupIds = new ArrayList<String>();
 
@@ -309,6 +312,23 @@ public class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification  impl
 
   /**
    **/
+  public WfmBuShortTermForecastCopyCompleteTopicBuForecastModification secondaryValues(List<WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue> secondaryValues) {
+    this.secondaryValues = secondaryValues;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("secondaryValues")
+  public List<WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue> getSecondaryValues() {
+    return secondaryValues;
+  }
+  public void setSecondaryValues(List<WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue> secondaryValues) {
+    this.secondaryValues = secondaryValues;
+  }
+
+
+  /**
+   **/
   public WfmBuShortTermForecastCopyCompleteTopicBuForecastModification enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
@@ -338,6 +358,23 @@ public class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification  impl
   }
   public void setGranularity(String granularity) {
     this.granularity = granularity;
+  }
+
+
+  /**
+   **/
+  public WfmBuShortTermForecastCopyCompleteTopicBuForecastModification secondaryGranularity(String secondaryGranularity) {
+    this.secondaryGranularity = secondaryGranularity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("secondaryGranularity")
+  public String getSecondaryGranularity() {
+    return secondaryGranularity;
+  }
+  public void setSecondaryGranularity(String secondaryGranularity) {
+    this.secondaryGranularity = secondaryGranularity;
   }
 
 
@@ -392,15 +429,17 @@ public class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification  impl
             Objects.equals(this.legacyMetric, wfmBuShortTermForecastCopyCompleteTopicBuForecastModification.legacyMetric) &&
             Objects.equals(this.value, wfmBuShortTermForecastCopyCompleteTopicBuForecastModification.value) &&
             Objects.equals(this.values, wfmBuShortTermForecastCopyCompleteTopicBuForecastModification.values) &&
+            Objects.equals(this.secondaryValues, wfmBuShortTermForecastCopyCompleteTopicBuForecastModification.secondaryValues) &&
             Objects.equals(this.enabled, wfmBuShortTermForecastCopyCompleteTopicBuForecastModification.enabled) &&
             Objects.equals(this.granularity, wfmBuShortTermForecastCopyCompleteTopicBuForecastModification.granularity) &&
+            Objects.equals(this.secondaryGranularity, wfmBuShortTermForecastCopyCompleteTopicBuForecastModification.secondaryGranularity) &&
             Objects.equals(this.displayGranularity, wfmBuShortTermForecastCopyCompleteTopicBuForecastModification.displayGranularity) &&
             Objects.equals(this.planningGroupIds, wfmBuShortTermForecastCopyCompleteTopicBuForecastModification.planningGroupIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, startIntervalIndex, endIntervalIndex, metric, legacyMetric, value, values, enabled, granularity, displayGranularity, planningGroupIds);
+    return Objects.hash(type, startIntervalIndex, endIntervalIndex, metric, legacyMetric, value, values, secondaryValues, enabled, granularity, secondaryGranularity, displayGranularity, planningGroupIds);
   }
 
   @Override
@@ -415,8 +454,10 @@ public class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification  impl
     sb.append("    legacyMetric: ").append(toIndentedString(legacyMetric)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    values: ").append(toIndentedString(values)).append("\n");
+    sb.append("    secondaryValues: ").append(toIndentedString(secondaryValues)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    granularity: ").append(toIndentedString(granularity)).append("\n");
+    sb.append("    secondaryGranularity: ").append(toIndentedString(secondaryGranularity)).append("\n");
     sb.append("    displayGranularity: ").append(toIndentedString(displayGranularity)).append("\n");
     sb.append("    planningGroupIds: ").append(toIndentedString(planningGroupIds)).append("\n");
     sb.append("}");

@@ -15,8 +15,10 @@ title: WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification
 | **legacyMetric** | [**LegacyMetricEnum**](#LegacyMetricEnum)<!----> |  |  [optional] |
 | **value** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
 | **values** | <!----><!---->[**List&lt;WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue&gt;**](WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue.html)<!----> |  |  [optional] |
+| **secondaryValues** | <!----><!---->[**List&lt;WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue&gt;**](WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue.html)<!----> |  |  [optional] |
 | **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **granularity** | <!----><!---->**String**<!----> |  |  [optional] |
+| **secondaryGranularity** | <!----><!---->**String**<!----> |  |  [optional] |
 | **displayGranularity** | <!----><!---->**String**<!----> |  |  [optional] |
 | **planningGroupIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
@@ -37,6 +39,7 @@ title: WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification
 | SETVALUEOVERRANGE | &quot;SetValueOverRange&quot; | 
 | CHANGEVALUEOVERRANGE | &quot;ChangeValueOverRange&quot; | 
 | SETVALUESFORINTERVALSET | &quot;SetValuesForIntervalSet&quot; | 
+| SETMULTIGRANULARITYVALUESFORINTERVALSET | &quot;SetMultiGranularityValuesForIntervalSet&quot; | 
 {: class="table table-striped"}
 
 

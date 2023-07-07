@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
 import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
 import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
 import com.mypurecloud.sdk.v2.model.Page;
+import com.mypurecloud.sdk.v2.model.PublishScriptRequestData;
 import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
@@ -32,6 +33,7 @@ import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPagesReques
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdVariablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsUploadStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PostScriptExportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostScriptsPublishedRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1240,6 +1242,88 @@ public class ScriptsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExportScriptResponse> response = (ApiResponse<ExportScriptResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Publish a script.
+   * 
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @param body body (optional)
+   * @return Script
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Script postScriptsPublished(String scriptDataVersion, PublishScriptRequestData body) throws IOException, ApiException {
+    return  postScriptsPublished(createPostScriptsPublishedRequest(scriptDataVersion, body));
+  }
+
+  /**
+   * Publish a script.
+   * 
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @param body body (optional)
+   * @return Script
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Script> postScriptsPublishedWithHttpInfo(String scriptDataVersion, PublishScriptRequestData body) throws IOException {
+    return postScriptsPublished(createPostScriptsPublishedRequest(scriptDataVersion, body).withHttpInfo());
+  }
+
+  private PostScriptsPublishedRequest createPostScriptsPublishedRequest(String scriptDataVersion, PublishScriptRequestData body) {
+    return PostScriptsPublishedRequest.builder()
+            .withScriptDataVersion(scriptDataVersion)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Publish a script.
+   * 
+   * @param request The request object
+   * @return Script
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Script postScriptsPublished(PostScriptsPublishedRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Script> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Script>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Publish a script.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Script> postScriptsPublished(ApiRequest<PublishScriptRequestData> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Script>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

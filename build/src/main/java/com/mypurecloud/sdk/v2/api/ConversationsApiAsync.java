@@ -78,7 +78,7 @@ import com.mypurecloud.sdk.v2.model.DraftManipulationRequest;
 import com.mypurecloud.sdk.v2.model.EmailConversation;
 import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailMessage;
-import com.mypurecloud.sdk.v2.model.EmailMessageListing;
+import com.mypurecloud.sdk.v2.model.EmailMessagePreviewListing;
 import com.mypurecloud.sdk.v2.model.EmailMessageReply;
 import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -4295,13 +4295,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EmailMessageListing> getConversationsEmailMessagesAsync(GetConversationsEmailMessagesRequest request, final AsyncApiCallback<EmailMessageListing> callback) {
+  public Future<EmailMessagePreviewListing> getConversationsEmailMessagesAsync(GetConversationsEmailMessagesRequest request, final AsyncApiCallback<EmailMessagePreviewListing> callback) {
     try {
-      final SettableFuture<EmailMessageListing> future = SettableFuture.create();
+      final SettableFuture<EmailMessagePreviewListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailMessageListing>() {}, new AsyncApiCallback<ApiResponse<EmailMessageListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailMessagePreviewListing>() {}, new AsyncApiCallback<ApiResponse<EmailMessagePreviewListing>>() {
         @Override
-        public void onCompleted(ApiResponse<EmailMessageListing> response) {
+        public void onCompleted(ApiResponse<EmailMessagePreviewListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4329,13 +4329,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailMessageListing>> getConversationsEmailMessagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmailMessageListing>> callback) {
+  public Future<ApiResponse<EmailMessagePreviewListing>> getConversationsEmailMessagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmailMessagePreviewListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<EmailMessageListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<EmailMessagePreviewListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<EmailMessageListing>() {}, new AsyncApiCallback<ApiResponse<EmailMessageListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<EmailMessagePreviewListing>() {}, new AsyncApiCallback<ApiResponse<EmailMessagePreviewListing>>() {
         @Override
-        public void onCompleted(ApiResponse<EmailMessageListing> response) {
+        public void onCompleted(ApiResponse<EmailMessagePreviewListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4343,7 +4343,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<EmailMessageListing> response = (ApiResponse<EmailMessageListing>)(ApiResponse<?>)exception;
+            ApiResponse<EmailMessagePreviewListing> response = (ApiResponse<EmailMessagePreviewListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -4351,7 +4351,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<EmailMessageListing> response = (ApiResponse<EmailMessageListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<EmailMessagePreviewListing> response = (ApiResponse<EmailMessagePreviewListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -206,21 +206,10 @@ public class ScimV2User  implements Serializable {
   }
 
 
-  /**
-   * The list of groups that the user is a member of.
-   **/
-  public ScimV2User groups(List<ScimV2GroupReference> groups) {
-    this.groups = groups;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The list of groups that the user is a member of.")
+  @ApiModelProperty(example = "null", value = "The list of groups that the user is a member of. This list is immutable per SCIM RFC and may only be updated using the GROUPS resource endpoint.")
   @JsonProperty("groups")
   public List<ScimV2GroupReference> getGroups() {
     return groups;
-  }
-  public void setGroups(List<ScimV2GroupReference> groups) {
-    this.groups = groups;
   }
 
 
@@ -278,7 +267,7 @@ public class ScimV2User  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
+  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;

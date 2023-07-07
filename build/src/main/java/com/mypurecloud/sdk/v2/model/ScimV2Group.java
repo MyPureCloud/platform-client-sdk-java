@@ -91,7 +91,7 @@ public class ScimV2Group  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
+  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;

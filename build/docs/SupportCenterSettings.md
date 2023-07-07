@@ -13,7 +13,7 @@ title: SupportCenterSettings
 | **customMessages** | <!----><!---->[**List&lt;SupportCenterCustomMessage&gt;**](SupportCenterCustomMessage.html)<!----> | Customizable display texts for support center |  [optional] |
 | **routerType** | [**RouterTypeEnum**](#RouterTypeEnum)<!----> | Router type for support center |  [optional] |
 | **screens** | <!----><!---->[**List&lt;SupportCenterScreen&gt;**](SupportCenterScreen.html)<!----> | Available screens for the support center with its modules |  [optional] |
-| **enabledCategories** | <!----><!---->[**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef.html)<!----> | Enabled article categories for support center |  [optional] |
+| **enabledCategories** | <!----><!---->[**List&lt;SupportCenterCategory&gt;**](SupportCenterCategory.html)<!----> | Enabled article categories for support center |  [optional] |
 | **styleSetting** | <!----><!---->[**SupportCenterStyleSetting**](SupportCenterStyleSetting.html)<!----> | Style attributes for support center |  [optional] |
 | **feedback** | <!----><!---->[**SupportCenterFeedbackSettings**](SupportCenterFeedbackSettings.html)<!----> | Customer feedback settings |  [optional] |
 {: class="table table-striped"}

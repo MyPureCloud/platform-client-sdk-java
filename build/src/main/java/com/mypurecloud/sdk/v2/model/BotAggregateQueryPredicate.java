@@ -93,6 +93,7 @@ public class BotAggregateQueryPredicate  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ASKACTIONID("askActionId"),
     ASKACTIONRESULT("askActionResult"),
+    ASKACTIONTYPE("askActionType"),
     BOTFINALINTENT("botFinalIntent"),
     BOTID("botId"),
     BOTINTENT("botIntent"),

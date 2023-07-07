@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getScriptsPublishedScriptIdVariables**](ScriptsApi.html#getScriptsPublishedScriptIdVariables) | Get the published variables |
 | [**getScriptsUploadStatus**](ScriptsApi.html#getScriptsUploadStatus) | Get the upload status of an imported script |
 | [**postScriptExport**](ScriptsApi.html#postScriptExport) | Export a script via download service. |
+| [**postScriptsPublished**](ScriptsApi.html#postScriptsPublished) | Publish a script. |
 {: class="table-striped"}
 
 <a name="getScript"></a>
@@ -904,4 +905,67 @@ try {
 ### Return type
 
 [**ExportScriptResponse**](ExportScriptResponse.html)
+
+<a name="postScriptsPublished"></a>
+
+# **postScriptsPublished**
+
+
+
+> [Script](Script.html) postScriptsPublished(scriptDataVersion, body)
+
+Publish a script.
+
+Wraps POST /api/v2/scripts/published  
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ScriptsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ScriptsApi apiInstance = new ScriptsApi();
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
+PublishScriptRequestData body = new PublishScriptRequestData(); // PublishScriptRequestData | body
+try {
+    Script result = apiInstance.postScriptsPublished(scriptDataVersion, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ScriptsApi#postScriptsPublished");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+| **body** | [**PublishScriptRequestData**](PublishScriptRequestData.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Script**](Script.html)
 

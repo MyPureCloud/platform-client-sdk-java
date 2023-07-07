@@ -31,6 +31,7 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
   private BigDecimal numberOfContactsMessaged = null;
   private BigDecimal totalNumberOfContacts = null;
   private Integer percentage = null;
+  private Map<String, Integer> numberOfContactsSkipped = null;
   private Map<String, Object> additionalProperties = null;
 
   
@@ -124,6 +125,24 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
 
 
   /**
+   * A map of skipped reasons and the number of contacts associated with each.
+   **/
+  public OutboundMessagingMessagingCampaignProgressEventCampaignProgress numberOfContactsSkipped(Map<String, Integer> numberOfContactsSkipped) {
+    this.numberOfContactsSkipped = numberOfContactsSkipped;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A map of skipped reasons and the number of contacts associated with each.")
+  @JsonProperty("numberOfContactsSkipped")
+  public Map<String, Integer> getNumberOfContactsSkipped() {
+    return numberOfContactsSkipped;
+  }
+  public void setNumberOfContactsSkipped(Map<String, Integer> numberOfContactsSkipped) {
+    this.numberOfContactsSkipped = numberOfContactsSkipped;
+  }
+
+
+  /**
    **/
   public OutboundMessagingMessagingCampaignProgressEventCampaignProgress additionalProperties(Map<String, Object> additionalProperties) {
     this.additionalProperties = additionalProperties;
@@ -155,12 +174,13 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
             Objects.equals(this.numberOfContactsMessaged, outboundMessagingMessagingCampaignProgressEventCampaignProgress.numberOfContactsMessaged) &&
             Objects.equals(this.totalNumberOfContacts, outboundMessagingMessagingCampaignProgressEventCampaignProgress.totalNumberOfContacts) &&
             Objects.equals(this.percentage, outboundMessagingMessagingCampaignProgressEventCampaignProgress.percentage) &&
+            Objects.equals(this.numberOfContactsSkipped, outboundMessagingMessagingCampaignProgressEventCampaignProgress.numberOfContactsSkipped) &&
             Objects.equals(this.additionalProperties, outboundMessagingMessagingCampaignProgressEventCampaignProgress.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaign, numberOfContactsCalled, numberOfContactsMessaged, totalNumberOfContacts, percentage, additionalProperties);
+    return Objects.hash(campaign, numberOfContactsCalled, numberOfContactsMessaged, totalNumberOfContacts, percentage, numberOfContactsSkipped, additionalProperties);
   }
 
   @Override
@@ -173,6 +193,7 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
     sb.append("    numberOfContactsMessaged: ").append(toIndentedString(numberOfContactsMessaged)).append("\n");
     sb.append("    totalNumberOfContacts: ").append(toIndentedString(totalNumberOfContacts)).append("\n");
     sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
+    sb.append("    numberOfContactsSkipped: ").append(toIndentedString(numberOfContactsSkipped)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

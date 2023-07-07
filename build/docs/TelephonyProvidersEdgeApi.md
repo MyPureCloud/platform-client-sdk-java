@@ -59,6 +59,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesLines**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLines) | Get a list of Lines |
 | [**getTelephonyProvidersEdgesLinesTemplate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLinesTemplate) | Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance |
 | [**getTelephonyProvidersEdgesLogicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLogicalinterfaces) | Get edge logical interfaces. |
+| [**getTelephonyProvidersEdgesMediastatisticsConversation**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMediastatisticsConversation) | Get media endpoint statistics events. |
+| [**getTelephonyProvidersEdgesMediastatisticsConversationCommunication**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMediastatisticsConversationCommunication) | Get media endpoint statistics event. |
 | [**getTelephonyProvidersEdgesMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMetrics) | Get the metrics for a list of edges. |
 | [**getTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroute) | Get outbound route |
 | [**getTelephonyProvidersEdgesOutboundroutes**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroutes) | Get outbound routes |
@@ -3407,6 +3409,134 @@ try {
 ### Return type
 
 [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)
+
+<a name="getTelephonyProvidersEdgesMediastatisticsConversation"></a>
+
+# **getTelephonyProvidersEdgesMediastatisticsConversation**
+
+
+
+> [MediaStatisticsListing](MediaStatisticsListing.html) getTelephonyProvidersEdgesMediastatisticsConversation(conversationId)
+
+Get media endpoint statistics events.
+
+getTelephonyProvidersEdgesMediastatisticsConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String conversationId = "conversationId_example"; // String | Identifier of the conversation
+try {
+    MediaStatisticsListing result = apiInstance.getTelephonyProvidersEdgesMediastatisticsConversation(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesMediastatisticsConversation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Identifier of the conversation | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MediaStatisticsListing**](MediaStatisticsListing.html)
+
+<a name="getTelephonyProvidersEdgesMediastatisticsConversationCommunication"></a>
+
+# **getTelephonyProvidersEdgesMediastatisticsConversationCommunication**
+
+
+
+> [MediaStatistics](MediaStatistics.html) getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId)
+
+Get media endpoint statistics event.
+
+getTelephonyProvidersEdgesMediastatisticsConversationCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String conversationId = "conversationId_example"; // String | Identifier of the conversation
+String communicationId = "communicationId_example"; // String | Identifier of the media session
+try {
+    MediaStatistics result = apiInstance.getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesMediastatisticsConversationCommunication");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Identifier of the conversation | 
+| **communicationId** | **String**| Identifier of the media session | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MediaStatistics**](MediaStatistics.html)
 
 <a name="getTelephonyProvidersEdgesMetrics"></a>
 
