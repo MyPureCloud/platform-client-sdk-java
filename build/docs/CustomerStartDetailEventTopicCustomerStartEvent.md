@@ -28,6 +28,7 @@ title: CustomerStartDetailEventTopicCustomerStartEvent
 | **messageType** | [**MessageTypeEnum**](#MessageTypeEnum)<!----> |  |  [optional] |
 | **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **journeyContext** | <!----><!---->[**CustomerStartDetailEventTopicJourneyContext**](CustomerStartDetailEventTopicJourneyContext.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

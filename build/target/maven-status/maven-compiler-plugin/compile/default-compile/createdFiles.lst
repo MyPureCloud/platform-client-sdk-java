@@ -1029,6 +1029,7 @@ com/mypurecloud/sdk/v2/api/ArchitectApi$139.class
 com/mypurecloud/sdk/v2/api/TaskManagementApiAsync$24.class
 com/mypurecloud/sdk/v2/api/request/PostOutboundCampaignsRequest.class
 com/mypurecloud/sdk/v2/model/UserProfile$StateEnumDeserializer.class
+com/mypurecloud/sdk/v2/model/CustomerStartDetailEventTopicJourneyContext.class
 com/mypurecloud/sdk/v2/api/ConversationsApiAsync$229.class
 com/mypurecloud/sdk/v2/api/request/PutConversationsCobrowsesessionRecordingstateRequest$1.class
 com/mypurecloud/sdk/v2/api/OrganizationAuthorizationApiAsync$105.class

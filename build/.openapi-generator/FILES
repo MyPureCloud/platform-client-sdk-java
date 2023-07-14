@@ -1002,6 +1002,7 @@ docs/CustomI18nLabels.md
 docs/CustomerEndDetailEventTopicCustomerEndEvent.md
 docs/CustomerInteractionCenter.md
 docs/CustomerStartDetailEventTopicCustomerStartEvent.md
+docs/CustomerStartDetailEventTopicJourneyContext.md
 docs/DID.md
 docs/DIDEntityListing.md
 docs/DIDNumber.md
@@ -9585,6 +9586,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/CustomI18nLabels.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomerEndDetailEventTopicCustomerEndEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomerInteractionCenter.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomerStartDetailEventTopicCustomerStartEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomerStartDetailEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/DID.java
 src/main/java/com/mypurecloud/sdk/v2/model/DIDEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DIDNumber.java

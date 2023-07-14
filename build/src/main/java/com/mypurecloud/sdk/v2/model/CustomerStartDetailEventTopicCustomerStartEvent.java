@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.CustomerStartDetailEventTopicJourneyContext;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -200,6 +201,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
   private MessageTypeEnum messageType = null;
   private List<String> conversationExternalContactIds = new ArrayList<String>();
   private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
+  private CustomerStartDetailEventTopicJourneyContext journeyContext = null;
 
   
   /**
@@ -542,6 +544,23 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
   }
 
 
+  /**
+   **/
+  public CustomerStartDetailEventTopicCustomerStartEvent journeyContext(CustomerStartDetailEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public CustomerStartDetailEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(CustomerStartDetailEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -571,12 +590,13 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
             Objects.equals(this.subject, customerStartDetailEventTopicCustomerStartEvent.subject) &&
             Objects.equals(this.messageType, customerStartDetailEventTopicCustomerStartEvent.messageType) &&
             Objects.equals(this.conversationExternalContactIds, customerStartDetailEventTopicCustomerStartEvent.conversationExternalContactIds) &&
-            Objects.equals(this.conversationExternalOrganizationIds, customerStartDetailEventTopicCustomerStartEvent.conversationExternalOrganizationIds);
+            Objects.equals(this.conversationExternalOrganizationIds, customerStartDetailEventTopicCustomerStartEvent.conversationExternalOrganizationIds) &&
+            Objects.equals(this.journeyContext, customerStartDetailEventTopicCustomerStartEvent.journeyContext);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, conversationExternalContactIds, conversationExternalOrganizationIds);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, conversationExternalContactIds, conversationExternalOrganizationIds, journeyContext);
   }
 
   @Override
@@ -604,6 +624,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("}");
     return sb.toString();
   }
