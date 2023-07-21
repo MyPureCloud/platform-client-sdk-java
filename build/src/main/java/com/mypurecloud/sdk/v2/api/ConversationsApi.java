@@ -102,7 +102,12 @@ import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
 import com.mypurecloud.sdk.v2.model.MessageTypingEventRequest;
+import com.mypurecloud.sdk.v2.model.MessagingConfigListing;
 import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingSetting;
+import com.mypurecloud.sdk.v2.model.MessagingSettingDefaultRequest;
+import com.mypurecloud.sdk.v2.model.MessagingSettingPatchRequest;
+import com.mypurecloud.sdk.v2.model.MessagingSettingRequest;
 import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
 import com.mypurecloud.sdk.v2.model.OpenIntegration;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationEntityListing;
@@ -154,6 +159,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegratio
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingSettingsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingSupportedcontentSupportedContentIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsAggregatesJobRequest;
@@ -226,6 +233,9 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsT
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingStickerRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcontentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcontentDefaultRequest;
@@ -272,6 +282,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegration
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingSupportedcontentSupportedContentIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
@@ -281,6 +292,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQu
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationAssignRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationBargeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationCobrowseRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
@@ -291,6 +303,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceExte
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantBargeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCoachRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultRequest;
@@ -339,6 +352,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrations
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSupportedcontentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsParticipantsAttributesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsScreenshareParticipantCommunicationWrapupRequest;
@@ -357,6 +371,7 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailRecordingstateReq
 import com.mypurecloud.sdk.v2.api.request.PutConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessageRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIntegrationsLineIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSettingsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSupportedcontentDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingThreadingtimelineRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsScreenshareRecordingstateRequest;
@@ -1224,6 +1239,152 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a messaging setting
+   * 
+   * @param messageSettingId Message Setting ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingSetting(String messageSettingId) throws IOException, ApiException {
+     deleteConversationsMessagingSetting(createDeleteConversationsMessagingSettingRequest(messageSettingId));
+  }
+
+  /**
+   * Delete a messaging setting
+   * 
+   * @param messageSettingId Message Setting ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingSettingWithHttpInfo(String messageSettingId) throws IOException {
+    return deleteConversationsMessagingSetting(createDeleteConversationsMessagingSettingRequest(messageSettingId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingSettingRequest createDeleteConversationsMessagingSettingRequest(String messageSettingId) {
+    return DeleteConversationsMessagingSettingRequest.builder()
+            .withMessageSettingId(messageSettingId)
+
+            .build();
+  }
+
+  /**
+   * Delete a messaging setting
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingSetting(DeleteConversationsMessagingSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a messaging setting
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingSetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete the organization's default setting, a global default will be applied to integrations without settings
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingSettingsDefault() throws IOException, ApiException {
+     deleteConversationsMessagingSettingsDefault(createDeleteConversationsMessagingSettingsDefaultRequest());
+  }
+
+  /**
+   * Delete the organization's default setting, a global default will be applied to integrations without settings
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingSettingsDefaultWithHttpInfo() throws IOException {
+    return deleteConversationsMessagingSettingsDefault(createDeleteConversationsMessagingSettingsDefaultRequest().withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingSettingsDefaultRequest createDeleteConversationsMessagingSettingsDefaultRequest() {
+    return DeleteConversationsMessagingSettingsDefaultRequest.builder()
+            .build();
+  }
+
+  /**
+   * Delete the organization's default setting, a global default will be applied to integrations without settings
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingSettingsDefault(DeleteConversationsMessagingSettingsDefaultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete the organization's default setting, a global default will be applied to integrations without settings
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingSettingsDefault(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7182,6 +7343,240 @@ public class ConversationsApi {
   }
 
   /**
+   * Get a messaging setting
+   * 
+   * @param messageSettingId Message Setting ID (required)
+   * @return MessagingSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingSetting getConversationsMessagingSetting(String messageSettingId) throws IOException, ApiException {
+    return  getConversationsMessagingSetting(createGetConversationsMessagingSettingRequest(messageSettingId));
+  }
+
+  /**
+   * Get a messaging setting
+   * 
+   * @param messageSettingId Message Setting ID (required)
+   * @return MessagingSetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingSetting> getConversationsMessagingSettingWithHttpInfo(String messageSettingId) throws IOException {
+    return getConversationsMessagingSetting(createGetConversationsMessagingSettingRequest(messageSettingId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingSettingRequest createGetConversationsMessagingSettingRequest(String messageSettingId) {
+    return GetConversationsMessagingSettingRequest.builder()
+            .withMessageSettingId(messageSettingId)
+
+            .build();
+  }
+
+  /**
+   * Get a messaging setting
+   * 
+   * @param request The request object
+   * @return MessagingSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingSetting getConversationsMessagingSetting(GetConversationsMessagingSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingSetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingSetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a messaging setting
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingSetting> getConversationsMessagingSetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingSetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingSetting> response = (ApiResponse<MessagingSetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingSetting> response = (ApiResponse<MessagingSetting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of messaging settings
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return MessagingConfigListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingConfigListing getConversationsMessagingSettings(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getConversationsMessagingSettings(createGetConversationsMessagingSettingsRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get a list of messaging settings
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return MessagingConfigListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingConfigListing> getConversationsMessagingSettingsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getConversationsMessagingSettings(createGetConversationsMessagingSettingsRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetConversationsMessagingSettingsRequest createGetConversationsMessagingSettingsRequest(Integer pageSize, Integer pageNumber) {
+    return GetConversationsMessagingSettingsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Get a list of messaging settings
+   * 
+   * @param request The request object
+   * @return MessagingConfigListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingConfigListing getConversationsMessagingSettings(GetConversationsMessagingSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingConfigListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingConfigListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of messaging settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingConfigListing> getConversationsMessagingSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingConfigListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingConfigListing> response = (ApiResponse<MessagingConfigListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingConfigListing> response = (ApiResponse<MessagingConfigListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the organization's default settings that will be used as the default when creating an integration.
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @return MessagingSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingSetting getConversationsMessagingSettingsDefault() throws IOException, ApiException {
+    return  getConversationsMessagingSettingsDefault(createGetConversationsMessagingSettingsDefaultRequest());
+  }
+
+  /**
+   * Get the organization's default settings that will be used as the default when creating an integration.
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @return MessagingSetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingSetting> getConversationsMessagingSettingsDefaultWithHttpInfo() throws IOException {
+    return getConversationsMessagingSettingsDefault(createGetConversationsMessagingSettingsDefaultRequest().withHttpInfo());
+  }
+
+  private GetConversationsMessagingSettingsDefaultRequest createGetConversationsMessagingSettingsDefaultRequest() {
+    return GetConversationsMessagingSettingsDefaultRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the organization's default settings that will be used as the default when creating an integration.
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @param request The request object
+   * @return MessagingSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingSetting getConversationsMessagingSettingsDefault(GetConversationsMessagingSettingsDefaultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingSetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingSetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the organization's default settings that will be used as the default when creating an integration.
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingSetting> getConversationsMessagingSettingsDefault(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingSetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingSetting> response = (ApiResponse<MessagingSetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingSetting> response = (ApiResponse<MessagingSetting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a list of Messaging Stickers
    * 
    * @param messengerType Messenger Type (required)
@@ -11032,6 +11427,88 @@ public class ConversationsApi {
   }
 
   /**
+   * Update a messaging setting
+   * 
+   * @param messageSettingId Message Setting ID (required)
+   * @param body MessagingSetting (required)
+   * @return MessagingSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingSetting patchConversationsMessagingSetting(String messageSettingId, MessagingSettingPatchRequest body) throws IOException, ApiException {
+    return  patchConversationsMessagingSetting(createPatchConversationsMessagingSettingRequest(messageSettingId, body));
+  }
+
+  /**
+   * Update a messaging setting
+   * 
+   * @param messageSettingId Message Setting ID (required)
+   * @param body MessagingSetting (required)
+   * @return MessagingSetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingSetting> patchConversationsMessagingSettingWithHttpInfo(String messageSettingId, MessagingSettingPatchRequest body) throws IOException {
+    return patchConversationsMessagingSetting(createPatchConversationsMessagingSettingRequest(messageSettingId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessagingSettingRequest createPatchConversationsMessagingSettingRequest(String messageSettingId, MessagingSettingPatchRequest body) {
+    return PatchConversationsMessagingSettingRequest.builder()
+            .withMessageSettingId(messageSettingId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a messaging setting
+   * 
+   * @param request The request object
+   * @return MessagingSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingSetting patchConversationsMessagingSetting(PatchConversationsMessagingSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingSetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingSetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a messaging setting
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingSetting> patchConversationsMessagingSetting(ApiRequest<MessagingSettingPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingSetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingSetting> response = (ApiResponse<MessagingSetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingSetting> response = (ApiResponse<MessagingSetting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update a supported content profile
    * 
    * @param supportedContentId Supported Content ID (required)
@@ -11759,6 +12236,85 @@ public class ConversationsApi {
   }
 
   /**
+   * Barge a conversation creating a barged in conference of connected participants.
+   * 
+   * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationBarge(String conversationId) throws IOException, ApiException {
+     postConversationBarge(createPostConversationBargeRequest(conversationId));
+  }
+
+  /**
+   * Barge a conversation creating a barged in conference of connected participants.
+   * 
+   * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationBargeWithHttpInfo(String conversationId) throws IOException {
+    return postConversationBarge(createPostConversationBargeRequest(conversationId).withHttpInfo());
+  }
+
+  private PostConversationBargeRequest createPostConversationBargeRequest(String conversationId) {
+    return PostConversationBargeRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Barge a conversation creating a barged in conference of connected participants.
+   * 
+   * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationBarge(PostConversationBargeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Barge a conversation creating a barged in conference of connected participants.
+   * 
+   * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationBarge(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
    * 
    * @param conversationId Conversation ID (required)
@@ -12088,7 +12644,6 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationParticipantReplace(createPostConversationParticipantReplaceRequest(conversationId, participantId, body));
@@ -12101,7 +12656,6 @@ public class ConversationsApi {
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationParticipantReplace(createPostConversationParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -12124,7 +12678,6 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationParticipantReplace(PostConversationParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -12143,7 +12696,6 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -12170,6 +12722,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the specified agent
    * 
+   * postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
@@ -12183,6 +12736,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the specified agent
    * 
+   * postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
@@ -12206,6 +12760,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the specified agent
    * 
+   * postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12224,6 +12779,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the specified agent
    * 
+   * postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -12253,6 +12809,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the an external contact
    * 
+   * postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
@@ -12266,6 +12823,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the an external contact
    * 
+   * postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
@@ -12289,6 +12847,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the an external contact
    * 
+   * postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12307,6 +12866,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the an external contact
    * 
+   * postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -12336,6 +12896,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the specified queue
    * 
+   * postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
@@ -12349,6 +12910,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the specified queue
    * 
+   * postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
@@ -12372,6 +12934,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the specified queue
    * 
+   * postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12390,6 +12953,7 @@ public class ConversationsApi {
   /**
    * Replace this participant with the specified queue
    * 
+   * postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -12585,6 +13149,89 @@ public class ConversationsApi {
   }
 
   /**
+   * Barge a given participant's call creating a barged in conference of connected participants.
+   * 
+   * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsCallParticipantBarge(String conversationId, String participantId) throws IOException, ApiException {
+     postConversationsCallParticipantBarge(createPostConversationsCallParticipantBargeRequest(conversationId, participantId));
+  }
+
+  /**
+   * Barge a given participant's call creating a barged in conference of connected participants.
+   * 
+   * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsCallParticipantBargeWithHttpInfo(String conversationId, String participantId) throws IOException {
+    return postConversationsCallParticipantBarge(createPostConversationsCallParticipantBargeRequest(conversationId, participantId).withHttpInfo());
+  }
+
+  private PostConversationsCallParticipantBargeRequest createPostConversationsCallParticipantBargeRequest(String conversationId, String participantId) {
+    return PostConversationsCallParticipantBargeRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .build();
+  }
+
+  /**
+   * Barge a given participant's call creating a barged in conference of connected participants.
+   * 
+   * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsCallParticipantBarge(PostConversationsCallParticipantBargeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Barge a given participant's call creating a barged in conference of connected participants.
+   * 
+   * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsCallParticipantBarge(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
    * 
    * @param conversationId conversationId (required)
@@ -12759,7 +13406,6 @@ public class ConversationsApi {
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ConsultTransferResponse postConversationsCallParticipantConsult(String conversationId, String participantId, ConsultTransfer body) throws IOException, ApiException {
     return  postConversationsCallParticipantConsult(createPostConversationsCallParticipantConsultRequest(conversationId, participantId, body));
@@ -12773,7 +13419,6 @@ public class ConversationsApi {
    * @param body Destination address & initial speak to (required)
    * @return ConsultTransferResponse
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultWithHttpInfo(String conversationId, String participantId, ConsultTransfer body) throws IOException {
     return postConversationsCallParticipantConsult(createPostConversationsCallParticipantConsultRequest(conversationId, participantId, body).withHttpInfo());
@@ -12797,7 +13442,6 @@ public class ConversationsApi {
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ConsultTransferResponse postConversationsCallParticipantConsult(PostConversationsCallParticipantConsultRequest request) throws IOException, ApiException {
     try {
@@ -12816,7 +13460,6 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsult(ApiRequest<ConsultTransfer> request) throws IOException {
     try {
@@ -12843,6 +13486,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an agent
    * 
+   * postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination agent & initial speak to (required)
@@ -12857,6 +13501,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an agent
    * 
+   * postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination agent & initial speak to (required)
@@ -12881,6 +13526,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an agent
    * 
+   * postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
@@ -12900,6 +13546,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an agent
    * 
+   * postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -12929,6 +13576,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an external contact
    * 
+   * postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination address & initial speak to (required)
@@ -12943,6 +13591,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an external contact
    * 
+   * postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination address & initial speak to (required)
@@ -12967,6 +13616,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an external contact
    * 
+   * postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
@@ -12986,6 +13636,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to an external contact
    * 
+   * postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -13015,6 +13666,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to a queue
    * 
+   * postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination queue & initial speak to (required)
@@ -13029,6 +13681,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to a queue
    * 
+   * postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Destination queue & initial speak to (required)
@@ -13053,6 +13706,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to a queue
    * 
+   * postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
@@ -13072,6 +13726,7 @@ public class ConversationsApi {
   /**
    * Initiate a consult transfer to a queue
    * 
+   * postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -13185,7 +13840,6 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsCallParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsCallParticipantReplace(createPostConversationsCallParticipantReplaceRequest(conversationId, participantId, body));
@@ -13198,7 +13852,6 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsCallParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsCallParticipantReplace(createPostConversationsCallParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -13221,7 +13874,6 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsCallParticipantReplace(PostConversationsCallParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -13240,7 +13892,6 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsCallParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -13441,7 +14092,6 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsCallbackParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsCallbackParticipantReplace(createPostConversationsCallbackParticipantReplaceRequest(conversationId, participantId, body));
@@ -13454,7 +14104,6 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsCallbackParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsCallbackParticipantReplace(createPostConversationsCallbackParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -13477,7 +14126,6 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsCallbackParticipantReplace(PostConversationsCallbackParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -13496,7 +14144,6 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsCallbackParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -14092,7 +14739,6 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsChatParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsChatParticipantReplace(createPostConversationsChatParticipantReplaceRequest(conversationId, participantId, body));
@@ -14105,7 +14751,6 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsChatParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsChatParticipantReplace(createPostConversationsChatParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -14128,7 +14773,6 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsChatParticipantReplace(PostConversationsChatParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -14147,7 +14791,6 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsChatParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -14344,7 +14987,6 @@ public class ConversationsApi {
    * @param body  (optional)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsCobrowsesessionParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsCobrowsesessionParticipantReplace(createPostConversationsCobrowsesessionParticipantReplaceRequest(conversationId, participantId, body));
@@ -14357,7 +14999,6 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body  (optional)
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsCobrowsesessionParticipantReplace(createPostConversationsCobrowsesessionParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -14380,7 +15021,6 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsCobrowsesessionParticipantReplace(PostConversationsCobrowsesessionParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -14399,7 +15039,6 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -14764,7 +15403,6 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsEmailParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsEmailParticipantReplace(createPostConversationsEmailParticipantReplaceRequest(conversationId, participantId, body));
@@ -14777,7 +15415,6 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsEmailParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsEmailParticipantReplace(createPostConversationsEmailParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -14800,7 +15437,6 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsEmailParticipantReplace(PostConversationsEmailParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -14819,7 +15455,6 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsEmailParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -15752,7 +16387,6 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsMessageParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsMessageParticipantReplace(createPostConversationsMessageParticipantReplaceRequest(conversationId, participantId, body));
@@ -15765,7 +16399,6 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Transfer request (required)
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsMessageParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsMessageParticipantReplace(createPostConversationsMessageParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -15788,7 +16421,6 @@ public class ConversationsApi {
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public void postConversationsMessageParticipantReplace(PostConversationsMessageParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -15807,7 +16439,6 @@ public class ConversationsApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
-   * @deprecated
    */
   public ApiResponse<Void> postConversationsMessageParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -16529,6 +17160,84 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a messaging setting
+   * 
+   * @param body MessagingSetting (required)
+   * @return MessagingSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingSetting postConversationsMessagingSettings(MessagingSettingRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingSettings(createPostConversationsMessagingSettingsRequest(body));
+  }
+
+  /**
+   * Create a messaging setting
+   * 
+   * @param body MessagingSetting (required)
+   * @return MessagingSetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingSetting> postConversationsMessagingSettingsWithHttpInfo(MessagingSettingRequest body) throws IOException {
+    return postConversationsMessagingSettings(createPostConversationsMessagingSettingsRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingSettingsRequest createPostConversationsMessagingSettingsRequest(MessagingSettingRequest body) {
+    return PostConversationsMessagingSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a messaging setting
+   * 
+   * @param request The request object
+   * @return MessagingSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingSetting postConversationsMessagingSettings(PostConversationsMessagingSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingSetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingSetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a messaging setting
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingSetting> postConversationsMessagingSettings(ApiRequest<MessagingSettingRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingSetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingSetting> response = (ApiResponse<MessagingSetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingSetting> response = (ApiResponse<MessagingSetting>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -18017,6 +18726,84 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Set the organization's default setting that may be applied to to integrations without settings
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @param body MessagingSetting (required)
+   * @return MessagingSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingSetting putConversationsMessagingSettingsDefault(MessagingSettingDefaultRequest body) throws IOException, ApiException {
+    return  putConversationsMessagingSettingsDefault(createPutConversationsMessagingSettingsDefaultRequest(body));
+  }
+
+  /**
+   * Set the organization's default setting that may be applied to to integrations without settings
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @param body MessagingSetting (required)
+   * @return MessagingSetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingSetting> putConversationsMessagingSettingsDefaultWithHttpInfo(MessagingSettingDefaultRequest body) throws IOException {
+    return putConversationsMessagingSettingsDefault(createPutConversationsMessagingSettingsDefaultRequest(body).withHttpInfo());
+  }
+
+  private PutConversationsMessagingSettingsDefaultRequest createPutConversationsMessagingSettingsDefaultRequest(MessagingSettingDefaultRequest body) {
+    return PutConversationsMessagingSettingsDefaultRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Set the organization's default setting that may be applied to to integrations without settings
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @param request The request object
+   * @return MessagingSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingSetting putConversationsMessagingSettingsDefault(PutConversationsMessagingSettingsDefaultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingSetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingSetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Set the organization's default setting that may be applied to to integrations without settings
+   * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingSetting> putConversationsMessagingSettingsDefault(ApiRequest<MessagingSettingDefaultRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingSetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingSetting> response = (ApiResponse<MessagingSetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingSetting> response = (ApiResponse<MessagingSetting>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

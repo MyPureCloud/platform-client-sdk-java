@@ -45,7 +45,8 @@ public class ConditionalGroupRoutingRule  implements Serializable {
  @JsonDeserialize(using = MetricEnumDeserializer.class)
   public enum MetricEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ESTIMATEDWAITTIME("EstimatedWaitTime");
+    ESTIMATEDWAITTIME("EstimatedWaitTime"),
+    SERVICELEVEL("ServiceLevel");
 
     private String value;
 

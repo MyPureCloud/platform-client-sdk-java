@@ -67,6 +67,8 @@ title: AnalyticsSession
 | **requestedRoutings** | <!---->[**List&lt;RequestedRoutingsEnum&gt;**](#RequestedRoutingsEnum)<!----> | Routing type(s) for requested/attempted routing methods. |  [optional] |
 | **roomId** | <!----><!---->**String**<!----> | Unique identifier for the room |  [optional] |
 | **routingRing** | <!----><!---->**Integer**<!----> | Routing ring for bullseye or preferred agent routing |  [optional] |
+| **routingRule** | <!----><!---->**String**<!----> | Routing rule for preferred, conditional and predictive routing type |  [optional] |
+| **routingRuleType** | [**RoutingRuleTypeEnum**](#RoutingRuleTypeEnum)<!----> | Routing rule type |  [optional] |
 | **screenShareAddressSelf** | <!----><!---->**String**<!----> | Direct ScreenShare address |  [optional] |
 | **screenShareRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud ScreenShare room |  [optional] |
 | **scriptId** | <!----><!---->**String**<!----> | A unique identifier for a script |  [optional] |
@@ -81,8 +83,8 @@ title: AnalyticsSession
 | **videoAddressSelf** | <!----><!---->**String**<!----> | Direct Video address |  [optional] |
 | **videoRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud video room |  [optional] |
 | **waitingInteractionCounts** | <!----><!---->**List&lt;Integer&gt;**<!----> | Number of waiting interactions for each predictive routing attempt |  [optional] |
-| **proposedAgents** | <!----><!---->[**List&lt;AnalyticsProposedAgent&gt;**](AnalyticsProposedAgent.html)<!----> | Proposed agents |  [optional] |
 | **agentGroups** | <!----><!---->[**List&lt;AnalyticsAgentGroup&gt;**](AnalyticsAgentGroup.html)<!----> | Conditional group routing agent groups |  [optional] |
+| **proposedAgents** | <!----><!---->[**List&lt;AnalyticsProposedAgent&gt;**](AnalyticsProposedAgent.html)<!----> | Proposed agents |  [optional] |
 | **mediaEndpointStats** | <!----><!---->[**List&lt;AnalyticsMediaEndpointStat&gt;**](AnalyticsMediaEndpointStat.html)<!----> | MediaEndpointStats associated with this session |  [optional] |
 | **flow** | <!----><!---->[**AnalyticsFlow**](AnalyticsFlow.html)<!----> | IVR flow execution associated with this session |  [optional] |
 | **metrics** | <!----><!---->[**List&lt;AnalyticsSessionMetric&gt;**](AnalyticsSessionMetric.html)<!----> | List of metrics for this session |  [optional] |
@@ -153,6 +155,20 @@ title: AnalyticsSession
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
 | VIP | &quot;Vip&quot; |
+{: class="table table-striped"}
+
+
+<a name="RoutingRuleTypeEnum"></a>
+
+## Enum: RoutingRuleTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BULLSEYE | &quot;Bullseye&quot; | 
+| CONDITIONAL | &quot;Conditional&quot; | 
+| PREDICTIVE | &quot;Predictive&quot; | 
+| PREFERRED | &quot;Preferred&quot; | 
 {: class="table table-striped"}
 
 

@@ -4651,7 +4651,7 @@ public class TelephonyProvidersEdgeApi {
   /**
    * Get the metrics for a list of edges.
    * 
-   * @param edgeIds Comma separated list of Edge Id's (required)
+   * @param edgeIds Comma separated list of Edge Id's. Maximum of 100 edge ids allowed. (required)
    * @return List<EdgeMetrics>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4663,7 +4663,7 @@ public class TelephonyProvidersEdgeApi {
   /**
    * Get the metrics for a list of edges.
    * 
-   * @param edgeIds Comma separated list of Edge Id's (required)
+   * @param edgeIds Comma separated list of Edge Id's. Maximum of 100 edge ids allowed. (required)
    * @return List<EdgeMetrics>
    * @throws IOException if the request fails to be processed
    */

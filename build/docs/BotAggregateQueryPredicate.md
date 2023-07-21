@@ -51,6 +51,7 @@ title: BotAggregateQueryPredicate
 | BOTVERSION | &quot;botVersion&quot; | 
 | CONVERSATIONID | &quot;conversationId&quot; | 
 | EXTERNALCONTACTID | &quot;externalContactId&quot; | 
+| INTERMEDIATEINTENTNAME | &quot;intermediateIntentName&quot; | 
 | KNOWLEDGEBASEID | &quot;knowledgeBaseId&quot; | 
 | LANGUAGECODE | &quot;languageCode&quot; | 
 | LASTACTIONID | &quot;lastActionId&quot; | 

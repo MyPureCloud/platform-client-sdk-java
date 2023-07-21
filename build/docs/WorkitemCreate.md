@@ -13,7 +13,7 @@ title: WorkitemCreate
 | **dateDue** | <!----><!---->[**Date**](Date.html)<!----> | The due date of the Workitem. Can not be greater than 365 days from the current time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateExpires** | <!----><!---->[**Date**](Date.html)<!----> | The expiry date of the Workitem. Can not be greater than 365 days from the current time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **durationSeconds** | <!----><!---->**Integer**<!----> | The estimated duration in seconds to complete the Workitem. Maximum of 365 days. |  [optional] |
-| **ttl** | <!----><!---->**Integer**<!----> | A timestamp specifying the time to live for the Workitem. Can not be greater than 365 days from the current time. |  [optional] |
+| **ttl** | <!----><!---->**Integer**<!----> | The epoch timestamp in seconds specifying the time to live for the Workitem. Can not be greater than 365 days from the current time. |  [optional] |
 | **statusId** | <!----><!---->**String**<!----> | The ID of the Status of the Workitem. |  [optional] |
 | **workbinId** | <!----><!---->**String**<!----> | The ID of Workbin that contains the Workitem. |  [optional] |
 | **autoStatusTransition** | <!----><!---->**Boolean**<!----> | Set it to false to disable auto status transition. By default, it is enabled. |  [optional] |

@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentBodyImage;
 import com.mypurecloud.sdk.v2.model.DocumentBodyList;
+import com.mypurecloud.sdk.v2.model.DocumentBodyVideo;
 import com.mypurecloud.sdk.v2.model.DocumentText;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -47,7 +48,8 @@ public class DocumentListContentBlock  implements Serializable {
     TEXT("Text"),
     IMAGE("Image"),
     ORDEREDLIST("OrderedList"),
-    UNORDEREDLIST("UnorderedList");
+    UNORDEREDLIST("UnorderedList"),
+    VIDEO("Video");
 
     private String value;
 
@@ -78,6 +80,7 @@ public class DocumentListContentBlock  implements Serializable {
   private DocumentText text = null;
   private DocumentBodyImage image = null;
   private DocumentBodyList list = null;
+  private DocumentBodyVideo video = null;
 
   
   /**
@@ -106,7 +109,7 @@ public class DocumentListContentBlock  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Text. It must contain a value if the type of the block is Text.")
+  @ApiModelProperty(example = "null", value = "Text. It must contain a value if the type of the block is Text.")
   @JsonProperty("text")
   public DocumentText getText() {
     return text;
@@ -124,7 +127,7 @@ public class DocumentListContentBlock  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Image. It must contain a value if the type of the block is Image.")
+  @ApiModelProperty(example = "null", value = "Image. It must contain a value if the type of the block is Image.")
   @JsonProperty("image")
   public DocumentBodyImage getImage() {
     return image;
@@ -142,13 +145,31 @@ public class DocumentListContentBlock  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "List. It must contain a value if the type of the block is UnorderedList or OrderedList.")
+  @ApiModelProperty(example = "null", value = "List. It must contain a value if the type of the block is UnorderedList or OrderedList.")
   @JsonProperty("list")
   public DocumentBodyList getList() {
     return list;
   }
   public void setList(DocumentBodyList list) {
     this.list = list;
+  }
+
+
+  /**
+   * Video. It must contain a value if the type of the block is Video.
+   **/
+  public DocumentListContentBlock video(DocumentBodyVideo video) {
+    this.video = video;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Video. It must contain a value if the type of the block is Video.")
+  @JsonProperty("video")
+  public DocumentBodyVideo getVideo() {
+    return video;
+  }
+  public void setVideo(DocumentBodyVideo video) {
+    this.video = video;
   }
 
 
@@ -165,12 +186,13 @@ public class DocumentListContentBlock  implements Serializable {
     return Objects.equals(this.type, documentListContentBlock.type) &&
             Objects.equals(this.text, documentListContentBlock.text) &&
             Objects.equals(this.image, documentListContentBlock.image) &&
-            Objects.equals(this.list, documentListContentBlock.list);
+            Objects.equals(this.list, documentListContentBlock.list) &&
+            Objects.equals(this.video, documentListContentBlock.video);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, text, image, list);
+    return Objects.hash(type, text, image, list, video);
   }
 
   @Override
@@ -182,6 +204,7 @@ public class DocumentListContentBlock  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
+    sb.append("    video: ").append(toIndentedString(video)).append("\n");
     sb.append("}");
     return sb.toString();
   }

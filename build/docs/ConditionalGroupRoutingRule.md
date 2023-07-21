@@ -25,6 +25,7 @@ title: ConditionalGroupRoutingRule
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ESTIMATEDWAITTIME | &quot;EstimatedWaitTime&quot; | 
+| SERVICELEVEL | &quot;ServiceLevel&quot; | 
 {: class="table table-striped"}
 
 

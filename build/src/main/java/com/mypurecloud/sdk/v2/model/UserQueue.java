@@ -121,6 +121,7 @@ public class UserQueue  implements Serializable {
   private QueueMessagingAddresses outboundMessagingAddresses = null;
   private QueueEmailAddress outboundEmailAddress = null;
   private String peerId = null;
+  private Boolean suppressInQueueCallRecording = null;
   private Boolean joined = null;
   private String selfUri = null;
 
@@ -674,6 +675,24 @@ public class UserQueue  implements Serializable {
 
 
   /**
+   * Indicates whether recording in-queue calls is suppressed for this queue.
+   **/
+  public UserQueue suppressInQueueCallRecording(Boolean suppressInQueueCallRecording) {
+    this.suppressInQueueCallRecording = suppressInQueueCallRecording;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether recording in-queue calls is suppressed for this queue.")
+  @JsonProperty("suppressInQueueCallRecording")
+  public Boolean getSuppressInQueueCallRecording() {
+    return suppressInQueueCallRecording;
+  }
+  public void setSuppressInQueueCallRecording(Boolean suppressInQueueCallRecording) {
+    this.suppressInQueueCallRecording = suppressInQueueCallRecording;
+  }
+
+
+  /**
    **/
   public UserQueue joined(Boolean joined) {
     this.joined = joined;
@@ -740,13 +759,14 @@ public class UserQueue  implements Serializable {
             Objects.equals(this.outboundMessagingAddresses, userQueue.outboundMessagingAddresses) &&
             Objects.equals(this.outboundEmailAddress, userQueue.outboundEmailAddress) &&
             Objects.equals(this.peerId, userQueue.peerId) &&
+            Objects.equals(this.suppressInQueueCallRecording, userQueue.suppressInQueueCallRecording) &&
             Objects.equals(this.joined, userQueue.joined) &&
             Objects.equals(this.selfUri, userQueue.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, joined, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, joined, selfUri);
   }
 
   @Override
@@ -787,6 +807,7 @@ public class UserQueue  implements Serializable {
     sb.append("    outboundMessagingAddresses: ").append(toIndentedString(outboundMessagingAddresses)).append("\n");
     sb.append("    outboundEmailAddress: ").append(toIndentedString(outboundEmailAddress)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
+    sb.append("    suppressInQueueCallRecording: ").append(toIndentedString(suppressInQueueCallRecording)).append("\n");
     sb.append("    joined: ").append(toIndentedString(joined)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

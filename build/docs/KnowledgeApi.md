@@ -2472,7 +2472,7 @@ try {
 
 
 
-> [UnansweredGroup](UnansweredGroup.html) getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, app)
+> [UnansweredGroup](UnansweredGroup.html) getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, app, dateStart, dateEnd)
 
 Get knowledge base unanswered group for a particular groupId
 
@@ -2507,8 +2507,10 @@ KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 String groupId = "groupId_example"; // String | The ID of the group to be retrieved.
 String app = "app_example"; // String | The app value to be used for filtering phrases.
+LocalDate dateStart = new LocalDate(); // LocalDate | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate dateEnd = new LocalDate(); // LocalDate | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 try {
-    UnansweredGroup result = apiInstance.getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, app);
+    UnansweredGroup result = apiInstance.getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, app, dateStart, dateEnd);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroup");
@@ -2524,6 +2526,8 @@ try {
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **groupId** | **String**| The ID of the group to be retrieved. | 
 | **app** | **String**| The app value to be used for filtering phrases. | [optional]<br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor 
+| **dateStart** | **LocalDate**| The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **dateEnd** | **LocalDate**| The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
 {: class="table-striped"}
 
 
@@ -2537,7 +2541,7 @@ try {
 
 
 
-> [UnansweredPhraseGroup](UnansweredPhraseGroup.html) getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, app)
+> [UnansweredPhraseGroup](UnansweredPhraseGroup.html) getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, app, dateStart, dateEnd)
 
 Get knowledge base unanswered phrase group for a particular phraseGroupId
 
@@ -2573,8 +2577,10 @@ String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base I
 String groupId = "groupId_example"; // String | The ID of the group to be retrieved.
 String phraseGroupId = "phraseGroupId_example"; // String | The ID of the phraseGroup to be retrieved.
 String app = "app_example"; // String | The app value to be used for filtering phrases.
+LocalDate dateStart = new LocalDate(); // LocalDate | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate dateEnd = new LocalDate(); // LocalDate | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 try {
-    UnansweredPhraseGroup result = apiInstance.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, app);
+    UnansweredPhraseGroup result = apiInstance.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, app, dateStart, dateEnd);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup");
@@ -2591,6 +2597,8 @@ try {
 | **groupId** | **String**| The ID of the group to be retrieved. | 
 | **phraseGroupId** | **String**| The ID of the phraseGroup to be retrieved. | 
 | **app** | **String**| The app value to be used for filtering phrases. | [optional]<br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor 
+| **dateStart** | **LocalDate**| The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **dateEnd** | **LocalDate**| The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
 {: class="table-striped"}
 
 
@@ -2604,7 +2612,7 @@ try {
 
 
 
-> [UnansweredGroups](UnansweredGroups.html) getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, app)
+> [UnansweredGroups](UnansweredGroups.html) getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, app, dateStart, dateEnd)
 
 Get knowledge base unanswered groups
 
@@ -2638,8 +2646,10 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 String app = "app_example"; // String | The app value to be used for filtering phrases.
+LocalDate dateStart = new LocalDate(); // LocalDate | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate dateEnd = new LocalDate(); // LocalDate | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 try {
-    UnansweredGroups result = apiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, app);
+    UnansweredGroups result = apiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, app, dateStart, dateEnd);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroups");
@@ -2654,6 +2664,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **app** | **String**| The app value to be used for filtering phrases. | [optional]<br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor 
+| **dateStart** | **LocalDate**| The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **dateEnd** | **LocalDate**| The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
 {: class="table-striped"}
 
 

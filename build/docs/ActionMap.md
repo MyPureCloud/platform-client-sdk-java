@@ -15,7 +15,8 @@ title: ActionMap
 | **triggerWithSegments** | <!----><!---->**List&lt;String&gt;**<!----> | Trigger action map if any segment in the list is assigned to a given customer. |  |
 | **triggerWithEventConditions** | <!----><!---->[**List&lt;EventCondition&gt;**](EventCondition.html)<!----> | List of event conditions that must be satisfied to trigger the action map. |  [optional] |
 | **triggerWithOutcomeProbabilityConditions** | <!----><!---->[**List&lt;OutcomeProbabilityCondition&gt;**](OutcomeProbabilityCondition.html)<!----> | Probability conditions for outcomes that must be satisfied to trigger the action map. |  [optional] |
-| **triggerWithOutcomePercentileConditions** | <!----><!---->[**List&lt;OutcomePercentileCondition&gt;**](OutcomePercentileCondition.html)<!----> | Percentile conditions for outcomes that must be satisfied to trigger the action map. |  [optional] |
+| **triggerWithOutcomePercentileConditions** | <!----><!---->[**List&lt;OutcomePercentileCondition&gt;**](OutcomePercentileCondition.html)<!----> | (deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map. |  [optional] |
+| **triggerWithOutcomeQuantileConditions** | <!----><!---->[**List&lt;OutcomeQuantileCondition&gt;**](OutcomeQuantileCondition.html)<!----> | Quantile conditions for outcomes that must be satisfied to trigger the action map. |  [optional] |
 | **pageUrlConditions** | <!----><!---->[**List&lt;UrlCondition&gt;**](UrlCondition.html)<!----> | URL conditions that a page must match for web actions to be displayable. |  |
 | **activation** | <!----><!---->[**Activation**](Activation.html)<!----> | Type of activation. |  [optional] |
 | **weight** | <!----><!---->**Integer**<!----> | Weight of the action map with higher number denoting higher weight. |  [optional] |

@@ -248,14 +248,14 @@ public class WorkitemUpdate  implements Serializable {
 
 
   /**
-   * A timestamp specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.
+   * The epoch timestamp in seconds specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.
    **/
   public WorkitemUpdate ttl(Integer ttl) {
     this.ttl = ttl;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A timestamp specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.")
+  @ApiModelProperty(example = "null", value = "The epoch timestamp in seconds specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.")
   @JsonProperty("ttl")
   public Integer getTtl() {
     return ttl;

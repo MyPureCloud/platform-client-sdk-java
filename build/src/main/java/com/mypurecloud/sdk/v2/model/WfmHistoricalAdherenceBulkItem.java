@@ -103,14 +103,14 @@ public class WfmHistoricalAdherenceBulkItem  implements Serializable {
 
 
   /**
-   * Whether user exceptions should be returned as part of the results. If not included, will default to false
+   * Whether user exceptions should be returned as part of the results. Defaults to false if not specified.
    **/
   public WfmHistoricalAdherenceBulkItem includeExceptions(Boolean includeExceptions) {
     this.includeExceptions = includeExceptions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether user exceptions should be returned as part of the results. If not included, will default to false")
+  @ApiModelProperty(example = "null", value = "Whether user exceptions should be returned as part of the results. Defaults to false if not specified.")
   @JsonProperty("includeExceptions")
   public Boolean getIncludeExceptions() {
     return includeExceptions;

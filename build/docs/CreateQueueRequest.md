@@ -42,6 +42,7 @@ title: CreateQueueRequest
 | **outboundMessagingAddresses** | <!----><!---->[**QueueMessagingAddresses**](QueueMessagingAddresses.html)<!----> | The messaging addresses for the queue. |  [optional] |
 | **outboundEmailAddress** | <!----><!---->[**QueueEmailAddress**](QueueEmailAddress.html)<!----> |  |  [optional] |
 | **peerId** | <!----><!---->**String**<!----> | The ID of an associated external queue. |  [optional] |
+| **suppressInQueueCallRecording** | <!----><!---->**Boolean**<!----> | Indicates whether recording in-queue calls is suppressed for this queue. |  [optional] |
 | **sourceQueueId** | <!----><!---->**String**<!----> | The id of an existing queue to copy the settings (does not include GPR settings) from when creating a new queue. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}

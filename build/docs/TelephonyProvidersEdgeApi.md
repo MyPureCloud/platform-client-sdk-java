@@ -3576,7 +3576,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
+String edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's. Maximum of 100 edge ids allowed.
 try {
     List<EdgeMetrics> result = apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds);
     System.out.println(result);
@@ -3591,7 +3591,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeIds** | **String**| Comma separated list of Edge Id&#39;s | 
+| **edgeIds** | **String**| Comma separated list of Edge Id&#39;s. Maximum of 100 edge ids allowed. | 
 {: class="table-striped"}
 
 

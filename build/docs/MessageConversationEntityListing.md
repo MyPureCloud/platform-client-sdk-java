@@ -8,7 +8,7 @@ title: MessageConversationEntityListing
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;EmailConversation&gt;**](EmailConversation.html)<!----> |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;MessageConversation&gt;**](MessageConversation.html)<!----> |  |  [optional] |
 | **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **total** | <!----><!---->**Long**<!----> |  |  [optional] |

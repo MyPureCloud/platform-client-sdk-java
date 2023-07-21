@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.SupportCenterCompactCategoryModuleTemplate;
+import com.mypurecloud.sdk.v2.model.SupportCenterDetailedCategoryModuleTemplate;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -76,6 +78,8 @@ public class SupportCenterModuleSetting  implements Serializable {
   }
   private TypeEnum type = null;
   private Boolean enabled = null;
+  private SupportCenterCompactCategoryModuleTemplate compactCategoryModuleTemplate = null;
+  private SupportCenterDetailedCategoryModuleTemplate detailedCategoryModuleTemplate = null;
 
   
   /**
@@ -114,6 +118,42 @@ public class SupportCenterModuleSetting  implements Serializable {
   }
 
 
+  /**
+   * Compact category module template
+   **/
+  public SupportCenterModuleSetting compactCategoryModuleTemplate(SupportCenterCompactCategoryModuleTemplate compactCategoryModuleTemplate) {
+    this.compactCategoryModuleTemplate = compactCategoryModuleTemplate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Compact category module template")
+  @JsonProperty("compactCategoryModuleTemplate")
+  public SupportCenterCompactCategoryModuleTemplate getCompactCategoryModuleTemplate() {
+    return compactCategoryModuleTemplate;
+  }
+  public void setCompactCategoryModuleTemplate(SupportCenterCompactCategoryModuleTemplate compactCategoryModuleTemplate) {
+    this.compactCategoryModuleTemplate = compactCategoryModuleTemplate;
+  }
+
+
+  /**
+   * Detailed category module template
+   **/
+  public SupportCenterModuleSetting detailedCategoryModuleTemplate(SupportCenterDetailedCategoryModuleTemplate detailedCategoryModuleTemplate) {
+    this.detailedCategoryModuleTemplate = detailedCategoryModuleTemplate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Detailed category module template")
+  @JsonProperty("detailedCategoryModuleTemplate")
+  public SupportCenterDetailedCategoryModuleTemplate getDetailedCategoryModuleTemplate() {
+    return detailedCategoryModuleTemplate;
+  }
+  public void setDetailedCategoryModuleTemplate(SupportCenterDetailedCategoryModuleTemplate detailedCategoryModuleTemplate) {
+    this.detailedCategoryModuleTemplate = detailedCategoryModuleTemplate;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -125,12 +165,14 @@ public class SupportCenterModuleSetting  implements Serializable {
     SupportCenterModuleSetting supportCenterModuleSetting = (SupportCenterModuleSetting) o;
 
     return Objects.equals(this.type, supportCenterModuleSetting.type) &&
-            Objects.equals(this.enabled, supportCenterModuleSetting.enabled);
+            Objects.equals(this.enabled, supportCenterModuleSetting.enabled) &&
+            Objects.equals(this.compactCategoryModuleTemplate, supportCenterModuleSetting.compactCategoryModuleTemplate) &&
+            Objects.equals(this.detailedCategoryModuleTemplate, supportCenterModuleSetting.detailedCategoryModuleTemplate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, enabled);
+    return Objects.hash(type, enabled, compactCategoryModuleTemplate, detailedCategoryModuleTemplate);
   }
 
   @Override
@@ -140,6 +182,8 @@ public class SupportCenterModuleSetting  implements Serializable {
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    compactCategoryModuleTemplate: ").append(toIndentedString(compactCategoryModuleTemplate)).append("\n");
+    sb.append("    detailedCategoryModuleTemplate: ").append(toIndentedString(detailedCategoryModuleTemplate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

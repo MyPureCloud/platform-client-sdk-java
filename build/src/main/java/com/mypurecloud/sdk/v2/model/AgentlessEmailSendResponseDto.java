@@ -147,14 +147,14 @@ public class AgentlessEmailSendResponseDto  implements Serializable {
 
 
   /**
-   * The recipient(s) of the message.
+   * The recipient of the message. So far, only one recipient is allowed. This is a list, only for future usage.
    **/
   public AgentlessEmailSendResponseDto toAddresses(List<EmailAddress> toAddresses) {
     this.toAddresses = toAddresses;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The recipient(s) of the message.")
+  @ApiModelProperty(example = "null", required = true, value = "The recipient of the message. So far, only one recipient is allowed. This is a list, only for future usage.")
   @JsonProperty("toAddresses")
   public List<EmailAddress> getToAddresses() {
     return toAddresses;

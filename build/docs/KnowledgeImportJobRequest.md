@@ -11,6 +11,7 @@ title: KnowledgeImportJobRequest
 | **uploadKey** | <!----><!---->**String**<!----> | Upload key |  |
 | **fileType** | [**FileTypeEnum**](#FileTypeEnum)<!----> | File type of the document |  |
 | **settings** | <!----><!---->[**KnowledgeImportJobSettings**](KnowledgeImportJobSettings.html)<!----> | Additional optional settings |  [optional] |
+| **skipConfirmationStep** | <!----><!---->**Boolean**<!----> | If enabled pre-validation step will be skipped. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentBodyImage;
 import com.mypurecloud.sdk.v2.model.DocumentBodyList;
+import com.mypurecloud.sdk.v2.model.DocumentBodyParagraph;
 import com.mypurecloud.sdk.v2.model.DocumentBodyVideo;
 import com.mypurecloud.sdk.v2.model.DocumentText;
 import io.swagger.annotations.ApiModel;
@@ -46,6 +47,7 @@ public class DocumentBodyTableCaptionItem  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXT("Text"),
+    PARAGRAPH("Paragraph"),
     IMAGE("Image"),
     VIDEO("Video"),
     ORDEREDLIST("OrderedList"),
@@ -78,6 +80,7 @@ public class DocumentBodyTableCaptionItem  implements Serializable {
   }
   private TypeEnum type = null;
   private DocumentText text = null;
+  private DocumentBodyParagraph paragraph = null;
   private DocumentBodyImage image = null;
   private DocumentBodyVideo video = null;
   private DocumentBodyList list = null;
@@ -109,13 +112,31 @@ public class DocumentBodyTableCaptionItem  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Text. It must contain a value if the type of the block is Text.")
+  @ApiModelProperty(example = "null", value = "Text. It must contain a value if the type of the block is Text.")
   @JsonProperty("text")
   public DocumentText getText() {
     return text;
   }
   public void setText(DocumentText text) {
     this.text = text;
+  }
+
+
+  /**
+   * Paragraph. It must contain a value if the type of the block is Paragraph.
+   **/
+  public DocumentBodyTableCaptionItem paragraph(DocumentBodyParagraph paragraph) {
+    this.paragraph = paragraph;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Paragraph. It must contain a value if the type of the block is Paragraph.")
+  @JsonProperty("paragraph")
+  public DocumentBodyParagraph getParagraph() {
+    return paragraph;
+  }
+  public void setParagraph(DocumentBodyParagraph paragraph) {
+    this.paragraph = paragraph;
   }
 
 
@@ -127,7 +148,7 @@ public class DocumentBodyTableCaptionItem  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Image. It must contain a value if the type of the block is Image.")
+  @ApiModelProperty(example = "null", value = "Image. It must contain a value if the type of the block is Image.")
   @JsonProperty("image")
   public DocumentBodyImage getImage() {
     return image;
@@ -145,7 +166,7 @@ public class DocumentBodyTableCaptionItem  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Video. It must contain a value if the type of the block is Video.")
+  @ApiModelProperty(example = "null", value = "Video. It must contain a value if the type of the block is Video.")
   @JsonProperty("video")
   public DocumentBodyVideo getVideo() {
     return video;
@@ -163,7 +184,7 @@ public class DocumentBodyTableCaptionItem  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "List. It must contain a value if the type of the block is UnorderedList or OrderedList.")
+  @ApiModelProperty(example = "null", value = "List. It must contain a value if the type of the block is UnorderedList or OrderedList.")
   @JsonProperty("list")
   public DocumentBodyList getList() {
     return list;
@@ -185,6 +206,7 @@ public class DocumentBodyTableCaptionItem  implements Serializable {
 
     return Objects.equals(this.type, documentBodyTableCaptionItem.type) &&
             Objects.equals(this.text, documentBodyTableCaptionItem.text) &&
+            Objects.equals(this.paragraph, documentBodyTableCaptionItem.paragraph) &&
             Objects.equals(this.image, documentBodyTableCaptionItem.image) &&
             Objects.equals(this.video, documentBodyTableCaptionItem.video) &&
             Objects.equals(this.list, documentBodyTableCaptionItem.list);
@@ -192,7 +214,7 @@ public class DocumentBodyTableCaptionItem  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, text, image, video, list);
+    return Objects.hash(type, text, paragraph, image, video, list);
   }
 
   @Override
@@ -202,6 +224,7 @@ public class DocumentBodyTableCaptionItem  implements Serializable {
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    paragraph: ").append(toIndentedString(paragraph)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");

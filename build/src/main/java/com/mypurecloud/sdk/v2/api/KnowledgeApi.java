@@ -64,6 +64,7 @@ import com.mypurecloud.sdk.v2.model.LabelCreateRequest;
 import com.mypurecloud.sdk.v2.model.LabelListing;
 import com.mypurecloud.sdk.v2.model.LabelResponse;
 import com.mypurecloud.sdk.v2.model.LabelUpdateRequest;
+import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.SearchUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TrainingListing;
 import com.mypurecloud.sdk.v2.model.UnansweredGroup;
@@ -3473,12 +3474,14 @@ public class KnowledgeApi {
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param groupId The ID of the group to be retrieved. (required)
    * @param app The app value to be used for filtering phrases. (optional)
+   * @param dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @return UnansweredGroup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UnansweredGroup getKnowledgeKnowledgebaseUnansweredGroup(String knowledgeBaseId, String groupId, String app) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebaseUnansweredGroup(createGetKnowledgeKnowledgebaseUnansweredGroupRequest(knowledgeBaseId, groupId, app));
+  public UnansweredGroup getKnowledgeKnowledgebaseUnansweredGroup(String knowledgeBaseId, String groupId, String app, LocalDate dateStart, LocalDate dateEnd) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseUnansweredGroup(createGetKnowledgeKnowledgebaseUnansweredGroupRequest(knowledgeBaseId, groupId, app, dateStart, dateEnd));
   }
 
   /**
@@ -3487,20 +3490,26 @@ public class KnowledgeApi {
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param groupId The ID of the group to be retrieved. (required)
    * @param app The app value to be used for filtering phrases. (optional)
+   * @param dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @return UnansweredGroup
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UnansweredGroup> getKnowledgeKnowledgebaseUnansweredGroupWithHttpInfo(String knowledgeBaseId, String groupId, String app) throws IOException {
-    return getKnowledgeKnowledgebaseUnansweredGroup(createGetKnowledgeKnowledgebaseUnansweredGroupRequest(knowledgeBaseId, groupId, app).withHttpInfo());
+  public ApiResponse<UnansweredGroup> getKnowledgeKnowledgebaseUnansweredGroupWithHttpInfo(String knowledgeBaseId, String groupId, String app, LocalDate dateStart, LocalDate dateEnd) throws IOException {
+    return getKnowledgeKnowledgebaseUnansweredGroup(createGetKnowledgeKnowledgebaseUnansweredGroupRequest(knowledgeBaseId, groupId, app, dateStart, dateEnd).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebaseUnansweredGroupRequest createGetKnowledgeKnowledgebaseUnansweredGroupRequest(String knowledgeBaseId, String groupId, String app) {
+  private GetKnowledgeKnowledgebaseUnansweredGroupRequest createGetKnowledgeKnowledgebaseUnansweredGroupRequest(String knowledgeBaseId, String groupId, String app, LocalDate dateStart, LocalDate dateEnd) {
     return GetKnowledgeKnowledgebaseUnansweredGroupRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
             .withGroupId(groupId)
 
             .withApp(app)
+
+            .withDateStart(dateStart)
+
+            .withDateEnd(dateEnd)
 
             .build();
   }
@@ -3560,12 +3569,14 @@ public class KnowledgeApi {
    * @param groupId The ID of the group to be retrieved. (required)
    * @param phraseGroupId The ID of the phraseGroup to be retrieved. (required)
    * @param app The app value to be used for filtering phrases. (optional)
+   * @param dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @return UnansweredPhraseGroup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UnansweredPhraseGroup getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(String knowledgeBaseId, String groupId, String phraseGroupId, String app) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(createGetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest(knowledgeBaseId, groupId, phraseGroupId, app));
+  public UnansweredPhraseGroup getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(String knowledgeBaseId, String groupId, String phraseGroupId, String app, LocalDate dateStart, LocalDate dateEnd) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(createGetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest(knowledgeBaseId, groupId, phraseGroupId, app, dateStart, dateEnd));
   }
 
   /**
@@ -3575,14 +3586,16 @@ public class KnowledgeApi {
    * @param groupId The ID of the group to be retrieved. (required)
    * @param phraseGroupId The ID of the phraseGroup to be retrieved. (required)
    * @param app The app value to be used for filtering phrases. (optional)
+   * @param dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @return UnansweredPhraseGroup
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UnansweredPhraseGroup> getKnowledgeKnowledgebaseUnansweredGroupPhrasegroupWithHttpInfo(String knowledgeBaseId, String groupId, String phraseGroupId, String app) throws IOException {
-    return getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(createGetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest(knowledgeBaseId, groupId, phraseGroupId, app).withHttpInfo());
+  public ApiResponse<UnansweredPhraseGroup> getKnowledgeKnowledgebaseUnansweredGroupPhrasegroupWithHttpInfo(String knowledgeBaseId, String groupId, String phraseGroupId, String app, LocalDate dateStart, LocalDate dateEnd) throws IOException {
+    return getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(createGetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest(knowledgeBaseId, groupId, phraseGroupId, app, dateStart, dateEnd).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest createGetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest(String knowledgeBaseId, String groupId, String phraseGroupId, String app) {
+  private GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest createGetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest(String knowledgeBaseId, String groupId, String phraseGroupId, String app, LocalDate dateStart, LocalDate dateEnd) {
     return GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
@@ -3591,6 +3604,10 @@ public class KnowledgeApi {
             .withPhraseGroupId(phraseGroupId)
 
             .withApp(app)
+
+            .withDateStart(dateStart)
+
+            .withDateEnd(dateEnd)
 
             .build();
   }
@@ -3648,12 +3665,14 @@ public class KnowledgeApi {
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param app The app value to be used for filtering phrases. (optional)
+   * @param dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @return UnansweredGroups
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UnansweredGroups getKnowledgeKnowledgebaseUnansweredGroups(String knowledgeBaseId, String app) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebaseUnansweredGroups(createGetKnowledgeKnowledgebaseUnansweredGroupsRequest(knowledgeBaseId, app));
+  public UnansweredGroups getKnowledgeKnowledgebaseUnansweredGroups(String knowledgeBaseId, String app, LocalDate dateStart, LocalDate dateEnd) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseUnansweredGroups(createGetKnowledgeKnowledgebaseUnansweredGroupsRequest(knowledgeBaseId, app, dateStart, dateEnd));
   }
 
   /**
@@ -3661,18 +3680,24 @@ public class KnowledgeApi {
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param app The app value to be used for filtering phrases. (optional)
+   * @param dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @return UnansweredGroups
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UnansweredGroups> getKnowledgeKnowledgebaseUnansweredGroupsWithHttpInfo(String knowledgeBaseId, String app) throws IOException {
-    return getKnowledgeKnowledgebaseUnansweredGroups(createGetKnowledgeKnowledgebaseUnansweredGroupsRequest(knowledgeBaseId, app).withHttpInfo());
+  public ApiResponse<UnansweredGroups> getKnowledgeKnowledgebaseUnansweredGroupsWithHttpInfo(String knowledgeBaseId, String app, LocalDate dateStart, LocalDate dateEnd) throws IOException {
+    return getKnowledgeKnowledgebaseUnansweredGroups(createGetKnowledgeKnowledgebaseUnansweredGroupsRequest(knowledgeBaseId, app, dateStart, dateEnd).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebaseUnansweredGroupsRequest createGetKnowledgeKnowledgebaseUnansweredGroupsRequest(String knowledgeBaseId, String app) {
+  private GetKnowledgeKnowledgebaseUnansweredGroupsRequest createGetKnowledgeKnowledgebaseUnansweredGroupsRequest(String knowledgeBaseId, String app, LocalDate dateStart, LocalDate dateEnd) {
     return GetKnowledgeKnowledgebaseUnansweredGroupsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
             .withApp(app)
+
+            .withDateStart(dateStart)
+
+            .withDateEnd(dateEnd)
 
             .build();
   }

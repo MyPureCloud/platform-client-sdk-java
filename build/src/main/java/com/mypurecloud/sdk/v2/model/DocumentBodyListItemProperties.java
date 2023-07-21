@@ -184,6 +184,109 @@ public class DocumentBodyListItemProperties  implements Serializable {
   private FontTypeEnum fontType = null;
   private String textColor = null;
 
+  private static class UnorderedTypeEnumDeserializer extends StdDeserializer<UnorderedTypeEnum> {
+    public UnorderedTypeEnumDeserializer() {
+      super(UnorderedTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public UnorderedTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return UnorderedTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of icon for the unordered list.
+   */
+ @JsonDeserialize(using = UnorderedTypeEnumDeserializer.class)
+  public enum UnorderedTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NORMAL("Normal"),
+    SQUARE("Square"),
+    CIRCLE("Circle"),
+    NONE("None");
+
+    private String value;
+
+    UnorderedTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static UnorderedTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (UnorderedTypeEnum value : UnorderedTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return UnorderedTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private UnorderedTypeEnum unorderedType = null;
+
+  private static class OrderedTypeEnumDeserializer extends StdDeserializer<OrderedTypeEnum> {
+    public OrderedTypeEnumDeserializer() {
+      super(OrderedTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public OrderedTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OrderedTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of icon for the ordered list.
+   */
+ @JsonDeserialize(using = OrderedTypeEnumDeserializer.class)
+  public enum OrderedTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NUMBER("Number"),
+    LOWERALPHA("LowerAlpha"),
+    LOWERGREEK("LowerGreek"),
+    LOWERROMAN("LowerRoman"),
+    UPPERALPHA("UpperAlpha"),
+    UPPERROMAN("UpperRoman"),
+    NONE("None");
+
+    private String value;
+
+    OrderedTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static OrderedTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (OrderedTypeEnum value : OrderedTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return OrderedTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private OrderedTypeEnum orderedType = null;
+
   
   /**
    * The background color for the list item. The valid values in hex color code representation. For example black color - #000000
@@ -293,6 +396,42 @@ public class DocumentBodyListItemProperties  implements Serializable {
   }
 
 
+  /**
+   * The type of icon for the unordered list.
+   **/
+  public DocumentBodyListItemProperties unorderedType(UnorderedTypeEnum unorderedType) {
+    this.unorderedType = unorderedType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of icon for the unordered list.")
+  @JsonProperty("unorderedType")
+  public UnorderedTypeEnum getUnorderedType() {
+    return unorderedType;
+  }
+  public void setUnorderedType(UnorderedTypeEnum unorderedType) {
+    this.unorderedType = unorderedType;
+  }
+
+
+  /**
+   * The type of icon for the ordered list.
+   **/
+  public DocumentBodyListItemProperties orderedType(OrderedTypeEnum orderedType) {
+    this.orderedType = orderedType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of icon for the ordered list.")
+  @JsonProperty("orderedType")
+  public OrderedTypeEnum getOrderedType() {
+    return orderedType;
+  }
+  public void setOrderedType(OrderedTypeEnum orderedType) {
+    this.orderedType = orderedType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -308,12 +447,14 @@ public class DocumentBodyListItemProperties  implements Serializable {
             Objects.equals(this.indentation, documentBodyListItemProperties.indentation) &&
             Objects.equals(this.fontSize, documentBodyListItemProperties.fontSize) &&
             Objects.equals(this.fontType, documentBodyListItemProperties.fontType) &&
-            Objects.equals(this.textColor, documentBodyListItemProperties.textColor);
+            Objects.equals(this.textColor, documentBodyListItemProperties.textColor) &&
+            Objects.equals(this.unorderedType, documentBodyListItemProperties.unorderedType) &&
+            Objects.equals(this.orderedType, documentBodyListItemProperties.orderedType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backgroundColor, align, indentation, fontSize, fontType, textColor);
+    return Objects.hash(backgroundColor, align, indentation, fontSize, fontType, textColor, unorderedType, orderedType);
   }
 
   @Override
@@ -327,6 +468,8 @@ public class DocumentBodyListItemProperties  implements Serializable {
     sb.append("    fontSize: ").append(toIndentedString(fontSize)).append("\n");
     sb.append("    fontType: ").append(toIndentedString(fontType)).append("\n");
     sb.append("    textColor: ").append(toIndentedString(textColor)).append("\n");
+    sb.append("    unorderedType: ").append(toIndentedString(unorderedType)).append("\n");
+    sb.append("    orderedType: ").append(toIndentedString(orderedType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

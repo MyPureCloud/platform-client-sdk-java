@@ -158,6 +158,8 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     ROOMID("roomId"),
     ROUTINGPRIORITY("routingPriority"),
     ROUTINGRING("routingRing"),
+    ROUTINGRULE("routingRule"),
+    ROUTINGRULETYPE("routingRuleType"),
     SCOREDAGENTID("scoredAgentId"),
     SELECTEDAGENTID("selectedAgentId"),
     SELECTEDAGENTRANK("selectedAgentRank"),

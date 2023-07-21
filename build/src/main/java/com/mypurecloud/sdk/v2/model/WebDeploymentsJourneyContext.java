@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.JourneyAction;
 import com.mypurecloud.sdk.v2.model.JourneyCustomer;
 import com.mypurecloud.sdk.v2.model.JourneyCustomerSession;
 import io.swagger.annotations.ApiModel;
@@ -23,10 +24,29 @@ import java.io.Serializable;
 
 public class WebDeploymentsJourneyContext  implements Serializable {
   
+  private JourneyAction journeyAction = null;
   private JourneyCustomer customer = null;
   private JourneyCustomerSession customerSession = null;
 
   
+  /**
+   * A subset of the Journey System's action data relevant to a part of a conversation (for external linkage and internal usage/context)
+   **/
+  public WebDeploymentsJourneyContext journeyAction(JourneyAction journeyAction) {
+    this.journeyAction = journeyAction;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A subset of the Journey System's action data relevant to a part of a conversation (for external linkage and internal usage/context)")
+  @JsonProperty("journeyAction")
+  public JourneyAction getJourneyAction() {
+    return journeyAction;
+  }
+  public void setJourneyAction(JourneyAction journeyAction) {
+    this.journeyAction = journeyAction;
+  }
+
+
   /**
    * Journey customer information. Used for linking the authenticated customer with the journey. 
    **/
@@ -73,13 +93,14 @@ public class WebDeploymentsJourneyContext  implements Serializable {
     }
     WebDeploymentsJourneyContext webDeploymentsJourneyContext = (WebDeploymentsJourneyContext) o;
 
-    return Objects.equals(this.customer, webDeploymentsJourneyContext.customer) &&
+    return Objects.equals(this.journeyAction, webDeploymentsJourneyContext.journeyAction) &&
+            Objects.equals(this.customer, webDeploymentsJourneyContext.customer) &&
             Objects.equals(this.customerSession, webDeploymentsJourneyContext.customerSession);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customer, customerSession);
+    return Objects.hash(journeyAction, customer, customerSession);
   }
 
   @Override
@@ -87,6 +108,7 @@ public class WebDeploymentsJourneyContext  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class WebDeploymentsJourneyContext {\n");
     
+    sb.append("    journeyAction: ").append(toIndentedString(journeyAction)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    customerSession: ").append(toIndentedString(customerSession)).append("\n");
     sb.append("}");

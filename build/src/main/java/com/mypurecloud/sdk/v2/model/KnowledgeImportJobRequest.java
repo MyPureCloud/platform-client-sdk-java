@@ -74,6 +74,7 @@ public class KnowledgeImportJobRequest  implements Serializable {
   }
   private FileTypeEnum fileType = null;
   private KnowledgeImportJobSettings settings = null;
+  private Boolean skipConfirmationStep = null;
 
   
   /**
@@ -130,6 +131,24 @@ public class KnowledgeImportJobRequest  implements Serializable {
   }
 
 
+  /**
+   * If enabled pre-validation step will be skipped.
+   **/
+  public KnowledgeImportJobRequest skipConfirmationStep(Boolean skipConfirmationStep) {
+    this.skipConfirmationStep = skipConfirmationStep;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If enabled pre-validation step will be skipped.")
+  @JsonProperty("skipConfirmationStep")
+  public Boolean getSkipConfirmationStep() {
+    return skipConfirmationStep;
+  }
+  public void setSkipConfirmationStep(Boolean skipConfirmationStep) {
+    this.skipConfirmationStep = skipConfirmationStep;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -142,12 +161,13 @@ public class KnowledgeImportJobRequest  implements Serializable {
 
     return Objects.equals(this.uploadKey, knowledgeImportJobRequest.uploadKey) &&
             Objects.equals(this.fileType, knowledgeImportJobRequest.fileType) &&
-            Objects.equals(this.settings, knowledgeImportJobRequest.settings);
+            Objects.equals(this.settings, knowledgeImportJobRequest.settings) &&
+            Objects.equals(this.skipConfirmationStep, knowledgeImportJobRequest.skipConfirmationStep);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uploadKey, fileType, settings);
+    return Objects.hash(uploadKey, fileType, settings, skipConfirmationStep);
   }
 
   @Override
@@ -158,6 +178,7 @@ public class KnowledgeImportJobRequest  implements Serializable {
     sb.append("    uploadKey: ").append(toIndentedString(uploadKey)).append("\n");
     sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
+    sb.append("    skipConfirmationStep: ").append(toIndentedString(skipConfirmationStep)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -106,6 +106,7 @@ public class BotAggregateQueryPredicate  implements Serializable {
     BOTVERSION("botVersion"),
     CONVERSATIONID("conversationId"),
     EXTERNALCONTACTID("externalContactId"),
+    INTERMEDIATEINTENTNAME("intermediateIntentName"),
     KNOWLEDGEBASEID("knowledgeBaseId"),
     LANGUAGECODE("languageCode"),
     LASTACTIONID("lastActionId"),

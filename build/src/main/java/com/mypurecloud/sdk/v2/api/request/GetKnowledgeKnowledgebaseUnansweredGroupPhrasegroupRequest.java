@@ -74,6 +74,7 @@ import com.mypurecloud.sdk.v2.model.LabelCreateRequest;
 import com.mypurecloud.sdk.v2.model.LabelListing;
 import com.mypurecloud.sdk.v2.model.LabelResponse;
 import com.mypurecloud.sdk.v2.model.LabelUpdateRequest;
+import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.SearchUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TrainingListing;
 import com.mypurecloud.sdk.v2.model.UnansweredGroup;
@@ -175,6 +176,34 @@ public class GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest {
 		}
 	}
 
+	private LocalDate dateStart;
+	public LocalDate getDateStart() {
+		return this.dateStart;
+	}
+
+	public void setDateStart(LocalDate dateStart) {
+		this.dateStart = dateStart;
+	}
+
+	public GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest withDateStart(LocalDate dateStart) {
+	    this.setDateStart(dateStart);
+	    return this;
+	} 
+
+	private LocalDate dateEnd;
+	public LocalDate getDateEnd() {
+		return this.dateEnd;
+	}
+
+	public void setDateEnd(LocalDate dateEnd) {
+		this.dateEnd = dateEnd;
+	}
+
+	public GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest withDateEnd(LocalDate dateEnd) {
+	    this.setDateEnd(dateEnd);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -221,6 +250,12 @@ public class GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest {
         
 
                 .withQueryParameters("app", "", app)
+        
+
+                .withQueryParameters("dateStart", "", dateStart)
+        
+
+                .withQueryParameters("dateEnd", "", dateEnd)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -275,6 +310,16 @@ public class GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest {
 		    request.setApp(app.toString());
 
 		    return this;
+		}
+
+		public Builder withDateStart(LocalDate dateStart) {
+			request.setDateStart(dateStart);
+			return this;
+		}
+
+		public Builder withDateEnd(LocalDate dateEnd) {
+			request.setDateEnd(dateEnd);
+			return this;
 		}
 
 

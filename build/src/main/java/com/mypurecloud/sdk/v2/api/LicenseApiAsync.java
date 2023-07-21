@@ -201,7 +201,7 @@ public class LicenseApiAsync {
   }
 
   /**
-   * Get PureCloud license feature toggle value.
+   * Deprecated - no alternative required. This operation will always return 'true' for requested toggles
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -235,7 +235,7 @@ public class LicenseApiAsync {
   }
 
   /**
-   * Get PureCloud license feature toggle value.
+   * Deprecated - no alternative required. This operation will always return 'true' for requested toggles
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -576,7 +576,7 @@ public class LicenseApiAsync {
   }
 
   /**
-   * Switch PureCloud license feature toggle value.
+   * Deprecated. No alternative required - this endpoint has no effect
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -610,7 +610,7 @@ public class LicenseApiAsync {
   }
 
   /**
-   * Switch PureCloud license feature toggle value.
+   * Deprecated. No alternative required - this endpoint has no effect
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

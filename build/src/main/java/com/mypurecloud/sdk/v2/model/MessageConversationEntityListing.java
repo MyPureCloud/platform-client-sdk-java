@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
-import com.mypurecloud.sdk.v2.model.EmailConversation;
+import com.mypurecloud.sdk.v2.model.MessageConversation;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -23,9 +23,9 @@ import java.io.Serializable;
  * MessageConversationEntityListing
  */
 
-public class MessageConversationEntityListing  implements Serializable, PagedResource<EmailConversation> {
+public class MessageConversationEntityListing  implements Serializable, PagedResource<MessageConversation> {
   
-  private List<EmailConversation> entities = new ArrayList<EmailConversation>();
+  private List<MessageConversation> entities = new ArrayList<MessageConversation>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
@@ -39,17 +39,17 @@ public class MessageConversationEntityListing  implements Serializable, PagedRes
   
   /**
    **/
-  public MessageConversationEntityListing entities(List<EmailConversation> entities) {
+  public MessageConversationEntityListing entities(List<MessageConversation> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<EmailConversation> getEntities() {
+  public List<MessageConversation> getEntities() {
     return entities;
   }
-  public void setEntities(List<EmailConversation> entities) {
+  public void setEntities(List<MessageConversation> entities) {
     this.entities = entities;
   }
 

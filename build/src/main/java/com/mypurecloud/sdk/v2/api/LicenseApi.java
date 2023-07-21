@@ -199,7 +199,7 @@ public class LicenseApi {
   }
 
   /**
-   * Get PureCloud license feature toggle value.
+   * Deprecated - no alternative required. This operation will always return 'true' for requested toggles
    * 
    * @param featureName featureName (required)
    * @return LicenseOrgToggle
@@ -211,7 +211,7 @@ public class LicenseApi {
   }
 
   /**
-   * Get PureCloud license feature toggle value.
+   * Deprecated - no alternative required. This operation will always return 'true' for requested toggles
    * 
    * @param featureName featureName (required)
    * @return LicenseOrgToggle
@@ -229,7 +229,7 @@ public class LicenseApi {
   }
 
   /**
-   * Get PureCloud license feature toggle value.
+   * Deprecated - no alternative required. This operation will always return 'true' for requested toggles
    * 
    * @param request The request object
    * @return LicenseOrgToggle
@@ -248,7 +248,7 @@ public class LicenseApi {
   }
 
   /**
-   * Get PureCloud license feature toggle value.
+   * Deprecated - no alternative required. This operation will always return 'true' for requested toggles
    * 
    * @param request The request object
    * @return the response
@@ -593,7 +593,7 @@ public class LicenseApi {
   }
 
   /**
-   * Switch PureCloud license feature toggle value.
+   * Deprecated. No alternative required - this endpoint has no effect
    * 
    * @param featureName featureName (required)
    * @return LicenseOrgToggle
@@ -605,7 +605,7 @@ public class LicenseApi {
   }
 
   /**
-   * Switch PureCloud license feature toggle value.
+   * Deprecated. No alternative required - this endpoint has no effect
    * 
    * @param featureName featureName (required)
    * @return LicenseOrgToggle
@@ -623,7 +623,7 @@ public class LicenseApi {
   }
 
   /**
-   * Switch PureCloud license feature toggle value.
+   * Deprecated. No alternative required - this endpoint has no effect
    * 
    * @param request The request object
    * @return LicenseOrgToggle
@@ -642,7 +642,7 @@ public class LicenseApi {
   }
 
   /**
-   * Switch PureCloud license feature toggle value.
+   * Deprecated. No alternative required - this endpoint has no effect
    * 
    * @param request The request object
    * @return the response

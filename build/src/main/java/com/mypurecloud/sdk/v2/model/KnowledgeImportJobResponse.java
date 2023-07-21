@@ -139,6 +139,7 @@ public class KnowledgeImportJobResponse  implements Serializable {
   private KnowledgeBase knowledgeBase = null;
   private Date dateCreated = null;
   private Date dateModified = null;
+  private Boolean skipConfirmationStep = null;
   private String selfUri = null;
 
   
@@ -238,6 +239,24 @@ public class KnowledgeImportJobResponse  implements Serializable {
   }
 
 
+  /**
+   * If enabled pre-validation step will be skipped.
+   **/
+  public KnowledgeImportJobResponse skipConfirmationStep(Boolean skipConfirmationStep) {
+    this.skipConfirmationStep = skipConfirmationStep;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If enabled pre-validation step will be skipped.")
+  @JsonProperty("skipConfirmationStep")
+  public Boolean getSkipConfirmationStep() {
+    return skipConfirmationStep;
+  }
+  public void setSkipConfirmationStep(Boolean skipConfirmationStep) {
+    this.skipConfirmationStep = skipConfirmationStep;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -264,12 +283,13 @@ public class KnowledgeImportJobResponse  implements Serializable {
             Objects.equals(this.knowledgeBase, knowledgeImportJobResponse.knowledgeBase) &&
             Objects.equals(this.dateCreated, knowledgeImportJobResponse.dateCreated) &&
             Objects.equals(this.dateModified, knowledgeImportJobResponse.dateModified) &&
+            Objects.equals(this.skipConfirmationStep, knowledgeImportJobResponse.skipConfirmationStep) &&
             Objects.equals(this.selfUri, knowledgeImportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uploadKey, fileType, settings, status, report, knowledgeBase, dateCreated, dateModified, selfUri);
+    return Objects.hash(id, uploadKey, fileType, settings, status, report, knowledgeBase, dateCreated, dateModified, skipConfirmationStep, selfUri);
   }
 
   @Override
@@ -286,6 +306,7 @@ public class KnowledgeImportJobResponse  implements Serializable {
     sb.append("    knowledgeBase: ").append(toIndentedString(knowledgeBase)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    skipConfirmationStep: ").append(toIndentedString(skipConfirmationStep)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.TranscriptUrls;
 import com.mypurecloud.sdk.v2.model.TranscriptionEnginesRequest;
 import com.mypurecloud.sdk.v2.model.UnifiedGeneralTopicEntityListing;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
@@ -49,6 +50,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentf
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramTranscriptionenginesRequest;
@@ -554,6 +556,88 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TranscriptUrl> response = (ApiResponse<TranscriptUrl>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @return TranscriptUrls
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptUrls getSpeechandtextanalyticsConversationCommunicationTranscripturls(String conversationId, String communicationId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsConversationCommunicationTranscripturls(createGetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest(conversationId, communicationId));
+  }
+
+  /**
+   * Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param communicationId Communication ID (required)
+   * @return TranscriptUrls
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptUrls> getSpeechandtextanalyticsConversationCommunicationTranscripturlsWithHttpInfo(String conversationId, String communicationId) throws IOException {
+    return getSpeechandtextanalyticsConversationCommunicationTranscripturls(createGetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest(conversationId, communicationId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest createGetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest(String conversationId, String communicationId) {
+    return GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .build();
+  }
+
+  /**
+   * Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation
+   * 
+   * @param request The request object
+   * @return TranscriptUrls
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptUrls getSpeechandtextanalyticsConversationCommunicationTranscripturls(GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TranscriptUrls> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TranscriptUrls>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptUrls> getSpeechandtextanalyticsConversationCommunicationTranscripturls(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TranscriptUrls>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptUrls> response = (ApiResponse<TranscriptUrls>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptUrls> response = (ApiResponse<TranscriptUrls>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -25,6 +25,7 @@ public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
   
   private String defaultProgramId = null;
   private List<String> expectedDialects = new ArrayList<String>();
+  private Boolean textAnalyticsEnabled = null;
 
   
   /**
@@ -63,6 +64,24 @@ public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
   }
 
 
+  /**
+   * Setting to enable/disable text analytics
+   **/
+  public SpeechTextAnalyticsSettingsRequest textAnalyticsEnabled(Boolean textAnalyticsEnabled) {
+    this.textAnalyticsEnabled = textAnalyticsEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Setting to enable/disable text analytics")
+  @JsonProperty("textAnalyticsEnabled")
+  public Boolean getTextAnalyticsEnabled() {
+    return textAnalyticsEnabled;
+  }
+  public void setTextAnalyticsEnabled(Boolean textAnalyticsEnabled) {
+    this.textAnalyticsEnabled = textAnalyticsEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -74,12 +93,13 @@ public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
     SpeechTextAnalyticsSettingsRequest speechTextAnalyticsSettingsRequest = (SpeechTextAnalyticsSettingsRequest) o;
 
     return Objects.equals(this.defaultProgramId, speechTextAnalyticsSettingsRequest.defaultProgramId) &&
-            Objects.equals(this.expectedDialects, speechTextAnalyticsSettingsRequest.expectedDialects);
+            Objects.equals(this.expectedDialects, speechTextAnalyticsSettingsRequest.expectedDialects) &&
+            Objects.equals(this.textAnalyticsEnabled, speechTextAnalyticsSettingsRequest.textAnalyticsEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(defaultProgramId, expectedDialects);
+    return Objects.hash(defaultProgramId, expectedDialects, textAnalyticsEnabled);
   }
 
   @Override
@@ -89,6 +109,7 @@ public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
     
     sb.append("    defaultProgramId: ").append(toIndentedString(defaultProgramId)).append("\n");
     sb.append("    expectedDialects: ").append(toIndentedString(expectedDialects)).append("\n");
+    sb.append("    textAnalyticsEnabled: ").append(toIndentedString(textAnalyticsEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

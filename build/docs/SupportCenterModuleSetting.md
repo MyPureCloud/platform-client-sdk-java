@@ -10,6 +10,8 @@ title: SupportCenterModuleSetting
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | Screen module type |  [optional] |
 | **enabled** | <!----><!---->**Boolean**<!----> | Whether or not support center screen module is enabled |  [optional] |
+| **compactCategoryModuleTemplate** | <!----><!---->[**SupportCenterCompactCategoryModuleTemplate**](SupportCenterCompactCategoryModuleTemplate.html)<!----> | Compact category module template |  [optional] |
+| **detailedCategoryModuleTemplate** | <!----><!---->[**SupportCenterDetailedCategoryModuleTemplate**](SupportCenterDetailedCategoryModuleTemplate.html)<!----> | Detailed category module template |  [optional] |
 {: class="table table-striped"}
 
 

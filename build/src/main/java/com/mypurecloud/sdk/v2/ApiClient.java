@@ -542,6 +542,9 @@ public class ApiClient implements AutoCloseable {
      * Content-Type (only JSON is supported for now).
      */
     public String serialize(Object obj) throws IOException {
+        if (obj instanceof String) {
+            return obj.toString();
+        }
         return objectMapper.writeValueAsString(obj);
     }
 
@@ -963,7 +966,7 @@ public class ApiClient implements AutoCloseable {
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "184.0.0");
+            withDefaultHeader("purecloud-sdk", "185.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

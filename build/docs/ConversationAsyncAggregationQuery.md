@@ -93,6 +93,8 @@ title: ConversationAsyncAggregationQuery
 | ROOMID | &quot;roomId&quot; |
 | ROUTINGPRIORITY | &quot;routingPriority&quot; |
 | ROUTINGRING | &quot;routingRing&quot; |
+| ROUTINGRULE | &quot;routingRule&quot; |
+| ROUTINGRULETYPE | &quot;routingRuleType&quot; |
 | SCOREDAGENTID | &quot;scoredAgentId&quot; |
 | SELECTEDAGENTID | &quot;selectedAgentId&quot; |
 | SELECTEDAGENTRANK | &quot;selectedAgentRank&quot; |

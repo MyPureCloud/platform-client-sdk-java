@@ -178,6 +178,7 @@ title: ViewFilter
 | **evaluationAssigned** | <!----><!---->**Boolean**<!----> | Filter to indicate that the user has no assigned evaluation. |  [optional] |
 | **assistantIds** | <!----><!---->**List&lt;String&gt;**<!----> | The assistant ids that are used to filter the view. |  [optional] |
 | **knowledgeBaseIds** | <!----><!---->**List&lt;String&gt;**<!----> | The knowledge base ids that are used to filter the view. |  [optional] |
+| **isParked** | <!----><!---->**Boolean**<!----> | Filter to indicate if the interactions are parked. |  [optional] |
 {: class="table table-striped"}
 
 

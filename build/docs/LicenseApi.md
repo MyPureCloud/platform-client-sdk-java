@@ -9,12 +9,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**getLicenseDefinition**](LicenseApi.html#getLicenseDefinition) | Get PureCloud license definition. |
 | [**getLicenseDefinitions**](LicenseApi.html#getLicenseDefinitions) | Get all PureCloud license definitions available for the organization. |
-| [**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | Get PureCloud license feature toggle value. |
+| [**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | Deprecated - no alternative required. This operation will always return 'true' for requested toggles |
 | [**getLicenseUser**](LicenseApi.html#getLicenseUser) | Get licenses for specified user. |
 | [**getLicenseUsers**](LicenseApi.html#getLicenseUsers) | Get a page of users and their licenses |
 | [**postLicenseInfer**](LicenseApi.html#postLicenseInfer) | Get a list of licenses inferred based on a list of roleIds |
 | [**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | Update the organization's license assignments in a batch. |
-| [**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | Switch PureCloud license feature toggle value. |
+| [**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | Deprecated. No alternative required - this endpoint has no effect |
 | [**postLicenseUsers**](LicenseApi.html#postLicenseUsers) | Fetch user licenses in a batch. |
 {: class="table-striped"}
 
@@ -146,13 +146,12 @@ This endpoint does not require any parameters.
 
 > [LicenseOrgToggle](LicenseOrgToggle.html) getLicenseToggle(featureName)
 
-Get PureCloud license feature toggle value.
+Deprecated - no alternative required. This operation will always return 'true' for requested toggles
 
 Wraps GET /api/v2/license/toggles/{featureName}  
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* authorization:grant:add
 
 ### Example
 
@@ -454,13 +453,12 @@ try {
 
 > [LicenseOrgToggle](LicenseOrgToggle.html) postLicenseToggle(featureName)
 
-Switch PureCloud license feature toggle value.
+Deprecated. No alternative required - this endpoint has no effect
 
 Wraps POST /api/v2/license/toggles/{featureName}  
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* authorization:grant:add
 
 ### Example
 

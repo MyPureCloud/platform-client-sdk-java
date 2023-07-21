@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.Activation;
 import com.mypurecloud.sdk.v2.model.EventCondition;
 import com.mypurecloud.sdk.v2.model.OutcomePercentileCondition;
 import com.mypurecloud.sdk.v2.model.OutcomeProbabilityCondition;
+import com.mypurecloud.sdk.v2.model.OutcomeQuantileCondition;
 import com.mypurecloud.sdk.v2.model.PatchAction;
 import com.mypurecloud.sdk.v2.model.PatchActionMapScheduleGroups;
 import com.mypurecloud.sdk.v2.model.UrlCondition;
@@ -39,6 +40,7 @@ public class PatchActionMap  implements Serializable {
   private List<EventCondition> triggerWithEventConditions = new ArrayList<EventCondition>();
   private List<OutcomeProbabilityCondition> triggerWithOutcomeProbabilityConditions = new ArrayList<OutcomeProbabilityCondition>();
   private List<OutcomePercentileCondition> triggerWithOutcomePercentileConditions = new ArrayList<OutcomePercentileCondition>();
+  private List<OutcomeQuantileCondition> triggerWithOutcomeQuantileConditions = new ArrayList<OutcomeQuantileCondition>();
   private List<UrlCondition> pageUrlConditions = new ArrayList<UrlCondition>();
   private Activation activation = null;
   private Integer weight = null;
@@ -168,20 +170,38 @@ public class PatchActionMap  implements Serializable {
 
 
   /**
-   * Percentile conditions for outcomes that must be satisfied to trigger the action map.
+   * (deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.
    **/
   public PatchActionMap triggerWithOutcomePercentileConditions(List<OutcomePercentileCondition> triggerWithOutcomePercentileConditions) {
     this.triggerWithOutcomePercentileConditions = triggerWithOutcomePercentileConditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Percentile conditions for outcomes that must be satisfied to trigger the action map.")
+  @ApiModelProperty(example = "null", value = "(deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.")
   @JsonProperty("triggerWithOutcomePercentileConditions")
   public List<OutcomePercentileCondition> getTriggerWithOutcomePercentileConditions() {
     return triggerWithOutcomePercentileConditions;
   }
   public void setTriggerWithOutcomePercentileConditions(List<OutcomePercentileCondition> triggerWithOutcomePercentileConditions) {
     this.triggerWithOutcomePercentileConditions = triggerWithOutcomePercentileConditions;
+  }
+
+
+  /**
+   * Quantile conditions for outcomes that must be satisfied to trigger the action map.
+   **/
+  public PatchActionMap triggerWithOutcomeQuantileConditions(List<OutcomeQuantileCondition> triggerWithOutcomeQuantileConditions) {
+    this.triggerWithOutcomeQuantileConditions = triggerWithOutcomeQuantileConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Quantile conditions for outcomes that must be satisfied to trigger the action map.")
+  @JsonProperty("triggerWithOutcomeQuantileConditions")
+  public List<OutcomeQuantileCondition> getTriggerWithOutcomeQuantileConditions() {
+    return triggerWithOutcomeQuantileConditions;
+  }
+  public void setTriggerWithOutcomeQuantileConditions(List<OutcomeQuantileCondition> triggerWithOutcomeQuantileConditions) {
+    this.triggerWithOutcomeQuantileConditions = triggerWithOutcomeQuantileConditions;
   }
 
 
@@ -390,6 +410,7 @@ public class PatchActionMap  implements Serializable {
             Objects.equals(this.triggerWithEventConditions, patchActionMap.triggerWithEventConditions) &&
             Objects.equals(this.triggerWithOutcomeProbabilityConditions, patchActionMap.triggerWithOutcomeProbabilityConditions) &&
             Objects.equals(this.triggerWithOutcomePercentileConditions, patchActionMap.triggerWithOutcomePercentileConditions) &&
+            Objects.equals(this.triggerWithOutcomeQuantileConditions, patchActionMap.triggerWithOutcomeQuantileConditions) &&
             Objects.equals(this.pageUrlConditions, patchActionMap.pageUrlConditions) &&
             Objects.equals(this.activation, patchActionMap.activation) &&
             Objects.equals(this.weight, patchActionMap.weight) &&
@@ -405,7 +426,7 @@ public class PatchActionMap  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, version, isActive, displayName, triggerWithSegments, triggerWithEventConditions, triggerWithOutcomeProbabilityConditions, triggerWithOutcomePercentileConditions, pageUrlConditions, activation, weight, action, actionMapScheduleGroups, ignoreFrequencyCap, selfUri, createdDate, modifiedDate, startDate, endDate);
+    return Objects.hash(id, version, isActive, displayName, triggerWithSegments, triggerWithEventConditions, triggerWithOutcomeProbabilityConditions, triggerWithOutcomePercentileConditions, triggerWithOutcomeQuantileConditions, pageUrlConditions, activation, weight, action, actionMapScheduleGroups, ignoreFrequencyCap, selfUri, createdDate, modifiedDate, startDate, endDate);
   }
 
   @Override
@@ -421,6 +442,7 @@ public class PatchActionMap  implements Serializable {
     sb.append("    triggerWithEventConditions: ").append(toIndentedString(triggerWithEventConditions)).append("\n");
     sb.append("    triggerWithOutcomeProbabilityConditions: ").append(toIndentedString(triggerWithOutcomeProbabilityConditions)).append("\n");
     sb.append("    triggerWithOutcomePercentileConditions: ").append(toIndentedString(triggerWithOutcomePercentileConditions)).append("\n");
+    sb.append("    triggerWithOutcomeQuantileConditions: ").append(toIndentedString(triggerWithOutcomeQuantileConditions)).append("\n");
     sb.append("    pageUrlConditions: ").append(toIndentedString(pageUrlConditions)).append("\n");
     sb.append("    activation: ").append(toIndentedString(activation)).append("\n");
     sb.append("    weight: ").append(toIndentedString(weight)).append("\n");

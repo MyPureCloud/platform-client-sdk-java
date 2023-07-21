@@ -122,6 +122,7 @@ public class CreateQueueRequest  implements Serializable {
   private QueueMessagingAddresses outboundMessagingAddresses = null;
   private QueueEmailAddress outboundEmailAddress = null;
   private String peerId = null;
+  private Boolean suppressInQueueCallRecording = null;
   private String sourceQueueId = null;
   private String selfUri = null;
 
@@ -694,6 +695,24 @@ public class CreateQueueRequest  implements Serializable {
 
 
   /**
+   * Indicates whether recording in-queue calls is suppressed for this queue.
+   **/
+  public CreateQueueRequest suppressInQueueCallRecording(Boolean suppressInQueueCallRecording) {
+    this.suppressInQueueCallRecording = suppressInQueueCallRecording;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether recording in-queue calls is suppressed for this queue.")
+  @JsonProperty("suppressInQueueCallRecording")
+  public Boolean getSuppressInQueueCallRecording() {
+    return suppressInQueueCallRecording;
+  }
+  public void setSuppressInQueueCallRecording(Boolean suppressInQueueCallRecording) {
+    this.suppressInQueueCallRecording = suppressInQueueCallRecording;
+  }
+
+
+  /**
    * The id of an existing queue to copy the settings (does not include GPR settings) from when creating a new queue.
    **/
   public CreateQueueRequest sourceQueueId(String sourceQueueId) {
@@ -762,13 +781,14 @@ public class CreateQueueRequest  implements Serializable {
             Objects.equals(this.outboundMessagingAddresses, createQueueRequest.outboundMessagingAddresses) &&
             Objects.equals(this.outboundEmailAddress, createQueueRequest.outboundEmailAddress) &&
             Objects.equals(this.peerId, createQueueRequest.peerId) &&
+            Objects.equals(this.suppressInQueueCallRecording, createQueueRequest.suppressInQueueCallRecording) &&
             Objects.equals(this.sourceQueueId, createQueueRequest.sourceQueueId) &&
             Objects.equals(this.selfUri, createQueueRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, sourceQueueId, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, sourceQueueId, selfUri);
   }
 
   @Override
@@ -810,6 +830,7 @@ public class CreateQueueRequest  implements Serializable {
     sb.append("    outboundMessagingAddresses: ").append(toIndentedString(outboundMessagingAddresses)).append("\n");
     sb.append("    outboundEmailAddress: ").append(toIndentedString(outboundEmailAddress)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
+    sb.append("    suppressInQueueCallRecording: ").append(toIndentedString(suppressInQueueCallRecording)).append("\n");
     sb.append("    sourceQueueId: ").append(toIndentedString(sourceQueueId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

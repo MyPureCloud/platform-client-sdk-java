@@ -11,7 +11,7 @@ title: AgentlessEmailSendRequestDto
 | **senderType** | [**SenderTypeEnum**](#SenderTypeEnum)<!----> | The direction of the message. |  |
 | **conversationId** | <!----><!---->**String**<!----> | The identifier of the conversation. |  [optional] |
 | **fromAddress** | <!----><!---->[**EmailAddress**](EmailAddress.html)<!----> | The sender of the message. |  |
-| **toAddresses** | <!----><!---->[**List&lt;EmailAddress&gt;**](EmailAddress.html)<!----> | The recipient(s) of the message. |  |
+| **toAddresses** | <!----><!---->[**List&lt;EmailAddress&gt;**](EmailAddress.html)<!----> | The recipient of the message. So far, only one recipient is allowed. This is a list, only for future usage. |  |
 | **replyToAddress** | <!----><!---->[**EmailAddress**](EmailAddress.html)<!----> | The address to use for reply. |  [optional] |
 | **subject** | <!----><!---->**String**<!----> | The subject of the message. |  [optional] |
 | **textBody** | <!----><!---->**String**<!----> | The Content of the message, in plain text. |  [optional] |

@@ -21,6 +21,10 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.MessagingConfigListing;
+import com.mypurecloud.sdk.v2.model.MessagingSetting;
+import com.mypurecloud.sdk.v2.model.MessagingSettingDefaultRequest;
+import com.mypurecloud.sdk.v2.model.MessagingSettingRequest;
 import com.mypurecloud.sdk.v2.model.SupportedContent;
 import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 
