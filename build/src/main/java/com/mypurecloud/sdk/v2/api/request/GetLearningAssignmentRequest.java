@@ -81,7 +81,9 @@ public class GetLearningAssignmentRequest {
 		MODULE("module"),
 		ASSESSMENT("assessment"),
 		ASSESSMENTFORM("assessmentForm"),
-		MODULE_COVERART("module.coverArt");
+		MODULE_COVERART("module.coverArt"),
+		STEP("step"),
+		STEP_MODULESTEP("step.moduleStep");
 
 		private String value;
 

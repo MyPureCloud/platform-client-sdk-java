@@ -92,6 +92,7 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ASSIGNEEID("assigneeId"),
+    ASSIGNEEAPPLICABLE("assigneeApplicable"),
     CALIBRATIONID("calibrationId"),
     CONTEXTID("contextId"),
     DELETED("deleted"),

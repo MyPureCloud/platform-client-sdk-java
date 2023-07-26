@@ -1997,8 +1997,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-String feature = "feature_example"; // String | 
-String divisionId = "divisionId_example"; // String | 
+String feature = "feature_example"; // String | If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+String divisionId = "divisionId_example"; // String | If specified, the list of management units belonging to the specified division will be returned
 try {
     ManagementUnitListing result = apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, feature, divisionId);
     System.out.println(result);
@@ -2014,8 +2014,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
-| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans 
-| **divisionId** | **String**|  | [optional] 
+| **feature** | **String**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans 
+| **divisionId** | **String**| If specified, the list of management units belonging to the specified division will be returned | [optional] 
 {: class="table-striped"}
 
 
@@ -3254,8 +3254,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String feature = "feature_example"; // String | 
-String divisionId = "divisionId_example"; // String | 
+String feature = "feature_example"; // String | If specified, the list of business units for which the user is authorized to use the requested feature will be returned
+String divisionId = "divisionId_example"; // String | If specified, the list of business units belonging to the specified division will be returned
 try {
     BusinessUnitListing result = apiInstance.getWorkforcemanagementBusinessunits(feature, divisionId);
     System.out.println(result);
@@ -3270,8 +3270,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans 
-| **divisionId** | **String**|  | [optional] 
+| **feature** | **String**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans 
+| **divisionId** | **String**| If specified, the list of business units belonging to the specified division will be returned | [optional] 
 {: class="table-striped"}
 
 
@@ -5125,8 +5125,8 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 Integer pageSize = 56; // Integer | Deprecated, paging is not supported
 Integer pageNumber = 56; // Integer | Deprecated, paging is not supported
 String expand = "expand_example"; // String | Deprecated, expand settings on the single MU route
-String feature = "feature_example"; // String | 
-String divisionId = "divisionId_example"; // String | 
+String feature = "feature_example"; // String | If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+String divisionId = "divisionId_example"; // String | If specified, the list of management units belonging to the specified division will be returned
 try {
     ManagementUnitListing result = apiInstance.getWorkforcemanagementManagementunits(pageSize, pageNumber, expand, feature, divisionId);
     System.out.println(result);
@@ -5144,8 +5144,8 @@ try {
 | **pageSize** | **Integer**| Deprecated, paging is not supported | [optional] 
 | **pageNumber** | **Integer**| Deprecated, paging is not supported | [optional] 
 | **expand** | **String**| Deprecated, expand settings on the single MU route | [optional]<br />**Values**: details 
-| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans 
-| **divisionId** | **String**|  | [optional] 
+| **feature** | **String**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans 
+| **divisionId** | **String**| If specified, the list of management units belonging to the specified division will be returned | [optional] 
 {: class="table-striped"}
 
 

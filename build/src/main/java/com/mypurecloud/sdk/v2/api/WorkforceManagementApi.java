@@ -2394,8 +2394,8 @@ public class WorkforceManagementApi {
    * Get all authorized management units in the business unit
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-   * @param feature  (optional)
-   * @param divisionId  (optional)
+   * @param feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned (optional)
+   * @param divisionId If specified, the list of management units belonging to the specified division will be returned (optional)
    * @return ManagementUnitListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2408,8 +2408,8 @@ public class WorkforceManagementApi {
    * Get all authorized management units in the business unit
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-   * @param feature  (optional)
-   * @param divisionId  (optional)
+   * @param feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned (optional)
+   * @param divisionId If specified, the list of management units belonging to the specified division will be returned (optional)
    * @return ManagementUnitListing
    * @throws IOException if the request fails to be processed
    */
@@ -4023,8 +4023,8 @@ public class WorkforceManagementApi {
   /**
    * Get business units
    * 
-   * @param feature  (optional)
-   * @param divisionId  (optional)
+   * @param feature If specified, the list of business units for which the user is authorized to use the requested feature will be returned (optional)
+   * @param divisionId If specified, the list of business units belonging to the specified division will be returned (optional)
    * @return BusinessUnitListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4036,8 +4036,8 @@ public class WorkforceManagementApi {
   /**
    * Get business units
    * 
-   * @param feature  (optional)
-   * @param divisionId  (optional)
+   * @param feature If specified, the list of business units for which the user is authorized to use the requested feature will be returned (optional)
+   * @param divisionId If specified, the list of business units belonging to the specified division will be returned (optional)
    * @return BusinessUnitListing
    * @throws IOException if the request fails to be processed
    */
@@ -6326,8 +6326,8 @@ public class WorkforceManagementApi {
    * @param pageSize Deprecated, paging is not supported (optional)
    * @param pageNumber Deprecated, paging is not supported (optional)
    * @param expand Deprecated, expand settings on the single MU route (optional)
-   * @param feature  (optional)
-   * @param divisionId  (optional)
+   * @param feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned (optional)
+   * @param divisionId If specified, the list of management units belonging to the specified division will be returned (optional)
    * @return ManagementUnitListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6342,8 +6342,8 @@ public class WorkforceManagementApi {
    * @param pageSize Deprecated, paging is not supported (optional)
    * @param pageNumber Deprecated, paging is not supported (optional)
    * @param expand Deprecated, expand settings on the single MU route (optional)
-   * @param feature  (optional)
-   * @param divisionId  (optional)
+   * @param feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned (optional)
+   * @param divisionId If specified, the list of management units belonging to the specified division will be returned (optional)
    * @return ManagementUnitListing
    * @throws IOException if the request fails to be processed
    */

@@ -32,8 +32,8 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
   private String firstUri = null;
   private String nextUri = null;
   private String previousUri = null;
-  private String lastUri = null;
   private String selfUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   
@@ -158,23 +158,6 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
 
   /**
    **/
-  public PolicyEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public PolicyEntityListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -187,6 +170,23 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public PolicyEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -224,14 +224,14 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
             Objects.equals(this.firstUri, policyEntityListing.firstUri) &&
             Objects.equals(this.nextUri, policyEntityListing.nextUri) &&
             Objects.equals(this.previousUri, policyEntityListing.previousUri) &&
-            Objects.equals(this.lastUri, policyEntityListing.lastUri) &&
             Objects.equals(this.selfUri, policyEntityListing.selfUri) &&
+            Objects.equals(this.lastUri, policyEntityListing.lastUri) &&
             Objects.equals(this.pageCount, policyEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, selfUri, lastUri, pageCount);
   }
 
   @Override
@@ -246,8 +246,8 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

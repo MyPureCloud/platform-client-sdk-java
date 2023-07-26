@@ -216,7 +216,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **assignmentId** | **String**| The ID of Learning Assignment | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response | [optional]<br />**Values**: module, assessment, assessmentForm, module.coverArt 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response | [optional]<br />**Values**: module, assessment, assessmentForm, module.coverArt, step, step.moduleStep 
 {: class="table-striped"}
 
 

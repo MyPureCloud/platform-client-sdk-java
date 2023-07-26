@@ -11,7 +11,9 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ButtonResponse;
+import com.mypurecloud.sdk.v2.model.Card;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.MessageMediaAttachment;
 import com.mypurecloud.sdk.v2.model.MessageStickerAttachment;
@@ -43,6 +45,66 @@ public class RecordingMessagingMessage  implements Serializable {
   private List<QuickReply> quickReplies = new ArrayList<QuickReply>();
   private ButtonResponse buttonResponse = null;
   private RecordingContentStory story = null;
+  private List<Card> cards = new ArrayList<Card>();
+
+  private static class ContentTypeEnumDeserializer extends StdDeserializer<ContentTypeEnum> {
+    public ContentTypeEnumDeserializer() {
+      super(ContentTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ContentTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ContentTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Indicates the content type for this message
+   */
+ @JsonDeserialize(using = ContentTypeEnumDeserializer.class)
+  public enum ContentTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    QUICKREPLY("QuickReply"),
+    STORY("Story"),
+    CARD("Card"),
+    CAROUSEL("Carousel"),
+    ATTACHMENT("Attachment"),
+    LOCATION("Location"),
+    NOTIFICATION("Notification"),
+    GENERICTEMPLATE("GenericTemplate"),
+    LISTTEMPLATE("ListTemplate"),
+    POSTBACK("Postback"),
+    REACTIONS("Reactions"),
+    MENTION("Mention"),
+    BUTTONRESPONSE("ButtonResponse");
+
+    private String value;
+
+    ContentTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ContentTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ContentTypeEnum value : ContentTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ContentTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ContentTypeEnum contentType = null;
 
   
   /**
@@ -261,6 +323,42 @@ public class RecordingMessagingMessage  implements Serializable {
   }
 
 
+  /**
+   * List of cards offered for this message
+   **/
+  public RecordingMessagingMessage cards(List<Card> cards) {
+    this.cards = cards;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of cards offered for this message")
+  @JsonProperty("cards")
+  public List<Card> getCards() {
+    return cards;
+  }
+  public void setCards(List<Card> cards) {
+    this.cards = cards;
+  }
+
+
+  /**
+   * Indicates the content type for this message
+   **/
+  public RecordingMessagingMessage contentType(ContentTypeEnum contentType) {
+    this.contentType = contentType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the content type for this message")
+  @JsonProperty("contentType")
+  public ContentTypeEnum getContentType() {
+    return contentType;
+  }
+  public void setContentType(ContentTypeEnum contentType) {
+    this.contentType = contentType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -282,12 +380,14 @@ public class RecordingMessagingMessage  implements Serializable {
             Objects.equals(this.messageStickerAttachments, recordingMessagingMessage.messageStickerAttachments) &&
             Objects.equals(this.quickReplies, recordingMessagingMessage.quickReplies) &&
             Objects.equals(this.buttonResponse, recordingMessagingMessage.buttonResponse) &&
-            Objects.equals(this.story, recordingMessagingMessage.story);
+            Objects.equals(this.story, recordingMessagingMessage.story) &&
+            Objects.equals(this.cards, recordingMessagingMessage.cards) &&
+            Objects.equals(this.contentType, recordingMessagingMessage.contentType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, contentType);
   }
 
   @Override
@@ -307,6 +407,8 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    quickReplies: ").append(toIndentedString(quickReplies)).append("\n");
     sb.append("    buttonResponse: ").append(toIndentedString(buttonResponse)).append("\n");
     sb.append("    story: ").append(toIndentedString(story)).append("\n");
+    sb.append("    cards: ").append(toIndentedString(cards)).append("\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

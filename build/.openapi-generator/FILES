@@ -1989,6 +1989,9 @@ docs/LearningAssignmentReschedule.md
 docs/LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification.md
 docs/LearningAssignmentRuleRunTopicLearningAssignmentsCreated.md
 docs/LearningAssignmentRuleRunTopicLearningModuleReference.md
+docs/LearningAssignmentStep.md
+docs/LearningAssignmentStepScoStructure.md
+docs/LearningAssignmentStepSignedCookie.md
 docs/LearningAssignmentTopicLearningAssignmentNotification.md
 docs/LearningAssignmentTopicLearningModuleReference.md
 docs/LearningAssignmentTopicUserReference.md
@@ -2015,6 +2018,7 @@ docs/LearningModuleSummary.md
 docs/LearningModulesDomainEntityListing.md
 docs/LearningScheduleSlotsQueryRequest.md
 docs/LearningScheduleSlotsQueryResponse.md
+docs/LearningShareableContentObject.md
 docs/LearningSlot.md
 docs/LearningSlotFullDayTimeOffMarker.md
 docs/LearningSlotScheduleActivity.md
@@ -3174,7 +3178,6 @@ docs/SupportCenterSettings.md
 docs/SupportCenterStyleSetting.md
 docs/SupportedContent.md
 docs/SupportedContentListing.md
-docs/SupportedContentProfile.md
 docs/SupportedContentReference.md
 docs/SupportedDialectsEntityListing.md
 docs/SupportedLanguage.md
@@ -10645,6 +10648,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentReschedule.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentRuleRunTopicLearningAssignmentsCreated.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentRuleRunTopicLearningModuleReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentStep.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentStepScoStructure.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentStepSignedCookie.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentTopicLearningAssignmentNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentTopicLearningModuleReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningAssignmentTopicUserReference.java
@@ -10671,6 +10677,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModulesDomainEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningScheduleSlotsQueryResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningShareableContentObject.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningSlot.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningSlotFullDayTimeOffMarker.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningSlotScheduleActivity.java
@@ -11784,7 +11791,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/SupportCenterSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportCenterStyleSetting.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportedContent.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportedContentListing.java
-src/main/java/com/mypurecloud/sdk/v2/model/SupportedContentProfile.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportedContentReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportedDialectsEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportedLanguage.java

@@ -24,6 +24,7 @@ import java.io.Serializable;
 public class AnalyticsEvaluation  implements Serializable {
   
   private String assigneeId = null;
+  private Boolean assigneeApplicable = null;
   private String calibrationId = null;
   private String contextId = null;
   private Boolean deleted = null;
@@ -106,6 +107,24 @@ public class AnalyticsEvaluation  implements Serializable {
   }
   public void setAssigneeId(String assigneeId) {
     this.assigneeId = assigneeId;
+  }
+
+
+  /**
+   * Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable
+   **/
+  public AnalyticsEvaluation assigneeApplicable(Boolean assigneeApplicable) {
+    this.assigneeApplicable = assigneeApplicable;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable")
+  @JsonProperty("assigneeApplicable")
+  public Boolean getAssigneeApplicable() {
+    return assigneeApplicable;
+  }
+  public void setAssigneeApplicable(Boolean assigneeApplicable) {
+    this.assigneeApplicable = assigneeApplicable;
   }
 
 
@@ -388,6 +407,7 @@ public class AnalyticsEvaluation  implements Serializable {
     AnalyticsEvaluation analyticsEvaluation = (AnalyticsEvaluation) o;
 
     return Objects.equals(this.assigneeId, analyticsEvaluation.assigneeId) &&
+            Objects.equals(this.assigneeApplicable, analyticsEvaluation.assigneeApplicable) &&
             Objects.equals(this.calibrationId, analyticsEvaluation.calibrationId) &&
             Objects.equals(this.contextId, analyticsEvaluation.contextId) &&
             Objects.equals(this.deleted, analyticsEvaluation.deleted) &&
@@ -407,7 +427,7 @@ public class AnalyticsEvaluation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(assigneeId, calibrationId, contextId, deleted, evaluationId, evaluationStatus, evaluatorId, eventTime, formId, formName, queueId, released, rescored, userId, oTotalCriticalScore, oTotalScore);
+    return Objects.hash(assigneeId, assigneeApplicable, calibrationId, contextId, deleted, evaluationId, evaluationStatus, evaluatorId, eventTime, formId, formName, queueId, released, rescored, userId, oTotalCriticalScore, oTotalScore);
   }
 
   @Override
@@ -416,6 +436,7 @@ public class AnalyticsEvaluation  implements Serializable {
     sb.append("class AnalyticsEvaluation {\n");
     
     sb.append("    assigneeId: ").append(toIndentedString(assigneeId)).append("\n");
+    sb.append("    assigneeApplicable: ").append(toIndentedString(assigneeApplicable)).append("\n");
     sb.append("    calibrationId: ").append(toIndentedString(calibrationId)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");

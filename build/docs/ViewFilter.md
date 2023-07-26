@@ -169,8 +169,10 @@ title: ViewFilter
 | **workitemIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Workitem IDs |  [optional] |
 | **workitemAssigneeIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Workitem Assignee IDs |  [optional] |
 | **workitemStatuses** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Workitem Statuses IDs |  [optional] |
-| **isAnalyzedForSensitiveData** | <!----><!---->**Boolean**<!----> | Filter to indicate the transcript has been analyzed for sensitive data. |  [optional] |
-| **hasSensitiveData** | <!----><!---->**Boolean**<!----> | Filter to indicate the transcript contains sensitive data. |  [optional] |
+| **isAnalyzedForSensitiveData** | <!----><!---->**Boolean**<!----> | Deprecated - Use hasPciData or hasPiiData instead. |  [optional] |
+| **hasSensitiveData** | <!----><!---->**Boolean**<!----> | Deprecated. Use hasPciData or hasPiiData instead. |  [optional] |
+| **hasPciData** | <!----><!---->**Boolean**<!----> | Filter to indicate the transcript contains Pci data. |  [optional] |
+| **hasPiiData** | <!----><!---->**Boolean**<!----> | Filter to indicate the transcript contains Pii data. |  [optional] |
 | **subPath** | <!----><!---->**String**<!----> | Filter for Sub Path |  [optional] |
 | **userState** | [**UserStateEnum**](#UserStateEnum)<!----> | The user supplied state value in the view |  [optional] |
 | **isClearedByCustomer** | <!----><!---->**Boolean**<!----> | Filter to indicate if the customer cleared the conversation. |  [optional] |

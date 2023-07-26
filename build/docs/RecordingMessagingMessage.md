@@ -20,6 +20,31 @@ title: RecordingMessagingMessage
 | **quickReplies** | <!----><!---->[**List&lt;QuickReply&gt;**](QuickReply.html)<!----> | List of quick reply options offered with this message. |  [optional] |
 | **buttonResponse** | <!----><!---->[**ButtonResponse**](ButtonResponse.html)<!----> | Button Response selected by user for this message. |  [optional] |
 | **story** | <!----><!---->[**RecordingContentStory**](RecordingContentStory.html)<!----> | Ephemeral story content. |  [optional] |
+| **cards** | <!----><!---->[**List&lt;Card&gt;**](Card.html)<!----> | List of cards offered for this message |  [optional] |
+| **contentType** | [**ContentTypeEnum**](#ContentTypeEnum)<!----> | Indicates the content type for this message |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="ContentTypeEnum"></a>
+
+## Enum: ContentTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| QUICKREPLY | &quot;QuickReply&quot; | 
+| STORY | &quot;Story&quot; | 
+| CARD | &quot;Card&quot; | 
+| CAROUSEL | &quot;Carousel&quot; | 
+| ATTACHMENT | &quot;Attachment&quot; | 
+| LOCATION | &quot;Location&quot; | 
+| NOTIFICATION | &quot;Notification&quot; | 
+| GENERICTEMPLATE | &quot;GenericTemplate&quot; | 
+| LISTTEMPLATE | &quot;ListTemplate&quot; | 
+| POSTBACK | &quot;Postback&quot; | 
+| REACTIONS | &quot;Reactions&quot; | 
+| MENTION | &quot;Mention&quot; | 
+| BUTTONRESPONSE | &quot;ButtonResponse&quot; | 
 {: class="table table-striped"}
 
 

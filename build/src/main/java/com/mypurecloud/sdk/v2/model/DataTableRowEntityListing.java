@@ -32,8 +32,8 @@ public class DataTableRowEntityListing  implements Serializable, PagedResource<M
   private String firstUri = null;
   private String nextUri = null;
   private String previousUri = null;
-  private String lastUri = null;
   private String selfUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   
@@ -158,23 +158,6 @@ public class DataTableRowEntityListing  implements Serializable, PagedResource<M
 
   /**
    **/
-  public DataTableRowEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public DataTableRowEntityListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -187,6 +170,23 @@ public class DataTableRowEntityListing  implements Serializable, PagedResource<M
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public DataTableRowEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -224,14 +224,14 @@ public class DataTableRowEntityListing  implements Serializable, PagedResource<M
             Objects.equals(this.firstUri, dataTableRowEntityListing.firstUri) &&
             Objects.equals(this.nextUri, dataTableRowEntityListing.nextUri) &&
             Objects.equals(this.previousUri, dataTableRowEntityListing.previousUri) &&
-            Objects.equals(this.lastUri, dataTableRowEntityListing.lastUri) &&
             Objects.equals(this.selfUri, dataTableRowEntityListing.selfUri) &&
+            Objects.equals(this.lastUri, dataTableRowEntityListing.lastUri) &&
             Objects.equals(this.pageCount, dataTableRowEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, selfUri, lastUri, pageCount);
   }
 
   @Override
@@ -246,8 +246,8 @@ public class DataTableRowEntityListing  implements Serializable, PagedResource<M
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();
