@@ -32,8 +32,8 @@ public class ExternalMetricDefinitionListing  implements Serializable, PagedReso
   private String firstUri = null;
   private String nextUri = null;
   private String previousUri = null;
-  private String selfUri = null;
   private String lastUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   
@@ -158,23 +158,6 @@ public class ExternalMetricDefinitionListing  implements Serializable, PagedReso
 
   /**
    **/
-  public ExternalMetricDefinitionListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public ExternalMetricDefinitionListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -187,6 +170,23 @@ public class ExternalMetricDefinitionListing  implements Serializable, PagedReso
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public ExternalMetricDefinitionListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 
@@ -224,14 +224,14 @@ public class ExternalMetricDefinitionListing  implements Serializable, PagedReso
             Objects.equals(this.firstUri, externalMetricDefinitionListing.firstUri) &&
             Objects.equals(this.nextUri, externalMetricDefinitionListing.nextUri) &&
             Objects.equals(this.previousUri, externalMetricDefinitionListing.previousUri) &&
-            Objects.equals(this.selfUri, externalMetricDefinitionListing.selfUri) &&
             Objects.equals(this.lastUri, externalMetricDefinitionListing.lastUri) &&
+            Objects.equals(this.selfUri, externalMetricDefinitionListing.selfUri) &&
             Objects.equals(this.pageCount, externalMetricDefinitionListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, selfUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -246,8 +246,8 @@ public class ExternalMetricDefinitionListing  implements Serializable, PagedReso
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

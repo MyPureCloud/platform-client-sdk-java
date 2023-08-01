@@ -3215,10 +3215,10 @@ Integer pageNumber = 1; // Integer |
 Integer pageSize = 25; // Integer | Max value is 100
 String sortOrder = "asc"; // String | Note: results are sorted by name.
 List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
-String name = "name_example"; // String | Filter by queue member name
-List<String> profileSkills = Arrays.asList(null); // List<String> | Filter by profile skill
-List<String> skills = Arrays.asList(null); // List<String> | Filter by skill
-List<String> languages = Arrays.asList(null); // List<String> | Filter by language
+String name = "name_example"; // String | Filter by queue member name (contains-style search)
+List<String> profileSkills = Arrays.asList(null); // List<String> | Filter by profile skill (contains-style search)
+List<String> skills = Arrays.asList(null); // List<String> | Filter by skill (contains-style search)
+List<String> languages = Arrays.asList(null); // List<String> | Filter by language (contains-style search)
 List<String> routingStatus = Arrays.asList(null); // List<String> | Filter by routing status
 List<String> presence = Arrays.asList(null); // List<String> | Filter by presence
 String memberBy = "memberBy_example"; // String | Filter by member type
@@ -3242,10 +3242,10 @@ try {
 | **pageSize** | **Integer**| Max value is 100 | [optional] [default to 25] 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
-| **name** | **String**| Filter by queue member name | [optional] 
-| **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] 
-| **skills** | [**List&lt;String&gt;**](String.html)| Filter by skill | [optional] 
-| **languages** | [**List&lt;String&gt;**](String.html)| Filter by language | [optional] 
+| **name** | **String**| Filter by queue member name (contains-style search) | [optional] 
+| **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill (contains-style search) | [optional] 
+| **skills** | [**List&lt;String&gt;**](String.html)| Filter by skill (contains-style search) | [optional] 
+| **languages** | [**List&lt;String&gt;**](String.html)| Filter by language (contains-style search) | [optional] 
 | **routingStatus** | [**List&lt;String&gt;**](String.html)| Filter by routing status | [optional] 
 | **presence** | [**List&lt;String&gt;**](String.html)| Filter by presence | [optional] 
 | **memberBy** | **String**| Filter by member type | [optional]<br />**Values**: user, group 

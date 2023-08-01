@@ -19,6 +19,7 @@ title: Evaluation
 | **answers** | <!----><!---->[**EvaluationScoringSet**](EvaluationScoringSet.html)<!----> |  |  [optional] |
 | **agentHasRead** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **assignee** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
+| **assigneeApplicable** | <!----><!---->**Boolean**<!----> | Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable. |  [optional] |
 | **releaseDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **assignedDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **changedDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |

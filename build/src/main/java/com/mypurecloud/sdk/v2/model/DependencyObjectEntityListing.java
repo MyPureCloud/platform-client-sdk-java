@@ -32,8 +32,8 @@ public class DependencyObjectEntityListing  implements Serializable, PagedResour
   private String firstUri = null;
   private String nextUri = null;
   private String previousUri = null;
-  private String selfUri = null;
   private String lastUri = null;
+  private String selfUri = null;
   private Integer pageCount = null;
 
   
@@ -158,23 +158,6 @@ public class DependencyObjectEntityListing  implements Serializable, PagedResour
 
   /**
    **/
-  public DependencyObjectEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public DependencyObjectEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -187,6 +170,23 @@ public class DependencyObjectEntityListing  implements Serializable, PagedResour
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public DependencyObjectEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 
@@ -224,14 +224,14 @@ public class DependencyObjectEntityListing  implements Serializable, PagedResour
             Objects.equals(this.firstUri, dependencyObjectEntityListing.firstUri) &&
             Objects.equals(this.nextUri, dependencyObjectEntityListing.nextUri) &&
             Objects.equals(this.previousUri, dependencyObjectEntityListing.previousUri) &&
-            Objects.equals(this.selfUri, dependencyObjectEntityListing.selfUri) &&
             Objects.equals(this.lastUri, dependencyObjectEntityListing.lastUri) &&
+            Objects.equals(this.selfUri, dependencyObjectEntityListing.selfUri) &&
             Objects.equals(this.pageCount, dependencyObjectEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, selfUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -246,8 +246,8 @@ public class DependencyObjectEntityListing  implements Serializable, PagedResour
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

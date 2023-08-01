@@ -67,6 +67,7 @@ title: LimitChangeRequestDetails
 | LANGUAGE_UNDERSTANDING | &quot;language.understanding&quot; | 
 | LIMIT_REGISTRY | &quot;limit.registry&quot; | 
 | MARKETPLACE | &quot;marketplace&quot; | 
+| MEDIA_COMMUNICATIONS | &quot;media.communications&quot; | 
 | MESSAGING | &quot;messaging&quot; | 
 | NOTIFICATIONS | &quot;notifications&quot; | 
 | ONBOARDING | &quot;onboarding&quot; | 

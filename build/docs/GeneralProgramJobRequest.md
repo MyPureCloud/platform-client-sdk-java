@@ -27,10 +27,15 @@ title: GeneralProgramJobRequest
 | AR_IL | &quot;ar-IL&quot; | 
 | AR_SA | &quot;ar-SA&quot; | 
 | AR_TN | &quot;ar-TN&quot; | 
+| DE_CH | &quot;de-CH&quot; | 
 | DE_DE | &quot;de-DE&quot; | 
 | EN_AU | &quot;en-AU&quot; | 
 | EN_GB | &quot;en-GB&quot; | 
+| EN_HK | &quot;en-HK&quot; | 
+| EN_IE | &quot;en-IE&quot; | 
 | EN_IN | &quot;en-IN&quot; | 
+| EN_NZ | &quot;en-NZ&quot; | 
+| EN_SG | &quot;en-SG&quot; | 
 | EN_US | &quot;en-US&quot; | 
 | EN_ZA | &quot;en-ZA&quot; | 
 | ES_ES | &quot;es-ES&quot; | 

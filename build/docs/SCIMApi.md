@@ -1386,6 +1386,7 @@ Requires ANY permissions:
 * authorization:grant:delete
 * routing:skill:assign
 * routing:language:assign
+* telephony:extension:assign
 
 ### Example
 
@@ -1521,6 +1522,7 @@ Requires ANY permissions:
 * authorization:grant:delete
 * routing:skill:assign
 * routing:language:assign
+* telephony:extension:assign
 
 ### Example
 
@@ -1590,6 +1592,7 @@ Requires ANY permissions:
 * authorization:grant:delete
 * routing:skill:assign
 * routing:language:assign
+* telephony:extension:assign
 
 ### Example
 
@@ -1655,6 +1658,7 @@ Requires ANY permissions:
 * authorization:grant:delete
 * routing:skill:assign
 * routing:language:assign
+* telephony:extension:assign
 
 ### Example
 
@@ -1786,6 +1790,7 @@ Requires ANY permissions:
 * authorization:grant:delete
 * routing:skill:assign
 * routing:language:assign
+* telephony:extension:assign
 
 ### Example
 
@@ -1921,6 +1926,7 @@ Requires ANY permissions:
 * authorization:grant:delete
 * routing:skill:assign
 * routing:language:assign
+* telephony:extension:assign
 
 ### Example
 

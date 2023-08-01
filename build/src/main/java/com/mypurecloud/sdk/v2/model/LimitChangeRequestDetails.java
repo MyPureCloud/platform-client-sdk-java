@@ -83,6 +83,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     LANGUAGE_UNDERSTANDING("language.understanding"),
     LIMIT_REGISTRY("limit.registry"),
     MARKETPLACE("marketplace"),
+    MEDIA_COMMUNICATIONS("media.communications"),
     MESSAGING("messaging"),
     NOTIFICATIONS("notifications"),
     ONBOARDING("onboarding"),

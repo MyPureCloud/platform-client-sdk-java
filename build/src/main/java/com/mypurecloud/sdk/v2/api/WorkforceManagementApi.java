@@ -4563,7 +4563,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get activity codes
+   * Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
@@ -4576,7 +4576,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get activity codes
+   * Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
@@ -4595,7 +4595,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get activity codes
+   * Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
    * 
    * @param request The request object
    * @return ActivityCodeContainer
@@ -4615,7 +4615,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get activity codes
+   * Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
    * 
    * @param request The request object
    * @return the response

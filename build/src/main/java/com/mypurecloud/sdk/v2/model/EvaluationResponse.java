@@ -93,6 +93,7 @@ public class EvaluationResponse  implements Serializable {
   private EvaluationScoringSet answers = null;
   private Boolean agentHasRead = null;
   private User assignee = null;
+  private Boolean assigneeApplicable = null;
   private Date releaseDate = null;
   private Date assignedDate = null;
   private Date changedDate = null;
@@ -388,6 +389,24 @@ public class EvaluationResponse  implements Serializable {
   }
   public void setAssignee(User assignee) {
     this.assignee = assignee;
+  }
+
+
+  /**
+   * Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable.
+   **/
+  public EvaluationResponse assigneeApplicable(Boolean assigneeApplicable) {
+    this.assigneeApplicable = assigneeApplicable;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable.")
+  @JsonProperty("assigneeApplicable")
+  public Boolean getAssigneeApplicable() {
+    return assigneeApplicable;
+  }
+  public void setAssigneeApplicable(Boolean assigneeApplicable) {
+    this.assigneeApplicable = assigneeApplicable;
   }
 
 
@@ -730,6 +749,7 @@ public class EvaluationResponse  implements Serializable {
             Objects.equals(this.answers, evaluationResponse.answers) &&
             Objects.equals(this.agentHasRead, evaluationResponse.agentHasRead) &&
             Objects.equals(this.assignee, evaluationResponse.assignee) &&
+            Objects.equals(this.assigneeApplicable, evaluationResponse.assigneeApplicable) &&
             Objects.equals(this.releaseDate, evaluationResponse.releaseDate) &&
             Objects.equals(this.assignedDate, evaluationResponse.assignedDate) &&
             Objects.equals(this.changedDate, evaluationResponse.changedDate) &&
@@ -753,7 +773,7 @@ public class EvaluationResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
   }
 
   @Override
@@ -772,6 +792,7 @@ public class EvaluationResponse  implements Serializable {
     sb.append("    answers: ").append(toIndentedString(answers)).append("\n");
     sb.append("    agentHasRead: ").append(toIndentedString(agentHasRead)).append("\n");
     sb.append("    assignee: ").append(toIndentedString(assignee)).append("\n");
+    sb.append("    assigneeApplicable: ").append(toIndentedString(assigneeApplicable)).append("\n");
     sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
     sb.append("    assignedDate: ").append(toIndentedString(assignedDate)).append("\n");
     sb.append("    changedDate: ").append(toIndentedString(changedDate)).append("\n");

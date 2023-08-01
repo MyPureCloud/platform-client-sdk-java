@@ -4247,7 +4247,7 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Get activity codes
+   * Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4282,7 +4282,7 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Get activity codes
+   * Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
