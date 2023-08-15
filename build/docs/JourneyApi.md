@@ -44,6 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postJourneyActionmaps**](JourneyApi.html#postJourneyActionmaps) | Create an action map. |
 | [**postJourneyActionmapsEstimatesJobs**](JourneyApi.html#postJourneyActionmapsEstimatesJobs) | Query for estimates |
 | [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | Create a single action template. |
+| [**postJourneyDeploymentAppevents**](JourneyApi.html#postJourneyDeploymentAppevents) | Send a journey app event, used for tracking customer activity on an application. |
 | [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | Create an outcome. |
 | [**postJourneyOutcomesAttributionsJobs**](JourneyApi.html#postJourneyOutcomesAttributionsJobs) | Create Outcome Attributions |
 | [**postJourneyOutcomesPredictors**](JourneyApi.html#postJourneyOutcomesPredictors) | Create an outcome predictor. |
@@ -2388,6 +2389,57 @@ try {
 ### Return type
 
 [**ActionTemplate**](ActionTemplate.html)
+
+<a name="postJourneyDeploymentAppevents"></a>
+
+# **postJourneyDeploymentAppevents**
+
+
+
+> [AppEventResponse](AppEventResponse.html) postJourneyDeploymentAppevents(deploymentId, body)
+
+Send a journey app event, used for tracking customer activity on an application.
+
+postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/deployments/{deploymentId}/appevents  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+
+JourneyApi apiInstance = new JourneyApi();
+String deploymentId = "deploymentId_example"; // String | The ID of the deployment sending the app event.
+AppEventRequest body = new AppEventRequest(); // AppEventRequest | 
+try {
+    AppEventResponse result = apiInstance.postJourneyDeploymentAppevents(deploymentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyDeploymentAppevents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **deploymentId** | **String**| The ID of the deployment sending the app event. | 
+| **body** | [**AppEventRequest**](AppEventRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AppEventResponse**](AppEventResponse.html)
 
 <a name="postJourneyOutcomes"></a>
 

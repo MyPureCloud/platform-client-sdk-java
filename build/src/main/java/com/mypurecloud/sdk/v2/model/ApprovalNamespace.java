@@ -74,6 +74,7 @@ public class ApprovalNamespace  implements Serializable {
     JOURNEY("journey"),
     KNOWLEDGE("knowledge"),
     LANGUAGE_UNDERSTANDING("language.understanding"),
+    LEARNING("learning"),
     LIMIT_REGISTRY("limit.registry"),
     MARKETPLACE("marketplace"),
     MEDIA_COMMUNICATIONS("media.communications"),

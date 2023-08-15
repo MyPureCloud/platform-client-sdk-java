@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationApp;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationBrowser;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationConnectedQueue;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationConversation;
@@ -21,9 +22,11 @@ import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationDevice;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationExternalContact;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationGeoLocation;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationMktCampaign;
+import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationNetworkConnectivity;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationOutcomeAchievement;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationPage;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationReferrer;
+import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationSdkLibrary;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationSegmentAssignment;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationSessionLastEvent;
 import com.mypurecloud.sdk.v2.model.JourneySessionEventsNotificationUser;
@@ -157,7 +160,9 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
     FORWARDTRANSFER("ForwardTransfer"),
     NOANSWERTRANSFER("NoAnswerTransfer"),
     NOTAVAILABLETRANSFER("NotAvailableTransfer"),
-    UNCALLABLE("Uncallable");
+    UNCALLABLE("Uncallable"),
+    DIDNOTDELIVERENDPOINT("DidNotDeliverEndpoint"),
+    DIDNOTDELIVERTRANSFER("DidNotDeliverTransfer");
 
     private String value;
 
@@ -236,6 +241,9 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   }
   private LastAcdOutcomeEnum lastAcdOutcome = null;
   private Boolean authenticated = null;
+  private JourneySessionEventsNotificationApp app = null;
+  private JourneySessionEventsNotificationSdkLibrary sdkLibrary = null;
+  private JourneySessionEventsNotificationNetworkConnectivity networkConnectivity = null;
 
   
   /**
@@ -867,6 +875,57 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   }
 
 
+  /**
+   **/
+  public JourneySessionEventsNotificationSessionEvent app(JourneySessionEventsNotificationApp app) {
+    this.app = app;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("app")
+  public JourneySessionEventsNotificationApp getApp() {
+    return app;
+  }
+  public void setApp(JourneySessionEventsNotificationApp app) {
+    this.app = app;
+  }
+
+
+  /**
+   **/
+  public JourneySessionEventsNotificationSessionEvent sdkLibrary(JourneySessionEventsNotificationSdkLibrary sdkLibrary) {
+    this.sdkLibrary = sdkLibrary;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sdkLibrary")
+  public JourneySessionEventsNotificationSdkLibrary getSdkLibrary() {
+    return sdkLibrary;
+  }
+  public void setSdkLibrary(JourneySessionEventsNotificationSdkLibrary sdkLibrary) {
+    this.sdkLibrary = sdkLibrary;
+  }
+
+
+  /**
+   **/
+  public JourneySessionEventsNotificationSessionEvent networkConnectivity(JourneySessionEventsNotificationNetworkConnectivity networkConnectivity) {
+    this.networkConnectivity = networkConnectivity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("networkConnectivity")
+  public JourneySessionEventsNotificationNetworkConnectivity getNetworkConnectivity() {
+    return networkConnectivity;
+  }
+  public void setNetworkConnectivity(JourneySessionEventsNotificationNetworkConnectivity networkConnectivity) {
+    this.networkConnectivity = networkConnectivity;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -913,12 +972,15 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
             Objects.equals(this.conversationChannels, journeySessionEventsNotificationSessionEvent.conversationChannels) &&
             Objects.equals(this.lastUserDisconnectType, journeySessionEventsNotificationSessionEvent.lastUserDisconnectType) &&
             Objects.equals(this.lastAcdOutcome, journeySessionEventsNotificationSessionEvent.lastAcdOutcome) &&
-            Objects.equals(this.authenticated, journeySessionEventsNotificationSessionEvent.authenticated);
+            Objects.equals(this.authenticated, journeySessionEventsNotificationSessionEvent.authenticated) &&
+            Objects.equals(this.app, journeySessionEventsNotificationSessionEvent.app) &&
+            Objects.equals(this.sdkLibrary, journeySessionEventsNotificationSessionEvent.sdkLibrary) &&
+            Objects.equals(this.networkConnectivity, journeySessionEventsNotificationSessionEvent.networkConnectivity);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, selfUri, createdDate, endedDate, externalContact, customerId, customerIdType, type, outcomeAchievements, segmentAssignments, awayDate, browser, device, geolocation, idleDate, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, originatingDirection, conversationSubject, lastUserDisposition, lastConnectedUser, lastConnectedQueue, conversationChannels, lastUserDisconnectType, lastAcdOutcome, authenticated);
+    return Objects.hash(id, selfUri, createdDate, endedDate, externalContact, customerId, customerIdType, type, outcomeAchievements, segmentAssignments, awayDate, browser, device, geolocation, idleDate, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, originatingDirection, conversationSubject, lastUserDisposition, lastConnectedUser, lastConnectedQueue, conversationChannels, lastUserDisconnectType, lastAcdOutcome, authenticated, app, sdkLibrary, networkConnectivity);
   }
 
   @Override
@@ -963,6 +1025,9 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
     sb.append("    lastUserDisconnectType: ").append(toIndentedString(lastUserDisconnectType)).append("\n");
     sb.append("    lastAcdOutcome: ").append(toIndentedString(lastAcdOutcome)).append("\n");
     sb.append("    authenticated: ").append(toIndentedString(authenticated)).append("\n");
+    sb.append("    app: ").append(toIndentedString(app)).append("\n");
+    sb.append("    sdkLibrary: ").append(toIndentedString(sdkLibrary)).append("\n");
+    sb.append("    networkConnectivity: ").append(toIndentedString(networkConnectivity)).append("\n");
     sb.append("}");
     return sb.toString();
   }

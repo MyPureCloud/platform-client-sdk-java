@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AppEvent;
 import com.mypurecloud.sdk.v2.model.EventSession;
 import com.mypurecloud.sdk.v2.model.GenericActionEvent;
 import com.mypurecloud.sdk.v2.model.OutcomeAchievedEvent;
@@ -41,6 +42,7 @@ public class Event  implements Serializable {
   private SegmentAssignmentEvent segmentAssignmentEvent = null;
   private WebActionEvent webActionEvent = null;
   private WebEvent webEvent = null;
+  private AppEvent appEvent = null;
   private Date createdDate = null;
 
   
@@ -250,6 +252,24 @@ public class Event  implements Serializable {
 
 
   /**
+   * Event that tracks user interactions with content in an application such as screen views, searches, etc.
+   **/
+  public Event appEvent(AppEvent appEvent) {
+    this.appEvent = appEvent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Event that tracks user interactions with content in an application such as screen views, searches, etc.")
+  @JsonProperty("appEvent")
+  public AppEvent getAppEvent() {
+    return appEvent;
+  }
+  public void setAppEvent(AppEvent appEvent) {
+    this.appEvent = appEvent;
+  }
+
+
+  /**
    * Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public Event createdDate(Date createdDate) {
@@ -289,12 +309,13 @@ public class Event  implements Serializable {
             Objects.equals(this.segmentAssignmentEvent, event.segmentAssignmentEvent) &&
             Objects.equals(this.webActionEvent, event.webActionEvent) &&
             Objects.equals(this.webEvent, event.webEvent) &&
+            Objects.equals(this.appEvent, event.appEvent) &&
             Objects.equals(this.createdDate, event.createdDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, correlationId, customerId, customerIdType, session, eventType, genericActionEvent, outcomeAchievedEvent, segmentAssignedEvent, segmentAssignmentEvent, webActionEvent, webEvent, createdDate);
+    return Objects.hash(id, correlationId, customerId, customerIdType, session, eventType, genericActionEvent, outcomeAchievedEvent, segmentAssignedEvent, segmentAssignmentEvent, webActionEvent, webEvent, appEvent, createdDate);
   }
 
   @Override
@@ -314,6 +335,7 @@ public class Event  implements Serializable {
     sb.append("    segmentAssignmentEvent: ").append(toIndentedString(segmentAssignmentEvent)).append("\n");
     sb.append("    webActionEvent: ").append(toIndentedString(webActionEvent)).append("\n");
     sb.append("    webEvent: ").append(toIndentedString(webEvent)).append("\n");
+    sb.append("    appEvent: ").append(toIndentedString(appEvent)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -33,6 +33,8 @@ title: ExternalContactsUnresolvedContactChangedTopicContact
 | **instagramId** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicInstagramId**](ExternalContactsUnresolvedContactChangedTopicInstagramId.html)<!----> |  |  [optional] |
 | **schema** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicDataSchema**](ExternalContactsUnresolvedContactChangedTopicDataSchema.html)<!----> |  |  [optional] |
 | **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
+| **createDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **modifyDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

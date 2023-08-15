@@ -107,7 +107,8 @@ public class TranscriptAggregateQueryPredicate  implements Serializable {
     RESULTSBY("resultsBy"),
     TEAMID("teamId"),
     TOPICID("topicId"),
-    USERID("userId");
+    USERID("userId"),
+    WRAPUPCODE("wrapUpCode");
 
     private String value;
 

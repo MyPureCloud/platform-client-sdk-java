@@ -21,6 +21,8 @@ import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.AppEventRequest;
+import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -88,6 +90,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRe
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsEstimatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentAppeventsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesAttributionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesPredictorsRequest;
@@ -2889,6 +2892,83 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ActionTemplate> response = (ApiResponse<ActionTemplate>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send a journey app event, used for tracking customer activity on an application.
+   * 
+   * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AppEventResponse> postJourneyDeploymentAppeventsAsync(PostJourneyDeploymentAppeventsRequest request, final AsyncApiCallback<AppEventResponse> callback) {
+    try {
+      final SettableFuture<AppEventResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AppEventResponse>() {}, new AsyncApiCallback<ApiResponse<AppEventResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AppEventResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send a journey app event, used for tracking customer activity on an application.
+   * 
+   * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AppEventResponse>> postJourneyDeploymentAppeventsAsync(ApiRequest<AppEventRequest> request, final AsyncApiCallback<ApiResponse<AppEventResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AppEventResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AppEventResponse>() {}, new AsyncApiCallback<ApiResponse<AppEventResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AppEventResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AppEventResponse> response = (ApiResponse<AppEventResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AppEventResponse> response = (ApiResponse<AppEventResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

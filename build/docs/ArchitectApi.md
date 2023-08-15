@@ -8,6 +8,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteArchitectEmergencygroup**](ArchitectApi.html#deleteArchitectEmergencygroup) | Deletes a emergency group by ID |
+| [**deleteArchitectGrammar**](ArchitectApi.html#deleteArchitectGrammar) | Delete a grammar. |
+| [**deleteArchitectGrammarLanguage**](ArchitectApi.html#deleteArchitectGrammarLanguage) | Delete specified grammar language |
+| [**deleteArchitectGrammarLanguageFilesDtmf**](ArchitectApi.html#deleteArchitectGrammarLanguageFilesDtmf) | Clear the DTMF mode file for the grammar language if there is one |
+| [**deleteArchitectGrammarLanguageFilesVoice**](ArchitectApi.html#deleteArchitectGrammarLanguageFilesVoice) | Clear the voice mode file for the grammar language if there is one |
 | [**deleteArchitectIvr**](ArchitectApi.html#deleteArchitectIvr) | Delete an IVR Config. |
 | [**deleteArchitectPrompt**](ArchitectApi.html#deleteArchitectPrompt) | Delete specified user prompt |
 | [**deleteArchitectPromptResource**](ArchitectApi.html#deleteArchitectPromptResource) | Delete specified user prompt resource |
@@ -32,6 +36,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getArchitectDependencytrackingUpdatedresourceconsumers**](ArchitectApi.html#getArchitectDependencytrackingUpdatedresourceconsumers) | Get Dependency Tracking objects that depend on updated resources |
 | [**getArchitectEmergencygroup**](ArchitectApi.html#getArchitectEmergencygroup) | Gets a emergency group by ID |
 | [**getArchitectEmergencygroups**](ArchitectApi.html#getArchitectEmergencygroups) | Get a list of emergency groups. |
+| [**getArchitectGrammar**](ArchitectApi.html#getArchitectGrammar) | Get a grammar |
+| [**getArchitectGrammarLanguage**](ArchitectApi.html#getArchitectGrammarLanguage) | Get a grammar language. |
+| [**getArchitectGrammars**](ArchitectApi.html#getArchitectGrammars) | Get a pageable list of grammars, filtered by query parameters |
 | [**getArchitectIvr**](ArchitectApi.html#getArchitectIvr) | Get an IVR config. |
 | [**getArchitectIvrs**](ArchitectApi.html#getArchitectIvrs) | Get IVR configs. |
 | [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | Get specified user prompt |
@@ -76,8 +83,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsOutcome**](ArchitectApi.html#getFlowsOutcome) | Get a flow outcome |
 | [**getFlowsOutcomes**](ArchitectApi.html#getFlowsOutcomes) | Get a pageable list of flow outcomes, filtered by query parameters |
 | [**getFlowsOutcomesDivisionviews**](ArchitectApi.html#getFlowsOutcomesDivisionviews) | Get a pageable list of basic flow outcome information objects filterable by query parameters. |
+| [**patchArchitectGrammar**](ArchitectApi.html#patchArchitectGrammar) | Updates a grammar |
 | [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
 | [**postArchitectEmergencygroups**](ArchitectApi.html#postArchitectEmergencygroups) | Creates a new emergency group |
+| [**postArchitectGrammarLanguageFilesDtmf**](ArchitectApi.html#postArchitectGrammarLanguageFilesDtmf) | Creates a presigned URL for uploading a grammar DTMF mode file |
+| [**postArchitectGrammarLanguageFilesVoice**](ArchitectApi.html#postArchitectGrammarLanguageFilesVoice) | Creates a presigned URL for uploading a grammar voice mode file |
+| [**postArchitectGrammarLanguages**](ArchitectApi.html#postArchitectGrammarLanguages) | Create a new language for a given grammar |
+| [**postArchitectGrammars**](ArchitectApi.html#postArchitectGrammars) | Create a new grammar |
 | [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | Create IVR config. |
 | [**postArchitectPromptHistory**](ArchitectApi.html#postArchitectPromptHistory) | Generate prompt history |
 | [**postArchitectPromptResources**](ArchitectApi.html#postArchitectPromptResources) | Create a new user prompt resource |
@@ -172,6 +184,261 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **emergencyGroupId** | **String**| Emergency group ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteArchitectGrammar"></a>
+
+# **deleteArchitectGrammar**
+
+
+
+> Empty deleteArchitectGrammar(grammarId)
+
+Delete a grammar.
+
+deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/architect/grammars/{grammarId}  
+
+Requires ALL permissions: 
+
+* architect:grammar:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String grammarId = "grammarId_example"; // String | grammar ID
+try {
+    Empty result = apiInstance.deleteArchitectGrammar(grammarId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteArchitectGrammar");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grammarId** | **String**| grammar ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+**Empty**
+
+<a name="deleteArchitectGrammarLanguage"></a>
+
+# **deleteArchitectGrammarLanguage**
+
+
+
+> Void deleteArchitectGrammarLanguage(grammarId, languageCode)
+
+Delete specified grammar language
+
+deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}  
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String grammarId = "grammarId_example"; // String | Grammar ID
+String languageCode = "languageCode_example"; // String | Language
+try {
+    apiInstance.deleteArchitectGrammarLanguage(grammarId, languageCode);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteArchitectGrammarLanguage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grammarId** | **String**| Grammar ID | 
+| **languageCode** | **String**| Language | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteArchitectGrammarLanguageFilesDtmf"></a>
+
+# **deleteArchitectGrammarLanguageFilesDtmf**
+
+
+
+> Void deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode)
+
+Clear the DTMF mode file for the grammar language if there is one
+
+deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf  
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String grammarId = "grammarId_example"; // String | Grammar ID
+String languageCode = "languageCode_example"; // String | Language
+try {
+    apiInstance.deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteArchitectGrammarLanguageFilesDtmf");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grammarId** | **String**| Grammar ID | 
+| **languageCode** | **String**| Language | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteArchitectGrammarLanguageFilesVoice"></a>
+
+# **deleteArchitectGrammarLanguageFilesVoice**
+
+
+
+> Void deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode)
+
+Clear the voice mode file for the grammar language if there is one
+
+deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice  
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String grammarId = "grammarId_example"; // String | Grammar ID
+String languageCode = "languageCode_example"; // String | Language
+try {
+    apiInstance.deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteArchitectGrammarLanguageFilesVoice");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grammarId** | **String**| Grammar ID | 
+| **languageCode** | **String**| Language | 
 {: class="table-striped"}
 
 
@@ -1731,6 +1998,219 @@ try {
 ### Return type
 
 [**EmergencyGroupListing**](EmergencyGroupListing.html)
+
+<a name="getArchitectGrammar"></a>
+
+# **getArchitectGrammar**
+
+
+
+> [Grammar](Grammar.html) getArchitectGrammar(grammarId, includeFileUrls)
+
+Get a grammar
+
+Returns a specified grammar
+
+getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/architect/grammars/{grammarId}  
+
+Requires ALL permissions: 
+
+* architect:grammar:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String grammarId = "grammarId_example"; // String | grammar ID
+Boolean includeFileUrls = true; // Boolean | Include grammar language file URLs
+try {
+    Grammar result = apiInstance.getArchitectGrammar(grammarId, includeFileUrls);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectGrammar");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grammarId** | **String**| grammar ID | 
+| **includeFileUrls** | **Boolean**| Include grammar language file URLs | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Grammar**](Grammar.html)
+
+<a name="getArchitectGrammarLanguage"></a>
+
+# **getArchitectGrammarLanguage**
+
+
+
+> [GrammarLanguage](GrammarLanguage.html) getArchitectGrammarLanguage(grammarId, languageCode)
+
+Get a grammar language.
+
+getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/architect/grammars/{grammarId}/languages/{languageCode}  
+
+Requires ALL permissions: 
+
+* architect:grammar:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String grammarId = "grammarId_example"; // String | Grammar ID
+String languageCode = "languageCode_example"; // String | Language
+try {
+    GrammarLanguage result = apiInstance.getArchitectGrammarLanguage(grammarId, languageCode);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectGrammarLanguage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grammarId** | **String**| Grammar ID | 
+| **languageCode** | **String**| Language | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GrammarLanguage**](GrammarLanguage.html)
+
+<a name="getArchitectGrammars"></a>
+
+# **getArchitectGrammars**
+
+
+
+> [GrammarListing](GrammarListing.html) getArchitectGrammars(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, includeFileUrls)
+
+Get a pageable list of grammars, filtered by query parameters
+
+Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
+
+getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/architect/grammars  
+
+Requires ALL permissions: 
+
+* architect:grammar:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "id"; // String | Sort by
+String sortOrder = "asc"; // String | Sort order
+List<String> id = Arrays.asList(null); // List<String> | ID
+String name = "name_example"; // String | Name
+String description = "description_example"; // String | Description
+String nameOrDescription = "nameOrDescription_example"; // String | Name or description
+Boolean includeFileUrls = true; // Boolean | Include grammar language file URLs
+try {
+    GrammarListing result = apiInstance.getArchitectGrammars(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, includeFileUrls);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectGrammars");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Sort by | [optional] [default to id]<br />**Values**: description, id, name 
+| **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc 
+| **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] 
+| **name** | **String**| Name | [optional] 
+| **description** | **String**| Description | [optional] 
+| **nameOrDescription** | **String**| Name or description | [optional] 
+| **includeFileUrls** | **Boolean**| Include grammar language file URLs | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GrammarListing**](GrammarListing.html)
 
 <a name="getArchitectIvr"></a>
 
@@ -4763,6 +5243,71 @@ try {
 
 [**FlowOutcomeDivisionViewEntityListing**](FlowOutcomeDivisionViewEntityListing.html)
 
+<a name="patchArchitectGrammar"></a>
+
+# **patchArchitectGrammar**
+
+
+
+> [Grammar](Grammar.html) patchArchitectGrammar(grammarId, body)
+
+Updates a grammar
+
+patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/architect/grammars/{grammarId}  
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String grammarId = "grammarId_example"; // String | grammar ID
+Grammar body = new Grammar(); // Grammar | 
+try {
+    Grammar result = apiInstance.patchArchitectGrammar(grammarId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#patchArchitectGrammar");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grammarId** | **String**| grammar ID | 
+| **body** | [**Grammar**](Grammar.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Grammar**](Grammar.html)
+
 <a name="postArchitectDependencytrackingBuild"></a>
 
 # **postArchitectDependencytrackingBuild**
@@ -4881,6 +5426,268 @@ try {
 ### Return type
 
 [**EmergencyGroup**](EmergencyGroup.html)
+
+<a name="postArchitectGrammarLanguageFilesDtmf"></a>
+
+# **postArchitectGrammarLanguageFilesDtmf**
+
+
+
+> [UploadUrlResponse](UploadUrlResponse.html) postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body)
+
+Creates a presigned URL for uploading a grammar DTMF mode file
+
+postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf  
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String grammarId = "grammarId_example"; // String | Grammar ID
+String languageCode = "languageCode_example"; // String | Language
+GrammarFileUploadRequest body = new GrammarFileUploadRequest(); // GrammarFileUploadRequest | query
+try {
+    UploadUrlResponse result = apiInstance.postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectGrammarLanguageFilesDtmf");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grammarId** | **String**| Grammar ID | 
+| **languageCode** | **String**| Language | 
+| **body** | [**GrammarFileUploadRequest**](GrammarFileUploadRequest.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
+
+<a name="postArchitectGrammarLanguageFilesVoice"></a>
+
+# **postArchitectGrammarLanguageFilesVoice**
+
+
+
+> [UploadUrlResponse](UploadUrlResponse.html) postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body)
+
+Creates a presigned URL for uploading a grammar voice mode file
+
+postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice  
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String grammarId = "grammarId_example"; // String | Grammar ID
+String languageCode = "languageCode_example"; // String | Language
+GrammarFileUploadRequest body = new GrammarFileUploadRequest(); // GrammarFileUploadRequest | query
+try {
+    UploadUrlResponse result = apiInstance.postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectGrammarLanguageFilesVoice");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grammarId** | **String**| Grammar ID | 
+| **languageCode** | **String**| Language | 
+| **body** | [**GrammarFileUploadRequest**](GrammarFileUploadRequest.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
+
+<a name="postArchitectGrammarLanguages"></a>
+
+# **postArchitectGrammarLanguages**
+
+
+
+> [GrammarLanguage](GrammarLanguage.html) postArchitectGrammarLanguages(grammarId, body)
+
+Create a new language for a given grammar
+
+postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/architect/grammars/{grammarId}/languages  
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String grammarId = "grammarId_example"; // String | Grammar ID
+GrammarLanguage body = new GrammarLanguage(); // GrammarLanguage | 
+try {
+    GrammarLanguage result = apiInstance.postArchitectGrammarLanguages(grammarId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectGrammarLanguages");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grammarId** | **String**| Grammar ID | 
+| **body** | [**GrammarLanguage**](GrammarLanguage.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GrammarLanguage**](GrammarLanguage.html)
+
+<a name="postArchitectGrammars"></a>
+
+# **postArchitectGrammars**
+
+
+
+> [Grammar](Grammar.html) postArchitectGrammars(body)
+
+Create a new grammar
+
+postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/architect/grammars  
+
+Requires ALL permissions: 
+
+* architect:grammar:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+Grammar body = new Grammar(); // Grammar | 
+try {
+    Grammar result = apiInstance.postArchitectGrammars(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectGrammars");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**Grammar**](Grammar.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Grammar**](Grammar.html)
 
 <a name="postArchitectIvrs"></a>
 

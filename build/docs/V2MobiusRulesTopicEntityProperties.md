@@ -12,6 +12,7 @@ title: V2MobiusRulesTopicEntityProperties
 | **userDisplayName** | <!----><!---->**String**<!----> |  |  [optional] |
 | **groupDisplayName** | <!----><!---->**String**<!----> |  |  [optional] |
 | **queueDisplayName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **teamDisplayName** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -27,6 +28,8 @@ title: V2MobiusRulesTopicEntityProperties
 | QUEUE | &quot;Queue&quot; | 
 | GROUP | &quot;Group&quot; | 
 | EDGE | &quot;Edge&quot; | 
+| TEAM | &quot;Team&quot; | 
+| TEAMMEMBERS | &quot;TeamMembers&quot; | 
 {: class="table table-striped"}
 
 

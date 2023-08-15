@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.V2MobiusRulesTopicCondition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -50,6 +51,7 @@ public class V2MobiusRulesTopicRule  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATIONMETRICS("ConversationMetrics"),
     USERPRESENCE("UserPresence"),
+    WORKFORCEMANAGEMENT("WorkforceManagement"),
     UNKNOWN("Unknown");
 
     private String value;
@@ -132,6 +134,7 @@ public class V2MobiusRulesTopicRule  implements Serializable {
     }
   }
   private ActionEnum action = null;
+  private Date dateCreated = null;
 
   
   /**
@@ -287,6 +290,23 @@ public class V2MobiusRulesTopicRule  implements Serializable {
   }
 
 
+  /**
+   **/
+  public V2MobiusRulesTopicRule dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -305,12 +325,13 @@ public class V2MobiusRulesTopicRule  implements Serializable {
             Objects.equals(this.conditions, v2MobiusRulesTopicRule.conditions) &&
             Objects.equals(this.enabled, v2MobiusRulesTopicRule.enabled) &&
             Objects.equals(this.inAlarm, v2MobiusRulesTopicRule.inAlarm) &&
-            Objects.equals(this.action, v2MobiusRulesTopicRule.action);
+            Objects.equals(this.action, v2MobiusRulesTopicRule.action) &&
+            Objects.equals(this.dateCreated, v2MobiusRulesTopicRule.dateCreated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userId, name, type, notifications, conditions, enabled, inAlarm, action);
+    return Objects.hash(id, userId, name, type, notifications, conditions, enabled, inAlarm, action, dateCreated);
   }
 
   @Override
@@ -327,6 +348,7 @@ public class V2MobiusRulesTopicRule  implements Serializable {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    inAlarm: ").append(toIndentedString(inAlarm)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("}");
     return sb.toString();
   }

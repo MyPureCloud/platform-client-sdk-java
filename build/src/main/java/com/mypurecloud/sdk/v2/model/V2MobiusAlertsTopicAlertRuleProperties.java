@@ -45,6 +45,7 @@ public class V2MobiusAlertsTopicAlertRuleProperties  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATIONMETRICS("ConversationMetrics"),
     USERPRESENCE("UserPresence"),
+    WORKFORCEMANAGEMENT("WorkforceManagement"),
     UNKNOWN("Unknown");
 
     private String value;

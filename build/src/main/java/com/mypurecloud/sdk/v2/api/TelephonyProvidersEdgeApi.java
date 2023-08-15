@@ -5321,7 +5321,7 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Get a list of Phone Instances
+   * Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values.
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -5349,7 +5349,7 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Get a list of Phone Instances
+   * Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values.
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -5415,7 +5415,7 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Get a list of Phone Instances
+   * Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values.
    * 
    * @param request The request object
    * @return PhoneEntityListing
@@ -5434,7 +5434,7 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Get a list of Phone Instances
+   * Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values.
    * 
    * @param request The request object
    * @return the response

@@ -14,6 +14,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -28,6 +31,7 @@ public class CampaignProgress  implements Serializable {
   private Long numberOfContactsMessaged = null;
   private Long totalNumberOfContacts = null;
   private Long percentage = null;
+  private Map<String, Integer> numberOfContactsSkipped = null;
 
   
   /**
@@ -94,6 +98,13 @@ public class CampaignProgress  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Number of contacts skipped during the campaign")
+  @JsonProperty("numberOfContactsSkipped")
+  public Map<String, Integer> getNumberOfContactsSkipped() {
+    return numberOfContactsSkipped;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -109,12 +120,13 @@ public class CampaignProgress  implements Serializable {
             Objects.equals(this.numberOfContactsCalled, campaignProgress.numberOfContactsCalled) &&
             Objects.equals(this.numberOfContactsMessaged, campaignProgress.numberOfContactsMessaged) &&
             Objects.equals(this.totalNumberOfContacts, campaignProgress.totalNumberOfContacts) &&
-            Objects.equals(this.percentage, campaignProgress.percentage);
+            Objects.equals(this.percentage, campaignProgress.percentage) &&
+            Objects.equals(this.numberOfContactsSkipped, campaignProgress.numberOfContactsSkipped);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaign, contactList, numberOfContactsCalled, numberOfContactsMessaged, totalNumberOfContacts, percentage);
+    return Objects.hash(campaign, contactList, numberOfContactsCalled, numberOfContactsMessaged, totalNumberOfContacts, percentage, numberOfContactsSkipped);
   }
 
   @Override
@@ -128,6 +140,7 @@ public class CampaignProgress  implements Serializable {
     sb.append("    numberOfContactsMessaged: ").append(toIndentedString(numberOfContactsMessaged)).append("\n");
     sb.append("    totalNumberOfContacts: ").append(toIndentedString(totalNumberOfContacts)).append("\n");
     sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
+    sb.append("    numberOfContactsSkipped: ").append(toIndentedString(numberOfContactsSkipped)).append("\n");
     sb.append("}");
     return sb.toString();
   }

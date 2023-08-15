@@ -36,6 +36,7 @@ title: EvaluationAggregateQueryPredicate
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASSIGNEEAPPLICABLE | &quot;assigneeApplicable&quot; | 
 | ASSIGNEEID | &quot;assigneeId&quot; | 
 | CALIBRATIONID | &quot;calibrationId&quot; | 
 | CONTEXTID | &quot;contextId&quot; | 

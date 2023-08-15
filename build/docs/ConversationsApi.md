@@ -4538,7 +4538,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
-String conversationId = "conversationId_example"; // String |  conversationId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 try {
     List<WrapupCode> result = apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, participantId);
@@ -4554,7 +4554,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**|  conversationId | 
+| **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 {: class="table-striped"}
 
@@ -6741,7 +6741,7 @@ null (empty response body)
 
 
 
-> Void patchConversationsCallParticipantAttributes(conversationId, participantId, body)
+> [ParticipantAttributes](ParticipantAttributes.html) patchConversationsCallParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
 
@@ -6776,7 +6776,8 @@ String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | Participant attributes
 try {
-    apiInstance.patchConversationsCallParticipantAttributes(conversationId, participantId, body);
+    ParticipantAttributes result = apiInstance.patchConversationsCallParticipantAttributes(conversationId, participantId, body);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCallParticipantAttributes");
     e.printStackTrace();
@@ -6796,7 +6797,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patchConversationsCallParticipantCommunication"></a>
 
@@ -7061,7 +7062,7 @@ null (empty response body)
 
 
 
-> Void patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
+> [ParticipantAttributes](ParticipantAttributes.html) patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
 
@@ -7096,7 +7097,8 @@ String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | Attributes
 try {
-    apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, participantId, body);
+    ParticipantAttributes result = apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, participantId, body);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCallbackParticipantAttributes");
     e.printStackTrace();
@@ -7116,7 +7118,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patchConversationsCallbackParticipantCommunication"></a>
 
@@ -7378,7 +7380,7 @@ null (empty response body)
 
 
 
-> Void patchConversationsChatParticipantAttributes(conversationId, participantId, body)
+> [ParticipantAttributes](ParticipantAttributes.html) patchConversationsChatParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
 
@@ -7413,7 +7415,8 @@ String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | Participant attributes
 try {
-    apiInstance.patchConversationsChatParticipantAttributes(conversationId, participantId, body);
+    ParticipantAttributes result = apiInstance.patchConversationsChatParticipantAttributes(conversationId, participantId, body);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsChatParticipantAttributes");
     e.printStackTrace();
@@ -7433,7 +7436,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patchConversationsChatParticipantCommunication"></a>
 
@@ -7634,7 +7637,7 @@ null (empty response body)
 
 
 
-> Void patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, body)
+> [ParticipantAttributes](ParticipantAttributes.html) patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
 
@@ -7669,7 +7672,8 @@ String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | 
 try {
-    apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, body);
+    ParticipantAttributes result = apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, body);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCobrowsesessionParticipantAttributes");
     e.printStackTrace();
@@ -7689,7 +7693,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patchConversationsCobrowsesessionParticipantCommunication"></a>
 
@@ -7956,7 +7960,7 @@ null (empty response body)
 
 
 
-> Void patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
+> [ParticipantAttributes](ParticipantAttributes.html) patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
 
@@ -7991,7 +7995,8 @@ String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | Participant attributes
 try {
-    apiInstance.patchConversationsEmailParticipantAttributes(conversationId, participantId, body);
+    ParticipantAttributes result = apiInstance.patchConversationsEmailParticipantAttributes(conversationId, participantId, body);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsEmailParticipantAttributes");
     e.printStackTrace();
@@ -8011,7 +8016,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patchConversationsEmailParticipantCommunication"></a>
 
@@ -8180,7 +8185,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
-String conversationId = "conversationId_example"; // String |  conversationId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | 
 try {
@@ -8196,7 +8201,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**|  conversationId | 
+| **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional] 
 {: class="table-striped"}
@@ -8212,7 +8217,7 @@ null (empty response body)
 
 
 
-> Void patchConversationsMessageParticipantAttributes(conversationId, participantId, body)
+> [ParticipantAttributes](ParticipantAttributes.html) patchConversationsMessageParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
 
@@ -8243,11 +8248,12 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
-String conversationId = "conversationId_example"; // String |  conversationId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | 
 try {
-    apiInstance.patchConversationsMessageParticipantAttributes(conversationId, participantId, body);
+    ParticipantAttributes result = apiInstance.patchConversationsMessageParticipantAttributes(conversationId, participantId, body);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsMessageParticipantAttributes");
     e.printStackTrace();
@@ -8259,7 +8265,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**|  conversationId | 
+| **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional] 
 {: class="table-striped"}
@@ -8267,7 +8273,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patchConversationsMessageParticipantCommunication"></a>
 
@@ -8306,7 +8312,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
-String conversationId = "conversationId_example"; // String |  conversationId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant
@@ -8324,7 +8330,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**|  conversationId | 
+| **conversationId** | **String**| conversationId | 
 | **participantId** | **String**| participantId | 
 | **communicationId** | **String**| communicationId | 
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | 

@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicTwitterId
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicWhatsAppId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -107,6 +108,8 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
   private ExternalContactsContactChangedTopicInstagramId instagramId = null;
   private ExternalContactsContactChangedTopicDataSchema schema = null;
   private Map<String, Object> customFields = null;
+  private Date createDate = null;
+  private Date modifyDate = null;
 
   
   /**
@@ -534,6 +537,40 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
   }
 
 
+  /**
+   **/
+  public ExternalContactsContactChangedTopicContact createDate(Date createDate) {
+    this.createDate = createDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("createDate")
+  public Date getCreateDate() {
+    return createDate;
+  }
+  public void setCreateDate(Date createDate) {
+    this.createDate = createDate;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsContactChangedTopicContact modifyDate(Date modifyDate) {
+    this.modifyDate = modifyDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("modifyDate")
+  public Date getModifyDate() {
+    return modifyDate;
+  }
+  public void setModifyDate(Date modifyDate) {
+    this.modifyDate = modifyDate;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -568,12 +605,14 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
             Objects.equals(this.facebookId, externalContactsContactChangedTopicContact.facebookId) &&
             Objects.equals(this.instagramId, externalContactsContactChangedTopicContact.instagramId) &&
             Objects.equals(this.schema, externalContactsContactChangedTopicContact.schema) &&
-            Objects.equals(this.customFields, externalContactsContactChangedTopicContact.customFields);
+            Objects.equals(this.customFields, externalContactsContactChangedTopicContact.customFields) &&
+            Objects.equals(this.createDate, externalContactsContactChangedTopicContact.createDate) &&
+            Objects.equals(this.modifyDate, externalContactsContactChangedTopicContact.modifyDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, schema, customFields);
+    return Objects.hash(id, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, schema, customFields, createDate, modifyDate);
   }
 
   @Override
@@ -606,6 +645,8 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
     sb.append("    instagramId: ").append(toIndentedString(instagramId)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
+    sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
+    sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

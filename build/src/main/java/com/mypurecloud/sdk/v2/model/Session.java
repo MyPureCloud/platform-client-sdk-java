@@ -21,11 +21,14 @@ import com.mypurecloud.sdk.v2.model.ConversationUserDisposition;
 import com.mypurecloud.sdk.v2.model.CustomEventAttribute;
 import com.mypurecloud.sdk.v2.model.CustomEventAttributeList;
 import com.mypurecloud.sdk.v2.model.Device;
+import com.mypurecloud.sdk.v2.model.JourneyApp;
 import com.mypurecloud.sdk.v2.model.JourneyCampaign;
 import com.mypurecloud.sdk.v2.model.JourneyGeolocation;
 import com.mypurecloud.sdk.v2.model.JourneyPage;
+import com.mypurecloud.sdk.v2.model.NetworkConnectivity;
 import com.mypurecloud.sdk.v2.model.OutcomeAchievement;
 import com.mypurecloud.sdk.v2.model.Referrer;
+import com.mypurecloud.sdk.v2.model.SdkLibrary;
 import com.mypurecloud.sdk.v2.model.SessionLastEvent;
 import com.mypurecloud.sdk.v2.model.SessionSegmentAssignment;
 import io.swagger.annotations.ApiModel;
@@ -62,6 +65,9 @@ public class Session  implements Serializable {
   private JourneyPage lastPage = null;
   private JourneyCampaign mktCampaign = null;
   private Referrer referrer = null;
+  private JourneyApp app = null;
+  private SdkLibrary sdkLibrary = null;
+  private NetworkConnectivity networkConnectivity = null;
   private List<String> searchTerms = new ArrayList<String>();
   private String userAgentString = null;
   private Integer durationInSeconds = null;
@@ -578,6 +584,60 @@ public class Session  implements Serializable {
 
 
   /**
+   * Application that the customer is interacting with (for app sessions).
+   **/
+  public Session app(JourneyApp app) {
+    this.app = app;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Application that the customer is interacting with (for app sessions).")
+  @JsonProperty("app")
+  public JourneyApp getApp() {
+    return app;
+  }
+  public void setApp(JourneyApp app) {
+    this.app = app;
+  }
+
+
+  /**
+   * SDK library used to generate the events for the session (for app and web sessions).
+   **/
+  public Session sdkLibrary(SdkLibrary sdkLibrary) {
+    this.sdkLibrary = sdkLibrary;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "SDK library used to generate the events for the session (for app and web sessions).")
+  @JsonProperty("sdkLibrary")
+  public SdkLibrary getSdkLibrary() {
+    return sdkLibrary;
+  }
+  public void setSdkLibrary(SdkLibrary sdkLibrary) {
+    this.sdkLibrary = sdkLibrary;
+  }
+
+
+  /**
+   * Information relating to the device's network connectivity (for app sessions).
+   **/
+  public Session networkConnectivity(NetworkConnectivity networkConnectivity) {
+    this.networkConnectivity = networkConnectivity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Information relating to the device's network connectivity (for app sessions).")
+  @JsonProperty("networkConnectivity")
+  public NetworkConnectivity getNetworkConnectivity() {
+    return networkConnectivity;
+  }
+  public void setNetworkConnectivity(NetworkConnectivity networkConnectivity) {
+    this.networkConnectivity = networkConnectivity;
+  }
+
+
+  /**
    * Search terms associated with the session.
    **/
   public Session searchTerms(List<String> searchTerms) {
@@ -987,6 +1047,9 @@ public class Session  implements Serializable {
             Objects.equals(this.lastPage, session.lastPage) &&
             Objects.equals(this.mktCampaign, session.mktCampaign) &&
             Objects.equals(this.referrer, session.referrer) &&
+            Objects.equals(this.app, session.app) &&
+            Objects.equals(this.sdkLibrary, session.sdkLibrary) &&
+            Objects.equals(this.networkConnectivity, session.networkConnectivity) &&
             Objects.equals(this.searchTerms, session.searchTerms) &&
             Objects.equals(this.userAgentString, session.userAgentString) &&
             Objects.equals(this.durationInSeconds, session.durationInSeconds) &&
@@ -1014,7 +1077,7 @@ public class Session  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, customerId, customerIdType, type, externalId, externalUrl, shortId, outcomeAchievements, segmentAssignments, attributes, attributeLists, browser, device, geolocation, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, lastConnectedQueue, lastConnectedUser, lastUserDisposition, conversationChannels, originatingDirection, conversationSubject, lastUserDisconnectType, lastAcdOutcome, authenticated, selfUri, createdDate, endedDate, externalContact, awayDate, idleDate, conversation);
+    return Objects.hash(id, customerId, customerIdType, type, externalId, externalUrl, shortId, outcomeAchievements, segmentAssignments, attributes, attributeLists, browser, device, geolocation, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, app, sdkLibrary, networkConnectivity, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, lastConnectedQueue, lastConnectedUser, lastUserDisposition, conversationChannels, originatingDirection, conversationSubject, lastUserDisconnectType, lastAcdOutcome, authenticated, selfUri, createdDate, endedDate, externalContact, awayDate, idleDate, conversation);
   }
 
   @Override
@@ -1041,6 +1104,9 @@ public class Session  implements Serializable {
     sb.append("    lastPage: ").append(toIndentedString(lastPage)).append("\n");
     sb.append("    mktCampaign: ").append(toIndentedString(mktCampaign)).append("\n");
     sb.append("    referrer: ").append(toIndentedString(referrer)).append("\n");
+    sb.append("    app: ").append(toIndentedString(app)).append("\n");
+    sb.append("    sdkLibrary: ").append(toIndentedString(sdkLibrary)).append("\n");
+    sb.append("    networkConnectivity: ").append(toIndentedString(networkConnectivity)).append("\n");
     sb.append("    searchTerms: ").append(toIndentedString(searchTerms)).append("\n");
     sb.append("    userAgentString: ").append(toIndentedString(userAgentString)).append("\n");
     sb.append("    durationInSeconds: ").append(toIndentedString(durationInSeconds)).append("\n");

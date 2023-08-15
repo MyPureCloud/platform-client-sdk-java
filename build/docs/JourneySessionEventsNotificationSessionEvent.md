@@ -45,6 +45,9 @@ title: JourneySessionEventsNotificationSessionEvent
 | **lastUserDisconnectType** | [**LastUserDisconnectTypeEnum**](#LastUserDisconnectTypeEnum)<!----> |  |  [optional] |
 | **lastAcdOutcome** | [**LastAcdOutcomeEnum**](#LastAcdOutcomeEnum)<!----> |  |  [optional] |
 | **authenticated** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **app** | <!----><!---->[**JourneySessionEventsNotificationApp**](JourneySessionEventsNotificationApp.html)<!----> |  |  [optional] |
+| **sdkLibrary** | <!----><!---->[**JourneySessionEventsNotificationSdkLibrary**](JourneySessionEventsNotificationSdkLibrary.html)<!----> |  |  [optional] |
+| **networkConnectivity** | <!----><!---->[**JourneySessionEventsNotificationNetworkConnectivity**](JourneySessionEventsNotificationNetworkConnectivity.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -85,6 +88,8 @@ title: JourneySessionEventsNotificationSessionEvent
 | NOANSWERTRANSFER | &quot;NoAnswerTransfer&quot; | 
 | NOTAVAILABLETRANSFER | &quot;NotAvailableTransfer&quot; | 
 | UNCALLABLE | &quot;Uncallable&quot; | 
+| DIDNOTDELIVERENDPOINT | &quot;DidNotDeliverEndpoint&quot; | 
+| DIDNOTDELIVERTRANSFER | &quot;DidNotDeliverTransfer&quot; | 
 {: class="table table-striped"}
 
 

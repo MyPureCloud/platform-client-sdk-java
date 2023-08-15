@@ -18,6 +18,8 @@ import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.AppEventRequest;
+import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -85,6 +87,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRe
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsEstimatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentAppeventsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesAttributionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesPredictorsRequest;
@@ -3150,6 +3153,92 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActionTemplate> response = (ApiResponse<ActionTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Send a journey app event, used for tracking customer activity on an application.
+   * 
+   * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param deploymentId The ID of the deployment sending the app event. (required)
+   * @param body  (optional)
+   * @return AppEventResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AppEventResponse postJourneyDeploymentAppevents(String deploymentId, AppEventRequest body) throws IOException, ApiException {
+    return  postJourneyDeploymentAppevents(createPostJourneyDeploymentAppeventsRequest(deploymentId, body));
+  }
+
+  /**
+   * Send a journey app event, used for tracking customer activity on an application.
+   * 
+   * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param deploymentId The ID of the deployment sending the app event. (required)
+   * @param body  (optional)
+   * @return AppEventResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AppEventResponse> postJourneyDeploymentAppeventsWithHttpInfo(String deploymentId, AppEventRequest body) throws IOException {
+    return postJourneyDeploymentAppevents(createPostJourneyDeploymentAppeventsRequest(deploymentId, body).withHttpInfo());
+  }
+
+  private PostJourneyDeploymentAppeventsRequest createPostJourneyDeploymentAppeventsRequest(String deploymentId, AppEventRequest body) {
+    return PostJourneyDeploymentAppeventsRequest.builder()
+            .withDeploymentId(deploymentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Send a journey app event, used for tracking customer activity on an application.
+   * 
+   * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AppEventResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AppEventResponse postJourneyDeploymentAppevents(PostJourneyDeploymentAppeventsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AppEventResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AppEventResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send a journey app event, used for tracking customer activity on an application.
+   * 
+   * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AppEventResponse> postJourneyDeploymentAppevents(ApiRequest<AppEventRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AppEventResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AppEventResponse> response = (ApiResponse<AppEventResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AppEventResponse> response = (ApiResponse<AppEventResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

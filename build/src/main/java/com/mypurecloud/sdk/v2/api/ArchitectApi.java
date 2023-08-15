@@ -46,6 +46,10 @@ import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowsQueryCriteriaResponse;
 import com.mypurecloud.sdk.v2.model.GetFlowExecutionDataJobResult;
+import com.mypurecloud.sdk.v2.model.Grammar;
+import com.mypurecloud.sdk.v2.model.GrammarFileUploadRequest;
+import com.mypurecloud.sdk.v2.model.GrammarLanguage;
+import com.mypurecloud.sdk.v2.model.GrammarListing;
 import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
@@ -64,9 +68,14 @@ import com.mypurecloud.sdk.v2.model.SystemPrompt;
 import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
 import com.mypurecloud.sdk.v2.model.SystemPromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPromptEntityListing;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectEmergencygroupRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteArchitectGrammarRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteArchitectGrammarLanguageRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteArchitectGrammarLanguageFilesDtmfRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteArchitectGrammarLanguageFilesVoiceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptResourceRequest;
@@ -91,6 +100,9 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingTypesReq
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingUpdatedresourceconsumersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectEmergencygroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarLanguageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptRequest;
@@ -135,8 +147,13 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesDivisionviewsRequest
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarLanguageFilesDtmfRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarLanguageFilesVoiceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarLanguagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptResourcesRequest;
@@ -248,6 +265,337 @@ public class ArchitectApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteArchitectEmergencygroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a grammar.
+   * 
+   * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId grammar ID (required)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteArchitectGrammar(String grammarId) throws IOException, ApiException {
+    return  deleteArchitectGrammar(createDeleteArchitectGrammarRequest(grammarId));
+  }
+
+  /**
+   * Delete a grammar.
+   * 
+   * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId grammar ID (required)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteArchitectGrammarWithHttpInfo(String grammarId) throws IOException {
+    return deleteArchitectGrammar(createDeleteArchitectGrammarRequest(grammarId).withHttpInfo());
+  }
+
+  private DeleteArchitectGrammarRequest createDeleteArchitectGrammarRequest(String grammarId) {
+    return DeleteArchitectGrammarRequest.builder()
+            .withGrammarId(grammarId)
+
+            .build();
+  }
+
+  /**
+   * Delete a grammar.
+   * 
+   * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteArchitectGrammar(DeleteArchitectGrammarRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete a grammar.
+   * 
+   * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteArchitectGrammar(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete specified grammar language
+   * 
+   * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectGrammarLanguage(String grammarId, String languageCode) throws IOException, ApiException {
+     deleteArchitectGrammarLanguage(createDeleteArchitectGrammarLanguageRequest(grammarId, languageCode));
+  }
+
+  /**
+   * Delete specified grammar language
+   * 
+   * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectGrammarLanguageWithHttpInfo(String grammarId, String languageCode) throws IOException {
+    return deleteArchitectGrammarLanguage(createDeleteArchitectGrammarLanguageRequest(grammarId, languageCode).withHttpInfo());
+  }
+
+  private DeleteArchitectGrammarLanguageRequest createDeleteArchitectGrammarLanguageRequest(String grammarId, String languageCode) {
+    return DeleteArchitectGrammarLanguageRequest.builder()
+            .withGrammarId(grammarId)
+
+            .withLanguageCode(languageCode)
+
+            .build();
+  }
+
+  /**
+   * Delete specified grammar language
+   * 
+   * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectGrammarLanguage(DeleteArchitectGrammarLanguageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete specified grammar language
+   * 
+   * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectGrammarLanguage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Clear the DTMF mode file for the grammar language if there is one
+   * 
+   * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectGrammarLanguageFilesDtmf(String grammarId, String languageCode) throws IOException, ApiException {
+     deleteArchitectGrammarLanguageFilesDtmf(createDeleteArchitectGrammarLanguageFilesDtmfRequest(grammarId, languageCode));
+  }
+
+  /**
+   * Clear the DTMF mode file for the grammar language if there is one
+   * 
+   * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectGrammarLanguageFilesDtmfWithHttpInfo(String grammarId, String languageCode) throws IOException {
+    return deleteArchitectGrammarLanguageFilesDtmf(createDeleteArchitectGrammarLanguageFilesDtmfRequest(grammarId, languageCode).withHttpInfo());
+  }
+
+  private DeleteArchitectGrammarLanguageFilesDtmfRequest createDeleteArchitectGrammarLanguageFilesDtmfRequest(String grammarId, String languageCode) {
+    return DeleteArchitectGrammarLanguageFilesDtmfRequest.builder()
+            .withGrammarId(grammarId)
+
+            .withLanguageCode(languageCode)
+
+            .build();
+  }
+
+  /**
+   * Clear the DTMF mode file for the grammar language if there is one
+   * 
+   * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectGrammarLanguageFilesDtmf(DeleteArchitectGrammarLanguageFilesDtmfRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Clear the DTMF mode file for the grammar language if there is one
+   * 
+   * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectGrammarLanguageFilesDtmf(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Clear the voice mode file for the grammar language if there is one
+   * 
+   * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectGrammarLanguageFilesVoice(String grammarId, String languageCode) throws IOException, ApiException {
+     deleteArchitectGrammarLanguageFilesVoice(createDeleteArchitectGrammarLanguageFilesVoiceRequest(grammarId, languageCode));
+  }
+
+  /**
+   * Clear the voice mode file for the grammar language if there is one
+   * 
+   * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectGrammarLanguageFilesVoiceWithHttpInfo(String grammarId, String languageCode) throws IOException {
+    return deleteArchitectGrammarLanguageFilesVoice(createDeleteArchitectGrammarLanguageFilesVoiceRequest(grammarId, languageCode).withHttpInfo());
+  }
+
+  private DeleteArchitectGrammarLanguageFilesVoiceRequest createDeleteArchitectGrammarLanguageFilesVoiceRequest(String grammarId, String languageCode) {
+    return DeleteArchitectGrammarLanguageFilesVoiceRequest.builder()
+            .withGrammarId(grammarId)
+
+            .withLanguageCode(languageCode)
+
+            .build();
+  }
+
+  /**
+   * Clear the voice mode file for the grammar language if there is one
+   * 
+   * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectGrammarLanguageFilesVoice(DeleteArchitectGrammarLanguageFilesVoiceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Clear the voice mode file for the grammar language if there is one
+   * 
+   * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectGrammarLanguageFilesVoice(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2291,6 +2639,292 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmergencyGroupListing> response = (ApiResponse<EmergencyGroupListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a grammar
+   * Returns a specified grammar
+   * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId grammar ID (required)
+   * @param includeFileUrls Include grammar language file URLs (optional)
+   * @return Grammar
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Grammar getArchitectGrammar(String grammarId, Boolean includeFileUrls) throws IOException, ApiException {
+    return  getArchitectGrammar(createGetArchitectGrammarRequest(grammarId, includeFileUrls));
+  }
+
+  /**
+   * Get a grammar
+   * Returns a specified grammar
+   * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId grammar ID (required)
+   * @param includeFileUrls Include grammar language file URLs (optional)
+   * @return Grammar
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Grammar> getArchitectGrammarWithHttpInfo(String grammarId, Boolean includeFileUrls) throws IOException {
+    return getArchitectGrammar(createGetArchitectGrammarRequest(grammarId, includeFileUrls).withHttpInfo());
+  }
+
+  private GetArchitectGrammarRequest createGetArchitectGrammarRequest(String grammarId, Boolean includeFileUrls) {
+    return GetArchitectGrammarRequest.builder()
+            .withGrammarId(grammarId)
+
+            .withIncludeFileUrls(includeFileUrls)
+
+            .build();
+  }
+
+  /**
+   * Get a grammar
+   * Returns a specified grammar
+   * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Grammar
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Grammar getArchitectGrammar(GetArchitectGrammarRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Grammar> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Grammar>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a grammar
+   * Returns a specified grammar
+   * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Grammar> getArchitectGrammar(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Grammar>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Grammar> response = (ApiResponse<Grammar>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Grammar> response = (ApiResponse<Grammar>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a grammar language.
+   * 
+   * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @return GrammarLanguage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GrammarLanguage getArchitectGrammarLanguage(String grammarId, String languageCode) throws IOException, ApiException {
+    return  getArchitectGrammarLanguage(createGetArchitectGrammarLanguageRequest(grammarId, languageCode));
+  }
+
+  /**
+   * Get a grammar language.
+   * 
+   * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @return GrammarLanguage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GrammarLanguage> getArchitectGrammarLanguageWithHttpInfo(String grammarId, String languageCode) throws IOException {
+    return getArchitectGrammarLanguage(createGetArchitectGrammarLanguageRequest(grammarId, languageCode).withHttpInfo());
+  }
+
+  private GetArchitectGrammarLanguageRequest createGetArchitectGrammarLanguageRequest(String grammarId, String languageCode) {
+    return GetArchitectGrammarLanguageRequest.builder()
+            .withGrammarId(grammarId)
+
+            .withLanguageCode(languageCode)
+
+            .build();
+  }
+
+  /**
+   * Get a grammar language.
+   * 
+   * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GrammarLanguage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GrammarLanguage getArchitectGrammarLanguage(GetArchitectGrammarLanguageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GrammarLanguage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GrammarLanguage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a grammar language.
+   * 
+   * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GrammarLanguage> getArchitectGrammarLanguage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GrammarLanguage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GrammarLanguage> response = (ApiResponse<GrammarLanguage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GrammarLanguage> response = (ApiResponse<GrammarLanguage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a pageable list of grammars, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
+   * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param description Description (optional)
+   * @param nameOrDescription Name or description (optional)
+   * @param includeFileUrls Include grammar language file URLs (optional)
+   * @return GrammarListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GrammarListing getArchitectGrammars(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, Boolean includeFileUrls) throws IOException, ApiException {
+    return  getArchitectGrammars(createGetArchitectGrammarsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, includeFileUrls));
+  }
+
+  /**
+   * Get a pageable list of grammars, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
+   * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param description Description (optional)
+   * @param nameOrDescription Name or description (optional)
+   * @param includeFileUrls Include grammar language file URLs (optional)
+   * @return GrammarListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GrammarListing> getArchitectGrammarsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, Boolean includeFileUrls) throws IOException {
+    return getArchitectGrammars(createGetArchitectGrammarsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, includeFileUrls).withHttpInfo());
+  }
+
+  private GetArchitectGrammarsRequest createGetArchitectGrammarsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, Boolean includeFileUrls) {
+    return GetArchitectGrammarsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withId(id)
+
+            .withName(name)
+
+            .withDescription(description)
+
+            .withNameOrDescription(nameOrDescription)
+
+            .withIncludeFileUrls(includeFileUrls)
+
+            .build();
+  }
+
+  /**
+   * Get a pageable list of grammars, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
+   * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GrammarListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GrammarListing getArchitectGrammars(GetArchitectGrammarsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GrammarListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GrammarListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a pageable list of grammars, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
+   * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GrammarListing> getArchitectGrammars(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GrammarListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GrammarListing> response = (ApiResponse<GrammarListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GrammarListing> response = (ApiResponse<GrammarListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6328,6 +6962,92 @@ public class ArchitectApi {
   }
 
   /**
+   * Updates a grammar
+   * 
+   * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId grammar ID (required)
+   * @param body  (optional)
+   * @return Grammar
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Grammar patchArchitectGrammar(String grammarId, Grammar body) throws IOException, ApiException {
+    return  patchArchitectGrammar(createPatchArchitectGrammarRequest(grammarId, body));
+  }
+
+  /**
+   * Updates a grammar
+   * 
+   * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId grammar ID (required)
+   * @param body  (optional)
+   * @return Grammar
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Grammar> patchArchitectGrammarWithHttpInfo(String grammarId, Grammar body) throws IOException {
+    return patchArchitectGrammar(createPatchArchitectGrammarRequest(grammarId, body).withHttpInfo());
+  }
+
+  private PatchArchitectGrammarRequest createPatchArchitectGrammarRequest(String grammarId, Grammar body) {
+    return PatchArchitectGrammarRequest.builder()
+            .withGrammarId(grammarId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Updates a grammar
+   * 
+   * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Grammar
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Grammar patchArchitectGrammar(PatchArchitectGrammarRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Grammar> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Grammar>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a grammar
+   * 
+   * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Grammar> patchArchitectGrammar(ApiRequest<Grammar> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Grammar>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Grammar> response = (ApiResponse<Grammar>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Grammar> response = (ApiResponse<Grammar>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Rebuild Dependency Tracking data for an organization
    * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
    * @throws ApiException if the request fails on the server
@@ -6472,6 +7192,354 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmergencyGroup> response = (ApiResponse<EmergencyGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a grammar DTMF mode file
+   * 
+   * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postArchitectGrammarLanguageFilesDtmf(String grammarId, String languageCode, GrammarFileUploadRequest body) throws IOException, ApiException {
+    return  postArchitectGrammarLanguageFilesDtmf(createPostArchitectGrammarLanguageFilesDtmfRequest(grammarId, languageCode, body));
+  }
+
+  /**
+   * Creates a presigned URL for uploading a grammar DTMF mode file
+   * 
+   * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postArchitectGrammarLanguageFilesDtmfWithHttpInfo(String grammarId, String languageCode, GrammarFileUploadRequest body) throws IOException {
+    return postArchitectGrammarLanguageFilesDtmf(createPostArchitectGrammarLanguageFilesDtmfRequest(grammarId, languageCode, body).withHttpInfo());
+  }
+
+  private PostArchitectGrammarLanguageFilesDtmfRequest createPostArchitectGrammarLanguageFilesDtmfRequest(String grammarId, String languageCode, GrammarFileUploadRequest body) {
+    return PostArchitectGrammarLanguageFilesDtmfRequest.builder()
+            .withGrammarId(grammarId)
+
+            .withLanguageCode(languageCode)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates a presigned URL for uploading a grammar DTMF mode file
+   * 
+   * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postArchitectGrammarLanguageFilesDtmf(PostArchitectGrammarLanguageFilesDtmfRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a grammar DTMF mode file
+   * 
+   * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postArchitectGrammarLanguageFilesDtmf(ApiRequest<GrammarFileUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a grammar voice mode file
+   * 
+   * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postArchitectGrammarLanguageFilesVoice(String grammarId, String languageCode, GrammarFileUploadRequest body) throws IOException, ApiException {
+    return  postArchitectGrammarLanguageFilesVoice(createPostArchitectGrammarLanguageFilesVoiceRequest(grammarId, languageCode, body));
+  }
+
+  /**
+   * Creates a presigned URL for uploading a grammar voice mode file
+   * 
+   * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postArchitectGrammarLanguageFilesVoiceWithHttpInfo(String grammarId, String languageCode, GrammarFileUploadRequest body) throws IOException {
+    return postArchitectGrammarLanguageFilesVoice(createPostArchitectGrammarLanguageFilesVoiceRequest(grammarId, languageCode, body).withHttpInfo());
+  }
+
+  private PostArchitectGrammarLanguageFilesVoiceRequest createPostArchitectGrammarLanguageFilesVoiceRequest(String grammarId, String languageCode, GrammarFileUploadRequest body) {
+    return PostArchitectGrammarLanguageFilesVoiceRequest.builder()
+            .withGrammarId(grammarId)
+
+            .withLanguageCode(languageCode)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates a presigned URL for uploading a grammar voice mode file
+   * 
+   * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postArchitectGrammarLanguageFilesVoice(PostArchitectGrammarLanguageFilesVoiceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a grammar voice mode file
+   * 
+   * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postArchitectGrammarLanguageFilesVoice(ApiRequest<GrammarFileUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a new language for a given grammar
+   * 
+   * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param body  (required)
+   * @return GrammarLanguage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GrammarLanguage postArchitectGrammarLanguages(String grammarId, GrammarLanguage body) throws IOException, ApiException {
+    return  postArchitectGrammarLanguages(createPostArchitectGrammarLanguagesRequest(grammarId, body));
+  }
+
+  /**
+   * Create a new language for a given grammar
+   * 
+   * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param body  (required)
+   * @return GrammarLanguage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GrammarLanguage> postArchitectGrammarLanguagesWithHttpInfo(String grammarId, GrammarLanguage body) throws IOException {
+    return postArchitectGrammarLanguages(createPostArchitectGrammarLanguagesRequest(grammarId, body).withHttpInfo());
+  }
+
+  private PostArchitectGrammarLanguagesRequest createPostArchitectGrammarLanguagesRequest(String grammarId, GrammarLanguage body) {
+    return PostArchitectGrammarLanguagesRequest.builder()
+            .withGrammarId(grammarId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a new language for a given grammar
+   * 
+   * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GrammarLanguage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GrammarLanguage postArchitectGrammarLanguages(PostArchitectGrammarLanguagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GrammarLanguage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GrammarLanguage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new language for a given grammar
+   * 
+   * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GrammarLanguage> postArchitectGrammarLanguages(ApiRequest<GrammarLanguage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GrammarLanguage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GrammarLanguage> response = (ApiResponse<GrammarLanguage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GrammarLanguage> response = (ApiResponse<GrammarLanguage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a new grammar
+   * 
+   * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body  (required)
+   * @return Grammar
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Grammar postArchitectGrammars(Grammar body) throws IOException, ApiException {
+    return  postArchitectGrammars(createPostArchitectGrammarsRequest(body));
+  }
+
+  /**
+   * Create a new grammar
+   * 
+   * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body  (required)
+   * @return Grammar
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Grammar> postArchitectGrammarsWithHttpInfo(Grammar body) throws IOException {
+    return postArchitectGrammars(createPostArchitectGrammarsRequest(body).withHttpInfo());
+  }
+
+  private PostArchitectGrammarsRequest createPostArchitectGrammarsRequest(Grammar body) {
+    return PostArchitectGrammarsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a new grammar
+   * 
+   * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Grammar
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Grammar postArchitectGrammars(PostArchitectGrammarsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Grammar> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Grammar>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new grammar
+   * 
+   * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Grammar> postArchitectGrammars(ApiRequest<Grammar> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Grammar>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Grammar> response = (ApiResponse<Grammar>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Grammar> response = (ApiResponse<Grammar>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

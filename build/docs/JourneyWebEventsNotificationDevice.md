@@ -12,10 +12,12 @@ title: JourneyWebEventsNotificationDevice
 | **isMobile** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **screenHeight** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **screenWidth** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **screenDensity** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **fingerprint** | <!----><!---->**String**<!----> |  |  [optional] |
 | **osFamily** | <!----><!---->**String**<!----> |  |  [optional] |
 | **osVersion** | <!----><!---->**String**<!----> |  |  [optional] |
 | **category** | [**CategoryEnum**](#CategoryEnum)<!----> |  |  [optional] |
+| **manufacturer** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

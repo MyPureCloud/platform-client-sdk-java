@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.GamificationScorecardChangeTopicEvaluationDetail;
 import com.mypurecloud.sdk.v2.model.GamificationScorecardChangeTopicMetric;
 import com.mypurecloud.sdk.v2.model.GamificationScorecardChangeTopicPunctualityEvent;
 import io.swagger.annotations.ApiModel;
@@ -30,6 +31,7 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
   private Integer points = null;
   private BigDecimal value = null;
   private List<GamificationScorecardChangeTopicPunctualityEvent> punctualityEvents = new ArrayList<GamificationScorecardChangeTopicPunctualityEvent>();
+  private List<GamificationScorecardChangeTopicEvaluationDetail> evaluationDetails = new ArrayList<GamificationScorecardChangeTopicEvaluationDetail>();
 
   
   /**
@@ -100,6 +102,23 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
   }
 
 
+  /**
+   **/
+  public GamificationScorecardChangeTopicPerformanceMetric evaluationDetails(List<GamificationScorecardChangeTopicEvaluationDetail> evaluationDetails) {
+    this.evaluationDetails = evaluationDetails;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("evaluationDetails")
+  public List<GamificationScorecardChangeTopicEvaluationDetail> getEvaluationDetails() {
+    return evaluationDetails;
+  }
+  public void setEvaluationDetails(List<GamificationScorecardChangeTopicEvaluationDetail> evaluationDetails) {
+    this.evaluationDetails = evaluationDetails;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -113,12 +132,13 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
     return Objects.equals(this.metric, gamificationScorecardChangeTopicPerformanceMetric.metric) &&
             Objects.equals(this.points, gamificationScorecardChangeTopicPerformanceMetric.points) &&
             Objects.equals(this.value, gamificationScorecardChangeTopicPerformanceMetric.value) &&
-            Objects.equals(this.punctualityEvents, gamificationScorecardChangeTopicPerformanceMetric.punctualityEvents);
+            Objects.equals(this.punctualityEvents, gamificationScorecardChangeTopicPerformanceMetric.punctualityEvents) &&
+            Objects.equals(this.evaluationDetails, gamificationScorecardChangeTopicPerformanceMetric.evaluationDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, points, value, punctualityEvents);
+    return Objects.hash(metric, points, value, punctualityEvents, evaluationDetails);
   }
 
   @Override
@@ -130,6 +150,7 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
     sb.append("    points: ").append(toIndentedString(points)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    punctualityEvents: ").append(toIndentedString(punctualityEvents)).append("\n");
+    sb.append("    evaluationDetails: ").append(toIndentedString(evaluationDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -65,6 +65,8 @@ title: AcdEndDetailEventTopicAcdEndEvent
 | NO_ANSWER_TRANSFER | &quot;NO_ANSWER_TRANSFER&quot; | 
 | NOT_AVAILABLE_TRANSFER | &quot;NOT_AVAILABLE_TRANSFER&quot; | 
 | UNCALLABLE | &quot;UNCALLABLE&quot; | 
+| DND_ENDPOINT | &quot;DND_ENDPOINT&quot; | 
+| DND_TRANSFER | &quot;DND_TRANSFER&quot; | 
 {: class="table table-striped"}
 
 

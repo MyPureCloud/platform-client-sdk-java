@@ -4879,7 +4879,7 @@ public class TelephonyProvidersEdgeApiAsync {
   }
 
   /**
-   * Get a list of Phone Instances
+   * Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4913,7 +4913,7 @@ public class TelephonyProvidersEdgeApiAsync {
   }
 
   /**
-   * Get a list of Phone Instances
+   * Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

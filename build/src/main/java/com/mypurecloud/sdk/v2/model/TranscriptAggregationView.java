@@ -44,7 +44,13 @@ public class TranscriptAggregationView  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NTOPICCOMMUNICATIONS("nTopicCommunications"),
     OCUSTOMERSENTIMENT("oCustomerSentiment"),
-    OSENTIMENTSCORE("oSentimentScore");
+    OOVERTALKSPEECHINSTANCES("oOverTalkSpeechInstances"),
+    OSENTIMENTSCORE("oSentimentScore"),
+    TAGENTSPEECH("tAgentSpeech"),
+    TCUSTOMERSPEECH("tCustomerSpeech"),
+    TOVERTALKSPEECH("tOverTalkSpeech"),
+    TSILENCE("tSilence"),
+    TTOTALSPEECHANDSILENCE("tTotalSpeechAndSilence");
 
     private String value;
 

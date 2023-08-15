@@ -79,7 +79,60 @@ public class ApiUsageSimpleSearch  implements Serializable {
   }
   private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
   private List<String> oauthClientNames = new ArrayList<String>();
-  private List<String> httpMethods = new ArrayList<String>();
+
+  private static class HttpMethodsEnumDeserializer extends StdDeserializer<HttpMethodsEnum> {
+    public HttpMethodsEnumDeserializer() {
+      super(HttpMethodsEnumDeserializer.class);
+    }
+
+    @Override
+    public HttpMethodsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return HttpMethodsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets httpMethods
+   */
+ @JsonDeserialize(using = HttpMethodsEnumDeserializer.class)
+  public enum HttpMethodsEnum {
+    GET("GET"),
+    POST("POST"),
+    DELETE("DELETE"),
+    PATCH("PATCH"),
+    PUT("PUT"),
+    HEAD("HEAD"),
+    CONNECT("CONNECT"),
+    OPTIONS("OPTIONS"),
+    TRACE("TRACE");
+
+    private String value;
+
+    HttpMethodsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static HttpMethodsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (HttpMethodsEnum value : HttpMethodsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return HttpMethodsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<HttpMethodsEnum> httpMethods = new ArrayList<HttpMethodsEnum>();
   private List<String> templateUris = new ArrayList<String>();
 
   
@@ -120,14 +173,14 @@ public class ApiUsageSimpleSearch  implements Serializable {
 
 
   /**
-   * Behaves like a SQL WHERE with multiple AND operators. Specifies a list of OAuth client names to be queried.
+   * Behaves like a SQL WHERE with multiple IN operators. Specifies a list of OAuth client names to be queried.
    **/
   public ApiUsageSimpleSearch oauthClientNames(List<String> oauthClientNames) {
     this.oauthClientNames = oauthClientNames;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Behaves like a SQL WHERE with multiple AND operators. Specifies a list of OAuth client names to be queried.")
+  @ApiModelProperty(example = "null", value = "Behaves like a SQL WHERE with multiple IN operators. Specifies a list of OAuth client names to be queried.")
   @JsonProperty("oauthClientNames")
   public List<String> getOauthClientNames() {
     return oauthClientNames;
@@ -138,32 +191,32 @@ public class ApiUsageSimpleSearch  implements Serializable {
 
 
   /**
-   * Behaves like a SQL WHERE with multiple AND operators. Specifies a list of HTTP methods to be queried.
+   * Behaves like a SQL WHERE with multiple IN operators. Specifies a list of HTTP methods to be queried.
    **/
-  public ApiUsageSimpleSearch httpMethods(List<String> httpMethods) {
+  public ApiUsageSimpleSearch httpMethods(List<HttpMethodsEnum> httpMethods) {
     this.httpMethods = httpMethods;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Behaves like a SQL WHERE with multiple AND operators. Specifies a list of HTTP methods to be queried.")
+  @ApiModelProperty(example = "null", value = "Behaves like a SQL WHERE with multiple IN operators. Specifies a list of HTTP methods to be queried.")
   @JsonProperty("httpMethods")
-  public List<String> getHttpMethods() {
+  public List<HttpMethodsEnum> getHttpMethods() {
     return httpMethods;
   }
-  public void setHttpMethods(List<String> httpMethods) {
+  public void setHttpMethods(List<HttpMethodsEnum> httpMethods) {
     this.httpMethods = httpMethods;
   }
 
 
   /**
-   * Behaves like a SQL WHERE with multiple AND operators. Specifies a list of Template Uris to be queried.
+   * Behaves like a SQL WHERE with multiple IN operators. Specifies a list of Template Uris to be queried.
    **/
   public ApiUsageSimpleSearch templateUris(List<String> templateUris) {
     this.templateUris = templateUris;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Behaves like a SQL WHERE with multiple AND operators. Specifies a list of Template Uris to be queried.")
+  @ApiModelProperty(example = "null", value = "Behaves like a SQL WHERE with multiple IN operators. Specifies a list of Template Uris to be queried.")
   @JsonProperty("templateUris")
   public List<String> getTemplateUris() {
     return templateUris;

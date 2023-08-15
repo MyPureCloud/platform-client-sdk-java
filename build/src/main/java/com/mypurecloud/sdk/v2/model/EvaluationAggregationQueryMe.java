@@ -44,6 +44,7 @@ public class EvaluationAggregationQueryMe  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    ASSIGNEEAPPLICABLE("assigneeApplicable"),
     ASSIGNEEID("assigneeId"),
     CALIBRATIONID("calibrationId"),
     CONTEXTID("contextId"),

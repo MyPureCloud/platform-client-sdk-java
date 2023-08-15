@@ -45,7 +45,9 @@ public class V2MobiusRulesTopicEntityProperties  implements Serializable {
     USER("User"),
     QUEUE("Queue"),
     GROUP("Group"),
-    EDGE("Edge");
+    EDGE("Edge"),
+    TEAM("Team"),
+    TEAMMEMBERS("TeamMembers");
 
     private String value;
 
@@ -76,6 +78,7 @@ public class V2MobiusRulesTopicEntityProperties  implements Serializable {
   private String userDisplayName = null;
   private String groupDisplayName = null;
   private String queueDisplayName = null;
+  private String teamDisplayName = null;
 
   
   /**
@@ -146,6 +149,23 @@ public class V2MobiusRulesTopicEntityProperties  implements Serializable {
   }
 
 
+  /**
+   **/
+  public V2MobiusRulesTopicEntityProperties teamDisplayName(String teamDisplayName) {
+    this.teamDisplayName = teamDisplayName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("teamDisplayName")
+  public String getTeamDisplayName() {
+    return teamDisplayName;
+  }
+  public void setTeamDisplayName(String teamDisplayName) {
+    this.teamDisplayName = teamDisplayName;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -159,12 +179,13 @@ public class V2MobiusRulesTopicEntityProperties  implements Serializable {
     return Objects.equals(this.entityType, v2MobiusRulesTopicEntityProperties.entityType) &&
             Objects.equals(this.userDisplayName, v2MobiusRulesTopicEntityProperties.userDisplayName) &&
             Objects.equals(this.groupDisplayName, v2MobiusRulesTopicEntityProperties.groupDisplayName) &&
-            Objects.equals(this.queueDisplayName, v2MobiusRulesTopicEntityProperties.queueDisplayName);
+            Objects.equals(this.queueDisplayName, v2MobiusRulesTopicEntityProperties.queueDisplayName) &&
+            Objects.equals(this.teamDisplayName, v2MobiusRulesTopicEntityProperties.teamDisplayName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entityType, userDisplayName, groupDisplayName, queueDisplayName);
+    return Objects.hash(entityType, userDisplayName, groupDisplayName, queueDisplayName, teamDisplayName);
   }
 
   @Override
@@ -176,6 +197,7 @@ public class V2MobiusRulesTopicEntityProperties  implements Serializable {
     sb.append("    userDisplayName: ").append(toIndentedString(userDisplayName)).append("\n");
     sb.append("    groupDisplayName: ").append(toIndentedString(groupDisplayName)).append("\n");
     sb.append("    queueDisplayName: ").append(toIndentedString(queueDisplayName)).append("\n");
+    sb.append("    teamDisplayName: ").append(toIndentedString(teamDisplayName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

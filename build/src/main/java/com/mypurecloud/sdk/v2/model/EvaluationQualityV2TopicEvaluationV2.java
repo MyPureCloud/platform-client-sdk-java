@@ -105,6 +105,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   private EvaluationQualityV2TopicEvaluationSource evaluationSource = null;
   private String assigneeUserId = null;
   private String previousAssigneeUserId = null;
+  private Boolean assigneeApplicable = null;
   private String evaluationContextId = null;
   private Integer disputeCount = null;
   private Integer version = null;
@@ -165,6 +166,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   private Boolean evaluatorCommentHasUpdated = null;
   private Boolean agentCommentHasUpdated = null;
   private Integer previousRescoreCount = null;
+  private String previousEvaluatorUserId = null;
 
   
   /**
@@ -594,6 +596,23 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
 
   /**
    **/
+  public EvaluationQualityV2TopicEvaluationV2 assigneeApplicable(Boolean assigneeApplicable) {
+    this.assigneeApplicable = assigneeApplicable;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("assigneeApplicable")
+  public Boolean getAssigneeApplicable() {
+    return assigneeApplicable;
+  }
+  public void setAssigneeApplicable(Boolean assigneeApplicable) {
+    this.assigneeApplicable = assigneeApplicable;
+  }
+
+
+  /**
+   **/
   public EvaluationQualityV2TopicEvaluationV2 evaluationContextId(String evaluationContextId) {
     this.evaluationContextId = evaluationContextId;
     return this;
@@ -762,6 +781,23 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   }
 
 
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 previousEvaluatorUserId(String previousEvaluatorUserId) {
+    this.previousEvaluatorUserId = previousEvaluatorUserId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousEvaluatorUserId")
+  public String getPreviousEvaluatorUserId() {
+    return previousEvaluatorUserId;
+  }
+  public void setPreviousEvaluatorUserId(String previousEvaluatorUserId) {
+    this.previousEvaluatorUserId = previousEvaluatorUserId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -797,6 +833,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
             Objects.equals(this.evaluationSource, evaluationQualityV2TopicEvaluationV2.evaluationSource) &&
             Objects.equals(this.assigneeUserId, evaluationQualityV2TopicEvaluationV2.assigneeUserId) &&
             Objects.equals(this.previousAssigneeUserId, evaluationQualityV2TopicEvaluationV2.previousAssigneeUserId) &&
+            Objects.equals(this.assigneeApplicable, evaluationQualityV2TopicEvaluationV2.assigneeApplicable) &&
             Objects.equals(this.evaluationContextId, evaluationQualityV2TopicEvaluationV2.evaluationContextId) &&
             Objects.equals(this.disputeCount, evaluationQualityV2TopicEvaluationV2.disputeCount) &&
             Objects.equals(this.version, evaluationQualityV2TopicEvaluationV2.version) &&
@@ -806,12 +843,13 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
             Objects.equals(this.rescoreCount, evaluationQualityV2TopicEvaluationV2.rescoreCount) &&
             Objects.equals(this.evaluatorCommentHasUpdated, evaluationQualityV2TopicEvaluationV2.evaluatorCommentHasUpdated) &&
             Objects.equals(this.agentCommentHasUpdated, evaluationQualityV2TopicEvaluationV2.agentCommentHasUpdated) &&
-            Objects.equals(this.previousRescoreCount, evaluationQualityV2TopicEvaluationV2.previousRescoreCount);
+            Objects.equals(this.previousRescoreCount, evaluationQualityV2TopicEvaluationV2.previousRescoreCount) &&
+            Objects.equals(this.previousEvaluatorUserId, evaluationQualityV2TopicEvaluationV2.previousEvaluatorUserId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType, calibration, evaluationSource, assigneeUserId, previousAssigneeUserId, evaluationContextId, disputeCount, version, previousStatus, declinedReview, retractedEvaluation, rescoreCount, evaluatorCommentHasUpdated, agentCommentHasUpdated, previousRescoreCount);
+    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType, calibration, evaluationSource, assigneeUserId, previousAssigneeUserId, assigneeApplicable, evaluationContextId, disputeCount, version, previousStatus, declinedReview, retractedEvaluation, rescoreCount, evaluatorCommentHasUpdated, agentCommentHasUpdated, previousRescoreCount, previousEvaluatorUserId);
   }
 
   @Override
@@ -844,6 +882,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     sb.append("    evaluationSource: ").append(toIndentedString(evaluationSource)).append("\n");
     sb.append("    assigneeUserId: ").append(toIndentedString(assigneeUserId)).append("\n");
     sb.append("    previousAssigneeUserId: ").append(toIndentedString(previousAssigneeUserId)).append("\n");
+    sb.append("    assigneeApplicable: ").append(toIndentedString(assigneeApplicable)).append("\n");
     sb.append("    evaluationContextId: ").append(toIndentedString(evaluationContextId)).append("\n");
     sb.append("    disputeCount: ").append(toIndentedString(disputeCount)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
@@ -854,6 +893,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     sb.append("    evaluatorCommentHasUpdated: ").append(toIndentedString(evaluatorCommentHasUpdated)).append("\n");
     sb.append("    agentCommentHasUpdated: ").append(toIndentedString(agentCommentHasUpdated)).append("\n");
     sb.append("    previousRescoreCount: ").append(toIndentedString(previousRescoreCount)).append("\n");
+    sb.append("    previousEvaluatorUserId: ").append(toIndentedString(previousEvaluatorUserId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

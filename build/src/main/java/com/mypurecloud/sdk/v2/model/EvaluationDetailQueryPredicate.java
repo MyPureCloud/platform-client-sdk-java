@@ -91,8 +91,8 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
  @JsonDeserialize(using = DimensionEnumDeserializer.class)
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ASSIGNEEID("assigneeId"),
     ASSIGNEEAPPLICABLE("assigneeApplicable"),
+    ASSIGNEEID("assigneeId"),
     CALIBRATIONID("calibrationId"),
     CONTEXTID("contextId"),
     DELETED("deleted"),

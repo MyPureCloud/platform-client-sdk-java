@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.MessageEvaluation;
 import com.mypurecloud.sdk.v2.model.PhoneNumberStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +43,7 @@ public class DialerContact  implements Serializable {
   private Map<String, ContactableStatus> contactableStatus = null;
   private Map<String, ContactColumnTimeZone> contactColumnTimeZones = null;
   private ConfigurationOverrides configurationOverrides = null;
+  private Date dateCreated = null;
   private String selfUri = null;
 
   
@@ -194,6 +196,13 @@ public class DialerContact  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -223,12 +232,13 @@ public class DialerContact  implements Serializable {
             Objects.equals(this.contactableStatus, dialerContact.contactableStatus) &&
             Objects.equals(this.contactColumnTimeZones, dialerContact.contactColumnTimeZones) &&
             Objects.equals(this.configurationOverrides, dialerContact.configurationOverrides) &&
+            Objects.equals(this.dateCreated, dialerContact.dateCreated) &&
             Objects.equals(this.selfUri, dialerContact.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, contactListId, data, callRecords, latestSmsEvaluations, latestEmailEvaluations, callable, phoneNumberStatus, contactableStatus, contactColumnTimeZones, configurationOverrides, selfUri);
+    return Objects.hash(id, name, contactListId, data, callRecords, latestSmsEvaluations, latestEmailEvaluations, callable, phoneNumberStatus, contactableStatus, contactColumnTimeZones, configurationOverrides, dateCreated, selfUri);
   }
 
   @Override
@@ -248,6 +258,7 @@ public class DialerContact  implements Serializable {
     sb.append("    contactableStatus: ").append(toIndentedString(contactableStatus)).append("\n");
     sb.append("    contactColumnTimeZones: ").append(toIndentedString(contactColumnTimeZones)).append("\n");
     sb.append("    configurationOverrides: ").append(toIndentedString(configurationOverrides)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

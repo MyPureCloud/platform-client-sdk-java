@@ -14,6 +14,7 @@ title: CampaignProgress
 | **numberOfContactsMessaged** | <!----><!---->**Long**<!----> | Number of contacts messaged during the campaign |  [optional] |
 | **totalNumberOfContacts** | <!----><!---->**Long**<!----> | Total number of contacts in the campaign |  [optional] |
 | **percentage** | <!----><!---->**Long**<!----> | Percentage of contacts processed during the campaign |  [optional] |
+| **numberOfContactsSkipped** | <!----><!---->**Map&lt;String, Integer&gt;**<!----> | Number of contacts skipped during the campaign |  [optional] |
 {: class="table table-striped"}
 
 

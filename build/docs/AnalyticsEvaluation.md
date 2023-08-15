@@ -8,8 +8,8 @@ title: AnalyticsEvaluation
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **assigneeId** | <!----><!---->**String**<!----> | UserId of the assignee |  [optional] |
 | **assigneeApplicable** | <!----><!---->**Boolean**<!----> | Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable |  [optional] |
+| **assigneeId** | <!----><!---->**String**<!----> | UserId of the assignee |  [optional] |
 | **calibrationId** | <!----><!---->**String**<!----> | The calibration ID used for the purpose of training evaluators |  [optional] |
 | **contextId** | <!----><!---->**String**<!----> | A unique identifier for an evaluation form, regardless of version |  [optional] |
 | **deleted** | <!----><!---->**Boolean**<!----> | Whether the evaluation has been deleted |  [optional] |

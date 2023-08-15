@@ -1518,9 +1518,9 @@ public class QualityApi {
    * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
+   * @param sortBy NOTE: Does not work when querying evaluations (optional)
    * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
+   * @param nextPage NOTE: Does not work when querying evaluations (optional)
    * @param previousPage Previous page token (optional)
    * @param conversationId conversationId specified (optional)
    * @param agentUserId user id of the agent (optional)
@@ -1533,8 +1533,8 @@ public class QualityApi {
    * @param isReleased the evaluation has been released (optional)
    * @param agentHasRead agent has the evaluation (optional)
    * @param expandAnswerTotalScores get the total scores for evaluations (optional)
-   * @param maximum maximum (optional)
-   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId (optional)
+   * @param maximum the maximum number of results to return (optional)
+   * @param sortOrder NOTE: Does not work when conversationId is supplied. (optional)
    * @return EvaluationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1548,9 +1548,9 @@ public class QualityApi {
    * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
+   * @param sortBy NOTE: Does not work when querying evaluations (optional)
    * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
+   * @param nextPage NOTE: Does not work when querying evaluations (optional)
    * @param previousPage Previous page token (optional)
    * @param conversationId conversationId specified (optional)
    * @param agentUserId user id of the agent (optional)
@@ -1563,8 +1563,8 @@ public class QualityApi {
    * @param isReleased the evaluation has been released (optional)
    * @param agentHasRead agent has the evaluation (optional)
    * @param expandAnswerTotalScores get the total scores for evaluations (optional)
-   * @param maximum maximum (optional)
-   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId (optional)
+   * @param maximum the maximum number of results to return (optional)
+   * @param sortOrder NOTE: Does not work when conversationId is supplied. (optional)
    * @return EvaluationEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -4959,7 +4959,7 @@ public class QualityApi {
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param body evaluation (required)
-   * @param expand evaluatorId, evaluationForm, assignee (optional)
+   * @param expand evaluatorId, evaluationForm, assignee, evaluator (optional)
    * @return EvaluationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4974,7 +4974,7 @@ public class QualityApi {
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param body evaluation (required)
-   * @param expand evaluatorId, evaluationForm, assignee (optional)
+   * @param expand evaluatorId, evaluationForm, assignee, evaluator (optional)
    * @return EvaluationResponse
    * @throws IOException if the request fails to be processed
    */

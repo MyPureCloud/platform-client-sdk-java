@@ -13,7 +13,6 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -24,7 +23,7 @@ import java.io.Serializable;
 public class LabelUtilization  implements Serializable {
   
   private Integer maximumCapacity = null;
-  private List<String> interruptingLabels = new ArrayList<String>();
+  private List<String> interruptingLabelIds = new ArrayList<String>();
 
   
   /**
@@ -46,20 +45,20 @@ public class LabelUtilization  implements Serializable {
 
 
   /**
-   * Defines the list of other labels that can interrupt an interaction with this label.
+   * Defines other labels that can interrupt an interaction with this label.
    **/
-  public LabelUtilization interruptingLabels(List<String> interruptingLabels) {
-    this.interruptingLabels = interruptingLabels;
+  public LabelUtilization interruptingLabelIds(List<String> interruptingLabelIds) {
+    this.interruptingLabelIds = interruptingLabelIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Defines the list of other labels that can interrupt an interaction with this label.")
-  @JsonProperty("interruptingLabels")
-  public List<String> getInterruptingLabels() {
-    return interruptingLabels;
+  @ApiModelProperty(example = "null", value = "Defines other labels that can interrupt an interaction with this label.")
+  @JsonProperty("interruptingLabelIds")
+  public List<String> getInterruptingLabelIds() {
+    return interruptingLabelIds;
   }
-  public void setInterruptingLabels(List<String> interruptingLabels) {
-    this.interruptingLabels = interruptingLabels;
+  public void setInterruptingLabelIds(List<String> interruptingLabelIds) {
+    this.interruptingLabelIds = interruptingLabelIds;
   }
 
 
@@ -74,12 +73,12 @@ public class LabelUtilization  implements Serializable {
     LabelUtilization labelUtilization = (LabelUtilization) o;
 
     return Objects.equals(this.maximumCapacity, labelUtilization.maximumCapacity) &&
-            Objects.equals(this.interruptingLabels, labelUtilization.interruptingLabels);
+            Objects.equals(this.interruptingLabelIds, labelUtilization.interruptingLabelIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maximumCapacity, interruptingLabels);
+    return Objects.hash(maximumCapacity, interruptingLabelIds);
   }
 
   @Override
@@ -88,7 +87,7 @@ public class LabelUtilization  implements Serializable {
     sb.append("class LabelUtilization {\n");
     
     sb.append("    maximumCapacity: ").append(toIndentedString(maximumCapacity)).append("\n");
-    sb.append("    interruptingLabels: ").append(toIndentedString(interruptingLabels)).append("\n");
+    sb.append("    interruptingLabelIds: ").append(toIndentedString(interruptingLabelIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

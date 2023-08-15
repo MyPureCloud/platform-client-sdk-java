@@ -32,6 +32,9 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentContentUpload;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedback;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearch;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentReq;
@@ -46,10 +49,12 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersion;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionVariation;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionVariationListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentView;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestion;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestionRequest;
@@ -93,6 +98,8 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentFeedbackRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentVariationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentVariationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseDocumentVersionRequest;
@@ -130,12 +137,15 @@ import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDoc
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVariationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest;
@@ -1642,6 +1652,218 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeDocumentResponse> response = (ApiResponse<KnowledgeDocumentResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of feedback records given on a document
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param onlyCommented If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. (optional)
+   * @param documentVersionId Document version ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param documentVariationId Document variation ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param appType Application type to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param queryType Query type to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param userId The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param queueId Queue ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param state State to filter by. Supported only if onlyCommented=true is set. Default: Final (optional)
+   * @return KnowledgeDocumentFeedbackResponseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentFeedbackResponseListing getKnowledgeKnowledgebaseDocumentFeedback(String knowledgeBaseId, String documentId, String before, String after, String pageSize, Boolean onlyCommented, String documentVersionId, String documentVariationId, String appType, String queryType, String userId, String queueId, String state) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseDocumentFeedback(createGetKnowledgeKnowledgebaseDocumentFeedbackRequest(knowledgeBaseId, documentId, before, after, pageSize, onlyCommented, documentVersionId, documentVariationId, appType, queryType, userId, queueId, state));
+  }
+
+  /**
+   * Get a list of feedback records given on a document
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param onlyCommented If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. (optional)
+   * @param documentVersionId Document version ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param documentVariationId Document variation ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param appType Application type to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param queryType Query type to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param userId The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param queueId Queue ID to filter by. Supported only if onlyCommented=true is set. (optional)
+   * @param state State to filter by. Supported only if onlyCommented=true is set. Default: Final (optional)
+   * @return KnowledgeDocumentFeedbackResponseListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentFeedbackResponseListing> getKnowledgeKnowledgebaseDocumentFeedbackWithHttpInfo(String knowledgeBaseId, String documentId, String before, String after, String pageSize, Boolean onlyCommented, String documentVersionId, String documentVariationId, String appType, String queryType, String userId, String queueId, String state) throws IOException {
+    return getKnowledgeKnowledgebaseDocumentFeedback(createGetKnowledgeKnowledgebaseDocumentFeedbackRequest(knowledgeBaseId, documentId, before, after, pageSize, onlyCommented, documentVersionId, documentVariationId, appType, queryType, userId, queueId, state).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseDocumentFeedbackRequest createGetKnowledgeKnowledgebaseDocumentFeedbackRequest(String knowledgeBaseId, String documentId, String before, String after, String pageSize, Boolean onlyCommented, String documentVersionId, String documentVariationId, String appType, String queryType, String userId, String queueId, String state) {
+    return GetKnowledgeKnowledgebaseDocumentFeedbackRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withDocumentId(documentId)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withOnlyCommented(onlyCommented)
+
+            .withDocumentVersionId(documentVersionId)
+
+            .withDocumentVariationId(documentVariationId)
+
+            .withAppType(appType)
+
+            .withQueryType(queryType)
+
+            .withUserId(userId)
+
+            .withQueueId(queueId)
+
+            .withState(state)
+
+            .build();
+  }
+
+  /**
+   * Get a list of feedback records given on a document
+   * 
+   * @param request The request object
+   * @return KnowledgeDocumentFeedbackResponseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentFeedbackResponseListing getKnowledgeKnowledgebaseDocumentFeedback(GetKnowledgeKnowledgebaseDocumentFeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeDocumentFeedbackResponseListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeDocumentFeedbackResponseListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of feedback records given on a document
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentFeedbackResponseListing> getKnowledgeKnowledgebaseDocumentFeedback(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeDocumentFeedbackResponseListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentFeedbackResponseListing> response = (ApiResponse<KnowledgeDocumentFeedbackResponseListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentFeedbackResponseListing> response = (ApiResponse<KnowledgeDocumentFeedbackResponseListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a single feedback record given on a document
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param feedbackId Feedback ID. (required)
+   * @return KnowledgeDocumentFeedbackResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentFeedbackResponse getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(String knowledgeBaseId, String documentId, String feedbackId) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(createGetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest(knowledgeBaseId, documentId, feedbackId));
+  }
+
+  /**
+   * Get a single feedback record given on a document
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param feedbackId Feedback ID. (required)
+   * @return KnowledgeDocumentFeedbackResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentFeedbackResponse> getKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdWithHttpInfo(String knowledgeBaseId, String documentId, String feedbackId) throws IOException {
+    return getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(createGetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest(knowledgeBaseId, documentId, feedbackId).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest createGetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest(String knowledgeBaseId, String documentId, String feedbackId) {
+    return GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withDocumentId(documentId)
+
+            .withFeedbackId(feedbackId)
+
+            .build();
+  }
+
+  /**
+   * Get a single feedback record given on a document
+   * 
+   * @param request The request object
+   * @return KnowledgeDocumentFeedbackResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentFeedbackResponse getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeDocumentFeedbackResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeDocumentFeedbackResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a single feedback record given on a document
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentFeedbackResponse> getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeDocumentFeedbackResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentFeedbackResponse> response = (ApiResponse<KnowledgeDocumentFeedbackResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentFeedbackResponse> response = (ApiResponse<KnowledgeDocumentFeedbackResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5083,6 +5305,92 @@ public class KnowledgeApi {
   }
 
   /**
+   * Give feedback on a document
+   * 
+   * @param sessionId Knowledge guest session ID. (required)
+   * @param documentId Document ID. (required)
+   * @param body  (optional)
+   * @return KnowledgeGuestDocumentFeedback
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeGuestDocumentFeedback postKnowledgeGuestSessionDocumentFeedback(String sessionId, String documentId, KnowledgeGuestDocumentFeedback body) throws IOException, ApiException {
+    return  postKnowledgeGuestSessionDocumentFeedback(createPostKnowledgeGuestSessionDocumentFeedbackRequest(sessionId, documentId, body));
+  }
+
+  /**
+   * Give feedback on a document
+   * 
+   * @param sessionId Knowledge guest session ID. (required)
+   * @param documentId Document ID. (required)
+   * @param body  (optional)
+   * @return KnowledgeGuestDocumentFeedback
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeGuestDocumentFeedback> postKnowledgeGuestSessionDocumentFeedbackWithHttpInfo(String sessionId, String documentId, KnowledgeGuestDocumentFeedback body) throws IOException {
+    return postKnowledgeGuestSessionDocumentFeedback(createPostKnowledgeGuestSessionDocumentFeedbackRequest(sessionId, documentId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeGuestSessionDocumentFeedbackRequest createPostKnowledgeGuestSessionDocumentFeedbackRequest(String sessionId, String documentId, KnowledgeGuestDocumentFeedback body) {
+    return PostKnowledgeGuestSessionDocumentFeedbackRequest.builder()
+            .withSessionId(sessionId)
+
+            .withDocumentId(documentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Give feedback on a document
+   * 
+   * @param request The request object
+   * @return KnowledgeGuestDocumentFeedback
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeGuestDocumentFeedback postKnowledgeGuestSessionDocumentFeedback(PostKnowledgeGuestSessionDocumentFeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeGuestDocumentFeedback> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeGuestDocumentFeedback>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Give feedback on a document
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeGuestDocumentFeedback> postKnowledgeGuestSessionDocumentFeedback(ApiRequest<KnowledgeGuestDocumentFeedback> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeGuestDocumentFeedback>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeGuestDocumentFeedback> response = (ApiResponse<KnowledgeGuestDocumentFeedback>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeGuestDocumentFeedback> response = (ApiResponse<KnowledgeGuestDocumentFeedback>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Search the documents in a guest session.
    * 
    * @param sessionId Knowledge guest session ID. (required)
@@ -5411,6 +5719,92 @@ public class KnowledgeApi {
   }
 
   /**
+   * Give feedback on a document
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param body  (optional)
+   * @return KnowledgeDocumentFeedbackResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentFeedbackResponse postKnowledgeKnowledgebaseDocumentFeedback(String knowledgeBaseId, String documentId, KnowledgeDocumentFeedback body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseDocumentFeedback(createPostKnowledgeKnowledgebaseDocumentFeedbackRequest(knowledgeBaseId, documentId, body));
+  }
+
+  /**
+   * Give feedback on a document
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param body  (optional)
+   * @return KnowledgeDocumentFeedbackResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentFeedbackResponse> postKnowledgeKnowledgebaseDocumentFeedbackWithHttpInfo(String knowledgeBaseId, String documentId, KnowledgeDocumentFeedback body) throws IOException {
+    return postKnowledgeKnowledgebaseDocumentFeedback(createPostKnowledgeKnowledgebaseDocumentFeedbackRequest(knowledgeBaseId, documentId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseDocumentFeedbackRequest createPostKnowledgeKnowledgebaseDocumentFeedbackRequest(String knowledgeBaseId, String documentId, KnowledgeDocumentFeedback body) {
+    return PostKnowledgeKnowledgebaseDocumentFeedbackRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withDocumentId(documentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Give feedback on a document
+   * 
+   * @param request The request object
+   * @return KnowledgeDocumentFeedbackResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentFeedbackResponse postKnowledgeKnowledgebaseDocumentFeedback(PostKnowledgeKnowledgebaseDocumentFeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeDocumentFeedbackResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeDocumentFeedbackResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Give feedback on a document
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentFeedbackResponse> postKnowledgeKnowledgebaseDocumentFeedback(ApiRequest<KnowledgeDocumentFeedback> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeDocumentFeedbackResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentFeedbackResponse> response = (ApiResponse<KnowledgeDocumentFeedbackResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentFeedbackResponse> response = (ApiResponse<KnowledgeDocumentFeedbackResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a variation for a document.
    * 
    * @param knowledgeBaseId Globally unique identifier for the knowledge base. (required)
@@ -5578,6 +5972,89 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeDocumentVersion> response = (ApiResponse<KnowledgeDocumentVersion>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create view for a document.
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeKnowledgebaseDocumentViews(String knowledgeBaseId, String documentId, KnowledgeDocumentView body) throws IOException, ApiException {
+     postKnowledgeKnowledgebaseDocumentViews(createPostKnowledgeKnowledgebaseDocumentViewsRequest(knowledgeBaseId, documentId, body));
+  }
+
+  /**
+   * Create view for a document.
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeKnowledgebaseDocumentViewsWithHttpInfo(String knowledgeBaseId, String documentId, KnowledgeDocumentView body) throws IOException {
+    return postKnowledgeKnowledgebaseDocumentViews(createPostKnowledgeKnowledgebaseDocumentViewsRequest(knowledgeBaseId, documentId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseDocumentViewsRequest createPostKnowledgeKnowledgebaseDocumentViewsRequest(String knowledgeBaseId, String documentId, KnowledgeDocumentView body) {
+    return PostKnowledgeKnowledgebaseDocumentViewsRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withDocumentId(documentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create view for a document.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeKnowledgebaseDocumentViews(PostKnowledgeKnowledgebaseDocumentViewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Create view for a document.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeKnowledgebaseDocumentViews(ApiRequest<KnowledgeDocumentView> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

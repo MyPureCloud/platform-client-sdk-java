@@ -42,6 +42,7 @@ title: TranscriptAggregationQuery
 | TEAMID | &quot;teamId&quot; |
 | TOPICID | &quot;topicId&quot; |
 | USERID | &quot;userId&quot; |
+| WRAPUPCODE | &quot;wrapUpCode&quot; |
 {: class="table table-striped"}
 
 
@@ -53,7 +54,13 @@ title: TranscriptAggregationQuery
 | ---- | ----- |
 | NTOPICCOMMUNICATIONS | &quot;nTopicCommunications&quot; |
 | OCUSTOMERSENTIMENT | &quot;oCustomerSentiment&quot; |
+| OOVERTALKSPEECHINSTANCES | &quot;oOverTalkSpeechInstances&quot; |
 | OSENTIMENTSCORE | &quot;oSentimentScore&quot; |
+| TAGENTSPEECH | &quot;tAgentSpeech&quot; |
+| TCUSTOMERSPEECH | &quot;tCustomerSpeech&quot; |
+| TOVERTALKSPEECH | &quot;tOverTalkSpeech&quot; |
+| TSILENCE | &quot;tSilence&quot; |
+| TTOTALSPEECHANDSILENCE | &quot;tTotalSpeechAndSilence&quot; |
 {: class="table table-striped"}
 
 

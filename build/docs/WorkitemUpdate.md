@@ -21,7 +21,7 @@ title: WorkitemUpdate
 | **dateClosed** | <!----><!---->[**Date**](Date.html)<!----> | The closed date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **assignmentState** | [**AssignmentStateEnum**](#AssignmentStateEnum)<!----> | The assignment state of the Workitem. |  [optional] |
 | **assignmentOperation** | [**AssignmentOperationEnum**](#AssignmentOperationEnum)<!----> | Set this value to AgentAssignmentAlerting and supply an 'assigneeId' to assign the workitem to an agent and alert the agent of the assignment. Set this value to QueueAssignmentAlerting and supply a 'queueId' to route the workitem to an agent who is a member of the queue and alert the agent. |  [optional] |
-| **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | Custom fields defined in the schema referenced by the Workitem. If set to {}, the existing keys and values will be removed. |  [optional] |
+| **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | Custom fields defined in the schema referenced by the worktype of the workitem. If set to {}, the existing keys and values will be removed. |  [optional] |
 | **queueId** | <!----><!---->**String**<!----> | The ID of the Workitems queue. Must be a valid UUID. |  [optional] |
 | **assigneeId** | <!----><!---->**String**<!----> | The ID of the assignee of the Workitem. If supplied it must be a valid UUID. |  [optional] |
 | **scoredAgents** | <!----><!---->[**List&lt;WorkitemScoredAgentRequest&gt;**](WorkitemScoredAgentRequest.html)<!----> | A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents. |  [optional] |

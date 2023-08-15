@@ -75,6 +75,8 @@ title: ConversationMetricsTopicConversationMetricRecord
 | **roomId** | <!----><!---->**String**<!----> | Unique identifier for the room |  [optional] |
 | **routingPriority** | <!----><!---->**Integer**<!----> | Routing priority for the current interaction |  [optional] |
 | **routingRing** | <!----><!---->**Integer**<!----> | Routing ring for bullseye or preferred agent routing |  [optional] |
+| **routingRule** | <!----><!---->**String**<!----> | Routing rule for preferred, conditional and predictive routing type |  [optional] |
+| **routingRuleType** | [**RoutingRuleTypeEnum**](#RoutingRuleTypeEnum)<!----> | Routing rule type |  [optional] |
 | **selectedAgentId** | <!----><!---->**String**<!----> | Selected agent ID |  [optional] |
 | **selectedAgentRank** | <!----><!---->**Integer**<!----> | Selected agent GPR rank |  [optional] |
 | **selfServed** | <!----><!---->**Boolean**<!----> | Indicates whether all flow sessions were self serviced |  [optional] |
@@ -116,6 +118,8 @@ title: ConversationMetricsTopicConversationMetricRecord
 | OMESSAGETURN | &quot;oMessageTurn&quot; | 
 | TABANDON | &quot;tAbandon&quot; | 
 | TACD | &quot;tAcd&quot; | 
+| TACTIVECALLBACK | &quot;tActiveCallback&quot; | 
+| TACTIVECALLBACKCOMPLETE | &quot;tActiveCallbackComplete&quot; | 
 | TACW | &quot;tAcw&quot; | 
 | TAGENTRESPONSETIME | &quot;tAgentResponseTime&quot; | 
 | TALERT | &quot;tAlert&quot; | 
@@ -213,6 +217,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | CONFERENCETRANSFER | &quot;conferenceTransfer&quot; | 
 | CONSULTTRANSFER | &quot;consultTransfer&quot; | 
 | ENDPOINT | &quot;endpoint&quot; | 
+| ENDPOINTDND | &quot;endpointDnd&quot; | 
 | ERROR | &quot;error&quot; | 
 | FORWARDTRANSFER | &quot;forwardTransfer&quot; | 
 | NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; | 
@@ -223,6 +228,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | SYSTEM | &quot;system&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
 | TRANSFER | &quot;transfer&quot; | 
+| TRANSFERDND | &quot;transferDnd&quot; | 
 | TRANSPORTFAILURE | &quot;transportFailure&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
 {: class="table table-striped"}
@@ -306,12 +312,27 @@ title: ConversationMetricsTopicConversationMetricRecord
 | ---- | ----- |
 | BULLSEYE | &quot;Bullseye&quot; |
 | CONDITIONAL | &quot;Conditional&quot; |
+| DIRECT | &quot;Direct&quot; |
 | LAST | &quot;Last&quot; |
 | MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
 | VIP | &quot;Vip&quot; |
+{: class="table table-striped"}
+
+
+<a name="RoutingRuleTypeEnum"></a>
+
+## Enum: RoutingRuleTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BULLSEYE | &quot;Bullseye&quot; | 
+| CONDITIONAL | &quot;Conditional&quot; | 
+| PREDICTIVE | &quot;Predictive&quot; | 
+| PREFERRED | &quot;Preferred&quot; | 
 {: class="table table-striped"}
 
 
@@ -324,6 +345,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BULLSEYE | &quot;Bullseye&quot; | 
 | CONDITIONAL | &quot;Conditional&quot; | 
+| DIRECT | &quot;Direct&quot; | 
 | LAST | &quot;Last&quot; | 
 | MANUAL | &quot;Manual&quot; | 
 | PREDICTIVE | &quot;Predictive&quot; | 

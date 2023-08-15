@@ -288,6 +288,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     CONFERENCETRANSFER("conferenceTransfer"),
     CONSULTTRANSFER("consultTransfer"),
     ENDPOINT("endpoint"),
+    ENDPOINTDND("endpointDnd"),
     ERROR("error"),
     FORWARDTRANSFER("forwardTransfer"),
     NOANSWERTRANSFER("noAnswerTransfer"),
@@ -298,6 +299,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     SYSTEM("system"),
     TIMEOUT("timeout"),
     TRANSFER("transfer"),
+    TRANSFERDND("transferDnd"),
     TRANSPORTFAILURE("transportFailure"),
     UNCALLABLE("uncallable");
 
@@ -721,6 +723,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
   public enum RequestedRoutingsEnum {
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
+    DIRECT("Direct"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -757,6 +760,57 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
   private String roomId = null;
   private Integer routingPriority = null;
   private Integer routingRing = null;
+  private String routingRule = null;
+
+  private static class RoutingRuleTypeEnumDeserializer extends StdDeserializer<RoutingRuleTypeEnum> {
+    public RoutingRuleTypeEnumDeserializer() {
+      super(RoutingRuleTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public RoutingRuleTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RoutingRuleTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Routing rule type
+   */
+ @JsonDeserialize(using = RoutingRuleTypeEnumDeserializer.class)
+  public enum RoutingRuleTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BULLSEYE("Bullseye"),
+    CONDITIONAL("Conditional"),
+    PREDICTIVE("Predictive"),
+    PREFERRED("Preferred");
+
+    private String value;
+
+    RoutingRuleTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RoutingRuleTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RoutingRuleTypeEnum value : RoutingRuleTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RoutingRuleTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private RoutingRuleTypeEnum routingRuleType = null;
   private String selectedAgentId = null;
   private Integer selectedAgentRank = null;
   private Boolean selfServed = null;
@@ -789,6 +843,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
+    DIRECT("Direct"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -2217,6 +2272,42 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
 
 
   /**
+   * Routing rule for preferred, conditional and predictive routing type
+   **/
+  public FlowMetricsTopicFlowMetricRecord routingRule(String routingRule) {
+    this.routingRule = routingRule;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Routing rule for preferred, conditional and predictive routing type")
+  @JsonProperty("routingRule")
+  public String getRoutingRule() {
+    return routingRule;
+  }
+  public void setRoutingRule(String routingRule) {
+    this.routingRule = routingRule;
+  }
+
+
+  /**
+   * Routing rule type
+   **/
+  public FlowMetricsTopicFlowMetricRecord routingRuleType(RoutingRuleTypeEnum routingRuleType) {
+    this.routingRuleType = routingRuleType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Routing rule type")
+  @JsonProperty("routingRuleType")
+  public RoutingRuleTypeEnum getRoutingRuleType() {
+    return routingRuleType;
+  }
+  public void setRoutingRuleType(RoutingRuleTypeEnum routingRuleType) {
+    this.routingRuleType = routingRuleType;
+  }
+
+
+  /**
    * Selected agent ID
    **/
   public FlowMetricsTopicFlowMetricRecord selectedAgentId(String selectedAgentId) {
@@ -2627,6 +2718,8 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
             Objects.equals(this.roomId, flowMetricsTopicFlowMetricRecord.roomId) &&
             Objects.equals(this.routingPriority, flowMetricsTopicFlowMetricRecord.routingPriority) &&
             Objects.equals(this.routingRing, flowMetricsTopicFlowMetricRecord.routingRing) &&
+            Objects.equals(this.routingRule, flowMetricsTopicFlowMetricRecord.routingRule) &&
+            Objects.equals(this.routingRuleType, flowMetricsTopicFlowMetricRecord.routingRuleType) &&
             Objects.equals(this.selectedAgentId, flowMetricsTopicFlowMetricRecord.selectedAgentId) &&
             Objects.equals(this.selectedAgentRank, flowMetricsTopicFlowMetricRecord.selectedAgentRank) &&
             Objects.equals(this.selfServed, flowMetricsTopicFlowMetricRecord.selfServed) &&
@@ -2649,7 +2742,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, endingLanguage, entryReason, entryType, errorCode, exitReason, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowId, flowInType, flowMilestoneIds, flowName, flowOutType, flowType, flowVersion, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseId, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, recognitionFailureReason, remote, removedSkillIds, reoffered, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, startingLanguage, stationId, teamId, transferTargetAddress, transferTargetName, transferType, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, outcomes, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, endingLanguage, entryReason, entryType, errorCode, exitReason, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowId, flowInType, flowMilestoneIds, flowName, flowOutType, flowType, flowVersion, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseId, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, recognitionFailureReason, remote, removedSkillIds, reoffered, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, startingLanguage, stationId, teamId, transferTargetAddress, transferTargetName, transferType, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, outcomes, scoredAgents);
   }
 
   @Override
@@ -2734,6 +2827,8 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("    routingPriority: ").append(toIndentedString(routingPriority)).append("\n");
     sb.append("    routingRing: ").append(toIndentedString(routingRing)).append("\n");
+    sb.append("    routingRule: ").append(toIndentedString(routingRule)).append("\n");
+    sb.append("    routingRuleType: ").append(toIndentedString(routingRuleType)).append("\n");
     sb.append("    selectedAgentId: ").append(toIndentedString(selectedAgentId)).append("\n");
     sb.append("    selectedAgentRank: ").append(toIndentedString(selectedAgentRank)).append("\n");
     sb.append("    selfServed: ").append(toIndentedString(selfServed)).append("\n");

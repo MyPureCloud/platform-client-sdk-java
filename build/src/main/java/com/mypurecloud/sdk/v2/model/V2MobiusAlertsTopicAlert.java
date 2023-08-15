@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicAlertNotification;
 import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicAlertRuleProperties;
+import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicAlertSummary;
 import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicCondition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -96,6 +97,7 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
     }
   }
   private ActionEnum action = null;
+  private V2MobiusAlertsTopicAlertSummary alertSummary = null;
 
   
   /**
@@ -353,6 +355,23 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
   }
 
 
+  /**
+   **/
+  public V2MobiusAlertsTopicAlert alertSummary(V2MobiusAlertsTopicAlertSummary alertSummary) {
+    this.alertSummary = alertSummary;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("alertSummary")
+  public V2MobiusAlertsTopicAlertSummary getAlertSummary() {
+    return alertSummary;
+  }
+  public void setAlertSummary(V2MobiusAlertsTopicAlertSummary alertSummary) {
+    this.alertSummary = alertSummary;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -377,12 +396,13 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
             Objects.equals(this.snoozed, v2MobiusAlertsTopicAlert.snoozed) &&
             Objects.equals(this.dateMutedUntil, v2MobiusAlertsTopicAlert.dateMutedUntil) &&
             Objects.equals(this.dateSnoozedUntil, v2MobiusAlertsTopicAlert.dateSnoozedUntil) &&
-            Objects.equals(this.action, v2MobiusAlertsTopicAlert.action);
+            Objects.equals(this.action, v2MobiusAlertsTopicAlert.action) &&
+            Objects.equals(this.alertSummary, v2MobiusAlertsTopicAlert.alertSummary);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rule, id, userId, notifications, dateStart, dateEnd, conditions, additionalProperties, active, unread, muted, snoozed, dateMutedUntil, dateSnoozedUntil, action);
+    return Objects.hash(rule, id, userId, notifications, dateStart, dateEnd, conditions, additionalProperties, active, unread, muted, snoozed, dateMutedUntil, dateSnoozedUntil, action, alertSummary);
   }
 
   @Override
@@ -405,6 +425,7 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
     sb.append("    dateMutedUntil: ").append(toIndentedString(dateMutedUntil)).append("\n");
     sb.append("    dateSnoozedUntil: ").append(toIndentedString(dateSnoozedUntil)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    sb.append("    alertSummary: ").append(toIndentedString(alertSummary)).append("\n");
     sb.append("}");
     return sb.toString();
   }

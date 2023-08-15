@@ -17,6 +17,7 @@ title: V2MobiusRulesTopicRule
 | **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **inAlarm** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **action** | [**ActionEnum**](#ActionEnum)<!----> |  |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -29,6 +30,7 @@ title: V2MobiusRulesTopicRule
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CONVERSATIONMETRICS | &quot;ConversationMetrics&quot; | 
 | USERPRESENCE | &quot;UserPresence&quot; | 
+| WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

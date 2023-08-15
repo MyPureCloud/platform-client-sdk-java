@@ -249,14 +249,14 @@ public class WorkitemCreate  implements Serializable {
 
 
   /**
-   * Custom fields defined in the schema referenced by the Workitems Worktype.
+   * Custom fields defined in the schema referenced by the worktype of the workitem.
    **/
   public WorkitemCreate customFields(Map<String, Object> customFields) {
     this.customFields = customFields;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Custom fields defined in the schema referenced by the Workitems Worktype.")
+  @ApiModelProperty(example = "null", value = "Custom fields defined in the schema referenced by the worktype of the workitem.")
   @JsonProperty("customFields")
   public Map<String, Object> getCustomFields() {
     return customFields;

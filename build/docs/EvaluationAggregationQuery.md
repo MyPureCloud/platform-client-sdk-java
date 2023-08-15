@@ -26,6 +26,7 @@ title: EvaluationAggregationQuery
 
 | Name | Value |
 | ---- | ----- |
+| ASSIGNEEAPPLICABLE | &quot;assigneeApplicable&quot; |
 | ASSIGNEEID | &quot;assigneeId&quot; |
 | CALIBRATIONID | &quot;calibrationId&quot; |
 | CONTEXTID | &quot;contextId&quot; |

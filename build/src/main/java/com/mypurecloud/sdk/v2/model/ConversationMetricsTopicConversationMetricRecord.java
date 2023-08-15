@@ -64,6 +64,8 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     OMESSAGETURN("oMessageTurn"),
     TABANDON("tAbandon"),
     TACD("tAcd"),
+    TACTIVECALLBACK("tActiveCallback"),
+    TACTIVECALLBACKCOMPLETE("tActiveCallbackComplete"),
     TACW("tAcw"),
     TAGENTRESPONSETIME("tAgentResponseTime"),
     TALERT("tAlert"),
@@ -322,6 +324,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     CONFERENCETRANSFER("conferenceTransfer"),
     CONSULTTRANSFER("consultTransfer"),
     ENDPOINT("endpoint"),
+    ENDPOINTDND("endpointDnd"),
     ERROR("error"),
     FORWARDTRANSFER("forwardTransfer"),
     NOANSWERTRANSFER("noAnswerTransfer"),
@@ -332,6 +335,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     SYSTEM("system"),
     TIMEOUT("timeout"),
     TRANSFER("transfer"),
+    TRANSFERDND("transferDnd"),
     TRANSPORTFAILURE("transportFailure"),
     UNCALLABLE("uncallable");
 
@@ -632,6 +636,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   public enum RequestedRoutingsEnum {
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
+    DIRECT("Direct"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -668,6 +673,57 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private String roomId = null;
   private Integer routingPriority = null;
   private Integer routingRing = null;
+  private String routingRule = null;
+
+  private static class RoutingRuleTypeEnumDeserializer extends StdDeserializer<RoutingRuleTypeEnum> {
+    public RoutingRuleTypeEnumDeserializer() {
+      super(RoutingRuleTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public RoutingRuleTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RoutingRuleTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Routing rule type
+   */
+ @JsonDeserialize(using = RoutingRuleTypeEnumDeserializer.class)
+  public enum RoutingRuleTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BULLSEYE("Bullseye"),
+    CONDITIONAL("Conditional"),
+    PREDICTIVE("Predictive"),
+    PREFERRED("Preferred");
+
+    private String value;
+
+    RoutingRuleTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RoutingRuleTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RoutingRuleTypeEnum value : RoutingRuleTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RoutingRuleTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private RoutingRuleTypeEnum routingRuleType = null;
   private String selectedAgentId = null;
   private Integer selectedAgentRank = null;
   private Boolean selfServed = null;
@@ -696,6 +752,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BULLSEYE("Bullseye"),
     CONDITIONAL("Conditional"),
+    DIRECT("Direct"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -1943,6 +2000,42 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
 
   /**
+   * Routing rule for preferred, conditional and predictive routing type
+   **/
+  public ConversationMetricsTopicConversationMetricRecord routingRule(String routingRule) {
+    this.routingRule = routingRule;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Routing rule for preferred, conditional and predictive routing type")
+  @JsonProperty("routingRule")
+  public String getRoutingRule() {
+    return routingRule;
+  }
+  public void setRoutingRule(String routingRule) {
+    this.routingRule = routingRule;
+  }
+
+
+  /**
+   * Routing rule type
+   **/
+  public ConversationMetricsTopicConversationMetricRecord routingRuleType(RoutingRuleTypeEnum routingRuleType) {
+    this.routingRuleType = routingRuleType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Routing rule type")
+  @JsonProperty("routingRuleType")
+  public RoutingRuleTypeEnum getRoutingRuleType() {
+    return routingRuleType;
+  }
+  public void setRoutingRuleType(RoutingRuleTypeEnum routingRuleType) {
+    this.routingRuleType = routingRuleType;
+  }
+
+
+  /**
    * Selected agent ID
    **/
   public ConversationMetricsTopicConversationMetricRecord selectedAgentId(String selectedAgentId) {
@@ -2253,6 +2346,8 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
             Objects.equals(this.roomId, conversationMetricsTopicConversationMetricRecord.roomId) &&
             Objects.equals(this.routingPriority, conversationMetricsTopicConversationMetricRecord.routingPriority) &&
             Objects.equals(this.routingRing, conversationMetricsTopicConversationMetricRecord.routingRing) &&
+            Objects.equals(this.routingRule, conversationMetricsTopicConversationMetricRecord.routingRule) &&
+            Objects.equals(this.routingRuleType, conversationMetricsTopicConversationMetricRecord.routingRuleType) &&
             Objects.equals(this.selectedAgentId, conversationMetricsTopicConversationMetricRecord.selectedAgentId) &&
             Objects.equals(this.selectedAgentRank, conversationMetricsTopicConversationMetricRecord.selectedAgentRank) &&
             Objects.equals(this.selfServed, conversationMetricsTopicConversationMetricRecord.selfServed) &&
@@ -2270,7 +2365,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, errorCode, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, reoffered, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, errorCode, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, reoffered, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
   }
 
   @Override
@@ -2345,6 +2440,8 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("    routingPriority: ").append(toIndentedString(routingPriority)).append("\n");
     sb.append("    routingRing: ").append(toIndentedString(routingRing)).append("\n");
+    sb.append("    routingRule: ").append(toIndentedString(routingRule)).append("\n");
+    sb.append("    routingRuleType: ").append(toIndentedString(routingRuleType)).append("\n");
     sb.append("    selectedAgentId: ").append(toIndentedString(selectedAgentId)).append("\n");
     sb.append("    selectedAgentRank: ").append(toIndentedString(selectedAgentRank)).append("\n");
     sb.append("    selfServed: ").append(toIndentedString(selfServed)).append("\n");

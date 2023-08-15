@@ -5965,7 +5965,7 @@ public class ConversationsApi {
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @param conversationId  conversationId (required)
+   * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
    * @throws ApiException if the request fails on the server
@@ -5978,7 +5978,7 @@ public class ConversationsApi {
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @param conversationId  conversationId (required)
+   * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
    * @throws IOException if the request fails to be processed
@@ -8905,11 +8905,12 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsCallParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-     patchConversationsCallParticipantAttributes(createPatchConversationsCallParticipantAttributesRequest(conversationId, participantId, body));
+  public ParticipantAttributes patchConversationsCallParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
+    return  patchConversationsCallParticipantAttributes(createPatchConversationsCallParticipantAttributesRequest(conversationId, participantId, body));
   }
 
   /**
@@ -8918,9 +8919,10 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
+   * @return ParticipantAttributes
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsCallParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
     return patchConversationsCallParticipantAttributes(createPatchConversationsCallParticipantAttributesRequest(conversationId, participantId, body).withHttpInfo());
   }
 
@@ -8939,17 +8941,18 @@ public class ConversationsApi {
    * Update the attributes on a conversation participant.
    * 
    * @param request The request object
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsCallParticipantAttributes(PatchConversationsCallParticipantAttributesRequest request) throws IOException, ApiException {
+  public ParticipantAttributes patchConversationsCallParticipantAttributes(PatchConversationsCallParticipantAttributesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<ParticipantAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ParticipantAttributes>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -8960,13 +8963,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsCallParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<ParticipantAttributes>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -8977,7 +8980,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9329,11 +9332,12 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Attributes (required)
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsCallbackParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-     patchConversationsCallbackParticipantAttributes(createPatchConversationsCallbackParticipantAttributesRequest(conversationId, participantId, body));
+  public ParticipantAttributes patchConversationsCallbackParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
+    return  patchConversationsCallbackParticipantAttributes(createPatchConversationsCallbackParticipantAttributesRequest(conversationId, participantId, body));
   }
 
   /**
@@ -9342,9 +9346,10 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Attributes (required)
+   * @return ParticipantAttributes
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallbackParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsCallbackParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
     return patchConversationsCallbackParticipantAttributes(createPatchConversationsCallbackParticipantAttributesRequest(conversationId, participantId, body).withHttpInfo());
   }
 
@@ -9363,17 +9368,18 @@ public class ConversationsApi {
    * Update the attributes on a conversation participant.
    * 
    * @param request The request object
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsCallbackParticipantAttributes(PatchConversationsCallbackParticipantAttributesRequest request) throws IOException, ApiException {
+  public ParticipantAttributes patchConversationsCallbackParticipantAttributes(PatchConversationsCallbackParticipantAttributesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<ParticipantAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ParticipantAttributes>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -9384,13 +9390,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallbackParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsCallbackParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<ParticipantAttributes>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -9401,7 +9407,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9745,11 +9751,12 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsChatParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-     patchConversationsChatParticipantAttributes(createPatchConversationsChatParticipantAttributesRequest(conversationId, participantId, body));
+  public ParticipantAttributes patchConversationsChatParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
+    return  patchConversationsChatParticipantAttributes(createPatchConversationsChatParticipantAttributesRequest(conversationId, participantId, body));
   }
 
   /**
@@ -9758,9 +9765,10 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
+   * @return ParticipantAttributes
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsChatParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsChatParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
     return patchConversationsChatParticipantAttributes(createPatchConversationsChatParticipantAttributesRequest(conversationId, participantId, body).withHttpInfo());
   }
 
@@ -9779,17 +9787,18 @@ public class ConversationsApi {
    * Update the attributes on a conversation participant.
    * 
    * @param request The request object
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsChatParticipantAttributes(PatchConversationsChatParticipantAttributesRequest request) throws IOException, ApiException {
+  public ParticipantAttributes patchConversationsChatParticipantAttributes(PatchConversationsChatParticipantAttributesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<ParticipantAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ParticipantAttributes>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -9800,13 +9809,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsChatParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsChatParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<ParticipantAttributes>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -9817,7 +9826,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10083,11 +10092,12 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsCobrowsesessionParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-     patchConversationsCobrowsesessionParticipantAttributes(createPatchConversationsCobrowsesessionParticipantAttributesRequest(conversationId, participantId, body));
+  public ParticipantAttributes patchConversationsCobrowsesessionParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
+    return  patchConversationsCobrowsesessionParticipantAttributes(createPatchConversationsCobrowsesessionParticipantAttributesRequest(conversationId, participantId, body));
   }
 
   /**
@@ -10096,9 +10106,10 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
+   * @return ParticipantAttributes
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsCobrowsesessionParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
     return patchConversationsCobrowsesessionParticipantAttributes(createPatchConversationsCobrowsesessionParticipantAttributesRequest(conversationId, participantId, body).withHttpInfo());
   }
 
@@ -10117,17 +10128,18 @@ public class ConversationsApi {
    * Update the attributes on a conversation participant.
    * 
    * @param request The request object
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsCobrowsesessionParticipantAttributes(PatchConversationsCobrowsesessionParticipantAttributesRequest request) throws IOException, ApiException {
+  public ParticipantAttributes patchConversationsCobrowsesessionParticipantAttributes(PatchConversationsCobrowsesessionParticipantAttributesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<ParticipantAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ParticipantAttributes>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -10138,13 +10150,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsCobrowsesessionParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<ParticipantAttributes>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -10155,7 +10167,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10511,11 +10523,12 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsEmailParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-     patchConversationsEmailParticipantAttributes(createPatchConversationsEmailParticipantAttributesRequest(conversationId, participantId, body));
+  public ParticipantAttributes patchConversationsEmailParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
+    return  patchConversationsEmailParticipantAttributes(createPatchConversationsEmailParticipantAttributesRequest(conversationId, participantId, body));
   }
 
   /**
@@ -10524,9 +10537,10 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
+   * @return ParticipantAttributes
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsEmailParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsEmailParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
     return patchConversationsEmailParticipantAttributes(createPatchConversationsEmailParticipantAttributesRequest(conversationId, participantId, body).withHttpInfo());
   }
 
@@ -10545,17 +10559,18 @@ public class ConversationsApi {
    * Update the attributes on a conversation participant.
    * 
    * @param request The request object
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsEmailParticipantAttributes(PatchConversationsEmailParticipantAttributesRequest request) throws IOException, ApiException {
+  public ParticipantAttributes patchConversationsEmailParticipantAttributes(PatchConversationsEmailParticipantAttributesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<ParticipantAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ParticipantAttributes>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -10566,13 +10581,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsEmailParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsEmailParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<ParticipantAttributes>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -10583,7 +10598,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10763,7 +10778,7 @@ public class ConversationsApi {
   /**
    * Update conversation participant
    * 
-   * @param conversationId  conversationId (required)
+   * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
    * @throws ApiException if the request fails on the server
@@ -10776,7 +10791,7 @@ public class ConversationsApi {
   /**
    * Update conversation participant
    * 
-   * @param conversationId  conversationId (required)
+   * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
    * @throws IOException if the request fails to be processed
@@ -10846,25 +10861,27 @@ public class ConversationsApi {
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @param conversationId  conversationId (required)
+   * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsMessageParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-     patchConversationsMessageParticipantAttributes(createPatchConversationsMessageParticipantAttributesRequest(conversationId, participantId, body));
+  public ParticipantAttributes patchConversationsMessageParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
+    return  patchConversationsMessageParticipantAttributes(createPatchConversationsMessageParticipantAttributesRequest(conversationId, participantId, body));
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @param conversationId  conversationId (required)
+   * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
+   * @return ParticipantAttributes
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsMessageParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsMessageParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
     return patchConversationsMessageParticipantAttributes(createPatchConversationsMessageParticipantAttributesRequest(conversationId, participantId, body).withHttpInfo());
   }
 
@@ -10883,17 +10900,18 @@ public class ConversationsApi {
    * Update the attributes on a conversation participant.
    * 
    * @param request The request object
+   * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void patchConversationsMessageParticipantAttributes(PatchConversationsMessageParticipantAttributesRequest request) throws IOException, ApiException {
+  public ParticipantAttributes patchConversationsMessageParticipantAttributes(PatchConversationsMessageParticipantAttributesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<ParticipantAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ParticipantAttributes>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -10904,13 +10922,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsMessageParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+  public ApiResponse<ParticipantAttributes> patchConversationsMessageParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<ParticipantAttributes>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -10921,7 +10939,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ParticipantAttributes> response = (ApiResponse<ParticipantAttributes>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10929,7 +10947,7 @@ public class ConversationsApi {
   /**
    * Update conversation participant's communication by disconnecting it.
    * 
-   * @param conversationId  conversationId (required)
+   * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param body Participant (required)
@@ -10944,7 +10962,7 @@ public class ConversationsApi {
   /**
    * Update conversation participant's communication by disconnecting it.
    * 
-   * @param conversationId  conversationId (required)
+   * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param body Participant (required)

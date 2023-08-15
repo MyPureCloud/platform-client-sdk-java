@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.MessageEvaluation;
 import com.mypurecloud.sdk.v2.model.PhoneNumberStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +36,7 @@ public class WritableDialerContact  implements Serializable {
   private Boolean callable = null;
   private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
   private Map<String, ContactableStatus> contactableStatus = null;
+  private Date dateCreated = null;
 
   
   /**
@@ -159,6 +161,13 @@ public class WritableDialerContact  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -176,12 +185,13 @@ public class WritableDialerContact  implements Serializable {
             Objects.equals(this.latestEmailEvaluations, writableDialerContact.latestEmailEvaluations) &&
             Objects.equals(this.callable, writableDialerContact.callable) &&
             Objects.equals(this.phoneNumberStatus, writableDialerContact.phoneNumberStatus) &&
-            Objects.equals(this.contactableStatus, writableDialerContact.contactableStatus);
+            Objects.equals(this.contactableStatus, writableDialerContact.contactableStatus) &&
+            Objects.equals(this.dateCreated, writableDialerContact.dateCreated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactListId, data, latestSmsEvaluations, latestEmailEvaluations, callable, phoneNumberStatus, contactableStatus);
+    return Objects.hash(id, contactListId, data, latestSmsEvaluations, latestEmailEvaluations, callable, phoneNumberStatus, contactableStatus, dateCreated);
   }
 
   @Override
@@ -197,6 +207,7 @@ public class WritableDialerContact  implements Serializable {
     sb.append("    callable: ").append(toIndentedString(callable)).append("\n");
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
     sb.append("    contactableStatus: ").append(toIndentedString(contactableStatus)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("}");
     return sb.toString();
   }

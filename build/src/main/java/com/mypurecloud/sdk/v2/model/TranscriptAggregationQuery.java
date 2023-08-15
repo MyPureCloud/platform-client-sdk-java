@@ -62,7 +62,8 @@ public class TranscriptAggregationQuery  implements Serializable {
     QUEUEID("queueId"),
     TEAMID("teamId"),
     TOPICID("topicId"),
-    USERID("userId");
+    USERID("userId"),
+    WRAPUPCODE("wrapUpCode");
 
     private String value;
 
@@ -111,7 +112,13 @@ public class TranscriptAggregationQuery  implements Serializable {
   public enum MetricsEnum {
     NTOPICCOMMUNICATIONS("nTopicCommunications"),
     OCUSTOMERSENTIMENT("oCustomerSentiment"),
-    OSENTIMENTSCORE("oSentimentScore");
+    OOVERTALKSPEECHINSTANCES("oOverTalkSpeechInstances"),
+    OSENTIMENTSCORE("oSentimentScore"),
+    TAGENTSPEECH("tAgentSpeech"),
+    TCUSTOMERSPEECH("tCustomerSpeech"),
+    TOVERTALKSPEECH("tOverTalkSpeech"),
+    TSILENCE("tSilence"),
+    TTOTALSPEECHANDSILENCE("tTotalSpeechAndSilence");
 
     private String value;
 

@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopi
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicWhatsAppId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -107,6 +108,8 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
   private ExternalContactsUnresolvedContactChangedTopicInstagramId instagramId = null;
   private ExternalContactsUnresolvedContactChangedTopicDataSchema schema = null;
   private Map<String, Object> customFields = null;
+  private Date createDate = null;
+  private Date modifyDate = null;
 
   
   /**
@@ -534,6 +537,40 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
   }
 
 
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicContact createDate(Date createDate) {
+    this.createDate = createDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("createDate")
+  public Date getCreateDate() {
+    return createDate;
+  }
+  public void setCreateDate(Date createDate) {
+    this.createDate = createDate;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicContact modifyDate(Date modifyDate) {
+    this.modifyDate = modifyDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("modifyDate")
+  public Date getModifyDate() {
+    return modifyDate;
+  }
+  public void setModifyDate(Date modifyDate) {
+    this.modifyDate = modifyDate;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -568,12 +605,14 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
             Objects.equals(this.facebookId, externalContactsUnresolvedContactChangedTopicContact.facebookId) &&
             Objects.equals(this.instagramId, externalContactsUnresolvedContactChangedTopicContact.instagramId) &&
             Objects.equals(this.schema, externalContactsUnresolvedContactChangedTopicContact.schema) &&
-            Objects.equals(this.customFields, externalContactsUnresolvedContactChangedTopicContact.customFields);
+            Objects.equals(this.customFields, externalContactsUnresolvedContactChangedTopicContact.customFields) &&
+            Objects.equals(this.createDate, externalContactsUnresolvedContactChangedTopicContact.createDate) &&
+            Objects.equals(this.modifyDate, externalContactsUnresolvedContactChangedTopicContact.modifyDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, schema, customFields);
+    return Objects.hash(id, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, schema, customFields, createDate, modifyDate);
   }
 
   @Override
@@ -606,6 +645,8 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
     sb.append("    instagramId: ").append(toIndentedString(instagramId)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
+    sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
+    sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

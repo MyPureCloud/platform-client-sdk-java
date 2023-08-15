@@ -392,14 +392,14 @@ public class WorkitemUpdate  implements Serializable {
 
 
   /**
-   * Custom fields defined in the schema referenced by the Workitem. If set to {}, the existing keys and values will be removed.
+   * Custom fields defined in the schema referenced by the worktype of the workitem. If set to {}, the existing keys and values will be removed.
    **/
   public WorkitemUpdate customFields(Map<String, Object> customFields) {
     this.customFields = customFields;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Custom fields defined in the schema referenced by the Workitem. If set to {}, the existing keys and values will be removed.")
+  @ApiModelProperty(example = "null", value = "Custom fields defined in the schema referenced by the worktype of the workitem. If set to {}, the existing keys and values will be removed.")
   @JsonProperty("customFields")
   public Map<String, Object> getCustomFields() {
     return customFields;

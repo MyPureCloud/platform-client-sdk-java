@@ -53,6 +53,7 @@ title: TranscriptAggregateQueryPredicate
 | TEAMID | &quot;teamId&quot; | 
 | TOPICID | &quot;topicId&quot; | 
 | USERID | &quot;userId&quot; | 
+| WRAPUPCODE | &quot;wrapUpCode&quot; | 
 {: class="table table-striped"}
 
 

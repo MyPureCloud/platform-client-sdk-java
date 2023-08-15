@@ -1161,9 +1161,9 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
-String sortBy = "sortBy_example"; // String | variable name requested to sort by
+String sortBy = "sortBy_example"; // String | NOTE: Does not work when querying evaluations
 List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
-String nextPage = "nextPage_example"; // String | next page token
+String nextPage = "nextPage_example"; // String | NOTE: Does not work when querying evaluations
 String previousPage = "previousPage_example"; // String | Previous page token
 String conversationId = "conversationId_example"; // String | conversationId specified
 String agentUserId = "agentUserId_example"; // String | user id of the agent
@@ -1176,8 +1176,8 @@ List<String> evaluationState = Arrays.asList(null); // List<String> |
 Boolean isReleased = true; // Boolean | the evaluation has been released
 Boolean agentHasRead = true; // Boolean | agent has the evaluation
 Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for evaluations
-Integer maximum = 56; // Integer | maximum
-String sortOrder = "sortOrder_example"; // String | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId
+Integer maximum = 56; // Integer | the maximum number of results to return
+String sortOrder = "sortOrder_example"; // String | NOTE: Does not work when conversationId is supplied.
 try {
     EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
     System.out.println(result);
@@ -1194,9 +1194,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
-| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **sortBy** | **String**| NOTE: Does not work when querying evaluations | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
-| **nextPage** | **String**| next page token | [optional] 
+| **nextPage** | **String**| NOTE: Does not work when querying evaluations | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **conversationId** | **String**| conversationId specified | [optional] 
 | **agentUserId** | **String**| user id of the agent | [optional] 
@@ -1209,8 +1209,8 @@ try {
 | **isReleased** | **Boolean**| the evaluation has been released | [optional] 
 | **agentHasRead** | **Boolean**| agent has the evaluation | [optional] 
 | **expandAnswerTotalScores** | **Boolean**| get the total scores for evaluations | [optional] 
-| **maximum** | **Integer**| maximum | [optional] 
-| **sortOrder** | **String**| sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39;. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId | [optional] 
+| **maximum** | **Integer**| the maximum number of results to return | [optional] 
+| **sortOrder** | **String**| NOTE: Does not work when conversationId is supplied. | [optional] 
 {: class="table-striped"}
 
 
@@ -3735,7 +3735,7 @@ QualityApi apiInstance = new QualityApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String evaluationId = "evaluationId_example"; // String | evaluationId
 Evaluation body = new Evaluation(); // Evaluation | evaluation
-String expand = "expand_example"; // String | evaluatorId, evaluationForm, assignee
+String expand = "expand_example"; // String | evaluatorId, evaluationForm, assignee, evaluator
 try {
     EvaluationResponse result = apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body, expand);
     System.out.println(result);
@@ -3753,7 +3753,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **evaluationId** | **String**| evaluationId | 
 | **body** | [**Evaluation**](Evaluation.html)| evaluation | 
-| **expand** | **String**| evaluatorId, evaluationForm, assignee | [optional] 
+| **expand** | **String**| evaluatorId, evaluationForm, assignee, evaluator | [optional] 
 {: class="table-striped"}
 
 

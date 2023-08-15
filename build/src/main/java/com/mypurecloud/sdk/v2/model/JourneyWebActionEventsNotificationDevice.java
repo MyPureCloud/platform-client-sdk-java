@@ -26,6 +26,7 @@ public class JourneyWebActionEventsNotificationDevice  implements Serializable {
   private Boolean isMobile = null;
   private Integer screenHeight = null;
   private Integer screenWidth = null;
+  private Integer screenDensity = null;
   private String fingerprint = null;
   private String osFamily = null;
   private String osVersion = null;
@@ -79,6 +80,7 @@ public class JourneyWebActionEventsNotificationDevice  implements Serializable {
     }
   }
   private CategoryEnum category = null;
+  private String manufacturer = null;
 
   
   /**
@@ -151,6 +153,23 @@ public class JourneyWebActionEventsNotificationDevice  implements Serializable {
 
   /**
    **/
+  public JourneyWebActionEventsNotificationDevice screenDensity(Integer screenDensity) {
+    this.screenDensity = screenDensity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("screenDensity")
+  public Integer getScreenDensity() {
+    return screenDensity;
+  }
+  public void setScreenDensity(Integer screenDensity) {
+    this.screenDensity = screenDensity;
+  }
+
+
+  /**
+   **/
   public JourneyWebActionEventsNotificationDevice fingerprint(String fingerprint) {
     this.fingerprint = fingerprint;
     return this;
@@ -217,6 +236,23 @@ public class JourneyWebActionEventsNotificationDevice  implements Serializable {
   }
 
 
+  /**
+   **/
+  public JourneyWebActionEventsNotificationDevice manufacturer(String manufacturer) {
+    this.manufacturer = manufacturer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("manufacturer")
+  public String getManufacturer() {
+    return manufacturer;
+  }
+  public void setManufacturer(String manufacturer) {
+    this.manufacturer = manufacturer;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -231,15 +267,17 @@ public class JourneyWebActionEventsNotificationDevice  implements Serializable {
             Objects.equals(this.isMobile, journeyWebActionEventsNotificationDevice.isMobile) &&
             Objects.equals(this.screenHeight, journeyWebActionEventsNotificationDevice.screenHeight) &&
             Objects.equals(this.screenWidth, journeyWebActionEventsNotificationDevice.screenWidth) &&
+            Objects.equals(this.screenDensity, journeyWebActionEventsNotificationDevice.screenDensity) &&
             Objects.equals(this.fingerprint, journeyWebActionEventsNotificationDevice.fingerprint) &&
             Objects.equals(this.osFamily, journeyWebActionEventsNotificationDevice.osFamily) &&
             Objects.equals(this.osVersion, journeyWebActionEventsNotificationDevice.osVersion) &&
-            Objects.equals(this.category, journeyWebActionEventsNotificationDevice.category);
+            Objects.equals(this.category, journeyWebActionEventsNotificationDevice.category) &&
+            Objects.equals(this.manufacturer, journeyWebActionEventsNotificationDevice.manufacturer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, isMobile, screenHeight, screenWidth, fingerprint, osFamily, osVersion, category);
+    return Objects.hash(type, isMobile, screenHeight, screenWidth, screenDensity, fingerprint, osFamily, osVersion, category, manufacturer);
   }
 
   @Override
@@ -251,10 +289,12 @@ public class JourneyWebActionEventsNotificationDevice  implements Serializable {
     sb.append("    isMobile: ").append(toIndentedString(isMobile)).append("\n");
     sb.append("    screenHeight: ").append(toIndentedString(screenHeight)).append("\n");
     sb.append("    screenWidth: ").append(toIndentedString(screenWidth)).append("\n");
+    sb.append("    screenDensity: ").append(toIndentedString(screenDensity)).append("\n");
     sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
     sb.append("    osFamily: ").append(toIndentedString(osFamily)).append("\n");
     sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    manufacturer: ").append(toIndentedString(manufacturer)).append("\n");
     sb.append("}");
     return sb.toString();
   }

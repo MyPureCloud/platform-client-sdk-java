@@ -19,7 +19,7 @@ title: WorkitemCreate
 | **autoStatusTransition** | <!----><!---->**Boolean**<!----> | Set it to false to disable auto status transition. By default, it is enabled. |  [optional] |
 | **description** | <!----><!---->**String**<!----> | The description of the Workitem. Maximum length of 4096 characters. |  [optional] |
 | **typeId** | <!----><!---->**String**<!----> | The ID of the Worktype of the Workitem. |  |
-| **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | Custom fields defined in the schema referenced by the Workitems Worktype. |  [optional] |
+| **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | Custom fields defined in the schema referenced by the worktype of the workitem. |  [optional] |
 | **queueId** | <!----><!---->**String**<!----> | The ID of the Workitems queue. Must be a valid UUID. |  [optional] |
 | **assigneeId** | <!----><!---->**String**<!----> | The ID of the assignee of the Workitem. Must be a valid UUID. |  [optional] |
 | **wrapupCode** | <!----><!---->**String**<!----> | The ID of the wrapup. Must be a valid UUID. |  [optional] |

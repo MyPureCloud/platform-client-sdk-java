@@ -12,6 +12,7 @@ title: GamificationScorecardChangeTopicPerformanceMetric
 | **points** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **value** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
 | **punctualityEvents** | <!----><!---->[**List&lt;GamificationScorecardChangeTopicPunctualityEvent&gt;**](GamificationScorecardChangeTopicPunctualityEvent.html)<!----> |  |  [optional] |
+| **evaluationDetails** | <!----><!---->[**List&lt;GamificationScorecardChangeTopicEvaluationDetail&gt;**](GamificationScorecardChangeTopicEvaluationDetail.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
