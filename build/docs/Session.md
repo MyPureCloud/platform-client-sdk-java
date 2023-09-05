@@ -93,6 +93,8 @@ title: Session
 | NOANSWERTRANSFER | &quot;NoAnswerTransfer&quot; | 
 | NOTAVAILABLETRANSFER | &quot;NotAvailableTransfer&quot; | 
 | UNCALLABLE | &quot;Uncallable&quot; | 
+| DONOTDISTURBENDPOINT | &quot;DoNotDisturbEndpoint&quot; | 
+| DONOTDISTURBTRANSFER | &quot;DoNotDisturbTransfer&quot; | 
 {: class="table table-striped"}
 
 

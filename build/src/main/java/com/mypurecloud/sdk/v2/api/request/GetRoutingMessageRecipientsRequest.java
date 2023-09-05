@@ -63,6 +63,7 @@ import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.QueueRequest;
 import com.mypurecloud.sdk.v2.model.Recipient;
 import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.RecipientRequest;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
@@ -76,6 +77,7 @@ import com.mypurecloud.sdk.v2.model.SkillGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisionList;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisions;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillGroupWithMemberDivisions;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
@@ -154,6 +156,20 @@ public class GetRoutingMessageRecipientsRequest {
 		}
 	}
 
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetRoutingMessageRecipientsRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	} 
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -209,6 +225,9 @@ public class GetRoutingMessageRecipientsRequest {
                 .withQueryParameters("messengerType", "", messengerType)
         
 
+                .withQueryParameters("name", "", name)
+        
+
                 .withQueryParameters("pageSize", "", pageSize)
         
 
@@ -247,6 +266,11 @@ public class GetRoutingMessageRecipientsRequest {
 		    request.setMessengerType(messengerType.toString());
 
 		    return this;
+		}
+
+		public Builder withName(String name) {
+			request.setName(name);
+			return this;
 		}
 
 		public Builder withPageSize(Integer pageSize) {

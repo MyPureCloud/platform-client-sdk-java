@@ -53,6 +53,7 @@ import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.QueueRequest;
 import com.mypurecloud.sdk.v2.model.Recipient;
 import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.RecipientRequest;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
@@ -66,6 +67,7 @@ import com.mypurecloud.sdk.v2.model.SkillGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisionList;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisions;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillGroupWithMemberDivisions;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
@@ -3234,32 +3236,36 @@ public class RoutingApi {
    * Get recipients
    * 
    * @param messengerType Messenger Type (optional)
+   * @param name Recipient Name (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return RecipientListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RecipientListing getRoutingMessageRecipients(String messengerType, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getRoutingMessageRecipients(createGetRoutingMessageRecipientsRequest(messengerType, pageSize, pageNumber));
+  public RecipientListing getRoutingMessageRecipients(String messengerType, String name, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getRoutingMessageRecipients(createGetRoutingMessageRecipientsRequest(messengerType, name, pageSize, pageNumber));
   }
 
   /**
    * Get recipients
    * 
    * @param messengerType Messenger Type (optional)
+   * @param name Recipient Name (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return RecipientListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RecipientListing> getRoutingMessageRecipientsWithHttpInfo(String messengerType, Integer pageSize, Integer pageNumber) throws IOException {
-    return getRoutingMessageRecipients(createGetRoutingMessageRecipientsRequest(messengerType, pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<RecipientListing> getRoutingMessageRecipientsWithHttpInfo(String messengerType, String name, Integer pageSize, Integer pageNumber) throws IOException {
+    return getRoutingMessageRecipients(createGetRoutingMessageRecipientsRequest(messengerType, name, pageSize, pageNumber).withHttpInfo());
   }
 
-  private GetRoutingMessageRecipientsRequest createGetRoutingMessageRecipientsRequest(String messengerType, Integer pageSize, Integer pageNumber) {
+  private GetRoutingMessageRecipientsRequest createGetRoutingMessageRecipientsRequest(String messengerType, String name, Integer pageSize, Integer pageNumber) {
     return GetRoutingMessageRecipientsRequest.builder()
             .withMessengerType(messengerType)
+
+            .withName(name)
 
             .withPageSize(pageSize)
 
@@ -9536,11 +9542,11 @@ public class RoutingApi {
    * Create a skill group
    * 
    * @param body Create skill group (required)
-   * @return SkillGroup
+   * @return SkillGroupWithMemberDivisions
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SkillGroup postRoutingSkillgroups(SkillGroup body) throws IOException, ApiException {
+  public SkillGroupWithMemberDivisions postRoutingSkillgroups(SkillGroupWithMemberDivisions body) throws IOException, ApiException {
     return  postRoutingSkillgroups(createPostRoutingSkillgroupsRequest(body));
   }
 
@@ -9548,14 +9554,14 @@ public class RoutingApi {
    * Create a skill group
    * 
    * @param body Create skill group (required)
-   * @return SkillGroup
+   * @return SkillGroupWithMemberDivisions
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SkillGroup> postRoutingSkillgroupsWithHttpInfo(SkillGroup body) throws IOException {
+  public ApiResponse<SkillGroupWithMemberDivisions> postRoutingSkillgroupsWithHttpInfo(SkillGroupWithMemberDivisions body) throws IOException {
     return postRoutingSkillgroups(createPostRoutingSkillgroupsRequest(body).withHttpInfo());
   }
 
-  private PostRoutingSkillgroupsRequest createPostRoutingSkillgroupsRequest(SkillGroup body) {
+  private PostRoutingSkillgroupsRequest createPostRoutingSkillgroupsRequest(SkillGroupWithMemberDivisions body) {
     return PostRoutingSkillgroupsRequest.builder()
             .withBody(body)
 
@@ -9566,13 +9572,13 @@ public class RoutingApi {
    * Create a skill group
    * 
    * @param request The request object
-   * @return SkillGroup
+   * @return SkillGroupWithMemberDivisions
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SkillGroup postRoutingSkillgroups(PostRoutingSkillgroupsRequest request) throws IOException, ApiException {
+  public SkillGroupWithMemberDivisions postRoutingSkillgroups(PostRoutingSkillgroupsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<SkillGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillGroup>() {});
+      ApiResponse<SkillGroupWithMemberDivisions> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SkillGroupWithMemberDivisions>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -9588,13 +9594,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SkillGroup> postRoutingSkillgroups(ApiRequest<SkillGroup> request) throws IOException {
+  public ApiResponse<SkillGroupWithMemberDivisions> postRoutingSkillgroups(ApiRequest<SkillGroupWithMemberDivisions> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<SkillGroup>() {});
+      return pcapiClient.invoke(request, new TypeReference<SkillGroupWithMemberDivisions>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)exception;
+      ApiResponse<SkillGroupWithMemberDivisions> response = (ApiResponse<SkillGroupWithMemberDivisions>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -9605,7 +9611,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<SkillGroup> response = (ApiResponse<SkillGroup>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<SkillGroupWithMemberDivisions> response = (ApiResponse<SkillGroupWithMemberDivisions>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10423,7 +10429,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Recipient putRoutingMessageRecipient(String recipientId, Recipient body) throws IOException, ApiException {
+  public Recipient putRoutingMessageRecipient(String recipientId, RecipientRequest body) throws IOException, ApiException {
     return  putRoutingMessageRecipient(createPutRoutingMessageRecipientRequest(recipientId, body));
   }
 
@@ -10435,11 +10441,11 @@ public class RoutingApi {
    * @return Recipient
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recipient> putRoutingMessageRecipientWithHttpInfo(String recipientId, Recipient body) throws IOException {
+  public ApiResponse<Recipient> putRoutingMessageRecipientWithHttpInfo(String recipientId, RecipientRequest body) throws IOException {
     return putRoutingMessageRecipient(createPutRoutingMessageRecipientRequest(recipientId, body).withHttpInfo());
   }
 
-  private PutRoutingMessageRecipientRequest createPutRoutingMessageRecipientRequest(String recipientId, Recipient body) {
+  private PutRoutingMessageRecipientRequest createPutRoutingMessageRecipientRequest(String recipientId, RecipientRequest body) {
     return PutRoutingMessageRecipientRequest.builder()
             .withRecipientId(recipientId)
 
@@ -10474,7 +10480,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recipient> putRoutingMessageRecipient(ApiRequest<Recipient> request) throws IOException {
+  public ApiResponse<Recipient> putRoutingMessageRecipient(ApiRequest<RecipientRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Recipient>() {});
     }

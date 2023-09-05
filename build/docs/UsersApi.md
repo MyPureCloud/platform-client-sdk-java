@@ -3583,8 +3583,8 @@ Wraps PATCH /api/v2/users/bulk
 
 Requires ANY permissions: 
 
-* directory:user:add
 * directory:user:edit
+* directory:organization:admin
 
 ### Example
 

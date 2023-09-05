@@ -188,26 +188,30 @@ public class TokensApi {
   /**
    * Fetch information about the current token
    * 
+   * @param preserveIdleTTL preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset. (optional)
    * @return TokenInfo
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TokenInfo getTokensMe() throws IOException, ApiException {
-    return  getTokensMe(createGetTokensMeRequest());
+  public TokenInfo getTokensMe(Boolean preserveIdleTTL) throws IOException, ApiException {
+    return  getTokensMe(createGetTokensMeRequest(preserveIdleTTL));
   }
 
   /**
    * Fetch information about the current token
    * 
+   * @param preserveIdleTTL preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset. (optional)
    * @return TokenInfo
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TokenInfo> getTokensMeWithHttpInfo() throws IOException {
-    return getTokensMe(createGetTokensMeRequest().withHttpInfo());
+  public ApiResponse<TokenInfo> getTokensMeWithHttpInfo(Boolean preserveIdleTTL) throws IOException {
+    return getTokensMe(createGetTokensMeRequest(preserveIdleTTL).withHttpInfo());
   }
 
-  private GetTokensMeRequest createGetTokensMeRequest() {
+  private GetTokensMeRequest createGetTokensMeRequest(Boolean preserveIdleTTL) {
     return GetTokensMeRequest.builder()
+            .withPreserveIdleTTL(preserveIdleTTL)
+
             .build();
   }
 

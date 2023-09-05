@@ -23,6 +23,7 @@ title: QueueRequest
 | **routingRules** | <!----><!---->[**List&lt;RoutingRule&gt;**](RoutingRule.html)<!----> | The routing rules for the queue, used for Preferred Agent Routing. |  [optional] |
 | **conditionalGroupRouting** | <!----><!---->[**ConditionalGroupRouting**](ConditionalGroupRouting.html)<!----> | The Conditional Group Routing settings for the queue. |  [optional] |
 | **bullseye** | <!----><!---->[**Bullseye**](Bullseye.html)<!----> | The bullseye settings for the queue. |  [optional] |
+| **scoringMethod** | [**ScoringMethodEnum**](#ScoringMethodEnum)<!----> | The Scoring Method for the queue |  [optional] |
 | **acwSettings** | <!----><!---->[**AcwSettings**](AcwSettings.html)<!----> | The ACW settings for the queue. |  [optional] |
 | **skillEvaluationMethod** | [**SkillEvaluationMethodEnum**](#SkillEvaluationMethodEnum)<!----> | The skill evaluation method to use when routing conversations. |  [optional] |
 | **memberGroups** | <!----><!---->[**List&lt;MemberGroup&gt;**](MemberGroup.html)<!----> | The groups of agents associated with the queue, if any.  Queue membership will update to match group membership changes. |  [optional] |
@@ -44,6 +45,18 @@ title: QueueRequest
 | **peerId** | <!----><!---->**String**<!----> | The ID of an associated external queue. |  [optional] |
 | **suppressInQueueCallRecording** | <!----><!---->**Boolean**<!----> | Indicates whether recording in-queue calls is suppressed for this queue. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="ScoringMethodEnum"></a>
+
+## Enum: ScoringMethodEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TIMESTAMPANDPRIORITY | &quot;TimestampAndPriority&quot; | 
+| PRIORITYONLY | &quot;PriorityOnly&quot; | 
 {: class="table table-striped"}
 
 

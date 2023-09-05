@@ -33,7 +33,9 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
@@ -92,16 +94,16 @@ import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 public class PostKnowledgeKnowledgebasesRequest {
 
-	private KnowledgeBase body;
-	public KnowledgeBase getBody() {
+	private KnowledgeBaseCreateRequest body;
+	public KnowledgeBaseCreateRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(KnowledgeBase body) {
+	public void setBody(KnowledgeBaseCreateRequest body) {
 		this.body = body;
 	}
 
-	public PostKnowledgeKnowledgebasesRequest withBody(KnowledgeBase body) {
+	public PostKnowledgeKnowledgebasesRequest withBody(KnowledgeBaseCreateRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -125,7 +127,7 @@ public class PostKnowledgeKnowledgebasesRequest {
         return this;
     }
 
-    public ApiRequest<KnowledgeBase> withHttpInfo() {
+    public ApiRequest<KnowledgeBaseCreateRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -148,7 +150,7 @@ public class PostKnowledgeKnowledgebasesRequest {
 	}
 
 
-	public static Builder builder(KnowledgeBase body) {
+	public static Builder builder(KnowledgeBaseCreateRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -162,14 +164,14 @@ public class PostKnowledgeKnowledgebasesRequest {
 		}
 
 
-		public Builder withBody(KnowledgeBase body) {
+		public Builder withBody(KnowledgeBaseCreateRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(KnowledgeBase body) {
+		public Builder withRequiredParams(KnowledgeBaseCreateRequest body) {
 			request.setBody(body);
 
 			return this;

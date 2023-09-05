@@ -166,11 +166,13 @@ public class EmailMediaParticipant  implements Serializable {
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("endpoint"),
+    ENDPOINT_DONOTDISTURB("endpoint.donotdisturb"),
     CLIENT("client"),
     SYSTEM("system"),
     TRANSFER("transfer"),
     TRANSFER_CONFERENCE("transfer.conference"),
     TRANSFER_CONSULT("transfer.consult"),
+    TRANSFER_DONOTDISTURB("transfer.donotdisturb"),
     TRANSFER_FORWARD("transfer.forward"),
     TRANSFER_NOANSWER("transfer.noanswer"),
     TRANSFER_NOTAVAILABLE("transfer.notavailable"),

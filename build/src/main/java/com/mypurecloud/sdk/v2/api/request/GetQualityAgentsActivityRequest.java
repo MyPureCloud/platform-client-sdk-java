@@ -226,6 +226,20 @@ public class GetQualityAgentsActivityRequest {
 	    return this;
 	} 
 
+	private String formContextId;
+	public String getFormContextId() {
+		return this.formContextId;
+	}
+
+	public void setFormContextId(String formContextId) {
+		this.formContextId = formContextId;
+	}
+
+	public GetQualityAgentsActivityRequest withFormContextId(String formContextId) {
+	    this.setFormContextId(formContextId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -284,6 +298,9 @@ public class GetQualityAgentsActivityRequest {
         
 
                 .withQueryParameters("group", "", group)
+        
+
+                .withQueryParameters("formContextId", "", formContextId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -363,6 +380,11 @@ public class GetQualityAgentsActivityRequest {
 
 		public Builder withGroup(String group) {
 			request.setGroup(group);
+			return this;
+		}
+
+		public Builder withFormContextId(String formContextId) {
+			request.setFormContextId(formContextId);
 			return this;
 		}
 

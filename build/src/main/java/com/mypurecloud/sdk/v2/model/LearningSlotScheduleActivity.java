@@ -49,6 +49,7 @@ public class LearningSlotScheduleActivity  implements Serializable {
  @JsonDeserialize(using = ExternalActivityTypeEnumDeserializer.class)
   public enum ExternalActivityTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVITYPLAN("ActivityPlan"),
     COACHING("Coaching"),
     LEARNING("Learning");
 

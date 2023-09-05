@@ -103,11 +103,13 @@ title: CallMediaParticipant
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ENDPOINT | &quot;endpoint&quot; | 
+| ENDPOINT_DONOTDISTURB | &quot;endpoint.donotdisturb&quot; | 
 | CLIENT | &quot;client&quot; | 
 | SYSTEM | &quot;system&quot; | 
 | TRANSFER | &quot;transfer&quot; | 
 | TRANSFER_CONFERENCE | &quot;transfer.conference&quot; | 
 | TRANSFER_CONSULT | &quot;transfer.consult&quot; | 
+| TRANSFER_DONOTDISTURB | &quot;transfer.donotdisturb&quot; | 
 | TRANSFER_FORWARD | &quot;transfer.forward&quot; | 
 | TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; | 
 | TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; | 

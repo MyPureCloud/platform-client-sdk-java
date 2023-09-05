@@ -2479,7 +2479,7 @@ try {
 
 
 
-> [RecipientListing](RecipientListing.html) getRoutingMessageRecipients(messengerType, pageSize, pageNumber)
+> [RecipientListing](RecipientListing.html) getRoutingMessageRecipients(messengerType, name, pageSize, pageNumber)
 
 Get recipients
 
@@ -2512,10 +2512,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String messengerType = "messengerType_example"; // String | Messenger Type
+String name = "name_example"; // String | Recipient Name
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 try {
-    RecipientListing result = apiInstance.getRoutingMessageRecipients(messengerType, pageSize, pageNumber);
+    RecipientListing result = apiInstance.getRoutingMessageRecipients(messengerType, name, pageSize, pageNumber);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingMessageRecipients");
@@ -2529,6 +2530,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **messengerType** | **String**| Messenger Type | [optional]<br />**Values**: sms, facebook, twitter, line, whatsapp, open, instagram 
+| **name** | **String**| Recipient Name | [optional] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 {: class="table-striped"}
@@ -7268,13 +7270,13 @@ null (empty response body)
 
 
 
-> [SkillGroup](SkillGroup.html) postRoutingSkillgroups(body)
+> [SkillGroupWithMemberDivisions](SkillGroupWithMemberDivisions.html) postRoutingSkillgroups(body)
 
 Create a skill group
 
 Wraps POST /api/v2/routing/skillgroups  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:skillGroup:add
 
@@ -7300,9 +7302,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-SkillGroup body = new SkillGroup(); // SkillGroup | Create skill group
+SkillGroupWithMemberDivisions body = new SkillGroupWithMemberDivisions(); // SkillGroupWithMemberDivisions | Create skill group
 try {
-    SkillGroup result = apiInstance.postRoutingSkillgroups(body);
+    SkillGroupWithMemberDivisions result = apiInstance.postRoutingSkillgroups(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#postRoutingSkillgroups");
@@ -7315,13 +7317,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SkillGroup**](SkillGroup.html)| Create skill group | 
+| **body** | [**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions.html)| Create skill group | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SkillGroup**](SkillGroup.html)
+[**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions.html)
 
 <a name="postRoutingSkills"></a>
 
@@ -7985,7 +7987,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String recipientId = "recipientId_example"; // String | Recipient ID
-Recipient body = new Recipient(); // Recipient | Recipient
+RecipientRequest body = new RecipientRequest(); // RecipientRequest | Recipient
 try {
     Recipient result = apiInstance.putRoutingMessageRecipient(recipientId, body);
     System.out.println(result);
@@ -8001,7 +8003,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **recipientId** | **String**| Recipient ID | 
-| **body** | [**Recipient**](Recipient.html)| Recipient | 
+| **body** | [**RecipientRequest**](RecipientRequest.html)| Recipient | 
 {: class="table-striped"}
 
 

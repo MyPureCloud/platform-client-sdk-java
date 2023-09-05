@@ -23,7 +23,9 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
@@ -2641,12 +2643,13 @@ public class KnowledgeApi {
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param importJobId Import job ID (required)
+   * @param expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. (optional)
    * @return KnowledgeImportJobResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeImportJobResponse getKnowledgeKnowledgebaseImportJob(String knowledgeBaseId, String importJobId) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebaseImportJob(createGetKnowledgeKnowledgebaseImportJobRequest(knowledgeBaseId, importJobId));
+  public KnowledgeImportJobResponse getKnowledgeKnowledgebaseImportJob(String knowledgeBaseId, String importJobId, List<String> expand) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseImportJob(createGetKnowledgeKnowledgebaseImportJobRequest(knowledgeBaseId, importJobId, expand));
   }
 
   /**
@@ -2654,18 +2657,21 @@ public class KnowledgeApi {
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param importJobId Import job ID (required)
+   * @param expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. (optional)
    * @return KnowledgeImportJobResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeImportJobResponse> getKnowledgeKnowledgebaseImportJobWithHttpInfo(String knowledgeBaseId, String importJobId) throws IOException {
-    return getKnowledgeKnowledgebaseImportJob(createGetKnowledgeKnowledgebaseImportJobRequest(knowledgeBaseId, importJobId).withHttpInfo());
+  public ApiResponse<KnowledgeImportJobResponse> getKnowledgeKnowledgebaseImportJobWithHttpInfo(String knowledgeBaseId, String importJobId, List<String> expand) throws IOException {
+    return getKnowledgeKnowledgebaseImportJob(createGetKnowledgeKnowledgebaseImportJobRequest(knowledgeBaseId, importJobId, expand).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebaseImportJobRequest createGetKnowledgeKnowledgebaseImportJobRequest(String knowledgeBaseId, String importJobId) {
+  private GetKnowledgeKnowledgebaseImportJobRequest createGetKnowledgeKnowledgebaseImportJobRequest(String knowledgeBaseId, String importJobId, List<String> expand) {
     return GetKnowledgeKnowledgebaseImportJobRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
             .withImportJobId(importJobId)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -4174,7 +4180,7 @@ public class KnowledgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeBase patchKnowledgeKnowledgebase(String knowledgeBaseId, KnowledgeBase body) throws IOException, ApiException {
+  public KnowledgeBase patchKnowledgeKnowledgebase(String knowledgeBaseId, KnowledgeBaseUpdateRequest body) throws IOException, ApiException {
     return  patchKnowledgeKnowledgebase(createPatchKnowledgeKnowledgebaseRequest(knowledgeBaseId, body));
   }
 
@@ -4186,11 +4192,11 @@ public class KnowledgeApi {
    * @return KnowledgeBase
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeBase> patchKnowledgeKnowledgebaseWithHttpInfo(String knowledgeBaseId, KnowledgeBase body) throws IOException {
+  public ApiResponse<KnowledgeBase> patchKnowledgeKnowledgebaseWithHttpInfo(String knowledgeBaseId, KnowledgeBaseUpdateRequest body) throws IOException {
     return patchKnowledgeKnowledgebase(createPatchKnowledgeKnowledgebaseRequest(knowledgeBaseId, body).withHttpInfo());
   }
 
-  private PatchKnowledgeKnowledgebaseRequest createPatchKnowledgeKnowledgebaseRequest(String knowledgeBaseId, KnowledgeBase body) {
+  private PatchKnowledgeKnowledgebaseRequest createPatchKnowledgeKnowledgebaseRequest(String knowledgeBaseId, KnowledgeBaseUpdateRequest body) {
     return PatchKnowledgeKnowledgebaseRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
@@ -4225,7 +4231,7 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeBase> patchKnowledgeKnowledgebase(ApiRequest<KnowledgeBase> request) throws IOException {
+  public ApiResponse<KnowledgeBase> patchKnowledgeKnowledgebase(ApiRequest<KnowledgeBaseUpdateRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<KnowledgeBase>() {});
     }
@@ -7451,7 +7457,7 @@ public class KnowledgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeBase postKnowledgeKnowledgebases(KnowledgeBase body) throws IOException, ApiException {
+  public KnowledgeBase postKnowledgeKnowledgebases(KnowledgeBaseCreateRequest body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebases(createPostKnowledgeKnowledgebasesRequest(body));
   }
 
@@ -7462,11 +7468,11 @@ public class KnowledgeApi {
    * @return KnowledgeBase
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeBase> postKnowledgeKnowledgebasesWithHttpInfo(KnowledgeBase body) throws IOException {
+  public ApiResponse<KnowledgeBase> postKnowledgeKnowledgebasesWithHttpInfo(KnowledgeBaseCreateRequest body) throws IOException {
     return postKnowledgeKnowledgebases(createPostKnowledgeKnowledgebasesRequest(body).withHttpInfo());
   }
 
-  private PostKnowledgeKnowledgebasesRequest createPostKnowledgeKnowledgebasesRequest(KnowledgeBase body) {
+  private PostKnowledgeKnowledgebasesRequest createPostKnowledgeKnowledgebasesRequest(KnowledgeBaseCreateRequest body) {
     return PostKnowledgeKnowledgebasesRequest.builder()
             .withBody(body)
 
@@ -7499,7 +7505,7 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeBase> postKnowledgeKnowledgebases(ApiRequest<KnowledgeBase> request) throws IOException {
+  public ApiResponse<KnowledgeBase> postKnowledgeKnowledgebases(ApiRequest<KnowledgeBaseCreateRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<KnowledgeBase>() {});
     }

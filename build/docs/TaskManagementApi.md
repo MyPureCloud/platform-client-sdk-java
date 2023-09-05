@@ -687,7 +687,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **workitemId** | **String**| Workitem ID | 
-| **expands** | **String**| Which fields to expand. Comma separated if more than one. | [optional]<br />**Values**: type, workbin, status 
+| **expands** | **String**| Which fields to expand. Comma separated if more than one. | [optional]<br />**Values**: type, workbin, status, queue, assignee 
 {: class="table-striped"}
 
 

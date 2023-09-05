@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteJourneySegment**](JourneyApi.html#deleteJourneySegment) | Delete a segment. |
 | [**getAnalyticsJourneysAggregatesJob**](JourneyApi.html#getAnalyticsJourneysAggregatesJob) | Get status for async query for journey aggregates |
 | [**getAnalyticsJourneysAggregatesJobResults**](JourneyApi.html#getAnalyticsJourneysAggregatesJobResults) | Fetch a page of results for an async aggregates query |
+| [**getExternalcontactsContactJourneySessions**](JourneyApi.html#getExternalcontactsContactJourneySessions) | Retrieve all sessions for a given external contact. |
 | [**getJourneyActionmap**](JourneyApi.html#getJourneyActionmap) | Retrieve a single action map. |
 | [**getJourneyActionmaps**](JourneyApi.html#getJourneyActionmaps) | Retrieve all action maps. |
 | [**getJourneyActionmapsEstimatesJob**](JourneyApi.html#getJourneyActionmapsEstimatesJob) | Get status of job. |
@@ -480,6 +481,73 @@ try {
 ### Return type
 
 [**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html)
+
+<a name="getExternalcontactsContactJourneySessions"></a>
+
+# **getExternalcontactsContactJourneySessions**
+
+
+
+> [SessionListing](SessionListing.html) getExternalcontactsContactJourneySessions(contactId, pageSize, after, includeMerged)
+
+Retrieve all sessions for a given external contact.
+
+Wraps GET /api/v2/externalcontacts/contacts/{contactId}/journey/sessions  
+
+Requires ANY permissions: 
+
+* externalContacts:session:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String contactId = "contactId_example"; // String | ExternalContact ID
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+Boolean includeMerged = true; // Boolean | Indicates whether to return sessions from all external contacts in the merge-set of the given one.
+try {
+    SessionListing result = apiInstance.getExternalcontactsContactJourneySessions(contactId, pageSize, after, includeMerged);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getExternalcontactsContactJourneySessions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactId** | **String**| ExternalContact ID | 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **includeMerged** | **Boolean**| Indicates whether to return sessions from all external contacts in the merge-set of the given one. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SessionListing**](SessionListing.html)
 
 <a name="getJourneyActionmap"></a>
 

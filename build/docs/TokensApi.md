@@ -136,7 +136,7 @@ null (empty response body)
 
 
 
-> [TokenInfo](TokenInfo.html) getTokensMe()
+> [TokenInfo](TokenInfo.html) getTokensMe(preserveIdleTTL)
 
 Fetch information about the current token
 
@@ -167,8 +167,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 TokensApi apiInstance = new TokensApi();
+Boolean preserveIdleTTL = true; // Boolean | preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset.
 try {
-    TokenInfo result = apiInstance.getTokensMe();
+    TokenInfo result = apiInstance.getTokensMe(preserveIdleTTL);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TokensApi#getTokensMe");
@@ -178,8 +179,11 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **preserveIdleTTL** | **Boolean**| preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset. | [optional] 
+{: class="table-striped"}
 
 
 ### Return type

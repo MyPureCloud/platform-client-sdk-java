@@ -1874,7 +1874,7 @@ try {
 
 
 
-> [KnowledgeImportJobResponse](KnowledgeImportJobResponse.html) getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId)
+> [KnowledgeImportJobResponse](KnowledgeImportJobResponse.html) getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, expand)
 
 Get import job report
 
@@ -1908,8 +1908,9 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 String importJobId = "importJobId_example"; // String | Import job ID
+List<String> expand = Arrays.asList(null); // List<String> | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
 try {
-    KnowledgeImportJobResponse result = apiInstance.getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId);
+    KnowledgeImportJobResponse result = apiInstance.getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseImportJob");
@@ -1924,6 +1925,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **importJobId** | **String**| Import job ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional]<br />**Values**: urls 
 {: class="table-striped"}
 
 
@@ -2994,7 +2996,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-KnowledgeBase body = new KnowledgeBase(); // KnowledgeBase | 
+KnowledgeBaseUpdateRequest body = new KnowledgeBaseUpdateRequest(); // KnowledgeBaseUpdateRequest | 
 try {
     KnowledgeBase result = apiInstance.patchKnowledgeKnowledgebase(knowledgeBaseId, body);
     System.out.println(result);
@@ -3010,7 +3012,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeBase**](KnowledgeBase.html)|  | 
+| **body** | [**KnowledgeBaseUpdateRequest**](KnowledgeBaseUpdateRequest.html)|  | 
 {: class="table-striped"}
 
 
@@ -5394,7 +5396,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
-KnowledgeBase body = new KnowledgeBase(); // KnowledgeBase | 
+KnowledgeBaseCreateRequest body = new KnowledgeBaseCreateRequest(); // KnowledgeBaseCreateRequest | 
 try {
     KnowledgeBase result = apiInstance.postKnowledgeKnowledgebases(body);
     System.out.println(result);
@@ -5409,7 +5411,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**KnowledgeBase**](KnowledgeBase.html)|  | 
+| **body** | [**KnowledgeBaseCreateRequest**](KnowledgeBaseCreateRequest.html)|  | 
 {: class="table-striped"}
 
 

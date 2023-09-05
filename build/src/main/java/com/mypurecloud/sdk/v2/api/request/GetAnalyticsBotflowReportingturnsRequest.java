@@ -158,6 +158,20 @@ public class GetAnalyticsBotflowReportingturnsRequest {
 	    return this;
 	} 
 
+	private String interval;
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+	}
+
+	public GetAnalyticsBotflowReportingturnsRequest withInterval(String interval) {
+	    this.setInterval(interval);
+	    return this;
+	} 
+
 	private String actionId;
 	public String getActionId() {
 		return this.actionId;
@@ -295,6 +309,9 @@ public class GetAnalyticsBotflowReportingturnsRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
 
+                .withQueryParameters("interval", "", interval)
+        
+
                 .withQueryParameters("actionId", "", actionId)
         
 
@@ -344,6 +361,11 @@ public class GetAnalyticsBotflowReportingturnsRequest {
 
 		public Builder withPageSize(String pageSize) {
 			request.setPageSize(pageSize);
+			return this;
+		}
+
+		public Builder withInterval(String interval) {
+			request.setInterval(interval);
 			return this;
 		}
 

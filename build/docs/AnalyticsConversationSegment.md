@@ -47,6 +47,7 @@ title: AnalyticsConversationSegment
 | CONFERENCETRANSFER | &quot;conferenceTransfer&quot; | 
 | CONSULTTRANSFER | &quot;consultTransfer&quot; | 
 | ENDPOINT | &quot;endpoint&quot; | 
+| ENDPOINTDND | &quot;endpointDnd&quot; | 
 | ERROR | &quot;error&quot; | 
 | FORWARDTRANSFER | &quot;forwardTransfer&quot; | 
 | NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; | 
@@ -57,6 +58,7 @@ title: AnalyticsConversationSegment
 | SYSTEM | &quot;system&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
 | TRANSFER | &quot;transfer&quot; | 
+| TRANSFERDND | &quot;transferDnd&quot; | 
 | TRANSPORTFAILURE | &quot;transportFailure&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
 {: class="table table-striped"}

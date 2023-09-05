@@ -13,7 +13,9 @@ title: BuAgentScheduleActivity
 | **description** | <!----><!---->**String**<!----> | The description of this activity |  [optional] |
 | **activityCodeId** | <!----><!---->**String**<!----> | The ID of the activity code associated with this activity |  [optional] |
 | **paid** | <!----><!---->**Boolean**<!----> | Whether this activity is paid |  [optional] |
+| **payableMinutes** | <!----><!---->**Integer**<!----> | Payable minutes for this activity |  [optional] |
 | **timeOffRequestId** | <!----><!---->**String**<!----> | The ID of the time off request associated with this activity, if applicable |  [optional] |
+| **timeOffRequestSyncVersion** | <!----><!---->**Integer**<!----> | The sync version of the partial day time off request for which the scheduled activity is associated, if applicable |  [optional] |
 | **externalActivityId** | <!----><!---->**String**<!----> | The ID of the external activity associated with this activity, if applicable |  [optional] |
 | **externalActivityType** | [**ExternalActivityTypeEnum**](#ExternalActivityTypeEnum)<!----> | The type of the external activity associated with this activity, if applicable |  [optional] |
 {: class="table table-striped"}
@@ -26,6 +28,7 @@ title: BuAgentScheduleActivity
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVITYPLAN | &quot;ActivityPlan&quot; | 
 | COACHING | &quot;Coaching&quot; | 
 | LEARNING | &quot;Learning&quot; | 
 {: class="table table-striped"}

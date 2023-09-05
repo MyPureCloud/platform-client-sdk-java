@@ -63,6 +63,7 @@ import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.QueueRequest;
 import com.mypurecloud.sdk.v2.model.Recipient;
 import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.RecipientRequest;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
@@ -76,6 +77,7 @@ import com.mypurecloud.sdk.v2.model.SkillGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisionList;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisions;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillGroupWithMemberDivisions;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
@@ -105,16 +107,16 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class PostRoutingSkillgroupsRequest {
 
-	private SkillGroup body;
-	public SkillGroup getBody() {
+	private SkillGroupWithMemberDivisions body;
+	public SkillGroupWithMemberDivisions getBody() {
 		return this.body;
 	}
 
-	public void setBody(SkillGroup body) {
+	public void setBody(SkillGroupWithMemberDivisions body) {
 		this.body = body;
 	}
 
-	public PostRoutingSkillgroupsRequest withBody(SkillGroup body) {
+	public PostRoutingSkillgroupsRequest withBody(SkillGroupWithMemberDivisions body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -138,7 +140,7 @@ public class PostRoutingSkillgroupsRequest {
         return this;
     }
 
-    public ApiRequest<SkillGroup> withHttpInfo() {
+    public ApiRequest<SkillGroupWithMemberDivisions> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -161,7 +163,7 @@ public class PostRoutingSkillgroupsRequest {
 	}
 
 
-	public static Builder builder(SkillGroup body) {
+	public static Builder builder(SkillGroupWithMemberDivisions body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -175,14 +177,14 @@ public class PostRoutingSkillgroupsRequest {
 		}
 
 
-		public Builder withBody(SkillGroup body) {
+		public Builder withBody(SkillGroupWithMemberDivisions body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(SkillGroup body) {
+		public Builder withRequiredParams(SkillGroupWithMemberDivisions body) {
 			request.setBody(body);
 
 			return this;

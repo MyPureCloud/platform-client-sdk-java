@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.HrisTimeOffType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.List;
@@ -76,6 +77,7 @@ public class CreateTimeOffPlanRequest  implements Serializable {
   }
   private AutoApprovalRuleEnum autoApprovalRule = null;
   private Integer daysBeforeStartToExpireFromWaitlist = null;
+  private HrisTimeOffType hrisTimeOffType = null;
   private Boolean active = null;
 
   
@@ -170,6 +172,24 @@ public class CreateTimeOffPlanRequest  implements Serializable {
 
 
   /**
+   * Time off type, if this time off plan is associated with the integration.
+   **/
+  public CreateTimeOffPlanRequest hrisTimeOffType(HrisTimeOffType hrisTimeOffType) {
+    this.hrisTimeOffType = hrisTimeOffType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Time off type, if this time off plan is associated with the integration.")
+  @JsonProperty("hrisTimeOffType")
+  public HrisTimeOffType getHrisTimeOffType() {
+    return hrisTimeOffType;
+  }
+  public void setHrisTimeOffType(HrisTimeOffType hrisTimeOffType) {
+    this.hrisTimeOffType = hrisTimeOffType;
+  }
+
+
+  /**
    * Whether this time off plan should be used by agents.
    **/
   public CreateTimeOffPlanRequest active(Boolean active) {
@@ -202,12 +222,13 @@ public class CreateTimeOffPlanRequest  implements Serializable {
             Objects.equals(this.timeOffLimitIds, createTimeOffPlanRequest.timeOffLimitIds) &&
             Objects.equals(this.autoApprovalRule, createTimeOffPlanRequest.autoApprovalRule) &&
             Objects.equals(this.daysBeforeStartToExpireFromWaitlist, createTimeOffPlanRequest.daysBeforeStartToExpireFromWaitlist) &&
+            Objects.equals(this.hrisTimeOffType, createTimeOffPlanRequest.hrisTimeOffType) &&
             Objects.equals(this.active, createTimeOffPlanRequest.active);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, activityCodeIds, timeOffLimitIds, autoApprovalRule, daysBeforeStartToExpireFromWaitlist, active);
+    return Objects.hash(name, activityCodeIds, timeOffLimitIds, autoApprovalRule, daysBeforeStartToExpireFromWaitlist, hrisTimeOffType, active);
   }
 
   @Override
@@ -220,6 +241,7 @@ public class CreateTimeOffPlanRequest  implements Serializable {
     sb.append("    timeOffLimitIds: ").append(toIndentedString(timeOffLimitIds)).append("\n");
     sb.append("    autoApprovalRule: ").append(toIndentedString(autoApprovalRule)).append("\n");
     sb.append("    daysBeforeStartToExpireFromWaitlist: ").append(toIndentedString(daysBeforeStartToExpireFromWaitlist)).append("\n");
+    sb.append("    hrisTimeOffType: ").append(toIndentedString(hrisTimeOffType)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("}");
     return sb.toString();

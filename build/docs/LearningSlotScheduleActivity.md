@@ -26,6 +26,7 @@ title: LearningSlotScheduleActivity
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVITYPLAN | &quot;ActivityPlan&quot; | 
 | COACHING | &quot;Coaching&quot; | 
 | LEARNING | &quot;Learning&quot; | 
 {: class="table table-striped"}

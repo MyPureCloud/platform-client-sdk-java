@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.HistoricalAdherenceActuals;
 import com.mypurecloud.sdk.v2.model.HistoricalAdherenceExceptionInfo;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceBulkUserDayMetrics;
 import io.swagger.annotations.ApiModel;
@@ -80,6 +81,7 @@ public class WfmHistoricalAdherenceBulkUserResult  implements Serializable {
   }
   private ImpactEnum impact = null;
   private List<HistoricalAdherenceExceptionInfo> exceptionInfo = new ArrayList<HistoricalAdherenceExceptionInfo>();
+  private List<HistoricalAdherenceActuals> actuals = new ArrayList<HistoricalAdherenceActuals>();
   private List<WfmHistoricalAdherenceBulkUserDayMetrics> dayMetrics = new ArrayList<WfmHistoricalAdherenceBulkUserDayMetrics>();
 
   
@@ -174,6 +176,24 @@ public class WfmHistoricalAdherenceBulkUserResult  implements Serializable {
 
 
   /**
+   * List of adherence actuals for this user
+   **/
+  public WfmHistoricalAdherenceBulkUserResult actuals(List<HistoricalAdherenceActuals> actuals) {
+    this.actuals = actuals;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of adherence actuals for this user")
+  @JsonProperty("actuals")
+  public List<HistoricalAdherenceActuals> getActuals() {
+    return actuals;
+  }
+  public void setActuals(List<HistoricalAdherenceActuals> actuals) {
+    this.actuals = actuals;
+  }
+
+
+  /**
    * Adherence and conformance metrics for days in query range
    **/
   public WfmHistoricalAdherenceBulkUserResult dayMetrics(List<WfmHistoricalAdherenceBulkUserDayMetrics> dayMetrics) {
@@ -206,12 +226,13 @@ public class WfmHistoricalAdherenceBulkUserResult  implements Serializable {
             Objects.equals(this.conformancePercentage, wfmHistoricalAdherenceBulkUserResult.conformancePercentage) &&
             Objects.equals(this.impact, wfmHistoricalAdherenceBulkUserResult.impact) &&
             Objects.equals(this.exceptionInfo, wfmHistoricalAdherenceBulkUserResult.exceptionInfo) &&
+            Objects.equals(this.actuals, wfmHistoricalAdherenceBulkUserResult.actuals) &&
             Objects.equals(this.dayMetrics, wfmHistoricalAdherenceBulkUserResult.dayMetrics);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, adherencePercentage, conformancePercentage, impact, exceptionInfo, dayMetrics);
+    return Objects.hash(userId, adherencePercentage, conformancePercentage, impact, exceptionInfo, actuals, dayMetrics);
   }
 
   @Override
@@ -224,6 +245,7 @@ public class WfmHistoricalAdherenceBulkUserResult  implements Serializable {
     sb.append("    conformancePercentage: ").append(toIndentedString(conformancePercentage)).append("\n");
     sb.append("    impact: ").append(toIndentedString(impact)).append("\n");
     sb.append("    exceptionInfo: ").append(toIndentedString(exceptionInfo)).append("\n");
+    sb.append("    actuals: ").append(toIndentedString(actuals)).append("\n");
     sb.append("    dayMetrics: ").append(toIndentedString(dayMetrics)).append("\n");
     sb.append("}");
     return sb.toString();

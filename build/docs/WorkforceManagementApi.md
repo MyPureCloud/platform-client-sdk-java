@@ -58,6 +58,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#getWorkforcemanagementCalendarUrlIcs) | Get existing calendar link for the current user |
 | [**getWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi.html#getWorkforcemanagementHistoricaldataDeletejob) | Retrieves delete job status for historical data imports of the organization |
 | [**getWorkforcemanagementHistoricaldataImportstatus**](WorkforceManagementApi.html#getWorkforcemanagementHistoricaldataImportstatus) | Retrieves status of the historical data imports of the organization |
+| [**getWorkforcemanagementIntegrationsHris**](WorkforceManagementApi.html#getWorkforcemanagementIntegrationsHris) | Get integrations |
+| [**getWorkforcemanagementIntegrationsHrisTimeofftypesJob**](WorkforceManagementApi.html#getWorkforcemanagementIntegrationsHrisTimeofftypesJob) | Query the results of time off types job |
 | [**getWorkforcemanagementManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementManagementunit) | Get management unit |
 | [**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes |
 | [**getWorkforcemanagementManagementunitAdherence**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAdherence) | Get a list of user schedule adherence records for the requested management unit |
@@ -86,6 +88,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi.html#getWorkforcemanagementSchedulingjob) | Get status of the scheduling job |
 | [**getWorkforcemanagementShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementShifttrades) | Gets all of my shift trades |
 | [**getWorkforcemanagementShrinkageJob**](WorkforceManagementApi.html#getWorkforcemanagementShrinkageJob) | Request to fetch the status of the historical shrinkage query |
+| [**getWorkforcemanagementTimeoffbalanceJob**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffbalanceJob) | Query the results of time off types job |
 | [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | Get a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequestWaitlistpositions**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequestWaitlistpositions) | Get the daily waitlist positions of a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | Get a list of time off requests for the current user |
@@ -98,6 +101,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementManagementunit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunit) | Update the requested management unit |
 | [**patchWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeofflimit) | Updates a time off limit object. |
 | [**patchWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeoffplan) | Updates a time off plan |
+| [**patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus) | Set integration status for a time off request. |
 | [**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitUserTimeoffrequest) | Update a time off request |
 | [**patchWorkforcemanagementManagementunitWeekShifttrade**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWeekShifttrade) | Updates a shift trade. This route can only be called by the initiating agent |
 | [**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplan) | Update a work plan |
@@ -109,6 +113,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementAdherenceHistoricalBulk**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistoricalBulk) | Request a historical adherence report in bulk |
 | [**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanations) | Add an adherence explanation for the requested user |
 | [**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanationsQuery) | Query adherence explanations for the given agent across a specified range |
+| [**postWorkforcemanagementAgentsIntegrationsHrisQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentsIntegrationsHrisQuery) | Query integrations for agents |
 | [**postWorkforcemanagementAgentsMePossibleworkshifts**](WorkforceManagementApi.html#postWorkforcemanagementAgentsMePossibleworkshifts) | Get agent possible work shifts for requested time frame |
 | [**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi.html#postWorkforcemanagementAgentschedulesMine) | Get published schedule for the current user |
 | [**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitActivitycodes) | Create a new activity code |
@@ -134,6 +139,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#postWorkforcemanagementCalendarUrlIcs) | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned |
 | [**postWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi.html#postWorkforcemanagementHistoricaldataDeletejob) | Delete the entries of the historical data imports in the organization |
 | [**postWorkforcemanagementHistoricaldataValidate**](WorkforceManagementApi.html#postWorkforcemanagementHistoricaldataValidate) | Trigger validation process for historical import |
+| [**postWorkforcemanagementIntegrationsHriTimeofftypesJobs**](WorkforceManagementApi.html#postWorkforcemanagementIntegrationsHriTimeofftypesJobs) | Get list of time off types configured in integration |
 | [**postWorkforcemanagementManagementunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitAgentschedulesSearch) | Query published schedules for given given time range for set of users |
 | [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | Request a historical adherence report |
 | [**postWorkforcemanagementManagementunitMove**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitMove) | Move the requested management unit to a new business unit |
@@ -143,10 +149,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementManagementunitTimeofflimitsValuesQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeofflimitsValuesQuery) | Retrieves time off limit related values based on a given set of filters. |
 | [**postWorkforcemanagementManagementunitTimeoffplans**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffplans) | Creates a new time off plan |
 | [**postWorkforcemanagementManagementunitTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequests) | Create a new time off request |
+| [**postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery) | Retrieves integration statuses for a list of time off requests |
 | [**postWorkforcemanagementManagementunitTimeoffrequestsQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsQuery) | Fetches time off requests matching the conditions specified in the request body |
 | [**postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery) | Retrieves daily waitlist position for a list of time off requests |
 | [**postWorkforcemanagementManagementunitUserTimeoffbalanceJobs**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitUserTimeoffbalanceJobs) | Query time off balances for a given user for specified activity code and dates |
 | [**postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs) | Query time off balances for dates spanned by a given time off request |
+| [**postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate) | Estimates available time off for an agent |
 | [**postWorkforcemanagementManagementunitWeekShifttradeMatch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttradeMatch) | Matches a shift trade. This route can only be called by the receiving agent |
 | [**postWorkforcemanagementManagementunitWeekShifttrades**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttrades) | Adds a shift trade |
 | [**postWorkforcemanagementManagementunitWeekShifttradesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttradesSearch) | Searches for potential shift trade matches for the current agent |
@@ -161,8 +169,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementSchedules**](WorkforceManagementApi.html#postWorkforcemanagementSchedules) | Get published schedule for the current user |
 | [**postWorkforcemanagementTeamAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementTeamAdherenceHistorical) | Request a teams historical adherence report |
 | [**postWorkforcemanagementTeamShrinkageJobs**](WorkforceManagementApi.html#postWorkforcemanagementTeamShrinkageJobs) | Request a historical shrinkage report |
+| [**postWorkforcemanagementTimeoffbalanceJobs**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffbalanceJobs) | Query time off balances for the current user for specified activity code and dates |
 | [**postWorkforcemanagementTimeofflimitsAvailableQuery**](WorkforceManagementApi.html#postWorkforcemanagementTimeofflimitsAvailableQuery) | Queries available time off for the current user |
 | [**postWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequests) | Create a time off request for the current user |
+| [**postWorkforcemanagementTimeoffrequestsEstimate**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequestsEstimate) | Estimates available time off for current user |
+| [**postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery) | Retrieves integration statuses for a list of current user time off requests |
+| [**putWorkforcemanagementAgentIntegrationsHris**](WorkforceManagementApi.html#putWorkforcemanagementAgentIntegrationsHris) | Update integrations for agent |
 | [**putWorkforcemanagementManagementunitTimeofflimitValues**](WorkforceManagementApi.html#putWorkforcemanagementManagementunitTimeofflimitValues) | Sets daily values for a date range of time off limit object |
 {: class="table-striped"}
 
@@ -2356,7 +2368,7 @@ try {
 
 
 
-> [ServiceGoalTemplate](ServiceGoalTemplate.html) getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId)
+> [ServiceGoalTemplate](ServiceGoalTemplate.html) getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, expand)
 
 Get a service goal template
 
@@ -2390,8 +2402,9 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 String serviceGoalTemplateId = "serviceGoalTemplateId_example"; // String | The ID of a service goal template to fetch
+List<String> expand = Arrays.asList(null); // List<String> | Include to access additional data on the service goal template
 try {
-    ServiceGoalTemplate result = apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId);
+    ServiceGoalTemplate result = apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitServicegoaltemplate");
@@ -2406,6 +2419,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit. | 
 | **serviceGoalTemplateId** | **String**| The ID of a service goal template to fetch | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Include to access additional data on the service goal template | [optional]<br />**Values**: impactOverride 
 {: class="table-striped"}
 
 
@@ -2419,7 +2433,7 @@ try {
 
 
 
-> [ServiceGoalTemplateList](ServiceGoalTemplateList.html) getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId)
+> [ServiceGoalTemplateList](ServiceGoalTemplateList.html) getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, expand)
 
 Gets list of service goal templates
 
@@ -2454,8 +2468,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
+List<String> expand = Arrays.asList(null); // List<String> | Include to access additional data on the service goal template
 try {
-    ServiceGoalTemplateList result = apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId);
+    ServiceGoalTemplateList result = apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitServicegoaltemplates");
@@ -2469,6 +2484,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit. | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Include to access additional data on the service goal template | [optional]<br />**Values**: impactOverride 
 {: class="table-striped"}
 
 
@@ -3562,6 +3578,123 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**HistoricalImportStatusListing**](HistoricalImportStatusListing.html)
+
+<a name="getWorkforcemanagementIntegrationsHris"></a>
+
+# **getWorkforcemanagementIntegrationsHris**
+
+
+
+> [WfmIntegrationListing](WfmIntegrationListing.html) getWorkforcemanagementIntegrationsHris()
+
+Get integrations
+
+Wraps GET /api/v2/workforcemanagement/integrations/hris  
+
+Requires ANY permissions: 
+
+* wfm:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+try {
+    WfmIntegrationListing result = apiInstance.getWorkforcemanagementIntegrationsHris();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementIntegrationsHris");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**WfmIntegrationListing**](WfmIntegrationListing.html)
+
+<a name="getWorkforcemanagementIntegrationsHrisTimeofftypesJob"></a>
+
+# **getWorkforcemanagementIntegrationsHrisTimeofftypesJob**
+
+
+
+> [HrisTimeOffTypesJobResponse](HrisTimeOffTypesJobResponse.html) getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId)
+
+Query the results of time off types job
+
+Wraps GET /api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the job.
+try {
+    HrisTimeOffTypesJobResponse result = apiInstance.getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementIntegrationsHrisTimeofftypesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**HrisTimeOffTypesJobResponse**](HrisTimeOffTypesJobResponse.html)
 
 <a name="getWorkforcemanagementManagementunit"></a>
 
@@ -5461,6 +5594,66 @@ try {
 
 [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
 
+<a name="getWorkforcemanagementTimeoffbalanceJob"></a>
+
+# **getWorkforcemanagementTimeoffbalanceJob**
+
+
+
+> [TimeOffBalanceJobResponse](TimeOffBalanceJobResponse.html) getWorkforcemanagementTimeoffbalanceJob(jobId)
+
+Query the results of time off types job
+
+Wraps GET /api/v2/workforcemanagement/timeoffbalance/jobs/{jobId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the job.
+try {
+    TimeOffBalanceJobResponse result = apiInstance.getWorkforcemanagementTimeoffbalanceJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementTimeoffbalanceJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TimeOffBalanceJobResponse**](TimeOffBalanceJobResponse.html)
+
 <a name="getWorkforcemanagementTimeoffrequest"></a>
 
 # **getWorkforcemanagementTimeoffrequest**
@@ -6228,6 +6421,73 @@ try {
 
 [**TimeOffPlan**](TimeOffPlan.html)
 
+<a name="patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus"></a>
+
+# **patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus**
+
+
+
+> [UserTimeOffIntegrationStatusResponse](UserTimeOffIntegrationStatusResponse.html) patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body)
+
+Set integration status for a time off request.
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus  
+
+Requires ANY permissions: 
+
+* wfm:timeOffRequest:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+String timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request.
+String userId = "userId_example"; // String | The ID of user to whom the time off request belongs.
+SetTimeOffIntegrationStatusRequest body = new SetTimeOffIntegrationStatusRequest(); // SetTimeOffIntegrationStatusRequest | body
+try {
+    UserTimeOffIntegrationStatusResponse result = apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit. | 
+| **timeOffRequestId** | **String**| The ID of the time off request. | 
+| **userId** | **String**| The ID of user to whom the time off request belongs. | 
+| **body** | [**SetTimeOffIntegrationStatusRequest**](SetTimeOffIntegrationStatusRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserTimeOffIntegrationStatusResponse**](UserTimeOffIntegrationStatusResponse.html)
+
 <a name="patchWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 
 # **patchWorkforcemanagementManagementunitUserTimeoffrequest**
@@ -6687,7 +6947,7 @@ try {
 
 # **postWorkforcemanagementAdherenceHistorical**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [WfmHistoricalAdherenceResponse](WfmHistoricalAdherenceResponse.html) postWorkforcemanagementAdherenceHistorical(body)
 
@@ -6934,6 +7194,67 @@ try {
 ### Return type
 
 [**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse.html)
+
+<a name="postWorkforcemanagementAgentsIntegrationsHrisQuery"></a>
+
+# **postWorkforcemanagementAgentsIntegrationsHrisQuery**
+
+
+
+> [AgentsIntegrationsListing](AgentsIntegrationsListing.html) postWorkforcemanagementAgentsIntegrationsHrisQuery(body)
+
+Query integrations for agents
+
+Wraps POST /api/v2/workforcemanagement/agents/integrations/hris/query  
+
+Requires ANY permissions: 
+
+* wfm:agent:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+QueryAgentsIntegrationsRequest body = new QueryAgentsIntegrationsRequest(); // QueryAgentsIntegrationsRequest | body
+try {
+    AgentsIntegrationsListing result = apiInstance.postWorkforcemanagementAgentsIntegrationsHrisQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentsIntegrationsHrisQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**QueryAgentsIntegrationsRequest**](QueryAgentsIntegrationsRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentsIntegrationsListing**](AgentsIntegrationsListing.html)
 
 <a name="postWorkforcemanagementAgentsMePossibleworkshifts"></a>
 
@@ -8566,6 +8887,67 @@ try {
 
 null (empty response body)
 
+<a name="postWorkforcemanagementIntegrationsHriTimeofftypesJobs"></a>
+
+# **postWorkforcemanagementIntegrationsHriTimeofftypesJobs**
+
+
+
+> [HrisTimeOffTypesResponse](HrisTimeOffTypesResponse.html) postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId)
+
+Get list of time off types configured in integration
+
+Wraps POST /api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs  
+
+Requires ANY permissions: 
+
+* wfm:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String hrisIntegrationId = "hrisIntegrationId_example"; // String | The ID of the HRIS integration for which time off types are queried.
+try {
+    HrisTimeOffTypesResponse result = apiInstance.postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementIntegrationsHriTimeofftypesJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **hrisIntegrationId** | **String**| The ID of the HRIS integration for which time off types are queried. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**HrisTimeOffTypesResponse**](HrisTimeOffTypesResponse.html)
+
 <a name="postWorkforcemanagementManagementunitAgentschedulesSearch"></a>
 
 # **postWorkforcemanagementManagementunitAgentschedulesSearch**
@@ -9147,6 +9529,69 @@ try {
 
 [**TimeOffRequestList**](TimeOffRequestList.html)
 
+<a name="postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery"></a>
+
+# **postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery**
+
+
+
+> [UserTimeOffIntegrationStatusResponseListing](UserTimeOffIntegrationStatusResponseListing.html) postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body)
+
+Retrieves integration statuses for a list of time off requests
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query  
+
+Requires ANY permissions: 
+
+* wfm:timeOffRequest:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+QueryTimeOffIntegrationStatusRequest body = new QueryTimeOffIntegrationStatusRequest(); // QueryTimeOffIntegrationStatusRequest | body
+try {
+    UserTimeOffIntegrationStatusResponseListing result = apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit. | 
+| **body** | [**QueryTimeOffIntegrationStatusRequest**](QueryTimeOffIntegrationStatusRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserTimeOffIntegrationStatusResponseListing**](UserTimeOffIntegrationStatusResponseListing.html)
+
 <a name="postWorkforcemanagementManagementunitTimeoffrequestsQuery"></a>
 
 # **postWorkforcemanagementManagementunitTimeoffrequestsQuery**
@@ -9404,6 +9849,71 @@ try {
 ### Return type
 
 [**TimeOffBalancesResponse**](TimeOffBalancesResponse.html)
+
+<a name="postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate"></a>
+
+# **postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate**
+
+
+
+> [EstimateAvailableTimeOffResponse](EstimateAvailableTimeOffResponse.html) postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body)
+
+Estimates available time off for an agent
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate  
+
+Requires ANY permissions: 
+
+* wfm:timeOffRequest:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
+String userId = "userId_example"; // String | The id of the user for whom the time off request estimate is requested
+EstimateAvailableTimeOffRequest body = new EstimateAvailableTimeOffRequest(); // EstimateAvailableTimeOffRequest | body
+try {
+    EstimateAvailableTimeOffResponse result = apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit | 
+| **userId** | **String**| The id of the user for whom the time off request estimate is requested | 
+| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse.html)
 
 <a name="postWorkforcemanagementManagementunitWeekShifttradeMatch"></a>
 
@@ -10312,6 +10822,67 @@ try {
 
 [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
 
+<a name="postWorkforcemanagementTimeoffbalanceJobs"></a>
+
+# **postWorkforcemanagementTimeoffbalanceJobs**
+
+
+
+> [TimeOffBalancesResponse](TimeOffBalancesResponse.html) postWorkforcemanagementTimeoffbalanceJobs(body)
+
+Query time off balances for the current user for specified activity code and dates
+
+Wraps POST /api/v2/workforcemanagement/timeoffbalance/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentTimeOffRequest:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+TimeOffBalanceRequest body = new TimeOffBalanceRequest(); // TimeOffBalanceRequest | The request body
+try {
+    TimeOffBalancesResponse result = apiInstance.postWorkforcemanagementTimeoffbalanceJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementTimeoffbalanceJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TimeOffBalanceRequest**](TimeOffBalanceRequest.html)| The request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TimeOffBalancesResponse**](TimeOffBalancesResponse.html)
+
 <a name="postWorkforcemanagementTimeofflimitsAvailableQuery"></a>
 
 # **postWorkforcemanagementTimeofflimitsAvailableQuery**
@@ -10433,6 +11004,191 @@ try {
 ### Return type
 
 [**TimeOffRequestResponse**](TimeOffRequestResponse.html)
+
+<a name="postWorkforcemanagementTimeoffrequestsEstimate"></a>
+
+# **postWorkforcemanagementTimeoffrequestsEstimate**
+
+
+
+> [EstimateAvailableTimeOffResponse](EstimateAvailableTimeOffResponse.html) postWorkforcemanagementTimeoffrequestsEstimate(body)
+
+Estimates available time off for current user
+
+Wraps POST /api/v2/workforcemanagement/timeoffrequests/estimate  
+
+Requires ANY permissions: 
+
+* wfm:agentTimeOffRequest:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+EstimateAvailableTimeOffRequest body = new EstimateAvailableTimeOffRequest(); // EstimateAvailableTimeOffRequest | body
+try {
+    EstimateAvailableTimeOffResponse result = apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementTimeoffrequestsEstimate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse.html)
+
+<a name="postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery"></a>
+
+# **postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery**
+
+
+
+> [TimeOffIntegrationStatusResponseListing](TimeOffIntegrationStatusResponseListing.html) postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body)
+
+Retrieves integration statuses for a list of current user time off requests
+
+Wraps POST /api/v2/workforcemanagement/timeoffrequests/integrationstatus/query  
+
+Requires ANY permissions: 
+
+* wfm:agentTimeOffRequest:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+CurrentUserTimeOffIntegrationStatusRequest body = new CurrentUserTimeOffIntegrationStatusRequest(); // CurrentUserTimeOffIntegrationStatusRequest | body
+try {
+    TimeOffIntegrationStatusResponseListing result = apiInstance.postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CurrentUserTimeOffIntegrationStatusRequest**](CurrentUserTimeOffIntegrationStatusRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TimeOffIntegrationStatusResponseListing**](TimeOffIntegrationStatusResponseListing.html)
+
+<a name="putWorkforcemanagementAgentIntegrationsHris"></a>
+
+# **putWorkforcemanagementAgentIntegrationsHris**
+
+
+
+> [AgentIntegrationsResponse](AgentIntegrationsResponse.html) putWorkforcemanagementAgentIntegrationsHris(agentId, body)
+
+Update integrations for agent
+
+Wraps PUT /api/v2/workforcemanagement/agents/{agentId}/integrations/hris  
+
+Requires ANY permissions: 
+
+* wfm:agent:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String agentId = "agentId_example"; // String | The ID of the agent
+AgentIntegrationsRequest body = new AgentIntegrationsRequest(); // AgentIntegrationsRequest | body
+try {
+    AgentIntegrationsResponse result = apiInstance.putWorkforcemanagementAgentIntegrationsHris(agentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#putWorkforcemanagementAgentIntegrationsHris");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The ID of the agent | 
+| **body** | [**AgentIntegrationsRequest**](AgentIntegrationsRequest.html)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentIntegrationsResponse**](AgentIntegrationsResponse.html)
 
 <a name="putWorkforcemanagementManagementunitTimeofflimitValues"></a>
 

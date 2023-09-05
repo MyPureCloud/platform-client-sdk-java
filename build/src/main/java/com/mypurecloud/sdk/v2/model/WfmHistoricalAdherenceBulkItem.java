@@ -28,6 +28,7 @@ public class WfmHistoricalAdherenceBulkItem  implements Serializable {
   private Date endDate = null;
   private List<String> userIds = new ArrayList<String>();
   private Boolean includeExceptions = null;
+  private Boolean includeActuals = null;
 
   
   /**
@@ -120,6 +121,24 @@ public class WfmHistoricalAdherenceBulkItem  implements Serializable {
   }
 
 
+  /**
+   * Whether user actual activities should be returned as part of the results. Defaults to false if not specified.
+   **/
+  public WfmHistoricalAdherenceBulkItem includeActuals(Boolean includeActuals) {
+    this.includeActuals = includeActuals;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether user actual activities should be returned as part of the results. Defaults to false if not specified.")
+  @JsonProperty("includeActuals")
+  public Boolean getIncludeActuals() {
+    return includeActuals;
+  }
+  public void setIncludeActuals(Boolean includeActuals) {
+    this.includeActuals = includeActuals;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -134,12 +153,13 @@ public class WfmHistoricalAdherenceBulkItem  implements Serializable {
             Objects.equals(this.startDate, wfmHistoricalAdherenceBulkItem.startDate) &&
             Objects.equals(this.endDate, wfmHistoricalAdherenceBulkItem.endDate) &&
             Objects.equals(this.userIds, wfmHistoricalAdherenceBulkItem.userIds) &&
-            Objects.equals(this.includeExceptions, wfmHistoricalAdherenceBulkItem.includeExceptions);
+            Objects.equals(this.includeExceptions, wfmHistoricalAdherenceBulkItem.includeExceptions) &&
+            Objects.equals(this.includeActuals, wfmHistoricalAdherenceBulkItem.includeActuals);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(managementUnitId, startDate, endDate, userIds, includeExceptions);
+    return Objects.hash(managementUnitId, startDate, endDate, userIds, includeExceptions, includeActuals);
   }
 
   @Override
@@ -152,6 +172,7 @@ public class WfmHistoricalAdherenceBulkItem  implements Serializable {
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
     sb.append("    includeExceptions: ").append(toIndentedString(includeExceptions)).append("\n");
+    sb.append("    includeActuals: ").append(toIndentedString(includeActuals)).append("\n");
     sb.append("}");
     return sb.toString();
   }

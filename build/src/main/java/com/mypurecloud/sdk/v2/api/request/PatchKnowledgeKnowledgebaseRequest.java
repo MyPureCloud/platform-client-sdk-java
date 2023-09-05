@@ -33,7 +33,9 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
@@ -106,16 +108,16 @@ public class PatchKnowledgeKnowledgebaseRequest {
 	    return this;
 	} 
 
-	private KnowledgeBase body;
-	public KnowledgeBase getBody() {
+	private KnowledgeBaseUpdateRequest body;
+	public KnowledgeBaseUpdateRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(KnowledgeBase body) {
+	public void setBody(KnowledgeBaseUpdateRequest body) {
 		this.body = body;
 	}
 
-	public PatchKnowledgeKnowledgebaseRequest withBody(KnowledgeBase body) {
+	public PatchKnowledgeKnowledgebaseRequest withBody(KnowledgeBaseUpdateRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -139,7 +141,7 @@ public class PatchKnowledgeKnowledgebaseRequest {
         return this;
     }
 
-    public ApiRequest<KnowledgeBase> withHttpInfo() {
+    public ApiRequest<KnowledgeBaseUpdateRequest> withHttpInfo() {
         
         // verify the required parameter 'knowledgeBaseId' is set
         if (this.knowledgeBaseId == null) {
@@ -169,7 +171,7 @@ public class PatchKnowledgeKnowledgebaseRequest {
 	}
 
 
-	public static Builder builder(String knowledgeBaseId, KnowledgeBase body) {
+	public static Builder builder(String knowledgeBaseId, KnowledgeBaseUpdateRequest body) {
 	    return new Builder()
 	            .withRequiredParams(knowledgeBaseId, body);
 	}
@@ -188,14 +190,14 @@ public class PatchKnowledgeKnowledgebaseRequest {
 			return this;
 		}
 
-		public Builder withBody(KnowledgeBase body) {
+		public Builder withBody(KnowledgeBaseUpdateRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String knowledgeBaseId, KnowledgeBase body) {
+		public Builder withRequiredParams(String knowledgeBaseId, KnowledgeBaseUpdateRequest body) {
 			request.setKnowledgeBaseId(knowledgeBaseId);
 			request.setBody(body);
 

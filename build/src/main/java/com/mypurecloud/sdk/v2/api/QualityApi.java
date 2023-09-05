@@ -874,12 +874,13 @@ public class QualityApi {
    * @param evaluatorUserId user id of the evaluator (optional)
    * @param name name (optional)
    * @param group group id (optional)
+   * @param formContextId shared id between form versions (optional)
    * @return AgentActivityEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AgentActivityEntityListing getQualityAgentsActivity(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group) throws IOException, ApiException {
-    return  getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group));
+  public AgentActivityEntityListing getQualityAgentsActivity(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group, String formContextId) throws IOException, ApiException {
+    return  getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, formContextId));
   }
 
   /**
@@ -897,14 +898,15 @@ public class QualityApi {
    * @param evaluatorUserId user id of the evaluator (optional)
    * @param name name (optional)
    * @param group group id (optional)
+   * @param formContextId shared id between form versions (optional)
    * @return AgentActivityEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AgentActivityEntityListing> getQualityAgentsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group) throws IOException {
-    return getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group).withHttpInfo());
+  public ApiResponse<AgentActivityEntityListing> getQualityAgentsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group, String formContextId) throws IOException {
+    return getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, formContextId).withHttpInfo());
   }
 
-  private GetQualityAgentsActivityRequest createGetQualityAgentsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group) {
+  private GetQualityAgentsActivityRequest createGetQualityAgentsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group, String formContextId) {
     return GetQualityAgentsActivityRequest.builder()
             .withPageSize(pageSize)
 
@@ -929,6 +931,8 @@ public class QualityApi {
             .withName(name)
 
             .withGroup(group)
+
+            .withFormContextId(formContextId)
 
             .build();
   }
@@ -1529,6 +1533,7 @@ public class QualityApi {
    * @param queueId queue id (optional)
    * @param startTime start time of the evaluation query (optional)
    * @param endTime end time of the evaluation query (optional)
+   * @param formContextId shared id between form versions (optional)
    * @param evaluationState  (optional)
    * @param isReleased the evaluation has been released (optional)
    * @param agentHasRead agent has the evaluation (optional)
@@ -1539,8 +1544,8 @@ public class QualityApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluationEntityListing getQualityEvaluationsQuery(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException, ApiException {
-    return  getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder));
+  public EvaluationEntityListing getQualityEvaluationsQuery(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException, ApiException {
+    return  getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder));
   }
 
   /**
@@ -1559,6 +1564,7 @@ public class QualityApi {
    * @param queueId queue id (optional)
    * @param startTime start time of the evaluation query (optional)
    * @param endTime end time of the evaluation query (optional)
+   * @param formContextId shared id between form versions (optional)
    * @param evaluationState  (optional)
    * @param isReleased the evaluation has been released (optional)
    * @param agentHasRead agent has the evaluation (optional)
@@ -1568,11 +1574,11 @@ public class QualityApi {
    * @return EvaluationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException {
-    return getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder).withHttpInfo());
+  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException {
+    return getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder).withHttpInfo());
   }
 
-  private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) {
+  private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) {
     return GetQualityEvaluationsQueryRequest.builder()
             .withPageSize(pageSize)
 
@@ -1599,6 +1605,8 @@ public class QualityApi {
             .withStartTime(startTime)
 
             .withEndTime(endTime)
+
+            .withFormContextId(formContextId)
 
             .withEvaluationState(evaluationState)
 

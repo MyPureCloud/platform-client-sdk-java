@@ -29,6 +29,8 @@ public class CreateAgentTimeOffRequest  implements Serializable {
   private List<String> fullDayManagementUnitDates = new ArrayList<String>();
   private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
   private Integer dailyDurationMinutes = null;
+  private List<Integer> durationMinutes = new ArrayList<Integer>();
+  private List<Integer> payableMinutes = new ArrayList<Integer>();
 
   
   /**
@@ -121,6 +123,42 @@ public class CreateAgentTimeOffRequest  implements Serializable {
   }
 
 
+  /**
+   * Daily durations for each day of this time off request in minutes
+   **/
+  public CreateAgentTimeOffRequest durationMinutes(List<Integer> durationMinutes) {
+    this.durationMinutes = durationMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Daily durations for each day of this time off request in minutes")
+  @JsonProperty("durationMinutes")
+  public List<Integer> getDurationMinutes() {
+    return durationMinutes;
+  }
+  public void setDurationMinutes(List<Integer> durationMinutes) {
+    this.durationMinutes = durationMinutes;
+  }
+
+
+  /**
+   * Payable minutes for each day of this time off request
+   **/
+  public CreateAgentTimeOffRequest payableMinutes(List<Integer> payableMinutes) {
+    this.payableMinutes = payableMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payable minutes for each day of this time off request")
+  @JsonProperty("payableMinutes")
+  public List<Integer> getPayableMinutes() {
+    return payableMinutes;
+  }
+  public void setPayableMinutes(List<Integer> payableMinutes) {
+    this.payableMinutes = payableMinutes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -135,12 +173,14 @@ public class CreateAgentTimeOffRequest  implements Serializable {
             Objects.equals(this.notes, createAgentTimeOffRequest.notes) &&
             Objects.equals(this.fullDayManagementUnitDates, createAgentTimeOffRequest.fullDayManagementUnitDates) &&
             Objects.equals(this.partialDayStartDateTimes, createAgentTimeOffRequest.partialDayStartDateTimes) &&
-            Objects.equals(this.dailyDurationMinutes, createAgentTimeOffRequest.dailyDurationMinutes);
+            Objects.equals(this.dailyDurationMinutes, createAgentTimeOffRequest.dailyDurationMinutes) &&
+            Objects.equals(this.durationMinutes, createAgentTimeOffRequest.durationMinutes) &&
+            Objects.equals(this.payableMinutes, createAgentTimeOffRequest.payableMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activityCodeId, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes);
+    return Objects.hash(activityCodeId, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes, durationMinutes, payableMinutes);
   }
 
   @Override
@@ -153,6 +193,8 @@ public class CreateAgentTimeOffRequest  implements Serializable {
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");
+    sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
+    sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

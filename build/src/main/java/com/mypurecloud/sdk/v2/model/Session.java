@@ -164,7 +164,9 @@ public class Session  implements Serializable {
     FORWARDTRANSFER("ForwardTransfer"),
     NOANSWERTRANSFER("NoAnswerTransfer"),
     NOTAVAILABLETRANSFER("NotAvailableTransfer"),
-    UNCALLABLE("Uncallable");
+    UNCALLABLE("Uncallable"),
+    DONOTDISTURBENDPOINT("DoNotDisturbEndpoint"),
+    DONOTDISTURBTRANSFER("DoNotDisturbTransfer");
 
     private String value;
 

@@ -417,7 +417,7 @@ try {
 
 
 
-> [ReportingTurnsResponse](ReportingTurnsResponse.html) getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId, language, askActionResults)
+> [ReportingTurnsResponse](ReportingTurnsResponse.html) getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults)
 
 Get Reporting Turns.
 
@@ -454,12 +454,13 @@ AnalyticsApi apiInstance = new AnalyticsApi();
 String botFlowId = "botFlowId_example"; // String | ID of the bot flow.
 String after = "after_example"; // String | The cursor that points to the ID of the last item in the list of entities that has been returned.
 String pageSize = "50"; // String | Max number of entities to return. Maximum of 250
+String interval = 2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z; // String | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 String actionId = "actionId_example"; // String | Optional action ID to get the reporting turns associated to a particular flow action
 String sessionId = "sessionId_example"; // String | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
 String language = en-us; // String | Optional language code to get the reporting turns for a particular language
 String askActionResults = "askActionResults_example"; // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
 try {
-    ReportingTurnsResponse result = apiInstance.getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId, language, askActionResults);
+    ReportingTurnsResponse result = apiInstance.getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#getAnalyticsBotflowReportingturns");
@@ -475,6 +476,7 @@ try {
 | **botFlowId** | **String**| ID of the bot flow. | 
 | **after** | **String**| The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Max number of entities to return. Maximum of 250 | [optional] [default to 50] 
+| **interval** | **String**| Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: &#39;2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07&#39;. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] [default to null] 
 | **actionId** | **String**| Optional action ID to get the reporting turns associated to a particular flow action | [optional] 
 | **sessionId** | **String**| Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional] 
 | **language** | **String**| Optional language code to get the reporting turns for a particular language | [optional] [default to null] 

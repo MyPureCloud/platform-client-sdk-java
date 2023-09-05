@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SchedulerMessageTypeSeverity;
+import com.mypurecloud.sdk.v2.model.WfmServiceGoalImpactSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,6 +26,53 @@ import java.io.Serializable;
 public class BuSchedulingSettingsResponse  implements Serializable {
   
   private List<SchedulerMessageTypeSeverity> messageSeverities = new ArrayList<SchedulerMessageTypeSeverity>();
+
+  private static class SyncTimeOffPropertiesEnumDeserializer extends StdDeserializer<SyncTimeOffPropertiesEnum> {
+    public SyncTimeOffPropertiesEnumDeserializer() {
+      super(SyncTimeOffPropertiesEnumDeserializer.class);
+    }
+
+    @Override
+    public SyncTimeOffPropertiesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SyncTimeOffPropertiesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets syncTimeOffProperties
+   */
+ @JsonDeserialize(using = SyncTimeOffPropertiesEnumDeserializer.class)
+  public enum SyncTimeOffPropertiesEnum {
+    PAYABLEMINUTES("PayableMinutes");
+
+    private String value;
+
+    SyncTimeOffPropertiesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SyncTimeOffPropertiesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SyncTimeOffPropertiesEnum value : SyncTimeOffPropertiesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SyncTimeOffPropertiesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SyncTimeOffPropertiesEnum> syncTimeOffProperties = new ArrayList<SyncTimeOffPropertiesEnum>();
+  private WfmServiceGoalImpactSettings serviceGoalImpact = null;
 
   
   /**
@@ -45,6 +93,42 @@ public class BuSchedulingSettingsResponse  implements Serializable {
   }
 
 
+  /**
+   * Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
+   **/
+  public BuSchedulingSettingsResponse syncTimeOffProperties(List<SyncTimeOffPropertiesEnum> syncTimeOffProperties) {
+    this.syncTimeOffProperties = syncTimeOffProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.")
+  @JsonProperty("syncTimeOffProperties")
+  public List<SyncTimeOffPropertiesEnum> getSyncTimeOffProperties() {
+    return syncTimeOffProperties;
+  }
+  public void setSyncTimeOffProperties(List<SyncTimeOffPropertiesEnum> syncTimeOffProperties) {
+    this.syncTimeOffProperties = syncTimeOffProperties;
+  }
+
+
+  /**
+   * Configures the max percent increase and decrease of service goals for this business unit
+   **/
+  public BuSchedulingSettingsResponse serviceGoalImpact(WfmServiceGoalImpactSettings serviceGoalImpact) {
+    this.serviceGoalImpact = serviceGoalImpact;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Configures the max percent increase and decrease of service goals for this business unit")
+  @JsonProperty("serviceGoalImpact")
+  public WfmServiceGoalImpactSettings getServiceGoalImpact() {
+    return serviceGoalImpact;
+  }
+  public void setServiceGoalImpact(WfmServiceGoalImpactSettings serviceGoalImpact) {
+    this.serviceGoalImpact = serviceGoalImpact;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -55,12 +139,14 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     }
     BuSchedulingSettingsResponse buSchedulingSettingsResponse = (BuSchedulingSettingsResponse) o;
 
-    return Objects.equals(this.messageSeverities, buSchedulingSettingsResponse.messageSeverities);
+    return Objects.equals(this.messageSeverities, buSchedulingSettingsResponse.messageSeverities) &&
+            Objects.equals(this.syncTimeOffProperties, buSchedulingSettingsResponse.syncTimeOffProperties) &&
+            Objects.equals(this.serviceGoalImpact, buSchedulingSettingsResponse.serviceGoalImpact);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageSeverities);
+    return Objects.hash(messageSeverities, syncTimeOffProperties, serviceGoalImpact);
   }
 
   @Override
@@ -69,6 +155,8 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     sb.append("class BuSchedulingSettingsResponse {\n");
     
     sb.append("    messageSeverities: ").append(toIndentedString(messageSeverities)).append("\n");
+    sb.append("    syncTimeOffProperties: ").append(toIndentedString(syncTimeOffProperties)).append("\n");
+    sb.append("    serviceGoalImpact: ").append(toIndentedString(serviceGoalImpact)).append("\n");
     sb.append("}");
     return sb.toString();
   }

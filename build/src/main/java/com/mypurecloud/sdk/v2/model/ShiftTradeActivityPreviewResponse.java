@@ -26,6 +26,7 @@ public class ShiftTradeActivityPreviewResponse  implements Serializable {
   private Integer lengthMinutes = null;
   private String activityCodeId = null;
   private Boolean countsAsPaidTime = null;
+  private Integer payableMinutes = null;
 
   
   /**
@@ -100,6 +101,24 @@ public class ShiftTradeActivityPreviewResponse  implements Serializable {
   }
 
 
+  /**
+   * Payable minutes for this activity
+   **/
+  public ShiftTradeActivityPreviewResponse payableMinutes(Integer payableMinutes) {
+    this.payableMinutes = payableMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payable minutes for this activity")
+  @JsonProperty("payableMinutes")
+  public Integer getPayableMinutes() {
+    return payableMinutes;
+  }
+  public void setPayableMinutes(Integer payableMinutes) {
+    this.payableMinutes = payableMinutes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -113,12 +132,13 @@ public class ShiftTradeActivityPreviewResponse  implements Serializable {
     return Objects.equals(this.startDate, shiftTradeActivityPreviewResponse.startDate) &&
             Objects.equals(this.lengthMinutes, shiftTradeActivityPreviewResponse.lengthMinutes) &&
             Objects.equals(this.activityCodeId, shiftTradeActivityPreviewResponse.activityCodeId) &&
-            Objects.equals(this.countsAsPaidTime, shiftTradeActivityPreviewResponse.countsAsPaidTime);
+            Objects.equals(this.countsAsPaidTime, shiftTradeActivityPreviewResponse.countsAsPaidTime) &&
+            Objects.equals(this.payableMinutes, shiftTradeActivityPreviewResponse.payableMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, lengthMinutes, activityCodeId, countsAsPaidTime);
+    return Objects.hash(startDate, lengthMinutes, activityCodeId, countsAsPaidTime, payableMinutes);
   }
 
   @Override
@@ -130,6 +150,7 @@ public class ShiftTradeActivityPreviewResponse  implements Serializable {
     sb.append("    lengthMinutes: ").append(toIndentedString(lengthMinutes)).append("\n");
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
     sb.append("    countsAsPaidTime: ").append(toIndentedString(countsAsPaidTime)).append("\n");
+    sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

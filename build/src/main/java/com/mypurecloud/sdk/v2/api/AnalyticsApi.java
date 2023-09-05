@@ -614,6 +614,7 @@ public class AnalyticsApi {
    * @param botFlowId ID of the bot flow. (required)
    * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
    * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
+   * @param interval Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional, default to null)
    * @param actionId Optional action ID to get the reporting turns associated to a particular flow action (optional)
    * @param sessionId Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. (optional)
    * @param language Optional language code to get the reporting turns for a particular language (optional, default to null)
@@ -622,8 +623,8 @@ public class AnalyticsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ReportingTurnsResponse getAnalyticsBotflowReportingturns(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language, String askActionResults) throws IOException, ApiException {
-    return  getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId, language, askActionResults));
+  public ReportingTurnsResponse getAnalyticsBotflowReportingturns(String botFlowId, String after, String pageSize, String interval, String actionId, String sessionId, String language, String askActionResults) throws IOException, ApiException {
+    return  getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults));
   }
 
   /**
@@ -632,6 +633,7 @@ public class AnalyticsApi {
    * @param botFlowId ID of the bot flow. (required)
    * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
    * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
+   * @param interval Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional, default to null)
    * @param actionId Optional action ID to get the reporting turns associated to a particular flow action (optional)
    * @param sessionId Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. (optional)
    * @param language Optional language code to get the reporting turns for a particular language (optional, default to null)
@@ -639,17 +641,19 @@ public class AnalyticsApi {
    * @return ReportingTurnsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowReportingturnsWithHttpInfo(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language, String askActionResults) throws IOException {
-    return getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId, language, askActionResults).withHttpInfo());
+  public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowReportingturnsWithHttpInfo(String botFlowId, String after, String pageSize, String interval, String actionId, String sessionId, String language, String askActionResults) throws IOException {
+    return getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults).withHttpInfo());
   }
 
-  private GetAnalyticsBotflowReportingturnsRequest createGetAnalyticsBotflowReportingturnsRequest(String botFlowId, String after, String pageSize, String actionId, String sessionId, String language, String askActionResults) {
+  private GetAnalyticsBotflowReportingturnsRequest createGetAnalyticsBotflowReportingturnsRequest(String botFlowId, String after, String pageSize, String interval, String actionId, String sessionId, String language, String askActionResults) {
     return GetAnalyticsBotflowReportingturnsRequest.builder()
             .withBotFlowId(botFlowId)
 
             .withAfter(after)
 
             .withPageSize(pageSize)
+
+            .withInterval(interval)
 
             .withActionId(actionId)
 

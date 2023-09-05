@@ -80,6 +80,8 @@ public class CreateAdminTimeOffRequest  implements Serializable {
   private List<String> fullDayManagementUnitDates = new ArrayList<String>();
   private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
   private Integer dailyDurationMinutes = null;
+  private List<Integer> durationMinutes = new ArrayList<Integer>();
+  private List<Integer> payableMinutes = new ArrayList<Integer>();
   private Boolean paid = null;
 
   
@@ -210,6 +212,42 @@ public class CreateAdminTimeOffRequest  implements Serializable {
 
 
   /**
+   * Daily durations for each day of this time off request in minutes
+   **/
+  public CreateAdminTimeOffRequest durationMinutes(List<Integer> durationMinutes) {
+    this.durationMinutes = durationMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Daily durations for each day of this time off request in minutes")
+  @JsonProperty("durationMinutes")
+  public List<Integer> getDurationMinutes() {
+    return durationMinutes;
+  }
+  public void setDurationMinutes(List<Integer> durationMinutes) {
+    this.durationMinutes = durationMinutes;
+  }
+
+
+  /**
+   * Payable minutes for each day of this time off request
+   **/
+  public CreateAdminTimeOffRequest payableMinutes(List<Integer> payableMinutes) {
+    this.payableMinutes = payableMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payable minutes for each day of this time off request")
+  @JsonProperty("payableMinutes")
+  public List<Integer> getPayableMinutes() {
+    return payableMinutes;
+  }
+  public void setPayableMinutes(List<Integer> payableMinutes) {
+    this.payableMinutes = payableMinutes;
+  }
+
+
+  /**
    * Whether this is a paid time off request
    **/
   public CreateAdminTimeOffRequest paid(Boolean paid) {
@@ -244,12 +282,14 @@ public class CreateAdminTimeOffRequest  implements Serializable {
             Objects.equals(this.fullDayManagementUnitDates, createAdminTimeOffRequest.fullDayManagementUnitDates) &&
             Objects.equals(this.partialDayStartDateTimes, createAdminTimeOffRequest.partialDayStartDateTimes) &&
             Objects.equals(this.dailyDurationMinutes, createAdminTimeOffRequest.dailyDurationMinutes) &&
+            Objects.equals(this.durationMinutes, createAdminTimeOffRequest.durationMinutes) &&
+            Objects.equals(this.payableMinutes, createAdminTimeOffRequest.payableMinutes) &&
             Objects.equals(this.paid, createAdminTimeOffRequest.paid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, users, activityCodeId, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes, paid);
+    return Objects.hash(status, users, activityCodeId, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes, durationMinutes, payableMinutes, paid);
   }
 
   @Override
@@ -264,6 +304,8 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");
+    sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
+    sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
     sb.append("    paid: ").append(toIndentedString(paid)).append("\n");
     sb.append("}");
     return sb.toString();

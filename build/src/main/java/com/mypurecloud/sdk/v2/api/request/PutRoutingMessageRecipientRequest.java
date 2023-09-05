@@ -63,6 +63,7 @@ import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.QueueRequest;
 import com.mypurecloud.sdk.v2.model.Recipient;
 import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.RecipientRequest;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
@@ -76,6 +77,7 @@ import com.mypurecloud.sdk.v2.model.SkillGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisionList;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberDivisions;
 import com.mypurecloud.sdk.v2.model.SkillGroupMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.SkillGroupWithMemberDivisions;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
@@ -119,16 +121,16 @@ public class PutRoutingMessageRecipientRequest {
 	    return this;
 	} 
 
-	private Recipient body;
-	public Recipient getBody() {
+	private RecipientRequest body;
+	public RecipientRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(Recipient body) {
+	public void setBody(RecipientRequest body) {
 		this.body = body;
 	}
 
-	public PutRoutingMessageRecipientRequest withBody(Recipient body) {
+	public PutRoutingMessageRecipientRequest withBody(RecipientRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -152,7 +154,7 @@ public class PutRoutingMessageRecipientRequest {
         return this;
     }
 
-    public ApiRequest<Recipient> withHttpInfo() {
+    public ApiRequest<RecipientRequest> withHttpInfo() {
         
         // verify the required parameter 'recipientId' is set
         if (this.recipientId == null) {
@@ -182,7 +184,7 @@ public class PutRoutingMessageRecipientRequest {
 	}
 
 
-	public static Builder builder(String recipientId, Recipient body) {
+	public static Builder builder(String recipientId, RecipientRequest body) {
 	    return new Builder()
 	            .withRequiredParams(recipientId, body);
 	}
@@ -201,14 +203,14 @@ public class PutRoutingMessageRecipientRequest {
 			return this;
 		}
 
-		public Builder withBody(Recipient body) {
+		public Builder withBody(RecipientRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String recipientId, Recipient body) {
+		public Builder withRequiredParams(String recipientId, RecipientRequest body) {
 			request.setRecipientId(recipientId);
 			request.setBody(body);
 

@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.BulkCallbackDisconnectRequest;
 import com.mypurecloud.sdk.v2.model.BulkCallbackPatchRequest;
 import com.mypurecloud.sdk.v2.model.BulkCallbackPatchResponse;
+import com.mypurecloud.sdk.v2.model.CachedMediaItem;
+import com.mypurecloud.sdk.v2.model.CachedMediaItemEntityListing;
 import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.CallConversation;
 import com.mypurecloud.sdk.v2.model.CallConversationEntityListing;
@@ -112,11 +114,17 @@ import com.mypurecloud.sdk.v2.model.MessagingSettingDefaultRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingPatchRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingRequest;
 import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
+import com.mypurecloud.sdk.v2.model.OpenEventNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedEvent;
+import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedReceipt;
 import com.mypurecloud.sdk.v2.model.OpenIntegration;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.OpenMessageNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenReceiptNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
 import com.mypurecloud.sdk.v2.model.PatchCallbackResponse;
@@ -156,6 +164,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantCodeReque
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest;
@@ -222,6 +231,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantComm
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaCachedMediaItemIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookAppRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
@@ -342,6 +353,9 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsVali
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationTypingRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenEventRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenReceiptRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantMonitorRequest;
@@ -741,6 +755,81 @@ public class ConversationsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteConversationsEmailMessagesDraftAttachmentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove a cached media item asychronously
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteConversationsMessagesCachedmediaCachedMediaItemIdAsync(DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove a cached media item asychronously
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteConversationsMessagesCachedmediaCachedMediaItemIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -5717,6 +5806,156 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MessageConversationEntityListing> response = (ApiResponse<MessageConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of cached media items
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CachedMediaItemEntityListing> getConversationsMessagesCachedmediaAsync(GetConversationsMessagesCachedmediaRequest request, final AsyncApiCallback<CachedMediaItemEntityListing> callback) {
+    try {
+      final SettableFuture<CachedMediaItemEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CachedMediaItemEntityListing>() {}, new AsyncApiCallback<ApiResponse<CachedMediaItemEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CachedMediaItemEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of cached media items
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CachedMediaItemEntityListing>> getConversationsMessagesCachedmediaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CachedMediaItemEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CachedMediaItemEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CachedMediaItemEntityListing>() {}, new AsyncApiCallback<ApiResponse<CachedMediaItemEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CachedMediaItemEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CachedMediaItemEntityListing> response = (ApiResponse<CachedMediaItemEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CachedMediaItemEntityListing> response = (ApiResponse<CachedMediaItemEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a cached media item
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CachedMediaItem> getConversationsMessagesCachedmediaCachedMediaItemIdAsync(GetConversationsMessagesCachedmediaCachedMediaItemIdRequest request, final AsyncApiCallback<CachedMediaItem> callback) {
+    try {
+      final SettableFuture<CachedMediaItem> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CachedMediaItem>() {}, new AsyncApiCallback<ApiResponse<CachedMediaItem>>() {
+        @Override
+        public void onCompleted(ApiResponse<CachedMediaItem> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a cached media item
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CachedMediaItem>> getConversationsMessagesCachedmediaCachedMediaItemIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CachedMediaItem>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CachedMediaItem>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CachedMediaItem>() {}, new AsyncApiCallback<ApiResponse<CachedMediaItem>>() {
+        @Override
+        public void onCompleted(ApiResponse<CachedMediaItem> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CachedMediaItem> response = (ApiResponse<CachedMediaItem>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CachedMediaItem> response = (ApiResponse<CachedMediaItem>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -14739,6 +14978,231 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send an inbound Open Event Message
+   * Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OpenEventNormalizedMessage> postConversationsMessageInboundOpenEventAsync(PostConversationsMessageInboundOpenEventRequest request, final AsyncApiCallback<OpenEventNormalizedMessage> callback) {
+    try {
+      final SettableFuture<OpenEventNormalizedMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OpenEventNormalizedMessage>() {}, new AsyncApiCallback<ApiResponse<OpenEventNormalizedMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenEventNormalizedMessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send an inbound Open Event Message
+   * Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OpenEventNormalizedMessage>> postConversationsMessageInboundOpenEventAsync(ApiRequest<OpenInboundNormalizedEvent> request, final AsyncApiCallback<ApiResponse<OpenEventNormalizedMessage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OpenEventNormalizedMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OpenEventNormalizedMessage>() {}, new AsyncApiCallback<ApiResponse<OpenEventNormalizedMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenEventNormalizedMessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenEventNormalizedMessage> response = (ApiResponse<OpenEventNormalizedMessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenEventNormalizedMessage> response = (ApiResponse<OpenEventNormalizedMessage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send inbound Open Message
+   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OpenMessageNormalizedMessage> postConversationsMessageInboundOpenMessageAsync(PostConversationsMessageInboundOpenMessageRequest request, final AsyncApiCallback<OpenMessageNormalizedMessage> callback) {
+    try {
+      final SettableFuture<OpenMessageNormalizedMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OpenMessageNormalizedMessage>() {}, new AsyncApiCallback<ApiResponse<OpenMessageNormalizedMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenMessageNormalizedMessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send inbound Open Message
+   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OpenMessageNormalizedMessage>> postConversationsMessageInboundOpenMessageAsync(ApiRequest<OpenInboundNormalizedMessage> request, final AsyncApiCallback<ApiResponse<OpenMessageNormalizedMessage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OpenMessageNormalizedMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OpenMessageNormalizedMessage>() {}, new AsyncApiCallback<ApiResponse<OpenMessageNormalizedMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenMessageNormalizedMessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenMessageNormalizedMessage> response = (ApiResponse<OpenMessageNormalizedMessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenMessageNormalizedMessage> response = (ApiResponse<OpenMessageNormalizedMessage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send an inbound Open Receipt Message
+   * Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OpenReceiptNormalizedMessage> postConversationsMessageInboundOpenReceiptAsync(PostConversationsMessageInboundOpenReceiptRequest request, final AsyncApiCallback<OpenReceiptNormalizedMessage> callback) {
+    try {
+      final SettableFuture<OpenReceiptNormalizedMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OpenReceiptNormalizedMessage>() {}, new AsyncApiCallback<ApiResponse<OpenReceiptNormalizedMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenReceiptNormalizedMessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send an inbound Open Receipt Message
+   * Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OpenReceiptNormalizedMessage>> postConversationsMessageInboundOpenReceiptAsync(ApiRequest<OpenInboundNormalizedReceipt> request, final AsyncApiCallback<ApiResponse<OpenReceiptNormalizedMessage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OpenReceiptNormalizedMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OpenReceiptNormalizedMessage>() {}, new AsyncApiCallback<ApiResponse<OpenReceiptNormalizedMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<OpenReceiptNormalizedMessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenReceiptNormalizedMessage> response = (ApiResponse<OpenReceiptNormalizedMessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OpenReceiptNormalizedMessage> response = (ApiResponse<OpenReceiptNormalizedMessage>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

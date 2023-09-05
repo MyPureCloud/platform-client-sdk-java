@@ -139,11 +139,14 @@ public class TimeOffRequest  implements Serializable {
   private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
   private List<String> fullDayManagementUnitDates = new ArrayList<String>();
   private Integer dailyDurationMinutes = null;
+  private List<Integer> durationMinutes = new ArrayList<Integer>();
+  private List<Integer> payableMinutes = new ArrayList<Integer>();
   private String notes = null;
   private UserReference submittedBy = null;
   private Date submittedDate = null;
   private UserReference reviewedBy = null;
   private Date reviewedDate = null;
+  private Integer syncVersion = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
 
@@ -347,6 +350,42 @@ public class TimeOffRequest  implements Serializable {
 
 
   /**
+   * Daily durations for each day of this time off request in minutes
+   **/
+  public TimeOffRequest durationMinutes(List<Integer> durationMinutes) {
+    this.durationMinutes = durationMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Daily durations for each day of this time off request in minutes")
+  @JsonProperty("durationMinutes")
+  public List<Integer> getDurationMinutes() {
+    return durationMinutes;
+  }
+  public void setDurationMinutes(List<Integer> durationMinutes) {
+    this.durationMinutes = durationMinutes;
+  }
+
+
+  /**
+   * Payable minutes for each day of this time off request
+   **/
+  public TimeOffRequest payableMinutes(List<Integer> payableMinutes) {
+    this.payableMinutes = payableMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payable minutes for each day of this time off request")
+  @JsonProperty("payableMinutes")
+  public List<Integer> getPayableMinutes() {
+    return payableMinutes;
+  }
+  public void setPayableMinutes(List<Integer> payableMinutes) {
+    this.payableMinutes = payableMinutes;
+  }
+
+
+  /**
    * Notes about the time off request
    **/
   public TimeOffRequest notes(String notes) {
@@ -437,6 +476,24 @@ public class TimeOffRequest  implements Serializable {
 
 
   /**
+   * The sync version of this time off request for which the scheduled activity is associated
+   **/
+  public TimeOffRequest syncVersion(Integer syncVersion) {
+    this.syncVersion = syncVersion;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The sync version of this time off request for which the scheduled activity is associated")
+  @JsonProperty("syncVersion")
+  public Integer getSyncVersion() {
+    return syncVersion;
+  }
+  public void setSyncVersion(Integer syncVersion) {
+    this.syncVersion = syncVersion;
+  }
+
+
+  /**
    * The version metadata of the time off request
    **/
   public TimeOffRequest metadata(WfmVersionedEntityMetadata metadata) {
@@ -482,18 +539,21 @@ public class TimeOffRequest  implements Serializable {
             Objects.equals(this.partialDayStartDateTimes, timeOffRequest.partialDayStartDateTimes) &&
             Objects.equals(this.fullDayManagementUnitDates, timeOffRequest.fullDayManagementUnitDates) &&
             Objects.equals(this.dailyDurationMinutes, timeOffRequest.dailyDurationMinutes) &&
+            Objects.equals(this.durationMinutes, timeOffRequest.durationMinutes) &&
+            Objects.equals(this.payableMinutes, timeOffRequest.payableMinutes) &&
             Objects.equals(this.notes, timeOffRequest.notes) &&
             Objects.equals(this.submittedBy, timeOffRequest.submittedBy) &&
             Objects.equals(this.submittedDate, timeOffRequest.submittedDate) &&
             Objects.equals(this.reviewedBy, timeOffRequest.reviewedBy) &&
             Objects.equals(this.reviewedDate, timeOffRequest.reviewedDate) &&
+            Objects.equals(this.syncVersion, timeOffRequest.syncVersion) &&
             Objects.equals(this.metadata, timeOffRequest.metadata) &&
             Objects.equals(this.selfUri, timeOffRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, dailyDurationMinutes, notes, submittedBy, submittedDate, reviewedBy, reviewedDate, metadata, selfUri);
+    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, dailyDurationMinutes, durationMinutes, payableMinutes, notes, submittedBy, submittedDate, reviewedBy, reviewedDate, syncVersion, metadata, selfUri);
   }
 
   @Override
@@ -512,11 +572,14 @@ public class TimeOffRequest  implements Serializable {
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");
+    sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
+    sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
     sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("    submittedBy: ").append(toIndentedString(submittedBy)).append("\n");
     sb.append("    submittedDate: ").append(toIndentedString(submittedDate)).append("\n");
     sb.append("    reviewedBy: ").append(toIndentedString(reviewedBy)).append("\n");
     sb.append("    reviewedDate: ").append(toIndentedString(reviewedDate)).append("\n");
+    sb.append("    syncVersion: ").append(toIndentedString(syncVersion)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

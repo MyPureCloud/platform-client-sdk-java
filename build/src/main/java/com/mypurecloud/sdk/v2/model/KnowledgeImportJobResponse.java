@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobReport;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobSettings;
+import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -27,6 +28,8 @@ import java.io.Serializable;
 public class KnowledgeImportJobResponse  implements Serializable {
   
   private String id = null;
+  private String downloadURL = null;
+  private String failedEntitiesURL = null;
   private String uploadKey = null;
 
   private static class FileTypeEnumDeserializer extends StdDeserializer<FileTypeEnum> {
@@ -137,6 +140,7 @@ public class KnowledgeImportJobResponse  implements Serializable {
   private StatusEnum status = null;
   private KnowledgeImportJobReport report = null;
   private KnowledgeBase knowledgeBase = null;
+  private UserReference createdBy = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private Boolean skipConfirmationStep = null;
@@ -147,6 +151,42 @@ public class KnowledgeImportJobResponse  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+
+  /**
+   * The URL of the location at which the caller can download the imported file.
+   **/
+  public KnowledgeImportJobResponse downloadURL(String downloadURL) {
+    this.downloadURL = downloadURL;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The URL of the location at which the caller can download the imported file.")
+  @JsonProperty("downloadURL")
+  public String getDownloadURL() {
+    return downloadURL;
+  }
+  public void setDownloadURL(String downloadURL) {
+    this.downloadURL = downloadURL;
+  }
+
+
+  /**
+   * The URL of the location at which the caller can download the entities in json format that failed during the import.
+   **/
+  public KnowledgeImportJobResponse failedEntitiesURL(String failedEntitiesURL) {
+    this.failedEntitiesURL = failedEntitiesURL;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The URL of the location at which the caller can download the entities in json format that failed during the import.")
+  @JsonProperty("failedEntitiesURL")
+  public String getFailedEntitiesURL() {
+    return failedEntitiesURL;
+  }
+  public void setFailedEntitiesURL(String failedEntitiesURL) {
+    this.failedEntitiesURL = failedEntitiesURL;
   }
 
 
@@ -225,6 +265,13 @@ public class KnowledgeImportJobResponse  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The user who created the operation")
+  @JsonProperty("createdBy")
+  public UserReference getCreatedBy() {
+    return createdBy;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
@@ -275,12 +322,15 @@ public class KnowledgeImportJobResponse  implements Serializable {
     KnowledgeImportJobResponse knowledgeImportJobResponse = (KnowledgeImportJobResponse) o;
 
     return Objects.equals(this.id, knowledgeImportJobResponse.id) &&
+            Objects.equals(this.downloadURL, knowledgeImportJobResponse.downloadURL) &&
+            Objects.equals(this.failedEntitiesURL, knowledgeImportJobResponse.failedEntitiesURL) &&
             Objects.equals(this.uploadKey, knowledgeImportJobResponse.uploadKey) &&
             Objects.equals(this.fileType, knowledgeImportJobResponse.fileType) &&
             Objects.equals(this.settings, knowledgeImportJobResponse.settings) &&
             Objects.equals(this.status, knowledgeImportJobResponse.status) &&
             Objects.equals(this.report, knowledgeImportJobResponse.report) &&
             Objects.equals(this.knowledgeBase, knowledgeImportJobResponse.knowledgeBase) &&
+            Objects.equals(this.createdBy, knowledgeImportJobResponse.createdBy) &&
             Objects.equals(this.dateCreated, knowledgeImportJobResponse.dateCreated) &&
             Objects.equals(this.dateModified, knowledgeImportJobResponse.dateModified) &&
             Objects.equals(this.skipConfirmationStep, knowledgeImportJobResponse.skipConfirmationStep) &&
@@ -289,7 +339,7 @@ public class KnowledgeImportJobResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uploadKey, fileType, settings, status, report, knowledgeBase, dateCreated, dateModified, skipConfirmationStep, selfUri);
+    return Objects.hash(id, downloadURL, failedEntitiesURL, uploadKey, fileType, settings, status, report, knowledgeBase, createdBy, dateCreated, dateModified, skipConfirmationStep, selfUri);
   }
 
   @Override
@@ -298,12 +348,15 @@ public class KnowledgeImportJobResponse  implements Serializable {
     sb.append("class KnowledgeImportJobResponse {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    downloadURL: ").append(toIndentedString(downloadURL)).append("\n");
+    sb.append("    failedEntitiesURL: ").append(toIndentedString(failedEntitiesURL)).append("\n");
     sb.append("    uploadKey: ").append(toIndentedString(uploadKey)).append("\n");
     sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    report: ").append(toIndentedString(report)).append("\n");
     sb.append("    knowledgeBase: ").append(toIndentedString(knowledgeBase)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    skipConfirmationStep: ").append(toIndentedString(skipConfirmationStep)).append("\n");

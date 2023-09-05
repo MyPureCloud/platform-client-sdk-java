@@ -25,6 +25,7 @@ public class TrendData  implements Serializable {
   private LocalDate dateStartWorkday = null;
   private LocalDate dateEndWorkday = null;
   private Double percentOfGoal = null;
+  private Double averageValue = null;
 
   
   /**
@@ -81,6 +82,24 @@ public class TrendData  implements Serializable {
   }
 
 
+  /**
+   * Average metric value
+   **/
+  public TrendData averageValue(Double averageValue) {
+    this.averageValue = averageValue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Average metric value")
+  @JsonProperty("averageValue")
+  public Double getAverageValue() {
+    return averageValue;
+  }
+  public void setAverageValue(Double averageValue) {
+    this.averageValue = averageValue;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -93,12 +112,13 @@ public class TrendData  implements Serializable {
 
     return Objects.equals(this.dateStartWorkday, trendData.dateStartWorkday) &&
             Objects.equals(this.dateEndWorkday, trendData.dateEndWorkday) &&
-            Objects.equals(this.percentOfGoal, trendData.percentOfGoal);
+            Objects.equals(this.percentOfGoal, trendData.percentOfGoal) &&
+            Objects.equals(this.averageValue, trendData.averageValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateStartWorkday, dateEndWorkday, percentOfGoal);
+    return Objects.hash(dateStartWorkday, dateEndWorkday, percentOfGoal, averageValue);
   }
 
   @Override
@@ -109,6 +129,7 @@ public class TrendData  implements Serializable {
     sb.append("    dateStartWorkday: ").append(toIndentedString(dateStartWorkday)).append("\n");
     sb.append("    dateEndWorkday: ").append(toIndentedString(dateEndWorkday)).append("\n");
     sb.append("    percentOfGoal: ").append(toIndentedString(percentOfGoal)).append("\n");
+    sb.append("    averageValue: ").append(toIndentedString(averageValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

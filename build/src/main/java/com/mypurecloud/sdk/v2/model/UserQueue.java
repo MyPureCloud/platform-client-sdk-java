@@ -55,6 +55,54 @@ public class UserQueue  implements Serializable {
   private List<RoutingRule> routingRules = new ArrayList<RoutingRule>();
   private ConditionalGroupRouting conditionalGroupRouting = null;
   private Bullseye bullseye = null;
+
+  private static class ScoringMethodEnumDeserializer extends StdDeserializer<ScoringMethodEnum> {
+    public ScoringMethodEnumDeserializer() {
+      super(ScoringMethodEnumDeserializer.class);
+    }
+
+    @Override
+    public ScoringMethodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ScoringMethodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The Scoring Method for the queue
+   */
+ @JsonDeserialize(using = ScoringMethodEnumDeserializer.class)
+  public enum ScoringMethodEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    TIMESTAMPANDPRIORITY("TimestampAndPriority"),
+    PRIORITYONLY("PriorityOnly");
+
+    private String value;
+
+    ScoringMethodEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ScoringMethodEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ScoringMethodEnum value : ScoringMethodEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ScoringMethodEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ScoringMethodEnum scoringMethod = null;
   private AcwSettings acwSettings = null;
 
   private static class SkillEvaluationMethodEnumDeserializer extends StdDeserializer<SkillEvaluationMethodEnum> {
@@ -348,6 +396,24 @@ public class UserQueue  implements Serializable {
   }
   public void setBullseye(Bullseye bullseye) {
     this.bullseye = bullseye;
+  }
+
+
+  /**
+   * The Scoring Method for the queue
+   **/
+  public UserQueue scoringMethod(ScoringMethodEnum scoringMethod) {
+    this.scoringMethod = scoringMethod;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Scoring Method for the queue")
+  @JsonProperty("scoringMethod")
+  public ScoringMethodEnum getScoringMethod() {
+    return scoringMethod;
+  }
+  public void setScoringMethod(ScoringMethodEnum scoringMethod) {
+    this.scoringMethod = scoringMethod;
   }
 
 
@@ -741,6 +807,7 @@ public class UserQueue  implements Serializable {
             Objects.equals(this.routingRules, userQueue.routingRules) &&
             Objects.equals(this.conditionalGroupRouting, userQueue.conditionalGroupRouting) &&
             Objects.equals(this.bullseye, userQueue.bullseye) &&
+            Objects.equals(this.scoringMethod, userQueue.scoringMethod) &&
             Objects.equals(this.acwSettings, userQueue.acwSettings) &&
             Objects.equals(this.skillEvaluationMethod, userQueue.skillEvaluationMethod) &&
             Objects.equals(this.memberGroups, userQueue.memberGroups) &&
@@ -766,7 +833,7 @@ public class UserQueue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, joined, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, joined, selfUri);
   }
 
   @Override
@@ -789,6 +856,7 @@ public class UserQueue  implements Serializable {
     sb.append("    routingRules: ").append(toIndentedString(routingRules)).append("\n");
     sb.append("    conditionalGroupRouting: ").append(toIndentedString(conditionalGroupRouting)).append("\n");
     sb.append("    bullseye: ").append(toIndentedString(bullseye)).append("\n");
+    sb.append("    scoringMethod: ").append(toIndentedString(scoringMethod)).append("\n");
     sb.append("    acwSettings: ").append(toIndentedString(acwSettings)).append("\n");
     sb.append("    skillEvaluationMethod: ").append(toIndentedString(skillEvaluationMethod)).append("\n");
     sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");

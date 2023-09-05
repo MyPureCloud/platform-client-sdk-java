@@ -27,7 +27,9 @@ public class BuFullDayTimeOffMarker  implements Serializable {
   private String description = null;
   private String activityCodeId = null;
   private Boolean paid = null;
+  private Integer payableMinutes = null;
   private String timeOffRequestId = null;
+  private Integer timeOffRequestSyncVersion = null;
 
   
   /**
@@ -121,6 +123,24 @@ public class BuFullDayTimeOffMarker  implements Serializable {
 
 
   /**
+   * Payable minutes for the time off marker
+   **/
+  public BuFullDayTimeOffMarker payableMinutes(Integer payableMinutes) {
+    this.payableMinutes = payableMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payable minutes for the time off marker")
+  @JsonProperty("payableMinutes")
+  public Integer getPayableMinutes() {
+    return payableMinutes;
+  }
+  public void setPayableMinutes(Integer payableMinutes) {
+    this.payableMinutes = payableMinutes;
+  }
+
+
+  /**
    * The ID of the time off request
    **/
   public BuFullDayTimeOffMarker timeOffRequestId(String timeOffRequestId) {
@@ -135,6 +155,24 @@ public class BuFullDayTimeOffMarker  implements Serializable {
   }
   public void setTimeOffRequestId(String timeOffRequestId) {
     this.timeOffRequestId = timeOffRequestId;
+  }
+
+
+  /**
+   * The sync version of the full day time off request for which the scheduled activity is associated
+   **/
+  public BuFullDayTimeOffMarker timeOffRequestSyncVersion(Integer timeOffRequestSyncVersion) {
+    this.timeOffRequestSyncVersion = timeOffRequestSyncVersion;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The sync version of the full day time off request for which the scheduled activity is associated")
+  @JsonProperty("timeOffRequestSyncVersion")
+  public Integer getTimeOffRequestSyncVersion() {
+    return timeOffRequestSyncVersion;
+  }
+  public void setTimeOffRequestSyncVersion(Integer timeOffRequestSyncVersion) {
+    this.timeOffRequestSyncVersion = timeOffRequestSyncVersion;
   }
 
 
@@ -153,12 +191,14 @@ public class BuFullDayTimeOffMarker  implements Serializable {
             Objects.equals(this.description, buFullDayTimeOffMarker.description) &&
             Objects.equals(this.activityCodeId, buFullDayTimeOffMarker.activityCodeId) &&
             Objects.equals(this.paid, buFullDayTimeOffMarker.paid) &&
-            Objects.equals(this.timeOffRequestId, buFullDayTimeOffMarker.timeOffRequestId);
+            Objects.equals(this.payableMinutes, buFullDayTimeOffMarker.payableMinutes) &&
+            Objects.equals(this.timeOffRequestId, buFullDayTimeOffMarker.timeOffRequestId) &&
+            Objects.equals(this.timeOffRequestSyncVersion, buFullDayTimeOffMarker.timeOffRequestSyncVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(businessUnitDate, lengthMinutes, description, activityCodeId, paid, timeOffRequestId);
+    return Objects.hash(businessUnitDate, lengthMinutes, description, activityCodeId, paid, payableMinutes, timeOffRequestId, timeOffRequestSyncVersion);
   }
 
   @Override
@@ -171,7 +211,9 @@ public class BuFullDayTimeOffMarker  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
     sb.append("    paid: ").append(toIndentedString(paid)).append("\n");
+    sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
     sb.append("    timeOffRequestId: ").append(toIndentedString(timeOffRequestId)).append("\n");
+    sb.append("    timeOffRequestSyncVersion: ").append(toIndentedString(timeOffRequestSyncVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }

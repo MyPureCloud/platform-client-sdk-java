@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -34,6 +35,7 @@ public class ExpandableWebDeployment  implements Serializable {
   private String description = null;
   private Boolean allowAllDomains = null;
   private List<String> allowedDomains = new ArrayList<String>();
+  private SupportedContentReference supportedContent = null;
   private String snippet = null;
   private Date dateCreated = null;
   private Date dateModified = null;
@@ -173,6 +175,24 @@ public class ExpandableWebDeployment  implements Serializable {
   }
 
 
+  /**
+   * The supported content profile for a deployment
+   **/
+  public ExpandableWebDeployment supportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The supported content profile for a deployment")
+  @JsonProperty("supportedContent")
+  public SupportedContentReference getSupportedContent() {
+    return supportedContent;
+  }
+  public void setSupportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Javascript snippet used to load the config")
   @JsonProperty("snippet")
   public String getSnippet() {
@@ -277,6 +297,7 @@ public class ExpandableWebDeployment  implements Serializable {
             Objects.equals(this.description, expandableWebDeployment.description) &&
             Objects.equals(this.allowAllDomains, expandableWebDeployment.allowAllDomains) &&
             Objects.equals(this.allowedDomains, expandableWebDeployment.allowedDomains) &&
+            Objects.equals(this.supportedContent, expandableWebDeployment.supportedContent) &&
             Objects.equals(this.snippet, expandableWebDeployment.snippet) &&
             Objects.equals(this.dateCreated, expandableWebDeployment.dateCreated) &&
             Objects.equals(this.dateModified, expandableWebDeployment.dateModified) &&
@@ -289,7 +310,7 @@ public class ExpandableWebDeployment  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, allowAllDomains, allowedDomains, snippet, dateCreated, dateModified, lastModifiedUser, flow, status, _configuration, selfUri);
+    return Objects.hash(id, name, description, allowAllDomains, allowedDomains, supportedContent, snippet, dateCreated, dateModified, lastModifiedUser, flow, status, _configuration, selfUri);
   }
 
   @Override
@@ -302,6 +323,7 @@ public class ExpandableWebDeployment  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    allowAllDomains: ").append(toIndentedString(allowAllDomains)).append("\n");
     sb.append("    allowedDomains: ").append(toIndentedString(allowedDomains)).append("\n");
+    sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
     sb.append("    snippet: ").append(toIndentedString(snippet)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");

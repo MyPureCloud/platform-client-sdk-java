@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAbandonRate;
 import com.mypurecloud.sdk.v2.model.BuAverageSpeedOfAnswer;
 import com.mypurecloud.sdk.v2.model.BuServiceLevel;
+import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateImpactOverride;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -28,6 +29,7 @@ public class CreateServiceGoalTemplate  implements Serializable {
   private BuServiceLevel serviceLevel = null;
   private BuAverageSpeedOfAnswer averageSpeedOfAnswer = null;
   private BuAbandonRate abandonRate = null;
+  private ServiceGoalTemplateImpactOverride impactOverride = null;
 
   
   /**
@@ -102,6 +104,24 @@ public class CreateServiceGoalTemplate  implements Serializable {
   }
 
 
+  /**
+   * Settings controlling max percent increase and decrease of service goals for this service goal template
+   **/
+  public CreateServiceGoalTemplate impactOverride(ServiceGoalTemplateImpactOverride impactOverride) {
+    this.impactOverride = impactOverride;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Settings controlling max percent increase and decrease of service goals for this service goal template")
+  @JsonProperty("impactOverride")
+  public ServiceGoalTemplateImpactOverride getImpactOverride() {
+    return impactOverride;
+  }
+  public void setImpactOverride(ServiceGoalTemplateImpactOverride impactOverride) {
+    this.impactOverride = impactOverride;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -115,12 +135,13 @@ public class CreateServiceGoalTemplate  implements Serializable {
     return Objects.equals(this.name, createServiceGoalTemplate.name) &&
             Objects.equals(this.serviceLevel, createServiceGoalTemplate.serviceLevel) &&
             Objects.equals(this.averageSpeedOfAnswer, createServiceGoalTemplate.averageSpeedOfAnswer) &&
-            Objects.equals(this.abandonRate, createServiceGoalTemplate.abandonRate);
+            Objects.equals(this.abandonRate, createServiceGoalTemplate.abandonRate) &&
+            Objects.equals(this.impactOverride, createServiceGoalTemplate.impactOverride);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, serviceLevel, averageSpeedOfAnswer, abandonRate);
+    return Objects.hash(name, serviceLevel, averageSpeedOfAnswer, abandonRate, impactOverride);
   }
 
   @Override
@@ -132,6 +153,7 @@ public class CreateServiceGoalTemplate  implements Serializable {
     sb.append("    serviceLevel: ").append(toIndentedString(serviceLevel)).append("\n");
     sb.append("    averageSpeedOfAnswer: ").append(toIndentedString(averageSpeedOfAnswer)).append("\n");
     sb.append("    abandonRate: ").append(toIndentedString(abandonRate)).append("\n");
+    sb.append("    impactOverride: ").append(toIndentedString(impactOverride)).append("\n");
     sb.append("}");
     return sb.toString();
   }

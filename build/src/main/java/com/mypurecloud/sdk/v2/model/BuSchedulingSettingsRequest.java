@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SchedulerMessageTypeSeverity;
+import com.mypurecloud.sdk.v2.model.SetWrapperSyncTimeOffProperty;
+import com.mypurecloud.sdk.v2.model.WfmServiceGoalImpactSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,6 +27,8 @@ import java.io.Serializable;
 public class BuSchedulingSettingsRequest  implements Serializable {
   
   private List<SchedulerMessageTypeSeverity> messageSeverities = new ArrayList<SchedulerMessageTypeSeverity>();
+  private SetWrapperSyncTimeOffProperty syncTimeOffProperties = null;
+  private WfmServiceGoalImpactSettings serviceGoalImpact = null;
 
   
   /**
@@ -45,6 +49,42 @@ public class BuSchedulingSettingsRequest  implements Serializable {
   }
 
 
+  /**
+   * Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
+   **/
+  public BuSchedulingSettingsRequest syncTimeOffProperties(SetWrapperSyncTimeOffProperty syncTimeOffProperties) {
+    this.syncTimeOffProperties = syncTimeOffProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.")
+  @JsonProperty("syncTimeOffProperties")
+  public SetWrapperSyncTimeOffProperty getSyncTimeOffProperties() {
+    return syncTimeOffProperties;
+  }
+  public void setSyncTimeOffProperties(SetWrapperSyncTimeOffProperty syncTimeOffProperties) {
+    this.syncTimeOffProperties = syncTimeOffProperties;
+  }
+
+
+  /**
+   * Configures the max percent increase and decrease of service goals for this business unit
+   **/
+  public BuSchedulingSettingsRequest serviceGoalImpact(WfmServiceGoalImpactSettings serviceGoalImpact) {
+    this.serviceGoalImpact = serviceGoalImpact;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Configures the max percent increase and decrease of service goals for this business unit")
+  @JsonProperty("serviceGoalImpact")
+  public WfmServiceGoalImpactSettings getServiceGoalImpact() {
+    return serviceGoalImpact;
+  }
+  public void setServiceGoalImpact(WfmServiceGoalImpactSettings serviceGoalImpact) {
+    this.serviceGoalImpact = serviceGoalImpact;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -55,12 +95,14 @@ public class BuSchedulingSettingsRequest  implements Serializable {
     }
     BuSchedulingSettingsRequest buSchedulingSettingsRequest = (BuSchedulingSettingsRequest) o;
 
-    return Objects.equals(this.messageSeverities, buSchedulingSettingsRequest.messageSeverities);
+    return Objects.equals(this.messageSeverities, buSchedulingSettingsRequest.messageSeverities) &&
+            Objects.equals(this.syncTimeOffProperties, buSchedulingSettingsRequest.syncTimeOffProperties) &&
+            Objects.equals(this.serviceGoalImpact, buSchedulingSettingsRequest.serviceGoalImpact);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageSeverities);
+    return Objects.hash(messageSeverities, syncTimeOffProperties, serviceGoalImpact);
   }
 
   @Override
@@ -69,6 +111,8 @@ public class BuSchedulingSettingsRequest  implements Serializable {
     sb.append("class BuSchedulingSettingsRequest {\n");
     
     sb.append("    messageSeverities: ").append(toIndentedString(messageSeverities)).append("\n");
+    sb.append("    syncTimeOffProperties: ").append(toIndentedString(syncTimeOffProperties)).append("\n");
+    sb.append("    serviceGoalImpact: ").append(toIndentedString(serviceGoalImpact)).append("\n");
     sb.append("}");
     return sb.toString();
   }

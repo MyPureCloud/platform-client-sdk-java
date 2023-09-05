@@ -89,7 +89,9 @@ public class GetTaskmanagementWorkitemRequest {
 	public enum expandsValues { 
 		TYPE("type"),
 		WORKBIN("workbin"),
-		STATUS("status");
+		STATUS("status"),
+		QUEUE("queue"),
+		ASSIGNEE("assignee");
 
 		private String value;
 

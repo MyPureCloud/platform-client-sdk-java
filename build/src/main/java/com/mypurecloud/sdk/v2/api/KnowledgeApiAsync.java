@@ -26,7 +26,9 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
@@ -3475,7 +3477,7 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KnowledgeBase>> patchKnowledgeKnowledgebaseAsync(ApiRequest<KnowledgeBase> request, final AsyncApiCallback<ApiResponse<KnowledgeBase>> callback) {
+  public Future<ApiResponse<KnowledgeBase>> patchKnowledgeKnowledgebaseAsync(ApiRequest<KnowledgeBaseUpdateRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeBase>> callback) {
     try {
       final SettableFuture<ApiResponse<KnowledgeBase>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -6355,7 +6357,7 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KnowledgeBase>> postKnowledgeKnowledgebasesAsync(ApiRequest<KnowledgeBase> request, final AsyncApiCallback<ApiResponse<KnowledgeBase>> callback) {
+  public Future<ApiResponse<KnowledgeBase>> postKnowledgeKnowledgebasesAsync(ApiRequest<KnowledgeBaseCreateRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeBase>> callback) {
     try {
       final SettableFuture<ApiResponse<KnowledgeBase>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

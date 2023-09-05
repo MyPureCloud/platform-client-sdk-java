@@ -58,6 +58,7 @@ import com.mypurecloud.sdk.v2.model.PatchSegment;
 import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
+import com.mypurecloud.sdk.v2.model.SessionListing;
 
 public class DeleteJourneySegmentRequest {
 

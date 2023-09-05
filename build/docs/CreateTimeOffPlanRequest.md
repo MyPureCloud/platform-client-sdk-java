@@ -13,6 +13,7 @@ title: CreateTimeOffPlanRequest
 | **timeOffLimitIds** | <!----><!---->**List&lt;String&gt;**<!----> | The set of time off limit IDs to associate with this time off plan. |  [optional] |
 | **autoApprovalRule** | [**AutoApprovalRuleEnum**](#AutoApprovalRuleEnum)<!----> | Auto approval rule for the time off plan. |  |
 | **daysBeforeStartToExpireFromWaitlist** | <!----><!---->**Integer**<!----> | The number of days before the time off request start date for when the request will be expired from the waitlist. |  [optional] |
+| **hrisTimeOffType** | <!----><!---->[**HrisTimeOffType**](HrisTimeOffType.html)<!----> | Time off type, if this time off plan is associated with the integration. |  [optional] |
 | **active** | <!----><!---->**Boolean**<!----> | Whether this time off plan should be used by agents. |  |
 {: class="table table-striped"}
 

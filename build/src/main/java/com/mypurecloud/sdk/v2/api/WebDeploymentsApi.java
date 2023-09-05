@@ -691,28 +691,32 @@ public class WebDeploymentsApi {
    * Get a deployment
    * 
    * @param deploymentId The deployment ID (required)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected.  (optional)
    * @return WebDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WebDeployment getWebdeploymentsDeployment(String deploymentId) throws IOException, ApiException {
-    return  getWebdeploymentsDeployment(createGetWebdeploymentsDeploymentRequest(deploymentId));
+  public WebDeployment getWebdeploymentsDeployment(String deploymentId, List<String> expand) throws IOException, ApiException {
+    return  getWebdeploymentsDeployment(createGetWebdeploymentsDeploymentRequest(deploymentId, expand));
   }
 
   /**
    * Get a deployment
    * 
    * @param deploymentId The deployment ID (required)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected.  (optional)
    * @return WebDeployment
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WebDeployment> getWebdeploymentsDeploymentWithHttpInfo(String deploymentId) throws IOException {
-    return getWebdeploymentsDeployment(createGetWebdeploymentsDeploymentRequest(deploymentId).withHttpInfo());
+  public ApiResponse<WebDeployment> getWebdeploymentsDeploymentWithHttpInfo(String deploymentId, List<String> expand) throws IOException {
+    return getWebdeploymentsDeployment(createGetWebdeploymentsDeploymentRequest(deploymentId, expand).withHttpInfo());
   }
 
-  private GetWebdeploymentsDeploymentRequest createGetWebdeploymentsDeploymentRequest(String deploymentId) {
+  private GetWebdeploymentsDeploymentRequest createGetWebdeploymentsDeploymentRequest(String deploymentId, List<String> expand) {
     return GetWebdeploymentsDeploymentRequest.builder()
             .withDeploymentId(deploymentId)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -852,12 +856,13 @@ public class WebDeploymentsApi {
    * 
    * @param deploymentId The deployment ID (required)
    * @param type Get active configuration on a deployment (optional)
+   * @param expand Expand instructions for the return value (optional)
    * @return WebDeploymentActiveConfigurationOnDeployment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WebDeploymentActiveConfigurationOnDeployment getWebdeploymentsDeploymentConfigurations(String deploymentId, String type) throws IOException, ApiException {
-    return  getWebdeploymentsDeploymentConfigurations(createGetWebdeploymentsDeploymentConfigurationsRequest(deploymentId, type));
+  public WebDeploymentActiveConfigurationOnDeployment getWebdeploymentsDeploymentConfigurations(String deploymentId, String type, List<String> expand) throws IOException, ApiException {
+    return  getWebdeploymentsDeploymentConfigurations(createGetWebdeploymentsDeploymentConfigurationsRequest(deploymentId, type, expand));
   }
 
   /**
@@ -865,18 +870,21 @@ public class WebDeploymentsApi {
    * 
    * @param deploymentId The deployment ID (required)
    * @param type Get active configuration on a deployment (optional)
+   * @param expand Expand instructions for the return value (optional)
    * @return WebDeploymentActiveConfigurationOnDeployment
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WebDeploymentActiveConfigurationOnDeployment> getWebdeploymentsDeploymentConfigurationsWithHttpInfo(String deploymentId, String type) throws IOException {
-    return getWebdeploymentsDeploymentConfigurations(createGetWebdeploymentsDeploymentConfigurationsRequest(deploymentId, type).withHttpInfo());
+  public ApiResponse<WebDeploymentActiveConfigurationOnDeployment> getWebdeploymentsDeploymentConfigurationsWithHttpInfo(String deploymentId, String type, List<String> expand) throws IOException {
+    return getWebdeploymentsDeploymentConfigurations(createGetWebdeploymentsDeploymentConfigurationsRequest(deploymentId, type, expand).withHttpInfo());
   }
 
-  private GetWebdeploymentsDeploymentConfigurationsRequest createGetWebdeploymentsDeploymentConfigurationsRequest(String deploymentId, String type) {
+  private GetWebdeploymentsDeploymentConfigurationsRequest createGetWebdeploymentsDeploymentConfigurationsRequest(String deploymentId, String type, List<String> expand) {
     return GetWebdeploymentsDeploymentConfigurationsRequest.builder()
             .withDeploymentId(deploymentId)
 
             .withType(type)
+
+            .withExpand(expand)
 
             .build();
   }

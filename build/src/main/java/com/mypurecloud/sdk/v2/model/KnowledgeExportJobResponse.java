@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobFilter;
+import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -137,6 +138,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
   }
   private StatusEnum status = null;
   private KnowledgeBase knowledgeBase = null;
+  private UserReference createdBy = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private ErrorBody errorInformation = null;
@@ -270,6 +272,24 @@ public class KnowledgeExportJobResponse  implements Serializable {
 
 
   /**
+   * The user who created the operation
+   **/
+  public KnowledgeExportJobResponse createdBy(UserReference createdBy) {
+    this.createdBy = createdBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user who created the operation")
+  @JsonProperty("createdBy")
+  public UserReference getCreatedBy() {
+    return createdBy;
+  }
+  public void setCreatedBy(UserReference createdBy) {
+    this.createdBy = createdBy;
+  }
+
+
+  /**
    * The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public KnowledgeExportJobResponse dateCreated(Date dateCreated) {
@@ -347,6 +367,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
             Objects.equals(this.exportFilter, knowledgeExportJobResponse.exportFilter) &&
             Objects.equals(this.status, knowledgeExportJobResponse.status) &&
             Objects.equals(this.knowledgeBase, knowledgeExportJobResponse.knowledgeBase) &&
+            Objects.equals(this.createdBy, knowledgeExportJobResponse.createdBy) &&
             Objects.equals(this.dateCreated, knowledgeExportJobResponse.dateCreated) &&
             Objects.equals(this.dateModified, knowledgeExportJobResponse.dateModified) &&
             Objects.equals(this.errorInformation, knowledgeExportJobResponse.errorInformation) &&
@@ -355,7 +376,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, downloadURL, fileType, countDocumentProcessed, exportFilter, status, knowledgeBase, dateCreated, dateModified, errorInformation, selfUri);
+    return Objects.hash(id, downloadURL, fileType, countDocumentProcessed, exportFilter, status, knowledgeBase, createdBy, dateCreated, dateModified, errorInformation, selfUri);
   }
 
   @Override
@@ -370,6 +391,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
     sb.append("    exportFilter: ").append(toIndentedString(exportFilter)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    knowledgeBase: ").append(toIndentedString(knowledgeBase)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");

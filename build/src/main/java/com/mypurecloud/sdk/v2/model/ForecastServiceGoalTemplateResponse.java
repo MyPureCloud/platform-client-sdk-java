@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ForecastAbandonRateResponse;
 import com.mypurecloud.sdk.v2.model.ForecastAverageSpeedOfAnswerResponse;
+import com.mypurecloud.sdk.v2.model.ForecastServiceGoalTemplateImpactOverrideResponse;
 import com.mypurecloud.sdk.v2.model.ForecastServiceLevelResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,6 +28,7 @@ public class ForecastServiceGoalTemplateResponse  implements Serializable {
   private ForecastServiceLevelResponse serviceLevel = null;
   private ForecastAverageSpeedOfAnswerResponse averageSpeedOfAnswer = null;
   private ForecastAbandonRateResponse abandonRate = null;
+  private ForecastServiceGoalTemplateImpactOverrideResponse impactOverride = null;
 
   
   /**
@@ -83,6 +85,24 @@ public class ForecastServiceGoalTemplateResponse  implements Serializable {
   }
 
 
+  /**
+   * The service goal impact overrides for this forecast
+   **/
+  public ForecastServiceGoalTemplateResponse impactOverride(ForecastServiceGoalTemplateImpactOverrideResponse impactOverride) {
+    this.impactOverride = impactOverride;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The service goal impact overrides for this forecast")
+  @JsonProperty("impactOverride")
+  public ForecastServiceGoalTemplateImpactOverrideResponse getImpactOverride() {
+    return impactOverride;
+  }
+  public void setImpactOverride(ForecastServiceGoalTemplateImpactOverrideResponse impactOverride) {
+    this.impactOverride = impactOverride;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -95,12 +115,13 @@ public class ForecastServiceGoalTemplateResponse  implements Serializable {
 
     return Objects.equals(this.serviceLevel, forecastServiceGoalTemplateResponse.serviceLevel) &&
             Objects.equals(this.averageSpeedOfAnswer, forecastServiceGoalTemplateResponse.averageSpeedOfAnswer) &&
-            Objects.equals(this.abandonRate, forecastServiceGoalTemplateResponse.abandonRate);
+            Objects.equals(this.abandonRate, forecastServiceGoalTemplateResponse.abandonRate) &&
+            Objects.equals(this.impactOverride, forecastServiceGoalTemplateResponse.impactOverride);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(serviceLevel, averageSpeedOfAnswer, abandonRate);
+    return Objects.hash(serviceLevel, averageSpeedOfAnswer, abandonRate, impactOverride);
   }
 
   @Override
@@ -111,6 +132,7 @@ public class ForecastServiceGoalTemplateResponse  implements Serializable {
     sb.append("    serviceLevel: ").append(toIndentedString(serviceLevel)).append("\n");
     sb.append("    averageSpeedOfAnswer: ").append(toIndentedString(averageSpeedOfAnswer)).append("\n");
     sb.append("    abandonRate: ").append(toIndentedString(abandonRate)).append("\n");
+    sb.append("    impactOverride: ").append(toIndentedString(impactOverride)).append("\n");
     sb.append("}");
     return sb.toString();
   }

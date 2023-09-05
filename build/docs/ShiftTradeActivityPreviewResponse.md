@@ -12,6 +12,7 @@ title: ShiftTradeActivityPreviewResponse
 | **lengthMinutes** | <!----><!---->**Integer**<!----> | The length in minutes of this activity |  [optional] |
 | **activityCodeId** | <!----><!---->**String**<!----> | The ID of the activity code for this activity |  [optional] |
 | **countsAsPaidTime** | <!----><!---->**Boolean**<!----> | Whether this activity counts as paid time |  [optional] |
+| **payableMinutes** | <!----><!---->**Integer**<!----> | Payable minutes for this activity |  [optional] |
 {: class="table table-striped"}
 
 

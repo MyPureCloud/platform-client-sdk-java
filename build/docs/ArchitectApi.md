@@ -36,11 +36,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getArchitectDependencytrackingUpdatedresourceconsumers**](ArchitectApi.html#getArchitectDependencytrackingUpdatedresourceconsumers) | Get Dependency Tracking objects that depend on updated resources |
 | [**getArchitectEmergencygroup**](ArchitectApi.html#getArchitectEmergencygroup) | Gets a emergency group by ID |
 | [**getArchitectEmergencygroups**](ArchitectApi.html#getArchitectEmergencygroups) | Get a list of emergency groups. |
+| [**getArchitectEmergencygroupsDivisionviews**](ArchitectApi.html#getArchitectEmergencygroupsDivisionviews) | Get a pageable list of basic emergency group objects filterable by query parameters. |
 | [**getArchitectGrammar**](ArchitectApi.html#getArchitectGrammar) | Get a grammar |
 | [**getArchitectGrammarLanguage**](ArchitectApi.html#getArchitectGrammarLanguage) | Get a grammar language. |
 | [**getArchitectGrammars**](ArchitectApi.html#getArchitectGrammars) | Get a pageable list of grammars, filtered by query parameters |
 | [**getArchitectIvr**](ArchitectApi.html#getArchitectIvr) | Get an IVR config. |
 | [**getArchitectIvrs**](ArchitectApi.html#getArchitectIvrs) | Get IVR configs. |
+| [**getArchitectIvrsDivisionviews**](ArchitectApi.html#getArchitectIvrsDivisionviews) | Get a pageable list of basic ivr configuration information objects filterable by query parameters. |
 | [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | Get specified user prompt |
 | [**getArchitectPromptHistoryHistoryId**](ArchitectApi.html#getArchitectPromptHistoryHistoryId) | Get generated prompt history |
 | [**getArchitectPromptResource**](ArchitectApi.html#getArchitectPromptResource) | Get specified user prompt resource |
@@ -49,7 +51,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getArchitectSchedule**](ArchitectApi.html#getArchitectSchedule) | Get a schedule by ID |
 | [**getArchitectSchedulegroup**](ArchitectApi.html#getArchitectSchedulegroup) | Gets a schedule group by ID |
 | [**getArchitectSchedulegroups**](ArchitectApi.html#getArchitectSchedulegroups) | Get a list of schedule groups. |
+| [**getArchitectSchedulegroupsDivisionviews**](ArchitectApi.html#getArchitectSchedulegroupsDivisionviews) | Get a pageable list of basic schedule group configuration information objects filterable by query parameters. |
 | [**getArchitectSchedules**](ArchitectApi.html#getArchitectSchedules) | Get a list of schedules. |
+| [**getArchitectSchedulesDivisionviews**](ArchitectApi.html#getArchitectSchedulesDivisionviews) | Get a pageable list of basic schedule configuration information objects filterable by query parameters. |
 | [**getArchitectSystemprompt**](ArchitectApi.html#getArchitectSystemprompt) | Get a system prompt |
 | [**getArchitectSystempromptHistoryHistoryId**](ArchitectApi.html#getArchitectSystempromptHistoryHistoryId) | Get generated prompt history |
 | [**getArchitectSystempromptResource**](ArchitectApi.html#getArchitectSystempromptResource) | Get a system prompt resource. |
@@ -1999,6 +2003,81 @@ try {
 
 [**EmergencyGroupListing**](EmergencyGroupListing.html)
 
+<a name="getArchitectEmergencygroupsDivisionviews"></a>
+
+# **getArchitectEmergencygroupsDivisionviews**
+
+
+
+> [EmergencyGroupDivisionViewEntityListing](EmergencyGroupDivisionViewEntityListing.html) getArchitectEmergencygroupsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+
+Get a pageable list of basic emergency group objects filterable by query parameters.
+
+This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+Wraps GET /api/v2/architect/emergencygroups/divisionviews  
+
+Requires ALL permissions: 
+
+* routing:emergencyGroup:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "name"; // String | Sort by
+String sortOrder = "ASC"; // String | Sort order
+List<String> id = Arrays.asList(null); // List<String> | ID of the Emergency Groups to filter by.
+String name = "name_example"; // String | Name of the Emergency Group to filter by.
+List<String> divisionId = Arrays.asList(null); // List<String> | List of divisionIds on which to filter.
+try {
+    EmergencyGroupDivisionViewEntityListing result = apiInstance.getArchitectEmergencygroupsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectEmergencygroupsDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **id** | [**List&lt;String&gt;**](String.html)| ID of the Emergency Groups to filter by. | [optional] 
+| **name** | **String**| Name of the Emergency Group to filter by. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmergencyGroupDivisionViewEntityListing**](EmergencyGroupDivisionViewEntityListing.html)
+
 <a name="getArchitectGrammar"></a>
 
 # **getArchitectGrammar**
@@ -2345,6 +2424,79 @@ try {
 ### Return type
 
 [**IVREntityListing**](IVREntityListing.html)
+
+<a name="getArchitectIvrsDivisionviews"></a>
+
+# **getArchitectIvrsDivisionviews**
+
+
+
+> [IVRDivisionViewEntityListing](IVRDivisionViewEntityListing.html) getArchitectIvrsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+
+Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+
+Wraps GET /api/v2/architect/ivrs/divisionviews  
+
+Requires ALL permissions: 
+
+* routing:callRoute:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "name"; // String | Sort by
+String sortOrder = "ASC"; // String | Sort order
+List<String> id = Arrays.asList(null); // List<String> | ID of the IVR to filter by.
+String name = "name_example"; // String | Name of the IVR to filter by.
+List<String> divisionId = Arrays.asList(null); // List<String> | List of divisionIds on which to filter.
+try {
+    IVRDivisionViewEntityListing result = apiInstance.getArchitectIvrsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectIvrsDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **id** | [**List&lt;String&gt;**](String.html)| ID of the IVR to filter by. | [optional] 
+| **name** | **String**| Name of the IVR to filter by. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IVRDivisionViewEntityListing**](IVRDivisionViewEntityListing.html)
 
 <a name="getArchitectPrompt"></a>
 
@@ -2880,6 +3032,79 @@ try {
 
 [**ScheduleGroupEntityListing**](ScheduleGroupEntityListing.html)
 
+<a name="getArchitectSchedulegroupsDivisionviews"></a>
+
+# **getArchitectSchedulegroupsDivisionviews**
+
+
+
+> [ScheduleGroupDivisionViewEntityListing](ScheduleGroupDivisionViewEntityListing.html) getArchitectSchedulegroupsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+
+Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+
+Wraps GET /api/v2/architect/schedulegroups/divisionviews  
+
+Requires ALL permissions: 
+
+* routing:scheduleGroup:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "name"; // String | Sort by
+String sortOrder = "ASC"; // String | Sort order
+List<String> id = Arrays.asList(null); // List<String> | ID of the schedule group to filter by.
+String name = "name_example"; // String | Name of the schedule group to filter by.
+List<String> divisionId = Arrays.asList(null); // List<String> | List of divisionIds on which to filter.
+try {
+    ScheduleGroupDivisionViewEntityListing result = apiInstance.getArchitectSchedulegroupsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectSchedulegroupsDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **id** | [**List&lt;String&gt;**](String.html)| ID of the schedule group to filter by. | [optional] 
+| **name** | **String**| Name of the schedule group to filter by. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleGroupDivisionViewEntityListing**](ScheduleGroupDivisionViewEntityListing.html)
+
 <a name="getArchitectSchedules"></a>
 
 # **getArchitectSchedules**
@@ -2950,6 +3175,79 @@ try {
 ### Return type
 
 [**ScheduleEntityListing**](ScheduleEntityListing.html)
+
+<a name="getArchitectSchedulesDivisionviews"></a>
+
+# **getArchitectSchedulesDivisionviews**
+
+
+
+> [ScheduleDivisionViewEntityListing](ScheduleDivisionViewEntityListing.html) getArchitectSchedulesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+
+Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+
+Wraps GET /api/v2/architect/schedules/divisionviews  
+
+Requires ALL permissions: 
+
+* routing:schedule:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "name"; // String | Sort by
+String sortOrder = "ASC"; // String | Sort order
+List<String> id = Arrays.asList(null); // List<String> | ID of the schedule group to filter by.
+String name = "name_example"; // String | Name of the schedule group to filter by.
+List<String> divisionId = Arrays.asList(null); // List<String> | List of divisionIds on which to filter.
+try {
+    ScheduleDivisionViewEntityListing result = apiInstance.getArchitectSchedulesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectSchedulesDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **id** | [**List&lt;String&gt;**](String.html)| ID of the schedule group to filter by. | [optional] 
+| **name** | **String**| Name of the schedule group to filter by. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleDivisionViewEntityListing**](ScheduleDivisionViewEntityListing.html)
 
 <a name="getArchitectSystemprompt"></a>
 

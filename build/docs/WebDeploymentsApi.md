@@ -499,7 +499,7 @@ try {
 
 
 
-> [WebDeployment](WebDeployment.html) getWebdeploymentsDeployment(deploymentId)
+> [WebDeployment](WebDeployment.html) getWebdeploymentsDeployment(deploymentId, expand)
 
 Get a deployment
 
@@ -532,8 +532,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
 String deploymentId = "deploymentId_example"; // String | The deployment ID
+List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected. 
 try {
-    WebDeployment result = apiInstance.getWebdeploymentsDeployment(deploymentId);
+    WebDeployment result = apiInstance.getWebdeploymentsDeployment(deploymentId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebDeploymentsApi#getWebdeploymentsDeployment");
@@ -547,6 +548,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **deploymentId** | **String**| The deployment ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| The specified entity attributes will be filled. Comma separated values expected.  | [optional]<br />**Values**: supportedContent 
 {: class="table-striped"}
 
 
@@ -609,7 +611,7 @@ try {
 
 
 
-> [WebDeploymentActiveConfigurationOnDeployment](WebDeploymentActiveConfigurationOnDeployment.html) getWebdeploymentsDeploymentConfigurations(deploymentId, type)
+> [WebDeploymentActiveConfigurationOnDeployment](WebDeploymentActiveConfigurationOnDeployment.html) getWebdeploymentsDeploymentConfigurations(deploymentId, type, expand)
 
 Get active configuration for a given deployment
 
@@ -642,8 +644,9 @@ Configuration.setDefaultApiClient(apiClient);
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
 String deploymentId = "deploymentId_example"; // String | The deployment ID
 String type = "type_example"; // String | Get active configuration on a deployment
+List<String> expand = Arrays.asList(null); // List<String> | Expand instructions for the return value
 try {
-    WebDeploymentActiveConfigurationOnDeployment result = apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, type);
+    WebDeploymentActiveConfigurationOnDeployment result = apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, type, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebDeploymentsApi#getWebdeploymentsDeploymentConfigurations");
@@ -658,6 +661,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **deploymentId** | **String**| The deployment ID | 
 | **type** | **String**| Get active configuration on a deployment | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Expand instructions for the return value | [optional]<br />**Values**: supportedContent 
 {: class="table-striped"}
 
 

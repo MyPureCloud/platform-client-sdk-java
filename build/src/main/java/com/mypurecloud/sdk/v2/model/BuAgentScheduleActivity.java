@@ -28,7 +28,9 @@ public class BuAgentScheduleActivity  implements Serializable {
   private String description = null;
   private String activityCodeId = null;
   private Boolean paid = null;
+  private Integer payableMinutes = null;
   private String timeOffRequestId = null;
+  private Integer timeOffRequestSyncVersion = null;
   private String externalActivityId = null;
 
   private static class ExternalActivityTypeEnumDeserializer extends StdDeserializer<ExternalActivityTypeEnum> {
@@ -49,6 +51,7 @@ public class BuAgentScheduleActivity  implements Serializable {
  @JsonDeserialize(using = ExternalActivityTypeEnumDeserializer.class)
   public enum ExternalActivityTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVITYPLAN("ActivityPlan"),
     COACHING("Coaching"),
     LEARNING("Learning");
 
@@ -171,6 +174,24 @@ public class BuAgentScheduleActivity  implements Serializable {
 
 
   /**
+   * Payable minutes for this activity
+   **/
+  public BuAgentScheduleActivity payableMinutes(Integer payableMinutes) {
+    this.payableMinutes = payableMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payable minutes for this activity")
+  @JsonProperty("payableMinutes")
+  public Integer getPayableMinutes() {
+    return payableMinutes;
+  }
+  public void setPayableMinutes(Integer payableMinutes) {
+    this.payableMinutes = payableMinutes;
+  }
+
+
+  /**
    * The ID of the time off request associated with this activity, if applicable
    **/
   public BuAgentScheduleActivity timeOffRequestId(String timeOffRequestId) {
@@ -185,6 +206,24 @@ public class BuAgentScheduleActivity  implements Serializable {
   }
   public void setTimeOffRequestId(String timeOffRequestId) {
     this.timeOffRequestId = timeOffRequestId;
+  }
+
+
+  /**
+   * The sync version of the partial day time off request for which the scheduled activity is associated, if applicable
+   **/
+  public BuAgentScheduleActivity timeOffRequestSyncVersion(Integer timeOffRequestSyncVersion) {
+    this.timeOffRequestSyncVersion = timeOffRequestSyncVersion;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The sync version of the partial day time off request for which the scheduled activity is associated, if applicable")
+  @JsonProperty("timeOffRequestSyncVersion")
+  public Integer getTimeOffRequestSyncVersion() {
+    return timeOffRequestSyncVersion;
+  }
+  public void setTimeOffRequestSyncVersion(Integer timeOffRequestSyncVersion) {
+    this.timeOffRequestSyncVersion = timeOffRequestSyncVersion;
   }
 
 
@@ -239,14 +278,16 @@ public class BuAgentScheduleActivity  implements Serializable {
             Objects.equals(this.description, buAgentScheduleActivity.description) &&
             Objects.equals(this.activityCodeId, buAgentScheduleActivity.activityCodeId) &&
             Objects.equals(this.paid, buAgentScheduleActivity.paid) &&
+            Objects.equals(this.payableMinutes, buAgentScheduleActivity.payableMinutes) &&
             Objects.equals(this.timeOffRequestId, buAgentScheduleActivity.timeOffRequestId) &&
+            Objects.equals(this.timeOffRequestSyncVersion, buAgentScheduleActivity.timeOffRequestSyncVersion) &&
             Objects.equals(this.externalActivityId, buAgentScheduleActivity.externalActivityId) &&
             Objects.equals(this.externalActivityType, buAgentScheduleActivity.externalActivityType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, lengthMinutes, description, activityCodeId, paid, timeOffRequestId, externalActivityId, externalActivityType);
+    return Objects.hash(startDate, lengthMinutes, description, activityCodeId, paid, payableMinutes, timeOffRequestId, timeOffRequestSyncVersion, externalActivityId, externalActivityType);
   }
 
   @Override
@@ -259,7 +300,9 @@ public class BuAgentScheduleActivity  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
     sb.append("    paid: ").append(toIndentedString(paid)).append("\n");
+    sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
     sb.append("    timeOffRequestId: ").append(toIndentedString(timeOffRequestId)).append("\n");
+    sb.append("    timeOffRequestSyncVersion: ").append(toIndentedString(timeOffRequestSyncVersion)).append("\n");
     sb.append("    externalActivityId: ").append(toIndentedString(externalActivityId)).append("\n");
     sb.append("    externalActivityType: ").append(toIndentedString(externalActivityType)).append("\n");
     sb.append("}");

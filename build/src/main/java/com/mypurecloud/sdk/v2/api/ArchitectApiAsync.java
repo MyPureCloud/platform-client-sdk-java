@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.DependencyStatus;
 import com.mypurecloud.sdk.v2.model.DependencyType;
 import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroup;
+import com.mypurecloud.sdk.v2.model.EmergencyGroupDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecutionDataRequest;
@@ -55,6 +56,7 @@ import com.mypurecloud.sdk.v2.model.GrammarLanguage;
 import com.mypurecloud.sdk.v2.model.GrammarListing;
 import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
+import com.mypurecloud.sdk.v2.model.IVRDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
@@ -64,8 +66,10 @@ import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.Schedule;
+import com.mypurecloud.sdk.v2.model.ScheduleDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleGroup;
+import com.mypurecloud.sdk.v2.model.ScheduleGroupDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPrompt;
 import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
@@ -103,11 +107,13 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingTypesReq
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingUpdatedresourceconsumersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectEmergencygroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectEmergencygroupsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptResourceRequest;
@@ -116,7 +122,9 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourceRequest;
@@ -2399,6 +2407,81 @@ public class ArchitectApiAsync {
   }
 
   /**
+   * Get a pageable list of basic emergency group objects filterable by query parameters.
+   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EmergencyGroupDivisionViewEntityListing> getArchitectEmergencygroupsDivisionviewsAsync(GetArchitectEmergencygroupsDivisionviewsRequest request, final AsyncApiCallback<EmergencyGroupDivisionViewEntityListing> callback) {
+    try {
+      final SettableFuture<EmergencyGroupDivisionViewEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmergencyGroupDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<EmergencyGroupDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmergencyGroupDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of basic emergency group objects filterable by query parameters.
+   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EmergencyGroupDivisionViewEntityListing>> getArchitectEmergencygroupsDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmergencyGroupDivisionViewEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EmergencyGroupDivisionViewEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EmergencyGroupDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<EmergencyGroupDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmergencyGroupDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmergencyGroupDivisionViewEntityListing> response = (ApiResponse<EmergencyGroupDivisionViewEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmergencyGroupDivisionViewEntityListing> response = (ApiResponse<EmergencyGroupDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a grammar
    * Returns a specified grammar
    * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -2768,6 +2851,81 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<IVREntityListing> response = (ApiResponse<IVREntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IVRDivisionViewEntityListing> getArchitectIvrsDivisionviewsAsync(GetArchitectIvrsDivisionviewsRequest request, final AsyncApiCallback<IVRDivisionViewEntityListing> callback) {
+    try {
+      final SettableFuture<IVRDivisionViewEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IVRDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<IVRDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IVRDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IVRDivisionViewEntityListing>> getArchitectIvrsDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IVRDivisionViewEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IVRDivisionViewEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IVRDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<IVRDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IVRDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IVRDivisionViewEntityListing> response = (ApiResponse<IVRDivisionViewEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IVRDivisionViewEntityListing> response = (ApiResponse<IVRDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3380,6 +3538,81 @@ public class ArchitectApiAsync {
   }
 
   /**
+   * Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleGroupDivisionViewEntityListing> getArchitectSchedulegroupsDivisionviewsAsync(GetArchitectSchedulegroupsDivisionviewsRequest request, final AsyncApiCallback<ScheduleGroupDivisionViewEntityListing> callback) {
+    try {
+      final SettableFuture<ScheduleGroupDivisionViewEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleGroupDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScheduleGroupDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleGroupDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleGroupDivisionViewEntityListing>> getArchitectSchedulegroupsDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScheduleGroupDivisionViewEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleGroupDivisionViewEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleGroupDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScheduleGroupDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleGroupDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleGroupDivisionViewEntityListing> response = (ApiResponse<ScheduleGroupDivisionViewEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleGroupDivisionViewEntityListing> response = (ApiResponse<ScheduleGroupDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a list of schedules.
    * 
    * @param request the request object
@@ -3443,6 +3676,81 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ScheduleEntityListing> response = (ApiResponse<ScheduleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleDivisionViewEntityListing> getArchitectSchedulesDivisionviewsAsync(GetArchitectSchedulesDivisionviewsRequest request, final AsyncApiCallback<ScheduleDivisionViewEntityListing> callback) {
+    try {
+      final SettableFuture<ScheduleDivisionViewEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScheduleDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleDivisionViewEntityListing>> getArchitectSchedulesDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScheduleDivisionViewEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleDivisionViewEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScheduleDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleDivisionViewEntityListing> response = (ApiResponse<ScheduleDivisionViewEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleDivisionViewEntityListing> response = (ApiResponse<ScheduleDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

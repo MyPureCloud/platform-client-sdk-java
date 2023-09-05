@@ -640,7 +640,7 @@ try {
 
 
 
-> [AgentActivityEntityListing](AgentActivityEntityListing.html) getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group)
+> [AgentActivityEntityListing](AgentActivityEntityListing.html) getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, formContextId)
 
 Gets a list of Agent Activities
 
@@ -686,8 +686,9 @@ List<String> agentUserId = Arrays.asList(null); // List<String> | user id of age
 String evaluatorUserId = "evaluatorUserId_example"; // String | user id of the evaluator
 String name = "name_example"; // String | name
 String group = "group_example"; // String | group id
+String formContextId = "formContextId_example"; // String | shared id between form versions
 try {
-    AgentActivityEntityListing result = apiInstance.getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group);
+    AgentActivityEntityListing result = apiInstance.getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, formContextId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityAgentsActivity");
@@ -712,6 +713,7 @@ try {
 | **evaluatorUserId** | **String**| user id of the evaluator | [optional] 
 | **name** | **String**| name | [optional] 
 | **group** | **String**| group id | [optional] 
+| **formContextId** | **String**| shared id between form versions | [optional] 
 {: class="table-striped"}
 
 
@@ -1125,7 +1127,7 @@ try {
 
 
 
-> [EvaluationEntityListing](EvaluationEntityListing.html) getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)
+> [EvaluationEntityListing](EvaluationEntityListing.html) getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)
 
 Queries Evaluations and returns a paged list
 
@@ -1172,6 +1174,7 @@ String assigneeUserId = "assigneeUserId_example"; // String | assignee user id
 String queueId = "queueId_example"; // String | queue id
 String startTime = "startTime_example"; // String | start time of the evaluation query
 String endTime = "endTime_example"; // String | end time of the evaluation query
+String formContextId = "formContextId_example"; // String | shared id between form versions
 List<String> evaluationState = Arrays.asList(null); // List<String> | 
 Boolean isReleased = true; // Boolean | the evaluation has been released
 Boolean agentHasRead = true; // Boolean | agent has the evaluation
@@ -1179,7 +1182,7 @@ Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for ev
 Integer maximum = 56; // Integer | the maximum number of results to return
 String sortOrder = "sortOrder_example"; // String | NOTE: Does not work when conversationId is supplied.
 try {
-    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
+    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityEvaluationsQuery");
@@ -1205,6 +1208,7 @@ try {
 | **queueId** | **String**| queue id | [optional] 
 | **startTime** | **String**| start time of the evaluation query | [optional] 
 | **endTime** | **String**| end time of the evaluation query | [optional] 
+| **formContextId** | **String**| shared id between form versions | [optional] 
 | **evaluationState** | [**List&lt;String&gt;**](String.html)|  | [optional] 
 | **isReleased** | **Boolean**| the evaluation has been released | [optional] 
 | **agentHasRead** | **Boolean**| agent has the evaluation | [optional] 

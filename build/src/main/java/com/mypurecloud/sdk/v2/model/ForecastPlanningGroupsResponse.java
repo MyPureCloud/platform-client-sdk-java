@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupResponse;
+import com.mypurecloud.sdk.v2.model.WfmServiceGoalImpactSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ import java.io.Serializable;
 public class ForecastPlanningGroupsResponse  implements Serializable {
   
   private List<ForecastPlanningGroupResponse> entities = new ArrayList<ForecastPlanningGroupResponse>();
+  private WfmServiceGoalImpactSettings businessUnitServiceGoalImpact = null;
 
   
   /**
@@ -44,6 +46,24 @@ public class ForecastPlanningGroupsResponse  implements Serializable {
   }
 
 
+  /**
+   * A snapshot of a business unit’s service goal impact settings taken at forecast generation time.
+   **/
+  public ForecastPlanningGroupsResponse businessUnitServiceGoalImpact(WfmServiceGoalImpactSettings businessUnitServiceGoalImpact) {
+    this.businessUnitServiceGoalImpact = businessUnitServiceGoalImpact;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A snapshot of a business unit’s service goal impact settings taken at forecast generation time.")
+  @JsonProperty("businessUnitServiceGoalImpact")
+  public WfmServiceGoalImpactSettings getBusinessUnitServiceGoalImpact() {
+    return businessUnitServiceGoalImpact;
+  }
+  public void setBusinessUnitServiceGoalImpact(WfmServiceGoalImpactSettings businessUnitServiceGoalImpact) {
+    this.businessUnitServiceGoalImpact = businessUnitServiceGoalImpact;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -54,12 +74,13 @@ public class ForecastPlanningGroupsResponse  implements Serializable {
     }
     ForecastPlanningGroupsResponse forecastPlanningGroupsResponse = (ForecastPlanningGroupsResponse) o;
 
-    return Objects.equals(this.entities, forecastPlanningGroupsResponse.entities);
+    return Objects.equals(this.entities, forecastPlanningGroupsResponse.entities) &&
+            Objects.equals(this.businessUnitServiceGoalImpact, forecastPlanningGroupsResponse.businessUnitServiceGoalImpact);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities);
+    return Objects.hash(entities, businessUnitServiceGoalImpact);
   }
 
   @Override
@@ -68,6 +89,7 @@ public class ForecastPlanningGroupsResponse  implements Serializable {
     sb.append("class ForecastPlanningGroupsResponse {\n");
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    businessUnitServiceGoalImpact: ").append(toIndentedString(businessUnitServiceGoalImpact)).append("\n");
     sb.append("}");
     return sb.toString();
   }

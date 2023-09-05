@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.DependencyStatus;
 import com.mypurecloud.sdk.v2.model.DependencyType;
 import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroup;
+import com.mypurecloud.sdk.v2.model.EmergencyGroupDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecutionDataRequest;
@@ -52,6 +53,7 @@ import com.mypurecloud.sdk.v2.model.GrammarLanguage;
 import com.mypurecloud.sdk.v2.model.GrammarListing;
 import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
+import com.mypurecloud.sdk.v2.model.IVRDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
@@ -61,8 +63,10 @@ import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.Schedule;
+import com.mypurecloud.sdk.v2.model.ScheduleDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleGroup;
+import com.mypurecloud.sdk.v2.model.ScheduleGroupDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPrompt;
 import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
@@ -100,11 +104,13 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingTypesReq
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingUpdatedresourceconsumersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectEmergencygroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectEmergencygroupsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectGrammarsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptResourceRequest;
@@ -113,7 +119,9 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourceRequest;
@@ -2644,6 +2652,108 @@ public class ArchitectApi {
   }
 
   /**
+   * Get a pageable list of basic emergency group objects filterable by query parameters.
+   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param id ID of the Emergency Groups to filter by. (optional)
+   * @param name Name of the Emergency Group to filter by. (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
+   * @return EmergencyGroupDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmergencyGroupDivisionViewEntityListing getArchitectEmergencygroupsDivisionviews(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException, ApiException {
+    return  getArchitectEmergencygroupsDivisionviews(createGetArchitectEmergencygroupsDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId));
+  }
+
+  /**
+   * Get a pageable list of basic emergency group objects filterable by query parameters.
+   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param id ID of the Emergency Groups to filter by. (optional)
+   * @param name Name of the Emergency Group to filter by. (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
+   * @return EmergencyGroupDivisionViewEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmergencyGroupDivisionViewEntityListing> getArchitectEmergencygroupsDivisionviewsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException {
+    return getArchitectEmergencygroupsDivisionviews(createGetArchitectEmergencygroupsDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId).withHttpInfo());
+  }
+
+  private GetArchitectEmergencygroupsDivisionviewsRequest createGetArchitectEmergencygroupsDivisionviewsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) {
+    return GetArchitectEmergencygroupsDivisionviewsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withId(id)
+
+            .withName(name)
+
+            .withDivisionId(divisionId)
+
+            .build();
+  }
+
+  /**
+   * Get a pageable list of basic emergency group objects filterable by query parameters.
+   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request The request object
+   * @return EmergencyGroupDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmergencyGroupDivisionViewEntityListing getArchitectEmergencygroupsDivisionviews(GetArchitectEmergencygroupsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmergencyGroupDivisionViewEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmergencyGroupDivisionViewEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a pageable list of basic emergency group objects filterable by query parameters.
+   * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmergencyGroupDivisionViewEntityListing> getArchitectEmergencygroupsDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmergencyGroupDivisionViewEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmergencyGroupDivisionViewEntityListing> response = (ApiResponse<EmergencyGroupDivisionViewEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmergencyGroupDivisionViewEntityListing> response = (ApiResponse<EmergencyGroupDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a grammar
    * Returns a specified grammar
    * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -3105,6 +3215,108 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<IVREntityListing> response = (ApiResponse<IVREntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param id ID of the IVR to filter by. (optional)
+   * @param name Name of the IVR to filter by. (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
+   * @return IVRDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IVRDivisionViewEntityListing getArchitectIvrsDivisionviews(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException, ApiException {
+    return  getArchitectIvrsDivisionviews(createGetArchitectIvrsDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId));
+  }
+
+  /**
+   * Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param id ID of the IVR to filter by. (optional)
+   * @param name Name of the IVR to filter by. (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
+   * @return IVRDivisionViewEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IVRDivisionViewEntityListing> getArchitectIvrsDivisionviewsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException {
+    return getArchitectIvrsDivisionviews(createGetArchitectIvrsDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId).withHttpInfo());
+  }
+
+  private GetArchitectIvrsDivisionviewsRequest createGetArchitectIvrsDivisionviewsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) {
+    return GetArchitectIvrsDivisionviewsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withId(id)
+
+            .withName(name)
+
+            .withDivisionId(divisionId)
+
+            .build();
+  }
+
+  /**
+   * Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+   * 
+   * @param request The request object
+   * @return IVRDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IVRDivisionViewEntityListing getArchitectIvrsDivisionviews(GetArchitectIvrsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IVRDivisionViewEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IVRDivisionViewEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IVRDivisionViewEntityListing> getArchitectIvrsDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IVRDivisionViewEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IVRDivisionViewEntityListing> response = (ApiResponse<IVRDivisionViewEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IVRDivisionViewEntityListing> response = (ApiResponse<IVRDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3818,6 +4030,108 @@ public class ArchitectApi {
   }
 
   /**
+   * Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param id ID of the schedule group to filter by. (optional)
+   * @param name Name of the schedule group to filter by. (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
+   * @return ScheduleGroupDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGroupDivisionViewEntityListing getArchitectSchedulegroupsDivisionviews(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException, ApiException {
+    return  getArchitectSchedulegroupsDivisionviews(createGetArchitectSchedulegroupsDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId));
+  }
+
+  /**
+   * Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param id ID of the schedule group to filter by. (optional)
+   * @param name Name of the schedule group to filter by. (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
+   * @return ScheduleGroupDivisionViewEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGroupDivisionViewEntityListing> getArchitectSchedulegroupsDivisionviewsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException {
+    return getArchitectSchedulegroupsDivisionviews(createGetArchitectSchedulegroupsDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId).withHttpInfo());
+  }
+
+  private GetArchitectSchedulegroupsDivisionviewsRequest createGetArchitectSchedulegroupsDivisionviewsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) {
+    return GetArchitectSchedulegroupsDivisionviewsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withId(id)
+
+            .withName(name)
+
+            .withDivisionId(divisionId)
+
+            .build();
+  }
+
+  /**
+   * Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+   * 
+   * @param request The request object
+   * @return ScheduleGroupDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGroupDivisionViewEntityListing getArchitectSchedulegroupsDivisionviews(GetArchitectSchedulegroupsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleGroupDivisionViewEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleGroupDivisionViewEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGroupDivisionViewEntityListing> getArchitectSchedulegroupsDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleGroupDivisionViewEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGroupDivisionViewEntityListing> response = (ApiResponse<ScheduleGroupDivisionViewEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGroupDivisionViewEntityListing> response = (ApiResponse<ScheduleGroupDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a list of schedules.
    * 
    * @param pageNumber Page number (optional, default to 1)
@@ -3911,6 +4225,108 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ScheduleEntityListing> response = (ApiResponse<ScheduleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param id ID of the schedule group to filter by. (optional)
+   * @param name Name of the schedule group to filter by. (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
+   * @return ScheduleDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleDivisionViewEntityListing getArchitectSchedulesDivisionviews(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException, ApiException {
+    return  getArchitectSchedulesDivisionviews(createGetArchitectSchedulesDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId));
+  }
+
+  /**
+   * Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param id ID of the schedule group to filter by. (optional)
+   * @param name Name of the schedule group to filter by. (optional)
+   * @param divisionId List of divisionIds on which to filter. (optional)
+   * @return ScheduleDivisionViewEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleDivisionViewEntityListing> getArchitectSchedulesDivisionviewsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException {
+    return getArchitectSchedulesDivisionviews(createGetArchitectSchedulesDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId).withHttpInfo());
+  }
+
+  private GetArchitectSchedulesDivisionviewsRequest createGetArchitectSchedulesDivisionviewsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) {
+    return GetArchitectSchedulesDivisionviewsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withId(id)
+
+            .withName(name)
+
+            .withDivisionId(divisionId)
+
+            .build();
+  }
+
+  /**
+   * Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+   * 
+   * @param request The request object
+   * @return ScheduleDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleDivisionViewEntityListing getArchitectSchedulesDivisionviews(GetArchitectSchedulesDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleDivisionViewEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleDivisionViewEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleDivisionViewEntityListing> getArchitectSchedulesDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleDivisionViewEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleDivisionViewEntityListing> response = (ApiResponse<ScheduleDivisionViewEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleDivisionViewEntityListing> response = (ApiResponse<ScheduleDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

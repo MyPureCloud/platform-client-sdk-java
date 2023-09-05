@@ -19,12 +19,15 @@ import com.mypurecloud.sdk.v2.model.AdherenceExplanationAsyncResponse;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationJob;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.AgentIntegrationsRequest;
+import com.mypurecloud.sdk.v2.model.AgentIntegrationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsRequest;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.AgentsIntegrationsListing;
 import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
 import com.mypurecloud.sdk.v2.model.AsyncIntradayResponse;
 import com.mypurecloud.sdk.v2.model.AvailableTimeOffRequest;
@@ -75,11 +78,16 @@ import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
+import com.mypurecloud.sdk.v2.model.CurrentUserTimeOffIntegrationStatusRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffRequest;
+import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffResponse;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
+import com.mypurecloud.sdk.v2.model.HrisTimeOffTypesJobResponse;
+import com.mypurecloud.sdk.v2.model.HrisTimeOffTypesResponse;
 import com.mypurecloud.sdk.v2.model.ImportForecastResponse;
 import com.mypurecloud.sdk.v2.model.ImportForecastUploadResponse;
 import com.mypurecloud.sdk.v2.model.ImportScheduleUploadResponse;
@@ -100,6 +108,8 @@ import com.mypurecloud.sdk.v2.model.PlanningGroup;
 import com.mypurecloud.sdk.v2.model.PlanningGroupList;
 import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
 import com.mypurecloud.sdk.v2.model.QueryAdherenceExplanationsResponse;
+import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
+import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
@@ -110,12 +120,15 @@ import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
+import com.mypurecloud.sdk.v2.model.SetTimeOffIntegrationStatusRequest;
 import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.TimeOffBalanceJobResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffBalanceRequest;
 import com.mypurecloud.sdk.v2.model.TimeOffBalancesResponse;
+import com.mypurecloud.sdk.v2.model.TimeOffIntegrationStatusResponseListing;
 import com.mypurecloud.sdk.v2.model.TimeOffLimit;
 import com.mypurecloud.sdk.v2.model.TimeOffLimitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffPlan;
@@ -141,6 +154,8 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
 import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
+import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponse;
+import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponseListing;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
 import com.mypurecloud.sdk.v2.model.ValidationServiceRequest;
 import com.mypurecloud.sdk.v2.model.WaitlistPositionListing;
@@ -157,6 +172,7 @@ import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalShrinkageTeamsRequest;
+import com.mypurecloud.sdk.v2.model.WfmIntegrationListing;
 import com.mypurecloud.sdk.v2.model.WfmIntradayPlanningGroupListing;
 import com.mypurecloud.sdk.v2.model.WfmProcessUploadRequest;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
@@ -218,6 +234,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarDataIcsR
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementIntegrationsHrisRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementIntegrationsHrisTimeofftypesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAdherenceRequest;
@@ -246,6 +264,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementNotificationsReq
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShrinkageJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffbalanceJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
@@ -258,6 +277,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSe
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffplanRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWeekShifttradeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
@@ -269,6 +289,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistor
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMePossibleworkshiftsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivitycodesRequest;
@@ -294,6 +315,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitsRe
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitAgentschedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitMoveRequest;
@@ -303,10 +325,12 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitT
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitUserTimeoffbalanceJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest;
@@ -321,8 +345,12 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUp
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTeamAdherenceHistoricalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTeamShrinkageJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffbalanceJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeofflimitsAvailableQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsEstimateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementAgentIntegrationsHrisRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementManagementunitTimeofflimitValuesRequest;
 
 import java.io.IOException;
@@ -2891,12 +2919,13 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit. (required)
    * @param serviceGoalTemplateId The ID of a service goal template to fetch (required)
+   * @param expand Include to access additional data on the service goal template (optional)
    * @return ServiceGoalTemplate
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ServiceGoalTemplate getWorkforcemanagementBusinessunitServicegoaltemplate(String businessUnitId, String serviceGoalTemplateId) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitServicegoaltemplate(createGetWorkforcemanagementBusinessunitServicegoaltemplateRequest(businessUnitId, serviceGoalTemplateId));
+  public ServiceGoalTemplate getWorkforcemanagementBusinessunitServicegoaltemplate(String businessUnitId, String serviceGoalTemplateId, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitServicegoaltemplate(createGetWorkforcemanagementBusinessunitServicegoaltemplateRequest(businessUnitId, serviceGoalTemplateId, expand));
   }
 
   /**
@@ -2904,18 +2933,21 @@ public class WorkforceManagementApi {
    * 
    * @param businessUnitId The ID of the business unit. (required)
    * @param serviceGoalTemplateId The ID of a service goal template to fetch (required)
+   * @param expand Include to access additional data on the service goal template (optional)
    * @return ServiceGoalTemplate
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ServiceGoalTemplate> getWorkforcemanagementBusinessunitServicegoaltemplateWithHttpInfo(String businessUnitId, String serviceGoalTemplateId) throws IOException {
-    return getWorkforcemanagementBusinessunitServicegoaltemplate(createGetWorkforcemanagementBusinessunitServicegoaltemplateRequest(businessUnitId, serviceGoalTemplateId).withHttpInfo());
+  public ApiResponse<ServiceGoalTemplate> getWorkforcemanagementBusinessunitServicegoaltemplateWithHttpInfo(String businessUnitId, String serviceGoalTemplateId, List<String> expand) throws IOException {
+    return getWorkforcemanagementBusinessunitServicegoaltemplate(createGetWorkforcemanagementBusinessunitServicegoaltemplateRequest(businessUnitId, serviceGoalTemplateId, expand).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitServicegoaltemplateRequest createGetWorkforcemanagementBusinessunitServicegoaltemplateRequest(String businessUnitId, String serviceGoalTemplateId) {
+  private GetWorkforcemanagementBusinessunitServicegoaltemplateRequest createGetWorkforcemanagementBusinessunitServicegoaltemplateRequest(String businessUnitId, String serviceGoalTemplateId, List<String> expand) {
     return GetWorkforcemanagementBusinessunitServicegoaltemplateRequest.builder()
             .withBusinessUnitId(businessUnitId)
 
             .withServiceGoalTemplateId(serviceGoalTemplateId)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -2972,28 +3004,32 @@ public class WorkforceManagementApi {
    * Gets list of service goal templates
    * 
    * @param businessUnitId The ID of the business unit. (required)
+   * @param expand Include to access additional data on the service goal template (optional)
    * @return ServiceGoalTemplateList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ServiceGoalTemplateList getWorkforcemanagementBusinessunitServicegoaltemplates(String businessUnitId) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitServicegoaltemplates(createGetWorkforcemanagementBusinessunitServicegoaltemplatesRequest(businessUnitId));
+  public ServiceGoalTemplateList getWorkforcemanagementBusinessunitServicegoaltemplates(String businessUnitId, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitServicegoaltemplates(createGetWorkforcemanagementBusinessunitServicegoaltemplatesRequest(businessUnitId, expand));
   }
 
   /**
    * Gets list of service goal templates
    * 
    * @param businessUnitId The ID of the business unit. (required)
+   * @param expand Include to access additional data on the service goal template (optional)
    * @return ServiceGoalTemplateList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ServiceGoalTemplateList> getWorkforcemanagementBusinessunitServicegoaltemplatesWithHttpInfo(String businessUnitId) throws IOException {
-    return getWorkforcemanagementBusinessunitServicegoaltemplates(createGetWorkforcemanagementBusinessunitServicegoaltemplatesRequest(businessUnitId).withHttpInfo());
+  public ApiResponse<ServiceGoalTemplateList> getWorkforcemanagementBusinessunitServicegoaltemplatesWithHttpInfo(String businessUnitId, List<String> expand) throws IOException {
+    return getWorkforcemanagementBusinessunitServicegoaltemplates(createGetWorkforcemanagementBusinessunitServicegoaltemplatesRequest(businessUnitId, expand).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest createGetWorkforcemanagementBusinessunitServicegoaltemplatesRequest(String businessUnitId) {
+  private GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest createGetWorkforcemanagementBusinessunitServicegoaltemplatesRequest(String businessUnitId, List<String> expand) {
     return GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest.builder()
             .withBusinessUnitId(businessUnitId)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -4476,6 +4512,158 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<HistoricalImportStatusListing> response = (ApiResponse<HistoricalImportStatusListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get integrations
+   * 
+   * @return WfmIntegrationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmIntegrationListing getWorkforcemanagementIntegrationsHris() throws IOException, ApiException {
+    return  getWorkforcemanagementIntegrationsHris(createGetWorkforcemanagementIntegrationsHrisRequest());
+  }
+
+  /**
+   * Get integrations
+   * 
+   * @return WfmIntegrationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmIntegrationListing> getWorkforcemanagementIntegrationsHrisWithHttpInfo() throws IOException {
+    return getWorkforcemanagementIntegrationsHris(createGetWorkforcemanagementIntegrationsHrisRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementIntegrationsHrisRequest createGetWorkforcemanagementIntegrationsHrisRequest() {
+    return GetWorkforcemanagementIntegrationsHrisRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get integrations
+   * 
+   * @param request The request object
+   * @return WfmIntegrationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmIntegrationListing getWorkforcemanagementIntegrationsHris(GetWorkforcemanagementIntegrationsHrisRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmIntegrationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmIntegrationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get integrations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmIntegrationListing> getWorkforcemanagementIntegrationsHris(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmIntegrationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmIntegrationListing> response = (ApiResponse<WfmIntegrationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmIntegrationListing> response = (ApiResponse<WfmIntegrationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the results of time off types job
+   * 
+   * @param jobId The ID of the job. (required)
+   * @return HrisTimeOffTypesJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HrisTimeOffTypesJobResponse getWorkforcemanagementIntegrationsHrisTimeofftypesJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementIntegrationsHrisTimeofftypesJob(createGetWorkforcemanagementIntegrationsHrisTimeofftypesJobRequest(jobId));
+  }
+
+  /**
+   * Query the results of time off types job
+   * 
+   * @param jobId The ID of the job. (required)
+   * @return HrisTimeOffTypesJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HrisTimeOffTypesJobResponse> getWorkforcemanagementIntegrationsHrisTimeofftypesJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementIntegrationsHrisTimeofftypesJob(createGetWorkforcemanagementIntegrationsHrisTimeofftypesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementIntegrationsHrisTimeofftypesJobRequest createGetWorkforcemanagementIntegrationsHrisTimeofftypesJobRequest(String jobId) {
+    return GetWorkforcemanagementIntegrationsHrisTimeofftypesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query the results of time off types job
+   * 
+   * @param request The request object
+   * @return HrisTimeOffTypesJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HrisTimeOffTypesJobResponse getWorkforcemanagementIntegrationsHrisTimeofftypesJob(GetWorkforcemanagementIntegrationsHrisTimeofftypesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<HrisTimeOffTypesJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HrisTimeOffTypesJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the results of time off types job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HrisTimeOffTypesJobResponse> getWorkforcemanagementIntegrationsHrisTimeofftypesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HrisTimeOffTypesJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HrisTimeOffTypesJobResponse> response = (ApiResponse<HrisTimeOffTypesJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HrisTimeOffTypesJobResponse> response = (ApiResponse<HrisTimeOffTypesJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6797,6 +6985,84 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Query the results of time off types job
+   * 
+   * @param jobId The ID of the job. (required)
+   * @return TimeOffBalanceJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffBalanceJobResponse getWorkforcemanagementTimeoffbalanceJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementTimeoffbalanceJob(createGetWorkforcemanagementTimeoffbalanceJobRequest(jobId));
+  }
+
+  /**
+   * Query the results of time off types job
+   * 
+   * @param jobId The ID of the job. (required)
+   * @return TimeOffBalanceJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffBalanceJobResponse> getWorkforcemanagementTimeoffbalanceJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementTimeoffbalanceJob(createGetWorkforcemanagementTimeoffbalanceJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementTimeoffbalanceJobRequest createGetWorkforcemanagementTimeoffbalanceJobRequest(String jobId) {
+    return GetWorkforcemanagementTimeoffbalanceJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query the results of time off types job
+   * 
+   * @param request The request object
+   * @return TimeOffBalanceJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffBalanceJobResponse getWorkforcemanagementTimeoffbalanceJob(GetWorkforcemanagementTimeoffbalanceJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffBalanceJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffBalanceJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the results of time off types job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffBalanceJobResponse> getWorkforcemanagementTimeoffbalanceJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffBalanceJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffBalanceJobResponse> response = (ApiResponse<TimeOffBalanceJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffBalanceJobResponse> response = (ApiResponse<TimeOffBalanceJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a time off request for the current user
    * 
    * @param timeOffRequestId The ID of the time off request (required)
@@ -7794,6 +8060,96 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Set integration status for a time off request.
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param timeOffRequestId The ID of the time off request. (required)
+   * @param userId The ID of user to whom the time off request belongs. (required)
+   * @param body body (optional)
+   * @return UserTimeOffIntegrationStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserTimeOffIntegrationStatusResponse patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(String managementUnitId, String timeOffRequestId, String userId, SetTimeOffIntegrationStatusRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(createPatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest(managementUnitId, timeOffRequestId, userId, body));
+  }
+
+  /**
+   * Set integration status for a time off request.
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param timeOffRequestId The ID of the time off request. (required)
+   * @param userId The ID of user to whom the time off request belongs. (required)
+   * @param body body (optional)
+   * @return UserTimeOffIntegrationStatusResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserTimeOffIntegrationStatusResponse> patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusWithHttpInfo(String managementUnitId, String timeOffRequestId, String userId, SetTimeOffIntegrationStatusRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(createPatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest(managementUnitId, timeOffRequestId, userId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest createPatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest(String managementUnitId, String timeOffRequestId, String userId, SetTimeOffIntegrationStatusRequest body) {
+    return PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .withTimeOffRequestId(timeOffRequestId)
+
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Set integration status for a time off request.
+   * 
+   * @param request The request object
+   * @return UserTimeOffIntegrationStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserTimeOffIntegrationStatusResponse patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserTimeOffIntegrationStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserTimeOffIntegrationStatusResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Set integration status for a time off request.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserTimeOffIntegrationStatusResponse> patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(ApiRequest<SetTimeOffIntegrationStatusRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserTimeOffIntegrationStatusResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserTimeOffIntegrationStatusResponse> response = (ApiResponse<UserTimeOffIntegrationStatusResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserTimeOffIntegrationStatusResponse> response = (ApiResponse<UserTimeOffIntegrationStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update a time off request
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
@@ -8402,6 +8758,7 @@ public class WorkforceManagementApi {
    * @return WfmHistoricalAdherenceResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WfmHistoricalAdherenceResponse postWorkforcemanagementAdherenceHistorical(WfmHistoricalAdherenceQueryForUsers body) throws IOException, ApiException {
     return  postWorkforcemanagementAdherenceHistorical(createPostWorkforcemanagementAdherenceHistoricalRequest(body));
@@ -8413,6 +8770,7 @@ public class WorkforceManagementApi {
    * @param body body (optional)
    * @return WfmHistoricalAdherenceResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WfmHistoricalAdherenceResponse> postWorkforcemanagementAdherenceHistoricalWithHttpInfo(WfmHistoricalAdherenceQueryForUsers body) throws IOException {
     return postWorkforcemanagementAdherenceHistorical(createPostWorkforcemanagementAdherenceHistoricalRequest(body).withHttpInfo());
@@ -8432,6 +8790,7 @@ public class WorkforceManagementApi {
    * @return WfmHistoricalAdherenceResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WfmHistoricalAdherenceResponse postWorkforcemanagementAdherenceHistorical(PostWorkforcemanagementAdherenceHistoricalRequest request) throws IOException, ApiException {
     try {
@@ -8450,6 +8809,7 @@ public class WorkforceManagementApi {
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WfmHistoricalAdherenceResponse> postWorkforcemanagementAdherenceHistorical(ApiRequest<WfmHistoricalAdherenceQueryForUsers> request) throws IOException {
     try {
@@ -8719,6 +9079,84 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentQueryAdherenceExplanationsResponse> response = (ApiResponse<AgentQueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query integrations for agents
+   * 
+   * @param body body (optional)
+   * @return AgentsIntegrationsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentsIntegrationsListing postWorkforcemanagementAgentsIntegrationsHrisQuery(QueryAgentsIntegrationsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentsIntegrationsHrisQuery(createPostWorkforcemanagementAgentsIntegrationsHrisQueryRequest(body));
+  }
+
+  /**
+   * Query integrations for agents
+   * 
+   * @param body body (optional)
+   * @return AgentsIntegrationsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentsIntegrationsListing> postWorkforcemanagementAgentsIntegrationsHrisQueryWithHttpInfo(QueryAgentsIntegrationsRequest body) throws IOException {
+    return postWorkforcemanagementAgentsIntegrationsHrisQuery(createPostWorkforcemanagementAgentsIntegrationsHrisQueryRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest createPostWorkforcemanagementAgentsIntegrationsHrisQueryRequest(QueryAgentsIntegrationsRequest body) {
+    return PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query integrations for agents
+   * 
+   * @param request The request object
+   * @return AgentsIntegrationsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentsIntegrationsListing postWorkforcemanagementAgentsIntegrationsHrisQuery(PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentsIntegrationsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentsIntegrationsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query integrations for agents
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentsIntegrationsListing> postWorkforcemanagementAgentsIntegrationsHrisQuery(ApiRequest<QueryAgentsIntegrationsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentsIntegrationsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentsIntegrationsListing> response = (ApiResponse<AgentsIntegrationsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentsIntegrationsListing> response = (ApiResponse<AgentsIntegrationsListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10855,6 +11293,84 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get list of time off types configured in integration
+   * 
+   * @param hrisIntegrationId The ID of the HRIS integration for which time off types are queried. (required)
+   * @return HrisTimeOffTypesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HrisTimeOffTypesResponse postWorkforcemanagementIntegrationsHriTimeofftypesJobs(String hrisIntegrationId) throws IOException, ApiException {
+    return  postWorkforcemanagementIntegrationsHriTimeofftypesJobs(createPostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest(hrisIntegrationId));
+  }
+
+  /**
+   * Get list of time off types configured in integration
+   * 
+   * @param hrisIntegrationId The ID of the HRIS integration for which time off types are queried. (required)
+   * @return HrisTimeOffTypesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HrisTimeOffTypesResponse> postWorkforcemanagementIntegrationsHriTimeofftypesJobsWithHttpInfo(String hrisIntegrationId) throws IOException {
+    return postWorkforcemanagementIntegrationsHriTimeofftypesJobs(createPostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest(hrisIntegrationId).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest createPostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest(String hrisIntegrationId) {
+    return PostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest.builder()
+            .withHrisIntegrationId(hrisIntegrationId)
+
+            .build();
+  }
+
+  /**
+   * Get list of time off types configured in integration
+   * 
+   * @param request The request object
+   * @return HrisTimeOffTypesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HrisTimeOffTypesResponse postWorkforcemanagementIntegrationsHriTimeofftypesJobs(PostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<HrisTimeOffTypesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HrisTimeOffTypesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of time off types configured in integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HrisTimeOffTypesResponse> postWorkforcemanagementIntegrationsHriTimeofftypesJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HrisTimeOffTypesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HrisTimeOffTypesResponse> response = (ApiResponse<HrisTimeOffTypesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HrisTimeOffTypesResponse> response = (ApiResponse<HrisTimeOffTypesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query published schedules for given given time range for set of users
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
@@ -11605,6 +12121,88 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Retrieves integration statuses for a list of time off requests
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param body body (optional)
+   * @return UserTimeOffIntegrationStatusResponseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserTimeOffIntegrationStatusResponseListing postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(String managementUnitId, QueryTimeOffIntegrationStatusRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQueryRequest(managementUnitId, body));
+  }
+
+  /**
+   * Retrieves integration statuses for a list of time off requests
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param body body (optional)
+   * @return UserTimeOffIntegrationStatusResponseListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserTimeOffIntegrationStatusResponseListing> postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQueryWithHttpInfo(String managementUnitId, QueryTimeOffIntegrationStatusRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQueryRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQueryRequest createPostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQueryRequest(String managementUnitId, QueryTimeOffIntegrationStatusRequest body) {
+    return PostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQueryRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Retrieves integration statuses for a list of time off requests
+   * 
+   * @param request The request object
+   * @return UserTimeOffIntegrationStatusResponseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserTimeOffIntegrationStatusResponseListing postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(PostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserTimeOffIntegrationStatusResponseListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserTimeOffIntegrationStatusResponseListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves integration statuses for a list of time off requests
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserTimeOffIntegrationStatusResponseListing> postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(ApiRequest<QueryTimeOffIntegrationStatusRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserTimeOffIntegrationStatusResponseListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserTimeOffIntegrationStatusResponseListing> response = (ApiResponse<UserTimeOffIntegrationStatusResponseListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserTimeOffIntegrationStatusResponseListing> response = (ApiResponse<UserTimeOffIntegrationStatusResponseListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Fetches time off requests matching the conditions specified in the request body
    * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
@@ -11936,6 +12534,92 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TimeOffBalancesResponse> response = (ApiResponse<TimeOffBalancesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Estimates available time off for an agent
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @param userId The id of the user for whom the time off request estimate is requested (required)
+   * @param body body (optional)
+   * @return EstimateAvailableTimeOffResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EstimateAvailableTimeOffResponse postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(String managementUnitId, String userId, EstimateAvailableTimeOffRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(createPostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest(managementUnitId, userId, body));
+  }
+
+  /**
+   * Estimates available time off for an agent
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @param userId The id of the user for whom the time off request estimate is requested (required)
+   * @param body body (optional)
+   * @return EstimateAvailableTimeOffResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EstimateAvailableTimeOffResponse> postWorkforcemanagementManagementunitUserTimeoffrequestsEstimateWithHttpInfo(String managementUnitId, String userId, EstimateAvailableTimeOffRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(createPostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest(managementUnitId, userId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest createPostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest(String managementUnitId, String userId, EstimateAvailableTimeOffRequest body) {
+    return PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Estimates available time off for an agent
+   * 
+   * @param request The request object
+   * @return EstimateAvailableTimeOffResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EstimateAvailableTimeOffResponse postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EstimateAvailableTimeOffResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EstimateAvailableTimeOffResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Estimates available time off for an agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EstimateAvailableTimeOffResponse> postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(ApiRequest<EstimateAvailableTimeOffRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EstimateAvailableTimeOffResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EstimateAvailableTimeOffResponse> response = (ApiResponse<EstimateAvailableTimeOffResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EstimateAvailableTimeOffResponse> response = (ApiResponse<EstimateAvailableTimeOffResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -13125,6 +13809,84 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Query time off balances for the current user for specified activity code and dates
+   * 
+   * @param body The request body (required)
+   * @return TimeOffBalancesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffBalancesResponse postWorkforcemanagementTimeoffbalanceJobs(TimeOffBalanceRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementTimeoffbalanceJobs(createPostWorkforcemanagementTimeoffbalanceJobsRequest(body));
+  }
+
+  /**
+   * Query time off balances for the current user for specified activity code and dates
+   * 
+   * @param body The request body (required)
+   * @return TimeOffBalancesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffBalancesResponse> postWorkforcemanagementTimeoffbalanceJobsWithHttpInfo(TimeOffBalanceRequest body) throws IOException {
+    return postWorkforcemanagementTimeoffbalanceJobs(createPostWorkforcemanagementTimeoffbalanceJobsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementTimeoffbalanceJobsRequest createPostWorkforcemanagementTimeoffbalanceJobsRequest(TimeOffBalanceRequest body) {
+    return PostWorkforcemanagementTimeoffbalanceJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query time off balances for the current user for specified activity code and dates
+   * 
+   * @param request The request object
+   * @return TimeOffBalancesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffBalancesResponse postWorkforcemanagementTimeoffbalanceJobs(PostWorkforcemanagementTimeoffbalanceJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffBalancesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffBalancesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query time off balances for the current user for specified activity code and dates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffBalancesResponse> postWorkforcemanagementTimeoffbalanceJobs(ApiRequest<TimeOffBalanceRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffBalancesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffBalancesResponse> response = (ApiResponse<TimeOffBalancesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffBalancesResponse> response = (ApiResponse<TimeOffBalancesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Queries available time off for the current user
    * 
    * @param body body (optional)
@@ -13276,6 +14038,244 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TimeOffRequestResponse> response = (ApiResponse<TimeOffRequestResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Estimates available time off for current user
+   * 
+   * @param body body (optional)
+   * @return EstimateAvailableTimeOffResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EstimateAvailableTimeOffResponse postWorkforcemanagementTimeoffrequestsEstimate(EstimateAvailableTimeOffRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementTimeoffrequestsEstimate(createPostWorkforcemanagementTimeoffrequestsEstimateRequest(body));
+  }
+
+  /**
+   * Estimates available time off for current user
+   * 
+   * @param body body (optional)
+   * @return EstimateAvailableTimeOffResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EstimateAvailableTimeOffResponse> postWorkforcemanagementTimeoffrequestsEstimateWithHttpInfo(EstimateAvailableTimeOffRequest body) throws IOException {
+    return postWorkforcemanagementTimeoffrequestsEstimate(createPostWorkforcemanagementTimeoffrequestsEstimateRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementTimeoffrequestsEstimateRequest createPostWorkforcemanagementTimeoffrequestsEstimateRequest(EstimateAvailableTimeOffRequest body) {
+    return PostWorkforcemanagementTimeoffrequestsEstimateRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Estimates available time off for current user
+   * 
+   * @param request The request object
+   * @return EstimateAvailableTimeOffResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EstimateAvailableTimeOffResponse postWorkforcemanagementTimeoffrequestsEstimate(PostWorkforcemanagementTimeoffrequestsEstimateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EstimateAvailableTimeOffResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EstimateAvailableTimeOffResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Estimates available time off for current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EstimateAvailableTimeOffResponse> postWorkforcemanagementTimeoffrequestsEstimate(ApiRequest<EstimateAvailableTimeOffRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EstimateAvailableTimeOffResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EstimateAvailableTimeOffResponse> response = (ApiResponse<EstimateAvailableTimeOffResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EstimateAvailableTimeOffResponse> response = (ApiResponse<EstimateAvailableTimeOffResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieves integration statuses for a list of current user time off requests
+   * 
+   * @param body body (optional)
+   * @return TimeOffIntegrationStatusResponseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffIntegrationStatusResponseListing postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(CurrentUserTimeOffIntegrationStatusRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(createPostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest(body));
+  }
+
+  /**
+   * Retrieves integration statuses for a list of current user time off requests
+   * 
+   * @param body body (optional)
+   * @return TimeOffIntegrationStatusResponseListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffIntegrationStatusResponseListing> postWorkforcemanagementTimeoffrequestsIntegrationstatusQueryWithHttpInfo(CurrentUserTimeOffIntegrationStatusRequest body) throws IOException {
+    return postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(createPostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest createPostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest(CurrentUserTimeOffIntegrationStatusRequest body) {
+    return PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Retrieves integration statuses for a list of current user time off requests
+   * 
+   * @param request The request object
+   * @return TimeOffIntegrationStatusResponseListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffIntegrationStatusResponseListing postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffIntegrationStatusResponseListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffIntegrationStatusResponseListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves integration statuses for a list of current user time off requests
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffIntegrationStatusResponseListing> postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(ApiRequest<CurrentUserTimeOffIntegrationStatusRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffIntegrationStatusResponseListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffIntegrationStatusResponseListing> response = (ApiResponse<TimeOffIntegrationStatusResponseListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffIntegrationStatusResponseListing> response = (ApiResponse<TimeOffIntegrationStatusResponseListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update integrations for agent
+   * 
+   * @param agentId The ID of the agent (required)
+   * @param body body (required)
+   * @return AgentIntegrationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentIntegrationsResponse putWorkforcemanagementAgentIntegrationsHris(String agentId, AgentIntegrationsRequest body) throws IOException, ApiException {
+    return  putWorkforcemanagementAgentIntegrationsHris(createPutWorkforcemanagementAgentIntegrationsHrisRequest(agentId, body));
+  }
+
+  /**
+   * Update integrations for agent
+   * 
+   * @param agentId The ID of the agent (required)
+   * @param body body (required)
+   * @return AgentIntegrationsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentIntegrationsResponse> putWorkforcemanagementAgentIntegrationsHrisWithHttpInfo(String agentId, AgentIntegrationsRequest body) throws IOException {
+    return putWorkforcemanagementAgentIntegrationsHris(createPutWorkforcemanagementAgentIntegrationsHrisRequest(agentId, body).withHttpInfo());
+  }
+
+  private PutWorkforcemanagementAgentIntegrationsHrisRequest createPutWorkforcemanagementAgentIntegrationsHrisRequest(String agentId, AgentIntegrationsRequest body) {
+    return PutWorkforcemanagementAgentIntegrationsHrisRequest.builder()
+            .withAgentId(agentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update integrations for agent
+   * 
+   * @param request The request object
+   * @return AgentIntegrationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentIntegrationsResponse putWorkforcemanagementAgentIntegrationsHris(PutWorkforcemanagementAgentIntegrationsHrisRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentIntegrationsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentIntegrationsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update integrations for agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentIntegrationsResponse> putWorkforcemanagementAgentIntegrationsHris(ApiRequest<AgentIntegrationsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentIntegrationsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentIntegrationsResponse> response = (ApiResponse<AgentIntegrationsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentIntegrationsResponse> response = (ApiResponse<AgentIntegrationsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

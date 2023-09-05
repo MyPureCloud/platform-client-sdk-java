@@ -26,14 +26,14 @@ public class WfmForecastModificationIntervalOffsetValue  implements Serializable
 
   
   /**
-   * The number of 15 minute intervals past referenceStartDate to which to apply this modification
+   * The number of intervals past referenceStartDate to which to apply this modification
    **/
   public WfmForecastModificationIntervalOffsetValue intervalIndex(Integer intervalIndex) {
     this.intervalIndex = intervalIndex;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The number of 15 minute intervals past referenceStartDate to which to apply this modification")
+  @ApiModelProperty(example = "null", required = true, value = "The number of intervals past referenceStartDate to which to apply this modification")
   @JsonProperty("intervalIndex")
   public Integer getIntervalIndex() {
     return intervalIndex;

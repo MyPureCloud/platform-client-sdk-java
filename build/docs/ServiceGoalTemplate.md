@@ -14,6 +14,7 @@ title: ServiceGoalTemplate
 | **averageSpeedOfAnswer** | <!----><!---->[**BuAverageSpeedOfAnswer**](BuAverageSpeedOfAnswer.html)<!----> | Average speed of answer targets for this service goal template |  [optional] |
 | **abandonRate** | <!----><!---->[**BuAbandonRate**](BuAbandonRate.html)<!----> | Abandon rate targets for this service goal template |  [optional] |
 | **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for the service goal template |  [optional] |
+| **impactOverride** | <!----><!---->[**ServiceGoalTemplateImpactOverride**](ServiceGoalTemplateImpactOverride.html)<!----> | Settings controlling max percent increase and decrease of service goals for this service goal template |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

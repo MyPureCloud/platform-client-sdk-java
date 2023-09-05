@@ -14,6 +14,8 @@ title: AdminTimeOffRequestPatch
 | **fullDayManagementUnitDates** | <!----><!---->**List&lt;String&gt;**<!----> | A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone. |  [optional] |
 | **partialDayStartDateTimes** | <!----><!---->[**List&lt;Date&gt;**](Date.html)<!----> | A set of start date-times in ISO-8601 format for partial day requests. |  [optional] |
 | **dailyDurationMinutes** | <!----><!---->**Integer**<!----> | The daily duration of this time off request in minutes |  [optional] |
+| **durationMinutes** | <!----><!---->**List&lt;Integer&gt;**<!----> | Daily durations for each day of this time off request in minutes |  [optional] |
+| **payableMinutes** | <!----><!---->**List&lt;Integer&gt;**<!----> | Payable minutes for each day of this time off request |  [optional] |
 | **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for the time off request |  |
 {: class="table table-striped"}
 

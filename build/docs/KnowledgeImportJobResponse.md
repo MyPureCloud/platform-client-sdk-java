@@ -9,12 +9,15 @@ title: KnowledgeImportJobResponse
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | Id of the import job |  [optional] |
+| **downloadURL** | <!----><!---->**String**<!----> | The URL of the location at which the caller can download the imported file. |  [optional] |
+| **failedEntitiesURL** | <!----><!---->**String**<!----> | The URL of the location at which the caller can download the entities in json format that failed during the import. |  [optional] |
 | **uploadKey** | <!----><!---->**String**<!----> | Upload key |  |
 | **fileType** | [**FileTypeEnum**](#FileTypeEnum)<!----> | File type of the document |  |
 | **settings** | <!----><!---->[**KnowledgeImportJobSettings**](KnowledgeImportJobSettings.html)<!----> | Additional optional settings |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | Status of the import job |  [optional] |
 | **report** | <!----><!---->[**KnowledgeImportJobReport**](KnowledgeImportJobReport.html)<!----> | Report of the import job |  [optional] |
 | **knowledgeBase** | <!----><!---->[**KnowledgeBase**](KnowledgeBase.html)<!----> | Knowledge base which document import does belong to |  [optional] |
+| **createdBy** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user who created the operation |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **skipConfirmationStep** | <!----><!---->**Boolean**<!----> | If enabled pre-validation step will be skipped. |  [optional] |

@@ -25,6 +25,8 @@ import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.BulkCallbackDisconnectRequest;
 import com.mypurecloud.sdk.v2.model.BulkCallbackPatchRequest;
 import com.mypurecloud.sdk.v2.model.BulkCallbackPatchResponse;
+import com.mypurecloud.sdk.v2.model.CachedMediaItem;
+import com.mypurecloud.sdk.v2.model.CachedMediaItemEntityListing;
 import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.CallConversation;
 import com.mypurecloud.sdk.v2.model.CallConversationEntityListing;
@@ -109,11 +111,17 @@ import com.mypurecloud.sdk.v2.model.MessagingSettingDefaultRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingPatchRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingRequest;
 import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
+import com.mypurecloud.sdk.v2.model.OpenEventNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedEvent;
+import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedReceipt;
 import com.mypurecloud.sdk.v2.model.OpenIntegration;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.OpenMessageNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.OpenReceiptNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
 import com.mypurecloud.sdk.v2.model.PatchCallbackResponse;
@@ -153,6 +161,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantCodeReque
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest;
@@ -219,6 +228,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantComm
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaCachedMediaItemIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookAppRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
@@ -339,6 +350,9 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsKeyconfigurationsVali
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationTypingRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenEventRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageInboundOpenReceiptRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantMonitorRequest;
@@ -769,6 +783,81 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteConversationsEmailMessagesDraftAttachment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Remove a cached media item asychronously
+   * 
+   * @param cachedMediaItemId cachedMediaItemId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagesCachedmediaCachedMediaItemId(String cachedMediaItemId) throws IOException, ApiException {
+     deleteConversationsMessagesCachedmediaCachedMediaItemId(createDeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest(cachedMediaItemId));
+  }
+
+  /**
+   * Remove a cached media item asychronously
+   * 
+   * @param cachedMediaItemId cachedMediaItemId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagesCachedmediaCachedMediaItemIdWithHttpInfo(String cachedMediaItemId) throws IOException {
+    return deleteConversationsMessagesCachedmediaCachedMediaItemId(createDeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest(cachedMediaItemId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest createDeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest(String cachedMediaItemId) {
+    return DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest.builder()
+            .withCachedMediaItemId(cachedMediaItemId)
+
+            .build();
+  }
+
+  /**
+   * Remove a cached media item asychronously
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagesCachedmediaCachedMediaItemId(DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Remove a cached media item asychronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagesCachedmediaCachedMediaItemId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -6114,6 +6203,170 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MessageConversationEntityListing> response = (ApiResponse<MessageConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of cached media items
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param url URL to search for (optional)
+   * @return CachedMediaItemEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CachedMediaItemEntityListing getConversationsMessagesCachedmedia(Integer pageSize, Integer pageNumber, String url) throws IOException, ApiException {
+    return  getConversationsMessagesCachedmedia(createGetConversationsMessagesCachedmediaRequest(pageSize, pageNumber, url));
+  }
+
+  /**
+   * Get a list of cached media items
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param url URL to search for (optional)
+   * @return CachedMediaItemEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CachedMediaItemEntityListing> getConversationsMessagesCachedmediaWithHttpInfo(Integer pageSize, Integer pageNumber, String url) throws IOException {
+    return getConversationsMessagesCachedmedia(createGetConversationsMessagesCachedmediaRequest(pageSize, pageNumber, url).withHttpInfo());
+  }
+
+  private GetConversationsMessagesCachedmediaRequest createGetConversationsMessagesCachedmediaRequest(Integer pageSize, Integer pageNumber, String url) {
+    return GetConversationsMessagesCachedmediaRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withUrl(url)
+
+            .build();
+  }
+
+  /**
+   * Get a list of cached media items
+   * 
+   * @param request The request object
+   * @return CachedMediaItemEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CachedMediaItemEntityListing getConversationsMessagesCachedmedia(GetConversationsMessagesCachedmediaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CachedMediaItemEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CachedMediaItemEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of cached media items
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CachedMediaItemEntityListing> getConversationsMessagesCachedmedia(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CachedMediaItemEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CachedMediaItemEntityListing> response = (ApiResponse<CachedMediaItemEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CachedMediaItemEntityListing> response = (ApiResponse<CachedMediaItemEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a cached media item
+   * 
+   * @param cachedMediaItemId cachedMediaItemId (required)
+   * @return CachedMediaItem
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CachedMediaItem getConversationsMessagesCachedmediaCachedMediaItemId(String cachedMediaItemId) throws IOException, ApiException {
+    return  getConversationsMessagesCachedmediaCachedMediaItemId(createGetConversationsMessagesCachedmediaCachedMediaItemIdRequest(cachedMediaItemId));
+  }
+
+  /**
+   * Get a cached media item
+   * 
+   * @param cachedMediaItemId cachedMediaItemId (required)
+   * @return CachedMediaItem
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CachedMediaItem> getConversationsMessagesCachedmediaCachedMediaItemIdWithHttpInfo(String cachedMediaItemId) throws IOException {
+    return getConversationsMessagesCachedmediaCachedMediaItemId(createGetConversationsMessagesCachedmediaCachedMediaItemIdRequest(cachedMediaItemId).withHttpInfo());
+  }
+
+  private GetConversationsMessagesCachedmediaCachedMediaItemIdRequest createGetConversationsMessagesCachedmediaCachedMediaItemIdRequest(String cachedMediaItemId) {
+    return GetConversationsMessagesCachedmediaCachedMediaItemIdRequest.builder()
+            .withCachedMediaItemId(cachedMediaItemId)
+
+            .build();
+  }
+
+  /**
+   * Get a cached media item
+   * 
+   * @param request The request object
+   * @return CachedMediaItem
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CachedMediaItem getConversationsMessagesCachedmediaCachedMediaItemId(GetConversationsMessagesCachedmediaCachedMediaItemIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CachedMediaItem> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CachedMediaItem>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a cached media item
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CachedMediaItem> getConversationsMessagesCachedmediaCachedMediaItemId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CachedMediaItem>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CachedMediaItem> response = (ApiResponse<CachedMediaItem>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CachedMediaItem> response = (ApiResponse<CachedMediaItem>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -16137,6 +16390,252 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Send an inbound Open Event Message
+   * Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param integrationId integrationId (required)
+   * @param body NormalizedMessage (required)
+   * @return OpenEventNormalizedMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenEventNormalizedMessage postConversationsMessageInboundOpenEvent(String integrationId, OpenInboundNormalizedEvent body) throws IOException, ApiException {
+    return  postConversationsMessageInboundOpenEvent(createPostConversationsMessageInboundOpenEventRequest(integrationId, body));
+  }
+
+  /**
+   * Send an inbound Open Event Message
+   * Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param integrationId integrationId (required)
+   * @param body NormalizedMessage (required)
+   * @return OpenEventNormalizedMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenEventNormalizedMessage> postConversationsMessageInboundOpenEventWithHttpInfo(String integrationId, OpenInboundNormalizedEvent body) throws IOException {
+    return postConversationsMessageInboundOpenEvent(createPostConversationsMessageInboundOpenEventRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PostConversationsMessageInboundOpenEventRequest createPostConversationsMessageInboundOpenEventRequest(String integrationId, OpenInboundNormalizedEvent body) {
+    return PostConversationsMessageInboundOpenEventRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Send an inbound Open Event Message
+   * Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request The request object
+   * @return OpenEventNormalizedMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenEventNormalizedMessage postConversationsMessageInboundOpenEvent(PostConversationsMessageInboundOpenEventRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenEventNormalizedMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenEventNormalizedMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send an inbound Open Event Message
+   * Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenEventNormalizedMessage> postConversationsMessageInboundOpenEvent(ApiRequest<OpenInboundNormalizedEvent> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenEventNormalizedMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenEventNormalizedMessage> response = (ApiResponse<OpenEventNormalizedMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenEventNormalizedMessage> response = (ApiResponse<OpenEventNormalizedMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Send inbound Open Message
+   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param integrationId integrationId (required)
+   * @param body NormalizedMessage (required)
+   * @return OpenMessageNormalizedMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenMessageNormalizedMessage postConversationsMessageInboundOpenMessage(String integrationId, OpenInboundNormalizedMessage body) throws IOException, ApiException {
+    return  postConversationsMessageInboundOpenMessage(createPostConversationsMessageInboundOpenMessageRequest(integrationId, body));
+  }
+
+  /**
+   * Send inbound Open Message
+   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param integrationId integrationId (required)
+   * @param body NormalizedMessage (required)
+   * @return OpenMessageNormalizedMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenMessageNormalizedMessage> postConversationsMessageInboundOpenMessageWithHttpInfo(String integrationId, OpenInboundNormalizedMessage body) throws IOException {
+    return postConversationsMessageInboundOpenMessage(createPostConversationsMessageInboundOpenMessageRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PostConversationsMessageInboundOpenMessageRequest createPostConversationsMessageInboundOpenMessageRequest(String integrationId, OpenInboundNormalizedMessage body) {
+    return PostConversationsMessageInboundOpenMessageRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Send inbound Open Message
+   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request The request object
+   * @return OpenMessageNormalizedMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenMessageNormalizedMessage postConversationsMessageInboundOpenMessage(PostConversationsMessageInboundOpenMessageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenMessageNormalizedMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenMessageNormalizedMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send inbound Open Message
+   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenMessageNormalizedMessage> postConversationsMessageInboundOpenMessage(ApiRequest<OpenInboundNormalizedMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenMessageNormalizedMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenMessageNormalizedMessage> response = (ApiResponse<OpenMessageNormalizedMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenMessageNormalizedMessage> response = (ApiResponse<OpenMessageNormalizedMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Send an inbound Open Receipt Message
+   * Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param integrationId integrationId (required)
+   * @param body NormalizedMessage (required)
+   * @return OpenReceiptNormalizedMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenReceiptNormalizedMessage postConversationsMessageInboundOpenReceipt(String integrationId, OpenInboundNormalizedReceipt body) throws IOException, ApiException {
+    return  postConversationsMessageInboundOpenReceipt(createPostConversationsMessageInboundOpenReceiptRequest(integrationId, body));
+  }
+
+  /**
+   * Send an inbound Open Receipt Message
+   * Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param integrationId integrationId (required)
+   * @param body NormalizedMessage (required)
+   * @return OpenReceiptNormalizedMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenReceiptNormalizedMessage> postConversationsMessageInboundOpenReceiptWithHttpInfo(String integrationId, OpenInboundNormalizedReceipt body) throws IOException {
+    return postConversationsMessageInboundOpenReceipt(createPostConversationsMessageInboundOpenReceiptRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PostConversationsMessageInboundOpenReceiptRequest createPostConversationsMessageInboundOpenReceiptRequest(String integrationId, OpenInboundNormalizedReceipt body) {
+    return PostConversationsMessageInboundOpenReceiptRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Send an inbound Open Receipt Message
+   * Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request The request object
+   * @return OpenReceiptNormalizedMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenReceiptNormalizedMessage postConversationsMessageInboundOpenReceipt(PostConversationsMessageInboundOpenReceiptRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenReceiptNormalizedMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenReceiptNormalizedMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send an inbound Open Receipt Message
+   * Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenReceiptNormalizedMessage> postConversationsMessageInboundOpenReceipt(ApiRequest<OpenInboundNormalizedReceipt> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenReceiptNormalizedMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenReceiptNormalizedMessage> response = (ApiResponse<OpenReceiptNormalizedMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenReceiptNormalizedMessage> response = (ApiResponse<OpenReceiptNormalizedMessage>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -80,6 +80,8 @@ public class AdminTimeOffRequestPatch  implements Serializable {
   private List<String> fullDayManagementUnitDates = new ArrayList<String>();
   private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
   private Integer dailyDurationMinutes = null;
+  private List<Integer> durationMinutes = new ArrayList<Integer>();
+  private List<Integer> payableMinutes = new ArrayList<Integer>();
   private WfmVersionedEntityMetadata metadata = null;
 
   
@@ -192,6 +194,42 @@ public class AdminTimeOffRequestPatch  implements Serializable {
 
 
   /**
+   * Daily durations for each day of this time off request in minutes
+   **/
+  public AdminTimeOffRequestPatch durationMinutes(List<Integer> durationMinutes) {
+    this.durationMinutes = durationMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Daily durations for each day of this time off request in minutes")
+  @JsonProperty("durationMinutes")
+  public List<Integer> getDurationMinutes() {
+    return durationMinutes;
+  }
+  public void setDurationMinutes(List<Integer> durationMinutes) {
+    this.durationMinutes = durationMinutes;
+  }
+
+
+  /**
+   * Payable minutes for each day of this time off request
+   **/
+  public AdminTimeOffRequestPatch payableMinutes(List<Integer> payableMinutes) {
+    this.payableMinutes = payableMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payable minutes for each day of this time off request")
+  @JsonProperty("payableMinutes")
+  public List<Integer> getPayableMinutes() {
+    return payableMinutes;
+  }
+  public void setPayableMinutes(List<Integer> payableMinutes) {
+    this.payableMinutes = payableMinutes;
+  }
+
+
+  /**
    * Version metadata for the time off request
    **/
   public AdminTimeOffRequestPatch metadata(WfmVersionedEntityMetadata metadata) {
@@ -225,12 +263,14 @@ public class AdminTimeOffRequestPatch  implements Serializable {
             Objects.equals(this.fullDayManagementUnitDates, adminTimeOffRequestPatch.fullDayManagementUnitDates) &&
             Objects.equals(this.partialDayStartDateTimes, adminTimeOffRequestPatch.partialDayStartDateTimes) &&
             Objects.equals(this.dailyDurationMinutes, adminTimeOffRequestPatch.dailyDurationMinutes) &&
+            Objects.equals(this.durationMinutes, adminTimeOffRequestPatch.durationMinutes) &&
+            Objects.equals(this.payableMinutes, adminTimeOffRequestPatch.payableMinutes) &&
             Objects.equals(this.metadata, adminTimeOffRequestPatch.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, activityCodeId, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes, metadata);
+    return Objects.hash(status, activityCodeId, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes, durationMinutes, payableMinutes, metadata);
   }
 
   @Override
@@ -244,6 +284,8 @@ public class AdminTimeOffRequestPatch  implements Serializable {
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");
+    sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
+    sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

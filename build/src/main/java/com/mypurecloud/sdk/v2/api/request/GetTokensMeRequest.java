@@ -26,6 +26,20 @@ import com.mypurecloud.sdk.v2.model.TokenInfo;
 
 public class GetTokensMeRequest {
 
+	private Boolean preserveIdleTTL;
+	public Boolean getPreserveIdleTTL() {
+		return this.preserveIdleTTL;
+	}
+
+	public void setPreserveIdleTTL(Boolean preserveIdleTTL) {
+		this.preserveIdleTTL = preserveIdleTTL;
+	}
+
+	public GetTokensMeRequest withPreserveIdleTTL(Boolean preserveIdleTTL) {
+	    this.setPreserveIdleTTL(preserveIdleTTL);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -49,6 +63,9 @@ public class GetTokensMeRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/tokens/me")
+
+                .withQueryParameters("preserveIdleTTL", "", preserveIdleTTL)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -69,6 +86,11 @@ public class GetTokensMeRequest {
 			request = new GetTokensMeRequest();
 		}
 
+
+		public Builder withPreserveIdleTTL(Boolean preserveIdleTTL) {
+			request.setPreserveIdleTTL(preserveIdleTTL);
+			return this;
+		}
 
 
 

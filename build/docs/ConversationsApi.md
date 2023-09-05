@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteConversationParticipantFlaggedreason**](ConversationsApi.html#deleteConversationParticipantFlaggedreason) | Remove flagged reason from conversation participant. |
 | [**deleteConversationsCallParticipantConsult**](ConversationsApi.html#deleteConversationsCallParticipantConsult) | Cancel the transfer |
 | [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | Delete attachment from draft |
+| [**deleteConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi.html#deleteConversationsMessagesCachedmediaCachedMediaItemId) | Remove a cached media item asychronously |
 | [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | Delete a Facebook messaging integration |
 | [**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | Delete Instagram messaging integration |
 | [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | Delete a LINE messenger integration |
@@ -78,6 +79,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessageParticipantWrapup**](ConversationsApi.html#getConversationsMessageParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi.html#getConversationsMessageParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsMessages**](ConversationsApi.html#getConversationsMessages) | Get active message conversations for the logged in user |
+| [**getConversationsMessagesCachedmedia**](ConversationsApi.html#getConversationsMessagesCachedmedia) | Get a list of cached media items |
+| [**getConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi.html#getConversationsMessagesCachedmediaCachedMediaItemId) | Get a cached media item |
 | [**getConversationsMessagingFacebookApp**](ConversationsApi.html#getConversationsMessagingFacebookApp) | Get Genesys Facebook App Id |
 | [**getConversationsMessagingIntegrations**](ConversationsApi.html#getConversationsMessagingIntegrations) | Get a list of Integrations |
 | [**getConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebook) | Get a list of Facebook Integrations |
@@ -198,6 +201,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessageCommunicationMessages**](ConversationsApi.html#postConversationsMessageCommunicationMessages) | Send message |
 | [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi.html#postConversationsMessageCommunicationMessagesMedia) | Create media |
 | [**postConversationsMessageCommunicationTyping**](ConversationsApi.html#postConversationsMessageCommunicationTyping) | Send message typing event |
+| [**postConversationsMessageInboundOpenEvent**](ConversationsApi.html#postConversationsMessageInboundOpenEvent) | Send an inbound Open Event Message |
+| [**postConversationsMessageInboundOpenMessage**](ConversationsApi.html#postConversationsMessageInboundOpenMessage) | Send inbound Open Message |
+| [**postConversationsMessageInboundOpenReceipt**](ConversationsApi.html#postConversationsMessageInboundOpenReceipt) | Send an inbound Open Receipt Message |
 | [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | Get messages in batch |
 | [**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsMessageParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsMessageParticipantMonitor**](ConversationsApi.html#postConversationsMessageParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
@@ -538,6 +544,66 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **attachmentId** | **String**| attachmentId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteConversationsMessagesCachedmediaCachedMediaItemId"></a>
+
+# **deleteConversationsMessagesCachedmediaCachedMediaItemId**
+
+
+
+> Void deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+
+Remove a cached media item asychronously
+
+Wraps DELETE /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}  
+
+Requires ANY permissions: 
+
+* conversation:cachedMedia:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String cachedMediaItemId = "cachedMediaItemId_example"; // String | cachedMediaItemId
+try {
+    apiInstance.deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagesCachedmediaCachedMediaItemId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cachedMediaItemId** | **String**| cachedMediaItemId | 
 {: class="table-striped"}
 
 
@@ -4618,6 +4684,132 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**MessageConversationEntityListing**](MessageConversationEntityListing.html)
+
+<a name="getConversationsMessagesCachedmedia"></a>
+
+# **getConversationsMessagesCachedmedia**
+
+
+
+> [CachedMediaItemEntityListing](CachedMediaItemEntityListing.html) getConversationsMessagesCachedmedia(pageSize, pageNumber, url)
+
+Get a list of cached media items
+
+Wraps GET /api/v2/conversations/messages/cachedmedia  
+
+Requires ANY permissions: 
+
+* conversation:cachedMedia:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String url = "url_example"; // String | URL to search for
+try {
+    CachedMediaItemEntityListing result = apiInstance.getConversationsMessagesCachedmedia(pageSize, pageNumber, url);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagesCachedmedia");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **url** | **String**| URL to search for | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CachedMediaItemEntityListing**](CachedMediaItemEntityListing.html)
+
+<a name="getConversationsMessagesCachedmediaCachedMediaItemId"></a>
+
+# **getConversationsMessagesCachedmediaCachedMediaItemId**
+
+
+
+> [CachedMediaItem](CachedMediaItem.html) getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+
+Get a cached media item
+
+Wraps GET /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}  
+
+Requires ANY permissions: 
+
+* conversation:cachedMedia:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String cachedMediaItemId = "cachedMediaItemId_example"; // String | cachedMediaItemId
+try {
+    CachedMediaItem result = apiInstance.getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagesCachedmediaCachedMediaItemId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cachedMediaItemId** | **String**| cachedMediaItemId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CachedMediaItem**](CachedMediaItem.html)
 
 <a name="getConversationsMessagingFacebookApp"></a>
 
@@ -12293,6 +12485,201 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postConversationsMessageInboundOpenEvent"></a>
+
+# **postConversationsMessageInboundOpenEvent**
+
+
+
+> [OpenEventNormalizedMessage](OpenEventNormalizedMessage.html) postConversationsMessageInboundOpenEvent(integrationId, body)
+
+Send an inbound Open Event Message
+
+Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Wraps POST /api/v2/conversations/messages/{integrationId}/inbound/open/event  
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | integrationId
+OpenInboundNormalizedEvent body = new OpenInboundNormalizedEvent(); // OpenInboundNormalizedEvent | NormalizedMessage
+try {
+    OpenEventNormalizedMessage result = apiInstance.postConversationsMessageInboundOpenEvent(integrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageInboundOpenEvent");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| integrationId | 
+| **body** | [**OpenInboundNormalizedEvent**](OpenInboundNormalizedEvent.html)| NormalizedMessage | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OpenEventNormalizedMessage**](OpenEventNormalizedMessage.html)
+
+<a name="postConversationsMessageInboundOpenMessage"></a>
+
+# **postConversationsMessageInboundOpenMessage**
+
+
+
+> [OpenMessageNormalizedMessage](OpenMessageNormalizedMessage.html) postConversationsMessageInboundOpenMessage(integrationId, body)
+
+Send inbound Open Message
+
+Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Wraps POST /api/v2/conversations/messages/{integrationId}/inbound/open/message  
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | integrationId
+OpenInboundNormalizedMessage body = new OpenInboundNormalizedMessage(); // OpenInboundNormalizedMessage | NormalizedMessage
+try {
+    OpenMessageNormalizedMessage result = apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageInboundOpenMessage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| integrationId | 
+| **body** | [**OpenInboundNormalizedMessage**](OpenInboundNormalizedMessage.html)| NormalizedMessage | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage.html)
+
+<a name="postConversationsMessageInboundOpenReceipt"></a>
+
+# **postConversationsMessageInboundOpenReceipt**
+
+
+
+> [OpenReceiptNormalizedMessage](OpenReceiptNormalizedMessage.html) postConversationsMessageInboundOpenReceipt(integrationId, body)
+
+Send an inbound Open Receipt Message
+
+Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Wraps POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt  
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | integrationId
+OpenInboundNormalizedReceipt body = new OpenInboundNormalizedReceipt(); // OpenInboundNormalizedReceipt | NormalizedMessage
+try {
+    OpenReceiptNormalizedMessage result = apiInstance.postConversationsMessageInboundOpenReceipt(integrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageInboundOpenReceipt");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| integrationId | 
+| **body** | [**OpenInboundNormalizedReceipt**](OpenInboundNormalizedReceipt.html)| NormalizedMessage | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage.html)
 
 <a name="postConversationsMessageMessagesBulk"></a>
 

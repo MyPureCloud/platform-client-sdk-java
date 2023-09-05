@@ -240,6 +240,20 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	} 
 
+	private String formContextId;
+	public String getFormContextId() {
+		return this.formContextId;
+	}
+
+	public void setFormContextId(String formContextId) {
+		this.formContextId = formContextId;
+	}
+
+	public GetQualityEvaluationsQueryRequest withFormContextId(String formContextId) {
+	    this.setFormContextId(formContextId);
+	    return this;
+	} 
+
 	private List<String> evaluationState;
 	public List<String> getEvaluationState() {
 		return this.evaluationState;
@@ -387,6 +401,9 @@ public class GetQualityEvaluationsQueryRequest {
                 .withQueryParameters("endTime", "", endTime)
         
 
+                .withQueryParameters("formContextId", "", formContextId)
+        
+
                 .withQueryParameters("evaluationState", "multi", evaluationState)
         
 
@@ -487,6 +504,11 @@ public class GetQualityEvaluationsQueryRequest {
 
 		public Builder withEndTime(String endTime) {
 			request.setEndTime(endTime);
+			return this;
+		}
+
+		public Builder withFormContextId(String formContextId) {
+			request.setFormContextId(formContextId);
 			return this;
 		}
 
