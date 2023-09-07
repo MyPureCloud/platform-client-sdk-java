@@ -76,6 +76,54 @@ public class AttendanceStatus  implements Serializable {
   }
   private AttendanceStatusTypeEnum attendanceStatusType = null;
 
+  private static class HasEvaluationEnumDeserializer extends StdDeserializer<HasEvaluationEnum> {
+    public HasEvaluationEnumDeserializer() {
+      super(HasEvaluationEnumDeserializer.class);
+    }
+
+    @Override
+    public HasEvaluationEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return HasEvaluationEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * the quality evaluation score status
+   */
+ @JsonDeserialize(using = HasEvaluationEnumDeserializer.class)
+  public enum HasEvaluationEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    HASQUALITYEVALUATION("HasQualityEvaluation"),
+    NOQUALITYEVALUATION("NoQualityEvaluation");
+
+    private String value;
+
+    HasEvaluationEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static HasEvaluationEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (HasEvaluationEnum value : HasEvaluationEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return HasEvaluationEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private HasEvaluationEnum hasEvaluation = null;
+
   
   @ApiModelProperty(example = "null", value = "the workday date of this attendance status. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateWorkday")
@@ -91,6 +139,13 @@ public class AttendanceStatus  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "the quality evaluation score status")
+  @JsonProperty("hasEvaluation")
+  public HasEvaluationEnum getHasEvaluation() {
+    return hasEvaluation;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -102,12 +157,13 @@ public class AttendanceStatus  implements Serializable {
     AttendanceStatus attendanceStatus = (AttendanceStatus) o;
 
     return Objects.equals(this.dateWorkday, attendanceStatus.dateWorkday) &&
-            Objects.equals(this.attendanceStatusType, attendanceStatus.attendanceStatusType);
+            Objects.equals(this.attendanceStatusType, attendanceStatus.attendanceStatusType) &&
+            Objects.equals(this.hasEvaluation, attendanceStatus.hasEvaluation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateWorkday, attendanceStatusType);
+    return Objects.hash(dateWorkday, attendanceStatusType, hasEvaluation);
   }
 
   @Override
@@ -117,6 +173,7 @@ public class AttendanceStatus  implements Serializable {
     
     sb.append("    dateWorkday: ").append(toIndentedString(dateWorkday)).append("\n");
     sb.append("    attendanceStatusType: ").append(toIndentedString(attendanceStatusType)).append("\n");
+    sb.append("    hasEvaluation: ").append(toIndentedString(hasEvaluation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

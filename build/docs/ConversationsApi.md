@@ -108,6 +108,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsSocialParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsSocialParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
 | [**getConversationsVideoDetails**](ConversationsApi.html#getConversationsVideoDetails) | Get video conference details (e.g. the current number of active participants). |
 | [**getConversationsVideoParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsVideoParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
+| [**getConversationsVideosMeeting**](ConversationsApi.html#getConversationsVideosMeeting) | Gets a record for a given meetingId |
 | [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | Update a participant. |
 | [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationSecureattributes**](ConversationsApi.html#patchConversationSecureattributes) | Update the secure attributes on a conversation. |
@@ -223,6 +224,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsScreenshareParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsSocialParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsSocialParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsVideoParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
+| [**postConversationsVideosMeetings**](ConversationsApi.html#postConversationsVideosMeetings) | Generate a meetingId for a given conferenceId |
 | [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality. |
 | [**putConversationSecureattributes**](ConversationsApi.html#putConversationSecureattributes) | Set the secure attributes on a conversation. |
 | [**putConversationTags**](ConversationsApi.html#putConversationTags) | Update the tags on a conversation. |
@@ -6540,6 +6542,69 @@ try {
 ### Return type
 
 [**AssignedWrapupCode**](AssignedWrapupCode.html)
+
+<a name="getConversationsVideosMeeting"></a>
+
+# **getConversationsVideosMeeting**
+
+
+
+> [MeetingIdRecord](MeetingIdRecord.html) getConversationsVideosMeeting(meetingId)
+
+Gets a record for a given meetingId
+
+getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/videos/meetings/{meetingId}  
+
+Requires ANY permissions: 
+
+* video:video:access
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String meetingId = "meetingId_example"; // String | meetingId
+try {
+    MeetingIdRecord result = apiInstance.getConversationsVideosMeeting(meetingId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsVideosMeeting");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **meetingId** | **String**| meetingId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MeetingIdRecord**](MeetingIdRecord.html)
 
 <a name="patchConversationParticipant"></a>
 
@@ -13882,6 +13947,69 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postConversationsVideosMeetings"></a>
+
+# **postConversationsVideosMeetings**
+
+
+
+> [MeetingIdRecord](MeetingIdRecord.html) postConversationsVideosMeetings(body)
+
+Generate a meetingId for a given conferenceId
+
+postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/videos/meetings  
+
+Requires ANY permissions: 
+
+* video:video:access
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+GenerateMeetingIdRequest body = new GenerateMeetingIdRequest(); // GenerateMeetingIdRequest | MeetingIdRequest
+try {
+    MeetingIdRecord result = apiInstance.postConversationsVideosMeetings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsVideosMeetings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**GenerateMeetingIdRequest**](GenerateMeetingIdRequest.html)| MeetingIdRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MeetingIdRecord**](MeetingIdRecord.html)
 
 <a name="putConversationParticipantFlaggedreason"></a>
 

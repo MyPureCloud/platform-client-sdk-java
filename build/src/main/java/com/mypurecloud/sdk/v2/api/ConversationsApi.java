@@ -88,6 +88,7 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
+import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIntegration;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
@@ -99,6 +100,7 @@ import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
+import com.mypurecloud.sdk.v2.model.MeetingIdRecord;
 import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessageData;
@@ -257,6 +259,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsSocialParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsVideoDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsVideoParticipantCommunicationWrapupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsVideosMeetingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSecureattributesRequest;
@@ -372,6 +375,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsParticipantsAttribute
 import com.mypurecloud.sdk.v2.api.request.PostConversationsScreenshareParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsSocialParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoParticipantCommunicationWrapupRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsVideosMeetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationTagsRequest;
@@ -8645,6 +8649,88 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets a record for a given meetingId
+   * 
+   * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param meetingId meetingId (required)
+   * @return MeetingIdRecord
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MeetingIdRecord getConversationsVideosMeeting(String meetingId) throws IOException, ApiException {
+    return  getConversationsVideosMeeting(createGetConversationsVideosMeetingRequest(meetingId));
+  }
+
+  /**
+   * Gets a record for a given meetingId
+   * 
+   * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param meetingId meetingId (required)
+   * @return MeetingIdRecord
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MeetingIdRecord> getConversationsVideosMeetingWithHttpInfo(String meetingId) throws IOException {
+    return getConversationsVideosMeeting(createGetConversationsVideosMeetingRequest(meetingId).withHttpInfo());
+  }
+
+  private GetConversationsVideosMeetingRequest createGetConversationsVideosMeetingRequest(String meetingId) {
+    return GetConversationsVideosMeetingRequest.builder()
+            .withMeetingId(meetingId)
+
+            .build();
+  }
+
+  /**
+   * Gets a record for a given meetingId
+   * 
+   * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return MeetingIdRecord
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MeetingIdRecord getConversationsVideosMeeting(GetConversationsVideosMeetingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MeetingIdRecord> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MeetingIdRecord>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a record for a given meetingId
+   * 
+   * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MeetingIdRecord> getConversationsVideosMeeting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MeetingIdRecord>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -18172,6 +18258,88 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Generate a meetingId for a given conferenceId
+   * 
+   * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body MeetingIdRequest (required)
+   * @return MeetingIdRecord
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MeetingIdRecord postConversationsVideosMeetings(GenerateMeetingIdRequest body) throws IOException, ApiException {
+    return  postConversationsVideosMeetings(createPostConversationsVideosMeetingsRequest(body));
+  }
+
+  /**
+   * Generate a meetingId for a given conferenceId
+   * 
+   * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body MeetingIdRequest (required)
+   * @return MeetingIdRecord
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MeetingIdRecord> postConversationsVideosMeetingsWithHttpInfo(GenerateMeetingIdRequest body) throws IOException {
+    return postConversationsVideosMeetings(createPostConversationsVideosMeetingsRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsVideosMeetingsRequest createPostConversationsVideosMeetingsRequest(GenerateMeetingIdRequest body) {
+    return PostConversationsVideosMeetingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Generate a meetingId for a given conferenceId
+   * 
+   * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return MeetingIdRecord
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MeetingIdRecord postConversationsVideosMeetings(PostConversationsVideosMeetingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MeetingIdRecord> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MeetingIdRecord>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generate a meetingId for a given conferenceId
+   * 
+   * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MeetingIdRecord> postConversationsVideosMeetings(ApiRequest<GenerateMeetingIdRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MeetingIdRecord>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

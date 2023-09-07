@@ -1627,6 +1627,7 @@ docs/GeneralProgramJobRequest.md
 docs/GeneralTopic.md
 docs/GeneralTopicsEntityListing.md
 docs/GenerateBuForecastRequest.md
+docs/GenerateMeetingIdRequest.md
 docs/GenericActionEvent.md
 docs/GenericEventAction.md
 docs/GenericSAML.md
@@ -2186,6 +2187,7 @@ docs/MediaType.md
 docs/MediaTypeAccess.md
 docs/MediaTypes.md
 docs/MediaUtilization.md
+docs/MeetingIdRecord.md
 docs/Member.md
 docs/MemberEntity.md
 docs/MemberGroup.md
@@ -2265,6 +2267,9 @@ docs/ModelVoid.md
 docs/ModelingProcessingError.md
 docs/ModelingStatusResponse.md
 docs/ModifiableRuleProperties.md
+docs/MoveAgentResponse.md
+docs/MoveAgentsRequest.md
+docs/MoveAgentsResponse.md
 docs/MoveManagementUnitRequest.md
 docs/MoveManagementUnitResponse.md
 docs/MuRescheduleResultWrapper.md
@@ -4637,6 +4642,7 @@ docs/getConversationsSettings-example.txt
 docs/getConversationsSocialParticipantCommunicationWrapup-example.txt
 docs/getConversationsVideoDetails-example.txt
 docs/getConversationsVideoParticipantCommunicationWrapup-example.txt
+docs/getConversationsVideosMeeting-example.txt
 docs/getDataextensionsCoretype-example.txt
 docs/getDataextensionsCoretypes-example.txt
 docs/getDataextensionsLimits-example.txt
@@ -5818,6 +5824,7 @@ docs/postConversationsParticipantsAttributesSearch-example.txt
 docs/postConversationsScreenshareParticipantCommunicationWrapup-example.txt
 docs/postConversationsSocialParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideoParticipantCommunicationWrapup-example.txt
+docs/postConversationsVideosMeetings-example.txt
 docs/postDocumentationAllSearch-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
@@ -6170,6 +6177,7 @@ docs/postWorkforcemanagementAdherenceHistorical-example.txt
 docs/postWorkforcemanagementAdherenceHistoricalBulk-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanations-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanationsQuery-example.txt
+docs/postWorkforcemanagementAgents-example.txt
 docs/postWorkforcemanagementAgentsIntegrationsHrisQuery-example.txt
 docs/postWorkforcemanagementAgentsMePossibleworkshifts-example.txt
 docs/postWorkforcemanagementAgentschedulesMine-example.txt
@@ -7098,6 +7106,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsSettingsRequest
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsSocialParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsVideoDetailsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsVideoParticipantCommunicationWrapupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsVideosMeetingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsCoretypeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsCoretypesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsLimitsRequest.java
@@ -8279,6 +8288,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsParticipantsAt
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsScreenshareParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsSocialParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsVideoParticipantCommunicationWrapupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsVideosMeetingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationAllSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationGknSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationSearchRequest.java
@@ -8633,6 +8643,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentAdh
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentAdherenceExplanationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentsMePossibleworkshiftsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementAgentschedulesMineRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitActivitycodesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest.java
@@ -10489,6 +10500,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/GeneralProgramJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/GeneralTopic.java
 src/main/java/com/mypurecloud/sdk/v2/model/GeneralTopicsEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/GenerateBuForecastRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/GenerateMeetingIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/GenericActionEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/GenericEventAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/GenericSAML.java
@@ -11022,6 +11034,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/MediaType.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaTypeAccess.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaTypes.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaUtilization.java
+src/main/java/com/mypurecloud/sdk/v2/model/MeetingIdRecord.java
 src/main/java/com/mypurecloud/sdk/v2/model/Member.java
 src/main/java/com/mypurecloud/sdk/v2/model/MemberEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/MemberGroup.java
@@ -11097,6 +11110,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/ModelVoid.java
 src/main/java/com/mypurecloud/sdk/v2/model/ModelingProcessingError.java
 src/main/java/com/mypurecloud/sdk/v2/model/ModelingStatusResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ModifiableRuleProperties.java
+src/main/java/com/mypurecloud/sdk/v2/model/MoveAgentResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/MoveAgentsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/MoveAgentsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/MoveManagementUnitRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/MoveManagementUnitResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/MuRescheduleResultWrapper.java

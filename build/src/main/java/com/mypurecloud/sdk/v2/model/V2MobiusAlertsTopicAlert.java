@@ -69,7 +69,9 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
     UPDATE("UPDATE"),
     DELETE("DELETE"),
     CLOSE("CLOSE"),
-    RENOTIFY("RENOTIFY");
+    RENOTIFY("RENOTIFY"),
+    BULK_DELETE("BULK_DELETE"),
+    BULK_UPDATE("BULK_UPDATE");
 
     private String value;
 

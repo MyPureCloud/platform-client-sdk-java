@@ -49,7 +49,8 @@ public class GetWebdeploymentsDeploymentsRequest {
 	} 
 
 	public enum expandValues { 
-		CONFIGURATION("Configuration");
+		CONFIGURATION("Configuration"),
+		SUPPORTEDCONTENT("SupportedContent");
 
 		private String value;
 

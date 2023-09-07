@@ -109,6 +109,8 @@ import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.ModelingStatusResponse;
+import com.mypurecloud.sdk.v2.model.MoveAgentsRequest;
+import com.mypurecloud.sdk.v2.model.MoveAgentsResponse;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;

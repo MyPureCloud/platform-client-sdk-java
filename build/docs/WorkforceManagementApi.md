@@ -113,6 +113,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementAdherenceHistoricalBulk**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistoricalBulk) | Request a historical adherence report in bulk |
 | [**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanations) | Add an adherence explanation for the requested user |
 | [**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanationsQuery) | Query adherence explanations for the given agent across a specified range |
+| [**postWorkforcemanagementAgents**](WorkforceManagementApi.html#postWorkforcemanagementAgents) | Move agents in and out of management unit |
 | [**postWorkforcemanagementAgentsIntegrationsHrisQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentsIntegrationsHrisQuery) | Query integrations for agents |
 | [**postWorkforcemanagementAgentsMePossibleworkshifts**](WorkforceManagementApi.html#postWorkforcemanagementAgentsMePossibleworkshifts) | Get agent possible work shifts for requested time frame |
 | [**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi.html#postWorkforcemanagementAgentschedulesMine) | Get published schedule for the current user |
@@ -7194,6 +7195,67 @@ try {
 ### Return type
 
 [**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse.html)
+
+<a name="postWorkforcemanagementAgents"></a>
+
+# **postWorkforcemanagementAgents**
+
+
+
+> [MoveAgentsResponse](MoveAgentsResponse.html) postWorkforcemanagementAgents(body)
+
+Move agents in and out of management unit
+
+Wraps POST /api/v2/workforcemanagement/agents  
+
+Requires ANY permissions: 
+
+* wfm:agent:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+MoveAgentsRequest body = new MoveAgentsRequest(); // MoveAgentsRequest | body
+try {
+    MoveAgentsResponse result = apiInstance.postWorkforcemanagementAgents(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**MoveAgentsRequest**](MoveAgentsRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MoveAgentsResponse**](MoveAgentsResponse.html)
 
 <a name="postWorkforcemanagementAgentsIntegrationsHrisQuery"></a>
 

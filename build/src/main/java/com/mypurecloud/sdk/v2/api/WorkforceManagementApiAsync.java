@@ -102,6 +102,8 @@ import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.ModelingStatusResponse;
+import com.mypurecloud.sdk.v2.model.MoveAgentsRequest;
+import com.mypurecloud.sdk.v2.model.MoveAgentsResponse;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
@@ -292,6 +294,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistor
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMePossibleworkshiftsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
@@ -8321,6 +8324,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AgentQueryAdherenceExplanationsResponse> response = (ApiResponse<AgentQueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Move agents in and out of management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MoveAgentsResponse> postWorkforcemanagementAgentsAsync(PostWorkforcemanagementAgentsRequest request, final AsyncApiCallback<MoveAgentsResponse> callback) {
+    try {
+      final SettableFuture<MoveAgentsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MoveAgentsResponse>() {}, new AsyncApiCallback<ApiResponse<MoveAgentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<MoveAgentsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Move agents in and out of management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MoveAgentsResponse>> postWorkforcemanagementAgentsAsync(ApiRequest<MoveAgentsRequest> request, final AsyncApiCallback<ApiResponse<MoveAgentsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MoveAgentsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MoveAgentsResponse>() {}, new AsyncApiCallback<ApiResponse<MoveAgentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<MoveAgentsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MoveAgentsResponse> response = (ApiResponse<MoveAgentsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MoveAgentsResponse> response = (ApiResponse<MoveAgentsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

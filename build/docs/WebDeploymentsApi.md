@@ -707,7 +707,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
-List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected. Valid values:
+List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.
 try {
     ExpandableWebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments(expand);
     System.out.println(result);
@@ -722,7 +722,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| The specified entity attributes will be filled. Comma separated values expected. Valid values: | [optional]<br />**Values**: Configuration 
+| **expand** | [**List&lt;String&gt;**](String.html)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: Configuration, SupportedContent 
 {: class="table-striped"}
 
 

@@ -27,6 +27,7 @@ title: MinerExecuteRequest
 | CHAT | &quot;Chat&quot; | 
 | CALL | &quot;Call&quot; | 
 | MESSAGE | &quot;Message&quot; | 
+| EMAIL | &quot;Email&quot; | 
 {: class="table table-striped"}
 
 

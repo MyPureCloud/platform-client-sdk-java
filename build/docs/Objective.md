@@ -16,6 +16,7 @@ title: Objective
 | **queues** | <!----><!---->[**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef.html)<!----> | A list of queues for the metric |  [optional] |
 | **topics** | <!----><!---->[**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef.html)<!----> | A list of topic ids for detected topic metrics |  [optional] |
 | **topicIdsFilterType** | [**TopicIdsFilterTypeEnum**](#TopicIdsFilterTypeEnum)<!----> | A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\". |  [optional] |
+| **evaluationFormContextIds** | <!----><!---->**List&lt;String&gt;**<!----> | The ids of associated evaluation form context, for Quality Evaluation Score metrics |  [optional] |
 | **dateStart** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 {: class="table table-striped"}
 

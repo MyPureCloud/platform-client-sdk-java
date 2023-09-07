@@ -10,6 +10,7 @@ title: AttendanceStatus
 | ------------ | ------------- | ------------- | ------------- |
 | **dateWorkday** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | the workday date of this attendance status. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **attendanceStatusType** | [**AttendanceStatusTypeEnum**](#AttendanceStatusTypeEnum)<!----> | the attendance status |  [optional] |
+| **hasEvaluation** | [**HasEvaluationEnum**](#HasEvaluationEnum)<!----> | the quality evaluation score status |  [optional] |
 {: class="table table-striped"}
 
 
@@ -25,6 +26,18 @@ title: AttendanceStatus
 | ABSENT | &quot;Absent&quot; | 
 | PRESENT | &quot;Present&quot; | 
 | NOSCHEDULE | &quot;NoSchedule&quot; | 
+{: class="table table-striped"}
+
+
+<a name="HasEvaluationEnum"></a>
+
+## Enum: HasEvaluationEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| HASQUALITYEVALUATION | &quot;HasQualityEvaluation&quot; | 
+| NOQUALITYEVALUATION | &quot;NoQualityEvaluation&quot; | 
 {: class="table table-striped"}
 
 

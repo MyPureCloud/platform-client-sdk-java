@@ -49,7 +49,8 @@ public class MinerExecuteRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CHAT("Chat"),
     CALL("Call"),
-    MESSAGE("Message");
+    MESSAGE("Message"),
+    EMAIL("Email");
 
     private String value;
 

@@ -134,6 +134,7 @@ public class CreateObjective  implements Serializable {
     }
   }
   private TopicIdsFilterTypeEnum topicIdsFilterType = null;
+  private List<String> evaluationFormContextIds = new ArrayList<String>();
   private LocalDate dateStart = null;
 
   
@@ -271,6 +272,24 @@ public class CreateObjective  implements Serializable {
 
 
   /**
+   * The ids of associated evaluation form context, for Quality Evaluation Score metrics
+   **/
+  public CreateObjective evaluationFormContextIds(List<String> evaluationFormContextIds) {
+    this.evaluationFormContextIds = evaluationFormContextIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ids of associated evaluation form context, for Quality Evaluation Score metrics")
+  @JsonProperty("evaluationFormContextIds")
+  public List<String> getEvaluationFormContextIds() {
+    return evaluationFormContextIds;
+  }
+  public void setEvaluationFormContextIds(List<String> evaluationFormContextIds) {
+    this.evaluationFormContextIds = evaluationFormContextIds;
+  }
+
+
+  /**
    * start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
   public CreateObjective dateStart(LocalDate dateStart) {
@@ -306,12 +325,13 @@ public class CreateObjective  implements Serializable {
             Objects.equals(this.mediaTypes, createObjective.mediaTypes) &&
             Objects.equals(this.queueIds, createObjective.queueIds) &&
             Objects.equals(this.topicIdsFilterType, createObjective.topicIdsFilterType) &&
+            Objects.equals(this.evaluationFormContextIds, createObjective.evaluationFormContextIds) &&
             Objects.equals(this.dateStart, createObjective.dateStart);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, templateId, zones, enabled, topicIds, mediaTypes, queueIds, topicIdsFilterType, dateStart);
+    return Objects.hash(id, templateId, zones, enabled, topicIds, mediaTypes, queueIds, topicIdsFilterType, evaluationFormContextIds, dateStart);
   }
 
   @Override
@@ -327,6 +347,7 @@ public class CreateObjective  implements Serializable {
     sb.append("    mediaTypes: ").append(toIndentedString(mediaTypes)).append("\n");
     sb.append("    queueIds: ").append(toIndentedString(queueIds)).append("\n");
     sb.append("    topicIdsFilterType: ").append(toIndentedString(topicIdsFilterType)).append("\n");
+    sb.append("    evaluationFormContextIds: ").append(toIndentedString(evaluationFormContextIds)).append("\n");
     sb.append("    dateStart: ").append(toIndentedString(dateStart)).append("\n");
     sb.append("}");
     return sb.toString();

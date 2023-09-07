@@ -177,14 +177,14 @@ public class WfmAgent  implements Serializable {
 
 
   /**
-   * Whether the agent has the permission to be included in schedule generation
+   * Whether the agent can be included in schedule generation
    **/
   public WfmAgent schedulable(Boolean schedulable) {
     this.schedulable = schedulable;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether the agent has the permission to be included in schedule generation")
+  @ApiModelProperty(example = "null", value = "Whether the agent can be included in schedule generation")
   @JsonProperty("schedulable")
   public Boolean getSchedulable() {
     return schedulable;

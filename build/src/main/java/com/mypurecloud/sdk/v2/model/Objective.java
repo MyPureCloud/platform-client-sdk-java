@@ -135,6 +135,7 @@ public class Objective  implements Serializable {
     }
   }
   private TopicIdsFilterTypeEnum topicIdsFilterType = null;
+  private List<String> evaluationFormContextIds = new ArrayList<String>();
   private LocalDate dateStart = null;
 
   
@@ -272,6 +273,24 @@ public class Objective  implements Serializable {
 
 
   /**
+   * The ids of associated evaluation form context, for Quality Evaluation Score metrics
+   **/
+  public Objective evaluationFormContextIds(List<String> evaluationFormContextIds) {
+    this.evaluationFormContextIds = evaluationFormContextIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ids of associated evaluation form context, for Quality Evaluation Score metrics")
+  @JsonProperty("evaluationFormContextIds")
+  public List<String> getEvaluationFormContextIds() {
+    return evaluationFormContextIds;
+  }
+  public void setEvaluationFormContextIds(List<String> evaluationFormContextIds) {
+    this.evaluationFormContextIds = evaluationFormContextIds;
+  }
+
+
+  /**
    * start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
   public Objective dateStart(LocalDate dateStart) {
@@ -307,12 +326,13 @@ public class Objective  implements Serializable {
             Objects.equals(this.queues, objective.queues) &&
             Objects.equals(this.topics, objective.topics) &&
             Objects.equals(this.topicIdsFilterType, objective.topicIdsFilterType) &&
+            Objects.equals(this.evaluationFormContextIds, objective.evaluationFormContextIds) &&
             Objects.equals(this.dateStart, objective.dateStart);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, templateId, zones, enabled, mediaTypes, queues, topics, topicIdsFilterType, dateStart);
+    return Objects.hash(id, templateId, zones, enabled, mediaTypes, queues, topics, topicIdsFilterType, evaluationFormContextIds, dateStart);
   }
 
   @Override
@@ -328,6 +348,7 @@ public class Objective  implements Serializable {
     sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
     sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
     sb.append("    topicIdsFilterType: ").append(toIndentedString(topicIdsFilterType)).append("\n");
+    sb.append("    evaluationFormContextIds: ").append(toIndentedString(evaluationFormContextIds)).append("\n");
     sb.append("    dateStart: ").append(toIndentedString(dateStart)).append("\n");
     sb.append("}");
     return sb.toString();

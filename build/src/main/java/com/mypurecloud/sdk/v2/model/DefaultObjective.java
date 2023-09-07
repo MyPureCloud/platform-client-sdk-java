@@ -134,6 +134,7 @@ public class DefaultObjective  implements Serializable {
     }
   }
   private TopicIdsFilterTypeEnum topicIdsFilterType = null;
+  private List<String> evaluationFormContextIds = new ArrayList<String>();
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -269,6 +270,24 @@ public class DefaultObjective  implements Serializable {
   }
 
 
+  /**
+   * The ids of associated evaluation form context, for Quality Evaluation Score metrics
+   **/
+  public DefaultObjective evaluationFormContextIds(List<String> evaluationFormContextIds) {
+    this.evaluationFormContextIds = evaluationFormContextIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ids of associated evaluation form context, for Quality Evaluation Score metrics")
+  @JsonProperty("evaluationFormContextIds")
+  public List<String> getEvaluationFormContextIds() {
+    return evaluationFormContextIds;
+  }
+  public void setEvaluationFormContextIds(List<String> evaluationFormContextIds) {
+    this.evaluationFormContextIds = evaluationFormContextIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -286,12 +305,13 @@ public class DefaultObjective  implements Serializable {
             Objects.equals(this.mediaTypes, defaultObjective.mediaTypes) &&
             Objects.equals(this.queues, defaultObjective.queues) &&
             Objects.equals(this.topics, defaultObjective.topics) &&
-            Objects.equals(this.topicIdsFilterType, defaultObjective.topicIdsFilterType);
+            Objects.equals(this.topicIdsFilterType, defaultObjective.topicIdsFilterType) &&
+            Objects.equals(this.evaluationFormContextIds, defaultObjective.evaluationFormContextIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, templateId, zones, enabled, mediaTypes, queues, topics, topicIdsFilterType);
+    return Objects.hash(id, templateId, zones, enabled, mediaTypes, queues, topics, topicIdsFilterType, evaluationFormContextIds);
   }
 
   @Override
@@ -307,6 +327,7 @@ public class DefaultObjective  implements Serializable {
     sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
     sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
     sb.append("    topicIdsFilterType: ").append(toIndentedString(topicIdsFilterType)).append("\n");
+    sb.append("    evaluationFormContextIds: ").append(toIndentedString(evaluationFormContextIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

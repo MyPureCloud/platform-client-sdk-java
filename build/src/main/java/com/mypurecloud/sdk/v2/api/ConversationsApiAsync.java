@@ -91,6 +91,7 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
+import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIntegration;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
@@ -102,6 +103,7 @@ import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
+import com.mypurecloud.sdk.v2.model.MeetingIdRecord;
 import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessageData;
@@ -260,6 +262,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsSocialParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsVideoDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsVideoParticipantCommunicationWrapupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsVideosMeetingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSecureattributesRequest;
@@ -375,6 +378,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsParticipantsAttribute
 import com.mypurecloud.sdk.v2.api.request.PostConversationsScreenshareParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsSocialParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsVideoParticipantCommunicationWrapupRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsVideosMeetingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationTagsRequest;
@@ -7983,6 +7987,83 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets a record for a given meetingId
+   * 
+   * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MeetingIdRecord> getConversationsVideosMeetingAsync(GetConversationsVideosMeetingRequest request, final AsyncApiCallback<MeetingIdRecord> callback) {
+    try {
+      final SettableFuture<MeetingIdRecord> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MeetingIdRecord>() {}, new AsyncApiCallback<ApiResponse<MeetingIdRecord>>() {
+        @Override
+        public void onCompleted(ApiResponse<MeetingIdRecord> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets a record for a given meetingId
+   * 
+   * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MeetingIdRecord>> getConversationsVideosMeetingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MeetingIdRecord>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MeetingIdRecord>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MeetingIdRecord>() {}, new AsyncApiCallback<ApiResponse<MeetingIdRecord>>() {
+        @Override
+        public void onCompleted(ApiResponse<MeetingIdRecord> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -16630,6 +16711,83 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generate a meetingId for a given conferenceId
+   * 
+   * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MeetingIdRecord> postConversationsVideosMeetingsAsync(PostConversationsVideosMeetingsRequest request, final AsyncApiCallback<MeetingIdRecord> callback) {
+    try {
+      final SettableFuture<MeetingIdRecord> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MeetingIdRecord>() {}, new AsyncApiCallback<ApiResponse<MeetingIdRecord>>() {
+        @Override
+        public void onCompleted(ApiResponse<MeetingIdRecord> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generate a meetingId for a given conferenceId
+   * 
+   * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MeetingIdRecord>> postConversationsVideosMeetingsAsync(ApiRequest<GenerateMeetingIdRequest> request, final AsyncApiCallback<ApiResponse<MeetingIdRecord>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MeetingIdRecord>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MeetingIdRecord>() {}, new AsyncApiCallback<ApiResponse<MeetingIdRecord>>() {
+        @Override
+        public void onCompleted(ApiResponse<MeetingIdRecord> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MeetingIdRecord> response = (ApiResponse<MeetingIdRecord>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

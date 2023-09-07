@@ -40,6 +40,8 @@ title: V2MobiusAlertsTopicAlert
 | DELETE | &quot;DELETE&quot; | 
 | CLOSE | &quot;CLOSE&quot; | 
 | RENOTIFY | &quot;RENOTIFY&quot; | 
+| BULK_DELETE | &quot;BULK_DELETE&quot; | 
+| BULK_UPDATE | &quot;BULK_UPDATE&quot; | 
 {: class="table table-striped"}
 
 

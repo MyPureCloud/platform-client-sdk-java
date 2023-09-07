@@ -161,8 +161,8 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
     NOANSWERTRANSFER("NoAnswerTransfer"),
     NOTAVAILABLETRANSFER("NotAvailableTransfer"),
     UNCALLABLE("Uncallable"),
-    DIDNOTDELIVERENDPOINT("DidNotDeliverEndpoint"),
-    DIDNOTDELIVERTRANSFER("DidNotDeliverTransfer");
+    DONOTDISTURBENDPOINT("DoNotDisturbEndpoint"),
+    DONOTDISTURBTRANSFER("DoNotDisturbTransfer");
 
     private String value;
 

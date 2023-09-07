@@ -16,6 +16,7 @@ title: CreateObjective
 | **mediaTypes** | <!---->[**List&lt;MediaTypesEnum&gt;**](#MediaTypesEnum)<!----> | A list of media types for the metric |  [optional] |
 | **queueIds** | <!----><!---->**List&lt;String&gt;**<!----> | A list of queue ids for the metric |  [optional] |
 | **topicIdsFilterType** | [**TopicIdsFilterTypeEnum**](#TopicIdsFilterTypeEnum)<!----> | A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\". |  [optional] |
+| **evaluationFormContextIds** | <!----><!---->**List&lt;String&gt;**<!----> | The ids of associated evaluation form context, for Quality Evaluation Score metrics |  [optional] |
 | **dateStart** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 {: class="table table-striped"}
 

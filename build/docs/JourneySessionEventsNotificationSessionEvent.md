@@ -88,8 +88,8 @@ title: JourneySessionEventsNotificationSessionEvent
 | NOANSWERTRANSFER | &quot;NoAnswerTransfer&quot; | 
 | NOTAVAILABLETRANSFER | &quot;NotAvailableTransfer&quot; | 
 | UNCALLABLE | &quot;Uncallable&quot; | 
-| DIDNOTDELIVERENDPOINT | &quot;DidNotDeliverEndpoint&quot; | 
-| DIDNOTDELIVERTRANSFER | &quot;DidNotDeliverTransfer&quot; | 
+| DONOTDISTURBENDPOINT | &quot;DoNotDisturbEndpoint&quot; | 
+| DONOTDISTURBTRANSFER | &quot;DoNotDisturbTransfer&quot; | 
 {: class="table table-striped"}
 
 

@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Metric;
 import com.mypurecloud.sdk.v2.model.Objective;
 import com.mypurecloud.sdk.v2.model.PunctualityEvent;
+import com.mypurecloud.sdk.v2.model.QualityEvaluationScoreItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class WorkdayMetric  implements Serializable {
   private Integer maxPoints = null;
   private Double value = null;
   private List<PunctualityEvent> punctualityEvents = new ArrayList<PunctualityEvent>();
+  private List<QualityEvaluationScoreItem> evaluationDetails = new ArrayList<QualityEvaluationScoreItem>();
 
   
   @ApiModelProperty(example = "null", value = "Gamification metric")
@@ -76,6 +78,13 @@ public class WorkdayMetric  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "List of evaluations for quality evaluation score metrics")
+  @JsonProperty("evaluationDetails")
+  public List<QualityEvaluationScoreItem> getEvaluationDetails() {
+    return evaluationDetails;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -91,12 +100,13 @@ public class WorkdayMetric  implements Serializable {
             Objects.equals(this.points, workdayMetric.points) &&
             Objects.equals(this.maxPoints, workdayMetric.maxPoints) &&
             Objects.equals(this.value, workdayMetric.value) &&
-            Objects.equals(this.punctualityEvents, workdayMetric.punctualityEvents);
+            Objects.equals(this.punctualityEvents, workdayMetric.punctualityEvents) &&
+            Objects.equals(this.evaluationDetails, workdayMetric.evaluationDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, objective, points, maxPoints, value, punctualityEvents);
+    return Objects.hash(metric, objective, points, maxPoints, value, punctualityEvents, evaluationDetails);
   }
 
   @Override
@@ -110,6 +120,7 @@ public class WorkdayMetric  implements Serializable {
     sb.append("    maxPoints: ").append(toIndentedString(maxPoints)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    punctualityEvents: ").append(toIndentedString(punctualityEvents)).append("\n");
+    sb.append("    evaluationDetails: ").append(toIndentedString(evaluationDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
