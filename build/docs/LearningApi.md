@@ -1496,7 +1496,7 @@ try {
 
 
 
-> [LearningModulePublishResponse](LearningModulePublishResponse.html) postLearningModulePublish(moduleId)
+> [LearningModulePublishResponse](LearningModulePublishResponse.html) postLearningModulePublish(moduleId, body)
 
 Publish a Learning module
 
@@ -1529,8 +1529,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 LearningApi apiInstance = new LearningApi();
 String moduleId = "moduleId_example"; // String | The ID of the learning module
+LearningModulePublishRequest body = new LearningModulePublishRequest(); // LearningModulePublishRequest | The request body
 try {
-    LearningModulePublishResponse result = apiInstance.postLearningModulePublish(moduleId);
+    LearningModulePublishResponse result = apiInstance.postLearningModulePublish(moduleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LearningApi#postLearningModulePublish");
@@ -1544,6 +1545,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **moduleId** | **String**| The ID of the learning module | 
+| **body** | [**LearningModulePublishRequest**](LearningModulePublishRequest.html)| The request body | [optional] 
 {: class="table-striped"}
 
 

@@ -38,6 +38,9 @@ import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
+import com.mypurecloud.sdk.v2.model.FlowHealth;
+import com.mypurecloud.sdk.v2.model.FlowHealthIntent;
+import com.mypurecloud.sdk.v2.model.FlowHealthUtterance;
 import com.mypurecloud.sdk.v2.model.FlowMilestone;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
@@ -135,6 +138,9 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowLatestconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionConfigurationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowVersionHealthRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowVersionIntentHealthRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowVersionIntentUtteranceHealthRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRequest;
@@ -4501,6 +4507,231 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowHealth> getFlowVersionHealthAsync(GetFlowVersionHealthRequest request, final AsyncApiCallback<FlowHealth> callback) {
+    try {
+      final SettableFuture<FlowHealth> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowHealth>() {}, new AsyncApiCallback<ApiResponse<FlowHealth>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowHealth> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowHealth>> getFlowVersionHealthAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowHealth>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowHealth>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowHealth>() {}, new AsyncApiCallback<ApiResponse<FlowHealth>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowHealth> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowHealth> response = (ApiResponse<FlowHealth>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowHealth> response = (ApiResponse<FlowHealth>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowHealthIntent> getFlowVersionIntentHealthAsync(GetFlowVersionIntentHealthRequest request, final AsyncApiCallback<FlowHealthIntent> callback) {
+    try {
+      final SettableFuture<FlowHealthIntent> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowHealthIntent>() {}, new AsyncApiCallback<ApiResponse<FlowHealthIntent>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowHealthIntent> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowHealthIntent>> getFlowVersionIntentHealthAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowHealthIntent>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowHealthIntent>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowHealthIntent>() {}, new AsyncApiCallback<ApiResponse<FlowHealthIntent>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowHealthIntent> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowHealthIntent> response = (ApiResponse<FlowHealthIntent>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowHealthIntent> response = (ApiResponse<FlowHealthIntent>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get health metrics associated with a specific utterance of an intent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowHealthUtterance> getFlowVersionIntentUtteranceHealthAsync(GetFlowVersionIntentUtteranceHealthRequest request, final AsyncApiCallback<FlowHealthUtterance> callback) {
+    try {
+      final SettableFuture<FlowHealthUtterance> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowHealthUtterance>() {}, new AsyncApiCallback<ApiResponse<FlowHealthUtterance>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowHealthUtterance> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get health metrics associated with a specific utterance of an intent.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowHealthUtterance>> getFlowVersionIntentUtteranceHealthAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowHealthUtterance>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowHealthUtterance>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowHealthUtterance>() {}, new AsyncApiCallback<ApiResponse<FlowHealthUtterance>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowHealthUtterance> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowHealthUtterance> response = (ApiResponse<FlowHealthUtterance>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowHealthUtterance> response = (ApiResponse<FlowHealthUtterance>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

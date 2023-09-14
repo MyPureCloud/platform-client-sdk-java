@@ -95,14 +95,14 @@ public class AcwSettings  implements Serializable {
 
 
   /**
-   * The amount of time the agent can stay in ACW (Min: 1 sec, Max: 1 day).  Can only be used when ACW is MANDATORY_TIMEOUT or MANDATORY_FORCED_TIMEOUT.
+   * The amount of time the agent can stay in ACW (Min: 1 sec, Max: 15 min).  Can only be used when ACW is MANDATORY_TIMEOUT or MANDATORY_FORCED_TIMEOUT.
    **/
   public AcwSettings timeoutMs(Integer timeoutMs) {
     this.timeoutMs = timeoutMs;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The amount of time the agent can stay in ACW (Min: 1 sec, Max: 1 day).  Can only be used when ACW is MANDATORY_TIMEOUT or MANDATORY_FORCED_TIMEOUT.")
+  @ApiModelProperty(example = "null", value = "The amount of time the agent can stay in ACW (Min: 1 sec, Max: 15 min).  Can only be used when ACW is MANDATORY_TIMEOUT or MANDATORY_FORCED_TIMEOUT.")
   @JsonProperty("timeoutMs")
   public Integer getTimeoutMs() {
     return timeoutMs;

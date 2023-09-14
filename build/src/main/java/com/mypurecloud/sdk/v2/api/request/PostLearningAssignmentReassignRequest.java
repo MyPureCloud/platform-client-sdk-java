@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;

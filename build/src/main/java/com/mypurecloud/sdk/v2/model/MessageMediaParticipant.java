@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ErrorInfo;
@@ -342,6 +343,7 @@ public class MessageMediaParticipant  implements Serializable {
   private String recipientType = null;
   private Boolean authenticated = null;
   private String monitoredParticipantId = null;
+  private AddressableEntityRef monitoredParticipant = null;
 
   
   /**
@@ -1100,6 +1102,24 @@ public class MessageMediaParticipant  implements Serializable {
   }
 
 
+  /**
+   * The participant being monitored when performing a message monitor.
+   **/
+  public MessageMediaParticipant monitoredParticipant(AddressableEntityRef monitoredParticipant) {
+    this.monitoredParticipant = monitoredParticipant;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The participant being monitored when performing a message monitor.")
+  @JsonProperty("monitoredParticipant")
+  public AddressableEntityRef getMonitoredParticipant() {
+    return monitoredParticipant;
+  }
+  public void setMonitoredParticipant(AddressableEntityRef monitoredParticipant) {
+    this.monitoredParticipant = monitoredParticipant;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1151,12 +1171,13 @@ public class MessageMediaParticipant  implements Serializable {
             Objects.equals(this.recipientCountry, messageMediaParticipant.recipientCountry) &&
             Objects.equals(this.recipientType, messageMediaParticipant.recipientType) &&
             Objects.equals(this.authenticated, messageMediaParticipant.authenticated) &&
-            Objects.equals(this.monitoredParticipantId, messageMediaParticipant.monitoredParticipantId);
+            Objects.equals(this.monitoredParticipantId, messageMediaParticipant.monitoredParticipantId) &&
+            Objects.equals(this.monitoredParticipant, messageMediaParticipant.monitoredParticipant);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, toAddress, fromAddress, messages, type, recipientCountry, recipientType, authenticated, monitoredParticipantId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, toAddress, fromAddress, messages, type, recipientCountry, recipientType, authenticated, monitoredParticipantId, monitoredParticipant);
   }
 
   @Override
@@ -1206,6 +1227,7 @@ public class MessageMediaParticipant  implements Serializable {
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("    authenticated: ").append(toIndentedString(authenticated)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
+    sb.append("    monitoredParticipant: ").append(toIndentedString(monitoredParticipant)).append("\n");
     sb.append("}");
     return sb.toString();
   }

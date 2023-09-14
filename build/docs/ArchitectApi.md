@@ -64,6 +64,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowLatestconfiguration**](ArchitectApi.html#getFlowLatestconfiguration) | Get the latest configuration for flow |
 | [**getFlowVersion**](ArchitectApi.html#getFlowVersion) | Get flow version |
 | [**getFlowVersionConfiguration**](ArchitectApi.html#getFlowVersionConfiguration) | Create flow version configuration |
+| [**getFlowVersionHealth**](ArchitectApi.html#getFlowVersionHealth) | Get overall health scores for all intents present in the NLU domain version associated with the bot flow version. |
+| [**getFlowVersionIntentHealth**](ArchitectApi.html#getFlowVersionIntentHealth) | Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent. |
+| [**getFlowVersionIntentUtteranceHealth**](ArchitectApi.html#getFlowVersionIntentUtteranceHealth) | Get health metrics associated with a specific utterance of an intent. |
 | [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | Get flow version list |
 | [**getFlows**](ArchitectApi.html#getFlows) | Get a pageable list of flows, filtered by query parameters |
 | [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | Returns a specific datatable by id |
@@ -3916,6 +3919,207 @@ try {
 ### Return type
 
 **Object**
+
+<a name="getFlowVersionHealth"></a>
+
+# **getFlowVersionHealth**
+
+
+
+> [FlowHealth](FlowHealth.html) getFlowVersionHealth(flowId, versionId, language)
+
+Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+
+Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/health  
+
+Requires ANY permissions: 
+
+* architect:flow:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID.
+String versionId = "versionId_example"; // String | Version ID.
+String language = "language_example"; // String | Language to filter for
+try {
+    FlowHealth result = apiInstance.getFlowVersionHealth(flowId, versionId, language);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowVersionHealth");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID. | 
+| **versionId** | **String**| Version ID. | 
+| **language** | **String**| Language to filter for | [optional]<br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowHealth**](FlowHealth.html)
+
+<a name="getFlowVersionIntentHealth"></a>
+
+# **getFlowVersionIntentHealth**
+
+
+
+> [FlowHealthIntent](FlowHealthIntent.html) getFlowVersionIntentHealth(flowId, versionId, intentId, language)
+
+Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+
+Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health  
+
+Requires ANY permissions: 
+
+* architect:flow:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID.
+String versionId = "versionId_example"; // String | Version ID.
+String intentId = "intentId_example"; // String | Intent ID.
+String language = "language_example"; // String | Language to filter for
+try {
+    FlowHealthIntent result = apiInstance.getFlowVersionIntentHealth(flowId, versionId, intentId, language);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowVersionIntentHealth");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID. | 
+| **versionId** | **String**| Version ID. | 
+| **intentId** | **String**| Intent ID. | 
+| **language** | **String**| Language to filter for |<br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowHealthIntent**](FlowHealthIntent.html)
+
+<a name="getFlowVersionIntentUtteranceHealth"></a>
+
+# **getFlowVersionIntentUtteranceHealth**
+
+
+
+> [FlowHealthUtterance](FlowHealthUtterance.html) getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language)
+
+Get health metrics associated with a specific utterance of an intent.
+
+Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health  
+
+Requires ANY permissions: 
+
+* architect:flow:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID.
+String versionId = "versionId_example"; // String | Version ID.
+String intentId = "intentId_example"; // String | Intent ID.
+String utteranceId = "utteranceId_example"; // String | Utterance ID.
+String language = "language_example"; // String | Language to filter for
+try {
+    FlowHealthUtterance result = apiInstance.getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowVersionIntentUtteranceHealth");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID. | 
+| **versionId** | **String**| Version ID. | 
+| **intentId** | **String**| Intent ID. | 
+| **utteranceId** | **String**| Utterance ID. | 
+| **language** | **String**| Language to filter for |<br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowHealthUtterance**](FlowHealthUtterance.html)
 
 <a name="getFlowVersions"></a>
 

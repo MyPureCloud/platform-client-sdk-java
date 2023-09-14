@@ -30,6 +30,7 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
@@ -1998,28 +1999,32 @@ public class LearningApi {
    * Publish a Learning module
    * 
    * @param moduleId The ID of the learning module (required)
+   * @param body The request body (optional)
    * @return LearningModulePublishResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LearningModulePublishResponse postLearningModulePublish(String moduleId) throws IOException, ApiException {
-    return  postLearningModulePublish(createPostLearningModulePublishRequest(moduleId));
+  public LearningModulePublishResponse postLearningModulePublish(String moduleId, LearningModulePublishRequest body) throws IOException, ApiException {
+    return  postLearningModulePublish(createPostLearningModulePublishRequest(moduleId, body));
   }
 
   /**
    * Publish a Learning module
    * 
    * @param moduleId The ID of the learning module (required)
+   * @param body The request body (optional)
    * @return LearningModulePublishResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LearningModulePublishResponse> postLearningModulePublishWithHttpInfo(String moduleId) throws IOException {
-    return postLearningModulePublish(createPostLearningModulePublishRequest(moduleId).withHttpInfo());
+  public ApiResponse<LearningModulePublishResponse> postLearningModulePublishWithHttpInfo(String moduleId, LearningModulePublishRequest body) throws IOException {
+    return postLearningModulePublish(createPostLearningModulePublishRequest(moduleId, body).withHttpInfo());
   }
 
-  private PostLearningModulePublishRequest createPostLearningModulePublishRequest(String moduleId) {
+  private PostLearningModulePublishRequest createPostLearningModulePublishRequest(String moduleId, LearningModulePublishRequest body) {
     return PostLearningModulePublishRequest.builder()
             .withModuleId(moduleId)
+
+            .withBody(body)
 
             .build();
   }
@@ -2050,7 +2055,7 @@ public class LearningApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LearningModulePublishResponse> postLearningModulePublish(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<LearningModulePublishResponse> postLearningModulePublish(ApiRequest<LearningModulePublishRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<LearningModulePublishResponse>() {});
     }

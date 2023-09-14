@@ -35,6 +35,9 @@ import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
+import com.mypurecloud.sdk.v2.model.FlowHealth;
+import com.mypurecloud.sdk.v2.model.FlowHealthIntent;
+import com.mypurecloud.sdk.v2.model.FlowHealthUtterance;
 import com.mypurecloud.sdk.v2.model.FlowMilestone;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
@@ -132,6 +135,9 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowLatestconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionConfigurationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowVersionHealthRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowVersionIntentHealthRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowVersionIntentUtteranceHealthRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRequest;
@@ -5223,6 +5229,276 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+   * 
+   * @param flowId Flow ID. (required)
+   * @param versionId Version ID. (required)
+   * @param language Language to filter for (optional)
+   * @return FlowHealth
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowHealth getFlowVersionHealth(String flowId, String versionId, String language) throws IOException, ApiException {
+    return  getFlowVersionHealth(createGetFlowVersionHealthRequest(flowId, versionId, language));
+  }
+
+  /**
+   * Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+   * 
+   * @param flowId Flow ID. (required)
+   * @param versionId Version ID. (required)
+   * @param language Language to filter for (optional)
+   * @return FlowHealth
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowHealth> getFlowVersionHealthWithHttpInfo(String flowId, String versionId, String language) throws IOException {
+    return getFlowVersionHealth(createGetFlowVersionHealthRequest(flowId, versionId, language).withHttpInfo());
+  }
+
+  private GetFlowVersionHealthRequest createGetFlowVersionHealthRequest(String flowId, String versionId, String language) {
+    return GetFlowVersionHealthRequest.builder()
+            .withFlowId(flowId)
+
+            .withVersionId(versionId)
+
+            .withLanguage(language)
+
+            .build();
+  }
+
+  /**
+   * Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+   * 
+   * @param request The request object
+   * @return FlowHealth
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowHealth getFlowVersionHealth(GetFlowVersionHealthRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowHealth> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowHealth>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowHealth> getFlowVersionHealth(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowHealth>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowHealth> response = (ApiResponse<FlowHealth>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowHealth> response = (ApiResponse<FlowHealth>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+   * 
+   * @param flowId Flow ID. (required)
+   * @param versionId Version ID. (required)
+   * @param intentId Intent ID. (required)
+   * @param language Language to filter for (required)
+   * @return FlowHealthIntent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowHealthIntent getFlowVersionIntentHealth(String flowId, String versionId, String intentId, String language) throws IOException, ApiException {
+    return  getFlowVersionIntentHealth(createGetFlowVersionIntentHealthRequest(flowId, versionId, intentId, language));
+  }
+
+  /**
+   * Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+   * 
+   * @param flowId Flow ID. (required)
+   * @param versionId Version ID. (required)
+   * @param intentId Intent ID. (required)
+   * @param language Language to filter for (required)
+   * @return FlowHealthIntent
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowHealthIntent> getFlowVersionIntentHealthWithHttpInfo(String flowId, String versionId, String intentId, String language) throws IOException {
+    return getFlowVersionIntentHealth(createGetFlowVersionIntentHealthRequest(flowId, versionId, intentId, language).withHttpInfo());
+  }
+
+  private GetFlowVersionIntentHealthRequest createGetFlowVersionIntentHealthRequest(String flowId, String versionId, String intentId, String language) {
+    return GetFlowVersionIntentHealthRequest.builder()
+            .withFlowId(flowId)
+
+            .withVersionId(versionId)
+
+            .withIntentId(intentId)
+
+            .withLanguage(language)
+
+            .build();
+  }
+
+  /**
+   * Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+   * 
+   * @param request The request object
+   * @return FlowHealthIntent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowHealthIntent getFlowVersionIntentHealth(GetFlowVersionIntentHealthRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowHealthIntent> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowHealthIntent>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowHealthIntent> getFlowVersionIntentHealth(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowHealthIntent>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowHealthIntent> response = (ApiResponse<FlowHealthIntent>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowHealthIntent> response = (ApiResponse<FlowHealthIntent>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get health metrics associated with a specific utterance of an intent.
+   * 
+   * @param flowId Flow ID. (required)
+   * @param versionId Version ID. (required)
+   * @param intentId Intent ID. (required)
+   * @param utteranceId Utterance ID. (required)
+   * @param language Language to filter for (required)
+   * @return FlowHealthUtterance
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowHealthUtterance getFlowVersionIntentUtteranceHealth(String flowId, String versionId, String intentId, String utteranceId, String language) throws IOException, ApiException {
+    return  getFlowVersionIntentUtteranceHealth(createGetFlowVersionIntentUtteranceHealthRequest(flowId, versionId, intentId, utteranceId, language));
+  }
+
+  /**
+   * Get health metrics associated with a specific utterance of an intent.
+   * 
+   * @param flowId Flow ID. (required)
+   * @param versionId Version ID. (required)
+   * @param intentId Intent ID. (required)
+   * @param utteranceId Utterance ID. (required)
+   * @param language Language to filter for (required)
+   * @return FlowHealthUtterance
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowHealthUtterance> getFlowVersionIntentUtteranceHealthWithHttpInfo(String flowId, String versionId, String intentId, String utteranceId, String language) throws IOException {
+    return getFlowVersionIntentUtteranceHealth(createGetFlowVersionIntentUtteranceHealthRequest(flowId, versionId, intentId, utteranceId, language).withHttpInfo());
+  }
+
+  private GetFlowVersionIntentUtteranceHealthRequest createGetFlowVersionIntentUtteranceHealthRequest(String flowId, String versionId, String intentId, String utteranceId, String language) {
+    return GetFlowVersionIntentUtteranceHealthRequest.builder()
+            .withFlowId(flowId)
+
+            .withVersionId(versionId)
+
+            .withIntentId(intentId)
+
+            .withUtteranceId(utteranceId)
+
+            .withLanguage(language)
+
+            .build();
+  }
+
+  /**
+   * Get health metrics associated with a specific utterance of an intent.
+   * 
+   * @param request The request object
+   * @return FlowHealthUtterance
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowHealthUtterance getFlowVersionIntentUtteranceHealth(GetFlowVersionIntentUtteranceHealthRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowHealthUtterance> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowHealthUtterance>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get health metrics associated with a specific utterance of an intent.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowHealthUtterance> getFlowVersionIntentUtteranceHealth(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowHealthUtterance>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowHealthUtterance> response = (ApiResponse<FlowHealthUtterance>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowHealthUtterance> response = (ApiResponse<FlowHealthUtterance>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

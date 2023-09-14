@@ -46,6 +46,7 @@ public class ContactList  implements Serializable {
   private Boolean automaticTimeZoneMapping = null;
   private String zipCodeColumnName = null;
   private List<ColumnDataTypeSpecification> columnDataTypeSpecifications = new ArrayList<ColumnDataTypeSpecification>();
+  private Boolean trimWhitespace = null;
   private String selfUri = null;
 
   
@@ -299,6 +300,24 @@ public class ContactList  implements Serializable {
   }
 
 
+  /**
+   * Whether to trim white space when importing a contactlist csv file, default value = true
+   **/
+  public ContactList trimWhitespace(Boolean trimWhitespace) {
+    this.trimWhitespace = trimWhitespace;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to trim white space when importing a contactlist csv file, default value = true")
+  @JsonProperty("trimWhitespace")
+  public Boolean getTrimWhitespace() {
+    return trimWhitespace;
+  }
+  public void setTrimWhitespace(Boolean trimWhitespace) {
+    this.trimWhitespace = trimWhitespace;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -333,12 +352,13 @@ public class ContactList  implements Serializable {
             Objects.equals(this.automaticTimeZoneMapping, contactList.automaticTimeZoneMapping) &&
             Objects.equals(this.zipCodeColumnName, contactList.zipCodeColumnName) &&
             Objects.equals(this.columnDataTypeSpecifications, contactList.columnDataTypeSpecifications) &&
+            Objects.equals(this.trimWhitespace, contactList.trimWhitespace) &&
             Objects.equals(this.selfUri, contactList.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, division, columnNames, phoneColumns, emailColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, columnDataTypeSpecifications, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, division, columnNames, phoneColumns, emailColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, columnDataTypeSpecifications, trimWhitespace, selfUri);
   }
 
   @Override
@@ -363,6 +383,7 @@ public class ContactList  implements Serializable {
     sb.append("    automaticTimeZoneMapping: ").append(toIndentedString(automaticTimeZoneMapping)).append("\n");
     sb.append("    zipCodeColumnName: ").append(toIndentedString(zipCodeColumnName)).append("\n");
     sb.append("    columnDataTypeSpecifications: ").append(toIndentedString(columnDataTypeSpecifications)).append("\n");
+    sb.append("    trimWhitespace: ").append(toIndentedString(trimWhitespace)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

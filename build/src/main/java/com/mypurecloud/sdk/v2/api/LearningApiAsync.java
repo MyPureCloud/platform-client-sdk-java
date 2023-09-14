@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
@@ -1779,7 +1780,7 @@ public class LearningApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LearningModulePublishResponse>> postLearningModulePublishAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LearningModulePublishResponse>> callback) {
+  public Future<ApiResponse<LearningModulePublishResponse>> postLearningModulePublishAsync(ApiRequest<LearningModulePublishRequest> request, final AsyncApiCallback<ApiResponse<LearningModulePublishResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<LearningModulePublishResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

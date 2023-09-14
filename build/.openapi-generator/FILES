@@ -399,6 +399,7 @@ docs/BuShortTermForecastListItem.md
 docs/BuShortTermForecastListing.md
 docs/BuShortTermForecastReference.md
 docs/BuShortTermForecastingSettings.md
+docs/BuUpdateAgentScheduleShift.md
 docs/BuUpdateAgentScheduleUploadSchema.md
 docs/BulkCallbackDisconnectRequest.md
 docs/BulkCallbackPatchRequest.md
@@ -605,6 +606,11 @@ docs/Condition.md
 docs/ConditionalGroupRouting.md
 docs/ConditionalGroupRoutingRule.md
 docs/ConfigurationOverrides.md
+docs/ConfusionDetails.md
+docs/ConfusionInfo.md
+docs/ConfusionIntentDetails.md
+docs/ConfusionIntentInfo.md
+docs/ConfusionUtterance.md
 docs/ConnectRate.md
 docs/ConnectedEdge.md
 docs/ConnectedQueue.md
@@ -1562,6 +1568,14 @@ docs/FlowEntityListing.md
 docs/FlowExecutionDataQueryResult.md
 docs/FlowExecutionLaunchRequest.md
 docs/FlowExecutionLaunchResponse.md
+docs/FlowHealth.md
+docs/FlowHealthErrorInfo.md
+docs/FlowHealthIntent.md
+docs/FlowHealthIntentInfo.md
+docs/FlowHealthIntentUtterance.md
+docs/FlowHealthIntentVersionInfo.md
+docs/FlowHealthUtterance.md
+docs/FlowHealthVersionInfo.md
 docs/FlowMetricsTopicFlowMetricRecord.md
 docs/FlowMetricsTopicFlowOutcome.md
 docs/FlowMetricsTopicFlowProposedAgent.md
@@ -1681,6 +1695,7 @@ docs/GuestMemberInfo.md
 docs/GuestResponseCategory.md
 docs/HeadcountForecast.md
 docs/HeadcountInterval.md
+docs/HealthInfo.md
 docs/HelpLink.md
 docs/HelpSettings.md
 docs/HistoricalAdherenceActuals.md
@@ -2075,6 +2090,7 @@ docs/LearningModuleInformStep.md
 docs/LearningModuleInformStepRequest.md
 docs/LearningModuleJobRequest.md
 docs/LearningModuleJobResponse.md
+docs/LearningModulePublishRequest.md
 docs/LearningModulePublishResponse.md
 docs/LearningModuleReassignSummary.md
 docs/LearningModuleRequest.md
@@ -2130,6 +2146,9 @@ docs/LocalDateRange.md
 docs/LocalEncryptionConfiguration.md
 docs/LocalEncryptionKeyRequest.md
 docs/LocalTime.md
+docs/LocaleFlowVersionInfo.md
+docs/LocaleHealth.md
+docs/LocaleInfo.md
 docs/LocalizedLabels.md
 docs/Location.md
 docs/LocationAddress.md
@@ -2446,6 +2465,7 @@ docs/OutcomeQuantileCondition.md
 docs/OutcomeRef.md
 docs/OutcomeRefRequest.md
 docs/OutcomeScoresResult.md
+docs/OutlierInfo.md
 docs/OverallBestPoints.md
 docs/OverallBestPointsItem.md
 docs/PINConfiguration.md
@@ -4694,6 +4714,9 @@ docs/getFlowHistoryHistoryId-example.txt
 docs/getFlowLatestconfiguration-example.txt
 docs/getFlowVersion-example.txt
 docs/getFlowVersionConfiguration-example.txt
+docs/getFlowVersionHealth-example.txt
+docs/getFlowVersionIntentHealth-example.txt
+docs/getFlowVersionIntentUtteranceHealth-example.txt
 docs/getFlowVersions-example.txt
 docs/getFlows-example.txt
 docs/getFlowsDatatable-example.txt
@@ -7157,6 +7180,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowHistoryHistoryIdRequest.
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowLatestconfigurationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowVersionConfigurationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowVersionHealthRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowVersionIntentHealthRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowVersionIntentUtteranceHealthRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowVersionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowVersionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowsDatatableExportJobRequest.java
@@ -9300,6 +9326,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/BuShortTermForecastListItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuShortTermForecastListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuShortTermForecastReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuShortTermForecastingSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuUpdateAgentScheduleShift.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuUpdateAgentScheduleUploadSchema.java
 src/main/java/com/mypurecloud/sdk/v2/model/BulkCallbackDisconnectRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BulkCallbackPatchRequest.java
@@ -9500,6 +9527,11 @@ src/main/java/com/mypurecloud/sdk/v2/model/Condition.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConditionalGroupRouting.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConditionalGroupRoutingRule.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConfigurationOverrides.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConfusionDetails.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConfusionInfo.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConfusionIntentDetails.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConfusionIntentInfo.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConfusionUtterance.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConnectRate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConnectedEdge.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConnectedQueue.java
@@ -10441,6 +10473,14 @@ src/main/java/com/mypurecloud/sdk/v2/model/FlowEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/FlowExecutionDataQueryResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/FlowExecutionLaunchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/FlowExecutionLaunchResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/FlowHealth.java
+src/main/java/com/mypurecloud/sdk/v2/model/FlowHealthErrorInfo.java
+src/main/java/com/mypurecloud/sdk/v2/model/FlowHealthIntent.java
+src/main/java/com/mypurecloud/sdk/v2/model/FlowHealthIntentInfo.java
+src/main/java/com/mypurecloud/sdk/v2/model/FlowHealthIntentUtterance.java
+src/main/java/com/mypurecloud/sdk/v2/model/FlowHealthIntentVersionInfo.java
+src/main/java/com/mypurecloud/sdk/v2/model/FlowHealthUtterance.java
+src/main/java/com/mypurecloud/sdk/v2/model/FlowHealthVersionInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/FlowMetricsTopicFlowMetricRecord.java
 src/main/java/com/mypurecloud/sdk/v2/model/FlowMetricsTopicFlowOutcome.java
 src/main/java/com/mypurecloud/sdk/v2/model/FlowMetricsTopicFlowProposedAgent.java
@@ -10548,6 +10588,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/GuestMemberInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuestResponseCategory.java
 src/main/java/com/mypurecloud/sdk/v2/model/HeadcountForecast.java
 src/main/java/com/mypurecloud/sdk/v2/model/HeadcountInterval.java
+src/main/java/com/mypurecloud/sdk/v2/model/HealthInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/HelpLink.java
 src/main/java/com/mypurecloud/sdk/v2/model/HelpSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/HistoricalAdherenceActuals.java
@@ -10926,6 +10967,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleInformStep.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleInformStepRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleJobResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/LearningModulePublishRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModulePublishResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleReassignSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/LearningModuleRequest.java
@@ -10979,6 +11021,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/LocalDateRange.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocalEncryptionConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocalEncryptionKeyRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocalTime.java
+src/main/java/com/mypurecloud/sdk/v2/model/LocaleFlowVersionInfo.java
+src/main/java/com/mypurecloud/sdk/v2/model/LocaleHealth.java
+src/main/java/com/mypurecloud/sdk/v2/model/LocaleInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocalizedLabels.java
 src/main/java/com/mypurecloud/sdk/v2/model/Location.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocationAddress.java
@@ -11277,6 +11322,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/OutcomeQuantileCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeRef.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeRefRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeScoresResult.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutlierInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/OverallBestPoints.java
 src/main/java/com/mypurecloud/sdk/v2/model/OverallBestPointsItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/PINConfiguration.java

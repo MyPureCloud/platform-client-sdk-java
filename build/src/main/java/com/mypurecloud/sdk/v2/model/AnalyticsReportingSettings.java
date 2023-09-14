@@ -23,6 +23,7 @@ public class AnalyticsReportingSettings  implements Serializable {
   
   private Boolean piiMaskingEnabled = null;
   private Boolean queueAgentAccessObfuscation = null;
+  private Boolean myInteractionsPiiMaskingEnabled = null;
 
   
   /**
@@ -61,6 +62,24 @@ public class AnalyticsReportingSettings  implements Serializable {
   }
 
 
+  /**
+   * Indicates whether PII data is masked in My Interaction export and the Analytics/Reporting UI
+   **/
+  public AnalyticsReportingSettings myInteractionsPiiMaskingEnabled(Boolean myInteractionsPiiMaskingEnabled) {
+    this.myInteractionsPiiMaskingEnabled = myInteractionsPiiMaskingEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether PII data is masked in My Interaction export and the Analytics/Reporting UI")
+  @JsonProperty("myInteractionsPiiMaskingEnabled")
+  public Boolean getMyInteractionsPiiMaskingEnabled() {
+    return myInteractionsPiiMaskingEnabled;
+  }
+  public void setMyInteractionsPiiMaskingEnabled(Boolean myInteractionsPiiMaskingEnabled) {
+    this.myInteractionsPiiMaskingEnabled = myInteractionsPiiMaskingEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +91,13 @@ public class AnalyticsReportingSettings  implements Serializable {
     AnalyticsReportingSettings analyticsReportingSettings = (AnalyticsReportingSettings) o;
 
     return Objects.equals(this.piiMaskingEnabled, analyticsReportingSettings.piiMaskingEnabled) &&
-            Objects.equals(this.queueAgentAccessObfuscation, analyticsReportingSettings.queueAgentAccessObfuscation);
+            Objects.equals(this.queueAgentAccessObfuscation, analyticsReportingSettings.queueAgentAccessObfuscation) &&
+            Objects.equals(this.myInteractionsPiiMaskingEnabled, analyticsReportingSettings.myInteractionsPiiMaskingEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(piiMaskingEnabled, queueAgentAccessObfuscation);
+    return Objects.hash(piiMaskingEnabled, queueAgentAccessObfuscation, myInteractionsPiiMaskingEnabled);
   }
 
   @Override
@@ -87,6 +107,7 @@ public class AnalyticsReportingSettings  implements Serializable {
     
     sb.append("    piiMaskingEnabled: ").append(toIndentedString(piiMaskingEnabled)).append("\n");
     sb.append("    queueAgentAccessObfuscation: ").append(toIndentedString(queueAgentAccessObfuscation)).append("\n");
+    sb.append("    myInteractionsPiiMaskingEnabled: ").append(toIndentedString(myInteractionsPiiMaskingEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

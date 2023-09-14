@@ -11,8 +11,8 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.BuAgentScheduleShift;
 import com.mypurecloud.sdk.v2.model.BuFullDayTimeOffMarker;
+import com.mypurecloud.sdk.v2.model.BuUpdateAgentScheduleShift;
 import com.mypurecloud.sdk.v2.model.ListWrapperString;
 import com.mypurecloud.sdk.v2.model.ValueWrapperString;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -31,7 +31,7 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
   private String userId = null;
   private ValueWrapperString workPlanId = null;
   private ListWrapperString workPlanIdsPerWeek = null;
-  private List<BuAgentScheduleShift> shifts = new ArrayList<BuAgentScheduleShift>();
+  private List<BuUpdateAgentScheduleShift> shifts = new ArrayList<BuUpdateAgentScheduleShift>();
   private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
   private WfmVersionedEntityMetadata metadata = null;
   private Boolean delete = null;
@@ -94,17 +94,17 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
   /**
    * The shift definitions for this agent schedule
    **/
-  public BuUpdateAgentScheduleUploadSchema shifts(List<BuAgentScheduleShift> shifts) {
+  public BuUpdateAgentScheduleUploadSchema shifts(List<BuUpdateAgentScheduleShift> shifts) {
     this.shifts = shifts;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The shift definitions for this agent schedule")
   @JsonProperty("shifts")
-  public List<BuAgentScheduleShift> getShifts() {
+  public List<BuUpdateAgentScheduleShift> getShifts() {
     return shifts;
   }
-  public void setShifts(List<BuAgentScheduleShift> shifts) {
+  public void setShifts(List<BuUpdateAgentScheduleShift> shifts) {
     this.shifts = shifts;
   }
 

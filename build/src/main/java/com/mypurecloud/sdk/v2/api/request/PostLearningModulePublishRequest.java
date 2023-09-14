@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
@@ -63,6 +64,20 @@ public class PostLearningModulePublishRequest {
 	    return this;
 	} 
 
+	private LearningModulePublishRequest body;
+	public LearningModulePublishRequest getBody() {
+		return this.body;
+	}
+
+	public void setBody(LearningModulePublishRequest body) {
+		this.body = body;
+	}
+
+	public PostLearningModulePublishRequest withBody(LearningModulePublishRequest body) {
+	    this.setBody(body);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -82,7 +97,7 @@ public class PostLearningModulePublishRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() {
+    public ApiRequest<LearningModulePublishRequest> withHttpInfo() {
         
         // verify the required parameter 'moduleId' is set
         if (this.moduleId == null) {
@@ -93,6 +108,8 @@ public class PostLearningModulePublishRequest {
         return ApiRequestBuilder.create("POST", "/api/v2/learning/modules/{moduleId}/publish")
                 .withPathParameter("moduleId", moduleId)
         
+                .withBody(body)
+
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -121,6 +138,11 @@ public class PostLearningModulePublishRequest {
 
 		public Builder withModuleId(String moduleId) {
 			request.setModuleId(moduleId);
+			return this;
+		}
+
+		public Builder withBody(LearningModulePublishRequest body) {
+			request.setBody(body);
 			return this;
 		}
 
