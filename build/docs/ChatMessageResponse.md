@@ -1,0 +1,25 @@
+---
+title: ChatMessageResponse
+---
+## ChatMessageResponse
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | <!----><!---->**String**<!----> | The id of the message |  |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Message's created time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Message's last updated time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **toJid** | <!----><!---->**String**<!----> | Jid of message's recipient (roomJid or userJid) |  |
+| **jid** | <!----><!---->**String**<!----> | Jid of message's sender (userJid) |  |
+| **body** | <!----><!---->**String**<!----> | Message's body |  |
+| **mentions** | <!----><!---->**Map&lt;String, String&gt;**<!----> | Message's mentions |  [optional] |
+| **edited** | <!----><!---->**Boolean**<!----> | If message was edited |  [optional] |
+| **attachmentDeleted** | <!----><!---->**Boolean**<!----> | If message's attachment was deleted |  [optional] |
+| **fileUri** | <!----><!---->**String**<!----> | URI of file attachment |  [optional] |
+| **thread** | <!----><!---->[**Entity**](Entity.html)<!----> | The id for a thread this message corresponds to |  |
+{: class="table table-striped"}
+
+
+

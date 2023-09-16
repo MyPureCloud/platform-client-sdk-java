@@ -119,6 +119,8 @@ docs/AlertListing.md
 docs/AlertNotification.md
 docs/AlertRequest.md
 docs/AlertRuleProperties.md
+docs/AlertSummary.md
+docs/AlertSummaryEntity.md
 docs/AlertingApi.json
 docs/AlertingApi.md
 docs/AlertingUnreadStatus.md
@@ -509,6 +511,7 @@ docs/CampaignRuleParameters.md
 docs/CampaignSchedule.md
 docs/CampaignSequence.md
 docs/CampaignSequenceEntityListing.md
+docs/CampaignSkillStatistics.md
 docs/CampaignStats.md
 docs/CampaignTimeSlot.md
 docs/Card.md
@@ -544,7 +547,10 @@ docs/ChatMediaParticipant.md
 docs/ChatMediaPolicy.md
 docs/ChatMediaPolicyConditions.md
 docs/ChatMessage.md
+docs/ChatMessageEntityListing.md
+docs/ChatMessageResponse.md
 docs/ChatMessageUser.md
+docs/ChatSendMessageResponse.md
 docs/ChatSettings.md
 docs/Check.md
 docs/ClientApp.md
@@ -983,6 +989,8 @@ docs/CreatePredictorRequest.md
 docs/CreateQueueRequest.md
 docs/CreateResponseAssetRequest.md
 docs/CreateResponseAssetResponse.md
+docs/CreateRoomRequest.md
+docs/CreateRoomResponse.md
 docs/CreateSecureSession.md
 docs/CreateServiceGoalTemplate.md
 docs/CreateShareRequest.md
@@ -2540,6 +2548,7 @@ docs/Phrase.md
 docs/PhraseAssociations.md
 docs/PhysicalInterfaceEntityListing.md
 docs/PingIdentity.md
+docs/PinnedMessageRequest.md
 docs/PlanningGroup.md
 docs/PlanningGroupList.md
 docs/PlanningGroupReference.md
@@ -3002,6 +3011,8 @@ docs/Ring.md
 docs/RoleDivision.md
 docs/RoleDivisionGrants.md
 docs/RoleDivisionPair.md
+docs/Room.md
+docs/RoomUpdateRequest.md
 docs/RoutePathRequest.md
 docs/RoutePathResponse.md
 docs/RoutingActivityData.md
@@ -3143,6 +3154,7 @@ docs/SelectedColumns.md
 docs/SelectorEventTrigger.md
 docs/SendAgentlessOutboundMessageRequest.md
 docs/SendAgentlessOutboundMessageResponse.md
+docs/SendMessageBody.md
 docs/SentimentFeedback.md
 docs/SentimentFeedbackEntityListing.md
 docs/SequenceSchedule.md
@@ -3792,6 +3804,7 @@ docs/Video.md
 docs/VideoConferenceDetails.md
 docs/VideoConferenceUpdateTopicParticipantInfo.md
 docs/VideoConferenceUpdateTopicVideoConference.md
+docs/VideoMetadata.md
 docs/ViewFilter.md
 docs/VisibilityCondition.md
 docs/VmPairingInfo.md
@@ -4185,6 +4198,10 @@ docs/deleteAuthorizationDivision-example.txt
 docs/deleteAuthorizationRole-example.txt
 docs/deleteAuthorizationSubjectDivisionRole-example.txt
 docs/deleteAuthorizationSubjectDivisionRole-example.txt
+docs/deleteChatsRoomMessage-example.txt
+docs/deleteChatsRoomParticipant-example.txt
+docs/deleteChatsRoomPinnedmessage-example.txt
+docs/deleteChatsUserMessage-example.txt
 docs/deleteCoachingAppointment-example.txt
 docs/deleteCoachingAppointmentAnnotation-example.txt
 docs/deleteContentmanagementDocument-example.txt
@@ -4548,7 +4565,14 @@ docs/getBillingReportsBillableusage-example.txt
 docs/getBillingTrusteebillingoverviewTrustorOrgId-example.txt
 docs/getCarrierservicesIntegrationsEmergencylocationsMe-example.txt
 docs/getChatSettings-example.txt
+docs/getChatsMessage-example.txt
+docs/getChatsRoom-example.txt
+docs/getChatsRoomMessage-example.txt
+docs/getChatsRoomMessages-example.txt
 docs/getChatsSettings-example.txt
+docs/getChatsThreadMessages-example.txt
+docs/getChatsUserMessage-example.txt
+docs/getChatsUserMessages-example.txt
 docs/getCoachingAppointment-example.txt
 docs/getCoachingAppointmentAnnotation-example.txt
 docs/getCoachingAppointmentAnnotations-example.txt
@@ -5507,7 +5531,10 @@ docs/patchArchitectGrammar-example.txt
 docs/patchAuthorizationRole-example.txt
 docs/patchAuthorizationSettings-example.txt
 docs/patchChatSettings-example.txt
+docs/patchChatsRoom-example.txt
+docs/patchChatsRoomMessage-example.txt
 docs/patchChatsSettings-example.txt
+docs/patchChatsUserMessage-example.txt
 docs/patchCoachingAppointment-example.txt
 docs/patchCoachingAppointmentAnnotation-example.txt
 docs/patchCoachingAppointmentStatus-example.txt
@@ -5761,6 +5788,11 @@ docs/postAuthorizationSubjectDivisionRole-example.txt
 docs/postAuthorizationSubjectDivisionRole-example.txt
 docs/postCarrierservicesIntegrationsEmergencylocationsMe-example.txt
 docs/postCertificateDetails-example.txt
+docs/postChatsRoomMessages-example.txt
+docs/postChatsRoomParticipant-example.txt
+docs/postChatsRoomPinnedmessages-example.txt
+docs/postChatsRooms-example.txt
+docs/postChatsUserMessages-example.txt
 docs/postCoachingAppointmentAnnotations-example.txt
 docs/postCoachingAppointmentConversations-example.txt
 docs/postCoachingAppointments-example.txt
@@ -6652,6 +6684,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteAuthorizationDivisionRequ
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteAuthorizationRoleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteAuthorizationSubjectDivisionRoleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteAuthorizationSubjectDivisionRoleRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsRoomMessageRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsRoomParticipantRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsRoomPinnedmessageRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsUserMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteCoachingAppointmentAnnotationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteCoachingAppointmentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteContentmanagementDocumentRequest.java
@@ -7015,7 +7051,14 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetBillingReportsBillableusageR
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetBillingTrusteebillingoverviewTrustorOrgIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCarrierservicesIntegrationsEmergencylocationsMeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsMessageRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsRoomMessageRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsRoomMessagesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsRoomRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsThreadMessagesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsUserMessageRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsUserMessagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentAnnotationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentAnnotationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentRequest.java
@@ -7974,7 +8017,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchArchitectGrammarRequest.ja
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchAuthorizationRoleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchAuthorizationSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchChatSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchChatsRoomMessageRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchChatsRoomRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchChatsSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchChatsUserMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingAppointmentAnnotationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingAppointmentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingAppointmentStatusRequest.java
@@ -8228,6 +8274,11 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostAuthorizationSubjectDivisio
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostAuthorizationSubjectDivisionRoleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCarrierservicesIntegrationsEmergencylocationsMeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCertificateDetailsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsRoomMessagesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsRoomParticipantRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsRoomPinnedmessagesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsRoomsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsUserMessagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentAnnotationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentConversationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentsAggregatesQueryRequest.java
@@ -9058,6 +9109,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/AlertListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertRuleProperties.java
+src/main/java/com/mypurecloud/sdk/v2/model/AlertSummary.java
+src/main/java/com/mypurecloud/sdk/v2/model/AlertSummaryEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertingUnreadStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/AllTimePoints.java
 src/main/java/com/mypurecloud/sdk/v2/model/AmazonLexRequest.java
@@ -9436,6 +9489,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/CampaignRuleParameters.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignSchedule.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignSequence.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignSequenceEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/CampaignSkillStatistics.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignStats.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignTimeSlot.java
 src/main/java/com/mypurecloud/sdk/v2/model/Card.java
@@ -9467,7 +9521,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/ChatMediaParticipant.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatMediaPolicy.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatMediaPolicyConditions.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatMessage.java
+src/main/java/com/mypurecloud/sdk/v2/model/ChatMessageEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/ChatMessageResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatMessageUser.java
+src/main/java/com/mypurecloud/sdk/v2/model/ChatSendMessageResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Check.java
 src/main/java/com/mypurecloud/sdk/v2/model/ClientApp.java
@@ -9900,6 +9957,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/CreatePredictorRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateQueueRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateResponseAssetRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateResponseAssetResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/CreateRoomRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/CreateRoomResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateSecureSession.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateServiceGoalTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateShareRequest.java
@@ -11397,6 +11456,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/Phrase.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhraseAssociations.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhysicalInterfaceEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/PingIdentity.java
+src/main/java/com/mypurecloud/sdk/v2/model/PinnedMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/PlanningGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/PlanningGroupList.java
 src/main/java/com/mypurecloud/sdk/v2/model/PlanningGroupReference.java
@@ -11849,6 +11909,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/Ring.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoleDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoleDivisionGrants.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoleDivisionPair.java
+src/main/java/com/mypurecloud/sdk/v2/model/Room.java
+src/main/java/com/mypurecloud/sdk/v2/model/RoomUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutePathRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutePathResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutingActivityData.java
@@ -11982,6 +12044,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SelectedColumns.java
 src/main/java/com/mypurecloud/sdk/v2/model/SelectorEventTrigger.java
 src/main/java/com/mypurecloud/sdk/v2/model/SendAgentlessOutboundMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SendAgentlessOutboundMessageResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/SendMessageBody.java
 src/main/java/com/mypurecloud/sdk/v2/model/SentimentFeedback.java
 src/main/java/com/mypurecloud/sdk/v2/model/SentimentFeedbackEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SequenceSchedule.java
@@ -12601,6 +12664,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/Video.java
 src/main/java/com/mypurecloud/sdk/v2/model/VideoConferenceDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/VideoConferenceUpdateTopicParticipantInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/VideoConferenceUpdateTopicVideoConference.java
+src/main/java/com/mypurecloud/sdk/v2/model/VideoMetadata.java
 src/main/java/com/mypurecloud/sdk/v2/model/ViewFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/VisibilityCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/VmPairingInfo.java

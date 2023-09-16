@@ -38,11 +38,12 @@ public class RecordingJobsQuery  implements Serializable {
     }
   }
   /**
-   * Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
+   * Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported
    */
  @JsonDeserialize(using = ActionEnumDeserializer.class)
   public enum ActionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ARCHIVE("ARCHIVE"),
     DELETE("DELETE"),
     EXPORT("EXPORT");
 
@@ -84,14 +85,14 @@ public class RecordingJobsQuery  implements Serializable {
 
   
   /**
-   * Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
+   * Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported
    **/
   public RecordingJobsQuery action(ActionEnum action) {
     this.action = action;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.")
+  @ApiModelProperty(example = "null", required = true, value = "Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported")
   @JsonProperty("action")
   public ActionEnum getAction() {
     return action;
@@ -228,14 +229,14 @@ public class RecordingJobsQuery  implements Serializable {
 
 
   /**
-   * For DELETE action, setting this to true will clear any pending exports for recordings. This field is not used for EXPORT action. Default value = false
+   * For DELETE action, setting this to true will clear any pending exports for recordings. This field is only used for DELETE action. Default value = false
    **/
   public RecordingJobsQuery clearExport(Boolean clearExport) {
     this.clearExport = clearExport;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "For DELETE action, setting this to true will clear any pending exports for recordings. This field is not used for EXPORT action. Default value = false")
+  @ApiModelProperty(example = "null", value = "For DELETE action, setting this to true will clear any pending exports for recordings. This field is only used for DELETE action. Default value = false")
   @JsonProperty("clearExport")
   public Boolean getClearExport() {
     return clearExport;

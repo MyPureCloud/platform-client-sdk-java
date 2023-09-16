@@ -44,7 +44,6 @@ title: MessagingCampaign
 | COMPLETE | &quot;complete&quot; | 
 | INVALID | &quot;invalid&quot; | 
 | FORCED_OFF | &quot;forced_off&quot; | 
-| FORCED_STOPPING | &quot;forced_stopping&quot; | 
 {: class="table table-striped"}
 
 

@@ -29,6 +29,8 @@ public class MediaSettings  implements Serializable {
   private Boolean enableAutoAnswer = null;
   private Integer alertingTimeoutSeconds = null;
   private ServiceLevel serviceLevel = null;
+  private Double autoAnswerAlertToneSeconds = null;
+  private Double manualAnswerAlertToneSeconds = null;
   private Map<String, BaseMediaSettings> subTypeSettings = null;
 
   
@@ -85,6 +87,40 @@ public class MediaSettings  implements Serializable {
 
 
   /**
+   **/
+  public MediaSettings autoAnswerAlertToneSeconds(Double autoAnswerAlertToneSeconds) {
+    this.autoAnswerAlertToneSeconds = autoAnswerAlertToneSeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("autoAnswerAlertToneSeconds")
+  public Double getAutoAnswerAlertToneSeconds() {
+    return autoAnswerAlertToneSeconds;
+  }
+  public void setAutoAnswerAlertToneSeconds(Double autoAnswerAlertToneSeconds) {
+    this.autoAnswerAlertToneSeconds = autoAnswerAlertToneSeconds;
+  }
+
+
+  /**
+   **/
+  public MediaSettings manualAnswerAlertToneSeconds(Double manualAnswerAlertToneSeconds) {
+    this.manualAnswerAlertToneSeconds = manualAnswerAlertToneSeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("manualAnswerAlertToneSeconds")
+  public Double getManualAnswerAlertToneSeconds() {
+    return manualAnswerAlertToneSeconds;
+  }
+  public void setManualAnswerAlertToneSeconds(Double manualAnswerAlertToneSeconds) {
+    this.manualAnswerAlertToneSeconds = manualAnswerAlertToneSeconds;
+  }
+
+
+  /**
    * Map of media subtype to media subtype specific settings.
    **/
   public MediaSettings subTypeSettings(Map<String, BaseMediaSettings> subTypeSettings) {
@@ -115,12 +151,14 @@ public class MediaSettings  implements Serializable {
     return Objects.equals(this.enableAutoAnswer, mediaSettings.enableAutoAnswer) &&
             Objects.equals(this.alertingTimeoutSeconds, mediaSettings.alertingTimeoutSeconds) &&
             Objects.equals(this.serviceLevel, mediaSettings.serviceLevel) &&
+            Objects.equals(this.autoAnswerAlertToneSeconds, mediaSettings.autoAnswerAlertToneSeconds) &&
+            Objects.equals(this.manualAnswerAlertToneSeconds, mediaSettings.manualAnswerAlertToneSeconds) &&
             Objects.equals(this.subTypeSettings, mediaSettings.subTypeSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, subTypeSettings);
+    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, subTypeSettings);
   }
 
   @Override
@@ -131,6 +169,8 @@ public class MediaSettings  implements Serializable {
     sb.append("    enableAutoAnswer: ").append(toIndentedString(enableAutoAnswer)).append("\n");
     sb.append("    alertingTimeoutSeconds: ").append(toIndentedString(alertingTimeoutSeconds)).append("\n");
     sb.append("    serviceLevel: ").append(toIndentedString(serviceLevel)).append("\n");
+    sb.append("    autoAnswerAlertToneSeconds: ").append(toIndentedString(autoAnswerAlertToneSeconds)).append("\n");
+    sb.append("    manualAnswerAlertToneSeconds: ").append(toIndentedString(manualAnswerAlertToneSeconds)).append("\n");
     sb.append("    subTypeSettings: ").append(toIndentedString(subTypeSettings)).append("\n");
     sb.append("}");
     return sb.toString();

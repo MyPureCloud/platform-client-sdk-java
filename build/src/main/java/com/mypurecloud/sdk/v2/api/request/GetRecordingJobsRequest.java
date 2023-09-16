@@ -210,6 +210,7 @@ public class GetRecordingJobsRequest {
 	} 
 
 	public enum jobTypeValues { 
+		ARCHIVE("ARCHIVE"),
 		DELETE("DELETE"),
 		EXPORT("EXPORT");
 

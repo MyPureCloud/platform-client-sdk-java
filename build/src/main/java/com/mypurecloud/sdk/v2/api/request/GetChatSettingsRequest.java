@@ -20,8 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.ChatMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.ChatMessageResponse;
+import com.mypurecloud.sdk.v2.model.ChatSendMessageResponse;
 import com.mypurecloud.sdk.v2.model.ChatSettings;
+import com.mypurecloud.sdk.v2.model.CreateRoomRequest;
+import com.mypurecloud.sdk.v2.model.CreateRoomResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.PinnedMessageRequest;
+import com.mypurecloud.sdk.v2.model.Room;
+import com.mypurecloud.sdk.v2.model.RoomUpdateRequest;
+import com.mypurecloud.sdk.v2.model.SendMessageBody;
 
 public class GetChatSettingsRequest {
 

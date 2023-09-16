@@ -143,14 +143,14 @@ public class ContactListFilter  implements Serializable {
 
 
   /**
-   * The contact list the filter is based on.
+   * The contact list the filter is based on. Required if sourceType is ContactList
    **/
   public ContactListFilter contactList(DomainEntityRef contactList) {
     this.contactList = contactList;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The contact list the filter is based on.")
+  @ApiModelProperty(example = "null", value = "The contact list the filter is based on. Required if sourceType is ContactList")
   @JsonProperty("contactList")
   public DomainEntityRef getContactList() {
     return contactList;

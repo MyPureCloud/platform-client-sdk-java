@@ -61,8 +61,7 @@ public class MessagingCampaign  implements Serializable {
     OFF("off"),
     COMPLETE("complete"),
     INVALID("invalid"),
-    FORCED_OFF("forced_off"),
-    FORCED_STOPPING("forced_stopping");
+    FORCED_OFF("forced_off");
 
     private String value;
 

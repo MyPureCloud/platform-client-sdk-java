@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallableContactsDiagnostic;
+import com.mypurecloud.sdk.v2.model.CampaignSkillStatistics;
 import com.mypurecloud.sdk.v2.model.QueueUtilizationDiagnostic;
 import com.mypurecloud.sdk.v2.model.RuleSetDiagnostic;
 import io.swagger.annotations.ApiModel;
@@ -32,6 +33,7 @@ public class CampaignDiagnostics  implements Serializable {
   private Integer outstandingInteractionsCount = null;
   private Integer scheduledInteractionsCount = null;
   private Integer timeZoneRescheduledCallsCount = null;
+  private CampaignSkillStatistics campaignSkillStatistics = null;
 
   
   @ApiModelProperty(example = "null", value = "Campaign properties that can impact which contacts are callable")
@@ -76,6 +78,13 @@ public class CampaignDiagnostics  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Information regarding the campaign's skills")
+  @JsonProperty("campaignSkillStatistics")
+  public CampaignSkillStatistics getCampaignSkillStatistics() {
+    return campaignSkillStatistics;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -91,12 +100,13 @@ public class CampaignDiagnostics  implements Serializable {
             Objects.equals(this.ruleSetDiagnostics, campaignDiagnostics.ruleSetDiagnostics) &&
             Objects.equals(this.outstandingInteractionsCount, campaignDiagnostics.outstandingInteractionsCount) &&
             Objects.equals(this.scheduledInteractionsCount, campaignDiagnostics.scheduledInteractionsCount) &&
-            Objects.equals(this.timeZoneRescheduledCallsCount, campaignDiagnostics.timeZoneRescheduledCallsCount);
+            Objects.equals(this.timeZoneRescheduledCallsCount, campaignDiagnostics.timeZoneRescheduledCallsCount) &&
+            Objects.equals(this.campaignSkillStatistics, campaignDiagnostics.campaignSkillStatistics);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callableContacts, queueUtilizationDiagnostic, ruleSetDiagnostics, outstandingInteractionsCount, scheduledInteractionsCount, timeZoneRescheduledCallsCount);
+    return Objects.hash(callableContacts, queueUtilizationDiagnostic, ruleSetDiagnostics, outstandingInteractionsCount, scheduledInteractionsCount, timeZoneRescheduledCallsCount, campaignSkillStatistics);
   }
 
   @Override
@@ -110,6 +120,7 @@ public class CampaignDiagnostics  implements Serializable {
     sb.append("    outstandingInteractionsCount: ").append(toIndentedString(outstandingInteractionsCount)).append("\n");
     sb.append("    scheduledInteractionsCount: ").append(toIndentedString(scheduledInteractionsCount)).append("\n");
     sb.append("    timeZoneRescheduledCallsCount: ").append(toIndentedString(timeZoneRescheduledCallsCount)).append("\n");
+    sb.append("    campaignSkillStatistics: ").append(toIndentedString(campaignSkillStatistics)).append("\n");
     sb.append("}");
     return sb.toString();
   }

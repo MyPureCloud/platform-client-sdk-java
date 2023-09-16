@@ -29,6 +29,7 @@ public class InsightsSummaryUserItem  implements Serializable {
   private UserReference user = null;
   private List<InsightsSummaryMetricItem> metricData = new ArrayList<InsightsSummaryMetricItem>();
   private InsightsSummaryOverallItem overallData = null;
+  private Integer ranking = null;
 
   
   /**
@@ -85,6 +86,24 @@ public class InsightsSummaryUserItem  implements Serializable {
   }
 
 
+  /**
+   * Ranking of the user
+   **/
+  public InsightsSummaryUserItem ranking(Integer ranking) {
+    this.ranking = ranking;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Ranking of the user")
+  @JsonProperty("ranking")
+  public Integer getRanking() {
+    return ranking;
+  }
+  public void setRanking(Integer ranking) {
+    this.ranking = ranking;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -97,12 +116,13 @@ public class InsightsSummaryUserItem  implements Serializable {
 
     return Objects.equals(this.user, insightsSummaryUserItem.user) &&
             Objects.equals(this.metricData, insightsSummaryUserItem.metricData) &&
-            Objects.equals(this.overallData, insightsSummaryUserItem.overallData);
+            Objects.equals(this.overallData, insightsSummaryUserItem.overallData) &&
+            Objects.equals(this.ranking, insightsSummaryUserItem.ranking);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, metricData, overallData);
+    return Objects.hash(user, metricData, overallData, ranking);
   }
 
   @Override
@@ -113,6 +133,7 @@ public class InsightsSummaryUserItem  implements Serializable {
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    metricData: ").append(toIndentedString(metricData)).append("\n");
     sb.append("    overallData: ").append(toIndentedString(overallData)).append("\n");
+    sb.append("    ranking: ").append(toIndentedString(ranking)).append("\n");
     sb.append("}");
     return sb.toString();
   }

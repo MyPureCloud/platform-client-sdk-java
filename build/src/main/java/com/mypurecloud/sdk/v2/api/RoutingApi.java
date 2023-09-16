@@ -6547,15 +6547,15 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ascending)
-   * @param id Filter by wrapup code ID(s) (optional)
    * @param name Wrapup code's name ('Sort by' param is ignored unless this field is provided) (optional)
+   * @param id Filter by wrapup code ID(s) (optional)
    * @param divisionId Filter by division ID(s) (optional)
    * @return WrapupCodeEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WrapupCodeEntityListing getRoutingWrapupcodes(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException, ApiException {
-    return  getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, sortOrder, id, name, divisionId));
+  public WrapupCodeEntityListing getRoutingWrapupcodes(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id, List<String> divisionId) throws IOException, ApiException {
+    return  getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId));
   }
 
   /**
@@ -6565,17 +6565,17 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ascending)
-   * @param id Filter by wrapup code ID(s) (optional)
    * @param name Wrapup code's name ('Sort by' param is ignored unless this field is provided) (optional)
+   * @param id Filter by wrapup code ID(s) (optional)
    * @param divisionId Filter by division ID(s) (optional)
    * @return WrapupCodeEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException {
-    return getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, sortOrder, id, name, divisionId).withHttpInfo());
+  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id, List<String> divisionId) throws IOException {
+    return getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId).withHttpInfo());
   }
 
-  private GetRoutingWrapupcodesRequest createGetRoutingWrapupcodesRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) {
+  private GetRoutingWrapupcodesRequest createGetRoutingWrapupcodesRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id, List<String> divisionId) {
     return GetRoutingWrapupcodesRequest.builder()
             .withPageSize(pageSize)
 
@@ -6585,9 +6585,9 @@ public class RoutingApi {
 
             .withSortOrder(sortOrder)
 
-            .withId(id)
-
             .withName(name)
+
+            .withId(id)
 
             .withDivisionId(divisionId)
 

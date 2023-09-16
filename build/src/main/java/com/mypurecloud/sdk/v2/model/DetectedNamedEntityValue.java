@@ -23,6 +23,7 @@ public class DetectedNamedEntityValue  implements Serializable {
   
   private String raw = null;
   private String resolved = null;
+  private String unit = null;
 
   
   @ApiModelProperty(example = "null", value = "The raw value of the detected named entity.")
@@ -39,6 +40,13 @@ public class DetectedNamedEntityValue  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The unit of the detected amount of money entity, e.g. EUR, USD.")
+  @JsonProperty("unit")
+  public String getUnit() {
+    return unit;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -50,12 +58,13 @@ public class DetectedNamedEntityValue  implements Serializable {
     DetectedNamedEntityValue detectedNamedEntityValue = (DetectedNamedEntityValue) o;
 
     return Objects.equals(this.raw, detectedNamedEntityValue.raw) &&
-            Objects.equals(this.resolved, detectedNamedEntityValue.resolved);
+            Objects.equals(this.resolved, detectedNamedEntityValue.resolved) &&
+            Objects.equals(this.unit, detectedNamedEntityValue.unit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(raw, resolved);
+    return Objects.hash(raw, resolved, unit);
   }
 
   @Override
@@ -65,6 +74,7 @@ public class DetectedNamedEntityValue  implements Serializable {
     
     sb.append("    raw: ").append(toIndentedString(raw)).append("\n");
     sb.append("    resolved: ").append(toIndentedString(resolved)).append("\n");
+    sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

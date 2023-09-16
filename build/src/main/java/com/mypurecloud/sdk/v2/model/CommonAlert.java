@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AlertNotification;
 import com.mypurecloud.sdk.v2.model.AlertRuleProperties;
+import com.mypurecloud.sdk.v2.model.AlertSummary;
 import com.mypurecloud.sdk.v2.model.CommonRuleConditions;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
@@ -43,6 +44,7 @@ public class CommonAlert  implements Serializable {
   private Date dateSnoozedUntil = null;
   private CommonRuleConditions conditions = null;
   private String conversationId = null;
+  private AlertSummary alertSummary = null;
   private String ruleUri = null;
   private String selfUri = null;
 
@@ -324,6 +326,24 @@ public class CommonAlert  implements Serializable {
 
 
   /**
+   * Summary of the alert status of the entities defined in the conditions.  Is set when rule has instance-based or team member based rule predicates
+   **/
+  public CommonAlert alertSummary(AlertSummary alertSummary) {
+    this.alertSummary = alertSummary;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Summary of the alert status of the entities defined in the conditions.  Is set when rule has instance-based or team member based rule predicates")
+  @JsonProperty("alertSummary")
+  public AlertSummary getAlertSummary() {
+    return alertSummary;
+  }
+  public void setAlertSummary(AlertSummary alertSummary) {
+    this.alertSummary = alertSummary;
+  }
+
+
+  /**
    **/
   public CommonAlert ruleUri(String ruleUri) {
     this.ruleUri = ruleUri;
@@ -373,13 +393,14 @@ public class CommonAlert  implements Serializable {
             Objects.equals(this.dateSnoozedUntil, commonAlert.dateSnoozedUntil) &&
             Objects.equals(this.conditions, commonAlert.conditions) &&
             Objects.equals(this.conversationId, commonAlert.conversationId) &&
+            Objects.equals(this.alertSummary, commonAlert.alertSummary) &&
             Objects.equals(this.ruleUri, commonAlert.ruleUri) &&
             Objects.equals(this.selfUri, commonAlert.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, rule, notifications, dateStart, dateEnd, active, unread, waitBetweenNotificationMs, muted, snoozed, dateMutedUntil, dateSnoozedUntil, conditions, conversationId, ruleUri, selfUri);
+    return Objects.hash(id, name, user, rule, notifications, dateStart, dateEnd, active, unread, waitBetweenNotificationMs, muted, snoozed, dateMutedUntil, dateSnoozedUntil, conditions, conversationId, alertSummary, ruleUri, selfUri);
   }
 
   @Override
@@ -403,6 +424,7 @@ public class CommonAlert  implements Serializable {
     sb.append("    dateSnoozedUntil: ").append(toIndentedString(dateSnoozedUntil)).append("\n");
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
+    sb.append("    alertSummary: ").append(toIndentedString(alertSummary)).append("\n");
     sb.append("    ruleUri: ").append(toIndentedString(ruleUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
