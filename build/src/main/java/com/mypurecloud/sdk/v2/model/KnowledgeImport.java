@@ -182,7 +182,13 @@ public class KnowledgeImport  implements Serializable {
     PT_PT("pt-PT"),
     NL_NL("nl-NL"),
     NL_BE("nl-BE"),
-    IT_IT("it-IT");
+    IT_IT("it-IT"),
+    CA_ES("ca-ES"),
+    TR_TR("tr-TR"),
+    SV_SE("sv-SE"),
+    FI_FI("fi-FI"),
+    NB_NO("nb-NO"),
+    DA_DK("da-DK");
 
     private String value;
 

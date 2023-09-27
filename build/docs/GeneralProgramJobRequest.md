@@ -27,6 +27,7 @@ title: GeneralProgramJobRequest
 | AR_IL | &quot;ar-IL&quot; | 
 | AR_SA | &quot;ar-SA&quot; | 
 | AR_TN | &quot;ar-TN&quot; | 
+| DA_DK | &quot;da-DK&quot; | 
 | DE_CH | &quot;de-CH&quot; | 
 | DE_DE | &quot;de-DE&quot; | 
 | EN_AU | &quot;en-AU&quot; | 
@@ -40,15 +41,19 @@ title: GeneralProgramJobRequest
 | EN_ZA | &quot;en-ZA&quot; | 
 | ES_ES | &quot;es-ES&quot; | 
 | ES_US | &quot;es-US&quot; | 
+| FI_FI | &quot;fi-FI&quot; | 
 | FR_CA | &quot;fr-CA&quot; | 
 | FR_FR | &quot;fr-FR&quot; | 
+| HE_IL | &quot;he-IL&quot; | 
 | IT_IT | &quot;it-IT&quot; | 
 | JA_JP | &quot;ja-JP&quot; | 
 | KO_KR | &quot;ko-KR&quot; | 
+| NB_NO | &quot;nb-NO&quot; | 
 | NL_NL | &quot;nl-NL&quot; | 
 | PL_PL | &quot;pl-PL&quot; | 
 | PT_BR | &quot;pt-BR&quot; | 
 | PT_PT | &quot;pt-PT&quot; | 
+| SV_SE | &quot;sv-SE&quot; | 
 {: class="table table-striped"}
 
 

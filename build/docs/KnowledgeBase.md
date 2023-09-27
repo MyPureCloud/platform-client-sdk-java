@@ -11,7 +11,7 @@ title: KnowledgeBase
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **description** | <!----><!---->**String**<!----> | Knowledge base description |  [optional] |
-| **coreLanguage** | [**CoreLanguageEnum**](#CoreLanguageEnum)<!----> | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently, however the new DX knowledge will support all these language codes |  |
+| **coreLanguage** | [**CoreLanguageEnum**](#CoreLanguageEnum)<!----> | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK] which might have a lower accuracy. |  |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Knowledge base creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Knowledge base last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **faqCount** | <!----><!---->**Integer**<!----> | The count representing the number of documents of type FAQ in the KnowledgeBase |  [optional] |
@@ -57,6 +57,12 @@ title: KnowledgeBase
 | NL_NL | &quot;nl-NL&quot; | 
 | NL_BE | &quot;nl-BE&quot; | 
 | IT_IT | &quot;it-IT&quot; | 
+| CA_ES | &quot;ca-ES&quot; | 
+| TR_TR | &quot;tr-TR&quot; | 
+| SV_SE | &quot;sv-SE&quot; | 
+| FI_FI | &quot;fi-FI&quot; | 
+| NB_NO | &quot;nb-NO&quot; | 
+| DA_DK | &quot;da-DK&quot; | 
 {: class="table table-striped"}
 
 

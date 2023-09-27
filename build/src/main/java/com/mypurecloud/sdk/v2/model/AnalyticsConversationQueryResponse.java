@@ -25,28 +25,11 @@ import java.io.Serializable;
 
 public class AnalyticsConversationQueryResponse  implements Serializable {
   
-  private List<AggregationResult> aggregations = new ArrayList<AggregationResult>();
   private List<AnalyticsConversationWithoutAttributes> conversations = new ArrayList<AnalyticsConversationWithoutAttributes>();
+  private List<AggregationResult> aggregations = new ArrayList<AggregationResult>();
   private Integer totalHits = null;
 
   
-  /**
-   **/
-  public AnalyticsConversationQueryResponse aggregations(List<AggregationResult> aggregations) {
-    this.aggregations = aggregations;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("aggregations")
-  public List<AggregationResult> getAggregations() {
-    return aggregations;
-  }
-  public void setAggregations(List<AggregationResult> aggregations) {
-    this.aggregations = aggregations;
-  }
-
-
   /**
    **/
   public AnalyticsConversationQueryResponse conversations(List<AnalyticsConversationWithoutAttributes> conversations) {
@@ -61,6 +44,23 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
   }
   public void setConversations(List<AnalyticsConversationWithoutAttributes> conversations) {
     this.conversations = conversations;
+  }
+
+
+  /**
+   **/
+  public AnalyticsConversationQueryResponse aggregations(List<AggregationResult> aggregations) {
+    this.aggregations = aggregations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("aggregations")
+  public List<AggregationResult> getAggregations() {
+    return aggregations;
+  }
+  public void setAggregations(List<AggregationResult> aggregations) {
+    this.aggregations = aggregations;
   }
 
 
@@ -91,14 +91,14 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
     }
     AnalyticsConversationQueryResponse analyticsConversationQueryResponse = (AnalyticsConversationQueryResponse) o;
 
-    return Objects.equals(this.aggregations, analyticsConversationQueryResponse.aggregations) &&
-            Objects.equals(this.conversations, analyticsConversationQueryResponse.conversations) &&
+    return Objects.equals(this.conversations, analyticsConversationQueryResponse.conversations) &&
+            Objects.equals(this.aggregations, analyticsConversationQueryResponse.aggregations) &&
             Objects.equals(this.totalHits, analyticsConversationQueryResponse.totalHits);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aggregations, conversations, totalHits);
+    return Objects.hash(conversations, aggregations, totalHits);
   }
 
   @Override
@@ -106,8 +106,8 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsConversationQueryResponse {\n");
     
-    sb.append("    aggregations: ").append(toIndentedString(aggregations)).append("\n");
     sb.append("    conversations: ").append(toIndentedString(conversations)).append("\n");
+    sb.append("    aggregations: ").append(toIndentedString(aggregations)).append("\n");
     sb.append("    totalHits: ").append(toIndentedString(totalHits)).append("\n");
     sb.append("}");
     return sb.toString();

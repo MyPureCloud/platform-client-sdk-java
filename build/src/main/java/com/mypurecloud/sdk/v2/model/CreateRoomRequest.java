@@ -22,6 +22,7 @@ import java.io.Serializable;
 public class CreateRoomRequest  implements Serializable {
   
   private String description = null;
+  private String subject = null;
 
   
   /**
@@ -32,13 +33,31 @@ public class CreateRoomRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Room's description")
+  @ApiModelProperty(example = "null", value = "Room's description")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
   public void setDescription(String description) {
     this.description = description;
+  }
+
+
+  /**
+   * Room's subject
+   **/
+  public CreateRoomRequest subject(String subject) {
+    this.subject = subject;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Room's subject")
+  @JsonProperty("subject")
+  public String getSubject() {
+    return subject;
+  }
+  public void setSubject(String subject) {
+    this.subject = subject;
   }
 
 
@@ -52,12 +71,13 @@ public class CreateRoomRequest  implements Serializable {
     }
     CreateRoomRequest createRoomRequest = (CreateRoomRequest) o;
 
-    return Objects.equals(this.description, createRoomRequest.description);
+    return Objects.equals(this.description, createRoomRequest.description) &&
+            Objects.equals(this.subject, createRoomRequest.subject);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description);
+    return Objects.hash(description, subject);
   }
 
   @Override
@@ -66,6 +86,7 @@ public class CreateRoomRequest  implements Serializable {
     sb.append("class CreateRoomRequest {\n");
     
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("}");
     return sb.toString();
   }

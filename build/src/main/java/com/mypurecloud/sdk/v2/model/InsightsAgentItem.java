@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,6 +24,7 @@ public class InsightsAgentItem  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private DomainEntityRef manager = null;
   private String selfUri = null;
 
   
@@ -50,6 +52,24 @@ public class InsightsAgentItem  implements Serializable {
   }
 
 
+  /**
+   * This user's manager.
+   **/
+  public InsightsAgentItem manager(DomainEntityRef manager) {
+    this.manager = manager;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "This user's manager.")
+  @JsonProperty("manager")
+  public DomainEntityRef getManager() {
+    return manager;
+  }
+  public void setManager(DomainEntityRef manager) {
+    this.manager = manager;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -69,12 +89,13 @@ public class InsightsAgentItem  implements Serializable {
 
     return Objects.equals(this.id, insightsAgentItem.id) &&
             Objects.equals(this.name, insightsAgentItem.name) &&
+            Objects.equals(this.manager, insightsAgentItem.manager) &&
             Objects.equals(this.selfUri, insightsAgentItem.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, selfUri);
+    return Objects.hash(id, name, manager, selfUri);
   }
 
   @Override
@@ -84,6 +105,7 @@ public class InsightsAgentItem  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

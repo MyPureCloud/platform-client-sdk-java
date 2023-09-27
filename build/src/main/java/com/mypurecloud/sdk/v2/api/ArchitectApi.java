@@ -53,6 +53,7 @@ import com.mypurecloud.sdk.v2.model.GetFlowExecutionDataJobResult;
 import com.mypurecloud.sdk.v2.model.Grammar;
 import com.mypurecloud.sdk.v2.model.GrammarFileUploadRequest;
 import com.mypurecloud.sdk.v2.model.GrammarLanguage;
+import com.mypurecloud.sdk.v2.model.GrammarLanguageUpdate;
 import com.mypurecloud.sdk.v2.model.GrammarListing;
 import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
@@ -162,6 +163,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarLanguageFilesDtmfRequest;
@@ -7735,6 +7737,96 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Grammar> response = (ApiResponse<Grammar>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Updates a grammar language
+   * 
+   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @param body  (optional)
+   * @return GrammarLanguage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GrammarLanguage patchArchitectGrammarLanguage(String grammarId, String languageCode, GrammarLanguageUpdate body) throws IOException, ApiException {
+    return  patchArchitectGrammarLanguage(createPatchArchitectGrammarLanguageRequest(grammarId, languageCode, body));
+  }
+
+  /**
+   * Updates a grammar language
+   * 
+   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param grammarId Grammar ID (required)
+   * @param languageCode Language (required)
+   * @param body  (optional)
+   * @return GrammarLanguage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GrammarLanguage> patchArchitectGrammarLanguageWithHttpInfo(String grammarId, String languageCode, GrammarLanguageUpdate body) throws IOException {
+    return patchArchitectGrammarLanguage(createPatchArchitectGrammarLanguageRequest(grammarId, languageCode, body).withHttpInfo());
+  }
+
+  private PatchArchitectGrammarLanguageRequest createPatchArchitectGrammarLanguageRequest(String grammarId, String languageCode, GrammarLanguageUpdate body) {
+    return PatchArchitectGrammarLanguageRequest.builder()
+            .withGrammarId(grammarId)
+
+            .withLanguageCode(languageCode)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Updates a grammar language
+   * 
+   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GrammarLanguage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GrammarLanguage patchArchitectGrammarLanguage(PatchArchitectGrammarLanguageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GrammarLanguage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GrammarLanguage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a grammar language
+   * 
+   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GrammarLanguage> patchArchitectGrammarLanguage(ApiRequest<GrammarLanguageUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GrammarLanguage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GrammarLanguage> response = (ApiResponse<GrammarLanguage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GrammarLanguage> response = (ApiResponse<GrammarLanguage>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

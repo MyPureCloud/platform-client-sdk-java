@@ -91,6 +91,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsOutcomes**](ArchitectApi.html#getFlowsOutcomes) | Get a pageable list of flow outcomes, filtered by query parameters |
 | [**getFlowsOutcomesDivisionviews**](ArchitectApi.html#getFlowsOutcomesDivisionviews) | Get a pageable list of basic flow outcome information objects filterable by query parameters. |
 | [**patchArchitectGrammar**](ArchitectApi.html#patchArchitectGrammar) | Updates a grammar |
+| [**patchArchitectGrammarLanguage**](ArchitectApi.html#patchArchitectGrammarLanguage) | Updates a grammar language |
 | [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
 | [**postArchitectEmergencygroups**](ArchitectApi.html#postArchitectEmergencygroups) | Creates a new emergency group |
 | [**postArchitectGrammarLanguageFilesDtmf**](ArchitectApi.html#postArchitectGrammarLanguageFilesDtmf) | Creates a presigned URL for uploading a grammar DTMF mode file |
@@ -5809,6 +5810,73 @@ try {
 ### Return type
 
 [**Grammar**](Grammar.html)
+
+<a name="patchArchitectGrammarLanguage"></a>
+
+# **patchArchitectGrammarLanguage**
+
+
+
+> [GrammarLanguage](GrammarLanguage.html) patchArchitectGrammarLanguage(grammarId, languageCode, body)
+
+Updates a grammar language
+
+patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/architect/grammars/{grammarId}/languages/{languageCode}  
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String grammarId = "grammarId_example"; // String | Grammar ID
+String languageCode = "languageCode_example"; // String | Language
+GrammarLanguageUpdate body = new GrammarLanguageUpdate(); // GrammarLanguageUpdate | 
+try {
+    GrammarLanguage result = apiInstance.patchArchitectGrammarLanguage(grammarId, languageCode, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#patchArchitectGrammarLanguage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grammarId** | **String**| Grammar ID | 
+| **languageCode** | **String**| Language | 
+| **body** | [**GrammarLanguageUpdate**](GrammarLanguageUpdate.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GrammarLanguage**](GrammarLanguage.html)
 
 <a name="postArchitectDependencytrackingBuild"></a>
 

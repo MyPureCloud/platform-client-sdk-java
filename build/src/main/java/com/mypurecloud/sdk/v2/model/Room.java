@@ -82,6 +82,7 @@ public class Room  implements Serializable {
   }
   private RoomTypeEnum roomType = null;
   private String description = null;
+  private String subject = null;
   private Integer participantLimit = null;
   private List<UserReference> owners = new ArrayList<UserReference>();
   private List<AddressableEntityRef> pinnedMessages = new ArrayList<AddressableEntityRef>();
@@ -167,6 +168,24 @@ public class Room  implements Serializable {
 
 
   /**
+   * Room's subject
+   **/
+  public Room subject(String subject) {
+    this.subject = subject;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Room's subject")
+  @JsonProperty("subject")
+  public String getSubject() {
+    return subject;
+  }
+  public void setSubject(String subject) {
+    this.subject = subject;
+  }
+
+
+  /**
    * Room's size limit
    **/
   public Room participantLimit(Integer participantLimit) {
@@ -242,6 +261,7 @@ public class Room  implements Serializable {
             Objects.equals(this.dateCreated, room.dateCreated) &&
             Objects.equals(this.roomType, room.roomType) &&
             Objects.equals(this.description, room.description) &&
+            Objects.equals(this.subject, room.subject) &&
             Objects.equals(this.participantLimit, room.participantLimit) &&
             Objects.equals(this.owners, room.owners) &&
             Objects.equals(this.pinnedMessages, room.pinnedMessages) &&
@@ -250,7 +270,7 @@ public class Room  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, roomType, description, participantLimit, owners, pinnedMessages, selfUri);
+    return Objects.hash(id, name, dateCreated, roomType, description, subject, participantLimit, owners, pinnedMessages, selfUri);
   }
 
   @Override
@@ -263,6 +283,7 @@ public class Room  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    roomType: ").append(toIndentedString(roomType)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    participantLimit: ").append(toIndentedString(participantLimit)).append("\n");
     sb.append("    owners: ").append(toIndentedString(owners)).append("\n");
     sb.append("    pinnedMessages: ").append(toIndentedString(pinnedMessages)).append("\n");

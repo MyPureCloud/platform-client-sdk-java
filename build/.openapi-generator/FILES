@@ -1673,6 +1673,7 @@ docs/Grammar.md
 docs/GrammarFileUploadRequest.md
 docs/GrammarLanguage.md
 docs/GrammarLanguageFileMetadata.md
+docs/GrammarLanguageUpdate.md
 docs/GrammarListing.md
 docs/Greeting.md
 docs/GreetingAudioFile.md
@@ -3722,6 +3723,7 @@ docs/UsersSearchResponse.md
 docs/UtilitiesApi.json
 docs/UtilitiesApi.md
 docs/Utilization.md
+docs/UtilizationLabel.md
 docs/UtilizationTag.md
 docs/UtilizationTagEntityListing.md
 docs/Utterance.md
@@ -5528,6 +5530,7 @@ docs/patchAlertingAlertsBulk-example.txt
 docs/patchAlertingRulesBulk-example.txt
 docs/patchAnalyticsReportingSettings-example.txt
 docs/patchArchitectGrammar-example.txt
+docs/patchArchitectGrammarLanguage-example.txt
 docs/patchAuthorizationRole-example.txt
 docs/patchAuthorizationSettings-example.txt
 docs/patchChatSettings-example.txt
@@ -8013,6 +8016,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchAlertingAlertRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchAlertingAlertsBulkRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchAlertingRulesBulkRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchAnalyticsReportingSettingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchArchitectGrammarLanguageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchArchitectGrammarRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchAuthorizationRoleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchAuthorizationSettingsRequest.java
@@ -10621,6 +10625,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/Grammar.java
 src/main/java/com/mypurecloud/sdk/v2/model/GrammarFileUploadRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/GrammarLanguage.java
 src/main/java/com/mypurecloud/sdk/v2/model/GrammarLanguageFileMetadata.java
+src/main/java/com/mypurecloud/sdk/v2/model/GrammarLanguageUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/GrammarListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Greeting.java
 src/main/java/com/mypurecloud/sdk/v2/model/GreetingAudioFile.java
@@ -12582,6 +12587,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/UserTokensTopicUriReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/UsersSearchResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Utilization.java
+src/main/java/com/mypurecloud/sdk/v2/model/UtilizationLabel.java
 src/main/java/com/mypurecloud/sdk/v2/model/UtilizationTag.java
 src/main/java/com/mypurecloud/sdk/v2/model/UtilizationTagEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Utterance.java

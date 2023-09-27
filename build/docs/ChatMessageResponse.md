@@ -19,6 +19,8 @@ title: ChatMessageResponse
 | **attachmentDeleted** | <!----><!---->**Boolean**<!----> | If message's attachment was deleted |  [optional] |
 | **fileUri** | <!----><!---->**String**<!----> | URI of file attachment |  [optional] |
 | **thread** | <!----><!---->[**Entity**](Entity.html)<!----> | The id for a thread this message corresponds to |  |
+| **user** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The user who sent the message |  [optional] |
+| **toUser** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The receiving user of the message |  [optional] |
 {: class="table table-striped"}
 
 

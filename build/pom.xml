@@ -4,7 +4,7 @@
   <groupId>com.mypurecloud</groupId>
   <artifactId>platform-client-v2</artifactId>
   <name>platform-client-v2</name>
-  <version>190.0.0</version>
+  <version>191.0.0</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://developer.mypurecloud.com/api/rest/client-libraries/java/latest/</url>
 
@@ -152,7 +152,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>3.6.0</version>
         <configuration>
           <additionalOptions>
             <additionalOption>-Xdoclint:none</additionalOption>
@@ -362,7 +362,7 @@
     <mockito.version>5.5.0</mockito.version>
     <ini4j-version>0.5.4</ini4j-version>
     <name>platform-client-v2</name>
-    <version>190.0.0</version>
+    <version>191.0.0</version>
     <description>A Java package to interface with the PureCloud Platform API</description>
     <url>https://developer.mypurecloud.com/api/rest/client-libraries/java/latest/</url>
   </properties>

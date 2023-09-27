@@ -91,6 +91,12 @@ title: KnowledgeImport
 | NL_NL | &quot;nl-NL&quot; | 
 | NL_BE | &quot;nl-BE&quot; | 
 | IT_IT | &quot;it-IT&quot; | 
+| CA_ES | &quot;ca-ES&quot; | 
+| TR_TR | &quot;tr-TR&quot; | 
+| SV_SE | &quot;sv-SE&quot; | 
+| FI_FI | &quot;fi-FI&quot; | 
+| NB_NO | &quot;nb-NO&quot; | 
+| DA_DK | &quot;da-DK&quot; | 
 {: class="table table-striped"}
 
 

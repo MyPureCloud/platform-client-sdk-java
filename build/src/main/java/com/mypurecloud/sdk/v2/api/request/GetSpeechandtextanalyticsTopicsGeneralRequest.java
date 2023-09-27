@@ -77,6 +77,7 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
 		AR_IL("ar-IL"),
 		AR_SA("ar-SA"),
 		AR_TN("ar-TN"),
+		DA_DK("da-DK"),
 		DE_CH("de-CH"),
 		DE_DE("de-DE"),
 		EN_AU("en-AU"),
@@ -90,15 +91,19 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
 		EN_ZA("en-ZA"),
 		ES_ES("es-ES"),
 		ES_US("es-US"),
+		FI_FI("fi-FI"),
 		FR_CA("fr-CA"),
 		FR_FR("fr-FR"),
+		HE_IL("he-IL"),
 		IT_IT("it-IT"),
 		JA_JP("ja-JP"),
 		KO_KR("ko-KR"),
+		NB_NO("nb-NO"),
 		NL_NL("nl-NL"),
 		PL_PL("pl-PL"),
 		PT_BR("pt-BR"),
-		PT_PT("pt-PT");
+		PT_PT("pt-PT"),
+		SV_SE("sv-SE");
 
 		private String value;
 

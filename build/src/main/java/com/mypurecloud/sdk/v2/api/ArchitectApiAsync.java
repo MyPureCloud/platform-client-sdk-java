@@ -56,6 +56,7 @@ import com.mypurecloud.sdk.v2.model.GetFlowExecutionDataJobResult;
 import com.mypurecloud.sdk.v2.model.Grammar;
 import com.mypurecloud.sdk.v2.model.GrammarFileUploadRequest;
 import com.mypurecloud.sdk.v2.model.GrammarLanguage;
+import com.mypurecloud.sdk.v2.model.GrammarLanguageUpdate;
 import com.mypurecloud.sdk.v2.model.GrammarListing;
 import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
@@ -165,6 +166,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarLanguageFilesDtmfRequest;
@@ -6540,6 +6542,83 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Grammar> response = (ApiResponse<Grammar>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates a grammar language
+   * 
+   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GrammarLanguage> patchArchitectGrammarLanguageAsync(PatchArchitectGrammarLanguageRequest request, final AsyncApiCallback<GrammarLanguage> callback) {
+    try {
+      final SettableFuture<GrammarLanguage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GrammarLanguage>() {}, new AsyncApiCallback<ApiResponse<GrammarLanguage>>() {
+        @Override
+        public void onCompleted(ApiResponse<GrammarLanguage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates a grammar language
+   * 
+   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GrammarLanguage>> patchArchitectGrammarLanguageAsync(ApiRequest<GrammarLanguageUpdate> request, final AsyncApiCallback<ApiResponse<GrammarLanguage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GrammarLanguage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GrammarLanguage>() {}, new AsyncApiCallback<ApiResponse<GrammarLanguage>>() {
+        @Override
+        public void onCompleted(ApiResponse<GrammarLanguage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GrammarLanguage> response = (ApiResponse<GrammarLanguage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GrammarLanguage> response = (ApiResponse<GrammarLanguage>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

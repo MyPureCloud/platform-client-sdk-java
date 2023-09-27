@@ -13,6 +13,7 @@ title: Room
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Room's created time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **roomType** | [**RoomTypeEnum**](#RoomTypeEnum)<!----> | The type of room |  [optional] |
 | **description** | <!----><!---->**String**<!----> | Room's description |  [optional] |
+| **subject** | <!----><!---->**String**<!----> | Room's subject |  [optional] |
 | **participantLimit** | <!----><!---->**Integer**<!----> | Room's size limit |  [optional] |
 | **owners** | <!----><!---->[**List&lt;UserReference&gt;**](UserReference.html)<!----> | Room's owners |  [optional] |
 | **pinnedMessages** | <!----><!---->[**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef.html)<!----> | Room's pinned messages |  [optional] |

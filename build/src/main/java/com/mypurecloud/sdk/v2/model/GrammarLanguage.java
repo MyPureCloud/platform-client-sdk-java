@@ -40,13 +40,14 @@ public class GrammarLanguage  implements Serializable {
 
 
   /**
+   * The ID of the grammar associated with this grammar language
    **/
   public GrammarLanguage grammarId(String grammarId) {
     this.grammarId = grammarId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the grammar associated with this grammar language")
   @JsonProperty("grammarId")
   public String getGrammarId() {
     return grammarId;

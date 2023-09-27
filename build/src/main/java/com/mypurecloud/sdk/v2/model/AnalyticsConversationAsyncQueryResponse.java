@@ -25,11 +25,28 @@ import java.io.Serializable;
 
 public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
   
+  private List<AnalyticsConversation> conversations = new ArrayList<AnalyticsConversation>();
   private String cursor = null;
   private Date dataAvailabilityDate = null;
-  private List<AnalyticsConversation> conversations = new ArrayList<AnalyticsConversation>();
 
   
+  /**
+   **/
+  public AnalyticsConversationAsyncQueryResponse conversations(List<AnalyticsConversation> conversations) {
+    this.conversations = conversations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversations")
+  public List<AnalyticsConversation> getConversations() {
+    return conversations;
+  }
+  public void setConversations(List<AnalyticsConversation> conversations) {
+    this.conversations = conversations;
+  }
+
+
   /**
    * Optional cursor to indicate where to resume the results
    **/
@@ -66,23 +83,6 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
   }
 
 
-  /**
-   **/
-  public AnalyticsConversationAsyncQueryResponse conversations(List<AnalyticsConversation> conversations) {
-    this.conversations = conversations;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("conversations")
-  public List<AnalyticsConversation> getConversations() {
-    return conversations;
-  }
-  public void setConversations(List<AnalyticsConversation> conversations) {
-    this.conversations = conversations;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -93,14 +93,14 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
     }
     AnalyticsConversationAsyncQueryResponse analyticsConversationAsyncQueryResponse = (AnalyticsConversationAsyncQueryResponse) o;
 
-    return Objects.equals(this.cursor, analyticsConversationAsyncQueryResponse.cursor) &&
-            Objects.equals(this.dataAvailabilityDate, analyticsConversationAsyncQueryResponse.dataAvailabilityDate) &&
-            Objects.equals(this.conversations, analyticsConversationAsyncQueryResponse.conversations);
+    return Objects.equals(this.conversations, analyticsConversationAsyncQueryResponse.conversations) &&
+            Objects.equals(this.cursor, analyticsConversationAsyncQueryResponse.cursor) &&
+            Objects.equals(this.dataAvailabilityDate, analyticsConversationAsyncQueryResponse.dataAvailabilityDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cursor, dataAvailabilityDate, conversations);
+    return Objects.hash(conversations, cursor, dataAvailabilityDate);
   }
 
   @Override
@@ -108,9 +108,9 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsConversationAsyncQueryResponse {\n");
     
+    sb.append("    conversations: ").append(toIndentedString(conversations)).append("\n");
     sb.append("    cursor: ").append(toIndentedString(cursor)).append("\n");
     sb.append("    dataAvailabilityDate: ").append(toIndentedString(dataAvailabilityDate)).append("\n");
-    sb.append("    conversations: ").append(toIndentedString(conversations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

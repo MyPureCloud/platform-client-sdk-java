@@ -63,6 +63,7 @@ import com.mypurecloud.sdk.v2.model.GetFlowExecutionDataJobResult;
 import com.mypurecloud.sdk.v2.model.Grammar;
 import com.mypurecloud.sdk.v2.model.GrammarFileUploadRequest;
 import com.mypurecloud.sdk.v2.model.GrammarLanguage;
+import com.mypurecloud.sdk.v2.model.GrammarLanguageUpdate;
 import com.mypurecloud.sdk.v2.model.GrammarListing;
 import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
