@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.OutcomeEventScore;
+import com.mypurecloud.sdk.v2.model.OutcomeScore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,24 +25,24 @@ import java.io.Serializable;
 
 public class OutcomeScoresResult  implements Serializable {
   
-  private List<OutcomeEventScore> outcomeScores = new ArrayList<OutcomeEventScore>();
+  private List<OutcomeScore> outcomeScores = new ArrayList<OutcomeScore>();
   private Date modifiedDate = null;
 
   
   /**
    * List of scored outcomes in the session.
    **/
-  public OutcomeScoresResult outcomeScores(List<OutcomeEventScore> outcomeScores) {
+  public OutcomeScoresResult outcomeScores(List<OutcomeScore> outcomeScores) {
     this.outcomeScores = outcomeScores;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "List of scored outcomes in the session.")
   @JsonProperty("outcomeScores")
-  public List<OutcomeEventScore> getOutcomeScores() {
+  public List<OutcomeScore> getOutcomeScores() {
     return outcomeScores;
   }
-  public void setOutcomeScores(List<OutcomeEventScore> outcomeScores) {
+  public void setOutcomeScores(List<OutcomeScore> outcomeScores) {
     this.outcomeScores = outcomeScores;
   }
 

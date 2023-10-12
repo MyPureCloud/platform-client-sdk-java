@@ -13,6 +13,8 @@ title: DnclistImportStatusImportStatus
 | **completedRecords** | <!----><!---->**Integer**<!----> | number of records finished importing |  [optional] |
 | **percentageComplete** | <!----><!---->**Integer**<!----> | percentage of records finished importing |  [optional] |
 | **failureReason** | <!----><!---->**String**<!----> | if the import has failed, the reason for the failure |  [optional] |
+| **targetContactListIds** | <!----><!---->**List&lt;String&gt;**<!----> | The ids for target contact lists |  [optional] |
+| **listNamePrefix** | <!----><!---->**String**<!----> | The prefix used for target contact list names |  [optional] |
 | **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

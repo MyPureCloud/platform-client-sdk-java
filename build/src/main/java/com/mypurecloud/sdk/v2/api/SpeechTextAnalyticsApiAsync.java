@@ -14,6 +14,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
+import com.mypurecloud.sdk.v2.model.DictionaryFeedback;
+import com.mypurecloud.sdk.v2.model.DictionaryFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
@@ -47,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.UnifiedGeneralTopicEntityListing;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest;
@@ -54,6 +57,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsTopicReque
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramTranscriptionenginesRequest;
@@ -73,6 +78,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneral
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsDictionaryfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsGeneralJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsPublishjobsRequest;
@@ -80,6 +86,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsSentimentfee
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramTranscriptionenginesRequest;
@@ -102,6 +109,81 @@ public class SpeechTextAnalyticsApiAsync {
 
   public SpeechTextAnalyticsApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete a Speech & Text Analytics DictionaryFeedback by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdAsync(DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a Speech & Text Analytics DictionaryFeedback by Id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
@@ -618,6 +700,156 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TranscriptUrls> response = (ApiResponse<TranscriptUrls>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics dictionary feedbacks
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DictionaryFeedbackEntityListing> getSpeechandtextanalyticsDictionaryfeedbackAsync(GetSpeechandtextanalyticsDictionaryfeedbackRequest request, final AsyncApiCallback<DictionaryFeedbackEntityListing> callback) {
+    try {
+      final SettableFuture<DictionaryFeedbackEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DictionaryFeedbackEntityListing>() {}, new AsyncApiCallback<ApiResponse<DictionaryFeedbackEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DictionaryFeedbackEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics dictionary feedbacks
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DictionaryFeedbackEntityListing>> getSpeechandtextanalyticsDictionaryfeedbackAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DictionaryFeedbackEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DictionaryFeedbackEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DictionaryFeedbackEntityListing>() {}, new AsyncApiCallback<ApiResponse<DictionaryFeedbackEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DictionaryFeedbackEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DictionaryFeedbackEntityListing> response = (ApiResponse<DictionaryFeedbackEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DictionaryFeedbackEntityListing> response = (ApiResponse<DictionaryFeedbackEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DictionaryFeedback> getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdAsync(GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest request, final AsyncApiCallback<DictionaryFeedback> callback) {
+    try {
+      final SettableFuture<DictionaryFeedback> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DictionaryFeedback>() {}, new AsyncApiCallback<ApiResponse<DictionaryFeedback>>() {
+        @Override
+        public void onCompleted(ApiResponse<DictionaryFeedback> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DictionaryFeedback>> getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DictionaryFeedback>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DictionaryFeedback>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DictionaryFeedback>() {}, new AsyncApiCallback<ApiResponse<DictionaryFeedback>>() {
+        @Override
+        public void onCompleted(ApiResponse<DictionaryFeedback> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2055,6 +2287,81 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
+   * Create a Speech & Text Analytics DictionaryFeedback
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DictionaryFeedback> postSpeechandtextanalyticsDictionaryfeedbackAsync(PostSpeechandtextanalyticsDictionaryfeedbackRequest request, final AsyncApiCallback<DictionaryFeedback> callback) {
+    try {
+      final SettableFuture<DictionaryFeedback> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DictionaryFeedback>() {}, new AsyncApiCallback<ApiResponse<DictionaryFeedback>>() {
+        @Override
+        public void onCompleted(ApiResponse<DictionaryFeedback> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a Speech & Text Analytics DictionaryFeedback
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DictionaryFeedback>> postSpeechandtextanalyticsDictionaryfeedbackAsync(ApiRequest<DictionaryFeedback> request, final AsyncApiCallback<ApiResponse<DictionaryFeedback>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DictionaryFeedback>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DictionaryFeedback>() {}, new AsyncApiCallback<ApiResponse<DictionaryFeedback>>() {
+        @Override
+        public void onCompleted(ApiResponse<DictionaryFeedback> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create new Speech & Text Analytics program
    * 
    * @param request the request object
@@ -2568,6 +2875,81 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update existing Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DictionaryFeedback> putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdAsync(PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest request, final AsyncApiCallback<DictionaryFeedback> callback) {
+    try {
+      final SettableFuture<DictionaryFeedback> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DictionaryFeedback>() {}, new AsyncApiCallback<ApiResponse<DictionaryFeedback>>() {
+        @Override
+        public void onCompleted(ApiResponse<DictionaryFeedback> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update existing Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DictionaryFeedback>> putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdAsync(ApiRequest<DictionaryFeedback> request, final AsyncApiCallback<ApiResponse<DictionaryFeedback>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DictionaryFeedback>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DictionaryFeedback>() {}, new AsyncApiCallback<ApiResponse<DictionaryFeedback>>() {
+        @Override
+        public void onCompleted(ApiResponse<DictionaryFeedback> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

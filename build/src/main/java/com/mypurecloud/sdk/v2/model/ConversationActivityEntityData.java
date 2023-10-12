@@ -76,6 +76,61 @@ public class ConversationActivityEntityData  implements Serializable {
     }
   }
   private MetricEnum metric = null;
+
+  private static class ActiveRoutingEnumDeserializer extends StdDeserializer<ActiveRoutingEnum> {
+    public ActiveRoutingEnumDeserializer() {
+      super(ActiveRoutingEnumDeserializer.class);
+    }
+
+    @Override
+    public ActiveRoutingEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActiveRoutingEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Active routing method
+   */
+ @JsonDeserialize(using = ActiveRoutingEnumDeserializer.class)
+  public enum ActiveRoutingEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BULLSEYE("Bullseye"),
+    CONDITIONAL("Conditional"),
+    DIRECT("Direct"),
+    LAST("Last"),
+    MANUAL("Manual"),
+    PREDICTIVE("Predictive"),
+    PREFERRED("Preferred"),
+    STANDARD("Standard"),
+    VIP("Vip");
+
+    private String value;
+
+    ActiveRoutingEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ActiveRoutingEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ActiveRoutingEnum value : ActiveRoutingEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ActiveRoutingEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ActiveRoutingEnum activeRouting = null;
   private String addressFrom = null;
   private String addressTo = null;
   private String ani = null;
@@ -339,6 +394,24 @@ public class ConversationActivityEntityData  implements Serializable {
   }
   public void setMetric(MetricEnum metric) {
     this.metric = metric;
+  }
+
+
+  /**
+   * Active routing method
+   **/
+  public ConversationActivityEntityData activeRouting(ActiveRoutingEnum activeRouting) {
+    this.activeRouting = activeRouting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Active routing method")
+  @JsonProperty("activeRouting")
+  public ActiveRoutingEnum getActiveRouting() {
+    return activeRouting;
+  }
+  public void setActiveRouting(ActiveRoutingEnum activeRouting) {
+    this.activeRouting = activeRouting;
   }
 
 
@@ -714,6 +787,7 @@ public class ConversationActivityEntityData  implements Serializable {
 
     return Objects.equals(this.activityDate, conversationActivityEntityData.activityDate) &&
             Objects.equals(this.metric, conversationActivityEntityData.metric) &&
+            Objects.equals(this.activeRouting, conversationActivityEntityData.activeRouting) &&
             Objects.equals(this.addressFrom, conversationActivityEntityData.addressFrom) &&
             Objects.equals(this.addressTo, conversationActivityEntityData.addressTo) &&
             Objects.equals(this.ani, conversationActivityEntityData.ani) &&
@@ -738,7 +812,7 @@ public class ConversationActivityEntityData  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activityDate, metric, addressFrom, addressTo, ani, conversationId, convertedFrom, convertedTo, direction, dnis, mediaType, participantName, queueId, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, routingPriority, sessionId, teamId, usedRouting, userId, scoredAgents);
+    return Objects.hash(activityDate, metric, activeRouting, addressFrom, addressTo, ani, conversationId, convertedFrom, convertedTo, direction, dnis, mediaType, participantName, queueId, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, routingPriority, sessionId, teamId, usedRouting, userId, scoredAgents);
   }
 
   @Override
@@ -748,6 +822,7 @@ public class ConversationActivityEntityData  implements Serializable {
     
     sb.append("    activityDate: ").append(toIndentedString(activityDate)).append("\n");
     sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
+    sb.append("    activeRouting: ").append(toIndentedString(activeRouting)).append("\n");
     sb.append("    addressFrom: ").append(toIndentedString(addressFrom)).append("\n");
     sb.append("    addressTo: ").append(toIndentedString(addressTo)).append("\n");
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");

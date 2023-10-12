@@ -47,6 +47,7 @@ public class FlowAsyncAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    ACTIVEROUTING("activeRouting"),
     ACTIVESKILLID("activeSkillId"),
     ADDRESSFROM("addressFrom"),
     ADDRESSTO("addressTo"),

@@ -90,6 +90,7 @@ public class FlowActivityQueryPredicate  implements Serializable {
  @JsonDeserialize(using = DimensionEnumDeserializer.class)
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVEROUTING("activeRouting"),
     ADDRESSFROM("addressFrom"),
     ADDRESSTO("addressTo"),
     AGENTSCORE("agentScore"),

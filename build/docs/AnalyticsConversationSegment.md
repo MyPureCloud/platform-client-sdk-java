@@ -46,6 +46,8 @@ title: AnalyticsConversationSegment
 | CLIENT | &quot;client&quot; | 
 | CONFERENCETRANSFER | &quot;conferenceTransfer&quot; | 
 | CONSULTTRANSFER | &quot;consultTransfer&quot; | 
+| DNDENDPOINT | &quot;dndEndpoint&quot; | 
+| DNDTRANSFER | &quot;dndTransfer&quot; | 
 | ENDPOINT | &quot;endpoint&quot; | 
 | ENDPOINTDND | &quot;endpointDnd&quot; | 
 | ERROR | &quot;error&quot; | 

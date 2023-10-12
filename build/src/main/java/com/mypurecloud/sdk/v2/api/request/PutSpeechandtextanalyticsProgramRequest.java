@@ -21,6 +21,8 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
+import com.mypurecloud.sdk.v2.model.DictionaryFeedback;
+import com.mypurecloud.sdk.v2.model.DictionaryFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJob;

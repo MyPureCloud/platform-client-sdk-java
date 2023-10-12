@@ -12,6 +12,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | **metricDate** | <!----><!---->[**Date**](Date.html)<!----> | The date and time of metric creation |  [optional] |
 | **value** | <!----><!---->**Integer**<!----> | Metric value |  [optional] |
 | **recordId** | <!----><!---->**String**<!----> | Record identifier |  [optional] |
+| **activeRouting** | [**ActiveRoutingEnum**](#ActiveRoutingEnum)<!----> | Active routing method |  [optional] |
 | **activeSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> | ID(s) of Skill(s) that are active on the conversation |  [optional] |
 | **addressFrom** | <!----><!---->**String**<!----> | The address that initiated an action |  [optional] |
 | **addressTo** | <!----><!---->**String**<!----> | The address receiving an action |  [optional] |
@@ -146,6 +147,25 @@ title: ConversationMetricsTopicConversationMetricRecord
 | TTALKCOMPLETE | &quot;tTalkComplete&quot; | 
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; | 
 | TVOICEMAIL | &quot;tVoicemail&quot; | 
+{: class="table table-striped"}
+
+
+<a name="ActiveRoutingEnum"></a>
+
+## Enum: ActiveRoutingEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BULLSEYE | &quot;Bullseye&quot; | 
+| CONDITIONAL | &quot;Conditional&quot; | 
+| DIRECT | &quot;Direct&quot; | 
+| LAST | &quot;Last&quot; | 
+| MANUAL | &quot;Manual&quot; | 
+| PREDICTIVE | &quot;Predictive&quot; | 
+| PREFERRED | &quot;Preferred&quot; | 
+| STANDARD | &quot;Standard&quot; | 
+| VIP | &quot;Vip&quot; | 
 {: class="table table-striped"}
 
 

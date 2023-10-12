@@ -116,6 +116,7 @@ public class TranscriptAsyncAggregationQuery  implements Serializable {
     OSENTIMENTSCORE("oSentimentScore"),
     TAGENTSPEECH("tAgentSpeech"),
     TCUSTOMERSPEECH("tCustomerSpeech"),
+    TOTHERAUDIO("tOtherAudio"),
     TOVERTALKSPEECH("tOverTalkSpeech"),
     TSILENCE("tSilence"),
     TTOTALSPEECHANDSILENCE("tTotalSpeechAndSilence");

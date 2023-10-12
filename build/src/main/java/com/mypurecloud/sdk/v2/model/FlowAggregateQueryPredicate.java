@@ -91,6 +91,7 @@ public class FlowAggregateQueryPredicate  implements Serializable {
  @JsonDeserialize(using = DimensionEnumDeserializer.class)
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVEROUTING("activeRouting"),
     ACTIVESKILLID("activeSkillId"),
     ADDRESSFROM("addressFrom"),
     ADDRESSTO("addressTo"),

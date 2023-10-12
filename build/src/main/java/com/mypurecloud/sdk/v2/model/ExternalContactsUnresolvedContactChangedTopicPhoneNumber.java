@@ -27,6 +27,7 @@ public class ExternalContactsUnresolvedContactChangedTopicPhoneNumber  implement
   private String userInput = null;
   private String e164 = null;
   private String countryCode = null;
+  private String normalizationCountryCode = null;
 
   
   /**
@@ -131,6 +132,23 @@ public class ExternalContactsUnresolvedContactChangedTopicPhoneNumber  implement
   }
 
 
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicPhoneNumber normalizationCountryCode(String normalizationCountryCode) {
+    this.normalizationCountryCode = normalizationCountryCode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("normalizationCountryCode")
+  public String getNormalizationCountryCode() {
+    return normalizationCountryCode;
+  }
+  public void setNormalizationCountryCode(String normalizationCountryCode) {
+    this.normalizationCountryCode = normalizationCountryCode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -146,12 +164,13 @@ public class ExternalContactsUnresolvedContactChangedTopicPhoneNumber  implement
             Objects.equals(this.acceptsSMS, externalContactsUnresolvedContactChangedTopicPhoneNumber.acceptsSMS) &&
             Objects.equals(this.userInput, externalContactsUnresolvedContactChangedTopicPhoneNumber.userInput) &&
             Objects.equals(this.e164, externalContactsUnresolvedContactChangedTopicPhoneNumber.e164) &&
-            Objects.equals(this.countryCode, externalContactsUnresolvedContactChangedTopicPhoneNumber.countryCode);
+            Objects.equals(this.countryCode, externalContactsUnresolvedContactChangedTopicPhoneNumber.countryCode) &&
+            Objects.equals(this.normalizationCountryCode, externalContactsUnresolvedContactChangedTopicPhoneNumber.normalizationCountryCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(display, extension, acceptsSMS, userInput, e164, countryCode);
+    return Objects.hash(display, extension, acceptsSMS, userInput, e164, countryCode, normalizationCountryCode);
   }
 
   @Override
@@ -165,6 +184,7 @@ public class ExternalContactsUnresolvedContactChangedTopicPhoneNumber  implement
     sb.append("    userInput: ").append(toIndentedString(userInput)).append("\n");
     sb.append("    e164: ").append(toIndentedString(e164)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    sb.append("    normalizationCountryCode: ").append(toIndentedString(normalizationCountryCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

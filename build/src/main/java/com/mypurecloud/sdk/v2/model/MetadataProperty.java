@@ -26,6 +26,7 @@ public class MetadataProperty  implements Serializable {
   
   private String type = null;
   private String description = null;
+  private String sensitive = null;
   private String help = null;
   private String _default = null;
   private List<String> _enum = new ArrayList<String>();
@@ -42,6 +43,13 @@ public class MetadataProperty  implements Serializable {
   @JsonProperty("description")
   public String getDescription() {
     return description;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "whether the property's value should be hidden from display")
+  @JsonProperty("sensitive")
+  public String getSensitive() {
+    return sensitive;
   }
 
 
@@ -78,6 +86,7 @@ public class MetadataProperty  implements Serializable {
 
     return Objects.equals(this.type, metadataProperty.type) &&
             Objects.equals(this.description, metadataProperty.description) &&
+            Objects.equals(this.sensitive, metadataProperty.sensitive) &&
             Objects.equals(this.help, metadataProperty.help) &&
             Objects.equals(this._default, metadataProperty._default) &&
             Objects.equals(this._enum, metadataProperty._enum);
@@ -85,7 +94,7 @@ public class MetadataProperty  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, description, help, _default, _enum);
+    return Objects.hash(type, description, sensitive, help, _default, _enum);
   }
 
   @Override
@@ -95,6 +104,7 @@ public class MetadataProperty  implements Serializable {
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    sensitive: ").append(toIndentedString(sensitive)).append("\n");
     sb.append("    help: ").append(toIndentedString(help)).append("\n");
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    _enum: ").append(toIndentedString(_enum)).append("\n");

@@ -53,6 +53,8 @@ public class AnalyticsConversationSegment  implements Serializable {
     CLIENT("client"),
     CONFERENCETRANSFER("conferenceTransfer"),
     CONSULTTRANSFER("consultTransfer"),
+    DNDENDPOINT("dndEndpoint"),
+    DNDTRANSFER("dndTransfer"),
     ENDPOINT("endpoint"),
     ENDPOINTDND("endpointDnd"),
     ERROR("error"),

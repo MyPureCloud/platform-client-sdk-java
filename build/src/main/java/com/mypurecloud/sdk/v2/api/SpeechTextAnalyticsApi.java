@@ -11,6 +11,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
+import com.mypurecloud.sdk.v2.model.DictionaryFeedback;
+import com.mypurecloud.sdk.v2.model.DictionaryFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
@@ -44,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.UnifiedGeneralTopicEntityListing;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest;
@@ -51,6 +54,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsTopicReque
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramTranscriptionenginesRequest;
@@ -70,6 +75,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneral
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsDictionaryfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsGeneralJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsPublishjobsRequest;
@@ -77,6 +83,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsSentimentfee
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramTranscriptionenginesRequest;
@@ -98,6 +105,81 @@ public class SpeechTextAnalyticsApi {
 
   public SpeechTextAnalyticsApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete a Speech & Text Analytics DictionaryFeedback by Id
+   * 
+   * @param dictionaryFeedbackId The Id of the Dictionary Feedback (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(String dictionaryFeedbackId) throws IOException, ApiException {
+     deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(createDeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest(dictionaryFeedbackId));
+  }
+
+  /**
+   * Delete a Speech & Text Analytics DictionaryFeedback by Id
+   * 
+   * @param dictionaryFeedbackId The Id of the Dictionary Feedback (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdWithHttpInfo(String dictionaryFeedbackId) throws IOException {
+    return deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(createDeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest(dictionaryFeedbackId).withHttpInfo());
+  }
+
+  private DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest createDeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest(String dictionaryFeedbackId) {
+    return DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest.builder()
+            .withDictionaryFeedbackId(dictionaryFeedbackId)
+
+            .build();
+  }
+
+  /**
+   * Delete a Speech & Text Analytics DictionaryFeedback by Id
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Speech & Text Analytics DictionaryFeedback by Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -638,6 +720,170 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TranscriptUrls> response = (ApiResponse<TranscriptUrls>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics dictionary feedbacks
+   * 
+   * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional, default to null)
+   * @param nextPage The key for listing the next page (optional)
+   * @param pageSize The page size for the listing (optional, default to 500)
+   * @return DictionaryFeedbackEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DictionaryFeedbackEntityListing getSpeechandtextanalyticsDictionaryfeedback(String dialect, String nextPage, Integer pageSize) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsDictionaryfeedback(createGetSpeechandtextanalyticsDictionaryfeedbackRequest(dialect, nextPage, pageSize));
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics dictionary feedbacks
+   * 
+   * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional, default to null)
+   * @param nextPage The key for listing the next page (optional)
+   * @param pageSize The page size for the listing (optional, default to 500)
+   * @return DictionaryFeedbackEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DictionaryFeedbackEntityListing> getSpeechandtextanalyticsDictionaryfeedbackWithHttpInfo(String dialect, String nextPage, Integer pageSize) throws IOException {
+    return getSpeechandtextanalyticsDictionaryfeedback(createGetSpeechandtextanalyticsDictionaryfeedbackRequest(dialect, nextPage, pageSize).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsDictionaryfeedbackRequest createGetSpeechandtextanalyticsDictionaryfeedbackRequest(String dialect, String nextPage, Integer pageSize) {
+    return GetSpeechandtextanalyticsDictionaryfeedbackRequest.builder()
+            .withDialect(dialect)
+
+            .withNextPage(nextPage)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics dictionary feedbacks
+   * 
+   * @param request The request object
+   * @return DictionaryFeedbackEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DictionaryFeedbackEntityListing getSpeechandtextanalyticsDictionaryfeedback(GetSpeechandtextanalyticsDictionaryfeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DictionaryFeedbackEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DictionaryFeedbackEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of Speech & Text Analytics dictionary feedbacks
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DictionaryFeedbackEntityListing> getSpeechandtextanalyticsDictionaryfeedback(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DictionaryFeedbackEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DictionaryFeedbackEntityListing> response = (ApiResponse<DictionaryFeedbackEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DictionaryFeedbackEntityListing> response = (ApiResponse<DictionaryFeedbackEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param dictionaryFeedbackId The Id of the Dictionary Feedback (required)
+   * @return DictionaryFeedback
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DictionaryFeedback getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(String dictionaryFeedbackId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(createGetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest(dictionaryFeedbackId));
+  }
+
+  /**
+   * Get a Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param dictionaryFeedbackId The Id of the Dictionary Feedback (required)
+   * @return DictionaryFeedback
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DictionaryFeedback> getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdWithHttpInfo(String dictionaryFeedbackId) throws IOException {
+    return getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(createGetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest(dictionaryFeedbackId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest createGetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest(String dictionaryFeedbackId) {
+    return GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest.builder()
+            .withDictionaryFeedbackId(dictionaryFeedbackId)
+
+            .build();
+  }
+
+  /**
+   * Get a Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param request The request object
+   * @return DictionaryFeedback
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DictionaryFeedback getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DictionaryFeedback> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DictionaryFeedback>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DictionaryFeedback> getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DictionaryFeedback>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2149,6 +2395,84 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
+   * Create a Speech & Text Analytics DictionaryFeedback
+   * 
+   * @param body The DictionaryFeedback to create (required)
+   * @return DictionaryFeedback
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DictionaryFeedback postSpeechandtextanalyticsDictionaryfeedback(DictionaryFeedback body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsDictionaryfeedback(createPostSpeechandtextanalyticsDictionaryfeedbackRequest(body));
+  }
+
+  /**
+   * Create a Speech & Text Analytics DictionaryFeedback
+   * 
+   * @param body The DictionaryFeedback to create (required)
+   * @return DictionaryFeedback
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DictionaryFeedback> postSpeechandtextanalyticsDictionaryfeedbackWithHttpInfo(DictionaryFeedback body) throws IOException {
+    return postSpeechandtextanalyticsDictionaryfeedback(createPostSpeechandtextanalyticsDictionaryfeedbackRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsDictionaryfeedbackRequest createPostSpeechandtextanalyticsDictionaryfeedbackRequest(DictionaryFeedback body) {
+    return PostSpeechandtextanalyticsDictionaryfeedbackRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a Speech & Text Analytics DictionaryFeedback
+   * 
+   * @param request The request object
+   * @return DictionaryFeedback
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DictionaryFeedback postSpeechandtextanalyticsDictionaryfeedback(PostSpeechandtextanalyticsDictionaryfeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DictionaryFeedback> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DictionaryFeedback>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Speech & Text Analytics DictionaryFeedback
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DictionaryFeedback> postSpeechandtextanalyticsDictionaryfeedback(ApiRequest<DictionaryFeedback> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DictionaryFeedback>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create new Speech & Text Analytics program
    * 
    * @param body The program to create (required)
@@ -2690,6 +3014,88 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update existing Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param dictionaryFeedbackId The Id of the Dictionary Feedback (required)
+   * @param body  (optional)
+   * @return DictionaryFeedback
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DictionaryFeedback putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(String dictionaryFeedbackId, DictionaryFeedback body) throws IOException, ApiException {
+    return  putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(createPutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest(dictionaryFeedbackId, body));
+  }
+
+  /**
+   * Update existing Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param dictionaryFeedbackId The Id of the Dictionary Feedback (required)
+   * @param body  (optional)
+   * @return DictionaryFeedback
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DictionaryFeedback> putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdWithHttpInfo(String dictionaryFeedbackId, DictionaryFeedback body) throws IOException {
+    return putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(createPutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest(dictionaryFeedbackId, body).withHttpInfo());
+  }
+
+  private PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest createPutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest(String dictionaryFeedbackId, DictionaryFeedback body) {
+    return PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest.builder()
+            .withDictionaryFeedbackId(dictionaryFeedbackId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update existing Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param request The request object
+   * @return DictionaryFeedback
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DictionaryFeedback putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DictionaryFeedback> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DictionaryFeedback>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update existing Speech & Text Analytics dictionary feedback by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DictionaryFeedback> putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(ApiRequest<DictionaryFeedback> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DictionaryFeedback>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DictionaryFeedback> response = (ApiResponse<DictionaryFeedback>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

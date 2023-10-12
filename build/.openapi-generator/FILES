@@ -1174,6 +1174,9 @@ docs/DialogflowAgentSummaryEntityListing.md
 docs/DialogflowIntent.md
 docs/DialogflowParameter.md
 docs/DialogflowProject.md
+docs/DictionaryFeedback.md
+docs/DictionaryFeedbackEntityListing.md
+docs/DictionaryFeedbackExamplePhrase.md
 docs/DigitLength.md
 docs/DigitalAction.md
 docs/DigitalCondition.md
@@ -2149,6 +2152,7 @@ docs/ListWrapperInterval.md
 docs/ListWrapperSecondaryPresence.md
 docs/ListWrapperShiftStartVariance.md
 docs/ListWrapperString.md
+docs/ListedDictionaryFeedback.md
 docs/ListedProgram.md
 docs/ListedTopic.md
 docs/LocalDateRange.md
@@ -2463,7 +2467,6 @@ docs/OutcomeAttributionRequest.md
 docs/OutcomeAttributionResponseListing.md
 docs/OutcomeAttributionResultsResponse.md
 docs/OutcomeConfig.md
-docs/OutcomeEventScore.md
 docs/OutcomeListing.md
 docs/OutcomePercentileCondition.md
 docs/OutcomePredictor.md
@@ -2473,6 +2476,7 @@ docs/OutcomeProbabilityCondition.md
 docs/OutcomeQuantileCondition.md
 docs/OutcomeRef.md
 docs/OutcomeRefRequest.md
+docs/OutcomeScore.md
 docs/OutcomeScoresResult.md
 docs/OutlierInfo.md
 docs/OverallBestPoints.md
@@ -3806,7 +3810,6 @@ docs/Video.md
 docs/VideoConferenceDetails.md
 docs/VideoConferenceUpdateTopicParticipantInfo.md
 docs/VideoConferenceUpdateTopicVideoConference.md
-docs/VideoMetadata.md
 docs/ViewFilter.md
 docs/VisibilityCondition.md
 docs/VmPairingInfo.md
@@ -4366,6 +4369,7 @@ docs/deleteRoutingUtilizationTag-example.txt
 docs/deleteRoutingWrapupcode-example.txt
 docs/deleteScimUser-example.txt
 docs/deleteScimV2User-example.txt
+docs/deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId-example.txt
 docs/deleteSpeechandtextanalyticsProgram-example.txt
 docs/deleteSpeechandtextanalyticsSentimentfeedback-example.txt
 docs/deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId-example.txt
@@ -5252,6 +5256,8 @@ docs/getSearchSuggest-example.txt
 docs/getSpeechandtextanalyticsConversation-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturl-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturls-example.txt
+docs/getSpeechandtextanalyticsDictionaryfeedback-example.txt
+docs/getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId-example.txt
 docs/getSpeechandtextanalyticsProgram-example.txt
 docs/getSpeechandtextanalyticsProgramMappings-example.txt
 docs/getSpeechandtextanalyticsProgramTranscriptionengines-example.txt
@@ -6140,6 +6146,7 @@ docs/postSearch-example.txt
 docs/postSearch-example.txt
 docs/postSearchSuggest-example.txt
 docs/postSearchSuggest-example.txt
+docs/postSpeechandtextanalyticsDictionaryfeedback-example.txt
 docs/postSpeechandtextanalyticsPrograms-example.txt
 docs/postSpeechandtextanalyticsProgramsGeneralJobs-example.txt
 docs/postSpeechandtextanalyticsProgramsPublishjobs-example.txt
@@ -6458,6 +6465,7 @@ docs/putScimGroup-example.txt
 docs/putScimUser-example.txt
 docs/putScimV2Group-example.txt
 docs/putScimV2User-example.txt
+docs/putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId-example.txt
 docs/putSpeechandtextanalyticsProgram-example.txt
 docs/putSpeechandtextanalyticsProgramMappings-example.txt
 docs/putSpeechandtextanalyticsProgramTranscriptionengines-example.txt
@@ -6853,6 +6861,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingUtilizationTagRequ
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteRoutingWrapupcodeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteScimUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteScimV2UserRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSpeechandtextanalyticsProgramRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSpeechandtextanalyticsSentimentfeedbackRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest.java
@@ -7739,6 +7748,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetSearchSuggestRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsConversationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsDictionaryfeedbackRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsProgramMappingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsProgramRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsProgramTranscriptionenginesRequest.java
@@ -8627,6 +8638,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSearchSuggestRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSearchSuggestRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostSpeechandtextanalyticsDictionaryfeedbackRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSpeechandtextanalyticsProgramsGeneralJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSpeechandtextanalyticsProgramsPublishjobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSpeechandtextanalyticsProgramsRequest.java
@@ -8945,6 +8957,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutScimGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutScimUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutScimV2GroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutScimV2UserRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutSpeechandtextanalyticsProgramMappingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutSpeechandtextanalyticsProgramRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutSpeechandtextanalyticsProgramTranscriptionenginesRequest.java
@@ -10144,6 +10157,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/DialogflowAgentSummaryEntityListing.j
 src/main/java/com/mypurecloud/sdk/v2/model/DialogflowIntent.java
 src/main/java/com/mypurecloud/sdk/v2/model/DialogflowParameter.java
 src/main/java/com/mypurecloud/sdk/v2/model/DialogflowProject.java
+src/main/java/com/mypurecloud/sdk/v2/model/DictionaryFeedback.java
+src/main/java/com/mypurecloud/sdk/v2/model/DictionaryFeedbackEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/DictionaryFeedbackExamplePhrase.java
 src/main/java/com/mypurecloud/sdk/v2/model/DigitLength.java
 src/main/java/com/mypurecloud/sdk/v2/model/DigitalAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/DigitalCondition.java
@@ -11079,6 +11095,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperInterval.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperSecondaryPresence.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperShiftStartVariance.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperString.java
+src/main/java/com/mypurecloud/sdk/v2/model/ListedDictionaryFeedback.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListedProgram.java
 src/main/java/com/mypurecloud/sdk/v2/model/ListedTopic.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocalDateRange.java
@@ -11375,7 +11392,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/OutcomeAttributionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeAttributionResponseListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeAttributionResultsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeConfig.java
-src/main/java/com/mypurecloud/sdk/v2/model/OutcomeEventScore.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomePercentileCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomePredictor.java
@@ -11385,6 +11401,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/OutcomeProbabilityCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeQuantileCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeRef.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeRefRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutcomeScore.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutcomeScoresResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutlierInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/OverallBestPoints.java
@@ -12670,7 +12687,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/Video.java
 src/main/java/com/mypurecloud/sdk/v2/model/VideoConferenceDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/VideoConferenceUpdateTopicParticipantInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/VideoConferenceUpdateTopicVideoConference.java
-src/main/java/com/mypurecloud/sdk/v2/model/VideoMetadata.java
 src/main/java/com/mypurecloud/sdk/v2/model/ViewFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/VisibilityCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/VmPairingInfo.java

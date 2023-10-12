@@ -20,6 +20,7 @@ title: ConversationActivityResponse
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVEROUTING | &quot;activeRouting&quot; | 
 | ADDRESSFROM | &quot;addressFrom&quot; | 
 | ADDRESSTO | &quot;addressTo&quot; | 
 | AGENTSCORE | &quot;agentScore&quot; | 

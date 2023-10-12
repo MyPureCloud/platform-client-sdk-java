@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +78,8 @@ public class ContactlistImportStatusImportStatus  implements Serializable {
   private Integer completedRecords = null;
   private Integer percentageComplete = null;
   private String failureReason = null;
+  private List<String> targetContactListIds = new ArrayList<String>();
+  private String listNamePrefix = null;
   private Map<String, Object> additionalProperties = null;
 
   
@@ -171,6 +174,42 @@ public class ContactlistImportStatusImportStatus  implements Serializable {
 
 
   /**
+   * The ids for target contact lists
+   **/
+  public ContactlistImportStatusImportStatus targetContactListIds(List<String> targetContactListIds) {
+    this.targetContactListIds = targetContactListIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ids for target contact lists")
+  @JsonProperty("targetContactListIds")
+  public List<String> getTargetContactListIds() {
+    return targetContactListIds;
+  }
+  public void setTargetContactListIds(List<String> targetContactListIds) {
+    this.targetContactListIds = targetContactListIds;
+  }
+
+
+  /**
+   * The prefix used for target contact list names
+   **/
+  public ContactlistImportStatusImportStatus listNamePrefix(String listNamePrefix) {
+    this.listNamePrefix = listNamePrefix;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The prefix used for target contact list names")
+  @JsonProperty("listNamePrefix")
+  public String getListNamePrefix() {
+    return listNamePrefix;
+  }
+  public void setListNamePrefix(String listNamePrefix) {
+    this.listNamePrefix = listNamePrefix;
+  }
+
+
+  /**
    **/
   public ContactlistImportStatusImportStatus additionalProperties(Map<String, Object> additionalProperties) {
     this.additionalProperties = additionalProperties;
@@ -202,12 +241,14 @@ public class ContactlistImportStatusImportStatus  implements Serializable {
             Objects.equals(this.completedRecords, contactlistImportStatusImportStatus.completedRecords) &&
             Objects.equals(this.percentageComplete, contactlistImportStatusImportStatus.percentageComplete) &&
             Objects.equals(this.failureReason, contactlistImportStatusImportStatus.failureReason) &&
+            Objects.equals(this.targetContactListIds, contactlistImportStatusImportStatus.targetContactListIds) &&
+            Objects.equals(this.listNamePrefix, contactlistImportStatusImportStatus.listNamePrefix) &&
             Objects.equals(this.additionalProperties, contactlistImportStatusImportStatus.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(importState, totalRecords, completedRecords, percentageComplete, failureReason, additionalProperties);
+    return Objects.hash(importState, totalRecords, completedRecords, percentageComplete, failureReason, targetContactListIds, listNamePrefix, additionalProperties);
   }
 
   @Override
@@ -220,6 +261,8 @@ public class ContactlistImportStatusImportStatus  implements Serializable {
     sb.append("    completedRecords: ").append(toIndentedString(completedRecords)).append("\n");
     sb.append("    percentageComplete: ").append(toIndentedString(percentageComplete)).append("\n");
     sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
+    sb.append("    targetContactListIds: ").append(toIndentedString(targetContactListIds)).append("\n");
+    sb.append("    listNamePrefix: ").append(toIndentedString(listNamePrefix)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -59,6 +59,7 @@ title: TranscriptAsyncAggregationQuery
 | OSENTIMENTSCORE | &quot;oSentimentScore&quot; |
 | TAGENTSPEECH | &quot;tAgentSpeech&quot; |
 | TCUSTOMERSPEECH | &quot;tCustomerSpeech&quot; |
+| TOTHERAUDIO | &quot;tOtherAudio&quot; |
 | TOVERTALKSPEECH | &quot;tOverTalkSpeech&quot; |
 | TSILENCE | &quot;tSilence&quot; |
 | TTOTALSPEECHANDSILENCE | &quot;tTotalSpeechAndSilence&quot; |

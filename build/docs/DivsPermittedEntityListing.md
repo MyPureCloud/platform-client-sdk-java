@@ -16,8 +16,8 @@ title: DivsPermittedEntityListing
 | **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **lastUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

@@ -329,6 +329,120 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
   private List<String> conversationExternalContactIds = new ArrayList<String>();
   private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
 
+  private static class ExitReasonEnumDeserializer extends StdDeserializer<ExitReasonEnum> {
+    public ExitReasonEnumDeserializer() {
+      super(ExitReasonEnumDeserializer.class);
+    }
+
+    @Override
+    public ExitReasonEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ExitReasonEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets exitReason
+   */
+ @JsonDeserialize(using = ExitReasonEnumDeserializer.class)
+  public enum ExitReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
+    DISCONNECT("DISCONNECT"),
+    FLOW_DISCONNECT("FLOW_DISCONNECT"),
+    FLOW_ERROR_DISCONNECT("FLOW_ERROR_DISCONNECT"),
+    TRANSFER("TRANSFER"),
+    SESSION_EXPIRE_DISCONNECT("SESSION_EXPIRE_DISCONNECT"),
+    RECOGNITION_FAILURE_DISCONNECT("RECOGNITION_FAILURE_DISCONNECT"),
+    RECOGNITION_FAILURE_EXIT("RECOGNITION_FAILURE_EXIT"),
+    USER_EXIT("USER_EXIT"),
+    FLOW_EXIT("FLOW_EXIT"),
+    FLOW_ERROR_EXIT("FLOW_ERROR_EXIT");
+
+    private String value;
+
+    ExitReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ExitReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ExitReasonEnum value : ExitReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ExitReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ExitReasonEnum exitReason = null;
+
+  private static class TransferTypeEnumDeserializer extends StdDeserializer<TransferTypeEnum> {
+    public TransferTypeEnumDeserializer() {
+      super(TransferTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TransferTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TransferTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets transferType
+   */
+ @JsonDeserialize(using = TransferTypeEnumDeserializer.class)
+  public enum TransferTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
+    ACD("ACD"),
+    USER("USER"),
+    NUMBER("NUMBER"),
+    ACD_VOICEMAIL("ACD_VOICEMAIL"),
+    USER_VOICEMAIL("USER_VOICEMAIL"),
+    GROUP_VOICEMAIL("GROUP_VOICEMAIL"),
+    GROUP("GROUP"),
+    FLOW("FLOW"),
+    SECURE_FLOW("SECURE_FLOW"),
+    RETURN_TO_AGENT("RETURN_TO_AGENT");
+
+    private String value;
+
+    TransferTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TransferTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TransferTypeEnum value : TransferTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TransferTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TransferTypeEnum transferType = null;
+
   
   /**
    **/
@@ -687,6 +801,40 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public FlowEndDetailEventTopicFlowEndEvent exitReason(ExitReasonEnum exitReason) {
+    this.exitReason = exitReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("exitReason")
+  public ExitReasonEnum getExitReason() {
+    return exitReason;
+  }
+  public void setExitReason(ExitReasonEnum exitReason) {
+    this.exitReason = exitReason;
+  }
+
+
+  /**
+   **/
+  public FlowEndDetailEventTopicFlowEndEvent transferType(TransferTypeEnum transferType) {
+    this.transferType = transferType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("transferType")
+  public TransferTypeEnum getTransferType() {
+    return transferType;
+  }
+  public void setTransferType(TransferTypeEnum transferType) {
+    this.transferType = transferType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -717,12 +865,14 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
             Objects.equals(this.flowVersion, flowEndDetailEventTopicFlowEndEvent.flowVersion) &&
             Objects.equals(this.connectedDurationMs, flowEndDetailEventTopicFlowEndEvent.connectedDurationMs) &&
             Objects.equals(this.conversationExternalContactIds, flowEndDetailEventTopicFlowEndEvent.conversationExternalContactIds) &&
-            Objects.equals(this.conversationExternalOrganizationIds, flowEndDetailEventTopicFlowEndEvent.conversationExternalOrganizationIds);
+            Objects.equals(this.conversationExternalOrganizationIds, flowEndDetailEventTopicFlowEndEvent.conversationExternalOrganizationIds) &&
+            Objects.equals(this.exitReason, flowEndDetailEventTopicFlowEndEvent.exitReason) &&
+            Objects.equals(this.transferType, flowEndDetailEventTopicFlowEndEvent.transferType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, subject, messageType, flowType, flowId, divisionId, flowVersion, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, subject, messageType, flowType, flowId, divisionId, flowVersion, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, exitReason, transferType);
   }
 
   @Override
@@ -751,6 +901,8 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     sb.append("    connectedDurationMs: ").append(toIndentedString(connectedDurationMs)).append("\n");
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
+    sb.append("    exitReason: ").append(toIndentedString(exitReason)).append("\n");
+    sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

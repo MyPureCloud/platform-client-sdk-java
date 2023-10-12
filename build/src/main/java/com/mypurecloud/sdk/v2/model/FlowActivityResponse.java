@@ -45,6 +45,7 @@ public class FlowActivityResponse  implements Serializable {
  @JsonDeserialize(using = EntityIdDimensionEnumDeserializer.class)
   public enum EntityIdDimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVEROUTING("activeRouting"),
     ADDRESSFROM("addressFrom"),
     ADDRESSTO("addressTo"),
     AGENTSCORE("agentScore"),

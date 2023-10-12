@@ -40,12 +40,14 @@ title: TranscriptAggregateQueryPredicate
 | ADDRESSTO | &quot;addressTo&quot; | 
 | ANI | &quot;ani&quot; | 
 | CHANNEL | &quot;channel&quot; | 
+| CONVERSATIONDURATION | &quot;conversationDuration&quot; | 
 | CONVERSATIONID | &quot;conversationId&quot; | 
 | DIRECTION | &quot;direction&quot; | 
 | DIVISIONID | &quot;divisionId&quot; | 
 | DNIS | &quot;dnis&quot; | 
 | FLOWID | &quot;flowId&quot; | 
 | FLOWVERSION | &quot;flowVersion&quot; | 
+| HANDLETIME | &quot;handleTime&quot; | 
 | MEDIATYPE | &quot;mediaType&quot; | 
 | MESSAGETYPE | &quot;messageType&quot; | 
 | QUEUEID | &quot;queueId&quot; | 

@@ -29,6 +29,8 @@ title: FlowEndDetailEventTopicFlowEndEvent
 | **connectedDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **exitReason** | [**ExitReasonEnum**](#ExitReasonEnum)<!----> |  |  [optional] |
+| **transferType** | [**TransferTypeEnum**](#TransferTypeEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -137,6 +139,48 @@ title: FlowEndDetailEventTopicFlowEndEvent
 | VOICE | &quot;VOICE&quot; | 
 | VOICEMAIL | &quot;VOICEMAIL&quot; | 
 | WORKITEM | &quot;WORKITEM&quot; | 
+{: class="table table-striped"}
+
+
+<a name="ExitReasonEnum"></a>
+
+## Enum: ExitReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| DISCONNECT | &quot;DISCONNECT&quot; | 
+| FLOW_DISCONNECT | &quot;FLOW_DISCONNECT&quot; | 
+| FLOW_ERROR_DISCONNECT | &quot;FLOW_ERROR_DISCONNECT&quot; | 
+| TRANSFER | &quot;TRANSFER&quot; | 
+| SESSION_EXPIRE_DISCONNECT | &quot;SESSION_EXPIRE_DISCONNECT&quot; | 
+| RECOGNITION_FAILURE_DISCONNECT | &quot;RECOGNITION_FAILURE_DISCONNECT&quot; | 
+| RECOGNITION_FAILURE_EXIT | &quot;RECOGNITION_FAILURE_EXIT&quot; | 
+| USER_EXIT | &quot;USER_EXIT&quot; | 
+| FLOW_EXIT | &quot;FLOW_EXIT&quot; | 
+| FLOW_ERROR_EXIT | &quot;FLOW_ERROR_EXIT&quot; | 
+{: class="table table-striped"}
+
+
+<a name="TransferTypeEnum"></a>
+
+## Enum: TransferTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| ACD | &quot;ACD&quot; | 
+| USER | &quot;USER&quot; | 
+| NUMBER | &quot;NUMBER&quot; | 
+| ACD_VOICEMAIL | &quot;ACD_VOICEMAIL&quot; | 
+| USER_VOICEMAIL | &quot;USER_VOICEMAIL&quot; | 
+| GROUP_VOICEMAIL | &quot;GROUP_VOICEMAIL&quot; | 
+| GROUP | &quot;GROUP&quot; | 
+| FLOW | &quot;FLOW&quot; | 
+| SECURE_FLOW | &quot;SECURE_FLOW&quot; | 
+| RETURN_TO_AGENT | &quot;RETURN_TO_AGENT&quot; | 
 {: class="table table-striped"}
 
 

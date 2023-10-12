@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | Delete a Speech & Text Analytics DictionaryFeedback by Id |
 | [**deleteSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsProgram) | Delete a Speech & Text Analytics program by id |
 | [**deleteSpeechandtextanalyticsSentimentfeedback**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsSentimentfeedback) | Delete All Speech & Text Analytics SentimentFeedback |
 | [**deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId) | Delete a Speech & Text Analytics SentimentFeedback by Id |
@@ -14,6 +15,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSpeechandtextanalyticsConversation**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversation) | Get Speech and Text Analytics for a specific conversation |
 | [**getSpeechandtextanalyticsConversationCommunicationTranscripturl**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCommunicationTranscripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation |
 | [**getSpeechandtextanalyticsConversationCommunicationTranscripturls**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCommunicationTranscripturls) | Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation |
+| [**getSpeechandtextanalyticsDictionaryfeedback**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsDictionaryfeedback) | Get the list of Speech & Text Analytics dictionary feedbacks |
+| [**getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | Get a Speech & Text Analytics dictionary feedback by id |
 | [**getSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgram) | Get a Speech & Text Analytics program by id |
 | [**getSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramMappings) | Get Speech & Text Analytics program mappings to queues and flows by id |
 | [**getSpeechandtextanalyticsProgramTranscriptionengines**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramTranscriptionengines) | Get transcription engine settings of a program |
@@ -33,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSpeechandtextanalyticsTopicsGeneralStatus**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsTopicsGeneralStatus) | Get the list of general topics from the org and the system with their current status |
 | [**getSpeechandtextanalyticsTopicsPublishjob**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsTopicsPublishjob) | Get a Speech & Text Analytics publish topics job by id |
 | [**patchSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#patchSpeechandtextanalyticsSettings) | Patch Speech And Text Analytics Settings |
+| [**postSpeechandtextanalyticsDictionaryfeedback**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsDictionaryfeedback) | Create a Speech & Text Analytics DictionaryFeedback |
 | [**postSpeechandtextanalyticsPrograms**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsPrograms) | Create new Speech & Text Analytics program |
 | [**postSpeechandtextanalyticsProgramsGeneralJobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsProgramsGeneralJobs) | Create new Speech & Text Analytics general program job |
 | [**postSpeechandtextanalyticsProgramsPublishjobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsProgramsPublishjobs) | Create new Speech & Text Analytics publish programs job |
@@ -40,12 +44,73 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSpeechandtextanalyticsTopics**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTopics) | Create new Speech & Text Analytics topic |
 | [**postSpeechandtextanalyticsTopicsPublishjobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTopicsPublishjobs) | Create new Speech & Text Analytics publish topics job |
 | [**postSpeechandtextanalyticsTranscriptsSearch**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
+| [**putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | Update existing Speech & Text Analytics dictionary feedback by id |
 | [**putSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgram) | Update existing Speech & Text Analytics program |
 | [**putSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgramMappings) | Set Speech & Text Analytics program mappings to queues and flows |
 | [**putSpeechandtextanalyticsProgramTranscriptionengines**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgramTranscriptionengines) | Update transcription engine settings of a program |
 | [**putSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsSettings) | Update Speech And Text Analytics Settings |
 | [**putSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsTopic) | Update existing Speech & Text Analytics topic |
 {: class="table-striped"}
+
+<a name="deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId"></a>
+
+# **deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**
+
+
+
+> Void deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)
+
+Delete a Speech & Text Analytics DictionaryFeedback by Id
+
+Wraps DELETE /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:dictionaryterm:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String dictionaryFeedbackId = "dictionaryFeedbackId_example"; // String | The Id of the Dictionary Feedback
+try {
+    apiInstance.deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dictionaryFeedbackId** | **String**| The Id of the Dictionary Feedback | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteSpeechandtextanalyticsProgram"></a>
 
@@ -472,6 +537,132 @@ try {
 ### Return type
 
 [**TranscriptUrls**](TranscriptUrls.html)
+
+<a name="getSpeechandtextanalyticsDictionaryfeedback"></a>
+
+# **getSpeechandtextanalyticsDictionaryfeedback**
+
+
+
+> [DictionaryFeedbackEntityListing](DictionaryFeedbackEntityListing.html) getSpeechandtextanalyticsDictionaryfeedback(dialect, nextPage, pageSize)
+
+Get the list of Speech & Text Analytics dictionary feedbacks
+
+Wraps GET /api/v2/speechandtextanalytics/dictionaryfeedback  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:dictionaryterm:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String dialect = en-US; // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+String nextPage = "nextPage_example"; // String | The key for listing the next page
+Integer pageSize = 500; // Integer | The page size for the listing
+try {
+    DictionaryFeedbackEntityListing result = apiInstance.getSpeechandtextanalyticsDictionaryfeedback(dialect, nextPage, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsDictionaryfeedback");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dialect** | **String**| The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] [default to null] 
+| **nextPage** | **String**| The key for listing the next page | [optional] 
+| **pageSize** | **Integer**| The page size for the listing | [optional] [default to 500] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DictionaryFeedbackEntityListing**](DictionaryFeedbackEntityListing.html)
+
+<a name="getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId"></a>
+
+# **getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**
+
+
+
+> [DictionaryFeedback](DictionaryFeedback.html) getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)
+
+Get a Speech & Text Analytics dictionary feedback by id
+
+Wraps GET /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:dictionaryterm:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String dictionaryFeedbackId = "dictionaryFeedbackId_example"; // String | The Id of the Dictionary Feedback
+try {
+    DictionaryFeedback result = apiInstance.getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dictionaryFeedbackId** | **String**| The Id of the Dictionary Feedback | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DictionaryFeedback**](DictionaryFeedback.html)
 
 <a name="getSpeechandtextanalyticsProgram"></a>
 
@@ -1636,6 +1827,67 @@ try {
 
 [**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html)
 
+<a name="postSpeechandtextanalyticsDictionaryfeedback"></a>
+
+# **postSpeechandtextanalyticsDictionaryfeedback**
+
+
+
+> [DictionaryFeedback](DictionaryFeedback.html) postSpeechandtextanalyticsDictionaryfeedback(body)
+
+Create a Speech & Text Analytics DictionaryFeedback
+
+Wraps POST /api/v2/speechandtextanalytics/dictionaryfeedback  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:dictionaryterm:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+DictionaryFeedback body = new DictionaryFeedback(); // DictionaryFeedback | The DictionaryFeedback to create
+try {
+    DictionaryFeedback result = apiInstance.postSpeechandtextanalyticsDictionaryfeedback(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#postSpeechandtextanalyticsDictionaryfeedback");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DictionaryFeedback**](DictionaryFeedback.html)| The DictionaryFeedback to create | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DictionaryFeedback**](DictionaryFeedback.html)
+
 <a name="postSpeechandtextanalyticsPrograms"></a>
 
 # **postSpeechandtextanalyticsPrograms**
@@ -2066,6 +2318,69 @@ try {
 ### Return type
 
 [**JsonSearchResponse**](JsonSearchResponse.html)
+
+<a name="putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId"></a>
+
+# **putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**
+
+
+
+> [DictionaryFeedback](DictionaryFeedback.html) putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, body)
+
+Update existing Speech & Text Analytics dictionary feedback by id
+
+Wraps PUT /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:dictionaryterm:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String dictionaryFeedbackId = "dictionaryFeedbackId_example"; // String | The Id of the Dictionary Feedback
+DictionaryFeedback body = new DictionaryFeedback(); // DictionaryFeedback | 
+try {
+    DictionaryFeedback result = apiInstance.putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dictionaryFeedbackId** | **String**| The Id of the Dictionary Feedback | 
+| **body** | [**DictionaryFeedback**](DictionaryFeedback.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DictionaryFeedback**](DictionaryFeedback.html)
 
 <a name="putSpeechandtextanalyticsProgram"></a>
 

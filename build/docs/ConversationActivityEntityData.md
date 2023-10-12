@@ -10,6 +10,7 @@ title: ConversationActivityEntityData
 | ------------ | ------------- | ------------- | ------------- |
 | **activityDate** | <!----><!---->[**Date**](Date.html)<!----> | The time at which the activity was observed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **metric** | [**MetricEnum**](#MetricEnum)<!----> | Activity metric |  [optional] |
+| **activeRouting** | [**ActiveRoutingEnum**](#ActiveRoutingEnum)<!----> | Active routing method |  [optional] |
 | **addressFrom** | <!----><!---->**String**<!----> | The address that initiated an action |  [optional] |
 | **addressTo** | <!----><!---->**String**<!----> | The address receiving an action |  [optional] |
 | **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller's number) |  [optional] |
@@ -43,6 +44,25 @@ title: ConversationActivityEntityData
 | OALERTING | &quot;oAlerting&quot; | 
 | OINTERACTING | &quot;oInteracting&quot; | 
 | OWAITING | &quot;oWaiting&quot; | 
+{: class="table table-striped"}
+
+
+<a name="ActiveRoutingEnum"></a>
+
+## Enum: ActiveRoutingEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BULLSEYE | &quot;Bullseye&quot; | 
+| CONDITIONAL | &quot;Conditional&quot; | 
+| DIRECT | &quot;Direct&quot; | 
+| LAST | &quot;Last&quot; | 
+| MANUAL | &quot;Manual&quot; | 
+| PREDICTIVE | &quot;Predictive&quot; | 
+| PREFERRED | &quot;Preferred&quot; | 
+| STANDARD | &quot;Standard&quot; | 
+| VIP | &quot;Vip&quot; | 
 {: class="table table-striped"}
 
 

@@ -26,6 +26,7 @@ title: FlowAggregationQuery
 
 | Name | Value |
 | ---- | ----- |
+| ACTIVEROUTING | &quot;activeRouting&quot; |
 | ACTIVESKILLID | &quot;activeSkillId&quot; |
 | ADDRESSFROM | &quot;addressFrom&quot; |
 | ADDRESSTO | &quot;addressTo&quot; |
