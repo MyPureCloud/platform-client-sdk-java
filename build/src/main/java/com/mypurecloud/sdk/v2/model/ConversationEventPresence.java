@@ -44,7 +44,8 @@ public class ConversationEventPresence  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     JOIN("Join"),
     DISCONNECT("Disconnect"),
-    CLEAR("Clear");
+    CLEAR("Clear"),
+    SIGNIN("SignIn");
 
     private String value;
 

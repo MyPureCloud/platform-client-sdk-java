@@ -11,7 +11,6 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.DirectRoutingCallMediaSettings;
 import com.mypurecloud.sdk.v2.model.DirectRoutingMediaSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,7 +22,7 @@ import java.io.Serializable;
 
 public class DirectRouting  implements Serializable {
   
-  private DirectRoutingCallMediaSettings callMediaSettings = null;
+  private DirectRoutingMediaSettings callMediaSettings = null;
   private DirectRoutingMediaSettings emailMediaSettings = null;
   private DirectRoutingMediaSettings messageMediaSettings = null;
   private String backupQueueId = null;
@@ -34,17 +33,17 @@ public class DirectRouting  implements Serializable {
   /**
    * Direct Routing Settings specific to Call media.
    **/
-  public DirectRouting callMediaSettings(DirectRoutingCallMediaSettings callMediaSettings) {
+  public DirectRouting callMediaSettings(DirectRoutingMediaSettings callMediaSettings) {
     this.callMediaSettings = callMediaSettings;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Direct Routing Settings specific to Call media.")
   @JsonProperty("callMediaSettings")
-  public DirectRoutingCallMediaSettings getCallMediaSettings() {
+  public DirectRoutingMediaSettings getCallMediaSettings() {
     return callMediaSettings;
   }
-  public void setCallMediaSettings(DirectRoutingCallMediaSettings callMediaSettings) {
+  public void setCallMediaSettings(DirectRoutingMediaSettings callMediaSettings) {
     this.callMediaSettings = callMediaSettings;
   }
 

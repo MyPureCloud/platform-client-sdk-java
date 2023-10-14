@@ -12,6 +12,7 @@ title: ConversationMetrics
 | **sentimentScore** | <!----><!---->**Double**<!----> | The Sentiment Score |  [optional] |
 | **sentimentTrend** | <!----><!---->**Double**<!----> | The Sentiment Trend |  [optional] |
 | **sentimentTrendClass** | [**SentimentTrendClassEnum**](#SentimentTrendClassEnum)<!----> | The Sentiment Trend Class |  [optional] |
+| **empathyScores** | <!----><!---->[**List&lt;EmpathyScore&gt;**](EmpathyScore.html)<!----> | The Empathy Scores |  [optional] |
 | **participantMetrics** | <!----><!---->[**ParticipantMetrics**](ParticipantMetrics.html)<!----> | The Participant Metrics |  [optional] |
 {: class="table table-striped"}
 

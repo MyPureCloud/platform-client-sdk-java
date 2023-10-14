@@ -1919,7 +1919,7 @@ public class ChatApi {
    * Create an adhoc room
    * 
    * postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body Room properties (optional)
+   * @param body Room properties (required)
    * @return CreateRoomResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1932,7 +1932,7 @@ public class ChatApi {
    * Create an adhoc room
    * 
    * postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param body Room properties (optional)
+   * @param body Room properties (required)
    * @return CreateRoomResponse
    * @throws IOException if the request fails to be processed
    */

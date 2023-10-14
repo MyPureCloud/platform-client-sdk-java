@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SkillGroupCondition;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
@@ -33,6 +34,54 @@ public class SkillGroup  implements Serializable {
   private Long memberCount = null;
   private Date dateModified = null;
   private Date dateCreated = null;
+
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Group's filling status
+   */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
+  public enum StatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INPROGRESS("InProgress"),
+    COMPLETE("Complete");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StatusEnum value : StatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StatusEnum status = null;
   private List<SkillGroupCondition> skillConditions = new ArrayList<SkillGroupCondition>();
   private String selfUri = null;
 
@@ -119,6 +168,13 @@ public class SkillGroup  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Group's filling status")
+  @JsonProperty("status")
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+
   /**
    * Conditions for this group
    **/
@@ -161,13 +217,14 @@ public class SkillGroup  implements Serializable {
             Objects.equals(this.memberCount, skillGroup.memberCount) &&
             Objects.equals(this.dateModified, skillGroup.dateModified) &&
             Objects.equals(this.dateCreated, skillGroup.dateCreated) &&
+            Objects.equals(this.status, skillGroup.status) &&
             Objects.equals(this.skillConditions, skillGroup.skillConditions) &&
             Objects.equals(this.selfUri, skillGroup.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, memberCount, dateModified, dateCreated, skillConditions, selfUri);
+    return Objects.hash(id, name, division, description, memberCount, dateModified, dateCreated, status, skillConditions, selfUri);
   }
 
   @Override
@@ -182,6 +239,7 @@ public class SkillGroup  implements Serializable {
     sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    skillConditions: ").append(toIndentedString(skillConditions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

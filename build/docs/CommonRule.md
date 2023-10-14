@@ -35,6 +35,7 @@ title: CommonRule
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CONVERSATIONMETRICS | &quot;ConversationMetrics&quot; | 
 | USERPRESENCE | &quot;UserPresence&quot; | 
+| WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

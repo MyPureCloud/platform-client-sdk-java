@@ -8,6 +8,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**getTelephonyMediaregions**](TelephonyApi.html#getTelephonyMediaregions) | Retrieve the list of AWS regions media can stream through. |
+| [**getTelephonySipmessagesConversation**](TelephonyApi.html#getTelephonySipmessagesConversation) | Get a SIP message. |
+| [**getTelephonySipmessagesConversationHeaders**](TelephonyApi.html#getTelephonySipmessagesConversationHeaders) | Get SIP headers. |
 | [**getTelephonySiptraces**](TelephonyApi.html#getTelephonySiptraces) | Fetch SIP metadata |
 | [**getTelephonySiptracesDownloadDownloadId**](TelephonyApi.html#getTelephonySiptracesDownloadDownloadId) | Get signed S3 URL for a pcap download |
 | [**postTelephonySiptracesDownload**](TelephonyApi.html#postTelephonySiptracesDownload) | Request a download of a pcap file to S3 |
@@ -69,6 +71,138 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**MediaRegions**](MediaRegions.html)
+
+<a name="getTelephonySipmessagesConversation"></a>
+
+# **getTelephonySipmessagesConversation**
+
+
+
+> [Callmessage](Callmessage.html) getTelephonySipmessagesConversation(conversationId)
+
+Get a SIP message.
+
+Get the raw form of the SIP message
+
+getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/sipmessages/conversations/{conversationId}  
+
+Requires ALL permissions: 
+
+* telephony:pcap:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+String conversationId = "conversationId_example"; // String | Conversation id
+try {
+    Callmessage result = apiInstance.getTelephonySipmessagesConversation(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonySipmessagesConversation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Callmessage**](Callmessage.html)
+
+<a name="getTelephonySipmessagesConversationHeaders"></a>
+
+# **getTelephonySipmessagesConversationHeaders**
+
+
+
+> [Callheader](Callheader.html) getTelephonySipmessagesConversationHeaders(conversationId, keys)
+
+Get SIP headers.
+
+Get parsed SIP headers. Returns specific headers if key query parameters are added.
+
+getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/sipmessages/conversations/{conversationId}/headers  
+
+Requires ALL permissions: 
+
+* telephony:pcap:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyApi apiInstance = new TelephonyApi();
+String conversationId = "conversationId_example"; // String | Conversation id
+List<String> keys = Arrays.asList(null); // List<String> | comma-separated list of header identifiers to query. e.g. ruri,to,from
+try {
+    Callheader result = apiInstance.getTelephonySipmessagesConversationHeaders(conversationId, keys);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyApi#getTelephonySipmessagesConversationHeaders");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation id | 
+| **keys** | [**List&lt;String&gt;**](String.html)| comma-separated list of header identifiers to query. e.g. ruri,to,from | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Callheader**](Callheader.html)
 
 <a name="getTelephonySiptraces"></a>
 

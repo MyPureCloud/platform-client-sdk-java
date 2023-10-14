@@ -112,6 +112,7 @@ title: CommonRulePredicate
 | OUSERPRESENCES | &quot;oUserPresences&quot; | 
 | OINTERACTING | &quot;oInteracting&quot; | 
 | TFLOWOUT | &quot;tFlowOut&quot; | 
+| TADHERENCESTATUS | &quot;tAdherenceStatus&quot; | 
 {: class="table table-striped"}
 
 

@@ -13,6 +13,8 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.Callheader;
+import com.mypurecloud.sdk.v2.model.Callmessage;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.MediaRegions;
@@ -23,6 +25,8 @@ import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationHeadersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesDownloadDownloadIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonySiptracesDownloadRequest;
@@ -109,6 +113,160 @@ public class TelephonyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MediaRegions> response = (ApiResponse<MediaRegions>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a SIP message.
+   * Get the raw form of the SIP message
+   * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Callmessage> getTelephonySipmessagesConversationAsync(GetTelephonySipmessagesConversationRequest request, final AsyncApiCallback<Callmessage> callback) {
+    try {
+      final SettableFuture<Callmessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Callmessage>() {}, new AsyncApiCallback<ApiResponse<Callmessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<Callmessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a SIP message.
+   * Get the raw form of the SIP message
+   * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Callmessage>> getTelephonySipmessagesConversationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Callmessage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Callmessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Callmessage>() {}, new AsyncApiCallback<ApiResponse<Callmessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<Callmessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Callmessage> response = (ApiResponse<Callmessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Callmessage> response = (ApiResponse<Callmessage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get SIP headers.
+   * Get parsed SIP headers. Returns specific headers if key query parameters are added.
+   * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Callheader> getTelephonySipmessagesConversationHeadersAsync(GetTelephonySipmessagesConversationHeadersRequest request, final AsyncApiCallback<Callheader> callback) {
+    try {
+      final SettableFuture<Callheader> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Callheader>() {}, new AsyncApiCallback<ApiResponse<Callheader>>() {
+        @Override
+        public void onCompleted(ApiResponse<Callheader> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get SIP headers.
+   * Get parsed SIP headers. Returns specific headers if key query parameters are added.
+   * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Callheader>> getTelephonySipmessagesConversationHeadersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Callheader>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Callheader>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Callheader>() {}, new AsyncApiCallback<ApiResponse<Callheader>>() {
+        @Override
+        public void onCompleted(ApiResponse<Callheader> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Callheader> response = (ApiResponse<Callheader>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Callheader> response = (ApiResponse<Callheader>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

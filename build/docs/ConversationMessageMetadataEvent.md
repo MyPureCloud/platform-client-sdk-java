@@ -42,6 +42,7 @@ title: ConversationMessageMetadataEvent
 | OFFERINGREJECTED | &quot;OfferingRejected&quot; | 
 | DISCONNECT | &quot;Disconnect&quot; | 
 | CLEAR | &quot;Clear&quot; | 
+| SIGNIN | &quot;SignIn&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

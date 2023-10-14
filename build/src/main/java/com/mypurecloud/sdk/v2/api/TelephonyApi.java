@@ -10,6 +10,8 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.Callheader;
+import com.mypurecloud.sdk.v2.model.Callmessage;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.MediaRegions;
@@ -20,6 +22,8 @@ import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyMediaregionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonySipmessagesConversationHeadersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesDownloadDownloadIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonySiptracesDownloadRequest;
@@ -111,6 +115,174 @@ public class TelephonyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MediaRegions> response = (ApiResponse<MediaRegions>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a SIP message.
+   * Get the raw form of the SIP message
+   * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Conversation id (required)
+   * @return Callmessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Callmessage getTelephonySipmessagesConversation(String conversationId) throws IOException, ApiException {
+    return  getTelephonySipmessagesConversation(createGetTelephonySipmessagesConversationRequest(conversationId));
+  }
+
+  /**
+   * Get a SIP message.
+   * Get the raw form of the SIP message
+   * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Conversation id (required)
+   * @return Callmessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Callmessage> getTelephonySipmessagesConversationWithHttpInfo(String conversationId) throws IOException {
+    return getTelephonySipmessagesConversation(createGetTelephonySipmessagesConversationRequest(conversationId).withHttpInfo());
+  }
+
+  private GetTelephonySipmessagesConversationRequest createGetTelephonySipmessagesConversationRequest(String conversationId) {
+    return GetTelephonySipmessagesConversationRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Get a SIP message.
+   * Get the raw form of the SIP message
+   * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Callmessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Callmessage getTelephonySipmessagesConversation(GetTelephonySipmessagesConversationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Callmessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Callmessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a SIP message.
+   * Get the raw form of the SIP message
+   * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Callmessage> getTelephonySipmessagesConversation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Callmessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Callmessage> response = (ApiResponse<Callmessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Callmessage> response = (ApiResponse<Callmessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get SIP headers.
+   * Get parsed SIP headers. Returns specific headers if key query parameters are added.
+   * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Conversation id (required)
+   * @param keys comma-separated list of header identifiers to query. e.g. ruri,to,from (optional)
+   * @return Callheader
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Callheader getTelephonySipmessagesConversationHeaders(String conversationId, List<String> keys) throws IOException, ApiException {
+    return  getTelephonySipmessagesConversationHeaders(createGetTelephonySipmessagesConversationHeadersRequest(conversationId, keys));
+  }
+
+  /**
+   * Get SIP headers.
+   * Get parsed SIP headers. Returns specific headers if key query parameters are added.
+   * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Conversation id (required)
+   * @param keys comma-separated list of header identifiers to query. e.g. ruri,to,from (optional)
+   * @return Callheader
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Callheader> getTelephonySipmessagesConversationHeadersWithHttpInfo(String conversationId, List<String> keys) throws IOException {
+    return getTelephonySipmessagesConversationHeaders(createGetTelephonySipmessagesConversationHeadersRequest(conversationId, keys).withHttpInfo());
+  }
+
+  private GetTelephonySipmessagesConversationHeadersRequest createGetTelephonySipmessagesConversationHeadersRequest(String conversationId, List<String> keys) {
+    return GetTelephonySipmessagesConversationHeadersRequest.builder()
+            .withConversationId(conversationId)
+
+            .withKeys(keys)
+
+            .build();
+  }
+
+  /**
+   * Get SIP headers.
+   * Get parsed SIP headers. Returns specific headers if key query parameters are added.
+   * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Callheader
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Callheader getTelephonySipmessagesConversationHeaders(GetTelephonySipmessagesConversationHeadersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Callheader> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Callheader>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get SIP headers.
+   * Get parsed SIP headers. Returns specific headers if key query parameters are added.
+   * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Callheader> getTelephonySipmessagesConversationHeaders(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Callheader>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Callheader> response = (ApiResponse<Callheader>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Callheader> response = (ApiResponse<Callheader>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

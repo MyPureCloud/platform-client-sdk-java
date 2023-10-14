@@ -100,6 +100,7 @@ public class ConversationMessageMetadataEvent  implements Serializable {
     OFFERINGREJECTED("OfferingRejected"),
     DISCONNECT("Disconnect"),
     CLEAR("Clear"),
+    SIGNIN("SignIn"),
     UNKNOWN("Unknown");
 
     private String value;

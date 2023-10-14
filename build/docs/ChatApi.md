@@ -1496,7 +1496,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateRoomRequest**](CreateRoomRequest.html)| Room properties | [optional] 
+| **body** | [**CreateRoomRequest**](CreateRoomRequest.html)| Room properties | 
 {: class="table-striped"}
 
 

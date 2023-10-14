@@ -274,7 +274,8 @@ public class CommonRulePredicate  implements Serializable {
     OUSERROUTINGSTATUSES("oUserRoutingStatuses"),
     OUSERPRESENCES("oUserPresences"),
     OINTERACTING("oInteracting"),
-    TFLOWOUT("tFlowOut");
+    TFLOWOUT("tFlowOut"),
+    TADHERENCESTATUS("tAdherenceStatus");
 
     private String value;
 

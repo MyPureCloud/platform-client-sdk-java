@@ -26,6 +26,7 @@ public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
   private String defaultProgramId = null;
   private List<String> expectedDialects = new ArrayList<String>();
   private Boolean textAnalyticsEnabled = null;
+  private Boolean agentEmpathyEnabled = null;
 
   
   /**
@@ -82,6 +83,24 @@ public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
   }
 
 
+  /**
+   * Setting to enable/disable Agent Empathy setting
+   **/
+  public SpeechTextAnalyticsSettingsRequest agentEmpathyEnabled(Boolean agentEmpathyEnabled) {
+    this.agentEmpathyEnabled = agentEmpathyEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Setting to enable/disable Agent Empathy setting")
+  @JsonProperty("agentEmpathyEnabled")
+  public Boolean getAgentEmpathyEnabled() {
+    return agentEmpathyEnabled;
+  }
+  public void setAgentEmpathyEnabled(Boolean agentEmpathyEnabled) {
+    this.agentEmpathyEnabled = agentEmpathyEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -94,12 +113,13 @@ public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
 
     return Objects.equals(this.defaultProgramId, speechTextAnalyticsSettingsRequest.defaultProgramId) &&
             Objects.equals(this.expectedDialects, speechTextAnalyticsSettingsRequest.expectedDialects) &&
-            Objects.equals(this.textAnalyticsEnabled, speechTextAnalyticsSettingsRequest.textAnalyticsEnabled);
+            Objects.equals(this.textAnalyticsEnabled, speechTextAnalyticsSettingsRequest.textAnalyticsEnabled) &&
+            Objects.equals(this.agentEmpathyEnabled, speechTextAnalyticsSettingsRequest.agentEmpathyEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(defaultProgramId, expectedDialects, textAnalyticsEnabled);
+    return Objects.hash(defaultProgramId, expectedDialects, textAnalyticsEnabled, agentEmpathyEnabled);
   }
 
   @Override
@@ -110,6 +130,7 @@ public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
     sb.append("    defaultProgramId: ").append(toIndentedString(defaultProgramId)).append("\n");
     sb.append("    expectedDialects: ").append(toIndentedString(expectedDialects)).append("\n");
     sb.append("    textAnalyticsEnabled: ").append(toIndentedString(textAnalyticsEnabled)).append("\n");
+    sb.append("    agentEmpathyEnabled: ").append(toIndentedString(agentEmpathyEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

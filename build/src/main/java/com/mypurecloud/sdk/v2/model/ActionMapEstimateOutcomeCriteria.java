@@ -24,6 +24,8 @@ public class ActionMapEstimateOutcomeCriteria  implements Serializable {
   private String outcomeId = null;
   private Float maxProbability = null;
   private Float probability = null;
+  private Float quantile = null;
+  private Float maxQuantile = null;
 
   
   /**
@@ -52,7 +54,7 @@ public class ActionMapEstimateOutcomeCriteria  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Probability value for the selected outcome at or above which the action map will trigger.")
+  @ApiModelProperty(example = "null", value = "Probability value for the selected outcome at or above which the action map will trigger.")
   @JsonProperty("maxProbability")
   public Float getMaxProbability() {
     return maxProbability;
@@ -80,6 +82,42 @@ public class ActionMapEstimateOutcomeCriteria  implements Serializable {
   }
 
 
+  /**
+   * Represents the quantity of sessions that have a maximum probability less than the predicted probability.
+   **/
+  public ActionMapEstimateOutcomeCriteria quantile(Float quantile) {
+    this.quantile = quantile;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the quantity of sessions that have a maximum probability less than the predicted probability.")
+  @JsonProperty("quantile")
+  public Float getQuantile() {
+    return quantile;
+  }
+  public void setQuantile(Float quantile) {
+    this.quantile = quantile;
+  }
+
+
+  /**
+   * Represents the quantity of sessions that have a maximum probability less than the predicted session max probability.
+   **/
+  public ActionMapEstimateOutcomeCriteria maxQuantile(Float maxQuantile) {
+    this.maxQuantile = maxQuantile;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the quantity of sessions that have a maximum probability less than the predicted session max probability.")
+  @JsonProperty("maxQuantile")
+  public Float getMaxQuantile() {
+    return maxQuantile;
+  }
+  public void setMaxQuantile(Float maxQuantile) {
+    this.maxQuantile = maxQuantile;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -92,12 +130,14 @@ public class ActionMapEstimateOutcomeCriteria  implements Serializable {
 
     return Objects.equals(this.outcomeId, actionMapEstimateOutcomeCriteria.outcomeId) &&
             Objects.equals(this.maxProbability, actionMapEstimateOutcomeCriteria.maxProbability) &&
-            Objects.equals(this.probability, actionMapEstimateOutcomeCriteria.probability);
+            Objects.equals(this.probability, actionMapEstimateOutcomeCriteria.probability) &&
+            Objects.equals(this.quantile, actionMapEstimateOutcomeCriteria.quantile) &&
+            Objects.equals(this.maxQuantile, actionMapEstimateOutcomeCriteria.maxQuantile);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(outcomeId, maxProbability, probability);
+    return Objects.hash(outcomeId, maxProbability, probability, quantile, maxQuantile);
   }
 
   @Override
@@ -108,6 +148,8 @@ public class ActionMapEstimateOutcomeCriteria  implements Serializable {
     sb.append("    outcomeId: ").append(toIndentedString(outcomeId)).append("\n");
     sb.append("    maxProbability: ").append(toIndentedString(maxProbability)).append("\n");
     sb.append("    probability: ").append(toIndentedString(probability)).append("\n");
+    sb.append("    quantile: ").append(toIndentedString(quantile)).append("\n");
+    sb.append("    maxQuantile: ").append(toIndentedString(maxQuantile)).append("\n");
     sb.append("}");
     return sb.toString();
   }

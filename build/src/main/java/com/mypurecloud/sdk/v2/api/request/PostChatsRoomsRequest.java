@@ -69,6 +69,11 @@ public class PostChatsRoomsRequest {
 
     public ApiRequest<CreateRoomRequest> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostChatsRoomsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/chats/rooms")
                 .withBody(body)
@@ -84,6 +89,11 @@ public class PostChatsRoomsRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(CreateRoomRequest body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -101,8 +111,19 @@ public class PostChatsRoomsRequest {
 
 
 
+		public Builder withRequiredParams(CreateRoomRequest body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostChatsRoomsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostChatsRoomsRequest.");
+            }
             
 			return request;
 		}

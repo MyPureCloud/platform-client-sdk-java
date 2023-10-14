@@ -27,6 +27,7 @@ public class SpeechTextAnalyticsSettingsResponse  implements Serializable {
   private AddressableEntityRef defaultProgram = null;
   private List<String> expectedDialects = new ArrayList<String>();
   private Boolean textAnalyticsEnabled = null;
+  private Boolean agentEmpathyEnabled = null;
 
   
   /**
@@ -83,6 +84,24 @@ public class SpeechTextAnalyticsSettingsResponse  implements Serializable {
   }
 
 
+  /**
+   * Setting to enable/disable Agent Empathy setting
+   **/
+  public SpeechTextAnalyticsSettingsResponse agentEmpathyEnabled(Boolean agentEmpathyEnabled) {
+    this.agentEmpathyEnabled = agentEmpathyEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Setting to enable/disable Agent Empathy setting")
+  @JsonProperty("agentEmpathyEnabled")
+  public Boolean getAgentEmpathyEnabled() {
+    return agentEmpathyEnabled;
+  }
+  public void setAgentEmpathyEnabled(Boolean agentEmpathyEnabled) {
+    this.agentEmpathyEnabled = agentEmpathyEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -95,12 +114,13 @@ public class SpeechTextAnalyticsSettingsResponse  implements Serializable {
 
     return Objects.equals(this.defaultProgram, speechTextAnalyticsSettingsResponse.defaultProgram) &&
             Objects.equals(this.expectedDialects, speechTextAnalyticsSettingsResponse.expectedDialects) &&
-            Objects.equals(this.textAnalyticsEnabled, speechTextAnalyticsSettingsResponse.textAnalyticsEnabled);
+            Objects.equals(this.textAnalyticsEnabled, speechTextAnalyticsSettingsResponse.textAnalyticsEnabled) &&
+            Objects.equals(this.agentEmpathyEnabled, speechTextAnalyticsSettingsResponse.agentEmpathyEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(defaultProgram, expectedDialects, textAnalyticsEnabled);
+    return Objects.hash(defaultProgram, expectedDialects, textAnalyticsEnabled, agentEmpathyEnabled);
   }
 
   @Override
@@ -111,6 +131,7 @@ public class SpeechTextAnalyticsSettingsResponse  implements Serializable {
     sb.append("    defaultProgram: ").append(toIndentedString(defaultProgram)).append("\n");
     sb.append("    expectedDialects: ").append(toIndentedString(expectedDialects)).append("\n");
     sb.append("    textAnalyticsEnabled: ").append(toIndentedString(textAnalyticsEnabled)).append("\n");
+    sb.append("    agentEmpathyEnabled: ").append(toIndentedString(agentEmpathyEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

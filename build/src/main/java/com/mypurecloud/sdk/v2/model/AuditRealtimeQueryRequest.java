@@ -59,7 +59,7 @@ public class AuditRealtimeQueryRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Name of the service to query audits for.")
+  @ApiModelProperty(example = "null", value = "Name of the service to query audits for.")
   @JsonProperty("serviceName")
   public String getServiceName() {
     return serviceName;

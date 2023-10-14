@@ -11,7 +11,6 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,43 +21,24 @@ import java.io.Serializable;
 
 public class DirectRoutingMediaSettings  implements Serializable {
   
-  private Boolean enabled = null;
-  private AddressableEntityRef inboundFlow = null;
+  private Boolean useAgentAddressOutbound = null;
 
   
   /**
-   * Toggle that enables Direct Routing for this media type.
+   * Toggle that enables using an agent's Direct Routing address outbound on behalf of queue for this media type.
    **/
-  public DirectRoutingMediaSettings enabled(Boolean enabled) {
-    this.enabled = enabled;
+  public DirectRoutingMediaSettings useAgentAddressOutbound(Boolean useAgentAddressOutbound) {
+    this.useAgentAddressOutbound = useAgentAddressOutbound;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Toggle that enables Direct Routing for this media type.")
-  @JsonProperty("enabled")
-  public Boolean getEnabled() {
-    return enabled;
+  @ApiModelProperty(example = "null", value = "Toggle that enables using an agent's Direct Routing address outbound on behalf of queue for this media type.")
+  @JsonProperty("useAgentAddressOutbound")
+  public Boolean getUseAgentAddressOutbound() {
+    return useAgentAddressOutbound;
   }
-  public void setEnabled(Boolean enabled) {
-    this.enabled = enabled;
-  }
-
-
-  /**
-   * The Direct Routing inbound flow id for this media type.
-   **/
-  public DirectRoutingMediaSettings inboundFlow(AddressableEntityRef inboundFlow) {
-    this.inboundFlow = inboundFlow;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The Direct Routing inbound flow id for this media type.")
-  @JsonProperty("inboundFlow")
-  public AddressableEntityRef getInboundFlow() {
-    return inboundFlow;
-  }
-  public void setInboundFlow(AddressableEntityRef inboundFlow) {
-    this.inboundFlow = inboundFlow;
+  public void setUseAgentAddressOutbound(Boolean useAgentAddressOutbound) {
+    this.useAgentAddressOutbound = useAgentAddressOutbound;
   }
 
 
@@ -72,13 +52,12 @@ public class DirectRoutingMediaSettings  implements Serializable {
     }
     DirectRoutingMediaSettings directRoutingMediaSettings = (DirectRoutingMediaSettings) o;
 
-    return Objects.equals(this.enabled, directRoutingMediaSettings.enabled) &&
-            Objects.equals(this.inboundFlow, directRoutingMediaSettings.inboundFlow);
+    return Objects.equals(this.useAgentAddressOutbound, directRoutingMediaSettings.useAgentAddressOutbound);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, inboundFlow);
+    return Objects.hash(useAgentAddressOutbound);
   }
 
   @Override
@@ -86,8 +65,7 @@ public class DirectRoutingMediaSettings  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class DirectRoutingMediaSettings {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    inboundFlow: ").append(toIndentedString(inboundFlow)).append("\n");
+    sb.append("    useAgentAddressOutbound: ").append(toIndentedString(useAgentAddressOutbound)).append("\n");
     sb.append("}");
     return sb.toString();
   }

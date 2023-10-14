@@ -493,6 +493,8 @@ docs/CallbackDisconnectIdentifier.md
 docs/CallbackIdentifier.md
 docs/CallbackMediaParticipant.md
 docs/CallbackMediaSettings.md
+docs/Callheader.md
+docs/Callmessage.md
 docs/Campaign.md
 docs/CampaignDiagnostics.md
 docs/CampaignDivisionView.md
@@ -1186,7 +1188,6 @@ docs/DigitalRuleSet.md
 docs/DigitalRuleSetEntityListing.md
 docs/Digits.md
 docs/DirectRouting.md
-docs/DirectRoutingCallMediaSettings.md
 docs/DirectRoutingMediaSettings.md
 docs/DirectoryUserDevicesListing.md
 docs/DisallowedEntityLearningAssignmentItem.md
@@ -2212,6 +2213,7 @@ docs/MediaRtpStatistics.md
 docs/MediaSettings.md
 docs/MediaStatistics.md
 docs/MediaStatisticsListing.md
+docs/MediaStatisticsTrunkInfo.md
 docs/MediaSummary.md
 docs/MediaSummaryDetail.md
 docs/MediaTranscription.md
@@ -5372,6 +5374,8 @@ docs/getTelephonyProvidersEdgesTrunkbasesettingsTemplate-example.txt
 docs/getTelephonyProvidersEdgesTrunks-example.txt
 docs/getTelephonyProvidersEdgesTrunksMetrics-example.txt
 docs/getTelephonyProvidersEdgesTrunkswithrecording-example.txt
+docs/getTelephonySipmessagesConversation-example.txt
+docs/getTelephonySipmessagesConversationHeaders-example.txt
 docs/getTelephonySiptraces-example.txt
 docs/getTelephonySiptracesDownloadDownloadId-example.txt
 docs/getTextbotsBotsSearch-example.txt
@@ -7864,6 +7868,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesTrunk
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesTrunksMetricsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesTrunksRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesTrunkswithrecordingRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonySipmessagesConversationHeadersRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonySipmessagesConversationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonySiptracesDownloadDownloadIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonySiptracesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTextbotsBotsSearchRequest.java
@@ -9488,6 +9494,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/CallbackDisconnectIdentifier.java
 src/main/java/com/mypurecloud/sdk/v2/model/CallbackIdentifier.java
 src/main/java/com/mypurecloud/sdk/v2/model/CallbackMediaParticipant.java
 src/main/java/com/mypurecloud/sdk/v2/model/CallbackMediaSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/Callheader.java
+src/main/java/com/mypurecloud/sdk/v2/model/Callmessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/Campaign.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignDiagnostics.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignDivisionView.java
@@ -10169,7 +10177,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/DigitalRuleSet.java
 src/main/java/com/mypurecloud/sdk/v2/model/DigitalRuleSetEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Digits.java
 src/main/java/com/mypurecloud/sdk/v2/model/DirectRouting.java
-src/main/java/com/mypurecloud/sdk/v2/model/DirectRoutingCallMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/DirectRoutingMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/DirectoryUserDevicesListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DisallowedEntityLearningAssignmentItem.java
@@ -11153,6 +11160,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/MediaRtpStatistics.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaStatistics.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaStatisticsListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/MediaStatisticsTrunkInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaSummaryDetail.java
 src/main/java/com/mypurecloud/sdk/v2/model/MediaTranscription.java

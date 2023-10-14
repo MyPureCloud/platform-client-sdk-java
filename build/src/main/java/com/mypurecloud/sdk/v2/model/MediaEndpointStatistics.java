@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MediaIceStatistics;
 import com.mypurecloud.sdk.v2.model.MediaRtpStatistics;
+import com.mypurecloud.sdk.v2.model.MediaStatisticsTrunkInfo;
 import com.mypurecloud.sdk.v2.model.NamedEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,7 +25,7 @@ import java.io.Serializable;
 
 public class MediaEndpointStatistics  implements Serializable {
   
-  private NamedEntity trunk = null;
+  private MediaStatisticsTrunkInfo trunk = null;
   private NamedEntity station = null;
   private NamedEntity user = null;
   private MediaIceStatistics ice = null;
@@ -34,17 +35,17 @@ public class MediaEndpointStatistics  implements Serializable {
   /**
    * Trunk information utilized when creating the media endpoint
    **/
-  public MediaEndpointStatistics trunk(NamedEntity trunk) {
+  public MediaEndpointStatistics trunk(MediaStatisticsTrunkInfo trunk) {
     this.trunk = trunk;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Trunk information utilized when creating the media endpoint")
   @JsonProperty("trunk")
-  public NamedEntity getTrunk() {
+  public MediaStatisticsTrunkInfo getTrunk() {
     return trunk;
   }
-  public void setTrunk(NamedEntity trunk) {
+  public void setTrunk(MediaStatisticsTrunkInfo trunk) {
     this.trunk = trunk;
   }
 

@@ -1,143 +1,120 @@
-Platform API version: 7379
+Platform API version: 7413
 
 
 
 
-# Major Changes (3 changes)
+# Major Changes (6 changes)
 
-**OutcomeEventScore** (1 change)
+**POST /api/v2/chats/rooms** (1 change)
 
-* Model OutcomeEventScore was removed
+* Parameter body was made required
 
-**VideoMetadata** (1 change)
+**DirectRoutingCallMediaSettings** (1 change)
 
-* Model VideoMetadata was removed
+* Model DirectRoutingCallMediaSettings was removed
 
-**OutcomeScoresResult** (1 change)
+**DirectRouting** (1 change)
 
-* Property outcomeScores was changed from OutcomeEventScore[] to OutcomeScore[]
+* Property callMediaSettings was changed from DirectRoutingCallMediaSettings to DirectRoutingMediaSettings
+
+**DirectRoutingMediaSettings** (2 changes)
+
+* Property enabled was removed
+* Property inboundFlow was removed
+
+**MediaEndpointStatistics** (1 change)
+
+* Property trunk was changed from NamedEntity to MediaStatisticsTrunkInfo
 
 
-# Minor Changes (35 changes)
+# Minor Changes (24 changes)
 
-**/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}** (4 changes)
+**/api/v2/telephony/sipmessages/conversations/{conversationId}/headers** (2 changes)
 
 * Path was added
 * Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
 
-**/api/v2/speechandtextanalytics/dictionaryfeedback** (3 changes)
+**/api/v2/telephony/sipmessages/conversations/{conversationId}** (2 changes)
 
 * Path was added
 * Operation GET was added
-* Operation POST was added
 
-**ConversationAggregateQueryPredicate** (1 change)
+**ReportingExportJobResponse** (1 change)
 
-* Enum value activeRouting was added to property dimension
+* Enum value DASHBOARD_USERS_DETAIL was added to property viewType
 
-**ConversationAggregationQuery** (1 change)
+**ReportingExportMetadataJobResponse** (1 change)
 
-* Enum value activeRouting was added to property groupBy
+* Enum value DASHBOARD_USERS_DETAIL was added to property viewType
 
-**AnalyticsConversationSegment** (2 changes)
+**ReportingExportJobRequest** (1 change)
 
-* Enum value dndEndpoint was added to property disconnectType
-* Enum value dndTransfer was added to property disconnectType
+* Enum value DASHBOARD_USERS_DETAIL was added to property viewType
 
-**FlowAggregateQueryPredicate** (1 change)
+**DirectRoutingMediaSettings** (1 change)
 
-* Enum value activeRouting was added to property dimension
+* Optional property useAgentAddressOutbound was added
 
-**FlowAggregationQuery** (1 change)
+**ConversationMessageMetadataEvent** (1 change)
 
-* Enum value activeRouting was added to property groupBy
+* Enum value SignIn was added to property subType
 
-**TranscriptAggregateQueryPredicate** (2 changes)
+**ConversationEventPresence** (1 change)
 
-* Enum value conversationDuration was added to property dimension
-* Enum value handleTime was added to property dimension
+* Enum value SignIn was added to property type
 
-**TranscriptAggregationQuery** (1 change)
+**ActionMapEstimateOutcomeCriteria** (2 changes)
 
-* Enum value tOtherAudio was added to property metrics
+* Optional property quantile was added
+* Optional property maxQuantile was added
 
-**TranscriptAggregationView** (1 change)
+**AlertRuleProperties** (1 change)
 
-* Enum value tOtherAudio was added to property target
+* Enum value WorkforceManagement was added to property type
 
-**EventLog** (1 change)
+**CommonRulePredicate** (1 change)
 
-* Enum value IMPORT_TEMPLATE was added to property category
+* Enum value tAdherenceStatus was added to property metric
 
-**OutcomeScore** (1 change)
+**CommonRule** (1 change)
+
+* Enum value WorkforceManagement was added to property type
+
+**SkillGroup** (1 change)
+
+* Optional property status was added
+
+**SkillGroupWithMemberDivisions** (1 change)
+
+* Optional property status was added
+
+**ConversationMetrics** (1 change)
+
+* Optional property empathyScores was added
+
+**SpeechTextAnalyticsSettingsResponse** (1 change)
+
+* Optional property agentEmpathyEnabled was added
+
+**SpeechTextAnalyticsSettingsRequest** (1 change)
+
+* Optional property agentEmpathyEnabled was added
+
+**CreateRoomRequest** (1 change)
+
+* Optional property userIds was added
+
+**Callheader** (1 change)
 
 * Model was added
 
-**DictionaryFeedback** (1 change)
+**Callmessage** (1 change)
 
 * Model was added
 
-**DictionaryFeedbackExamplePhrase** (1 change)
+**MediaStatisticsTrunkInfo** (1 change)
 
 * Model was added
-
-**DictionaryFeedbackEntityListing** (1 change)
-
-* Model was added
-
-**ListedDictionaryFeedback** (1 change)
-
-* Model was added
-
-**MetadataProperty** (1 change)
-
-* Optional property sensitive was added
-
-**ConversationAsyncAggregationQuery** (1 change)
-
-* Enum value activeRouting was added to property groupBy
-
-**ConversationActivityEntityData** (1 change)
-
-* Optional property activeRouting was added
-
-**ConversationActivityResponse** (1 change)
-
-* Enum value activeRouting was added to property entityIdDimension
-
-**ConversationActivityQuery** (1 change)
-
-* Enum value activeRouting was added to property groupBy
-
-**ConversationActivityQueryPredicate** (1 change)
-
-* Enum value activeRouting was added to property dimension
-
-**FlowAsyncAggregationQuery** (1 change)
-
-* Enum value activeRouting was added to property groupBy
-
-**FlowActivityEntityData** (1 change)
-
-* Optional property activeRouting was added
-
-**FlowActivityResponse** (1 change)
-
-* Enum value activeRouting was added to property entityIdDimension
-
-**FlowActivityQuery** (1 change)
-
-* Enum value activeRouting was added to property groupBy
-
-**FlowActivityQueryPredicate** (1 change)
-
-* Enum value activeRouting was added to property dimension
-
-**TranscriptAsyncAggregationQuery** (1 change)
-
-* Enum value tOtherAudio was added to property metrics
 
 
 # Point Changes (0 changes)
