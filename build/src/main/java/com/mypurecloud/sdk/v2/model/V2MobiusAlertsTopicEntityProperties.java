@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicAddressableEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -75,10 +76,10 @@ public class V2MobiusAlertsTopicEntityProperties  implements Serializable {
     }
   }
   private EntityTypeEnum entityType = null;
-  private String userDisplayName = null;
-  private String groupDisplayName = null;
-  private String queueDisplayName = null;
-  private String teamDisplayName = null;
+  private V2MobiusAlertsTopicAddressableEntityRef user = null;
+  private V2MobiusAlertsTopicAddressableEntityRef group = null;
+  private V2MobiusAlertsTopicAddressableEntityRef queue = null;
+  private V2MobiusAlertsTopicAddressableEntityRef team = null;
 
   
   /**
@@ -100,69 +101,69 @@ public class V2MobiusAlertsTopicEntityProperties  implements Serializable {
 
   /**
    **/
-  public V2MobiusAlertsTopicEntityProperties userDisplayName(String userDisplayName) {
-    this.userDisplayName = userDisplayName;
+  public V2MobiusAlertsTopicEntityProperties user(V2MobiusAlertsTopicAddressableEntityRef user) {
+    this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("userDisplayName")
-  public String getUserDisplayName() {
-    return userDisplayName;
+  @JsonProperty("user")
+  public V2MobiusAlertsTopicAddressableEntityRef getUser() {
+    return user;
   }
-  public void setUserDisplayName(String userDisplayName) {
-    this.userDisplayName = userDisplayName;
+  public void setUser(V2MobiusAlertsTopicAddressableEntityRef user) {
+    this.user = user;
   }
 
 
   /**
    **/
-  public V2MobiusAlertsTopicEntityProperties groupDisplayName(String groupDisplayName) {
-    this.groupDisplayName = groupDisplayName;
+  public V2MobiusAlertsTopicEntityProperties group(V2MobiusAlertsTopicAddressableEntityRef group) {
+    this.group = group;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("groupDisplayName")
-  public String getGroupDisplayName() {
-    return groupDisplayName;
+  @JsonProperty("group")
+  public V2MobiusAlertsTopicAddressableEntityRef getGroup() {
+    return group;
   }
-  public void setGroupDisplayName(String groupDisplayName) {
-    this.groupDisplayName = groupDisplayName;
+  public void setGroup(V2MobiusAlertsTopicAddressableEntityRef group) {
+    this.group = group;
   }
 
 
   /**
    **/
-  public V2MobiusAlertsTopicEntityProperties queueDisplayName(String queueDisplayName) {
-    this.queueDisplayName = queueDisplayName;
+  public V2MobiusAlertsTopicEntityProperties queue(V2MobiusAlertsTopicAddressableEntityRef queue) {
+    this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("queueDisplayName")
-  public String getQueueDisplayName() {
-    return queueDisplayName;
+  @JsonProperty("queue")
+  public V2MobiusAlertsTopicAddressableEntityRef getQueue() {
+    return queue;
   }
-  public void setQueueDisplayName(String queueDisplayName) {
-    this.queueDisplayName = queueDisplayName;
+  public void setQueue(V2MobiusAlertsTopicAddressableEntityRef queue) {
+    this.queue = queue;
   }
 
 
   /**
    **/
-  public V2MobiusAlertsTopicEntityProperties teamDisplayName(String teamDisplayName) {
-    this.teamDisplayName = teamDisplayName;
+  public V2MobiusAlertsTopicEntityProperties team(V2MobiusAlertsTopicAddressableEntityRef team) {
+    this.team = team;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("teamDisplayName")
-  public String getTeamDisplayName() {
-    return teamDisplayName;
+  @JsonProperty("team")
+  public V2MobiusAlertsTopicAddressableEntityRef getTeam() {
+    return team;
   }
-  public void setTeamDisplayName(String teamDisplayName) {
-    this.teamDisplayName = teamDisplayName;
+  public void setTeam(V2MobiusAlertsTopicAddressableEntityRef team) {
+    this.team = team;
   }
 
 
@@ -177,15 +178,15 @@ public class V2MobiusAlertsTopicEntityProperties  implements Serializable {
     V2MobiusAlertsTopicEntityProperties v2MobiusAlertsTopicEntityProperties = (V2MobiusAlertsTopicEntityProperties) o;
 
     return Objects.equals(this.entityType, v2MobiusAlertsTopicEntityProperties.entityType) &&
-            Objects.equals(this.userDisplayName, v2MobiusAlertsTopicEntityProperties.userDisplayName) &&
-            Objects.equals(this.groupDisplayName, v2MobiusAlertsTopicEntityProperties.groupDisplayName) &&
-            Objects.equals(this.queueDisplayName, v2MobiusAlertsTopicEntityProperties.queueDisplayName) &&
-            Objects.equals(this.teamDisplayName, v2MobiusAlertsTopicEntityProperties.teamDisplayName);
+            Objects.equals(this.user, v2MobiusAlertsTopicEntityProperties.user) &&
+            Objects.equals(this.group, v2MobiusAlertsTopicEntityProperties.group) &&
+            Objects.equals(this.queue, v2MobiusAlertsTopicEntityProperties.queue) &&
+            Objects.equals(this.team, v2MobiusAlertsTopicEntityProperties.team);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entityType, userDisplayName, groupDisplayName, queueDisplayName, teamDisplayName);
+    return Objects.hash(entityType, user, group, queue, team);
   }
 
   @Override
@@ -194,10 +195,10 @@ public class V2MobiusAlertsTopicEntityProperties  implements Serializable {
     sb.append("class V2MobiusAlertsTopicEntityProperties {\n");
     
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
-    sb.append("    userDisplayName: ").append(toIndentedString(userDisplayName)).append("\n");
-    sb.append("    groupDisplayName: ").append(toIndentedString(groupDisplayName)).append("\n");
-    sb.append("    queueDisplayName: ").append(toIndentedString(queueDisplayName)).append("\n");
-    sb.append("    teamDisplayName: ").append(toIndentedString(teamDisplayName)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("}");
     return sb.toString();
   }

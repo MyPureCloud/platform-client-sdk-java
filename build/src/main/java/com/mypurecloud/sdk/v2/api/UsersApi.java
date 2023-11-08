@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.UpdateUser;
+import com.mypurecloud.sdk.v2.model.UpdateVerifierRequest;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.UserActivityQuery;
 import com.mypurecloud.sdk.v2.model.UserActivityResponse;
@@ -68,6 +69,8 @@ import com.mypurecloud.sdk.v2.model.UserState;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.Utilization;
+import com.mypurecloud.sdk.v2.model.Verifier;
+import com.mypurecloud.sdk.v2.model.VerifierEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
@@ -78,6 +81,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteUserVerifierRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
@@ -110,6 +114,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserStateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserStationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserSuperiorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserTrustorsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserVerifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesMeRequest;
@@ -158,6 +163,7 @@ import com.mypurecloud.sdk.v2.api.request.PutUserRoutingstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationAssociatedstationStationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationDefaultstationStationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUserVerifierRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -774,6 +780,85 @@ public class UsersApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteUserStationDefaultstation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a verifier
+   * 
+   * @param userId User ID (required)
+   * @param verifierId Verifier ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUserVerifier(String userId, String verifierId) throws IOException, ApiException {
+     deleteUserVerifier(createDeleteUserVerifierRequest(userId, verifierId));
+  }
+
+  /**
+   * Delete a verifier
+   * 
+   * @param userId User ID (required)
+   * @param verifierId Verifier ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUserVerifierWithHttpInfo(String userId, String verifierId) throws IOException {
+    return deleteUserVerifier(createDeleteUserVerifierRequest(userId, verifierId).withHttpInfo());
+  }
+
+  private DeleteUserVerifierRequest createDeleteUserVerifierRequest(String userId, String verifierId) {
+    return DeleteUserVerifierRequest.builder()
+            .withUserId(userId)
+
+            .withVerifierId(verifierId)
+
+            .build();
+  }
+
+  /**
+   * Delete a verifier
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUserVerifier(DeleteUserVerifierRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a verifier
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUserVerifier(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -3488,6 +3573,84 @@ public class UsersApi {
   }
 
   /**
+   * Get a list of verifiers
+   * 
+   * @param userId User ID (required)
+   * @return VerifierEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VerifierEntityListing getUserVerifiers(String userId) throws IOException, ApiException {
+    return  getUserVerifiers(createGetUserVerifiersRequest(userId));
+  }
+
+  /**
+   * Get a list of verifiers
+   * 
+   * @param userId User ID (required)
+   * @return VerifierEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VerifierEntityListing> getUserVerifiersWithHttpInfo(String userId) throws IOException {
+    return getUserVerifiers(createGetUserVerifiersRequest(userId).withHttpInfo());
+  }
+
+  private GetUserVerifiersRequest createGetUserVerifiersRequest(String userId) {
+    return GetUserVerifiersRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Get a list of verifiers
+   * 
+   * @param request The request object
+   * @return VerifierEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VerifierEntityListing getUserVerifiers(GetUserVerifiersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<VerifierEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VerifierEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of verifiers
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VerifierEntityListing> getUserVerifiers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VerifierEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VerifierEntityListing> response = (ApiResponse<VerifierEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VerifierEntityListing> response = (ApiResponse<VerifierEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get the list of available users.
    * 
    * @param pageSize Page size (optional, default to 25)
@@ -4756,7 +4919,7 @@ public class UsersApi {
   }
 
   /**
-   * Update bulk acd autoanswer on users
+   * Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
    * 
    * @param body Users (required)
    * @return UserEntityListing
@@ -4768,7 +4931,7 @@ public class UsersApi {
   }
 
   /**
-   * Update bulk acd autoanswer on users
+   * Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
    * 
    * @param body Users (required)
    * @return UserEntityListing
@@ -4786,7 +4949,7 @@ public class UsersApi {
   }
 
   /**
-   * Update bulk acd autoanswer on users
+   * Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
    * 
    * @param request The request object
    * @return UserEntityListing
@@ -4805,7 +4968,7 @@ public class UsersApi {
   }
 
   /**
-   * Update bulk acd autoanswer on users
+   * Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
    * 
    * @param request The request object
    * @return the response
@@ -7500,6 +7663,92 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a verifier
+   * 
+   * @param userId User ID (required)
+   * @param verifierId Verifier ID (required)
+   * @param body Verifier Update (required)
+   * @return Verifier
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Verifier putUserVerifier(String userId, String verifierId, UpdateVerifierRequest body) throws IOException, ApiException {
+    return  putUserVerifier(createPutUserVerifierRequest(userId, verifierId, body));
+  }
+
+  /**
+   * Update a verifier
+   * 
+   * @param userId User ID (required)
+   * @param verifierId Verifier ID (required)
+   * @param body Verifier Update (required)
+   * @return Verifier
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Verifier> putUserVerifierWithHttpInfo(String userId, String verifierId, UpdateVerifierRequest body) throws IOException {
+    return putUserVerifier(createPutUserVerifierRequest(userId, verifierId, body).withHttpInfo());
+  }
+
+  private PutUserVerifierRequest createPutUserVerifierRequest(String userId, String verifierId, UpdateVerifierRequest body) {
+    return PutUserVerifierRequest.builder()
+            .withUserId(userId)
+
+            .withVerifierId(verifierId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a verifier
+   * 
+   * @param request The request object
+   * @return Verifier
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Verifier putUserVerifier(PutUserVerifierRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Verifier> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Verifier>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a verifier
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Verifier> putUserVerifier(ApiRequest<UpdateVerifierRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Verifier>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Verifier> response = (ApiResponse<Verifier>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Verifier> response = (ApiResponse<Verifier>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

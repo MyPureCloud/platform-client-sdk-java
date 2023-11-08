@@ -238,6 +238,20 @@ public class GetWorkforcemanagementManagementunitWeekShifttradesRequest {
 	    return this;
 	} 
 
+	private Boolean forceDownloadService;
+	public Boolean getForceDownloadService() {
+		return this.forceDownloadService;
+	}
+
+	public void setForceDownloadService(Boolean forceDownloadService) {
+		this.forceDownloadService = forceDownloadService;
+	}
+
+	public GetWorkforcemanagementManagementunitWeekShifttradesRequest withForceDownloadService(Boolean forceDownloadService) {
+	    this.setForceDownloadService(forceDownloadService);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -278,6 +292,9 @@ public class GetWorkforcemanagementManagementunitWeekShifttradesRequest {
 
                 .withQueryParameters("evaluateMatches", "", evaluateMatches)
         
+
+                .withQueryParameters("forceDownloadService", "", forceDownloadService)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -316,6 +333,11 @@ public class GetWorkforcemanagementManagementunitWeekShifttradesRequest {
 
 		public Builder withEvaluateMatches(Boolean evaluateMatches) {
 			request.setEvaluateMatches(evaluateMatches);
+			return this;
+		}
+
+		public Builder withForceDownloadService(Boolean forceDownloadService) {
+			request.setForceDownloadService(forceDownloadService);
 			return this;
 		}
 

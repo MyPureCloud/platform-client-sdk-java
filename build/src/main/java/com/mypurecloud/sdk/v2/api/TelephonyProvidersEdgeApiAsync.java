@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.DIDEntityListing;
 import com.mypurecloud.sdk.v2.model.DIDNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.DIDPool;
 import com.mypurecloud.sdk.v2.model.DIDPoolEntityListing;
+import com.mypurecloud.sdk.v2.model.DisableSiteConnectionsRequest;
 import com.mypurecloud.sdk.v2.model.DomainCertificateAuthority;
 import com.mypurecloud.sdk.v2.model.DomainEdgeSoftwareUpdateDto;
 import com.mypurecloud.sdk.v2.model.DomainEdgeSoftwareVersionDtoEntityListing;
@@ -68,6 +69,7 @@ import com.mypurecloud.sdk.v2.model.PhoneMetaBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 import com.mypurecloud.sdk.v2.model.PhysicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.Site;
+import com.mypurecloud.sdk.v2.model.SiteConnections;
 import com.mypurecloud.sdk.v2.model.SiteEntityListing;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
@@ -153,6 +155,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberpl
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteOutboundroutesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteSiteconnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSitesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkRequest;
@@ -164,6 +167,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbaseset
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkswithrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTelephonyProvidersEdgesSiteSiteconnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticNslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticPingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticRouteRequest;
@@ -200,6 +204,7 @@ import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesPhonebaseset
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteNumberplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteOutboundrouteRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteSiteconnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesTrunkbasesettingRequest;
 
 import java.io.IOException;
@@ -5554,6 +5559,81 @@ public class TelephonyProvidersEdgeApiAsync {
   }
 
   /**
+   * Get site connections for a site.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SiteConnections> getTelephonyProvidersEdgesSiteSiteconnectionsAsync(GetTelephonyProvidersEdgesSiteSiteconnectionsRequest request, final AsyncApiCallback<SiteConnections> callback) {
+    try {
+      final SettableFuture<SiteConnections> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SiteConnections>() {}, new AsyncApiCallback<ApiResponse<SiteConnections>>() {
+        @Override
+        public void onCompleted(ApiResponse<SiteConnections> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get site connections for a site.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SiteConnections>> getTelephonyProvidersEdgesSiteSiteconnectionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SiteConnections>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SiteConnections>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SiteConnections>() {}, new AsyncApiCallback<ApiResponse<SiteConnections>>() {
+        @Override
+        public void onCompleted(ApiResponse<SiteConnections> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the list of Sites.
    * 
    * @param request the request object
@@ -6367,6 +6447,81 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TrunkRecordingEnabledCount> response = (ApiResponse<TrunkRecordingEnabledCount>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Disable site connections for a site.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SiteConnections> patchTelephonyProvidersEdgesSiteSiteconnectionsAsync(PatchTelephonyProvidersEdgesSiteSiteconnectionsRequest request, final AsyncApiCallback<SiteConnections> callback) {
+    try {
+      final SettableFuture<SiteConnections> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SiteConnections>() {}, new AsyncApiCallback<ApiResponse<SiteConnections>>() {
+        @Override
+        public void onCompleted(ApiResponse<SiteConnections> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Disable site connections for a site.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SiteConnections>> patchTelephonyProvidersEdgesSiteSiteconnectionsAsync(ApiRequest<DisableSiteConnectionsRequest> request, final AsyncApiCallback<ApiResponse<SiteConnections>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SiteConnections>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SiteConnections>() {}, new AsyncApiCallback<ApiResponse<SiteConnections>>() {
+        @Override
+        public void onCompleted(ApiResponse<SiteConnections> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -9067,6 +9222,81 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update site connections for a site.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SiteConnections> putTelephonyProvidersEdgesSiteSiteconnectionsAsync(PutTelephonyProvidersEdgesSiteSiteconnectionsRequest request, final AsyncApiCallback<SiteConnections> callback) {
+    try {
+      final SettableFuture<SiteConnections> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SiteConnections>() {}, new AsyncApiCallback<ApiResponse<SiteConnections>>() {
+        @Override
+        public void onCompleted(ApiResponse<SiteConnections> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update site connections for a site.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SiteConnections>> putTelephonyProvidersEdgesSiteSiteconnectionsAsync(ApiRequest<SiteConnections> request, final AsyncApiCallback<ApiResponse<SiteConnections>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SiteConnections>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SiteConnections>() {}, new AsyncApiCallback<ApiResponse<SiteConnections>>() {
+        @Override
+        public void onCompleted(ApiResponse<SiteConnections> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

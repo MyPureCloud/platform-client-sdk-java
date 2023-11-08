@@ -150,6 +150,8 @@ import com.mypurecloud.sdk.v2.model.VideoConferenceDetails;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
 import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatTyping;
+import com.mypurecloud.sdk.v2.model.WhatsAppEmbeddedSignupIntegrationActivationRequest;
+import com.mypurecloud.sdk.v2.model.WhatsAppEmbeddedSignupIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegration;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
@@ -295,6 +297,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegration
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingSupportedcontentSupportedContentIdRequest;
@@ -369,6 +372,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrations
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSupportedcontentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsParticipantsAttributesSearchRequest;
@@ -11702,6 +11706,88 @@ public class ConversationsApi {
   }
 
   /**
+   * Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
+   * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+   * @param integrationId Integration ID (required)
+   * @param body WhatsAppEmbeddedSignupIntegrationActivationRequest (required)
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(String integrationId, WhatsAppEmbeddedSignupIntegrationActivationRequest body) throws IOException, ApiException {
+    return  patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(createPatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
+   * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+   * @param integrationId Integration ID (required)
+   * @param body WhatsAppEmbeddedSignupIntegrationActivationRequest (required)
+   * @return WhatsAppIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegration> patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdWithHttpInfo(String integrationId, WhatsAppEmbeddedSignupIntegrationActivationRequest body) throws IOException {
+    return patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(createPatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest createPatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest(String integrationId, WhatsAppEmbeddedSignupIntegrationActivationRequest body) {
+    return PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
+   * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+   * @param request The request object
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WhatsAppIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
+   * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegration> patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(ApiRequest<WhatsAppEmbeddedSignupIntegrationActivationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update or activate a WhatsApp messaging integration
    * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
    * @param integrationId Integration ID (required)
@@ -17690,23 +17776,25 @@ public class ConversationsApi {
   }
 
   /**
-   * Create a WhatsApp Integration
-   * You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
+   * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
+   * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
    * @param body WhatsAppIntegrationRequest (required)
    * @return WhatsAppIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(WhatsAppIntegrationRequest body) throws IOException, ApiException {
     return  postConversationsMessagingIntegrationsWhatsapp(createPostConversationsMessagingIntegrationsWhatsappRequest(body));
   }
 
   /**
-   * Create a WhatsApp Integration
-   * You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
+   * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
+   * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
    * @param body WhatsAppIntegrationRequest (required)
    * @return WhatsAppIntegration
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<WhatsAppIntegration> postConversationsMessagingIntegrationsWhatsappWithHttpInfo(WhatsAppIntegrationRequest body) throws IOException {
     return postConversationsMessagingIntegrationsWhatsapp(createPostConversationsMessagingIntegrationsWhatsappRequest(body).withHttpInfo());
@@ -17720,12 +17808,13 @@ public class ConversationsApi {
   }
 
   /**
-   * Create a WhatsApp Integration
-   * You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
+   * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
+   * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
    * @param request The request object
    * @return WhatsAppIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(PostConversationsMessagingIntegrationsWhatsappRequest request) throws IOException, ApiException {
     try {
@@ -17739,13 +17828,92 @@ public class ConversationsApi {
   }
 
   /**
-   * Create a WhatsApp Integration
-   * You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
+   * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
+   * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+   */
+  public ApiResponse<WhatsAppIntegration> postConversationsMessagingIntegrationsWhatsapp(ApiRequest<WhatsAppIntegrationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a WhatsApp Integration using the WhatsApp embedded signup flow
+   * Use the access token returned from the embedded signup flow to obtain a list of available phone numbers that can be associated with the created integration. The returned WhatsApp integration will initially have a createStatus of Initiated until the list of available phone numbers can be obtained from the provider. Please run a GET on the created integration until it returns a createStatus of Completed, and the list of available phone numbers obtained from the provider. You can then specify one of the available phone numbers in the PATCH call on the integration to activate it.
+   * @param body WhatsAppEmbeddedSignupIntegrationRequest (required)
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(WhatsAppEmbeddedSignupIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(createPostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest(body));
+  }
+
+  /**
+   * Create a WhatsApp Integration using the WhatsApp embedded signup flow
+   * Use the access token returned from the embedded signup flow to obtain a list of available phone numbers that can be associated with the created integration. The returned WhatsApp integration will initially have a createStatus of Initiated until the list of available phone numbers can be obtained from the provider. Please run a GET on the created integration until it returns a createStatus of Completed, and the list of available phone numbers obtained from the provider. You can then specify one of the available phone numbers in the PATCH call on the integration to activate it.
+   * @param body WhatsAppEmbeddedSignupIntegrationRequest (required)
+   * @return WhatsAppIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegration> postConversationsMessagingIntegrationsWhatsappEmbeddedsignupWithHttpInfo(WhatsAppEmbeddedSignupIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(createPostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest createPostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest(WhatsAppEmbeddedSignupIntegrationRequest body) {
+    return PostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a WhatsApp Integration using the WhatsApp embedded signup flow
+   * Use the access token returned from the embedded signup flow to obtain a list of available phone numbers that can be associated with the created integration. The returned WhatsApp integration will initially have a createStatus of Initiated until the list of available phone numbers can be obtained from the provider. Please run a GET on the created integration until it returns a createStatus of Completed, and the list of available phone numbers obtained from the provider. You can then specify one of the available phone numbers in the PATCH call on the integration to activate it.
+   * @param request The request object
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(PostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WhatsAppIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a WhatsApp Integration using the WhatsApp embedded signup flow
+   * Use the access token returned from the embedded signup flow to obtain a list of available phone numbers that can be associated with the created integration. The returned WhatsApp integration will initially have a createStatus of Initiated until the list of available phone numbers can be obtained from the provider. Please run a GET on the created integration until it returns a createStatus of Completed, and the list of available phone numbers obtained from the provider. You can then specify one of the available phone numbers in the PATCH call on the integration to activate it.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WhatsAppIntegration> postConversationsMessagingIntegrationsWhatsapp(ApiRequest<WhatsAppIntegrationRequest> request) throws IOException {
+  public ApiResponse<WhatsAppIntegration> postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(ApiRequest<WhatsAppEmbeddedSignupIntegrationRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<WhatsAppIntegration>() {});
     }

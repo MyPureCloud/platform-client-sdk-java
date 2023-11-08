@@ -102,14 +102,14 @@ public class AgentlessEmailSendRequestDto  implements Serializable {
 
 
   /**
-   * The identifier of the conversation.
+   * The identifier of the conversation. This must be an email interaction.
    **/
   public AgentlessEmailSendRequestDto conversationId(String conversationId) {
     this.conversationId = conversationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The identifier of the conversation.")
+  @ApiModelProperty(example = "null", value = "The identifier of the conversation. This must be an email interaction.")
   @JsonProperty("conversationId")
   public String getConversationId() {
     return conversationId;

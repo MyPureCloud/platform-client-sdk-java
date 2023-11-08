@@ -46,14 +46,14 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
 
 
   /**
-   * The IDs of the users to query.  Omit to query all user schedules in the management unit. 
+   * The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned
    **/
   public BuQueryAgentSchedulesRequest userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The IDs of the users to query.  Omit to query all user schedules in the management unit. ")
+  @ApiModelProperty(example = "null", value = "The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned")
   @JsonProperty("userIds")
   public List<String> getUserIds() {
     return userIds;

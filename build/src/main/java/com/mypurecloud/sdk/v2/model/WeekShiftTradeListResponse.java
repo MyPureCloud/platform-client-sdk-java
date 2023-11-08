@@ -25,6 +25,7 @@ import java.io.Serializable;
 public class WeekShiftTradeListResponse  implements Serializable {
   
   private List<WeekShiftTradeResponse> entities = new ArrayList<WeekShiftTradeResponse>();
+  private String downloadUrl = null;
 
   
   /**
@@ -44,6 +45,24 @@ public class WeekShiftTradeListResponse  implements Serializable {
   }
 
 
+  /**
+   * URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
+   **/
+  public WeekShiftTradeListResponse downloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl")
+  @JsonProperty("downloadUrl")
+  public String getDownloadUrl() {
+    return downloadUrl;
+  }
+  public void setDownloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -54,12 +73,13 @@ public class WeekShiftTradeListResponse  implements Serializable {
     }
     WeekShiftTradeListResponse weekShiftTradeListResponse = (WeekShiftTradeListResponse) o;
 
-    return Objects.equals(this.entities, weekShiftTradeListResponse.entities);
+    return Objects.equals(this.entities, weekShiftTradeListResponse.entities) &&
+            Objects.equals(this.downloadUrl, weekShiftTradeListResponse.downloadUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities);
+    return Objects.hash(entities, downloadUrl);
   }
 
   @Override
@@ -68,6 +88,7 @@ public class WeekShiftTradeListResponse  implements Serializable {
     sb.append("class WeekShiftTradeListResponse {\n");
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

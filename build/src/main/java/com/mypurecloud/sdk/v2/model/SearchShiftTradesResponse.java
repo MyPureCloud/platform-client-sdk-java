@@ -25,6 +25,7 @@ import java.io.Serializable;
 public class SearchShiftTradesResponse  implements Serializable {
   
   private List<SearchShiftTradeResponse> trades = new ArrayList<SearchShiftTradeResponse>();
+  private String downloadUrl = null;
 
   
   /**
@@ -45,6 +46,24 @@ public class SearchShiftTradesResponse  implements Serializable {
   }
 
 
+  /**
+   * URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
+   **/
+  public SearchShiftTradesResponse downloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl")
+  @JsonProperty("downloadUrl")
+  public String getDownloadUrl() {
+    return downloadUrl;
+  }
+  public void setDownloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -55,12 +74,13 @@ public class SearchShiftTradesResponse  implements Serializable {
     }
     SearchShiftTradesResponse searchShiftTradesResponse = (SearchShiftTradesResponse) o;
 
-    return Objects.equals(this.trades, searchShiftTradesResponse.trades);
+    return Objects.equals(this.trades, searchShiftTradesResponse.trades) &&
+            Objects.equals(this.downloadUrl, searchShiftTradesResponse.downloadUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trades);
+    return Objects.hash(trades, downloadUrl);
   }
 
   @Override
@@ -69,6 +89,7 @@ public class SearchShiftTradesResponse  implements Serializable {
     sb.append("class SearchShiftTradesResponse {\n");
     
     sb.append("    trades: ").append(toIndentedString(trades)).append("\n");
+    sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

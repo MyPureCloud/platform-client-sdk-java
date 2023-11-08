@@ -25,7 +25,7 @@ title: AppEventResponse
 | **searchQuery** | <!----><!---->**String**<!----> | Represents the keywords in a customer search query. |  [optional] |
 | **attributes** | <!----><!---->[**Map&lt;String, CustomEventAttribute&gt;**](CustomEventAttribute.html)<!----> | User-defined attributes associated with a particular event. |  [optional] |
 | **traits** | <!----><!---->[**Map&lt;String, CustomEventAttribute&gt;**](CustomEventAttribute.html)<!----> | Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, name, phone). |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **externalContact** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The external contact associated with this app event. |  [optional] |
 {: class="table table-striped"}
 

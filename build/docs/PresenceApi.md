@@ -226,7 +226,7 @@ null (empty response body)
 
 
 
-> [OrganizationPresenceDefinition](OrganizationPresenceDefinition.html) getPresenceDefinition0(definitionId)
+> [OrganizationPresenceDefinition](OrganizationPresenceDefinition.html) getPresenceDefinition0(definitionId, localeCode)
 
 Get a Presence Definition
 
@@ -261,8 +261,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 PresenceApi apiInstance = new PresenceApi();
 String definitionId = "definitionId_example"; // String | Presence Definition ID
+String localeCode = "localeCode_example"; // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
 try {
-    OrganizationPresenceDefinition result = apiInstance.getPresenceDefinition0(definitionId);
+    OrganizationPresenceDefinition result = apiInstance.getPresenceDefinition0(definitionId, localeCode);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PresenceApi#getPresenceDefinition0");
@@ -276,6 +277,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **definitionId** | **String**| Presence Definition ID | 
+| **localeCode** | **String**| The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional]<br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW 
 {: class="table-striped"}
 
 
@@ -289,7 +291,7 @@ try {
 
 
 
-> [OrganizationPresenceDefinitionEntityListing](OrganizationPresenceDefinitionEntityListing.html) getPresenceDefinitions0(deactivated, divisionId)
+> [OrganizationPresenceDefinitionEntityListing](OrganizationPresenceDefinitionEntityListing.html) getPresenceDefinitions0(deactivated, divisionId, localeCode)
 
 Get a list of Presence Definitions
 
@@ -325,8 +327,9 @@ Configuration.setDefaultApiClient(apiClient);
 PresenceApi apiInstance = new PresenceApi();
 String deactivated = "false"; // String | Deactivated query can be TRUE or FALSE
 List<String> divisionId = Arrays.asList(null); // List<String> | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+String localeCode = "localeCode_example"; // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
 try {
-    OrganizationPresenceDefinitionEntityListing result = apiInstance.getPresenceDefinitions0(deactivated, divisionId);
+    OrganizationPresenceDefinitionEntityListing result = apiInstance.getPresenceDefinitions0(deactivated, divisionId, localeCode);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PresenceApi#getPresenceDefinitions0");
@@ -341,6 +344,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **deactivated** | **String**| Deactivated query can be TRUE or FALSE | [optional] [default to false] 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional] 
+| **localeCode** | **String**| The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional]<br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW 
 {: class="table-striped"}
 
 
@@ -1689,7 +1693,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 PresenceApi apiInstance = new PresenceApi();
-List<UserPresence> body = Arrays.asList(new UserPresence()); // List<UserPresence> | List of User presences
+List<MutableUserPresence> body = Arrays.asList(new MutableUserPresence()); // List<MutableUserPresence> | List of User presences
 try {
     List<UserPresence> result = apiInstance.putUsersPresencesBulk(body);
     System.out.println(result);
@@ -1704,7 +1708,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;UserPresence&gt;**](UserPresence.html)| List of User presences | 
+| **body** | [**List&lt;MutableUserPresence&gt;**](MutableUserPresence.html)| List of User presences | 
 {: class="table-striped"}
 
 

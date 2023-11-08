@@ -2241,7 +2241,7 @@ public class QualityApi {
 
   /**
    * Get the list of evaluation forms
-   * 
+   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -2260,7 +2260,7 @@ public class QualityApi {
 
   /**
    * Get the list of evaluation forms
-   * 
+   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -2299,7 +2299,7 @@ public class QualityApi {
 
   /**
    * Get the list of evaluation forms
-   * 
+   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
    * @param request The request object
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
@@ -2318,7 +2318,7 @@ public class QualityApi {
 
   /**
    * Get the list of evaluation forms
-   * 
+   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -97,6 +97,7 @@ title: KnowledgeImport
 | FI_FI | &quot;fi-FI&quot; | 
 | NB_NO | &quot;nb-NO&quot; | 
 | DA_DK | &quot;da-DK&quot; | 
+| JA_JP | &quot;ja-JP&quot; | 
 {: class="table table-striped"}
 
 

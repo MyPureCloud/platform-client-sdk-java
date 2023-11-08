@@ -120,7 +120,7 @@ public class GetFlowsInstanceRequest {
 
 	public enum expandValues { 
 		BOTS("bots"),
-		DATA("data");
+		DATAACTIONS("dataActions");
 
 		private String value;
 

@@ -78,6 +78,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesSiteNumberplansClassifications**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplansClassifications) | Get a list of Classifications for this Site |
 | [**getTelephonyProvidersEdgesSiteOutboundroute**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteOutboundroute) | Get an outbound route |
 | [**getTelephonyProvidersEdgesSiteOutboundroutes**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteOutboundroutes) | Get outbound routes |
+| [**getTelephonyProvidersEdgesSiteSiteconnections**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteSiteconnections) | Get site connections for a site. |
 | [**getTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSites) | Get the list of Sites. |
 | [**getTelephonyProvidersEdgesTimezones**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTimezones) | Get a list of Edge-compatible time zones |
 | [**getTelephonyProvidersEdgesTrunk**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunk) | Get a Trunk by ID |
@@ -89,6 +90,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesTrunks**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunks) | Get the list of available trunks. |
 | [**getTelephonyProvidersEdgesTrunksMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunksMetrics) | Get the metrics for a list of trunks. |
 | [**getTelephonyProvidersEdgesTrunkswithrecording**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkswithrecording) | Get Counts of trunks that have recording disabled or enabled |
+| [**patchTelephonyProvidersEdgesSiteSiteconnections**](TelephonyProvidersEdgeApi.html#patchTelephonyProvidersEdgesSiteSiteconnections) | Disable site connections for a site. |
 | [**postTelephonyProvidersEdgeDiagnosticNslookup**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticNslookup) | Nslookup request command to collect networking-related information from an Edge for a target IP or host. |
 | [**postTelephonyProvidersEdgeDiagnosticPing**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticPing) | Ping Request command to collect networking-related information from an Edge for a target IP or host. |
 | [**postTelephonyProvidersEdgeDiagnosticRoute**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticRoute) | Route request command to collect networking-related information from an Edge for a target IP or host. |
@@ -125,6 +127,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putTelephonyProvidersEdgesSite**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesSite) | Update a Site by ID. |
 | [**putTelephonyProvidersEdgesSiteNumberplans**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesSiteNumberplans) | Update the list of Number Plans. A user can update maximum 200 number plans at a time. |
 | [**putTelephonyProvidersEdgesSiteOutboundroute**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesSiteOutboundroute) | Update outbound route |
+| [**putTelephonyProvidersEdgesSiteSiteconnections**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesSiteSiteconnections) | Update site connections for a site. |
 | [**putTelephonyProvidersEdgesTrunkbasesetting**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesTrunkbasesetting) | Update a Trunk Base Settings object by ID |
 {: class="table-striped"}
 
@@ -4650,6 +4653,68 @@ try {
 
 [**OutboundRouteBaseEntityListing**](OutboundRouteBaseEntityListing.html)
 
+<a name="getTelephonyProvidersEdgesSiteSiteconnections"></a>
+
+# **getTelephonyProvidersEdgesSiteSiteconnections**
+
+
+
+> [SiteConnections](SiteConnections.html) getTelephonyProvidersEdgesSiteSiteconnections(siteId)
+
+Get site connections for a site.
+
+Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String siteId = "siteId_example"; // String | Site ID
+try {
+    SiteConnections result = apiInstance.getTelephonyProvidersEdgesSiteSiteconnections(siteId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesSiteSiteconnections");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **siteId** | **String**| Site ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SiteConnections**](SiteConnections.html)
+
 <a name="getTelephonyProvidersEdgesSites"></a>
 
 # **getTelephonyProvidersEdgesSites**
@@ -5373,6 +5438,69 @@ try {
 ### Return type
 
 [**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount.html)
+
+<a name="patchTelephonyProvidersEdgesSiteSiteconnections"></a>
+
+# **patchTelephonyProvidersEdgesSiteSiteconnections**
+
+
+
+> [SiteConnections](SiteConnections.html) patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
+
+Disable site connections for a site.
+
+Wraps PATCH /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String siteId = "siteId_example"; // String | Site ID
+DisableSiteConnectionsRequest body = new DisableSiteConnectionsRequest(); // DisableSiteConnectionsRequest | Site
+try {
+    SiteConnections result = apiInstance.patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#patchTelephonyProvidersEdgesSiteSiteconnections");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **siteId** | **String**| Site ID | 
+| **body** | [**DisableSiteConnectionsRequest**](DisableSiteConnectionsRequest.html)| Site | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SiteConnections**](SiteConnections.html)
 
 <a name="postTelephonyProvidersEdgeDiagnosticNslookup"></a>
 
@@ -7620,6 +7748,69 @@ try {
 ### Return type
 
 [**OutboundRouteBase**](OutboundRouteBase.html)
+
+<a name="putTelephonyProvidersEdgesSiteSiteconnections"></a>
+
+# **putTelephonyProvidersEdgesSiteSiteconnections**
+
+
+
+> [SiteConnections](SiteConnections.html) putTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
+
+Update site connections for a site.
+
+Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String siteId = "siteId_example"; // String | Site ID
+SiteConnections body = new SiteConnections(); // SiteConnections | Site
+try {
+    SiteConnections result = apiInstance.putTelephonyProvidersEdgesSiteSiteconnections(siteId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesSiteSiteconnections");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **siteId** | **String**| Site ID | 
+| **body** | [**SiteConnections**](SiteConnections.html)| Site | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SiteConnections**](SiteConnections.html)
 
 <a name="putTelephonyProvidersEdgesTrunkbasesetting"></a>
 

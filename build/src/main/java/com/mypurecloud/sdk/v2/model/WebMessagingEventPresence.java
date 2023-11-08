@@ -43,7 +43,9 @@ public class WebMessagingEventPresence  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     JOIN("Join"),
-    DISCONNECT("Disconnect");
+    DISCONNECT("Disconnect"),
+    CLEAR("Clear"),
+    SIGNIN("SignIn");
 
     private String value;
 

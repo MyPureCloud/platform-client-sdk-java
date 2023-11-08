@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.HrisTimeOffType;
 import com.mypurecloud.sdk.v2.model.TimeOffLimitReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
@@ -79,6 +80,7 @@ public class TimeOffPlan  implements Serializable {
   }
   private AutoApprovalRuleEnum autoApprovalRule = null;
   private Integer daysBeforeStartToExpireFromWaitlist = null;
+  private HrisTimeOffType hrisTimeOffType = null;
   private Boolean active = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
@@ -182,6 +184,24 @@ public class TimeOffPlan  implements Serializable {
 
 
   /**
+   * Time off type, if this time off plan is associated with the integration.
+   **/
+  public TimeOffPlan hrisTimeOffType(HrisTimeOffType hrisTimeOffType) {
+    this.hrisTimeOffType = hrisTimeOffType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Time off type, if this time off plan is associated with the integration.")
+  @JsonProperty("hrisTimeOffType")
+  public HrisTimeOffType getHrisTimeOffType() {
+    return hrisTimeOffType;
+  }
+  public void setHrisTimeOffType(HrisTimeOffType hrisTimeOffType) {
+    this.hrisTimeOffType = hrisTimeOffType;
+  }
+
+
+  /**
    * Whether this time off plan is currently being used by agents.
    **/
   public TimeOffPlan active(Boolean active) {
@@ -240,6 +260,7 @@ public class TimeOffPlan  implements Serializable {
             Objects.equals(this.timeOffLimits, timeOffPlan.timeOffLimits) &&
             Objects.equals(this.autoApprovalRule, timeOffPlan.autoApprovalRule) &&
             Objects.equals(this.daysBeforeStartToExpireFromWaitlist, timeOffPlan.daysBeforeStartToExpireFromWaitlist) &&
+            Objects.equals(this.hrisTimeOffType, timeOffPlan.hrisTimeOffType) &&
             Objects.equals(this.active, timeOffPlan.active) &&
             Objects.equals(this.metadata, timeOffPlan.metadata) &&
             Objects.equals(this.selfUri, timeOffPlan.selfUri);
@@ -247,7 +268,7 @@ public class TimeOffPlan  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, activityCodeIds, timeOffLimits, autoApprovalRule, daysBeforeStartToExpireFromWaitlist, active, metadata, selfUri);
+    return Objects.hash(id, name, activityCodeIds, timeOffLimits, autoApprovalRule, daysBeforeStartToExpireFromWaitlist, hrisTimeOffType, active, metadata, selfUri);
   }
 
   @Override
@@ -261,6 +282,7 @@ public class TimeOffPlan  implements Serializable {
     sb.append("    timeOffLimits: ").append(toIndentedString(timeOffLimits)).append("\n");
     sb.append("    autoApprovalRule: ").append(toIndentedString(autoApprovalRule)).append("\n");
     sb.append("    daysBeforeStartToExpireFromWaitlist: ").append(toIndentedString(daysBeforeStartToExpireFromWaitlist)).append("\n");
+    sb.append("    hrisTimeOffType: ").append(toIndentedString(hrisTimeOffType)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.MutableUserPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinition;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinitionEntityListing;
@@ -303,12 +304,13 @@ public class PresenceApi {
    * 
    * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
+   * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresenceDefinition
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationPresenceDefinition getPresenceDefinition0(String definitionId) throws IOException, ApiException {
-    return  getPresenceDefinition0(createGetPresenceDefinition0Request(definitionId));
+  public OrganizationPresenceDefinition getPresenceDefinition0(String definitionId, String localeCode) throws IOException, ApiException {
+    return  getPresenceDefinition0(createGetPresenceDefinition0Request(definitionId, localeCode));
   }
 
   /**
@@ -316,16 +318,19 @@ public class PresenceApi {
    * 
    * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
+   * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresenceDefinition
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceDefinition> getPresenceDefinition0WithHttpInfo(String definitionId) throws IOException {
-    return getPresenceDefinition0(createGetPresenceDefinition0Request(definitionId).withHttpInfo());
+  public ApiResponse<OrganizationPresenceDefinition> getPresenceDefinition0WithHttpInfo(String definitionId, String localeCode) throws IOException {
+    return getPresenceDefinition0(createGetPresenceDefinition0Request(definitionId, localeCode).withHttpInfo());
   }
 
-  private GetPresenceDefinition0Request createGetPresenceDefinition0Request(String definitionId) {
+  private GetPresenceDefinition0Request createGetPresenceDefinition0Request(String definitionId, String localeCode) {
     return GetPresenceDefinition0Request.builder()
             .withDefinitionId(definitionId)
+
+            .withLocaleCode(localeCode)
 
             .build();
   }
@@ -386,12 +391,13 @@ public class PresenceApi {
    * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
    * @param divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
+   * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresenceDefinitionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(String deactivated, List<String> divisionId) throws IOException, ApiException {
-    return  getPresenceDefinitions0(createGetPresenceDefinitions0Request(deactivated, divisionId));
+  public OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(String deactivated, List<String> divisionId, String localeCode) throws IOException, ApiException {
+    return  getPresenceDefinitions0(createGetPresenceDefinitions0Request(deactivated, divisionId, localeCode));
   }
 
   /**
@@ -400,18 +406,21 @@ public class PresenceApi {
    * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
    * @param divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
+   * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresenceDefinitionEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceDefinitionEntityListing> getPresenceDefinitions0WithHttpInfo(String deactivated, List<String> divisionId) throws IOException {
-    return getPresenceDefinitions0(createGetPresenceDefinitions0Request(deactivated, divisionId).withHttpInfo());
+  public ApiResponse<OrganizationPresenceDefinitionEntityListing> getPresenceDefinitions0WithHttpInfo(String deactivated, List<String> divisionId, String localeCode) throws IOException {
+    return getPresenceDefinitions0(createGetPresenceDefinitions0Request(deactivated, divisionId, localeCode).withHttpInfo());
   }
 
-  private GetPresenceDefinitions0Request createGetPresenceDefinitions0Request(String deactivated, List<String> divisionId) {
+  private GetPresenceDefinitions0Request createGetPresenceDefinitions0Request(String deactivated, List<String> divisionId, String localeCode) {
     return GetPresenceDefinitions0Request.builder()
             .withDeactivated(deactivated)
 
             .withDivisionId(divisionId)
+
+            .withLocaleCode(localeCode)
 
             .build();
   }
@@ -2164,7 +2173,7 @@ public class PresenceApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<UserPresence> putUsersPresencesBulk(List<UserPresence> body) throws IOException, ApiException {
+  public List<UserPresence> putUsersPresencesBulk(List<MutableUserPresence> body) throws IOException, ApiException {
     return  putUsersPresencesBulk(createPutUsersPresencesBulkRequest(body));
   }
 
@@ -2175,11 +2184,11 @@ public class PresenceApi {
    * @return List<UserPresence>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<UserPresence>> putUsersPresencesBulkWithHttpInfo(List<UserPresence> body) throws IOException {
+  public ApiResponse<List<UserPresence>> putUsersPresencesBulkWithHttpInfo(List<MutableUserPresence> body) throws IOException {
     return putUsersPresencesBulk(createPutUsersPresencesBulkRequest(body).withHttpInfo());
   }
 
-  private PutUsersPresencesBulkRequest createPutUsersPresencesBulkRequest(List<UserPresence> body) {
+  private PutUsersPresencesBulkRequest createPutUsersPresencesBulkRequest(List<MutableUserPresence> body) {
     return PutUsersPresencesBulkRequest.builder()
             .withBody(body)
 
@@ -2212,7 +2221,7 @@ public class PresenceApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<UserPresence>> putUsersPresencesBulk(ApiRequest<List<UserPresence>> request) throws IOException {
+  public ApiResponse<List<UserPresence>> putUsersPresencesBulk(ApiRequest<List<MutableUserPresence>> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<List<UserPresence>>() {});
     }

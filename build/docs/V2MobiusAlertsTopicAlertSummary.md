@@ -9,7 +9,7 @@ title: V2MobiusAlertsTopicAlertSummary
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | <!----><!---->[**List&lt;V2MobiusAlertsTopicAlertSummaryEntity&gt;**](V2MobiusAlertsTopicAlertSummaryEntity.html)<!----> |  |  [optional] |
-| **conversationId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **conversation** | <!----><!---->[**V2MobiusAlertsTopicAddressableEntityRef**](V2MobiusAlertsTopicAddressableEntityRef.html)<!----> |  |  [optional] |
 | **metricType** | [**MetricTypeEnum**](#MetricTypeEnum)<!----> |  |  [optional] |
 | **isTeamMemberRuleSummary** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **teamMemberRuleSummary** | <!----><!---->**Boolean**<!----> |  |  [optional] |

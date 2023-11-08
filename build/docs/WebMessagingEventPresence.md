@@ -21,6 +21,8 @@ title: WebMessagingEventPresence
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | JOIN | &quot;Join&quot; | 
 | DISCONNECT | &quot;Disconnect&quot; | 
+| CLEAR | &quot;Clear&quot; | 
+| SIGNIN | &quot;SignIn&quot; | 
 {: class="table table-striped"}
 
 

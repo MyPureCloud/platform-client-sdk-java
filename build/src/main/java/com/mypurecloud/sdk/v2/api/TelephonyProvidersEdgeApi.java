@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.DIDEntityListing;
 import com.mypurecloud.sdk.v2.model.DIDNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.DIDPool;
 import com.mypurecloud.sdk.v2.model.DIDPoolEntityListing;
+import com.mypurecloud.sdk.v2.model.DisableSiteConnectionsRequest;
 import com.mypurecloud.sdk.v2.model.DomainCertificateAuthority;
 import com.mypurecloud.sdk.v2.model.DomainEdgeSoftwareUpdateDto;
 import com.mypurecloud.sdk.v2.model.DomainEdgeSoftwareVersionDtoEntityListing;
@@ -65,6 +66,7 @@ import com.mypurecloud.sdk.v2.model.PhoneMetaBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 import com.mypurecloud.sdk.v2.model.PhysicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.Site;
+import com.mypurecloud.sdk.v2.model.SiteConnections;
 import com.mypurecloud.sdk.v2.model.SiteEntityListing;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
@@ -150,6 +152,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberpl
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteOutboundroutesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteSiteconnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSitesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkRequest;
@@ -161,6 +164,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbaseset
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkswithrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTelephonyProvidersEdgesSiteSiteconnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticNslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticPingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticRouteRequest;
@@ -197,6 +201,7 @@ import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesPhonebaseset
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteNumberplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteOutboundrouteRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteSiteconnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesTrunkbasesettingRequest;
 
 import java.io.IOException;
@@ -6119,6 +6124,84 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
+   * Get site connections for a site.
+   * 
+   * @param siteId Site ID (required)
+   * @return SiteConnections
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SiteConnections getTelephonyProvidersEdgesSiteSiteconnections(String siteId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesSiteSiteconnections(createGetTelephonyProvidersEdgesSiteSiteconnectionsRequest(siteId));
+  }
+
+  /**
+   * Get site connections for a site.
+   * 
+   * @param siteId Site ID (required)
+   * @return SiteConnections
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SiteConnections> getTelephonyProvidersEdgesSiteSiteconnectionsWithHttpInfo(String siteId) throws IOException {
+    return getTelephonyProvidersEdgesSiteSiteconnections(createGetTelephonyProvidersEdgesSiteSiteconnectionsRequest(siteId).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesSiteSiteconnectionsRequest createGetTelephonyProvidersEdgesSiteSiteconnectionsRequest(String siteId) {
+    return GetTelephonyProvidersEdgesSiteSiteconnectionsRequest.builder()
+            .withSiteId(siteId)
+
+            .build();
+  }
+
+  /**
+   * Get site connections for a site.
+   * 
+   * @param request The request object
+   * @return SiteConnections
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SiteConnections getTelephonyProvidersEdgesSiteSiteconnections(GetTelephonyProvidersEdgesSiteSiteconnectionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SiteConnections> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SiteConnections>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get site connections for a site.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SiteConnections> getTelephonyProvidersEdgesSiteSiteconnections(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SiteConnections>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get the list of Sites.
    * 
    * @param pageSize Page size (optional, default to 25)
@@ -7068,6 +7151,88 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TrunkRecordingEnabledCount> response = (ApiResponse<TrunkRecordingEnabledCount>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Disable site connections for a site.
+   * 
+   * @param siteId Site ID (required)
+   * @param body Site (required)
+   * @return SiteConnections
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SiteConnections patchTelephonyProvidersEdgesSiteSiteconnections(String siteId, DisableSiteConnectionsRequest body) throws IOException, ApiException {
+    return  patchTelephonyProvidersEdgesSiteSiteconnections(createPatchTelephonyProvidersEdgesSiteSiteconnectionsRequest(siteId, body));
+  }
+
+  /**
+   * Disable site connections for a site.
+   * 
+   * @param siteId Site ID (required)
+   * @param body Site (required)
+   * @return SiteConnections
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SiteConnections> patchTelephonyProvidersEdgesSiteSiteconnectionsWithHttpInfo(String siteId, DisableSiteConnectionsRequest body) throws IOException {
+    return patchTelephonyProvidersEdgesSiteSiteconnections(createPatchTelephonyProvidersEdgesSiteSiteconnectionsRequest(siteId, body).withHttpInfo());
+  }
+
+  private PatchTelephonyProvidersEdgesSiteSiteconnectionsRequest createPatchTelephonyProvidersEdgesSiteSiteconnectionsRequest(String siteId, DisableSiteConnectionsRequest body) {
+    return PatchTelephonyProvidersEdgesSiteSiteconnectionsRequest.builder()
+            .withSiteId(siteId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Disable site connections for a site.
+   * 
+   * @param request The request object
+   * @return SiteConnections
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SiteConnections patchTelephonyProvidersEdgesSiteSiteconnections(PatchTelephonyProvidersEdgesSiteSiteconnectionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SiteConnections> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SiteConnections>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Disable site connections for a site.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SiteConnections> patchTelephonyProvidersEdgesSiteSiteconnections(ApiRequest<DisableSiteConnectionsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SiteConnections>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9975,6 +10140,88 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update site connections for a site.
+   * 
+   * @param siteId Site ID (required)
+   * @param body Site (required)
+   * @return SiteConnections
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SiteConnections putTelephonyProvidersEdgesSiteSiteconnections(String siteId, SiteConnections body) throws IOException, ApiException {
+    return  putTelephonyProvidersEdgesSiteSiteconnections(createPutTelephonyProvidersEdgesSiteSiteconnectionsRequest(siteId, body));
+  }
+
+  /**
+   * Update site connections for a site.
+   * 
+   * @param siteId Site ID (required)
+   * @param body Site (required)
+   * @return SiteConnections
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SiteConnections> putTelephonyProvidersEdgesSiteSiteconnectionsWithHttpInfo(String siteId, SiteConnections body) throws IOException {
+    return putTelephonyProvidersEdgesSiteSiteconnections(createPutTelephonyProvidersEdgesSiteSiteconnectionsRequest(siteId, body).withHttpInfo());
+  }
+
+  private PutTelephonyProvidersEdgesSiteSiteconnectionsRequest createPutTelephonyProvidersEdgesSiteSiteconnectionsRequest(String siteId, SiteConnections body) {
+    return PutTelephonyProvidersEdgesSiteSiteconnectionsRequest.builder()
+            .withSiteId(siteId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update site connections for a site.
+   * 
+   * @param request The request object
+   * @return SiteConnections
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SiteConnections putTelephonyProvidersEdgesSiteSiteconnections(PutTelephonyProvidersEdgesSiteSiteconnectionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SiteConnections> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SiteConnections>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update site connections for a site.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SiteConnections> putTelephonyProvidersEdgesSiteSiteconnections(ApiRequest<SiteConnections> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SiteConnections>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SiteConnections> response = (ApiResponse<SiteConnections>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

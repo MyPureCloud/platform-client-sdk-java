@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicAddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicAlertSummaryEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,7 +27,7 @@ import java.io.Serializable;
 public class V2MobiusAlertsTopicAlertSummary  implements Serializable {
   
   private List<V2MobiusAlertsTopicAlertSummaryEntity> entities = new ArrayList<V2MobiusAlertsTopicAlertSummaryEntity>();
-  private String conversationId = null;
+  private V2MobiusAlertsTopicAddressableEntityRef conversation = null;
 
   private static class MetricTypeEnumDeserializer extends StdDeserializer<MetricTypeEnum> {
     public MetricTypeEnumDeserializer() {
@@ -99,18 +100,18 @@ public class V2MobiusAlertsTopicAlertSummary  implements Serializable {
 
   /**
    **/
-  public V2MobiusAlertsTopicAlertSummary conversationId(String conversationId) {
-    this.conversationId = conversationId;
+  public V2MobiusAlertsTopicAlertSummary conversation(V2MobiusAlertsTopicAddressableEntityRef conversation) {
+    this.conversation = conversation;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("conversationId")
-  public String getConversationId() {
-    return conversationId;
+  @JsonProperty("conversation")
+  public V2MobiusAlertsTopicAddressableEntityRef getConversation() {
+    return conversation;
   }
-  public void setConversationId(String conversationId) {
-    this.conversationId = conversationId;
+  public void setConversation(V2MobiusAlertsTopicAddressableEntityRef conversation) {
+    this.conversation = conversation;
   }
 
 
@@ -176,7 +177,7 @@ public class V2MobiusAlertsTopicAlertSummary  implements Serializable {
     V2MobiusAlertsTopicAlertSummary v2MobiusAlertsTopicAlertSummary = (V2MobiusAlertsTopicAlertSummary) o;
 
     return Objects.equals(this.entities, v2MobiusAlertsTopicAlertSummary.entities) &&
-            Objects.equals(this.conversationId, v2MobiusAlertsTopicAlertSummary.conversationId) &&
+            Objects.equals(this.conversation, v2MobiusAlertsTopicAlertSummary.conversation) &&
             Objects.equals(this.metricType, v2MobiusAlertsTopicAlertSummary.metricType) &&
             Objects.equals(this.isTeamMemberRuleSummary, v2MobiusAlertsTopicAlertSummary.isTeamMemberRuleSummary) &&
             Objects.equals(this.teamMemberRuleSummary, v2MobiusAlertsTopicAlertSummary.teamMemberRuleSummary);
@@ -184,7 +185,7 @@ public class V2MobiusAlertsTopicAlertSummary  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, conversationId, metricType, isTeamMemberRuleSummary, teamMemberRuleSummary);
+    return Objects.hash(entities, conversation, metricType, isTeamMemberRuleSummary, teamMemberRuleSummary);
   }
 
   @Override
@@ -193,7 +194,7 @@ public class V2MobiusAlertsTopicAlertSummary  implements Serializable {
     sb.append("class V2MobiusAlertsTopicAlertSummary {\n");
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
-    sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
+    sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("    metricType: ").append(toIndentedString(metricType)).append("\n");
     sb.append("    isTeamMemberRuleSummary: ").append(toIndentedString(isTeamMemberRuleSummary)).append("\n");
     sb.append("    teamMemberRuleSummary: ").append(toIndentedString(teamMemberRuleSummary)).append("\n");

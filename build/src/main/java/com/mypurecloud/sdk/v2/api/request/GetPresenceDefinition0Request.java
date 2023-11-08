@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.MutableUserPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinition;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinitionEntityListing;
@@ -48,6 +49,73 @@ public class GetPresenceDefinition0Request {
 	    this.setDefinitionId(definitionId);
 	    return this;
 	} 
+
+	private String localeCode;
+	public String getLocaleCode() {
+		return this.localeCode;
+	}
+
+	public void setLocaleCode(String localeCode) {
+		this.localeCode = localeCode;
+	}
+
+	public GetPresenceDefinition0Request withLocaleCode(String localeCode) {
+	    this.setLocaleCode(localeCode);
+	    return this;
+	} 
+
+	public enum localeCodeValues { 
+		ALL("ALL"),
+		HE("he"),
+		FR("fr"),
+		EN_US("en_US"),
+		DA("da"),
+		DE("de"),
+		IT("it"),
+		CS("cs"),
+		ES("es"),
+		FI("fi"),
+		AR("ar"),
+		JA("ja"),
+		KO("ko"),
+		NL("nl"),
+		NO("no"),
+		PL("pl"),
+		PT_BR("pt_BR"),
+		PT_PT("pt_PT"),
+		RU("ru"),
+		SV("sv"),
+		TH("th"),
+		TR("tr"),
+		UK("uk"),
+		ZH_CN("zh_CN"),
+		ZH_TW("zh_TW");
+
+		private String value;
+
+		localeCodeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static localeCodeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (localeCodeValues value : localeCodeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return localeCodeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -79,6 +147,9 @@ public class GetPresenceDefinition0Request {
         return ApiRequestBuilder.create("GET", "/api/v2/presence/definitions/{definitionId}")
                 .withPathParameter("definitionId", definitionId)
         
+
+                .withQueryParameters("localeCode", "", localeCode)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -108,6 +179,20 @@ public class GetPresenceDefinition0Request {
 		public Builder withDefinitionId(String definitionId) {
 			request.setDefinitionId(definitionId);
 			return this;
+		}
+
+		public Builder withLocaleCode(String localeCode) {
+			request.setLocaleCode(localeCode);
+			return this;
+		}
+
+
+
+		
+		public Builder withLocaleCode(localeCodeValues localeCode) {
+		    request.setLocaleCode(localeCode.toString());
+
+		    return this;
 		}
 
 

@@ -109,6 +109,8 @@ title: ConversationDetailQueryPredicate
 | TMONITORING | &quot;tMonitoring&quot; | 
 | TMONITORINGCOMPLETE | &quot;tMonitoringComplete&quot; | 
 | TNOTRESPONDING | &quot;tNotResponding&quot; | 
+| TPARK | &quot;tPark&quot; | 
+| TPARKCOMPLETE | &quot;tParkComplete&quot; | 
 | TSHORTABANDON | &quot;tShortAbandon&quot; | 
 | TTALK | &quot;tTalk&quot; | 
 | TTALKCOMPLETE | &quot;tTalkComplete&quot; | 

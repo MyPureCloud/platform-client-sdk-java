@@ -76,6 +76,7 @@ public class AdminTimeOffRequestPatch  implements Serializable {
   }
   private StatusEnum status = null;
   private String activityCodeId = null;
+  private Boolean paid = null;
   private String notes = null;
   private List<String> fullDayManagementUnitDates = new ArrayList<String>();
   private List<Date> partialDayStartDateTimes = new ArrayList<Date>();
@@ -122,6 +123,24 @@ public class AdminTimeOffRequestPatch  implements Serializable {
 
 
   /**
+   * Whether this is a paid time off request
+   **/
+  public AdminTimeOffRequestPatch paid(Boolean paid) {
+    this.paid = paid;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this is a paid time off request")
+  @JsonProperty("paid")
+  public Boolean getPaid() {
+    return paid;
+  }
+  public void setPaid(Boolean paid) {
+    this.paid = paid;
+  }
+
+
+  /**
    * Notes about the time off request
    **/
   public AdminTimeOffRequestPatch notes(String notes) {
@@ -140,14 +159,14 @@ public class AdminTimeOffRequestPatch  implements Serializable {
 
 
   /**
-   * A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.
+   * A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone.
    **/
   public AdminTimeOffRequestPatch fullDayManagementUnitDates(List<String> fullDayManagementUnitDates) {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.")
+  @ApiModelProperty(example = "null", value = "A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone.")
   @JsonProperty("fullDayManagementUnitDates")
   public List<String> getFullDayManagementUnitDates() {
     return fullDayManagementUnitDates;
@@ -259,6 +278,7 @@ public class AdminTimeOffRequestPatch  implements Serializable {
 
     return Objects.equals(this.status, adminTimeOffRequestPatch.status) &&
             Objects.equals(this.activityCodeId, adminTimeOffRequestPatch.activityCodeId) &&
+            Objects.equals(this.paid, adminTimeOffRequestPatch.paid) &&
             Objects.equals(this.notes, adminTimeOffRequestPatch.notes) &&
             Objects.equals(this.fullDayManagementUnitDates, adminTimeOffRequestPatch.fullDayManagementUnitDates) &&
             Objects.equals(this.partialDayStartDateTimes, adminTimeOffRequestPatch.partialDayStartDateTimes) &&
@@ -270,7 +290,7 @@ public class AdminTimeOffRequestPatch  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, activityCodeId, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes, durationMinutes, payableMinutes, metadata);
+    return Objects.hash(status, activityCodeId, paid, notes, fullDayManagementUnitDates, partialDayStartDateTimes, dailyDurationMinutes, durationMinutes, payableMinutes, metadata);
   }
 
   @Override
@@ -280,6 +300,7 @@ public class AdminTimeOffRequestPatch  implements Serializable {
     
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
+    sb.append("    paid: ").append(toIndentedString(paid)).append("\n");
     sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");

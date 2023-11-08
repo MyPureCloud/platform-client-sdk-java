@@ -11,7 +11,6 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.AppEventRequestSession;
 import com.mypurecloud.sdk.v2.model.CustomEventAttribute;
 import com.mypurecloud.sdk.v2.model.Device;
 import com.mypurecloud.sdk.v2.model.JourneyApp;
@@ -38,7 +37,6 @@ public class AppEventRequest  implements Serializable {
   private SdkLibrary sdkLibrary = null;
   private NetworkConnectivity networkConnectivity = null;
   private String referrerUrl = null;
-  private AppEventRequestSession session = null;
   private String searchQuery = null;
   private Map<String, CustomEventAttribute> attributes = null;
   private Map<String, CustomEventAttribute> traits = null;
@@ -173,24 +171,6 @@ public class AppEventRequest  implements Serializable {
 
 
   /**
-   * Contains information about the app session the event belongs to. A session is expected to end once the application is closed or a customer has been idle for more than 30 minutes. Each session is tied to a single customer and a customer can be linked to multiple unique sessions.
-   **/
-  public AppEventRequest session(AppEventRequestSession session) {
-    this.session = session;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Contains information about the app session the event belongs to. A session is expected to end once the application is closed or a customer has been idle for more than 30 minutes. Each session is tied to a single customer and a customer can be linked to multiple unique sessions.")
-  @JsonProperty("session")
-  public AppEventRequestSession getSession() {
-    return session;
-  }
-  public void setSession(AppEventRequestSession session) {
-    this.session = session;
-  }
-
-
-  /**
    * Represents the keywords in a customer search query.
    **/
   public AppEventRequest searchQuery(String searchQuery) {
@@ -263,14 +243,14 @@ public class AppEventRequest  implements Serializable {
 
 
   /**
-   * Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * UTC timestamp indicating when the event actually took place, events older than an hour will be rejected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AppEventRequest createdDate(Date createdDate) {
     this.createdDate = createdDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "UTC timestamp indicating when the event actually took place, events older than an hour will be rejected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;
@@ -297,7 +277,6 @@ public class AppEventRequest  implements Serializable {
             Objects.equals(this.sdkLibrary, appEventRequest.sdkLibrary) &&
             Objects.equals(this.networkConnectivity, appEventRequest.networkConnectivity) &&
             Objects.equals(this.referrerUrl, appEventRequest.referrerUrl) &&
-            Objects.equals(this.session, appEventRequest.session) &&
             Objects.equals(this.searchQuery, appEventRequest.searchQuery) &&
             Objects.equals(this.attributes, appEventRequest.attributes) &&
             Objects.equals(this.traits, appEventRequest.traits) &&
@@ -307,7 +286,7 @@ public class AppEventRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventName, screenName, app, device, sdkLibrary, networkConnectivity, referrerUrl, session, searchQuery, attributes, traits, customerCookieId, createdDate);
+    return Objects.hash(eventName, screenName, app, device, sdkLibrary, networkConnectivity, referrerUrl, searchQuery, attributes, traits, customerCookieId, createdDate);
   }
 
   @Override
@@ -322,7 +301,6 @@ public class AppEventRequest  implements Serializable {
     sb.append("    sdkLibrary: ").append(toIndentedString(sdkLibrary)).append("\n");
     sb.append("    networkConnectivity: ").append(toIndentedString(networkConnectivity)).append("\n");
     sb.append("    referrerUrl: ").append(toIndentedString(referrerUrl)).append("\n");
-    sb.append("    session: ").append(toIndentedString(session)).append("\n");
     sb.append("    searchQuery: ").append(toIndentedString(searchQuery)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    traits: ").append(toIndentedString(traits)).append("\n");

@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.ActionEventRequest;
 import com.mypurecloud.sdk.v2.model.ActionMap;
 import com.mypurecloud.sdk.v2.model.ActionMapEstimateRequest;
 import com.mypurecloud.sdk.v2.model.ActionMapEstimateResult;
@@ -22,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.AppEventRequest;
 import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.DeploymentPing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateJobAsyncResponse;
 import com.mypurecloud.sdk.v2.model.EventListing;
@@ -67,6 +69,7 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyDeploymentCustomerPingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesAttributionsJobRequest;
@@ -89,6 +92,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRe
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsEstimatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentActioneventRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentAppeventsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesAttributionsJobsRequest;
@@ -1425,6 +1429,108 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActionTemplateListing> response = (ApiResponse<ActionTemplateListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Send a ping.
+   * 
+   * @param deploymentId The ID of the deployment sending the ping. (required)
+   * @param customerCookieId ID of the customer associated with the ping. (required)
+   * @param sessionId UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session (required)
+   * @param dl Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions. (optional)
+   * @param dt Document Title.  A human readable name for the page or screen (optional)
+   * @param appNamespace Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions (optional)
+   * @param sinceLastBeaconMilliseconds How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. (optional)
+   * @return DeploymentPing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DeploymentPing getJourneyDeploymentCustomerPing(String deploymentId, String customerCookieId, String sessionId, String dl, String dt, String appNamespace, Long sinceLastBeaconMilliseconds) throws IOException, ApiException {
+    return  getJourneyDeploymentCustomerPing(createGetJourneyDeploymentCustomerPingRequest(deploymentId, customerCookieId, sessionId, dl, dt, appNamespace, sinceLastBeaconMilliseconds));
+  }
+
+  /**
+   * Send a ping.
+   * 
+   * @param deploymentId The ID of the deployment sending the ping. (required)
+   * @param customerCookieId ID of the customer associated with the ping. (required)
+   * @param sessionId UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session (required)
+   * @param dl Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions. (optional)
+   * @param dt Document Title.  A human readable name for the page or screen (optional)
+   * @param appNamespace Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions (optional)
+   * @param sinceLastBeaconMilliseconds How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. (optional)
+   * @return DeploymentPing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DeploymentPing> getJourneyDeploymentCustomerPingWithHttpInfo(String deploymentId, String customerCookieId, String sessionId, String dl, String dt, String appNamespace, Long sinceLastBeaconMilliseconds) throws IOException {
+    return getJourneyDeploymentCustomerPing(createGetJourneyDeploymentCustomerPingRequest(deploymentId, customerCookieId, sessionId, dl, dt, appNamespace, sinceLastBeaconMilliseconds).withHttpInfo());
+  }
+
+  private GetJourneyDeploymentCustomerPingRequest createGetJourneyDeploymentCustomerPingRequest(String deploymentId, String customerCookieId, String sessionId, String dl, String dt, String appNamespace, Long sinceLastBeaconMilliseconds) {
+    return GetJourneyDeploymentCustomerPingRequest.builder()
+            .withDeploymentId(deploymentId)
+
+            .withCustomerCookieId(customerCookieId)
+
+            .withSessionId(sessionId)
+
+            .withDl(dl)
+
+            .withDt(dt)
+
+            .withAppNamespace(appNamespace)
+
+            .withSinceLastBeaconMilliseconds(sinceLastBeaconMilliseconds)
+
+            .build();
+  }
+
+  /**
+   * Send a ping.
+   * 
+   * @param request The request object
+   * @return DeploymentPing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DeploymentPing getJourneyDeploymentCustomerPing(GetJourneyDeploymentCustomerPingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DeploymentPing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DeploymentPing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send a ping.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DeploymentPing> getJourneyDeploymentCustomerPing(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DeploymentPing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DeploymentPing> response = (ApiResponse<DeploymentPing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DeploymentPing> response = (ApiResponse<DeploymentPing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3250,9 +3356,87 @@ public class JourneyApi {
   }
 
   /**
+   * Sends an action event, which is used for changing the state of actions that have been offered to the user.
+   * 
+   * @param deploymentId The ID of the deployment sending the beacon. (required)
+   * @param body  (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postJourneyDeploymentActionevent(String deploymentId, ActionEventRequest body) throws IOException, ApiException {
+     postJourneyDeploymentActionevent(createPostJourneyDeploymentActioneventRequest(deploymentId, body));
+  }
+
+  /**
+   * Sends an action event, which is used for changing the state of actions that have been offered to the user.
+   * 
+   * @param deploymentId The ID of the deployment sending the beacon. (required)
+   * @param body  (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postJourneyDeploymentActioneventWithHttpInfo(String deploymentId, ActionEventRequest body) throws IOException {
+    return postJourneyDeploymentActionevent(createPostJourneyDeploymentActioneventRequest(deploymentId, body).withHttpInfo());
+  }
+
+  private PostJourneyDeploymentActioneventRequest createPostJourneyDeploymentActioneventRequest(String deploymentId, ActionEventRequest body) {
+    return PostJourneyDeploymentActioneventRequest.builder()
+            .withDeploymentId(deploymentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Sends an action event, which is used for changing the state of actions that have been offered to the user.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postJourneyDeploymentActionevent(PostJourneyDeploymentActioneventRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Sends an action event, which is used for changing the state of actions that have been offered to the user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postJourneyDeploymentActionevent(ApiRequest<ActionEventRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Send a journey app event, used for tracking customer activity on an application.
    * 
-   * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deploymentId The ID of the deployment sending the app event. (required)
    * @param body  (optional)
    * @return AppEventResponse
@@ -3266,7 +3450,6 @@ public class JourneyApi {
   /**
    * Send a journey app event, used for tracking customer activity on an application.
    * 
-   * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deploymentId The ID of the deployment sending the app event. (required)
    * @param body  (optional)
    * @return AppEventResponse
@@ -3288,7 +3471,6 @@ public class JourneyApi {
   /**
    * Send a journey app event, used for tracking customer activity on an application.
    * 
-   * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AppEventResponse
    * @throws ApiException if the request fails on the server
@@ -3308,7 +3490,6 @@ public class JourneyApi {
   /**
    * Send a journey app event, used for tracking customer activity on an application.
    * 
-   * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

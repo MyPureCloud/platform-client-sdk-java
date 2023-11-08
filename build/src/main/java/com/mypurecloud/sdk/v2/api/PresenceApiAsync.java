@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.MutableUserPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinition;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinitionEntityListing;
@@ -2074,7 +2075,7 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<UserPresence>>> putUsersPresencesBulkAsync(ApiRequest<List<UserPresence>> request, final AsyncApiCallback<ApiResponse<List<UserPresence>>> callback) {
+  public Future<ApiResponse<List<UserPresence>>> putUsersPresencesBulkAsync(ApiRequest<List<MutableUserPresence>> request, final AsyncApiCallback<ApiResponse<List<UserPresence>>> callback) {
     try {
       final SettableFuture<ApiResponse<List<UserPresence>>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

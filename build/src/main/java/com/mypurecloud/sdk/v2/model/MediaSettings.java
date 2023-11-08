@@ -53,13 +53,14 @@ public class MediaSettings  implements Serializable {
 
 
   /**
+   * The alerting timeout for the media type, in seconds
    **/
   public MediaSettings alertingTimeoutSeconds(Integer alertingTimeoutSeconds) {
     this.alertingTimeoutSeconds = alertingTimeoutSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The alerting timeout for the media type, in seconds")
   @JsonProperty("alertingTimeoutSeconds")
   public Integer getAlertingTimeoutSeconds() {
     return alertingTimeoutSeconds;
@@ -70,13 +71,14 @@ public class MediaSettings  implements Serializable {
 
 
   /**
+   * The targeted service level for the media type
    **/
   public MediaSettings serviceLevel(ServiceLevel serviceLevel) {
     this.serviceLevel = serviceLevel;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The targeted service level for the media type")
   @JsonProperty("serviceLevel")
   public ServiceLevel getServiceLevel() {
     return serviceLevel;
@@ -87,13 +89,14 @@ public class MediaSettings  implements Serializable {
 
 
   /**
+   * How long to play the alerting tone for an auto-answer interaction
    **/
   public MediaSettings autoAnswerAlertToneSeconds(Double autoAnswerAlertToneSeconds) {
     this.autoAnswerAlertToneSeconds = autoAnswerAlertToneSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "How long to play the alerting tone for an auto-answer interaction")
   @JsonProperty("autoAnswerAlertToneSeconds")
   public Double getAutoAnswerAlertToneSeconds() {
     return autoAnswerAlertToneSeconds;
@@ -104,13 +107,14 @@ public class MediaSettings  implements Serializable {
 
 
   /**
+   * How long to play the alerting tone for a manual-answer interaction
    **/
   public MediaSettings manualAnswerAlertToneSeconds(Double manualAnswerAlertToneSeconds) {
     this.manualAnswerAlertToneSeconds = manualAnswerAlertToneSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "How long to play the alerting tone for a manual-answer interaction")
   @JsonProperty("manualAnswerAlertToneSeconds")
   public Double getManualAnswerAlertToneSeconds() {
     return manualAnswerAlertToneSeconds;

@@ -210,6 +210,20 @@ public class GetWorkforcemanagementBusinessunitActivitycodesRequest {
 	    return this;
 	} 
 
+	private Boolean forceDownloadService;
+	public Boolean getForceDownloadService() {
+		return this.forceDownloadService;
+	}
+
+	public void setForceDownloadService(Boolean forceDownloadService) {
+		this.forceDownloadService = forceDownloadService;
+	}
+
+	public GetWorkforcemanagementBusinessunitActivitycodesRequest withForceDownloadService(Boolean forceDownloadService) {
+	    this.setForceDownloadService(forceDownloadService);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -240,6 +254,9 @@ public class GetWorkforcemanagementBusinessunitActivitycodesRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes")
                 .withPathParameter("businessUnitId", businessUnitId)
         
+
+                .withQueryParameters("forceDownloadService", "", forceDownloadService)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -268,6 +285,11 @@ public class GetWorkforcemanagementBusinessunitActivitycodesRequest {
 
 		public Builder withBusinessUnitId(String businessUnitId) {
 			request.setBusinessUnitId(businessUnitId);
+			return this;
+		}
+
+		public Builder withForceDownloadService(Boolean forceDownloadService) {
+			request.setForceDownloadService(forceDownloadService);
 			return this;
 		}
 

@@ -139,6 +139,8 @@ public class EdgeTrunkBase  implements Serializable {
     }
   }
   private TrunkTypeEnum trunkType = null;
+  private DomainEntityRef site = null;
+  private DomainEntityRef inboundSite = null;
   private String selfUri = null;
 
   
@@ -323,6 +325,42 @@ public class EdgeTrunkBase  implements Serializable {
   }
 
 
+  /**
+   * Used to determine the media regions for inbound and outbound calls through a trunk. Also determines the dial plan to use for calls that came in on a trunk and have to be sent out on it as well.
+   **/
+  public EdgeTrunkBase site(DomainEntityRef site) {
+    this.site = site;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Used to determine the media regions for inbound and outbound calls through a trunk. Also determines the dial plan to use for calls that came in on a trunk and have to be sent out on it as well.")
+  @JsonProperty("site")
+  public DomainEntityRef getSite() {
+    return site;
+  }
+  public void setSite(DomainEntityRef site) {
+    this.site = site;
+  }
+
+
+  /**
+   * Allows a customer to set the site to which inbound calls will be routed
+   **/
+  public EdgeTrunkBase inboundSite(DomainEntityRef inboundSite) {
+    this.inboundSite = inboundSite;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Allows a customer to set the site to which inbound calls will be routed")
+  @JsonProperty("inboundSite")
+  public DomainEntityRef getInboundSite() {
+    return inboundSite;
+  }
+  public void setInboundSite(DomainEntityRef inboundSite) {
+    this.inboundSite = inboundSite;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -355,12 +393,14 @@ public class EdgeTrunkBase  implements Serializable {
             Objects.equals(this.trunkMetabase, edgeTrunkBase.trunkMetabase) &&
             Objects.equals(this.properties, edgeTrunkBase.properties) &&
             Objects.equals(this.trunkType, edgeTrunkBase.trunkType) &&
+            Objects.equals(this.site, edgeTrunkBase.site) &&
+            Objects.equals(this.inboundSite, edgeTrunkBase.inboundSite) &&
             Objects.equals(this.selfUri, edgeTrunkBase.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, trunkMetabase, properties, trunkType, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, trunkMetabase, properties, trunkType, site, inboundSite, selfUri);
   }
 
   @Override
@@ -383,6 +423,8 @@ public class EdgeTrunkBase  implements Serializable {
     sb.append("    trunkMetabase: ").append(toIndentedString(trunkMetabase)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    trunkType: ").append(toIndentedString(trunkType)).append("\n");
+    sb.append("    site: ").append(toIndentedString(site)).append("\n");
+    sb.append("    inboundSite: ").append(toIndentedString(inboundSite)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

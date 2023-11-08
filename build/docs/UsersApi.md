@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | Remove routing skill from user |
 | [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | Clear associated station |
 | [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | Clear default station |
+| [**deleteUserVerifier**](UsersApi.html#deleteUserVerifier) | Delete a verifier |
 | [**getAnalyticsUsersAggregatesJob**](UsersApi.html#getAnalyticsUsersAggregatesJob) | Get status for async query for user aggregates |
 | [**getAnalyticsUsersAggregatesJobResults**](UsersApi.html#getAnalyticsUsersAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsUsersDetailsJob**](UsersApi.html#getAnalyticsUsersDetailsJob) | Get status for async query for user details |
@@ -47,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserStation**](UsersApi.html#getUserStation) | Get station information for user |
 | [**getUserSuperiors**](UsersApi.html#getUserSuperiors) | Get superiors |
 | [**getUserTrustors**](UsersApi.html#getUserTrustors) | List the organizations that have authorized/trusted the user. |
+| [**getUserVerifiers**](UsersApi.html#getUserVerifiers) | Get a list of verifiers |
 | [**getUsers**](UsersApi.html#getUsers) | Get the list of available users. |
 | [**getUsersDevelopmentActivities**](UsersApi.html#getUsersDevelopmentActivities) | Get list of Development Activities |
 | [**getUsersDevelopmentActivitiesMe**](UsersApi.html#getUsersDevelopmentActivitiesMe) | Get list of Development Activities for current user |
@@ -61,7 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | Update routing language proficiency or state. |
 | [**patchUserRoutinglanguagesBulk**](UsersApi.html#patchUserRoutinglanguagesBulk) | Add bulk routing language to user. Max limit 50 languages |
 | [**patchUserRoutingskillsBulk**](UsersApi.html#patchUserRoutingskillsBulk) | Bulk add routing skills to user |
-| [**patchUsersBulk**](UsersApi.html#patchUsersBulk) | Update bulk acd autoanswer on users |
+| [**patchUsersBulk**](UsersApi.html#patchUsersBulk) | Update bulk acd autoanswer on users. Max 50 users can be updated at a time. |
 | [**postAnalyticsUsersActivityQuery**](UsersApi.html#postAnalyticsUsersActivityQuery) | Query for user activity observations |
 | [**postAnalyticsUsersAggregatesJobs**](UsersApi.html#postAnalyticsUsersAggregatesJobs) | Query for user aggregates asynchronously |
 | [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | Query for user aggregates |
@@ -95,6 +97,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putUserState**](UsersApi.html#putUserState) | Update user state information. |
 | [**putUserStationAssociatedstationStationId**](UsersApi.html#putUserStationAssociatedstationStationId) | Set associated station |
 | [**putUserStationDefaultstationStationId**](UsersApi.html#putUserStationDefaultstationStationId) | Set default station |
+| [**putUserVerifier**](UsersApi.html#putUserVerifier) | Update a verifier |
 {: class="table-striped"}
 
 <a name="deleteAnalyticsUsersDetailsJob"></a>
@@ -581,6 +584,68 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteUserVerifier"></a>
+
+# **deleteUserVerifier**
+
+
+
+> Void deleteUserVerifier(userId, verifierId)
+
+Delete a verifier
+
+Wraps DELETE /api/v2/users/{userId}/verifiers/{verifierId}  
+
+Requires ANY permissions: 
+
+* mfa:verifier:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+String verifierId = "verifierId_example"; // String | Verifier ID
+try {
+    apiInstance.deleteUserVerifier(userId, verifierId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#deleteUserVerifier");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **verifierId** | **String**| Verifier ID | 
 {: class="table-striped"}
 
 
@@ -2614,6 +2679,67 @@ try {
 
 [**TrustorEntityListing**](TrustorEntityListing.html)
 
+<a name="getUserVerifiers"></a>
+
+# **getUserVerifiers**
+
+
+
+> [VerifierEntityListing](VerifierEntityListing.html) getUserVerifiers(userId)
+
+Get a list of verifiers
+
+Wraps GET /api/v2/users/{userId}/verifiers  
+
+Requires ANY permissions: 
+
+* mfa:verifier:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+try {
+    VerifierEntityListing result = apiInstance.getUserVerifiers(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUserVerifiers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**VerifierEntityListing**](VerifierEntityListing.html)
+
 <a name="getUsers"></a>
 
 # **getUsers**
@@ -3577,7 +3703,7 @@ try {
 
 > [UserEntityListing](UserEntityListing.html) patchUsersBulk(body)
 
-Update bulk acd autoanswer on users
+Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
 
 Wraps PATCH /api/v2/users/bulk  
 
@@ -5706,4 +5832,69 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="putUserVerifier"></a>
+
+# **putUserVerifier**
+
+
+
+> [Verifier](Verifier.html) putUserVerifier(userId, verifierId, body)
+
+Update a verifier
+
+Wraps PUT /api/v2/users/{userId}/verifiers/{verifierId}  
+
+Requires ANY permissions: 
+
+* mfa:verifier:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+String verifierId = "verifierId_example"; // String | Verifier ID
+UpdateVerifierRequest body = new UpdateVerifierRequest(); // UpdateVerifierRequest | Verifier Update
+try {
+    Verifier result = apiInstance.putUserVerifier(userId, verifierId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#putUserVerifier");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **verifierId** | **String**| Verifier ID | 
+| **body** | [**UpdateVerifierRequest**](UpdateVerifierRequest.html)| Verifier Update | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Verifier**](Verifier.html)
 

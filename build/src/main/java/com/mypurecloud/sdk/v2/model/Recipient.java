@@ -114,14 +114,14 @@ public class Recipient  implements Serializable {
 
 
   /**
-   * An automate flow object which defines the set of actions to be taken, when a message is received by this provisioned phone number.
+   * An automate flow object which defines the set of actions to be taken, when a message is received by this recipient.
    **/
   public Recipient flow(Flow flow) {
     this.flow = flow;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An automate flow object which defines the set of actions to be taken, when a message is received by this provisioned phone number.")
+  @ApiModelProperty(example = "null", value = "An automate flow object which defines the set of actions to be taken, when a message is received by this recipient.")
   @JsonProperty("flow")
   public Flow getFlow() {
     return flow;

@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.MutableUserPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinition;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceDefinitionEntityListing;
@@ -35,16 +36,16 @@ import com.mypurecloud.sdk.v2.model.UserPrimarySource;
 
 public class PutUsersPresencesBulkRequest {
 
-	private List<UserPresence> body;
-	public List<UserPresence> getBody() {
+	private List<MutableUserPresence> body;
+	public List<MutableUserPresence> getBody() {
 		return this.body;
 	}
 
-	public void setBody(List<UserPresence> body) {
+	public void setBody(List<MutableUserPresence> body) {
 		this.body = body;
 	}
 
-	public PutUsersPresencesBulkRequest withBody(List<UserPresence> body) {
+	public PutUsersPresencesBulkRequest withBody(List<MutableUserPresence> body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -68,7 +69,7 @@ public class PutUsersPresencesBulkRequest {
         return this;
     }
 
-    public ApiRequest<List<UserPresence>> withHttpInfo() {
+    public ApiRequest<List<MutableUserPresence>> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -91,7 +92,7 @@ public class PutUsersPresencesBulkRequest {
 	}
 
 
-	public static Builder builder(List<UserPresence> body) {
+	public static Builder builder(List<MutableUserPresence> body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -105,14 +106,14 @@ public class PutUsersPresencesBulkRequest {
 		}
 
 
-		public Builder withBody(List<UserPresence> body) {
+		public Builder withBody(List<MutableUserPresence> body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(List<UserPresence> body) {
+		public Builder withRequiredParams(List<MutableUserPresence> body) {
 			request.setBody(body);
 
 			return this;

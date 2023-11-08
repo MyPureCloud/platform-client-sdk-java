@@ -212,7 +212,8 @@ public class GetKnowledgeKnowledgebasesRequest {
 		SV_SE("sv-SE"),
 		FI_FI("fi-FI"),
 		NB_NO("nb-NO"),
-		DA_DK("da-DK");
+		DA_DK("da-DK"),
+		JA_JP("ja-JP");
 
 		private String value;
 

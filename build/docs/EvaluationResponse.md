@@ -23,6 +23,7 @@ title: EvaluationResponse
 | **releaseDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **assignedDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **changedDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **revisionCreatedDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **queue** | <!----><!---->[**Queue**](Queue.html)<!----> |  |  [optional] |
 | **mediaType** | <!---->[**List&lt;MediaTypeEnum&gt;**](#MediaTypeEnum)<!----> | List of different communication types used in conversation. |  [optional] |
 | **rescore** | <!----><!---->**Boolean**<!----> | Is only true when evaluation is re-scored. |  [optional] |

@@ -38,7 +38,7 @@ public class KnowledgeBaseCreateRequest  implements Serializable {
     }
   }
   /**
-   * Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK] which might have a lower accuracy.
+   * Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP] which might have a lower accuracy.
    */
  @JsonDeserialize(using = CoreLanguageEnumDeserializer.class)
   public enum CoreLanguageEnum {
@@ -76,7 +76,8 @@ public class KnowledgeBaseCreateRequest  implements Serializable {
     SV_SE("sv-SE"),
     FI_FI("fi-FI"),
     NB_NO("nb-NO"),
-    DA_DK("da-DK");
+    DA_DK("da-DK"),
+    JA_JP("ja-JP");
 
     private String value;
 
@@ -143,14 +144,14 @@ public class KnowledgeBaseCreateRequest  implements Serializable {
 
 
   /**
-   * Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK] which might have a lower accuracy.
+   * Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP] which might have a lower accuracy.
    **/
   public KnowledgeBaseCreateRequest coreLanguage(CoreLanguageEnum coreLanguage) {
     this.coreLanguage = coreLanguage;
     return this;
   }
   
-  @ApiModelProperty(example = "en-US", required = true, value = "Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK] which might have a lower accuracy.")
+  @ApiModelProperty(example = "en-US", required = true, value = "Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP] which might have a lower accuracy.")
   @JsonProperty("coreLanguage")
   public CoreLanguageEnum getCoreLanguage() {
     return coreLanguage;

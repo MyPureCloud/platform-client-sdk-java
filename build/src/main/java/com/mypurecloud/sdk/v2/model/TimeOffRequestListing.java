@@ -25,6 +25,7 @@ import java.io.Serializable;
 public class TimeOffRequestListing  implements Serializable {
   
   private List<TimeOffRequest> entities = new ArrayList<TimeOffRequest>();
+  private String downloadUrl = null;
 
   
   /**
@@ -45,6 +46,24 @@ public class TimeOffRequestListing  implements Serializable {
   }
 
 
+  /**
+   * URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
+   **/
+  public TimeOffRequestListing downloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl")
+  @JsonProperty("downloadUrl")
+  public String getDownloadUrl() {
+    return downloadUrl;
+  }
+  public void setDownloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -55,12 +74,13 @@ public class TimeOffRequestListing  implements Serializable {
     }
     TimeOffRequestListing timeOffRequestListing = (TimeOffRequestListing) o;
 
-    return Objects.equals(this.entities, timeOffRequestListing.entities);
+    return Objects.equals(this.entities, timeOffRequestListing.entities) &&
+            Objects.equals(this.downloadUrl, timeOffRequestListing.downloadUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities);
+    return Objects.hash(entities, downloadUrl);
   }
 
   @Override
@@ -69,6 +89,7 @@ public class TimeOffRequestListing  implements Serializable {
     sb.append("class TimeOffRequestListing {\n");
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

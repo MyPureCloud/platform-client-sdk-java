@@ -11,7 +11,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteChatsRoomParticipant**](ChatApi.html#deleteChatsRoomParticipant) | Remove a user from a room. |
 | [**deleteChatsRoomPinnedmessage**](ChatApi.html#deleteChatsRoomPinnedmessage) | Remove a pinned message from a room |
 | [**deleteChatsUserMessage**](ChatApi.html#deleteChatsUserMessage) | Delete a message to a user |
-| [**getChatSettings**](ChatApi.html#getChatSettings) | Get Chat Settings. |
 | [**getChatsMessage**](ChatApi.html#getChatsMessage) | Get a message |
 | [**getChatsRoom**](ChatApi.html#getChatsRoom) | Get a room |
 | [**getChatsRoomMessage**](ChatApi.html#getChatsRoomMessage) | Get messages by id(s) from a room |
@@ -20,7 +19,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getChatsThreadMessages**](ChatApi.html#getChatsThreadMessages) | Get history by thread |
 | [**getChatsUserMessage**](ChatApi.html#getChatsUserMessage) | Get messages by id(s) from a 1on1 |
 | [**getChatsUserMessages**](ChatApi.html#getChatsUserMessages) | Get 1on1 History between a user |
-| [**patchChatSettings**](ChatApi.html#patchChatSettings) | Patch Chat Settings. |
 | [**patchChatsRoom**](ChatApi.html#patchChatsRoom) | Set properties for a room |
 | [**patchChatsRoomMessage**](ChatApi.html#patchChatsRoomMessage) | Edit a message in a room |
 | [**patchChatsSettings**](ChatApi.html#patchChatsSettings) | Patch Chat Settings. |
@@ -30,7 +28,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postChatsRoomPinnedmessages**](ChatApi.html#postChatsRoomPinnedmessages) | Add pinned messages for a room, up to a maximum of 5 pinned messages |
 | [**postChatsRooms**](ChatApi.html#postChatsRooms) | Create an adhoc room |
 | [**postChatsUserMessages**](ChatApi.html#postChatsUserMessages) | Send a message to a user |
-| [**putChatSettings**](ChatApi.html#putChatSettings) | Update Chat Settings. |
 | [**putChatsSettings**](ChatApi.html#putChatsSettings) | Update Chat Settings. |
 {: class="table-striped"}
 
@@ -293,66 +290,6 @@ try {
 ### Return type
 
 null (empty response body)
-
-<a name="getChatSettings"></a>
-
-# **getChatSettings**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [ChatSettings](ChatSettings.html) getChatSettings()
-
-Get Chat Settings.
-
-This route is deprecated, please use /chats/settings instead
-
-Wraps GET /api/v2/chat/settings  
-
-Requires ANY permissions: 
-
-* chat:setting:view
-* chat:setting:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ChatApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ChatApi apiInstance = new ChatApi();
-try {
-    ChatSettings result = apiInstance.getChatSettings();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChatApi#getChatSettings");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-This endpoint does not require any parameters.
-
-
-
-### Return type
-
-[**ChatSettings**](ChatSettings.html)
 
 <a name="getChatsMessage"></a>
 
@@ -918,69 +855,6 @@ try {
 ### Return type
 
 [**ChatMessageResponse**](ChatMessageResponse.html)
-
-<a name="patchChatSettings"></a>
-
-# **patchChatSettings**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [ChatSettings](ChatSettings.html) patchChatSettings(body)
-
-Patch Chat Settings.
-
-This route is deprecated, please use /chats/settings instead
-
-Wraps PATCH /api/v2/chat/settings  
-
-Requires ANY permissions: 
-
-* chat:setting:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ChatApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ChatApi apiInstance = new ChatApi();
-ChatSettings body = new ChatSettings(); // ChatSettings | Chat
-try {
-    ChatSettings result = apiInstance.patchChatSettings(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChatApi#patchChatSettings");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ChatSettings**](ChatSettings.html)| Chat | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ChatSettings**](ChatSettings.html)
 
 <a name="patchChatsRoom"></a>
 
@@ -1569,69 +1443,6 @@ try {
 ### Return type
 
 [**ChatSendMessageResponse**](ChatSendMessageResponse.html)
-
-<a name="putChatSettings"></a>
-
-# **putChatSettings**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [ChatSettings](ChatSettings.html) putChatSettings(body)
-
-Update Chat Settings.
-
-This route is deprecated, please use /chats/settings instead
-
-Wraps PUT /api/v2/chat/settings  
-
-Requires ANY permissions: 
-
-* chat:setting:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ChatApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ChatApi apiInstance = new ChatApi();
-ChatSettings body = new ChatSettings(); // ChatSettings | Chat
-try {
-    ChatSettings result = apiInstance.putChatSettings(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChatApi#putChatSettings");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ChatSettings**](ChatSettings.html)| Chat | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ChatSettings**](ChatSettings.html)
 
 <a name="putChatsSettings"></a>
 

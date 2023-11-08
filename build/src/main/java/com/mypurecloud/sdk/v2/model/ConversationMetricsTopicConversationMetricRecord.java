@@ -88,6 +88,8 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     TMONITORING("tMonitoring"),
     TMONITORINGCOMPLETE("tMonitoringComplete"),
     TNOTRESPONDING("tNotResponding"),
+    TPARK("tPark"),
+    TPARKCOMPLETE("tParkComplete"),
     TTALK("tTalk"),
     TTALKCOMPLETE("tTalkComplete"),
     TUSERRESPONSETIME("tUserResponseTime"),

@@ -22,6 +22,7 @@ public class NotificationHandler extends Object {
     private static final Logger LOGGER = LoggerFactory.getLogger(NotificationHandler.class);
 
     private NotificationsApi notificationsApi = new NotificationsApi();
+    private String proxyHost;
     private WebSocket webSocket;
     private Channel channel;
     private Map<String, NotificationListener<?>> typeMap = new HashMap<>();
@@ -77,84 +78,8 @@ public class NotificationHandler extends Object {
         // Set web socket listener
         this.setWebSocketListener(builder.webSocketListener);
 
-        // Initialize web socket
-        WebSocketFactory factory = new WebSocketFactory();
-
         if (builder.proxyHost != null)
-            factory.getProxySettings().setServer(builder.proxyHost);
-
-        this.webSocket = factory
-                .createSocket(this.channel.getConnectUri())
-                .addListener(new WebSocketAdapter() {
-                    @Override
-                    public void onStateChanged(WebSocket websocket, WebSocketState newState) throws Exception {
-                        if (webSocketListener != null)
-                            webSocketListener.onStateChanged(newState);
-                    }
-
-                    @Override
-                    public void onConnected(WebSocket websocket, Map<String, List<String>> headers) throws Exception {
-                        if (webSocketListener != null)
-                            webSocketListener.onConnected();
-                    }
-
-                    @Override
-                    public void onConnectError(WebSocket websocket, WebSocketException exception) throws Exception {
-                        if (webSocketListener != null)
-                            webSocketListener.onConnectError(exception);
-                    }
-
-                    @Override
-                    public void onDisconnected(WebSocket websocket, WebSocketFrame serverCloseFrame, WebSocketFrame clientCloseFrame, boolean closedByServer) throws Exception {
-                        if (webSocketListener != null)
-                            webSocketListener.onDisconnected(closedByServer);
-                    }
-
-                    @Override
-                    public void onTextMessage(WebSocket websocket, String message) {
-                        try {
-                            if (LOGGER.isDebugEnabled()) {
-                                LOGGER.debug("---WEBSOCKET MESSAGE---\n"+message);
-                            }
-                            // Deserialize without knowing body type to figure out topic name
-                            JavaType genericEventType = objectMapper.getTypeFactory().constructParametricType(NotificationEvent.class, Object.class);
-                            NotificationEvent<Object> genericEventData = objectMapper.readValue(message, genericEventType);
-
-                            // Look up Listener based on topic name
-                            NotificationListener<?> specificType = typeMap.get(genericEventData.getTopicName());
-
-                            if (specificType != null) {
-                                // Deserialize to specific type provided by listener
-                                JavaType specificEventType = objectMapper.getTypeFactory().constructParametricType(NotificationEvent.class, specificType.getEventBodyClass());
-                                NotificationEvent<?> notificationEvent = (NotificationEvent<?>) objectMapper.readValue(message, specificEventType);
-
-                                // Set raw body
-                                notificationEvent.setEventBodyRaw(message);
-
-                                // Raise event
-                                specificType.onEvent(notificationEvent);
-                            } else {
-                                // Unhandled topic
-                                if (webSocketListener != null)
-                                    webSocketListener.onUnhandledEvent(message);
-                            }
-                        } catch (Exception ex) {
-                            LOGGER.error(ex.getMessage(), ex);
-                        }
-                    }
-
-                    @Override
-                    public void onError(WebSocket websocket, WebSocketException cause) throws Exception {
-                        if (webSocketListener != null)
-                            webSocketListener.onError(cause);
-                    }
-
-                    @Override
-                    public void handleCallbackError(WebSocket websocket, Throwable cause) throws Exception {
-                        if (webSocketListener != null)
-                            webSocketListener.onCallbackError(cause);
-                    }
-                });
+            this.proxyHost = builder.proxyHost;
 
         if (builder.connectAsync != null)
             this.connect(builder.connectAsync);
@@ -314,7 +239,10 @@ public class NotificationHandler extends Object {
         typeMap.clear();
     }
 
-    public void connect(boolean async) throws WebSocketException {
+    public void connect(boolean async) throws IOException, WebSocketException {
+        if (this.webSocket == null || !this.webSocket.isOpen()) {
+            this.webSocket = createWebSocket();
+        }
         if (async)
             this.webSocket.connectAsynchronously();
         else
@@ -335,5 +263,85 @@ public class NotificationHandler extends Object {
             LOGGER.error(ex.getMessage(), ex);
         }
         super.finalize();
+    }
+
+    private WebSocket createWebSocket() throws IOException {
+        WebSocketFactory factory = new WebSocketFactory();
+
+        if (this.proxyHost != null)
+            factory.getProxySettings().setServer(this.proxyHost);
+
+        return factory
+                .createSocket(this.channel.getConnectUri())
+                .addListener(new WebSocketAdapter() {
+                    @Override
+                    public void onStateChanged(WebSocket websocket, WebSocketState newState) throws Exception {
+                        if (webSocketListener != null)
+                            webSocketListener.onStateChanged(newState);
+                    }
+
+                    @Override
+                    public void onConnected(WebSocket websocket, Map<String, List<String>> headers) throws Exception {
+                        if (webSocketListener != null)
+                            webSocketListener.onConnected();
+                    }
+
+                    @Override
+                    public void onConnectError(WebSocket websocket, WebSocketException exception) throws Exception {
+                        if (webSocketListener != null)
+                            webSocketListener.onConnectError(exception);
+                    }
+
+                    @Override
+                    public void onDisconnected(WebSocket websocket, WebSocketFrame serverCloseFrame, WebSocketFrame clientCloseFrame, boolean closedByServer) throws Exception {
+                        if (webSocketListener != null)
+                            webSocketListener.onDisconnected(closedByServer);
+                    }
+
+                    @Override
+                    public void onTextMessage(WebSocket websocket, String message) {
+                        try {
+                            if (LOGGER.isDebugEnabled()) {
+                                LOGGER.debug("---WEBSOCKET MESSAGE---\n"+message);
+                            }
+                            // Deserialize without knowing body type to figure out topic name
+                            JavaType genericEventType = objectMapper.getTypeFactory().constructParametricType(NotificationEvent.class, Object.class);
+                            NotificationEvent<Object> genericEventData = objectMapper.readValue(message, genericEventType);
+
+                            // Look up Listener based on topic name
+                            NotificationListener<?> specificType = typeMap.get(genericEventData.getTopicName());
+
+                            if (specificType != null) {
+                                // Deserialize to specific type provided by listener
+                                JavaType specificEventType = objectMapper.getTypeFactory().constructParametricType(NotificationEvent.class, specificType.getEventBodyClass());
+                                NotificationEvent<?> notificationEvent = (NotificationEvent<?>) objectMapper.readValue(message, specificEventType);
+
+                                // Set raw body
+                                notificationEvent.setEventBodyRaw(message);
+
+                                // Raise event
+                                specificType.onEvent(notificationEvent);
+                            } else {
+                                // Unhandled topic
+                                if (webSocketListener != null)
+                                    webSocketListener.onUnhandledEvent(message);
+                            }
+                        } catch (Exception ex) {
+                            LOGGER.error(ex.getMessage(), ex);
+                        }
+                    }
+
+                    @Override
+                    public void onError(WebSocket websocket, WebSocketException cause) throws Exception {
+                        if (webSocketListener != null)
+                            webSocketListener.onError(cause);
+                    }
+
+                    @Override
+                    public void handleCallbackError(WebSocket websocket, Throwable cause) throws Exception {
+                        if (webSocketListener != null)
+                            webSocketListener.onCallbackError(cause);
+                    }
+                });
     }
 }

@@ -2265,28 +2265,32 @@ public class WorkforceManagementApi {
    * Get activity codes
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return BusinessUnitActivityCodeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(String businessUnitId) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitActivitycodes(createGetWorkforcemanagementBusinessunitActivitycodesRequest(businessUnitId));
+  public BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(String businessUnitId, Boolean forceDownloadService) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivitycodes(createGetWorkforcemanagementBusinessunitActivitycodesRequest(businessUnitId, forceDownloadService));
   }
 
   /**
    * Get activity codes
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return BusinessUnitActivityCodeListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnitActivityCodeListing> getWorkforcemanagementBusinessunitActivitycodesWithHttpInfo(String businessUnitId) throws IOException {
-    return getWorkforcemanagementBusinessunitActivitycodes(createGetWorkforcemanagementBusinessunitActivitycodesRequest(businessUnitId).withHttpInfo());
+  public ApiResponse<BusinessUnitActivityCodeListing> getWorkforcemanagementBusinessunitActivitycodesWithHttpInfo(String businessUnitId, Boolean forceDownloadService) throws IOException {
+    return getWorkforcemanagementBusinessunitActivitycodes(createGetWorkforcemanagementBusinessunitActivitycodesRequest(businessUnitId, forceDownloadService).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitActivitycodesRequest createGetWorkforcemanagementBusinessunitActivitycodesRequest(String businessUnitId) {
+  private GetWorkforcemanagementBusinessunitActivitycodesRequest createGetWorkforcemanagementBusinessunitActivitycodesRequest(String businessUnitId, Boolean forceDownloadService) {
     return GetWorkforcemanagementBusinessunitActivitycodesRequest.builder()
             .withBusinessUnitId(businessUnitId)
+
+            .withForceDownloadService(forceDownloadService)
 
             .build();
   }
@@ -6099,12 +6103,13 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return WeekShiftTradeListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches));
+  public WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches, Boolean forceDownloadService) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches, forceDownloadService));
   }
 
   /**
@@ -6113,20 +6118,23 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return WeekShiftTradeListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WeekShiftTradeListResponse> getWorkforcemanagementManagementunitWeekShifttradesWithHttpInfo(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches) throws IOException {
-    return getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches).withHttpInfo());
+  public ApiResponse<WeekShiftTradeListResponse> getWorkforcemanagementManagementunitWeekShifttradesWithHttpInfo(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches, Boolean forceDownloadService) throws IOException {
+    return getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches, forceDownloadService).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitWeekShifttradesRequest createGetWorkforcemanagementManagementunitWeekShifttradesRequest(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches) {
+  private GetWorkforcemanagementManagementunitWeekShifttradesRequest createGetWorkforcemanagementManagementunitWeekShifttradesRequest(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches, Boolean forceDownloadService) {
     return GetWorkforcemanagementManagementunitWeekShifttradesRequest.builder()
             .withManagementUnitId(managementUnitId)
 
             .withWeekDateId(weekDateId)
 
             .withEvaluateMatches(evaluateMatches)
+
+            .withForceDownloadService(forceDownloadService)
 
             .build();
   }
@@ -12287,30 +12295,34 @@ public class WorkforceManagementApi {
    * Fetches time off requests matching the conditions specified in the request body
    * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @param body body (optional)
    * @return TimeOffRequestListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(String managementUnitId, TimeOffRequestQueryBody body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(managementUnitId, body));
+  public TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(String managementUnitId, Boolean forceDownloadService, TimeOffRequestQueryBody body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(managementUnitId, forceDownloadService, body));
   }
 
   /**
    * Fetches time off requests matching the conditions specified in the request body
    * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @param body body (optional)
    * @return TimeOffRequestListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestListing> postWorkforcemanagementManagementunitTimeoffrequestsQueryWithHttpInfo(String managementUnitId, TimeOffRequestQueryBody body) throws IOException {
-    return postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(managementUnitId, body).withHttpInfo());
+  public ApiResponse<TimeOffRequestListing> postWorkforcemanagementManagementunitTimeoffrequestsQueryWithHttpInfo(String managementUnitId, Boolean forceDownloadService, TimeOffRequestQueryBody body) throws IOException {
+    return postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(managementUnitId, forceDownloadService, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(String managementUnitId, TimeOffRequestQueryBody body) {
+  private PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(String managementUnitId, Boolean forceDownloadService, TimeOffRequestQueryBody body) {
     return PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest.builder()
             .withManagementUnitId(managementUnitId)
+
+            .withForceDownloadService(forceDownloadService)
 
             .withBody(body)
 
@@ -12887,12 +12899,13 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return SearchShiftTradesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitWeekShifttradesSearch(createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(managementUnitId, weekDateId, body));
+  public SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWeekShifttradesSearch(createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(managementUnitId, weekDateId, body, forceDownloadService));
   }
 
   /**
@@ -12901,20 +12914,23 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return SearchShiftTradesResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SearchShiftTradesResponse> postWorkforcemanagementManagementunitWeekShifttradesSearchWithHttpInfo(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body) throws IOException {
-    return postWorkforcemanagementManagementunitWeekShifttradesSearch(createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(managementUnitId, weekDateId, body).withHttpInfo());
+  public ApiResponse<SearchShiftTradesResponse> postWorkforcemanagementManagementunitWeekShifttradesSearchWithHttpInfo(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementManagementunitWeekShifttradesSearch(createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(managementUnitId, weekDateId, body, forceDownloadService).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body) {
+  private PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body, Boolean forceDownloadService) {
     return PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest.builder()
             .withManagementUnitId(managementUnitId)
 
             .withWeekDateId(weekDateId)
 
             .withBody(body)
+
+            .withForceDownloadService(forceDownloadService)
 
             .build();
   }

@@ -210,6 +210,20 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest {
 	    return this;
 	} 
 
+	private Boolean forceDownloadService;
+	public Boolean getForceDownloadService() {
+		return this.forceDownloadService;
+	}
+
+	public void setForceDownloadService(Boolean forceDownloadService) {
+		this.forceDownloadService = forceDownloadService;
+	}
+
+	public PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest withForceDownloadService(Boolean forceDownloadService) {
+	    this.setForceDownloadService(forceDownloadService);
+	    return this;
+	} 
+
 	private TimeOffRequestQueryBody body;
 	public TimeOffRequestQueryBody getBody() {
 		return this.body;
@@ -254,6 +268,9 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest {
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query")
                 .withPathParameter("managementUnitId", managementUnitId)
         
+
+                .withQueryParameters("forceDownloadService", "", forceDownloadService)
+        
                 .withBody(body)
 
 		.withCustomHeaders(customHeaders)
@@ -284,6 +301,11 @@ public class PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest {
 
 		public Builder withManagementUnitId(String managementUnitId) {
 			request.setManagementUnitId(managementUnitId);
+			return this;
+		}
+
+		public Builder withForceDownloadService(Boolean forceDownloadService) {
+			request.setForceDownloadService(forceDownloadService);
 			return this;
 		}
 

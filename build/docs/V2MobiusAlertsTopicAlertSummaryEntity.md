@@ -9,10 +9,10 @@ title: V2MobiusAlertsTopicAlertSummaryEntity
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> |  |  [optional] |
-| **userDisplayName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **groupDisplayName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **queueDisplayName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **teamDisplayName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**V2MobiusAlertsTopicAddressableEntityRef**](V2MobiusAlertsTopicAddressableEntityRef.html)<!----> |  |  [optional] |
+| **group** | <!----><!---->[**V2MobiusAlertsTopicAddressableEntityRef**](V2MobiusAlertsTopicAddressableEntityRef.html)<!----> |  |  [optional] |
+| **queue** | <!----><!---->[**V2MobiusAlertsTopicAddressableEntityRef**](V2MobiusAlertsTopicAddressableEntityRef.html)<!----> |  |  [optional] |
+| **team** | <!----><!---->[**V2MobiusAlertsTopicAddressableEntityRef**](V2MobiusAlertsTopicAddressableEntityRef.html)<!----> |  |  [optional] |
 | **alerting** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

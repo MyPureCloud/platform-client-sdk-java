@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ import java.io.Serializable;
 public class ServiceGoalTemplateList  implements Serializable {
   
   private List<ServiceGoalTemplate> entities = new ArrayList<ServiceGoalTemplate>();
+  private WfmVersionedEntityMetadata metadata = null;
 
   
   /**
@@ -44,6 +46,24 @@ public class ServiceGoalTemplateList  implements Serializable {
   }
 
 
+  /**
+   * Version metadata for the service goal templates
+   **/
+  public ServiceGoalTemplateList metadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Version metadata for the service goal templates")
+  @JsonProperty("metadata")
+  public WfmVersionedEntityMetadata getMetadata() {
+    return metadata;
+  }
+  public void setMetadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -54,12 +74,13 @@ public class ServiceGoalTemplateList  implements Serializable {
     }
     ServiceGoalTemplateList serviceGoalTemplateList = (ServiceGoalTemplateList) o;
 
-    return Objects.equals(this.entities, serviceGoalTemplateList.entities);
+    return Objects.equals(this.entities, serviceGoalTemplateList.entities) &&
+            Objects.equals(this.metadata, serviceGoalTemplateList.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities);
+    return Objects.hash(entities, metadata);
   }
 
   @Override
@@ -68,6 +89,7 @@ public class ServiceGoalTemplateList  implements Serializable {
     sb.append("class ServiceGoalTemplateList {\n");
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

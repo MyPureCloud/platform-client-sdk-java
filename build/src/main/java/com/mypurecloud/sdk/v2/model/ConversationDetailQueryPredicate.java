@@ -199,6 +199,8 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     TMONITORING("tMonitoring"),
     TMONITORINGCOMPLETE("tMonitoringComplete"),
     TNOTRESPONDING("tNotResponding"),
+    TPARK("tPark"),
+    TPARKCOMPLETE("tParkComplete"),
     TSHORTABANDON("tShortAbandon"),
     TTALK("tTalk"),
     TTALKCOMPLETE("tTalkComplete"),
