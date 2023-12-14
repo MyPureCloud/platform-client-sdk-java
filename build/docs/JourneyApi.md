@@ -1073,7 +1073,7 @@ try {
 
 
 
-> [DeploymentPing](DeploymentPing.html) getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, sessionId, dl, dt, appNamespace, sinceLastBeaconMilliseconds)
+> [DeploymentPing](DeploymentPing.html) getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, dl, dt, appNamespace, sessionId, sinceLastBeaconMilliseconds)
 
 Send a ping.
 
@@ -1093,13 +1093,13 @@ import com.mypurecloud.sdk.v2.api.JourneyApi;
 JourneyApi apiInstance = new JourneyApi();
 String deploymentId = "deploymentId_example"; // String | The ID of the deployment sending the ping.
 String customerCookieId = "customerCookieId_example"; // String | ID of the customer associated with the ping.
-String sessionId = "sessionId_example"; // String | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session
 String dl = "dl_example"; // String | Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions.
 String dt = "dt_example"; // String | Document Title.  A human readable name for the page or screen
 String appNamespace = "appNamespace_example"; // String | Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions
+String sessionId = "sessionId_example"; // String | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session
 Long sinceLastBeaconMilliseconds = 56L; // Long | How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings.
 try {
-    DeploymentPing result = apiInstance.getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, sessionId, dl, dt, appNamespace, sinceLastBeaconMilliseconds);
+    DeploymentPing result = apiInstance.getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, dl, dt, appNamespace, sessionId, sinceLastBeaconMilliseconds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JourneyApi#getJourneyDeploymentCustomerPing");
@@ -1114,10 +1114,10 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **deploymentId** | **String**| The ID of the deployment sending the ping. | 
 | **customerCookieId** | **String**| ID of the customer associated with the ping. | 
-| **sessionId** | **String**| UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session | 
 | **dl** | **String**| Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. &#39;home&#39; or &#39;help. Pings without this parameter will not return actions. | [optional] 
 | **dt** | **String**| Document Title.  A human readable name for the page or screen | [optional] 
 | **appNamespace** | **String**| Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions | [optional] 
+| **sessionId** | **String**| UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session | [optional] 
 | **sinceLastBeaconMilliseconds** | **Long**| How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. | [optional] 
 {: class="table-striped"}
 

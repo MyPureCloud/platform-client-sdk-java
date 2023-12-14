@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentExternalUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentReschedule;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
@@ -56,6 +57,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModulesAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesCoverartCoverArtIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRescheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchLearningModuleUserAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssessmentsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentReassignRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentResetRequest;
@@ -1106,6 +1108,83 @@ public class LearningApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<LearningAssignment>> patchLearningAssignmentRescheduleAsync(ApiRequest<LearningAssignmentReschedule> request, final AsyncApiCallback<ApiResponse<LearningAssignment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LearningAssignment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LearningAssignment>() {}, new AsyncApiCallback<ApiResponse<LearningAssignment>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningAssignment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an external assignment for a specific user
+   * 
+   * patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LearningAssignment> patchLearningModuleUserAssignmentsAsync(PatchLearningModuleUserAssignmentsRequest request, final AsyncApiCallback<LearningAssignment> callback) {
+    try {
+      final SettableFuture<LearningAssignment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningAssignment>() {}, new AsyncApiCallback<ApiResponse<LearningAssignment>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningAssignment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an external assignment for a specific user
+   * 
+   * patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LearningAssignment>> patchLearningModuleUserAssignmentsAsync(ApiRequest<LearningAssignmentExternalUpdate> request, final AsyncApiCallback<ApiResponse<LearningAssignment>> callback) {
     try {
       final SettableFuture<ApiResponse<LearningAssignment>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

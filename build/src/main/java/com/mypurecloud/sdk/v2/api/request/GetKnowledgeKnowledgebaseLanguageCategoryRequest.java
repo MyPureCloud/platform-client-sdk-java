@@ -171,7 +171,8 @@ public class GetKnowledgeKnowledgebaseLanguageCategoryRequest {
 		FI_FI("fi-FI"),
 		NB_NO("nb-NO"),
 		DA_DK("da-DK"),
-		JA_JP("ja-JP");
+		JA_JP("ja-JP"),
+		AR_AE("ar-AE");
 
 		private String value;
 

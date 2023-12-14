@@ -13,6 +13,7 @@ title: MediaEndpointStatistics
 | **user** | <!----><!---->[**NamedEntity**](NamedEntity.html)<!----> | User information associated media endpoint |  [optional] |
 | **ice** | <!----><!---->[**MediaIceStatistics**](MediaIceStatistics.html)<!----> | The ICE protocol statistics and details. Reference: https://www.rfc-editor.org/rfc/rfc5245 |  [optional] |
 | **rtp** | <!----><!---->[**MediaRtpStatistics**](MediaRtpStatistics.html)<!----> | Statistics of sent and received RTP. Reference: https://www.rfc-editor.org/rfc/rfc3550 |  [optional] |
+| **reconnectAttemptCount** | <!----><!---->**Integer**<!----> | Media reconnect attempt count |  [optional] |
 {: class="table table-striped"}
 
 

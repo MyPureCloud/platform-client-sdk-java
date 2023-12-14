@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAfterCallWork;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -214,6 +215,7 @@ public class ConversationEventTopicVideo  implements Serializable {
   private ConversationEventTopicWrapup wrapup = null;
   private ConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+  private ConversationEventTopicQueueMediaSettings queueMediaSettings = null;
 
   
   /**
@@ -556,6 +558,24 @@ public class ConversationEventTopicVideo  implements Serializable {
   }
 
 
+  /**
+   * Represents the queue setting for this media.
+   **/
+  public ConversationEventTopicVideo queueMediaSettings(ConversationEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the queue setting for this media.")
+  @JsonProperty("queueMediaSettings")
+  public ConversationEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -584,12 +604,13 @@ public class ConversationEventTopicVideo  implements Serializable {
             Objects.equals(this.msids, conversationEventTopicVideo.msids) &&
             Objects.equals(this.wrapup, conversationEventTopicVideo.wrapup) &&
             Objects.equals(this.afterCallWork, conversationEventTopicVideo.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, conversationEventTopicVideo.afterCallWorkRequired);
+            Objects.equals(this.afterCallWorkRequired, conversationEventTopicVideo.afterCallWorkRequired) &&
+            Objects.equals(this.queueMediaSettings, conversationEventTopicVideo.queueMediaSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, self, id, context, audioMuted, videoMuted, sharingScreen, peerCount, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, initialState, self, id, context, audioMuted, videoMuted, sharingScreen, peerCount, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired, queueMediaSettings);
   }
 
   @Override
@@ -616,6 +637,7 @@ public class ConversationEventTopicVideo  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

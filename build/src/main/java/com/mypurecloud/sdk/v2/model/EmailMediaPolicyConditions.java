@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.Team;
 import com.mypurecloud.sdk.v2.model.TimeAllowed;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
@@ -35,6 +36,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
   private List<WrapupCode> wrapupCodes = new ArrayList<WrapupCode>();
   private List<Language> languages = new ArrayList<Language>();
   private TimeAllowed timeAllowed = null;
+  private List<Team> teams = new ArrayList<Team>();
 
   private static class CustomerParticipationEnumDeserializer extends StdDeserializer<CustomerParticipationEnum> {
     public CustomerParticipationEnumDeserializer() {
@@ -188,6 +190,24 @@ public class EmailMediaPolicyConditions  implements Serializable {
 
 
   /**
+   * Teams to match conversations against
+   **/
+  public EmailMediaPolicyConditions teams(List<Team> teams) {
+    this.teams = teams;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Teams to match conversations against")
+  @JsonProperty("teams")
+  public List<Team> getTeams() {
+    return teams;
+  }
+  public void setTeams(List<Team> teams) {
+    this.teams = teams;
+  }
+
+
+  /**
    **/
   public EmailMediaPolicyConditions customerParticipation(CustomerParticipationEnum customerParticipation) {
     this.customerParticipation = customerParticipation;
@@ -220,12 +240,13 @@ public class EmailMediaPolicyConditions  implements Serializable {
             Objects.equals(this.wrapupCodes, emailMediaPolicyConditions.wrapupCodes) &&
             Objects.equals(this.languages, emailMediaPolicyConditions.languages) &&
             Objects.equals(this.timeAllowed, emailMediaPolicyConditions.timeAllowed) &&
+            Objects.equals(this.teams, emailMediaPolicyConditions.teams) &&
             Objects.equals(this.customerParticipation, emailMediaPolicyConditions.customerParticipation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, languages, timeAllowed, customerParticipation);
+    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, languages, timeAllowed, teams, customerParticipation);
   }
 
   @Override
@@ -239,6 +260,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     sb.append("    wrapupCodes: ").append(toIndentedString(wrapupCodes)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    timeAllowed: ").append(toIndentedString(timeAllowed)).append("\n");
+    sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
     sb.append("    customerParticipation: ").append(toIndentedString(customerParticipation)).append("\n");
     sb.append("}");
     return sb.toString();

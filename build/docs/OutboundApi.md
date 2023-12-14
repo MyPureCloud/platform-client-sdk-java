@@ -18,11 +18,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteOutboundContactlistContacts**](OutboundApi.html#deleteOutboundContactlistContacts) | Delete contacts from a contact list. |
 | [**deleteOutboundContactlistfilter**](OutboundApi.html#deleteOutboundContactlistfilter) | Delete Contact List Filter |
 | [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | Delete multiple contact lists. |
+| [**deleteOutboundContactlisttemplate**](OutboundApi.html#deleteOutboundContactlisttemplate) | Delete Contact List Template |
+| [**deleteOutboundContactlisttemplates**](OutboundApi.html#deleteOutboundContactlisttemplates) | Delete multiple contact list templates. |
 | [**deleteOutboundDigitalruleset**](OutboundApi.html#deleteOutboundDigitalruleset) | Delete an Outbound Digital Rule Set |
 | [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | Delete dialer DNC list |
 | [**deleteOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#deleteOutboundDnclistCustomexclusioncolumns) | Deletes all or expired custom exclusion column entries from a DNC list. |
 | [**deleteOutboundDnclistEmailaddresses**](OutboundApi.html#deleteOutboundDnclistEmailaddresses) | Deletes all or expired email addresses from a DNC list. |
 | [**deleteOutboundDnclistPhonenumbers**](OutboundApi.html#deleteOutboundDnclistPhonenumbers) | Deletes all or expired phone numbers from a DNC list. |
+| [**deleteOutboundImporttemplate**](OutboundApi.html#deleteOutboundImporttemplate) | Delete Import Template |
+| [**deleteOutboundImporttemplates**](OutboundApi.html#deleteOutboundImporttemplates) | Delete multiple import templates. |
 | [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | Delete an Outbound Messaging Campaign |
 | [**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | Reset messaging campaign progress and recycle the messaging campaign |
 | [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | Delete a Rule Set. |
@@ -60,6 +64,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | Query a list of contact lists. |
 | [**getOutboundContactlistsDivisionview**](OutboundApi.html#getOutboundContactlistsDivisionview) | Get a basic ContactList information object |
 | [**getOutboundContactlistsDivisionviews**](OutboundApi.html#getOutboundContactlistsDivisionviews) | Query a list of simplified contact list objects. |
+| [**getOutboundContactlisttemplate**](OutboundApi.html#getOutboundContactlisttemplate) | Get Contact List Template |
+| [**getOutboundContactlisttemplates**](OutboundApi.html#getOutboundContactlisttemplates) | Query a list of contact list templates |
 | [**getOutboundDigitalruleset**](OutboundApi.html#getOutboundDigitalruleset) | Get an Outbound Digital Rule Set |
 | [**getOutboundDigitalrulesets**](OutboundApi.html#getOutboundDigitalrulesets) | Query a list of Outbound Digital Rule Sets |
 | [**getOutboundDnclist**](OutboundApi.html#getOutboundDnclist) | Get dialer DNC list |
@@ -70,6 +76,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundDnclistsDivisionviews**](OutboundApi.html#getOutboundDnclistsDivisionviews) | Query a list of simplified dnc list objects. |
 | [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | Get Dialer Event |
 | [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | Query Event Logs |
+| [**getOutboundImporttemplate**](OutboundApi.html#getOutboundImporttemplate) | Get Import Template |
+| [**getOutboundImporttemplateImportstatus**](OutboundApi.html#getOutboundImporttemplateImportstatus) | Get the import status for an import template. |
+| [**getOutboundImporttemplates**](OutboundApi.html#getOutboundImporttemplates) | Query Import Templates |
 | [**getOutboundMessagingcampaign**](OutboundApi.html#getOutboundMessagingcampaign) | Get an Outbound Messaging Campaign |
 | [**getOutboundMessagingcampaignDiagnostics**](OutboundApi.html#getOutboundMessagingcampaignDiagnostics) | Get messaging campaign diagnostics |
 | [**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | Get messaging campaign's progress |
@@ -110,12 +119,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundContactlistfilters**](OutboundApi.html#postOutboundContactlistfilters) | Create Contact List Filter |
 | [**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | Get a preview of the output of a contact list filter |
 | [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | Create a contact List. |
+| [**postOutboundContactlisttemplates**](OutboundApi.html#postOutboundContactlisttemplates) | Create Contact List Template |
+| [**postOutboundContactlisttemplatesBulkAdd**](OutboundApi.html#postOutboundContactlisttemplatesBulkAdd) | Add multiple contact list templates |
 | [**postOutboundConversationDnc**](OutboundApi.html#postOutboundConversationDnc) | Add phone numbers to a Dialer DNC list. |
 | [**postOutboundDigitalrulesets**](OutboundApi.html#postOutboundDigitalrulesets) | Create an Outbound Digital Rule Set |
 | [**postOutboundDnclistEmailaddresses**](OutboundApi.html#postOutboundDnclistEmailaddresses) | Add email addresses to a DNC list. |
 | [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | Initiate the export of a dnc list. |
 | [**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | Add phone numbers to a DNC list. |
 | [**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | Create dialer DNC list |
+| [**postOutboundImporttemplates**](OutboundApi.html#postOutboundImporttemplates) | Create Import Template |
+| [**postOutboundImporttemplatesBulkAdd**](OutboundApi.html#postOutboundImporttemplatesBulkAdd) | Add multiple import templates |
 | [**postOutboundMessagingcampaigns**](OutboundApi.html#postOutboundMessagingcampaigns) | Create a Messaging Campaign |
 | [**postOutboundMessagingcampaignsProgress**](OutboundApi.html#postOutboundMessagingcampaignsProgress) | Get progress for a list of messaging campaigns |
 | [**postOutboundRulesets**](OutboundApi.html#postOutboundRulesets) | Create a Rule Set. |
@@ -129,8 +142,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putOutboundContactlist**](OutboundApi.html#putOutboundContactlist) | Update a contact list. |
 | [**putOutboundContactlistContact**](OutboundApi.html#putOutboundContactlistContact) | Update a contact. |
 | [**putOutboundContactlistfilter**](OutboundApi.html#putOutboundContactlistfilter) | Update Contact List Filter |
+| [**putOutboundContactlisttemplate**](OutboundApi.html#putOutboundContactlisttemplate) | Update a contact list template. |
 | [**putOutboundDigitalruleset**](OutboundApi.html#putOutboundDigitalruleset) | Update an Outbound Digital Rule Set |
 | [**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | Update dialer DNC list |
+| [**putOutboundImporttemplate**](OutboundApi.html#putOutboundImporttemplate) | Update Import Template |
 | [**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | Update an Outbound Messaging Campaign |
 | [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | Update a Rule Set. |
 | [**putOutboundSchedulesCampaign**](OutboundApi.html#putOutboundSchedulesCampaign) | Update a new campaign schedule. |
@@ -806,6 +821,126 @@ try {
 
 null (empty response body)
 
+<a name="deleteOutboundContactlisttemplate"></a>
+
+# **deleteOutboundContactlisttemplate**
+
+
+
+> Void deleteOutboundContactlisttemplate(contactListTemplateId)
+
+Delete Contact List Template
+
+Wraps DELETE /api/v2/outbound/contactlisttemplates/{contactListTemplateId}  
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
+try {
+    apiInstance.deleteOutboundContactlisttemplate(contactListTemplateId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundContactlisttemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListTemplateId** | **String**| ContactListTemplate ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundContactlisttemplates"></a>
+
+# **deleteOutboundContactlisttemplates**
+
+
+
+> Void deleteOutboundContactlisttemplates(id)
+
+Delete multiple contact list templates.
+
+Wraps DELETE /api/v2/outbound/contactlisttemplates  
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+List<String> id = Arrays.asList(null); // List<String> | contact list template id(s) to delete
+try {
+    apiInstance.deleteOutboundContactlisttemplates(id);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundContactlisttemplates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String.html)| contact list template id(s) to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="deleteOutboundDigitalruleset"></a>
 
 # **deleteOutboundDigitalruleset**
@@ -1111,6 +1246,126 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
 | **expiredOnly** | **Boolean**| Set to true to only remove DNC entries that are expired | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundImporttemplate"></a>
+
+# **deleteOutboundImporttemplate**
+
+
+
+> Void deleteOutboundImporttemplate(importTemplateId)
+
+Delete Import Template
+
+Wraps DELETE /api/v2/outbound/importtemplates/{importTemplateId}  
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String importTemplateId = "importTemplateId_example"; // String | Import Template ID
+try {
+    apiInstance.deleteOutboundImporttemplate(importTemplateId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundImporttemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **importTemplateId** | **String**| Import Template ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundImporttemplates"></a>
+
+# **deleteOutboundImporttemplates**
+
+
+
+> Void deleteOutboundImporttemplates(id)
+
+Delete multiple import templates.
+
+Wraps DELETE /api/v2/outbound/importtemplates  
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+List<String> id = Arrays.asList(null); // List<String> | import template id(s) to delete
+try {
+    apiInstance.deleteOutboundImporttemplates(id);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundImporttemplates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String.html)| import template id(s) to delete | 
 {: class="table-striped"}
 
 
@@ -3555,6 +3810,140 @@ try {
 
 [**ContactListDivisionViewListing**](ContactListDivisionViewListing.html)
 
+<a name="getOutboundContactlisttemplate"></a>
+
+# **getOutboundContactlisttemplate**
+
+
+
+> [ContactListTemplate](ContactListTemplate.html) getOutboundContactlisttemplate(contactListTemplateId)
+
+Get Contact List Template
+
+Wraps GET /api/v2/outbound/contactlisttemplates/{contactListTemplateId}  
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
+try {
+    ContactListTemplate result = apiInstance.getOutboundContactlisttemplate(contactListTemplateId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundContactlisttemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListTemplateId** | **String**| ContactListTemplate ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactListTemplate**](ContactListTemplate.html)
+
+<a name="getOutboundContactlisttemplates"></a>
+
+# **getOutboundContactlisttemplates**
+
+
+
+> [ContactListTemplateEntityListing](ContactListTemplateEntityListing.html) getOutboundContactlisttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
+
+Query a list of contact list templates
+
+Wraps GET /api/v2/outbound/contactlisttemplates  
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
+Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
+String filterType = "Prefix"; // String | Filter type
+String name = "name_example"; // String | Name
+String sortBy = "sortBy_example"; // String | Sort by
+String sortOrder = "a"; // String | Sort order
+try {
+    ContactListTemplateEntityListing result = apiInstance.getOutboundContactlisttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundContactlisttemplates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
+| **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
+| **name** | **String**| Name | [optional] 
+| **sortBy** | **String**| Sort by | [optional] 
+| **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+
 <a name="getOutboundDigitalruleset"></a>
 
 # **getOutboundDigitalruleset**
@@ -4239,6 +4628,205 @@ try {
 ### Return type
 
 [**DialerEventEntityListing**](DialerEventEntityListing.html)
+
+<a name="getOutboundImporttemplate"></a>
+
+# **getOutboundImporttemplate**
+
+
+
+> [ImportTemplate](ImportTemplate.html) getOutboundImporttemplate(importTemplateId)
+
+Get Import Template
+
+Wraps GET /api/v2/outbound/importtemplates/{importTemplateId}  
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String importTemplateId = "importTemplateId_example"; // String | Import Template ID
+try {
+    ImportTemplate result = apiInstance.getOutboundImporttemplate(importTemplateId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundImporttemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **importTemplateId** | **String**| Import Template ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ImportTemplate**](ImportTemplate.html)
+
+<a name="getOutboundImporttemplateImportstatus"></a>
+
+# **getOutboundImporttemplateImportstatus**
+
+
+
+> [ImportStatus](ImportStatus.html) getOutboundImporttemplateImportstatus(importTemplateId, listNamePrefix)
+
+Get the import status for an import template.
+
+Wraps GET /api/v2/outbound/importtemplates/{importTemplateId}/importstatus  
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String importTemplateId = "importTemplateId_example"; // String | importTemplateId
+String listNamePrefix = "listNamePrefix_example"; // String | listNamePrefix
+try {
+    ImportStatus result = apiInstance.getOutboundImporttemplateImportstatus(importTemplateId, listNamePrefix);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundImporttemplateImportstatus");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **importTemplateId** | **String**| importTemplateId | 
+| **listNamePrefix** | **String**| listNamePrefix | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ImportStatus**](ImportStatus.html)
+
+<a name="getOutboundImporttemplates"></a>
+
+# **getOutboundImporttemplates**
+
+
+
+> [ImportTemplateEntityListing](ImportTemplateEntityListing.html) getOutboundImporttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListTemplateId)
+
+Query Import Templates
+
+Wraps GET /api/v2/outbound/importtemplates  
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
+Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
+String filterType = "Prefix"; // String | Filter type
+String name = "name_example"; // String | Name
+String sortBy = "sortBy_example"; // String | Sort by
+String sortOrder = "a"; // String | Sort order
+String contactListTemplateId = "contactListTemplateId_example"; // String | Contact List Template ID
+try {
+    ImportTemplateEntityListing result = apiInstance.getOutboundImporttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListTemplateId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundImporttemplates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
+| **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
+| **name** | **String**| Name | [optional] 
+| **sortBy** | **String**| Sort by | [optional] 
+| **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
+| **contactListTemplateId** | **String**| Contact List Template ID | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ImportTemplateEntityListing**](ImportTemplateEntityListing.html)
 
 <a name="getOutboundMessagingcampaign"></a>
 
@@ -6755,6 +7343,128 @@ try {
 
 [**ContactList**](ContactList.html)
 
+<a name="postOutboundContactlisttemplates"></a>
+
+# **postOutboundContactlisttemplates**
+
+
+
+> [ContactListTemplate](ContactListTemplate.html) postOutboundContactlisttemplates(body)
+
+Create Contact List Template
+
+Wraps POST /api/v2/outbound/contactlisttemplates  
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+ContactListTemplate body = new ContactListTemplate(); // ContactListTemplate | ContactListTemplate
+try {
+    ContactListTemplate result = apiInstance.postOutboundContactlisttemplates(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlisttemplates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContactListTemplate**](ContactListTemplate.html)| ContactListTemplate | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactListTemplate**](ContactListTemplate.html)
+
+<a name="postOutboundContactlisttemplatesBulkAdd"></a>
+
+# **postOutboundContactlisttemplatesBulkAdd**
+
+
+
+> [ContactListTemplateEntityListing](ContactListTemplateEntityListing.html) postOutboundContactlisttemplatesBulkAdd(body)
+
+Add multiple contact list templates
+
+Wraps POST /api/v2/outbound/contactlisttemplates/bulk/add  
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+List<ContactListTemplate> body = Arrays.asList(new ContactListTemplate()); // List<ContactListTemplate> | contact list template(s) to add
+try {
+    ContactListTemplateEntityListing result = apiInstance.postOutboundContactlisttemplatesBulkAdd(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlisttemplatesBulkAdd");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**List&lt;ContactListTemplate&gt;**](ContactListTemplate.html)| contact list template(s) to add | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+
 <a name="postOutboundConversationDnc"></a>
 
 # **postOutboundConversationDnc**
@@ -7130,6 +7840,128 @@ try {
 ### Return type
 
 [**DncList**](DncList.html)
+
+<a name="postOutboundImporttemplates"></a>
+
+# **postOutboundImporttemplates**
+
+
+
+> [ImportTemplate](ImportTemplate.html) postOutboundImporttemplates(body)
+
+Create Import Template
+
+Wraps POST /api/v2/outbound/importtemplates  
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+ImportTemplate body = new ImportTemplate(); // ImportTemplate | ImportTemplate
+try {
+    ImportTemplate result = apiInstance.postOutboundImporttemplates(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundImporttemplates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ImportTemplate**](ImportTemplate.html)| ImportTemplate | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ImportTemplate**](ImportTemplate.html)
+
+<a name="postOutboundImporttemplatesBulkAdd"></a>
+
+# **postOutboundImporttemplatesBulkAdd**
+
+
+
+> [ImportTemplateEntityListing](ImportTemplateEntityListing.html) postOutboundImporttemplatesBulkAdd(body)
+
+Add multiple import templates
+
+Wraps POST /api/v2/outbound/importtemplates/bulk/add  
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+List<ImportTemplate> body = Arrays.asList(new ImportTemplate()); // List<ImportTemplate> | import template(s) to add
+try {
+    ImportTemplateEntityListing result = apiInstance.postOutboundImporttemplatesBulkAdd(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundImporttemplatesBulkAdd");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**List&lt;ImportTemplate&gt;**](ImportTemplate.html)| import template(s) to add | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ImportTemplateEntityListing**](ImportTemplateEntityListing.html)
 
 <a name="postOutboundMessagingcampaigns"></a>
 
@@ -7949,6 +8781,69 @@ try {
 
 [**ContactListFilter**](ContactListFilter.html)
 
+<a name="putOutboundContactlisttemplate"></a>
+
+# **putOutboundContactlisttemplate**
+
+
+
+> [ContactListTemplate](ContactListTemplate.html) putOutboundContactlisttemplate(contactListTemplateId, body)
+
+Update a contact list template.
+
+Wraps PUT /api/v2/outbound/contactlisttemplates/{contactListTemplateId}  
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
+ContactListTemplate body = new ContactListTemplate(); // ContactListTemplate | ContactListTemplate
+try {
+    ContactListTemplate result = apiInstance.putOutboundContactlisttemplate(contactListTemplateId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#putOutboundContactlisttemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListTemplateId** | **String**| ContactListTemplate ID | 
+| **body** | [**ContactListTemplate**](ContactListTemplate.html)| ContactListTemplate | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactListTemplate**](ContactListTemplate.html)
+
 <a name="putOutboundDigitalruleset"></a>
 
 # **putOutboundDigitalruleset**
@@ -8074,6 +8969,69 @@ try {
 ### Return type
 
 [**DncList**](DncList.html)
+
+<a name="putOutboundImporttemplate"></a>
+
+# **putOutboundImporttemplate**
+
+
+
+> [ImportTemplate](ImportTemplate.html) putOutboundImporttemplate(importTemplateId, body)
+
+Update Import Template
+
+Wraps PUT /api/v2/outbound/importtemplates/{importTemplateId}  
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String importTemplateId = "importTemplateId_example"; // String | Import Template ID
+ImportTemplate body = new ImportTemplate(); // ImportTemplate | importTemplate
+try {
+    ImportTemplate result = apiInstance.putOutboundImporttemplate(importTemplateId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#putOutboundImporttemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **importTemplateId** | **String**| Import Template ID | 
+| **body** | [**ImportTemplate**](ImportTemplate.html)| importTemplate | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ImportTemplate**](ImportTemplate.html)
 
 <a name="putOutboundMessagingcampaign"></a>
 

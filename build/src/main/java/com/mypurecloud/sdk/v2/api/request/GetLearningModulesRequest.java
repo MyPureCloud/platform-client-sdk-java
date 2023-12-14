@@ -30,6 +30,7 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentExternalUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentReschedule;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
@@ -375,6 +376,20 @@ public class GetLearningModulesRequest {
 		}
 	}
 
+	private List<String> externalIds;
+	public List<String> getExternalIds() {
+		return this.externalIds;
+	}
+
+	public void setExternalIds(List<String> externalIds) {
+		this.externalIds = externalIds;
+	}
+
+	public GetLearningModulesRequest withExternalIds(List<String> externalIds) {
+	    this.setExternalIds(externalIds);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -427,6 +442,9 @@ public class GetLearningModulesRequest {
         
 
                 .withQueryParameters("statuses", "multi", statuses)
+        
+
+                .withQueryParameters("externalIds", "multi", externalIds)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -557,6 +575,11 @@ public class GetLearningModulesRequest {
 	      }
 	      request.setStatuses(stringList);
 		    return this;
+		}
+
+		public Builder withExternalIds(List<String> externalIds) {
+			request.setExternalIds(externalIds);
+			return this;
 		}
 
 

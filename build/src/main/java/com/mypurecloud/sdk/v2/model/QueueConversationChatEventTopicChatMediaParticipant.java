@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicJourneyContext;
+import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -336,6 +337,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
+  private QueueConversationChatEventTopicQueueMediaSettings queueMediaSettings = null;
   private String roomId = null;
   private String avatarImageUrl = null;
 
@@ -954,6 +956,23 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
 
   /**
    **/
+  public QueueConversationChatEventTopicChatMediaParticipant queueMediaSettings(QueueConversationChatEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueMediaSettings")
+  public QueueConversationChatEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(QueueConversationChatEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
+  /**
+   **/
   public QueueConversationChatEventTopicChatMediaParticipant roomId(String roomId) {
     this.roomId = roomId;
     return this;
@@ -1032,13 +1051,14 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
             Objects.equals(this.startAcwTime, queueConversationChatEventTopicChatMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, queueConversationChatEventTopicChatMediaParticipant.endAcwTime) &&
             Objects.equals(this.mediaRoles, queueConversationChatEventTopicChatMediaParticipant.mediaRoles) &&
+            Objects.equals(this.queueMediaSettings, queueConversationChatEventTopicChatMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.roomId, queueConversationChatEventTopicChatMediaParticipant.roomId) &&
             Objects.equals(this.avatarImageUrl, queueConversationChatEventTopicChatMediaParticipant.avatarImageUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, roomId, avatarImageUrl);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, roomId, avatarImageUrl);
   }
 
   @Override
@@ -1082,6 +1102,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("}");

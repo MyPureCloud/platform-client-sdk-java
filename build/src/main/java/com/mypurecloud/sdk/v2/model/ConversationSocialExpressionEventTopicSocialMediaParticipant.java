@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicJourneyContext;
+import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -336,6 +337,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
+  private ConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings = null;
   private String socialMediaId = null;
   private String socialMediaHub = null;
   private String socialUserName = null;
@@ -956,6 +958,23 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
 
   /**
    **/
+  public ConversationSocialExpressionEventTopicSocialMediaParticipant queueMediaSettings(ConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueMediaSettings")
+  public ConversationSocialExpressionEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
+  /**
+   **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant socialMediaId(String socialMediaId) {
     this.socialMediaId = socialMediaId;
     return this;
@@ -1068,6 +1087,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
             Objects.equals(this.startAcwTime, conversationSocialExpressionEventTopicSocialMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationSocialExpressionEventTopicSocialMediaParticipant.endAcwTime) &&
             Objects.equals(this.mediaRoles, conversationSocialExpressionEventTopicSocialMediaParticipant.mediaRoles) &&
+            Objects.equals(this.queueMediaSettings, conversationSocialExpressionEventTopicSocialMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.socialMediaId, conversationSocialExpressionEventTopicSocialMediaParticipant.socialMediaId) &&
             Objects.equals(this.socialMediaHub, conversationSocialExpressionEventTopicSocialMediaParticipant.socialMediaHub) &&
             Objects.equals(this.socialUserName, conversationSocialExpressionEventTopicSocialMediaParticipant.socialUserName) &&
@@ -1076,7 +1096,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, socialMediaId, socialMediaHub, socialUserName, previewText);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, socialMediaId, socialMediaHub, socialUserName, previewText);
   }
 
   @Override
@@ -1120,6 +1140,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    socialMediaId: ").append(toIndentedString(socialMediaId)).append("\n");
     sb.append("    socialMediaHub: ").append(toIndentedString(socialMediaHub)).append("\n");
     sb.append("    socialUserName: ").append(toIndentedString(socialUserName)).append("\n");

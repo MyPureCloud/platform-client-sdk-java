@@ -16,11 +16,11 @@ import com.mypurecloud.sdk.v2.model.AutoStatusTransitionDetail;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.ExternalContactReference;
 import com.mypurecloud.sdk.v2.model.LanguageReference;
-import com.mypurecloud.sdk.v2.model.QueueReference;
 import com.mypurecloud.sdk.v2.model.RoutingSkillReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.UserReferenceWithName;
 import com.mypurecloud.sdk.v2.model.WorkbinReference;
+import com.mypurecloud.sdk.v2.model.WorkitemQueueReference;
 import com.mypurecloud.sdk.v2.model.WorkitemSchema;
 import com.mypurecloud.sdk.v2.model.WorkitemScoredAgent;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusReference;
@@ -113,7 +113,7 @@ public class Workitem  implements Serializable {
   private ExternalContactReference externalContact = null;
   private String externalTag = null;
   private UserReference modifiedBy = null;
-  private QueueReference queue = null;
+  private WorkitemQueueReference queue = null;
 
   private static class AssignmentStateEnumDeserializer extends StdDeserializer<AssignmentStateEnum> {
     public AssignmentStateEnumDeserializer() {
@@ -591,17 +591,17 @@ public class Workitem  implements Serializable {
   /**
    * The Workitems queue.
    **/
-  public Workitem queue(QueueReference queue) {
+  public Workitem queue(WorkitemQueueReference queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The Workitems queue.")
   @JsonProperty("queue")
-  public QueueReference getQueue() {
+  public WorkitemQueueReference getQueue() {
     return queue;
   }
-  public void setQueue(QueueReference queue) {
+  public void setQueue(WorkitemQueueReference queue) {
     this.queue = queue;
   }
 

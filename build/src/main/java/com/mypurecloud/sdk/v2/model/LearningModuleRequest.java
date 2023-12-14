@@ -84,6 +84,9 @@ public class LearningModuleRequest  implements Serializable {
   private TypeEnum type = null;
   private AssessmentForm assessmentForm = null;
   private LearningModuleCoverArtRequest coverArt = null;
+  private Integer lengthInMinutes = null;
+  private Boolean excludedFromCatalog = null;
+  private String externalId = null;
 
   
   /**
@@ -212,6 +215,60 @@ public class LearningModuleRequest  implements Serializable {
   }
 
 
+  /**
+   * The recommended time in minutes to complete the module
+   **/
+  public LearningModuleRequest lengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The recommended time in minutes to complete the module")
+  @JsonProperty("lengthInMinutes")
+  public Integer getLengthInMinutes() {
+    return lengthInMinutes;
+  }
+  public void setLengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+  }
+
+
+  /**
+   * If true, learning module is excluded when retrieving modules for manual assignment
+   **/
+  public LearningModuleRequest excludedFromCatalog(Boolean excludedFromCatalog) {
+    this.excludedFromCatalog = excludedFromCatalog;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, learning module is excluded when retrieving modules for manual assignment")
+  @JsonProperty("excludedFromCatalog")
+  public Boolean getExcludedFromCatalog() {
+    return excludedFromCatalog;
+  }
+  public void setExcludedFromCatalog(Boolean excludedFromCatalog) {
+    this.excludedFromCatalog = excludedFromCatalog;
+  }
+
+
+  /**
+   * The external ID of the learning module. Maximum length: 50 characters.
+   **/
+  public LearningModuleRequest externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external ID of the learning module. Maximum length: 50 characters.")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -228,12 +285,15 @@ public class LearningModuleRequest  implements Serializable {
             Objects.equals(this.informSteps, learningModuleRequest.informSteps) &&
             Objects.equals(this.type, learningModuleRequest.type) &&
             Objects.equals(this.assessmentForm, learningModuleRequest.assessmentForm) &&
-            Objects.equals(this.coverArt, learningModuleRequest.coverArt);
+            Objects.equals(this.coverArt, learningModuleRequest.coverArt) &&
+            Objects.equals(this.lengthInMinutes, learningModuleRequest.lengthInMinutes) &&
+            Objects.equals(this.excludedFromCatalog, learningModuleRequest.excludedFromCatalog) &&
+            Objects.equals(this.externalId, learningModuleRequest.externalId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, completionTimeInDays, informSteps, type, assessmentForm, coverArt);
+    return Objects.hash(name, description, completionTimeInDays, informSteps, type, assessmentForm, coverArt, lengthInMinutes, excludedFromCatalog, externalId);
   }
 
   @Override
@@ -248,6 +308,9 @@ public class LearningModuleRequest  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    assessmentForm: ").append(toIndentedString(assessmentForm)).append("\n");
     sb.append("    coverArt: ").append(toIndentedString(coverArt)).append("\n");
+    sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
+    sb.append("    excludedFromCatalog: ").append(toIndentedString(excludedFromCatalog)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

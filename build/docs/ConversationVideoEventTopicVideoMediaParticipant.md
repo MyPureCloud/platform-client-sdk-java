@@ -44,6 +44,7 @@ title: ConversationVideoEventTopicVideoMediaParticipant
 | **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **queueMediaSettings** | <!----><!---->[**ConversationVideoEventTopicQueueMediaSettings**](ConversationVideoEventTopicQueueMediaSettings.html)<!----> |  |  [optional] |
 | **audioMuted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **videoMuted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **sharingScreen** | <!----><!---->**Boolean**<!----> |  |  [optional] |

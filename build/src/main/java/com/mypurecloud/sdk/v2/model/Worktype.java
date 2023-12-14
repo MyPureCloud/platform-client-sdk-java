@@ -13,10 +13,10 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.LanguageReference;
-import com.mypurecloud.sdk.v2.model.QueueReference;
 import com.mypurecloud.sdk.v2.model.RoutingSkillReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WorkbinReference;
+import com.mypurecloud.sdk.v2.model.WorkitemQueueReference;
 import com.mypurecloud.sdk.v2.model.WorkitemSchema;
 import com.mypurecloud.sdk.v2.model.WorkitemStatus;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusReference;
@@ -49,7 +49,7 @@ public class Worktype  implements Serializable {
   private LanguageReference defaultLanguage = null;
   private Integer defaultTtlSeconds = null;
   private UserReference modifiedBy = null;
-  private QueueReference defaultQueue = null;
+  private WorkitemQueueReference defaultQueue = null;
   private List<RoutingSkillReference> defaultSkills = new ArrayList<RoutingSkillReference>();
   private Boolean assignmentEnabled = null;
   private WorkitemSchema schema = null;
@@ -336,17 +336,17 @@ public class Worktype  implements Serializable {
   /**
    * The default queue for Workitems created from the Worktype.
    **/
-  public Worktype defaultQueue(QueueReference defaultQueue) {
+  public Worktype defaultQueue(WorkitemQueueReference defaultQueue) {
     this.defaultQueue = defaultQueue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The default queue for Workitems created from the Worktype.")
   @JsonProperty("defaultQueue")
-  public QueueReference getDefaultQueue() {
+  public WorkitemQueueReference getDefaultQueue() {
     return defaultQueue;
   }
-  public void setDefaultQueue(QueueReference defaultQueue) {
+  public void setDefaultQueue(WorkitemQueueReference defaultQueue) {
     this.defaultQueue = defaultQueue;
   }
 

@@ -28,14 +28,14 @@ public class SupportCenterStyleSetting  implements Serializable {
 
   
   /**
-   * Support center hero customizations
+   * Knowledge portal (previously support center) hero customizations
    **/
   public SupportCenterStyleSetting heroStyle(SupportCenterHeroStyle heroStyle) {
     this.heroStyle = heroStyle;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Support center hero customizations")
+  @ApiModelProperty(example = "null", value = "Knowledge portal (previously support center) hero customizations")
   @JsonProperty("heroStyle")
   public SupportCenterHeroStyle getHeroStyle() {
     return heroStyle;
@@ -46,14 +46,14 @@ public class SupportCenterStyleSetting  implements Serializable {
 
 
   /**
-   * Support center global customizations
+   * Knowledge portal (previously support center) global customizations
    **/
   public SupportCenterStyleSetting globalStyle(SupportCenterGlobalStyle globalStyle) {
     this.globalStyle = globalStyle;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Support center global customizations")
+  @ApiModelProperty(example = "null", value = "Knowledge portal (previously support center) global customizations")
   @JsonProperty("globalStyle")
   public SupportCenterGlobalStyle getGlobalStyle() {
     return globalStyle;

@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicConversationRoutin
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicFaxStatus;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicJourneyContext;
+import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -337,6 +338,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
+  private ConversationCallEventTopicQueueMediaSettings queueMediaSettings = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -1016,6 +1018,23 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
 
   /**
    **/
+  public ConversationCallEventTopicCallMediaParticipant queueMediaSettings(ConversationCallEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueMediaSettings")
+  public ConversationCallEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationCallEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
+  /**
+   **/
   public ConversationCallEventTopicCallMediaParticipant muted(Boolean muted) {
     this.muted = muted;
     return this;
@@ -1315,6 +1334,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
             Objects.equals(this.startAcwTime, conversationCallEventTopicCallMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationCallEventTopicCallMediaParticipant.endAcwTime) &&
             Objects.equals(this.mediaRoles, conversationCallEventTopicCallMediaParticipant.mediaRoles) &&
+            Objects.equals(this.queueMediaSettings, conversationCallEventTopicCallMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.muted, conversationCallEventTopicCallMediaParticipant.muted) &&
             Objects.equals(this.confined, conversationCallEventTopicCallMediaParticipant.confined) &&
             Objects.equals(this.recording, conversationCallEventTopicCallMediaParticipant.recording) &&
@@ -1334,7 +1354,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, muted, confined, recording, recordingState, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, muted, confined, recording, recordingState, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1378,6 +1398,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

@@ -4589,7 +4589,7 @@ try {
 
 
 
-> [AgentMaxUtilization](AgentMaxUtilization.html) getRoutingUserUtilization(userId)
+> [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse.html) getRoutingUserUtilization(userId)
 
 Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 
@@ -4624,7 +4624,7 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
 try {
-    AgentMaxUtilization result = apiInstance.getRoutingUserUtilization(userId);
+    AgentMaxUtilizationResponse result = apiInstance.getRoutingUserUtilization(userId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingUserUtilization");
@@ -4643,7 +4643,7 @@ try {
 
 ### Return type
 
-[**AgentMaxUtilization**](AgentMaxUtilization.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
 
 <a name="getRoutingUtilization"></a>
 
@@ -4651,7 +4651,7 @@ try {
 
 
 
-> [Utilization](Utilization.html) getRoutingUtilization()
+> [UtilizationResponse](UtilizationResponse.html) getRoutingUtilization()
 
 Get the organization-wide max utilization settings.
 
@@ -4685,7 +4685,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 try {
-    Utilization result = apiInstance.getRoutingUtilization();
+    UtilizationResponse result = apiInstance.getRoutingUtilization();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingUtilization");
@@ -4701,7 +4701,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+[**UtilizationResponse**](UtilizationResponse.html)
 
 <a name="getRoutingUtilizationTag"></a>
 
@@ -8265,7 +8265,7 @@ try {
 
 
 
-> [AgentMaxUtilization](AgentMaxUtilization.html) putRoutingUserUtilization(userId, body)
+> [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse.html) putRoutingUserUtilization(userId, body)
 
 Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 
@@ -8298,9 +8298,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
-Utilization body = new Utilization(); // Utilization | utilization
+UtilizationRequest body = new UtilizationRequest(); // UtilizationRequest | utilization
 try {
-    AgentMaxUtilization result = apiInstance.putRoutingUserUtilization(userId, body);
+    AgentMaxUtilizationResponse result = apiInstance.putRoutingUserUtilization(userId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#putRoutingUserUtilization");
@@ -8314,13 +8314,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**Utilization**](Utilization.html)| utilization | 
+| **body** | [**UtilizationRequest**](UtilizationRequest.html)| utilization | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AgentMaxUtilization**](AgentMaxUtilization.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
 
 <a name="putRoutingUtilization"></a>
 
@@ -8328,7 +8328,7 @@ try {
 
 
 
-> [Utilization](Utilization.html) putRoutingUtilization(body)
+> [UtilizationResponse](UtilizationResponse.html) putRoutingUtilization(body)
 
 Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 
@@ -8360,9 +8360,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-Utilization body = new Utilization(); // Utilization | utilization
+UtilizationRequest body = new UtilizationRequest(); // UtilizationRequest | utilization
 try {
-    Utilization result = apiInstance.putRoutingUtilization(body);
+    UtilizationResponse result = apiInstance.putRoutingUtilization(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#putRoutingUtilization");
@@ -8375,13 +8375,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Utilization**](Utilization.html)| utilization | 
+| **body** | [**UtilizationRequest**](UtilizationRequest.html)| utilization | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+[**UtilizationResponse**](UtilizationResponse.html)
 
 <a name="putRoutingWrapupcode"></a>
 

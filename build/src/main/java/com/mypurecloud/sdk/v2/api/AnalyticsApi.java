@@ -49,6 +49,10 @@ import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.FlowAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.FlowAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.FlowExecutionAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.FlowExecutionAggregationQuery;
+import com.mypurecloud.sdk.v2.model.FlowExecutionAsyncAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.FlowExecutionAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
@@ -78,6 +82,7 @@ import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
 import com.mypurecloud.sdk.v2.model.RunNowResponse;
+import com.mypurecloud.sdk.v2.model.SessionsResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.SurveyAsyncAggregateQueryResponse;
@@ -111,6 +116,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowReportingturnsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
@@ -123,6 +129,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAv
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsDataretentionSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsEvaluationsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsEvaluationsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsFlowexecutionsAggregatesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsFlowexecutionsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsFlowsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsFlowsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobRequest;
@@ -168,6 +176,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQuery
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsTranscriptsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowexecutionsAggregatesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowexecutionsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowsActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowsAggregatesQueryRequest;
@@ -610,7 +620,7 @@ public class AnalyticsApi {
 
   /**
    * Get Reporting Turns.
-   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
+   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
    * @param botFlowId ID of the bot flow. (required)
    * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
    * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
@@ -629,7 +639,7 @@ public class AnalyticsApi {
 
   /**
    * Get Reporting Turns.
-   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
+   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
    * @param botFlowId ID of the bot flow. (required)
    * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
    * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
@@ -668,7 +678,7 @@ public class AnalyticsApi {
 
   /**
    * Get Reporting Turns.
-   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
+   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
    * @param request The request object
    * @return ReportingTurnsResponse
    * @throws ApiException if the request fails on the server
@@ -687,7 +697,7 @@ public class AnalyticsApi {
 
   /**
    * Get Reporting Turns.
-   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
+   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -710,6 +720,104 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ReportingTurnsResponse> response = (ApiResponse<ReportingTurnsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Bot Flow Sessions.
+   * Returns the bot flow sessions in reverse chronological order from the date they were created. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * @param botFlowId ID of the bot flow. (required)
+   * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
+   * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
+   * @param interval Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional, default to null)
+   * @param botResultCategories Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by. (optional)
+   * @param endLanguage Optional case-insensitive language code to filter sessions by the language the sessions ended in. (optional)
+   * @return SessionsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SessionsResponse getAnalyticsBotflowSessions(String botFlowId, String after, String pageSize, String interval, String botResultCategories, String endLanguage) throws IOException, ApiException {
+    return  getAnalyticsBotflowSessions(createGetAnalyticsBotflowSessionsRequest(botFlowId, after, pageSize, interval, botResultCategories, endLanguage));
+  }
+
+  /**
+   * Get Bot Flow Sessions.
+   * Returns the bot flow sessions in reverse chronological order from the date they were created. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * @param botFlowId ID of the bot flow. (required)
+   * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
+   * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
+   * @param interval Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional, default to null)
+   * @param botResultCategories Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by. (optional)
+   * @param endLanguage Optional case-insensitive language code to filter sessions by the language the sessions ended in. (optional)
+   * @return SessionsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SessionsResponse> getAnalyticsBotflowSessionsWithHttpInfo(String botFlowId, String after, String pageSize, String interval, String botResultCategories, String endLanguage) throws IOException {
+    return getAnalyticsBotflowSessions(createGetAnalyticsBotflowSessionsRequest(botFlowId, after, pageSize, interval, botResultCategories, endLanguage).withHttpInfo());
+  }
+
+  private GetAnalyticsBotflowSessionsRequest createGetAnalyticsBotflowSessionsRequest(String botFlowId, String after, String pageSize, String interval, String botResultCategories, String endLanguage) {
+    return GetAnalyticsBotflowSessionsRequest.builder()
+            .withBotFlowId(botFlowId)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withInterval(interval)
+
+            .withBotResultCategories(botResultCategories)
+
+            .withEndLanguage(endLanguage)
+
+            .build();
+  }
+
+  /**
+   * Get Bot Flow Sessions.
+   * Returns the bot flow sessions in reverse chronological order from the date they were created. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * @param request The request object
+   * @return SessionsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SessionsResponse getAnalyticsBotflowSessions(GetAnalyticsBotflowSessionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SessionsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SessionsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Bot Flow Sessions.
+   * Returns the bot flow sessions in reverse chronological order from the date they were created. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SessionsResponse> getAnalyticsBotflowSessions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SessionsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SessionsResponse> response = (ApiResponse<SessionsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SessionsResponse> response = (ApiResponse<SessionsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1682,6 +1790,174 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EvaluationAsyncAggregateQueryResponse> response = (ApiResponse<EvaluationAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get status for async query for flow execution aggregates
+   * 
+   * getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsFlowexecutionsAggregatesJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsFlowexecutionsAggregatesJob(createGetAnalyticsFlowexecutionsAggregatesJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for flow execution aggregates
+   * 
+   * getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsFlowexecutionsAggregatesJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsFlowexecutionsAggregatesJob(createGetAnalyticsFlowexecutionsAggregatesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsFlowexecutionsAggregatesJobRequest createGetAnalyticsFlowexecutionsAggregatesJobRequest(String jobId) {
+    return GetAnalyticsFlowexecutionsAggregatesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get status for async query for flow execution aggregates
+   * 
+   * getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsFlowexecutionsAggregatesJob(GetAnalyticsFlowexecutionsAggregatesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for flow execution aggregates
+   * 
+   * getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsFlowexecutionsAggregatesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return FlowExecutionAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowExecutionAsyncAggregateQueryResponse getAnalyticsFlowexecutionsAggregatesJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsFlowexecutionsAggregatesJobResults(createGetAnalyticsFlowexecutionsAggregatesJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @param cursor Cursor token to retrieve next page (optional)
+   * @return FlowExecutionAsyncAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowExecutionAsyncAggregateQueryResponse> getAnalyticsFlowexecutionsAggregatesJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsFlowexecutionsAggregatesJobResults(createGetAnalyticsFlowexecutionsAggregatesJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsFlowexecutionsAggregatesJobResultsRequest createGetAnalyticsFlowexecutionsAggregatesJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsFlowexecutionsAggregatesJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .withCursor(cursor)
+
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FlowExecutionAsyncAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowExecutionAsyncAggregateQueryResponse getAnalyticsFlowexecutionsAggregatesJobResults(GetAnalyticsFlowexecutionsAggregatesJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowExecutionAsyncAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowExecutionAsyncAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async aggregates query
+   * 
+   * getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowExecutionAsyncAggregateQueryResponse> getAnalyticsFlowexecutionsAggregatesJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowExecutionAsyncAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowExecutionAsyncAggregateQueryResponse> response = (ApiResponse<FlowExecutionAsyncAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowExecutionAsyncAggregateQueryResponse> response = (ApiResponse<FlowExecutionAsyncAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5345,6 +5621,170 @@ public class AnalyticsApi {
   }
 
   /**
+   * Query for flow execution aggregates asynchronously
+   * 
+   * postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsFlowexecutionsAggregatesJobs(FlowExecutionAsyncAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsFlowexecutionsAggregatesJobs(createPostAnalyticsFlowexecutionsAggregatesJobsRequest(body));
+  }
+
+  /**
+   * Query for flow execution aggregates asynchronously
+   * 
+   * postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsFlowexecutionsAggregatesJobsWithHttpInfo(FlowExecutionAsyncAggregationQuery body) throws IOException {
+    return postAnalyticsFlowexecutionsAggregatesJobs(createPostAnalyticsFlowexecutionsAggregatesJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsFlowexecutionsAggregatesJobsRequest createPostAnalyticsFlowexecutionsAggregatesJobsRequest(FlowExecutionAsyncAggregationQuery body) {
+    return PostAnalyticsFlowexecutionsAggregatesJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for flow execution aggregates asynchronously
+   * 
+   * postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsFlowexecutionsAggregatesJobs(PostAnalyticsFlowexecutionsAggregatesJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for flow execution aggregates asynchronously
+   * 
+   * postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsFlowexecutionsAggregatesJobs(ApiRequest<FlowExecutionAsyncAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for flow execution aggregates
+   * 
+   * postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return FlowExecutionAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowExecutionAggregateQueryResponse postAnalyticsFlowexecutionsAggregatesQuery(FlowExecutionAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsFlowexecutionsAggregatesQuery(createPostAnalyticsFlowexecutionsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for flow execution aggregates
+   * 
+   * postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body query (required)
+   * @return FlowExecutionAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowExecutionAggregateQueryResponse> postAnalyticsFlowexecutionsAggregatesQueryWithHttpInfo(FlowExecutionAggregationQuery body) throws IOException {
+    return postAnalyticsFlowexecutionsAggregatesQuery(createPostAnalyticsFlowexecutionsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsFlowexecutionsAggregatesQueryRequest createPostAnalyticsFlowexecutionsAggregatesQueryRequest(FlowExecutionAggregationQuery body) {
+    return PostAnalyticsFlowexecutionsAggregatesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for flow execution aggregates
+   * 
+   * postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FlowExecutionAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowExecutionAggregateQueryResponse postAnalyticsFlowexecutionsAggregatesQuery(PostAnalyticsFlowexecutionsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowExecutionAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowExecutionAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for flow execution aggregates
+   * 
+   * postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowExecutionAggregateQueryResponse> postAnalyticsFlowexecutionsAggregatesQuery(ApiRequest<FlowExecutionAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowExecutionAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowExecutionAggregateQueryResponse> response = (ApiResponse<FlowExecutionAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowExecutionAggregateQueryResponse> response = (ApiResponse<FlowExecutionAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Query for flow activity observations
    * 
    * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -6154,11 +6594,12 @@ public class AnalyticsApi {
 
   /**
    * Place a scheduled report immediately into the reporting queue
-   * 
+   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
    * @param scheduleId Schedule ID (required)
    * @return RunNowResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public RunNowResponse postAnalyticsReportingScheduleRunreport(String scheduleId) throws IOException, ApiException {
     return  postAnalyticsReportingScheduleRunreport(createPostAnalyticsReportingScheduleRunreportRequest(scheduleId));
@@ -6166,10 +6607,11 @@ public class AnalyticsApi {
 
   /**
    * Place a scheduled report immediately into the reporting queue
-   * 
+   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
    * @param scheduleId Schedule ID (required)
    * @return RunNowResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<RunNowResponse> postAnalyticsReportingScheduleRunreportWithHttpInfo(String scheduleId) throws IOException {
     return postAnalyticsReportingScheduleRunreport(createPostAnalyticsReportingScheduleRunreportRequest(scheduleId).withHttpInfo());
@@ -6184,11 +6626,12 @@ public class AnalyticsApi {
 
   /**
    * Place a scheduled report immediately into the reporting queue
-   * 
+   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
    * @param request The request object
    * @return RunNowResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public RunNowResponse postAnalyticsReportingScheduleRunreport(PostAnalyticsReportingScheduleRunreportRequest request) throws IOException, ApiException {
     try {
@@ -6203,10 +6646,11 @@ public class AnalyticsApi {
 
   /**
    * Place a scheduled report immediately into the reporting queue
-   * 
+   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<RunNowResponse> postAnalyticsReportingScheduleRunreport(ApiRequest<Void> request) throws IOException {
     try {
@@ -6232,11 +6676,12 @@ public class AnalyticsApi {
 
   /**
    * Create a scheduled report job
-   * Create a scheduled report job.
+   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
    * @param body ReportSchedule (required)
    * @return ReportSchedule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ReportSchedule postAnalyticsReportingSchedules(ReportSchedule body) throws IOException, ApiException {
     return  postAnalyticsReportingSchedules(createPostAnalyticsReportingSchedulesRequest(body));
@@ -6244,10 +6689,11 @@ public class AnalyticsApi {
 
   /**
    * Create a scheduled report job
-   * Create a scheduled report job.
+   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
    * @param body ReportSchedule (required)
    * @return ReportSchedule
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ReportSchedule> postAnalyticsReportingSchedulesWithHttpInfo(ReportSchedule body) throws IOException {
     return postAnalyticsReportingSchedules(createPostAnalyticsReportingSchedulesRequest(body).withHttpInfo());
@@ -6262,11 +6708,12 @@ public class AnalyticsApi {
 
   /**
    * Create a scheduled report job
-   * Create a scheduled report job.
+   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
    * @param request The request object
    * @return ReportSchedule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ReportSchedule postAnalyticsReportingSchedules(PostAnalyticsReportingSchedulesRequest request) throws IOException, ApiException {
     try {
@@ -6281,10 +6728,11 @@ public class AnalyticsApi {
 
   /**
    * Create a scheduled report job
-   * Create a scheduled report job.
+   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ReportSchedule> postAnalyticsReportingSchedules(ApiRequest<ReportSchedule> request) throws IOException {
     try {
@@ -7618,12 +8066,13 @@ public class AnalyticsApi {
 
   /**
    * Update a scheduled report job.
-   * 
+   * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
    * @param scheduleId Schedule ID (required)
    * @param body ReportSchedule (required)
    * @return ReportSchedule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ReportSchedule putAnalyticsReportingSchedule(String scheduleId, ReportSchedule body) throws IOException, ApiException {
     return  putAnalyticsReportingSchedule(createPutAnalyticsReportingScheduleRequest(scheduleId, body));
@@ -7631,11 +8080,12 @@ public class AnalyticsApi {
 
   /**
    * Update a scheduled report job.
-   * 
+   * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
    * @param scheduleId Schedule ID (required)
    * @param body ReportSchedule (required)
    * @return ReportSchedule
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ReportSchedule> putAnalyticsReportingScheduleWithHttpInfo(String scheduleId, ReportSchedule body) throws IOException {
     return putAnalyticsReportingSchedule(createPutAnalyticsReportingScheduleRequest(scheduleId, body).withHttpInfo());
@@ -7652,11 +8102,12 @@ public class AnalyticsApi {
 
   /**
    * Update a scheduled report job.
-   * 
+   * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
    * @param request The request object
    * @return ReportSchedule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ReportSchedule putAnalyticsReportingSchedule(PutAnalyticsReportingScheduleRequest request) throws IOException, ApiException {
     try {
@@ -7671,10 +8122,11 @@ public class AnalyticsApi {
 
   /**
    * Update a scheduled report job.
-   * 
+   * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ReportSchedule> putAnalyticsReportingSchedule(ApiRequest<ReportSchedule> request) throws IOException {
     try {

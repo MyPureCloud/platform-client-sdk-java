@@ -10,7 +10,7 @@ title: TriggerTarget
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | The entity type to target |  [optional] |
 | **id** | <!----><!---->**String**<!----> | The ID of the entity to target |  [optional] |
-| **workflowTargetSettings** | <!----><!---->[**WorkflowTargetSettings**](WorkflowTargetSettings.html)<!----> | Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode. |  [optional] |
+| **workflowTargetSettings** | <!----><!---->[**WorkflowTargetSettings**](WorkflowTargetSettings.html)<!----> | Optional config for the target. |  [optional] |
 {: class="table table-striped"}
 
 

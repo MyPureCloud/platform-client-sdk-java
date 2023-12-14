@@ -9,21 +9,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteAlertingAlert**](AlertingApi.html#deleteAlertingAlert) | Delete an alert |
 | [**deleteAlertingInteractionstatsAlert**](AlertingApi.html#deleteAlertingInteractionstatsAlert) | Delete an interaction stats alert |
-| [**deleteAlertingInteractionstatsRule**](AlertingApi.html#deleteAlertingInteractionstatsRule) | Delete an interaction stats rule. |
+| [**deleteAlertingInteractionstatsRule**](AlertingApi.html#deleteAlertingInteractionstatsRule) | Delete an interaction stats rule |
 | [**deleteAlertingRule**](AlertingApi.html#deleteAlertingRule) | Delete a rule. |
 | [**getAlertingAlert**](AlertingApi.html#getAlertingAlert) | Get an alert |
-| [**getAlertingAlertsActive**](AlertingApi.html#getAlertingAlertsActive) | Gets active alert count for a user. |
+| [**getAlertingAlertsActive**](AlertingApi.html#getAlertingAlertsActive) | Gets active alert count for a user |
 | [**getAlertingInteractionstatsAlert**](AlertingApi.html#getAlertingInteractionstatsAlert) | Get an interaction stats alert |
-| [**getAlertingInteractionstatsAlerts**](AlertingApi.html#getAlertingInteractionstatsAlerts) | Get interaction stats alert list. |
-| [**getAlertingInteractionstatsAlertsUnread**](AlertingApi.html#getAlertingInteractionstatsAlertsUnread) | Gets user unread count of interaction stats alerts. |
-| [**getAlertingInteractionstatsRule**](AlertingApi.html#getAlertingInteractionstatsRule) | Get an interaction stats rule. |
-| [**getAlertingInteractionstatsRules**](AlertingApi.html#getAlertingInteractionstatsRules) | Get an interaction stats rule list. |
+| [**getAlertingInteractionstatsAlerts**](AlertingApi.html#getAlertingInteractionstatsAlerts) | Get interaction stats alert list |
+| [**getAlertingInteractionstatsAlertsUnread**](AlertingApi.html#getAlertingInteractionstatsAlertsUnread) | Gets user unread count of interaction stats alerts |
+| [**getAlertingInteractionstatsRule**](AlertingApi.html#getAlertingInteractionstatsRule) | Get an interaction stats rule |
+| [**getAlertingInteractionstatsRules**](AlertingApi.html#getAlertingInteractionstatsRules) | Get an interaction stats rule list |
 | [**getAlertingRule**](AlertingApi.html#getAlertingRule) | Get a rule. |
 | [**patchAlertingAlert**](AlertingApi.html#patchAlertingAlert) | Allows an entity to mute/snooze an alert or update the unread status of the alert. |
 | [**patchAlertingAlertsBulk**](AlertingApi.html#patchAlertingAlertsBulk) | Bulk alert updates |
 | [**patchAlertingRulesBulk**](AlertingApi.html#patchAlertingRulesBulk) | Bulk update of notification lists |
 | [**postAlertingAlertsQuery**](AlertingApi.html#postAlertingAlertsQuery) | Gets a paged list of alerts. The max page size is 50 |
-| [**postAlertingInteractionstatsRules**](AlertingApi.html#postAlertingInteractionstatsRules) | Create an interaction stats rule. |
+| [**postAlertingInteractionstatsRules**](AlertingApi.html#postAlertingInteractionstatsRules) | Create an interaction stats rule |
 | [**postAlertingRules**](AlertingApi.html#postAlertingRules) | Create a Rule. |
 | [**postAlertingRulesBulkRemove**](AlertingApi.html#postAlertingRulesBulkRemove) | Bulk remove rules |
 | [**postAlertingRulesQuery**](AlertingApi.html#postAlertingRulesQuery) | Get a paged list of rules.  The max size of the page is 50 items. |
@@ -97,11 +97,13 @@ null (empty response body)
 
 # **deleteAlertingInteractionstatsAlert**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deleteAlertingInteractionstatsAlert(alertId)
 
 Delete an interaction stats alert
+
+Apps should migrate to use DELETE /api/v2/alerting/alerts/{alertId}.
 
 Wraps DELETE /api/v2/alerting/interactionstats/alerts/{alertId}  
 
@@ -157,11 +159,13 @@ null (empty response body)
 
 # **deleteAlertingInteractionstatsRule**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deleteAlertingInteractionstatsRule(ruleId)
 
-Delete an interaction stats rule.
+Delete an interaction stats rule
+
+Apps should migrate to use DELETE /api/v2/alerting/rules/{ruleId}.
 
 Wraps DELETE /api/v2/alerting/interactionstats/rules/{ruleId}  
 
@@ -338,11 +342,13 @@ try {
 
 # **getAlertingAlertsActive**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ActiveAlertCount](ActiveAlertCount.html) getAlertingAlertsActive()
 
-Gets active alert count for a user.
+Gets active alert count for a user
+
+Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and alertStatus to 'Active' in the request body.
 
 Wraps GET /api/v2/alerting/alerts/active  
 
@@ -394,11 +400,13 @@ This endpoint does not require any parameters.
 
 # **getAlertingInteractionstatsAlert**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [InteractionStatsAlert](InteractionStatsAlert.html) getAlertingInteractionstatsAlert(alertId, expand)
 
 Get an interaction stats alert
+
+Apps should migrate to use GET /api/v2/alerting/alerts/{alertId}.
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/{alertId}  
 
@@ -457,11 +465,13 @@ try {
 
 # **getAlertingInteractionstatsAlerts**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [InteractionStatsAlertContainer](InteractionStatsAlertContainer.html) getAlertingInteractionstatsAlerts(expand)
 
-Get interaction stats alert list.
+Get interaction stats alert list
+
+Apps should migrate to use POST /api/v2/alerting/alerts/query.
 
 Wraps GET /api/v2/alerting/interactionstats/alerts  
 
@@ -518,11 +528,13 @@ try {
 
 # **getAlertingInteractionstatsAlertsUnread**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [UnreadMetric](UnreadMetric.html) getAlertingInteractionstatsAlertsUnread()
 
-Gets user unread count of interaction stats alerts.
+Gets user unread count of interaction stats alerts
+
+Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and viewStatus to 'Unread' in the request body.
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/unread  
 
@@ -574,11 +586,13 @@ This endpoint does not require any parameters.
 
 # **getAlertingInteractionstatsRule**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [InteractionStatsRule](InteractionStatsRule.html) getAlertingInteractionstatsRule(ruleId, expand)
 
-Get an interaction stats rule.
+Get an interaction stats rule
+
+Apps should migrate to use GET /api/v2/alerting/rules/{ruleId}.
 
 Wraps GET /api/v2/alerting/interactionstats/rules/{ruleId}  
 
@@ -637,11 +651,13 @@ try {
 
 # **getAlertingInteractionstatsRules**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [InteractionStatsRuleContainer](InteractionStatsRuleContainer.html) getAlertingInteractionstatsRules(expand)
 
-Get an interaction stats rule list.
+Get an interaction stats rule list
+
+Apps should migrate to use POST /api/v2/alerting/rules/query.
 
 Wraps GET /api/v2/alerting/interactionstats/rules  
 
@@ -1007,11 +1023,13 @@ try {
 
 # **postAlertingInteractionstatsRules**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [InteractionStatsRule](InteractionStatsRule.html) postAlertingInteractionstatsRules(body, expand)
 
-Create an interaction stats rule.
+Create an interaction stats rule
+
+Apps should migrate to use POST /api/v2/alerting/rules.
 
 Wraps POST /api/v2/alerting/interactionstats/rules  
 
@@ -1316,11 +1334,13 @@ try {
 
 # **putAlertingInteractionstatsAlert**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [UnreadStatus](UnreadStatus.html) putAlertingInteractionstatsAlert(alertId, body, expand)
 
 Update an interaction stats alert read status
+
+Apps should migrate to use PUT /api/v2/alerting/alerts/{alertId}.
 
 Wraps PUT /api/v2/alerting/interactionstats/alerts/{alertId}  
 
@@ -1381,11 +1401,13 @@ try {
 
 # **putAlertingInteractionstatsRule**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [InteractionStatsRule](InteractionStatsRule.html) putAlertingInteractionstatsRule(ruleId, body, expand)
 
 Update an interaction stats rule
+
+Apps should migrate to use PUT /api/v2/alerting/rules/{ruleId}.
 
 Wraps PUT /api/v2/alerting/interactionstats/rules/{ruleId}  
 

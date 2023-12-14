@@ -15,6 +15,9 @@ title: LearningModuleRequest
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | The type for the learning module |  [optional] |
 | **assessmentForm** | <!----><!---->[**AssessmentForm**](AssessmentForm.html)<!----> | The assessment form for learning module |  [optional] |
 | **coverArt** | <!----><!---->[**LearningModuleCoverArtRequest**](LearningModuleCoverArtRequest.html)<!----> | The cover art for the learning module |  [optional] |
+| **lengthInMinutes** | <!----><!---->**Integer**<!----> | The recommended time in minutes to complete the module |  [optional] |
+| **excludedFromCatalog** | <!----><!---->**Boolean**<!----> | If true, learning module is excluded when retrieving modules for manual assignment |  [optional] |
+| **externalId** | <!----><!---->**String**<!----> | The external ID of the learning module. Maximum length: 50 characters. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -290,14 +290,14 @@ public class WebDeploymentConfigurationVersionResponse  implements Serializable 
 
 
   /**
-   * The settings for support center
+   * The settings for knowledge portal (previously support center)
    **/
   public WebDeploymentConfigurationVersionResponse supportCenter(SupportCenterSettings supportCenter) {
     this.supportCenter = supportCenter;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The settings for support center")
+  @ApiModelProperty(example = "null", value = "The settings for knowledge portal (previously support center)")
   @JsonProperty("supportCenter")
   public SupportCenterSettings getSupportCenter() {
     return supportCenter;

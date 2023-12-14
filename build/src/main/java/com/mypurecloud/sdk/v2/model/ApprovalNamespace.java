@@ -41,13 +41,6 @@ public class ApprovalNamespace  implements Serializable {
  @JsonDeserialize(using = NamespaceEnumDeserializer.class)
   public enum NamespaceEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    AGENT_ASSISTANT("agent.assistant"),
-    ANALYTICS_ALERTING("analytics.alerting"),
-    ANALYTICS("analytics"),
-    ANALYTICS_REALTIME("analytics.realtime"),
-    ANALYTICS_REPORTING_SETTINGS("analytics.reporting.settings"),
-    ARCHITECT("architect"),
-    AUDIOHOOK("audiohook"),
     AUDIT("audit"),
     AUTH_API("auth.api"),
     AUTHORIZATION("authorization"),
@@ -62,6 +55,7 @@ public class ApprovalNamespace  implements Serializable {
     DATATABLES("datatables"),
     DIRECTORY("directory"),
     EMAIL("email"),
+    EMPLOYEE_ENGAGEMENT("employee.engagement"),
     EVENT_ORCHESTRATION("event.orchestration"),
     EXTERNAL_CONTACTS("external.contacts"),
     GCV("gcv"),
@@ -104,7 +98,14 @@ public class ApprovalNamespace  implements Serializable {
     WEB_MESSAGING("web.messaging"),
     WEBCHAT("webchat"),
     WEBHOOKS("webhooks"),
-    WORKFORCE_MANAGEMENT("workforce.management");
+    WORKFORCE_MANAGEMENT("workforce.management"),
+    AGENT_ASSISTANT("agent.assistant"),
+    ANALYTICS_ALERTING("analytics.alerting"),
+    ANALYTICS("analytics"),
+    ANALYTICS_REALTIME("analytics.realtime"),
+    ANALYTICS_REPORTING_SETTINGS("analytics.reporting.settings"),
+    ARCHITECT("architect"),
+    AUDIOHOOK("audiohook");
 
     private String value;
 

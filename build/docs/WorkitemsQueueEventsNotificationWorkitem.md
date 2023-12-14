@@ -39,6 +39,7 @@ title: WorkitemsQueueEventsNotificationWorkitem
 | **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **customFields** | <!----><!---->[**Map&lt;String, WorkitemsQueueEventsNotificationCustomAttribute&gt;**](WorkitemsQueueEventsNotificationCustomAttribute.html)<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**WorkitemsQueueEventsNotificationWrapup**](WorkitemsQueueEventsNotificationWrapup.html)<!----> |  |  [optional] |
+| **sessions** | <!----><!---->[**List&lt;WorkitemsQueueEventsNotificationSession&gt;**](WorkitemsQueueEventsNotificationSession.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

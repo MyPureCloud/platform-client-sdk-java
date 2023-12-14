@@ -112,14 +112,14 @@ public class TriggerTarget  implements Serializable {
 
 
   /**
-   * Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode.
+   * Optional config for the target.
    **/
   public TriggerTarget workflowTargetSettings(WorkflowTargetSettings workflowTargetSettings) {
     this.workflowTargetSettings = workflowTargetSettings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode.")
+  @ApiModelProperty(example = "null", value = "Optional config for the target.")
   @JsonProperty("workflowTargetSettings")
   public WorkflowTargetSettings getWorkflowTargetSettings() {
     return workflowTargetSettings;

@@ -92,20 +92,6 @@ public class GetJourneyDeploymentCustomerPingRequest {
 	    return this;
 	} 
 
-	private String sessionId;
-	public String getSessionId() {
-		return this.sessionId;
-	}
-
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
-	}
-
-	public GetJourneyDeploymentCustomerPingRequest withSessionId(String sessionId) {
-	    this.setSessionId(sessionId);
-	    return this;
-	} 
-
 	private String dl;
 	public String getDl() {
 		return this.dl;
@@ -145,6 +131,20 @@ public class GetJourneyDeploymentCustomerPingRequest {
 
 	public GetJourneyDeploymentCustomerPingRequest withAppNamespace(String appNamespace) {
 	    this.setAppNamespace(appNamespace);
+	    return this;
+	} 
+
+	private String sessionId;
+	public String getSessionId() {
+		return this.sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+	}
+
+	public GetJourneyDeploymentCustomerPingRequest withSessionId(String sessionId) {
+	    this.setSessionId(sessionId);
 	    return this;
 	} 
 
@@ -193,11 +193,6 @@ public class GetJourneyDeploymentCustomerPingRequest {
             throw new IllegalStateException("Missing the required parameter 'customerCookieId' when building request for GetJourneyDeploymentCustomerPingRequest.");
         }
         
-        // verify the required parameter 'sessionId' is set
-        if (this.sessionId == null) {
-            throw new IllegalStateException("Missing the required parameter 'sessionId' when building request for GetJourneyDeploymentCustomerPingRequest.");
-        }
-        
 
         return ApiRequestBuilder.create("GET", "/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping")
                 .withPathParameter("deploymentId", deploymentId)
@@ -231,9 +226,9 @@ public class GetJourneyDeploymentCustomerPingRequest {
 	}
 
 
-	public static Builder builder(String deploymentId, String customerCookieId, String sessionId) {
+	public static Builder builder(String deploymentId, String customerCookieId) {
 	    return new Builder()
-	            .withRequiredParams(deploymentId, customerCookieId, sessionId);
+	            .withRequiredParams(deploymentId, customerCookieId);
 	}
 
 
@@ -255,11 +250,6 @@ public class GetJourneyDeploymentCustomerPingRequest {
 			return this;
 		}
 
-		public Builder withSessionId(String sessionId) {
-			request.setSessionId(sessionId);
-			return this;
-		}
-
 		public Builder withDl(String dl) {
 			request.setDl(dl);
 			return this;
@@ -275,6 +265,11 @@ public class GetJourneyDeploymentCustomerPingRequest {
 			return this;
 		}
 
+		public Builder withSessionId(String sessionId) {
+			request.setSessionId(sessionId);
+			return this;
+		}
+
 		public Builder withSinceLastBeaconMilliseconds(Long sinceLastBeaconMilliseconds) {
 			request.setSinceLastBeaconMilliseconds(sinceLastBeaconMilliseconds);
 			return this;
@@ -282,10 +277,9 @@ public class GetJourneyDeploymentCustomerPingRequest {
 
 
 
-		public Builder withRequiredParams(String deploymentId, String customerCookieId, String sessionId) {
+		public Builder withRequiredParams(String deploymentId, String customerCookieId) {
 			request.setDeploymentId(deploymentId);
 			request.setCustomerCookieId(customerCookieId);
-			request.setSessionId(sessionId);
 
 			return this;
 		}
@@ -301,11 +295,6 @@ public class GetJourneyDeploymentCustomerPingRequest {
             // verify the required parameter 'customerCookieId' is set
             if (request.customerCookieId == null) {
                 throw new IllegalStateException("Missing the required parameter 'customerCookieId' when building request for GetJourneyDeploymentCustomerPingRequest.");
-            }
-            
-            // verify the required parameter 'sessionId' is set
-            if (request.sessionId == null) {
-                throw new IllegalStateException("Missing the required parameter 'sessionId' when building request for GetJourneyDeploymentCustomerPingRequest.");
             }
             
 			return request;

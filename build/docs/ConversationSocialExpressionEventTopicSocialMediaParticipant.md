@@ -44,6 +44,7 @@ title: ConversationSocialExpressionEventTopicSocialMediaParticipant
 | **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **queueMediaSettings** | <!----><!---->[**ConversationSocialExpressionEventTopicQueueMediaSettings**](ConversationSocialExpressionEventTopicQueueMediaSettings.html)<!----> |  |  [optional] |
 | **socialMediaId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **socialMediaHub** | <!----><!---->**String**<!----> |  |  [optional] |
 | **socialUserName** | <!----><!---->**String**<!----> |  |  [optional] |

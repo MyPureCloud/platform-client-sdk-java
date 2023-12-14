@@ -30,6 +30,8 @@ public class TranscriptionTopicTranscriptAlternative  implements Serializable {
   private Integer durationMs = null;
   private String transcript = null;
   private List<TranscriptionTopicTranscriptWord> words = new ArrayList<TranscriptionTopicTranscriptWord>();
+  private String decoratedTranscript = null;
+  private List<TranscriptionTopicTranscriptWord> decoratedWords = new ArrayList<TranscriptionTopicTranscriptWord>();
 
   
   /**
@@ -117,6 +119,40 @@ public class TranscriptionTopicTranscriptAlternative  implements Serializable {
   }
 
 
+  /**
+   **/
+  public TranscriptionTopicTranscriptAlternative decoratedTranscript(String decoratedTranscript) {
+    this.decoratedTranscript = decoratedTranscript;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("decoratedTranscript")
+  public String getDecoratedTranscript() {
+    return decoratedTranscript;
+  }
+  public void setDecoratedTranscript(String decoratedTranscript) {
+    this.decoratedTranscript = decoratedTranscript;
+  }
+
+
+  /**
+   **/
+  public TranscriptionTopicTranscriptAlternative decoratedWords(List<TranscriptionTopicTranscriptWord> decoratedWords) {
+    this.decoratedWords = decoratedWords;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("decoratedWords")
+  public List<TranscriptionTopicTranscriptWord> getDecoratedWords() {
+    return decoratedWords;
+  }
+  public void setDecoratedWords(List<TranscriptionTopicTranscriptWord> decoratedWords) {
+    this.decoratedWords = decoratedWords;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -131,12 +167,14 @@ public class TranscriptionTopicTranscriptAlternative  implements Serializable {
             Objects.equals(this.offsetMs, transcriptionTopicTranscriptAlternative.offsetMs) &&
             Objects.equals(this.durationMs, transcriptionTopicTranscriptAlternative.durationMs) &&
             Objects.equals(this.transcript, transcriptionTopicTranscriptAlternative.transcript) &&
-            Objects.equals(this.words, transcriptionTopicTranscriptAlternative.words);
+            Objects.equals(this.words, transcriptionTopicTranscriptAlternative.words) &&
+            Objects.equals(this.decoratedTranscript, transcriptionTopicTranscriptAlternative.decoratedTranscript) &&
+            Objects.equals(this.decoratedWords, transcriptionTopicTranscriptAlternative.decoratedWords);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(confidence, offsetMs, durationMs, transcript, words);
+    return Objects.hash(confidence, offsetMs, durationMs, transcript, words, decoratedTranscript, decoratedWords);
   }
 
   @Override
@@ -149,6 +187,8 @@ public class TranscriptionTopicTranscriptAlternative  implements Serializable {
     sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
     sb.append("    transcript: ").append(toIndentedString(transcript)).append("\n");
     sb.append("    words: ").append(toIndentedString(words)).append("\n");
+    sb.append("    decoratedTranscript: ").append(toIndentedString(decoratedTranscript)).append("\n");
+    sb.append("    decoratedWords: ").append(toIndentedString(decoratedWords)).append("\n");
     sb.append("}");
     return sb.toString();
   }

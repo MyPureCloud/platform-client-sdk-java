@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAfterCallWork;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -212,6 +213,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
   private QueueConversationVideoEventTopicWrapup wrapup = null;
   private QueueConversationVideoEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+  private QueueConversationVideoEventTopicQueueMediaSettings queueMediaSettings = null;
 
   
   /**
@@ -554,6 +556,24 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
   }
 
 
+  /**
+   * Represents the queue setting for this media.
+   **/
+  public QueueConversationVideoEventTopicCobrowse queueMediaSettings(QueueConversationVideoEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the queue setting for this media.")
+  @JsonProperty("queueMediaSettings")
+  public QueueConversationVideoEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(QueueConversationVideoEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -582,12 +602,13 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
             Objects.equals(this.disconnectedTime, queueConversationVideoEventTopicCobrowse.disconnectedTime) &&
             Objects.equals(this.wrapup, queueConversationVideoEventTopicCobrowse.wrapup) &&
             Objects.equals(this.afterCallWork, queueConversationVideoEventTopicCobrowse.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicCobrowse.afterCallWorkRequired);
+            Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicCobrowse.afterCallWorkRequired) &&
+            Objects.equals(this.queueMediaSettings, queueConversationVideoEventTopicCobrowse.queueMediaSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, initialState, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, queueMediaSettings);
   }
 
   @Override
@@ -614,6 +635,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

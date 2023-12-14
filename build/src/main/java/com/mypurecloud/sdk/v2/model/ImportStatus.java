@@ -14,6 +14,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -74,6 +76,8 @@ public class ImportStatus  implements Serializable {
   private Long completedRecords = null;
   private Integer percentComplete = null;
   private String failureReason = null;
+  private List<String> targetContactListIds = new ArrayList<String>();
+  private String listNamePrefix = null;
 
   
   @ApiModelProperty(example = "null", required = true, value = "current status of the import")
@@ -111,6 +115,20 @@ public class ImportStatus  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The contact list Ids for target contact lists.")
+  @JsonProperty("targetContactListIds")
+  public List<String> getTargetContactListIds() {
+    return targetContactListIds;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The prefix for the contact list name")
+  @JsonProperty("listNamePrefix")
+  public String getListNamePrefix() {
+    return listNamePrefix;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -125,12 +143,14 @@ public class ImportStatus  implements Serializable {
             Objects.equals(this.totalRecords, importStatus.totalRecords) &&
             Objects.equals(this.completedRecords, importStatus.completedRecords) &&
             Objects.equals(this.percentComplete, importStatus.percentComplete) &&
-            Objects.equals(this.failureReason, importStatus.failureReason);
+            Objects.equals(this.failureReason, importStatus.failureReason) &&
+            Objects.equals(this.targetContactListIds, importStatus.targetContactListIds) &&
+            Objects.equals(this.listNamePrefix, importStatus.listNamePrefix);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, totalRecords, completedRecords, percentComplete, failureReason);
+    return Objects.hash(state, totalRecords, completedRecords, percentComplete, failureReason, targetContactListIds, listNamePrefix);
   }
 
   @Override
@@ -143,6 +163,8 @@ public class ImportStatus  implements Serializable {
     sb.append("    completedRecords: ").append(toIndentedString(completedRecords)).append("\n");
     sb.append("    percentComplete: ").append(toIndentedString(percentComplete)).append("\n");
     sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
+    sb.append("    targetContactListIds: ").append(toIndentedString(targetContactListIds)).append("\n");
+    sb.append("    listNamePrefix: ").append(toIndentedString(listNamePrefix)).append("\n");
     sb.append("}");
     return sb.toString();
   }

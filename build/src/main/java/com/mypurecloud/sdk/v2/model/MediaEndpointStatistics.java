@@ -30,6 +30,7 @@ public class MediaEndpointStatistics  implements Serializable {
   private NamedEntity user = null;
   private MediaIceStatistics ice = null;
   private MediaRtpStatistics rtp = null;
+  private Integer reconnectAttemptCount = null;
 
   
   /**
@@ -122,6 +123,24 @@ public class MediaEndpointStatistics  implements Serializable {
   }
 
 
+  /**
+   * Media reconnect attempt count
+   **/
+  public MediaEndpointStatistics reconnectAttemptCount(Integer reconnectAttemptCount) {
+    this.reconnectAttemptCount = reconnectAttemptCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Media reconnect attempt count")
+  @JsonProperty("reconnectAttemptCount")
+  public Integer getReconnectAttemptCount() {
+    return reconnectAttemptCount;
+  }
+  public void setReconnectAttemptCount(Integer reconnectAttemptCount) {
+    this.reconnectAttemptCount = reconnectAttemptCount;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -136,12 +155,13 @@ public class MediaEndpointStatistics  implements Serializable {
             Objects.equals(this.station, mediaEndpointStatistics.station) &&
             Objects.equals(this.user, mediaEndpointStatistics.user) &&
             Objects.equals(this.ice, mediaEndpointStatistics.ice) &&
-            Objects.equals(this.rtp, mediaEndpointStatistics.rtp);
+            Objects.equals(this.rtp, mediaEndpointStatistics.rtp) &&
+            Objects.equals(this.reconnectAttemptCount, mediaEndpointStatistics.reconnectAttemptCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trunk, station, user, ice, rtp);
+    return Objects.hash(trunk, station, user, ice, rtp, reconnectAttemptCount);
   }
 
   @Override
@@ -154,6 +174,7 @@ public class MediaEndpointStatistics  implements Serializable {
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    ice: ").append(toIndentedString(ice)).append("\n");
     sb.append("    rtp: ").append(toIndentedString(rtp)).append("\n");
+    sb.append("    reconnectAttemptCount: ").append(toIndentedString(reconnectAttemptCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

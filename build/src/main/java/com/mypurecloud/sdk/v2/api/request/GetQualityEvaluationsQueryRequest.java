@@ -170,6 +170,20 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	} 
 
+	private String agentTeamId;
+	public String getAgentTeamId() {
+		return this.agentTeamId;
+	}
+
+	public void setAgentTeamId(String agentTeamId) {
+		this.agentTeamId = agentTeamId;
+	}
+
+	public GetQualityEvaluationsQueryRequest withAgentTeamId(String agentTeamId) {
+	    this.setAgentTeamId(agentTeamId);
+	    return this;
+	} 
+
 	private String evaluatorUserId;
 	public String getEvaluatorUserId() {
 		return this.evaluatorUserId;
@@ -386,6 +400,9 @@ public class GetQualityEvaluationsQueryRequest {
                 .withQueryParameters("agentUserId", "", agentUserId)
         
 
+                .withQueryParameters("agentTeamId", "", agentTeamId)
+        
+
                 .withQueryParameters("evaluatorUserId", "", evaluatorUserId)
         
 
@@ -479,6 +496,11 @@ public class GetQualityEvaluationsQueryRequest {
 
 		public Builder withAgentUserId(String agentUserId) {
 			request.setAgentUserId(agentUserId);
+			return this;
+		}
+
+		public Builder withAgentTeamId(String agentTeamId) {
+			request.setAgentTeamId(agentTeamId);
 			return this;
 		}
 

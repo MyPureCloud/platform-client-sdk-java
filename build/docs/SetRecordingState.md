@@ -8,7 +8,7 @@ title: SetRecordingState
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> | The value of the recordingState to set. |  [optional] |
+| **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> | On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings. |  [optional] |
 {: class="table table-striped"}
 
 

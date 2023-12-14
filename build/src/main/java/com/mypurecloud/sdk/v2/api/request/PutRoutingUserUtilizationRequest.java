@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.Adjacents;
-import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
@@ -78,7 +78,7 @@ import com.mypurecloud.sdk.v2.model.UserSkillGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.UserState;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
-import com.mypurecloud.sdk.v2.model.Utilization;
+import com.mypurecloud.sdk.v2.model.UtilizationRequest;
 import com.mypurecloud.sdk.v2.model.Verifier;
 import com.mypurecloud.sdk.v2.model.VerifierEntityListing;
 
@@ -98,16 +98,16 @@ public class PutRoutingUserUtilizationRequest {
 	    return this;
 	} 
 
-	private Utilization body;
-	public Utilization getBody() {
+	private UtilizationRequest body;
+	public UtilizationRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(Utilization body) {
+	public void setBody(UtilizationRequest body) {
 		this.body = body;
 	}
 
-	public PutRoutingUserUtilizationRequest withBody(Utilization body) {
+	public PutRoutingUserUtilizationRequest withBody(UtilizationRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -131,7 +131,7 @@ public class PutRoutingUserUtilizationRequest {
         return this;
     }
 
-    public ApiRequest<Utilization> withHttpInfo() {
+    public ApiRequest<UtilizationRequest> withHttpInfo() {
         
         // verify the required parameter 'userId' is set
         if (this.userId == null) {
@@ -161,7 +161,7 @@ public class PutRoutingUserUtilizationRequest {
 	}
 
 
-	public static Builder builder(String userId, Utilization body) {
+	public static Builder builder(String userId, UtilizationRequest body) {
 	    return new Builder()
 	            .withRequiredParams(userId, body);
 	}
@@ -180,14 +180,14 @@ public class PutRoutingUserUtilizationRequest {
 			return this;
 		}
 
-		public Builder withBody(Utilization body) {
+		public Builder withBody(UtilizationRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String userId, Utilization body) {
+		public Builder withRequiredParams(String userId, UtilizationRequest body) {
 			request.setUserId(userId);
 			request.setBody(body);
 

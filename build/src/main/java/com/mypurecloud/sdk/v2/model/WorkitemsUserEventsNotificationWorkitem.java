@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationCustomAttribute;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationDelta;
+import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationSession;
 import com.mypurecloud.sdk.v2.model.WorkitemsUserEventsNotificationWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -233,6 +234,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   private String queueId = null;
   private Map<String, WorkitemsUserEventsNotificationCustomAttribute> customFields = null;
   private WorkitemsUserEventsNotificationWrapup wrapup = null;
+  private List<WorkitemsUserEventsNotificationSession> sessions = new ArrayList<WorkitemsUserEventsNotificationSession>();
 
   
   /**
@@ -762,6 +764,23 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   }
 
 
+  /**
+   **/
+  public WorkitemsUserEventsNotificationWorkitem sessions(List<WorkitemsUserEventsNotificationSession> sessions) {
+    this.sessions = sessions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sessions")
+  public List<WorkitemsUserEventsNotificationSession> getSessions() {
+    return sessions;
+  }
+  public void setSessions(List<WorkitemsUserEventsNotificationSession> sessions) {
+    this.sessions = sessions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -802,12 +821,13 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
             Objects.equals(this.alertTimeoutSeconds, workitemsUserEventsNotificationWorkitem.alertTimeoutSeconds) &&
             Objects.equals(this.queueId, workitemsUserEventsNotificationWorkitem.queueId) &&
             Objects.equals(this.customFields, workitemsUserEventsNotificationWorkitem.customFields) &&
-            Objects.equals(this.wrapup, workitemsUserEventsNotificationWorkitem.wrapup);
+            Objects.equals(this.wrapup, workitemsUserEventsNotificationWorkitem.wrapup) &&
+            Objects.equals(this.sessions, workitemsUserEventsNotificationWorkitem.sessions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup);
+    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup, sessions);
   }
 
   @Override
@@ -846,6 +866,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

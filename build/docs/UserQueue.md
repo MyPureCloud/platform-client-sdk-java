@@ -33,6 +33,7 @@ title: UserQueue
 | **whisperPrompt** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The prompt used for whisper on the queue, if configured. |  [optional] |
 | **onHoldPrompt** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play. |  [optional] |
 | **enableTranscription** | <!----><!---->**Boolean**<!----> | Indicates whether voice transcription is enabled for this queue. |  [optional] |
+| **enableAudioMonitoring** | <!----><!---->**Boolean**<!----> | Indicates whether audio monitoring is enabled for this queue. |  [optional] |
 | **enableManualAssignment** | <!----><!---->**Boolean**<!----> | Indicates whether manual assignment is enabled for this queue. |  [optional] |
 | **agentOwnedRouting** | <!----><!---->[**AgentOwnedRouting**](AgentOwnedRouting.html)<!----> | The Agent Owned Routing settings for the queue |  [optional] |
 | **directRouting** | <!----><!---->[**DirectRouting**](DirectRouting.html)<!----> | The Direct Routing settings for the queue |  [optional] |

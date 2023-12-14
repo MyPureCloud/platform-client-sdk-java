@@ -640,7 +640,7 @@ try {
 
 
 
-> [AgentActivityEntityListing](AgentActivityEntityListing.html) getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, formContextId)
+> [AgentActivityEntityListing](AgentActivityEntityListing.html) getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId)
 
 Gets a list of Agent Activities
 
@@ -686,9 +686,10 @@ List<String> agentUserId = Arrays.asList(null); // List<String> | user id of age
 String evaluatorUserId = "evaluatorUserId_example"; // String | user id of the evaluator
 String name = "name_example"; // String | name
 String group = "group_example"; // String | group id
+String agentTeamId = "agentTeamId_example"; // String | team id of agents requested
 String formContextId = "formContextId_example"; // String | shared id between form versions
 try {
-    AgentActivityEntityListing result = apiInstance.getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, formContextId);
+    AgentActivityEntityListing result = apiInstance.getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityAgentsActivity");
@@ -713,6 +714,7 @@ try {
 | **evaluatorUserId** | **String**| user id of the evaluator | [optional] 
 | **name** | **String**| name | [optional] 
 | **group** | **String**| group id | [optional] 
+| **agentTeamId** | **String**| team id of agents requested | [optional] 
 | **formContextId** | **String**| shared id between form versions | [optional] 
 {: class="table-striped"}
 
@@ -1127,7 +1129,7 @@ try {
 
 
 
-> [EvaluationEntityListing](EvaluationEntityListing.html) getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)
+> [EvaluationEntityListing](EvaluationEntityListing.html) getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)
 
 Queries Evaluations and returns a paged list
 
@@ -1169,6 +1171,7 @@ String nextPage = "nextPage_example"; // String | NOTE: Does not work when query
 String previousPage = "previousPage_example"; // String | Previous page token
 String conversationId = "conversationId_example"; // String | conversationId specified
 String agentUserId = "agentUserId_example"; // String | user id of the agent
+String agentTeamId = "agentTeamId_example"; // String | team id of the agent
 String evaluatorUserId = "evaluatorUserId_example"; // String | evaluator user id
 String assigneeUserId = "assigneeUserId_example"; // String | assignee user id
 String queueId = "queueId_example"; // String | queue id
@@ -1182,7 +1185,7 @@ Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for ev
 Integer maximum = 56; // Integer | the maximum number of results to return
 String sortOrder = "sortOrder_example"; // String | NOTE: Does not work when conversationId is supplied.
 try {
-    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
+    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityEvaluationsQuery");
@@ -1203,6 +1206,7 @@ try {
 | **previousPage** | **String**| Previous page token | [optional] 
 | **conversationId** | **String**| conversationId specified | [optional] 
 | **agentUserId** | **String**| user id of the agent | [optional] 
+| **agentTeamId** | **String**| team id of the agent | [optional] 
 | **evaluatorUserId** | **String**| evaluator user id | [optional] 
 | **assigneeUserId** | **String**| assignee user id | [optional] 
 | **queueId** | **String**| queue id | [optional] 
@@ -1228,7 +1232,7 @@ try {
 
 
 
-> [EvaluatorActivityEntityListing](EvaluatorActivityEntityListing.html) getQualityEvaluatorsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group)
+> [EvaluatorActivityEntityListing](EvaluatorActivityEntityListing.html) getQualityEvaluatorsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group, agentTeamId)
 
 Get an evaluator activity
 
@@ -1271,8 +1275,9 @@ Date endTime = new Date(); // Date | The end time specified. Date time is repres
 String name = "name_example"; // String | Evaluator name
 List<String> permission = Arrays.asList(null); // List<String> | permission strings
 String group = "group_example"; // String | group id
+String agentTeamId = "agentTeamId_example"; // String | team id of agents to be considered
 try {
-    EvaluatorActivityEntityListing result = apiInstance.getQualityEvaluatorsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group);
+    EvaluatorActivityEntityListing result = apiInstance.getQualityEvaluatorsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group, agentTeamId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityEvaluatorsActivity");
@@ -1296,6 +1301,7 @@ try {
 | **name** | **String**| Evaluator name | [optional] 
 | **permission** | [**List&lt;String&gt;**](String.html)| permission strings | [optional] 
 | **group** | **String**| group id | [optional] 
+| **agentTeamId** | **String**| team id of agents to be considered | [optional] 
 {: class="table-striped"}
 
 

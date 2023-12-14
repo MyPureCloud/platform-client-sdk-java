@@ -1417,7 +1417,7 @@ try {
 
 
 
-> [AgentMaxUtilization](AgentMaxUtilization.html) getRoutingUserUtilization(userId)
+> [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse.html) getRoutingUserUtilization(userId)
 
 Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 
@@ -1452,7 +1452,7 @@ Configuration.setDefaultApiClient(apiClient);
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
 try {
-    AgentMaxUtilization result = apiInstance.getRoutingUserUtilization(userId);
+    AgentMaxUtilizationResponse result = apiInstance.getRoutingUserUtilization(userId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getRoutingUserUtilization");
@@ -1471,7 +1471,7 @@ try {
 
 ### Return type
 
-[**AgentMaxUtilization**](AgentMaxUtilization.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
 
 <a name="getUser"></a>
 
@@ -5148,7 +5148,7 @@ try {
 
 
 
-> [AgentMaxUtilization](AgentMaxUtilization.html) putRoutingUserUtilization(userId, body)
+> [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse.html) putRoutingUserUtilization(userId, body)
 
 Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 
@@ -5181,9 +5181,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
-Utilization body = new Utilization(); // Utilization | utilization
+UtilizationRequest body = new UtilizationRequest(); // UtilizationRequest | utilization
 try {
-    AgentMaxUtilization result = apiInstance.putRoutingUserUtilization(userId, body);
+    AgentMaxUtilizationResponse result = apiInstance.putRoutingUserUtilization(userId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#putRoutingUserUtilization");
@@ -5197,13 +5197,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**Utilization**](Utilization.html)| utilization | 
+| **body** | [**UtilizationRequest**](UtilizationRequest.html)| utilization | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AgentMaxUtilization**](AgentMaxUtilization.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
 
 <a name="putUserCallforwarding"></a>
 

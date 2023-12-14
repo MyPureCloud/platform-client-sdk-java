@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentExternalUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentReschedule;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
@@ -53,6 +54,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModulesAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesCoverartCoverArtIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRescheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchLearningModuleUserAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssessmentsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentReassignRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentResetRequest;
@@ -922,12 +924,13 @@ public class LearningApi {
    * @param expand Fields to expand in response(case insensitive) (optional)
    * @param isPublished Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional, default to Any)
    * @param statuses Specifies the module statuses to filter by (optional)
+   * @param externalIds Specifies the module external IDs to filter by. Only one ID is allowed (optional)
    * @return LearningModulesDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LearningModulesDomainEntityListing getLearningModules(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses) throws IOException, ApiException {
-    return  getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses));
+  public LearningModulesDomainEntityListing getLearningModules(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses, List<String> externalIds) throws IOException, ApiException {
+    return  getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds));
   }
 
   /**
@@ -943,14 +946,15 @@ public class LearningApi {
    * @param expand Fields to expand in response(case insensitive) (optional)
    * @param isPublished Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional, default to Any)
    * @param statuses Specifies the module statuses to filter by (optional)
+   * @param externalIds Specifies the module external IDs to filter by. Only one ID is allowed (optional)
    * @return LearningModulesDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LearningModulesDomainEntityListing> getLearningModulesWithHttpInfo(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses) throws IOException {
-    return getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses).withHttpInfo());
+  public ApiResponse<LearningModulesDomainEntityListing> getLearningModulesWithHttpInfo(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses, List<String> externalIds) throws IOException {
+    return getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds).withHttpInfo());
   }
 
-  private GetLearningModulesRequest createGetLearningModulesRequest(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses) {
+  private GetLearningModulesRequest createGetLearningModulesRequest(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished, List<String> statuses, List<String> externalIds) {
     return GetLearningModulesRequest.builder()
             .withIsArchived(isArchived)
 
@@ -971,6 +975,8 @@ public class LearningApi {
             .withIsPublished(isPublished)
 
             .withStatuses(statuses)
+
+            .withExternalIds(externalIds)
 
             .build();
   }
@@ -1346,6 +1352,96 @@ public class LearningApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<LearningAssignment> patchLearningAssignmentReschedule(ApiRequest<LearningAssignmentReschedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningAssignment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an external assignment for a specific user
+   * 
+   * patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param moduleId Key identifier for the module (required)
+   * @param userId Key identifier for the user (required)
+   * @param body The learning request for updating the assignment (required)
+   * @return LearningAssignment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignment patchLearningModuleUserAssignments(String moduleId, String userId, LearningAssignmentExternalUpdate body) throws IOException, ApiException {
+    return  patchLearningModuleUserAssignments(createPatchLearningModuleUserAssignmentsRequest(moduleId, userId, body));
+  }
+
+  /**
+   * Update an external assignment for a specific user
+   * 
+   * patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param moduleId Key identifier for the module (required)
+   * @param userId Key identifier for the user (required)
+   * @param body The learning request for updating the assignment (required)
+   * @return LearningAssignment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignment> patchLearningModuleUserAssignmentsWithHttpInfo(String moduleId, String userId, LearningAssignmentExternalUpdate body) throws IOException {
+    return patchLearningModuleUserAssignments(createPatchLearningModuleUserAssignmentsRequest(moduleId, userId, body).withHttpInfo());
+  }
+
+  private PatchLearningModuleUserAssignmentsRequest createPatchLearningModuleUserAssignmentsRequest(String moduleId, String userId, LearningAssignmentExternalUpdate body) {
+    return PatchLearningModuleUserAssignmentsRequest.builder()
+            .withModuleId(moduleId)
+
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an external assignment for a specific user
+   * 
+   * patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return LearningAssignment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignment patchLearningModuleUserAssignments(PatchLearningModuleUserAssignmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningAssignment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningAssignment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an external assignment for a specific user
+   * 
+   * patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignment> patchLearningModuleUserAssignments(ApiRequest<LearningAssignmentExternalUpdate> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<LearningAssignment>() {});
     }

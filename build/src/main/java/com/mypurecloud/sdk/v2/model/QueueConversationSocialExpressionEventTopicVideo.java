@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAfterCallWork;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -214,6 +215,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+  private QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings = null;
 
   
   /**
@@ -556,6 +558,24 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
   }
 
 
+  /**
+   * Represents the queue setting for this media.
+   **/
+  public QueueConversationSocialExpressionEventTopicVideo queueMediaSettings(QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the queue setting for this media.")
+  @JsonProperty("queueMediaSettings")
+  public QueueConversationSocialExpressionEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -584,12 +604,13 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
             Objects.equals(this.msids, queueConversationSocialExpressionEventTopicVideo.msids) &&
             Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicVideo.wrapup) &&
             Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicVideo.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicVideo.afterCallWorkRequired);
+            Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicVideo.afterCallWorkRequired) &&
+            Objects.equals(this.queueMediaSettings, queueConversationSocialExpressionEventTopicVideo.queueMediaSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, self, id, context, audioMuted, videoMuted, sharingScreen, peerCount, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, initialState, self, id, context, audioMuted, videoMuted, sharingScreen, peerCount, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired, queueMediaSettings);
   }
 
   @Override
@@ -616,6 +637,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

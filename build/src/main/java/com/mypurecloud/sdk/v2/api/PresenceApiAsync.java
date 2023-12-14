@@ -77,7 +77,6 @@ public class PresenceApiAsync {
   /**
    * Delete a Presence Definition
    * 
-   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -112,7 +111,6 @@ public class PresenceApiAsync {
   /**
    * Delete a Presence Definition
    * 
-   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -304,7 +302,6 @@ public class PresenceApiAsync {
   /**
    * Get a Presence Definition
    * 
-   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -339,7 +336,6 @@ public class PresenceApiAsync {
   /**
    * Get a Presence Definition
    * 
-   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -381,7 +377,6 @@ public class PresenceApiAsync {
   /**
    * Get a list of Presence Definitions
    * 
-   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -416,7 +411,6 @@ public class PresenceApiAsync {
   /**
    * Get a list of Presence Definitions
    * 
-   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1433,7 +1427,6 @@ public class PresenceApiAsync {
   /**
    * Create a Presence Definition
    * 
-   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1468,7 +1461,6 @@ public class PresenceApiAsync {
   /**
    * Create a Presence Definition
    * 
-   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1660,7 +1652,6 @@ public class PresenceApiAsync {
   /**
    * Update a Presence Definition
    * 
-   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1695,7 +1686,6 @@ public class PresenceApiAsync {
   /**
    * Update a Presence Definition
    * 
-   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

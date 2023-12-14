@@ -4283,7 +4283,7 @@ public class IntegrationsApiAsync {
   }
 
   /**
-   * Create a new Action
+   * Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4317,7 +4317,7 @@ public class IntegrationsApiAsync {
   }
 
   /**
-   * Create a new Action
+   * Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

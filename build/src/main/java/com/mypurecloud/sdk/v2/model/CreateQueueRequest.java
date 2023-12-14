@@ -161,6 +161,7 @@ public class CreateQueueRequest  implements Serializable {
   private DomainEntityRef onHoldPrompt = null;
   private Boolean autoAnswerOnly = null;
   private Boolean enableTranscription = null;
+  private Boolean enableAudioMonitoring = null;
   private Boolean enableManualAssignment = null;
   private AgentOwnedRouting agentOwnedRouting = null;
   private DirectRouting directRouting = null;
@@ -600,6 +601,24 @@ public class CreateQueueRequest  implements Serializable {
 
 
   /**
+   * Indicates whether audio monitoring is enabled for this queue.
+   **/
+  public CreateQueueRequest enableAudioMonitoring(Boolean enableAudioMonitoring) {
+    this.enableAudioMonitoring = enableAudioMonitoring;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether audio monitoring is enabled for this queue.")
+  @JsonProperty("enableAudioMonitoring")
+  public Boolean getEnableAudioMonitoring() {
+    return enableAudioMonitoring;
+  }
+  public void setEnableAudioMonitoring(Boolean enableAudioMonitoring) {
+    this.enableAudioMonitoring = enableAudioMonitoring;
+  }
+
+
+  /**
    * Indicates whether manual assignment is enabled for this queue.
    **/
   public CreateQueueRequest enableManualAssignment(Boolean enableManualAssignment) {
@@ -839,6 +858,7 @@ public class CreateQueueRequest  implements Serializable {
             Objects.equals(this.onHoldPrompt, createQueueRequest.onHoldPrompt) &&
             Objects.equals(this.autoAnswerOnly, createQueueRequest.autoAnswerOnly) &&
             Objects.equals(this.enableTranscription, createQueueRequest.enableTranscription) &&
+            Objects.equals(this.enableAudioMonitoring, createQueueRequest.enableAudioMonitoring) &&
             Objects.equals(this.enableManualAssignment, createQueueRequest.enableManualAssignment) &&
             Objects.equals(this.agentOwnedRouting, createQueueRequest.agentOwnedRouting) &&
             Objects.equals(this.directRouting, createQueueRequest.directRouting) &&
@@ -855,7 +875,7 @@ public class CreateQueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, sourceQueueId, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, sourceQueueId, selfUri);
   }
 
   @Override
@@ -889,6 +909,7 @@ public class CreateQueueRequest  implements Serializable {
     sb.append("    onHoldPrompt: ").append(toIndentedString(onHoldPrompt)).append("\n");
     sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
+    sb.append("    enableAudioMonitoring: ").append(toIndentedString(enableAudioMonitoring)).append("\n");
     sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");
     sb.append("    agentOwnedRouting: ").append(toIndentedString(agentOwnedRouting)).append("\n");
     sb.append("    directRouting: ").append(toIndentedString(directRouting)).append("\n");

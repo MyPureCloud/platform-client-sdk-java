@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.AssessmentListing;
 import com.mypurecloud.sdk.v2.model.AvailableMediaTypeEntityListing;
@@ -96,7 +96,8 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillGroupEntityListing;
-import com.mypurecloud.sdk.v2.model.Utilization;
+import com.mypurecloud.sdk.v2.model.UtilizationRequest;
+import com.mypurecloud.sdk.v2.model.UtilizationResponse;
 import com.mypurecloud.sdk.v2.model.UtilizationTag;
 import com.mypurecloud.sdk.v2.model.UtilizationTagEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
@@ -107,16 +108,16 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class PutRoutingUtilizationRequest {
 
-	private Utilization body;
-	public Utilization getBody() {
+	private UtilizationRequest body;
+	public UtilizationRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(Utilization body) {
+	public void setBody(UtilizationRequest body) {
 		this.body = body;
 	}
 
-	public PutRoutingUtilizationRequest withBody(Utilization body) {
+	public PutRoutingUtilizationRequest withBody(UtilizationRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -140,7 +141,7 @@ public class PutRoutingUtilizationRequest {
         return this;
     }
 
-    public ApiRequest<Utilization> withHttpInfo() {
+    public ApiRequest<UtilizationRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -163,7 +164,7 @@ public class PutRoutingUtilizationRequest {
 	}
 
 
-	public static Builder builder(Utilization body) {
+	public static Builder builder(UtilizationRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -177,14 +178,14 @@ public class PutRoutingUtilizationRequest {
 		}
 
 
-		public Builder withBody(Utilization body) {
+		public Builder withBody(UtilizationRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(Utilization body) {
+		public Builder withRequiredParams(UtilizationRequest body) {
 			request.setBody(body);
 
 			return this;

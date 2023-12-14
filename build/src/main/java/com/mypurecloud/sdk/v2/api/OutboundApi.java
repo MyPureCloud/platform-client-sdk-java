@@ -39,6 +39,8 @@ import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListFilter;
 import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListTemplate;
+import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
@@ -59,6 +61,8 @@ import com.mypurecloud.sdk.v2.model.EventLog;
 import com.mypurecloud.sdk.v2.model.ExportUri;
 import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
+import com.mypurecloud.sdk.v2.model.ImportTemplate;
+import com.mypurecloud.sdk.v2.model.ImportTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingCampaign;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignDiagnostics;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
@@ -88,11 +92,15 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactReques
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistsRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlisttemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlisttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistCustomexclusioncolumnsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistPhonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundImporttemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundImporttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundRulesetRequest;
@@ -130,6 +138,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlisttemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlisttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDigitalrulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistRequest;
@@ -140,6 +150,9 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewRequest
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundImporttemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundImporttemplateImportstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundImporttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignDiagnosticsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignProgressRequest;
@@ -180,12 +193,16 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundConversationDncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDigitalrulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignsProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundRulesetsRequest;
@@ -199,8 +216,10 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistfilterRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlisttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDnclistRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundImporttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesCampaignRequest;
@@ -1064,6 +1083,156 @@ public class OutboundApi {
   }
 
   /**
+   * Delete Contact List Template
+   * 
+   * @param contactListTemplateId ContactListTemplate ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundContactlisttemplate(String contactListTemplateId) throws IOException, ApiException {
+     deleteOutboundContactlisttemplate(createDeleteOutboundContactlisttemplateRequest(contactListTemplateId));
+  }
+
+  /**
+   * Delete Contact List Template
+   * 
+   * @param contactListTemplateId ContactListTemplate ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundContactlisttemplateWithHttpInfo(String contactListTemplateId) throws IOException {
+    return deleteOutboundContactlisttemplate(createDeleteOutboundContactlisttemplateRequest(contactListTemplateId).withHttpInfo());
+  }
+
+  private DeleteOutboundContactlisttemplateRequest createDeleteOutboundContactlisttemplateRequest(String contactListTemplateId) {
+    return DeleteOutboundContactlisttemplateRequest.builder()
+            .withContactListTemplateId(contactListTemplateId)
+
+            .build();
+  }
+
+  /**
+   * Delete Contact List Template
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundContactlisttemplate(DeleteOutboundContactlisttemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Contact List Template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundContactlisttemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete multiple contact list templates.
+   * 
+   * @param id contact list template id(s) to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundContactlisttemplates(List<String> id) throws IOException, ApiException {
+     deleteOutboundContactlisttemplates(createDeleteOutboundContactlisttemplatesRequest(id));
+  }
+
+  /**
+   * Delete multiple contact list templates.
+   * 
+   * @param id contact list template id(s) to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundContactlisttemplatesWithHttpInfo(List<String> id) throws IOException {
+    return deleteOutboundContactlisttemplates(createDeleteOutboundContactlisttemplatesRequest(id).withHttpInfo());
+  }
+
+  private DeleteOutboundContactlisttemplatesRequest createDeleteOutboundContactlisttemplatesRequest(List<String> id) {
+    return DeleteOutboundContactlisttemplatesRequest.builder()
+            .withId(id)
+
+            .build();
+  }
+
+  /**
+   * Delete multiple contact list templates.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundContactlisttemplates(DeleteOutboundContactlisttemplatesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete multiple contact list templates.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundContactlisttemplates(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Delete an Outbound Digital Rule Set
    * 
    * @param digitalRuleSetId The Digital Rule Set ID (required)
@@ -1429,6 +1598,156 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOutboundDnclistPhonenumbers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete Import Template
+   * 
+   * @param importTemplateId Import Template ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundImporttemplate(String importTemplateId) throws IOException, ApiException {
+     deleteOutboundImporttemplate(createDeleteOutboundImporttemplateRequest(importTemplateId));
+  }
+
+  /**
+   * Delete Import Template
+   * 
+   * @param importTemplateId Import Template ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundImporttemplateWithHttpInfo(String importTemplateId) throws IOException {
+    return deleteOutboundImporttemplate(createDeleteOutboundImporttemplateRequest(importTemplateId).withHttpInfo());
+  }
+
+  private DeleteOutboundImporttemplateRequest createDeleteOutboundImporttemplateRequest(String importTemplateId) {
+    return DeleteOutboundImporttemplateRequest.builder()
+            .withImportTemplateId(importTemplateId)
+
+            .build();
+  }
+
+  /**
+   * Delete Import Template
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundImporttemplate(DeleteOutboundImporttemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Import Template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundImporttemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete multiple import templates.
+   * 
+   * @param id import template id(s) to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundImporttemplates(List<String> id) throws IOException, ApiException {
+     deleteOutboundImporttemplates(createDeleteOutboundImporttemplatesRequest(id));
+  }
+
+  /**
+   * Delete multiple import templates.
+   * 
+   * @param id import template id(s) to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundImporttemplatesWithHttpInfo(List<String> id) throws IOException {
+    return deleteOutboundImporttemplates(createDeleteOutboundImporttemplatesRequest(id).withHttpInfo());
+  }
+
+  private DeleteOutboundImporttemplatesRequest createDeleteOutboundImporttemplatesRequest(List<String> id) {
+    return DeleteOutboundImporttemplatesRequest.builder()
+            .withId(id)
+
+            .build();
+  }
+
+  /**
+   * Delete multiple import templates.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundImporttemplates(DeleteOutboundImporttemplatesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete multiple import templates.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundImporttemplates(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -4656,6 +4975,186 @@ public class OutboundApi {
   }
 
   /**
+   * Get Contact List Template
+   * 
+   * @param contactListTemplateId ContactListTemplate ID (required)
+   * @return ContactListTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplate getOutboundContactlisttemplate(String contactListTemplateId) throws IOException, ApiException {
+    return  getOutboundContactlisttemplate(createGetOutboundContactlisttemplateRequest(contactListTemplateId));
+  }
+
+  /**
+   * Get Contact List Template
+   * 
+   * @param contactListTemplateId ContactListTemplate ID (required)
+   * @return ContactListTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplate> getOutboundContactlisttemplateWithHttpInfo(String contactListTemplateId) throws IOException {
+    return getOutboundContactlisttemplate(createGetOutboundContactlisttemplateRequest(contactListTemplateId).withHttpInfo());
+  }
+
+  private GetOutboundContactlisttemplateRequest createGetOutboundContactlisttemplateRequest(String contactListTemplateId) {
+    return GetOutboundContactlisttemplateRequest.builder()
+            .withContactListTemplateId(contactListTemplateId)
+
+            .build();
+  }
+
+  /**
+   * Get Contact List Template
+   * 
+   * @param request The request object
+   * @return ContactListTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplate getOutboundContactlisttemplate(GetOutboundContactlisttemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Contact List Template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplate> getOutboundContactlisttemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplate> response = (ApiResponse<ContactListTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplate> response = (ApiResponse<ContactListTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query a list of contact list templates
+   * 
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return ContactListTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplateEntityListing getOutboundContactlisttemplates(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundContactlisttemplates(createGetOutboundContactlisttemplatesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder));
+  }
+
+  /**
+   * Query a list of contact list templates
+   * 
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return ContactListTemplateEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplateEntityListing> getOutboundContactlisttemplatesWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundContactlisttemplates(createGetOutboundContactlisttemplatesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetOutboundContactlisttemplatesRequest createGetOutboundContactlisttemplatesRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
+    return GetOutboundContactlisttemplatesRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withAllowEmptyResult(allowEmptyResult)
+
+            .withFilterType(filterType)
+
+            .withName(name)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .build();
+  }
+
+  /**
+   * Query a list of contact list templates
+   * 
+   * @param request The request object
+   * @return ContactListTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplateEntityListing getOutboundContactlisttemplates(GetOutboundContactlisttemplatesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListTemplateEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListTemplateEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query a list of contact list templates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplateEntityListing> getOutboundContactlisttemplates(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListTemplateEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplateEntityListing> response = (ApiResponse<ContactListTemplateEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplateEntityListing> response = (ApiResponse<ContactListTemplateEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get an Outbound Digital Rule Set
    * 
    * @param digitalRuleSetId The Digital Rule Set ID (required)
@@ -5571,6 +6070,272 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DialerEventEntityListing> response = (ApiResponse<DialerEventEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Import Template
+   * 
+   * @param importTemplateId Import Template ID (required)
+   * @return ImportTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportTemplate getOutboundImporttemplate(String importTemplateId) throws IOException, ApiException {
+    return  getOutboundImporttemplate(createGetOutboundImporttemplateRequest(importTemplateId));
+  }
+
+  /**
+   * Get Import Template
+   * 
+   * @param importTemplateId Import Template ID (required)
+   * @return ImportTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportTemplate> getOutboundImporttemplateWithHttpInfo(String importTemplateId) throws IOException {
+    return getOutboundImporttemplate(createGetOutboundImporttemplateRequest(importTemplateId).withHttpInfo());
+  }
+
+  private GetOutboundImporttemplateRequest createGetOutboundImporttemplateRequest(String importTemplateId) {
+    return GetOutboundImporttemplateRequest.builder()
+            .withImportTemplateId(importTemplateId)
+
+            .build();
+  }
+
+  /**
+   * Get Import Template
+   * 
+   * @param request The request object
+   * @return ImportTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportTemplate getOutboundImporttemplate(GetOutboundImporttemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ImportTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Import Template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportTemplate> getOutboundImporttemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportTemplate> response = (ApiResponse<ImportTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportTemplate> response = (ApiResponse<ImportTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the import status for an import template.
+   * 
+   * @param importTemplateId importTemplateId (required)
+   * @param listNamePrefix listNamePrefix (optional)
+   * @return ImportStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportStatus getOutboundImporttemplateImportstatus(String importTemplateId, String listNamePrefix) throws IOException, ApiException {
+    return  getOutboundImporttemplateImportstatus(createGetOutboundImporttemplateImportstatusRequest(importTemplateId, listNamePrefix));
+  }
+
+  /**
+   * Get the import status for an import template.
+   * 
+   * @param importTemplateId importTemplateId (required)
+   * @param listNamePrefix listNamePrefix (optional)
+   * @return ImportStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportStatus> getOutboundImporttemplateImportstatusWithHttpInfo(String importTemplateId, String listNamePrefix) throws IOException {
+    return getOutboundImporttemplateImportstatus(createGetOutboundImporttemplateImportstatusRequest(importTemplateId, listNamePrefix).withHttpInfo());
+  }
+
+  private GetOutboundImporttemplateImportstatusRequest createGetOutboundImporttemplateImportstatusRequest(String importTemplateId, String listNamePrefix) {
+    return GetOutboundImporttemplateImportstatusRequest.builder()
+            .withImportTemplateId(importTemplateId)
+
+            .withListNamePrefix(listNamePrefix)
+
+            .build();
+  }
+
+  /**
+   * Get the import status for an import template.
+   * 
+   * @param request The request object
+   * @return ImportStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportStatus getOutboundImporttemplateImportstatus(GetOutboundImporttemplateImportstatusRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ImportStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the import status for an import template.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportStatus> getOutboundImporttemplateImportstatus(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportStatus> response = (ApiResponse<ImportStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportStatus> response = (ApiResponse<ImportStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query Import Templates
+   * 
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @param contactListTemplateId Contact List Template ID (optional)
+   * @return ImportTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportTemplateEntityListing getOutboundImporttemplates(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder, String contactListTemplateId) throws IOException, ApiException {
+    return  getOutboundImporttemplates(createGetOutboundImporttemplatesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListTemplateId));
+  }
+
+  /**
+   * Query Import Templates
+   * 
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @param contactListTemplateId Contact List Template ID (optional)
+   * @return ImportTemplateEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportTemplateEntityListing> getOutboundImporttemplatesWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder, String contactListTemplateId) throws IOException {
+    return getOutboundImporttemplates(createGetOutboundImporttemplatesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListTemplateId).withHttpInfo());
+  }
+
+  private GetOutboundImporttemplatesRequest createGetOutboundImporttemplatesRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder, String contactListTemplateId) {
+    return GetOutboundImporttemplatesRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withAllowEmptyResult(allowEmptyResult)
+
+            .withFilterType(filterType)
+
+            .withName(name)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withContactListTemplateId(contactListTemplateId)
+
+            .build();
+  }
+
+  /**
+   * Query Import Templates
+   * 
+   * @param request The request object
+   * @return ImportTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportTemplateEntityListing getOutboundImporttemplates(GetOutboundImporttemplatesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ImportTemplateEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportTemplateEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query Import Templates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportTemplateEntityListing> getOutboundImporttemplates(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportTemplateEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportTemplateEntityListing> response = (ApiResponse<ImportTemplateEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportTemplateEntityListing> response = (ApiResponse<ImportTemplateEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8825,6 +9590,162 @@ public class OutboundApi {
   }
 
   /**
+   * Create Contact List Template
+   * 
+   * @param body ContactListTemplate (required)
+   * @return ContactListTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplate postOutboundContactlisttemplates(ContactListTemplate body) throws IOException, ApiException {
+    return  postOutboundContactlisttemplates(createPostOutboundContactlisttemplatesRequest(body));
+  }
+
+  /**
+   * Create Contact List Template
+   * 
+   * @param body ContactListTemplate (required)
+   * @return ContactListTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplate> postOutboundContactlisttemplatesWithHttpInfo(ContactListTemplate body) throws IOException {
+    return postOutboundContactlisttemplates(createPostOutboundContactlisttemplatesRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundContactlisttemplatesRequest createPostOutboundContactlisttemplatesRequest(ContactListTemplate body) {
+    return PostOutboundContactlisttemplatesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create Contact List Template
+   * 
+   * @param request The request object
+   * @return ContactListTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplate postOutboundContactlisttemplates(PostOutboundContactlisttemplatesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create Contact List Template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplate> postOutboundContactlisttemplates(ApiRequest<ContactListTemplate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplate> response = (ApiResponse<ContactListTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplate> response = (ApiResponse<ContactListTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add multiple contact list templates
+   * 
+   * @param body contact list template(s) to add (required)
+   * @return ContactListTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkAdd(List<ContactListTemplate> body) throws IOException, ApiException {
+    return  postOutboundContactlisttemplatesBulkAdd(createPostOutboundContactlisttemplatesBulkAddRequest(body));
+  }
+
+  /**
+   * Add multiple contact list templates
+   * 
+   * @param body contact list template(s) to add (required)
+   * @return ContactListTemplateEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplateEntityListing> postOutboundContactlisttemplatesBulkAddWithHttpInfo(List<ContactListTemplate> body) throws IOException {
+    return postOutboundContactlisttemplatesBulkAdd(createPostOutboundContactlisttemplatesBulkAddRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundContactlisttemplatesBulkAddRequest createPostOutboundContactlisttemplatesBulkAddRequest(List<ContactListTemplate> body) {
+    return PostOutboundContactlisttemplatesBulkAddRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add multiple contact list templates
+   * 
+   * @param request The request object
+   * @return ContactListTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkAdd(PostOutboundContactlisttemplatesBulkAddRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListTemplateEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListTemplateEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add multiple contact list templates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplateEntityListing> postOutboundContactlisttemplatesBulkAdd(ApiRequest<List<ContactListTemplate>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListTemplateEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplateEntityListing> response = (ApiResponse<ContactListTemplateEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplateEntityListing> response = (ApiResponse<ContactListTemplateEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Add phone numbers to a Dialer DNC list.
    * 
    * @param conversationId Conversation ID (required)
@@ -9291,6 +10212,162 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create Import Template
+   * 
+   * @param body ImportTemplate (required)
+   * @return ImportTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportTemplate postOutboundImporttemplates(ImportTemplate body) throws IOException, ApiException {
+    return  postOutboundImporttemplates(createPostOutboundImporttemplatesRequest(body));
+  }
+
+  /**
+   * Create Import Template
+   * 
+   * @param body ImportTemplate (required)
+   * @return ImportTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportTemplate> postOutboundImporttemplatesWithHttpInfo(ImportTemplate body) throws IOException {
+    return postOutboundImporttemplates(createPostOutboundImporttemplatesRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundImporttemplatesRequest createPostOutboundImporttemplatesRequest(ImportTemplate body) {
+    return PostOutboundImporttemplatesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create Import Template
+   * 
+   * @param request The request object
+   * @return ImportTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportTemplate postOutboundImporttemplates(PostOutboundImporttemplatesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ImportTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create Import Template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportTemplate> postOutboundImporttemplates(ApiRequest<ImportTemplate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportTemplate> response = (ApiResponse<ImportTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportTemplate> response = (ApiResponse<ImportTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add multiple import templates
+   * 
+   * @param body import template(s) to add (required)
+   * @return ImportTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportTemplateEntityListing postOutboundImporttemplatesBulkAdd(List<ImportTemplate> body) throws IOException, ApiException {
+    return  postOutboundImporttemplatesBulkAdd(createPostOutboundImporttemplatesBulkAddRequest(body));
+  }
+
+  /**
+   * Add multiple import templates
+   * 
+   * @param body import template(s) to add (required)
+   * @return ImportTemplateEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportTemplateEntityListing> postOutboundImporttemplatesBulkAddWithHttpInfo(List<ImportTemplate> body) throws IOException {
+    return postOutboundImporttemplatesBulkAdd(createPostOutboundImporttemplatesBulkAddRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundImporttemplatesBulkAddRequest createPostOutboundImporttemplatesBulkAddRequest(List<ImportTemplate> body) {
+    return PostOutboundImporttemplatesBulkAddRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add multiple import templates
+   * 
+   * @param request The request object
+   * @return ImportTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportTemplateEntityListing postOutboundImporttemplatesBulkAdd(PostOutboundImporttemplatesBulkAddRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ImportTemplateEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportTemplateEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add multiple import templates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportTemplateEntityListing> postOutboundImporttemplatesBulkAdd(ApiRequest<List<ImportTemplate>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportTemplateEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportTemplateEntityListing> response = (ApiResponse<ImportTemplateEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportTemplateEntityListing> response = (ApiResponse<ImportTemplateEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10354,6 +11431,88 @@ public class OutboundApi {
   }
 
   /**
+   * Update a contact list template.
+   * 
+   * @param contactListTemplateId ContactListTemplate ID (required)
+   * @param body ContactListTemplate (required)
+   * @return ContactListTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplate putOutboundContactlisttemplate(String contactListTemplateId, ContactListTemplate body) throws IOException, ApiException {
+    return  putOutboundContactlisttemplate(createPutOutboundContactlisttemplateRequest(contactListTemplateId, body));
+  }
+
+  /**
+   * Update a contact list template.
+   * 
+   * @param contactListTemplateId ContactListTemplate ID (required)
+   * @param body ContactListTemplate (required)
+   * @return ContactListTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplate> putOutboundContactlisttemplateWithHttpInfo(String contactListTemplateId, ContactListTemplate body) throws IOException {
+    return putOutboundContactlisttemplate(createPutOutboundContactlisttemplateRequest(contactListTemplateId, body).withHttpInfo());
+  }
+
+  private PutOutboundContactlisttemplateRequest createPutOutboundContactlisttemplateRequest(String contactListTemplateId, ContactListTemplate body) {
+    return PutOutboundContactlisttemplateRequest.builder()
+            .withContactListTemplateId(contactListTemplateId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a contact list template.
+   * 
+   * @param request The request object
+   * @return ContactListTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplate putOutboundContactlisttemplate(PutOutboundContactlisttemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a contact list template.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplate> putOutboundContactlisttemplate(ApiRequest<ContactListTemplate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplate> response = (ApiResponse<ContactListTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplate> response = (ApiResponse<ContactListTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update an Outbound Digital Rule Set
    * 
    * @param digitalRuleSetId The Digital Rule Set ID (required)
@@ -10513,6 +11672,88 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update Import Template
+   * 
+   * @param importTemplateId Import Template ID (required)
+   * @param body importTemplate (required)
+   * @return ImportTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportTemplate putOutboundImporttemplate(String importTemplateId, ImportTemplate body) throws IOException, ApiException {
+    return  putOutboundImporttemplate(createPutOutboundImporttemplateRequest(importTemplateId, body));
+  }
+
+  /**
+   * Update Import Template
+   * 
+   * @param importTemplateId Import Template ID (required)
+   * @param body importTemplate (required)
+   * @return ImportTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportTemplate> putOutboundImporttemplateWithHttpInfo(String importTemplateId, ImportTemplate body) throws IOException {
+    return putOutboundImporttemplate(createPutOutboundImporttemplateRequest(importTemplateId, body).withHttpInfo());
+  }
+
+  private PutOutboundImporttemplateRequest createPutOutboundImporttemplateRequest(String importTemplateId, ImportTemplate body) {
+    return PutOutboundImporttemplateRequest.builder()
+            .withImportTemplateId(importTemplateId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Import Template
+   * 
+   * @param request The request object
+   * @return ImportTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportTemplate putOutboundImporttemplate(PutOutboundImporttemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ImportTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Import Template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportTemplate> putOutboundImporttemplate(ApiRequest<ImportTemplate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportTemplate> response = (ApiResponse<ImportTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportTemplate> response = (ApiResponse<ImportTemplate>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

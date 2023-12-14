@@ -156,10 +156,11 @@ public class AlertingApiAsync {
 
   /**
    * Delete an interaction stats alert
-   * 
+   * Apps should migrate to use DELETE /api/v2/alerting/alerts/{alertId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteAlertingInteractionstatsAlertAsync(DeleteAlertingInteractionstatsAlertRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -190,10 +191,11 @@ public class AlertingApiAsync {
 
   /**
    * Delete an interaction stats alert
-   * 
+   * Apps should migrate to use DELETE /api/v2/alerting/alerts/{alertId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteAlertingInteractionstatsAlertAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -230,11 +232,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Delete an interaction stats rule.
-   * 
+   * Delete an interaction stats rule
+   * Apps should migrate to use DELETE /api/v2/alerting/rules/{ruleId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteAlertingInteractionstatsRuleAsync(DeleteAlertingInteractionstatsRuleRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -264,11 +267,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Delete an interaction stats rule.
-   * 
+   * Delete an interaction stats rule
+   * Apps should migrate to use DELETE /api/v2/alerting/rules/{ruleId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteAlertingInteractionstatsRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -455,11 +459,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Gets active alert count for a user.
-   * 
+   * Gets active alert count for a user
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and alertStatus to 'Active' in the request body.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ActiveAlertCount> getAlertingAlertsActiveAsync(GetAlertingAlertsActiveRequest request, final AsyncApiCallback<ActiveAlertCount> callback) {
     try {
@@ -489,11 +494,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Gets active alert count for a user.
-   * 
+   * Gets active alert count for a user
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and alertStatus to 'Active' in the request body.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ActiveAlertCount>> getAlertingAlertsActiveAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActiveAlertCount>> callback) {
     try {
@@ -531,10 +537,11 @@ public class AlertingApiAsync {
 
   /**
    * Get an interaction stats alert
-   * 
+   * Apps should migrate to use GET /api/v2/alerting/alerts/{alertId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<InteractionStatsAlert> getAlertingInteractionstatsAlertAsync(GetAlertingInteractionstatsAlertRequest request, final AsyncApiCallback<InteractionStatsAlert> callback) {
     try {
@@ -565,10 +572,11 @@ public class AlertingApiAsync {
 
   /**
    * Get an interaction stats alert
-   * 
+   * Apps should migrate to use GET /api/v2/alerting/alerts/{alertId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<InteractionStatsAlert>> getAlertingInteractionstatsAlertAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InteractionStatsAlert>> callback) {
     try {
@@ -605,11 +613,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Get interaction stats alert list.
-   * 
+   * Get interaction stats alert list
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<InteractionStatsAlertContainer> getAlertingInteractionstatsAlertsAsync(GetAlertingInteractionstatsAlertsRequest request, final AsyncApiCallback<InteractionStatsAlertContainer> callback) {
     try {
@@ -639,11 +648,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Get interaction stats alert list.
-   * 
+   * Get interaction stats alert list
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<InteractionStatsAlertContainer>> getAlertingInteractionstatsAlertsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InteractionStatsAlertContainer>> callback) {
     try {
@@ -680,11 +690,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Gets user unread count of interaction stats alerts.
-   * 
+   * Gets user unread count of interaction stats alerts
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and viewStatus to 'Unread' in the request body.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<UnreadMetric> getAlertingInteractionstatsAlertsUnreadAsync(GetAlertingInteractionstatsAlertsUnreadRequest request, final AsyncApiCallback<UnreadMetric> callback) {
     try {
@@ -714,11 +725,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Gets user unread count of interaction stats alerts.
-   * 
+   * Gets user unread count of interaction stats alerts
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and viewStatus to 'Unread' in the request body.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<UnreadMetric>> getAlertingInteractionstatsAlertsUnreadAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UnreadMetric>> callback) {
     try {
@@ -755,11 +767,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Get an interaction stats rule.
-   * 
+   * Get an interaction stats rule
+   * Apps should migrate to use GET /api/v2/alerting/rules/{ruleId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<InteractionStatsRule> getAlertingInteractionstatsRuleAsync(GetAlertingInteractionstatsRuleRequest request, final AsyncApiCallback<InteractionStatsRule> callback) {
     try {
@@ -789,11 +802,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Get an interaction stats rule.
-   * 
+   * Get an interaction stats rule
+   * Apps should migrate to use GET /api/v2/alerting/rules/{ruleId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<InteractionStatsRule>> getAlertingInteractionstatsRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InteractionStatsRule>> callback) {
     try {
@@ -830,11 +844,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Get an interaction stats rule list.
-   * 
+   * Get an interaction stats rule list
+   * Apps should migrate to use POST /api/v2/alerting/rules/query.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<InteractionStatsRuleContainer> getAlertingInteractionstatsRulesAsync(GetAlertingInteractionstatsRulesRequest request, final AsyncApiCallback<InteractionStatsRuleContainer> callback) {
     try {
@@ -864,11 +879,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Get an interaction stats rule list.
-   * 
+   * Get an interaction stats rule list
+   * Apps should migrate to use POST /api/v2/alerting/rules/query.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<InteractionStatsRuleContainer>> getAlertingInteractionstatsRulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InteractionStatsRuleContainer>> callback) {
     try {
@@ -1280,11 +1296,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Create an interaction stats rule.
-   * 
+   * Create an interaction stats rule
+   * Apps should migrate to use POST /api/v2/alerting/rules.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<InteractionStatsRule> postAlertingInteractionstatsRulesAsync(PostAlertingInteractionstatsRulesRequest request, final AsyncApiCallback<InteractionStatsRule> callback) {
     try {
@@ -1314,11 +1331,12 @@ public class AlertingApiAsync {
   }
 
   /**
-   * Create an interaction stats rule.
-   * 
+   * Create an interaction stats rule
+   * Apps should migrate to use POST /api/v2/alerting/rules.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<InteractionStatsRule>> postAlertingInteractionstatsRulesAsync(ApiRequest<InteractionStatsRule> request, final AsyncApiCallback<ApiResponse<InteractionStatsRule>> callback) {
     try {
@@ -1656,10 +1674,11 @@ public class AlertingApiAsync {
 
   /**
    * Update an interaction stats alert read status
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/alerts/{alertId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<UnreadStatus> putAlertingInteractionstatsAlertAsync(PutAlertingInteractionstatsAlertRequest request, final AsyncApiCallback<UnreadStatus> callback) {
     try {
@@ -1690,10 +1709,11 @@ public class AlertingApiAsync {
 
   /**
    * Update an interaction stats alert read status
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/alerts/{alertId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<UnreadStatus>> putAlertingInteractionstatsAlertAsync(ApiRequest<UnreadStatus> request, final AsyncApiCallback<ApiResponse<UnreadStatus>> callback) {
     try {
@@ -1731,10 +1751,11 @@ public class AlertingApiAsync {
 
   /**
    * Update an interaction stats rule
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/rules/{ruleId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<InteractionStatsRule> putAlertingInteractionstatsRuleAsync(PutAlertingInteractionstatsRuleRequest request, final AsyncApiCallback<InteractionStatsRule> callback) {
     try {
@@ -1765,10 +1786,11 @@ public class AlertingApiAsync {
 
   /**
    * Update an interaction stats rule
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/rules/{ruleId}.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<InteractionStatsRule>> putAlertingInteractionstatsRuleAsync(ApiRequest<InteractionStatsRule> request, final AsyncApiCallback<ApiResponse<InteractionStatsRule>> callback) {
     try {

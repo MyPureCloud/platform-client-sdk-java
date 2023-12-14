@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicJourneyContext;
+import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -336,6 +337,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
+  private ConversationVideoEventTopicQueueMediaSettings queueMediaSettings = null;
   private Boolean audioMuted = null;
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
@@ -958,6 +960,23 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
 
   /**
    **/
+  public ConversationVideoEventTopicVideoMediaParticipant queueMediaSettings(ConversationVideoEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueMediaSettings")
+  public ConversationVideoEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationVideoEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
+  /**
+   **/
   public ConversationVideoEventTopicVideoMediaParticipant audioMuted(Boolean audioMuted) {
     this.audioMuted = audioMuted;
     return this;
@@ -1104,6 +1123,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
             Objects.equals(this.startAcwTime, conversationVideoEventTopicVideoMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationVideoEventTopicVideoMediaParticipant.endAcwTime) &&
             Objects.equals(this.mediaRoles, conversationVideoEventTopicVideoMediaParticipant.mediaRoles) &&
+            Objects.equals(this.queueMediaSettings, conversationVideoEventTopicVideoMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.audioMuted, conversationVideoEventTopicVideoMediaParticipant.audioMuted) &&
             Objects.equals(this.videoMuted, conversationVideoEventTopicVideoMediaParticipant.videoMuted) &&
             Objects.equals(this.sharingScreen, conversationVideoEventTopicVideoMediaParticipant.sharingScreen) &&
@@ -1114,7 +1134,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
   }
 
   @Override
@@ -1158,6 +1178,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    audioMuted: ").append(toIndentedString(audioMuted)).append("\n");
     sb.append("    videoMuted: ").append(toIndentedString(videoMuted)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");

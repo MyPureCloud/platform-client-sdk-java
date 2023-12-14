@@ -152,10 +152,11 @@ public class AlertingApi {
 
   /**
    * Delete an interaction stats alert
-   * 
+   * Apps should migrate to use DELETE /api/v2/alerting/alerts/{alertId}.
    * @param alertId Alert ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteAlertingInteractionstatsAlert(String alertId) throws IOException, ApiException {
      deleteAlertingInteractionstatsAlert(createDeleteAlertingInteractionstatsAlertRequest(alertId));
@@ -163,9 +164,10 @@ public class AlertingApi {
 
   /**
    * Delete an interaction stats alert
-   * 
+   * Apps should migrate to use DELETE /api/v2/alerting/alerts/{alertId}.
    * @param alertId Alert ID (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteAlertingInteractionstatsAlertWithHttpInfo(String alertId) throws IOException {
     return deleteAlertingInteractionstatsAlert(createDeleteAlertingInteractionstatsAlertRequest(alertId).withHttpInfo());
@@ -180,10 +182,11 @@ public class AlertingApi {
 
   /**
    * Delete an interaction stats alert
-   * 
+   * Apps should migrate to use DELETE /api/v2/alerting/alerts/{alertId}.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteAlertingInteractionstatsAlert(DeleteAlertingInteractionstatsAlertRequest request) throws IOException, ApiException {
     try {
@@ -198,10 +201,11 @@ public class AlertingApi {
 
   /**
    * Delete an interaction stats alert
-   * 
+   * Apps should migrate to use DELETE /api/v2/alerting/alerts/{alertId}.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteAlertingInteractionstatsAlert(ApiRequest<Void> request) throws IOException {
     try {
@@ -226,21 +230,23 @@ public class AlertingApi {
   }
 
   /**
-   * Delete an interaction stats rule.
-   * 
+   * Delete an interaction stats rule
+   * Apps should migrate to use DELETE /api/v2/alerting/rules/{ruleId}.
    * @param ruleId Rule ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteAlertingInteractionstatsRule(String ruleId) throws IOException, ApiException {
      deleteAlertingInteractionstatsRule(createDeleteAlertingInteractionstatsRuleRequest(ruleId));
   }
 
   /**
-   * Delete an interaction stats rule.
-   * 
+   * Delete an interaction stats rule
+   * Apps should migrate to use DELETE /api/v2/alerting/rules/{ruleId}.
    * @param ruleId Rule ID (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteAlertingInteractionstatsRuleWithHttpInfo(String ruleId) throws IOException {
     return deleteAlertingInteractionstatsRule(createDeleteAlertingInteractionstatsRuleRequest(ruleId).withHttpInfo());
@@ -254,11 +260,12 @@ public class AlertingApi {
   }
 
   /**
-   * Delete an interaction stats rule.
-   * 
+   * Delete an interaction stats rule
+   * Apps should migrate to use DELETE /api/v2/alerting/rules/{ruleId}.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteAlertingInteractionstatsRule(DeleteAlertingInteractionstatsRuleRequest request) throws IOException, ApiException {
     try {
@@ -272,11 +279,12 @@ public class AlertingApi {
   }
 
   /**
-   * Delete an interaction stats rule.
-   * 
+   * Delete an interaction stats rule
+   * Apps should migrate to use DELETE /api/v2/alerting/rules/{ruleId}.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteAlertingInteractionstatsRule(ApiRequest<Void> request) throws IOException {
     try {
@@ -454,21 +462,23 @@ public class AlertingApi {
   }
 
   /**
-   * Gets active alert count for a user.
-   * 
+   * Gets active alert count for a user
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and alertStatus to 'Active' in the request body.
    * @return ActiveAlertCount
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActiveAlertCount getAlertingAlertsActive() throws IOException, ApiException {
     return  getAlertingAlertsActive(createGetAlertingAlertsActiveRequest());
   }
 
   /**
-   * Gets active alert count for a user.
-   * 
+   * Gets active alert count for a user
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and alertStatus to 'Active' in the request body.
    * @return ActiveAlertCount
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActiveAlertCount> getAlertingAlertsActiveWithHttpInfo() throws IOException {
     return getAlertingAlertsActive(createGetAlertingAlertsActiveRequest().withHttpInfo());
@@ -480,12 +490,13 @@ public class AlertingApi {
   }
 
   /**
-   * Gets active alert count for a user.
-   * 
+   * Gets active alert count for a user
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and alertStatus to 'Active' in the request body.
    * @param request The request object
    * @return ActiveAlertCount
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ActiveAlertCount getAlertingAlertsActive(GetAlertingAlertsActiveRequest request) throws IOException, ApiException {
     try {
@@ -499,11 +510,12 @@ public class AlertingApi {
   }
 
   /**
-   * Gets active alert count for a user.
-   * 
+   * Gets active alert count for a user
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and alertStatus to 'Active' in the request body.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ActiveAlertCount> getAlertingAlertsActive(ApiRequest<Void> request) throws IOException {
     try {
@@ -529,12 +541,13 @@ public class AlertingApi {
 
   /**
    * Get an interaction stats alert
-   * 
+   * Apps should migrate to use GET /api/v2/alerting/alerts/{alertId}.
    * @param alertId Alert ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsAlert
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsAlert getAlertingInteractionstatsAlert(String alertId, List<String> expand) throws IOException, ApiException {
     return  getAlertingInteractionstatsAlert(createGetAlertingInteractionstatsAlertRequest(alertId, expand));
@@ -542,11 +555,12 @@ public class AlertingApi {
 
   /**
    * Get an interaction stats alert
-   * 
+   * Apps should migrate to use GET /api/v2/alerting/alerts/{alertId}.
    * @param alertId Alert ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsAlert
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsAlert> getAlertingInteractionstatsAlertWithHttpInfo(String alertId, List<String> expand) throws IOException {
     return getAlertingInteractionstatsAlert(createGetAlertingInteractionstatsAlertRequest(alertId, expand).withHttpInfo());
@@ -563,11 +577,12 @@ public class AlertingApi {
 
   /**
    * Get an interaction stats alert
-   * 
+   * Apps should migrate to use GET /api/v2/alerting/alerts/{alertId}.
    * @param request The request object
    * @return InteractionStatsAlert
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsAlert getAlertingInteractionstatsAlert(GetAlertingInteractionstatsAlertRequest request) throws IOException, ApiException {
     try {
@@ -582,10 +597,11 @@ public class AlertingApi {
 
   /**
    * Get an interaction stats alert
-   * 
+   * Apps should migrate to use GET /api/v2/alerting/alerts/{alertId}.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsAlert> getAlertingInteractionstatsAlert(ApiRequest<Void> request) throws IOException {
     try {
@@ -610,23 +626,25 @@ public class AlertingApi {
   }
 
   /**
-   * Get interaction stats alert list.
-   * 
+   * Get interaction stats alert list
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query.
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsAlertContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsAlertContainer getAlertingInteractionstatsAlerts(List<String> expand) throws IOException, ApiException {
     return  getAlertingInteractionstatsAlerts(createGetAlertingInteractionstatsAlertsRequest(expand));
   }
 
   /**
-   * Get interaction stats alert list.
-   * 
+   * Get interaction stats alert list
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query.
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsAlertContainer
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsAlertContainer> getAlertingInteractionstatsAlertsWithHttpInfo(List<String> expand) throws IOException {
     return getAlertingInteractionstatsAlerts(createGetAlertingInteractionstatsAlertsRequest(expand).withHttpInfo());
@@ -640,12 +658,13 @@ public class AlertingApi {
   }
 
   /**
-   * Get interaction stats alert list.
-   * 
+   * Get interaction stats alert list
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query.
    * @param request The request object
    * @return InteractionStatsAlertContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsAlertContainer getAlertingInteractionstatsAlerts(GetAlertingInteractionstatsAlertsRequest request) throws IOException, ApiException {
     try {
@@ -659,11 +678,12 @@ public class AlertingApi {
   }
 
   /**
-   * Get interaction stats alert list.
-   * 
+   * Get interaction stats alert list
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsAlertContainer> getAlertingInteractionstatsAlerts(ApiRequest<Void> request) throws IOException {
     try {
@@ -688,21 +708,23 @@ public class AlertingApi {
   }
 
   /**
-   * Gets user unread count of interaction stats alerts.
-   * 
+   * Gets user unread count of interaction stats alerts
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and viewStatus to 'Unread' in the request body.
    * @return UnreadMetric
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UnreadMetric getAlertingInteractionstatsAlertsUnread() throws IOException, ApiException {
     return  getAlertingInteractionstatsAlertsUnread(createGetAlertingInteractionstatsAlertsUnreadRequest());
   }
 
   /**
-   * Gets user unread count of interaction stats alerts.
-   * 
+   * Gets user unread count of interaction stats alerts
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and viewStatus to 'Unread' in the request body.
    * @return UnreadMetric
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UnreadMetric> getAlertingInteractionstatsAlertsUnreadWithHttpInfo() throws IOException {
     return getAlertingInteractionstatsAlertsUnread(createGetAlertingInteractionstatsAlertsUnreadRequest().withHttpInfo());
@@ -714,12 +736,13 @@ public class AlertingApi {
   }
 
   /**
-   * Gets user unread count of interaction stats alerts.
-   * 
+   * Gets user unread count of interaction stats alerts
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and viewStatus to 'Unread' in the request body.
    * @param request The request object
    * @return UnreadMetric
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UnreadMetric getAlertingInteractionstatsAlertsUnread(GetAlertingInteractionstatsAlertsUnreadRequest request) throws IOException, ApiException {
     try {
@@ -733,11 +756,12 @@ public class AlertingApi {
   }
 
   /**
-   * Gets user unread count of interaction stats alerts.
-   * 
+   * Gets user unread count of interaction stats alerts
+   * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and viewStatus to 'Unread' in the request body.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UnreadMetric> getAlertingInteractionstatsAlertsUnread(ApiRequest<Void> request) throws IOException {
     try {
@@ -762,25 +786,27 @@ public class AlertingApi {
   }
 
   /**
-   * Get an interaction stats rule.
-   * 
+   * Get an interaction stats rule
+   * Apps should migrate to use GET /api/v2/alerting/rules/{ruleId}.
    * @param ruleId Rule ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsRule getAlertingInteractionstatsRule(String ruleId, List<String> expand) throws IOException, ApiException {
     return  getAlertingInteractionstatsRule(createGetAlertingInteractionstatsRuleRequest(ruleId, expand));
   }
 
   /**
-   * Get an interaction stats rule.
-   * 
+   * Get an interaction stats rule
+   * Apps should migrate to use GET /api/v2/alerting/rules/{ruleId}.
    * @param ruleId Rule ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsRule> getAlertingInteractionstatsRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException {
     return getAlertingInteractionstatsRule(createGetAlertingInteractionstatsRuleRequest(ruleId, expand).withHttpInfo());
@@ -796,12 +822,13 @@ public class AlertingApi {
   }
 
   /**
-   * Get an interaction stats rule.
-   * 
+   * Get an interaction stats rule
+   * Apps should migrate to use GET /api/v2/alerting/rules/{ruleId}.
    * @param request The request object
    * @return InteractionStatsRule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsRule getAlertingInteractionstatsRule(GetAlertingInteractionstatsRuleRequest request) throws IOException, ApiException {
     try {
@@ -815,11 +842,12 @@ public class AlertingApi {
   }
 
   /**
-   * Get an interaction stats rule.
-   * 
+   * Get an interaction stats rule
+   * Apps should migrate to use GET /api/v2/alerting/rules/{ruleId}.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsRule> getAlertingInteractionstatsRule(ApiRequest<Void> request) throws IOException {
     try {
@@ -844,23 +872,25 @@ public class AlertingApi {
   }
 
   /**
-   * Get an interaction stats rule list.
-   * 
+   * Get an interaction stats rule list
+   * Apps should migrate to use POST /api/v2/alerting/rules/query.
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRuleContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsRuleContainer getAlertingInteractionstatsRules(List<String> expand) throws IOException, ApiException {
     return  getAlertingInteractionstatsRules(createGetAlertingInteractionstatsRulesRequest(expand));
   }
 
   /**
-   * Get an interaction stats rule list.
-   * 
+   * Get an interaction stats rule list
+   * Apps should migrate to use POST /api/v2/alerting/rules/query.
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRuleContainer
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsRuleContainer> getAlertingInteractionstatsRulesWithHttpInfo(List<String> expand) throws IOException {
     return getAlertingInteractionstatsRules(createGetAlertingInteractionstatsRulesRequest(expand).withHttpInfo());
@@ -874,12 +904,13 @@ public class AlertingApi {
   }
 
   /**
-   * Get an interaction stats rule list.
-   * 
+   * Get an interaction stats rule list
+   * Apps should migrate to use POST /api/v2/alerting/rules/query.
    * @param request The request object
    * @return InteractionStatsRuleContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsRuleContainer getAlertingInteractionstatsRules(GetAlertingInteractionstatsRulesRequest request) throws IOException, ApiException {
     try {
@@ -893,11 +924,12 @@ public class AlertingApi {
   }
 
   /**
-   * Get an interaction stats rule list.
-   * 
+   * Get an interaction stats rule list
+   * Apps should migrate to use POST /api/v2/alerting/rules/query.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsRuleContainer> getAlertingInteractionstatsRules(ApiRequest<Void> request) throws IOException {
     try {
@@ -1316,25 +1348,27 @@ public class AlertingApi {
   }
 
   /**
-   * Create an interaction stats rule.
-   * 
+   * Create an interaction stats rule
+   * Apps should migrate to use POST /api/v2/alerting/rules.
    * @param body AlertingRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsRule postAlertingInteractionstatsRules(InteractionStatsRule body, List<String> expand) throws IOException, ApiException {
     return  postAlertingInteractionstatsRules(createPostAlertingInteractionstatsRulesRequest(body, expand));
   }
 
   /**
-   * Create an interaction stats rule.
-   * 
+   * Create an interaction stats rule
+   * Apps should migrate to use POST /api/v2/alerting/rules.
    * @param body AlertingRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsRule> postAlertingInteractionstatsRulesWithHttpInfo(InteractionStatsRule body, List<String> expand) throws IOException {
     return postAlertingInteractionstatsRules(createPostAlertingInteractionstatsRulesRequest(body, expand).withHttpInfo());
@@ -1350,12 +1384,13 @@ public class AlertingApi {
   }
 
   /**
-   * Create an interaction stats rule.
-   * 
+   * Create an interaction stats rule
+   * Apps should migrate to use POST /api/v2/alerting/rules.
    * @param request The request object
    * @return InteractionStatsRule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsRule postAlertingInteractionstatsRules(PostAlertingInteractionstatsRulesRequest request) throws IOException, ApiException {
     try {
@@ -1369,11 +1404,12 @@ public class AlertingApi {
   }
 
   /**
-   * Create an interaction stats rule.
-   * 
+   * Create an interaction stats rule
+   * Apps should migrate to use POST /api/v2/alerting/rules.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsRule> postAlertingInteractionstatsRules(ApiRequest<InteractionStatsRule> request) throws IOException {
     try {
@@ -1715,13 +1751,14 @@ public class AlertingApi {
 
   /**
    * Update an interaction stats alert read status
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/alerts/{alertId}.
    * @param alertId Alert ID (required)
    * @param body InteractionStatsAlert (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UnreadStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UnreadStatus putAlertingInteractionstatsAlert(String alertId, UnreadStatus body, List<String> expand) throws IOException, ApiException {
     return  putAlertingInteractionstatsAlert(createPutAlertingInteractionstatsAlertRequest(alertId, body, expand));
@@ -1729,12 +1766,13 @@ public class AlertingApi {
 
   /**
    * Update an interaction stats alert read status
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/alerts/{alertId}.
    * @param alertId Alert ID (required)
    * @param body InteractionStatsAlert (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UnreadStatus
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UnreadStatus> putAlertingInteractionstatsAlertWithHttpInfo(String alertId, UnreadStatus body, List<String> expand) throws IOException {
     return putAlertingInteractionstatsAlert(createPutAlertingInteractionstatsAlertRequest(alertId, body, expand).withHttpInfo());
@@ -1753,11 +1791,12 @@ public class AlertingApi {
 
   /**
    * Update an interaction stats alert read status
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/alerts/{alertId}.
    * @param request The request object
    * @return UnreadStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UnreadStatus putAlertingInteractionstatsAlert(PutAlertingInteractionstatsAlertRequest request) throws IOException, ApiException {
     try {
@@ -1772,10 +1811,11 @@ public class AlertingApi {
 
   /**
    * Update an interaction stats alert read status
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/alerts/{alertId}.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UnreadStatus> putAlertingInteractionstatsAlert(ApiRequest<UnreadStatus> request) throws IOException {
     try {
@@ -1801,13 +1841,14 @@ public class AlertingApi {
 
   /**
    * Update an interaction stats rule
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/rules/{ruleId}.
    * @param ruleId Rule ID (required)
    * @param body AlertingRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsRule putAlertingInteractionstatsRule(String ruleId, InteractionStatsRule body, List<String> expand) throws IOException, ApiException {
     return  putAlertingInteractionstatsRule(createPutAlertingInteractionstatsRuleRequest(ruleId, body, expand));
@@ -1815,12 +1856,13 @@ public class AlertingApi {
 
   /**
    * Update an interaction stats rule
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/rules/{ruleId}.
    * @param ruleId Rule ID (required)
    * @param body AlertingRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsRule> putAlertingInteractionstatsRuleWithHttpInfo(String ruleId, InteractionStatsRule body, List<String> expand) throws IOException {
     return putAlertingInteractionstatsRule(createPutAlertingInteractionstatsRuleRequest(ruleId, body, expand).withHttpInfo());
@@ -1839,11 +1881,12 @@ public class AlertingApi {
 
   /**
    * Update an interaction stats rule
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/rules/{ruleId}.
    * @param request The request object
    * @return InteractionStatsRule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public InteractionStatsRule putAlertingInteractionstatsRule(PutAlertingInteractionstatsRuleRequest request) throws IOException, ApiException {
     try {
@@ -1858,10 +1901,11 @@ public class AlertingApi {
 
   /**
    * Update an interaction stats rule
-   * 
+   * Apps should migrate to use PUT /api/v2/alerting/rules/{ruleId}.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<InteractionStatsRule> putAlertingInteractionstatsRule(ApiRequest<InteractionStatsRule> request) throws IOException {
     try {

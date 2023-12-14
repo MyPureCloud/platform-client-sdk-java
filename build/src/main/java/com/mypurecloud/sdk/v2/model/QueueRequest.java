@@ -161,6 +161,7 @@ public class QueueRequest  implements Serializable {
   private DomainEntityRef onHoldPrompt = null;
   private Boolean autoAnswerOnly = null;
   private Boolean enableTranscription = null;
+  private Boolean enableAudioMonitoring = null;
   private Boolean enableManualAssignment = null;
   private AgentOwnedRouting agentOwnedRouting = null;
   private DirectRouting directRouting = null;
@@ -599,6 +600,24 @@ public class QueueRequest  implements Serializable {
 
 
   /**
+   * Indicates whether audio monitoring is enabled for this queue.
+   **/
+  public QueueRequest enableAudioMonitoring(Boolean enableAudioMonitoring) {
+    this.enableAudioMonitoring = enableAudioMonitoring;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether audio monitoring is enabled for this queue.")
+  @JsonProperty("enableAudioMonitoring")
+  public Boolean getEnableAudioMonitoring() {
+    return enableAudioMonitoring;
+  }
+  public void setEnableAudioMonitoring(Boolean enableAudioMonitoring) {
+    this.enableAudioMonitoring = enableAudioMonitoring;
+  }
+
+
+  /**
    * Indicates whether manual assignment is enabled for this queue.
    **/
   public QueueRequest enableManualAssignment(Boolean enableManualAssignment) {
@@ -820,6 +839,7 @@ public class QueueRequest  implements Serializable {
             Objects.equals(this.onHoldPrompt, queueRequest.onHoldPrompt) &&
             Objects.equals(this.autoAnswerOnly, queueRequest.autoAnswerOnly) &&
             Objects.equals(this.enableTranscription, queueRequest.enableTranscription) &&
+            Objects.equals(this.enableAudioMonitoring, queueRequest.enableAudioMonitoring) &&
             Objects.equals(this.enableManualAssignment, queueRequest.enableManualAssignment) &&
             Objects.equals(this.agentOwnedRouting, queueRequest.agentOwnedRouting) &&
             Objects.equals(this.directRouting, queueRequest.directRouting) &&
@@ -835,7 +855,7 @@ public class QueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, selfUri);
   }
 
   @Override
@@ -869,6 +889,7 @@ public class QueueRequest  implements Serializable {
     sb.append("    onHoldPrompt: ").append(toIndentedString(onHoldPrompt)).append("\n");
     sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
+    sb.append("    enableAudioMonitoring: ").append(toIndentedString(enableAudioMonitoring)).append("\n");
     sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");
     sb.append("    agentOwnedRouting: ").append(toIndentedString(agentOwnedRouting)).append("\n");
     sb.append("    directRouting: ").append(toIndentedString(directRouting)).append("\n");

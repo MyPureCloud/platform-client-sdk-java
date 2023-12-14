@@ -4903,7 +4903,7 @@ public class IntegrationsApi {
   }
 
   /**
-   * Create a new Action
+   * Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
    * 
    * @param body Input used to create Action. (required)
    * @return Action
@@ -4915,7 +4915,7 @@ public class IntegrationsApi {
   }
 
   /**
-   * Create a new Action
+   * Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
    * 
    * @param body Input used to create Action. (required)
    * @return Action
@@ -4933,7 +4933,7 @@ public class IntegrationsApi {
   }
 
   /**
-   * Create a new Action
+   * Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
    * 
    * @param request The request object
    * @return Action
@@ -4952,7 +4952,7 @@ public class IntegrationsApi {
   }
 
   /**
-   * Create a new Action
+   * Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
    * 
    * @param request The request object
    * @return the response

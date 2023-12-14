@@ -36,6 +36,7 @@ public class AssignedLearningModule  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Boolean excludedFromCatalog = null;
   private UserReference createdBy = null;
   private Date dateCreated = null;
   private UserReference modifiedBy = null;
@@ -152,6 +153,7 @@ public class AssignedLearningModule  implements Serializable {
   private LearningModuleSummary summaryData = null;
   private LearningModuleReassignSummary reassignSummaryData = null;
   private LearningModuleCoverArtResponse coverArt = null;
+  private Integer lengthInMinutes = null;
 
   private static class ArchivalModeEnumDeserializer extends StdDeserializer<ArchivalModeEnum> {
     public ArchivalModeEnumDeserializer() {
@@ -224,6 +226,24 @@ public class AssignedLearningModule  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  /**
+   * If true, learning module is excluded when retrieving modules for manual assignment
+   **/
+  public AssignedLearningModule excludedFromCatalog(Boolean excludedFromCatalog) {
+    this.excludedFromCatalog = excludedFromCatalog;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, learning module is excluded when retrieving modules for manual assignment")
+  @JsonProperty("excludedFromCatalog")
+  public Boolean getExcludedFromCatalog() {
+    return excludedFromCatalog;
+  }
+  public void setExcludedFromCatalog(Boolean excludedFromCatalog) {
+    this.excludedFromCatalog = excludedFromCatalog;
   }
 
 
@@ -467,6 +487,24 @@ public class AssignedLearningModule  implements Serializable {
 
 
   /**
+   * The recommended time in minutes to complete the module
+   **/
+  public AssignedLearningModule lengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The recommended time in minutes to complete the module")
+  @JsonProperty("lengthInMinutes")
+  public Integer getLengthInMinutes() {
+    return lengthInMinutes;
+  }
+  public void setLengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+  }
+
+
+  /**
    * The mode of archival for learning module
    **/
   public AssignedLearningModule archivalMode(ArchivalModeEnum archivalMode) {
@@ -496,6 +534,7 @@ public class AssignedLearningModule  implements Serializable {
 
     return Objects.equals(this.id, assignedLearningModule.id) &&
             Objects.equals(this.name, assignedLearningModule.name) &&
+            Objects.equals(this.excludedFromCatalog, assignedLearningModule.excludedFromCatalog) &&
             Objects.equals(this.createdBy, assignedLearningModule.createdBy) &&
             Objects.equals(this.dateCreated, assignedLearningModule.dateCreated) &&
             Objects.equals(this.modifiedBy, assignedLearningModule.modifiedBy) &&
@@ -516,12 +555,13 @@ public class AssignedLearningModule  implements Serializable {
             Objects.equals(this.summaryData, assignedLearningModule.summaryData) &&
             Objects.equals(this.reassignSummaryData, assignedLearningModule.reassignSummaryData) &&
             Objects.equals(this.coverArt, assignedLearningModule.coverArt) &&
+            Objects.equals(this.lengthInMinutes, assignedLearningModule.lengthInMinutes) &&
             Objects.equals(this.archivalMode, assignedLearningModule.archivalMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, currentAssignments, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, reassignSummaryData, coverArt, archivalMode);
+    return Objects.hash(id, name, excludedFromCatalog, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, currentAssignments, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, reassignSummaryData, coverArt, lengthInMinutes, archivalMode);
   }
 
   @Override
@@ -531,6 +571,7 @@ public class AssignedLearningModule  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    excludedFromCatalog: ").append(toIndentedString(excludedFromCatalog)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
@@ -551,6 +592,7 @@ public class AssignedLearningModule  implements Serializable {
     sb.append("    summaryData: ").append(toIndentedString(summaryData)).append("\n");
     sb.append("    reassignSummaryData: ").append(toIndentedString(reassignSummaryData)).append("\n");
     sb.append("    coverArt: ").append(toIndentedString(coverArt)).append("\n");
+    sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
     sb.append("    archivalMode: ").append(toIndentedString(archivalMode)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsActionsAggregatesJob**](AnalyticsApi.html#getAnalyticsActionsAggregatesJob) | Get status for async query for action aggregates |
 | [**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsActionsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsBotflowReportingturns**](AnalyticsApi.html#getAnalyticsBotflowReportingturns) | Get Reporting Turns. |
+| [**getAnalyticsBotflowSessions**](AnalyticsApi.html#getAnalyticsBotflowSessions) | Get Bot Flow Sessions. |
 | [**getAnalyticsBotsAggregatesJob**](AnalyticsApi.html#getAnalyticsBotsAggregatesJob) | Get status for async query for bot aggregates |
 | [**getAnalyticsBotsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsBotsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsConversationDetails**](AnalyticsApi.html#getAnalyticsConversationDetails) | Get a conversation by id |
@@ -25,6 +26,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsDataretentionSettings**](AnalyticsApi.html#getAnalyticsDataretentionSettings) | Get analytics data retention setting |
 | [**getAnalyticsEvaluationsAggregatesJob**](AnalyticsApi.html#getAnalyticsEvaluationsAggregatesJob) | Get status for async query for evaluation aggregates |
 | [**getAnalyticsEvaluationsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsEvaluationsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
+| [**getAnalyticsFlowexecutionsAggregatesJob**](AnalyticsApi.html#getAnalyticsFlowexecutionsAggregatesJob) | Get status for async query for flow execution aggregates |
+| [**getAnalyticsFlowexecutionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsFlowexecutionsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsFlowsAggregatesJob**](AnalyticsApi.html#getAnalyticsFlowsAggregatesJob) | Get status for async query for Flow aggregates |
 | [**getAnalyticsFlowsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsFlowsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsJourneysAggregatesJob**](AnalyticsApi.html#getAnalyticsJourneysAggregatesJob) | Get status for async query for journey aggregates |
@@ -70,6 +73,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsConversationsTranscriptsQuery**](AnalyticsApi.html#postAnalyticsConversationsTranscriptsQuery) | Search resources. |
 | [**postAnalyticsEvaluationsAggregatesJobs**](AnalyticsApi.html#postAnalyticsEvaluationsAggregatesJobs) | Query for evaluation aggregates asynchronously |
 | [**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsEvaluationsAggregatesQuery) | Query for evaluation aggregates |
+| [**postAnalyticsFlowexecutionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsFlowexecutionsAggregatesJobs) | Query for flow execution aggregates asynchronously |
+| [**postAnalyticsFlowexecutionsAggregatesQuery**](AnalyticsApi.html#postAnalyticsFlowexecutionsAggregatesQuery) | Query for flow execution aggregates |
 | [**postAnalyticsFlowsActivityQuery**](AnalyticsApi.html#postAnalyticsFlowsActivityQuery) | Query for flow activity observations |
 | [**postAnalyticsFlowsAggregatesJobs**](AnalyticsApi.html#postAnalyticsFlowsAggregatesJobs) | Query for flow aggregates asynchronously |
 | [**postAnalyticsFlowsAggregatesQuery**](AnalyticsApi.html#postAnalyticsFlowsAggregatesQuery) | Query for flow aggregates |
@@ -421,7 +426,7 @@ try {
 
 Get Reporting Turns.
 
-Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
+Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 
 Wraps GET /api/v2/analytics/botflows/{botFlowId}/reportingturns  
 
@@ -487,6 +492,79 @@ try {
 ### Return type
 
 [**ReportingTurnsResponse**](ReportingTurnsResponse.html)
+
+<a name="getAnalyticsBotflowSessions"></a>
+
+# **getAnalyticsBotflowSessions**
+
+
+
+> [SessionsResponse](SessionsResponse.html) getAnalyticsBotflowSessions(botFlowId, after, pageSize, interval, botResultCategories, endLanguage)
+
+Get Bot Flow Sessions.
+
+Returns the bot flow sessions in reverse chronological order from the date they were created. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+
+Wraps GET /api/v2/analytics/botflows/{botFlowId}/sessions  
+
+Requires ANY permissions: 
+
+* analytics:botFlowSession:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String botFlowId = "botFlowId_example"; // String | ID of the bot flow.
+String after = "after_example"; // String | The cursor that points to the ID of the last item in the list of entities that has been returned.
+String pageSize = "50"; // String | Max number of entities to return. Maximum of 250
+String interval = 2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z; // String | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+String botResultCategories = "botResultCategories_example"; // String | Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by.
+String endLanguage = "endLanguage_example"; // String | Optional case-insensitive language code to filter sessions by the language the sessions ended in.
+try {
+    SessionsResponse result = apiInstance.getAnalyticsBotflowSessions(botFlowId, after, pageSize, interval, botResultCategories, endLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsBotflowSessions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **botFlowId** | **String**| ID of the bot flow. | 
+| **after** | **String**| The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Max number of entities to return. Maximum of 250 | [optional] [default to 50] 
+| **interval** | **String**| Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: &#39;2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07&#39;. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] [default to null] 
+| **botResultCategories** | **String**| Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by. | [optional]<br />**Values**: Unknown, UserExit, BotExit, Error, RecognitionFailure, UserDisconnect, BotDisconnect, SessionExpired, Transfer 
+| **endLanguage** | **String**| Optional case-insensitive language code to filter sessions by the language the sessions ended in. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SessionsResponse**](SessionsResponse.html)
 
 <a name="getAnalyticsBotsAggregatesJob"></a>
 
@@ -1237,6 +1315,134 @@ try {
 ### Return type
 
 [**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse.html)
+
+<a name="getAnalyticsFlowexecutionsAggregatesJob"></a>
+
+# **getAnalyticsFlowexecutionsAggregatesJob**
+
+
+
+> [AsyncQueryStatus](AsyncQueryStatus.html) getAnalyticsFlowexecutionsAggregatesJob(jobId)
+
+Get status for async query for flow execution aggregates
+
+getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:flowExecutionAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    AsyncQueryStatus result = apiInstance.getAnalyticsFlowexecutionsAggregatesJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsFlowexecutionsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="getAnalyticsFlowexecutionsAggregatesJobResults"></a>
+
+# **getAnalyticsFlowexecutionsAggregatesJobResults**
+
+
+
+> [FlowExecutionAsyncAggregateQueryResponse](FlowExecutionAsyncAggregateQueryResponse.html) getAnalyticsFlowexecutionsAggregatesJobResults(jobId, cursor)
+
+Fetch a page of results for an async aggregates query
+
+getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results  
+
+Requires ANY permissions: 
+
+* analytics:flowExecutionAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+String cursor = "cursor_example"; // String | Cursor token to retrieve next page
+try {
+    FlowExecutionAsyncAggregateQueryResponse result = apiInstance.getAnalyticsFlowexecutionsAggregatesJobResults(jobId, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsFlowexecutionsAggregatesJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+| **cursor** | **String**| Cursor token to retrieve next page | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowExecutionAsyncAggregateQueryResponse**](FlowExecutionAsyncAggregateQueryResponse.html)
 
 <a name="getAnalyticsFlowsAggregatesJob"></a>
 
@@ -4053,6 +4259,132 @@ try {
 
 [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
 
+<a name="postAnalyticsFlowexecutionsAggregatesJobs"></a>
+
+# **postAnalyticsFlowexecutionsAggregatesJobs**
+
+
+
+> [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsFlowexecutionsAggregatesJobs(body)
+
+Query for flow execution aggregates asynchronously
+
+postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/flowexecutions/aggregates/jobs  
+
+Requires ANY permissions: 
+
+* analytics:flowExecutionAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+FlowExecutionAsyncAggregationQuery body = new FlowExecutionAsyncAggregationQuery(); // FlowExecutionAsyncAggregationQuery | query
+try {
+    AsyncQueryResponse result = apiInstance.postAnalyticsFlowexecutionsAggregatesJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsFlowexecutionsAggregatesJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**FlowExecutionAsyncAggregationQuery**](FlowExecutionAsyncAggregationQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
+<a name="postAnalyticsFlowexecutionsAggregatesQuery"></a>
+
+# **postAnalyticsFlowexecutionsAggregatesQuery**
+
+
+
+> [FlowExecutionAggregateQueryResponse](FlowExecutionAggregateQueryResponse.html) postAnalyticsFlowexecutionsAggregatesQuery(body)
+
+Query for flow execution aggregates
+
+postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/flowexecutions/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:flowExecutionAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+FlowExecutionAggregationQuery body = new FlowExecutionAggregationQuery(); // FlowExecutionAggregationQuery | query
+try {
+    FlowExecutionAggregateQueryResponse result = apiInstance.postAnalyticsFlowexecutionsAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsFlowexecutionsAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**FlowExecutionAggregationQuery**](FlowExecutionAggregationQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowExecutionAggregateQueryResponse**](FlowExecutionAggregateQueryResponse.html)
+
 <a name="postAnalyticsFlowsActivityQuery"></a>
 
 # **postAnalyticsFlowsActivityQuery**
@@ -4683,11 +5015,13 @@ try {
 
 # **postAnalyticsReportingScheduleRunreport**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [RunNowResponse](RunNowResponse.html) postAnalyticsReportingScheduleRunreport(scheduleId)
 
 Place a scheduled report immediately into the reporting queue
+
+This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
 
 Wraps POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport  
 
@@ -4744,13 +5078,13 @@ try {
 
 # **postAnalyticsReportingSchedules**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ReportSchedule](ReportSchedule.html) postAnalyticsReportingSchedules(body)
 
 Create a scheduled report job
 
-Create a scheduled report job.
+This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
 
 Wraps POST /api/v2/analytics/reporting/schedules  
 
@@ -5813,11 +6147,13 @@ try {
 
 # **putAnalyticsReportingSchedule**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ReportSchedule](ReportSchedule.html) putAnalyticsReportingSchedule(scheduleId, body)
 
 Update a scheduled report job.
+
+This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
 
 Wraps PUT /api/v2/analytics/reporting/schedules/{scheduleId}  
 

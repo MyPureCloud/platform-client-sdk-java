@@ -548,7 +548,7 @@ public class ObjectsApi {
    * Recreate a previously deleted division.
    * 
    * @param divisionId Division ID (required)
-   * @param body Recreated division data (required)
+   * @param body Recreated division data (optional)
    * @return AuthzDivision
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -561,7 +561,7 @@ public class ObjectsApi {
    * Recreate a previously deleted division.
    * 
    * @param divisionId Division ID (required)
-   * @param body Recreated division data (required)
+   * @param body Recreated division data (optional)
    * @return AuthzDivision
    * @throws IOException if the request fails to be processed
    */

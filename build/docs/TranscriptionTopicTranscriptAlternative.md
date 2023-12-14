@@ -13,6 +13,8 @@ title: TranscriptionTopicTranscriptAlternative
 | **durationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **transcript** | <!----><!---->**String**<!----> |  |  [optional] |
 | **words** | <!----><!---->[**List&lt;TranscriptionTopicTranscriptWord&gt;**](TranscriptionTopicTranscriptWord.html)<!----> |  |  [optional] |
+| **decoratedTranscript** | <!----><!---->**String**<!----> |  |  [optional] |
+| **decoratedWords** | <!----><!---->[**List&lt;TranscriptionTopicTranscriptWord&gt;**](TranscriptionTopicTranscriptWord.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

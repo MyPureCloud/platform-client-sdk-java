@@ -73,7 +73,6 @@ public class PresenceApi {
   /**
    * Delete a Presence Definition
    * 
-   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -85,7 +84,6 @@ public class PresenceApi {
   /**
    * Delete a Presence Definition
    * 
-   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @throws IOException if the request fails to be processed
    */
@@ -103,7 +101,6 @@ public class PresenceApi {
   /**
    * Delete a Presence Definition
    * 
-   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -122,7 +119,6 @@ public class PresenceApi {
   /**
    * Delete a Presence Definition
    * 
-   * deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -302,7 +298,6 @@ public class PresenceApi {
   /**
    * Get a Presence Definition
    * 
-   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresenceDefinition
@@ -316,7 +311,6 @@ public class PresenceApi {
   /**
    * Get a Presence Definition
    * 
-   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresenceDefinition
@@ -338,7 +332,6 @@ public class PresenceApi {
   /**
    * Get a Presence Definition
    * 
-   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OrganizationPresenceDefinition
    * @throws ApiException if the request fails on the server
@@ -358,7 +351,6 @@ public class PresenceApi {
   /**
    * Get a Presence Definition
    * 
-   * getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -388,7 +380,6 @@ public class PresenceApi {
   /**
    * Get a list of Presence Definitions
    * 
-   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
    * @param divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
    * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
@@ -403,7 +394,6 @@ public class PresenceApi {
   /**
    * Get a list of Presence Definitions
    * 
-   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param deactivated Deactivated query can be TRUE or FALSE (optional, default to false)
    * @param divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
    * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
@@ -428,7 +418,6 @@ public class PresenceApi {
   /**
    * Get a list of Presence Definitions
    * 
-   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OrganizationPresenceDefinitionEntityListing
    * @throws ApiException if the request fails on the server
@@ -448,7 +437,6 @@ public class PresenceApi {
   /**
    * Get a list of Presence Definitions
    * 
-   * getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1520,7 +1508,6 @@ public class PresenceApi {
   /**
    * Create a Presence Definition
    * 
-   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body The Presence Definition to create (required)
    * @return OrganizationPresenceDefinition
    * @throws ApiException if the request fails on the server
@@ -1533,7 +1520,6 @@ public class PresenceApi {
   /**
    * Create a Presence Definition
    * 
-   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body The Presence Definition to create (required)
    * @return OrganizationPresenceDefinition
    * @throws IOException if the request fails to be processed
@@ -1552,7 +1538,6 @@ public class PresenceApi {
   /**
    * Create a Presence Definition
    * 
-   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OrganizationPresenceDefinition
    * @throws ApiException if the request fails on the server
@@ -1572,7 +1557,6 @@ public class PresenceApi {
   /**
    * Create a Presence Definition
    * 
-   * postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1758,7 +1742,6 @@ public class PresenceApi {
   /**
    * Update a Presence Definition
    * 
-   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @param body The updated Presence Definition (required)
    * @return OrganizationPresenceDefinition
@@ -1772,7 +1755,6 @@ public class PresenceApi {
   /**
    * Update a Presence Definition
    * 
-   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param definitionId Presence Definition ID (required)
    * @param body The updated Presence Definition (required)
    * @return OrganizationPresenceDefinition
@@ -1794,7 +1776,6 @@ public class PresenceApi {
   /**
    * Update a Presence Definition
    * 
-   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OrganizationPresenceDefinition
    * @throws ApiException if the request fails on the server
@@ -1814,7 +1795,6 @@ public class PresenceApi {
   /**
    * Update a Presence Definition
    * 
-   * putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

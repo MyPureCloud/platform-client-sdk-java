@@ -25,6 +25,7 @@ public class EvaluationQuestionScore  implements Serializable {
   private String answerId = null;
   private Integer score = null;
   private Boolean markedNA = null;
+  private Boolean systemMarkedNA = null;
   private String assistedAnswerId = null;
   private Boolean failedKillQuestion = null;
   private String comments = null;
@@ -83,19 +84,38 @@ public class EvaluationQuestionScore  implements Serializable {
 
 
   /**
+   * True when the evaluation is submitted with a question that does not have an answer. Only allowed when naEnabled is true or if set by the system
    **/
   public EvaluationQuestionScore markedNA(Boolean markedNA) {
     this.markedNA = markedNA;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True when the evaluation is submitted with a question that does not have an answer. Only allowed when naEnabled is true or if set by the system")
   @JsonProperty("markedNA")
   public Boolean getMarkedNA() {
     return markedNA;
   }
   public void setMarkedNA(Boolean markedNA) {
     this.markedNA = markedNA;
+  }
+
+
+  /**
+   * If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+   **/
+  public EvaluationQuestionScore systemMarkedNA(Boolean systemMarkedNA) {
+    this.systemMarkedNA = systemMarkedNA;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.")
+  @JsonProperty("systemMarkedNA")
+  public Boolean getSystemMarkedNA() {
+    return systemMarkedNA;
+  }
+  public void setSystemMarkedNA(Boolean systemMarkedNA) {
+    this.systemMarkedNA = systemMarkedNA;
   }
 
 
@@ -167,6 +187,7 @@ public class EvaluationQuestionScore  implements Serializable {
             Objects.equals(this.answerId, evaluationQuestionScore.answerId) &&
             Objects.equals(this.score, evaluationQuestionScore.score) &&
             Objects.equals(this.markedNA, evaluationQuestionScore.markedNA) &&
+            Objects.equals(this.systemMarkedNA, evaluationQuestionScore.systemMarkedNA) &&
             Objects.equals(this.assistedAnswerId, evaluationQuestionScore.assistedAnswerId) &&
             Objects.equals(this.failedKillQuestion, evaluationQuestionScore.failedKillQuestion) &&
             Objects.equals(this.comments, evaluationQuestionScore.comments);
@@ -174,7 +195,7 @@ public class EvaluationQuestionScore  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(questionId, answerId, score, markedNA, assistedAnswerId, failedKillQuestion, comments);
+    return Objects.hash(questionId, answerId, score, markedNA, systemMarkedNA, assistedAnswerId, failedKillQuestion, comments);
   }
 
   @Override
@@ -186,6 +207,7 @@ public class EvaluationQuestionScore  implements Serializable {
     sb.append("    answerId: ").append(toIndentedString(answerId)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    markedNA: ").append(toIndentedString(markedNA)).append("\n");
+    sb.append("    systemMarkedNA: ").append(toIndentedString(systemMarkedNA)).append("\n");
     sb.append("    assistedAnswerId: ").append(toIndentedString(assistedAnswerId)).append("\n");
     sb.append("    failedKillQuestion: ").append(toIndentedString(failedKillQuestion)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");

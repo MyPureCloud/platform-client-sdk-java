@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.AssessmentListing;
 import com.mypurecloud.sdk.v2.model.AvailableMediaTypeEntityListing;
@@ -96,7 +96,8 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillGroupEntityListing;
-import com.mypurecloud.sdk.v2.model.Utilization;
+import com.mypurecloud.sdk.v2.model.UtilizationRequest;
+import com.mypurecloud.sdk.v2.model.UtilizationResponse;
 import com.mypurecloud.sdk.v2.model.UtilizationTag;
 import com.mypurecloud.sdk.v2.model.UtilizationTagEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;

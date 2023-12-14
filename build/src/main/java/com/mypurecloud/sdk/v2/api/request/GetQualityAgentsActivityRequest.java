@@ -226,6 +226,20 @@ public class GetQualityAgentsActivityRequest {
 	    return this;
 	} 
 
+	private String agentTeamId;
+	public String getAgentTeamId() {
+		return this.agentTeamId;
+	}
+
+	public void setAgentTeamId(String agentTeamId) {
+		this.agentTeamId = agentTeamId;
+	}
+
+	public GetQualityAgentsActivityRequest withAgentTeamId(String agentTeamId) {
+	    this.setAgentTeamId(agentTeamId);
+	    return this;
+	} 
+
 	private String formContextId;
 	public String getFormContextId() {
 		return this.formContextId;
@@ -298,6 +312,9 @@ public class GetQualityAgentsActivityRequest {
         
 
                 .withQueryParameters("group", "", group)
+        
+
+                .withQueryParameters("agentTeamId", "", agentTeamId)
         
 
                 .withQueryParameters("formContextId", "", formContextId)
@@ -380,6 +397,11 @@ public class GetQualityAgentsActivityRequest {
 
 		public Builder withGroup(String group) {
 			request.setGroup(group);
+			return this;
+		}
+
+		public Builder withAgentTeamId(String agentTeamId) {
+			request.setAgentTeamId(agentTeamId);
 			return this;
 		}
 

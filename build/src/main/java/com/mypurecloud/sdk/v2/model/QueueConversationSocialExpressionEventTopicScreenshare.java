@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAfterCallWork;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -209,6 +210,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+  private QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings = null;
 
   
   /**
@@ -497,6 +499,24 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
   }
 
 
+  /**
+   * Represents the queue setting for this media.
+   **/
+  public QueueConversationSocialExpressionEventTopicScreenshare queueMediaSettings(QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the queue setting for this media.")
+  @JsonProperty("queueMediaSettings")
+  public QueueConversationSocialExpressionEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -522,12 +542,13 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
             Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicScreenshare.disconnectedTime) &&
             Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicScreenshare.wrapup) &&
             Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicScreenshare.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicScreenshare.afterCallWorkRequired);
+            Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicScreenshare.afterCallWorkRequired) &&
+            Objects.equals(this.queueMediaSettings, queueConversationSocialExpressionEventTopicScreenshare.queueMediaSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, self, id, context, sharing, provider, scriptId, peerId, peerCount, disconnectType, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, initialState, self, id, context, sharing, provider, scriptId, peerId, peerCount, disconnectType, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, queueMediaSettings);
   }
 
   @Override
@@ -551,6 +572,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

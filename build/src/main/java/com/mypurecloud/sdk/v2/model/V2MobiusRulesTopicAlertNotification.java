@@ -45,6 +45,7 @@ public class V2MobiusRulesTopicAlertNotification  implements Serializable {
     DEVICE("Device"),
     EMAIL("Email"),
     SMS("Sms"),
+    PUSH("Push"),
     UNKNOWN("Unknown");
 
     private String value;

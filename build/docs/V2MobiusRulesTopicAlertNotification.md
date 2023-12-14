@@ -22,6 +22,7 @@ title: V2MobiusRulesTopicAlertNotification
 | DEVICE | &quot;Device&quot; |
 | EMAIL | &quot;Email&quot; |
 | SMS | &quot;Sms&quot; |
+| PUSH | &quot;Push&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 {: class="table table-striped"}
 

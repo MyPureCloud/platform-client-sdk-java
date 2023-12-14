@@ -26,13 +26,14 @@ public class SupportCenterImage  implements Serializable {
 
   
   /**
+   * Source URLs for image
    **/
   public SupportCenterImage source(SupportCenterImageSource source) {
     this.source = source;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Source URLs for image")
   @JsonProperty("source")
   public SupportCenterImageSource getSource() {
     return source;

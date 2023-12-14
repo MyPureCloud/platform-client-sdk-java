@@ -44,6 +44,7 @@ title: QueueConversationMessageEventTopicMessageMediaParticipant
 | **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **queueMediaSettings** | <!----><!---->[**QueueConversationMessageEventTopicQueueMediaSettings**](QueueConversationMessageEventTopicQueueMediaSettings.html)<!----> |  |  [optional] |
 | **messages** | <!----><!---->[**List&lt;QueueConversationMessageEventTopicMessageDetails&gt;**](QueueConversationMessageEventTopicMessageDetails.html)<!----> |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 | **recipientCountry** | <!----><!---->**String**<!----> |  |  [optional] |

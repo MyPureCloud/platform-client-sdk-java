@@ -44,6 +44,7 @@ title: QueueConversationCallbackEventTopicCallbackMediaParticipant
 | **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **queueMediaSettings** | <!----><!---->[**QueueConversationCallbackEventTopicQueueMediaSettings**](QueueConversationCallbackEventTopicQueueMediaSettings.html)<!----> |  |  [optional] |
 | **outboundPreview** | <!----><!---->[**QueueConversationCallbackEventTopicDialerPreview**](QueueConversationCallbackEventTopicDialerPreview.html)<!----> |  |  [optional] |
 | **voicemail** | <!----><!---->[**QueueConversationCallbackEventTopicVoicemail**](QueueConversationCallbackEventTopicVoicemail.html)<!----> |  |  [optional] |
 | **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |

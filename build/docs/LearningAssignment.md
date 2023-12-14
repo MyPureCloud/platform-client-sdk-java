@@ -27,6 +27,7 @@ title: LearningAssignment
 | **module** | <!----><!---->[**LearningModule**](LearningModule.html)<!----> | The Learning module object associated with this assignment |  [optional] |
 | **user** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user to whom the assignment is assigned |  [optional] |
 | **assessmentForm** | <!----><!---->[**AssessmentForm**](AssessmentForm.html)<!----> | The assessment form associated with this assignment |  [optional] |
+| **lengthInMinutes** | <!----><!---->**Integer**<!----> | The length in minutes of the assignment |  [optional] |
 {: class="table table-striped"}
 
 

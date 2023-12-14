@@ -108,6 +108,7 @@ public class DependencyObject  implements Serializable {
     TTSVOICE("TTSVOICE"),
     USER("USER"),
     USERPROMPT("USERPROMPT"),
+    UTILIZATIONLABEL("UTILIZATIONLABEL"),
     VOICEFLOW("VOICEFLOW"),
     VOICEMAILFLOW("VOICEMAILFLOW"),
     WIDGET("WIDGET"),

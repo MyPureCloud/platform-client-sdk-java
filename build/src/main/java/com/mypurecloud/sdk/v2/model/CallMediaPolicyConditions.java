@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DurationCondition;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.Team;
 import com.mypurecloud.sdk.v2.model.TimeAllowed;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
@@ -35,6 +36,7 @@ public class CallMediaPolicyConditions  implements Serializable {
   private List<WrapupCode> wrapupCodes = new ArrayList<WrapupCode>();
   private List<Language> languages = new ArrayList<Language>();
   private TimeAllowed timeAllowed = null;
+  private List<Team> teams = new ArrayList<Team>();
 
   private static class DirectionsEnumDeserializer extends StdDeserializer<DirectionsEnum> {
     public DirectionsEnumDeserializer() {
@@ -188,6 +190,24 @@ public class CallMediaPolicyConditions  implements Serializable {
 
 
   /**
+   * Teams to match conversations against
+   **/
+  public CallMediaPolicyConditions teams(List<Team> teams) {
+    this.teams = teams;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Teams to match conversations against")
+  @JsonProperty("teams")
+  public List<Team> getTeams() {
+    return teams;
+  }
+  public void setTeams(List<Team> teams) {
+    this.teams = teams;
+  }
+
+
+  /**
    **/
   public CallMediaPolicyConditions directions(List<DirectionsEnum> directions) {
     this.directions = directions;
@@ -237,13 +257,14 @@ public class CallMediaPolicyConditions  implements Serializable {
             Objects.equals(this.wrapupCodes, callMediaPolicyConditions.wrapupCodes) &&
             Objects.equals(this.languages, callMediaPolicyConditions.languages) &&
             Objects.equals(this.timeAllowed, callMediaPolicyConditions.timeAllowed) &&
+            Objects.equals(this.teams, callMediaPolicyConditions.teams) &&
             Objects.equals(this.directions, callMediaPolicyConditions.directions) &&
             Objects.equals(this.duration, callMediaPolicyConditions.duration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, languages, timeAllowed, directions, duration);
+    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, languages, timeAllowed, teams, directions, duration);
   }
 
   @Override
@@ -257,6 +278,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     sb.append("    wrapupCodes: ").append(toIndentedString(wrapupCodes)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    timeAllowed: ").append(toIndentedString(timeAllowed)).append("\n");
+    sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
     sb.append("    directions: ").append(toIndentedString(directions)).append("\n");
     sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
     sb.append("}");

@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLearningModulesCoverartCoverArtId**](LearningApi.html#getLearningModulesCoverartCoverArtId) | Get a specific Learning Module cover art using ID |
 | [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | Update Learning Assignment |
 | [**patchLearningAssignmentReschedule**](LearningApi.html#patchLearningAssignmentReschedule) | Reschedule Learning Assignment |
+| [**patchLearningModuleUserAssignments**](LearningApi.html#patchLearningModuleUserAssignments) | Update an external assignment for a specific user |
 | [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | Score learning assessment for preview |
 | [**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | Reassign Learning Assignment |
 | [**postLearningAssignmentReset**](LearningApi.html#postLearningAssignmentReset) | Reset Learning Assignment |
@@ -659,7 +660,7 @@ try {
 
 
 
-> [LearningModulesDomainEntityListing](LearningModulesDomainEntityListing.html) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses)
+> [LearningModulesDomainEntityListing](LearningModulesDomainEntityListing.html) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds)
 
 Get all learning modules of an organization
 
@@ -701,8 +702,9 @@ String searchTerm = "searchTerm_example"; // String | Search Term (searchable by
 List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)
 String isPublished = "Any"; // String | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
 List<String> statuses = Arrays.asList(null); // List<String> | Specifies the module statuses to filter by
+List<String> externalIds = Arrays.asList(null); // List<String> | Specifies the module external IDs to filter by. Only one ID is allowed
 try {
-    LearningModulesDomainEntityListing result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses);
+    LearningModulesDomainEntityListing result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LearningApi#getLearningModules");
@@ -725,6 +727,7 @@ try {
 | **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: rule, summaryData 
 | **isPublished** | **String**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
 | **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the module statuses to filter by | [optional]<br />**Values**: Unpublished, Published, Archived 
+| **externalIds** | [**List&lt;String&gt;**](String.html)| Specifies the module external IDs to filter by. Only one ID is allowed | [optional] 
 {: class="table-striped"}
 
 
@@ -985,6 +988,73 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **assignmentId** | **String**| The ID of Learning Assignment | 
 | **body** | [**LearningAssignmentReschedule**](LearningAssignmentReschedule.html)| The Learning assignment reschedule model | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningAssignment**](LearningAssignment.html)
+
+<a name="patchLearningModuleUserAssignments"></a>
+
+# **patchLearningModuleUserAssignments**
+
+
+
+> [LearningAssignment](LearningAssignment.html) patchLearningModuleUserAssignments(moduleId, userId, body)
+
+Update an external assignment for a specific user
+
+patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/learning/modules/{moduleId}/users/{userId}/assignments  
+
+Requires ALL permissions: 
+
+* learning:externalAssignment:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+String moduleId = "moduleId_example"; // String | Key identifier for the module
+String userId = "userId_example"; // String | Key identifier for the user
+LearningAssignmentExternalUpdate body = new LearningAssignmentExternalUpdate(); // LearningAssignmentExternalUpdate | The learning request for updating the assignment
+try {
+    LearningAssignment result = apiInstance.patchLearningModuleUserAssignments(moduleId, userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#patchLearningModuleUserAssignments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **moduleId** | **String**| Key identifier for the module | 
+| **userId** | **String**| Key identifier for the user | 
+| **body** | [**LearningAssignmentExternalUpdate**](LearningAssignmentExternalUpdate.html)| The learning request for updating the assignment | 
 {: class="table-striped"}
 
 

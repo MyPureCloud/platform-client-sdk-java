@@ -44,6 +44,7 @@ title: QueueConversationCobrowseEventTopicCobrowseMediaParticipant
 | **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **queueMediaSettings** | <!----><!---->[**QueueConversationCobrowseEventTopicQueueMediaSettings**](QueueConversationCobrowseEventTopicQueueMediaSettings.html)<!----> |  |  [optional] |
 | **cobrowseSessionId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **cobrowseRole** | <!----><!---->**String**<!----> |  |  [optional] |
 | **viewerUrl** | <!----><!---->**String**<!----> |  |  [optional] |

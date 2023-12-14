@@ -80,11 +80,6 @@ public class PostAuthorizationDivisionRestoreRequest {
             throw new IllegalStateException("Missing the required parameter 'divisionId' when building request for PostAuthorizationDivisionRestoreRequest.");
         }
         
-        // verify the required parameter 'body' is set
-        if (this.body == null) {
-            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostAuthorizationDivisionRestoreRequest.");
-        }
-        
 
         return ApiRequestBuilder.create("POST", "/api/v2/authorization/divisions/{divisionId}/restore")
                 .withPathParameter("divisionId", divisionId)
@@ -103,9 +98,9 @@ public class PostAuthorizationDivisionRestoreRequest {
 	}
 
 
-	public static Builder builder(String divisionId, AuthzDivision body) {
+	public static Builder builder(String divisionId) {
 	    return new Builder()
-	            .withRequiredParams(divisionId, body);
+	            .withRequiredParams(divisionId);
 	}
 
 
@@ -129,9 +124,8 @@ public class PostAuthorizationDivisionRestoreRequest {
 
 
 
-		public Builder withRequiredParams(String divisionId, AuthzDivision body) {
+		public Builder withRequiredParams(String divisionId) {
 			request.setDivisionId(divisionId);
-			request.setBody(body);
 
 			return this;
 		}
@@ -142,11 +136,6 @@ public class PostAuthorizationDivisionRestoreRequest {
             // verify the required parameter 'divisionId' is set
             if (request.divisionId == null) {
                 throw new IllegalStateException("Missing the required parameter 'divisionId' when building request for PostAuthorizationDivisionRestoreRequest.");
-            }
-            
-            // verify the required parameter 'body' is set
-            if (request.body == null) {
-                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostAuthorizationDivisionRestoreRequest.");
             }
             
 			return request;

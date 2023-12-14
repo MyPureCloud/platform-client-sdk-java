@@ -10,7 +10,7 @@ title: KnowledgeBaseCreateRequest
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | <!----><!---->**String**<!----> | Knowledge base name |  |
 | **description** | <!----><!---->**String**<!----> | Knowledge base description |  [optional] |
-| **coreLanguage** | [**CoreLanguageEnum**](#CoreLanguageEnum)<!----> | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP] which might have a lower accuracy. |  |
+| **coreLanguage** | [**CoreLanguageEnum**](#CoreLanguageEnum)<!----> | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE] which might have a lower accuracy. |  |
 {: class="table table-striped"}
 
 
@@ -56,6 +56,7 @@ title: KnowledgeBaseCreateRequest
 | NB_NO | &quot;nb-NO&quot; | 
 | DA_DK | &quot;da-DK&quot; | 
 | JA_JP | &quot;ja-JP&quot; | 
+| AR_AE | &quot;ar-AE&quot; | 
 {: class="table table-striped"}
 
 

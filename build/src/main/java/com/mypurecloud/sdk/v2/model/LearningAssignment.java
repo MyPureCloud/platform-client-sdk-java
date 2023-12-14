@@ -98,6 +98,7 @@ public class LearningAssignment  implements Serializable {
   private LearningModule module = null;
   private UserReference user = null;
   private AssessmentForm assessmentForm = null;
+  private Integer lengthInMinutes = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -310,6 +311,24 @@ public class LearningAssignment  implements Serializable {
   }
 
 
+  /**
+   * The length in minutes of the assignment
+   **/
+  public LearningAssignment lengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The length in minutes of the assignment")
+  @JsonProperty("lengthInMinutes")
+  public Integer getLengthInMinutes() {
+    return lengthInMinutes;
+  }
+  public void setLengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -338,12 +357,13 @@ public class LearningAssignment  implements Serializable {
             Objects.equals(this.version, learningAssignment.version) &&
             Objects.equals(this.module, learningAssignment.module) &&
             Objects.equals(this.user, learningAssignment.user) &&
-            Objects.equals(this.assessmentForm, learningAssignment.assessmentForm);
+            Objects.equals(this.assessmentForm, learningAssignment.assessmentForm) &&
+            Objects.equals(this.lengthInMinutes, learningAssignment.lengthInMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assessment, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, percentageScore, isRule, isManual, isPassed, isLatest, selfUri, state, dateRecommendedForCompletion, version, module, user, assessmentForm);
+    return Objects.hash(id, assessment, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, percentageScore, isRule, isManual, isPassed, isLatest, selfUri, state, dateRecommendedForCompletion, version, module, user, assessmentForm, lengthInMinutes);
   }
 
   @Override
@@ -370,6 +390,7 @@ public class LearningAssignment  implements Serializable {
     sb.append("    module: ").append(toIndentedString(module)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    assessmentForm: ").append(toIndentedString(assessmentForm)).append("\n");
+    sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

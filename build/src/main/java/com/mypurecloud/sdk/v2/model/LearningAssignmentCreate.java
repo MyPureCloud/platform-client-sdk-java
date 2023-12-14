@@ -25,6 +25,7 @@ public class LearningAssignmentCreate  implements Serializable {
   private String moduleId = null;
   private String userId = null;
   private Date recommendedCompletionDate = null;
+  private Integer lengthInMinutes = null;
 
   
   /**
@@ -81,6 +82,24 @@ public class LearningAssignmentCreate  implements Serializable {
   }
 
 
+  /**
+   * The length in minutes of assignment
+   **/
+  public LearningAssignmentCreate lengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The length in minutes of assignment")
+  @JsonProperty("lengthInMinutes")
+  public Integer getLengthInMinutes() {
+    return lengthInMinutes;
+  }
+  public void setLengthInMinutes(Integer lengthInMinutes) {
+    this.lengthInMinutes = lengthInMinutes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -93,12 +112,13 @@ public class LearningAssignmentCreate  implements Serializable {
 
     return Objects.equals(this.moduleId, learningAssignmentCreate.moduleId) &&
             Objects.equals(this.userId, learningAssignmentCreate.userId) &&
-            Objects.equals(this.recommendedCompletionDate, learningAssignmentCreate.recommendedCompletionDate);
+            Objects.equals(this.recommendedCompletionDate, learningAssignmentCreate.recommendedCompletionDate) &&
+            Objects.equals(this.lengthInMinutes, learningAssignmentCreate.lengthInMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(moduleId, userId, recommendedCompletionDate);
+    return Objects.hash(moduleId, userId, recommendedCompletionDate, lengthInMinutes);
   }
 
   @Override
@@ -109,6 +129,7 @@ public class LearningAssignmentCreate  implements Serializable {
     sb.append("    moduleId: ").append(toIndentedString(moduleId)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    recommendedCompletionDate: ").append(toIndentedString(recommendedCompletionDate)).append("\n");
+    sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationSource;
 import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.Team;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -208,6 +209,7 @@ public class Evaluation  implements Serializable {
   }
   private ResourceTypeEnum resourceType = null;
   private Boolean redacted = null;
+  private Team agentTeam = null;
   private Boolean isScoringIndex = null;
   private List<String> authorizedActions = new ArrayList<String>();
   private Boolean hasAssistanceFailed = null;
@@ -681,6 +683,24 @@ public class Evaluation  implements Serializable {
 
 
   /**
+   * Team of the evaluation agent
+   **/
+  public Evaluation agentTeam(Team agentTeam) {
+    this.agentTeam = agentTeam;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Team of the evaluation agent")
+  @JsonProperty("agentTeam")
+  public Team getAgentTeam() {
+    return agentTeam;
+  }
+  public void setAgentTeam(Team agentTeam) {
+    this.agentTeam = agentTeam;
+  }
+
+
+  /**
    **/
   public Evaluation isScoringIndex(Boolean isScoringIndex) {
     this.isScoringIndex = isScoringIndex;
@@ -784,6 +804,7 @@ public class Evaluation  implements Serializable {
             Objects.equals(this.resourceId, evaluation.resourceId) &&
             Objects.equals(this.resourceType, evaluation.resourceType) &&
             Objects.equals(this.redacted, evaluation.redacted) &&
+            Objects.equals(this.agentTeam, evaluation.agentTeam) &&
             Objects.equals(this.isScoringIndex, evaluation.isScoringIndex) &&
             Objects.equals(this.authorizedActions, evaluation.authorizedActions) &&
             Objects.equals(this.hasAssistanceFailed, evaluation.hasAssistanceFailed) &&
@@ -793,7 +814,7 @@ public class Evaluation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, revisionCreatedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, revisionCreatedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, agentTeam, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
   }
 
   @Override
@@ -828,6 +849,7 @@ public class Evaluation  implements Serializable {
     sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
     sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
     sb.append("    redacted: ").append(toIndentedString(redacted)).append("\n");
+    sb.append("    agentTeam: ").append(toIndentedString(agentTeam)).append("\n");
     sb.append("    isScoringIndex: ").append(toIndentedString(isScoringIndex)).append("\n");
     sb.append("    authorizedActions: ").append(toIndentedString(authorizedActions)).append("\n");
     sb.append("    hasAssistanceFailed: ").append(toIndentedString(hasAssistanceFailed)).append("\n");

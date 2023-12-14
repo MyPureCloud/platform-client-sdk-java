@@ -15,7 +15,6 @@ title: AppEventResponse
 | **screenName** | <!----><!---->**String**<!----> | The name of the screen in the app that the event took place. |  [optional] |
 | **app** | <!----><!---->[**JourneyApp**](JourneyApp.html)<!----> | Application that the customer is interacting with. |  [optional] |
 | **device** | <!----><!---->[**Device**](Device.html)<!----> | Customer's device. |  [optional] |
-| **ipAddress** | <!----><!---->**String**<!----> | Customer's IP address. May be null if the business configures the tracker to not collect IP addresses. |  [optional] |
 | **ipOrganization** | <!----><!---->**String**<!----> | Customer's IP-based organization or ISP name. |  [optional] |
 | **geolocation** | <!----><!---->[**JourneyGeolocation**](JourneyGeolocation.html)<!----> | Customer's geolocation. |  [optional] |
 | **sdkLibrary** | <!----><!---->[**SdkLibrary**](SdkLibrary.html)<!----> | SDK library used to generate the event. |  [optional] |
@@ -26,7 +25,6 @@ title: AppEventResponse
 | **attributes** | <!----><!---->[**Map&lt;String, CustomEventAttribute&gt;**](CustomEventAttribute.html)<!----> | User-defined attributes associated with a particular event. |  [optional] |
 | **traits** | <!----><!---->[**Map&lt;String, CustomEventAttribute&gt;**](CustomEventAttribute.html)<!----> | Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, name, phone). |  [optional] |
 | **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **externalContact** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The external contact associated with this app event. |  [optional] |
 {: class="table table-striped"}
 
 

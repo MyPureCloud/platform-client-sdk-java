@@ -36,7 +36,7 @@ public class SetRecordingState  implements Serializable {
     }
   }
   /**
-   * The value of the recordingState to set.
+   * On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.
    */
  @JsonDeserialize(using = RecordingStateEnumDeserializer.class)
   public enum RecordingStateEnum {
@@ -74,14 +74,14 @@ public class SetRecordingState  implements Serializable {
 
   
   /**
-   * The value of the recordingState to set.
+   * On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.
    **/
   public SetRecordingState recordingState(RecordingStateEnum recordingState) {
     this.recordingState = recordingState;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The value of the recordingState to set.")
+  @ApiModelProperty(example = "null", value = "On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.")
   @JsonProperty("recordingState")
   public RecordingStateEnum getRecordingState() {
     return recordingState;

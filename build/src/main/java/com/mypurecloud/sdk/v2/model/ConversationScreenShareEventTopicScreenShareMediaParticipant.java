@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicJourneyContext;
+import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -336,6 +337,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
+  private ConversationScreenShareEventTopicQueueMediaSettings queueMediaSettings = null;
   private String context = null;
   private Integer peerCount = null;
   private Boolean sharing = null;
@@ -955,6 +957,23 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
 
   /**
    **/
+  public ConversationScreenShareEventTopicScreenShareMediaParticipant queueMediaSettings(ConversationScreenShareEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueMediaSettings")
+  public ConversationScreenShareEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationScreenShareEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
+  /**
+   **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant context(String context) {
     this.context = context;
     return this;
@@ -1050,6 +1069,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
             Objects.equals(this.startAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.endAcwTime) &&
             Objects.equals(this.mediaRoles, conversationScreenShareEventTopicScreenShareMediaParticipant.mediaRoles) &&
+            Objects.equals(this.queueMediaSettings, conversationScreenShareEventTopicScreenShareMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.context, conversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
             Objects.equals(this.peerCount, conversationScreenShareEventTopicScreenShareMediaParticipant.peerCount) &&
             Objects.equals(this.sharing, conversationScreenShareEventTopicScreenShareMediaParticipant.sharing);
@@ -1057,7 +1077,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, context, peerCount, sharing);
   }
 
   @Override
@@ -1101,6 +1121,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    sharing: ").append(toIndentedString(sharing)).append("\n");

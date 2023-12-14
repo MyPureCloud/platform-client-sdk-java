@@ -14,8 +14,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DivisionReference;
-import com.mypurecloud.sdk.v2.model.InsightsTrendMetricItem;
-import com.mypurecloud.sdk.v2.model.InsightsTrendTotalItem;
+import com.mypurecloud.sdk.v2.model.UserInsightsTrendMetricItem;
+import com.mypurecloud.sdk.v2.model.UserInsightsTrendTotalItem;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WorkdayPeriod;
 import io.swagger.annotations.ApiModel;
@@ -83,9 +83,9 @@ public class UserInsightsTrend  implements Serializable {
   private GranularityEnum granularity = null;
   private WorkdayPeriod comparativePeriod = null;
   private WorkdayPeriod primaryPeriod = null;
-  private List<InsightsTrendMetricItem> entities = new ArrayList<InsightsTrendMetricItem>();
-  private InsightsTrendTotalItem total = null;
   private UserReference user = null;
+  private List<UserInsightsTrendMetricItem> entities = new ArrayList<UserInsightsTrendMetricItem>();
+  private UserInsightsTrendTotalItem total = null;
 
   
   /**
@@ -179,42 +179,6 @@ public class UserInsightsTrend  implements Serializable {
 
 
   /**
-   * The list of insights trend for each metric
-   **/
-  public UserInsightsTrend entities(List<InsightsTrendMetricItem> entities) {
-    this.entities = entities;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The list of insights trend for each metric")
-  @JsonProperty("entities")
-  public List<InsightsTrendMetricItem> getEntities() {
-    return entities;
-  }
-  public void setEntities(List<InsightsTrendMetricItem> entities) {
-    this.entities = entities;
-  }
-
-
-  /**
-   * The insights trend in total
-   **/
-  public UserInsightsTrend total(InsightsTrendTotalItem total) {
-    this.total = total;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The insights trend in total")
-  @JsonProperty("total")
-  public InsightsTrendTotalItem getTotal() {
-    return total;
-  }
-  public void setTotal(InsightsTrendTotalItem total) {
-    this.total = total;
-  }
-
-
-  /**
    * The query user
    **/
   public UserInsightsTrend user(UserReference user) {
@@ -229,6 +193,42 @@ public class UserInsightsTrend  implements Serializable {
   }
   public void setUser(UserReference user) {
     this.user = user;
+  }
+
+
+  /**
+   * The list of insights trend for each metric
+   **/
+  public UserInsightsTrend entities(List<UserInsightsTrendMetricItem> entities) {
+    this.entities = entities;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of insights trend for each metric")
+  @JsonProperty("entities")
+  public List<UserInsightsTrendMetricItem> getEntities() {
+    return entities;
+  }
+  public void setEntities(List<UserInsightsTrendMetricItem> entities) {
+    this.entities = entities;
+  }
+
+
+  /**
+   * The insights trend in total
+   **/
+  public UserInsightsTrend total(UserInsightsTrendTotalItem total) {
+    this.total = total;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The insights trend in total")
+  @JsonProperty("total")
+  public UserInsightsTrendTotalItem getTotal() {
+    return total;
+  }
+  public void setTotal(UserInsightsTrendTotalItem total) {
+    this.total = total;
   }
 
 
@@ -247,14 +247,14 @@ public class UserInsightsTrend  implements Serializable {
             Objects.equals(this.granularity, userInsightsTrend.granularity) &&
             Objects.equals(this.comparativePeriod, userInsightsTrend.comparativePeriod) &&
             Objects.equals(this.primaryPeriod, userInsightsTrend.primaryPeriod) &&
+            Objects.equals(this.user, userInsightsTrend.user) &&
             Objects.equals(this.entities, userInsightsTrend.entities) &&
-            Objects.equals(this.total, userInsightsTrend.total) &&
-            Objects.equals(this.user, userInsightsTrend.user);
+            Objects.equals(this.total, userInsightsTrend.total);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(performanceProfile, division, granularity, comparativePeriod, primaryPeriod, entities, total, user);
+    return Objects.hash(performanceProfile, division, granularity, comparativePeriod, primaryPeriod, user, entities, total);
   }
 
   @Override
@@ -267,9 +267,9 @@ public class UserInsightsTrend  implements Serializable {
     sb.append("    granularity: ").append(toIndentedString(granularity)).append("\n");
     sb.append("    comparativePeriod: ").append(toIndentedString(comparativePeriod)).append("\n");
     sb.append("    primaryPeriod: ").append(toIndentedString(primaryPeriod)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");
     return sb.toString();
   }

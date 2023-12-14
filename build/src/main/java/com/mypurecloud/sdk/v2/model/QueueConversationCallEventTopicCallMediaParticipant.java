@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicConversationR
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicFaxStatus;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicJourneyContext;
+import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -337,6 +338,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
+  private QueueConversationCallEventTopicQueueMediaSettings queueMediaSettings = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -1016,6 +1018,23 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   /**
    **/
+  public QueueConversationCallEventTopicCallMediaParticipant queueMediaSettings(QueueConversationCallEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueMediaSettings")
+  public QueueConversationCallEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(QueueConversationCallEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
+  /**
+   **/
   public QueueConversationCallEventTopicCallMediaParticipant muted(Boolean muted) {
     this.muted = muted;
     return this;
@@ -1315,6 +1334,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
             Objects.equals(this.startAcwTime, queueConversationCallEventTopicCallMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, queueConversationCallEventTopicCallMediaParticipant.endAcwTime) &&
             Objects.equals(this.mediaRoles, queueConversationCallEventTopicCallMediaParticipant.mediaRoles) &&
+            Objects.equals(this.queueMediaSettings, queueConversationCallEventTopicCallMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.muted, queueConversationCallEventTopicCallMediaParticipant.muted) &&
             Objects.equals(this.confined, queueConversationCallEventTopicCallMediaParticipant.confined) &&
             Objects.equals(this.recording, queueConversationCallEventTopicCallMediaParticipant.recording) &&
@@ -1334,7 +1354,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, muted, confined, recording, recordingState, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, muted, confined, recording, recordingState, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1378,6 +1398,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

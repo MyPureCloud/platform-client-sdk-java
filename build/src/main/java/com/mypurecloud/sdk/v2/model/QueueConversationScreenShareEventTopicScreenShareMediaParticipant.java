@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicJourneyContext;
+import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -336,6 +337,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
+  private QueueConversationScreenShareEventTopicQueueMediaSettings queueMediaSettings = null;
   private String context = null;
   private Integer peerCount = null;
   private Boolean sharing = null;
@@ -955,6 +957,23 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
 
   /**
    **/
+  public QueueConversationScreenShareEventTopicScreenShareMediaParticipant queueMediaSettings(QueueConversationScreenShareEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueMediaSettings")
+  public QueueConversationScreenShareEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(QueueConversationScreenShareEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
+  /**
+   **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant context(String context) {
     this.context = context;
     return this;
@@ -1050,6 +1069,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
             Objects.equals(this.startAcwTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.endAcwTime) &&
             Objects.equals(this.mediaRoles, queueConversationScreenShareEventTopicScreenShareMediaParticipant.mediaRoles) &&
+            Objects.equals(this.queueMediaSettings, queueConversationScreenShareEventTopicScreenShareMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.context, queueConversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
             Objects.equals(this.peerCount, queueConversationScreenShareEventTopicScreenShareMediaParticipant.peerCount) &&
             Objects.equals(this.sharing, queueConversationScreenShareEventTopicScreenShareMediaParticipant.sharing);
@@ -1057,7 +1077,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, context, peerCount, sharing);
   }
 
   @Override
@@ -1101,6 +1121,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    sharing: ").append(toIndentedString(sharing)).append("\n");

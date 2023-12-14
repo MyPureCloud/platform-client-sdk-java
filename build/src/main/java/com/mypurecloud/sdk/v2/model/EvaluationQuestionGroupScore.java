@@ -28,6 +28,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
   private Float totalScore = null;
   private Float maxTotalScore = null;
   private Boolean markedNA = null;
+  private Boolean systemMarkedNA = null;
   private Float totalCriticalScore = null;
   private Float maxTotalCriticalScore = null;
   private Float totalNonCriticalScore = null;
@@ -95,19 +96,38 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
 
   /**
+   * True when the evaluation is submitted with a question group that does not have any answers. Only allowed when naEnabled is true or if set by the system
    **/
   public EvaluationQuestionGroupScore markedNA(Boolean markedNA) {
     this.markedNA = markedNA;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True when the evaluation is submitted with a question group that does not have any answers. Only allowed when naEnabled is true or if set by the system")
   @JsonProperty("markedNA")
   public Boolean getMarkedNA() {
     return markedNA;
   }
   public void setMarkedNA(Boolean markedNA) {
     this.markedNA = markedNA;
+  }
+
+
+  /**
+   * If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+   **/
+  public EvaluationQuestionGroupScore systemMarkedNA(Boolean systemMarkedNA) {
+    this.systemMarkedNA = systemMarkedNA;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.")
+  @JsonProperty("systemMarkedNA")
+  public Boolean getSystemMarkedNA() {
+    return systemMarkedNA;
+  }
+  public void setSystemMarkedNA(Boolean systemMarkedNA) {
+    this.systemMarkedNA = systemMarkedNA;
   }
 
 
@@ -322,6 +342,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
             Objects.equals(this.totalScore, evaluationQuestionGroupScore.totalScore) &&
             Objects.equals(this.maxTotalScore, evaluationQuestionGroupScore.maxTotalScore) &&
             Objects.equals(this.markedNA, evaluationQuestionGroupScore.markedNA) &&
+            Objects.equals(this.systemMarkedNA, evaluationQuestionGroupScore.systemMarkedNA) &&
             Objects.equals(this.totalCriticalScore, evaluationQuestionGroupScore.totalCriticalScore) &&
             Objects.equals(this.maxTotalCriticalScore, evaluationQuestionGroupScore.maxTotalCriticalScore) &&
             Objects.equals(this.totalNonCriticalScore, evaluationQuestionGroupScore.totalNonCriticalScore) &&
@@ -337,7 +358,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(questionGroupId, totalScore, maxTotalScore, markedNA, totalCriticalScore, maxTotalCriticalScore, totalNonCriticalScore, maxTotalNonCriticalScore, totalScoreUnweighted, maxTotalScoreUnweighted, totalCriticalScoreUnweighted, maxTotalCriticalScoreUnweighted, totalNonCriticalScoreUnweighted, maxTotalNonCriticalScoreUnweighted, questionScores);
+    return Objects.hash(questionGroupId, totalScore, maxTotalScore, markedNA, systemMarkedNA, totalCriticalScore, maxTotalCriticalScore, totalNonCriticalScore, maxTotalNonCriticalScore, totalScoreUnweighted, maxTotalScoreUnweighted, totalCriticalScoreUnweighted, maxTotalCriticalScoreUnweighted, totalNonCriticalScoreUnweighted, maxTotalNonCriticalScoreUnweighted, questionScores);
   }
 
   @Override
@@ -349,6 +370,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     sb.append("    totalScore: ").append(toIndentedString(totalScore)).append("\n");
     sb.append("    maxTotalScore: ").append(toIndentedString(maxTotalScore)).append("\n");
     sb.append("    markedNA: ").append(toIndentedString(markedNA)).append("\n");
+    sb.append("    systemMarkedNA: ").append(toIndentedString(systemMarkedNA)).append("\n");
     sb.append("    totalCriticalScore: ").append(toIndentedString(totalCriticalScore)).append("\n");
     sb.append("    maxTotalCriticalScore: ").append(toIndentedString(maxTotalCriticalScore)).append("\n");
     sb.append("    totalNonCriticalScore: ").append(toIndentedString(totalNonCriticalScore)).append("\n");

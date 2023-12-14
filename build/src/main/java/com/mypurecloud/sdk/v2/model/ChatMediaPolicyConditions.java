@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DurationCondition;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.Team;
 import com.mypurecloud.sdk.v2.model.TimeAllowed;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
@@ -35,6 +36,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
   private List<WrapupCode> wrapupCodes = new ArrayList<WrapupCode>();
   private List<Language> languages = new ArrayList<Language>();
   private TimeAllowed timeAllowed = null;
+  private List<Team> teams = new ArrayList<Team>();
   private DurationCondition duration = null;
 
   
@@ -141,6 +143,24 @@ public class ChatMediaPolicyConditions  implements Serializable {
 
 
   /**
+   * Teams to match conversations against
+   **/
+  public ChatMediaPolicyConditions teams(List<Team> teams) {
+    this.teams = teams;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Teams to match conversations against")
+  @JsonProperty("teams")
+  public List<Team> getTeams() {
+    return teams;
+  }
+  public void setTeams(List<Team> teams) {
+    this.teams = teams;
+  }
+
+
+  /**
    **/
   public ChatMediaPolicyConditions duration(DurationCondition duration) {
     this.duration = duration;
@@ -173,12 +193,13 @@ public class ChatMediaPolicyConditions  implements Serializable {
             Objects.equals(this.wrapupCodes, chatMediaPolicyConditions.wrapupCodes) &&
             Objects.equals(this.languages, chatMediaPolicyConditions.languages) &&
             Objects.equals(this.timeAllowed, chatMediaPolicyConditions.timeAllowed) &&
+            Objects.equals(this.teams, chatMediaPolicyConditions.teams) &&
             Objects.equals(this.duration, chatMediaPolicyConditions.duration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, languages, timeAllowed, duration);
+    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, languages, timeAllowed, teams, duration);
   }
 
   @Override
@@ -192,6 +213,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     sb.append("    wrapupCodes: ").append(toIndentedString(wrapupCodes)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    timeAllowed: ").append(toIndentedString(timeAllowed)).append("\n");
+    sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
     sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicJourneyContext;
+import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -336,6 +337,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
+  private ConversationCobrowseEventTopicQueueMediaSettings queueMediaSettings = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
   private String viewerUrl = null;
@@ -957,6 +959,23 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
 
   /**
    **/
+  public ConversationCobrowseEventTopicCobrowseMediaParticipant queueMediaSettings(ConversationCobrowseEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueMediaSettings")
+  public ConversationCobrowseEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationCobrowseEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
+  /**
+   **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant cobrowseSessionId(String cobrowseSessionId) {
     this.cobrowseSessionId = cobrowseSessionId;
     return this;
@@ -1086,6 +1105,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
             Objects.equals(this.startAcwTime, conversationCobrowseEventTopicCobrowseMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationCobrowseEventTopicCobrowseMediaParticipant.endAcwTime) &&
             Objects.equals(this.mediaRoles, conversationCobrowseEventTopicCobrowseMediaParticipant.mediaRoles) &&
+            Objects.equals(this.queueMediaSettings, conversationCobrowseEventTopicCobrowseMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.cobrowseSessionId, conversationCobrowseEventTopicCobrowseMediaParticipant.cobrowseSessionId) &&
             Objects.equals(this.cobrowseRole, conversationCobrowseEventTopicCobrowseMediaParticipant.cobrowseRole) &&
             Objects.equals(this.viewerUrl, conversationCobrowseEventTopicCobrowseMediaParticipant.viewerUrl) &&
@@ -1095,7 +1115,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
   }
 
   @Override
@@ -1139,6 +1159,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    cobrowseSessionId: ").append(toIndentedString(cobrowseSessionId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    viewerUrl: ").append(toIndentedString(viewerUrl)).append("\n");

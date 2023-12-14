@@ -14,6 +14,7 @@ title: CallMediaPolicyConditions
 | **wrapupCodes** | <!----><!---->[**List&lt;WrapupCode&gt;**](WrapupCode.html)<!----> |  |  [optional] |
 | **languages** | <!----><!---->[**List&lt;Language&gt;**](Language.html)<!----> |  |  [optional] |
 | **timeAllowed** | <!----><!---->[**TimeAllowed**](TimeAllowed.html)<!----> |  |  [optional] |
+| **teams** | <!----><!---->[**List&lt;Team&gt;**](Team.html)<!----> | Teams to match conversations against |  [optional] |
 | **directions** | <!---->[**List&lt;DirectionsEnum&gt;**](#DirectionsEnum)<!----> |  |  [optional] |
 | **duration** | <!----><!---->[**DurationCondition**](DurationCondition.html)<!----> |  |  [optional] |
 {: class="table table-striped"}

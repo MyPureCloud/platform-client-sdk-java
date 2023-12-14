@@ -32,13 +32,6 @@ title: LimitChangeRequestDetails
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
-| ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
-| ANALYTICS | &quot;analytics&quot; | 
-| ANALYTICS_REALTIME | &quot;analytics.realtime&quot; | 
-| ANALYTICS_REPORTING_SETTINGS | &quot;analytics.reporting.settings&quot; | 
-| ARCHITECT | &quot;architect&quot; | 
-| AUDIOHOOK | &quot;audiohook&quot; | 
 | AUDIT | &quot;audit&quot; | 
 | AUTH_API | &quot;auth.api&quot; | 
 | AUTHORIZATION | &quot;authorization&quot; | 
@@ -53,6 +46,7 @@ title: LimitChangeRequestDetails
 | DATATABLES | &quot;datatables&quot; | 
 | DIRECTORY | &quot;directory&quot; | 
 | EMAIL | &quot;email&quot; | 
+| EMPLOYEE_ENGAGEMENT | &quot;employee.engagement&quot; | 
 | EVENT_ORCHESTRATION | &quot;event.orchestration&quot; | 
 | EXTERNAL_CONTACTS | &quot;external.contacts&quot; | 
 | GCV | &quot;gcv&quot; | 
@@ -96,6 +90,13 @@ title: LimitChangeRequestDetails
 | WEBCHAT | &quot;webchat&quot; | 
 | WEBHOOKS | &quot;webhooks&quot; | 
 | WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
+| AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
+| ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
+| ANALYTICS | &quot;analytics&quot; | 
+| ANALYTICS_REALTIME | &quot;analytics.realtime&quot; | 
+| ANALYTICS_REPORTING_SETTINGS | &quot;analytics.reporting.settings&quot; | 
+| ARCHITECT | &quot;architect&quot; | 
+| AUDIOHOOK | &quot;audiohook&quot; | 
 {: class="table table-striped"}
 
 

@@ -61,6 +61,7 @@ title: KnowledgeCategory
 | NB_NO | &quot;nb-NO&quot; | 
 | DA_DK | &quot;da-DK&quot; | 
 | JA_JP | &quot;ja-JP&quot; | 
+| AR_AE | &quot;ar-AE&quot; | 
 {: class="table table-striped"}
 
 

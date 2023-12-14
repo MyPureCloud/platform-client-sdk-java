@@ -212,6 +212,20 @@ public class GetQualityEvaluatorsActivityRequest {
 	    return this;
 	} 
 
+	private String agentTeamId;
+	public String getAgentTeamId() {
+		return this.agentTeamId;
+	}
+
+	public void setAgentTeamId(String agentTeamId) {
+		this.agentTeamId = agentTeamId;
+	}
+
+	public GetQualityEvaluatorsActivityRequest withAgentTeamId(String agentTeamId) {
+	    this.setAgentTeamId(agentTeamId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -267,6 +281,9 @@ public class GetQualityEvaluatorsActivityRequest {
         
 
                 .withQueryParameters("group", "", group)
+        
+
+                .withQueryParameters("agentTeamId", "", agentTeamId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -341,6 +358,11 @@ public class GetQualityEvaluatorsActivityRequest {
 
 		public Builder withGroup(String group) {
 			request.setGroup(group);
+			return this;
+		}
+
+		public Builder withAgentTeamId(String agentTeamId) {
+			request.setAgentTeamId(agentTeamId);
 			return this;
 		}
 

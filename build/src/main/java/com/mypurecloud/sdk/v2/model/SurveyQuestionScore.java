@@ -25,6 +25,7 @@ public class SurveyQuestionScore  implements Serializable {
   private String answerId = null;
   private Integer score = null;
   private Boolean markedNA = null;
+  private Boolean systemMarkedNA = null;
   private String assistedAnswerId = null;
   private Integer npsScore = null;
   private String npsTextAnswer = null;
@@ -84,19 +85,38 @@ public class SurveyQuestionScore  implements Serializable {
 
 
   /**
+   * True when the evaluation is submitted with a question that does not have an answer. Only allowed when naEnabled is true or if set by the system
    **/
   public SurveyQuestionScore markedNA(Boolean markedNA) {
     this.markedNA = markedNA;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True when the evaluation is submitted with a question that does not have an answer. Only allowed when naEnabled is true or if set by the system")
   @JsonProperty("markedNA")
   public Boolean getMarkedNA() {
     return markedNA;
   }
   public void setMarkedNA(Boolean markedNA) {
     this.markedNA = markedNA;
+  }
+
+
+  /**
+   * If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+   **/
+  public SurveyQuestionScore systemMarkedNA(Boolean systemMarkedNA) {
+    this.systemMarkedNA = systemMarkedNA;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.")
+  @JsonProperty("systemMarkedNA")
+  public Boolean getSystemMarkedNA() {
+    return systemMarkedNA;
+  }
+  public void setSystemMarkedNA(Boolean systemMarkedNA) {
+    this.systemMarkedNA = systemMarkedNA;
   }
 
 
@@ -183,6 +203,7 @@ public class SurveyQuestionScore  implements Serializable {
             Objects.equals(this.answerId, surveyQuestionScore.answerId) &&
             Objects.equals(this.score, surveyQuestionScore.score) &&
             Objects.equals(this.markedNA, surveyQuestionScore.markedNA) &&
+            Objects.equals(this.systemMarkedNA, surveyQuestionScore.systemMarkedNA) &&
             Objects.equals(this.assistedAnswerId, surveyQuestionScore.assistedAnswerId) &&
             Objects.equals(this.npsScore, surveyQuestionScore.npsScore) &&
             Objects.equals(this.npsTextAnswer, surveyQuestionScore.npsTextAnswer) &&
@@ -191,7 +212,7 @@ public class SurveyQuestionScore  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(questionId, answerId, score, markedNA, assistedAnswerId, npsScore, npsTextAnswer, freeTextAnswer);
+    return Objects.hash(questionId, answerId, score, markedNA, systemMarkedNA, assistedAnswerId, npsScore, npsTextAnswer, freeTextAnswer);
   }
 
   @Override
@@ -203,6 +224,7 @@ public class SurveyQuestionScore  implements Serializable {
     sb.append("    answerId: ").append(toIndentedString(answerId)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    markedNA: ").append(toIndentedString(markedNA)).append("\n");
+    sb.append("    systemMarkedNA: ").append(toIndentedString(systemMarkedNA)).append("\n");
     sb.append("    assistedAnswerId: ").append(toIndentedString(assistedAnswerId)).append("\n");
     sb.append("    npsScore: ").append(toIndentedString(npsScore)).append("\n");
     sb.append("    npsTextAnswer: ").append(toIndentedString(npsTextAnswer)).append("\n");

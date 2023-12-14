@@ -11,7 +11,6 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.AppEventResponseSession;
 import com.mypurecloud.sdk.v2.model.CustomEventAttribute;
 import com.mypurecloud.sdk.v2.model.Device;
@@ -41,7 +40,6 @@ public class AppEventResponse  implements Serializable {
   private String screenName = null;
   private JourneyApp app = null;
   private Device device = null;
-  private String ipAddress = null;
   private String ipOrganization = null;
   private JourneyGeolocation geolocation = null;
   private SdkLibrary sdkLibrary = null;
@@ -52,7 +50,6 @@ public class AppEventResponse  implements Serializable {
   private Map<String, CustomEventAttribute> attributes = null;
   private Map<String, CustomEventAttribute> traits = null;
   private Date createdDate = null;
-  private AddressableEntityRef externalContact = null;
 
   
   /**
@@ -178,24 +175,6 @@ public class AppEventResponse  implements Serializable {
   }
   public void setDevice(Device device) {
     this.device = device;
-  }
-
-
-  /**
-   * Customer's IP address. May be null if the business configures the tracker to not collect IP addresses.
-   **/
-  public AppEventResponse ipAddress(String ipAddress) {
-    this.ipAddress = ipAddress;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Customer's IP address. May be null if the business configures the tracker to not collect IP addresses.")
-  @JsonProperty("ipAddress")
-  public String getIpAddress() {
-    return ipAddress;
-  }
-  public void setIpAddress(String ipAddress) {
-    this.ipAddress = ipAddress;
   }
 
 
@@ -379,13 +358,6 @@ public class AppEventResponse  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The external contact associated with this app event.")
-  @JsonProperty("externalContact")
-  public AddressableEntityRef getExternalContact() {
-    return externalContact;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -403,7 +375,6 @@ public class AppEventResponse  implements Serializable {
             Objects.equals(this.screenName, appEventResponse.screenName) &&
             Objects.equals(this.app, appEventResponse.app) &&
             Objects.equals(this.device, appEventResponse.device) &&
-            Objects.equals(this.ipAddress, appEventResponse.ipAddress) &&
             Objects.equals(this.ipOrganization, appEventResponse.ipOrganization) &&
             Objects.equals(this.geolocation, appEventResponse.geolocation) &&
             Objects.equals(this.sdkLibrary, appEventResponse.sdkLibrary) &&
@@ -413,13 +384,12 @@ public class AppEventResponse  implements Serializable {
             Objects.equals(this.searchQuery, appEventResponse.searchQuery) &&
             Objects.equals(this.attributes, appEventResponse.attributes) &&
             Objects.equals(this.traits, appEventResponse.traits) &&
-            Objects.equals(this.createdDate, appEventResponse.createdDate) &&
-            Objects.equals(this.externalContact, appEventResponse.externalContact);
+            Objects.equals(this.createdDate, appEventResponse.createdDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, customerId, customerIdType, eventName, screenName, app, device, ipAddress, ipOrganization, geolocation, sdkLibrary, networkConnectivity, mktCampaign, session, searchQuery, attributes, traits, createdDate, externalContact);
+    return Objects.hash(id, customerId, customerIdType, eventName, screenName, app, device, ipOrganization, geolocation, sdkLibrary, networkConnectivity, mktCampaign, session, searchQuery, attributes, traits, createdDate);
   }
 
   @Override
@@ -434,7 +404,6 @@ public class AppEventResponse  implements Serializable {
     sb.append("    screenName: ").append(toIndentedString(screenName)).append("\n");
     sb.append("    app: ").append(toIndentedString(app)).append("\n");
     sb.append("    device: ").append(toIndentedString(device)).append("\n");
-    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     sb.append("    ipOrganization: ").append(toIndentedString(ipOrganization)).append("\n");
     sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
     sb.append("    sdkLibrary: ").append(toIndentedString(sdkLibrary)).append("\n");
@@ -445,7 +414,6 @@ public class AppEventResponse  implements Serializable {
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    traits: ").append(toIndentedString(traits)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
-    sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("}");
     return sb.toString();
   }

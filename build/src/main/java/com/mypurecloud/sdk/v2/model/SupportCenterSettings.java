@@ -25,9 +25,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Settings concerning support center
+ * Settings concerning knowledge portal (previously support center)
  */
-@ApiModel(description = "Settings concerning support center")
+@ApiModel(description = "Settings concerning knowledge portal (previously support center)")
 
 public class SupportCenterSettings  implements Serializable {
   
@@ -48,7 +48,7 @@ public class SupportCenterSettings  implements Serializable {
     }
   }
   /**
-   * Router type for support center
+   * Router type for knowledge portal (previously support center)
    */
  @JsonDeserialize(using = RouterTypeEnumDeserializer.class)
   public enum RouterTypeEnum {
@@ -89,14 +89,14 @@ public class SupportCenterSettings  implements Serializable {
 
   
   /**
-   * Whether or not support center is enabled
+   * Whether or not knowledge portal (previously support center) is enabled
    **/
   public SupportCenterSettings enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether or not support center is enabled")
+  @ApiModelProperty(example = "null", value = "Whether or not knowledge portal (previously support center) is enabled")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;
@@ -107,14 +107,14 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
-   * The knowledge base for support center
+   * The knowledge base for knowledge portal (previously support center)
    **/
   public SupportCenterSettings knowledgeBase(AddressableEntityRef knowledgeBase) {
     this.knowledgeBase = knowledgeBase;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The knowledge base for support center")
+  @ApiModelProperty(example = "null", value = "The knowledge base for knowledge portal (previously support center)")
   @JsonProperty("knowledgeBase")
   public AddressableEntityRef getKnowledgeBase() {
     return knowledgeBase;
@@ -125,14 +125,14 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
-   * Customizable display texts for support center
+   * Customizable display texts for knowledge portal (previously support center)
    **/
   public SupportCenterSettings customMessages(List<SupportCenterCustomMessage> customMessages) {
     this.customMessages = customMessages;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Customizable display texts for support center")
+  @ApiModelProperty(example = "null", value = "Customizable display texts for knowledge portal (previously support center)")
   @JsonProperty("customMessages")
   public List<SupportCenterCustomMessage> getCustomMessages() {
     return customMessages;
@@ -143,14 +143,14 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
-   * Router type for support center
+   * Router type for knowledge portal (previously support center)
    **/
   public SupportCenterSettings routerType(RouterTypeEnum routerType) {
     this.routerType = routerType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Router type for support center")
+  @ApiModelProperty(example = "null", value = "Router type for knowledge portal (previously support center)")
   @JsonProperty("routerType")
   public RouterTypeEnum getRouterType() {
     return routerType;
@@ -161,14 +161,14 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
-   * Available screens for the support center with its modules
+   * Available screens for the knowledge portal (previously support center) with its modules
    **/
   public SupportCenterSettings screens(List<SupportCenterScreen> screens) {
     this.screens = screens;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Available screens for the support center with its modules")
+  @ApiModelProperty(example = "null", value = "Available screens for the knowledge portal (previously support center) with its modules")
   @JsonProperty("screens")
   public List<SupportCenterScreen> getScreens() {
     return screens;
@@ -179,14 +179,14 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
-   * Enabled article categories for support center
+   * Featured categories for knowledge portal (previously support center) home screen
    **/
   public SupportCenterSettings enabledCategories(List<SupportCenterCategory> enabledCategories) {
     this.enabledCategories = enabledCategories;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Enabled article categories for support center")
+  @ApiModelProperty(example = "null", value = "Featured categories for knowledge portal (previously support center) home screen")
   @JsonProperty("enabledCategories")
   public List<SupportCenterCategory> getEnabledCategories() {
     return enabledCategories;
@@ -197,14 +197,14 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
-   * Style attributes for support center
+   * Style attributes for knowledge portal (previously support center)
    **/
   public SupportCenterSettings styleSetting(SupportCenterStyleSetting styleSetting) {
     this.styleSetting = styleSetting;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Style attributes for support center")
+  @ApiModelProperty(example = "null", value = "Style attributes for knowledge portal (previously support center)")
   @JsonProperty("styleSetting")
   public SupportCenterStyleSetting getStyleSetting() {
     return styleSetting;

@@ -33,14 +33,14 @@ public class RequestConfig  implements Serializable {
 
   
   /**
-   * URL that may include placeholders for requests to 3rd party service
+   * URL that may include placeholders for requests to 3rd party service. This value is read only for Function Integrations and will be set when a draft is created.
    **/
   public RequestConfig requestUrlTemplate(String requestUrlTemplate) {
     this.requestUrlTemplate = requestUrlTemplate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "URL that may include placeholders for requests to 3rd party service")
+  @ApiModelProperty(example = "null", value = "URL that may include placeholders for requests to 3rd party service. This value is read only for Function Integrations and will be set when a draft is created.")
   @JsonProperty("requestUrlTemplate")
   public String getRequestUrlTemplate() {
     return requestUrlTemplate;

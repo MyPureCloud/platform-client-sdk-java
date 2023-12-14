@@ -62,13 +62,14 @@ public class SupportCenterCategory  implements Serializable {
 
 
   /**
+   * Image attributes for a featured category
    **/
   public SupportCenterCategory image(SupportCenterImage image) {
     this.image = image;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Image attributes for a featured category")
   @JsonProperty("image")
   public SupportCenterImage getImage() {
     return image;

@@ -173,14 +173,14 @@ public class Trigger  implements Serializable {
 
 
   /**
-   * Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.
+   * Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
    **/
   public Trigger delayBySeconds(Integer delayBySeconds) {
     this.delayBySeconds = delayBySeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.")
+  @ApiModelProperty(example = "null", value = "Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.")
   @JsonProperty("delayBySeconds")
   public Integer getDelayBySeconds() {
     return delayBySeconds;

@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicConversationRou
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicMessageDetails;
+import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -337,6 +338,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
+  private ConversationMessageEventTopicQueueMediaSettings queueMediaSettings = null;
   private List<ConversationMessageEventTopicMessageDetails> messages = new ArrayList<ConversationMessageEventTopicMessageDetails>();
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -1017,6 +1019,23 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
 
   /**
    **/
+  public ConversationMessageEventTopicMessageMediaParticipant queueMediaSettings(ConversationMessageEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueMediaSettings")
+  public ConversationMessageEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationMessageEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
+  /**
+   **/
   public ConversationMessageEventTopicMessageMediaParticipant messages(List<ConversationMessageEventTopicMessageDetails> messages) {
     this.messages = messages;
     return this;
@@ -1163,6 +1182,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
             Objects.equals(this.startAcwTime, conversationMessageEventTopicMessageMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationMessageEventTopicMessageMediaParticipant.endAcwTime) &&
             Objects.equals(this.mediaRoles, conversationMessageEventTopicMessageMediaParticipant.mediaRoles) &&
+            Objects.equals(this.queueMediaSettings, conversationMessageEventTopicMessageMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.messages, conversationMessageEventTopicMessageMediaParticipant.messages) &&
             Objects.equals(this.type, conversationMessageEventTopicMessageMediaParticipant.type) &&
             Objects.equals(this.recipientCountry, conversationMessageEventTopicMessageMediaParticipant.recipientCountry) &&
@@ -1173,7 +1193,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, messages, type, recipientCountry, recipientType, byoSmsIntegrationId, monitoredParticipantId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, messages, type, recipientCountry, recipientType, byoSmsIntegrationId, monitoredParticipantId);
   }
 
   @Override
@@ -1217,6 +1237,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");

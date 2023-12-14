@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OperationalEventNotificationTopicEventEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -25,6 +26,14 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
   private OperationalEventNotificationTopicEventEntity eventEntity = null;
   private String entityId = null;
   private String entityName = null;
+  private String previousValue = null;
+  private String currentValue = null;
+  private String errorCode = null;
+  private String version = null;
+  private String parentEntity = null;
+  private String entityType = null;
+  private String conversationId = null;
+  private Date timestamp = null;
 
   
   /**
@@ -78,6 +87,142 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
   }
 
 
+  /**
+   **/
+  public OperationalEventNotificationTopicOperationalEventNotification previousValue(String previousValue) {
+    this.previousValue = previousValue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousValue")
+  public String getPreviousValue() {
+    return previousValue;
+  }
+  public void setPreviousValue(String previousValue) {
+    this.previousValue = previousValue;
+  }
+
+
+  /**
+   **/
+  public OperationalEventNotificationTopicOperationalEventNotification currentValue(String currentValue) {
+    this.currentValue = currentValue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("currentValue")
+  public String getCurrentValue() {
+    return currentValue;
+  }
+  public void setCurrentValue(String currentValue) {
+    this.currentValue = currentValue;
+  }
+
+
+  /**
+   **/
+  public OperationalEventNotificationTopicOperationalEventNotification errorCode(String errorCode) {
+    this.errorCode = errorCode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("errorCode")
+  public String getErrorCode() {
+    return errorCode;
+  }
+  public void setErrorCode(String errorCode) {
+    this.errorCode = errorCode;
+  }
+
+
+  /**
+   **/
+  public OperationalEventNotificationTopicOperationalEventNotification version(String version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("version")
+  public String getVersion() {
+    return version;
+  }
+  public void setVersion(String version) {
+    this.version = version;
+  }
+
+
+  /**
+   **/
+  public OperationalEventNotificationTopicOperationalEventNotification parentEntity(String parentEntity) {
+    this.parentEntity = parentEntity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("parentEntity")
+  public String getParentEntity() {
+    return parentEntity;
+  }
+  public void setParentEntity(String parentEntity) {
+    this.parentEntity = parentEntity;
+  }
+
+
+  /**
+   **/
+  public OperationalEventNotificationTopicOperationalEventNotification entityType(String entityType) {
+    this.entityType = entityType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("entityType")
+  public String getEntityType() {
+    return entityType;
+  }
+  public void setEntityType(String entityType) {
+    this.entityType = entityType;
+  }
+
+
+  /**
+   **/
+  public OperationalEventNotificationTopicOperationalEventNotification conversationId(String conversationId) {
+    this.conversationId = conversationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationId")
+  public String getConversationId() {
+    return conversationId;
+  }
+  public void setConversationId(String conversationId) {
+    this.conversationId = conversationId;
+  }
+
+
+  /**
+   **/
+  public OperationalEventNotificationTopicOperationalEventNotification timestamp(Date timestamp) {
+    this.timestamp = timestamp;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("timestamp")
+  public Date getTimestamp() {
+    return timestamp;
+  }
+  public void setTimestamp(Date timestamp) {
+    this.timestamp = timestamp;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -90,12 +235,20 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
 
     return Objects.equals(this.eventEntity, operationalEventNotificationTopicOperationalEventNotification.eventEntity) &&
             Objects.equals(this.entityId, operationalEventNotificationTopicOperationalEventNotification.entityId) &&
-            Objects.equals(this.entityName, operationalEventNotificationTopicOperationalEventNotification.entityName);
+            Objects.equals(this.entityName, operationalEventNotificationTopicOperationalEventNotification.entityName) &&
+            Objects.equals(this.previousValue, operationalEventNotificationTopicOperationalEventNotification.previousValue) &&
+            Objects.equals(this.currentValue, operationalEventNotificationTopicOperationalEventNotification.currentValue) &&
+            Objects.equals(this.errorCode, operationalEventNotificationTopicOperationalEventNotification.errorCode) &&
+            Objects.equals(this.version, operationalEventNotificationTopicOperationalEventNotification.version) &&
+            Objects.equals(this.parentEntity, operationalEventNotificationTopicOperationalEventNotification.parentEntity) &&
+            Objects.equals(this.entityType, operationalEventNotificationTopicOperationalEventNotification.entityType) &&
+            Objects.equals(this.conversationId, operationalEventNotificationTopicOperationalEventNotification.conversationId) &&
+            Objects.equals(this.timestamp, operationalEventNotificationTopicOperationalEventNotification.timestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventEntity, entityId, entityName);
+    return Objects.hash(eventEntity, entityId, entityName, previousValue, currentValue, errorCode, version, parentEntity, entityType, conversationId, timestamp);
   }
 
   @Override
@@ -106,6 +259,14 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
     sb.append("    eventEntity: ").append(toIndentedString(eventEntity)).append("\n");
     sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
     sb.append("    entityName: ").append(toIndentedString(entityName)).append("\n");
+    sb.append("    previousValue: ").append(toIndentedString(previousValue)).append("\n");
+    sb.append("    currentValue: ").append(toIndentedString(currentValue)).append("\n");
+    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    parentEntity: ").append(toIndentedString(parentEntity)).append("\n");
+    sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
+    sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
+    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("}");
     return sb.toString();
   }

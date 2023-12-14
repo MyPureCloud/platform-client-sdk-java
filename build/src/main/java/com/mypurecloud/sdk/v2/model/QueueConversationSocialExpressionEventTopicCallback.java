@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicDialerPreview;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicVoicemail;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -273,6 +274,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
   private Boolean afterCallWorkRequired = null;
   private String callerId = null;
   private String callerIdName = null;
+  private QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings = null;
 
   
   /**
@@ -739,6 +741,24 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
   }
 
 
+  /**
+   * Represents the queue setting for this media.
+   **/
+  public QueueConversationSocialExpressionEventTopicCallback queueMediaSettings(QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the queue setting for this media.")
+  @JsonProperty("queueMediaSettings")
+  public QueueConversationSocialExpressionEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(QueueConversationSocialExpressionEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -774,12 +794,13 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
             Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicCallback.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCallback.afterCallWorkRequired) &&
             Objects.equals(this.callerId, queueConversationSocialExpressionEventTopicCallback.callerId) &&
-            Objects.equals(this.callerIdName, queueConversationSocialExpressionEventTopicCallback.callerIdName);
+            Objects.equals(this.callerIdName, queueConversationSocialExpressionEventTopicCallback.callerIdName) &&
+            Objects.equals(this.queueMediaSettings, queueConversationSocialExpressionEventTopicCallback.queueMediaSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName);
+    return Objects.hash(state, initialState, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName, queueMediaSettings);
   }
 
   @Override
@@ -813,6 +834,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
     sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

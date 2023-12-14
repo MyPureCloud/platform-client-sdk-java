@@ -160,6 +160,7 @@ public class UserQueue  implements Serializable {
   private DomainEntityRef whisperPrompt = null;
   private DomainEntityRef onHoldPrompt = null;
   private Boolean enableTranscription = null;
+  private Boolean enableAudioMonitoring = null;
   private Boolean enableManualAssignment = null;
   private AgentOwnedRouting agentOwnedRouting = null;
   private DirectRouting directRouting = null;
@@ -580,6 +581,24 @@ public class UserQueue  implements Serializable {
 
 
   /**
+   * Indicates whether audio monitoring is enabled for this queue.
+   **/
+  public UserQueue enableAudioMonitoring(Boolean enableAudioMonitoring) {
+    this.enableAudioMonitoring = enableAudioMonitoring;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether audio monitoring is enabled for this queue.")
+  @JsonProperty("enableAudioMonitoring")
+  public Boolean getEnableAudioMonitoring() {
+    return enableAudioMonitoring;
+  }
+  public void setEnableAudioMonitoring(Boolean enableAudioMonitoring) {
+    this.enableAudioMonitoring = enableAudioMonitoring;
+  }
+
+
+  /**
    * Indicates whether manual assignment is enabled for this queue.
    **/
   public UserQueue enableManualAssignment(Boolean enableManualAssignment) {
@@ -817,6 +836,7 @@ public class UserQueue  implements Serializable {
             Objects.equals(this.whisperPrompt, userQueue.whisperPrompt) &&
             Objects.equals(this.onHoldPrompt, userQueue.onHoldPrompt) &&
             Objects.equals(this.enableTranscription, userQueue.enableTranscription) &&
+            Objects.equals(this.enableAudioMonitoring, userQueue.enableAudioMonitoring) &&
             Objects.equals(this.enableManualAssignment, userQueue.enableManualAssignment) &&
             Objects.equals(this.agentOwnedRouting, userQueue.agentOwnedRouting) &&
             Objects.equals(this.directRouting, userQueue.directRouting) &&
@@ -833,7 +853,7 @@ public class UserQueue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, enableTranscription, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, joined, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, joined, selfUri);
   }
 
   @Override
@@ -866,6 +886,7 @@ public class UserQueue  implements Serializable {
     sb.append("    whisperPrompt: ").append(toIndentedString(whisperPrompt)).append("\n");
     sb.append("    onHoldPrompt: ").append(toIndentedString(onHoldPrompt)).append("\n");
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
+    sb.append("    enableAudioMonitoring: ").append(toIndentedString(enableAudioMonitoring)).append("\n");
     sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");
     sb.append("    agentOwnedRouting: ").append(toIndentedString(agentOwnedRouting)).append("\n");
     sb.append("    directRouting: ").append(toIndentedString(directRouting)).append("\n");

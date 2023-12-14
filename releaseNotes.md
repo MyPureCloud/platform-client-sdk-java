@@ -1,304 +1,593 @@
-Platform API version: 7466
+Platform API version: 7567
 
 
 
 
-# Major Changes (10 changes)
+# Major Changes (33 changes)
 
-**/api/v2/chat/settings** (1 change)
-
-* Path /api/v2/chat/settings was removed
-
-**POST /api/v2/conversations/messaging/integrations/whatsapp** (1 change)
+**GET /api/v2/alerting/alerts/active** (1 change)
 
 * Has been deprecated
 
-**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes** (1 change)
+**GET /api/v2/alerting/interactionstats/alerts/{alertId}** (1 change)
 
-* Parameter forceDownloadService was added
+* Has been deprecated
 
-**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query** (1 change)
+**PUT /api/v2/alerting/interactionstats/alerts/{alertId}** (1 change)
 
-* Parameter forceDownloadService was added
+* Has been deprecated
 
-**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search** (1 change)
+**DELETE /api/v2/alerting/interactionstats/alerts/{alertId}** (1 change)
 
-* Parameter forceDownloadService was added
+* Has been deprecated
 
-**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades** (1 change)
+**GET /api/v2/alerting/interactionstats/alerts** (1 change)
 
-* Parameter forceDownloadService was added
+* Has been deprecated
 
-**GET /api/v2/presence/definitions/{definitionId}** (1 change)
+**GET /api/v2/alerting/interactionstats/rules/{ruleId}** (1 change)
 
-* Parameter localeCode was added
+* Has been deprecated
 
-**GET /api/v2/presence/definitions** (1 change)
+**PUT /api/v2/alerting/interactionstats/rules/{ruleId}** (1 change)
 
-* Parameter localeCode was added
+* Has been deprecated
 
-**AppEventRequestSession** (1 change)
+**DELETE /api/v2/alerting/interactionstats/rules/{ruleId}** (1 change)
 
-* Model AppEventRequestSession was removed
+* Has been deprecated
 
-**AppEventRequest** (1 change)
+**GET /api/v2/alerting/interactionstats/rules** (1 change)
 
-* Property session was removed
+* Has been deprecated
+
+**POST /api/v2/alerting/interactionstats/rules** (1 change)
+
+* Has been deprecated
+
+**GET /api/v2/alerting/interactionstats/alerts/unread** (1 change)
+
+* Has been deprecated
+
+**PUT /api/v2/analytics/reporting/schedules/{scheduleId}** (1 change)
+
+* Has been deprecated
+
+**POST /api/v2/analytics/reporting/schedules** (1 change)
+
+* Has been deprecated
+
+**POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport** (1 change)
+
+* Has been deprecated
+
+**GET /api/v2/quality/agents/activity** (1 change)
+
+* Parameter agentTeamId was added
+
+**GET /api/v2/quality/evaluations/query** (1 change)
+
+* Parameter agentTeamId was added
+
+**GET /api/v2/quality/evaluators/activity** (1 change)
+
+* Parameter agentTeamId was added
+
+**GET /api/v2/routing/utilization** (1 change)
+
+* Response 200 type was changed from Utilization to UtilizationResponse
+
+**PUT /api/v2/routing/utilization** (1 change)
+
+* Response 200 type was changed from Utilization to UtilizationResponse
+
+**GET /api/v2/routing/users/{userId}/utilization** (1 change)
+
+* Response 200 type was changed from AgentMaxUtilization to AgentMaxUtilizationResponse
+
+**PUT /api/v2/routing/users/{userId}/utilization** (1 change)
+
+* Response 200 type was changed from AgentMaxUtilization to AgentMaxUtilizationResponse
+
+**GET /api/v2/learning/modules** (1 change)
+
+* Parameter externalIds was added
+
+**LabelUtilization** (1 change)
+
+* Model LabelUtilization was removed
+
+**Utilization** (1 change)
+
+* Model Utilization was removed
+
+**AgentMaxUtilization** (1 change)
+
+* Model AgentMaxUtilization was removed
+
+**UserInsightsTrend** (2 changes)
+
+* Property entities was changed from InsightsTrendMetricItem[] to UserInsightsTrendMetricItem[]
+* Property total was changed from InsightsTrendTotalItem to UserInsightsTrendTotalItem
+
+**AppEventResponse** (2 changes)
+
+* Property ipAddress was removed
+* Property externalContact was removed
+
+**Workitem** (1 change)
+
+* Property queue was changed from QueueReference to WorkitemQueueReference
+
+**WorkitemVersion** (1 change)
+
+* Property queue was changed from QueueReference to WorkitemQueueReference
+
+**Worktype** (1 change)
+
+* Property defaultQueue was changed from QueueReference to WorkitemQueueReference
+
+**WorktypeVersion** (1 change)
+
+* Property defaultQueue was changed from QueueReference to WorkitemQueueReference
 
 
-# Minor Changes (74 changes)
+# Minor Changes (120 changes)
 
-**/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}** (2 changes)
+**POST /api/v2/authorization/divisions/{divisionId}/restore** (1 change)
 
-* Path was added
-* Operation PATCH was added
+* Parameter body was made optional
 
-**/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/users/{userId}/verifiers** (2 changes)
+**/api/v2/analytics/botflows/{botFlowId}/sessions** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/users/{userId}/verifiers/{verifierId}** (3 changes)
+**/api/v2/outbound/contactlisttemplates/{contactListTemplateId}** (4 changes)
 
 * Path was added
+* Operation GET was added
 * Operation PUT was added
 * Operation DELETE was added
 
-**/api/v2/journey/deployments/{deploymentId}/actionevent** (2 changes)
+**/api/v2/outbound/contactlisttemplates** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+* Operation DELETE was added
+
+**/api/v2/outbound/contactlisttemplates/bulk/add** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping** (2 changes)
+**/api/v2/outbound/importtemplates/{importTemplateId}/importstatus** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/usage/events/definitions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/usage/events/definitions/{eventDefinitionId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections** (4 changes)
+**/api/v2/outbound/importtemplates/{importTemplateId}** (4 changes)
 
 * Path was added
 * Operation GET was added
 * Operation PUT was added
+* Operation DELETE was added
+
+**/api/v2/outbound/importtemplates** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+* Operation DELETE was added
+
+**/api/v2/outbound/importtemplates/bulk/add** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/diagnostics/logcapture/browser/entries/download/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/diagnostics/logcapture/browser/entries/download/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**GET /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping** (1 change)
+
+* Parameter sessionId was made optional
+
+**/api/v2/analytics/flowexecutions/aggregates/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/analytics/flowexecutions/aggregates/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/learning/modules/{moduleId}/users/{userId}/assignments** (2 changes)
+
+* Path was added
 * Operation PATCH was added
 
-**ConversationAggregationQuery** (2 changes)
-
-* Enum value tPark was added to property metrics
-* Enum value tParkComplete was added to property metrics
-
-**ConversationAggregationView** (2 changes)
-
-* Enum value tPark was added to property target
-* Enum value tParkComplete was added to property target
-
-**AnalyticsConversationSegment** (1 change)
-
-* Enum value parked was added to property segmentType
-
-**ConversationDetailQueryPredicate** (2 changes)
-
-* Enum value tPark was added to property metric
-* Enum value tParkComplete was added to property metric
-
-**ReportingExportJobResponse** (1 change)
-
-* Enum value CIRCUIT_BREAKER_OPEN_FOR_VIEW_TYPE was added to property exportErrorMessagesType
-
-**DomainOrganizationRole** (1 change)
-
-* id is no longer readonly
-
-**DomainOrganizationRoleUpdate** (1 change)
-
-* id is no longer readonly
-
-**DomainOrganizationRoleCreate** (1 change)
-
-* id is no longer readonly
-
-**Evaluation** (1 change)
-
-* Optional property revisionCreatedDate was added
-
-**WhatsAppEmbeddedSignupIntegrationActivationRequest** (1 change)
+**BotChannel** (1 change)
 
 * Model was added
 
-**WhatsAppEmbeddedSignupIntegrationRequest** (1 change)
+**BotFlowSession** (1 change)
+
+* Model was added
+
+**SessionsResponse** (1 change)
+
+* Model was added
+
+**Queue** (1 change)
+
+* Optional property enableAudioMonitoring was added
+
+**Limit** (1 change)
+
+* Enum value employee.engagement was added to property namespace
+
+**CallMediaPolicyConditions** (1 change)
+
+* Optional property teams was added
+
+**ChatMediaPolicyConditions** (1 change)
+
+* Optional property teams was added
+
+**EmailMediaPolicyConditions** (1 change)
+
+* Optional property teams was added
+
+**MessageMediaPolicyConditions** (1 change)
+
+* Optional property teams was added
+
+**PolicyConditions** (1 change)
+
+* Optional property teams was added
+
+**PhoneNumber** (1 change)
+
+* Optional property normalizationCountryCode was added
+
+**ExternalOrganizationTrustorLink** (2 changes)
+
+* Optional property id was added
+* Optional property selfUri was added
+
+**Evaluation** (1 change)
+
+* Optional property agentTeam was added
+
+**EvaluationQuestionGroupScore** (1 change)
+
+* Optional property systemMarkedNA was added
+
+**EvaluationQuestionScore** (1 change)
+
+* Optional property systemMarkedNA was added
+
+**ImportStatus** (2 changes)
+
+* Optional property targetContactListIds was added
+* Optional property listNamePrefix was added
+
+**ContactListFilter** (2 changes)
+
+* Optional property contactListTemplate was added
+* Optional property sourceType was added
+
+**ContactListTemplate** (1 change)
+
+* Model was added
+
+**ContactListTemplateEntityListing** (1 change)
+
+* Model was added
+
+**EventMessage** (3 changes)
+
+* Enum value IMPORT_NO_LISTS_CREATED_NO_CONTACTS_MATCH_FILTER was added to property code
+* Enum value IMPORT_TARGET_CONTACT_LIST_NAME_EXISTS was added to property code
+* Enum value IMPORT_CONTACT_LIST_NAME_LENGTH_EXCEEDED was added to property code
+
+**ImportTemplate** (1 change)
+
+* Model was added
+
+**SplittingInformation** (1 change)
+
+* Model was added
+
+**ImportTemplateEntityListing** (1 change)
+
+* Model was added
+
+**UserInsightsTrendMetricItem** (1 change)
+
+* Model was added
+
+**UserInsightsTrendTotalItem** (1 change)
+
+* Model was added
+
+**UserInsightsTrends** (1 change)
+
+* Model was added
+
+**UserTrendData** (1 change)
 
 * Model was added
 
 **KnowledgeBase** (1 change)
 
-* Enum value ja-JP was added to property coreLanguage
+* Enum value ar-AE was added to property coreLanguage
 
 **KnowledgeCategory** (1 change)
 
-* Enum value ja-JP was added to property languageCode
+* Enum value ar-AE was added to property languageCode
 
 **KnowledgeSearchDocument** (1 change)
 
-* Enum value ja-JP was added to property languageCode
+* Enum value ar-AE was added to property languageCode
 
 **KnowledgeExtendedCategory** (1 change)
 
-* Enum value ja-JP was added to property languageCode
+* Enum value ar-AE was added to property languageCode
 
 **KnowledgeImport** (1 change)
 
-* Enum value ja-JP was added to property languageCode
+* Enum value ar-AE was added to property languageCode
 
 **KnowledgeDocument** (1 change)
 
-* Enum value ja-JP was added to property languageCode
+* Enum value ar-AE was added to property languageCode
 
 **KnowledgeBaseCreateRequest** (1 change)
 
-* Enum value ja-JP was added to property coreLanguage
+* Enum value ar-AE was added to property coreLanguage
 
-**Verifier** (1 change)
+**ApprovalNamespace** (1 change)
 
-* Model was added
+* Enum value employee.engagement was added to property namespace
 
-**VerifierEntityListing** (1 change)
+**LimitChangeRequestDetails** (1 change)
 
-* Model was added
+* Enum value employee.engagement was added to property namespace
 
-**UpdateVerifierRequest** (1 change)
+**StatusChange** (1 change)
 
-* Model was added
+* Enum value employee.engagement was added to property namespace
 
-**ActionEventRequest** (1 change)
-
-* Model was added
-
-**DeploymentPing** (1 change)
+**LogCaptureDownloadExecutionResponse** (1 change)
 
 * Model was added
 
-**DeploymentWebAction** (1 change)
+**LogCaptureQueryRequest** (1 change)
 
 * Model was added
 
-**OpenActionProperties** (1 change)
+**SurveyQuestionGroupScore** (1 change)
 
-* Model was added
+* Optional property systemMarkedNA was added
 
-**WebMessagingOfferProperties** (1 change)
+**SurveyQuestionScore** (1 change)
 
-* Model was added
-
-**EventDefinition** (1 change)
-
-* Model was added
-
-**EventDefinitionListing** (1 change)
-
-* Model was added
-
-**MutableUserPresence** (1 change)
-
-* Model was added
+* Optional property systemMarkedNA was added
 
 **EvaluationResponse** (1 change)
 
-* Optional property revisionCreatedDate was added
+* Optional property agentTeam was added
 
-**TrunkBase** (2 changes)
+**Survey** (1 change)
 
-* Optional property site was added
-* Optional property inboundSite was added
+* Optional property agentTeam was added
 
-**EdgeTrunkBase** (2 changes)
+**QueueRequest** (1 change)
 
-* Optional property site was added
-* Optional property inboundSite was added
+* Optional property enableAudioMonitoring was added
 
-**SiteConnections** (1 change)
+**UserQueue** (1 change)
+
+* Optional property enableAudioMonitoring was added
+
+**CreateQueueRequest** (1 change)
+
+* Optional property enableAudioMonitoring was added
+
+**LabelUtilizationRequest** (1 change)
 
 * Model was added
 
-**DisableSiteConnectionsRequest** (1 change)
+**LabelUtilizationResponse** (1 change)
+
+* Model was added
+
+**UtilizationResponse** (1 change)
+
+* Model was added
+
+**UtilizationRequest** (1 change)
+
+* Model was added
+
+**AgentMaxUtilizationResponse** (1 change)
 
 * Model was added
 
 **Dependency** (1 change)
 
-* Enum value AUDIOCONNECTORBOT was added to property type
+* Enum value UTILIZATIONLABEL was added to property type
 
 **DependencyObject** (1 change)
 
-* Enum value AUDIOCONNECTORBOT was added to property type
+* Enum value UTILIZATIONLABEL was added to property type
 
-**WebMessagingEventPresence** (2 changes)
+**LearningAssignment** (1 change)
 
-* Enum value Clear was added to property type
-* Enum value SignIn was added to property type
+* Optional property lengthInMinutes was added
 
-**BusinessUnitActivityCodeListing** (1 change)
+**LearningModule** (2 changes)
 
-* Optional property downloadUrl was added
+* Optional property excludedFromCatalog was added
+* Optional property lengthInMinutes was added
 
-**PlanningGroupList** (1 change)
+**LearningAssignmentCreate** (1 change)
 
-* Optional property metadata was added
+* Optional property lengthInMinutes was added
 
-**ServiceGoalTemplateList** (1 change)
+**LearningModuleRequest** (3 changes)
 
-* Optional property metadata was added
+* Optional property lengthInMinutes was added
+* Optional property excludedFromCatalog was added
+* Optional property externalId was added
 
-**TimeOffPlan** (1 change)
+**AssignedLearningModule** (2 changes)
 
-* Optional property hrisTimeOffType was added
+* Optional property excludedFromCatalog was added
+* Optional property lengthInMinutes was added
 
-**AdminTimeOffRequestPatch** (1 change)
+**FlowExecutionAggregateDataContainer** (1 change)
 
-* Optional property paid was added
+* Model was added
 
-**TimeOffRequestListing** (1 change)
+**FlowExecutionAggregateQueryResponse** (1 change)
 
-* Optional property downloadUrl was added
+* Model was added
 
-**SearchShiftTradesResponse** (1 change)
+**FlowExecutionAggregateQueryClause** (1 change)
 
-* Optional property downloadUrl was added
+* Model was added
 
-**WeekShiftTradeListResponse** (1 change)
+**FlowExecutionAggregateQueryFilter** (1 change)
 
-* Optional property downloadUrl was added
+* Model was added
 
-**ConversationAsyncAggregationQuery** (2 changes)
+**FlowExecutionAggregateQueryPredicate** (1 change)
 
-* Enum value tPark was added to property metrics
-* Enum value tParkComplete was added to property metrics
+* Model was added
+
+**FlowExecutionAggregationQuery** (1 change)
+
+* Model was added
+
+**FlowExecutionAggregationView** (1 change)
+
+* Model was added
+
+**FlowExecutionAsyncAggregationQuery** (1 change)
+
+* Model was added
+
+**FlowExecutionAsyncAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**ExecutionDataEntity** (1 change)
+
+* Optional property statusCode was added
+
+**MediaEndpointStatistics** (1 change)
+
+* Optional property reconnectAttemptCount was added
+
+**LearningAssignmentExternalUpdate** (1 change)
+
+* Model was added
+
+**WorkitemQueueReference** (1 change)
+
+* Model was added
 
 
-# Point Changes (4 changes)
+# Point Changes (23 changes)
 
-**POST /api/v2/conversations/messaging/integrations/whatsapp** (2 changes)
+**GET /api/v2/alerting/alerts/active** (2 changes)
 
 * Description was changed
 * Summary was changed
 
-**GET /api/v2/quality/forms/evaluations** (1 change)
+**GET /api/v2/alerting/interactionstats/alerts/{alertId}** (1 change)
 
 * Description was changed
 
-**PATCH /api/v2/users/bulk** (1 change)
+**PUT /api/v2/alerting/interactionstats/alerts/{alertId}** (1 change)
+
+* Description was changed
+
+**DELETE /api/v2/alerting/interactionstats/alerts/{alertId}** (1 change)
+
+* Description was changed
+
+**GET /api/v2/alerting/interactionstats/alerts** (2 changes)
+
+* Description was changed
+* Summary was changed
+
+**GET /api/v2/alerting/interactionstats/rules/{ruleId}** (2 changes)
+
+* Description was changed
+* Summary was changed
+
+**PUT /api/v2/alerting/interactionstats/rules/{ruleId}** (1 change)
+
+* Description was changed
+
+**DELETE /api/v2/alerting/interactionstats/rules/{ruleId}** (2 changes)
+
+* Description was changed
+* Summary was changed
+
+**GET /api/v2/alerting/interactionstats/rules** (2 changes)
+
+* Description was changed
+* Summary was changed
+
+**POST /api/v2/alerting/interactionstats/rules** (2 changes)
+
+* Description was changed
+* Summary was changed
+
+**GET /api/v2/alerting/interactionstats/alerts/unread** (2 changes)
+
+* Description was changed
+* Summary was changed
+
+**GET /api/v2/analytics/botflows/{botFlowId}/reportingturns** (1 change)
+
+* Description was changed
+
+**PUT /api/v2/analytics/reporting/schedules/{scheduleId}** (1 change)
+
+* Description was changed
+
+**POST /api/v2/analytics/reporting/schedules** (1 change)
+
+* Description was changed
+
+**POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport** (1 change)
+
+* Description was changed
+
+**POST /api/v2/integrations/actions** (1 change)
 
 * Summary was changed

@@ -44,6 +44,7 @@ title: ConversationScreenShareEventTopicScreenShareMediaParticipant
 | **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **queueMediaSettings** | <!----><!---->[**ConversationScreenShareEventTopicQueueMediaSettings**](ConversationScreenShareEventTopicQueueMediaSettings.html)<!----> |  |  [optional] |
 | **context** | <!----><!---->**String**<!----> |  |  [optional] |
 | **peerCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **sharing** | <!----><!---->**Boolean**<!----> |  |  [optional] |

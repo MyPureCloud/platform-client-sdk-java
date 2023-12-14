@@ -25,6 +25,7 @@ public class ExecutionDataEntity  implements Serializable {
   private String id = null;
   private String downloadUri = null;
   private Boolean failed = null;
+  private String statusCode = null;
 
   
   /**
@@ -81,6 +82,24 @@ public class ExecutionDataEntity  implements Serializable {
   }
 
 
+  /**
+   * This will contain the http status code for the failure
+   **/
+  public ExecutionDataEntity statusCode(String statusCode) {
+    this.statusCode = statusCode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "This will contain the http status code for the failure")
+  @JsonProperty("statusCode")
+  public String getStatusCode() {
+    return statusCode;
+  }
+  public void setStatusCode(String statusCode) {
+    this.statusCode = statusCode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -93,12 +112,13 @@ public class ExecutionDataEntity  implements Serializable {
 
     return Objects.equals(this.id, executionDataEntity.id) &&
             Objects.equals(this.downloadUri, executionDataEntity.downloadUri) &&
-            Objects.equals(this.failed, executionDataEntity.failed);
+            Objects.equals(this.failed, executionDataEntity.failed) &&
+            Objects.equals(this.statusCode, executionDataEntity.statusCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, downloadUri, failed);
+    return Objects.hash(id, downloadUri, failed, statusCode);
   }
 
   @Override
@@ -109,6 +129,7 @@ public class ExecutionDataEntity  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    downloadUri: ").append(toIndentedString(downloadUri)).append("\n");
     sb.append("    failed: ").append(toIndentedString(failed)).append("\n");
+    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

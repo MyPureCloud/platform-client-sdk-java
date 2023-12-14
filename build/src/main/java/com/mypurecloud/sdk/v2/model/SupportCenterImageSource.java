@@ -25,13 +25,14 @@ public class SupportCenterImageSource  implements Serializable {
 
   
   /**
+   * Default URL for image
    **/
   public SupportCenterImageSource defaultUrl(String defaultUrl) {
     this.defaultUrl = defaultUrl;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Default URL for image")
   @JsonProperty("defaultUrl")
   public String getDefaultUrl() {
     return defaultUrl;

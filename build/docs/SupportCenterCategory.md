@@ -10,7 +10,7 @@ title: SupportCenterCategory
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **image** | <!----><!---->[**SupportCenterImage**](SupportCenterImage.html)<!----> |  |  [optional] |
+| **image** | <!----><!---->[**SupportCenterImage**](SupportCenterImage.html)<!----> | Image attributes for a featured category |  [optional] |
 {: class="table table-striped"}
 
 

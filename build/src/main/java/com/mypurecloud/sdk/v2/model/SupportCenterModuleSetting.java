@@ -101,14 +101,14 @@ public class SupportCenterModuleSetting  implements Serializable {
 
 
   /**
-   * Whether or not support center screen module is enabled
+   * Whether or not knowledge portal (previously support center) screen module is enabled
    **/
   public SupportCenterModuleSetting enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether or not support center screen module is enabled")
+  @ApiModelProperty(example = "null", value = "Whether or not knowledge portal (previously support center) screen module is enabled")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;

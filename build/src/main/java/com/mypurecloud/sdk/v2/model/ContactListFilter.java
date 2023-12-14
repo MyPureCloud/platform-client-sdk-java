@@ -33,6 +33,55 @@ public class ContactListFilter  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private DomainEntityRef contactList = null;
+  private DomainEntityRef contactListTemplate = null;
+
+  private static class SourceTypeEnumDeserializer extends StdDeserializer<SourceTypeEnum> {
+    public SourceTypeEnumDeserializer() {
+      super(SourceTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SourceTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SourceTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The source type the filter is based on.
+   */
+ @JsonDeserialize(using = SourceTypeEnumDeserializer.class)
+  public enum SourceTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CONTACTLIST("ContactList"),
+    CONTACTLISTTEMPLATE("ContactListTemplate");
+
+    private String value;
+
+    SourceTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SourceTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SourceTypeEnum value : SourceTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SourceTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SourceTypeEnum sourceType = null;
   private List<ContactListFilterClause> clauses = new ArrayList<ContactListFilterClause>();
 
   private static class FilterTypeEnumDeserializer extends StdDeserializer<FilterTypeEnum> {
@@ -161,6 +210,42 @@ public class ContactListFilter  implements Serializable {
 
 
   /**
+   * The contact list template the filter is based on. Required if sourceType is ContactListTemplate
+   **/
+  public ContactListFilter contactListTemplate(DomainEntityRef contactListTemplate) {
+    this.contactListTemplate = contactListTemplate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The contact list template the filter is based on. Required if sourceType is ContactListTemplate")
+  @JsonProperty("contactListTemplate")
+  public DomainEntityRef getContactListTemplate() {
+    return contactListTemplate;
+  }
+  public void setContactListTemplate(DomainEntityRef contactListTemplate) {
+    this.contactListTemplate = contactListTemplate;
+  }
+
+
+  /**
+   * The source type the filter is based on.
+   **/
+  public ContactListFilter sourceType(SourceTypeEnum sourceType) {
+    this.sourceType = sourceType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The source type the filter is based on.")
+  @JsonProperty("sourceType")
+  public SourceTypeEnum getSourceType() {
+    return sourceType;
+  }
+  public void setSourceType(SourceTypeEnum sourceType) {
+    this.sourceType = sourceType;
+  }
+
+
+  /**
    * Groups of conditions to filter the contacts by.
    **/
   public ContactListFilter clauses(List<ContactListFilterClause> clauses) {
@@ -219,6 +304,8 @@ public class ContactListFilter  implements Serializable {
             Objects.equals(this.dateModified, contactListFilter.dateModified) &&
             Objects.equals(this.version, contactListFilter.version) &&
             Objects.equals(this.contactList, contactListFilter.contactList) &&
+            Objects.equals(this.contactListTemplate, contactListFilter.contactListTemplate) &&
+            Objects.equals(this.sourceType, contactListFilter.sourceType) &&
             Objects.equals(this.clauses, contactListFilter.clauses) &&
             Objects.equals(this.filterType, contactListFilter.filterType) &&
             Objects.equals(this.selfUri, contactListFilter.selfUri);
@@ -226,7 +313,7 @@ public class ContactListFilter  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, clauses, filterType, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, contactListTemplate, sourceType, clauses, filterType, selfUri);
   }
 
   @Override
@@ -240,6 +327,8 @@ public class ContactListFilter  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    contactList: ").append(toIndentedString(contactList)).append("\n");
+    sb.append("    contactListTemplate: ").append(toIndentedString(contactListTemplate)).append("\n");
+    sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
     sb.append("    clauses: ").append(toIndentedString(clauses)).append("\n");
     sb.append("    filterType: ").append(toIndentedString(filterType)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

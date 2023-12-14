@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.QueueReference;
 import com.mypurecloud.sdk.v2.model.SurveyErrorDetails;
 import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
+import com.mypurecloud.sdk.v2.model.Team;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -91,6 +92,7 @@ public class Survey  implements Serializable {
   private SurveyScoringSet answers = null;
   private Date completedDate = null;
   private SurveyErrorDetails surveyErrorDetails = null;
+  private Team agentTeam = null;
   private String selfUri = null;
 
   
@@ -257,6 +259,24 @@ public class Survey  implements Serializable {
   }
 
 
+  /**
+   * The team that the agent belongs to
+   **/
+  public Survey agentTeam(Team agentTeam) {
+    this.agentTeam = agentTeam;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The team that the agent belongs to")
+  @JsonProperty("agentTeam")
+  public Team getAgentTeam() {
+    return agentTeam;
+  }
+  public void setAgentTeam(Team agentTeam) {
+    this.agentTeam = agentTeam;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -284,12 +304,13 @@ public class Survey  implements Serializable {
             Objects.equals(this.answers, survey.answers) &&
             Objects.equals(this.completedDate, survey.completedDate) &&
             Objects.equals(this.surveyErrorDetails, survey.surveyErrorDetails) &&
+            Objects.equals(this.agentTeam, survey.agentTeam) &&
             Objects.equals(this.selfUri, survey.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, surveyForm, agent, status, queue, answers, completedDate, surveyErrorDetails, selfUri);
+    return Objects.hash(id, name, conversation, surveyForm, agent, status, queue, answers, completedDate, surveyErrorDetails, agentTeam, selfUri);
   }
 
   @Override
@@ -307,6 +328,7 @@ public class Survey  implements Serializable {
     sb.append("    answers: ").append(toIndentedString(answers)).append("\n");
     sb.append("    completedDate: ").append(toIndentedString(completedDate)).append("\n");
     sb.append("    surveyErrorDetails: ").append(toIndentedString(surveyErrorDetails)).append("\n");
+    sb.append("    agentTeam: ").append(toIndentedString(agentTeam)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicConversationRo
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicDialerPreview;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicJourneyContext;
+import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicVoicemail;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicWrapup;
@@ -338,6 +339,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
+  private ConversationCallbackEventTopicQueueMediaSettings queueMediaSettings = null;
   private ConversationCallbackEventTopicDialerPreview outboundPreview = null;
   private ConversationCallbackEventTopicVoicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -963,6 +965,23 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
 
   /**
    **/
+  public ConversationCallbackEventTopicCallbackMediaParticipant queueMediaSettings(ConversationCallbackEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("queueMediaSettings")
+  public ConversationCallbackEventTopicQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationCallbackEventTopicQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
+  /**
+   **/
   public ConversationCallbackEventTopicCallbackMediaParticipant outboundPreview(ConversationCallbackEventTopicDialerPreview outboundPreview) {
     this.outboundPreview = outboundPreview;
     return this;
@@ -1160,6 +1179,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
             Objects.equals(this.startAcwTime, conversationCallbackEventTopicCallbackMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationCallbackEventTopicCallbackMediaParticipant.endAcwTime) &&
             Objects.equals(this.mediaRoles, conversationCallbackEventTopicCallbackMediaParticipant.mediaRoles) &&
+            Objects.equals(this.queueMediaSettings, conversationCallbackEventTopicCallbackMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.outboundPreview, conversationCallbackEventTopicCallbackMediaParticipant.outboundPreview) &&
             Objects.equals(this.voicemail, conversationCallbackEventTopicCallbackMediaParticipant.voicemail) &&
             Objects.equals(this.callbackNumbers, conversationCallbackEventTopicCallbackMediaParticipant.callbackNumbers) &&
@@ -1173,7 +1193,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -1217,6 +1237,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");

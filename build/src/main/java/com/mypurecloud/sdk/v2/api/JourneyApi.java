@@ -1438,17 +1438,17 @@ public class JourneyApi {
    * 
    * @param deploymentId The ID of the deployment sending the ping. (required)
    * @param customerCookieId ID of the customer associated with the ping. (required)
-   * @param sessionId UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session (required)
    * @param dl Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions. (optional)
    * @param dt Document Title.  A human readable name for the page or screen (optional)
    * @param appNamespace Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions (optional)
+   * @param sessionId UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session (optional)
    * @param sinceLastBeaconMilliseconds How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. (optional)
    * @return DeploymentPing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DeploymentPing getJourneyDeploymentCustomerPing(String deploymentId, String customerCookieId, String sessionId, String dl, String dt, String appNamespace, Long sinceLastBeaconMilliseconds) throws IOException, ApiException {
-    return  getJourneyDeploymentCustomerPing(createGetJourneyDeploymentCustomerPingRequest(deploymentId, customerCookieId, sessionId, dl, dt, appNamespace, sinceLastBeaconMilliseconds));
+  public DeploymentPing getJourneyDeploymentCustomerPing(String deploymentId, String customerCookieId, String dl, String dt, String appNamespace, String sessionId, Long sinceLastBeaconMilliseconds) throws IOException, ApiException {
+    return  getJourneyDeploymentCustomerPing(createGetJourneyDeploymentCustomerPingRequest(deploymentId, customerCookieId, dl, dt, appNamespace, sessionId, sinceLastBeaconMilliseconds));
   }
 
   /**
@@ -1456,31 +1456,31 @@ public class JourneyApi {
    * 
    * @param deploymentId The ID of the deployment sending the ping. (required)
    * @param customerCookieId ID of the customer associated with the ping. (required)
-   * @param sessionId UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session (required)
    * @param dl Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions. (optional)
    * @param dt Document Title.  A human readable name for the page or screen (optional)
    * @param appNamespace Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions (optional)
+   * @param sessionId UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session (optional)
    * @param sinceLastBeaconMilliseconds How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. (optional)
    * @return DeploymentPing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DeploymentPing> getJourneyDeploymentCustomerPingWithHttpInfo(String deploymentId, String customerCookieId, String sessionId, String dl, String dt, String appNamespace, Long sinceLastBeaconMilliseconds) throws IOException {
-    return getJourneyDeploymentCustomerPing(createGetJourneyDeploymentCustomerPingRequest(deploymentId, customerCookieId, sessionId, dl, dt, appNamespace, sinceLastBeaconMilliseconds).withHttpInfo());
+  public ApiResponse<DeploymentPing> getJourneyDeploymentCustomerPingWithHttpInfo(String deploymentId, String customerCookieId, String dl, String dt, String appNamespace, String sessionId, Long sinceLastBeaconMilliseconds) throws IOException {
+    return getJourneyDeploymentCustomerPing(createGetJourneyDeploymentCustomerPingRequest(deploymentId, customerCookieId, dl, dt, appNamespace, sessionId, sinceLastBeaconMilliseconds).withHttpInfo());
   }
 
-  private GetJourneyDeploymentCustomerPingRequest createGetJourneyDeploymentCustomerPingRequest(String deploymentId, String customerCookieId, String sessionId, String dl, String dt, String appNamespace, Long sinceLastBeaconMilliseconds) {
+  private GetJourneyDeploymentCustomerPingRequest createGetJourneyDeploymentCustomerPingRequest(String deploymentId, String customerCookieId, String dl, String dt, String appNamespace, String sessionId, Long sinceLastBeaconMilliseconds) {
     return GetJourneyDeploymentCustomerPingRequest.builder()
             .withDeploymentId(deploymentId)
 
             .withCustomerCookieId(customerCookieId)
-
-            .withSessionId(sessionId)
 
             .withDl(dl)
 
             .withDt(dt)
 
             .withAppNamespace(appNamespace)
+
+            .withSessionId(sessionId)
 
             .withSinceLastBeaconMilliseconds(sinceLastBeaconMilliseconds)
 
