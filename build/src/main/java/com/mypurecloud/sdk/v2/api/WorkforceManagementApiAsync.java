@@ -45,6 +45,7 @@ import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuCurrentAgentScheduleSearchResponse;
 import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
 import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
+import com.mypurecloud.sdk.v2.model.BuForecastStaffingRequirementsResultResponse;
 import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
@@ -109,6 +110,9 @@ import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
 import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
 import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationResponse;
+import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationUploadResponse;
+import com.mypurecloud.sdk.v2.model.PerformancePredictionResponse;
 import com.mypurecloud.sdk.v2.model.PlanningGroup;
 import com.mypurecloud.sdk.v2.model.PlanningGroupList;
 import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
@@ -146,6 +150,7 @@ import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateMuAgentsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
 import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
@@ -226,12 +231,15 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeek
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsDivisionviewsRequest;
@@ -280,6 +288,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPl
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest;
@@ -306,6 +315,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPla
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest;
@@ -3228,6 +3239,156 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Get the performance prediction for the associated schedule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PerformancePredictionResponse> getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsAsync(GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRequest request, final AsyncApiCallback<PerformancePredictionResponse> callback) {
+    try {
+      final SettableFuture<PerformancePredictionResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PerformancePredictionResponse>() {}, new AsyncApiCallback<ApiResponse<PerformancePredictionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformancePredictionResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the performance prediction for the associated schedule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PerformancePredictionResponse>> getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PerformancePredictionResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PerformancePredictionResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PerformancePredictionResponse>() {}, new AsyncApiCallback<ApiResponse<PerformancePredictionResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformancePredictionResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformancePredictionResponse> response = (ApiResponse<PerformancePredictionResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformancePredictionResponse> response = (ApiResponse<PerformancePredictionResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get recalculated performance prediction result
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PerformancePredictionRecalculationResponse> getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationAsync(GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationRequest request, final AsyncApiCallback<PerformancePredictionRecalculationResponse> callback) {
+    try {
+      final SettableFuture<PerformancePredictionRecalculationResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PerformancePredictionRecalculationResponse>() {}, new AsyncApiCallback<ApiResponse<PerformancePredictionRecalculationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformancePredictionRecalculationResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get recalculated performance prediction result
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PerformancePredictionRecalculationResponse>> getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PerformancePredictionRecalculationResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PerformancePredictionRecalculationResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PerformancePredictionRecalculationResponse>() {}, new AsyncApiCallback<ApiResponse<PerformancePredictionRecalculationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformancePredictionRecalculationResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformancePredictionRecalculationResponse> response = (ApiResponse<PerformancePredictionRecalculationResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformancePredictionRecalculationResponse> response = (ApiResponse<PerformancePredictionRecalculationResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the list of week schedules for the specified week
    * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param request the request object
@@ -3666,6 +3827,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ForecastPlanningGroupsResponse> response = (ApiResponse<ForecastPlanningGroupsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the staffing requirement by planning group for a forecast
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuForecastStaffingRequirementsResultResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementAsync(GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest request, final AsyncApiCallback<BuForecastStaffingRequirementsResultResponse> callback) {
+    try {
+      final SettableFuture<BuForecastStaffingRequirementsResultResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuForecastStaffingRequirementsResultResponse>() {}, new AsyncApiCallback<ApiResponse<BuForecastStaffingRequirementsResultResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuForecastStaffingRequirementsResultResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the staffing requirement by planning group for a forecast
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuForecastStaffingRequirementsResultResponse>> getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BuForecastStaffingRequirementsResultResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuForecastStaffingRequirementsResultResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuForecastStaffingRequirementsResultResponse>() {}, new AsyncApiCallback<ApiResponse<BuForecastStaffingRequirementsResultResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuForecastStaffingRequirementsResultResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuForecastStaffingRequirementsResultResponse> response = (ApiResponse<BuForecastStaffingRequirementsResultResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuForecastStaffingRequirementsResultResponse> response = (ApiResponse<BuForecastStaffingRequirementsResultResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7284,6 +7520,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Update agent configurations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> patchWorkforcemanagementManagementunitAgentsAsync(PatchWorkforcemanagementManagementunitAgentsRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update agent configurations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> patchWorkforcemanagementManagementunitAgentsAsync(ApiRequest<UpdateMuAgentsRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Updates a time off limit object.
    * Updates time off limit object properties, but not daily values.
    * @param request the request object
@@ -9224,6 +9535,156 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BuAsyncScheduleResponse> response = (ApiResponse<BuAsyncScheduleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request a daily recalculation of the performance prediction for the associated schedule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PerformancePredictionRecalculationResponse> postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsAsync(PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest request, final AsyncApiCallback<PerformancePredictionRecalculationResponse> callback) {
+    try {
+      final SettableFuture<PerformancePredictionRecalculationResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PerformancePredictionRecalculationResponse>() {}, new AsyncApiCallback<ApiResponse<PerformancePredictionRecalculationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformancePredictionRecalculationResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Request a daily recalculation of the performance prediction for the associated schedule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PerformancePredictionRecalculationResponse>> postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsAsync(ApiRequest<WfmProcessUploadRequest> request, final AsyncApiCallback<ApiResponse<PerformancePredictionRecalculationResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PerformancePredictionRecalculationResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PerformancePredictionRecalculationResponse>() {}, new AsyncApiCallback<ApiResponse<PerformancePredictionRecalculationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformancePredictionRecalculationResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformancePredictionRecalculationResponse> response = (ApiResponse<PerformancePredictionRecalculationResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformancePredictionRecalculationResponse> response = (ApiResponse<PerformancePredictionRecalculationResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Upload daily activity changes to be able to request a performance prediction recalculation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PerformancePredictionRecalculationUploadResponse> postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlAsync(PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlRequest request, final AsyncApiCallback<PerformancePredictionRecalculationUploadResponse> callback) {
+    try {
+      final SettableFuture<PerformancePredictionRecalculationUploadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PerformancePredictionRecalculationUploadResponse>() {}, new AsyncApiCallback<ApiResponse<PerformancePredictionRecalculationUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformancePredictionRecalculationUploadResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Upload daily activity changes to be able to request a performance prediction recalculation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PerformancePredictionRecalculationUploadResponse>> postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlAsync(ApiRequest<UploadUrlRequestBody> request, final AsyncApiCallback<ApiResponse<PerformancePredictionRecalculationUploadResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PerformancePredictionRecalculationUploadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PerformancePredictionRecalculationUploadResponse>() {}, new AsyncApiCallback<ApiResponse<PerformancePredictionRecalculationUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformancePredictionRecalculationUploadResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformancePredictionRecalculationUploadResponse> response = (ApiResponse<PerformancePredictionRecalculationUploadResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformancePredictionRecalculationUploadResponse> response = (ApiResponse<PerformancePredictionRecalculationUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

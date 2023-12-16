@@ -38,7 +38,7 @@ public class RecordingJobsQuery  implements Serializable {
     }
   }
   /**
-   * Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported
+   * Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
    */
  @JsonDeserialize(using = ActionEnumDeserializer.class)
   public enum ActionEnum {
@@ -85,14 +85,14 @@ public class RecordingJobsQuery  implements Serializable {
 
   
   /**
-   * Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported
+   * Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
    **/
   public RecordingJobsQuery action(ActionEnum action) {
     this.action = action;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported")
+  @ApiModelProperty(example = "null", required = true, value = "Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.")
   @JsonProperty("action")
   public ActionEnum getAction() {
     return action;
@@ -247,14 +247,14 @@ public class RecordingJobsQuery  implements Serializable {
 
 
   /**
-   * Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability
+   * Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is required only when querying for conversations lesser than 5 years.
    **/
   public RecordingJobsQuery conversationQuery(AsyncConversationQuery conversationQuery) {
     this.conversationQuery = conversationQuery;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability")
+  @ApiModelProperty(example = "null", value = "Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is required only when querying for conversations lesser than 5 years.")
   @JsonProperty("conversationQuery")
   public AsyncConversationQuery getConversationQuery() {
     return conversationQuery;

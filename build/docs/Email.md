@@ -33,6 +33,7 @@ title: Email
 | **wrapup** | <!----><!---->[**Wrapup**](Wrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
 | **afterCallWork** | <!----><!---->[**AfterCallWork**](AfterCallWork.html)<!----> | After-call work for the communication. |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
+| **queueMediaSettings** | <!----><!---->[**ConversationQueueMediaSettings**](ConversationQueueMediaSettings.html)<!----> | Represents the queue settings for this media type. |  [optional] |
 {: class="table table-striped"}
 
 

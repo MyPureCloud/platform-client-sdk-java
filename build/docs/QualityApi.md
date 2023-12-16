@@ -1315,7 +1315,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [EvaluationForm](EvaluationForm.html) getQualityForm(formId)
+> [EvaluationFormResponse](EvaluationFormResponse.html) getQualityForm(formId)
 
 Get an evaluation form
 
@@ -1349,7 +1349,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 String formId = "formId_example"; // String | Form ID
 try {
-    EvaluationForm result = apiInstance.getQualityForm(formId);
+    EvaluationFormResponse result = apiInstance.getQualityForm(formId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityForm");
@@ -1368,7 +1368,7 @@ try {
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="getQualityFormVersions"></a>
 
@@ -1376,7 +1376,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormVersions(formId, pageSize, pageNumber)
+> [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing.html) getQualityFormVersions(formId, pageSize, pageNumber)
 
 Gets all the revisions for a specific evaluation.
 
@@ -1412,7 +1412,7 @@ String formId = "formId_example"; // String | Form ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 try {
-    EvaluationFormEntityListing result = apiInstance.getQualityFormVersions(formId, pageSize, pageNumber);
+    EvaluationFormResponseEntityListing result = apiInstance.getQualityFormVersions(formId, pageSize, pageNumber);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityFormVersions");
@@ -1433,7 +1433,7 @@ try {
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="getQualityForms"></a>
 
@@ -1441,7 +1441,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
+> [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing.html) getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
 
 Get the list of evaluation forms
 
@@ -1482,7 +1482,7 @@ String expand = "expand_example"; // String | If 'expand=publishHistory', then e
 String name = "name_example"; // String | Name
 String sortOrder = "sortOrder_example"; // String | Order to sort results, either asc or desc
 try {
-    EvaluationFormEntityListing result = apiInstance.getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);
+    EvaluationFormResponseEntityListing result = apiInstance.getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityForms");
@@ -1508,7 +1508,7 @@ try {
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="getQualityFormsEvaluation"></a>
 
@@ -1516,7 +1516,7 @@ try {
 
 
 
-> [EvaluationForm](EvaluationForm.html) getQualityFormsEvaluation(formId)
+> [EvaluationFormResponse](EvaluationFormResponse.html) getQualityFormsEvaluation(formId)
 
 Get an evaluation form
 
@@ -1550,7 +1550,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 String formId = "formId_example"; // String | Form ID
 try {
-    EvaluationForm result = apiInstance.getQualityFormsEvaluation(formId);
+    EvaluationFormResponse result = apiInstance.getQualityFormsEvaluation(formId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityFormsEvaluation");
@@ -1569,7 +1569,7 @@ try {
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="getQualityFormsEvaluationVersions"></a>
 
@@ -1577,7 +1577,7 @@ try {
 
 
 
-> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormsEvaluationVersions(formId, pageSize, pageNumber, sortOrder)
+> [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing.html) getQualityFormsEvaluationVersions(formId, pageSize, pageNumber, sortOrder)
 
 Gets all the revisions for a specific evaluation.
 
@@ -1614,7 +1614,7 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "asc"; // String | Sort order
 try {
-    EvaluationFormEntityListing result = apiInstance.getQualityFormsEvaluationVersions(formId, pageSize, pageNumber, sortOrder);
+    EvaluationFormResponseEntityListing result = apiInstance.getQualityFormsEvaluationVersions(formId, pageSize, pageNumber, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityFormsEvaluationVersions");
@@ -1636,7 +1636,7 @@ try {
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="getQualityFormsEvaluations"></a>
 
@@ -1644,7 +1644,7 @@ try {
 
 
 
-> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
+> [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing.html) getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
 
 Get the list of evaluation forms
 
@@ -1687,7 +1687,7 @@ String expand = "expand_example"; // String | If 'expand=publishHistory', then e
 String name = "name_example"; // String | Name
 String sortOrder = "sortOrder_example"; // String | Order to sort results, either asc or desc
 try {
-    EvaluationFormEntityListing result = apiInstance.getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);
+    EvaluationFormResponseEntityListing result = apiInstance.getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityFormsEvaluations");
@@ -1713,7 +1713,7 @@ try {
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="getQualityFormsEvaluationsBulkContexts"></a>
 
@@ -1721,7 +1721,7 @@ try {
 
 
 
-> [List&lt;EvaluationForm&gt;](EvaluationForm.html) getQualityFormsEvaluationsBulkContexts(contextId)
+> [List&lt;EvaluationFormResponse&gt;](EvaluationFormResponse.html) getQualityFormsEvaluationsBulkContexts(contextId)
 
 Retrieve a list of the latest published evaluation form versions by context ids
 
@@ -1755,7 +1755,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 List<String> contextId = Arrays.asList(null); // List<String> | A comma-delimited list of valid evaluation form context ids
 try {
-    List<EvaluationForm> result = apiInstance.getQualityFormsEvaluationsBulkContexts(contextId);
+    List<EvaluationFormResponse> result = apiInstance.getQualityFormsEvaluationsBulkContexts(contextId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityFormsEvaluationsBulkContexts");
@@ -1774,7 +1774,7 @@ try {
 
 ### Return type
 
-[**List&lt;EvaluationForm&gt;**](EvaluationForm.html)
+[**List&lt;EvaluationFormResponse&gt;**](EvaluationFormResponse.html)
 
 <a name="getQualityFormsSurvey"></a>
 
@@ -2107,7 +2107,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [EvaluationForm](EvaluationForm.html) getQualityPublishedform(formId)
+> [EvaluationFormResponse](EvaluationFormResponse.html) getQualityPublishedform(formId)
 
 Get the published evaluation forms.
 
@@ -2141,7 +2141,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 String formId = "formId_example"; // String | Form ID
 try {
-    EvaluationForm result = apiInstance.getQualityPublishedform(formId);
+    EvaluationFormResponse result = apiInstance.getQualityPublishedform(formId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityPublishedform");
@@ -2160,7 +2160,7 @@ try {
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="getQualityPublishedforms"></a>
 
@@ -2168,7 +2168,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityPublishedforms(pageSize, pageNumber, name, onlyLatestPerContext)
+> [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing.html) getQualityPublishedforms(pageSize, pageNumber, name, onlyLatestPerContext)
 
 Get the published evaluation forms.
 
@@ -2205,7 +2205,7 @@ Integer pageNumber = 1; // Integer | Page number
 String name = "name_example"; // String | Name
 Boolean onlyLatestPerContext = false; // Boolean | onlyLatestPerContext
 try {
-    EvaluationFormEntityListing result = apiInstance.getQualityPublishedforms(pageSize, pageNumber, name, onlyLatestPerContext);
+    EvaluationFormResponseEntityListing result = apiInstance.getQualityPublishedforms(pageSize, pageNumber, name, onlyLatestPerContext);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityPublishedforms");
@@ -2227,7 +2227,7 @@ try {
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="getQualityPublishedformsEvaluation"></a>
 
@@ -2235,7 +2235,7 @@ try {
 
 
 
-> [EvaluationForm](EvaluationForm.html) getQualityPublishedformsEvaluation(formId)
+> [EvaluationFormResponse](EvaluationFormResponse.html) getQualityPublishedformsEvaluation(formId)
 
 Get the most recent published version of an evaluation form.
 
@@ -2269,7 +2269,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 String formId = "formId_example"; // String | Form ID
 try {
-    EvaluationForm result = apiInstance.getQualityPublishedformsEvaluation(formId);
+    EvaluationFormResponse result = apiInstance.getQualityPublishedformsEvaluation(formId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityPublishedformsEvaluation");
@@ -2288,7 +2288,7 @@ try {
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="getQualityPublishedformsEvaluations"></a>
 
@@ -2296,7 +2296,7 @@ try {
 
 
 
-> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityPublishedformsEvaluations(pageSize, pageNumber, name, onlyLatestPerContext)
+> [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing.html) getQualityPublishedformsEvaluations(pageSize, pageNumber, name, onlyLatestPerContext)
 
 Get the published evaluation forms.
 
@@ -2333,7 +2333,7 @@ Integer pageNumber = 1; // Integer | Page number
 String name = "name_example"; // String | Name
 Boolean onlyLatestPerContext = false; // Boolean | onlyLatestPerContext
 try {
-    EvaluationFormEntityListing result = apiInstance.getQualityPublishedformsEvaluations(pageSize, pageNumber, name, onlyLatestPerContext);
+    EvaluationFormResponseEntityListing result = apiInstance.getQualityPublishedformsEvaluations(pageSize, pageNumber, name, onlyLatestPerContext);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityPublishedformsEvaluations");
@@ -2355,7 +2355,7 @@ try {
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="getQualityPublishedformsSurvey"></a>
 
@@ -3219,7 +3219,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [EvaluationForm](EvaluationForm.html) postQualityForms(body)
+> [EvaluationFormResponse](EvaluationFormResponse.html) postQualityForms(body)
 
 Create an evaluation form.
 
@@ -3253,7 +3253,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 EvaluationForm body = new EvaluationForm(); // EvaluationForm | Evaluation form
 try {
-    EvaluationForm result = apiInstance.postQualityForms(body);
+    EvaluationFormResponse result = apiInstance.postQualityForms(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#postQualityForms");
@@ -3272,7 +3272,7 @@ try {
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="postQualityFormsEvaluations"></a>
 
@@ -3280,7 +3280,7 @@ try {
 
 
 
-> [EvaluationForm](EvaluationForm.html) postQualityFormsEvaluations(body)
+> [EvaluationFormResponse](EvaluationFormResponse.html) postQualityFormsEvaluations(body)
 
 Create an evaluation form.
 
@@ -3314,7 +3314,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 EvaluationForm body = new EvaluationForm(); // EvaluationForm | Evaluation form
 try {
-    EvaluationForm result = apiInstance.postQualityFormsEvaluations(body);
+    EvaluationFormResponse result = apiInstance.postQualityFormsEvaluations(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#postQualityFormsEvaluations");
@@ -3333,7 +3333,7 @@ try {
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="postQualityFormsSurveys"></a>
 
@@ -3402,7 +3402,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [EvaluationForm](EvaluationForm.html) postQualityPublishedforms(body)
+> [EvaluationFormResponse](EvaluationFormResponse.html) postQualityPublishedforms(body)
 
 Publish an evaluation form.
 
@@ -3436,7 +3436,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 PublishForm body = new PublishForm(); // PublishForm | Publish request containing id of form to publish
 try {
-    EvaluationForm result = apiInstance.postQualityPublishedforms(body);
+    EvaluationFormResponse result = apiInstance.postQualityPublishedforms(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#postQualityPublishedforms");
@@ -3455,7 +3455,7 @@ try {
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="postQualityPublishedformsEvaluations"></a>
 
@@ -3463,7 +3463,7 @@ try {
 
 
 
-> [EvaluationForm](EvaluationForm.html) postQualityPublishedformsEvaluations(body)
+> [EvaluationFormResponse](EvaluationFormResponse.html) postQualityPublishedformsEvaluations(body)
 
 Publish an evaluation form.
 
@@ -3497,7 +3497,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 PublishForm body = new PublishForm(); // PublishForm | Publish request containing id of form to publish
 try {
-    EvaluationForm result = apiInstance.postQualityPublishedformsEvaluations(body);
+    EvaluationFormResponse result = apiInstance.postQualityPublishedformsEvaluations(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#postQualityPublishedformsEvaluations");
@@ -3516,7 +3516,7 @@ try {
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="postQualityPublishedformsSurveys"></a>
 
@@ -3779,7 +3779,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [EvaluationForm](EvaluationForm.html) putQualityForm(formId, body)
+> [EvaluationFormResponse](EvaluationFormResponse.html) putQualityForm(formId, body)
 
 Update an evaluation form.
 
@@ -3814,7 +3814,7 @@ QualityApi apiInstance = new QualityApi();
 String formId = "formId_example"; // String | Form ID
 EvaluationForm body = new EvaluationForm(); // EvaluationForm | Evaluation form
 try {
-    EvaluationForm result = apiInstance.putQualityForm(formId, body);
+    EvaluationFormResponse result = apiInstance.putQualityForm(formId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#putQualityForm");
@@ -3834,7 +3834,7 @@ try {
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="putQualityFormsEvaluation"></a>
 
@@ -3842,7 +3842,7 @@ try {
 
 
 
-> [EvaluationForm](EvaluationForm.html) putQualityFormsEvaluation(formId, body)
+> [EvaluationFormResponse](EvaluationFormResponse.html) putQualityFormsEvaluation(formId, body)
 
 Update an evaluation form.
 
@@ -3877,7 +3877,7 @@ QualityApi apiInstance = new QualityApi();
 String formId = "formId_example"; // String | Form ID
 EvaluationForm body = new EvaluationForm(); // EvaluationForm | Evaluation form
 try {
-    EvaluationForm result = apiInstance.putQualityFormsEvaluation(formId, body);
+    EvaluationFormResponse result = apiInstance.putQualityFormsEvaluation(formId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#putQualityFormsEvaluation");
@@ -3897,7 +3897,7 @@ try {
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="putQualityFormsSurvey"></a>
 

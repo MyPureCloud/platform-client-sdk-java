@@ -921,7 +921,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
 String roleId = "roleId_example"; // String | Role ID
-Boolean userCount = true; // Boolean | Fetch the count of users who have this role granted in at least one division
+Boolean userCount = true; // Boolean | Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to 'true' can lead to slower load times or timeouts for role queries with large member counts.
 List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role
 try {
     DomainOrganizationRole result = apiInstance.getAuthorizationRole(roleId, userCount, expand);
@@ -938,7 +938,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
-| **userCount** | **Boolean**| Fetch the count of users who have this role granted in at least one division | [optional] [default to true]<br />**Values**: true, false 
+| **userCount** | **Boolean**| Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to &#39;true&#39; can lead to slower load times or timeouts for role queries with large member counts. | [optional] [default to true]<br />**Values**: true, false 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role | [optional]<br />**Values**: unusedPermissions 
 {: class="table-striped"}
 

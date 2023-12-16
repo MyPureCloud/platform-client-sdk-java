@@ -45,12 +45,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitWeekScheduleGenerationresults**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleGenerationresults) | Get the generation results for a generated schedule |
 | [**getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast) | Get the headcount forecast by planning group for the schedule |
 | [**getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent) | Loads agent's schedule history. |
+| [**getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions) | Get the performance prediction for the associated schedule |
+| [**getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation) | Get recalculated performance prediction result |
 | [**getWorkforcemanagementBusinessunitWeekSchedules**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekSchedules) | Get the list of week schedules for the specified week |
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecast) | Get a short term forecast |
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecastData**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastData) | Get the result of a short term forecast calculation |
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults) | Gets the forecast generation results |
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata) | Get the result of a long term forecast calculation |
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups) | Gets the forecast planning group snapshot |
+| [**getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement) | Get the staffing requirement by planning group for a forecast |
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecasts**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecasts) | Get short term forecasts |
 | [**getWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunits) | Get business units |
 | [**getWorkforcemanagementBusinessunitsDivisionviews**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitsDivisionviews) | Get business units across divisions |
@@ -99,6 +102,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitSchedulingRun) | Mark a schedule run as applied |
 | [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitServicegoaltemplate) | Updates a service goal template |
 | [**patchWorkforcemanagementManagementunit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunit) | Update the requested management unit |
+| [**patchWorkforcemanagementManagementunitAgents**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitAgents) | Update agent configurations |
 | [**patchWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeofflimit) | Updates a time off limit object. |
 | [**patchWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeoffplan) | Updates a time off plan |
 | [**patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus) | Set integration status for a time off request. |
@@ -125,6 +129,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitServicegoaltemplates) | Adds a new service goal template |
 | [**postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery) | Loads agent schedule data from the schedule. Used in combination with the metadata route |
 | [**postWorkforcemanagementBusinessunitWeekScheduleCopy**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleCopy) | Copy a schedule |
+| [**postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations) | Request a daily recalculation of the performance prediction for the associated schedule |
+| [**postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl) | Upload daily activity changes to be able to request a performance prediction recalculation |
 | [**postWorkforcemanagementBusinessunitWeekScheduleReschedule**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleReschedule) | Start a rescheduling run |
 | [**postWorkforcemanagementBusinessunitWeekScheduleUpdate**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleUpdate) | Starts processing a schedule update |
 | [**postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl) | Creates a signed upload URL for updating a schedule |
@@ -2767,6 +2773,140 @@ try {
 
 [**BuAgentScheduleHistoryResponse**](BuAgentScheduleHistoryResponse.html)
 
+<a name="getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions"></a>
+
+# **getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions**
+
+
+
+> [PerformancePredictionResponse](PerformancePredictionResponse.html) getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId)
+
+Get the performance prediction for the associated schedule
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions  
+
+Requires ANY permissions: 
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the performance prediction belongs
+String weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
+String scheduleId = "scheduleId_example"; // String | The ID of the schedule the performance prediction belongs to
+try {
+    PerformancePredictionResponse result = apiInstance.getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit to which the performance prediction belongs | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format | 
+| **scheduleId** | **String**| The ID of the schedule the performance prediction belongs to | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PerformancePredictionResponse**](PerformancePredictionResponse.html)
+
+<a name="getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation"></a>
+
+# **getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation**
+
+
+
+> [PerformancePredictionRecalculationResponse](PerformancePredictionRecalculationResponse.html) getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId)
+
+Get recalculated performance prediction result
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId}  
+
+Requires ANY permissions: 
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the performance prediction belongs
+String weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
+String scheduleId = "scheduleId_example"; // String | The ID of the schedule the recalculation belongs to
+String recalculationId = "recalculationId_example"; // String | The ID of the recalculation request
+try {
+    PerformancePredictionRecalculationResponse result = apiInstance.getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit to which the performance prediction belongs | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format | 
+| **scheduleId** | **String**| The ID of the schedule the recalculation belongs to | 
+| **recalculationId** | **String**| The ID of the recalculation request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse.html)
+
 <a name="getWorkforcemanagementBusinessunitWeekSchedules"></a>
 
 # **getWorkforcemanagementBusinessunitWeekSchedules**
@@ -3175,6 +3315,73 @@ try {
 ### Return type
 
 [**ForecastPlanningGroupsResponse**](ForecastPlanningGroupsResponse.html)
+
+<a name="getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement"></a>
+
+# **getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement**
+
+
+
+> [BuForecastStaffingRequirementsResultResponse](BuForecastStaffingRequirementsResultResponse.html) getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, weekNumbers)
+
+Get the staffing requirement by planning group for a forecast
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement  
+
+Requires ANY permissions: 
+
+* wfm:staffingRequirement:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
+LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String forecastId = "forecastId_example"; // String | The ID of the forecast
+List<String> weekNumbers = Arrays.asList(null); // List<String> | The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
+try {
+    BuForecastStaffingRequirementsResultResponse result = apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, weekNumbers);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
+| **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **forecastId** | **String**| The ID of the forecast | 
+| **weekNumbers** | [**List&lt;String&gt;**](String.html)| The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuForecastStaffingRequirementsResultResponse**](BuForecastStaffingRequirementsResultResponse.html)
 
 <a name="getWorkforcemanagementBusinessunitWeekShorttermforecasts"></a>
 
@@ -6296,6 +6503,68 @@ try {
 
 [**ManagementUnit**](ManagementUnit.html)
 
+<a name="patchWorkforcemanagementManagementunitAgents"></a>
+
+# **patchWorkforcemanagementManagementunitAgents**
+
+
+
+> Void patchWorkforcemanagementManagementunitAgents(managementUnitId, body)
+
+Update agent configurations
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents  
+
+Requires ANY permissions: 
+
+* wfm:agent:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+UpdateMuAgentsRequest body = new UpdateMuAgentsRequest(); // UpdateMuAgentsRequest | body
+try {
+    apiInstance.patchWorkforcemanagementManagementunitAgents(managementUnitId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitAgents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**UpdateMuAgentsRequest**](UpdateMuAgentsRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="patchWorkforcemanagementManagementunitTimeofflimit"></a>
 
 # **patchWorkforcemanagementManagementunitTimeofflimit**
@@ -7973,6 +8242,140 @@ try {
 ### Return type
 
 [**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations"></a>
+
+# **postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations**
+
+
+
+> [PerformancePredictionRecalculationResponse](PerformancePredictionRecalculationResponse.html) postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body)
+
+Request a daily recalculation of the performance prediction for the associated schedule
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations  
+
+Requires ANY permissions: 
+
+* wfm:schedule:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the performance prediction belongs
+String weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
+String scheduleId = "scheduleId_example"; // String | The ID of the schedule the performance prediction belongs to
+WfmProcessUploadRequest body = new WfmProcessUploadRequest(); // WfmProcessUploadRequest | body
+try {
+    PerformancePredictionRecalculationResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit to which the performance prediction belongs | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format | 
+| **scheduleId** | **String**| The ID of the schedule the performance prediction belongs to | 
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl"></a>
+
+# **postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl**
+
+
+
+> [PerformancePredictionRecalculationUploadResponse](PerformancePredictionRecalculationUploadResponse.html) postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body)
+
+Upload daily activity changes to be able to request a performance prediction recalculation
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl  
+
+Requires ANY permissions: 
+
+* wfm:schedule:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the performance prediction belongs
+String weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
+String scheduleId = "scheduleId_example"; // String | The ID of the schedule the performance prediction belongs to
+UploadUrlRequestBody body = new UploadUrlRequestBody(); // UploadUrlRequestBody | body
+try {
+    PerformancePredictionRecalculationUploadResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit to which the performance prediction belongs | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format | 
+| **scheduleId** | **String**| The ID of the schedule the performance prediction belongs to | 
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PerformancePredictionRecalculationUploadResponse**](PerformancePredictionRecalculationUploadResponse.html)
 
 <a name="postWorkforcemanagementBusinessunitWeekScheduleReschedule"></a>
 

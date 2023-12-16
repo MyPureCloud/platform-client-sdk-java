@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
 import com.mypurecloud.sdk.v2.model.AfterCallWork;
+import com.mypurecloud.sdk.v2.model.ConversationQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.JourneyContext;
 import com.mypurecloud.sdk.v2.model.MessageDetails;
@@ -321,6 +322,7 @@ public class Message  implements Serializable {
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
   private String byoSmsIntegrationId = null;
+  private ConversationQueueMediaSettings queueMediaSettings = null;
 
   
   /**
@@ -844,6 +846,24 @@ public class Message  implements Serializable {
   }
 
 
+  /**
+   * Represents the queue settings for this media type.
+   **/
+  public Message queueMediaSettings(ConversationQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the queue settings for this media type.")
+  @JsonProperty("queueMediaSettings")
+  public ConversationQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -882,12 +902,13 @@ public class Message  implements Serializable {
             Objects.equals(this.afterCallWork, message.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, message.afterCallWorkRequired) &&
             Objects.equals(this.agentAssistantId, message.agentAssistantId) &&
-            Objects.equals(this.byoSmsIntegrationId, message.byoSmsIntegrationId);
+            Objects.equals(this.byoSmsIntegrationId, message.byoSmsIntegrationId) &&
+            Objects.equals(this.queueMediaSettings, message.queueMediaSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, authenticated, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, byoSmsIntegrationId);
+    return Objects.hash(state, initialState, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, authenticated, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, byoSmsIntegrationId, queueMediaSettings);
   }
 
   @Override
@@ -924,6 +945,7 @@ public class Message  implements Serializable {
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("    byoSmsIntegrationId: ").append(toIndentedString(byoSmsIntegrationId)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

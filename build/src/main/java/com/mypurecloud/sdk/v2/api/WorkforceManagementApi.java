@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuCurrentAgentScheduleSearchResponse;
 import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
 import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
+import com.mypurecloud.sdk.v2.model.BuForecastStaffingRequirementsResultResponse;
 import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
@@ -106,6 +107,9 @@ import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
 import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
 import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationResponse;
+import com.mypurecloud.sdk.v2.model.PerformancePredictionRecalculationUploadResponse;
+import com.mypurecloud.sdk.v2.model.PerformancePredictionResponse;
 import com.mypurecloud.sdk.v2.model.PlanningGroup;
 import com.mypurecloud.sdk.v2.model.PlanningGroupList;
 import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
@@ -143,6 +147,7 @@ import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateMuAgentsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
 import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
@@ -223,12 +228,15 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeek
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsDivisionviewsRequest;
@@ -277,6 +285,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPl
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest;
@@ -303,6 +312,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPla
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest;
@@ -3446,6 +3457,182 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get the performance prediction for the associated schedule
+   * 
+   * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format (required)
+   * @param scheduleId The ID of the schedule the performance prediction belongs to (required)
+   * @return PerformancePredictionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformancePredictionResponse getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(String businessUnitId, String weekId, String scheduleId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(createGetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRequest(businessUnitId, weekId, scheduleId));
+  }
+
+  /**
+   * Get the performance prediction for the associated schedule
+   * 
+   * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format (required)
+   * @param scheduleId The ID of the schedule the performance prediction belongs to (required)
+   * @return PerformancePredictionResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformancePredictionResponse> getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsWithHttpInfo(String businessUnitId, String weekId, String scheduleId) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(createGetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRequest(businessUnitId, weekId, scheduleId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRequest createGetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRequest(String businessUnitId, String weekId, String scheduleId) {
+    return GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withWeekId(weekId)
+
+            .withScheduleId(scheduleId)
+
+            .build();
+  }
+
+  /**
+   * Get the performance prediction for the associated schedule
+   * 
+   * @param request The request object
+   * @return PerformancePredictionResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformancePredictionResponse getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PerformancePredictionResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PerformancePredictionResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the performance prediction for the associated schedule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformancePredictionResponse> getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PerformancePredictionResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformancePredictionResponse> response = (ApiResponse<PerformancePredictionResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformancePredictionResponse> response = (ApiResponse<PerformancePredictionResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get recalculated performance prediction result
+   * 
+   * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format (required)
+   * @param scheduleId The ID of the schedule the recalculation belongs to (required)
+   * @param recalculationId The ID of the recalculation request (required)
+   * @return PerformancePredictionRecalculationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformancePredictionRecalculationResponse getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(String businessUnitId, String weekId, String scheduleId, String recalculationId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(createGetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationRequest(businessUnitId, weekId, scheduleId, recalculationId));
+  }
+
+  /**
+   * Get recalculated performance prediction result
+   * 
+   * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format (required)
+   * @param scheduleId The ID of the schedule the recalculation belongs to (required)
+   * @param recalculationId The ID of the recalculation request (required)
+   * @return PerformancePredictionRecalculationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformancePredictionRecalculationResponse> getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationWithHttpInfo(String businessUnitId, String weekId, String scheduleId, String recalculationId) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(createGetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationRequest(businessUnitId, weekId, scheduleId, recalculationId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationRequest createGetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationRequest(String businessUnitId, String weekId, String scheduleId, String recalculationId) {
+    return GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withWeekId(weekId)
+
+            .withScheduleId(scheduleId)
+
+            .withRecalculationId(recalculationId)
+
+            .build();
+  }
+
+  /**
+   * Get recalculated performance prediction result
+   * 
+   * @param request The request object
+   * @return PerformancePredictionRecalculationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformancePredictionRecalculationResponse getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PerformancePredictionRecalculationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PerformancePredictionRecalculationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get recalculated performance prediction result
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformancePredictionRecalculationResponse> getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PerformancePredictionRecalculationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformancePredictionRecalculationResponse> response = (ApiResponse<PerformancePredictionRecalculationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformancePredictionRecalculationResponse> response = (ApiResponse<PerformancePredictionRecalculationResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get the list of week schedules for the specified week
    * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param businessUnitId The ID of the business unit (required)
@@ -3977,6 +4164,96 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ForecastPlanningGroupsResponse> response = (ApiResponse<ForecastPlanningGroupsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the staffing requirement by planning group for a forecast
+   * 
+   * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @param weekNumbers The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified (optional)
+   * @return BuForecastStaffingRequirementsResultResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuForecastStaffingRequirementsResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> weekNumbers) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(createGetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest(businessUnitId, weekDateId, forecastId, weekNumbers));
+  }
+
+  /**
+   * Get the staffing requirement by planning group for a forecast
+   * 
+   * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @param weekNumbers The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified (optional)
+   * @return BuForecastStaffingRequirementsResultResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuForecastStaffingRequirementsResultResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> weekNumbers) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(createGetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest(businessUnitId, weekDateId, forecastId, weekNumbers).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> weekNumbers) {
+    return GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withWeekDateId(weekDateId)
+
+            .withForecastId(forecastId)
+
+            .withWeekNumbers(weekNumbers)
+
+            .build();
+  }
+
+  /**
+   * Get the staffing requirement by planning group for a forecast
+   * 
+   * @param request The request object
+   * @return BuForecastStaffingRequirementsResultResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuForecastStaffingRequirementsResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuForecastStaffingRequirementsResultResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuForecastStaffingRequirementsResultResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the staffing requirement by planning group for a forecast
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuForecastStaffingRequirementsResultResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuForecastStaffingRequirementsResultResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuForecastStaffingRequirementsResultResponse> response = (ApiResponse<BuForecastStaffingRequirementsResultResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuForecastStaffingRequirementsResultResponse> response = (ApiResponse<BuForecastStaffingRequirementsResultResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7899,6 +8176,85 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Update agent configurations
+   * 
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchWorkforcemanagementManagementunitAgents(String managementUnitId, UpdateMuAgentsRequest body) throws IOException, ApiException {
+     patchWorkforcemanagementManagementunitAgents(createPatchWorkforcemanagementManagementunitAgentsRequest(managementUnitId, body));
+  }
+
+  /**
+   * Update agent configurations
+   * 
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchWorkforcemanagementManagementunitAgentsWithHttpInfo(String managementUnitId, UpdateMuAgentsRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunitAgents(createPatchWorkforcemanagementManagementunitAgentsRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitAgentsRequest createPatchWorkforcemanagementManagementunitAgentsRequest(String managementUnitId, UpdateMuAgentsRequest body) {
+    return PatchWorkforcemanagementManagementunitAgentsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update agent configurations
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchWorkforcemanagementManagementunitAgents(PatchWorkforcemanagementManagementunitAgentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update agent configurations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchWorkforcemanagementManagementunitAgents(ApiRequest<UpdateMuAgentsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Updates a time off limit object.
    * Updates time off limit object properties, but not daily values.
    * @param managementUnitId The ID of the management unit. (required)
@@ -10102,6 +10458,186 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuAsyncScheduleResponse> response = (ApiResponse<BuAsyncScheduleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Request a daily recalculation of the performance prediction for the associated schedule
+   * 
+   * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format (required)
+   * @param scheduleId The ID of the schedule the performance prediction belongs to (required)
+   * @param body body (optional)
+   * @return PerformancePredictionRecalculationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformancePredictionRecalculationResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(String businessUnitId, String weekId, String scheduleId, WfmProcessUploadRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(createPostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest(businessUnitId, weekId, scheduleId, body));
+  }
+
+  /**
+   * Request a daily recalculation of the performance prediction for the associated schedule
+   * 
+   * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format (required)
+   * @param scheduleId The ID of the schedule the performance prediction belongs to (required)
+   * @param body body (optional)
+   * @return PerformancePredictionRecalculationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformancePredictionRecalculationResponse> postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsWithHttpInfo(String businessUnitId, String weekId, String scheduleId, WfmProcessUploadRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(createPostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest(businessUnitId, weekId, scheduleId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest createPostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest(String businessUnitId, String weekId, String scheduleId, WfmProcessUploadRequest body) {
+    return PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withWeekId(weekId)
+
+            .withScheduleId(scheduleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Request a daily recalculation of the performance prediction for the associated schedule
+   * 
+   * @param request The request object
+   * @return PerformancePredictionRecalculationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformancePredictionRecalculationResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PerformancePredictionRecalculationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PerformancePredictionRecalculationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request a daily recalculation of the performance prediction for the associated schedule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformancePredictionRecalculationResponse> postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(ApiRequest<WfmProcessUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PerformancePredictionRecalculationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformancePredictionRecalculationResponse> response = (ApiResponse<PerformancePredictionRecalculationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformancePredictionRecalculationResponse> response = (ApiResponse<PerformancePredictionRecalculationResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Upload daily activity changes to be able to request a performance prediction recalculation
+   * 
+   * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format (required)
+   * @param scheduleId The ID of the schedule the performance prediction belongs to (required)
+   * @param body body (optional)
+   * @return PerformancePredictionRecalculationUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformancePredictionRecalculationUploadResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(String businessUnitId, String weekId, String scheduleId, UploadUrlRequestBody body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(createPostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlRequest(businessUnitId, weekId, scheduleId, body));
+  }
+
+  /**
+   * Upload daily activity changes to be able to request a performance prediction recalculation
+   * 
+   * @param businessUnitId The ID of the business unit to which the performance prediction belongs (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format (required)
+   * @param scheduleId The ID of the schedule the performance prediction belongs to (required)
+   * @param body body (optional)
+   * @return PerformancePredictionRecalculationUploadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformancePredictionRecalculationUploadResponse> postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlWithHttpInfo(String businessUnitId, String weekId, String scheduleId, UploadUrlRequestBody body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(createPostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlRequest(businessUnitId, weekId, scheduleId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlRequest createPostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlRequest(String businessUnitId, String weekId, String scheduleId, UploadUrlRequestBody body) {
+    return PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withWeekId(weekId)
+
+            .withScheduleId(scheduleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Upload daily activity changes to be able to request a performance prediction recalculation
+   * 
+   * @param request The request object
+   * @return PerformancePredictionRecalculationUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformancePredictionRecalculationUploadResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PerformancePredictionRecalculationUploadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PerformancePredictionRecalculationUploadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Upload daily activity changes to be able to request a performance prediction recalculation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformancePredictionRecalculationUploadResponse> postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(ApiRequest<UploadUrlRequestBody> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PerformancePredictionRecalculationUploadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformancePredictionRecalculationUploadResponse> response = (ApiResponse<PerformancePredictionRecalculationUploadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformancePredictionRecalculationUploadResponse> response = (ApiResponse<PerformancePredictionRecalculationUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

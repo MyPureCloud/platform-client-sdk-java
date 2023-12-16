@@ -269,6 +269,56 @@ public class Edge  implements Serializable {
   }
   private EdgeDeploymentTypeEnum edgeDeploymentType = null;
 
+  private static class CertTypeEnumDeserializer extends StdDeserializer<CertTypeEnum> {
+    public CertTypeEnumDeserializer() {
+      super(CertTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public CertTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CertTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of certificate used to communicate with edge-proxy.
+   */
+ @JsonDeserialize(using = CertTypeEnumDeserializer.class)
+  public enum CertTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PURECLOUD("PureCloud"),
+    PUBLIC("Public"),
+    CHINA("China"),
+    NOTREQUESTED("NotRequested");
+
+    private String value;
+
+    CertTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CertTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CertTypeEnum value : CertTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CertTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CertTypeEnum certType = null;
+
   private static class CallDrainingStateEnumDeserializer extends StdDeserializer<CallDrainingStateEnum> {
     public CallDrainingStateEnumDeserializer() {
       super(CallDrainingStateEnumDeserializer.class);
@@ -867,6 +917,24 @@ public class Edge  implements Serializable {
   }
 
 
+  /**
+   * The type of certificate used to communicate with edge-proxy.
+   **/
+  public Edge certType(CertTypeEnum certType) {
+    this.certType = certType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of certificate used to communicate with edge-proxy.")
+  @JsonProperty("certType")
+  public CertTypeEnum getCertType() {
+    return certType;
+  }
+  public void setCertType(CertTypeEnum certType) {
+    this.certType = certType;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The current state of the Edge's call draining process before it can be safely rebooted or updated.")
   @JsonProperty("callDrainingState")
   public CallDrainingStateEnum getCallDrainingState() {
@@ -966,6 +1034,7 @@ public class Edge  implements Serializable {
             Objects.equals(this.physicalEdge, edge.physicalEdge) &&
             Objects.equals(this.managed, edge.managed) &&
             Objects.equals(this.edgeDeploymentType, edge.edgeDeploymentType) &&
+            Objects.equals(this.certType, edge.certType) &&
             Objects.equals(this.callDrainingState, edge.callDrainingState) &&
             Objects.equals(this.conversationCount, edge.conversationCount) &&
             Objects.equals(this.proxy, edge.proxy) &&
@@ -976,7 +1045,7 @@ public class Edge  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, interfaces, make, model, apiVersion, softwareVersion, softwareVersionTimestamp, softwareVersionPlatform, softwareVersionConfiguration, fullSoftwareVersion, pairingId, fingerprint, fingerprintHint, currentVersion, stagedVersion, patch, statusCode, edgeGroup, site, softwareStatus, onlineStatus, serialNumber, physicalEdge, managed, edgeDeploymentType, callDrainingState, conversationCount, proxy, offlineConfigCalled, osName, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, interfaces, make, model, apiVersion, softwareVersion, softwareVersionTimestamp, softwareVersionPlatform, softwareVersionConfiguration, fullSoftwareVersion, pairingId, fingerprint, fingerprintHint, currentVersion, stagedVersion, patch, statusCode, edgeGroup, site, softwareStatus, onlineStatus, serialNumber, physicalEdge, managed, edgeDeploymentType, certType, callDrainingState, conversationCount, proxy, offlineConfigCalled, osName, selfUri);
   }
 
   @Override
@@ -1020,6 +1089,7 @@ public class Edge  implements Serializable {
     sb.append("    physicalEdge: ").append(toIndentedString(physicalEdge)).append("\n");
     sb.append("    managed: ").append(toIndentedString(managed)).append("\n");
     sb.append("    edgeDeploymentType: ").append(toIndentedString(edgeDeploymentType)).append("\n");
+    sb.append("    certType: ").append(toIndentedString(certType)).append("\n");
     sb.append("    callDrainingState: ").append(toIndentedString(callDrainingState)).append("\n");
     sb.append("    conversationCount: ").append(toIndentedString(conversationCount)).append("\n");
     sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");

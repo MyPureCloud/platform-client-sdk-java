@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
 import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
@@ -80,6 +81,7 @@ import com.mypurecloud.sdk.v2.model.SmsPhoneNumberImport;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.TestMessage;
 import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
+import com.mypurecloud.sdk.v2.model.UpdateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
@@ -89,6 +91,8 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillGroupEntityListing;
+import com.mypurecloud.sdk.v2.model.UtilizationLabel;
+import com.mypurecloud.sdk.v2.model.UtilizationLabelEntityListing;
 import com.mypurecloud.sdk.v2.model.UtilizationRequest;
 import com.mypurecloud.sdk.v2.model.UtilizationResponse;
 import com.mypurecloud.sdk.v2.model.UtilizationTag;
@@ -117,6 +121,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
@@ -172,6 +177,9 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelAgentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagsRequest;
@@ -217,6 +225,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationLabelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
@@ -230,6 +239,7 @@ import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsTranscriptionRequest
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillsBulkRequest;
@@ -1496,6 +1506,83 @@ public class RoutingApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteRoutingUtilizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a utilization label
+   * 
+   * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRoutingUtilizationLabelAsync(DeleteRoutingUtilizationLabelRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a utilization label
+   * 
+   * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRoutingUtilizationLabelAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -5659,6 +5746,237 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Get details about this utilization label
+   * 
+   * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UtilizationLabel> getRoutingUtilizationLabelAsync(GetRoutingUtilizationLabelRequest request, final AsyncApiCallback<UtilizationLabel> callback) {
+    try {
+      final SettableFuture<UtilizationLabel> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UtilizationLabel>() {}, new AsyncApiCallback<ApiResponse<UtilizationLabel>>() {
+        @Override
+        public void onCompleted(ApiResponse<UtilizationLabel> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about this utilization label
+   * 
+   * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UtilizationLabel>> getRoutingUtilizationLabelAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UtilizationLabel>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UtilizationLabel>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UtilizationLabel>() {}, new AsyncApiCallback<ApiResponse<UtilizationLabel>>() {
+        @Override
+        public void onCompleted(ApiResponse<UtilizationLabel> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of agent ids associated with a utilization label
+   * 
+   * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<Object>> getRoutingUtilizationLabelAgentsAsync(GetRoutingUtilizationLabelAgentsRequest request, final AsyncApiCallback<List<Object>> callback) {
+    try {
+      final SettableFuture<List<Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Object>>() {}, new AsyncApiCallback<ApiResponse<List<Object>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Object>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of agent ids associated with a utilization label
+   * 
+   * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<Object>>> getRoutingUtilizationLabelAgentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Object>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<Object>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<Object>>() {}, new AsyncApiCallback<ApiResponse<List<Object>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Object>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of utilization labels
+   * 
+   * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UtilizationLabelEntityListing> getRoutingUtilizationLabelsAsync(GetRoutingUtilizationLabelsRequest request, final AsyncApiCallback<UtilizationLabelEntityListing> callback) {
+    try {
+      final SettableFuture<UtilizationLabelEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UtilizationLabelEntityListing>() {}, new AsyncApiCallback<ApiResponse<UtilizationLabelEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UtilizationLabelEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of utilization labels
+   * 
+   * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UtilizationLabelEntityListing>> getRoutingUtilizationLabelsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UtilizationLabelEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UtilizationLabelEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UtilizationLabelEntityListing>() {}, new AsyncApiCallback<ApiResponse<UtilizationLabelEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UtilizationLabelEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UtilizationLabelEntityListing> response = (ApiResponse<UtilizationLabelEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UtilizationLabelEntityListing> response = (ApiResponse<UtilizationLabelEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get details about this utilization tag
    * 
    * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -9050,6 +9368,83 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Create a utilization label
+   * 
+   * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UtilizationLabel> postRoutingUtilizationLabelsAsync(PostRoutingUtilizationLabelsRequest request, final AsyncApiCallback<UtilizationLabel> callback) {
+    try {
+      final SettableFuture<UtilizationLabel> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UtilizationLabel>() {}, new AsyncApiCallback<ApiResponse<UtilizationLabel>>() {
+        @Override
+        public void onCompleted(ApiResponse<UtilizationLabel> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a utilization label
+   * 
+   * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UtilizationLabel>> postRoutingUtilizationLabelsAsync(ApiRequest<CreateUtilizationLabelRequest> request, final AsyncApiCallback<ApiResponse<UtilizationLabel>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UtilizationLabel>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UtilizationLabel>() {}, new AsyncApiCallback<ApiResponse<UtilizationLabel>>() {
+        @Override
+        public void onCompleted(ApiResponse<UtilizationLabel> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create an utilization tag
    * 
    * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -10015,6 +10410,83 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UtilizationResponse> response = (ApiResponse<UtilizationResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a utilization label
+   * 
+   * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UtilizationLabel> putRoutingUtilizationLabelAsync(PutRoutingUtilizationLabelRequest request, final AsyncApiCallback<UtilizationLabel> callback) {
+    try {
+      final SettableFuture<UtilizationLabel> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UtilizationLabel>() {}, new AsyncApiCallback<ApiResponse<UtilizationLabel>>() {
+        @Override
+        public void onCompleted(ApiResponse<UtilizationLabel> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a utilization label
+   * 
+   * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UtilizationLabel>> putRoutingUtilizationLabelAsync(ApiRequest<UpdateUtilizationLabelRequest> request, final AsyncApiCallback<ApiResponse<UtilizationLabel>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UtilizationLabel>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UtilizationLabel>() {}, new AsyncApiCallback<ApiResponse<UtilizationLabel>>() {
+        @Override
+        public void onCompleted(ApiResponse<UtilizationLabel> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -86,6 +86,7 @@ public class MetricDefinition  implements Serializable {
   private DefaultObjective defaultObjective = null;
   private String lockTemplateId = null;
   private Boolean mediaTypeFilteringAllowed = null;
+  private Boolean initialDirectionFilteringAllowed = null;
   private Boolean queueFilteringAllowed = null;
   private String selfUri = null;
 
@@ -241,6 +242,24 @@ public class MetricDefinition  implements Serializable {
 
 
   /**
+   * Flag to indicate if this metricDefinition allows filter based on initial direction
+   **/
+  public MetricDefinition initialDirectionFilteringAllowed(Boolean initialDirectionFilteringAllowed) {
+    this.initialDirectionFilteringAllowed = initialDirectionFilteringAllowed;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag to indicate if this metricDefinition allows filter based on initial direction")
+  @JsonProperty("initialDirectionFilteringAllowed")
+  public Boolean getInitialDirectionFilteringAllowed() {
+    return initialDirectionFilteringAllowed;
+  }
+  public void setInitialDirectionFilteringAllowed(Boolean initialDirectionFilteringAllowed) {
+    this.initialDirectionFilteringAllowed = initialDirectionFilteringAllowed;
+  }
+
+
+  /**
    * Flag to indicate if this metricDefinition allows filter based on queues
    **/
   public MetricDefinition queueFilteringAllowed(Boolean queueFilteringAllowed) {
@@ -284,13 +303,14 @@ public class MetricDefinition  implements Serializable {
             Objects.equals(this.defaultObjective, metricDefinition.defaultObjective) &&
             Objects.equals(this.lockTemplateId, metricDefinition.lockTemplateId) &&
             Objects.equals(this.mediaTypeFilteringAllowed, metricDefinition.mediaTypeFilteringAllowed) &&
+            Objects.equals(this.initialDirectionFilteringAllowed, metricDefinition.initialDirectionFilteringAllowed) &&
             Objects.equals(this.queueFilteringAllowed, metricDefinition.queueFilteringAllowed) &&
             Objects.equals(this.selfUri, metricDefinition.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, unitType, shortName, dividendMetrics, divisorMetrics, defaultObjective, lockTemplateId, mediaTypeFilteringAllowed, queueFilteringAllowed, selfUri);
+    return Objects.hash(id, name, unitType, shortName, dividendMetrics, divisorMetrics, defaultObjective, lockTemplateId, mediaTypeFilteringAllowed, initialDirectionFilteringAllowed, queueFilteringAllowed, selfUri);
   }
 
   @Override
@@ -307,6 +327,7 @@ public class MetricDefinition  implements Serializable {
     sb.append("    defaultObjective: ").append(toIndentedString(defaultObjective)).append("\n");
     sb.append("    lockTemplateId: ").append(toIndentedString(lockTemplateId)).append("\n");
     sb.append("    mediaTypeFilteringAllowed: ").append(toIndentedString(mediaTypeFilteringAllowed)).append("\n");
+    sb.append("    initialDirectionFilteringAllowed: ").append(toIndentedString(initialDirectionFilteringAllowed)).append("\n");
     sb.append("    queueFilteringAllowed: ").append(toIndentedString(queueFilteringAllowed)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

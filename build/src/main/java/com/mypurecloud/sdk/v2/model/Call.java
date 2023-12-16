@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
 import com.mypurecloud.sdk.v2.model.AfterCallWork;
+import com.mypurecloud.sdk.v2.model.ConversationQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.DisconnectReason;
 import com.mypurecloud.sdk.v2.model.Disposition;
 import com.mypurecloud.sdk.v2.model.ErrorInfo;
@@ -334,6 +335,7 @@ public class Call  implements Serializable {
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
+  private ConversationQueueMediaSettings queueMediaSettings = null;
   private Disposition disposition = null;
 
   
@@ -895,6 +897,24 @@ public class Call  implements Serializable {
 
 
   /**
+   * Represents the queue settings for this media type.
+   **/
+  public Call queueMediaSettings(ConversationQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the queue settings for this media type.")
+  @JsonProperty("queueMediaSettings")
+  public ConversationQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
+  /**
    * Call resolution data for Dialer bulk make calls commands.
    **/
   public Call disposition(Disposition disposition) {
@@ -953,12 +973,13 @@ public class Call  implements Serializable {
             Objects.equals(this.afterCallWork, call.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, call.afterCallWorkRequired) &&
             Objects.equals(this.agentAssistantId, call.agentAssistantId) &&
+            Objects.equals(this.queueMediaSettings, call.queueMediaSettings) &&
             Objects.equals(this.disposition, call.disposition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, direction, recording, recordingState, muted, confined, held, securePause, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, disposition);
+    return Objects.hash(state, initialState, id, direction, recording, recordingState, muted, confined, held, securePause, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, queueMediaSettings, disposition);
   }
 
   @Override
@@ -997,6 +1018,7 @@ public class Call  implements Serializable {
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    disposition: ").append(toIndentedString(disposition)).append("\n");
     sb.append("}");
     return sb.toString();

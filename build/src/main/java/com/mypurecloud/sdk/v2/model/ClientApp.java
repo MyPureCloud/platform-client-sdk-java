@@ -54,7 +54,8 @@ public class ClientApp  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENABLED("ENABLED"),
     DISABLED("DISABLED"),
-    DELETED("DELETED");
+    DELETED("DELETED"),
+    RESTORED("RESTORED");
 
     private String value;
 

@@ -30,6 +30,7 @@ title: Integration
 | ENABLED | &quot;ENABLED&quot; | 
 | DISABLED | &quot;DISABLED&quot; | 
 | DELETED | &quot;DELETED&quot; | 
+| RESTORED | &quot;RESTORED&quot; | 
 {: class="table table-striped"}
 
 

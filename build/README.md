@@ -43,8 +43,8 @@ import com.mypurecloud.sdk.v2.PureCloudRegionHosts;
 The Java SDK contains a helper method to execute a Client Credentials OAuth flow. This is appropriate for non-user Java applications, typically when there is no UI. Invoking `authorizeClientCredentials(String clientId, String clientSecret)` will execute the client credentials OAuth grant and store the access token within the ApiClient class. 
 
 ```java
-String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
-String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
+String clientId = "YourOAuthClientID";
+String clientSecret = "YourOAuthClientSecret";
 
 //Set Region
 PureCloudRegionHosts region = PureCloudRegionHosts.us_east_1;
@@ -68,8 +68,8 @@ For user applications, the consuming application must complete an implicit, auth
 #### Authentication with SAML2Bearer token
 
 ```java
-String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
-String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
+String clientId = "YourOAuthClientID";
+String clientSecret = "YourOAuthClientSecret";
 String orgName = "YourOrg"; // Your org name 
 String encodedSamlAssertion= ""; // Base64 encoded SAML assertion
 
@@ -87,8 +87,8 @@ System.out.println("Authentication successful. Access token expires in " + authR
 See example on how to authenticate with an authorization code below. For more information see the article on [Code Authorization](https://developer.genesys.cloud/authorization/platform-auth/use-authorization-code)
 
 ```java
-String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
-String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
+String clientId = "YourOAuthClientID";
+String clientSecret = "YourOAuthClientSecret";
 String authorizationCode = "YourAuthorizationCode"; // Your authorization code 
 String redirectUri= ""; // Your redirect URI
 
@@ -116,6 +116,31 @@ System.out.println("Authentication successful. Access token expires in " + expir
 authResponse = apiClient.refreshCodeAuthorization(clientId,clientSecret,refreshToken);
 refreshToken = authResponse.getBody().getRefresh_token();
 expiresIn = authResponse.getBody().getExpires_in();
+```
+
+#### Authentication with PKCE
+
+See example on how to authenticate with a pkce code below. For more information see the article on [PKCE Grant](https://developer.genesys.cloud/authorization/platform-auth/use-pkce)
+
+```java
+String clientId = "YourOAuthClientID";
+String codeVerifier = "YourCodeVerifier"; // Your code verifier 
+String authorizationCode = "YourAuthorizationCode"; // Your authorization code 
+String redirectUri= ""; // Your redirect URI
+
+//Set Region
+PureCloudRegionHosts region = PureCloudRegionHosts.us_east_1;
+
+ApiClient apiClient = ApiClient.Builder.standard().withBasePath(region).build();
+ApiResponse<AuthResponse> authResponse = apiClient.authorizePKCE(clientId,codeVerifier,authorizationCode,redirectUri);
+System.out.println("Authentication successful. Access token expires in " + authResponse.getBody().getExpires_in() + " seconds");
+```
+
+The SDK provides methods to generate a PKCE Code Verifier and to compute PKCE Code Challenge.
+
+```java
+String codeVerifier = apiClient.generatePKCECodeVerifier(128);
+String codeChallenge = apiClient.computePKCECodeChallenge(codeVerifier);
 ```
 
 ### Building an ApiClient Instance

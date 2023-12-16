@@ -2326,11 +2326,12 @@ public class TelephonyProvidersEdgeApiAsync {
   }
 
   /**
-   * Get the list of available languages.
+   * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguagesAsync(GetTelephonyProvidersEdgesAvailablelanguagesRequest request, final AsyncApiCallback<AvailableLanguageList> callback) {
     try {
@@ -2360,11 +2361,12 @@ public class TelephonyProvidersEdgeApiAsync {
   }
 
   /**
-   * Get the list of available languages.
+   * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<AvailableLanguageList>> getTelephonyProvidersEdgesAvailablelanguagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AvailableLanguageList>> callback) {
     try {

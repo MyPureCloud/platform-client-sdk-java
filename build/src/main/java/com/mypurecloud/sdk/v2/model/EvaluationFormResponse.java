@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.DomainEntityListingEvaluationForm;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,7 +32,54 @@ public class EvaluationFormResponse  implements Serializable {
   private Boolean published = null;
   private String contextId = null;
   private List<EvaluationQuestionGroup> questionGroups = new ArrayList<EvaluationQuestionGroup>();
-  private DomainEntityListingEvaluationForm publishedVersions = null;
+
+  private static class WeightModeEnumDeserializer extends StdDeserializer<WeightModeEnum> {
+    public WeightModeEnumDeserializer() {
+      super(WeightModeEnumDeserializer.class);
+    }
+
+    @Override
+    public WeightModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return WeightModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Mode for evaluation form weight
+   */
+ @JsonDeserialize(using = WeightModeEnumDeserializer.class)
+  public enum WeightModeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SCALED("SCALED"),
+    OFF("OFF");
+
+    private String value;
+
+    WeightModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static WeightModeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (WeightModeEnum value : WeightModeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return WeightModeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private WeightModeEnum weightMode = null;
   private String selfUri = null;
 
   
@@ -132,19 +179,20 @@ public class EvaluationFormResponse  implements Serializable {
 
 
   /**
+   * Mode for evaluation form weight
    **/
-  public EvaluationFormResponse publishedVersions(DomainEntityListingEvaluationForm publishedVersions) {
-    this.publishedVersions = publishedVersions;
+  public EvaluationFormResponse weightMode(WeightModeEnum weightMode) {
+    this.weightMode = weightMode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("publishedVersions")
-  public DomainEntityListingEvaluationForm getPublishedVersions() {
-    return publishedVersions;
+  @ApiModelProperty(example = "null", value = "Mode for evaluation form weight")
+  @JsonProperty("weightMode")
+  public WeightModeEnum getWeightMode() {
+    return weightMode;
   }
-  public void setPublishedVersions(DomainEntityListingEvaluationForm publishedVersions) {
-    this.publishedVersions = publishedVersions;
+  public void setWeightMode(WeightModeEnum weightMode) {
+    this.weightMode = weightMode;
   }
 
 
@@ -171,13 +219,13 @@ public class EvaluationFormResponse  implements Serializable {
             Objects.equals(this.published, evaluationFormResponse.published) &&
             Objects.equals(this.contextId, evaluationFormResponse.contextId) &&
             Objects.equals(this.questionGroups, evaluationFormResponse.questionGroups) &&
-            Objects.equals(this.publishedVersions, evaluationFormResponse.publishedVersions) &&
+            Objects.equals(this.weightMode, evaluationFormResponse.weightMode) &&
             Objects.equals(this.selfUri, evaluationFormResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, publishedVersions, selfUri);
+    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, weightMode, selfUri);
   }
 
   @Override
@@ -191,7 +239,7 @@ public class EvaluationFormResponse  implements Serializable {
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    questionGroups: ").append(toIndentedString(questionGroups)).append("\n");
-    sb.append("    publishedVersions: ").append(toIndentedString(publishedVersions)).append("\n");
+    sb.append("    weightMode: ").append(toIndentedString(weightMode)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

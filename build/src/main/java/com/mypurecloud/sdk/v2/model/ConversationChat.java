@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AfterCallWork;
+import com.mypurecloud.sdk.v2.model.ConversationQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.JourneyContext;
 import com.mypurecloud.sdk.v2.model.Segment;
 import com.mypurecloud.sdk.v2.model.Wrapup;
@@ -260,6 +261,7 @@ public class ConversationChat  implements Serializable {
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+  private ConversationQueueMediaSettings queueMediaSettings = null;
 
   
   /**
@@ -640,6 +642,24 @@ public class ConversationChat  implements Serializable {
   }
 
 
+  /**
+   * Represents the queue settings for this media type.
+   **/
+  public ConversationChat queueMediaSettings(ConversationQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the queue settings for this media type.")
+  @JsonProperty("queueMediaSettings")
+  public ConversationQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -670,12 +690,13 @@ public class ConversationChat  implements Serializable {
             Objects.equals(this.journeyContext, conversationChat.journeyContext) &&
             Objects.equals(this.wrapup, conversationChat.wrapup) &&
             Objects.equals(this.afterCallWork, conversationChat.afterCallWork) &&
-            Objects.equals(this.afterCallWorkRequired, conversationChat.afterCallWorkRequired);
+            Objects.equals(this.afterCallWorkRequired, conversationChat.afterCallWorkRequired) &&
+            Objects.equals(this.queueMediaSettings, conversationChat.queueMediaSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, avatarImageUrl, journeyContext, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, initialState, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, avatarImageUrl, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, queueMediaSettings);
   }
 
   @Override
@@ -704,6 +725,7 @@ public class ConversationChat  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

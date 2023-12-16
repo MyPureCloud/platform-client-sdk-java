@@ -36,6 +36,7 @@ title: Callback
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
 | **callerId** | <!----><!---->**String**<!----> | The phone number displayed to recipients of the phone call. The value should conform to the E164 format. |  [optional] |
 | **callerIdName** | <!----><!---->**String**<!----> | The name displayed to recipients of the phone call. |  [optional] |
+| **queueMediaSettings** | <!----><!---->[**ConversationQueueMediaSettings**](ConversationQueueMediaSettings.html)<!----> | Represents the queue settings for this media type. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -14,8 +14,20 @@ title: EvaluationFormResponse
 | **published** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **contextId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **questionGroups** | <!----><!---->[**List&lt;EvaluationQuestionGroup&gt;**](EvaluationQuestionGroup.html)<!----> | A list of question groups |  [optional] |
-| **publishedVersions** | <!----><!---->[**DomainEntityListingEvaluationForm**](DomainEntityListingEvaluationForm.html)<!----> |  |  [optional] |
+| **weightMode** | [**WeightModeEnum**](#WeightModeEnum)<!----> | Mode for evaluation form weight |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="WeightModeEnum"></a>
+
+## Enum: WeightModeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SCALED | &quot;SCALED&quot; | 
+| OFF | &quot;OFF&quot; | 
 {: class="table table-striped"}
 
 

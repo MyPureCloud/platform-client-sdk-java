@@ -26,6 +26,7 @@ public class RoutingData  implements Serializable {
   
   private String queueId = null;
   private String languageId = null;
+  private String label = null;
   private Integer priority = null;
   private List<String> skillIds = new ArrayList<String>();
   private List<String> preferredAgentIds = new ArrayList<String>();
@@ -66,6 +67,24 @@ public class RoutingData  implements Serializable {
   }
   public void setLanguageId(String languageId) {
     this.languageId = languageId;
+  }
+
+
+  /**
+   * An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+   **/
+  public RoutingData label(String label) {
+    this.label = label;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level")
+  @JsonProperty("label")
+  public String getLabel() {
+    return label;
+  }
+  public void setLabel(String label) {
+    this.label = label;
   }
 
 
@@ -171,6 +190,7 @@ public class RoutingData  implements Serializable {
 
     return Objects.equals(this.queueId, routingData.queueId) &&
             Objects.equals(this.languageId, routingData.languageId) &&
+            Objects.equals(this.label, routingData.label) &&
             Objects.equals(this.priority, routingData.priority) &&
             Objects.equals(this.skillIds, routingData.skillIds) &&
             Objects.equals(this.preferredAgentIds, routingData.preferredAgentIds) &&
@@ -180,7 +200,7 @@ public class RoutingData  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, languageId, priority, skillIds, preferredAgentIds, scoredAgents, routingFlags);
+    return Objects.hash(queueId, languageId, label, priority, skillIds, preferredAgentIds, scoredAgents, routingFlags);
   }
 
   @Override
@@ -190,6 +210,7 @@ public class RoutingData  implements Serializable {
     
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
+    sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");

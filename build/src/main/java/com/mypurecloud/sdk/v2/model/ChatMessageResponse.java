@@ -12,9 +12,11 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.ChatReaction;
 import com.mypurecloud.sdk.v2.model.Entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -40,6 +42,7 @@ public class ChatMessageResponse  implements Serializable {
   private Entity thread = null;
   private AddressableEntityRef user = null;
   private AddressableEntityRef toUser = null;
+  private List<ChatReaction> reactions = new ArrayList<ChatReaction>();
 
   
   /**
@@ -276,6 +279,24 @@ public class ChatMessageResponse  implements Serializable {
   }
 
 
+  /**
+   * The emoji reactions to this message
+   **/
+  public ChatMessageResponse reactions(List<ChatReaction> reactions) {
+    this.reactions = reactions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The emoji reactions to this message")
+  @JsonProperty("reactions")
+  public List<ChatReaction> getReactions() {
+    return reactions;
+  }
+  public void setReactions(List<ChatReaction> reactions) {
+    this.reactions = reactions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -298,12 +319,13 @@ public class ChatMessageResponse  implements Serializable {
             Objects.equals(this.fileUri, chatMessageResponse.fileUri) &&
             Objects.equals(this.thread, chatMessageResponse.thread) &&
             Objects.equals(this.user, chatMessageResponse.user) &&
-            Objects.equals(this.toUser, chatMessageResponse.toUser);
+            Objects.equals(this.toUser, chatMessageResponse.toUser) &&
+            Objects.equals(this.reactions, chatMessageResponse.reactions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateCreated, dateModified, toJid, jid, body, mentions, edited, attachmentDeleted, fileUri, thread, user, toUser);
+    return Objects.hash(id, dateCreated, dateModified, toJid, jid, body, mentions, edited, attachmentDeleted, fileUri, thread, user, toUser, reactions);
   }
 
   @Override
@@ -324,6 +346,7 @@ public class ChatMessageResponse  implements Serializable {
     sb.append("    thread: ").append(toIndentedString(thread)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    toUser: ").append(toIndentedString(toUser)).append("\n");
+    sb.append("    reactions: ").append(toIndentedString(reactions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

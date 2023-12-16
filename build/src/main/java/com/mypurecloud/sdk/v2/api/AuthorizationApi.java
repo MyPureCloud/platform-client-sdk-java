@@ -1188,7 +1188,7 @@ public class AuthorizationApi {
    * Get a single organization role.
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
-   * @param userCount Fetch the count of users who have this role granted in at least one division (optional, default to true)
+   * @param userCount Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to 'true' can lead to slower load times or timeouts for role queries with large member counts. (optional, default to true)
    * @param expand Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role (optional)
    * @return DomainOrganizationRole
    * @throws ApiException if the request fails on the server
@@ -1202,7 +1202,7 @@ public class AuthorizationApi {
    * Get a single organization role.
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
-   * @param userCount Fetch the count of users who have this role granted in at least one division (optional, default to true)
+   * @param userCount Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to 'true' can lead to slower load times or timeouts for role queries with large member counts. (optional, default to true)
    * @param expand Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role (optional)
    * @return DomainOrganizationRole
    * @throws IOException if the request fails to be processed

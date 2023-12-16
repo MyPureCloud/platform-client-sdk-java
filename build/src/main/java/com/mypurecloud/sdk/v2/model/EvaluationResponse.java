@@ -18,7 +18,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationFormResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationSource;
 import com.mypurecloud.sdk.v2.model.Queue;
-import com.mypurecloud.sdk.v2.model.Team;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -98,7 +97,6 @@ public class EvaluationResponse  implements Serializable {
   private Date releaseDate = null;
   private Date assignedDate = null;
   private Date changedDate = null;
-  private Date revisionCreatedDate = null;
   private Queue queue = null;
 
   private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
@@ -209,7 +207,6 @@ public class EvaluationResponse  implements Serializable {
   }
   private ResourceTypeEnum resourceType = null;
   private Boolean redacted = null;
-  private Team agentTeam = null;
   private Boolean isScoringIndex = null;
   private List<String> authorizedActions = new ArrayList<String>();
   private Boolean hasAssistanceFailed = null;
@@ -468,24 +465,6 @@ public class EvaluationResponse  implements Serializable {
 
 
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public EvaluationResponse revisionCreatedDate(Date revisionCreatedDate) {
-    this.revisionCreatedDate = revisionCreatedDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("revisionCreatedDate")
-  public Date getRevisionCreatedDate() {
-    return revisionCreatedDate;
-  }
-  public void setRevisionCreatedDate(Date revisionCreatedDate) {
-    this.revisionCreatedDate = revisionCreatedDate;
-  }
-
-
-  /**
    **/
   public EvaluationResponse queue(Queue queue) {
     this.queue = queue;
@@ -683,24 +662,6 @@ public class EvaluationResponse  implements Serializable {
 
 
   /**
-   * Team of the evaluation agent
-   **/
-  public EvaluationResponse agentTeam(Team agentTeam) {
-    this.agentTeam = agentTeam;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Team of the evaluation agent")
-  @JsonProperty("agentTeam")
-  public Team getAgentTeam() {
-    return agentTeam;
-  }
-  public void setAgentTeam(Team agentTeam) {
-    this.agentTeam = agentTeam;
-  }
-
-
-  /**
    **/
   public EvaluationResponse isScoringIndex(Boolean isScoringIndex) {
     this.isScoringIndex = isScoringIndex;
@@ -792,7 +753,6 @@ public class EvaluationResponse  implements Serializable {
             Objects.equals(this.releaseDate, evaluationResponse.releaseDate) &&
             Objects.equals(this.assignedDate, evaluationResponse.assignedDate) &&
             Objects.equals(this.changedDate, evaluationResponse.changedDate) &&
-            Objects.equals(this.revisionCreatedDate, evaluationResponse.revisionCreatedDate) &&
             Objects.equals(this.queue, evaluationResponse.queue) &&
             Objects.equals(this.mediaType, evaluationResponse.mediaType) &&
             Objects.equals(this.rescore, evaluationResponse.rescore) &&
@@ -804,7 +764,6 @@ public class EvaluationResponse  implements Serializable {
             Objects.equals(this.resourceId, evaluationResponse.resourceId) &&
             Objects.equals(this.resourceType, evaluationResponse.resourceType) &&
             Objects.equals(this.redacted, evaluationResponse.redacted) &&
-            Objects.equals(this.agentTeam, evaluationResponse.agentTeam) &&
             Objects.equals(this.isScoringIndex, evaluationResponse.isScoringIndex) &&
             Objects.equals(this.authorizedActions, evaluationResponse.authorizedActions) &&
             Objects.equals(this.hasAssistanceFailed, evaluationResponse.hasAssistanceFailed) &&
@@ -814,7 +773,7 @@ public class EvaluationResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, revisionCreatedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, agentTeam, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
   }
 
   @Override
@@ -837,7 +796,6 @@ public class EvaluationResponse  implements Serializable {
     sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
     sb.append("    assignedDate: ").append(toIndentedString(assignedDate)).append("\n");
     sb.append("    changedDate: ").append(toIndentedString(changedDate)).append("\n");
-    sb.append("    revisionCreatedDate: ").append(toIndentedString(revisionCreatedDate)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    rescore: ").append(toIndentedString(rescore)).append("\n");
@@ -849,7 +807,6 @@ public class EvaluationResponse  implements Serializable {
     sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
     sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
     sb.append("    redacted: ").append(toIndentedString(redacted)).append("\n");
-    sb.append("    agentTeam: ").append(toIndentedString(agentTeam)).append("\n");
     sb.append("    isScoringIndex: ").append(toIndentedString(isScoringIndex)).append("\n");
     sb.append("    authorizedActions: ").append(toIndentedString(authorizedActions)).append("\n");
     sb.append("    hasAssistanceFailed: ").append(toIndentedString(hasAssistanceFailed)).append("\n");

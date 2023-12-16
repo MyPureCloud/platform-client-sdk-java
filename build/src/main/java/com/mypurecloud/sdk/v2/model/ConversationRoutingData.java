@@ -30,6 +30,7 @@ public class ConversationRoutingData  implements Serializable {
   private Integer priority = null;
   private List<AddressableEntityRef> skills = new ArrayList<AddressableEntityRef>();
   private List<ScoredAgent> scoredAgents = new ArrayList<ScoredAgent>();
+  private String label = null;
 
   
   /**
@@ -122,6 +123,24 @@ public class ConversationRoutingData  implements Serializable {
   }
 
 
+  /**
+   * An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+   **/
+  public ConversationRoutingData label(String label) {
+    this.label = label;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level")
+  @JsonProperty("label")
+  public String getLabel() {
+    return label;
+  }
+  public void setLabel(String label) {
+    this.label = label;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -136,12 +155,13 @@ public class ConversationRoutingData  implements Serializable {
             Objects.equals(this.language, conversationRoutingData.language) &&
             Objects.equals(this.priority, conversationRoutingData.priority) &&
             Objects.equals(this.skills, conversationRoutingData.skills) &&
-            Objects.equals(this.scoredAgents, conversationRoutingData.scoredAgents);
+            Objects.equals(this.scoredAgents, conversationRoutingData.scoredAgents) &&
+            Objects.equals(this.label, conversationRoutingData.label);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queue, language, priority, skills, scoredAgents);
+    return Objects.hash(queue, language, priority, skills, scoredAgents, label);
   }
 
   @Override
@@ -154,6 +174,7 @@ public class ConversationRoutingData  implements Serializable {
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
+    sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("}");
     return sb.toString();
   }

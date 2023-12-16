@@ -2454,21 +2454,23 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Get the list of available languages.
+   * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
    * 
    * @return AvailableLanguageList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages() throws IOException, ApiException {
     return  getTelephonyProvidersEdgesAvailablelanguages(createGetTelephonyProvidersEdgesAvailablelanguagesRequest());
   }
 
   /**
-   * Get the list of available languages.
+   * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
    * 
    * @return AvailableLanguageList
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguagesWithHttpInfo() throws IOException {
     return getTelephonyProvidersEdgesAvailablelanguages(createGetTelephonyProvidersEdgesAvailablelanguagesRequest().withHttpInfo());
@@ -2480,12 +2482,13 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Get the list of available languages.
+   * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
    * 
    * @param request The request object
    * @return AvailableLanguageList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages(GetTelephonyProvidersEdgesAvailablelanguagesRequest request) throws IOException, ApiException {
     try {
@@ -2499,11 +2502,12 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Get the list of available languages.
+   * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguages(ApiRequest<Void> request) throws IOException {
     try {

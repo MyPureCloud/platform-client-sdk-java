@@ -44,6 +44,7 @@ title: Edge
 | **physicalEdge** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **managed** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **edgeDeploymentType** | [**EdgeDeploymentTypeEnum**](#EdgeDeploymentTypeEnum)<!----> |  |  [optional] |
+| **certType** | [**CertTypeEnum**](#CertTypeEnum)<!----> | The type of certificate used to communicate with edge-proxy. |  [optional] |
 | **callDrainingState** | [**CallDrainingStateEnum**](#CallDrainingStateEnum)<!----> | The current state of the Edge's call draining process before it can be safely rebooted or updated. |  [optional] |
 | **conversationCount** | <!----><!---->**Integer**<!----> | The remaining number of conversations the Edge has to drain before it can be safely rebooted or updated. When an Edge is not draining conversations, this will be NULL or 0. |  [optional] |
 | **proxy** | <!----><!---->**String**<!----> | Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed. |  [optional] |
@@ -112,6 +113,20 @@ title: Edge
 | CDM | &quot;CDM&quot; | 
 | CHS | &quot;CHS&quot; | 
 | INVALID | &quot;INVALID&quot; | 
+{: class="table table-striped"}
+
+
+<a name="CertTypeEnum"></a>
+
+## Enum: CertTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PURECLOUD | &quot;PureCloud&quot; | 
+| PUBLIC | &quot;Public&quot; | 
+| CHINA | &quot;China&quot; | 
+| NOTREQUESTED | &quot;NotRequested&quot; | 
 {: class="table table-striped"}
 
 

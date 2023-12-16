@@ -42,6 +42,13 @@ public class Limit  implements Serializable {
  @JsonDeserialize(using = NamespaceEnumDeserializer.class)
   public enum NamespaceEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AGENT_ASSISTANT("agent.assistant"),
+    ANALYTICS_ALERTING("analytics.alerting"),
+    ANALYTICS("analytics"),
+    ANALYTICS_REALTIME("analytics.realtime"),
+    ANALYTICS_REPORTING_SETTINGS("analytics.reporting.settings"),
+    ARCHITECT("architect"),
+    AUDIOHOOK("audiohook"),
     AUDIT("audit"),
     AUTH_API("auth.api"),
     AUTHORIZATION("authorization"),
@@ -99,14 +106,7 @@ public class Limit  implements Serializable {
     WEB_MESSAGING("web.messaging"),
     WEBCHAT("webchat"),
     WEBHOOKS("webhooks"),
-    WORKFORCE_MANAGEMENT("workforce.management"),
-    AGENT_ASSISTANT("agent.assistant"),
-    ANALYTICS_ALERTING("analytics.alerting"),
-    ANALYTICS("analytics"),
-    ANALYTICS_REALTIME("analytics.realtime"),
-    ANALYTICS_REPORTING_SETTINGS("analytics.reporting.settings"),
-    ARCHITECT("architect"),
-    AUDIOHOOK("audiohook");
+    WORKFORCE_MANAGEMENT("workforce.management");
 
     private String value;
 

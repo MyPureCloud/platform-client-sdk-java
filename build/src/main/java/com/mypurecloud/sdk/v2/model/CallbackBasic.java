@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AfterCallWork;
+import com.mypurecloud.sdk.v2.model.ConversationQueueMediaSettings;
 import com.mypurecloud.sdk.v2.model.DialerPreview;
 import com.mypurecloud.sdk.v2.model.Segment;
 import com.mypurecloud.sdk.v2.model.Voicemail;
@@ -274,6 +275,7 @@ public class CallbackBasic  implements Serializable {
   private Boolean afterCallWorkRequired = null;
   private String callerId = null;
   private String callerIdName = null;
+  private ConversationQueueMediaSettings queueMediaSettings = null;
 
   
   /**
@@ -780,6 +782,24 @@ public class CallbackBasic  implements Serializable {
   }
 
 
+  /**
+   * Represents the queue settings for this media type.
+   **/
+  public CallbackBasic queueMediaSettings(ConversationQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the queue settings for this media type.")
+  @JsonProperty("queueMediaSettings")
+  public ConversationQueueMediaSettings getQueueMediaSettings() {
+    return queueMediaSettings;
+  }
+  public void setQueueMediaSettings(ConversationQueueMediaSettings queueMediaSettings) {
+    this.queueMediaSettings = queueMediaSettings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -817,12 +837,13 @@ public class CallbackBasic  implements Serializable {
             Objects.equals(this.afterCallWork, callbackBasic.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, callbackBasic.afterCallWorkRequired) &&
             Objects.equals(this.callerId, callbackBasic.callerId) &&
-            Objects.equals(this.callerIdName, callbackBasic.callerIdName);
+            Objects.equals(this.callerIdName, callbackBasic.callerIdName) &&
+            Objects.equals(this.queueMediaSettings, callbackBasic.queueMediaSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, externalCampaign, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName);
+    return Objects.hash(state, initialState, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, externalCampaign, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName, queueMediaSettings);
   }
 
   @Override
@@ -858,6 +879,7 @@ public class CallbackBasic  implements Serializable {
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
     sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
+    sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

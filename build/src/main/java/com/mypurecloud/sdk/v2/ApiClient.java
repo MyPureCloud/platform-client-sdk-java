@@ -27,6 +27,11 @@ import com.google.common.base.Stopwatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import java.security.SecureRandom;
+import java.security.MessageDigest;
+import java.util.Base64;
+import java.nio.charset.StandardCharsets;
+
 import javax.xml.bind.DatatypeConverter;
 
 import com.google.common.util.concurrent.SettableFuture;
@@ -364,6 +369,56 @@ public class ApiClient implements AutoCloseable {
 
     private ApiResponse<AuthResponse> refreshCodeAuthorization() throws IOException, ApiException {
         return this.refreshCodeAuthorization(this.clientId, this.clientSecret, this.refreshToken);
+    }
+
+    /**
+     * Generate a random string used as PKCE Code Verifier
+     */
+    public String generatePKCECodeVerifier(int len) {
+        if (len < 43 || len > 128) {
+            throw new IllegalArgumentException("PKCE Code Verifier (length) must be between 43 and 128 characters");
+        }
+        String unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
+        SecureRandom rnd = new SecureRandom();
+        StringBuilder sb = new StringBuilder(len);
+        for(int i = 0; i < len; i++)
+            sb.append(unreservedCharacters.charAt(rnd.nextInt(unreservedCharacters.length())));
+        return sb.toString();
+    }
+
+    /**
+     * Compute Base64Url PKCE Code Challenge from Code Verifier
+     */
+    public String computePKCECodeChallenge(String code) {
+        if (code.length() < 43 || code.length() > 128) {
+            throw new IllegalArgumentException("PKCE Code Verifier (length) must be between 43 and 128 characters");
+        }
+        try {
+            byte codeVerifierHash[] = MessageDigest.getInstance("SHA-256").digest(code.getBytes(StandardCharsets.UTF_8));
+            String codeChallenge = new String(Base64.getUrlEncoder().encode(codeVerifierHash));
+            codeChallenge = codeChallenge.split("=")[0];
+            return codeChallenge;
+        } catch (Exception ex) {
+            return null;
+        }
+    }
+
+    public ApiResponse<AuthResponse> authorizePKCE(String clientId, String codeVerifier, String authCode, String redirectUri) throws IOException, ApiException {
+        this.clientId = clientId;
+        ApiRequest<Void> request = ApiRequestBuilder.create("POST", "/oauth/token")
+                .withCustomHeader("Content-Type", "application/x-www-form-urlencoded")
+                .withFormParameter("grant_type", "authorization_code")
+                .withFormParameter("code", authCode)
+                .withFormParameter("code_verifier", codeVerifier)
+                .withFormParameter("client_id", clientId)
+                .withFormParameter("redirect_uri", redirectUri)
+                .build();
+        
+        ApiResponse<AuthResponse> response = this.getAPIResponse(request, new TypeReference<AuthResponse>() {}, true);
+        
+        setAccessToken(response.getBody().getAccess_token());
+
+        return response;
     }
 
     /**
@@ -966,7 +1021,7 @@ public class ApiClient implements AutoCloseable {
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "197.0.0");
+            withDefaultHeader("purecloud-sdk", "198.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

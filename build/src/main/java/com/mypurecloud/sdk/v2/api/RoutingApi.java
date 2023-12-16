@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
 import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.CreateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.CreateUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.model.EmailOutboundDomainResult;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
@@ -77,6 +78,7 @@ import com.mypurecloud.sdk.v2.model.SmsPhoneNumberImport;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.TestMessage;
 import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
+import com.mypurecloud.sdk.v2.model.UpdateUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
@@ -86,6 +88,8 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillGroupEntityListing;
+import com.mypurecloud.sdk.v2.model.UtilizationLabel;
+import com.mypurecloud.sdk.v2.model.UtilizationLabelEntityListing;
 import com.mypurecloud.sdk.v2.model.UtilizationRequest;
 import com.mypurecloud.sdk.v2.model.UtilizationResponse;
 import com.mypurecloud.sdk.v2.model.UtilizationTag;
@@ -114,6 +118,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
@@ -169,6 +174,9 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelAgentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagsRequest;
@@ -214,6 +222,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationLabelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
@@ -227,6 +236,7 @@ import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsTranscriptionRequest
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationLabelRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillsBulkRequest;
@@ -1518,6 +1528,89 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingUtilization(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a utilization label
+   * 
+   * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param labelId Utilization Label ID (required)
+   * @param forceDelete Remove all label usages (if found) without warning (optional, default to false)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingUtilizationLabel(String labelId, Boolean forceDelete) throws IOException, ApiException {
+     deleteRoutingUtilizationLabel(createDeleteRoutingUtilizationLabelRequest(labelId, forceDelete));
+  }
+
+  /**
+   * Delete a utilization label
+   * 
+   * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param labelId Utilization Label ID (required)
+   * @param forceDelete Remove all label usages (if found) without warning (optional, default to false)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingUtilizationLabelWithHttpInfo(String labelId, Boolean forceDelete) throws IOException {
+    return deleteRoutingUtilizationLabel(createDeleteRoutingUtilizationLabelRequest(labelId, forceDelete).withHttpInfo());
+  }
+
+  private DeleteRoutingUtilizationLabelRequest createDeleteRoutingUtilizationLabelRequest(String labelId, Boolean forceDelete) {
+    return DeleteRoutingUtilizationLabelRequest.builder()
+            .withLabelId(labelId)
+
+            .withForceDelete(forceDelete)
+
+            .build();
+  }
+
+  /**
+   * Delete a utilization label
+   * 
+   * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingUtilizationLabel(DeleteRoutingUtilizationLabelRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a utilization label
+   * 
+   * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingUtilizationLabel(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -6206,6 +6299,264 @@ public class RoutingApi {
   }
 
   /**
+   * Get details about this utilization label
+   * 
+   * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param labelId Utilization Label ID (required)
+   * @return UtilizationLabel
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UtilizationLabel getRoutingUtilizationLabel(String labelId) throws IOException, ApiException {
+    return  getRoutingUtilizationLabel(createGetRoutingUtilizationLabelRequest(labelId));
+  }
+
+  /**
+   * Get details about this utilization label
+   * 
+   * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param labelId Utilization Label ID (required)
+   * @return UtilizationLabel
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UtilizationLabel> getRoutingUtilizationLabelWithHttpInfo(String labelId) throws IOException {
+    return getRoutingUtilizationLabel(createGetRoutingUtilizationLabelRequest(labelId).withHttpInfo());
+  }
+
+  private GetRoutingUtilizationLabelRequest createGetRoutingUtilizationLabelRequest(String labelId) {
+    return GetRoutingUtilizationLabelRequest.builder()
+            .withLabelId(labelId)
+
+            .build();
+  }
+
+  /**
+   * Get details about this utilization label
+   * 
+   * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return UtilizationLabel
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UtilizationLabel getRoutingUtilizationLabel(GetRoutingUtilizationLabelRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UtilizationLabel> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UtilizationLabel>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about this utilization label
+   * 
+   * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UtilizationLabel> getRoutingUtilizationLabel(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UtilizationLabel>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of agent ids associated with a utilization label
+   * 
+   * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param labelId Utilization Label ID (required)
+   * @return List<Object>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<Object> getRoutingUtilizationLabelAgents(String labelId) throws IOException, ApiException {
+    return  getRoutingUtilizationLabelAgents(createGetRoutingUtilizationLabelAgentsRequest(labelId));
+  }
+
+  /**
+   * Get list of agent ids associated with a utilization label
+   * 
+   * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param labelId Utilization Label ID (required)
+   * @return List<Object>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<Object>> getRoutingUtilizationLabelAgentsWithHttpInfo(String labelId) throws IOException {
+    return getRoutingUtilizationLabelAgents(createGetRoutingUtilizationLabelAgentsRequest(labelId).withHttpInfo());
+  }
+
+  private GetRoutingUtilizationLabelAgentsRequest createGetRoutingUtilizationLabelAgentsRequest(String labelId) {
+    return GetRoutingUtilizationLabelAgentsRequest.builder()
+            .withLabelId(labelId)
+
+            .build();
+  }
+
+  /**
+   * Get list of agent ids associated with a utilization label
+   * 
+   * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return List<Object>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<Object> getRoutingUtilizationLabelAgents(GetRoutingUtilizationLabelAgentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<Object>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Object>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of agent ids associated with a utilization label
+   * 
+   * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<Object>> getRoutingUtilizationLabelAgents(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<Object>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of utilization labels
+   * 
+   * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Sort order by name (optional, default to ascending)
+   * @param name Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*' (optional)
+   * @return UtilizationLabelEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UtilizationLabelEntityListing getRoutingUtilizationLabels(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException, ApiException {
+    return  getRoutingUtilizationLabels(createGetRoutingUtilizationLabelsRequest(pageSize, pageNumber, sortOrder, name));
+  }
+
+  /**
+   * Get list of utilization labels
+   * 
+   * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Sort order by name (optional, default to ascending)
+   * @param name Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*' (optional)
+   * @return UtilizationLabelEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UtilizationLabelEntityListing> getRoutingUtilizationLabelsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException {
+    return getRoutingUtilizationLabels(createGetRoutingUtilizationLabelsRequest(pageSize, pageNumber, sortOrder, name).withHttpInfo());
+  }
+
+  private GetRoutingUtilizationLabelsRequest createGetRoutingUtilizationLabelsRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name) {
+    return GetRoutingUtilizationLabelsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withSortOrder(sortOrder)
+
+            .withName(name)
+
+            .build();
+  }
+
+  /**
+   * Get list of utilization labels
+   * 
+   * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return UtilizationLabelEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UtilizationLabelEntityListing getRoutingUtilizationLabels(GetRoutingUtilizationLabelsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UtilizationLabelEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UtilizationLabelEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of utilization labels
+   * 
+   * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UtilizationLabelEntityListing> getRoutingUtilizationLabels(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UtilizationLabelEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationLabelEntityListing> response = (ApiResponse<UtilizationLabelEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationLabelEntityListing> response = (ApiResponse<UtilizationLabelEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get details about this utilization tag
    * 
    * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -9934,6 +10285,88 @@ public class RoutingApi {
   }
 
   /**
+   * Create a utilization label
+   * 
+   * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body UtilizationLabel (required)
+   * @return UtilizationLabel
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UtilizationLabel postRoutingUtilizationLabels(CreateUtilizationLabelRequest body) throws IOException, ApiException {
+    return  postRoutingUtilizationLabels(createPostRoutingUtilizationLabelsRequest(body));
+  }
+
+  /**
+   * Create a utilization label
+   * 
+   * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body UtilizationLabel (required)
+   * @return UtilizationLabel
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UtilizationLabel> postRoutingUtilizationLabelsWithHttpInfo(CreateUtilizationLabelRequest body) throws IOException {
+    return postRoutingUtilizationLabels(createPostRoutingUtilizationLabelsRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingUtilizationLabelsRequest createPostRoutingUtilizationLabelsRequest(CreateUtilizationLabelRequest body) {
+    return PostRoutingUtilizationLabelsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a utilization label
+   * 
+   * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return UtilizationLabel
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UtilizationLabel postRoutingUtilizationLabels(PostRoutingUtilizationLabelsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UtilizationLabel> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UtilizationLabel>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a utilization label
+   * 
+   * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UtilizationLabel> postRoutingUtilizationLabels(ApiRequest<CreateUtilizationLabelRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UtilizationLabel>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create an utilization tag
    * 
    * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -10979,6 +11412,92 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UtilizationResponse> response = (ApiResponse<UtilizationResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a utilization label
+   * 
+   * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param labelId Utilization Label ID (required)
+   * @param body UtilizationLabel (required)
+   * @return UtilizationLabel
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UtilizationLabel putRoutingUtilizationLabel(String labelId, UpdateUtilizationLabelRequest body) throws IOException, ApiException {
+    return  putRoutingUtilizationLabel(createPutRoutingUtilizationLabelRequest(labelId, body));
+  }
+
+  /**
+   * Update a utilization label
+   * 
+   * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param labelId Utilization Label ID (required)
+   * @param body UtilizationLabel (required)
+   * @return UtilizationLabel
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UtilizationLabel> putRoutingUtilizationLabelWithHttpInfo(String labelId, UpdateUtilizationLabelRequest body) throws IOException {
+    return putRoutingUtilizationLabel(createPutRoutingUtilizationLabelRequest(labelId, body).withHttpInfo());
+  }
+
+  private PutRoutingUtilizationLabelRequest createPutRoutingUtilizationLabelRequest(String labelId, UpdateUtilizationLabelRequest body) {
+    return PutRoutingUtilizationLabelRequest.builder()
+            .withLabelId(labelId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a utilization label
+   * 
+   * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return UtilizationLabel
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UtilizationLabel putRoutingUtilizationLabel(PutRoutingUtilizationLabelRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UtilizationLabel> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UtilizationLabel>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a utilization label
+   * 
+   * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UtilizationLabel> putRoutingUtilizationLabel(ApiRequest<UpdateUtilizationLabelRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UtilizationLabel>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UtilizationLabel> response = (ApiResponse<UtilizationLabel>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

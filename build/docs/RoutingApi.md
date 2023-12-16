@@ -24,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | Delete a phone number provisioned for SMS. |
 | [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | Delete the user's max utilization settings and revert to the organization-wide default. |
 | [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | Delete the organization-wide max utilization settings and revert to the system default. |
+| [**deleteRoutingUtilizationLabel**](RoutingApi.html#deleteRoutingUtilizationLabel) | Delete a utilization label |
 | [**deleteRoutingUtilizationTag**](RoutingApi.html#deleteRoutingUtilizationTag) | Delete an utilization tag |
 | [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | Delete wrap-up code |
 | [**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | Remove routing language from user |
@@ -79,6 +80,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | Get a list of provisioned phone numbers. |
 | [**getRoutingUserUtilization**](RoutingApi.html#getRoutingUserUtilization) | Get the user's max utilization settings.  If not configured, the organization-wide default is returned. |
 | [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | Get the organization-wide max utilization settings. |
+| [**getRoutingUtilizationLabel**](RoutingApi.html#getRoutingUtilizationLabel) | Get details about this utilization label |
+| [**getRoutingUtilizationLabelAgents**](RoutingApi.html#getRoutingUtilizationLabelAgents) | Get list of agent ids associated with a utilization label |
+| [**getRoutingUtilizationLabels**](RoutingApi.html#getRoutingUtilizationLabels) | Get list of utilization labels |
 | [**getRoutingUtilizationTag**](RoutingApi.html#getRoutingUtilizationTag) | Get details about this utilization tag |
 | [**getRoutingUtilizationTagAgents**](RoutingApi.html#getRoutingUtilizationTagAgents) | Get list of agent ids associated with a utilization tag |
 | [**getRoutingUtilizationTags**](RoutingApi.html#getRoutingUtilizationTags) | Get list of utilization tags |
@@ -124,6 +128,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | Provision an Address for SMS |
 | [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | Provision a phone number for SMS |
 | [**postRoutingSmsPhonenumbersImport**](RoutingApi.html#postRoutingSmsPhonenumbersImport) | Imports a phone number for SMS |
+| [**postRoutingUtilizationLabels**](RoutingApi.html#postRoutingUtilizationLabels) | Create a utilization label |
 | [**postRoutingUtilizationTags**](RoutingApi.html#postRoutingUtilizationTags) | Create an utilization tag |
 | [**postRoutingWrapupcodes**](RoutingApi.html#postRoutingWrapupcodes) | Create a wrap-up code |
 | [**postUserRoutinglanguages**](RoutingApi.html#postUserRoutinglanguages) | Add routing language to user |
@@ -137,6 +142,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | Update a phone number provisioned for SMS. |
 | [**putRoutingUserUtilization**](RoutingApi.html#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. |
+| [**putRoutingUtilizationLabel**](RoutingApi.html#putRoutingUtilizationLabel) | Update a utilization label |
 | [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | Update wrap-up code |
 | [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | Update routing skill proficiency or state. |
 | [**putUserRoutingskillsBulk**](RoutingApi.html#putUserRoutingskillsBulk) | Replace all routing skills assigned to a user |
@@ -1161,6 +1167,70 @@ try {
 
 This endpoint does not require any parameters.
 
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingUtilizationLabel"></a>
+
+# **deleteRoutingUtilizationLabel**
+
+
+
+> Void deleteRoutingUtilizationLabel(labelId, forceDelete)
+
+Delete a utilization label
+
+deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/routing/utilization/labels/{labelId}  
+
+Requires ALL permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String labelId = "labelId_example"; // String | Utilization Label ID
+Boolean forceDelete = false; // Boolean | Remove all label usages (if found) without warning
+try {
+    apiInstance.deleteRoutingUtilizationLabel(labelId, forceDelete);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingUtilizationLabel");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **labelId** | **String**| Utilization Label ID | 
+| **forceDelete** | **Boolean**| Remove all label usages (if found) without warning | [optional] [default to false] 
+{: class="table-striped"}
 
 
 ### Return type
@@ -4703,6 +4773,201 @@ This endpoint does not require any parameters.
 
 [**UtilizationResponse**](UtilizationResponse.html)
 
+<a name="getRoutingUtilizationLabel"></a>
+
+# **getRoutingUtilizationLabel**
+
+
+
+> [UtilizationLabel](UtilizationLabel.html) getRoutingUtilizationLabel(labelId)
+
+Get details about this utilization label
+
+getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/utilization/labels/{labelId}  
+
+Requires ALL permissions: 
+
+* routing:utilization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String labelId = "labelId_example"; // String | Utilization Label ID
+try {
+    UtilizationLabel result = apiInstance.getRoutingUtilizationLabel(labelId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingUtilizationLabel");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **labelId** | **String**| Utilization Label ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UtilizationLabel**](UtilizationLabel.html)
+
+<a name="getRoutingUtilizationLabelAgents"></a>
+
+# **getRoutingUtilizationLabelAgents**
+
+
+
+> List&lt;Object&gt; getRoutingUtilizationLabelAgents(labelId)
+
+Get list of agent ids associated with a utilization label
+
+getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/utilization/labels/{labelId}/agents  
+
+Requires ALL permissions: 
+
+* routing:utilization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String labelId = "labelId_example"; // String | Utilization Label ID
+try {
+    List<Object> result = apiInstance.getRoutingUtilizationLabelAgents(labelId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingUtilizationLabelAgents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **labelId** | **String**| Utilization Label ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+**List&lt;Object&gt;**
+
+<a name="getRoutingUtilizationLabels"></a>
+
+# **getRoutingUtilizationLabels**
+
+
+
+> [UtilizationLabelEntityListing](UtilizationLabelEntityListing.html) getRoutingUtilizationLabels(pageSize, pageNumber, sortOrder, name)
+
+Get list of utilization labels
+
+getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/utilization/labels  
+
+Requires ALL permissions: 
+
+* routing:utilization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortOrder = "ascending"; // String | Sort order by name
+String name = "name_example"; // String | Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*'
+try {
+    UtilizationLabelEntityListing result = apiInstance.getRoutingUtilizationLabels(pageSize, pageNumber, sortOrder, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingUtilizationLabels");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Sort order by name | [optional] [default to ascending]<br />**Values**: ascending, descending 
+| **name** | **String**| Utilization label&#39;s name (Wildcard is supported, e.g., &#39;label1*&#39;, &#39;*label*&#39; | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UtilizationLabelEntityListing**](UtilizationLabelEntityListing.html)
+
 <a name="getRoutingUtilizationTag"></a>
 
 # **getRoutingUtilizationTag**
@@ -7571,6 +7836,69 @@ try {
 
 [**SmsPhoneNumber**](SmsPhoneNumber.html)
 
+<a name="postRoutingUtilizationLabels"></a>
+
+# **postRoutingUtilizationLabels**
+
+
+
+> [UtilizationLabel](UtilizationLabel.html) postRoutingUtilizationLabels(body)
+
+Create a utilization label
+
+postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/routing/utilization/labels  
+
+Requires ALL permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+CreateUtilizationLabelRequest body = new CreateUtilizationLabelRequest(); // CreateUtilizationLabelRequest | UtilizationLabel
+try {
+    UtilizationLabel result = apiInstance.postRoutingUtilizationLabels(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingUtilizationLabels");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateUtilizationLabelRequest**](CreateUtilizationLabelRequest.html)| UtilizationLabel | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UtilizationLabel**](UtilizationLabel.html)
+
 <a name="postRoutingUtilizationTags"></a>
 
 # **postRoutingUtilizationTags**
@@ -8382,6 +8710,71 @@ try {
 ### Return type
 
 [**UtilizationResponse**](UtilizationResponse.html)
+
+<a name="putRoutingUtilizationLabel"></a>
+
+# **putRoutingUtilizationLabel**
+
+
+
+> [UtilizationLabel](UtilizationLabel.html) putRoutingUtilizationLabel(labelId, body)
+
+Update a utilization label
+
+putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/routing/utilization/labels/{labelId}  
+
+Requires ALL permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String labelId = "labelId_example"; // String | Utilization Label ID
+UpdateUtilizationLabelRequest body = new UpdateUtilizationLabelRequest(); // UpdateUtilizationLabelRequest | UtilizationLabel
+try {
+    UtilizationLabel result = apiInstance.putRoutingUtilizationLabel(labelId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#putRoutingUtilizationLabel");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **labelId** | **String**| Utilization Label ID | 
+| **body** | [**UpdateUtilizationLabelRequest**](UpdateUtilizationLabelRequest.html)| UtilizationLabel | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UtilizationLabel**](UtilizationLabel.html)
 
 <a name="putRoutingWrapupcode"></a>
 
